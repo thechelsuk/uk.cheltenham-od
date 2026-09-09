@@ -16,25 +16,24 @@
 
         {% assign ev = site.data["ev-charging"] %}
 
-        <div class="scroll">
+        <div class="ev-charging-widget">
 
-            <div class="ev-charging-widget">
+            {% if ev.summary %}
+            <p class="ev-charging-intro">Cheltenham has
+                <strong>{{ ev.summary.total_locations }}</strong> public charging locations,
+                with <strong>{{ ev.summary.total_connectors }}</strong> connectors from
+                <strong>{{ ev.summary.operators }}</strong> operators
+                {% if ev.summary.max_power_kw %}and speeds up to
+                <strong>{{ ev.summary.max_power_kw }} kW</strong>{% endif %}.
+            </p>
+            {% endif %}
 
-                {% if ev.summary %}
-                <p class="ev-charging-intro">Cheltenham has
-                    <strong>{{ ev.summary.total_locations }}</strong> public charging locations,
-                    with <strong>{{ ev.summary.total_connectors }}</strong> connectors from
-                    <strong>{{ ev.summary.operators }}</strong> operators
-                    {% if ev.summary.max_power_kw %}and speeds up to
-                    <strong>{{ ev.summary.max_power_kw }} kW</strong>{% endif %}.
-                </p>
-                {% endif %}
+            <h2>Charging Locations Map</h2>
+            <div id="ev-map" style="height: 480px;" aria-label="Map of EV charging locations in Cheltenham"></div>
 
-                <h2>Charging Locations Map</h2>
-                <div id="ev-map" style="height: 480px;" aria-label="Map of EV charging locations in Cheltenham"></div>
-
-                {% if ev.summary.connector_types and ev.summary.connector_types.size > 0 %}
-                <h2>Connectors by Type</h2>
+            {% if ev.summary.connector_types and ev.summary.connector_types.size > 0 %}
+            <h2>Connectors by Type</h2>
+            <div class="scroll">
                 <table class="ev-summary-table" data-sortable>
                     <thead>
                         <tr>
@@ -56,9 +55,11 @@
                         {% endfor %}
                     </tbody>
                 </table>
-                {% endif %}
+            </div>
+            {% endif %}
 
-                <h2>All Charging Locations</h2>
+            <h2>All Charging Locations</h2>
+            <div class="scroll">
                 <table id="ev-charging-table" class="ev-charging-table" data-sortable>
                     <thead>
                         <tr>
@@ -92,8 +93,8 @@
                         {% endfor %}
                     </tbody>
                 </table>
-
             </div>
+
 
             <p class="ev-charging-attribution"><small>
                     Charging location data from <a href="{{ ev.source_url }}">{{ ev.source }}</a>,

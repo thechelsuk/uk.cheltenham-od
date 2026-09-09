@@ -1,0 +1,67 @@
+{% include header.html %}
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                {% if page.feed_url %}
+                <li><a href="{{ page.feed_url}}">Subscribe via our feed/rss →</a></li>
+                {% endif %}
+            </ul>
+        </header>
+
+        {{ content }}
+
+        {% assign spaces = site.data["third-spaces"] %}
+
+        <div class="third-spaces-widget">
+            <h2>Third Spaces Map</h2>
+            <div id="third-spaces-map" style="height: 480px;" aria-label="Map of community third spaces in Cheltenham">
+            </div>
+
+            <h2>Selected Third Spaces</h2>
+            <div class="scroll">
+                <table id="third-spaces-table" class="third-spaces-table" data-sortable>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Website</th>
+                            <th class="map">Map</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in spaces.locations %}
+                        <tr>
+                            <td>{{ s.name | default: "Third space" }}</td>
+                            <td>{{ s.address }}</td>
+                            <td>{% if s.website and s.website != "" %}<a href="{{ s.website }}">Website</a>{% else %}—{%
+                                endif %}</td>
+                            <td class="map">{% include pin.html lat=s.latitude lng=s.longitude label=s.name %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <p class="third-spaces-attribution"><small>
+                Data from <a href="{{ spaces.source_url }}">{{ spaces.source }}</a>{% if spaces.licence and
+                spaces.licence != "" %},
+                licensed under {{ spaces.licence }}{% endif %}.
+                Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+                {% if spaces.generated_at %}Last updated {{ spaces.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            </small></p>
+
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script id="third-spaces-data" type="application/json">{{ spaces.locations | jsonify }}</script>
+    <script id="third-spaces-centre" type="application/json">{{ spaces.centre | jsonify }}</script>
+    <script src="/scripts/third-spaces-map.js"></script>
+</div>
+</div>
+{% include footer.html %}

@@ -14,44 +14,47 @@
 
         <h2>Public Toilets</h2>
 
-        <table class="toilet-table" data-sortable>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Key features</th>
-                    <th>Opening hours</th>
-                    <th class="map">Map</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for toilet in site.data.toilets %}
-                {%- capture features_raw -%}
-                {%- if toilet.accessible -%}Wheelchair accessible|{%- endif -%}
-                {%- if toilet.all_gender -%}All gender|{%- endif -%}
-                {%- if toilet.baby_change -%}Baby changing|{%- endif -%}
-                {%- if toilet.men and toilet.women -%}Male and female|{%- elsif toilet.men -%}Male only|{%- elsif
-                toilet.women
-                -%}Female only|{%- endif -%}
-                {%- if toilet.urinal_only -%}Urinal only|{%- endif -%}
-                {%- if toilet.radar_key -%}RADAR key required|{%- endif -%}
-                {%- if toilet.no_payment -%}Free to use|{%- elsif toilet.payment_details -%}Charge:
-                {{ toilet.payment_details }}|{%- endif -%}
-                {%- endcapture -%}
-                {% assign features = features_raw | split: "|" %}
-                <tr>
-                    <td>{{ toilet.name }}</td>
-                    <td>
-                        {% for feature in features %}
-                        {% if feature != "" %}{{ feature }}{% unless forloop.last %}, {% endunless %}{% endif %}
-                        {% endfor %}
-                    </td>
-                    <td>{{ toilet.opening_hours_summary | default: "Not listed" }}</td>
-                    <td class="map">{% include pin.html lat=toilet.latitude lng=toilet.longitude label=toilet.name %}
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="scroll">
+            <table class="toilet-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Key features</th>
+                        <th>Opening hours</th>
+                        <th class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for toilet in site.data.toilets %}
+                    {%- capture features_raw -%}
+                    {%- if toilet.accessible -%}Wheelchair accessible|{%- endif -%}
+                    {%- if toilet.all_gender -%}All gender|{%- endif -%}
+                    {%- if toilet.baby_change -%}Baby changing|{%- endif -%}
+                    {%- if toilet.men and toilet.women -%}Male and female|{%- elsif toilet.men -%}Male only|{%- elsif
+                    toilet.women
+                    -%}Female only|{%- endif -%}
+                    {%- if toilet.urinal_only -%}Urinal only|{%- endif -%}
+                    {%- if toilet.radar_key -%}RADAR key required|{%- endif -%}
+                    {%- if toilet.no_payment -%}Free to use|{%- elsif toilet.payment_details -%}Charge:
+                    {{ toilet.payment_details }}|{%- endif -%}
+                    {%- endcapture -%}
+                    {% assign features = features_raw | split: "|" %}
+                    <tr>
+                        <td>{{ toilet.name }}</td>
+                        <td>
+                            {% for feature in features %}
+                            {% if feature != "" %}{{ feature }}{% unless forloop.last %}, {% endunless %}{% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>{{ toilet.opening_hours_summary | default: "Not listed" }}</td>
+                        <td class="map">{% include pin.html lat=toilet.latitude lng=toilet.longitude label=toilet.name
+                            %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
         <h2>Good to Know</h2>
 
