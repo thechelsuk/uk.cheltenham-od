@@ -1,0 +1,149 @@
+{% include header.html %}
+{% assign summary = site.data["broadband-summary"] %}
+{% assign mapdata = site.data["broadband-map"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ summary.unit_total }} postcodes across {{ summary.outcodes | join: ", " }} Mapped as
+                    {{ summary.ward_total }} wards
+                </li>
+                <li>Last updated {{ summary.updated }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{content}}
+
+        <h2>Map of Local Coverage</h2>
+        <p><small>Shaded by gigabit-capable availability (% of premises)</small></p>
+        <div class="broadband-legend">
+            <span><i class="tier-swatch shade-0"></i> &lt;75%</span>
+            <span><i class="tier-swatch shade-1"></i> 75–80%</span>
+            <span><i class="tier-swatch shade-2"></i> 80–85%</span>
+            <span><i class="tier-swatch shade-3"></i> 85–90%</span>
+            <span><i class="tier-swatch shade-4"></i> 90–95%</span>
+            <span><i class="tier-swatch shade-5"></i> 95%+</span>
+        </div>
+
+        <div id="broadband-map" style="height: 600px; border-radius: 8px;"></div>
+        <script id="broadband-map-data" type="application/json">
+        {{ mapdata | jsonify }}
+        </script>
+
+        <h2>Coverage by Ward</h2>
+        <div class="table-scroll">
+            <table class="broadband-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Postcodes</th>
+                        <th scope="col">Typical tier</th>
+                        <th scope="col" class="number">Superfast (30+)</th>
+                        <th scope="col" class="number">Ultrafast (100+)</th>
+                        <th scope="col" class="number">Ultrafast (300+)</th>
+                        <th scope="col" class="number">Gigabit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in summary.ward_summary %}
+                    <tr>
+                        <td class="postcode">{{ w.name }}</td>
+                        <td class="number">{{ w.unit_count }}</td>
+                        <td><span class="tier-badge"><i
+                                    class="tier-swatch shade-{{ w.tier }}"></i>{{ w.tier_label }}</span></td>
+                        <td class="number">{{ w.sfbb_pct }}%</td>
+                        <td class="number">{{ w.ufbb100_pct }}%</td>
+                        <td class="number">{{ w.ufbb300_pct }}%</td>
+                        <td class="number">{{ w.gigabit_pct }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>What the Speed Tiers Mean & Coverage</h2>
+        <div class="table-scroll">
+            <table class="broadband-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Tier</th>
+                        <th scope="col">Speed</th>
+                        <th scope="col" class="number">Postcodes</th>
+                        <th scope="col">What It Means</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in summary.tier_totals %}
+                    <tr>
+                        <td><span class="tier-badge"><i class="tier-swatch shade-{{ t.tier }}"></i>{{ t.name }}</span>
+                        </td>
+                        <td class="number">{{ t.speed }}</td>
+                        <td class="number">{{ t.count }}</td>
+                        <td>{{ t.blurb }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p><small>Source: Ofcom Connected Nations, postcode-unit data, aggregated to postcode
+                {{ summary.agg_level }}s. A postcode is banded into a tier when at least half its
+                premises have that level of coverage; area figures are the mean across their postcodes.</small></p>
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How to Read the Map?</h3>
+        <ul>
+            <li>Each shaded area is an electoral ward. The darker the blue, the higher the share
+                of premises that can get a gigabit-capable connection (1000 Mbps+). Pale wards
+                aren't badly connected — almost everywhere here can get at least superfast
+                broadband — they simply have fewer gigabit-ready lines so far. Click any ward for
+                its full breakdown.</li>
+        </ul>
+
+        <h3>Where Does This Data Come From?</h3>
+        <ul>
+            <li>Ofcom's Connected Nations programme, which publishes fixed broadband coverage for every UK postcode.
+                Ofcom
+                refreshes it roughly twice a year.</li>
+        </ul>
+
+        <h3>Is This the Speed I'll Actually Get?</h3>
+        <ul>
+            <li>No — it shows what's available to order, not guaranteed speeds. Your real speed depends on your
+                provider,
+                package, and the line to your home.</li>
+        </ul>
+
+        <h3>What Do the Ward Figures Represent?</h3>
+        <ul>
+            <li>We take every postcode in GL50–GL54, match it to its ward, and average the results, so each ward shows
+                one
+                representative value. A mostly-fast ward can still contain individual streets that lag behind.</li>
+        </ul>
+
+        <h3>Why Show Wards Instead of Postcodes?</h3>
+        <ul>
+            <li>There are several thousand postcodes across these areas — too many to read on a map. Wards group them
+                into
+                recognisable neighbourhoods while keeping the full detail in the table above.</li>
+        </ul>
+
+        <h3>How Current Is It?</h3>
+        <ul>
+            <li>Check the "last updated" date at the top of the page. Because Ofcom publishes about twice a year, very
+                recent
+                rollouts may not appear yet.</li>
+        </ul>
+
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/scripts/broadband-map.js"></script>
+{% include footer.html %}

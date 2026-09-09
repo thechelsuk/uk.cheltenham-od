@@ -1,0 +1,92 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Broadband Speeds & Coverage by Ward",
+  "description": "Fixed broadband coverage and speeds across Cheltenham and surrounding Gloucestershire wards (GL50–GL54), showing gigabit, full-fibre, ultrafast and superfast availability, aggregated from Ofcom Connected Nations postcode-level data.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "broadband coverage",
+    "broadband speeds",
+    "Cheltenham",
+    "Gloucestershire",
+    "gigabit",
+    "full fibre",
+    "ultrafast",
+    "superfast",
+    "Ofcom Connected Nations",
+    "GL50", "GL51", "GL52", "GL53", "GL54"
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Cheltenham and surrounding Gloucestershire wards (GL50–GL54)"
+  },
+  "dateModified": "{{ site.data['broadband-summary'].updated }}",
+  "creator": {
+    "@type": "Organization",
+    "name": "Cheltenham Open Data",
+    "url": "{{ '/' | absolute_url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cheltenham Open Data"
+  },
+  "isBasedOn": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/",
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "variableMeasured": [
+    "Superfast (30 Mbps+) availability (% premises)",
+    "Ultrafast (100 Mbps+) availability (% premises)",
+    "Ultrafast (300 Mbps+) availability (% premises)",
+    "Gigabit-capable (1000 Mbps+) availability (% premises)"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where does this data come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofcom's Connected Nations programme, which publishes fixed broadband coverage for every UK postcode. Ofcom refreshes it roughly twice a year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this the speed I'll actually get?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — it shows what's available to order, not guaranteed speeds. Your real speed depends on your provider, package, and the line to your home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do the ward figures represent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We take every postcode in GL50–GL54, match it to its ward, and average the results, so each ward shows one representative value. A mostly-fast ward can still contain individual streets that lag behind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why show wards instead of postcodes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are several thousand postcodes across these areas — too many to read on a map. Wards group them into recognisable neighbourhoods while keeping the full detail in the table above."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How current is it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the last updated date at the top of the page. Because Ofcom publishes about twice a year, very recent rollouts may not appear yet."
+      }
+    }
+  ]
+}
+</script>

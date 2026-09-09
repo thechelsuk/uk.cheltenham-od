@@ -156,3 +156,44 @@ body.theme-third,
     --accent-dark: #9ca2c4;
     --accent-text: #110a20;
 }
+
+
+.tier-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.tier-swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex: 0 0 auto;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.shade-0 {
+    background: #eff3ff;
+}
+
+.shade-1 {
+    background: #c6dbef;
+}
+
+.shade-2 {
+    background: #9ecae1;
+}
+
+.shade-3 {
+    background: #6baed6;
+}
+
+.shade-4 {
+    background: #3182bd;
+}
+
+.shade-5 {
+    background: #08519c;
+}
