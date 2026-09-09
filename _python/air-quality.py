@@ -22,7 +22,7 @@ Usage:
 Requires:
     pip install requests
 """
-
+import re
 import sys
 import math
 import argparse
