@@ -69,7 +69,7 @@ DECISION_TERMS = (
 
 TODAY = datetime.now().strftime("%Y-%m-%d")
 
-DEBUG = True
+DEBUG = False
 
 
 # ---------------------------------------------------------------------------
