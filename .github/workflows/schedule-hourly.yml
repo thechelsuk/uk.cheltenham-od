@@ -59,6 +59,7 @@ jobs:
               env:
                   OPEN_WEATHER_KEY: ${{ secrets.OPEN_WEATHER_KEY }}
               run: |-
+                  python '_python/forecast.py'
                   python '_python/weather.py'
                   python '_python/news.py'
                   python '_python/land_registry.py'
