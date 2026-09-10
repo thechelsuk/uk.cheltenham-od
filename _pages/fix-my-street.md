@@ -41,6 +41,15 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Dirt and debris from road works, 10th September :- [10081140](https://www.fixmystreet.com/report/10081140)
+- Vegetation blocking pavement, 10th September :- [10081134](https://www.fixmystreet.com/report/10081134)
+- Large tree obscuring street light in my close., 10th September :- [10081025](https://www.fixmystreet.com/report/10081025)
+- Brambles growing into road. Scratch cars, 10th September :- [10080967](https://www.fixmystreet.com/report/10080967)
+- Temporary emergency lighting, 10th September :- [10080697](https://www.fixmystreet.com/report/10080697)
+- Seven Nitrous oxide canisters dumped, 10th September :- [10080597](https://www.fixmystreet.com/report/10080597)
+- There is quite a bit of water on road and road is breaking quite badly, 10th September :- [10080483](https://www.fixmystreet.com/report/10080483)
+- Dumped kitchen appliance, 10th September :- [10080401](https://www.fixmystreet.com/report/10080401)
+- Dumped foot stall, 10th September :- [10080397](https://www.fixmystreet.com/report/10080397)
 - Water pipe leak from pavement into road, 10th September :- [10080193](https://www.fixmystreet.com/report/10080193)
 - Overgrown footpath, 10th September :- [10080148](https://www.fixmystreet.com/report/10080148)
 - 17 gas cylinders and assorted rubbish fly tipped, 10th September :- [10080136](https://www.fixmystreet.com/report/10080136)
@@ -52,14 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Other issue with a footway/pavement problem, 10th September :- [10079755](https://www.fixmystreet.com/report/10079755)
 - For sometime the footpath across the fields to the rear of Stone Cottage and Greenway Cottage in Little Shurdington has been blocked by electric fences creating horse paddocks. There used to be a sign that offered an "alternative route" but this has been removed. It is now impossible to use the footpath due to the electric fences, three separate ones I believe. Also the yellow arrow footpath sign has been adjusted to show the path taking the "alternative route" rather than its actual route, 10th September :- [10079548](https://www.fixmystreet.com/report/10079548)
 - Overgrown trees and vegetation, 10th September :- [10079398](https://www.fixmystreet.com/report/10079398)
-- Blocked stormdrain, 10th September :- [10079406](https://www.fixmystreet.com/report/10079406)
-- TMC - Defects - Kerbs and Channels problem, 10th September :- [10079384](https://www.fixmystreet.com/report/10079384)
-- Significant cracking and pothole, 10th September :- [10077329](https://www.fixmystreet.com/report/10077329)
-- Significantcracking and subsidence in carriageway, 10th September :- [10077299](https://www.fixmystreet.com/report/10077299)
-- TMC - Defects - Other FW6  Surface problem, 10th September :- [10079165](https://www.fixmystreet.com/report/10079165)
-- TMC - Defects - Footways Slabs problem, 10th September :- [10079159](https://www.fixmystreet.com/report/10079159)
-- Lights signal very short, 10th September :- [10078982](https://www.fixmystreet.com/report/10078982)
-- Tree is damaged problem, 10th September :- [10079151](https://www.fixmystreet.com/report/10079151)
-- Car drivers at Ullenwood driving up the Cotswold Way bridleway as a shortcut., 10th September :- [10078866](https://www.fixmystreet.com/report/10078866)
 
 <!-- fix_marker ends -->
