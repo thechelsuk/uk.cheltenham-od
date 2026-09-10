@@ -11,11 +11,11 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 <!-- weather_marker starts -->
 ## On Thursday, 10 September 2026
 
-- The average temperature today is 17.7˚C,
-- With highs of 17.7˚C and lows of 9.3˚C,
-- It may feel like 17.7˚C with light rain
-- The wind speed is 6.3m/s
-- The pressure is 1016.71hPa and humidity is 53%
+- The average temperature today is 18.3˚C,
+- With highs of 18.7˚C and lows of 9.8˚C,
+- It may feel like 18.3˚C with light rain
+- The wind speed is 7.5m/s
+- The pressure is 1016.16hPa and humidity is 58%
 - The sun will rise at 06:34 and set at 19:36
 
 <!-- weather_marker ends -->
