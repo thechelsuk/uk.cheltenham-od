@@ -41,6 +41,14 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Signage blocking path, 9th September :- [10076036](https://www.fixmystreet.com/report/10076036)
+- Street Light 6 has failed., 9th September :- [10075758](https://www.fixmystreet.com/report/10075758)
+- The tarmac leading outside 35 Welland Lodge Road in poor state., 9th September :- [10075692](https://www.fixmystreet.com/report/10075692)
+- Works signs are not required in this place., 9th September :- [10075285](https://www.fixmystreet.com/report/10075285)
+- Overgrown hedge reaching up towards the telegraph pole, 9th September :- [10075222](https://www.fixmystreet.com/report/10075222)
+- Plant/tree growing out of central kerb, 9th September :- [10075057](https://www.fixmystreet.com/report/10075057)
+- Dead ash tree, 9th September :- [10075035](https://www.fixmystreet.com/report/10075035)
+- Trees over hanging path and road delivery vans hitting branches, 9th September :- [10074893](https://www.fixmystreet.com/report/10074893)
 - Dangerous Lane-Cutting and Gridlock at Elmbridge Court Roundabout (Cheltenham Road Exit), 9th September :- [10074708](https://www.fixmystreet.com/report/10074708)
 - Overhanging hedge, 9th September :- [10074704](https://www.fixmystreet.com/report/10074704)
 - Aqua kerb 6100 has a broken mounting lug so is tipping whenever anyone runs over it., 9th September :- [10074700](https://www.fixmystreet.com/report/10074700)
@@ -53,13 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - TMC - Defects - Footways Slabs problem, 9th September :- [10074408](https://www.fixmystreet.com/report/10074408)
 - TMC - Defects - Kerbs and Channels problem, 9th September :- [10074404](https://www.fixmystreet.com/report/10074404)
 - TMC - Defects - Other problem, 9th September :- [10074391](https://www.fixmystreet.com/report/10074391)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074393](https://www.fixmystreet.com/report/10074393)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074388](https://www.fixmystreet.com/report/10074388)
-- TMC - Defects - Footways Slabs problem, 9th September :- [10074384](https://www.fixmystreet.com/report/10074384)
-- TMC - Defects - Footways Slabs problem, 9th September :- [10074383](https://www.fixmystreet.com/report/10074383)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074385](https://www.fixmystreet.com/report/10074385)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074386](https://www.fixmystreet.com/report/10074386)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074387](https://www.fixmystreet.com/report/10074387)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074382](https://www.fixmystreet.com/report/10074382)
 
 <!-- fix_marker ends -->
