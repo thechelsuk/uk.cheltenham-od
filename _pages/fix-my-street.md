@@ -56,10 +56,10 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Abandoned car over footpath and across double yellow lines, 9th September :- [10074642](https://www.fixmystreet.com/report/10074642)
 - TMC - Defects -CW6 Potholes  problem, 9th September :- [10074608](https://www.fixmystreet.com/report/10074608)
 - TMC - Defects - Other FW6  Surface problem, 9th September :- [10074415](https://www.fixmystreet.com/report/10074415)
-- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074409](https://www.fixmystreet.com/report/10074409)
 - TMC - Defects - Other FW6  Surface problem, 9th September :- [10074410](https://www.fixmystreet.com/report/10074410)
+- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074409](https://www.fixmystreet.com/report/10074409)
 - TMC - Defects - Footways Slabs problem, 9th September :- [10074408](https://www.fixmystreet.com/report/10074408)
 - TMC - Defects - Kerbs and Channels problem, 9th September :- [10074404](https://www.fixmystreet.com/report/10074404)
-- TMC - Defects - Other problem, 9th September :- [10074391](https://www.fixmystreet.com/report/10074391)
+- TMC - Defects - Other FW6  Surface problem, 9th September :- [10074393](https://www.fixmystreet.com/report/10074393)
 
 <!-- fix_marker ends -->
