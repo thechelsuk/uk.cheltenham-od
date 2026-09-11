@@ -11,11 +11,11 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 <!-- weather_marker starts -->
 ## On Friday, 11 September 2026
 
-- The average temperature today is 20.3˚C,
-- With highs of 21.3˚C and lows of 12.1˚C,
-- It may feel like 20.3˚C with clear sky
-- The wind speed is 4.4m/s
-- The pressure is 1020.2hPa and humidity is 53%
+- The average temperature today is 19.8˚C,
+- With highs of 20.8˚C and lows of 12.3˚C,
+- It may feel like 19.8˚C with clear sky
+- The wind speed is 4.3m/s
+- The pressure is 1020.13hPa and humidity is 57%
 - The sun will rise at 06:36 and set at 19:34
 
 <!-- weather_marker ends -->
