@@ -189,6 +189,11 @@ def main():
 	)
 	parser.add_argument("--start-date", help="First month in an inclusive YYYY-MM range")
 	parser.add_argument("--end-date", help="Last month in an inclusive YYYY-MM range")
+	parser.add_argument(
+		"--overwrite",
+		action="store_true",
+		help="Re-fetch and overwrite months that already have saved data",
+	)
 	args = parser.parse_args()
 	if args.date and (args.start_date or args.end_date):
 		parser.error("use --date or --start-date/--end-date, not both")
@@ -201,6 +206,13 @@ def main():
 		months = month_range(start_date, end_date)
 	except ValueError as error:
 		parser.error(str(error))
+
+	existing_months = [date for date in months if (OUTPUT_DIR / date).exists()]
+	if existing_months and not args.overwrite:
+		parser.error(
+			f"data already saved for {', '.join(existing_months)}; "
+			"pass --overwrite to re-fetch and replace it"
+		)
 
 	neighbourhoods = fetch_neighbourhoods()
 	boundaries = {}

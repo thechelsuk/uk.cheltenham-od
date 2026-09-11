@@ -7,6 +7,12 @@ permalink: /cheltenham-broadband-internet-speeds
 description: "Check broadband coverage and speeds across Cheltenham by ward — gigabit, full-fibre, ultrafast and superfast availability from Ofcom data, covering GL50–GL54."
 type: "house"
 schema_type: broadband
+sponsor:
+    url: "https://youfibre.com?ref=cheltenham-od"
+    logo: "/images/sponsors/youfibre.png"
+    name: "YouFibre Broadband"
+    tagline: "Get up to £100 cashback when taking a YouFibre broadband plan with code `5QGYSF`"
+    type: "Affiliate Link"
 ---
 
 
