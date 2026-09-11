@@ -12,10 +12,10 @@ permalink: /cheltenham-news
 {% include sponsor.html %}
 
 <!-- news_marker starts -->
-- Busy A-road to close before drivers can use new layout ([3 hours ago](https://www.bbc.co.uk/news/articles/cy4zjvw37qko?at_medium=RSS&at_campaign=rss))
-- 'Stroke completely wiped out my ability to speak' ([7 hours ago](https://www.bbc.co.uk/news/articles/c980lqz1lq1o?at_medium=RSS&at_campaign=rss))
-- Salary of £195k on offer for new chief constable ([15 hours ago](https://www.bbc.co.uk/news/articles/cy4zdq9410vo?at_medium=RSS&at_campaign=rss))
-- 'Ripple effect of trauma' after Post Office scandal ([16 hours ago](https://www.bbc.co.uk/news/articles/c62mn9me083o?at_medium=RSS&at_campaign=rss))
+- Busy A-road to close before drivers can use new layout ([6 hours ago](https://www.bbc.co.uk/news/articles/cy4zjvw37qko?at_medium=RSS&at_campaign=rss))
+- 'Stroke completely wiped out my ability to speak' ([10 hours ago](https://www.bbc.co.uk/news/articles/c980lqz1lq1o?at_medium=RSS&at_campaign=rss))
+- Salary of £195k on offer for new chief constable ([19 hours ago](https://www.bbc.co.uk/news/articles/cy4zdq9410vo?at_medium=RSS&at_campaign=rss))
+- 'Ripple effect of trauma' after Post Office scandal ([19 hours ago](https://www.bbc.co.uk/news/articles/c62mn9me083o?at_medium=RSS&at_campaign=rss))
 - 'First holiday ruined' and 'nightmare' waits amid flight disruption ([1 days ago](https://www.bbc.co.uk/news/articles/c3d7pn7x8xlo?at_medium=RSS&at_campaign=rss))
 - Man who treated city as 'his dumping ground' sentenced ([1 days ago](https://www.bbc.co.uk/news/articles/cp30e7e5943o?at_medium=RSS&at_campaign=rss))
 - Teenage boy sentenced for murder of man in Cheltenham ([1 days ago](https://gloucesternewscentre.co.uk/teenage-boy-sentenced-for-murder-of-man-in-cheltenham/))
@@ -32,12 +32,14 @@ permalink: /cheltenham-news
 - Family 'isolated' by 16-month bedbug infestation ([3 days ago](https://www.bbc.co.uk/news/articles/cn8e662gddno?at_medium=RSS&at_campaign=rss))
 - Social media inspiring new generation of bookworms ([4 days ago](https://www.bbc.co.uk/news/articles/ced7y169ll9o?at_medium=RSS&at_campaign=rss))
 - Cheltenham BID Announces Appointment of New Chief Executive ([7 days ago](https://cheltenhambid.co.uk/2026/09/03/cheltenham-bid-announces-appointment-of-new-chief-executive/))
+- Bishop’s Cleeve care worker wins national award for bringing joy to residents ([15 days ago](https://cheltenhampost.co.uk/bishops-cleeve-care-worker-wins-national-award-for-bringing-joy-to-residents/))
 - Police release image of man wanted in connection with a serious assault ([16 days ago](https://gloucesternewscentre.co.uk/police-release-image-of-man-wanted-in-connection-with-a-serious-assault/))
 - Hospital parking firm blasted as ‘vultures’ after fining man battling cancer ([16 days ago](https://gloucesternewscentre.co.uk/hospital-parking-firm-blasted-as-vultures-after-fining-man-battling-cancer/))
 - Man racially abused and punched two other men in Cheltenham ([24 days ago](https://gloucesternewscentre.co.uk/man-racially-abused-and-punched-two-other-men-in-cheltenham/))
 - Frustration as people are ‘forced to drive miles’ because of tip closures ([24 days ago](https://gloucesternewscentre.co.uk/frustration-as-people-are-forced-to-drive-miles-because-of-tip-closures/))
 - England, Wales ([27 days ago](https://www.gov.uk/alerts/14-aug-2026-2))
 - Wales ([27 days ago](https://www.gov.uk/alerts/14-aug-2026))
+- Free family events at The Brewery Quarter in August ([27 days ago](https://cheltenhampost.co.uk/free-family-events-at-the-brewery-quarter-in-august/))
 - Review: The Choir of Man ([27 days ago](https://gloucesternewscentre.co.uk/review-the-choir-of-man/))
 
 <!-- news_marker ends -->
