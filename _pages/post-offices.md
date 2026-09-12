@@ -5,6 +5,7 @@ seo: "Cheltenham Post Office Locations - Find Your Nearest Branch, including Hig
 permalink: /cheltenham-post-office-locations
 description: "Every Post Office branch in Cheltenham, with map links"
 type: "third"
+schema: post-offices
 ---
 
 {% include sponsor.html %}

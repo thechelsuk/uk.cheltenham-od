@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham EV Charging Points",
+  "description": "Public electric vehicle charging locations across Cheltenham, with connector types, charging speeds and directions, sourced from Open Charge Map.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['ev-charging'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Location", "Connector type", "Max power (kW)"]
+}
+</script>

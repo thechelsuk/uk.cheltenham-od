@@ -5,6 +5,7 @@ seo: "Public Toilets in Cheltenham - Find Your Nearest Facility, including acces
 permalink: /cheltenham-public-toilets
 description: "Every known public toilet in Cheltenham, with opening hours, accessibility info and map links"
 type: "third"
+schema: toilets
 ---
 
 {% include sponsor.html %}

@@ -1,6 +1,20 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Points of Interest",
+  "description": "Museums, historic sites, stadiums and blue plaques in and around Cheltenham, each with distance and a map link, sourced from OpenStreetMap.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "license": "https://opendatacommons.org/licenses/odbl/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Category", "Distance"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {

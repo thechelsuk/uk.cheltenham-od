@@ -5,6 +5,7 @@ seo: "Where to find third spaces in Cheltenham, Gloucestershire"
 permalink: /cheltenham-third-spaces
 description: "A curated list of local third spaces within Cheltenham. Last updated August 2026"
 type: "third"
+schema: thirds
 ---
 
 {% include sponsor.html %}

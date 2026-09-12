@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Third Spaces",
+  "description": "A curated list of local third spaces in Cheltenham — community hubs, cafes and venues to spend time outside home and work.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['third-spaces'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "{{ site.data['third-spaces'].licence }}",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Category", "Address"]
+}
+</script>
