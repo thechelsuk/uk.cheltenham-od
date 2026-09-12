@@ -9,7 +9,7 @@ feed_url: "/feeds/bus-disruptions.xml"
 description: Every registered bus route serving Cheltenham from the DfT's Bus Open Data Service.
 ---
 
-{% assign bus = site.data["bus-routes"] %}
+## Cheltenham Bus Data
 
 This page lists every bus route registered with the Office of the Traffic Commissioner that has Cheltenham as its origin, destination, or a stop along the way, sourced from the Department for Transport's Bus Open Data Service data catalogue.
 
