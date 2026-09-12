@@ -1,0 +1,26 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham InPost Locker Locations",
+  "description": "InPost self-service parcel locker locations in Cheltenham, sourced from InPost's own public locations service.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['inpost-lockers'].updated_iso }}",
+  "isAccessibleForFree": true,
+  "isBasedOn": "https://www.inpost.co.uk/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Street", "Postcode", "24/7 access"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is an InPost locker?", "acceptedAnswer": {"@type": "Answer", "text": "A self-service parcel locker for sending and collecting parcels using a QR code or the InPost app — no staff interaction needed. Many are accessible 24/7."} },
+    { "@type": "Question", "name": "How do I send a parcel from a locker?", "acceptedAnswer": {"@type": "Answer", "text": "Book your parcel through the courier or marketplace you're using, then take the QR code or booking reference to the locker to open a compartment and drop it in."} },
+    { "@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "InPost's own public locker location service, refreshed hourly."} }
+  ]
+}
+</script>

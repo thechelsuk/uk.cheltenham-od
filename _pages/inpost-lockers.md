@@ -5,6 +5,7 @@ seo: "Cheltenham InPost parcel locker locations — find your nearest 24/7 self-
 permalink: /cheltenham-inpost-lockers
 description: "Every InPost parcel locker in Cheltenham, with a map and opening access, sourced from InPost's own locations service."
 type: "third"
+schema: inpost
 ---
 
 {% include sponsor.html %}

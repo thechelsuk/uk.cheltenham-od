@@ -1,0 +1,26 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham DPD Pickup Points",
+  "description": "DPD Pickup drop-off and collection points in Cheltenham — local shops, newsagents, petrol station kiosks and Post Office branches — sourced from DPD's own pickup point finder.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['dpd-pickup-points'].updated_iso }}",
+  "isAccessibleForFree": true,
+  "isBasedOn": "https://pickup.dpd.co.uk/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Type", "Street", "Postcode", "Opening hours"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is a DPD Pickup point?", "acceptedAnswer": {"@type": "Answer", "text": "A local shop, newsagent or Post Office signed up to accept DPD parcel drop-offs and collections. Many aren't Post Offices at all — Cheltenham's DPD network includes convenience stores, petrol station kiosks and Argos."} },
+    { "@type": "Question", "name": "How do I drop off a parcel?", "acceptedAnswer": {"@type": "Answer", "text": "Book your parcel through DPD or a marketplace/carrier using DPD, then take your QR code or booking reference to the pickup point during its opening hours."} },
+    { "@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "DPD's own public pickup point finder, refreshed hourly."} }
+  ]
+}
+</script>

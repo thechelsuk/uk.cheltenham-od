@@ -5,6 +5,7 @@ description: "A complete list of schools in Cheltenham, Gloucestershire (GL50–
 seo: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools, sortable by name, type and phase."
 permalink: /cheltenham-schools
 type: "third"
+schema: schools
 ---
 
 ## Schools in Cheltenham
