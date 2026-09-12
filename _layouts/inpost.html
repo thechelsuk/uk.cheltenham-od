@@ -1,0 +1,73 @@
+{% include header.html %}
+{% assign inpost = site.data["inpost-lockers"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ inpost.count }} lockers in Cheltenham</li>
+                <li>Last updated {{ inpost.updated }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>InPost Locker Map</h2>
+        <div id="inpost-map" style="height: 600px;" aria-label="Map of InPost locker locations in Cheltenham"></div>
+
+        <h2>InPost Locker Locations</h2>
+        <div class="table-scroll">
+            <table class="inpost-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Street</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col">Access</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for l in inpost.lockers %}
+                    <tr>
+                        <td data-val="{{ l.name | downcase }}">{{ l.name }}</td>
+                        <td data-val="{{ l.street | downcase }}">{{ l.street }}</td>
+                        <td class="postcode" data-val="{{ l.postcode | downcase }}">{{ l.postcode }}</td>
+                        <td data-val="{% if l.is_247 %}1{% else %}0{% endif %}">{% if l.is_247 %}24/7{% else %}Store
+                            hours{% endif %}</td>
+                        <td class="map">{% include pin.html lat=l.lat lng=l.lon label=l.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>FAQs</h2>
+
+        <h3>What Is an InPost Locker?</h3>
+        <p>A self-service parcel locker where you can send and collect parcels at any time it's accessible, using a
+            QR code or the InPost app — no staff interaction needed. Handy for Vinted, eBay and other online
+            marketplace sellers, since most InPost lockers are accessible outside normal shop hours, several of them
+            24/7.</p>
+
+        <h3>How Do I Send a Parcel from a Locker?</h3>
+        <p>Book your parcel through the courier or marketplace you're using (InPost is used directly, and by
+            carriers including Evri for locker drop-off), then take the QR code or booking reference to the locker to
+            open a compartment and drop your parcel in.</p>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>InPost's own public locker location service, refreshed hourly. Locker availability can change, so it's
+            worth checking the InPost app for live compartment availability before a special trip.</p>
+
+        <h3>Looking for a Post Office Instead?</h3>
+        <p>See our <a href="/cheltenham-post-office-locations">Cheltenham Post Office locations</a> page for branches
+            that also handle parcels and everyday banking.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="inpost-data" type="application/json">{{ inpost.lockers | jsonify }}</script>
+<script src="/scripts/inpost-map.js"></script>
+{% include footer.html %}

@@ -25,3 +25,9 @@ Most branches offer core postal and banking services, though exact services vary
 - Bill payments and travel money
 - Cash withdrawals and deposits (banking services)
 - Click & Collect parcel pickup
+
+## Post Office FAQs
+
+### Where Can I Send a Parcel Outside Post Office Opening Hours?
+
+- Cheltenham also has a growing network of [InPost self-service parcel lockers](/cheltenham-inpost-lockers), many of which are accessible 24 hours a day — useful for Vinted, eBay and other marketplace sellers who need to post outside normal shop hours.
