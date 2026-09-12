@@ -39,45 +39,41 @@ def fetch_terrorism_xml(destination):
 
 # processing
 if __name__ == "__main__":
+    root = pathlib.Path(__file__).parent.parent.resolve()
+    terror_xml = root / "_data/terrorism.xml"
+
     try:
-        root = pathlib.Path(__file__).parent.parent.resolve()
-        terror_xml = root / "_data/terrorism.xml"
+        xml_content = fetch_terrorism_xml(terror_xml)
+    except Exception as error:
+        if terror_xml.exists():
+            print(f"Fetch failed, using cached terrorism.xml: {error}")
+            xml_content = terror_xml.read_text()
+        else:
+            raise
 
-        try:
-            xml_content = fetch_terrorism_xml(terror_xml)
-        except Exception as error:
-            if terror_xml.exists():
-                print(f"Fetch failed, using cached terrorism.xml: {error}")
-                xml_content = terror_xml.read_text()
-            else:
-                raise
+    parsed = feedparser.parse(xml_content)
+    output = parsed["entries"]
+    if not output:
+        raise RuntimeError("No entries found in terrorism feed")
 
-        parsed = feedparser.parse(xml_content)
-        output = parsed["entries"]
-        if not output:
-            raise RuntimeError("No entries found in terrorism feed")
+    for entry in output:
+        level = (f"{entry['title']}")
+        update = entry['published']
+        update = datetime.strptime(
+            update, "%A, %B %d, %Y -  %H:%M").strftime("%Y-%m-%d")
+        days_since_update = (datetime.now() -
+                             datetime.strptime(update, "%Y-%m-%d")).days
+        desc = entry['summary']
 
-        for entry in output:
-            level = (f"{entry['title']}")
-            update = entry['published']
-            update = datetime.strptime(
-                update, "%A, %B %d, %Y -  %H:%M").strftime("%Y-%m-%d")
-            days_since_update = (datetime.now() -
-                                 datetime.strptime(update, "%Y-%m-%d")).days
-            desc = entry['summary']
+        level_class = level.split()[-1].capitalize()
 
-            level_class = level.split()[-1].capitalize()
+    string =  f'### {level_class}\n\n'
+    string += f'- {level}\n'
+    string += f'- It has been {days_since_update} days since the last change ({update})\n'
+    string += f'- Details: {strip_html(desc)}\n'
 
-        string =  f'### {level_class}\n\n'
-        string += f'- {level}\n'
-        string += f'- It has been {days_since_update} days since the last change ({update})\n'
-        string += f'- Details: {strip_html(desc)}\n'
-
-        f = root / "_pages/security.md"
-        m = f.open().read()
-        c = helper.replace_chunk(m, "threat_marker", string)
-        f.open("w").write(c)
-        print("threat completed")
-
-    except FileNotFoundError:
-        print("File does not exist, unable to proceed")
+    f = root / "_pages/security.md"
+    m = f.open().read()
+    c = helper.replace_chunk(m, "threat_marker", string)
+    f.open("w").write(c)
+    print("threat completed")

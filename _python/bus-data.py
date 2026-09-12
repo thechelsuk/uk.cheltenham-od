@@ -107,14 +107,27 @@ if __name__ == "__main__":
             "last_modified":      (r.get("XML:Last Modified Date") or "")[:10],
         })
 
-    # De-dupe identical service number + operator + start/finish combos (variations of the same route).
-    seen = {}
+    # De-dupe identical service number + operator + start/finish combos (variations
+    # of the same route registered separately in BODS/OTC). We display the most
+    # recently modified variation, but a route still counts as needing attention
+    # if ANY of its variations does — an older, stale-but-still-live registration
+    # shouldn't be hidden just because a newer variation happens to be clean.
+    groups = {}
     for route in routes:
         key = (route["service_number"], route["operator"], route["start_point"], route["finish_point"])
-        existing = seen.get(key)
-        if existing is None or route["last_modified"] > existing["last_modified"]:
-            seen[key] = route
-    routes = sorted(seen.values(), key=lambda r: (r["operator"].lower(), r["service_number"]))
+        groups.setdefault(key, []).append(route)
+
+    merged = []
+    for group in groups.values():
+        display = max(group, key=lambda r: r["last_modified"])
+        needs_attention = any(r["requires_attention"] for r in group)
+        if needs_attention and not display["requires_attention"]:
+            # Surface the reason from whichever variation actually needs attention,
+            # so the displayed status matches the flag instead of contradicting it.
+            flagged = next(r for r in group if r["requires_attention"])
+            display = {**display, "requires_attention": True, "timeliness": flagged["timeliness"]}
+        merged.append(display)
+    routes = sorted(merged, key=lambda r: (r["operator"].lower(), r["service_number"]))
 
     attention_count = sum(1 for r in routes if r["requires_attention"])
     operators = sorted({r["operator"] for r in routes})

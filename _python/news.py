@@ -23,38 +23,34 @@ def time_ago(published_parsed):
 
 # processing
 if __name__ == "__main__":
-    try:
-        root = pathlib.Path(__file__).parent.parent.resolve()
+    root = pathlib.Path(__file__).parent.parent.resolve()
 
-        config_path = root / "_data/news-sources.yml"
-        with config_path.open() as f:
-            sources = yaml.safe_load(f)["sources"]
-        urls = [source["url"] for source in sources]
+    config_path = root / "_data/news-sources.yml"
+    with config_path.open() as f:
+        sources = yaml.safe_load(f)["sources"]
+    urls = [source["url"] for source in sources]
 
-        all_items = []
+    all_items = []
 
-        for URL in urls:
-            feed = feedparser.parse(URL)
-            all_items.extend(feed["items"][:25])
+    for URL in urls:
+        feed = feedparser.parse(URL)
+        all_items.extend(feed["items"][:25])
 
-        all_items.sort(key=lambda x: x["published_parsed"], reverse=True)
+    all_items.sort(key=lambda x: x["published_parsed"], reverse=True)
 
 
-        for item in all_items:
-            item["published"] = time_ago(item["published_parsed"])
+    for item in all_items:
+        item["published"] = time_ago(item["published_parsed"])
 
-            cutoff_date = datetime.now() - timedelta(days=30)
-            all_items = [item for item in all_items if datetime(*item["published_parsed"][:6]) > cutoff_date]
+        cutoff_date = datetime.now() - timedelta(days=30)
+        all_items = [item for item in all_items if datetime(*item["published_parsed"][:6]) > cutoff_date]
 
-        string = ""
-        for item in all_items:
-            string += f"- {item['title']} ([{item['published']}]({item['link']}))\n"
+    string = ""
+    for item in all_items:
+        string += f"- {item['title']} ([{item['published']}]({item['link']}))\n"
 
-        f = root / "_pages/news.md"
-        m = f.open().read()
-        c = helper.replace_chunk(m, "news_marker", string)
-        f.open("w").write(c)
-        print("News completed")
-
-    except FileNotFoundError:
-        print("File does not exist, unable to proceed")
+    f = root / "_pages/news.md"
+    m = f.open().read()
+    c = helper.replace_chunk(m, "news_marker", string)
+    f.open("w").write(c)
+    print("News completed")
