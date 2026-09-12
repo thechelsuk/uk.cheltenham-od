@@ -17,3 +17,20 @@ Cheltenham is a spa town in Gloucestershire, in the South West of England, known
 Today Cheltenham's economy leans heavily on technology and cyber security, education, and tourism around its festivals and racing. GCHQ, the government's signals intelligence and cyber security agency, is based on the edge of town and has helped draw a wider cluster of tech and cyber firms to the area, alongside long-established independent schools including Cheltenham College and Cheltenham Ladies' College.
 
 This page pulls together the town's key population and employment statistics, sourced directly from the Office for National Statistics rather than a third party, and refreshed automatically as new figures are published.
+
+## Cheltenham Through the Years
+
+| Year | Event |
+|---|---|
+| 1086 | Domesday Book records Cheltenham as a small village |
+| 1226 | Granted market town status by Henry III |
+| c.1716 | Mineral spring discovered — the start of Cheltenham as a spa town |
+| 1738–42 | Henry Skillicorne develops the well and builds the first spa buildings |
+| 1788 | King George III's month-long royal visit cements Cheltenham's fame as a spa resort |
+| 1818 | First race meetings on Cleeve Hill — precursor to today's racecourse |
+| 1830 | Pittville Pump Room built |
+| 1841 / 1853 | Cheltenham College and Cheltenham Ladies' College founded |
+| 1898 | Racing re-established at Prestbury Park, the modern racecourse site |
+| 1924 | First Cheltenham Gold Cup run |
+| 1952 | GCHQ relocates to Cheltenham |
+| 2025 | Population reaches 121,452 |

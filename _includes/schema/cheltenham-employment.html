@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Employment Rate History",
+  "description": "Cheltenham's economic activity, employment and unemployment rates by year since 2004, sourced from the ONS's Nomis service.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['cheltenham-employment'].updated_iso }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.ons.gov.uk/methodology/geography/licences",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Economic activity rate", "Employment rate", "Unemployment rate"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Why does the rate jump around so much year to year?", "acceptedAnswer": {"@type": "Answer", "text": "These rates come from a sample survey. For a town the size of Cheltenham, year-to-year swings of several percentage points are normal statistical noise, not necessarily a real change in the local economy."} },
+    { "@type": "Question", "name": "Why is the unemployment rate missing for some years?", "acceptedAnswer": {"@type": "Answer", "text": "The ONS suppresses the unemployment rate for a given year when the underlying sample is too small to be statistically reliable at local authority level."} }
+  ]
+}
+</script>
