@@ -1,12 +1,6 @@
-import csv
 import datetime
-import io
-import json
-import pathlib
-import re
-import zipfile
 
-import requests
+import helper
 
 # -- Configuration ------------------------------------------------------------
 
@@ -30,39 +24,8 @@ ATTENTION_LABELS = {
 
 # BODS source data is a mix of ALL CAPS and Title Case. Normalise to Title
 # Case, keeping known acronyms and anything with a digit (road refs like A40,
-# B4063) upper-case — same approach as toilets.py's clean_name.
+# B4063) upper-case.
 ACRONYMS = {"UK", "LLP", "PLC"}
-
-
-def clean_name(name):
-    """Tidy an operator/place name: collapse stray whitespace, title-case each
-    word (including inside brackets), and keep known acronyms and anything
-    containing a digit (A40, B4063, 80-86) upper-case."""
-    def fix(w):
-        lead, core, trail = re.match(r"(\W*)(.*?)(\W*)$", w).groups()
-        if core.upper() in ACRONYMS or any(c.isdigit() for c in core):
-            core = core.upper()
-        elif core:
-            core = core[:1].upper() + core[1:].lower()
-        return lead + core + trail
-
-    name = re.sub(r"(?<! )- ", " - ", name or "")
-    return " ".join(fix(w) for w in name.split())
-
-
-def fetch_catalogue_zip():
-    """Download and return the BODS data catalogue zip as bytes."""
-    resp = requests.get(CATALOGUE_URL, timeout=(10, 120))
-    resp.raise_for_status()
-    return resp.content
-
-
-def load_timetables_csv(zip_bytes):
-    with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
-        name = next(n for n in zf.namelist() if n.endswith(TIMETABLES_CSV))
-        with zf.open(name) as f:
-            text = io.TextIOWrapper(f, encoding="utf-8-sig")
-            return list(csv.DictReader(text))
 
 
 def row_serves_cheltenham(row):
@@ -78,14 +41,10 @@ def timeliness_label(row):
 
 
 if __name__ == "__main__":
-    out_path = pathlib.Path(__file__).parent.parent / "_data" / "bus-routes.json"
+    out_path = helper.repo_root() / "_data" / "bus-routes.json"
 
     print("Downloading BODS data catalogue...")
-    zip_bytes = fetch_catalogue_zip()
-    print(f"  {len(zip_bytes):,} bytes")
-
-    print("Extracting timetables data catalogue...")
-    rows = load_timetables_csv(zip_bytes)
+    rows = helper.fetch_bods_csv(TIMETABLES_CSV, CATALOGUE_URL)
     print(f"  {len(rows):,} total rows in national catalogue")
 
     local_rows = [r for r in rows if row_serves_cheltenham(r)]
@@ -96,10 +55,10 @@ if __name__ == "__main__":
         requires_attention = (r.get("Requires Attention") or "").strip().lower() == "yes"
         routes.append({
             "service_number": r.get("OTC:Service Number") or r.get("XML:Line Name") or "",
-            "operator":       clean_name(r.get("OTC:Operator Name") or r.get("Organisation Name") or "Unknown"),
-            "start_point":    clean_name(r.get("OTC:Start Point") or r.get("OTC:Origin") or ""),
-            "finish_point":   clean_name(r.get("OTC:Finish Point") or r.get("OTC:Destination") or ""),
-            "via":            clean_name(r.get("OTC:Via") or ""),
+            "operator":       helper.clean_name(r.get("OTC:Operator Name") or r.get("Organisation Name") or "Unknown", ACRONYMS),
+            "start_point":    helper.clean_name(r.get("OTC:Start Point") or r.get("OTC:Origin") or "", ACRONYMS),
+            "finish_point":   helper.clean_name(r.get("OTC:Finish Point") or r.get("OTC:Destination") or "", ACRONYMS),
+            "via":            helper.clean_name(r.get("OTC:Via") or "", ACRONYMS),
             "requires_attention": requires_attention,
             "published_status":   r.get("Published Status") or "",
             "timeliness":         timeliness_label(r),
@@ -133,7 +92,7 @@ if __name__ == "__main__":
     operators = sorted({r["operator"] for r in routes})
 
     payload = {
-        "updated":          datetime.datetime.now().strftime("%-d %B %Y at %H:%M"),
+        "updated":          helper.updated_timestamp(),
         "updated_iso":      datetime.date.today().isoformat(),
         "source":           SOURCE_PAGE,
         "source_catalogue": CATALOGUE_URL,
@@ -144,5 +103,5 @@ if __name__ == "__main__":
         "routes":           routes,
     }
 
-    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    helper.write_json(out_path, payload)
     print(f"Wrote {len(routes)} routes to {out_path}")

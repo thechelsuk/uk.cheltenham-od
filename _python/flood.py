@@ -1,13 +1,12 @@
 import helper
 import json
-import pathlib
 import xml.etree.ElementTree as ET
 
 ATOM_NS = "{http://www.w3.org/2005/Atom}"
 
 if __name__ == "__main__":
     # Compute repo root FIRST, before it's needed anywhere else
-    root = pathlib.Path(__file__).parent.parent.resolve()
+    root = helper.repo_root()
 
     data_dir = root / "_data"
     feeds_dir = root / "feeds"

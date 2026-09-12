@@ -13,6 +13,8 @@ from pathlib import Path
 
 import requests
 
+import helper
+
 try:
     from better_profanity import profanity
     profanity.load_censor_words()
@@ -196,9 +198,6 @@ IGNORE_IDS = {
     "6448f645d84833e33775bf6e",
 }
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT_PATH = REPO_ROOT / "_data" / "toilets.json"
-
 
 def fetch_data(url: str) -> list[dict]:
     resp = requests.get(url, timeout=60)
@@ -207,30 +206,9 @@ def fetch_data(url: str) -> list[dict]:
 
 ACRONYMS = {"WH", "BP", "ASDA", "GWSR", "UK"}
 
+
 def clean_name(name: str) -> str:
-    """Tidy a station name: collapse stray whitespace, title-case each word
-    (including words inside brackets, so '(summer Only)' -> '(Summer Only)'
-    and '(whaddon)' -> '(Whaddon)'), and keep known brand acronyms and road
-    numbers (A40, B4083, 80-86) upper-case — even wrapped in brackets like
-    '(GWSR)'.
-
-    Also fixes 'Waterstones- upper floor' -> 'Waterstones - upper floor': a
-    space is only added before a hyphen when a space already follows it, so the
-    hyphen is being used as a dash/separator. Untouched: 'Stratford-upon-Avon'
-    (no spaces) and already-correct 'Foo - bar' (already has both).
-    """
-    def fix(w):
-        # Peel leading/trailing punctuation off the core word so brackets like
-        # '(GWSR)' don't hide an acronym or block title-casing.
-        lead, core, trail = re.match(r"(\W*)(.*?)(\W*)$", w).groups()
-        if core.upper() in ACRONYMS or any(c.isdigit() for c in core):
-            core = core.upper()
-        elif core:
-            core = core[:1].upper() + core[1:].lower()
-        return lead + core + trail
-
-    name = re.sub(r"(?<! )- ", " - ", name or "")
-    return " ".join(fix(w) for w in name.split())
+    return helper.clean_name(name, ACRONYMS)
 
 
 
@@ -298,6 +276,9 @@ def write_output(records: list[dict], path: Path) -> None:
 
 
 def main() -> None:
+    root = helper.repo_root()
+    output_path = root / "_data/toilets.json"
+
     if not HAS_PROFANITY_LIB:
         print("Note: 'better_profanity' not installed — falling back to the "
               "custom keyword list only (pip install better_profanity).")
@@ -326,8 +307,8 @@ def main() -> None:
 
     clean.sort(key=lambda rec: rec["name"].lower())
 
-    write_output(clean, OUTPUT_PATH)
-    print(f"Written {len(clean)} records to {OUTPUT_PATH}")
+    write_output(clean, output_path)
+    print(f"Written {len(clean)} records to {output_path}")
 
 
 if __name__ == "__main__":

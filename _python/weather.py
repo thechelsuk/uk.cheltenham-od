@@ -1,11 +1,10 @@
 # importing modules
 import json
-import pathlib
 import datetime
 import helper
 
 if __name__ == "__main__":
-    root = pathlib.Path(__file__).parent.parent.resolve()
+    root = helper.repo_root()
 
     # read the already-fetched forecast
     weather_file = root / "_data" / "weather.json"

@@ -1,7 +1,6 @@
 import html
 import json
 import os
-import pathlib
 import math
 import datetime
 import time
@@ -11,7 +10,7 @@ import requests
 import helper
 
 # Load .env file for local development if present
-_env_file = pathlib.Path(__file__).parent.parent / ".env"
+_env_file = helper.repo_root() / ".env"
 if _env_file.exists():
     for _line in _env_file.read_text().splitlines():
         _line = _line.strip()
@@ -54,16 +53,7 @@ ACRONYMS = {"MFG", "ASDA", "EG", "BP", "PFS", "SF", "PJ", "TGC", "PA", "UK"}
 
 
 def clean_name(raw):
-    """Title-case a station name, collapse stray whitespace, and keep known
-    brand acronyms and road numbers (A40, B4083, etc.) uppercase."""
-    out = []
-    for w in (raw or "").split():
-        up = w.upper()
-        if up in ACRONYMS or any(c.isdigit() for c in w):
-            out.append(up)                       # ASDA, MFG, A417, 80-86…
-        else:
-            out.append(w[:1].upper() + w[1:].lower())
-    return " ".join(out)
+    return helper.clean_name(raw, ACRONYMS)
 
 
 # -- Auth helpers -------------------------------------------------------------
@@ -251,7 +241,7 @@ def station_from_pfs_record(record):
 # -- Main ---------------------------------------------------------------------
 
 if __name__ == "__main__":
-    root            = pathlib.Path(__file__).parent.parent.resolve()
+    root            = helper.repo_root()
     cache_path      = root / "_data" / "fuel-stations.json"
     ignore_path     = root / "_data" / "ignore-stations.json"
     out_path        = root / "_data" / "fuel-prices.json"
@@ -488,7 +478,7 @@ if __name__ == "__main__":
 
 
     payload = {
-        "updated":       datetime.datetime.now().strftime("%-d %B %Y at %H:%M"),
+        "updated":       helper.updated_timestamp(),
         "updated_iso":   today_str,
         "radius_miles":  RADIUS_MILES,
         "lookback_days": PRICE_LOOKBACK_DAYS,
@@ -499,6 +489,6 @@ if __name__ == "__main__":
         "stations":      stations,
     }
 
-    out_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    helper.write_json(out_path, payload)
     print(f"Wrote {len(stations)} stations to {out_path}")
 

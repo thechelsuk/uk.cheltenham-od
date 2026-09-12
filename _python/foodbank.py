@@ -1,10 +1,9 @@
 # importing modules
 import helper
-import pathlib
 import json
 
 if __name__ == "__main__":
-    root = pathlib.Path(__file__).parent.parent.resolve()
+    root = helper.repo_root()
     with open(root / "_data/foodbank-cheltenham.json", 'r') as filehandler:
         data = json.load(filehandler)
         needs = data['need']['needs']

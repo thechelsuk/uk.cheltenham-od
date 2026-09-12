@@ -1,5 +1,4 @@
 # importing modules
-import pathlib
 import feedparser
 import yaml
 import helper
@@ -23,7 +22,7 @@ def time_ago(published_parsed):
 
 # processing
 if __name__ == "__main__":
-    root = pathlib.Path(__file__).parent.parent.resolve()
+    root = helper.repo_root()
 
     config_path = root / "_data/news-sources.yml"
     with config_path.open() as f:

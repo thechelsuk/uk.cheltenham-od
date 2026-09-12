@@ -1,14 +1,7 @@
-import csv
 import datetime
-import io
 import json
-import pathlib
-import re
-import zipfile
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
-
-import requests
 
 import helper
 
@@ -29,42 +22,14 @@ FALLBACK_OPERATOR_TERMS = [
 
 ATOM_NS = "http://www.w3.org/2005/Atom"
 
-# BODS source data is a mix of ALL CAPS and Title Case — normalise to Title
-# Case, same approach as bus-data.py and toilets.py's clean_name.
+# BODS source data is a mix of ALL CAPS and Title Case — normalise to Title Case.
 ACRONYMS = {"UK", "LLP", "PLC"}
-
-
-def clean_name(name):
-    def fix(w):
-        lead, core, trail = re.match(r"(\W*)(.*?)(\W*)$", w).groups()
-        if core.upper() in ACRONYMS or any(c.isdigit() for c in core):
-            core = core.upper()
-        elif core:
-            core = core[:1].upper() + core[1:].lower()
-        return lead + core + trail
-
-    name = re.sub(r"(?<! )- ", " - ", name or "")
-    return " ".join(fix(w) for w in name.split())
-
-
-def fetch_catalogue_zip():
-    resp = requests.get(CATALOGUE_URL, timeout=(10, 120))
-    resp.raise_for_status()
-    return resp.content
-
-
-def load_disruptions_csv(zip_bytes):
-    with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
-        name = next(n for n in zf.namelist() if n.endswith(DISRUPTIONS_CSV))
-        with zf.open(name) as f:
-            text = io.TextIOWrapper(f, encoding="utf-8-sig")
-            return list(csv.DictReader(text))
 
 
 def local_operator_terms():
     """Pull the operator names bus-data.py already identified as serving Cheltenham,
     falling back to a fixed list if that data hasn't been generated yet."""
-    bus_routes_path = pathlib.Path(__file__).parent.parent / "_data" / "bus-routes.json"
+    bus_routes_path = helper.repo_root() / "_data" / "bus-routes.json"
     if bus_routes_path.exists():
         data = json.loads(bus_routes_path.read_text())
         operators = [o.lower() for o in data.get("operators", [])]
@@ -144,16 +109,12 @@ def convert_to_atom(disruptions, filename):
 
 
 if __name__ == "__main__":
-    root      = pathlib.Path(__file__).parent.parent.resolve()
+    root      = helper.repo_root()
     data_dir  = root / "_data"
     feeds_dir = root / "feeds"
 
     print("Downloading BODS data catalogue...")
-    zip_bytes = fetch_catalogue_zip()
-    print(f"  {len(zip_bytes):,} bytes")
-
-    print("Extracting disruptions data catalogue...")
-    rows = load_disruptions_csv(zip_bytes)
+    rows = helper.fetch_bods_csv(DISRUPTIONS_CSV, CATALOGUE_URL)
     print(f"  {len(rows):,} total disruptions in national catalogue")
 
     operator_terms = local_operator_terms()
@@ -163,20 +124,20 @@ if __name__ == "__main__":
     disruptions = []
     for r in local_rows:
         disruptions.append({
-            "organisation":       clean_name(r.get("Organisation") or ""),
+            "organisation":       helper.clean_name(r.get("Organisation") or "", ACRONYMS),
             "situation_number":   r.get("Situation Number") or r.get("ID") or "",
             "validity_start":     r.get("Validity Start Date") or r.get("Validity start") or "",
             "validity_end":       r.get("Validity End Date") or r.get("Validity end") or "",
-            "reason":             clean_name(r.get("Reason") or "Unknown"),
+            "reason":             helper.clean_name(r.get("Reason") or "Unknown", ACRONYMS),
             "planned":            r.get("Planned") or "",
-            "modes_affected":     clean_name(r.get("Modes Affected") or r.get("Modes affected") or ""),
-            "operators_affected": clean_name(r.get("Operators Affected") or r.get("Operators affected") or ""),
+            "modes_affected":     helper.clean_name(r.get("Modes Affected") or r.get("Modes affected") or "", ACRONYMS),
+            "operators_affected": helper.clean_name(r.get("Operators Affected") or r.get("Operators affected") or "", ACRONYMS),
             "services_affected":  r.get("Services Affected") or r.get("Services affected") or "",
             "stops_affected":     r.get("Stops Affected") or r.get("Stops affected") or "",
         })
 
     payload = {
-        "updated":     datetime.datetime.now().strftime("%-d %B %Y at %H:%M"),
+        "updated":     helper.updated_timestamp(),
         "updated_iso": datetime.date.today().isoformat(),
         "source":      SOURCE_PAGE,
         "count":       len(disruptions),
@@ -184,7 +145,7 @@ if __name__ == "__main__":
     }
 
     data_json = data_dir / "bus-disruptions.json"
-    data_json.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    helper.write_json(data_json, payload)
     print(f"Wrote {len(disruptions)} disruptions to {data_json}")
 
     atom_path = feeds_dir / "bus-disruptions.xml"

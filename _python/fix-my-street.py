@@ -1,9 +1,8 @@
  # importing modules
 import helper
 import feedparser
-import pathlib
 
-root = pathlib.Path(__file__).parent.parent.resolve()
+root = helper.repo_root()
 url = root / "_data/fix-my-street.xml"
 string_output = ""
 entries = feedparser.parse(url)["entries"]
