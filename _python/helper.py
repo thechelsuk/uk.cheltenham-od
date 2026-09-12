@@ -42,6 +42,41 @@ def get_data(endpoint):
         print(f"Request failed: { response.text }")
     return response.json()
 
+
+def request_with_retry(method, url, max_attempts=5, retry_statuses=(429, 500, 502, 503, 504), **kwargs):
+    """requests.request(), retrying transient failures: a connection error/
+    timeout, or a response with one of `retry_statuses`. Honours a
+    Retry-After header when present, otherwise backs off exponentially
+    (1, 2, 4, 8... seconds). Raises (the last error, or via raise_for_status)
+    once `max_attempts` is exhausted. Returns the successful `requests.Response`
+    — callers call .json()/.text themselves, since that varies by caller.
+    """
+    last_error = None
+    for attempt in range(max_attempts):
+        try:
+            response = requests.request(method, url, **kwargs)
+        except requests.exceptions.RequestException as error:
+            last_error = error
+            if attempt == max_attempts - 1:
+                raise
+            time.sleep(2 ** attempt)
+            continue
+
+        if response.status_code in retry_statuses:
+            retry_after = response.headers.get("Retry-After")
+            delay = float(retry_after) if retry_after else (2 ** attempt)
+            last_error = requests.HTTPError(f"{response.status_code} received, retrying in {delay}s")
+            if attempt == max_attempts - 1:
+                response.raise_for_status()
+            time.sleep(delay)
+            continue
+
+        response.raise_for_status()
+        return response
+
+    raise last_error
+
+
 def fetch_flood_data():
     url = "https://environment.data.gov.uk/flood-monitoring/id/floods"
     headers = {
@@ -49,42 +84,17 @@ def fetch_flood_data():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Referer": "https://environment.data.gov.uk/flood-monitoring/",
     }
-    last_error = None
-    max_attempts = 6
-    for attempt in range(max_attempts):
-        try:
-            response = requests.get(url, headers=headers, timeout=30)
-
-            # Handle 503 / 429 explicitly, respecting Retry-After if present
-            if response.status_code in (503, 429):
-                retry_after = response.headers.get("Retry-After")
-                delay = float(retry_after) if retry_after else (2 ** attempt)
-                last_error = requests.HTTPError(
-                    f"{response.status_code} received, retrying in {delay}s"
-                )
-                if attempt == max_attempts - 1:
-                    response.raise_for_status()
-                time.sleep(delay)
-                continue
-
-            response.raise_for_status()
-            data = response.json()
-            items = data.get("items", [])
-            filtered = [
-                item for item in items
-                if item.get("floodArea", {}).get("county", "").find("Gloucestershire") != -1
-            ]
-            data["items"] = filtered
-            return data
-
-        except requests.RequestException as error:
-            last_error = error
-            if attempt == max_attempts - 1:
-                raise
-            # exponential backoff: 1, 2, 4, 8, 16s
-            time.sleep(2 ** attempt)
-
-    raise last_error
+    response = request_with_retry(
+        "GET", url, max_attempts=6, retry_statuses=(429, 503), headers=headers, timeout=30,
+    )
+    data = response.json()
+    items = data.get("items", [])
+    filtered = [
+        item for item in items
+        if item.get("floodArea", {}).get("county", "").find("Gloucestershire") != -1
+    ]
+    data["items"] = filtered
+    return data
 
 
 def convert_to_atom(data, filename):
