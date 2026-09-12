@@ -32,6 +32,7 @@
         <p><small>Also published as an <a href="{{ page.feed_url }}">Atom feed</a>. The underlying BODS disruptions data
                 updates roughly every minute; this page and feed refresh every 10 minutes.</small></p>
 
+        {% assign town_routes = bus.routes | where: "is_school", false %}
         <h2>Routes Serving Cheltenham</h2>
         <div class="table-scroll">
             <table class="buses-table data-table" data-sortable>
@@ -47,7 +48,40 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for r in bus.routes %}
+                    {% for r in town_routes %}
+                    <tr{% if r.requires_attention %} class="stale" {% endif %}>
+                        <td data-val="{{ r.service_number | downcase }}">{{ r.service_number }}</td>
+                        <td data-val="{{ r.operator | downcase }}">{{ r.operator }}</td>
+                        <td data-val="{{ r.start_point | downcase }}">{{ r.start_point }}</td>
+                        <td data-val="{{ r.finish_point | downcase }}">{{ r.finish_point }}</td>
+                        <td data-val="{{ r.via | downcase }}">{{ r.via }}</td>
+                        <td data-val="{{ r.timeliness | downcase }}">{{ r.timeliness }}</td>
+                        <td class="date" data-val="{{ r.last_modified }}">{{ r.last_modified }}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% assign school_routes = bus.routes | where: "is_school", true %}
+        <h2>School Routes in Cheltenham</h2>
+        <p>Dedicated school and college services registered as "School or Works" with the Office of the Traffic
+            Commissioner, rather than a normal stopping service.</p>
+        <div class="table-scroll">
+            <table class="buses-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Route</th>
+                        <th scope="col">Operator</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Via</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="date">Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in school_routes %}
                     <tr{% if r.requires_attention %} class="stale" {% endif %}>
                         <td data-val="{{ r.service_number | downcase }}">{{ r.service_number }}</td>
                         <td data-val="{{ r.operator | downcase }}">{{ r.operator }}</td>
@@ -81,6 +115,19 @@
 
         <h3>How Do I Read the Table?</h3>
         <p>Click any column header to sort. Routes needing attention from their operator are highlighted.</p>
+
+        <h3>Why Don't the Operator Names Match the Brand on the Bus?</h3>
+        <p>Routes are registered under the legal operating company, which isn't always the brand painted on the bus.
+            Stagecoach's local Cheltenham and Gloucester services are registered under Cheltenham & Gloucester Omnibus
+            Co Ltd, and several Pulham & Sons (Coaches) routes are published to BODS through a Go-Ahead account, since
+            Go-Ahead owns Pulham & Sons.</p>
+
+        <h3>Is There a Bus to Cheltenham Racecourse?</h3>
+        <p>Yes. Cocktail Tours UK run a shuttle between Cheltenham Spa railway station and the Racecourse, and Pulham
+            & Sons operate a park-and-ride service to the Racecourse from Cirencester. National Express route 444/445
+            also passes through Cheltenham on its way to and from London Victoria, useful for Festival visitors
+            travelling further afield. See our <a href="/cheltenham-festival-accommodation">Cheltenham Festival
+                accommodation guide</a> for where to stay during race week.</p>
     </div>
 </div>
 

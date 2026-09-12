@@ -31,4 +31,4 @@ The page shows hotels and guest houses near Cheltenham Racecourse at Prestbury P
 
 ### How Do I Get to the Racecourse?
 
-- Cheltenham Racecourse is at Prestbury Park, about two miles north of the town centre. During the Festival there are shuttle buses from the town and Cheltenham Spa railway station, plus park-and-ride services.
+- Cheltenham Racecourse is at Prestbury Park, about two miles north of the town centre. During the Festival there are shuttle buses from the town and Cheltenham Spa railway station, plus park-and-ride services. See our [Cheltenham bus routes and service data](/cheltenham-bus-data) page for the full list of registered routes serving the town.

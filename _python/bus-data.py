@@ -15,6 +15,11 @@ MATCH_FIELDS = [
 ]
 MATCH_TERM = "cheltenham"
 
+# "New Cheltenham" is a place near Kingswood/Bristol, in South Gloucestershire —
+# nothing to do with our Cheltenham. Excluded so routes like a Yate-Kingswood
+# service that merely passes through it don't get wrongly counted as local.
+EXCLUDE_TERM = "new cheltenham"
+
 ATTENTION_LABELS = {
     "Up to date":                             "Up to date",
     "OTC variation not published":            "Registration change not published",
@@ -29,7 +34,12 @@ ACRONYMS = {"UK", "LLP", "PLC"}
 
 
 def row_serves_cheltenham(row):
-    return any(MATCH_TERM in (row.get(field) or "").lower() for field in MATCH_FIELDS)
+    combined = " ".join(row.get(field) or "" for field in MATCH_FIELDS).lower()
+    return MATCH_TERM in combined and EXCLUDE_TERM not in combined
+
+
+def row_is_school_route(row):
+    return "school" in (row.get("OTC:Service Type Description") or "").lower()
 
 
 def timeliness_label(row):
@@ -64,6 +74,7 @@ if __name__ == "__main__":
             "timeliness":         timeliness_label(r),
             "authority":          r.get("Local Transport Authority") or "",
             "last_modified":      (r.get("XML:Last Modified Date") or "")[:10],
+            "is_school":          row_is_school_route(r),
         })
 
     # De-dupe identical service number + operator + start/finish combos (variations
@@ -85,22 +96,26 @@ if __name__ == "__main__":
             # so the displayed status matches the flag instead of contradicting it.
             flagged = next(r for r in group if r["requires_attention"])
             display = {**display, "requires_attention": True, "timeliness": flagged["timeliness"]}
+        if any(r["is_school"] for r in group) and not display["is_school"]:
+            display = {**display, "is_school": True}
         merged.append(display)
     routes = sorted(merged, key=lambda r: (r["operator"].lower(), r["service_number"]))
 
     attention_count = sum(1 for r in routes if r["requires_attention"])
+    school_route_count = sum(1 for r in routes if r["is_school"])
     operators = sorted({r["operator"] for r in routes})
 
     payload = {
-        "updated":          helper.updated_timestamp(),
-        "updated_iso":      datetime.date.today().isoformat(),
-        "source":           SOURCE_PAGE,
-        "source_catalogue": CATALOGUE_URL,
-        "total_routes":     len(routes),
-        "attention_count":  attention_count,
-        "operator_count":   len(operators),
-        "operators":        operators,
-        "routes":           routes,
+        "updated":            helper.updated_timestamp(),
+        "updated_iso":        datetime.date.today().isoformat(),
+        "source":             SOURCE_PAGE,
+        "source_catalogue":   CATALOGUE_URL,
+        "total_routes":       len(routes),
+        "attention_count":    attention_count,
+        "school_route_count": school_route_count,
+        "operator_count":     len(operators),
+        "operators":          operators,
+        "routes":             routes,
     }
 
     helper.write_json(out_path, payload)
