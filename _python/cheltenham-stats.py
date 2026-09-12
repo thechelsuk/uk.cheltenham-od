@@ -14,9 +14,12 @@ import helper
 BASE_URL = "https://www.nomisweb.co.uk/api/v01/dataset"
 GEOGRAPHY = "E07000078"  # Cheltenham (ONS/GSS area code)
 
-# Mid-year population estimates by single year of age and sex.
+# Mid-year population estimates by single year of age and sex. Nomis has
+# annual data from 2001 onwards for this geography — request every year in
+# the range (not just a handful of sample years) so the growth chart doesn't
+# show misleading gaps; Nomis simply omits years not yet published.
 POPULATION_DATASET = "NM_31_1"
-POPULATION_YEARS = [2001, 2006, 2011, 2016, 2020, 2021, 2022, 2023, 2024, 2025]
+POPULATION_START_YEAR = 2001
 
 # Annual Population Survey — labour market rates (percentages), aged 16-64.
 EMPLOYMENT_DATASET = "NM_17_5"
@@ -40,9 +43,10 @@ def fetch_csv_rows(dataset, **params):
 
 
 def fetch_population_series():
+    current_year = datetime.date.today().year
     rows = fetch_csv_rows(
         POPULATION_DATASET,
-        date=",".join(str(y) for y in POPULATION_YEARS),
+        date=f"{POPULATION_START_YEAR}-{current_year}",
         sex=7, age=0, measures=20100,
     )
     series = []
