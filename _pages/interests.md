@@ -5,7 +5,7 @@ seo: "Points of interest in and around Cheltenham Gloucestershire"
 description: "Explore points of interest in and around Cheltenham, Gloucestershire — museums, historic sites, stadiums and blue plaques, each with distance and a map link."
 type: "third"
 permalink: /cheltenham-points-of-interest
-schema_include: interests
+schema: interests
 
 ---
 

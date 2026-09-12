@@ -5,7 +5,7 @@ seo: "Track recent planning applications submitted to Cheltenham Borough Council
 permalink: /cheltenham-planning-applications
 description: "Recent planning applications submitted to Cheltenham Borough Council, updated daily from the council's PublicAccess portal."
 type: "house"
-schema_include: planschema
+schema: planschema
 ---
 
 {% assign planning = site.data["planning-applications"] %}
