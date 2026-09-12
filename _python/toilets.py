@@ -198,9 +198,6 @@ IGNORE_IDS = {
     "6448f645d84833e33775bf6e",
 }
 
-REPO_ROOT = helper.repo_root()
-OUTPUT_PATH = REPO_ROOT / "_data" / "toilets.json"
-
 
 def fetch_data(url: str) -> list[dict]:
     resp = requests.get(url, timeout=60)
@@ -279,6 +276,9 @@ def write_output(records: list[dict], path: Path) -> None:
 
 
 def main() -> None:
+    root = helper.repo_root()
+    output_path = root / "_data/toilets.json"
+
     if not HAS_PROFANITY_LIB:
         print("Note: 'better_profanity' not installed — falling back to the "
               "custom keyword list only (pip install better_profanity).")
@@ -307,8 +307,8 @@ def main() -> None:
 
     clean.sort(key=lambda rec: rec["name"].lower())
 
-    write_output(clean, OUTPUT_PATH)
-    print(f"Written {len(clean)} records to {OUTPUT_PATH}")
+    write_output(clean, output_path)
+    print(f"Written {len(clean)} records to {output_path}")
 
 
 if __name__ == "__main__":
