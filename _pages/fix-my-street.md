@@ -41,6 +41,13 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Signs left behind, 11th September :- [10086124](https://www.fixmystreet.com/report/10086124)
+- Cycle path is full of huge cracks, 11th September :- [10086017](https://www.fixmystreet.com/report/10086017)
+- Flytipping on edge of road and wood, 11th September :- [10085874](https://www.fixmystreet.com/report/10085874)
+- Large fly tip by recycling bins, 11th September :- [10085867](https://www.fixmystreet.com/report/10085867)
+- Area by bus stop not yet paved, 11th September :- [10085865](https://www.fixmystreet.com/report/10085865)
+- Diversion sign left on traffic island, 11th September :- [10085802](https://www.fixmystreet.com/report/10085802)
+- Reinstatement Failure, 11th September :- [10085365](https://www.fixmystreet.com/report/10085365)
 - By tree stump but at narrow part of road, 11th September :- [10085313](https://www.fixmystreet.com/report/10085313)
 - Tables and chairs left in public park, 11th September :- [10085194](https://www.fixmystreet.com/report/10085194)
 - Kerb is damaged, loose or missing problem, 11th September :- [10085045](https://www.fixmystreet.com/report/10085045)
@@ -54,12 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - TMC - Defects - Vegetation problem, 11th September :- [10084319](https://www.fixmystreet.com/report/10084319)
 - TMC - Defects - Vegetation problem, 11th September :- [10084153](https://www.fixmystreet.com/report/10084153)
 - Other issue with a footway/pavement problem, 11th September :- [10084141](https://www.fixmystreet.com/report/10084141)
-- TMC - Defects - Other problem, 11th September :- [10084149](https://www.fixmystreet.com/report/10084149)
-- TMC - Defects - Other problem, 11th September :- [10084144](https://www.fixmystreet.com/report/10084144)
-- Really noisy manhole cover, 11th September :- [10083926](https://www.fixmystreet.com/report/10083926)
-- TMC - Defects - Other problem, 11th September :- [10083954](https://www.fixmystreet.com/report/10083954)
-- All lights out in newton road. has been sinse monday, 11th September :- [10083828](https://www.fixmystreet.com/report/10083828)
-- Storm drain full of weeds, 11th September :- [10083670](https://www.fixmystreet.com/report/10083670)
-- TMC - Defects - Other FW6  Surface problem, 11th September :- [10083755](https://www.fixmystreet.com/report/10083755)
 
 <!-- fix_marker ends -->
