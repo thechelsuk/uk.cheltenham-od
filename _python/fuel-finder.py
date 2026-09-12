@@ -8,6 +8,8 @@ import time
 import sys
 import requests
 
+import helper
+
 # Load .env file for local development if present
 _env_file = pathlib.Path(__file__).parent.parent / ".env"
 if _env_file.exists():
@@ -68,25 +70,13 @@ def clean_name(raw):
 
 def authenticate(client_id, client_secret):
     """Obtain a fresh access token, retrying on transient failures."""
-    for attempt in range(4):
-        try:
-            resp = requests.post(
-                BASE_URL + AUTH_PATH,
-                json={"client_id": client_id, "client_secret": client_secret},
-                timeout=20,
-            )
-            if resp.ok:
-                data = resp.json()
-                payload = data.get("data") if isinstance(data.get("data"), dict) else data
-                return payload["access_token"]
-            wait = BATCH_DELAY_SECS * (attempt + 2)
-            print(f"  Auth attempt {attempt + 1}/4 failed ({resp.status_code}), retrying in {wait}s...")
-            time.sleep(wait)
-        except requests.exceptions.RequestException as e:
-            wait = BATCH_DELAY_SECS * (attempt + 2)
-            print(f"  Auth attempt {attempt + 1}/4 error ({e}), retrying in {wait}s...")
-            time.sleep(wait)
-    resp.raise_for_status()  # raise on final failure
+    resp = helper.request_with_retry(
+        "POST", BASE_URL + AUTH_PATH, max_attempts=4, retry_statuses=range(400, 600),
+        json={"client_id": client_id, "client_secret": client_secret}, timeout=20,
+    )
+    data = resp.json()
+    payload = data.get("data") if isinstance(data.get("data"), dict) else data
+    return payload["access_token"]
 
 
 # -- Helpers ------------------------------------------------------------------

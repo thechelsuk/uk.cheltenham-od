@@ -11,11 +11,12 @@ Run from the repository root:
 import argparse
 import json
 import logging
-import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+
+import helper
 
 
 API_ROOT = "https://data.police.uk/api"
@@ -50,20 +51,11 @@ log = logging.getLogger(__name__)
 
 
 def request_json(method, url, **kwargs):
-	for attempt in range(5):
-		response = requests.request(
-			method, url, headers=HEADERS, timeout=TIMEOUT, **kwargs
-		)
-		if response.status_code not in (429, 502, 503, 504):
-			response.raise_for_status()
-			return response.json()
-		if attempt == 4:
-			response.raise_for_status()
-		retry_after = response.headers.get("Retry-After")
-		delay = float(retry_after) if retry_after else 2 ** attempt
-		log.warning("%s from Police API; retrying in %ss", response.status_code, delay)
-		time.sleep(delay)
-	raise RuntimeError("Police API request failed after retries")
+	response = helper.request_with_retry(
+		method, url, max_attempts=5, retry_statuses=(429, 502, 503, 504),
+		headers=HEADERS, timeout=TIMEOUT, **kwargs,
+	)
+	return response.json()
 
 
 def get_json(url, **kwargs):
