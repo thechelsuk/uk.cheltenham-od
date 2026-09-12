@@ -5,7 +5,7 @@ seo: "Where to stay for the Cheltenham Festival and Races 2027 (16–19 March) �
 description: "Accommodation for the Cheltenham Festival and Races 2027 — hotels near Cheltenham Racecourse with live availability for race week, 16–19 March."
 type: "other"
 permalink: /cheltenham-festival-accommodation
-schema_include: stay22
+schema: stay22
 festival_checkin: 2027-03-15
 festival_checkout: 2027-03-20
 
