@@ -1,0 +1,73 @@
+{% include header.html %}
+{% assign dpd = site.data["dpd-pickup-points"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ dpd.count }} pickup points in Cheltenham</li>
+                <li>Last updated {{ dpd.updated }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>DPD Pickup Point Map</h2>
+        <div id="dpd-map" style="height: 600px;" aria-label="Map of DPD pickup point locations in Cheltenham"></div>
+
+        <h2>DPD Pickup Point Locations</h2>
+        <div class="table-scroll">
+            <table class="dpd-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Street</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col">Opening Hours</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in dpd.points %}
+                    <tr>
+                        <td data-val="{{ p.name | downcase }}">{{ p.name }}</td>
+                        <td data-val="{% if p.is_post_office %}post office{% else %}shop{% endif %}">{% if p.is_post_office %}Post Office{% else %}Shop{% endif %}</td>
+                        <td data-val="{{ p.street | downcase }}">{{ p.street }}</td>
+                        <td class="postcode" data-val="{{ p.postcode | downcase }}">{{ p.postcode }}</td>
+                        <td data-val="{{ p.opening_hours | downcase }}">{% if p.is_247 %}24/7{% else %}{{ p.opening_hours }}{% endif %}</td>
+                        <td class="map">{% include pin.html lat=p.lat lng=p.lon label=p.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>FAQs</h2>
+
+        <h3>What Is a DPD Pickup Point?</h3>
+        <p>A local shop, newsagent or Post Office that's signed up to accept DPD parcel drop-offs and collections on
+            DPD's behalf, in addition to its normal business. Many aren't Post Offices at all — Cheltenham's DPD
+            network includes convenience stores, petrol station kiosks and Argos, several open well beyond typical
+            shop hours. Useful if you're regularly sending items sold on Vinted, eBay or another marketplace.</p>
+
+        <h3>How Do I Drop Off a Parcel?</h3>
+        <p>Book your parcel through DPD (or a marketplace/carrier using DPD for delivery), then take your QR code or
+            booking reference to the pickup point during its opening hours to drop it off.</p>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>DPD's own public pickup point finder, refreshed hourly. Opening hours can change, particularly around
+            holidays, so it's worth checking with the shop directly before a special trip.</p>
+
+        <h3>Looking for a Post Office or InPost Locker Instead?</h3>
+        <p>See our <a href="/cheltenham-post-office-locations">Cheltenham Post Office locations</a> page, or our
+            <a href="/cheltenham-inpost-lockers">InPost locker locations</a> page for 24/7 self-service lockers.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="dpd-data" type="application/json">{{ dpd.points | jsonify }}</script>
+<script src="/scripts/dpd-pickup-map.js"></script>
+{% include footer.html %}

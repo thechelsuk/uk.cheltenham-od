@@ -71,6 +71,7 @@ jobs:
                   python _python/food-standards.py
                   python '_python/bus-data.py'
                   python '_python/inpost.py'
+                  python '_python/dpd-pickup.py'
 
             - name: Commit and push if changed
               id: commit
