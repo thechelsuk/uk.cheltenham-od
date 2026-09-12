@@ -1,5 +1,4 @@
 # importing modules
-import pathlib
 import time
 import feedparser
 import requests
@@ -39,7 +38,7 @@ def fetch_terrorism_xml(destination):
 
 # processing
 if __name__ == "__main__":
-    root = pathlib.Path(__file__).parent.parent.resolve()
+    root = helper.repo_root()
     terror_xml = root / "_data/terrorism.xml"
 
     try:

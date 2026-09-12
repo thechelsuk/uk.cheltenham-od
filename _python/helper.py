@@ -1,4 +1,5 @@
 from dateutil.parser import parse
+import pathlib
 import re
 import json
 import requests
@@ -7,6 +8,64 @@ from datetime import datetime, timezone
 from requests import get
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+
+
+def repo_root():
+    """Resolve the repository root from within any _python/*.py script."""
+    return pathlib.Path(__file__).parent.parent.resolve()
+
+
+def updated_timestamp():
+    """The "updated" string used across _data/*.json payloads, e.g. '12 September 2026 at 20:53'."""
+    return datetime.now().strftime("%-d %B %Y at %H:%M")
+
+
+def write_json(path, payload):
+    pathlib.Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+
+
+DEFAULT_ACRONYMS = {"UK"}
+
+
+def clean_name(name, acronyms=DEFAULT_ACRONYMS):
+    """Tidy a station/operator/place name: collapse stray whitespace, title-case
+    each word (including inside brackets, so '(summer Only)' -> '(Summer Only)'),
+    and keep known acronyms and anything containing a digit (A40, B4083, 80-86)
+    upper-case — even wrapped in brackets like '(GWSR)'.
+
+    Also fixes 'Waterstones- upper floor' -> 'Waterstones - upper floor': a
+    space is only added before a hyphen when a space already follows it, so the
+    hyphen is being used as a dash/separator. Untouched: 'Stratford-upon-Avon'
+    (no spaces) and already-correct 'Foo - bar' (already has both).
+    """
+    def fix(w):
+        lead, core, trail = re.match(r"(\W*)(.*?)(\W*)$", w).groups()
+        if core.upper() in acronyms or any(c.isdigit() for c in core):
+            core = core.upper()
+        elif core:
+            core = core[:1].upper() + core[1:].lower()
+        return lead + core + trail
+
+    name = re.sub(r"(?<! )- ", " - ", name or "")
+    return " ".join(fix(w) for w in name.split())
+
+
+def fetch_bods_csv(csv_filename, catalogue_url="https://data.bus-data.dft.gov.uk/catalogue/"):
+    """Download the BODS data catalogue zip and return one of its CSVs as a
+    list of dict rows (via csv.DictReader). `csv_filename` matches by suffix,
+    e.g. 'timetables_data_catalogue.csv' or 'disruptions_data_catalogue.csv'."""
+    import csv
+    import io
+    import zipfile
+
+    resp = requests.get(catalogue_url, timeout=(10, 120))
+    resp.raise_for_status()
+
+    with zipfile.ZipFile(io.BytesIO(resp.content)) as zf:
+        name = next(n for n in zf.namelist() if n.endswith(csv_filename))
+        with zf.open(name) as f:
+            text = io.TextIOWrapper(f, encoding="utf-8-sig")
+            return list(csv.DictReader(text))
 
 
 def replace_chunk(content, marker, chunk):

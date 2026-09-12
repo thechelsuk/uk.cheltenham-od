@@ -6,12 +6,12 @@ import os
 import sys
 from datetime import datetime, time, timezone
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
-import pathlib
 import requests
 
+import helper
 
 # Load .env file for local development if present
-_env_file = pathlib.Path(__file__).parent.parent / ".env"
+_env_file = helper.repo_root() / ".env"
 if _env_file.exists():
     for _line in _env_file.read_text().splitlines():
         _line = _line.strip()

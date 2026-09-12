@@ -9,9 +9,10 @@ Source: https://www.toiletmap.org.uk/dataset
 import json
 import re
 import sys
-from pathlib import Path
 
 import requests
+
+import helper
 
 try:
     from better_profanity import profanity
@@ -196,7 +197,7 @@ IGNORE_IDS = {
     "6448f645d84833e33775bf6e",
 }
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = helper.repo_root()
 OUTPUT_PATH = REPO_ROOT / "_data" / "toilets.json"
 
 
@@ -207,30 +208,9 @@ def fetch_data(url: str) -> list[dict]:
 
 ACRONYMS = {"WH", "BP", "ASDA", "GWSR", "UK"}
 
+
 def clean_name(name: str) -> str:
-    """Tidy a station name: collapse stray whitespace, title-case each word
-    (including words inside brackets, so '(summer Only)' -> '(Summer Only)'
-    and '(whaddon)' -> '(Whaddon)'), and keep known brand acronyms and road
-    numbers (A40, B4083, 80-86) upper-case — even wrapped in brackets like
-    '(GWSR)'.
-
-    Also fixes 'Waterstones- upper floor' -> 'Waterstones - upper floor': a
-    space is only added before a hyphen when a space already follows it, so the
-    hyphen is being used as a dash/separator. Untouched: 'Stratford-upon-Avon'
-    (no spaces) and already-correct 'Foo - bar' (already has both).
-    """
-    def fix(w):
-        # Peel leading/trailing punctuation off the core word so brackets like
-        # '(GWSR)' don't hide an acronym or block title-casing.
-        lead, core, trail = re.match(r"(\W*)(.*?)(\W*)$", w).groups()
-        if core.upper() in ACRONYMS or any(c.isdigit() for c in core):
-            core = core.upper()
-        elif core:
-            core = core[:1].upper() + core[1:].lower()
-        return lead + core + trail
-
-    name = re.sub(r"(?<! )- ", " - ", name or "")
-    return " ".join(fix(w) for w in name.split())
+    return helper.clean_name(name, ACRONYMS)
 
 
 
