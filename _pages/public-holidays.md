@@ -5,6 +5,7 @@ seo: "Latest confirmed public holidays for Cheltenham and the UK including Chris
 permalink: /cheltenham-public-holidays
 description: Public holidays in Cheltenham and the UK
 type: "other"
+schema: holidays
 ---
 
 {% include sponsor.html %}
