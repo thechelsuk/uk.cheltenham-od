@@ -19,13 +19,13 @@ The main pollutants tracked here are fine particulates (PM2.5 and PM10, from veh
 
 If you have asthma, another lung condition, or a heart condition, the NHS and DEFRA recommend reducing strenuous activity outdoors when readings are in the High or Very High bands. See [DEFRA's air quality advice](https://uk-air.defra.gov.uk/air-pollution/daqi) for more detail on what each band means for your health.
 
-## Cheltenham A40 Gloucester Road (2.5km from Cheltenham centre)
+## Cheltenham A40 Gloucester Road (2.5km from Cheltenham Centre)
 
 | Pollutant | Reading | Band | Measured (UTC) |
 |---|---|---|---|
 | PM2.5 (fine particulates) | 3.9 ug.m-3 | Low | 2026-09-12 02:00 |
 
-## Gloucester Tredworth (12.1km from Cheltenham centre)
+## Gloucester Tredworth (12.1km from Cheltenham Centre)
 
 | Pollutant | Reading | Band | Measured (UTC) |
 |---|---|---|---|

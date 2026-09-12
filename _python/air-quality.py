@@ -396,7 +396,7 @@ def render_markdown(readings):
 
     for station_name, station_readings in sorted(stations.items()):
         distance = station_readings[0].get("distance_km")
-        distance_str = f" ({distance}km from Cheltenham centre)" if distance is not None else ""
+        distance_str = f" ({distance}km from Cheltenham Centre)" if distance is not None else ""
         lines.append(f"\n## {smart_title(station_name)}{distance_str}\n")
         lines.append("\n| Pollutant | Reading | Band | Measured (UTC) |\n")
         lines.append("|---|---|---|---|\n")

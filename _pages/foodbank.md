@@ -21,7 +21,7 @@ We track needs for two local organisations:
 Donations can be dropped at the addresses listed against each food bank below, or bought online via their shopping lists. Lists are updated as needs change.
 
 <!-- summary1_marker starts -->
-## List of needed items in Cheltenham
+## List of Needed Items in Cheltenham
 
 Last updated: 2026-08-21
 
@@ -49,7 +49,7 @@ Last updated: 2026-08-21
 <!-- contact1_marker ends -->
 
 <!-- summary2_marker starts -->
-## List of needed items in Cheltenham Open Door
+## List of Needed Items in Cheltenham Open Door
 
 Last updated: 2025-03-30
 

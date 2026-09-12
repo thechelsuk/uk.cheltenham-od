@@ -25,7 +25,7 @@ No new build sales were recorded in Cheltenham over the past year.
 {% if site.data.house-summary.current.domestic_count > 0 %}
 Excluding properties classed as "Other" in Land Registry data, {{ site.data.house-summary.current.domestic_count_display }} domestic sales were recorded over the past year{% if site.data.house-summary.current.domestic_count_change %}, {{ site.data.house-summary.current.domestic_count_change }}{% endif %}, with an average (mean) price of {{ site.data.house-summary.current.domestic_mean_display }}{% if site.data.house-summary.current.domestic_mean_change %}, {{ site.data.house-summary.current.domestic_mean_change }}{% endif %}. {% if site.data.house-summary.current.other_note %}{{ site.data.house-summary.current.other_note }}{% endif %}
 
-### Overall since January 2023
+### Overall Since January 2023
 
 Across the full dataset, **{{ site.data.house-summary.full_dataset.count_display }}** Cheltenham property sales were recorded, with a median price of **{{ site.data.house-summary.full_dataset.median_display }}** (mean {{ site.data.house-summary.full_dataset.mean_display }}), ranging from {{ site.data.house-summary.full_dataset.min_display }} to {{ site.data.house-summary.full_dataset.max_display }}.
 {% endif %}

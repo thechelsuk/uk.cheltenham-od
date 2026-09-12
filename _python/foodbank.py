@@ -8,7 +8,7 @@ if __name__ == "__main__":
         data = json.load(filehandler)
         needs = data['need']['needs']
         date = helper.date_to_iso(data['need']['created'])
-        output = f"## List of needed items in Cheltenham\n\n"
+        output = f"## List of Needed Items in Cheltenham\n\n"
         output += f"Last updated: {date}\n\n"
         output += f"- {needs}".replace("\n", "\n- ")
         output.rstrip("-")
@@ -29,7 +29,7 @@ if __name__ == "__main__":
         data = json.load(filehandler)
         needs = data['need']['needs']
         date = helper.date_to_iso(data['need']['created'])
-        output = f"## List of needed items in Cheltenham Open Door\n\n"
+        output = f"## List of Needed Items in Cheltenham Open Door\n\n"
         output += f"Last updated: {date}\n\n"
         output += f"- {needs}".replace("\n", "\n- ")
         output.rstrip("-")
