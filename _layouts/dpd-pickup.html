@@ -6,8 +6,8 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul>
+                <li><a href="/cheltenham-post-office-locations">&lAarr; Back to Post Offices</a></li>
                 <li>{{ dpd.count }} pickup points in Cheltenham</li>
-                <li>Last updated {{ dpd.updated }}</li>
             </ul>
         </header>
 
@@ -33,16 +33,19 @@
                     {% for p in dpd.points %}
                     <tr>
                         <td data-val="{{ p.name | downcase }}">{{ p.name }}</td>
-                        <td data-val="{% if p.is_post_office %}post office{% else %}shop{% endif %}">{% if p.is_post_office %}Post Office{% else %}Shop{% endif %}</td>
+                        <td data-val="{% if p.is_post_office %}post office{% else %}shop{% endif %}">{% if
+                            p.is_post_office %}Post Office{% else %}Shop{% endif %}</td>
                         <td data-val="{{ p.street | downcase }}">{{ p.street }}</td>
                         <td class="postcode" data-val="{{ p.postcode | downcase }}">{{ p.postcode }}</td>
-                        <td data-val="{{ p.opening_hours | downcase }}">{% if p.is_247 %}24/7{% else %}{{ p.opening_hours }}{% endif %}</td>
+                        <td data-val="{{ p.opening_hours | downcase }}">{% if p.is_247 %}24/7{% else %}{{
+                            p.opening_hours }}{% endif %}</td>
                         <td class="map">{% include pin.html lat=p.lat lng=p.lon label=p.name %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+        <p>Last updated {{ dpd.updated }}</p>
 
         <h2>FAQs</h2>
 
@@ -62,7 +65,8 @@
 
         <h3>Looking for a Post Office or InPost Locker Instead?</h3>
         <p>See our <a href="/cheltenham-post-office-locations">Cheltenham Post Office locations</a> page, or our
-            <a href="/cheltenham-inpost-lockers">InPost locker locations</a> page for 24/7 self-service lockers.</p>
+            <a href="/cheltenham-inpost-lockers">InPost locker locations</a> page for 24/7 self-service lockers.
+        </p>
     </div>
 </div>
 
