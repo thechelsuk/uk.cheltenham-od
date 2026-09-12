@@ -5,7 +5,6 @@ seo: "Places to stay in Cheltenham, Gloucestershire — hotels and accommodation
 description: "Compare hotels and accommodation in Cheltenham, from Regency townhouse hotels to budget stays near the centre and racecourse."
 type: "third"
 permalink: /staying-in-cheltenham
-schema_type: stay22
 ---
 
 {% include sponsor.html %}
