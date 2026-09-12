@@ -23,11 +23,11 @@ The page covers roughly the last **90 days** of activity.
 
 - The page keeps roughly the last 90 days of activity, covering everything from tree works and householder extensions to larger housing and commercial schemes.
 
-### Where does the planning data come from?
+### Where Does the Planning Data Come From?
 
 - Directly from [Cheltenham Borough Council's PublicAccess planning portal](https://publicaccess.cheltenham.gov.uk/online-applications/), the council's official planning system. It's provided for general information — always check the portal for the definitive record.
 
-### How often is it updated?
+### How Often Is It Updated?
 
 - The list is refreshed daily as new applications are submitted and decisions are published.
 
