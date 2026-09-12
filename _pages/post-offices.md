@@ -31,3 +31,7 @@ Most branches offer core postal and banking services, though exact services vary
 ### Where Can I Send a Parcel Outside Post Office Opening Hours?
 
 - Cheltenham also has a growing network of [InPost self-service parcel lockers](/cheltenham-inpost-lockers), many of which are accessible 24 hours a day — useful for Vinted, eBay and other marketplace sellers who need to post outside normal shop hours.
+
+### Are There Other Shops That Accept Parcels Besides Post Offices?
+
+- Yes — see our [Cheltenham DPD Pickup points](/cheltenham-dpd-pickup-points) page for a full list of local shops, newsagents and petrol station kiosks that accept DPD drop-offs and collections, many with longer opening hours than a typical Post Office branch.
