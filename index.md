@@ -8,6 +8,8 @@ type: "cod"
 description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices, crime figures, flood alerts, food banks, GPs, planning, local news and weather — all free, in one place."
 ---
 
+{% include bus-alert.html %}
+
 <!-- weather_marker starts -->
 ## On Saturday, 12 September 2026
 

@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Bus Routes & Service Data",
+  "description": "Registered bus routes serving Cheltenham and their BODS publishing status, sourced from the DfT Bus Open Data Service.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['bus-routes'].updated_iso }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.gov.uk/government/publications/bus-open-data-terms-and-conditions",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Route", "Operator", "Origin", "Destination", "Publishing status"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Where does this bus data come from?", "acceptedAnswer": {"@type": "Answer", "text": "The DfT's Bus Open Data Service (BODS) data catalogue."} },
+    { "@type": "Question", "name": "What does route status mean?", "acceptedAnswer": {"@type": "Answer", "text": "Whether the operator's published timetable data on BODS matches their registration with the Office of the Traffic Commissioner."} }
+  ]
+}
+</script>

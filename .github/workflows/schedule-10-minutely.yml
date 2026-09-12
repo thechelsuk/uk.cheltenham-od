@@ -1,9 +1,13 @@
 ---
-name: Scheduled Hourly
+name: Scheduled 10-Minutely
 on:
     workflow_dispatch:
     schedule:
-        - cron: "36 */2 * * *"
+        - cron: "*/10 * * * *"
+
+concurrency:
+    group: bus-disruptions
+    cancel-in-progress: false
 
 permissions:
     contents: write
@@ -25,19 +29,6 @@ jobs:
             - name: Check out Repo
               uses: actions/checkout@v7
 
-            - name: Fetch latest FMS Data
-              run: |-
-                  curl "https://ratings.food.gov.uk/api/open-data-files/FHRS124en-GB.xml" > _data/food-standards.xml
-
-            - name: Fetch latest FMS Data
-              run: |-
-                  curl "https://www.fixmystreet.com/rss/l/51.897991,-2.071308/10" > _data/fix-my-street.xml
-
-            - name: Fetch latest FB Data
-              run: |-
-                  curl "https://www.givefood.org.uk/api/2/foodbank/cheltenham/" | jq . > _data/foodbank-cheltenham.json
-                  curl "https://www.givefood.org.uk/api/2/foodbank/cheltenham-open-door/" | jq . > _data/foodbank-open-door.json
-
             - name: Set up Python
               uses: actions/setup-python@v7
               with:
@@ -56,20 +47,8 @@ jobs:
                   python -m pip install -r requirements.txt
 
             - name: Processing Python Scripts
-              env:
-                  OPEN_WEATHER_KEY: ${{ secrets.OPEN_WEATHER_KEY }}
               run: |-
-                  python '_python/forecast.py'
-                  python '_python/weather.py'
-                  python '_python/news.py'
-                  python '_python/land_registry.py'
-                  python '_python/house_summary.py'
-                  python '_python/planning.py'
-                  python '_python/recycling.py'
-                  python '_python/fix-my-street.py'
-                  python '_python/air-quality.py'
-                  python _python/food-standards.py
-                  python '_python/bus-data.py'
+                  python '_python/bus-disruptions.py'
 
             - name: Commit and push if changed
               id: commit
@@ -84,7 +63,7 @@ jobs:
                     exit 0
                   fi
 
-                  git commit -m "Chore: Hourly COD Data pull for `date +'%Y-%m-%d %H:%M'`"
+                  git commit -m "Chore: Bus disruptions data pull for `date +'%Y-%m-%d %H:%M'`"
                   git push
                   echo "changed=true" >> "$GITHUB_OUTPUT"
                   echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

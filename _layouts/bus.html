@@ -1,0 +1,85 @@
+{% include header.html %}
+{% assign bus = site.data["bus-routes"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ bus.total_routes }} routes from {{ bus.operator_count }} operators serving Cheltenham</li>
+                <li>Last updated {{ bus.updated }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{content}}
+
+        {% assign disruptions = site.data["bus-disruptions"] %}
+        <h2>Latest Disruptions</h2>
+        {% if disruptions.disruptions.size > 0 %}
+        <ul>
+            {% for d in disruptions.disruptions %}
+            <li>&rarr; {{ d.reason }}: {{ d.organisation }}{% if d.operators_affected != "" %} — {{ d.operators_affected }}{% endif %}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No current bus disruptions reported for Cheltenham.</p>
+        {% endif %}
+        <p><small>Also published as an <a href="{{ page.feed_url }}">Atom feed</a>. The underlying BODS disruptions data updates roughly every minute; this page and feed refresh every 10 minutes.</small></p>
+
+        <h2>Headline Data</h2>
+        <ul>
+            <li>&rarr; {{ bus.total_routes }} registered bus routes pass through or serve Cheltenham</li>
+            <li>&rarr; {{ bus.attention_count }} of these currently need attention from their operator (unpublished,
+                incomplete or stale data)</li>
+            <li>&rarr; Run by {{ bus.operator_count }} different operators</li>
+        </ul>
+
+        <h2>Routes Serving Cheltenham</h2>
+        <div class="table-scroll">
+            <table class="buses-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Route</th>
+                        <th scope="col">Operator</th>
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Via</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="date">Last Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in bus.routes %}
+                    <tr{% if r.requires_attention %} class="stale" {% endif %}>
+                        <td data-val="{{ r.service_number | downcase }}">{{ r.service_number }}</td>
+                        <td data-val="{{ r.operator | downcase }}">{{ r.operator }}</td>
+                        <td data-val="{{ r.start_point | downcase }}">{{ r.start_point }}</td>
+                        <td data-val="{{ r.finish_point | downcase }}">{{ r.finish_point }}</td>
+                        <td data-val="{{ r.via | downcase }}">{{ r.via }}</td>
+                        <td data-val="{{ r.timeliness | downcase }}">{{ r.timeliness }}</td>
+                        <td class="date" data-val="{{ r.last_modified }}">{{ r.last_modified }}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Bus Data FAQs</h2>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>The DfT's <a href="https://data.bus-data.dft.gov.uk/">Bus Open Data Service</a>, which requires local bus operators in England to publish timetable, fares and live location data. We show every registered route where Cheltenham appears as an origin, destination or stop along the way.</p>
+
+        <h3>What Does "Status" Mean?</h3>
+        <p>Each route registered with the Office of the Traffic Commissioner (OTC) is required to publish matching timetable data to BODS. "Up to date" means the operator's published data matches their registration. Anything else — an unpublished registration change, a timetable that doesn't look far enough ahead, or data that hasn't been updated in over a year — is flagged, and highlighted in the table above.</p>
+
+        <h3>Why Might a Route Be Missing?</h3>
+        <p>Only routes registered with the OTC and captured in the BODS data catalogue are included. Purely commercial, unregistered, or school-only services may not appear.</p>
+
+        <h3>How Do I Read the Table?</h3>
+        <p>Click any column header to sort. Routes needing attention from their operator are highlighted.</p>
+    </div>
+</div>
+
+{% include footer.html %}
