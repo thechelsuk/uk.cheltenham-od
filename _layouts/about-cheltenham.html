@@ -16,9 +16,7 @@
         <h2>Population &amp; Growth</h2>
         <p>Cheltenham's population has grown from {{ stats.population_earliest.population_formatted }} in {{ stats.population_earliest.year }} to {{ stats.population_latest.population_formatted }} in {{ stats.population_latest.year }} — an increase of {{ stats.growth_pct }}% over {{ stats.growth_years }} years, according to the ONS's official mid-year population estimates.</p>
 
-        <div class="chart-wrap">
-            <canvas id="population-chart" height="120"></canvas>
-        </div>
+        <canvas id="population-chart" height="120"></canvas>
 
         <div class="table-scroll">
             <table class="cheltenham-stats-table data-table" data-sortable>
@@ -71,12 +69,6 @@
     </div>
 </div>
 
-<style>
-    .chart-wrap {
-        max-width: 900px;
-        margin: 1.5em 0;
-    }
-</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script id="population-series-data" type="application/json">{{ stats.population_series | jsonify }}</script>
 <script src="/scripts/cheltenham-stats-chart.js"></script>
