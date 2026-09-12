@@ -1,0 +1,75 @@
+{% include header.html %}
+{% assign stats = site.data["cheltenham-stats"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ stats.population_latest.population_formatted }} people ({{ stats.population_latest.year }})</li>
+                <li>{{ stats.employment.employment_rate }}% employment rate</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Population &amp; Growth</h2>
+        <p>Cheltenham's population has grown from {{ stats.population_earliest.population_formatted }} in {{ stats.population_earliest.year }} to {{ stats.population_latest.population_formatted }} in {{ stats.population_latest.year }} — an increase of {{ stats.growth_pct }}% over {{ stats.growth_years }} years, according to the ONS's official mid-year population estimates.</p>
+
+        <canvas id="population-chart" height="120"></canvas>
+
+        <div class="table-scroll">
+            <table class="cheltenham-stats-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in stats.population_series %}
+                    <tr>
+                        <td data-val="{{ p.year }}">{{ p.year }}</td>
+                        <td class="number" data-val="{{ p.population }}">{{ p.population_formatted }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Employment</h2>
+        <p>Labour market rates for Cheltenham residents aged 16-64, from the ONS Annual Population Survey, {{ stats.employment.period }}:</p>
+        <ul>
+            <li>Economic activity rate: {{ stats.employment.economic_activity_rate }}%</li>
+            <li>Employment rate: {{ stats.employment.employment_rate }}%</li>
+            <li>Unemployment rate: {% if stats.employment.unemployment_rate %}{{ stats.employment.unemployment_rate }}%{% else %}not published — suppressed by the ONS as statistically unreliable at this local scale{% endif %}</li>
+        </ul>
+
+        <h2>Census 2021</h2>
+        <p>At the 2021 Census, Cheltenham had {{ stats.census_2021_population_formatted }} usual residents — closely matching the same year's mid-year estimate above, as you'd expect from two independent counts of the same population.</p>
+
+        <p>Full data last refreshed {{ stats.updated }}.</p>
+
+        <h2>FAQs</h2>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>Population and employment figures come from Nomis, the Office for National Statistics' official service
+            for labour market and census data. Population estimates and Census 2021 figures are both a count of
+            usual residents; the small difference between them is expected, since they use slightly different
+            methods and reference dates.</p>
+
+        <h3>Why Isn't the Unemployment Rate Always Shown?</h3>
+        <p>Local unemployment rates are modelled from a survey sample, and for smaller areas like a single local
+            authority, the ONS sometimes suppresses the figure as too statistically unreliable to publish. This is
+            normal and not specific to Cheltenham.</p>
+
+        <h3>How Often Is This Updated?</h3>
+        <p>Population estimates and employment rates are refreshed by the ONS periodically throughout the year;
+            this page re-fetches the latest published figures from Nomis monthly.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="population-series-data" type="application/json">{{ stats.population_series | jsonify }}</script>
+<script src="/scripts/cheltenham-stats-chart.js"></script>
+{% include footer.html %}

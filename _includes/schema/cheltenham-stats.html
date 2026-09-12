@@ -1,0 +1,25 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Population, Growth & Employment Statistics",
+  "description": "Cheltenham's population, population growth over time, employment rates and Census 2021 usual resident population, sourced from the ONS's Nomis service.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['cheltenham-stats'].updated_iso }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.ons.gov.uk/methodology/geography/licences",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Population", "Population growth", "Economic activity rate", "Employment rate", "Unemployment rate", "Census 2021 population"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "Nomis, the Office for National Statistics' official service for labour market and census data."} },
+    { "@type": "Question", "name": "Why isn't the unemployment rate always shown?", "acceptedAnswer": {"@type": "Answer", "text": "Local unemployment rates are modelled from a survey sample, and the ONS sometimes suppresses the figure for smaller areas as too statistically unreliable to publish."} }
+  ]
+}
+</script>
