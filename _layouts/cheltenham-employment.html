@@ -1,0 +1,67 @@
+{% include header.html %}
+{% assign employment = site.data["cheltenham-employment"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/about-cheltenham">&lAarr; Back to All About Cheltenham</a></li>
+                <li>{{ employment.series | size }} years of data</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Employment Rates Over Time</h2>
+        <canvas id="employment-chart" height="120"></canvas>
+
+        <div class="table-scroll">
+            <table class="cheltenham-employment-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Economic Activity Rate</th>
+                        <th scope="col" class="number">Employment Rate</th>
+                        <th scope="col" class="number">Unemployment Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in employment.series %}
+                    <tr>
+                        <td data-val="{{ p.year }}">{{ p.year }}</td>
+                        <td class="number" data-val="{{ p.economic_activity_rate }}">{% if p.economic_activity_rate %}{{ p.economic_activity_rate }}%{% else %}—{% endif %}</td>
+                        <td class="number" data-val="{{ p.employment_rate }}">{% if p.employment_rate %}{{ p.employment_rate }}%{% else %}—{% endif %}</td>
+                        <td class="number" data-val="{{ p.unemployment_rate }}">{% if p.unemployment_rate %}{{ p.unemployment_rate }}%{% else %}suppressed{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p>Full data last refreshed {{ employment.updated }}.</p>
+
+        <h2>FAQs</h2>
+
+        <h3>Why Does the Rate Jump Around So Much Year to Year?</h3>
+        <p>These rates come from the Annual Population Survey, which estimates from a sample of residents rather
+            than a full count. For a town the size of Cheltenham, that sample is small enough that year-to-year
+            swings of several percentage points are normal statistical noise, not necessarily a real change in the
+            local economy — look at the overall trend rather than any single year.</p>
+
+        <h3>Why Is the Unemployment Rate Missing for Some Years?</h3>
+        <p>The ONS suppresses the unemployment rate for a given year when the underlying sample is too small to be
+            statistically reliable at local authority level. This happens intermittently throughout the series, more
+            often in recent years, and is normal — not specific to Cheltenham.</p>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>Nomis, the Office for National Statistics' official service for labour market data, refreshed monthly.
+            See our <a href="/about-cheltenham">All About Cheltenham</a> page for the current headline figures,
+            population and Census 2021 statistics.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="employment-series-data" type="application/json">{{ employment.series | jsonify }}</script>
+<script src="/scripts/cheltenham-employment-chart.js"></script>
+{% include footer.html %}

@@ -32,6 +32,8 @@ EMPLOYMENT_VARIABLES = {
 # Census 2021 — usual resident population (TS001).
 CENSUS_DATASET = "NM_2021_1"
 
+EMPLOYMENT_START_YEAR = 2004
+
 
 def fetch_csv_rows(dataset, **params):
     resp = helper.request_with_retry(
@@ -75,6 +77,33 @@ def fetch_employment_rates():
     return rates
 
 
+def fetch_employment_series():
+    """Full annual history (calendar-year-ending, i.e. the Jan-Dec Q4 rolling
+    period) for each rate, back to 2004 — the earliest Nomis has for this
+    geography. The underlying data is quarterly/rolling; we keep just the
+    Dec-ending point per year so the chart shows one clean value per year.
+    As with the latest-only figures, some years' unemployment rate is
+    suppressed by the ONS as statistically unreliable — recorded as None.
+    """
+    current_year = datetime.date.today().year
+    by_year = {}
+    for key, variable in EMPLOYMENT_VARIABLES.items():
+        rows = fetch_csv_rows(
+            EMPLOYMENT_DATASET,
+            date=f"{EMPLOYMENT_START_YEAR}-12-{current_year}-12",
+            variable=variable, measures=20599,
+        )
+        for row in rows:
+            if not row["DATE"].endswith("-12"):
+                continue
+            year = int(row["DATE"][:4])
+            by_year.setdefault(year, {"year": year})
+            value = row["OBS_VALUE"]
+            by_year[year][key] = float(value) if value else None
+
+    return [by_year[year] for year in sorted(by_year)]
+
+
 def fetch_census_population():
     rows = fetch_csv_rows(CENSUS_DATASET, measures=20100)
     total_row = next((r for r in rows if r.get("C2021_RESTYPE_3_CODE") == "0"), None)
@@ -82,7 +111,9 @@ def fetch_census_population():
 
 
 if __name__ == "__main__":
-    out_path = helper.repo_root() / "_data" / "cheltenham-stats.json"
+    root = helper.repo_root()
+    out_path = root / "_data" / "cheltenham-stats.json"
+    employment_out_path = root / "_data" / "cheltenham-employment.json"
 
     print("Fetching population time series...")
     population_series = fetch_population_series()
@@ -94,6 +125,10 @@ if __name__ == "__main__":
     print("Fetching employment rates...")
     employment = fetch_employment_rates()
     print(f"  {employment}")
+
+    print("Fetching employment history...")
+    employment_series = fetch_employment_series()
+    print(f"  {len(employment_series)} years, {employment_series[0]['year']}-{employment_series[-1]['year']}")
 
     print("Fetching Census 2021 population...")
     census_population = fetch_census_population()
@@ -116,3 +151,12 @@ if __name__ == "__main__":
 
     helper.write_json(out_path, payload)
     print(f"Wrote stats to {out_path}")
+
+    employment_payload = {
+        "updated":     helper.updated_timestamp(),
+        "updated_iso": datetime.date.today().isoformat(),
+        "source":      "https://www.nomisweb.co.uk/",
+        "series":      employment_series,
+    }
+    helper.write_json(employment_out_path, employment_payload)
+    print(f"Wrote employment history to {employment_out_path}")
