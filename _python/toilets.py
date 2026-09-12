@@ -9,6 +9,7 @@ Source: https://www.toiletmap.org.uk/dataset
 import json
 import re
 import sys
+from pathlib import Path
 
 import requests
 
