@@ -26,7 +26,7 @@
         {% assign venues = nil %}
         <h2>Ratings by Type ({{ site.data["food-standards"].size }} Venues)</h2>
         <div class="table-scroll">
-            <table class="food-standards-table" data-sortable>
+            <table class="food-standards-table data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Type</th>
@@ -79,7 +79,7 @@
         <h2>Venues Rated 1 to 4 ({{ venues.size }} Venues)</h2>
         {% endif %}
         <div class="table-scroll">
-            <table class="food-standards-table" data-sortable>
+            <table class="food-standards-table data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Venue</th>
