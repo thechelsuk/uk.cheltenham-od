@@ -9,6 +9,8 @@ from datetime import datetime, timezone
 
 import requests
 
+import helper
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "listed-buildings.json")
 
@@ -27,6 +29,8 @@ BBOX = (391000, 218000, 398000, 225000)  # (min E, min N, max E, max N)
 LAYER_BUILDINGS = 0
 LAYER_SCHEDULED_MONUMENTS = 6
 LAYER_PARKS_GARDENS = 7
+
+ACRONYMS = {"UK"}
 
 
 def epoch_ms_to_iso_date(value):
@@ -65,7 +69,7 @@ def fetch_buildings():
         lon, lat = (point[0], point[1]) if point else (None, None)
         buildings.append({
             "list_entry": props.get("ListEntry"),
-            "name": props.get("Name"),
+            "name": helper.clean_name(props.get("Name"), ACRONYMS),
             "grade": props.get("Grade"),
             "list_date": epoch_ms_to_iso_date(props.get("ListDate")),
             "amend_date": epoch_ms_to_iso_date(props.get("AmendDate")),
@@ -84,7 +88,7 @@ def fetch_areas(layer, out_fields, date_field):
         props = feature.get("properties", {})
         areas.append({
             "list_entry": props.get("ListEntry"),
-            "name": props.get("Name"),
+            "name": helper.clean_name(props.get("Name"), ACRONYMS),
             "grade": props.get("Grade"),
             "list_date": epoch_ms_to_iso_date(props.get(date_field)),
             "hyperlink": props.get("hyperlink"),
