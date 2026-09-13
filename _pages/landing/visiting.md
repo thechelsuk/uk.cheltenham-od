@@ -23,6 +23,7 @@ From Regency townhouse hotels to budget stays near the centre, there's a room fo
 Pack the day with the things Cheltenham does best — history, green space and a full events calendar.
 
 - [Points of interest](/cheltenham-points-of-interest) — museums, historic sites, parks and blue plaques, each with a map link.
+- [Listed buildings](/cheltenham-listed-buildings) — every listed building, scheduled monument and registered park & garden in Cheltenham, graded and mapped.
 - [What's on in Cheltenham](/cheltenham-events) — events and the town's year-round festival calendar.
 
 ## Eating and Drinking

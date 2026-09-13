@@ -18,6 +18,8 @@ The map below shows hotels and rentals across Cheltenham with live availability,
 
 First time visiting? Our [visiting Cheltenham guide](/visiting-cheltenham) pulls together where to eat, what to see and how to get around, alongside this page.
 
+Staying somewhere central puts you within walking distance of much of the town's Regency architecture — see our [Cheltenham listed buildings](/cheltenham-listed-buildings) page for the full official list, with a map showing what's nearby.
+
 ### Notes
 
 Booking links point to each property's location and are usually accurate, but occasionally a link may open a nearby area search rather than the exact venue — please double-check the property name before booking.

@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Listed Buildings & Heritage Sites",
+  "description": "Listed buildings, scheduled monuments and registered parks & gardens in Cheltenham, sourced from Historic England's National Heritage List for England.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['listed-buildings'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Grade", "List date", "Location"]
+}
+</script>

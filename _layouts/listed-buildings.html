@@ -1,0 +1,110 @@
+{% include header.html %}
+{% assign heritage = site.data["listed-buildings"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Summary</h2>
+        <ul>
+            {% for grade in heritage.grade_counts %}
+            <li>Grade {{ grade[0] }}: {{ grade[1] }} buildings</li>
+            {% endfor %}
+            <li>Scheduled monuments: {{ heritage.scheduled_monuments.size }}</li>
+            <li>Registered parks &amp; gardens: {{ heritage.parks_and_gardens.size }}</li>
+        </ul>
+
+        <h2>Heritage Map</h2>
+        <div id="listed-buildings-map" style="height: 600px;" aria-label="Map of listed buildings, scheduled monuments and registered parks and gardens in Cheltenham"></div>
+
+        <h2>Listed Buildings</h2>
+        <p>
+            <label for="grade-filter">Filter by grade:</label>
+            <select id="grade-filter">
+                <option value="">All grades</option>
+                <option value="I">Grade I</option>
+                <option value="II*">Grade II*</option>
+                <option value="II">Grade II</option>
+            </select>
+        </p>
+        <div class="table-scroll">
+            <table class="listed-buildings-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Listed</th>
+                        <th scope="col">Listing</th>
+                        <th class="map" scope="col">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for building in heritage.buildings %}
+                    <tr data-grade="{{ building.grade }}">
+                        <td>{{ building.name }}</td>
+                        <td data-value="{{ building.grade }}">{{ building.grade }}</td>
+                        <td class="date" data-value="{{ building.list_date }}">{{ building.list_date }}</td>
+                        <td class="listing"><a href="{{ building.hyperlink }}" target="_blank" rel="noopener">View listing &#8599;</a></td>
+                        <td class="map">{% include pin.html lat=building.lat lng=building.lon label=building.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Scheduled Monuments &amp; Registered Parks &amp; Gardens</h2>
+        <div class="table-scroll">
+            <table class="listed-buildings-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Designated</th>
+                        <th scope="col">Listing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for site_item in heritage.scheduled_monuments %}
+                    <tr>
+                        <td>{{ site_item.name }}</td>
+                        <td>Scheduled Monument</td>
+                        <td class="date" data-value="{{ site_item.list_date }}">{{ site_item.list_date }}</td>
+                        <td class="listing"><a href="{{ site_item.hyperlink }}" target="_blank" rel="noopener">View listing &#8599;</a></td>
+                    </tr>
+                    {% endfor %}
+                    {% for site_item in heritage.parks_and_gardens %}
+                    <tr>
+                        <td>{{ site_item.name }}</td>
+                        <td>Registered Park &amp; Garden{% if site_item.grade %} (Grade {{ site_item.grade }}){% endif %}</td>
+                        <td class="date" data-value="{{ site_item.list_date }}">{{ site_item.list_date }}</td>
+                        <td class="listing"><a href="{{ site_item.hyperlink }}" target="_blank" rel="noopener">View listing &#8599;</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>About This Data</h2>
+        <p>Listings are drawn from Historic England's National Heritage List for England, the official register of all nationally protected historic buildings and sites in England. A building's grade reflects its level of special architectural or historic interest, not its condition — Grade I is exceptional national importance, Grade II* is particularly important, and Grade II is special interest. Listing does not by itself grant public access to a building; most entries on this page are private property.</p>
+
+        <p class="listed-buildings-attribution"><small>
+            Data from <a href="{{ heritage.source_url }}" target="_blank" rel="noopener">{{ heritage.source }}</a>, licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener">Open Government Licence v3.0</a>.
+            {{ heritage.attribution }}
+            {% if heritage.generated_at %}Last updated {{ heritage.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="listed-buildings-data" type="application/json">{{ heritage.buildings | jsonify }}</script>
+<script id="listed-buildings-areas-data" type="application/json">{{ heritage.scheduled_monuments | concat: heritage.parks_and_gardens | jsonify }}</script>
+<script src="/assets/scripts/listed-buildings-map.js"></script>
+<script src="/assets/scripts/listed-buildings-filter.js"></script>
+{% include footer.html %}

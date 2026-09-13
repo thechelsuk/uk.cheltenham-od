@@ -21,6 +21,8 @@ Links go to official website, or wikipedia for more information.
 
 Planning a day out? Our [visiting Cheltenham guide](/visiting-cheltenham) pairs this list with where to stay, eat and get around.
 
+Many of the historic sites on this page are also protected as listed buildings — see the full official register on our [Cheltenham listed buildings](/cheltenham-listed-buildings) page, with a map and grade for every entry.
+
 ## Cheltenham Points of Interest — FAQ
 
 ### What Is Cheltenham Known For?

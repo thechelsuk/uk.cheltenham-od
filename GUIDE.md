@@ -220,9 +220,11 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
 - [ ] `assets/scripts/<name>-map.js` if there's a map, following the standard IIFE shape
-- [ ] Linked from the relevant parent/sibling pages, and added to `navigation_header`/`footer_columns` in `_config.yml`
+- [ ] Linked from the relevant parent/sibling pages
+- [ ] Decided whether this is a headline main-menu item or a sub-page of an existing one — if it's a genuine new topic, add it to `navigation_header`/`footer_columns` in `_config.yml`; if it's a filtered view or a natural sub-topic of an existing page (like `/cheltenham-employment-history` under `/about-cheltenham`, or `/cheltenham-listed-buildings` under `/about-cheltenham`), link it inline from the parent page's prose instead and leave the nav/footer alone
 - [ ] `schema:` + `_includes/schema/<name>.html` if the page has a real dataset and/or a real FAQ section worth marking up
 - [ ] Checked `_data/sources.json` — add or update the entry for this source, being honest about the licence
+- [ ] Asked whether a `_posts/<date>-<name>-added.md` news post announcing the new page is warranted — follow the shape of recent posts like `_posts/2026-09-09-broadband-internet-added.md` (intro paragraph linking the new page, a short "what it shows" summary, an FAQs section). Not every page needs one (a minor filter/sub-page usually doesn't), but a genuinely new dataset or page usually does.
 
 ## Maps
 
