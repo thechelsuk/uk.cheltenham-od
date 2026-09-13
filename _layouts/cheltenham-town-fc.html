@@ -1,0 +1,111 @@
+{% include header.html %}
+{% assign ctfc = site.data["cheltenham-town-fc"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-sports">&lAarr; Back to Sports</a></li>
+                {% if ctfc.team.website %}
+                <li><a href="{{ ctfc.team.website }}" target="_blank" rel="noopener">Official Club Website &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Next Fixture{% if ctfc.next_fixtures.size > 1 %}s{% endif %}</h2>
+        {% if ctfc.next_fixtures.size > 0 %}
+        <div class="table-scroll">
+            <table class="ctfc-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Kick-off</th>
+                        <th scope="col">Fixture</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Competition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in ctfc.next_fixtures %}
+                    <tr>
+                        <td>{{ f.date | date: "%-d %b %Y" }}</td>
+                        <td>{{ f.time | slice: 0, 5 }}</td>
+                        <td>{% if f.venue_type == "Home" %}Cheltenham Town vs {{ f.opponent }}{% else %}{{ f.opponent
+                            }} vs Cheltenham Town{% endif %}</td>
+                        <td>{{ f.venue }}</td>
+                        <td>{{ f.competition }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No fixture currently scheduled — check the <a href="{{ ctfc.team.website }}" target="_blank"
+                rel="noopener">official club website</a> for the latest.</p>
+        {% endif %}
+
+        <h2>Recent Results</h2>
+        {% if ctfc.last_results.size > 0 %}
+        <div class="table-scroll">
+            <table class="ctfc-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Fixture</th>
+                        <th scope="col">Score</th>
+                        <th scope="col">Competition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in ctfc.last_results %}
+                    <tr>
+                        <td>{{ r.date | date: "%-d %b %Y" }}</td>
+                        <td>{% if r.venue_type == "Home" %}Cheltenham Town vs {{ r.opponent }}{% else %}{{ r.opponent
+                            }} vs Cheltenham Town{% endif %}</td>
+                        <td>{% if r.venue_type == "Home" %}{{ r.home_score }}&ndash;{{ r.away_score }}{% else %}{{
+                            r.away_score }}&ndash;{{ r.home_score }}{% endif %}</td>
+                        <td>{{ r.competition }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>Our free data source only reliably returns the single most recent result — see the club's own <a
+                    href="{{ ctfc.team.website }}" target="_blank" rel="noopener">results and fixtures page</a> for
+                the full season.</small></p>
+        {% else %}
+        <p>No recent results available — see the club's own <a href="{{ ctfc.team.website }}" target="_blank"
+                rel="noopener">results and fixtures page</a>.</p>
+        {% endif %}
+
+        <h2>Getting to Whaddon Road</h2>
+
+        {% assign home_record = ctfc.next_fixtures | where: "venue_type", "Home" | first %}
+        {% if home_record == nil %}{% assign home_record = ctfc.last_results | where: "venue_type", "Home" | first %}{% endif %}
+        <p>Cheltenham Town play at Whaddon Road, Whaddon, Cheltenham, GL52 5NA{% if home_record.venue %} — currently
+            known by its sponsor's name, "{{ home_record.venue }}"{% endif %}.</p>
+
+        <h3>By Train</h3>
+        <p>Cheltenham Spa station is around 2 miles from the ground, roughly a 40-minute walk. From the station,
+            local buses run into the town centre, from where it's a shorter walk or short taxi ride up Prestbury
+            Road to Whaddon Road. A taxi direct from the station takes about 10 minutes.</p>
+
+        <h3>By Car and Park &amp; Ride</h3>
+        <p>Whaddon Road itself has very limited parking on match days, and nearby residential streets operate
+            parking restrictions. Cheltenham's two Park &amp; Ride sites — <a
+                href="https://www.gloucestershire.gov.uk/major-projects-list/m5-junction-10/arle-court-transport-hub/"
+                target="_blank" rel="noopener">Arle Court Transport Hub</a> (GL51 6SY, near M5 Junction 11) and
+            Cheltenham Racecourse (GL50 4SH, seasonal) — run regular buses into the town centre, leaving a walk or
+            short taxi on to the ground; neither runs a direct matchday shuttle to Whaddon Road, so allow extra time
+            on top of the bus journey.</p>
+
+        <p>Fixture and result data from <a href="{{ ctfc.source_url }}" target="_blank" rel="noopener">{{ ctfc.source
+                }}</a>'s free, crowd-sourced API.
+            {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y %H:%M" }}.{% endif %}</p>
+    </div>
+</div>
+{% include footer.html %}
