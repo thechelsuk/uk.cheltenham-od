@@ -453,7 +453,7 @@ def show_flagged(flagged: list[tuple[Event, Event, int]]) -> None:
 # --------------------------------------------------------------------------
 
 def create_front_matter(post_date: date, events: list[Event]) -> str:
-    title = f"Upcoming Events For {post_date.strftime('%B %Y')}"
+    title = f"Upcoming Events for {post_date.strftime('%B %Y')}"
 
     lines = [
         "---",
