@@ -3,8 +3,9 @@
 release and write _data/mobile-coverage.json. Ofcom only publishes mobile
 coverage at local authority / parliamentary constituency / devolved
 constituency level (no postcode-level file, unlike fixed broadband), so this
-is a single constituency-wide summary, refreshed whenever a new release is
-manually dropped into _data-sources/ (roughly twice a year) — see GUIDE.md.
+is a single constituency-wide summary. Run manually after dropping a new
+release CSV into _data-sources/ (roughly twice a year) — not part of any
+scheduled workflow, since that gitignored input file only exists locally.
 """
 import csv
 import json
