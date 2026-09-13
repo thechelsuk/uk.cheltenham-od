@@ -35,21 +35,21 @@ Cheltenham has four parkrun events — free, weekly, timed runs open to everyone
 
 Beyond parkrun, Cheltenham has several running clubs for regular training and racing:
 
-- [Cheltenham & County Harriers](https://www.cheltenhamharriers.co.uk/) &rarr; — the town's long-established athletics and running club, training from Prince of Wales Stadium.
-- [Cheltenham Running and Walking Club](https://cheltenhamrunningclub.co.uk/) &rarr; — an inclusive running and walking club for all abilities, from Couch to 5k up to sub-18-minute 5k runners.
-- [CLC Striders](https://clcstriders-runningclub.co.uk/) &rarr; — an inclusive and competitive running club training from the CLC Health & Fitness Centre.
-- [Almost Athletes](https://almostathletes.co.uk/) &rarr; — Cheltenham's largest running club, for runners of all abilities.
+- [Cheltenham & County Harriers](https://www.cheltenhamharriers.co.uk/) &rarr; the town's long-established athletics and running club, training from Prince of Wales Stadium.
+- [Cheltenham Running and Walking Club](https://cheltenhamrunningclub.co.uk/) &rarr; an inclusive running and walking club for all abilities, from Couch to 5k up to sub-18-minute 5k runners.
+- [CLC Striders](https://clcstriders-runningclub.co.uk/) &rarr; an inclusive and competitive running club training from the CLC Health & Fitness Centre.
+- [Almost Athletes](https://almostathletes.co.uk/) &rarr; Cheltenham's largest running club, for runners of all abilities.
 
 ## Hiking and Walking
 
-- [Cheltenham Rambling Club](https://www.cheltenhamramblingclub.org.uk/) &rarr; — an independent local walking club with walks of 4 to 14 miles.
-- [Cheltenham Spa Walkers](https://gloucestershireramblers.org.uk/csw/) &rarr; — Cheltenham's local group of the Ramblers, Britain's walking charity.
-- [Cotswold Voluntary Wardens: guided walks](https://www.cotswolds-nl.org.uk/visiting-and-exploring/guided-walks/) &rarr; — free, volunteer-led guided walks across the Cotswolds National Landscape on Cheltenham's doorstep.
+- [Cheltenham Rambling Club](https://www.cheltenhamramblingclub.org.uk/) &rarr; an independent local walking club with walks of 4 to 14 miles.
+- [Cheltenham Spa Walkers](https://gloucestershireramblers.org.uk/csw/) &rarr; Cheltenham's local group of the Ramblers, Britain's walking charity.
+- [Cotswold Voluntary Wardens: guided walks](https://www.cotswolds-nl.org.uk/visiting-and-exploring/guided-walks/) &rarr; free, volunteer-led guided walks across the Cotswolds National Landscape on Cheltenham's doorstep.
 
 ## Climbing
 
-- [Boulders Cheltenham](https://cheltenham.bouldersuk.com/) &rarr; — an indoor bouldering centre in Cheltenham itself, for first-timers through to experienced climbers.
-- [British Mountaineering Council: club finder](https://www.thebmc.co.uk/en/clubs) &rarr; — for outdoor climbing and mountaineering clubs across Gloucestershire and the wider region.
+- [Boulders Cheltenham](https://cheltenham.bouldersuk.com/) &rarr; an indoor bouldering centre in Cheltenham itself, for first-timers through to experienced climbers.
+- [British Mountaineering Council: club finder](https://www.thebmc.co.uk/en/clubs) &rarr; for outdoor climbing and mountaineering clubs across Gloucestershire and the wider region.
 
 ## Notes
 
