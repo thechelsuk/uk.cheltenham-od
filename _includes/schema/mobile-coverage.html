@@ -1,0 +1,97 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Mobile Phone Coverage",
+  "description": "2G, 3G, 4G, 5G and voice call mobile coverage for the Cheltenham constituency, indoors, outdoors and across the local area, from Ofcom's Connected Nations data.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "mobile coverage",
+    "mobile signal",
+    "Cheltenham",
+    "4G",
+    "5G",
+    "5G Standalone",
+    "Ofcom Connected Nations",
+    "EE", "O2", "Three", "Vodafone"
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Cheltenham parliamentary constituency"
+  },
+  "dateModified": "{{ site.data['mobile-coverage'].generated_at }}",
+  "creator": {
+    "@type": "Organization",
+    "name": "Cheltenham Open Data",
+    "url": "{{ '/' | absolute_url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cheltenham Open Data"
+  },
+  "isBasedOn": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/",
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "variableMeasured": [
+    "2G/3G/4G/5G/Voice coverage (% premises indoor)",
+    "2G/3G/4G/5G/Voice coverage (% premises outdoor)",
+    "2G/3G/4G/5G/Voice coverage (% geographic area)"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do \"indoor\", \"outdoor\" and \"local area\" mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Indoor and outdoor coverage are both measured at premises (homes and businesses) — indoor is the harder test, since walls, insulation and modern double glazing all weaken a signal. \"Local area\" (Ofcom calls this \"geographic\" coverage) is different: it's the percentage of the physical land area with a predicted signal, including fields, roads and open spaces between buildings, not just where people live and work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"at least one network\" actually mean for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means at least one of EE, O2, Three or Vodafone is predicted to reach that location — not necessarily the network on your SIM. If your specific network shows gaps, a different provider might still work well in the same spot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't this match what I actually get on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofcom's own guidance lists several reasons real-world signal can differ from the prediction: how far you are from the nearest mast, hills, trees and buildings in the way, how busy the local mast is at that moment, the materials your building or vehicle is made from, bad weather, and even the quality of your phone's own antenna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why isn't there a map like the broadband page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofcom publishes fixed broadband data postcode by postcode, which is granular enough to map ward by ward. Mobile coverage is only published down to constituency level, so there's no sub-area breakdown to map; every figure here is one average for the whole of Cheltenham."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between 5G and \"5G Standalone\"?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ordinary 5G (\"non-standalone\") still leans on a network's existing 4G infrastructure behind the scenes. 5G Standalone (5G SA) runs on an entirely new 5G core network, enabling lower latency and features aimed at business and future services — it's newer and less widely rolled out, which is why its coverage figures lag behind ordinary 5G."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is this updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofcom publishes this data roughly twice a year as part of its Connected Nations programme, with occasional interim updates. This page is refreshed whenever a new release is available."
+      }
+    }
+  ]
+}
+</script>

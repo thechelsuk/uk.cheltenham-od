@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Filter GIAS schools to Cheltenham postcode districts, write _data/schools.json."""
+"""Filter GIAS schools to Cheltenham postcode districts, write _data/schools.json.
+
+Run manually after downloading a new GIAS extract into _data-sources/ — not
+part of any scheduled workflow, since that gitignored input file only exists
+locally.
+"""
 import re
 import csv
 import json
