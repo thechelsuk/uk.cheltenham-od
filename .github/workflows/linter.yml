@@ -6,6 +6,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  statuses: write
 
 jobs:
   build:
@@ -14,9 +15,16 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - name: Linter
         uses: github/super-linter/slim@v7
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 0% duplication threshold is the wrong bar for a content-heavy
+          # Jekyll site: sibling pages (crime/food-standards/house-prices
+          # year pages, per-category layouts) are deliberately similar
+          # front matter/structure, not a code smell to fix.
+          VALIDATE_JSCPD: false
