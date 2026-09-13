@@ -1,0 +1,97 @@
+{% include header.html %}
+{% assign mobile = site.data["mobile-coverage"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ mobile.geography_name }} {{ mobile.geography }} — {{ mobile.premises_count }} premises</li>
+                <li>Ofcom reference date {{ mobile.reference_date | date: "%-d %B %Y" }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Coverage by Generation</h2>
+        <p><small>Percentage of premises with a usable signal from <strong>at least one</strong> network. "Indoor" is the harder test — outdoor coverage is nearly always better.</small></p>
+        <div class="table-scroll">
+            <table class="mobile-coverage-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Service</th>
+                        <th scope="col" class="number">Indoor</th>
+                        <th scope="col" class="number">Outdoor</th>
+                        <th scope="col" class="number">Local area</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in mobile.services %}
+                    <tr>
+                        <td>{{ s.label }}</td>
+                        <td class="number" data-value="{{ s.indoor_at_least_one }}">{% if s.indoor_at_least_one %}{{ s.indoor_at_least_one }}%{% else %}—{% endif %}</td>
+                        <td class="number" data-value="{{ s.outdoor_at_least_one }}">{{ s.outdoor_at_least_one }}%</td>
+                        <td class="number" data-value="{{ s.geographic_at_least_one }}">{{ s.geographic_at_least_one }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Coverage From All Four Networks</h2>
+        <p>Having a signal from <em>one</em> network is one thing — having a choice of <em>every</em> network (EE, O2, Three and Vodafone) is a stronger test, and a better proxy for reliable coverage if you're not sure which network your phone is on.</p>
+        <div class="table-scroll">
+            <table class="mobile-coverage-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Service</th>
+                        <th scope="col" class="number">Indoor (all 4)</th>
+                        <th scope="col" class="number">Outdoor (all 4)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in mobile.services %}
+                    {% if s.outdoor_all_operators %}
+                    <tr>
+                        <td>{{ s.label }}</td>
+                        <td class="number" data-value="{{ s.indoor_all_operators }}">{% if s.indoor_all_operators %}{{ s.indoor_all_operators }}%{% else %}—{% endif %}</td>
+                        <td class="number" data-value="{{ s.outdoor_all_operators }}">{{ s.outdoor_all_operators }}%</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>2G, 3G and the 5G Standalone tiers aren't shown here — most networks have switched off 3G, and not every network has rolled out 5G Standalone yet, so an "all four" figure isn't meaningful for those.</small></p>
+
+        <h2>About This Data</h2>
+        <p>Data from <a href="{{ mobile.source_url }}" target="_blank" rel="noopener">{{ mobile.source }}</a>, licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener">Open Government Licence v3.0</a>. Figures are predictions submitted by the four mobile network operators (EE, O2, Three and Vodafone) with a reference date of {{ mobile.reference_date | date: "%-d %B %Y" }}, covering the {{ mobile.geography_name }} {{ mobile.geography }}.</p>
+
+        <p class="mobile-coverage-attribution"><small>
+            {% if mobile.generated_at %}Last updated {{ mobile.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>What Do "Indoor", "Outdoor" and "Local Area" Mean?</h3>
+        <p>Indoor and outdoor coverage are both measured at premises (homes and businesses) — indoor is the harder test, since walls, insulation and modern double glazing all weaken a signal. "Local area" (Ofcom calls this "geographic" coverage) is different: it's the percentage of the physical land area with a predicted signal, including fields, roads and open spaces between buildings, not just where people live and work.</p>
+
+        <h3>What Does "at Least One Network" Actually Mean for Me?</h3>
+        <p>It means at least one of EE, O2, Three or Vodafone is predicted to reach that location — not necessarily the network on your SIM. If your specific network shows gaps, a different provider might still work well in the same spot; see the "All Four Networks" table above for how much of Cheltenham has a genuine choice.</p>
+
+        <h3>Why Doesn't This Match What I Actually Get on My Phone?</h3>
+        <p>Ofcom's own guidance lists several reasons real-world signal can differ from the prediction: how far you are from the nearest mast, hills, trees and buildings in the way, how busy the local mast is at that moment, the materials your building or vehicle is made from, bad weather, and even the quality of your phone's own antenna. Treat this page as a town-wide guide, not a guarantee for your exact address.</p>
+
+        <h3>Why Isn't There a Map Like the Broadband Page?</h3>
+        <p>Ofcom publishes fixed broadband data postcode by postcode, which is granular enough to map ward by ward — see our <a href="/cheltenham-broadband-internet-speeds">broadband coverage page</a>. Mobile coverage is only published down to constituency level, so there's no sub-area breakdown to map; every figure here is one average for the whole of Cheltenham.</p>
+
+        <h3>What's the Difference Between 5G and "5G Standalone"?</h3>
+        <p>Ordinary 5G ("non-standalone") still leans on a network's existing 4G infrastructure behind the scenes. 5G Standalone (5G SA) runs on an entirely new 5G core network, enabling lower latency and features aimed at business and future services — it's newer and less widely rolled out, which is why its coverage figures lag behind ordinary 5G.</p>
+
+        <h3>How Often Is This Updated?</h3>
+        <p>Ofcom publishes this data roughly twice a year as part of its Connected Nations programme, with occasional interim updates. This page is refreshed whenever a new release is available.</p>
+    </div>
+</div>
+{% include footer.html %}

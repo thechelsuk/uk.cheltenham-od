@@ -42,6 +42,7 @@ jobs:
                   python _python/cheltenham-stats.py
                   python _python/parkrun.py
                   python _python/listed-buildings.py
+                  python _python/mobile-coverage.py
 
             - name: Commit and push if it changed
               id: commit
