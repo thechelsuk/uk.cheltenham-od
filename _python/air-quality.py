@@ -49,7 +49,7 @@ RADIUS_KM = 20
 # station list (the DEFRA SOS instance's server-side bbox/near params
 # returned 400/500 errors in testing).
 
-OUTPUT_FILE = "_pages/air-quality.md"
+OUTPUT_FILE = "_pages/safety-environment/air-quality.md"
 DEBUG = False
 
 

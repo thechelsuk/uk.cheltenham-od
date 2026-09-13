@@ -2,7 +2,7 @@
 """
 Scrapes the Cheltenham Borough Council recycling banks page and rewrites
 the content between the recycling_banks placeholder markers in
-_pages/recycling.md.
+_pages/home-property/recycling.md.
 
 Run from the repo root:
     python _python/recycling.py
@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 import helper
 
 URL = "https://www.cheltenham.gov.uk/recyclingbanks"
-OUTPUT_PATH = Path("_pages/recycling.md")
+OUTPUT_PATH = Path("_pages/home-property/recycling.md")
 MARKER = "recycling_banks"
 
 HEADERS = {

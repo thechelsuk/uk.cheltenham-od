@@ -47,7 +47,7 @@ if __name__ == "__main__":
             output += f"- {title}\n"
             output += f"- {summary}\n"
 
-    md = root / "_pages/flood-warnings.md"
+    md = root / "_pages/safety-environment/flood-warnings.md"
     md_contents = md.open().read()
     md_contents = helper.replace_chunk(md_contents, "flood_marker", output)
     md.open("w").write(md_contents)

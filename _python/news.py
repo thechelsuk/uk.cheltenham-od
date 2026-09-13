@@ -48,7 +48,7 @@ if __name__ == "__main__":
     for item in all_items:
         string += f"- {item['title']} ([{item['published']}]({item['link']}))\n"
 
-    f = root / "_pages/news.md"
+    f = root / "_pages/about-info/news.md"
     m = f.open().read()
     c = helper.replace_chunk(m, "news_marker", string)
     f.open("w").write(c)

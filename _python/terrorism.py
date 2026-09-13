@@ -71,7 +71,7 @@ if __name__ == "__main__":
     string += f'- It has been {days_since_update} days since the last change ({update})\n'
     string += f'- Details: {strip_html(desc)}\n'
 
-    f = root / "_pages/security.md"
+    f = root / "_pages/safety-environment/security.md"
     m = f.open().read()
     c = helper.replace_chunk(m, "threat_marker", string)
     f.open("w").write(c)
