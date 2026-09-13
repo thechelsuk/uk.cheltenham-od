@@ -52,6 +52,12 @@ Available exclusively to current Founding and Standard sponsors. Adds one editor
 
 - [Add an editorial boost &rarr;](https://buy.stripe.com/14AfZh5874afecTaxM0Ny02)
 
+### Principal Sponsor — £250 per Month (3 month minimum)
+
+Become our principal sponsor with an advert slot on our home page - front and centre, with one editorial post in our news & announcements each month — ideal for a long term local business supporting the local community. Just one slot, so it's first come, first served.
+
+- [Buy today! &rarr;](https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03)
+
 > See [current availability of the sponsorship slots](/sponsor/slots).
 > By sponsoring you agree to our a [sponsorship terms](/sponsor/terms).
 

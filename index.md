@@ -6,12 +6,19 @@ seo: "Free Cheltenham open data for Gloucestershire: compare local fuel prices, 
 permalink: /
 type: "cod"
 description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices, crime figures, flood alerts, food banks, GPs, planning, local news and weather — all free, in one place."
+sponsor:
+  url: "/sponsor"
+  logo: "/images/sponsors/logo.png"
+  name: "Your Local Business Here  - 01242 000000"
+  tagline: "Become a principal sponsor of Cheltenham Open Data &rarr;"
 ---
 
 ## Latest from Cheltenham Open Data
 
 {% for post in site.posts limit: 5 %}
-- [{{ post.title }}]({{ post.url }}) &mdash; {{ post.date | date: "%-d %B %Y" }}
+
+- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%-d %B %Y" }}
+
 {% endfor %}
 
 - [See all announcements &rarr;](/news)
