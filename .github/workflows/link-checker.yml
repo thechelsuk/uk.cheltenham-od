@@ -1,0 +1,73 @@
+name: "Link Checker"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '13 20 * * 5'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.11
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          # Check the built HTML, not the Jekyll source — the source is full of
+          # unrendered Liquid ({{ ... }}) and root-relative paths that only
+          # resolve once Jekyll has generated real pages.
+          #
+          # --accept includes 403/405 alongside real "alive" codes: several
+          # sites we link to (parkrun, data.bus-data.dft.gov.uk, our own
+          # /contact and /submission form endpoints) correctly block or
+          # reject plain GET requests from bots while working fine for real
+          # visitors, so treating those as failures would just be noise.
+          # google.com/maps links are excluded outright — Google blocks
+          # automated requests to them with a captcha/consent redirect loop
+          # that has nothing to do with whether the link itself is good.
+          args: >-
+            --root-dir ${{ github.workspace }}/_site
+            --fallback-extensions html
+            --accept 100..=103,200..=299,403,405,429
+            --exclude 'google\.com/maps'
+            --timeout 20
+            --max-retries 3
+            --no-progress
+            './_site/**/*.html'
+          fail: true
+          format: markdown
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for an already-open report
+        id: existing
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          count=$(gh issue list --repo "${{ github.repository }}" --label broken-links --state open --json number --jq 'length')
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Create Issue From File
+        if: steps.lychee.outputs.exit_code != 0 && steps.existing.outputs.count == '0'
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: broken-links
