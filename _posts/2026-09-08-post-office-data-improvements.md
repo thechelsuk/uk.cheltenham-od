@@ -9,25 +9,25 @@ date: 2026-09-08 07:00
 
 Cheltenham Open Data has expanded the [post office locations page](/cheltenham-post-office-locations).
 
-Pulling OpenStreeMap data, the page now shows a tables of all post offices in the area, as well as a map showing the locations.
+Pulling OpenStreetMap data, the page now shows a table of all post offices in the area, as well as a map showing the locations.
 
 ## FAQs
 
 ### What Does the Post Office Page Show?
 
-- A table. showing each post office name, address, type and a link to Google Maps.
+- A table showing each post office's name, address, type and a link to Google Maps.
 
 ### Where Does the Post Office Data Come From?
 
-- Directly from OpenStreeMap available under the [Open Database Licence (ODbL)](https://opendatacommons.org/licenses/odbl/)
+- Directly from OpenStreetMap, available under the [Open Database Licence (ODbL)](https://opendatacommons.org/licenses/odbl/).
 
 ### How Often Is It Updated?
 
-- The list is refreshed daily to ensure data is accruate and timely, post offices don't tend to change often.
+- The list is refreshed daily to ensure data is accurate and timely, though post offices don't tend to change often.
 
 ### What Do the Type Codes Mean?
 
-- This is a value their determines whether this is a counter style branch or a dedicated building unit or area. It's an exercise for the reader to determine the true difference between the dedicate area upstairs in WH Smith's vs half a newsagents on Bath Road, for exmple.
+- It's a value that determines whether this is a counter-style branch or a dedicated building or area. It's up to the reader to judge the true difference between the dedicated area upstairs in WH Smith's and half a newsagents on Bath Road, for example.
 
 ### What Can You Do in a Post Office
 
