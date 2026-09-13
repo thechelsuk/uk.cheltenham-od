@@ -41,6 +41,11 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Abandoned car, 13th September :- [10090933](https://www.fixmystreet.com/report/10090933)
+- Flytipped items, 13th September :- [10090675](https://www.fixmystreet.com/report/10090675)
+- Sewer cover faulty, 13th September :- [10090673](https://www.fixmystreet.com/report/10090673)
+- Flytipped item, 13th September :- [10090670](https://www.fixmystreet.com/report/10090670)
+- Volunteer litter pick bags ready for collection, 13th September :- [10090654](https://www.fixmystreet.com/report/10090654)
 - Sign damaged plus need more information, 13th September :- [10090556](https://www.fixmystreet.com/report/10090556)
 - Sink holes, 13th September :- [10090049](https://www.fixmystreet.com/report/10090049)
 - Rubbish on the sides of the road, 13th September :- [10090010](https://www.fixmystreet.com/report/10090010)
@@ -56,10 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Garden extended over footpath with furniture and plants, 12th September :- [10088618](https://www.fixmystreet.com/report/10088618)
 - Good spot, 12th September :- [10088592](https://www.fixmystreet.com/report/10088592)
 - Road Closed sign and diversion sign left behind after wok completed, 12th September :- [10088482](https://www.fixmystreet.com/report/10088482)
-- Dead Birch Tree, 12th September :- [10088318](https://www.fixmystreet.com/report/10088318)
-- Tree adjacent to parking area and school typhoon way, 12th September :- [10087332](https://www.fixmystreet.com/report/10087332)
-- Fly tipping waste dumped again., 12th September :- [10088112](https://www.fixmystreet.com/report/10088112)
-- By Old Spot pub, 12th September :- [10088065](https://www.fixmystreet.com/report/10088065)
-- Large tree fallen blocking footpath, 12th September :- [10088035](https://www.fixmystreet.com/report/10088035)
 
 <!-- fix_marker ends -->
