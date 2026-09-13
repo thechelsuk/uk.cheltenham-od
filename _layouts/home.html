@@ -58,6 +58,27 @@
 
         {{ content }}
 
+        <div class="home-hero-grid">
+            <div>
+                <h2>Local Classifieds in Cheltenham</h2>
+                {% assign now = site.time | date: "%s" | plus: 0 %}
+                {% assign classifieds_count = 0 %}
+                {% for item in site.classifieds %}
+                    {% assign exp = item.expires | date: "%s" | plus: 0 %}
+                    {% if exp > now %}
+                        {% assign classifieds_count = classifieds_count | plus: 1 %}
+                    {% endif %}
+                {% endfor %}
+                <ul>
+                    <li><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live classifieds</a></li>
+                    <li><a href="/submission">Add yours</a></li>
+                </ul>
+            </div>
+            <div>
+                {% include referral.html %}
+            </div>
+        </div>
+
     </div>
 </div>
 

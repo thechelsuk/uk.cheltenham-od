@@ -15,19 +15,3 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 {% endfor %}
 
 - [See all announcements &rarr;](/news)
-
-## Local Classifieds in Cheltenham
-
-{% assign now = site.time | date: "%s" | plus: 0 %}
-{% assign count = 0 %}
-{% for item in site.classifieds %}
-  {% assign exp = item.expires | date: "%s" | plus: 0 %}
-  {% if exp > now %}
-    {% assign count = count | plus: 1 %}
-  {% endif %}
-{% endfor %}
-
-- [Currently there are {{ count }} live classifieds](/cheltenham-classifieds)
-- [Add yours](/submission)
-
-{% include referral.html %}
