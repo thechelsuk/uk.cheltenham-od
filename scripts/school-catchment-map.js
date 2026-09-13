@@ -11,12 +11,13 @@
         return;
     }
 
-    // Cheltenham town centre — schools further than this are a different town
-    // (e.g. Winchcombe, Fairford) sharing a Cheltenham postcode district, and
-    // including them would stretch the "nearest school" zones across open
-    // countryside rather than reflect choices within Cheltenham itself.
+    // Cheltenham town centre — schools further than this are a different
+    // village or town (e.g. Winchcombe, Bourton-on-the-Water) sharing a
+    // Cheltenham postcode district, and including them would stretch the
+    // "nearest school" zones across open countryside rather than reflect
+    // choices within Cheltenham itself. Set per-page via data-max-miles.
     var CENTRE = { lat: 51.8994, lon: -2.0783 };
-    var MAX_MILES = 4.5;
+    var MAX_MILES = parseFloat(el.dataset.maxMiles) || 4.5;
 
     function milesBetween(a, b) {
         var R = 3958.8;
@@ -43,10 +44,13 @@
 
     if (points.length < 2) return;
 
-    var COLORS = [
-        "#ca3393", "#3393ca", "#77267e", "#2e9e5b",
-        "#e08a1e", "#c94b3c", "#4b6fb8", "#8a5fc4",
-    ];
+    // Golden-angle hue rotation gives N visually distinct colours without
+    // needing a hand-picked palette sized to the school count (7 for
+    // secondary, 30+ for primary).
+    function colorForIndex(i) {
+        var hue = (i * 137.508) % 360;
+        return "hsl(" + hue.toFixed(0) + ", 62%, 42%)";
+    }
 
     var map = L.map(el);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -75,7 +79,7 @@
     var group = [];
 
     points.forEach(function (p, i) {
-        var color = COLORS[i % COLORS.length];
+        var color = colorForIndex(i);
         var cell = voronoi.cellPolygon(i);
         if (cell) {
             var latLngs = cell.map(function (pt) { return [pt[1], pt[0]]; });

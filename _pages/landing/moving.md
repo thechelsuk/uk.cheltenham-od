@@ -30,7 +30,8 @@ Different parts of town suit different priorities — proximity to schools, to t
 Cheltenham is well served for education, from state primaries and secondaries to a grammar school and a strong independent sector. If you're moving with children, school proximity often shapes which area you choose.
 
 - [Schools in Cheltenham](/cheltenham-schools) — every school across GL50–GL54 by phase and type, with official records for inspection reports and admissions.
-- [Secondary school catchment areas map](/cheltenham-schools/catchment-areas) — which secondary school is nearest to each part of town, by straight-line distance.
+- [Secondary school catchment areas map](/cheltenham-schools/catchment-areas/secondary) — which secondary school is nearest to each part of town, by straight-line distance.
+- [Primary school catchment areas map](/cheltenham-schools/catchment-areas/primary) — the same, for primary schools.
 
 ## Healthcare and Essentials
 
