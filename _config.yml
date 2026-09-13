@@ -113,11 +113,11 @@ navigation_header:
     group: "Getting Around"
   - name: Cheltenham Bus Data
     link: /cheltenham-bus-data
-    description: "Bus routes serving Cheltenham and their BODS publishing status"
+    description: "Bus routes serving Cheltenham and disruption statuses"
     group: "Getting Around"
   - name: Cheltenham Public Toilets
     link: /cheltenham-public-toilets
-    description: "Local public toilet locations and information."
+    description: "Local public toilet with mapped locations and information."
     group: "Getting Around"
 
   # Home & Property
@@ -165,13 +165,9 @@ navigation_header:
     link: /cheltenham-events
     description: "Events and Activities in Cheltenham and Gloucestershire"
     group: "Things To Do"
-  - name: Cheltenham Sports
+  - name: Cheltenham Sports &amp; Clubs
     link: /cheltenham-sports
     description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
-    group: "Things To Do"
-  - name: Cheltenham Third Spaces
-    link: /cheltenham-third-spaces
-    description: "Local third spaces and community hubs in Cheltenham."
     group: "Things To Do"
   - name: Cheltenham Points of Interest
     link: /cheltenham-points-of-interest
@@ -184,6 +180,10 @@ navigation_header:
   - name: Cheltenham Public Holidays
     link: /cheltenham-public-holidays
     description: "Confirmed public holidays."
+    group: "Things To Do"
+  - name: Cheltenham Festivals
+    link: /festivals
+    description: "Cheltenham's year-round festival calendar — Literature, Racing, Jazz, Science and Music."
     group: "Things To Do"
 
   # Community & Support
@@ -207,17 +207,21 @@ navigation_header:
     link: /cheltenham-food-standards
     description: "Food hygiene ratings for venues in Cheltenham."
     group: "Community & Support"
+  - name: Cheltenham Third Spaces
+    link: /cheltenham-third-spaces
+    description: "Local third spaces and community hubs in Cheltenham."
+    group: "Community & Support"
 
   # About & Info
   - name: All About Cheltenham
     link: /about-cheltenham
     description: "Cheltenham population, growth, employment and Census 2021 statistics"
     group: "About & Info"
-  - name: Cheltenham Schools
+  - name: Cheltenham Schools &amp; Catchment Areas
     link: /cheltenham-schools
     description: "Primary, secondary, independent, and special schools in Cheltenham."
     group: "About & Info"
-  - name: Cheltenham Post Offices
+  - name: Cheltenham Post Offices &amp; Lockers
     link: /cheltenham-post-office-locations
     description: "Find Post Offices, InPost lockers and DPD Pickup points in Cheltenham"
     group: "About & Info"
@@ -248,6 +252,8 @@ footer_columns:
         link: /cheltenham-events
       - name: Cheltenham EV Charging
         link: /cheltenham-ev-charging
+      - name: Cheltenham Festivals
+        link: /festivals
       - name: Cheltenham Fix My Street
         link: /cheltenham-fix-my-street
       - name: Cheltenham Flood Warnings

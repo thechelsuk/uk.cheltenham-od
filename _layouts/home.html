@@ -1,0 +1,85 @@
+{% include header.html %}
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+
+        <h2>Principal Sponsor</h2>
+        {% include sponsor.html sponsor=page.sponsor %}
+
+        {% include bus-alert.html %}
+
+        {% assign weather = site.data["weather-today"] %}
+        <div class="home-hero-grid">
+            <div>
+                <h2>Today's Weather at a Glance</h2>
+                <div class="weather-glance">
+                    {% if weather %}
+                    <p class="weather-glance-date">{{ weather.date }}</p>
+                    <div class="weather-glance-header">
+                        {% if weather.icon %}
+                        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
+                            alt="{{ weather.desc }}" class="weather-glance-icon" width="64" height="64">
+                        {% endif %}
+                        <div>
+                            <span class="weather-glance-temp">{{ weather.temp }}&deg;C</span>
+                            <span class="weather-glance-desc">{{ weather.desc | capitalize }} &middot; feels like
+                                {{ weather.feels_like }}&deg;C</span>
+                        </div>
+                    </div>
+                    <ul class="weather-glance-stats">
+                        <li><span>High / Low</span><strong>{{ weather.high }}&deg; / {{ weather.low }}&deg;</strong>
+                        </li>
+                        <li><span>Wind</span><strong>{{ weather.wind }} m/s</strong></li>
+                        <li><span>Humidity</span><strong>{{ weather.humidity }}%</strong></li>
+                        <li><span>Sunrise / Sunset</span><strong>{{ weather.sunrise }} / {{ weather.sunset }}</strong>
+                        </li>
+                    </ul>
+                    {% endif %}
+                </div>
+                <p><a href="/cheltenham-10-day-weather-forecast">See a full 10-day Cheltenham forecast &rarr;</a></p>
+            </div>
+            <div>
+                <h2>Explore by Category</h2>
+                <ul>
+                    <li><a href="/explore/getting-around">Getting Around</a></li>
+                    <li><a href="/explore/home-property">Home &amp; Property</a></li>
+                    <li><a href="/explore/safety-environment">Safety &amp; Environment</a></li>
+                    <li><a href="/explore/things-to-do">Things To Do</a></li>
+                    <li><a href="/explore/community-support">Community &amp; Support</a></li>
+                    <li><a href="/explore/about-info">About &amp; Info</a></li>
+                    <li><a href="/festivals">Festivals</a></li>
+                </ul>
+            </div>
+        </div>
+
+        {{ content }}
+
+        <div class="home-hero-grid">
+            <div>
+                <h2>Local Classifieds in Cheltenham</h2>
+                {% assign now = site.time | date: "%s" | plus: 0 %}
+                {% assign classifieds_count = 0 %}
+                {% for item in site.classifieds %}
+                    {% assign exp = item.expires | date: "%s" | plus: 0 %}
+                    {% if exp > now %}
+                        {% assign classifieds_count = classifieds_count | plus: 1 %}
+                    {% endif %}
+                {% endfor %}
+                <ul>
+                    <li><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live classifieds</a></li>
+                    <li><a href="/submission">Add yours</a></li>
+                </ul>
+            </div>
+            <div>
+                {% include referral.html %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% include footer.html %}
