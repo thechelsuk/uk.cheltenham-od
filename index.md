@@ -11,6 +11,7 @@ sponsor:
   logo: "/assets/images/sponsors/logo.png"
   name: "Your Local Business Here  - 01242 000000"
   tagline: "Become a principal sponsor of Cheltenham Open Data &rarr;"
+  type: "Prinicpal Site Sponsor"
 ---
 
 ## Latest from Cheltenham Open Data
