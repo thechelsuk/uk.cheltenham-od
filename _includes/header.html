@@ -199,25 +199,18 @@
 
                     <div class="nav-panel" id="nav-panel" hidden>
                         <div class="nav-panel-inner">
-                            {% assign nav_items = site.navigation_header %}
-                            {% assign half = nav_items.size | divided_by: 2.0 | ceil %}
+                            {% assign nav_groups = site.navigation_header | group_by: "group" %}
+                            {% for group in nav_groups %}
                             <div class="nav-panel-col">
-                                {% for item in nav_items limit: half %}
+                                <h2 class="nav-panel-group-title">{{ group.name }}</h2>
+                                {% for item in group.items %}
                                 <div class="nav-panel-item">
                                     <a class="nav-panel-item-title" href="{{ item.link }}">{{ item.name }}</a>
                                     <span class="nav-panel-item-desc">{{ item.description }}</span>
                                 </div>
                                 {% endfor %}
                             </div>
-                            <div class="nav-panel-col">
-                                {% assign remaining = nav_items.size | minus: half %}
-                                {% for item in nav_items offset: half limit: remaining %}
-                                <div class="nav-panel-item">
-                                    <a class="nav-panel-item-title" href="{{ item.link }}">{{ item.name }}</a>
-                                    <span class="nav-panel-item-desc">{{ item.description }}</span>
-                                </div>
-                                {% endfor %}
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </header>
