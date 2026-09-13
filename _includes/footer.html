@@ -11,9 +11,6 @@
                     {% for item in col.links %}
                     {% if item.heading %}
                     <li class="footer-subheading">{{ item.heading }}</li>
-                    <li><a id="theme-toggle-btn" aria-pressed="false" type="button" aria-label="Toggle dark mode"
-                            href="#footer">Theme
-                            Toggle</a></li>
                     {% else %}
                     <li><a href="{{ item.link }}">{{ item.name }}</a></li>
                     {% endif %}
