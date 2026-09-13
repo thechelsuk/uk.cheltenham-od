@@ -30,9 +30,12 @@
                     {% for p in employment.series %}
                     <tr>
                         <td data-val="{{ p.year }}">{{ p.year }}</td>
-                        <td class="number" data-val="{{ p.economic_activity_rate }}">{% if p.economic_activity_rate %}{{ p.economic_activity_rate }}%{% else %}—{% endif %}</td>
-                        <td class="number" data-val="{{ p.employment_rate }}">{% if p.employment_rate %}{{ p.employment_rate }}%{% else %}—{% endif %}</td>
-                        <td class="number" data-val="{{ p.unemployment_rate }}">{% if p.unemployment_rate %}{{ p.unemployment_rate }}%{% else %}suppressed{% endif %}</td>
+                        <td class="number" data-val="{{ p.economic_activity_rate }}">{% if p.economic_activity_rate %}{{
+                            p.economic_activity_rate }}%{% else %}—{% endif %}</td>
+                        <td class="number" data-val="{{ p.employment_rate }}">{% if p.employment_rate %}{{
+                            p.employment_rate }}%{% else %}—{% endif %}</td>
+                        <td class="number" data-val="{{ p.unemployment_rate }}">{% if p.unemployment_rate %}{{
+                            p.unemployment_rate }}%{% else %}suppressed{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
