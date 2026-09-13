@@ -223,3 +223,12 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] Linked from the relevant parent/sibling pages, and added to `navigation_header`/`footer_columns` in `_config.yml`
 - [ ] `schema:` + `_includes/schema/<name>.html` if the page has a real dataset and/or a real FAQ section worth marking up
 - [ ] Checked `_data/sources.json` — add or update the entry for this source, being honest about the licence
+
+## Maps
+
+Examples
+
+```html
+<td class="map">{% include pin.html lat=s.latitude lng=s.longitude label=s.name %}</td>
+<td class="map">{% include pin.html lat=p.lat lng=p.lng label=p.name %}</td>
+```
