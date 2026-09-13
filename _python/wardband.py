@@ -17,6 +17,10 @@ Outputs:
 
 Usage:
     python build_broadband.py
+
+Run manually after downloading a new coverage CSV into _data-sources/ — not
+part of any scheduled workflow, since those gitignored input files only
+exist locally.
 """
 
 import csv
