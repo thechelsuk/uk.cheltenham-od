@@ -20,6 +20,8 @@ We track needs for two local organisations:
 
 Donations can be dropped at the addresses listed against each food bank below, or bought online via their shopping lists. Lists are updated as needs change.
 
+If money's tight this term, our [student guide to Cheltenham](/student-guide-to-cheltenham) points to this page alongside other local budget help.
+
 <!-- summary1_marker starts -->
 ## List of Needed Items in Cheltenham
 

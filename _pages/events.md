@@ -9,3 +9,5 @@ permalink: /cheltenham-events
 ---
 
 {% include sponsor.html %}
+
+Planning a trip around what's on? Our [visiting Cheltenham guide](/visiting-cheltenham) covers where to stay, eat and explore alongside the events below.

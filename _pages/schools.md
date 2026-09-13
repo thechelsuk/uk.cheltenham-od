@@ -28,3 +28,5 @@ straight from the official register.
 ## Using the Data
 
 Sort the table by name, type or phase to find what you're after, or use the summary to see how the schools break down across phases. Each entry links through to its official record, where you'll find inspection reports, contact details and admissions information.
+
+Moving with children? Our [moving to Cheltenham guide](/moving-to-cheltenham) covers school catchments alongside house prices and neighbourhood safety.

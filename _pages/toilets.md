@@ -14,7 +14,7 @@ schema: toilets
 
 Finding a public toilet when you need one shouldn't be a scramble. Whether you're out shopping on the High Street, walking in Pittville Park, or visiting for the Festivals, this page lists the known public toilets across Cheltenham, including facilities in shops, cafés and public buildings that allow public access.
 
-Below is a full list of toilet locations in and around Cheltenham, with key features and direct map links to help you find the nearest one and plan your route.
+Below is a full list of toilet locations in and around Cheltenham, with key features and direct map links to help you find the nearest one and plan your route. See our [visiting Cheltenham guide](/visiting-cheltenham) for more practical tips for a day out in town.
 
 ### What Is Listed for Each Toilet
 

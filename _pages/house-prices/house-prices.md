@@ -35,3 +35,5 @@ Across the full dataset, **{{ site.data.house-summary.full_dataset.count_display
 Other exclusion is based on Land Registry's own property type classification which seems to indicate non-domestic buildings and should be treated as a indicative and not a guaranteed commercial/residential split.
 
 Recently completed sales may take 2-3 months to appear.
+
+Thinking of relocating? Our [moving to Cheltenham guide](/moving-to-cheltenham) pulls this together with schools, crime data and neighbourhood comparisons.
