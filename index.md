@@ -10,6 +10,35 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 
 {% include bus-alert.html %}
 
+## Explore Cheltenham Open Data
+
+{% assign nav_groups = site.navigation_header | group_by: "group" %}
+<div class="explore-grid">
+{% for group in nav_groups %}
+    <div class="explore-card">
+        <h3 class="explore-card-title">{{ group.name }}</h3>
+        <ul class="explore-card-links">
+            {% for item in group.items limit: 3 %}
+            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+</div>
+
+## Latest from Cheltenham Open Data
+
+<ul class="home-latest-list">
+{% for post in site.posts limit: 5 %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="home-latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
+    </li>
+{% endfor %}
+</ul>
+
+- [See all announcements &rarr;](/news)
+
 <!-- weather_marker starts -->
 ## On Sunday, 13 September 2026
 

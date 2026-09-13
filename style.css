@@ -1650,3 +1650,62 @@ pre {
     border-radius: 50%;
     flex-shrink: 0;
 }
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1em;
+    margin: 1.5em 0;
+}
+
+.explore-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1em 1.2em;
+    background: var(--bg-alt);
+    box-shadow: var(--shadow);
+}
+
+.explore-card-title {
+    font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Gill Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 0.6em;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid var(--accent);
+}
+
+.explore-card-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.explore-card-links li {
+    padding: 0.35em 0;
+}
+
+.home-latest-list {
+    list-style: none;
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+.home-latest-list li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5em;
+    padding: 0.6em 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.home-latest-list li:last-child {
+    border-bottom: none;
+}
+
+.home-latest-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
