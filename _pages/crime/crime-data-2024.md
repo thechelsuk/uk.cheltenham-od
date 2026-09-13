@@ -6,6 +6,7 @@ permalink: /cheltenham-crime-data/2024
 description: "Monthly street-level crime figures for Cheltenham in 2024, broken down by neighbourhood."
 crime_year: "2024"
 type: "other"
+schema: crime-data
 sponsor:
     url: "https://www.awin1.com/cread.php?awinmid=19571&awinaffid=3077999&campaign=Yale+Alarm+Kits+Discount&clickref=cheltenhamod&ued=https%3A%2F%2Fyalehome.co.uk%2Fsmart-alarm-starter-kit-1-with-6-months-free-secure-subscription%2F"
     logo: "/images/sponsors/yale.png"

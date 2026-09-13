@@ -6,6 +6,7 @@ permalink: /cheltenham-food-standards/rated-five
 description: "Food businesses in Cheltenham with a food hygiene rating of 5."
 food_rating: "5"
 type: "food"
+schema: food-standards
 ---
 
 ## Five-star Food Businesses

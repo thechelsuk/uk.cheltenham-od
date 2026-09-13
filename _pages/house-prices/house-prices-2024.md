@@ -5,6 +5,7 @@ seo: "Is cheltenham expensive area to live, check out the average house prices i
 permalink: /cheltenham-house-prices-2024
 description: "Property Data from Land Registry and ONS datasets."
 type: "house"
+schema: house-prices
 pyear: "2024"
 ayears:
     - 2026

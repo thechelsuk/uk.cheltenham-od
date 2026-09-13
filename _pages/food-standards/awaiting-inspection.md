@@ -6,6 +6,7 @@ permalink: /cheltenham-food-standards/awaiting-inspection
 description: "Food businesses in Cheltenham awaiting a food hygiene inspection."
 food_rating: "AwaitingInspection"
 type: "food"
+schema: food-standards
 ---
 
 ## Food Businesses Awaiting Inspection
