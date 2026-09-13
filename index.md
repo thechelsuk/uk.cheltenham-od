@@ -13,11 +13,11 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 <!-- weather_marker starts -->
 ## On Sunday, 13 September 2026
 
-- The average temperature today is 19.4˚C,
-- With highs of 21.8˚C and lows of 16.2˚C,
-- It may feel like 19.4˚C with light rain
+- The average temperature today is 17.9˚C,
+- With highs of 21.1˚C and lows of 16.6˚C,
+- It may feel like 17.9˚C with light rain
 - The wind speed is 5.4m/s
-- The pressure is 1021.66hPa and humidity is 81%
+- The pressure is 1021.52hPa and humidity is 95%
 - The sun will rise at 06:39 and set at 19:29
 
 <!-- weather_marker ends -->

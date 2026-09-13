@@ -41,6 +41,14 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Sign damaged plus need more information, 13th September :- [10090556](https://www.fixmystreet.com/report/10090556)
+- Sink holes, 13th September :- [10090049](https://www.fixmystreet.com/report/10090049)
+- Rubbish on the sides of the road, 13th September :- [10090010](https://www.fixmystreet.com/report/10090010)
+- Bags of waste dumped at the side of the lane, 13th September :- [10089918](https://www.fixmystreet.com/report/10089918)
+- Vomit outside my front door on the public pavement, 13th September :- [10089370](https://www.fixmystreet.com/report/10089370)
+- Electric fence with NO signs, 13th September :- [10089721](https://www.fixmystreet.com/report/10089721)
+- Lane markings need improvement, 13th September :- [10089474](https://www.fixmystreet.com/report/10089474)
+- Yellow Box Required, 13th September :- [10089466](https://www.fixmystreet.com/report/10089466)
 - 3 way temp traffic lights, 13th September :- [10089141](https://www.fixmystreet.com/report/10089141)
 - Offensive Graffiti Sprayed onto Tree!, 12th September :- [10089025](https://www.fixmystreet.com/report/10089025)
 - Pothole in the road problem, 12th September :- [10088857](https://www.fixmystreet.com/report/10088857)
@@ -53,13 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Fly tipping waste dumped again., 12th September :- [10088112](https://www.fixmystreet.com/report/10088112)
 - By Old Spot pub, 12th September :- [10088065](https://www.fixmystreet.com/report/10088065)
 - Large tree fallen blocking footpath, 12th September :- [10088035](https://www.fixmystreet.com/report/10088035)
-- Flytipping in Warden’s wood car park, 12th September :- [10087877](https://www.fixmystreet.com/report/10087877)
-- Flytipped items, 12th September :- [10087823](https://www.fixmystreet.com/report/10087823)
-- Obstruction, 12th September :- [10087767](https://www.fixmystreet.com/report/10087767)
-- Several large items around base of Fir Tree, 12th September :- [10087744](https://www.fixmystreet.com/report/10087744)
-- Re my previous report, more detail. The new shoots on the bottom of the trees next to the road need cutting back please. It is difficult as a pedestrian to see gaps in the cars in order to cross safely and therefore it will be difficult for cars and buses to see pedestrians. The trees themselves are fine, it is the new shoots at the base., 12th September :- [10087743](https://www.fixmystreet.com/report/10087743)
-- Trees need cutting back as obscuring view of pedestrians, 12th September :- [10087712](https://www.fixmystreet.com/report/10087712)
-- The whole street is flooded with potholes and uneven surface. This causes damages for suspensions and front bumpers of vechiles, 12th September :- [10087537](https://www.fixmystreet.com/report/10087537)
-- Flytipped items, 12th September :- [10087412](https://www.fixmystreet.com/report/10087412)
 
 <!-- fix_marker ends -->
