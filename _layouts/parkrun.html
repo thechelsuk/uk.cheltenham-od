@@ -1,0 +1,54 @@
+{% include header.html %}
+{% assign parkrun = site.data["parkrun"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-sports">&lAarr; Back to Sports</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Parkrun Map</h2>
+        <div id="parkrun-map" style="height: 480px;" aria-label="Map of parkrun events in Cheltenham"></div>
+
+        <h2>Cheltenham Parkrun Events</h2>
+        <div class="table-scroll">
+            <table class="parkrun-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Event</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Distance</th>
+                        <th scope="col">Official Page</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in parkrun.events %}
+                    <tr>
+                        <td>{{ e.name }}</td>
+                        <td>{{ e.location }}</td>
+                        <td>{{ e.distance }}</td>
+                        <td><a href="{{ e.event_page }}" target="_blank" rel="noopener">Event page &rarr;</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="parkrun-attribution"><small>
+                Event locations from <a href="{{ parkrun.source_url }}">parkrun</a>'s own public events feed.
+                Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+                {% if parkrun.generated_at %}Last updated {{ parkrun.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            </small></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="parkrun-data" type="application/json">{{ parkrun.events | jsonify }}</script>
+<script src="/scripts/parkrun-map.js"></script>
+{% include footer.html %}
