@@ -7,21 +7,39 @@
             <p>{{page.description}}</p>
         </header>
 
+        <h2>Principal Sponsor</h2>
+        {% include sponsor.html sponsor=page.sponsor %}
+
         {% include bus-alert.html %}
 
         {% assign weather = site.data["weather-today"] %}
         <div class="home-hero-grid">
             <div>
                 <h2>Today's Weather at a Glance</h2>
-                {% if weather %}
-                <ul>
-                    <li>{{ weather.date }}</li>
-                    <li>{{ weather.desc | capitalize }}, {{ weather.temp }}&deg;C (feels like {{ weather.feels_like }}&deg;C)</li>
-                    <li>High {{ weather.high }}&deg;C, low {{ weather.low }}&deg;C</li>
-                    <li>Wind {{ weather.wind }} m/s, humidity {{ weather.humidity }}%</li>
-                    <li>Sunrise {{ weather.sunrise }}, sunset {{ weather.sunset }}</li>
-                </ul>
-                {% endif %}
+                <div class="weather-glance">
+                    {% if weather %}
+                    <p class="weather-glance-date">{{ weather.date }}</p>
+                    <div class="weather-glance-header">
+                        {% if weather.icon %}
+                        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
+                            alt="{{ weather.desc }}" class="weather-glance-icon" width="64" height="64">
+                        {% endif %}
+                        <div>
+                            <span class="weather-glance-temp">{{ weather.temp }}&deg;C</span>
+                            <span class="weather-glance-desc">{{ weather.desc | capitalize }} &middot; feels like
+                                {{ weather.feels_like }}&deg;C</span>
+                        </div>
+                    </div>
+                    <ul class="weather-glance-stats">
+                        <li><span>High / Low</span><strong>{{ weather.high }}&deg; / {{ weather.low }}&deg;</strong>
+                        </li>
+                        <li><span>Wind</span><strong>{{ weather.wind }} m/s</strong></li>
+                        <li><span>Humidity</span><strong>{{ weather.humidity }}%</strong></li>
+                        <li><span>Sunrise / Sunset</span><strong>{{ weather.sunrise }} / {{ weather.sunset }}</strong>
+                        </li>
+                    </ul>
+                    {% endif %}
+                </div>
                 <p><a href="/cheltenham-10-day-weather-forecast">See a full 10-day Cheltenham forecast &rarr;</a></p>
             </div>
             <div>
@@ -33,6 +51,7 @@
                     <li><a href="/explore/things-to-do">Things To Do</a></li>
                     <li><a href="/explore/community-support">Community &amp; Support</a></li>
                     <li><a href="/explore/about-info">About &amp; Info</a></li>
+                    <li><a href="/festivals">Festivals</a></li>
                 </ul>
             </div>
         </div>
