@@ -9,7 +9,7 @@ type: "house"
 schema: broadband
 sponsor:
     url: "https://youfibre.com?ref=cheltenham-od"
-    logo: "/images/sponsors/youfibre.png"
+    logo: "/assets/images/sponsors/youfibre.png"
     name: "YouFibre Broadband"
     tagline: "Get up to £100 cashback when taking a YouFibre broadband plan with code `5QGYSF`"
     type: "Affiliate Link"

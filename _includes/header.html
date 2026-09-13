@@ -20,7 +20,7 @@
 
         {%- assign meta_description = page.seo | default: page.description | default: site.description -%}
         {%- assign social_title = page.title | default: site.title -%}
-        {%- assign social_image ='/images/og-default.png' | absolute_url -%}
+        {%- assign social_image ='/assets/images/og-default.png' | absolute_url -%}
 
         {% assign seo_title = page.seo_title | default: page.title %}
         <title>{% if seo_title %}{{ seo_title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -77,10 +77,10 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-        <link rel="stylesheet" href="/themes.css">
-        <link rel="stylesheet" href="/style.css">
-        <link href="/fonts/Archivo-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
-        <link href="/fonts/SourceSerif4-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
+        <link rel="stylesheet" href="/assets/themes.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        <link href="/assets/fonts/Archivo-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
+        <link href="/assets/fonts/SourceSerif4-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
 
         <!-- Feeds -->
         <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - main site announcements feed"
@@ -146,10 +146,10 @@
         {% include schema/{{ page.schema }}.html %}
         {% endif %}
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-        <link rel="manifest" href="/images/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+        <link rel="manifest" href="/assets/images/site.webmanifest">
     </head>
 
 

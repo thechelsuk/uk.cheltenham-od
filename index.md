@@ -8,7 +8,7 @@ type: "cod"
 description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices, crime figures, flood alerts, food banks, GPs, planning, local news and weather — all free, in one place."
 sponsor:
   url: "/sponsor"
-  logo: "/images/sponsors/logo.png"
+  logo: "/assets/images/sponsors/logo.png"
   name: "Your Local Business Here  - 01242 000000"
   tagline: "Become a principal sponsor of Cheltenham Open Data &rarr;"
 ---
