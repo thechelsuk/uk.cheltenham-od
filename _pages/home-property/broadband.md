@@ -15,8 +15,6 @@ sponsor:
     type: "Affiliate Link"
 ---
 
-
-
 ## Cheltenham Broadband Speeds
 
 This page maps home broadband availability across Cheltenham and the surrounding

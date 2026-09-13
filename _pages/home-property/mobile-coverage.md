@@ -6,6 +6,12 @@ permalink: /cheltenham-mobile-coverage
 description: "How good is mobile signal in Cheltenham? 2G, 3G, 4G, 5G and voice call coverage indoors, outdoors and across the local area, from Ofcom's Connected Nations data."
 type: "house"
 schema: mobile-coverage
+sponsor:
+    url: "https://i.smarty.co.uk/CSj6iK"
+    logo: "/assets/images/sponsors/smarty.png"
+    name: "Smarty Mobile (On the Three Network)"
+    tagline: "Choose a gift card worth up to £20 when you join Smarty Mobile"
+    type: "Affiliate Link"
 ---
 
 ## Mobile Coverage in Cheltenham
