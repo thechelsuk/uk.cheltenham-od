@@ -12,6 +12,8 @@ seo: "Check current Cheltenham air quality levels — live PM2.5, PM10, NO2 and 
 
 ## Cheltenham Air Quality Reports
 
+If you're choosing between areas to live, our [moving to Cheltenham guide](/moving-to-cheltenham) covers this alongside house prices, schools and crime data.
+
 <!-- air_quality starts -->
 Air quality in Cheltenham changes hour to hour depending on traffic, weather and wider weather patterns. The readings below come directly from [DEFRA's UK-AIR monitoring network](https://uk-air.defra.gov.uk/), the UK government's official air pollution data source, and are pulled from the nearest monitoring stations to Cheltenham.
 

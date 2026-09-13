@@ -19,6 +19,8 @@ Use the category summary to jump to what you're after, or sort the full table by
 
 Links go to official website, or wikipedia for more information.
 
+Planning a day out? Our [visiting Cheltenham guide](/visiting-cheltenham) pairs this list with where to stay, eat and get around.
+
 ## Cheltenham Points of Interest — FAQ
 
 ### What Is Cheltenham Known For?

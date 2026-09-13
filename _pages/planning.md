@@ -15,3 +15,5 @@ schema: planschema
 This page tracks the {{ planning.received_count }} applications Cheltenham Borough Council has received in the last {{ planning.lookback_days }} days with {{ planning.pending }} still awaiting a decision and {{ planning.decided_count }} already determined. Applications range from single-home extensions to major housing schemes, as well as managing trees, lots and lots of trees.
 
 Data is refreshed daily from the council's PublicAccess portal. Sort by any column, or open an application's status to read the full case file.
+
+If you're weighing up an area to move to, our [moving to Cheltenham guide](/moving-to-cheltenham) covers what's being built nearby alongside house prices, schools and safety.

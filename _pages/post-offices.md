@@ -36,3 +36,5 @@ Most branches offer core postal and banking services, though exact services vary
 ### Are There Other Shops That Accept Parcels Besides Post Offices?
 
 - Yes — see our [Cheltenham DPD Pickup points](/cheltenham-dpd-pickup-points) page for a full list of local shops, newsagents and petrol station kiosks that accept DPD drop-offs and collections, many with longer opening hours than a typical Post Office branch.
+
+New to the area? Our [student guide to Cheltenham](/student-guide-to-cheltenham) covers this alongside registering with a GP and other first-week admin.

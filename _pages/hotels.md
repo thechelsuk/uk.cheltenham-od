@@ -16,6 +16,8 @@ Looking for places to stay in Cheltenham? Whether you're visiting for the Chelte
 
 The map below shows hotels and rentals across Cheltenham with live availability, and the table lists a selection of well-known hotels in the town. Use them to compare areas, check prices and book directly with the provider.
 
+First time visiting? Our [visiting Cheltenham guide](/visiting-cheltenham) pulls together where to eat, what to see and how to get around, alongside this page.
+
 ### Notes
 
 Booking links point to each property's location and are usually accurate, but occasionally a link may open a nearby area search rather than the exact venue — please double-check the property name before booking.
