@@ -9,7 +9,7 @@ schema: ev-charging
 sponsor:
     type: Affiliate Link
     name: "Join the Electroverse today and get £5 free credit &rarr;"
-    logo: "/images/sponsors/electroverse.png"
+    logo: "/assets/images/sponsors/electroverse.png"
     tagline: "Electroverse lets you use one card or app across most UK charging networks, with a single bill."
     url: "https://electroverse.octopus.energy/sign-up/magic?referralCode=aglow-louse-16571"
 ---

@@ -4,10 +4,10 @@ This is the standard shape of a data page on Cheltenham Open Data. It's not a ha
 
 Good reference examples to read alongside this guide:
 
-- **Simple list + map**: `_python/post-office.py` → `_data/post-offices.json` → `_layouts/post-offices.html` → `scripts/po-map.js`
+- **Simple list + map**: `_python/post-office.py` → `_data/post-offices.json` → `_layouts/post-offices.html` → `assets/scripts/po-map.js`
 - **Sibling pages sharing one dataset, different filters**: `_python/schools.py` → `_data/schools.json`, rendered by `_layouts/schools.html` (`/cheltenham-schools`) and `_layouts/school-catchment-areas.html` (`/cheltenham-schools/catchment-areas/secondary` and `/primary`)
 - **One layout, parameterised by front matter**: `_layouts/school-catchment-areas.html` — same layout, same script, driven by `page.phase`, `page.max_miles` etc. so two pages don't duplicate markup
-- **Custom map computation (Voronoi)**: `scripts/school-catchment-map.js`
+- **Custom map computation (Voronoi)**: `assets/scripts/school-catchment-map.js`
 - **Hand-curated dataset (no fetcher)**: `_data/third-spaces.json`, `_data/parkrun.json`'s sibling pattern but fetched — see below for when to curate instead of fetch
 
 ## 1. The Python fetcher (`_python/<name>.py`)
@@ -135,14 +135,14 @@ Standard skeleton:
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script id="example-data" type="application/json">{{ data.items | jsonify }}</script>
-<script src="/scripts/example-map.js"></script>
+<script src="/assets/scripts/example-map.js"></script>
 {% include footer.html %}
 ```
 
-- `data-sortable` on a `<table>` is picked up generically by `scripts/table-sort.js` — no per-page JS needed for sorting.
+- `data-sortable` on a `<table>` is picked up generically by `assets/scripts/table-sort.js` — no per-page JS needed for sorting.
 - Pull page-specific values through front matter (`page.phase`, `page.max_miles`) rather than hardcoding them in the layout, if the same layout serves more than one page.
 
-## 4. The map script (`scripts/<name>-map.js`)
+## 4. The map script (`assets/scripts/<name>-map.js`)
 
 Every map on the site follows the same IIFE shape — read the JSON out of a `<script type="application/json">` tag, guard against missing elements/empty data, build a Leaflet map, fit bounds to the markers:
 
@@ -180,10 +180,10 @@ Every map on the site follows the same IIFE shape — read the JSON out of a `<s
 
 Reference examples, roughly in order of complexity:
 
-- `scripts/po-map.js` — the simplest version, plain markers
-- `scripts/parkrun-map.js` — markers with richer popups
-- `scripts/third-spaces-map.js` — markers plus a separate `-centre` JSON script tag for the initial view
-- `scripts/school-catchment-map.js` — the complex end: computes a Voronoi diagram client-side with `d3-delaunay` (loaded from unpkg alongside Leaflet), colours cells with golden-angle hue rotation so it scales to any number of points, reads its exclusion radius from a `data-max-miles` attribute on the map `<div>` so one script serves multiple pages
+- `assets/scripts/po-map.js` — the simplest version, plain markers
+- `assets/scripts/parkrun-map.js` — markers with richer popups
+- `assets/scripts/third-spaces-map.js` — markers plus a separate `-centre` JSON script tag for the initial view
+- `assets/scripts/school-catchment-map.js` — the complex end: computes a Voronoi diagram client-side with `d3-delaunay` (loaded from unpkg alongside Leaflet), colours cells with golden-angle hue rotation so it scales to any number of points, reads its exclusion radius from a `data-max-miles` attribute on the map `<div>` so one script serves multiple pages
 
 Load Leaflet (and `d3-delaunay` if needed) from unpkg in the layout, pinned to an exact version, before the page's own script tag.
 
@@ -219,7 +219,7 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] Added to the right `schedule-*.yml` workflow for how often the source actually changes
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
-- [ ] `scripts/<name>-map.js` if there's a map, following the standard IIFE shape
+- [ ] `assets/scripts/<name>-map.js` if there's a map, following the standard IIFE shape
 - [ ] Linked from the relevant parent/sibling pages, and added to `navigation_header`/`footer_columns` in `_config.yml`
 - [ ] `schema:` + `_includes/schema/<name>.html` if the page has a real dataset and/or a real FAQ section worth marking up
 - [ ] Checked `_data/sources.json` — add or update the entry for this source, being honest about the licence

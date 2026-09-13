@@ -5,13 +5,13 @@ title: "Cheltenham Open Data"
 description: "Local Data for Local People in Cheltenham and Gloucestershire"
 author: "thechelsuk"
 url: https://cheltenham-od.uk
-icon: "/images/logo.png"
+icon: "/assets/images/logo.png"
 copyright: "Cheltenham Open Data — site, content, code and compilation &copy; Cheltenham Open Data, all rights reserved."
 disclaimer: "Underlying data &copy; respective providers, used under licence. No liability accepted for data accuracy."
 encoding: UTF-8
 future: false
 repository: thechelsuk/uk.thechels.cod
-defaultImagePath: "/images/logo.png"
+defaultImagePath: "/assets/images/logo.png"
 github:
   repository_url: https://github.com/thechelsuk/uk.cheltenham-od
   branch: main
@@ -43,8 +43,6 @@ include:
   - ".well-known"
   - "_pages"
   - ads.txt
-  - style.css
-  - theme.js
 
 # --- Classifieds / adverts section. ---
 collections:
@@ -361,6 +359,6 @@ footer_columns:
 
 sponsor:
   url: "/sponsor"
-  logo: "/images/sponsors/logo.png"
+  logo: "/assets/images/sponsors/logo.png"
   name: "Your Local Business Here  - 01242 000000"
   tagline: "Sponsor this page with your local business from £50/m as a founding sponsor &rarr;"

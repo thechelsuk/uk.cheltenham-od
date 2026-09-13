@@ -8,7 +8,7 @@ type: "other"
 schema: crime-data
 sponsor:
     url: "https://www.awin1.com/cread.php?awinmid=19571&awinaffid=3077999&campaign=Yale+Alarm+Kits+Discount&clickref=cheltenhamod&ued=https%3A%2F%2Fyalehome.co.uk%2Fsmart-alarm-starter-kit-1-with-6-months-free-secure-subscription%2F"
-    logo: "/images/sponsors/yale.png"
+    logo: "/assets/images/sponsors/yale.png"
     name: "Yale Smart Alarms"
     tagline: "Add security and peace of mind with a Yale Smart Alarm system - 6 months enhanced free"
     type: "Affiliate Link"
