@@ -1,15 +1,15 @@
 ---
 layout: page
 title: "Sport in Cheltenham"
-seo: "Sport in Cheltenham — Cheltenham Town FC, Gloucester Rugby, Cheltenham Town Women, parkrun, and local running, hiking and climbing clubs."
+seo: "Sport in Cheltenham — Cheltenham Town FC, Gloucester Rugby, Cheltenham Town Women, parkrun, and local running, cycling, hiking and climbing clubs."
 permalink: /cheltenham-sports
-description: "A guide to sport in Cheltenham: the professional clubs, parkrun, and local running, hiking and climbing groups."
+description: "A guide to sport in Cheltenham: the professional clubs, parkrun, and local running, cycling, hiking and climbing groups."
 type: "other"
 ---
 
 ## Sport in Cheltenham
 
-Cheltenham has one professional club of its own, a Premiership rugby side on its doorstep, and a strong grassroots scene — from parkrun's free weekly 5ks to running, hiking and climbing clubs for every level.
+Cheltenham has one professional club of its own, a Premiership rugby side on its doorstep, and a strong grassroots scene — from parkrun's free weekly 5ks to running, cycling, hiking and climbing clubs for every level.
 
 ## Professional and Semi-Professional Clubs
 
@@ -39,6 +39,12 @@ Beyond parkrun, Cheltenham has several running clubs for regular training and ra
 - [Cheltenham Running and Walking Club](https://cheltenhamrunningclub.co.uk/) &rarr; an inclusive running and walking club for all abilities, from Couch to 5k up to sub-18-minute 5k runners.
 - [CLC Striders](https://clcstriders-runningclub.co.uk/) &rarr; an inclusive and competitive running club training from the CLC Health & Fitness Centre.
 - [Almost Athletes](https://almostathletes.co.uk/) &rarr; Cheltenham's largest running club, for runners of all abilities.
+
+## Cycling
+
+- [Cheltenham & County Cycling Club](https://www.cheltenhamandcounty.cc/) &rarr; a road, mountain bike and gravel club with around 300 members, running its own road race, time trial series, hill climb series and cyclocross races.
+- [Cheltenham Cycling Touring Club (CTC)](https://cheltenhamctc.org/) &rarr; a friendly, relaxed club affiliated to Cycling UK, with group rides across the week for all riders.
+- [Woodmancote Wheelers](https://www.woodmancotewheelers.org/) &rarr; a social road cycling club based just north of Cheltenham, with Classic and faster-paced Velo group rides.
 
 ## Hiking and Walking
 
