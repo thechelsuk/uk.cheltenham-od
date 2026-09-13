@@ -10,20 +10,35 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 
 {% include bus-alert.html %}
 
-## Explore Cheltenham Open Data
+<div class="home-hero-grid">
+    <div class="home-hero-weather">
+        <h2>Weather at a Glance</h2>
 
-{% assign nav_groups = site.navigation_header | group_by: "group" %}
-<div class="explore-grid">
-{% for group in nav_groups %}
-    <div class="explore-card">
-        <h3 class="explore-card-title">{{ group.name }}</h3>
-        <ul class="explore-card-links">
-            {% for item in group.items limit: 3 %}
-            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-            {% endfor %}
-        </ul>
+<!-- weather_marker starts -->
+<div class="weather-glance">
+    <p class="weather-glance-date">Sunday, 13 September 2026</p>
+    <div class="weather-glance-header">
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="light rain" class="weather-glance-icon" width="80" height="80">
+        <div>
+            <span class="weather-glance-temp">18.0&deg;C</span>
+            <span class="weather-glance-desc">Light rain &middot; feels like 18.0&deg;C</span>
+        </div>
     </div>
-{% endfor %}
+    <ul class="weather-glance-stats">
+        <li><span>High / Low</span><strong>19.5&deg; / 17.2&deg;</strong></li>
+        <li><span>Wind</span><strong>5.4 m/s</strong></li>
+        <li><span>Humidity</span><strong>96%</strong></li>
+        <li><span>Sunrise / Sunset</span><strong>06:39 / 19:29</strong></li>
+    </ul>
+</div>
+
+<!-- weather_marker ends -->
+        <p><a href="/cheltenham-10-day-weather-forecast">See a full 10-day Cheltenham forecast &rarr;</a></p>
+    </div>
+    <div class="home-hero-categories">
+        <h2>Explore by Category</h2>
+        {% include home-categories.html %}
+    </div>
 </div>
 
 ## Latest from Cheltenham Open Data
@@ -38,19 +53,6 @@ description: "The open data hub for Cheltenham and Gloucestershire. Fuel prices,
 </ul>
 
 - [See all announcements &rarr;](/news)
-
-<!-- weather_marker starts -->
-## On Sunday, 13 September 2026
-
-- The average temperature today is 18.0˚C,
-- With highs of 19.5˚C and lows of 17.2˚C,
-- It may feel like 18.0˚C with light rain
-- The wind speed is 5.4m/s
-- The pressure is 1021.47hPa and humidity is 96%
-- The sun will rise at 06:39 and set at 19:29
-
-<!-- weather_marker ends -->
-- [See a full 10-day Cheltenham forecast &rarr;](/cheltenham-10-day-weather-forecast)
 
 ## Local Classifieds in Cheltenham
 

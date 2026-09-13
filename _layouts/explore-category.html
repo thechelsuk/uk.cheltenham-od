@@ -1,0 +1,25 @@
+{% include header.html %}
+{% assign items = site.navigation_header | where: "group", page.group %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/">&lAarr; Back to Home</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <div class="explore-grid">
+            {% for item in items %}
+            <div class="explore-card">
+                <h3 class="explore-card-title"><a href="{{ item.link }}">{{ item.name }}</a></h3>
+                <p>{{ item.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include footer.html %}

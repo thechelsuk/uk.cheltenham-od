@@ -22,18 +22,29 @@ if __name__ == "__main__":
     high_temp = str(today["max"])
     low_temp = str(today["min"])
     wind_speed = str(today["wind"])
-    pressure = str(today["pressure"])
     humidity = str(today["humidity"])
     sunrise = str(today["sunrise"])   # already "HH:MM"
     sunset = str(today["sunset"])     # already "HH:MM"
+    icon = str(today.get("icon", ""))
+    icon_url = f"https://openweathermap.org/img/wn/{icon}@2x.png" if icon else ""
 
-    string_today = f"## On {output_date}\n\n"
-    string_today += f"- The average temperature today is {day_temp}˚C,\n"
-    string_today += f"- With highs of {high_temp}˚C and lows of {low_temp}˚C,\n"
-    string_today += f"- It may feel like {feels_like}˚C with {day_desc}\n"
-    string_today += f"- The wind speed is {wind_speed}m/s\n"
-    string_today += f"- The pressure is {pressure}hPa and humidity is {humidity}%\n"
-    string_today += f"- The sun will rise at {sunrise} and set at {sunset}\n"
+    string_today = f'<div class="weather-glance">\n'
+    string_today += f'    <p class="weather-glance-date">{output_date}</p>\n'
+    string_today += f'    <div class="weather-glance-header">\n'
+    if icon_url:
+        string_today += f'        <img src="{icon_url}" alt="{day_desc}" class="weather-glance-icon" width="80" height="80">\n'
+    string_today += f'        <div>\n'
+    string_today += f'            <span class="weather-glance-temp">{day_temp}&deg;C</span>\n'
+    string_today += f'            <span class="weather-glance-desc">{day_desc.capitalize()} &middot; feels like {feels_like}&deg;C</span>\n'
+    string_today += f'        </div>\n'
+    string_today += f'    </div>\n'
+    string_today += f'    <ul class="weather-glance-stats">\n'
+    string_today += f'        <li><span>High / Low</span><strong>{high_temp}&deg; / {low_temp}&deg;</strong></li>\n'
+    string_today += f'        <li><span>Wind</span><strong>{wind_speed} m/s</strong></li>\n'
+    string_today += f'        <li><span>Humidity</span><strong>{humidity}%</strong></li>\n'
+    string_today += f'        <li><span>Sunrise / Sunset</span><strong>{sunrise} / {sunset}</strong></li>\n'
+    string_today += f'    </ul>\n'
+    string_today += f'</div>\n'
 
     f = root / "index.md"
     m = f.open().read()

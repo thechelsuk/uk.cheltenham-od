@@ -1,0 +1,32 @@
+<div class="home-category-grid">
+    {% assign getting_around = site.navigation_header | where: "group", "Getting Around" %}
+    <a class="home-category-tile" href="/explore/getting-around">
+        <h3>Getting Around</h3>
+        <p>{{ getting_around.size }} pages &middot; fuel, EV charging, buses, broadband</p>
+    </a>
+    {% assign home_property = site.navigation_header | where: "group", "Home & Property" %}
+    <a class="home-category-tile" href="/explore/home-property">
+        <h3>Home &amp; Property</h3>
+        <p>{{ home_property.size }} pages &middot; house prices, planning, recycling</p>
+    </a>
+    {% assign safety_environment = site.navigation_header | where: "group", "Safety & Environment" %}
+    <a class="home-category-tile" href="/explore/safety-environment">
+        <h3>Safety &amp; Environment</h3>
+        <p>{{ safety_environment.size }} pages &middot; crime, flooding, air quality</p>
+    </a>
+    {% assign things_to_do = site.navigation_header | where: "group", "Things To Do" %}
+    <a class="home-category-tile" href="/explore/things-to-do">
+        <h3>Things To Do</h3>
+        <p>{{ things_to_do.size }} pages &middot; events, sports, places to stay</p>
+    </a>
+    {% assign community_support = site.navigation_header | where: "group", "Community & Support" %}
+    <a class="home-category-tile" href="/explore/community-support">
+        <h3>Community &amp; Support</h3>
+        <p>{{ community_support.size }} pages &middot; classifieds, food banks, helplines</p>
+    </a>
+    {% assign about_info = site.navigation_header | where: "group", "About & Info" %}
+    <a class="home-category-tile" href="/explore/about-info">
+        <h3>About &amp; Info</h3>
+        <p>{{ about_info.size }} pages &middot; schools, news, weather, the town itself</p>
+    </a>
+</div>
