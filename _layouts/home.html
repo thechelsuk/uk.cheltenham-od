@@ -1,0 +1,45 @@
+{% include header.html %}
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+
+        {% include bus-alert.html %}
+
+        {% assign weather = site.data["weather-today"] %}
+        <div class="home-hero-grid">
+            <div>
+                <h2>Today's Weather at a Glance</h2>
+                {% if weather %}
+                <ul>
+                    <li>{{ weather.date }}</li>
+                    <li>{{ weather.desc | capitalize }}, {{ weather.temp }}&deg;C (feels like {{ weather.feels_like }}&deg;C)</li>
+                    <li>High {{ weather.high }}&deg;C, low {{ weather.low }}&deg;C</li>
+                    <li>Wind {{ weather.wind }} m/s, humidity {{ weather.humidity }}%</li>
+                    <li>Sunrise {{ weather.sunrise }}, sunset {{ weather.sunset }}</li>
+                </ul>
+                {% endif %}
+                <p><a href="/cheltenham-10-day-weather-forecast">See a full 10-day Cheltenham forecast &rarr;</a></p>
+            </div>
+            <div>
+                <h2>Explore by Category</h2>
+                <ul>
+                    <li><a href="/explore/getting-around">Getting Around</a></li>
+                    <li><a href="/explore/home-property">Home &amp; Property</a></li>
+                    <li><a href="/explore/safety-environment">Safety &amp; Environment</a></li>
+                    <li><a href="/explore/things-to-do">Things To Do</a></li>
+                    <li><a href="/explore/community-support">Community &amp; Support</a></li>
+                    <li><a href="/explore/about-info">About &amp; Info</a></li>
+                </ul>
+            </div>
+        </div>
+
+        {{ content }}
+
+    </div>
+</div>
+
+{% include footer.html %}

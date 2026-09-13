@@ -12,14 +12,11 @@
 
         {{ content }}
 
-        <div class="explore-grid">
+        <ul>
             {% for item in items %}
-            <div class="explore-card">
-                <h3 class="explore-card-title"><a href="{{ item.link }}">{{ item.name }}</a></h3>
-                <p>{{ item.description }}</p>
-            </div>
+            <li><a href="{{ item.link }}">{{ item.name }}</a> &mdash; {{ item.description }}</li>
             {% endfor %}
-        </div>
+        </ul>
     </div>
 </div>
 {% include footer.html %}
