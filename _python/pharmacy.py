@@ -31,7 +31,7 @@ CHELTENHAM_POSTCODES = ["GL50", "GL51", "GL52", "GL53"]
 
 GP_NON_PRIMARY_ROLE_ID = "RO76"  # confirmed: "GP Practice Prescribing Cost Centre"
 
-OUTPUT_FILE = "_pages/gp-pharmacy.md"
+OUTPUT_FILE = "_pages/community-support/gp-pharmacy.md"
 MARKER_NAME = "gp_pharmacy_finder"  # CHECK: matches your template's marker name?
 
 DEBUG = False

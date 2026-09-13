@@ -12,7 +12,7 @@ for entry in entries:
     string_output += f"\n- {entry['title']} :- [{link_suffix}]({entry['link']})"
 
 if __name__ == "__main__":
-    readme = root / "_pages/fix-my-street.md"
+    readme = root / "_pages/safety-environment/fix-my-street.md"
     readme_contents = readme.open().read()
     final_output = helper.replace_chunk(readme_contents,"fix_marker",f'{string_output}\n')
     readme.open("w").write(final_output)

@@ -25,7 +25,6 @@ Requires: beautifulsoup4
     pip install beautifulsoup4
 """
 
-import csv
 import re
 import sys
 from pathlib import Path
@@ -173,15 +172,7 @@ def main():
         print(f"    [{tag}] {original}")
         print(f"        -> {suggestion}")
 
-    # --- CSV output ---
-    out_csv = Path("header_audit.csv")
-    with open(out_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["page", "tag", "original", "suggested", "needs_fix"])
-        for page, tag, original, suggestion, needs_fix in all_rows:
-            writer.writerow([page, tag, original, suggestion, "yes" if needs_fix else "no"])
-    print(f"\nFull results written to {out_csv.resolve()}")
-    print(f"{len(flagged)} of {len(all_rows)} headings don't match standard title case.")
+    print(f"\n{len(flagged)} of {len(all_rows)} headings don't match standard title case.")
     print(
         "\nNote: only the first letter of each word is adjusted, to avoid mangling "
         "acronyms/postcodes/brand names (e.g. 'GL50', 'eBay'). Spot-check suggestions "
