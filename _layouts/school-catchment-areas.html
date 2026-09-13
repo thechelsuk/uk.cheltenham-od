@@ -1,0 +1,52 @@
+{% include header.html %}
+{% assign secondary_schools = site.data["schools"] | where: "phase", "Secondary" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/cheltenham-schools">&lAarr; Back to All Schools</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Nearest Secondary School by Area</h2>
+        <div id="catchment-map" style="height: 600px;"
+            aria-label="Map of Cheltenham shaded by nearest secondary school"></div>
+        <p id="catchment-legend" class="catchment-legend"></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Why Isn't This an Official Catchment Map?</h3>
+        <p>Because Gloucestershire doesn't have one. Unlike some local authorities, Gloucestershire County Council
+            doesn't draw fixed catchment boundaries for secondary schools — it ranks applicants by measured distance
+            once a school is oversubscribed, alongside criteria such as siblings and faith. The zones on this map are
+            a straight-line "nearest school" approximation calculated from official school locations, not a
+            reproduction of any council boundary.</p>
+
+        <h3>Which Schools Are Included?</h3>
+        <p>Cheltenham's secondary schools that fall within the town and its immediate edge. Schools sharing a
+            Cheltenham postcode district but sitting in a separate town — Winchcombe School and The Cotswold Academy
+            in Fairford — are excluded, since including them would stretch zones across open countryside rather than
+            reflect how people actually choose between Cheltenham schools.</p>
+
+        <h3>Where Does the Data Come From?</h3>
+        <p>School names and locations come from the Department for Education's <a
+                href="https://get-information-schools.service.gov.uk/">Get Information about Schools (GIAS)</a>
+            register, refreshed monthly. Grid references are converted from the register's Ordnance Survey National
+            Grid coordinates.</p>
+
+        <p>Public sector information licensed under the <a
+                href="https://www.nationalarchives.gov.uk/doc/open-government-licence/">Open Government Licence
+                v3.0 &rarr;</a></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/d3-delaunay@6/dist/d3-delaunay.min.js"></script>
+<script id="catchment-data" type="application/json">{{ secondary_schools | jsonify }}</script>
+<script src="/scripts/school-catchment-map.js"></script>
+{% include footer.html %}
