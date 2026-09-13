@@ -2,7 +2,7 @@
 layout: schools
 title: "Schools in Cheltenham — Primary, Secondary & Independent"
 description: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools"
-seo: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools, sortable by name, type and phase."
+seo: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools, with catchment areas."
 permalink: /cheltenham-schools
 type: "third"
 schema: schools
