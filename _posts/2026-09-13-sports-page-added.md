@@ -17,7 +17,7 @@ Two areas get their own data-backed sub-page: [Cheltenham parkrun](/cheltenham-s
 
 - Cheltenham Town FC, Gloucester Rugby and Cheltenham Town Women, plus a curated list of local running, hiking and climbing clubs — including parkrun, Cheltenham & County Harriers, CLC Striders, Almost Athletes, Cheltenham Rambling Club and Boulders Cheltenham.
 
-### Why Is This Page Curated Rather Than Sourced from Open Data?
+### Why Is This Page Curated Rather than Sourced from Open Data?
 
 - Unlike most of this site, there's no open register of local sports clubs to pull from — governing bodies like England Athletics and British Cycling only offer web search tools, not data feeds. So the main page is a hand-checked list rather than an automated one; every link was verified individually before publishing.
 
