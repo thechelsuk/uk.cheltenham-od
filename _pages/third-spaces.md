@@ -16,6 +16,8 @@ Cheltenham offers an excellent mix of vibrant "third spaces", which are places t
 
 Do check the council and other local community websites for up to date information on opening times and events, as these can change.
 
+Looking for something to *do* rather than somewhere to sit? Our [sport in Cheltenham](/cheltenham-sports) page covers parkrun, running, hiking and climbing clubs, plus Cheltenham Town FC and the town's other professional and semi-professional sides.
+
 The [Glos Libraries](https://gloslibraries.uk/your-libraries) provide a useful list of all the libraries across the county.
 
 ## Wilson Art Gallery and Museum, Cheltenham
