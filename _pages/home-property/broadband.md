@@ -23,3 +23,7 @@ This page maps home broadband availability across Cheltenham and the surrounding
 Gloucestershire wards, using [Ofcom's Connected Nations](https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/)
 data. It shows what's available to order at each address — not the speed any one
 household currently pays for.
+
+Checking a new address? Pair this with our [mobile phone coverage](/cheltenham-mobile-coverage)
+page for the same area — a fast fixed line at home doesn't tell you much about
+4G/5G signal out and about.
