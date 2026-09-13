@@ -5,6 +5,7 @@ seo: "Food hygiene ratings for food businesses in Cheltenham from the Food Stand
 permalink: /cheltenham-food-standards
 description: "Food hygiene ratings for venues in Cheltenham, Gloucestershire."
 type: "food"
+schema: food-standards
 ---
 
 ## Cheltenham Food Hygiene Ratings

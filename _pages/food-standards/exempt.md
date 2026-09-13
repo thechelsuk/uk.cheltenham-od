@@ -6,6 +6,7 @@ permalink: /cheltenham-food-standards/exempt
 description: "Food businesses in Cheltenham marked exempt from a food hygiene rating."
 food_rating: "Exempt"
 type: "food"
+schema: food-standards
 ---
 
 ## Exempt Food Businesses
