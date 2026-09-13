@@ -2,7 +2,7 @@
 layout: schools
 title: "Schools in Cheltenham — Primary, Secondary & Independent"
 description: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools"
-seo: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools, sortable by name, type and phase."
+seo: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools, with catchment areas."
 permalink: /cheltenham-schools
 type: "third"
 schema: schools
@@ -20,7 +20,8 @@ straight from the official register.
 
 ## More Information
 
-- [Check local school's catchment areas](https://schoolcatchmentchecker.co.uk/?loc=51.8994,-2.0783&zoom=12)
+- [Secondary school catchment areas map](/cheltenham-schools/catchment-areas/secondary) — which secondary school is nearest to each part of town.
+- [Primary school catchment areas map](/cheltenham-schools/catchment-areas/primary) — which primary school is nearest to each part of town.
 - [Gloucester County Council Find a School](https://www.gloucestershire.gov.uk/education-and-learning/find-a-school)
 - [Dynamic Maps for Schools](https://gcc.dynamicmaps.co.uk/MapThatPublic/Default.aspx)
 - [Term Dates from Gloucestershire County Council](https://www.gloucestershire.gov.uk/education-and-learning/term-dates/)
