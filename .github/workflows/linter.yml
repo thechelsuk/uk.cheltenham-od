@@ -28,3 +28,9 @@ jobs:
           # year pages, per-category layouts) are deliberately similar
           # front matter/structure, not a code smell to fix.
           VALIDATE_JSCPD: false
+          # Prettier flags a touched file's *entire* pre-existing formatting,
+          # not just the diff — and none of this repo's YAML has ever been
+          # Prettier-formatted, so this would block the next PR that touches
+          # any other workflow file too. Plain YAML syntax linting (VALIDATE_YAML)
+          # stays on; this is purely a styling preference this repo hasn't adopted.
+          VALIDATE_YAML_PRETTIER: false
