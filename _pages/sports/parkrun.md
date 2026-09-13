@@ -5,6 +5,7 @@ seo: "Cheltenham parkrun events — Cheltenham parkrun, King George V Playing Fi
 permalink: /cheltenham-sports/parkrun
 description: "Every parkrun event in Cheltenham — free, timed 5k runs and junior 2k runs, with locations and a map."
 type: "third"
+schema: parkrun
 ---
 
 ## Parkrun in Cheltenham

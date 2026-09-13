@@ -9,6 +9,7 @@ phase: "Secondary"
 max_miles: 4.5
 other_phase_label: "Primary"
 other_phase_link: /cheltenham-schools/catchment-areas/primary
+schema: schools-catchment-secondary
 ---
 
 ## Cheltenham Secondary School "Nearest School" Map
