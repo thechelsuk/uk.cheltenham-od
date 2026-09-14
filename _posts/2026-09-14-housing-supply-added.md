@@ -9,7 +9,7 @@ date: 2026-09-14 22:00
 
 Cheltenham Open Data has published two new pages: [housing supply & student accommodation](/cheltenham-house-prices/housing-supply) and [total number of properties over time](/cheltenham-house-prices/council-tax-stock).
 
-The housing supply page shows net additional dwellings built in Cheltenham each year since 2001, plus a breakdown of communal accommodation (student halls and other shared housing) split between student and non-student use — a rough proxy for how much purpose-built student housing has been added or lost. The property stock page tracks the total number of domestic properties in the town every year back to 1993.
+The housing supply page shows net additional dwellings built in Cheltenham each year since 2001, plus a breakdown of communal accommodation (student halls and other shared housing) split between student and non-student use — a rough proxy for how much purpose-built [student](/student-guide-to-cheltenham) housing has been added or lost. The property stock page tracks the total number of domestic properties in the town every year back to 1993.
 
 ## FAQs
 
