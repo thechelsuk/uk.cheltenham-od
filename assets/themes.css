@@ -91,6 +91,22 @@ body.theme-food,
 }
 
 /*--------------------------------------------------*/
+/* about: About & Info category */
+body.theme-about,
+.theme-about {
+    --accent: #7a5230;
+    --accent-dark: #593b22;
+    --accent-text: #ffffff;
+}
+
+[data-theme="dark"] body.theme-about,
+[data-theme="dark"] .theme-about {
+    --accent: #c9a179;
+    --accent-dark: #dbbd9d;
+    --accent-text: #0a1420;
+}
+
+/*--------------------------------------------------*/
 /* House: house, planning */
 body.theme-house,
 .theme-house {

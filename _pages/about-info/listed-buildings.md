@@ -4,7 +4,7 @@ title: "Cheltenham Listed Buildings & Heritage Sites"
 seo: "Every listed building in Cheltenham, plus scheduled monuments and registered parks & gardens, from Historic England's National Heritage List for England."
 permalink: /cheltenham-listed-buildings
 description: "Listed buildings, scheduled monuments and registered parks & gardens in Cheltenham, sourced from Historic England's National Heritage List."
-type: "house"
+type: "about"
 schema: listed-buildings
 ---
 
