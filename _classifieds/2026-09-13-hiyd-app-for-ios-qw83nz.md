@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: single
+type: community
 title: "Hiyd - the Jekyll Companion App"
 category: digital
 company: "thechelsuk"
