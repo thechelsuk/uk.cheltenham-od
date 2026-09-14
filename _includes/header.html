@@ -202,7 +202,14 @@
                             {% assign nav_groups = site.navigation_header | group_by: "group" %}
                             {% for group in nav_groups %}
                             <div class="nav-panel-col">
-                                <h2 class="nav-panel-group-title">{{ group.name }}</h2>
+                                {% assign category_page = site.pages | where: "group", group.name | first %}
+                                <h2 class="nav-panel-group-title">
+                                    {% if category_page %}
+                                    <a href="{{ category_page.url }}">{{ group.name }}</a>
+                                    {% else %}
+                                    {{ group.name }}
+                                    {% endif %}
+                                </h2>
                                 {% for item in group.items %}
                                 <div class="nav-panel-item">
                                     <a class="nav-panel-item-title" href="{{ item.link }}">{{ item.name }}</a>

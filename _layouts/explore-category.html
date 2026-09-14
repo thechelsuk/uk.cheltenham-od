@@ -14,7 +14,15 @@
 
         <ul>
             {% for item in items %}
-            <li><a href="{{ item.link }}">{{ item.name }}</a> &mdash; {{ item.description }}</li>
+            <li><a href="{{ item.link }}">{{ item.name }}</a> &mdash; {{ item.description }}
+                {% if item.children %}
+                <ul>
+                    {% for child in item.children %}
+                    <li><a href="{{ child.link }}">{{ child.name }}</a> &mdash; {{ child.description }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
             {% endfor %}
         </ul>
     </div>

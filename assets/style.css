@@ -584,6 +584,17 @@ pre>code {
     border-bottom: 2px solid var(--accent);
 }
 
+/* A quiet link to the category's /explore page — no hover/focus colour or
+   underline change, since the individual items below already make the
+   panel's links obvious. This is meant to be a discoverable extra, not
+   another visually "linky" element. */
+.nav-panel-group-title a,
+.nav-panel-group-title a:hover,
+.nav-panel-group-title a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
 .nav-panel-item {
     display: block;
     padding: 0.8em 0;
