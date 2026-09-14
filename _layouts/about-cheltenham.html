@@ -7,14 +7,18 @@
             <p>{{page.description}}</p>
             <ul>
                 <li>{{ stats.population_latest.population_formatted }} people ({{ stats.population_latest.year }})</li>
-                <li><a href="/cheltenham-employment-history">{{ stats.employment.employment_rate }}% employment rate</a></li>
+                <li><a href="/cheltenham-employment-history">{{ stats.employment.employment_rate }}% employment rate
+                        &rarr;</a></li>
             </ul>
         </header>
 
         {{ content }}
 
         <h2>Population &amp; Growth</h2>
-        <p>Cheltenham's population has grown from {{ stats.population_earliest.population_formatted }} in {{ stats.population_earliest.year }} to {{ stats.population_latest.population_formatted }} in {{ stats.population_latest.year }} — an increase of {{ stats.growth_pct }}% over {{ stats.growth_years }} years, according to the ONS's official mid-year population estimates.</p>
+        <p>Cheltenham's population has grown from {{ stats.population_earliest.population_formatted }} in
+            {{ stats.population_earliest.year }} to {{ stats.population_latest.population_formatted }} in
+            {{ stats.population_latest.year }} — an increase of {{ stats.growth_pct }}% over {{ stats.growth_years }}
+            years, according to the ONS's official mid-year population estimates.</p>
 
         <canvas id="population-chart" height="120"></canvas>
 
@@ -38,16 +42,22 @@
         </div>
 
         <h2>Employment</h2>
-        <p>Labour market rates for Cheltenham residents aged 16-64, from the ONS Annual Population Survey, {{ stats.employment.period }}:</p>
+        <p>Labour market rates for Cheltenham residents aged 16-64, from the ONS Annual Population Survey,
+            {{ stats.employment.period }}:</p>
         <ul>
             <li>Economic activity rate: {{ stats.employment.economic_activity_rate }}%</li>
             <li>Employment rate: {{ stats.employment.employment_rate }}%</li>
-            <li>Unemployment rate: {% if stats.employment.unemployment_rate %}{{ stats.employment.unemployment_rate }}%{% else %}not published — suppressed by the ONS as statistically unreliable at this local scale{% endif %}</li>
+            <li>Unemployment rate: {% if stats.employment.unemployment_rate %}{{ stats.employment.unemployment_rate
+                }}%{% else %}not published — suppressed by the ONS as statistically unreliable at this local scale{%
+                endif %}</li>
         </ul>
-        <p>See the <a href="/cheltenham-employment-history">full year-by-year employment history since 2004</a>, with a chart.</p>
+        <p>See the <a href="/cheltenham-employment-history">full year-by-year employment history since 2004</a>, with a
+            chart.</p>
 
         <h2>Census 2021</h2>
-        <p>At the 2021 Census, Cheltenham had {{ stats.census_2021_population_formatted }} usual residents — closely matching the same year's mid-year estimate above, as you'd expect from two independent counts of the same population.</p>
+        <p>At the 2021 Census, Cheltenham had {{ stats.census_2021_population_formatted }} usual residents — closely
+            matching the same year's mid-year estimate above, as you'd expect from two independent counts of the same
+            population.</p>
 
         <p>Full data last refreshed {{ stats.updated }}.</p>
 
