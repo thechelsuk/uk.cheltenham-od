@@ -21,14 +21,14 @@
                 <thead>
                     <tr>
                         <th scope="col">Year (as at 31 March)</th>
-                        <th scope="col">Total Properties</th>
+                        <th scope="col" class="number">Total Properties</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for row in data.council_tax_stock.years %}
                     <tr>
                         <td>{{ row.year }}</td>
-                        <td>{{ row.all_properties }}</td>
+                        <td class="number">{{ row.all_properties }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
