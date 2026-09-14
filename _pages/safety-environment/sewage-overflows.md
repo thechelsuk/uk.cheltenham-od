@@ -4,7 +4,7 @@ title: Cheltenham Sewage Overflow Status
 seo: "Live sewage overflow and storm discharge status for the River Chelt Cheltenham, from Severn Trent Water Event Duration Monitors."
 description: "Live storm overflow status for the River Chelt and its tributary brooks, sourced from Severn Trent Water's Event Duration Monitors."
 permalink: /cheltenham-sewage-overflows
-type: "alert"
+type: "environment"
 schema: sewage-overflows
 ---
 

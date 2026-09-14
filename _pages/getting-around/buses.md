@@ -4,7 +4,7 @@ title: Cheltenham Bus Routes & Service Data
 seo: "Cheltenham bus routes, timetables and service data. Which Cheltenham bus services are properly registered and up to date, from official DfT Bus Open Data Service records."
 permalink: /cheltenham-bus-data
 schema: bus-data
-type: fuel
+type: travel
 feed_url: "/feeds/bus-disruptions.xml"
 description: Every registered bus route serving Cheltenham from the DfT's Bus Open Data Service.
 ---

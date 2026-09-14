@@ -4,7 +4,7 @@ title: Cheltenham River Water Quality
 seo: "River water quality readings for the River Chelt and nearby brooks near Cheltenham, from the Environment Agency's Water Quality Archive."
 description: "Chemical water quality readings for the River Chelt and nearby brooks, from the Environment Agency's Water Quality Archive."
 permalink: /cheltenham-water-quality
-type: "alert"
+type: "environment"
 schema: water-quality
 ---
 
