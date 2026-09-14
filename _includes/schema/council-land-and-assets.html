@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Council Land & Assets ({{ page.year }})",
+  "description": "Land and property owned by Cheltenham Borough Council, reported under the Local Government Transparency Code.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['council-land-and-assets'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Address", "Tenure type", "Tenure detail", "Holding type", "Location"]
+}
+</script>
