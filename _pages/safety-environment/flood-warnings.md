@@ -51,13 +51,11 @@ and the Environment Agency.
 ## Latest Flood Alerts
 
 <!-- flood_marker starts -->
-- Flood alert: Tidal River Avon at Bristol, Pill and Shirehampton
-- High tides over the next two days may lead to flooding. 
-Flooding is possible from 7:30PM to 9:30PM on 11/09, from 08:00am to 10:00am and from 08:00PM to 10:00PM on 12/09. 
-Areas most at risk include the tidal River Avon from Sea Mills to Conham in Bristol and between the Avonmouth Bridge and Shirehampton Park including Pill and Shirehampton. The detailed tidal forecast for those who use it is for a peak level at Avonmouth Portbury. The first forecast high water of 7.42 mAODN is at 8:30PM 11/09, which is 0.14 m above tide tables, with Westerly force 4 winds. The second forecast high water is at 09:00AM 12/09 with a level of 7.4 mAODN with South-Westerly force 5 winds. (mAODN is height above average sea level.) 
-We are closely monitoring the situation . 
-Take care and avoid walking, cycling or driving through flood water . 
-This message will be updated by 1:35PM on 12 September 2026 or as the situation changes.
+- Warning no longer in force: Tidal River Avon at Bristol, Pill and Shirehampton
+- There is no longer a threat of flooding, though standing water and debris may still remain. 
+We do not expect to see similar impacts from the next high tide.   
+We will continue to monitor the situation and will issue further alerts or warnings if necessary.   
+Continue to take care on waterside roads and footpaths and don't put yourself in unnecessary danger. Stay away from floodwater - it contains hidden dangers such as open manhole covers, sewage and chemicals.   
 
 
 <!-- flood_marker ends -->

@@ -13,7 +13,7 @@ OUT  = os.path.join(HERE, "..", "_data", "races.json")
 COURSE_LAT, COURSE_LNG = 51.9251, -2.0587
 RADIUS_M = 8000                    # ~5 miles from the course — covers the town + fringes
 OVERPASS = "https://overpass-api.de/api/interpreter"
-HEADERS  = {"User-Agent": "cheltenham-od/1.2 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
+HEADERS  = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 TYPES = {"hotel": "Hotel", "guest_house": "Guest house"}
 
