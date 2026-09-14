@@ -4,7 +4,7 @@ title: "About Cheltenham & Info"
 seo: "About Cheltenham, schools, post offices, local news and the weather forecast."
 permalink: /explore/about-info
 description: "Population and history, schools, post offices, local news and the weather forecast for Cheltenham."
-type: "other"
+type: "about"
 group: "About & Info"
 ---
 

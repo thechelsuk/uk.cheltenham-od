@@ -3,7 +3,7 @@ layout: events
 title: Events and Activities in Cheltenham
 seo: "What's on in Cheltenham, local events and activities in Cheltenham Gloucestershire"
 description: "Archive of curated posts with local events and activities in Cheltenham, Gloucestershire"
-type: "third"
+type: "activities"
 permalink: /cheltenham-events
 
 ---

@@ -4,7 +4,7 @@ title: "Home & Property in Cheltenham"
 seo: "Cheltenham house prices, planning applications, broadband coverage and recycling — local data for homeowners and renters."
 permalink: /explore/home-property
 description: "House prices, planning applications, broadband coverage and recycling — local data for homeowners and renters."
-type: "other"
+type: "property"
 group: "Home & Property"
 ---
 

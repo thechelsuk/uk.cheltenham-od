@@ -58,6 +58,8 @@
             {% if schema_content contains "Dataset" %}{% assign has_dataset = true %}{% endif %}
             {% if schema_content contains "FAQPage" %}{% assign has_faq = true %}{% endif %}
             {% endif %}
+            {% assign page_category = page.group %}
+            {% unless page_category %}
             {% assign page_category = "" %}
             {% for nav_item in site.navigation_header %}
             {% if nav_item.link == page.url %}{% assign page_category = nav_item.group %}{% endif %}
@@ -65,6 +67,7 @@
             {% if nav_child.link == page.url %}{% assign page_category = nav_item.group %}{% endif %}
             {% endfor %}
             {% endfor %}
+            {% endunless %}
             <tr>
                 <td data-val="{{ page.title | downcase }}"><a href="{{ page.url | relative_url }}">{{ page.title }}</a>
                 </td>

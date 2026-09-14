@@ -4,7 +4,7 @@ title: "Things to Do in Cheltenham"
 seo: "Cheltenham events, sports clubs, third spaces, points of interest, places to stay and public holidays."
 permalink: /explore/things-to-do
 description: "Events, sports clubs, third spaces, points of interest, places to stay and public holidays in Cheltenham."
-type: "other"
+type: "activities"
 group: "Things to Do"
 ---
 

@@ -113,16 +113,16 @@ body.theme-about,
 }
 
 /*--------------------------------------------------*/
-/* House: house, planning */
-body.theme-house,
-.theme-house {
+/* property: Home & Property category */
+body.theme-property,
+.theme-property {
     --accent: #8a2f3d;
     --accent-dark: #661f2a;
     --accent-text: #ffffff;
 }
 
-[data-theme="dark"] body.theme-house,
-[data-theme="dark"] .theme-house {
+[data-theme="dark"] body.theme-property,
+[data-theme="dark"] .theme-property {
     --accent: #c97985;
     --accent-dark: #dba3ab;
     --accent-text: #0a1420;
@@ -131,6 +131,7 @@ body.theme-house,
 
 /*--------------------------------------------------*/
 
+/* news: unused since posts/events moved to cod — free for reuse */
 body.theme-news,
 .theme-news {
     --accent: #1d4e89;
@@ -148,16 +149,16 @@ body.theme-news,
 
 /*--------------------------------------------------*/
 
-/* other: fix, food, help, holidays */
-body.theme-other,
-.theme-other {
+/* activities: Things to Do category */
+body.theme-activities,
+.theme-activities {
     --accent: #2f6b4f;
     --accent-dark: #204a37;
     --accent-text: #ffffff;
 }
 
-[data-theme="dark"] body.theme-other,
-[data-theme="dark"] .theme-other {
+[data-theme="dark"] body.theme-activities,
+[data-theme="dark"] .theme-activities {
     --accent: #5ba07f;
     --accent-dark: #8ac3a8;
     --accent-text: #0a1420;
@@ -165,7 +166,7 @@ body.theme-other,
 }
 
 /*--------------------------------------------------*/
-/* third: GP, PO, Recycling, Third, Toilets */
+/* third: unused since the category theme normalisation — free for reuse */
 body.theme-third,
 .theme-third {
     --accent: #4a51b7;

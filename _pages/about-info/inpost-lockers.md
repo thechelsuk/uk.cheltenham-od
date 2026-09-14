@@ -4,7 +4,7 @@ title: "Cheltenham InPost Locker Locations"
 seo: "Cheltenham InPost parcel locker locations — find your nearest 24/7 self-service locker for sending and collecting Vinted, eBay and other parcels."
 permalink: /cheltenham-inpost-lockers
 description: "Every InPost parcel locker in Cheltenham, with a map and opening access, sourced from InPost's own locations service."
-type: "third"
+type: "about"
 schema: inpost
 ---
 

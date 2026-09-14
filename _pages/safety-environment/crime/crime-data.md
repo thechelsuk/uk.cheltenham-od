@@ -4,7 +4,7 @@ title: "Cheltenham Crime Data"
 seo: "Monthly street-level crime figures for Cheltenham neighbourhoods from the Police.uk API."
 permalink: /cheltenham-crime-data
 description: "Monthly street-level crime figures for Cheltenham, broken down by neighbourhood."
-type: "other"
+type: "environment"
 schema: crime-data
 sponsor:
     url: "https://www.awin1.com/cread.php?awinmid=19571&awinaffid=3077999&campaign=Yale+Alarm+Kits+Discount&clickref=cheltenhamod&ued=https%3A%2F%2Fyalehome.co.uk%2Fsmart-alarm-starter-kit-1-with-6-months-free-secure-subscription%2F"
