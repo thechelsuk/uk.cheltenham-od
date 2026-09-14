@@ -1728,3 +1728,62 @@ pre {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================
+   Fuel headline savings badges (Option A)
+   ================================ */
+
+:root {
+    --saving: #1a7f37;
+    --saving-bg: rgba(26, 127, 55, 0.1);
+}
+
+[data-theme=dark] {
+    --saving: #6fd88a;
+    --saving-bg: rgba(111, 216, 138, 0.12);
+}
+
+.headline-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.headline-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4em 1em;
+    padding: 0.35em 0;
+}
+
+.headline-main {
+    flex: 1 1 auto;
+}
+
+.headline-saving {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5em;
+    background: var(--saving-bg);
+    color: var(--saving);
+    border-radius: 999px;
+    padding: 0.15em 0.75em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.headline-saving-tank {
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+@media screen and (max-width: 500px) {
+    .headline-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
