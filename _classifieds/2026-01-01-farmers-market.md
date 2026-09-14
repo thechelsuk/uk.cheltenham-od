@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: single
+type: community
 title: "Cheltenham Farmers Market"
 category: community
 company: "Cheltenham Farmers Market"

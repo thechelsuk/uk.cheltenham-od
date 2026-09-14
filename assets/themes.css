@@ -38,23 +38,15 @@ body.theme-environment,
 /*--------------------------------------------------*/
 
 
-/* community: Community & Support category (classifieds/single pending rename) */
-body.theme-single,
-body.theme-classifieds,
+/* community: Community & Support category */
 body.theme-community,
-.theme-single,
-.theme-classifieds,
 .theme-community {
     --accent: #6a3f6b;
     --accent-dark: #4d2d4e;
     --accent-text: #ffffff;
 }
 
-[data-theme="dark"] body.theme-single,
-[data-theme="dark"] body.theme-classifieds,
 [data-theme="dark"] body.theme-community,
-[data-theme="dark"] .theme-single,
-[data-theme="dark"] .theme-classifieds,
 [data-theme="dark"] .theme-community {
     --accent: #a877a9;
     --accent-dark: #c9a0ca;
@@ -131,24 +123,6 @@ body.theme-property,
 
 /*--------------------------------------------------*/
 
-/* news: unused since posts/events moved to cod — free for reuse */
-body.theme-news,
-.theme-news {
-    --accent: #1d4e89;
-    --accent-dark: #123a68;
-    --accent-text: #ffffff;
-}
-
-[data-theme="dark"] body.theme-news,
-[data-theme="dark"] .theme-news {
-    --accent: #7db0e8;
-    --accent-dark: #a6cbf2;
-    --accent-text: #0a1420;
-}
-
-
-/*--------------------------------------------------*/
-
 /* activities: Things to Do category */
 body.theme-activities,
 .theme-activities {
@@ -164,23 +138,6 @@ body.theme-activities,
     --accent-text: #0a1420;
 
 }
-
-/*--------------------------------------------------*/
-/* third: unused since the category theme normalisation — free for reuse */
-body.theme-third,
-.theme-third {
-    --accent: #4a51b7;
-    --accent-dark: #112d4e;
-    --accent-text: #ffffff;
-}
-
-[data-theme="dark"] body.theme-third,
-[data-theme="dark"] .theme-third {
-    --accent: #6778d7;
-    --accent-dark: #9ca2c4;
-    --accent-text: #110a20;
-}
-
 
 .tier-badge {
     display: inline-flex;
