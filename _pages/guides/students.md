@@ -17,6 +17,8 @@ Most students rent, whether that's halls in the first year or a shared house aft
 
 - [Cheltenham classifieds](/cheltenham-classifieds) — rooms, house shares, second-hand furniture and bikes from local people.
 - [Cheltenham house prices](/cheltenham-house-prices) — recent sold prices to get a feel for which areas are pricier and why.
+- [Housing supply & student accommodation](/cheltenham-house-prices/housing-supply) — how much student accommodation has actually been added or lost year to year, alongside general house building.
+- [Total number of properties in Cheltenham](/cheltenham-house-prices/council-tax-stock) — how the town's overall housing stock has grown over time.
 - [Crime data by neighbourhood](/cheltenham-crime-data) — compare areas on the same basis before you sign a tenancy.
 
 ## Getting Set Up

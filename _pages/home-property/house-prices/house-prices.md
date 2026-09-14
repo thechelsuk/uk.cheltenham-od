@@ -38,3 +38,5 @@ Other exclusion is based on Land Registry's own property type classification whi
 Recently completed sales may take 2-3 months to appear.
 
 Thinking of relocating? Our [moving to Cheltenham guide](/moving-to-cheltenham) pulls this together with schools, crime data and neighbourhood comparisons. See also our [council tax charges by area and band](/cheltenham-council-tax) page.
+
+For the bigger picture beyond individual sales, see how many homes Cheltenham actually [adds each year](/cheltenham-house-prices/housing-supply) — including student accommodation — and how the town's [total property stock has grown](/cheltenham-house-prices/council-tax-stock) since 1993.

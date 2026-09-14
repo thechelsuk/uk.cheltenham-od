@@ -43,6 +43,7 @@ jobs:
                   python _python/listed-buildings.py
                   python _python/water-quality.py
                   python _python/council-tax.py
+                  python _python/housing-supply.py
 
             - name: Commit and push if it changed
               id: commit

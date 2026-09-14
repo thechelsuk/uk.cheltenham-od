@@ -1,0 +1,54 @@
+{% include header.html %}
+{% assign data = site.data["housing-supply"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-house-prices">&lAarr; Back to House Prices</a></li>
+                <li><a href="/cheltenham-house-prices/housing-supply">Net Additional Dwellings &rarr;</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Total Number of Properties by Year</h2>
+        <canvas id="council-tax-stock-chart" height="120"></canvas>
+
+        <div class="table-scroll">
+            <table class="council-tax-stock-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year (as at 31 March)</th>
+                        <th scope="col">Total Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data.council_tax_stock.years %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{{ row.all_properties }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="housing-supply-attribution"><small>
+                Total properties data from the Valuation Office Agency's <a
+                    href="{{ data.council_tax_stock.source_url }}">Council Tax: stock of properties</a>
+                (Table CTSOP1.1), with the 1993-2024 series backfilled from the
+                <a href="{{ data.council_tax_stock.history_source_url }}">2024 release</a>.
+                Licensed under the <a
+                    href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
+                    Licence v3.0</a>.
+                {% if data.generated_at %}Last fetched {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            </small></p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="council-tax-stock-data" type="application/json">{{ data.council_tax_stock.years | jsonify }}</script>
+<script src="/assets/scripts/council-tax-stock-chart.js"></script>
+{% include footer.html %}
