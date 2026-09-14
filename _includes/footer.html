@@ -3,26 +3,32 @@
 </div>
 <footer class="footer">
     <div class="wrapper">
-        <div class="footer-columns">
-            {% for col in site.footer_columns %}
-            <nav class="footer-col" aria-label="{{ col.title }}">
-                <h2 class="footer-col-title">{{ col.title }}</h2>
-                <ul>
-                    {% assign col_links = col.links %}
-                    {% if col.sort_alpha %}
-                    {% assign col_links = col.links | sort_natural: "name" %}
-                    {% endif %}
-                    {% for item in col_links %}
-                    {% if item.heading %}
-                    <li class="footer-subheading">{{ item.heading }}</li>
-                    {% else %}
-                    <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-                    {% endif %}
-                    {% endfor %}
-                    <li><a href="#top" class="back-to-top" name="back-to-top">↑</a></li>
-                </ul>
-            </nav>
-            {% endfor %}
+        <div class="footer-menu-wrap">
+            <div class="footer-columns">
+                {% for col in site.footer_columns %}
+                <nav class="footer-col" aria-label="{{ col.title }}">
+                    <h2 class="footer-col-title">{{ col.title }}</h2>
+                    <ul>
+                        {% assign col_links = col.links %}
+                        {% if col.sort_alpha %}
+                        {% assign col_links = col.links | sort_natural: "name" %}
+                        {% endif %}
+                        {% for item in col_links %}
+                        {% if item.heading %}
+                        <li class="footer-subheading">{{ item.heading }}</li>
+                        {% else %}
+                        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        <li><a href="#top" class="back-to-top" name="back-to-top">↑</a></li>
+                    </ul>
+                </nav>
+                {% endfor %}
+            </div>
+
+            <div class="footer-social-corner">
+                {% include social-icons.html %}
+            </div>
         </div>
 
         <p class="footer-legal">&copy; {{ site.time | date: '%Y' }}
