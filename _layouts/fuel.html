@@ -26,8 +26,9 @@
 
         {% if fuel.context.size > 0 %}
         <p><small>
-                {% for c in fuel.context %}{{ c.label }}: cheapest {{ c.cheapest }}p, typical ~{{ c.typical }}p{% unless
-                forloop.last %} · {% endunless %}{% endfor %}
+                {% for c in fuel.context %}{{ c.label }}: cheapest {{ c.cheapest }}p, typical ~{{ c.typical }}p{% if
+                c.national_avg %} ({{ c.vs_national }}p {{ c.vs_national_words }} the {{ c.national_avg }}p national
+                average){% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}
             </small></p>
         {% endif %}
 

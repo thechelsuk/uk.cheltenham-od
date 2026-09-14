@@ -207,6 +207,70 @@ def fetch_local_prices(local_node_ids, token, since_date, label="prices "):
     return results
 
 
+def fetch_national_fuel_averages(token, since_date, label="national "):
+    """Page through the *entire* national price feed and return the average
+    price per fuel type, using each station's latest reported price.
+
+    Unlike fetch_local_prices this can't exit early — an honest national
+    average needs every reporting station, not just the local ones.
+    """
+    latest  = {}   # (node_id, fuel_type) -> (date_str, price)
+    batch   = 1
+    headers = {"Authorization": f"Bearer {token}"}
+    while True:
+        params = {"batch-number": batch, "effective-start-timestamp": since_date}
+        for attempt in range(4):
+            try:
+                resp = requests.get(
+                    BASE_URL + PRICES_PATH,
+                    headers=headers,
+                    params=params,
+                    timeout=(10, 90),
+                )
+                if resp.status_code == 504:
+                    wait = BATCH_DELAY_SECS * (attempt + 2)
+                    print(f"  {label}batch {batch}: 504 timeout (attempt {attempt + 1}/4), waiting {wait}s...")
+                    time.sleep(wait)
+                    if attempt == 3:
+                        resp.raise_for_status()
+                    continue
+                break
+            except requests.exceptions.ReadTimeout:
+                wait = BATCH_DELAY_SECS * (attempt + 2)
+                print(f"  {label}batch {batch}: read timeout (attempt {attempt + 1}/4), waiting {wait}s...")
+                time.sleep(wait)
+                if attempt == 3:
+                    raise
+        if resp.status_code == 404:
+            break
+        resp.raise_for_status()
+        page = resp.json()
+        if not page:
+            break
+        for record in page:
+            nid         = record.get("node_id")
+            record_date = (record.get("effective_start_timestamp") or "")[:10]
+            for p in record.get("fuel_prices") or []:
+                ft, price = p.get("fuel_type"), p.get("price")
+                if ft is None or price is None:
+                    continue
+                key      = (nid, ft)
+                existing = latest.get(key)
+                if existing is None or record_date >= existing[0]:
+                    latest[key] = (record_date, float(price))
+        print(f"  {label}batch {batch}: {len(page)} records")
+        if len(page) < 500:
+            break
+        batch += 1
+        time.sleep(BATCH_DELAY_SECS)
+
+    sums, counts = {}, {}
+    for (_, ft), (_, price) in latest.items():
+        sums[ft]   = sums.get(ft, 0.0) + price
+        counts[ft] = counts.get(ft, 0) + 1
+    return {ft: sums[ft] / counts[ft] for ft in sums}
+
+
 def station_from_pfs_record(record):
     loc  = record.get("location") or {}
     lat  = loc.get("latitude") or loc.get("lat")
@@ -348,6 +412,15 @@ if __name__ == "__main__":
         save_station_cache(cache_path, station_cache)
     print(f"Local stations with fresh prices: {price_updates}")
 
+    # 3b. National average per fuel type, for context alongside the local figures.
+    print("Fetching national fuel price averages...")
+    try:
+        national_avg = fetch_national_fuel_averages(access_token, lookback_date)
+        print(f"  National averages computed for {len(national_avg)} fuel types")
+    except Exception as e:
+        print(f"  National average fetch failed ({e}); skipping")
+        national_avg = {}
+
     # 5. Per-station latest as_of date.
     def station_as_of(station):
         change_dates = [
@@ -402,14 +475,30 @@ if __name__ == "__main__":
         return xs[mid] if n % 2 else (xs[mid - 1] + xs[mid]) / 2
 
     context = []
+    typical_by_ft = {}
     for ft in fuel_type_cols:
         vals = all_vals[ft]
         if vals:
-            context.append({
+            typical = round(median(vals), 1)
+            typical_by_ft[ft] = typical
+            entry = {
                 "label":    fuel_label(ft),
                 "cheapest": round(min(vals), 1),
-                "typical":  round(median(vals), 1),
-            })
+                "typical":  typical,
+            }
+            nat = national_avg.get(ft)
+            if nat is not None:
+                nat  = round(nat, 1)
+                diff = round(typical - nat, 1)
+                entry["national_avg"] = nat
+                entry["vs_national"]  = abs(diff)
+                if abs(diff) < 0.05:
+                    entry["vs_national_words"] = "in line with"
+                elif diff < 0:
+                    entry["vs_national_words"] = "under"
+                else:
+                    entry["vs_national_words"] = "over"
+            context.append(entry)
 
     # 9. Build render-ready rows, sorted by distance then name.
     ordered = sorted(
