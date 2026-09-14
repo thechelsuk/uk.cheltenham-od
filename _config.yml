@@ -126,6 +126,19 @@ navigation_header:
     link: /cheltenham-house-prices
     description: "Local house prices data from Land Registry and ONS."
     group: "Home & Property"
+    children:
+      - name: Cheltenham House Prices 2026
+        link: /cheltenham-house-prices-2026
+        description: "House price sales data for Cheltenham in 2026."
+      - name: Cheltenham House Prices 2025
+        link: /cheltenham-house-prices-2025
+        description: "House price sales data for Cheltenham in 2025."
+      - name: Cheltenham House Prices 2024
+        link: /cheltenham-house-prices-2024
+        description: "House price sales data for Cheltenham in 2024."
+      - name: Cheltenham House Prices 2023
+        link: /cheltenham-house-prices-2023
+        description: "House price sales data for Cheltenham in 2023."
   - name: Cheltenham Planning Applications
     link: /cheltenham-planning-applications
     description: "Local planning applications from Cheltenham Borough Council."
@@ -134,6 +147,10 @@ navigation_header:
     link: /cheltenham-broadband-internet-speeds
     description: "Broadband internet and mobile network coverage in Cheltenham"
     group: "Home & Property"
+    children:
+      - name: Cheltenham Mobile Coverage
+        link: /cheltenham-mobile-coverage
+        description: "Mobile phone network coverage by operator in Cheltenham."
   - name: Cheltenham Council Tax
     link: /cheltenham-council-tax
     description: "Council tax charges by band and by parish for Cheltenham."
@@ -148,6 +165,19 @@ navigation_header:
     link: /cheltenham-crime-data
     description: "Monthly street-level crime figures by Cheltenham neighbourhood."
     group: "Safety & Environment"
+    children:
+      - name: Cheltenham Crime Data 2026
+        link: /cheltenham-crime-data/2026
+        description: "Monthly street-level crime figures for Cheltenham in 2026."
+      - name: Cheltenham Crime Data 2025
+        link: /cheltenham-crime-data/2025
+        description: "Monthly street-level crime figures for Cheltenham in 2025."
+      - name: Cheltenham Crime Data 2024
+        link: /cheltenham-crime-data/2024
+        description: "Monthly street-level crime figures for Cheltenham in 2024."
+      - name: Cheltenham Crime Data 2023
+        link: /cheltenham-crime-data/2023
+        description: "Monthly street-level crime figures for Cheltenham in 2023."
   - name: Cheltenham Water Quality &amp; Flooding
     link: /cheltenham-flood-warnings
     description: "Flood warnings, live sewage overflow status, and river water quality for the River Chelt."
@@ -181,6 +211,13 @@ navigation_header:
     link: /cheltenham-sports
     description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
     group: "Things to Do"
+    children:
+      - name: Cheltenham Town FC
+        link: /cheltenham-sports/cheltenham-town-fc
+        description: "Cheltenham Town FC fixtures, results and getting to the ground."
+      - name: Cheltenham Parkrun
+        link: /cheltenham-sports/parkrun
+        description: "Cheltenham parkrun events and results."
   - name: Cheltenham Points of Interest
     link: /cheltenham-points-of-interest
     description: "Local points of interests in and around Cheltenham."
@@ -219,6 +256,19 @@ navigation_header:
     link: /cheltenham-food-standards
     description: "Food hygiene ratings for venues in Cheltenham."
     group: "Community & Support"
+    children:
+      - name: Five-Star Food Hygiene Ratings
+        link: /cheltenham-food-standards/rated-five
+        description: "Cheltenham venues with a five-star food hygiene rating."
+      - name: Food Hygiene Ratings 1 to 4
+        link: /cheltenham-food-standards/rated-one-to-four
+        description: "Cheltenham venues rated 1 to 4 for food hygiene."
+      - name: Exempt Food Businesses
+        link: /cheltenham-food-standards/exempt
+        description: "Cheltenham food businesses exempt from a hygiene rating."
+      - name: Food Businesses Awaiting Inspection
+        link: /cheltenham-food-standards/awaiting-inspection
+        description: "Cheltenham food businesses awaiting a hygiene inspection."
   - name: Cheltenham Third Spaces
     link: /cheltenham-third-spaces
     description: "Local third spaces and community hubs in Cheltenham."
@@ -229,14 +279,35 @@ navigation_header:
     link: /about-cheltenham
     description: "Cheltenham population, growth, employment and Census 2021 statistics"
     group: "About & Info"
+    children:
+      - name: Cheltenham Employment History
+        link: /cheltenham-employment-history
+        description: "Full year-by-year employment rate history for Cheltenham."
+      - name: Cheltenham Listed Buildings
+        link: /cheltenham-listed-buildings
+        description: "Every listed building, scheduled monument and registered park & garden in Cheltenham."
   - name: Cheltenham Schools &amp; Catchment Areas
     link: /cheltenham-schools
     description: "Primary, secondary, independent, and special schools in Cheltenham."
     group: "About & Info"
+    children:
+      - name: Primary School Catchment Areas
+        link: /cheltenham-schools/catchment-areas/primary
+        description: "Cheltenham primary school catchment areas map."
+      - name: Secondary School Catchment Areas
+        link: /cheltenham-schools/catchment-areas/secondary
+        description: "Cheltenham secondary school catchment areas map."
   - name: Cheltenham Post Offices &amp; Lockers
     link: /cheltenham-post-office-locations
     description: "Find Post Offices, InPost lockers and DPD Pickup points in Cheltenham"
     group: "About & Info"
+    children:
+      - name: Cheltenham InPost Lockers
+        link: /cheltenham-inpost-lockers
+        description: "Cheltenham InPost self-service parcel locker locations."
+      - name: Cheltenham DPD Pickup Points
+        link: /cheltenham-dpd-pickup-points
+        description: "Cheltenham DPD Pickup points at local shops and petrol stations."
   - name: Cheltenham Latest News
     link: /cheltenham-news
     description: "Today's Local news aggregation for Cheltenham and Gloucestershire"
