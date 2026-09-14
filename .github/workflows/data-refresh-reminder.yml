@@ -1,0 +1,44 @@
+name: "Data Refresh Reminder"
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 10:00 on the 2nd of every month.
+    - cron: '0 10 2 * *'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for an already-open reminder
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          count=$(gh issue list --repo "${{ github.repository }}" --label data-refresh --state open --json number --jq 'length')
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Write reminder body
+        if: steps.existing.outputs.count == '0'
+        run: |
+          cat > reminder.md <<'EOF'
+          Monthly reminder to pull fresh source data for the manual, non-scheduled `_python/local/` scripts. Each source file goes in the gitignored `_data-sources/` folder, then run the matching script to refresh the site's `_data/*.json` output.
+
+          - [ ] **Schools** — download the latest GIAS extract from the [GIAS downloads page](https://get-information-schools.service.gov.uk/Downloads), save as `_data-sources/edubasealldata.csv`, then run `_python/local/process-schools-data.py`.
+          - [ ] **Ofcom Connected Nations** (mobile + fixed broadband coverage) — check the [Connected Nations and infrastructure reports hub](https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-and-infrastructure-reports) for a newer release, save the mobile coverage CSV and run `_python/local/process-mobile-coverage.py`, and save the fixed broadband coverage CSV and run `_python/local/process-wardband.py`.
+          - [ ] **Ward boundaries** — check the [ONS Open Geography Portal](https://geoportal.statistics.gov.uk/) for a newer "Wards Boundaries UK BGC" release, save as `_data-sources/wards.geojson`, then re-run `_python/local/process-wardband.py`.
+
+          Close this issue once done — a new one opens automatically next month.
+          EOF
+
+      - name: Create reminder issue
+        if: steps.existing.outputs.count == '0'
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Monthly Data Refresh Reminder
+          content-filepath: ./reminder.md
+          labels: data-refresh
