@@ -56,7 +56,15 @@
             </div>
         </div>
 
-        {{ content }}
+        <h2>Latest from Cheltenham Open Data</h2>
+        <ul>
+            {% assign latest = site.posts | concat: site.events | sort: "date" | reverse %}
+            {% for post in latest limit: 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%-d %B %Y" }}{% if
+                    post.collection == "events" %} (Events roundup){% endif %}</li>
+            {% endfor %}
+            <li><a href="/news">See all announcements &rarr;</a></li>
+        </ul>
 
         <div class="home-hero-grid">
             <div>

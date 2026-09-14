@@ -13,14 +13,3 @@ sponsor:
   tagline: "Become a principal sponsor of Cheltenham Open Data &rarr;"
   type: "Prinicpal Site Sponsor"
 ---
-
-## Latest from Cheltenham Open Data
-
-{% assign latest = site.posts | concat: site.events | sort: "date" | reverse %}
-{% for post in latest limit: 5 %}
-
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%-d %B %Y" }}{% if post.collection == "events" %} (Events roundup){% endif %}
-
-{% endfor %}
-
-- [See all announcements &rarr;](/news)
