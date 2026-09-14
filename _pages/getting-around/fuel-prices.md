@@ -30,6 +30,10 @@ Data sourced from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-p
 
 - Click any column header to sort — by price, distance, or when a price was last reported. The lowest price in each fuel column is highlighted, and forecourts with no update in {{ fuel.stale_days }} days are greyed out.
 
+### How Is "Typical" Calculated?
+
+- It's the median price for that fuel type across all listed local forecourts — the middle value when every price is lined up in order — not the average. Median is less skewed by the odd unusually cheap or expensive forecourt, so it's a fairer read of what you'd typically pay locally.
+
 ### How Are the "Savings" Worked Out?
 
 - The percentage compares the cheapest local price against the local typical (median) price. The £ figure scales that per-litre saving up to a 55-litre tank — about the size of an average UK car's — as a simple, comparable reference point. Most people don't fill from empty, so treat it as an upper bound: if you're topping up 30 litres instead of 55, the saving is roughly 30/55 of what's shown.
