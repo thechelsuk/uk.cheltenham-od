@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds River Water Quality Readings
-type: news
+type: cod
 description: Chemical water quality readings for the River Chelt and nearby brooks, from the Environment Agency's Water Quality Archive.
 seo: River Chelt water quality readings — pH, temperature, nitrate and more — from the Environment Agency's Water Quality Archive.
 date: 2026-09-14 14:10

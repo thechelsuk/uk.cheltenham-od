@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds a Council Tax Charges Page
-type: news
+type: cod
 description: Council tax charges by band A-H and by parish for Cheltenham, plus a link to check your property's official band.
 seo: Cheltenham council tax charges by band and by parish for the current tax year, with a link to the official VOA band checker.
 date: 2026-09-14 15:00

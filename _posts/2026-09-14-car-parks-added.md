@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds a Car Parks Page
-type: news
+type: cod
 description: Public car parks near Cheltenham, mapped with fees, charging hours, capacity and max stay where recorded.
 seo: Cheltenham car parks map with fees, charging hours, capacity and max stay times, sourced from OpenStreetMap.
 date: 2026-09-14 14:00

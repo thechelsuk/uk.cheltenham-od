@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds Points of Interest to the Site
-type: news
+type: cod
 description: Museums, historic sites, stadiums, hills and commemorative plaques in and around Cheltenham, each with a map link.
 seo: A map of points of interest within 16 miles of Cheltenham — museums, historic sites, stadiums, hills and blue plaques — sourced from OpenStreetMap with distances and Google Maps links.
 date: 2026-09-07 01:00

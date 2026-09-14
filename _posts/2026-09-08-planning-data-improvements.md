@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Expands the Planning Applications Page
-type: news
+type: cod
 description: Recent planning applications for Cheltenham, now with a second table tracking recently decided applications alongside new submissions.
 seo: Track planning applications submitted to Cheltenham Borough Council — new submissions and recently decided applications, sortable by date, location and status, updated daily from the council's PublicAccess portal.
 date: 2026-09-08 06:00
