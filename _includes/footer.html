@@ -6,8 +6,10 @@
         <div class="footer-menu-wrap">
             <div class="footer-columns">
                 {% for col in site.footer_columns %}
-                <nav class="footer-col" aria-label="{{ col.title }}">
+                <nav class="footer-col" aria-label="{{ col.title | default: col.aria_label }}">
+                    {% if col.title %}
                     <h2 class="footer-col-title">{{ col.title }}</h2>
+                    {% endif %}
                     <ul>
                         {% assign col_links = col.links %}
                         {% if col.sort_alpha %}

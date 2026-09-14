@@ -362,10 +362,6 @@ footer_columns:
         link: /cheltenham-fix-my-street
       - name: Cheltenham Flood Warnings
         link: /cheltenham-flood-warnings
-      - name: Cheltenham Sewage Overflow Status
-        link: /cheltenham-sewage-overflows
-      - name: Cheltenham River Water Quality
-        link: /cheltenham-water-quality
       - name: Cheltenham Food Banks
         link: /cheltenham-foodbank-needed-items
       - name: Cheltenham Food Hygiene Ratings
@@ -374,6 +370,13 @@ footer_columns:
         link: /cheltenham-fuel-prices
       - name: Cheltenham GP and Pharmacies
         link: /cheltenham-gp-pharmacies
+
+  # continues the A-Z list started in the column above — no title of its own.
+  # Not sort_alpha: the Guides section appended below must stay in its own
+  # curated order, so these entries are hand-sorted instead (matches Feeds
+  # and About, which are hand-ordered too).
+  - aria_label: "Pages (A-Z), continued"
+    links:
       - name: Cheltenham Helplines and Contacts
         link: /cheltenham-helpful-contacts-reports
       - name: Cheltenham House Prices
@@ -386,10 +389,10 @@ footer_columns:
         link: /cheltenham-listed-buildings
       - name: Cheltenham Mobile Coverage
         link: /cheltenham-mobile-coverage
-      - name: Cheltenham Planning Applications
-        link: /cheltenham-planning-applications
       - name: Cheltenham Places to Stay
         link: /staying-in-cheltenham
+      - name: Cheltenham Planning Applications
+        link: /cheltenham-planning-applications
       - name: Cheltenham Points of Interest
         link: /cheltenham-points-of-interest
       - name: Cheltenham Post Office Locations
@@ -400,31 +403,20 @@ footer_columns:
         link: /cheltenham-public-toilets
       - name: Cheltenham Recycling
         link: /cheltenham-recycling
+      - name: Cheltenham River Water Quality
+        link: /cheltenham-water-quality
       - name: Cheltenham Schools
         link: /cheltenham-schools
       - name: Cheltenham Security Alerts
         link: /cheltenham-security-alerts
+      - name: Cheltenham Sewage Overflow Status
+        link: /cheltenham-sewage-overflows
       - name: Cheltenham Sports
         link: /cheltenham-sports
       - name: Cheltenham Third Spaces
         link: /cheltenham-third-spaces
       - name: Cheltenham Weather Forecast
         link: /cheltenham-10-day-weather-forecast
-
-  - title: Feeds
-    links:
-      - name: Announcements Feed (atom)
-        link: /feeds/main.xml
-      - name: Flood warnings (atom)
-        link: /feeds/flood.xml
-      - name: Daily News Summary (atom)
-        link: /feeds/news-summary.xml
-      - name: Cheltenham Classifieds (atom)
-        link: /feeds/classifieds.xml
-      - name: Cheltenham Events (atom)
-        link: /feeds/events.xml
-      - name: Cheltenham Bus Disruptions (atom)
-        link: /feeds/bus-disruptions.xml
       - heading: Guides
       - name: Moving to Cheltenham
         link: /moving-to-cheltenham
@@ -455,6 +447,19 @@ footer_columns:
         link: /sponsor/slots
       - name: Sponsorship Terms
         link: /sponsor/terms
+      - heading: Feeds
+      - name: Announcements Feed (atom)
+        link: /feeds/main.xml
+      - name: Flood warnings (atom)
+        link: /feeds/flood.xml
+      - name: Daily News Summary (atom)
+        link: /feeds/news-summary.xml
+      - name: Cheltenham Classifieds (atom)
+        link: /feeds/classifieds.xml
+      - name: Cheltenham Events (atom)
+        link: /feeds/events.xml
+      - name: Cheltenham Bus Disruptions (atom)
+        link: /feeds/bus-disruptions.xml
       - heading: Meta
       - name: Terms &amp; Conditions
         link: /terms
