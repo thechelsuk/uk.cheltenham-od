@@ -326,10 +326,13 @@ navigation_header:
     link: /cheltenham-10-day-weather-forecast
     description: "Local temperature, rain, wind and humidity forecasts for Cheltenham."
     group: "About & Info"
-footer_columns:
-  - title: Pages (A-Z)
-    sort_alpha: true
-    links:
+# Full-width heading, links split into 4 even columns underneath at render
+# time (see _includes/footer.html) — one list, so it stays self-sorting as
+# pages are added instead of needing hand-split sub-lists kept in balance.
+footer_pages:
+  title: "Pages (A-Z)"
+  sort_alpha: true
+  links:
       - name: All About Cheltenham
         link: /about-cheltenham
       - name: Cheltenham Air Quality
@@ -370,13 +373,6 @@ footer_columns:
         link: /cheltenham-fuel-prices
       - name: Cheltenham GP and Pharmacies
         link: /cheltenham-gp-pharmacies
-
-  # continues the A-Z list started in the column above — no title of its own.
-  # Not sort_alpha: the Guides section appended below must stay in its own
-  # curated order, so these entries are hand-sorted instead (matches Feeds
-  # and About, which are hand-ordered too).
-  - aria_label: "Pages (A-Z), continued"
-    links:
       - name: Cheltenham Helplines and Contacts
         link: /cheltenham-helpful-contacts-reports
       - name: Cheltenham House Prices
@@ -417,7 +413,11 @@ footer_columns:
         link: /cheltenham-third-spaces
       - name: Cheltenham Weather Forecast
         link: /cheltenham-10-day-weather-forecast
-      - heading: Guides
+
+# The four columns under the Pages (A-Z) block: Guides, Feeds, About, Meta.
+footer_columns:
+  - title: Guides
+    links:
       - name: Moving to Cheltenham
         link: /moving-to-cheltenham
       - name: Studying in Cheltenham
@@ -428,6 +428,21 @@ footer_columns:
         link: /visiting-cheltenham
       - name: All Guides
         link: /guides
+
+  - title: Feeds
+    links:
+      - name: Announcements Feed (atom)
+        link: /feeds/main.xml
+      - name: Flood warnings (atom)
+        link: /feeds/flood.xml
+      - name: Daily News Summary (atom)
+        link: /feeds/news-summary.xml
+      - name: Cheltenham Classifieds (atom)
+        link: /feeds/classifieds.xml
+      - name: Cheltenham Events (atom)
+        link: /feeds/events.xml
+      - name: Cheltenham Bus Disruptions (atom)
+        link: /feeds/bus-disruptions.xml
 
   - title: About
     links:
@@ -447,20 +462,9 @@ footer_columns:
         link: /sponsor/slots
       - name: Sponsorship Terms
         link: /sponsor/terms
-      - heading: Feeds
-      - name: Announcements Feed (atom)
-        link: /feeds/main.xml
-      - name: Flood warnings (atom)
-        link: /feeds/flood.xml
-      - name: Daily News Summary (atom)
-        link: /feeds/news-summary.xml
-      - name: Cheltenham Classifieds (atom)
-        link: /feeds/classifieds.xml
-      - name: Cheltenham Events (atom)
-        link: /feeds/events.xml
-      - name: Cheltenham Bus Disruptions (atom)
-        link: /feeds/bus-disruptions.xml
-      - heading: Meta
+
+  - title: Meta
+    links:
       - name: Terms &amp; Conditions
         link: /terms
       - name: Privacy Policy
