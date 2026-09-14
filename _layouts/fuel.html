@@ -25,11 +25,17 @@
         </ul>
 
         {% if fuel.context.size > 0 %}
-        <p><small>
-                {% for c in fuel.context %}{{ c.label }}: cheapest {{ c.cheapest }}p, typical ~{{ c.typical }}p{% if
-                c.national_avg %} ({{ c.vs_national }}p {{ c.vs_national_words }} the {{ c.national_avg }}p national
-                average){% endif %}{% unless forloop.last %} · {% endunless %}{% endfor %}
-            </small></p>
+        <div class="fuel-context">
+            <p><small>How the cheapest local price for each fuel type compares to the UK national
+                    average:</small></p>
+            <ul class="fuel-context-list">
+                {% for c in fuel.context %}
+                <li><small>{{ c.label }}: cheapest locally is {{ c.cheapest }}p, typical locally ~{{ c.typical
+                        }}p{% if c.national_avg %} — that's {{ c.vs_national }}p {{ c.vs_national_words }} the {{
+                        c.national_avg }}p national average{% endif %}.</small></li>
+                {% endfor %}
+            </ul>
+        </div>
         {% endif %}
 
         <h2>Map of Local Forecourts</h2>

@@ -479,17 +479,20 @@ if __name__ == "__main__":
     for ft in fuel_type_cols:
         vals = all_vals[ft]
         if vals:
-            typical = round(median(vals), 1)
+            cheapest_val = round(min(vals), 1)
+            typical      = round(median(vals), 1)
             typical_by_ft[ft] = typical
             entry = {
                 "label":    fuel_label(ft),
-                "cheapest": round(min(vals), 1),
+                "cheapest": cheapest_val,
                 "typical":  typical,
             }
             nat = national_avg.get(ft)
             if nat is not None:
+                # Compare the cheapest local price (not the typical) against the
+                # national average — that's the number worth telling people about.
                 nat  = round(nat, 1)
-                diff = round(typical - nat, 1)
+                diff = round(cheapest_val - nat, 1)
                 entry["national_avg"] = nat
                 entry["vs_national"]  = abs(diff)
                 if abs(diff) < 0.05:

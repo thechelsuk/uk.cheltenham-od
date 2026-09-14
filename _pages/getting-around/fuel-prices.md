@@ -33,3 +33,7 @@ Data sourced from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-p
 ### How Is the National Average Worked Out?
 
 - It's the mean of the latest reported price at every reporting forecourt across the UK for that fuel type, using the same GOV.UK fuel price scheme data. It isn't weighted by sales volume, so it reflects the spread of forecourt prices rather than what drivers typically pay in total.
+
+### Why Compare the Cheapest Price, Not the Typical One?
+
+- The typical (median) local price is shown for reference, but it's the cheapest local price we compare against the national average — that's the number that tells you whether it's worth a special trip, and it's usually close to the typical figure anyway since half of local forecourts already sit below it.
