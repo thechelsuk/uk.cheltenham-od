@@ -82,12 +82,19 @@ def normalise_2023(row):
 NORMALISERS = {2021: normalise_2021, 2023: normalise_2023}
 
 
+def is_blank_row(row):
+    """The council's CSV exports end with a couple of stray rows that are
+    just commas (every field empty) — skip those rather than normalising
+    them into placeholder entries."""
+    return not any(v.strip() for v in row.values() if v)
+
+
 def main():
     items = []
     for year in YEARS:
         rows = fetch_csv(year)
         normalise = NORMALISERS[year]
-        items.extend(normalise(row) for row in rows)
+        items.extend(normalise(row) for row in rows if not is_blank_row(row))
 
     output = {
         "generated_at": None,
