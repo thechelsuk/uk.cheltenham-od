@@ -21,8 +21,8 @@
                     <p class="weather-glance-date">{{ weather.date }}</p>
                     <div class="weather-glance-header">
                         {% if weather.icon %}
-                        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
-                            alt="{{ weather.desc }}" class="weather-glance-icon" width="64" height="64">
+                        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="{{ weather.desc }}"
+                            class="weather-glance-icon" width="64" height="64">
                         {% endif %}
                         <div>
                             <span class="weather-glance-temp">{{ weather.temp }}&deg;C</span>
@@ -57,14 +57,28 @@
         </div>
 
         <h2>Latest from Cheltenham Open Data</h2>
-        <ul>
+        <ul class="latest-list">
             {% assign latest = site.posts | concat: site.events | sort: "date" | reverse %}
             {% for post in latest limit: 5 %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%-d %B %Y" }}{% if
-                    post.collection == "events" %} (Events roundup){% endif %}</li>
+            {% if post.collection == "events" %}
+            <li class="latest-item">
+                <a href="/cheltenham-events" class="latest-pill latest-pill-events">Events</a>
+                <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
+                <span class="latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
+            </li>
+            {% else %}
+            <li class="latest-item">
+                <a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>
+                <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
+                <span class="latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
+            </li>
+            {% endif %}
             {% endfor %}
-            <li><a href="/news">See all announcements &rarr;</a></li>
         </ul>
+        <p class="latest-actions">
+            <a href="/news" class="latest-action-link">See all announcements &rarr;</a>
+            <a href="/cheltenham-events" class="latest-action-link">See all events &rarr;</a>
+        </p>
 
         <div class="home-hero-grid">
             <div>
@@ -72,13 +86,14 @@
                 {% assign now = site.time | date: "%s" | plus: 0 %}
                 {% assign classifieds_count = 0 %}
                 {% for item in site.classifieds %}
-                    {% assign exp = item.expires | date: "%s" | plus: 0 %}
-                    {% if exp > now %}
-                        {% assign classifieds_count = classifieds_count | plus: 1 %}
-                    {% endif %}
+                {% assign exp = item.expires | date: "%s" | plus: 0 %}
+                {% if exp > now %}
+                {% assign classifieds_count = classifieds_count | plus: 1 %}
+                {% endif %}
                 {% endfor %}
                 <ul>
-                    <li><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live classifieds</a></li>
+                    <li><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live
+                            classifieds</a></li>
                     <li><a href="/submission">Add yours</a></li>
                 </ul>
             </div>
