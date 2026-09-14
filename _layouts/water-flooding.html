@@ -1,0 +1,60 @@
+{% include header.html %}
+{% assign sewage = site.data["sewage-overflows"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Sewage Overflow Status</h2>
+        <p>Live status of the storm overflows discharging into the River Chelt and the brooks that feed it, from
+            Severn Trent Water's Event Duration Monitors — updated automatically several times a day.</p>
+
+        <div id="sewage-map" style="height: 480px; border-radius: 8px;" aria-label="Map of sewage overflow points near Cheltenham"></div>
+
+        <div class="table-scroll">
+            <table class="sewage-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Watercourse</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="number">Distance</th>
+                        <th scope="col">Last Discharge Started</th>
+                        <th scope="col">Last Discharge Ended</th>
+                        <th scope="col" class="number">Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for o in sewage.overflows %}
+                    <tr{% if o.discharging %} class="discharging"{% endif %}>
+                        <td data-val="{{ o.watercourse | downcase }}">{{ o.watercourse }}</td>
+                        <td data-val="{{ o.discharging }}">{% if o.discharging %}&#128308; Discharging now{% else %}&#128994; Not discharging{% endif %}</td>
+                        <td class="number" data-val="{{ o.distance_miles }}">{{ o.distance_miles }} mi</td>
+                        <td>{{ o.latest_event_start }}</td>
+                        <td>{{ o.latest_event_end }}</td>
+                        <td class="number" data-val="{{ o.latest_event_hours }}">{% if o.latest_event_hours %}{{ o.latest_event_hours }}h{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="sewage-attribution"><small>
+                Sewage overflow data from <a href="{{ sewage.source_url }}">{{ sewage.source }}</a>.
+                {% if sewage.generated_at %}Last updated {{ sewage.generated_at | date: "%-d %B %Y at %H:%M" }}.{% endif %}
+                {{ sewage.licence }}.
+            </small></p>
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="sewage-data" type="application/json">{{ sewage.overflows | jsonify }}</script>
+<script src="/assets/scripts/sewage-map.js"></script>
+{% include footer.html %}

@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Sewage Overflow Status",
+  "description": "Near-real-time storm overflow (sewage discharge) status for the River Chelt and its tributary brooks, from Severn Trent Water's Event Duration Monitors via Water UK's National Storm Overflow Hub.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['sewage-overflows'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Watercourse", "Discharging status", "Latest discharge start/end time", "Distance from Cheltenham"]
+}
+</script>
