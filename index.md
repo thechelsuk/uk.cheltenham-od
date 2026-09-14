@@ -16,9 +16,10 @@ sponsor:
 
 ## Latest from Cheltenham Open Data
 
-{% for post in site.posts limit: 5 %}
+{% assign latest = site.posts | concat: site.events | sort: "date" | reverse %}
+{% for post in latest limit: 5 %}
 
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%-d %B %Y" }}
+- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%-d %B %Y" }}{% if post.collection == "events" %} (Events roundup){% endif %}
 
 {% endfor %}
 
