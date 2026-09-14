@@ -140,6 +140,8 @@ Standard skeleton:
 ```
 
 - `data-sortable` on a `<table>` is picked up generically by `assets/scripts/table-sort.js` — no per-page JS needed for sorting.
+- Any numeric column — counts, prices, distances, years-as-quantities — gets `class="number"` on both the `<th>` and every `<td>` in that column, so it right-aligns instead of sitting left like text (see `assets/style.css`'s `.data-table .number` rule). Applies even to a single-number-column table like a simple `Year` / `Total` pair.
+- A postcode column gets `class="postcode"` on both `<th>` and `<td>` so it doesn't wrap mid-postcode (`.data-table .postcode` is one of a few columns — `.date`, `.type`, `.category`, `.rating-date`, `.listing` — the site already sets to `white-space: nowrap`).
 - Pull page-specific values through front matter (`page.phase`, `page.max_miles`) rather than hardcoding them in the layout, if the same layout serves more than one page.
 
 ## 4. The map script (`assets/scripts/<name>-map.js`)
@@ -219,6 +221,7 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] Added to the right `schedule-*.yml` workflow for how often the source actually changes
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
+- [ ] Every numeric table column has `class="number"` on its `<th>` and `<td>`s (right-aligned), and any postcode column has `class="postcode"` (no mid-postcode wrapping)
 - [ ] `assets/scripts/<name>-map.js` if there's a map, following the standard IIFE shape
 - [ ] Linked from the relevant parent/sibling pages
 - [ ] Decided whether this is a headline main-menu item or a sub-page of an existing one — if it's a genuine new topic, add it to `navigation_header`/`footer_columns` in `_config.yml`; if it's a filtered view or a natural sub-topic of an existing page (like `/cheltenham-employment-history` under `/about-cheltenham`, or `/cheltenham-listed-buildings` under `/about-cheltenham`), link it inline from the parent page's prose instead and leave the nav/footer alone

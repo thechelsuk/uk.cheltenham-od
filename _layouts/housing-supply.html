@@ -21,14 +21,14 @@
                 <thead>
                     <tr>
                         <th scope="col">Year</th>
-                        <th scope="col">Net Additional Dwellings</th>
+                        <th scope="col" class="number">Net Additional Dwellings</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for row in data.net_additional_dwellings.years %}
                     <tr>
                         <td>{{ row.year }}</td>
-                        <td>{{ row.net_additional_dwellings }}</td>
+                        <td class="number">{{ row.net_additional_dwellings }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -57,9 +57,9 @@
                     <tr>
                         <th scope="col">Year</th>
                         <th scope="col">Metric</th>
-                        <th scope="col">Student Net Change</th>
-                        <th scope="col">Other Net Change</th>
-                        <th scope="col">Total Net Change</th>
+                        <th scope="col" class="number">Student Net Change</th>
+                        <th scope="col" class="number">Other Net Change</th>
+                        <th scope="col" class="number">Total Net Change</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,9 +67,9 @@
                     <tr>
                         <td>{{ row.year }}</td>
                         <td>{% if row.metric == "council_tax_listings" %}Council Tax Listings{% else %}Bedspaces{% endif %}</td>
-                        <td>{{ row.student_net_change }}</td>
-                        <td>{{ row.other_net_change }}</td>
-                        <td>{{ row.total_net_change }}</td>
+                        <td class="number">{{ row.student_net_change }}</td>
+                        <td class="number">{{ row.other_net_change }}</td>
+                        <td class="number">{{ row.total_net_change }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
