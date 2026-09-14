@@ -24,16 +24,16 @@ If you have asthma, another lung condition, or a heart condition, the NHS and DE
 ## Cheltenham A40 Gloucester Road (2.5km from Cheltenham Centre)
 
 | Pollutant | Reading | Band | Measured (UTC) |
-|---|---|---|---|
-| PM2.5 (fine particulates) | -99.0 ug.m-3 | Low | 2026-09-14 16:00 |
+| --- | --- | --- | --- |
+| PM2.5 (fine particulates) | -99.0 ug.m-3 | Low | 2026-09-14 18:00 |
 
 ## Gloucester Tredworth (12.1km from Cheltenham Centre)
 
 | Pollutant | Reading | Band | Measured (UTC) |
-|---|---|---|---|
-| PM10 (particulates) | 2.8 ug.m-3 | Low | 2026-09-14 16:00 |
-| PM2.5 (fine particulates) | 1.038 ug.m-3 | Low | 2026-09-14 16:00 |
+| --- | --- | --- | --- |
+| PM10 (particulates) | 3.0 ug.m-3 | Low | 2026-09-14 18:00 |
+| PM2.5 (fine particulates) | 1.415 ug.m-3 | Low | 2026-09-14 18:00 |
 
-*Source: [DEFRA UK-AIR](https://uk-air.defra.gov.uk/). Data last refreshed 2026-09-14 17:51 UTC.*
+*Source: [DEFRA UK-AIR](https://uk-air.defra.gov.uk/). Data last refreshed 2026-09-14 19:35 UTC.*
 
 <!-- air_quality ends -->
