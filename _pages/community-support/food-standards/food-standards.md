@@ -4,7 +4,7 @@ title: "Cheltenham Food Hygiene Ratings"
 seo: "Food hygiene ratings for food businesses in Cheltenham from the Food Standards Agency."
 permalink: /cheltenham-food-standards
 description: "Food hygiene ratings for venues in Cheltenham, Gloucestershire."
-type: "food"
+type: "community"
 schema: food-standards
 ---
 

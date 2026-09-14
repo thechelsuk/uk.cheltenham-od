@@ -5,7 +5,7 @@ seo: "Food businesses in Cheltenham awaiting a food hygiene inspection from the 
 permalink: /cheltenham-food-standards/awaiting-inspection
 description: "Food businesses in Cheltenham awaiting a food hygiene inspection."
 food_rating: "AwaitingInspection"
-type: "food"
+type: "community"
 schema: food-standards
 ---
 

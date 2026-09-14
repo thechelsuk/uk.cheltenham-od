@@ -38,10 +38,13 @@ body.theme-environment,
 /*--------------------------------------------------*/
 
 
+/* community: Community & Support category (classifieds/single pending rename) */
 body.theme-single,
 body.theme-classifieds,
+body.theme-community,
 .theme-single,
-.theme-classifieds {
+.theme-classifieds,
+.theme-community {
     --accent: #6a3f6b;
     --accent-dark: #4d2d4e;
     --accent-text: #ffffff;
@@ -49,8 +52,10 @@ body.theme-classifieds,
 
 [data-theme="dark"] body.theme-single,
 [data-theme="dark"] body.theme-classifieds,
+[data-theme="dark"] body.theme-community,
 [data-theme="dark"] .theme-single,
-[data-theme="dark"] .theme-classifieds {
+[data-theme="dark"] .theme-classifieds,
+[data-theme="dark"] .theme-community {
     --accent: #a877a9;
     --accent-dark: #c9a0ca;
     --accent-text: #0a1420;
