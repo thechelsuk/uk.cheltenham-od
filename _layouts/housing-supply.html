@@ -1,0 +1,94 @@
+{% include header.html %}
+{% assign data = site.data["housing-supply"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-house-prices">&lAarr; Back to House Prices</a></li>
+                <li><a href="/cheltenham-house-prices/council-tax-stock">Total Properties Over Time &rarr;</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Net Additional Dwellings by Year</h2>
+        <canvas id="net-additional-dwellings-chart" height="120"></canvas>
+
+        <div class="table-scroll">
+            <table class="net-additional-dwellings-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col">Net Additional Dwellings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data.net_additional_dwellings.years %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{{ row.net_additional_dwellings }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="housing-supply-attribution"><small>
+                Net additional dwellings data from the <a href="{{ data.net_additional_dwellings.source_url }}">Ministry
+                    of Housing, Communities &amp; Local Government's live tables on housing supply</a> (Table 122).
+                Licensed under the <a
+                    href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
+                    Licence v3.0</a>.
+            </small></p>
+
+        <h2>Student &amp; Other Communal Accommodation</h2>
+
+        <p>Net change in communal accommodation (student halls and other shared housing), split by whether it's
+            classed as student or other accommodation, reported both as council tax valuation listings and as
+            individual bedspaces.</p>
+
+        <canvas id="communal-accommodation-chart" height="120"></canvas>
+
+        <div class="table-scroll">
+            <table class="communal-accommodation-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col">Metric</th>
+                        <th scope="col">Student Net Change</th>
+                        <th scope="col">Other Net Change</th>
+                        <th scope="col">Total Net Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data.communal_accommodation.entries %}
+                    <tr>
+                        <td>{{ row.year }}</td>
+                        <td>{% if row.metric == "council_tax_listings" %}Council Tax Listings{% else %}Bedspaces{% endif %}</td>
+                        <td>{{ row.student_net_change }}</td>
+                        <td>{{ row.other_net_change }}</td>
+                        <td>{{ row.total_net_change }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="housing-supply-attribution"><small>
+                Communal accommodation data from the <a href="{{ data.communal_accommodation.source_url }}">Ministry
+                    of Housing, Communities &amp; Local Government's live tables on housing supply</a> (Table 124).
+                Licensed under the <a
+                    href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
+                    Licence v3.0</a>.
+                {% if data.generated_at %}Last fetched {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            </small></p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="net-additional-dwellings-data" type="application/json">{{ data.net_additional_dwellings.years | jsonify }}</script>
+<script id="communal-accommodation-data" type="application/json">{{ data.communal_accommodation.entries | jsonify }}</script>
+<script src="/assets/scripts/housing-supply-charts.js"></script>
+{% include footer.html %}
