@@ -38,6 +38,7 @@ The town is well served for food, from café culture to fine dining.
 A little planning makes a visit smoother, especially on busy weekends.
 
 - [Cheltenham weather forecast](/cheltenham-10-day-weather-forecast) — the 10-day outlook so you pack right.
+- [Car parks in Cheltenham](/cheltenham-car-parks) — locations, fees, charging hours and max stay times if you're driving in.
 - [Public toilets in Cheltenham](/cheltenham-public-toilets) — where to find facilities around town.
 - [Fuel prices in Cheltenham](/cheltenham-fuel-prices) — cheapest local forecourts if you're driving in.
 - [Post Office locations](/cheltenham-post-office-locations) — for stamps, cash and parcels.
