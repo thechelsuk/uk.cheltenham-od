@@ -8,7 +8,11 @@
             <nav class="footer-col" aria-label="{{ col.title }}">
                 <h2 class="footer-col-title">{{ col.title }}</h2>
                 <ul>
-                    {% for item in col.links %}
+                    {% assign col_links = col.links %}
+                    {% if col.sort_alpha %}
+                    {% assign col_links = col.links | sort_natural: "name" %}
+                    {% endif %}
+                    {% for item in col_links %}
                     {% if item.heading %}
                     <li class="footer-subheading">{{ item.heading }}</li>
                     {% else %}
