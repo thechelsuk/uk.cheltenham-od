@@ -1391,47 +1391,44 @@ pre {
     flex-direction: column;
 }
 
-.footer-social-top {
-    order: 0;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1.5em;
-}
-
-.social-row {
-    display: flex;
-    gap: 0.6em;
-}
-
-.social-row a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    color: var(--text-secondary);
-}
-
-.social-row a:hover,
-.social-row a:focus {
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.social-row svg {
-    width: 1.05em;
-    height: 1.05em;
-    fill: currentColor;
+.footer-menu-wrap {
+    order: 1;
+    position: relative;
+    padding-bottom: 5.5em;
 }
 
 /* three-column grid */
 .footer-columns {
-    order: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 3em;
+}
+
+.footer-social-corner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.social-row {
+    display: flex;
+    gap: 0.5em;
+}
+
+.social-row a {
+    display: flex;
+    color: #000;
+}
+
+.social-row a:hover,
+.social-row a:focus {
+    opacity: 0.7;
+}
+
+.social-row svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: currentColor;
 }
 
 .footer-col-title, .footer-subheading {
@@ -1624,15 +1621,22 @@ pre {
         gap: 1.5em;
     }
 
-    /* drop the social icons under the copyright line instead of floating them above the menu */
-    .footer-social-top {
-        order: 3;
-        justify-content: center;
-        margin: 1.5em 0 0;
+    /* icons can't stay pinned to the corner of a single stacked column without
+       overlapping its links, so drop them into normal flow, centred, on mobile */
+    .footer-menu-wrap {
+        padding-bottom: 0;
     }
 
-    .footer-theme-control {
-        order: 4;
+    .footer-social-corner {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5em;
+    }
+
+    .social-row svg {
+        width: 2.75rem;
+        height: 2.75rem;
     }
 }
 
