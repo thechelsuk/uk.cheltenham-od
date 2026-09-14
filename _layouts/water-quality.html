@@ -1,0 +1,65 @@
+{% include header.html %}
+{% assign data = site.data["water-quality"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ data.sampling_points | size }} sampling points within {{ data.radius_miles }} miles</li>
+                <li><a href="/cheltenham-flood-warnings">Flood Warnings</a></li>
+                <li><a href="/cheltenham-sewage-overflows">Sewage Overflow Status</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <div id="water-quality-map" style="height: 480px; border-radius: 8px;" aria-label="Map of water quality sampling points near Cheltenham"></div>
+
+        <h2>Latest Readings</h2>
+        <div class="table-scroll">
+            <table class="water-quality-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Sampling Point</th>
+                        <th scope="col" class="number">Distance</th>
+                        <th scope="col">Sample Date</th>
+                        <th scope="col">Determinand</th>
+                        <th scope="col" class="number">Value</th>
+                        <th scope="col">Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in data.sampling_points %}
+                    {% for r in p.readings %}
+                    <tr>
+                        <td data-val="{{ p.name | downcase }}">{{ p.name }}</td>
+                        <td class="number" data-val="{{ p.distance_miles }}">{{ p.distance_miles }} mi</td>
+                        <td data-val="{{ p.latest_date }}">{{ p.latest_date }}</td>
+                        <td>{{ r.determinand }}</td>
+                        <td class="number">{{ r.value }}</td>
+                        <td>{{ r.unit }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="water-quality-attribution"><small>
+                Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
+                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
+                Each sampling point is only tested periodically (roughly monthly) — the "Sample Date" is when that
+                point was last visited, not when this page was updated.
+            </small></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="water-quality-data" type="application/json">{{ data.sampling_points | jsonify }}</script>
+<script src="/assets/scripts/water-quality-map.js"></script>
+{% include footer.html %}
