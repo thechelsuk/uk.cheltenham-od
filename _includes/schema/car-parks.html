@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Car Parks",
+  "description": "Public car parks near Cheltenham, with fees, charging hours, capacity and max stay where recorded, sourced from OpenStreetMap.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.openstreetmap.org/copyright",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Operator", "Capacity", "Fee", "Charging hours", "Max stay"]
+}
+</script>

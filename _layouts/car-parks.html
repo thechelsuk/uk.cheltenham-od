@@ -1,0 +1,66 @@
+{% include header.html %}
+{% assign data = site.data["car-parks"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ data.car_parks | size }} car parks near Cheltenham</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <div id="car-parks-map" style="height: 480px; border-radius: 8px;" aria-label="Map of car parks near Cheltenham"></div>
+
+        <h2>Car Parks</h2>
+        <div class="table-scroll">
+            <table class="car-parks-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Operator</th>
+                        <th scope="col" class="number">Spaces</th>
+                        <th scope="col">Fee</th>
+                        <th scope="col">Charging Hours</th>
+                        <th scope="col">Max Stay</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.car_parks %}
+                    <tr>
+                        <td data-val="{{ c.name | downcase }}">{{ c.name }}{% if c.park_and_ride %} (Park &amp;
+                            Ride){% endif %}</td>
+                        <td>{{ c.operator }}</td>
+                        <td class="number" data-val="{{ c.capacity | default: -1 }}">{{ c.capacity }}</td>
+                        <td data-val="{{ c.fee }}">{% if c.fee == true %}Yes{% elsif c.fee == false %}Free{% else
+                            %}Unknown{% endif %}</td>
+                        <td>{{ c.charging_hours }}</td>
+                        <td>{{ c.maxstay }}</td>
+                        <td class="map">{% if c.lat and c.lon %}{% include pin.html lat=c.lat lng=c.lon
+                            label=c.name %}{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="car-parks-attribution"><small>
+                Car park locations from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
+                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
+                Some fields (fee, opening hours, capacity) may be incomplete or out of date — always check the
+                signage on arrival.
+            </small></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="car-parks-data" type="application/json">{{ data.car_parks | jsonify }}</script>
+<script src="/assets/scripts/car-parks-map.js"></script>
+{% include footer.html %}
