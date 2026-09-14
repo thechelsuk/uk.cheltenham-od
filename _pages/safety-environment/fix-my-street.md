@@ -41,6 +41,13 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Very large pot hole - long enough for my 2 year old to lie down in it, 13th September :- [10092230](https://www.fixmystreet.com/report/10092230)
+- A sign advertising this event is attached to fencing and hinders line of sight at this high risk junction, 13th September :- [10092083](https://www.fixmystreet.com/report/10092083)
+- Dead fox by large tree, near 135 St George’s road, Cheltenham, 13th September :- [10092072](https://www.fixmystreet.com/report/10092072)
+- Willow tree branches are hanging down, 13th September :- [10092035](https://www.fixmystreet.com/report/10092035)
+- Tiemtbsme, 13th September :- [10091992](https://www.fixmystreet.com/report/10091992)
+- Graffiti, 13th September :- [10091778](https://www.fixmystreet.com/report/10091778)
+- Drain cover broken in kiddle of road and sticking up 3 inches above tarmac, 13th September :- [10091678](https://www.fixmystreet.com/report/10091678)
 - Abandoned car, 13th September :- [10090933](https://www.fixmystreet.com/report/10090933)
 - Flytipped items, 13th September :- [10090675](https://www.fixmystreet.com/report/10090675)
 - Sewer cover faulty, 13th September :- [10090673](https://www.fixmystreet.com/report/10090673)
@@ -54,12 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Electric fence with NO signs, 13th September :- [10089721](https://www.fixmystreet.com/report/10089721)
 - Lane markings need improvement, 13th September :- [10089474](https://www.fixmystreet.com/report/10089474)
 - Yellow Box Required, 13th September :- [10089466](https://www.fixmystreet.com/report/10089466)
-- 3 way temp traffic lights, 13th September :- [10089141](https://www.fixmystreet.com/report/10089141)
-- Offensive Graffiti Sprayed onto Tree!, 12th September :- [10089025](https://www.fixmystreet.com/report/10089025)
-- Pothole in the road problem, 12th September :- [10088857](https://www.fixmystreet.com/report/10088857)
-- Bollard been hit and leaning over, 12th September :- [10088696](https://www.fixmystreet.com/report/10088696)
-- Garden extended over footpath with furniture and plants, 12th September :- [10088618](https://www.fixmystreet.com/report/10088618)
-- Good spot, 12th September :- [10088592](https://www.fixmystreet.com/report/10088592)
-- Road Closed sign and diversion sign left behind after wok completed, 12th September :- [10088482](https://www.fixmystreet.com/report/10088482)
 
 <!-- fix_marker ends -->
