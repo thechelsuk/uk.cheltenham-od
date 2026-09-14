@@ -7,11 +7,11 @@ import datetime
 import time
 import sys
 import requests
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 import helper
 
 # Load .env file for local development if present
-_env_file = pathlib.Path(__file__).parent.parent.parent.resolve() / ".env"
+_env_file = helper.repo_root() / ".env"
 if _env_file.exists():
     for _line in _env_file.read_text().splitlines():
         _line = _line.strip()
@@ -243,7 +243,7 @@ def station_from_pfs_record(record):
 # -- Main ---------------------------------------------------------------------
 
 if __name__ == "__main__":
-    root            = pathlib.Path(__file__).parent.parent.parent.resolve()
+    root            = helper.repo_root()
     cache_path      = root / "_data" / "fuel-stations.json"
     ignore_path     = root / "_data" / "ignore-stations.json"
     out_path        = root / "_data" / "fuel-prices.json"
