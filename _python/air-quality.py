@@ -399,7 +399,7 @@ def render_markdown(readings):
         distance_str = f" ({distance}km from Cheltenham Centre)" if distance is not None else ""
         lines.append(f"\n## {smart_title(station_name)}{distance_str}\n")
         lines.append("\n| Pollutant | Reading | Band | Measured (UTC) |\n")
-        lines.append("|---|---|---|---|\n")
+        lines.append("| --- | --- | --- | --- |\n")
         for r in sorted(station_readings, key=lambda x: x["pollutant_label"]):
             value_str = f"{r['value']} {r['uom']}".strip() if r["value"] is not None else "n/a"
             when_str = r["timestamp"].strftime("%Y-%m-%d %H:%M") if r["timestamp"] else "n/a"
