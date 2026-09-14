@@ -1,0 +1,61 @@
+{% include header.html %}
+{% assign data = site.data["council-land-and-assets"] %}
+{% assign year_items = data.items | where: "year", page.year %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="{{ page.other_year_link }}">{{ page.other_year_label }} Snapshot &rarr;</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <div id="council-land-and-assets-map" style="height: 600px;"
+            aria-label="Map of Cheltenham Borough Council land and assets in {{ page.year }}"></div>
+
+        <h2>Land & Assets ({{ page.year }})</h2>
+        <div class="table-scroll">
+            <table class="council-land-and-assets-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col">Tenure Type</th>
+                        <th scope="col">Tenure Detail</th>
+                        <th scope="col">Holding Type</th>
+                        <th class="map" scope="col">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in year_items %}
+                    <tr>
+                        <td>{{ item.address }}{% if item.postcode %}, {{ item.postcode }}{% endif %}</td>
+                        <td>{{ item.tenure_type }}</td>
+                        <td>{{ item.tenure_detail }}</td>
+                        <td>{{ item.holding_type }}</td>
+                        <td class="map">{% include pin.html lat=item.lat lng=item.lon label=item.address %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="council-land-and-assets-attribution"><small>
+                Originally published by Cheltenham Borough Council under the
+                <a href="https://www.gov.uk/government/publications/local-government-transparency-code-2015">Local
+                    Government Transparency Code</a>; the council's own open data page for this dataset is no longer
+                online. Sourced here via a <a href="{{ data.source_url }}">GitHub mirror</a> of the original CSV
+                export.
+                {% if data.generated_at %}Last fetched {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            </small></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="council-land-and-assets-data" type="application/json">{{ year_items | jsonify }}</script>
+<script src="/assets/scripts/council-land-and-assets-map.js"></script>
+{% include footer.html %}
