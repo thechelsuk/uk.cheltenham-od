@@ -40,7 +40,10 @@
                     </ul>
                     {% endif %}
                 </div>
-                <p><a href="/cheltenham-10-day-weather-forecast">See a full 10-day Cheltenham forecast &rarr;</a></p>
+                <p class="latest-actions">
+                    <a href="/cheltenham-10-day-weather-forecast" class="latest-action-link">See a full 10-day
+                        Cheltenham forecast &rarr;</a>
+                </p>
             </div>
             <div>
                 <h2>Explore by Category</h2>
@@ -91,11 +94,11 @@
                 {% assign classifieds_count = classifieds_count | plus: 1 %}
                 {% endif %}
                 {% endfor %}
-                <ul>
-                    <li><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live
-                            classifieds</a></li>
-                    <li><a href="/submission">Add yours</a></li>
-                </ul>
+                <p><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live
+                        classifieds</a></p>
+                <p class="latest-actions">
+                    <a href="/submission" class="latest-action-link">Add your classified &rarr;</a>
+                </p>
             </div>
             <div>
                 {% include referral.html %}
