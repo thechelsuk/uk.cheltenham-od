@@ -17,13 +17,23 @@
         {% include sponsor.html %}
 
         <h2>Headline Prices</h2>
-        <ul>
+        <div class="headline-cards">
             {% for h in fuel.headline %}
-            <li>&rarr; {{ h.label }} @ {{ h.price }}p/L from {{ h.name }}{% if h.brand != "" %} ({{ h.brand }}){% endif
-                %}{% if h.pct_cheaper %} — {{ h.pct_cheaper }}% cheaper than typical, around £{{ h.tank_saving }}
-                saved on a full {{ h.tank_litres }}L tank{% endif %}</li>
+            <div class="headline-card">
+                <div class="headline-card-top">
+                    <span class="headline-card-label">{{ h.label }}</span>
+                    <span class="headline-card-price">{{ h.price }}p<span class="headline-card-unit">/L</span></span>
+                </div>
+                <div class="headline-card-name">{{ h.name }}{% if h.brand != "" %} ({{ h.brand }}){% endif %}</div>
+                {% if h.pct_cheaper %}
+                <div class="headline-card-saving">
+                    <strong>{{ h.pct_cheaper }}%</strong> below typical &middot; save ~£{{ h.tank_saving }} on a
+                    {{ h.tank_litres }}L tank
+                </div>
+                {% endif %}
+            </div>
             {% endfor %}
-        </ul>
+        </div>
 
         {% if fuel.context.size > 0 %}
         <p><small>

@@ -1728,3 +1728,71 @@ pre {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================
+   Fuel headline savings cards (Option B)
+   ================================ */
+
+:root {
+    --saving: #1a7f37;
+}
+
+[data-theme=dark] {
+    --saving: #6fd88a;
+}
+
+.headline-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75em;
+    margin: 0.75em 0;
+}
+
+.headline-card {
+    border: 1px solid var(--border);
+    border-radius: 0.6em;
+    padding: 0.75em 0.9em;
+    background: var(--bg-raised);
+}
+
+.headline-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5em;
+}
+
+.headline-card-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.headline-card-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.headline-card-unit {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.headline-card-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.2em;
+}
+
+.headline-card-saving {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--saving);
+}
