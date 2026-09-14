@@ -4,10 +4,35 @@
 <footer class="footer">
     <div class="wrapper">
         <div class="footer-menu-wrap">
+            <nav class="footer-pages-section" aria-label="{{ site.footer_pages.title }}">
+                <h2 class="footer-col-title footer-pages-title">{{ site.footer_pages.title }}</h2>
+                {% assign pages_links = site.footer_pages.links %}
+                {% if site.footer_pages.sort_alpha %}
+                {% assign pages_links = pages_links | sort_natural: "name" %}
+                {% endif %}
+                {% assign pages_total = pages_links.size %}
+                {% assign pages_chunk = pages_total | plus: 3 | divided_by: 4 %}
+                <div class="footer-pages-columns">
+                    {% for i in (0..3) %}
+                    {% assign pages_offset = i | times: pages_chunk %}
+                    {% assign pages_sub = pages_links | slice: pages_offset, pages_chunk %}
+                    {% if pages_sub.size > 0 %}
+                    <ul class="footer-pages-col">
+                        {% for item in pages_sub %}
+                        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </nav>
+
             <div class="footer-columns">
                 {% for col in site.footer_columns %}
-                <nav class="footer-col" aria-label="{{ col.title }}">
+                <nav class="footer-col" aria-label="{{ col.title | default: col.aria_label }}">
+                    {% if col.title %}
                     <h2 class="footer-col-title">{{ col.title }}</h2>
+                    {% endif %}
                     <ul>
                         {% assign col_links = col.links %}
                         {% if col.sort_alpha %}
