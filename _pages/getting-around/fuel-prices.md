@@ -29,3 +29,7 @@ Data sourced from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-p
 ### How Do I Read the Table?
 
 - Click any column header to sort — by price, distance, or when a price was last reported. The lowest price in each fuel column is highlighted, and forecourts with no update in {{ fuel.stale_days }} days are greyed out.
+
+### How Is the National Average Worked Out?
+
+- It's the mean of the latest reported price at every reporting forecourt across the UK for that fuel type, using the same GOV.UK fuel price scheme data. It isn't weighted by sales volume, so it reflects the spread of forecourt prices rather than what drivers typically pay in total.
