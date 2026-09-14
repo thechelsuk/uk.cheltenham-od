@@ -1,0 +1,50 @@
+{% include header.html %}
+{% assign data = site.data["council-tax"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>Tax year {{ data.tax_year }}</li>
+                <li><a href="{{ data.band_check_url }}">Check your property's council tax band &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Council Tax by Area and Band</h2>
+        <div class="table-scroll">
+            <table class="council-tax-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        {% assign first_area = data.areas | first %}
+                        {% for b in first_area.bands %}
+                        <th scope="col" class="number">Band {{ b.band }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in data.areas %}
+                    <tr{% if a.is_parish %} class="parish"{% endif %}>
+                        <td data-val="{{ a.area | downcase }}">{{ a.area }}</td>
+                        {% for b in a.bands %}
+                        <td class="number" data-val="{{ b.amount }}">&pound;{{ b.amount }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="council-tax-attribution"><small>
+                Charges from <a href="{{ data.source_url }}">{{ data.source }}</a> for {{ data.tax_year }}.
+                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
+                {{ data.licence }}.
+            </small></p>
+    </div>
+</div>
+{% include footer.html %}
