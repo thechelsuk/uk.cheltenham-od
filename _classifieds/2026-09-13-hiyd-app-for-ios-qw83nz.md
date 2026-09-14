@@ -29,7 +29,7 @@ touching a terminal.
 - Full-text search across your whole archive, with live Markdown preview
 - Shortcuts and App Intents support for automating your writing workflow
 
-## Why You'll Like It
+## Why You'll like It
 
 - Every feature is free to use — no paywalled functionality, ever
 - Customisable app appearance to match how you like to write
