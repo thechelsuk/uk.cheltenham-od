@@ -20,16 +20,16 @@ body.theme-cod,
 }
 
 /*--------------------------------------------------*/
-/* alert: air, flood, gov */
-body.theme-alert,
-.theme-alert {
+/* environment: air, flood, sewage, water quality, security — Safety & Environment */
+body.theme-environment,
+.theme-environment {
     --accent: #0f6e8c;
     --accent-dark: #0a4f65;
     --accent-text: #ffffff;
 }
 
-[data-theme="dark"] body.theme-alert,
-[data-theme="dark"] .theme-alert {
+[data-theme="dark"] body.theme-environment,
+[data-theme="dark"] .theme-environment {
     --accent: #5bb8d6;
     --accent-dark: #8fd0e6;
     --accent-text: #0a1420;
@@ -58,15 +58,16 @@ body.theme-classifieds,
 
 /*--------------------------------------------------*/
 
-body.theme-fuel,
-.theme-fuel {
+/* travel: fuel, EV charging, buses — Getting Around */
+body.theme-travel,
+.theme-travel {
     --accent: #b5561f;
     --accent-dark: #863f16;
     --accent-text: #ffffff;
 }
 
-[data-theme="dark"] body.theme-fuel,
-[data-theme="dark"] .theme-fuel {
+[data-theme="dark"] body.theme-travel,
+[data-theme="dark"] .theme-travel {
     --accent: #e08a4f;
     --accent-dark: #f0ad7c;
     --accent-text: #0a1420;
