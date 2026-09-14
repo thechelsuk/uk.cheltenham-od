@@ -26,7 +26,7 @@
                     <tr>
                         <th scope="col">Sampling Point</th>
                         <th scope="col" class="number">Distance</th>
-                        <th scope="col">Sample Date</th>
+                        <th scope="col" class="date">Sample Date</th>
                         <th scope="col">Determinand</th>
                         <th scope="col" class="number">Value</th>
                         <th scope="col">Unit</th>
@@ -38,7 +38,7 @@
                     <tr>
                         <td data-val="{{ p.name | downcase }}">{{ p.name }}</td>
                         <td class="number" data-val="{{ p.distance_miles }}">{{ p.distance_miles }} mi</td>
-                        <td data-val="{{ p.latest_date }}">{{ p.latest_date }}</td>
+                        <td class="date" data-val="{{ p.latest_date }}">{{ p.latest_date }}</td>
                         <td>{{ r.determinand }}</td>
                         <td class="number">{{ r.value }}</td>
                         <td>{{ r.unit }}</td>
