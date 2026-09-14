@@ -34,15 +34,15 @@ from pathlib import Path
 
 # --- CONFIG -----------------------------------------------------------
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-SOURCE_DIR = REPO_ROOT / "_data-sources"
+root = Path(__file__).resolve().parent.parent.parent
+SOURCE_DIR = root / "_data-sources"
 
 COVERAGE_CSV = SOURCE_DIR / "202601_fixed_pc_coverage_r2_GL.csv"
 WARD_BOUNDARY_FILE = SOURCE_DIR / "wards.geojson"
 WARD_CACHE = SOURCE_DIR / "_ward-cache.json"
 
-MAP_OUT = REPO_ROOT / "_data" / "broadband-map.json"
-SUMMARY_OUT = REPO_ROOT / "_data" / "broadband-summary.json"
+MAP_OUT = root / "_data" / "broadband-map.json"
+SUMMARY_OUT = root / "_data" / "broadband-summary.json"
 
 TARGET_OUTCODES = {"GL50", "GL51", "GL52", "GL53", "GL54"}
 

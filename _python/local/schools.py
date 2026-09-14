@@ -13,8 +13,8 @@ import os
 from pyproj import Transformer
 
 HERE = os.path.dirname(os.path.abspath(__file__))          # _python/
-SRC  = os.path.join(HERE, "..", "_data-sources", "edubasealldata.csv")
-OUT  = os.path.join(HERE, "..", "_data", "schools.json")
+SRC  = os.path.join(HERE, "..", "..", "_data-sources", "edubasealldata.csv")
+OUT  = os.path.join(HERE, "..", "..", "_data", "schools.json")
 
 DISTRICTS = {"GL50", "GL51", "GL52", "GL53", "GL54"}
 

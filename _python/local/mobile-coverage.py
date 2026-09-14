@@ -14,8 +14,8 @@ import sys
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SOURCE_CSV = os.path.join(HERE, "..", "_data-sources", "202601_mobile_coverage_pcon_r01.csv")
-OUT = os.path.join(HERE, "..", "_data", "mobile-coverage.json")
+SOURCE_CSV = os.path.join(HERE, "..", "..", "_data-sources", "202601_mobile_coverage_pcon_r01.csv")
+OUT = os.path.join(HERE, "..", "..", "_data", "mobile-coverage.json")
 
 SOURCE_URL = "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-update-spring-2026"
 CONSTITUENCY_NAME = "Cheltenham"
