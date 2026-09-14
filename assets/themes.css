@@ -81,15 +81,16 @@ body.theme-travel,
 
 /*--------------------------------------------------*/
 
-body.theme-food,
-.theme-food {
+/* landing: cross-category guide pages (moving, visiting, students, racing, guides) */
+body.theme-landing,
+.theme-landing {
     --accent: #b8925a;
     --accent-dark: #d1b184;
     --accent-text: #0a1420;
 }
 
-[data-theme="dark"] body.theme-food,
-[data-theme="dark"] .theme-food {
+[data-theme="dark"] body.theme-landing,
+[data-theme="dark"] .theme-landing {
     --accent: #4ba39c;
     --accent-dark: #7fc2bb;
     --accent-text: #0a1420;

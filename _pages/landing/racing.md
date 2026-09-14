@@ -3,7 +3,7 @@ layout: races
 title: "Cheltenham Festival & Races 2027: Where to Stay"
 seo: "Where to stay for the Cheltenham Festival and Races 2027 (16–19 March) — hotels and guest houses near Cheltenham Racecourse, sorted by distance, with live availability for raceweek and Gold Cup Friday."
 description: "Accommodation for the Cheltenham Festival and Races 2027 — hotels near Cheltenham Racecourse with live availability for race week, 16–19 March."
-type: "other"
+type: "landing"
 permalink: /cheltenham-festival-accommodation
 schema: stay22
 festival_checkin: 2027-03-15
