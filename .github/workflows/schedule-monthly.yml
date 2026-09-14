@@ -37,10 +37,12 @@ jobs:
                   python _python/crime.py
                   python _python/interests.py
                   python _python/hotels.py
+                  python _python/car-parks.py
                   python _python/cheltenham-stats.py
                   python _python/parkrun.py
                   python _python/listed-buildings.py
                   python _python/water-quality.py
+                  python _python/council-tax.py
 
             - name: Commit and push if it changed
               id: commit
