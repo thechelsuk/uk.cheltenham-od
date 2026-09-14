@@ -5,7 +5,7 @@ seo_title: "Cheltenham Broadband Speeds & Coverage Map by Ward"
 seo: "Cheltenham Broadband Speeds & Coverage Map by Ward"
 permalink: /cheltenham-broadband-internet-speeds
 description: "Check broadband coverage and speeds across Cheltenham by ward — gigabit, full-fibre, ultrafast and superfast availability from Ofcom data, covering GL50–GL54."
-type: "house"
+type: "property"
 schema: broadband
 sponsor:
     url: "https://youfibre.com?ref=cheltenham-od"

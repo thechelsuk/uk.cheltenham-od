@@ -4,7 +4,7 @@ title: Cheltenham Council Tax
 seo: "Cheltenham council tax charges by band A-H, by parish, for the current tax year, plus a link to check your property's official band."
 permalink: /cheltenham-council-tax
 description: "Council tax charges by band, by area, for Cheltenham and its parishes."
-type: "other"
+type: "property"
 schema: council-tax
 ---
 

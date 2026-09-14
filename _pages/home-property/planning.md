@@ -4,7 +4,7 @@ title: "Cheltenham Planning Applications"
 seo: "Track recent planning applications submitted to Cheltenham Borough Council — new homes, conversions, extensions and commercial schemes, updated daily."
 permalink: /cheltenham-planning-applications
 description: "Recent planning applications submitted to Cheltenham Borough Council, updated daily from the council's PublicAccess portal."
-type: "house"
+type: "property"
 schema: planschema
 ---
 

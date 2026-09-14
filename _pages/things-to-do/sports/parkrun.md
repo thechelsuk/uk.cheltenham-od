@@ -4,7 +4,7 @@ title: "Cheltenham Parkrun Events"
 seo: "Cheltenham parkrun events — Cheltenham parkrun, King George V Playing Field parkrun, and junior parkruns, with locations and a map."
 permalink: /cheltenham-sports/parkrun
 description: "Every parkrun event in Cheltenham — free, timed 5k runs and junior 2k runs, with locations and a map."
-type: "third"
+type: "activities"
 schema: parkrun
 ---
 

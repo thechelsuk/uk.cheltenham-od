@@ -4,7 +4,7 @@ title: "Cheltenham Food Bank Needed Items"
 seo: "food bank needed and wanted items for two major Cheltenham food banks to donate food and items"
 permalink: /cheltenham-foodbank-needed-items
 description: "Needed items for Cheltenham foodbanks"
-type: "other"
+type: "community"
 ---
 
 ## Cheltenham Food Banks - Needed Items

@@ -5,7 +5,7 @@ title: "Cheltenham Help and Support Contact Details"
 seo: "helpful phone numbers and contacts in Cheltenham area including utilities, hospitals, and crisis numbers"
 permalink: /cheltenham-helpful-contacts-reports
 description: "Helpful phone numbers and contacts in the Cheltenham area"
-type: "other"
+type: "community"
 feed_url:
 ---
 
