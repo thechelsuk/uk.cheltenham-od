@@ -44,7 +44,7 @@ def friendly_date(raw):
     if not raw:
         return None
     try:
-        return parse_date(raw).strftime("%-d %B %Y at %H:%M")
+        return parse_date(raw).strftime("%Y-%m-%d %H:%M")
     except (ValueError, TypeError):
         return raw
 

@@ -33,7 +33,7 @@
                     {% for o in sewage.overflows %}
                     <tr{% if o.discharging %} class="discharging"{% endif %}>
                         <td data-val="{{ o.watercourse | downcase }}">{{ o.watercourse }}</td>
-                        <td data-val="{{ o.discharging }}">{% if o.discharging %}&#128308; Discharging now{% else %}&#128994; Not discharging{% endif %}</td>
+                        <td data-val="{{ o.discharging }}">{% if o.discharging %}Discharging now{% else %}Not discharging{% endif %}</td>
                         <td class="number" data-val="{{ o.distance_miles }}">{{ o.distance_miles }} mi</td>
                         <td>{{ o.latest_event_start }}</td>
                         <td>{{ o.latest_event_end }}</td>
