@@ -5,18 +5,20 @@
         <header class="{{page.type}} header">
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-flood-warnings">Flood Warnings</a></li>
+                <li><a href="/cheltenham-water-quality">River Water Quality</a></li>
+            </ul>
         </header>
 
         {% include sponsor.html %}
 
         {{ content }}
 
-        <h2>Sewage Overflow Status</h2>
-        <p>Live status of the storm overflows discharging into the River Chelt and the brooks that feed it, from
-            Severn Trent Water's Event Duration Monitors — updated automatically several times a day.</p>
-
+        <h2>Map</h2>
         <div id="sewage-map" style="height: 480px; border-radius: 8px;" aria-label="Map of sewage overflow points near Cheltenham"></div>
 
+        <h2>Overflow Status</h2>
         <div class="table-scroll">
             <table class="sewage-table data-table" data-sortable>
                 <thead>

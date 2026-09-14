@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham River Water Quality",
+  "description": "Chemical water quality readings (pH, temperature, nutrients and more) for the River Chelt and nearby brooks, from the Environment Agency's Water Quality Archive.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Sampling point", "Sample date", "Determinand", "Value", "Unit"]
+}
+</script>

@@ -7,9 +7,9 @@ seo: Live sewage overflow and storm discharge status for the River Chelt Chelten
 date: 2026-09-14 13:00
 ---
 
-Our [flood warnings page](/cheltenham-flood-warnings) is now "Cheltenham Water & Flooding" — alongside the existing Environment Agency flood alerts, it shows near-real-time sewage overflow status for the River Chelt and the brooks that feed it.
+We've added a new [sewage overflow status page](/cheltenham-sewage-overflows), showing near-real-time storm overflow status for the River Chelt and the brooks that feed it, alongside our existing [flood warnings](/cheltenham-flood-warnings) page.
 
-Severn Trent Water fits an Event Duration Monitor (EDM) to each storm overflow, recording exactly when it starts and stops discharging untreated wastewater during heavy rainfall. We pull that feed via Water UK's National Storm Overflow Hub, filtered to the 12 monitored overflows within 4 miles of Cheltenham, and show them on a map and sortable table alongside the flood alerts.
+Severn Trent Water fits an Event Duration Monitor (EDM) to each storm overflow, recording exactly when it starts and stops discharging untreated wastewater during heavy rainfall. We pull that feed via Water UK's National Storm Overflow Hub, filtered to the 12 monitored overflows within 4 miles of Cheltenham, and show them on a map and sortable table.
 
 ## FAQs
 

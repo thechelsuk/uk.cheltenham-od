@@ -1,20 +1,19 @@
 ---
 
-layout: water-flooding
-title: Cheltenham Water & Flooding
-seo: Flood warnings and live sewage overflow status for Cheltenham and Gloucestershire, sourced from the Environment Agency and Severn Trent Water.
-description: "Live flood warnings and river sewage overflow status for Cheltenham, sourced from the Environment Agency and Severn Trent Water."
+layout: flood-warnings
+title: Cheltenham Flood Warnings
+seo: Flood warnings and alerts for Cheltenham and Gloucestershire, sourced from the Environment Agency.
+description: "Live flood warnings for Cheltenham and Gloucestershire, sourced from the Environment Agency."
 type: "alert"
 feed_url: "/feeds/flood.xml"
 permalink: /cheltenham-flood-warnings
-schema: water-flooding
 
 ---
 
 ## About Flood Warnings for Cheltenham and Gloucestershire
 
 This page publishes live flood warnings and flood alerts for Cheltenham and the
-wider Gloucestershire area, sourced from the [Environment Agency](https://www.gov.uk/check-flood-risk) flood warning service and republished here as an [RSS feed]({{feed_url}}), alongside live sewage overflow status for the River Chelt from Severn Trent Water.
+wider Gloucestershire area, sourced from the [Environment Agency](https://www.gov.uk/check-flood-risk) flood warning service and republished here as an [RSS feed]({{feed_url}}).
 
 When the Environment Agency has issued a warning that affects Gloucestershire,
 it appears in the list above. When the list is empty, there are no active flood
@@ -27,6 +26,8 @@ Local watercourses including the River Chelt, along with the Severn and Avon
 catchments across Gloucestershire, are the main sources of flood risk in the
 area. Risk is highest during prolonged or heavy rainfall, particularly in
 autumn and winter.
+
+For the state of the River Chelt itself day-to-day, see our [sewage overflow status](/cheltenham-sewage-overflows) and [river water quality](/cheltenham-water-quality) pages.
 
 ### How to Check Your Flood Risk and Stay Informed
 
@@ -47,27 +48,15 @@ medication, and avoid walking or driving through flood water — just 30 cm of
 moving water can move a vehicle. Follow instructions from emergency services
 and the Environment Agency.
 
-### About the Sewage Overflow Data
-
-Severn Trent Water fits an Event Duration Monitor (EDM) to each storm
-overflow, recording when it starts and stops discharging untreated wastewater
-into a watercourse during heavy rainfall — this is a normal, permitted part of
-how the sewer network avoids backing up, not necessarily a sign of a fault.
-The table below shows near-real-time EDM status for the overflows on the
-River Chelt and the brooks that feed it. This tracks discharge *activity*, not
-chemical water quality (nitrates, bacteria levels and so on) — the
-Environment Agency's separate Water Quality Archive covers that, where
-testing exists for a given watercourse.
-
 ## Latest Flood Alerts
 
 <!-- flood_marker starts -->
 - Flood alert: Tidal River Avon at Bristol, Pill and Shirehampton
-- High tides over the next two days may lead to flooding. 
-Flooding is possible from 7:30PM to 9:30PM on 11/09, from 08:00am to 10:00am and from 08:00PM to 10:00PM on 12/09. 
-Areas most at risk include the tidal River Avon from Sea Mills to Conham in Bristol and between the Avonmouth Bridge and Shirehampton Park including Pill and Shirehampton. The detailed tidal forecast for those who use it is for a peak level at Avonmouth Portbury. The first forecast high water of 7.42 mAODN is at 8:30PM 11/09, which is 0.14 m above tide tables, with Westerly force 4 winds. The second forecast high water is at 09:00AM 12/09 with a level of 7.4 mAODN with South-Westerly force 5 winds. (mAODN is height above average sea level.) 
-We are closely monitoring the situation . 
-Take care and avoid walking, cycling or driving through flood water . 
+- High tides over the next two days may lead to flooding. 
+Flooding is possible from 7:30PM to 9:30PM on 11/09, from 08:00am to 10:00am and from 08:00PM to 10:00PM on 12/09. 
+Areas most at risk include the tidal River Avon from Sea Mills to Conham in Bristol and between the Avonmouth Bridge and Shirehampton Park including Pill and Shirehampton. The detailed tidal forecast for those who use it is for a peak level at Avonmouth Portbury. The first forecast high water of 7.42 mAODN is at 8:30PM 11/09, which is 0.14 m above tide tables, with Westerly force 4 winds. The second forecast high water is at 09:00AM 12/09 with a level of 7.4 mAODN with South-Westerly force 5 winds. (mAODN is height above average sea level.) 
+We are closely monitoring the situation . 
+Take care and avoid walking, cycling or driving through flood water . 
 This message will be updated by 1:35PM on 12 September 2026 or as the situation changes.
 
 
