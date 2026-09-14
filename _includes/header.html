@@ -206,6 +206,8 @@
                                 <h2 class="nav-panel-group-title">
                                     {% if category_page %}
                                     <a href="{{ category_page.url }}">{{ group.name }}</a>
+                                    <span class="nav-category-swatch theme-{{ category_page.type }}"
+                                        aria-hidden="true"></span>
                                     {% else %}
                                     {{ group.name }}
                                     {% endif %}

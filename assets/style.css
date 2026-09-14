@@ -582,6 +582,10 @@ pre>code {
     margin: 0 0 0.4em;
     padding-bottom: 0.4em;
     border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
 }
 
 /* A quiet link to the category's /explore page — no hover/focus colour or
@@ -593,6 +597,17 @@ pre>code {
 .nav-panel-group-title a:focus {
     color: inherit;
     text-decoration: none;
+}
+
+/* Small colour swatch for the category's own theme, since --accent here
+   reflects the current page's theme, not each group's. */
+.nav-category-swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    flex: 0 0 auto;
+    border: 1px solid #000;
+    background: var(--accent);
 }
 
 .nav-panel-item {
