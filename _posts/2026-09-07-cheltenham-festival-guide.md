@@ -1,6 +1,6 @@
 ---
 layout: posts
-type: news
+type: cod
 title: Cheltenham Open Data Adds a Festival & Races Accommodation Guide
 seo: Where to stay for the Cheltenham Festival and Races 2027 (16–19 March) — hotels near Cheltenham Racecourse, sorted by distance, with live availability for raceweek and Gold Cup Friday.
 date: 2026-09-07 13:00

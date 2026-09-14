@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds Air Quality, GPs, and Pharmacies to Site
-type: news
+type: cod
 description: Find GP practices and pharmacies in Cheltenham and DEFRA air quality reports.
 seo: Find GP practices and pharmacies in Cheltenham, with addresses, phone numbers and map links, updated automatically from the NHS national register and DEFRA air quality reports
 date: 2026-08-22 11:00

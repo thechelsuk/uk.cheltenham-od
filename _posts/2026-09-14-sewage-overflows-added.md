@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds Live River Chelt Sewage Overflow Status
-type: news
+type: cod
 description: Live storm overflow status for the River Chelt and its tributary brooks, sourced from Severn Trent Water's Event Duration Monitors.
 seo: Live sewage overflow and storm discharge status for the River Chelt Cheltenham, from Severn Trent Water Event Duration Monitors.
 date: 2026-09-14 13:00

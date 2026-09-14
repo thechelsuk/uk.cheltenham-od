@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds a Full Employment Rate History
-type: news
+type: cod
 description: Cheltenham's economic activity, employment and unemployment rates year by year since 2004, sourced from the ONS's Nomis service.
 seo: Cheltenham employment rate history since 2004 — economic activity, employment and unemployment rates by year, sourced from ONS Nomis.
 date: 2026-09-13 04:00

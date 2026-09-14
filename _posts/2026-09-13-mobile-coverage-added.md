@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds Mobile Phone Coverage
-type: news
+type: cod
 description: 2G, 3G, 4G, 5G and voice call mobile coverage for Cheltenham, indoors, outdoors and across the local area, from Ofcom's Connected Nations data.
 seo: Cheltenham mobile phone coverage — 4G, 5G and voice call availability by network, from Ofcom's Connected Nations data.
 date: 2026-09-13 07:00

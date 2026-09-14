@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Maps Every Listed Building in the Town
-type: news
+type: cod
 description: Every listed building, scheduled monument and registered park & garden in Cheltenham, graded and mapped, from Historic England's National Heritage List.
 seo: Cheltenham listed buildings mapped by grade, plus scheduled monuments and registered parks & gardens, sourced from Historic England's National Heritage List.
 date: 2026-09-14 09:00

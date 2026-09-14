@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds a Bus Routes and Service Data Page
-type: news
+type: cod
 description: Every registered bus route serving Cheltenham, and whether its timetable data is properly published, sourced from the DfT's Bus Open Data Service.
 seo: Cheltenham bus routes and live disruptions, sourced from the DfT's Bus Open Data Service (BODS), refreshed every 10 minutes.
 date: 2026-09-13 01:00

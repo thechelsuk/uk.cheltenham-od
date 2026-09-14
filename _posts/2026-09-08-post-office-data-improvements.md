@@ -1,7 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Expands Post Office Page
-type: news
+type: cod
 description: Cheltenham's post office locations with map and address.
 seo: Find Cheltenham's nearest post office with map and table of addresses.
 date: 2026-09-08 07:00
