@@ -32,6 +32,7 @@ EARTH_RADIUS_MI = 3958.8
 BATCH_DELAY_SECS     = 1.5   # pause between paginated requests to avoid hammering the API
 PRICE_LOOKBACK_DAYS  = 25    # how far back the daily price fetch looks
 STALE_DAYS           = 10    # prices older than this are flagged as stale on the page
+AVG_TANK_LITRES      = 55    # approx size of an average UK car fuel tank, for "full tank" savings
 
 # Human-readable names for API fuel type codes
 FUEL_LABELS = {
@@ -402,13 +403,16 @@ if __name__ == "__main__":
         return xs[mid] if n % 2 else (xs[mid - 1] + xs[mid]) / 2
 
     context = []
+    typical_by_ft = {}
     for ft in fuel_type_cols:
         vals = all_vals[ft]
         if vals:
+            typical = round(median(vals), 1)
+            typical_by_ft[ft] = typical
             context.append({
                 "label":    fuel_label(ft),
                 "cheapest": round(min(vals), 1),
-                "typical":  round(median(vals), 1),
+                "typical":  typical,
             })
 
     # 9. Build render-ready rows, sorted by distance then name.
@@ -469,12 +473,22 @@ if __name__ == "__main__":
             s = station_cache[cheapest[ft]["nid"]]
             raw_brand = s.get("brand_name") or ""
             brand = clean_name(raw_brand)
-            headline.append({
+            entry = {
                 "label": fuel_label(ft),
                 "price": f"{cheapest[ft]['price']:.1f}",
                 "name":  clean_name(s["trading_name"]),
                 "brand": brand if brand and raw_brand.lower() != s["trading_name"].lower() else "",
-            })
+            }
+            typical = typical_by_ft.get(ft)
+            if typical:
+                price_per_litre = cheapest[ft]["price"]
+                pct_cheaper     = (typical - price_per_litre) / typical * 100
+                if pct_cheaper >= 0.1:
+                    tank_saving = (typical - price_per_litre) * AVG_TANK_LITRES / 100
+                    entry["pct_cheaper"] = f"{pct_cheaper:.1f}"
+                    entry["tank_litres"] = AVG_TANK_LITRES
+                    entry["tank_saving"] = f"{tank_saving:.2f}"
+            headline.append(entry)
 
 
     payload = {
