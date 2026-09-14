@@ -8,7 +8,13 @@ the River Chelt itself plus the brooks that feed it (Wyman's Brook, Hatherley
 Brook, Hyde Brook, Ham Brook, Mill Stream), filtered to a radius around
 Cheltenham rather than a hardcoded watercourse name list, so it also picks up
 any newly added or renamed monitoring points nearby.
-"""
+
+Queries the underlying ArcGIS Feature Service directly with a spatial filter,
+rather than the Hub's "static" geojson download link — that link now kicks
+off an async on-demand export and returns a 202 "still generating, check
+back later" JSON body instead of the data, which silently produced an empty
+overflows list (no exception, since .get("features", []) just came back
+empty) until this was noticed on the live site."""
 import json
 import math
 import os
@@ -22,8 +28,9 @@ import helper
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "sewage-overflows.json")
 
-SOURCE_URL = ("https://portal-streamwaterdata.hub.arcgis.com/datasets/"
-              "stwmaps::severn-trent-water-storm-overflow-activity.geojson")
+QUERY_URL = ("https://services1.arcgis.com/NO7lTIlnxRMMG9Gw/arcgis/rest/services/"
+             "Severn_Trent_Water_Storm_Overflow_Activity/FeatureServer/0/query")
+FRIENDLY_SOURCE_URL = "https://www.stwater.co.uk/in-my-area/storm-overflow-map/"
 HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 CHELTENHAM_LAT  = 51.899
@@ -40,19 +47,42 @@ def haversine_miles(lat1, lon1, lat2, lon2):
     return 2 * EARTH_RADIUS_MI * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
-def friendly_date(raw):
-    if not raw:
+def parse_field_date(raw):
+    """Esri fields come back as epoch milliseconds (an int), not a string."""
+    if raw is None:
         return None
+    if isinstance(raw, (int, float)):
+        return datetime.fromtimestamp(raw / 1000, tz=timezone.utc)
     try:
-        return parse_date(raw).strftime("%Y-%m-%d %H:%M")
+        return parse_date(raw)
     except (ValueError, TypeError):
-        return raw
+        return None
+
+
+def friendly_date(raw):
+    parsed = parse_field_date(raw)
+    return parsed.strftime("%Y-%m-%d %H:%M") if parsed else None
 
 
 def main():
-    resp = requests.get(SOURCE_URL, headers=HEADERS, timeout=30)
+    params = {
+        "where": "1=1",
+        "outFields": "*",
+        "f": "geojson",
+        "geometry": json.dumps({"x": CHELTENHAM_LON, "y": CHELTENHAM_LAT,
+                                 "spatialReference": {"wkid": 4326}}),
+        "geometryType": "esriGeometryPoint",
+        "inSR": 4326,
+        "distance": RADIUS_MILES,
+        "units": "esriSRUnit_StatuteMile",
+        "spatialRel": "esriSpatialRelIntersects",
+    }
+    resp = requests.get(QUERY_URL, params=params, headers=HEADERS, timeout=30)
     resp.raise_for_status()
-    features = resp.json().get("features", [])
+    body = resp.json()
+    if "features" not in body:
+        raise SystemExit(f"Unexpected response from storm overflow query (no 'features' key): {body}")
+    features = body["features"]
 
     overflows = []
     for feat in features:
@@ -65,12 +95,8 @@ def main():
             continue
 
         event_start, event_end = props.get("LatestEventStart"), props.get("LatestEventEnd")
-        duration_hours = None
-        if event_start and event_end:
-            try:
-                duration_hours = round((parse_date(event_end) - parse_date(event_start)).total_seconds() / 3600, 1)
-            except (ValueError, TypeError):
-                pass
+        start_dt, end_dt = parse_field_date(event_start), parse_field_date(event_end)
+        duration_hours = round((end_dt - start_dt).total_seconds() / 3600, 1) if start_dt and end_dt else None
 
         overflows.append({
             "id":                 props.get("Id"),
@@ -90,7 +116,7 @@ def main():
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source":       "Water UK National Storm Overflow Hub (Severn Trent Water EDM feed)",
-        "source_url":   "https://www.stwater.co.uk/in-my-area/storm-overflow-map/",
+        "source_url":   FRIENDLY_SOURCE_URL,
         "licence":      ("No formal licence stated — published as a free public near-real-time "
                           "data feed by Severn Trent Water via Water UK's National Storm "
                           "Overflow Hub"),
