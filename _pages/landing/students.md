@@ -3,7 +3,7 @@ layout: page
 title: Student Guide to Cheltenham - Living & Studying Here
 seo: "New student in Cheltenham? A local guide to renting, registering with a GP, bins, budget eats, going out and settling in - backed by open data."
 description: "A practical guide for students moving to Cheltenham, Gloucestershire. Renting, healthcare, bins, cheap eats, things to do and staying safe, all backed by open data."
-type: "other"
+type: "landing"
 permalink: /student-guide-to-cheltenham
 ---
 
