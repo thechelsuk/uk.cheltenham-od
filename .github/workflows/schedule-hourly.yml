@@ -26,17 +26,28 @@ jobs:
               uses: actions/checkout@v7
 
             - name: Fetch latest FMS Data
+              continue-on-error: true
               run: |-
-                  curl "https://ratings.food.gov.uk/api/open-data-files/FHRS124en-GB.xml" > _data/food-standards.xml
+                  curl -f "https://ratings.food.gov.uk/api/open-data-files/FHRS124en-GB.xml" -o /tmp/food-standards.xml \
+                    && mv /tmp/food-standards.xml _data/food-standards.xml \
+                    || echo "::warning::Failed to fetch food-standards.xml, keeping existing data"
 
             - name: Fetch latest FMS Data
+              continue-on-error: true
               run: |-
-                  curl "https://www.fixmystreet.com/rss/l/51.897991,-2.071308/10" > _data/fix-my-street.xml
+                  curl -f "https://www.fixmystreet.com/rss/l/51.897991,-2.071308/10" -o /tmp/fix-my-street.xml \
+                    && mv /tmp/fix-my-street.xml _data/fix-my-street.xml \
+                    || echo "::warning::Failed to fetch fix-my-street.xml, keeping existing data"
 
             - name: Fetch latest FB Data
+              continue-on-error: true
               run: |-
-                  curl "https://www.givefood.org.uk/api/2/foodbank/cheltenham/" | jq . > _data/foodbank-cheltenham.json
-                  curl "https://www.givefood.org.uk/api/2/foodbank/cheltenham-open-door/" | jq . > _data/foodbank-open-door.json
+                  curl -f "https://www.givefood.org.uk/api/2/foodbank/cheltenham/" | jq . > /tmp/foodbank-cheltenham.json \
+                    && mv /tmp/foodbank-cheltenham.json _data/foodbank-cheltenham.json \
+                    || echo "::warning::Failed to fetch foodbank-cheltenham.json, keeping existing data"
+                  curl -f "https://www.givefood.org.uk/api/2/foodbank/cheltenham-open-door/" | jq . > /tmp/foodbank-open-door.json \
+                    && mv /tmp/foodbank-open-door.json _data/foodbank-open-door.json \
+                    || echo "::warning::Failed to fetch foodbank-open-door.json, keeping existing data"
 
             - name: Set up Python
               uses: actions/setup-python@v7

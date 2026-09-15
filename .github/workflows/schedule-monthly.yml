@@ -21,8 +21,11 @@ jobs:
               uses: actions/checkout@v7
 
             - name: Fetch holidays data
+              continue-on-error: true
               run: |
-                  curl https://www.gov.uk/bank-holidays.json | jq . > _data/holidays.json
+                  curl -f https://www.gov.uk/bank-holidays.json | jq . > /tmp/holidays.json \
+                    && mv /tmp/holidays.json _data/holidays.json \
+                    || echo "::warning::Failed to fetch holidays.json, keeping existing data"
 
             - name: Set up Python
               uses: actions/setup-python@v7
