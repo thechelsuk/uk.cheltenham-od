@@ -2,28 +2,22 @@
 layout: empty
 permalink: /feeds/news-summary.xml
 ---
-{%- assign contents_of_page = site.pages | where: "name", "news.md" | first -%}
-{%- assign updated = site.time | date_to_xmlschema -%}
-{%- assign day = site.time | date: "%Y-%m-%d" -%}
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Cheltenham OD - Daily News Summary</title>
-  <subtitle>{{ site.description | xml_escape }}</subtitle>
-  <link href="{{ site.url }}/feeds/news-summary.xml" rel="self" type="application/atom+xml"/>
-  <link href="{{ site.url }}//cheltenham-news" rel="alternate" type="text/html"/>
-  <id>{{ site.url }}/news</id>
-  <updated>{{ updated }}</updated>
-  <author>
-    <name>Cheltenham Open Data</name>
-  </author>
+  <title>Cheltenham OD - Cheltenham Daily News Summary</title>
+  <subtitle>One round-up a day of the top local headlines — a daily newsletter without the inbox.</subtitle>
+  <link rel="self" href="https://cheltenham-od.uk/feeds/news-summary.xml"/>
+  <link rel="alternate" type="text/html" href="https://cheltenham-od.uk/cheltenham-news"/>
+  <id>https://cheltenham-od.uk/cheltenham-news</id>
+  <updated>2026-09-15T12:34:33Z</updated>
   <entry>
-    <title>Daily News Aggregation Summary for {{ day }}</title>
-    <link href="{{ site.url }}/news" rel="alternate" type="text/html"/>
-    <id>{{ site.url }}/news#{{ day }}</id>
-    <updated>{{ updated }}</updated>
-    <published>{{ updated }}</published>
-    <content type="html">
-      <![CDATA[ {{ contents_of_page.content | markdownify }} ]]>
-    </content>
+    <title>Daily News Summary — 15 September 2026</title>
+    <link href="https://cheltenham-od.uk/cheltenham-news#2026-09-15"/>
+    <id>https://cheltenham-od.uk/cheltenham-news#2026-09-15</id>
+    <author>
+      <name>Cheltenham OD - Cheltenham Daily News Summary</name>
+    </author>
+    <content type="html">&lt;p&gt;Today's top 10 local headlines:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/cwg7kv373z4eo?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Harry and Meghan to have security review and kids change Cotswold school&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/cm0lr97488xgo?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Historic cinema needs £70k for new projectors&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/c5y7e9e2rx0o?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Rare marble sculpture mistaken for garden ornament&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/cqvgy888r7kko?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Three sisters rising through the ranks of bowls&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="/news/housing-supply-added.html"&gt;Cheltenham Open Data Adds Housing Supply &amp;amp; Property Stock&lt;/a&gt; — Cheltenham OD News&lt;/li&gt;&lt;li&gt;&lt;a href="/news/council-land-and-assets-added.html"&gt;Cheltenham Open Data Maps Council Land &amp;amp; Assets&lt;/a&gt; — Cheltenham OD News&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/cwm2q0y5gp14o?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Vote against assisted dying &amp;#x27;cruel and inhumane&amp;#x27;&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/c5m27117e1w8o?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Boats stuck as silt builds up in city docks&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.bbc.co.uk/news/articles/c9e8enr1m41yo?at_medium=RSS&amp;amp;at_campaign=rss"&gt;Jury discharged in Boris Johnson wedding plot trial&lt;/a&gt; — BBC News&lt;/li&gt;&lt;li&gt;&lt;a href="/news/council-tax-added.html"&gt;Cheltenham Open Data Adds a Council Tax Charges Page&lt;/a&gt; — Cheltenham OD News&lt;/li&gt;&lt;/ul&gt;</content>
+    <updated>2026-09-15T13:34:29Z</updated>
   </entry>
 </feed>

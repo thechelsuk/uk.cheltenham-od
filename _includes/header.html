@@ -79,6 +79,7 @@
 
         <link rel="stylesheet" href="/assets/themes.css">
         <link rel="stylesheet" href="/assets/style.css">
+        {% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css }}">{% endif %}
         <link href="/assets/fonts/Archivo-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
         <link href="/assets/fonts/SourceSerif4-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
 
@@ -90,7 +91,9 @@
         <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Local Bus Disruptions"
             href="/feeds/bus-disruptions.xml">
         <link rel="alternate" type="application/atom+xml"
-            title="Cheltenham OD - Cheltenham Daily News Aggregation Summary" href="/feeds/news-summary.xml">
+            title="Cheltenham OD - Cheltenham Daily News Summary" href="/feeds/news-summary.xml">
+        <link rel="alternate" type="application/atom+xml"
+            title="Cheltenham OD - Breaking Cheltenham News" href="/feeds/news-breaking.xml">
         <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Cheltenham Classifieds"
             href="/feeds/classifieds.xml">
         <link rel="alternate" type="application/atom+xml"

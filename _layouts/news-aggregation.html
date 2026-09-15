@@ -1,0 +1,61 @@
+{% include header.html %}
+{% assign news = site.data.news_archive %}
+{% assign page_size = news.page_size | default: 25 %}
+{% assign page_num = page.page_num | default: 1 %}
+{% assign offset = page_num | minus: 1 | times: page_size %}
+{% assign page_items = news.items | slice: offset, page_size %}
+
+{% comment %} Integer-division ceiling: (count + page_size - 1) / page_size {% endcomment %}
+{% assign total_pages = news.count | plus: page_size | minus: 1 | divided_by: page_size %}
+
+{% assign prev_url = nil %}
+{% if page_num == 2 %}
+    {% assign prev_url = "/cheltenham-news" %}
+{% elsif page_num > 2 %}
+    {% assign prev_page_num = page_num | minus: 1 %}
+    {% assign prev_url = "/cheltenham-news/page/" | append: prev_page_num | append: "/" %}
+{% endif %}
+
+{% assign next_url = nil %}
+{% if page_num < total_pages %}
+    {% assign next_page_num = page_num | plus: 1 %}
+    {% assign next_url = "/cheltenham-news/page/" | append: next_page_num | append: "/" %}
+{% endif %}
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><b>{{ news.count }}</b> stories from <b>{{ news.sources | size }}</b> sources · updated {{ news.updated }}</li>
+                <li><a href="/feeds/news-breaking.xml">Breaking news feed (every headline) →</a></li>
+                <li><a href="/feeds/news-summary.xml">Daily digest feed (once a day) →</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <ul class="news-pill-list">
+            {% for item in page_items %}
+            <li class="news-pill-item">
+                <a href="{{ item.link }}" class="news-pill-title" target="_blank" rel="noopener">{{ item.title }}</a>
+                {% if item.summary %}<p class="news-pill-summary">{{ item.summary }}</p>{% endif %}
+                <div class="news-pill-meta">
+                    <a href="{{ item.link }}" class="news-pill-tag" style="--pill-color: {{ item.source_color }};" target="_blank" rel="noopener">{{ item.source }}</a>
+                    <span class="news-pill-date">{{ item.published_relative }}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% if total_pages > 1 %}
+        <nav class="news-pagination" aria-label="News archive pages">
+            {% if prev_url %}<a href="{{ prev_url }}" class="news-pagination-link">← Newer</a>{% else %}<span></span>{% endif %}
+            <span class="news-pagination-status">Page {{ page_num }} of {{ total_pages }}</span>
+            {% if next_url %}<a href="{{ next_url }}" class="news-pagination-link">Older →</a>{% else %}<span></span>{% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% include footer.html %}
