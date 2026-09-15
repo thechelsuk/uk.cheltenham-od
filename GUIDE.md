@@ -87,6 +87,8 @@ A paragraph or two of real prose introducing the page — layouts render
 `{{ content }}` above the data table/map, this isn't just filler.
 ```
 
+Every sentence of that intro prose is copy for the site's actual visitors — write it as finished, SEO/GEO-friendly page content, not as a note explaining an implementation or data decision to whoever's reading the diff. "Curated by hand rather than fetched, since OpenStreetMap's coverage of these is patchy" is a fact about the pipeline, not something a visitor searching for a pump track needs to read. If a decision genuinely needs explaining, that's what a code comment, commit message, or PR description is for — never the page body. Before finalising any page's prose, reread it and ask: would this sentence make sense to someone who never saw the commit history?
+
 For a genuine sub-page of an existing dataset (a filtered view, not a different source), nest it under a subfolder and give it its own explicit `permalink`, matching `_pages/schools/catchment-areas-secondary.md` or `_pages/food-standards/rated-five.md` — don't rely on the folder path to produce the URL.
 
 If two sibling pages differ only by a filter (primary vs secondary, a food hygiene rating band), share one layout and drive the difference from front matter variables (`phase:`, `max_miles:`, `other_phase_link:` in the schools example) rather than forking the layout.
@@ -219,7 +221,7 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 
 - [ ] `_python/<name>.py` fetches and normalises, writes `_data/<name>.json` with `generated_at`/`source`/`source_url`/`licence`
 - [ ] Added to the right `schedule-*.yml` workflow for how often the source actually changes
-- [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump
+- [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump — reread every sentence as a visitor would: no implementation/data-decision notes ("hand-curated because OSM coverage is patchy") leaking into published copy
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
 - [ ] Every numeric table column has `class="number"` on its `<th>` and `<td>`s (right-aligned), and any postcode column has `class="postcode"` (no mid-postcode wrapping)
 - [ ] `assets/scripts/<name>-map.js` if there's a map, following the standard IIFE shape
