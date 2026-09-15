@@ -1,8 +1,26 @@
 {% include header.html %}
 {% assign news = site.data.news_archive %}
-{% assign offset = page.offset | default: 0 %}
-{% assign page_size = page.page_size | default: 25 %}
+{% assign page_size = news.page_size | default: 25 %}
+{% assign page_num = page.page_num | default: 1 %}
+{% assign offset = page_num | minus: 1 | times: page_size %}
 {% assign page_items = news.items | slice: offset, page_size %}
+
+{% comment %} Integer-division ceiling: (count + page_size - 1) / page_size {% endcomment %}
+{% assign total_pages = news.count | plus: page_size | minus: 1 | divided_by: page_size %}
+
+{% assign prev_url = nil %}
+{% if page_num == 2 %}
+    {% assign prev_url = "/cheltenham-news" %}
+{% elsif page_num > 2 %}
+    {% assign prev_page_num = page_num | minus: 1 %}
+    {% assign prev_url = "/cheltenham-news/page/" | append: prev_page_num | append: "/" %}
+{% endif %}
+
+{% assign next_url = nil %}
+{% if page_num < total_pages %}
+    {% assign next_page_num = page_num | plus: 1 %}
+    {% assign next_url = "/cheltenham-news/page/" | append: next_page_num | append: "/" %}
+{% endif %}
 
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
@@ -31,11 +49,11 @@
             {% endfor %}
         </ul>
 
-        {% if page.total_pages > 1 %}
+        {% if total_pages > 1 %}
         <nav class="news-pagination" aria-label="News archive pages">
-            {% if page.prev_url %}<a href="{{ page.prev_url }}" class="news-pagination-link">← Newer</a>{% else %}<span></span>{% endif %}
-            <span class="news-pagination-status">Page {{ page.page_num }} of {{ page.total_pages }}</span>
-            {% if page.next_url %}<a href="{{ page.next_url }}" class="news-pagination-link">Older →</a>{% else %}<span></span>{% endif %}
+            {% if prev_url %}<a href="{{ prev_url }}" class="news-pagination-link">← Newer</a>{% else %}<span></span>{% endif %}
+            <span class="news-pagination-status">Page {{ page_num }} of {{ total_pages }}</span>
+            {% if next_url %}<a href="{{ next_url }}" class="news-pagination-link">Older →</a>{% else %}<span></span>{% endif %}
         </nav>
         {% endif %}
     </div>

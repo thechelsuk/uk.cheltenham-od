@@ -8,11 +8,6 @@ type: about
 permalink: /cheltenham-news/page/3/
 robots: noindex,follow
 page_num: 3
-total_pages: 7
-offset: 50
-page_size: 25
-prev_url: /cheltenham-news/page/2/
-next_url: /cheltenham-news/page/4/
 ---
 
 {% include sponsor.html %}

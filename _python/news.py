@@ -104,23 +104,12 @@ def load_archive(archive_path):
     return {item["link"]: item for item in payload.get("items", []) if item.get("link")}
 
 
-def update_paginated_page(path, page_num, total_pages):
-    """Refresh only the pagination front-matter keys on the hand-authored
-    news.md, leaving its title/description/SEO copy/intro body untouched."""
-    front_matter, body = helper.parse_front_matter(path.read_text())
-    front_matter.update({
-        "page_num": page_num,
-        "total_pages": total_pages,
-        "offset": (page_num - 1) * PAGE_SIZE,
-        "page_size": PAGE_SIZE,
-        "next_url": f"/cheltenham-news/page/{page_num + 1}/" if page_num < total_pages else None,
-    })
-    front_matter.pop("prev_url", None)
-    new_text = "---\n" + yaml.safe_dump(front_matter, sort_keys=False, allow_unicode=True) + "---\n" + body
-    path.write_text(new_text)
-
-
-def write_paginated_page(path, page_num, total_pages):
+def write_paginated_page(path, page_num):
+    """Generated pages only need a permalink and which page they are —
+    page_size/total_pages/offset/prev_url/next_url are all derived in the
+    layout from site.data.news_archive, so they don't need to be baked into
+    every page's front matter (and news.md, page 1, needs none of this at
+    all: page_num defaults to 1 in the layout)."""
     front_matter = {
         "layout": "news-aggregation",
         "title": f"Cheltenham News Archive — Page {page_num}",
@@ -131,11 +120,6 @@ def write_paginated_page(path, page_num, total_pages):
         "permalink": f"/cheltenham-news/page/{page_num}/",
         "robots": "noindex,follow",
         "page_num": page_num,
-        "total_pages": total_pages,
-        "offset": (page_num - 1) * PAGE_SIZE,
-        "page_size": PAGE_SIZE,
-        "prev_url": "/cheltenham-news" if page_num == 2 else f"/cheltenham-news/page/{page_num - 1}/",
-        "next_url": f"/cheltenham-news/page/{page_num + 1}/" if page_num < total_pages else None,
     }
     content = "---\n" + yaml.safe_dump(front_matter, sort_keys=False, allow_unicode=True) + "---\n\n{% include sponsor.html %}\n"
     path.write_text(content)
@@ -171,6 +155,7 @@ if __name__ == "__main__":
         "updated": helper.updated_timestamp(),
         "sources": [{"title": s["title"], "color": s.get("color", "#7a7973")} for s in sources],
         "count": len(all_items),
+        "page_size": PAGE_SIZE,
         "items": all_items,
     }
     helper.write_json(archive_path, payload)
@@ -192,8 +177,6 @@ if __name__ == "__main__":
 
     total_pages = max(1, math.ceil(len(all_items) / PAGE_SIZE))
 
-    update_paginated_page(root / "_pages/about-info/news.md", page_num=1, total_pages=total_pages)
-
     pages_dir = root / "_pages/about-info/news-pages"
     pages_dir.mkdir(exist_ok=True)
 
@@ -203,6 +186,6 @@ if __name__ == "__main__":
             stale.unlink()
 
     for page_num in range(2, total_pages + 1):
-        write_paginated_page(pages_dir / f"page-{page_num}.md", page_num, total_pages)
+        write_paginated_page(pages_dir / f"page-{page_num}.md", page_num)
 
     print(f"News completed: {len(all_items)} items across {len(sources)} sources, {total_pages} page(s)")
