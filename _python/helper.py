@@ -213,3 +213,80 @@ def convert_to_atom(data, filename):
         front_matter = "---\nlayout: empty\npermalink: /feeds/flood.xml\n---\n"
         with open(filename, "w") as f:
             f.write(front_matter + xml_pretty)
+
+
+def parse_front_matter(text):
+    """Split a Jekyll page's '---\\nYAML\\n---\\nbody' into (front_matter_dict, body).
+    Returns ({}, text) if `text` has no front matter block."""
+    import yaml as _yaml
+
+    match = re.match(r"^---\s*\n(.*?\n)---\s*\n?(.*)$", text, re.DOTALL)
+    if not match:
+        return {}, text
+    front_matter = _yaml.safe_load(match.group(1)) or {}
+    return front_matter, match.group(2)
+
+
+def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None):
+    """Write an Atom 1.0 feed of arbitrary `items` (each a dict with title,
+    link, published_iso, summary, source) to `filename`, with the usual
+    front-matter + layout:empty wrapper so Jekyll serves it as a static file.
+    `permalink_path` is the site-relative path (e.g. '/feeds/news-summary.xml')
+    written into that front matter; `self_url`/`alternate_url` are the full
+    URLs used in the feed's own <link> elements. Mirrors convert_to_atom()
+    above, generalised for reuse."""
+    ATOM_NS = "http://www.w3.org/2005/Atom"
+    ET.register_namespace("", ATOM_NS)
+
+    feed = ET.Element("feed", xmlns=ATOM_NS)
+
+    ET.SubElement(feed, "title").text = feed_title
+    ET.SubElement(feed, "subtitle").text = feed_subtitle
+
+    link_self = ET.SubElement(feed, "link")
+    link_self.set("rel", "self")
+    link_self.set("href", self_url)
+
+    link_alt = ET.SubElement(feed, "link")
+    link_alt.set("rel", "alternate")
+    link_alt.set("type", "text/html")
+    link_alt.set("href", alternate_url)
+
+    ET.SubElement(feed, "id").text = feed_id or alternate_url
+    ET.SubElement(feed, "updated").text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    for item in items:
+        entry = ET.SubElement(feed, "entry")
+        ET.SubElement(entry, "title").text = item.get("title", "")
+
+        link = ET.SubElement(entry, "link")
+        link.set("href", item.get("link", alternate_url))
+
+        ET.SubElement(entry, "id").text = item.get("link", alternate_url)
+
+        author = ET.SubElement(entry, "author")
+        ET.SubElement(author, "name").text = item.get("source", feed_title)
+
+        summary = ET.SubElement(entry, "summary")
+        summary.text = item.get("summary") or item.get("title", "")
+
+        published_iso = item.get("published_iso")
+        updated_text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        if published_iso:
+            try:
+                updated_text = datetime.fromisoformat(published_iso).strftime("%Y-%m-%dT%H:%M:%SZ")
+            except ValueError:
+                pass
+        ET.SubElement(entry, "updated").text = updated_text
+
+    tree = ET.ElementTree(feed)
+    filename = str(filename)
+    tree.write(filename, encoding="utf-8", xml_declaration=True)
+
+    with open(filename, "r") as f:
+        xml_content = f.read()
+    xml_pretty = minidom.parseString(xml_content).toprettyxml(indent="  ")
+
+    front_matter = f"---\nlayout: empty\npermalink: {permalink_path}\n---\n"
+    with open(filename, "w") as f:
+        f.write(front_matter + xml_pretty)

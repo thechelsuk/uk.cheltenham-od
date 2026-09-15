@@ -1,15 +1,22 @@
 # importing modules
+import json
+import math
+import re
+from datetime import datetime
+
 import feedparser
 import yaml
+from dateutil.parser import parse as parse_date
+
 import helper
-import re
-from datetime import datetime, timedelta
+
+PAGE_SIZE = 25
+SITE_URL = "https://cheltenham-od.uk"
 
 
-def time_ago(published_parsed):
-    published_date = datetime(*published_parsed[:6])
+def time_ago(dt):
     now = datetime.now()
-    diff = now - published_date
+    diff = now - dt
     if diff.days > 0:
         return f"{diff.days} day{'s' if diff.days != 1 else ''} ago"
     elif diff.seconds > 3600:
@@ -32,6 +39,109 @@ def clean_summary(raw, max_len=160):
     return text
 
 
+def fetch_rss_items(source):
+    feed = feedparser.parse(source["url"])
+    items = []
+    for entry in feed["items"][:25]:
+        if not entry.get("published_parsed"):
+            continue
+        dt = datetime(*entry["published_parsed"][:6])
+        items.append({
+            "title": entry.get("title", "").strip(),
+            "link": entry.get("link", ""),
+            "source": source["title"],
+            "source_color": source.get("color", "#7a7973"),
+            "published_iso": dt.isoformat(),
+            "summary": clean_summary(entry.get("summary", "")),
+        })
+    return items
+
+
+def slug_from_filename(path):
+    """'2026-09-14-council-tax-added.md' -> 'council-tax-added'."""
+    match = re.match(r"^\d{4}-\d{2}-\d{2}-(.+)$", path.stem)
+    return match.group(1) if match else path.stem
+
+
+def as_datetime(value):
+    if isinstance(value, datetime):
+        return value
+    if hasattr(value, "year"):  # datetime.date, from a bare YAML date
+        return datetime(value.year, value.month, value.day)
+    return parse_date(str(value))
+
+
+def fetch_local_items(source, root):
+    """Pull items straight from this site's own _posts/_events collections,
+    rather than round-tripping through our own already-derived Atom feeds."""
+    kind = source["kind"]
+    collection_dir = root / ("_posts" if kind == "posts" else "_events")
+    link_template = "/news/{slug}.html" if kind == "posts" else "/events/{slug}/"
+
+    items = []
+    for path in sorted(collection_dir.glob("*.md")):
+        front_matter, _ = helper.parse_front_matter(path.read_text())
+        if not front_matter or not front_matter.get("date"):
+            continue
+        items.append({
+            "title": (front_matter.get("title") or "").strip(),
+            "link": link_template.format(slug=slug_from_filename(path)),
+            "source": source["title"],
+            "source_color": source.get("color", "#7a7973"),
+            "published_iso": as_datetime(front_matter["date"]).isoformat(),
+            "summary": clean_summary(front_matter.get("description", "")),
+        })
+    return items
+
+
+def load_archive(archive_path):
+    if not archive_path.exists():
+        return {}
+    try:
+        payload = json.loads(archive_path.read_text())
+    except json.JSONDecodeError:
+        return {}
+    return {item["link"]: item for item in payload.get("items", []) if item.get("link")}
+
+
+def update_paginated_page(path, page_num, total_pages):
+    """Refresh only the pagination front-matter keys on the hand-authored
+    news.md, leaving its title/description/SEO copy/intro body untouched."""
+    front_matter, body = helper.parse_front_matter(path.read_text())
+    front_matter.update({
+        "page_num": page_num,
+        "total_pages": total_pages,
+        "offset": (page_num - 1) * PAGE_SIZE,
+        "page_size": PAGE_SIZE,
+        "next_url": f"/cheltenham-news/page/{page_num + 1}/" if page_num < total_pages else None,
+    })
+    front_matter.pop("prev_url", None)
+    new_text = "---\n" + yaml.safe_dump(front_matter, sort_keys=False, allow_unicode=True) + "---\n" + body
+    path.write_text(new_text)
+
+
+def write_paginated_page(path, page_num, total_pages):
+    front_matter = {
+        "layout": "news-pills",
+        "title": f"Cheltenham News Archive — Page {page_num}",
+        "seo": f"Older Cheltenham local news headlines, page {page_num} of our aggregation archive.",
+        "description": "Older headlines from our Cheltenham news aggregation archive.",
+        "feed_url": "/feeds/news-summary.xml",
+        "extra_css": "/assets/news-pills.css",
+        "type": "about",
+        "permalink": f"/cheltenham-news/page/{page_num}/",
+        "robots": "noindex,follow",
+        "page_num": page_num,
+        "total_pages": total_pages,
+        "offset": (page_num - 1) * PAGE_SIZE,
+        "page_size": PAGE_SIZE,
+        "prev_url": "/cheltenham-news" if page_num == 2 else f"/cheltenham-news/page/{page_num - 1}/",
+        "next_url": f"/cheltenham-news/page/{page_num + 1}/" if page_num < total_pages else None,
+    }
+    content = "---\n" + yaml.safe_dump(front_matter, sort_keys=False, allow_unicode=True) + "---\n\n{% include sponsor.html %}\n"
+    path.write_text(content)
+
+
 # processing
 if __name__ == "__main__":
     root = helper.repo_root()
@@ -40,40 +150,55 @@ if __name__ == "__main__":
     with config_path.open() as f:
         sources = yaml.safe_load(f)["sources"]
 
-    all_items = []
-
+    fetched_items = []
     for source in sources:
-        feed = feedparser.parse(source["url"])
-        for item in feed["items"][:25]:
-            item["_source"] = source["title"]
-            item["_source_color"] = source.get("color", "#7a7973")
-            all_items.append(item)
+        if source.get("kind") in ("posts", "events"):
+            fetched_items.extend(fetch_local_items(source, root))
+        else:
+            fetched_items.extend(fetch_rss_items(source))
 
-    all_items = [item for item in all_items if item.get("published_parsed")]
-    all_items.sort(key=lambda x: x["published_parsed"], reverse=True)
+    archive_path = root / "_data/news_archive.json"
+    merged = load_archive(archive_path)
+    for item in fetched_items:
+        if item["link"]:
+            merged[item["link"]] = item
 
-    cutoff_date = datetime.now() - timedelta(days=30)
-    all_items = [item for item in all_items if datetime(*item["published_parsed"][:6]) > cutoff_date]
-
-    news_items = []
+    all_items = list(merged.values())
     for item in all_items:
-        dt = datetime(*item["published_parsed"][:6])
-        news_items.append({
-            "title": item.get("title", "").strip(),
-            "link": item.get("link", ""),
-            "source": item["_source"],
-            "source_color": item["_source_color"],
-            "published_iso": dt.isoformat(),
-            "published_relative": time_ago(item["published_parsed"]),
-            "summary": clean_summary(item.get("summary", "")),
-        })
+        item["published_relative"] = time_ago(datetime.fromisoformat(item["published_iso"]))
+    all_items.sort(key=lambda x: x["published_iso"], reverse=True)
 
     payload = {
         "updated": helper.updated_timestamp(),
         "sources": [{"title": s["title"], "color": s.get("color", "#7a7973")} for s in sources],
-        "count": len(news_items),
-        "items": news_items,
+        "count": len(all_items),
+        "items": all_items,
     }
+    helper.write_json(archive_path, payload)
 
-    helper.write_json(root / "_data/news.json", payload)
-    print(f"News completed: wrote {len(news_items)} items to _data/news.json")
+    helper.write_items_atom(
+        all_items[:10],
+        root / "feeds/news-summary.xml",
+        permalink_path="/feeds/news-summary.xml",
+        feed_title="Cheltenham OD - Cheltenham Daily News Aggregation Summary",
+        feed_subtitle="The latest local headlines aggregated across Cheltenham news, council, police and community sources.",
+        self_url=f"{SITE_URL}/feeds/news-summary.xml",
+        alternate_url=f"{SITE_URL}/cheltenham-news",
+    )
+
+    total_pages = max(1, math.ceil(len(all_items) / PAGE_SIZE))
+
+    update_paginated_page(root / "_pages/about-info/news.md", page_num=1, total_pages=total_pages)
+
+    pages_dir = root / "_pages/about-info/news-pages"
+    pages_dir.mkdir(exist_ok=True)
+
+    for stale in pages_dir.glob("page-*.md"):
+        stale_num = int(re.search(r"page-(\d+)\.md", stale.name).group(1))
+        if stale_num > total_pages:
+            stale.unlink()
+
+    for page_num in range(2, total_pages + 1):
+        write_paginated_page(pages_dir / f"page-{page_num}.md", page_num, total_pages)
+
+    print(f"News completed: {len(all_items)} items across {len(sources)} sources, {total_pages} page(s)")
