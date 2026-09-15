@@ -41,6 +41,16 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Street light not working, 15th September :- [10104173](https://www.fixmystreet.com/report/10104173)
+- Contradictory road marking/signage, 15th September :- [10104155](https://www.fixmystreet.com/report/10104155)
+- St Georges Road bus stop shelter - light out, 15th September :- [10104079](https://www.fixmystreet.com/report/10104079)
+- Traffic lights not sensing traffic correctly, 15th September :- [10104059](https://www.fixmystreet.com/report/10104059)
+- Sewage smells outside house, 15th September :- [10103922](https://www.fixmystreet.com/report/10103922)
+- Manhole cover and road is elevated and large hump in the road, 15th September :- [10103701](https://www.fixmystreet.com/report/10103701)
+- Signage is damaged with very sharp edges, 15th September :- [10103567](https://www.fixmystreet.com/report/10103567)
+- Blocked gully, 15th September :- [10103432](https://www.fixmystreet.com/report/10103432)
+- Black bags in hedge by lay-by, 15th September :- [10103390](https://www.fixmystreet.com/report/10103390)
+- Road sign left behind after roadworks, 15th September :- [10103258](https://www.fixmystreet.com/report/10103258)
 - Pothole (again!!!) on the railway bridge., 15th September :- [10103079](https://www.fixmystreet.com/report/10103079)
 - Road surface Deep cracks & subsidance drain cover near by, 15th September :- [10102992](https://www.fixmystreet.com/report/10102992)
 - Flytipping, 15th September :- [10102964](https://www.fixmystreet.com/report/10102964)
@@ -51,15 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - TMC - Defects -other CW6 problem, 15th September :- [10102090](https://www.fixmystreet.com/report/10102090)
 - TMC - Defects -other CW6 problem, 15th September :- [10102089](https://www.fixmystreet.com/report/10102089)
 - TMC - Defects -other CW6 problem, 15th September :- [10102087](https://www.fixmystreet.com/report/10102087)
-- TMC - Defects - Other problem, 15th September :- [10101880](https://www.fixmystreet.com/report/10101880)
-- Freezer dumped on pavement, 15th September :- [10101643](https://www.fixmystreet.com/report/10101643)
-- Pothole on bridge, 15th September :- [10100235](https://www.fixmystreet.com/report/10100235)
-- Pothole in the road problem, 15th September :- [10100375](https://www.fixmystreet.com/report/10100375)
-- Orange parking barrier abandoned on pavement blocking pedestrians- moved to behind lamppost but still untidy and obstructive., 15th September :- [10100092](https://www.fixmystreet.com/report/10100092)
-- TMC - Defects - Footways Slabs problem, 15th September :- [10100118](https://www.fixmystreet.com/report/10100118)
-- TMC - Defects - Footways Slabs problem, 15th September :- [10100116](https://www.fixmystreet.com/report/10100116)
-- Pothole outside no.5 Armada Close, 15th September :- [10099953](https://www.fixmystreet.com/report/10099953)
-- Pothole in line with ouderground drain pipe, 15th September :- [10099895](https://www.fixmystreet.com/report/10099895)
-- Previous repair getting worse, 15th September :- [10099380](https://www.fixmystreet.com/report/10099380)
 
 <!-- fix_marker ends -->
