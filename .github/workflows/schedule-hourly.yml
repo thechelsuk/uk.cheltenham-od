@@ -59,19 +59,19 @@ jobs:
               env:
                   OPEN_WEATHER_KEY: ${{ secrets.OPEN_WEATHER_KEY }}
               run: |-
-                  python '_python/forecast.py'
-                  python '_python/weather.py'
-                  python '_python/news.py'
-                  python '_python/land_registry.py'
-                  python '_python/house_summary.py'
-                  python '_python/planning.py'
-                  python '_python/recycling.py'
-                  python '_python/fix-my-street.py'
-                  python '_python/air-quality.py'
-                  python _python/food-standards.py
-                  python '_python/bus-data.py'
-                  python '_python/inpost.py'
-                  python '_python/dpd-pickup.py'
+                  python '_python/forecast.py' || echo "::warning::forecast.py failed, continuing with other scripts"
+                  python '_python/weather.py' || echo "::warning::weather.py failed, continuing with other scripts"
+                  python '_python/news.py' || echo "::warning::news.py failed, continuing with other scripts"
+                  python '_python/land_registry.py' || echo "::warning::land_registry.py failed, continuing with other scripts"
+                  python '_python/house_summary.py' || echo "::warning::house_summary.py failed, continuing with other scripts"
+                  python '_python/planning.py' || echo "::warning::planning.py failed, continuing with other scripts"
+                  python '_python/recycling.py' || echo "::warning::recycling.py failed, continuing with other scripts"
+                  python '_python/fix-my-street.py' || echo "::warning::fix-my-street.py failed, continuing with other scripts"
+                  python '_python/air-quality.py' || echo "::warning::air-quality.py failed, continuing with other scripts"
+                  python _python/food-standards.py || echo "::warning::food-standards.py failed, continuing with other scripts"
+                  python '_python/bus-data.py' || echo "::warning::bus-data.py failed, continuing with other scripts"
+                  python '_python/inpost.py' || echo "::warning::inpost.py failed, continuing with other scripts"
+                  python '_python/dpd-pickup.py' || echo "::warning::dpd-pickup.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit

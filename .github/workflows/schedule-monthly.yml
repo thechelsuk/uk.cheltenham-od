@@ -34,16 +34,16 @@ jobs:
 
             - name: Fetch crime data
               run: |
-                  python _python/crime.py
-                  python _python/interests.py
-                  python _python/hotels.py
-                  python _python/car-parks.py
-                  python _python/cheltenham-stats.py
-                  python _python/parkrun.py
-                  python _python/listed-buildings.py
-                  python _python/water-quality.py
-                  python _python/council-tax.py
-                  python _python/housing-supply.py
+                  python _python/crime.py || echo "::warning::crime.py failed, continuing with other scripts"
+                  python _python/interests.py || echo "::warning::interests.py failed, continuing with other scripts"
+                  python _python/hotels.py || echo "::warning::hotels.py failed, continuing with other scripts"
+                  python _python/car-parks.py || echo "::warning::car-parks.py failed, continuing with other scripts"
+                  python _python/cheltenham-stats.py || echo "::warning::cheltenham-stats.py failed, continuing with other scripts"
+                  python _python/parkrun.py || echo "::warning::parkrun.py failed, continuing with other scripts"
+                  python _python/listed-buildings.py || echo "::warning::listed-buildings.py failed, continuing with other scripts"
+                  python _python/water-quality.py || echo "::warning::water-quality.py failed, continuing with other scripts"
+                  python _python/council-tax.py || echo "::warning::council-tax.py failed, continuing with other scripts"
+                  python _python/housing-supply.py || echo "::warning::housing-supply.py failed, continuing with other scripts"
 
             - name: Commit and push if it changed
               id: commit
