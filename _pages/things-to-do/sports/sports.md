@@ -46,16 +46,20 @@ Beyond parkrun, Cheltenham has several running clubs for regular training and ra
 - [Cheltenham Cycling Touring Club (CTC)](https://cheltenhamctc.org/) &rarr; a friendly, relaxed club affiliated to Cycling UK, with group rides across the week for all riders.
 - [Woodmancote Wheelers](https://www.woodmancotewheelers.org/) &rarr; a social road cycling club based just north of Cheltenham, with Classic and faster-paced Velo group rides.
 
+## Climbing
+
+- [Boulders Cheltenham](https://cheltenham.bouldersuk.com/) &rarr; an indoor bouldering centre in Cheltenham itself, for first-timers through to experienced climbers.
+- [British Mountaineering Council: club finder](https://www.thebmc.co.uk/en/clubs) &rarr; for outdoor climbing and mountaineering clubs across Gloucestershire and the wider region.
+
+## Cheerleading
+
+- [All Star Passion](https://www.allstarpassion.co.uk/) &rarr; is a offering competitive cheerleading in Cheltenham with beginner, competition and after-school clubs available.
+
 ## Hiking and Walking
 
 - [Cheltenham Rambling Club](https://www.cheltenhamramblingclub.org.uk/) &rarr; an independent local walking club with walks of 4 to 14 miles.
 - [Cheltenham Spa Walkers](https://gloucestershireramblers.org.uk/csw/) &rarr; Cheltenham's local group of the Ramblers, Britain's walking charity.
 - [Cotswold Voluntary Wardens: guided walks](https://www.cotswolds-nl.org.uk/visiting-and-exploring/guided-walks/) &rarr; free, volunteer-led guided walks across the Cotswolds National Landscape on Cheltenham's doorstep.
-
-## Climbing
-
-- [Boulders Cheltenham](https://cheltenham.bouldersuk.com/) &rarr; an indoor bouldering centre in Cheltenham itself, for first-timers through to experienced climbers.
-- [British Mountaineering Council: club finder](https://www.thebmc.co.uk/en/clubs) &rarr; for outdoor climbing and mountaineering clubs across Gloucestershire and the wider region.
 
 ## Notes
 
