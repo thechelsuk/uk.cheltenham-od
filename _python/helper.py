@@ -22,7 +22,7 @@ def updated_timestamp():
 
 
 def write_json(path, payload):
-    pathlib.Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
+    pathlib.Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False))
 
 
 DEFAULT_ACRONYMS = {"UK"}
