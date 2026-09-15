@@ -79,6 +79,7 @@
 
         <link rel="stylesheet" href="/assets/themes.css">
         <link rel="stylesheet" href="/assets/style.css">
+        {% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css }}">{% endif %}
         <link href="/assets/fonts/Archivo-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
         <link href="/assets/fonts/SourceSerif4-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
 

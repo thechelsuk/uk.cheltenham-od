@@ -1,0 +1,46 @@
+{% include header.html %}
+{% assign news = site.data.news %}
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><b>{{ news.count }}</b> stories from <b>{{ news.sources | size }}</b> sources · updated {{ news.updated }}</li>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss →</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <div class="news-filter-bar">
+            <input type="radio" name="news-source" id="news-filter-all" class="news-filter-input" checked>
+            <label for="news-filter-all" class="news-filter-chip">All</label>
+            {% for source in news.sources %}
+            <input type="radio" name="news-source" id="news-filter-{{ forloop.index }}" class="news-filter-input">
+            <label for="news-filter-{{ forloop.index }}" class="news-filter-chip" style="--chip-color: {{ source.color }};">{{ source.title }}</label>
+            {% endfor %}
+        </div>
+
+        <style>
+            {% for source in news.sources %}
+            #news-filter-{{ forloop.index }}:checked ~ .news-pill-list .news-pill-item:not([data-source="{{ source.title }}"]) { display: none; }
+            {% endfor %}
+        </style>
+
+        <ul class="news-pill-list">
+            {% for item in news.items %}
+            <li class="news-pill-item" data-source="{{ item.source }}">
+                <a href="{{ item.link }}" class="news-pill-tag" style="--pill-color: {{ item.source_color }};" target="_blank" rel="noopener">{{ item.source }}</a>
+                <div class="news-pill-body">
+                    <a href="{{ item.link }}" class="news-pill-title" target="_blank" rel="noopener">{{ item.title }}</a>
+                    {% if item.summary %}<p class="news-pill-summary">{{ item.summary }}</p>{% endif %}
+                </div>
+                <span class="news-pill-date">{{ item.published_relative }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include footer.html %}
