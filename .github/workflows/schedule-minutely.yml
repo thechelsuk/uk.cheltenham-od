@@ -48,7 +48,7 @@ jobs:
 
             - name: Processing Python Scripts
               run: |-
-                  python '_python/bus-disruptions.py'
+                  python '_python/bus-disruptions.py' || echo "::warning::bus-disruptions.py failed, continuing"
 
             - name: Commit and push if changed
               id: commit

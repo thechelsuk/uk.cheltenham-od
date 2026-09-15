@@ -85,17 +85,13 @@ OFFSET {offset}
 
 
 def _run_query(query: str) -> dict:
-    try:
-        resp = requests.get(
-            ENDPOINT,
-            params={"query": query, "output": "json"},
-            headers={"Accept": "application/sparql-results+json"},
-            timeout=TIMEOUT_SECONDS,
-        )
-        resp.raise_for_status()
-    except requests.exceptions.RequestException as exc:
-        print(f"ERROR: SPARQL request failed: {exc}", file=sys.stderr)
-        sys.exit(1)
+    resp = requests.get(
+        ENDPOINT,
+        params={"query": query, "output": "json"},
+        headers={"Accept": "application/sparql-results+json"},
+        timeout=TIMEOUT_SECONDS,
+    )
+    resp.raise_for_status()
     return resp.json()
 
 
@@ -185,4 +181,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except requests.exceptions.RequestException as exc:
+        # The Land Registry SPARQL endpoint is occasionally unavailable
+        # (rate limiting, maintenance, a stray 403). Treat that as a soft
+        # failure rather than a build error: log it clearly and leave
+        # JSON_DATA_PATH untouched so the site keeps serving the last
+        # good fetch until the next scheduled run succeeds.
+        print(f"::warning::land_registry.py: SPARQL request failed ({exc}); "
+              f"leaving {JSON_DATA_PATH} unchanged", file=sys.stderr)
