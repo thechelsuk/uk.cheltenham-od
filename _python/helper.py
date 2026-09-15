@@ -4,6 +4,7 @@ import re
 import json
 import requests
 import time
+import html
 from datetime import datetime, timezone
 from requests import get
 import xml.etree.ElementTree as ET
@@ -275,6 +276,80 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
         if published_iso:
             try:
                 updated_text = datetime.fromisoformat(published_iso).strftime("%Y-%m-%dT%H:%M:%SZ")
+            except ValueError:
+                pass
+        ET.SubElement(entry, "updated").text = updated_text
+
+    tree = ET.ElementTree(feed)
+    filename = str(filename)
+    tree.write(filename, encoding="utf-8", xml_declaration=True)
+
+    with open(filename, "r") as f:
+        xml_content = f.read()
+    xml_pretty = minidom.parseString(xml_content).toprettyxml(indent="  ")
+
+    front_matter = f"---\nlayout: empty\npermalink: {permalink_path}\n---\n"
+    with open(filename, "w") as f:
+        f.write(front_matter + xml_pretty)
+
+
+def write_digest_atom(digests, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None):
+    """Write an Atom 1.0 feed with one entry per day's digest (each `digests`
+    entry a dict with date, created_iso, items — a list of {title, link,
+    source}), so subscribers get one round-up post a day rather than one
+    entry per headline. `permalink_path`/`self_url`/`alternate_url` as in
+    write_items_atom() above."""
+    ATOM_NS = "http://www.w3.org/2005/Atom"
+    ET.register_namespace("", ATOM_NS)
+
+    feed = ET.Element("feed", xmlns=ATOM_NS)
+
+    ET.SubElement(feed, "title").text = feed_title
+    ET.SubElement(feed, "subtitle").text = feed_subtitle
+
+    link_self = ET.SubElement(feed, "link")
+    link_self.set("rel", "self")
+    link_self.set("href", self_url)
+
+    link_alt = ET.SubElement(feed, "link")
+    link_alt.set("rel", "alternate")
+    link_alt.set("type", "text/html")
+    link_alt.set("href", alternate_url)
+
+    ET.SubElement(feed, "id").text = feed_id or alternate_url
+    ET.SubElement(feed, "updated").text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    for digest in digests:
+        entry = ET.SubElement(feed, "entry")
+
+        display_date = datetime.fromisoformat(digest["date"]).strftime("%-d %B %Y")
+        ET.SubElement(entry, "title").text = f"Daily News Summary — {display_date}"
+
+        entry_url = f"{alternate_url}#{digest['date']}"
+        link = ET.SubElement(entry, "link")
+        link.set("href", entry_url)
+        ET.SubElement(entry, "id").text = entry_url
+
+        author = ET.SubElement(entry, "author")
+        ET.SubElement(author, "name").text = feed_title
+
+        rows = "".join(
+            '<li><a href="{link}">{title}</a> — {source}</li>'.format(
+                link=html.escape(item["link"], quote=True),
+                title=html.escape(item["title"]),
+                source=html.escape(item["source"]),
+            )
+            for item in digest["items"]
+        )
+        content = ET.SubElement(entry, "content")
+        content.set("type", "html")
+        content.text = f"<p>Today's top {len(digest['items'])} local headlines:</p><ul>{rows}</ul>"
+
+        updated_text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        created_iso = digest.get("created_iso")
+        if created_iso:
+            try:
+                updated_text = datetime.fromisoformat(created_iso).strftime("%Y-%m-%dT%H:%M:%SZ")
             except ValueError:
                 pass
         ET.SubElement(entry, "updated").text = updated_text

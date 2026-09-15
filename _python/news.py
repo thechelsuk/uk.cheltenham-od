@@ -122,12 +122,11 @@ def update_paginated_page(path, page_num, total_pages):
 
 def write_paginated_page(path, page_num, total_pages):
     front_matter = {
-        "layout": "news-pills",
+        "layout": "news-aggregation",
         "title": f"Cheltenham News Archive — Page {page_num}",
         "seo": f"Older Cheltenham local news headlines, page {page_num} of our aggregation archive.",
         "description": "Older headlines from our Cheltenham news aggregation archive.",
-        "feed_url": "/feeds/news-summary.xml",
-        "extra_css": "/assets/news-pills.css",
+        "extra_css": "/assets/news-aggregation.css",
         "type": "about",
         "permalink": f"/cheltenham-news/page/{page_num}/",
         "robots": "noindex,follow",
@@ -176,13 +175,18 @@ if __name__ == "__main__":
     }
     helper.write_json(archive_path, payload)
 
+    # Every headline, one entry each, as soon as it's picked up — a typical
+    # "new item appears in the feed" RSS reader experience. The once-a-day
+    # round-up feed (feeds/news-summary.xml) is generated separately by
+    # news-digest.py, since it needs to fire once at a fixed time of day
+    # rather than every time this script runs.
     helper.write_items_atom(
-        all_items[:10],
-        root / "feeds/news-summary.xml",
-        permalink_path="/feeds/news-summary.xml",
-        feed_title="Cheltenham OD - Cheltenham Daily News Aggregation Summary",
-        feed_subtitle="The latest local headlines aggregated across Cheltenham news, council, police and community sources.",
-        self_url=f"{SITE_URL}/feeds/news-summary.xml",
+        all_items,
+        root / "feeds/news-breaking.xml",
+        permalink_path="/feeds/news-breaking.xml",
+        feed_title="Cheltenham OD - Breaking Cheltenham News",
+        feed_subtitle="Every local headline aggregated across Cheltenham news, council, police and community sources, as it's picked up.",
+        self_url=f"{SITE_URL}/feeds/news-breaking.xml",
         alternate_url=f"{SITE_URL}/cheltenham-news",
     )
 
