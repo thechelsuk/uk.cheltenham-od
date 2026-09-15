@@ -34,3 +34,14 @@ jobs:
           # any other workflow file too. Plain YAML syntax linting (VALIDATE_YAML)
           # stays on; this is purely a styling preference this repo hasn't adopted.
           VALIDATE_YAML_PRETTIER: false
+          # Same issue as above, but for the YAML front matter embedded in
+          # every _pages/*.md file: Prettier wants to reformat its quoting
+          # and line-wrapping, which this repo has never adopted either
+          # (34 pre-existing page files fail this check). Markdown syntax
+          # linting (VALIDATE_MARKDOWN) stays on.
+          VALIDATE_MARKDOWN_PRETTIER: false
+          # feeds/*.xml files intentionally start with a Jekyll front-matter
+          # block (layout/permalink) before the raw XML, so Jekyll can serve
+          # them as static files. That makes them invalid XML as source, by
+          # design — the linter should only ever see the built output.
+          FILTER_REGEX_EXCLUDE: .*/feeds/.*\.xml

@@ -1,0 +1,6 @@
+# Content pages are prose (front matter descriptions, intro paragraphs) that
+# this repo has never hard-wrapped at 80/100/400 columns — plenty of existing
+# pages already run past 400 chars on a line. Line-length isn't a useful
+# signal for this content, so it's switched off rather than chased file by
+# file.
+MD013: false
