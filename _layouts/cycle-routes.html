@@ -1,0 +1,61 @@
+{% include header.html %}
+{% assign data = site.data["cycle-routes"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ data.segments | size }} mapped cycle track/lane segments near Cheltenham</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <div id="cycle-routes-map" style="height: 520px; border-radius: 8px;" aria-label="Map of cycle tracks and lanes near Cheltenham"></div>
+        <p class="cycle-routes-legend"><small>
+            <span class="cycle-routes-swatch cycle-routes-swatch-track"></span> Dedicated track
+            &nbsp;&nbsp;<span class="cycle-routes-swatch cycle-routes-swatch-lane"></span> On-road lane
+            &nbsp;&nbsp;<span class="cycle-routes-swatch cycle-routes-swatch-named"></span> Named/numbered route
+        </small></p>
+
+        <h2>Named Routes</h2>
+        <div class="table-scroll">
+            <table class="cycle-routes-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Route</th>
+                        <th scope="col">Ref</th>
+                        <th scope="col" class="number">Mapped Distance (km)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in data.routes %}
+                    <tr>
+                        <td>{{ r.name }}</td>
+                        <td>{{ r.ref }}</td>
+                        <td class="number" data-val="{{ r.distance_km }}">{{ r.distance_km }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="cycle-routes-attribution"><small>
+                Cycle infrastructure from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
+                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
+                Coverage depends on what's been mapped in OpenStreetMap — if you spot a missing or incorrect route,
+                it can be fixed at <a href="https://www.openstreetmap.org/">openstreetmap.org</a> and will appear
+                here next update.
+            </small></p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="cycle-routes-data" type="application/json">{{ data.segments | jsonify }}</script>
+<script src="/assets/scripts/cycle-routes-map.js"></script>
+{% include footer.html %}
