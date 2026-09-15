@@ -14,4 +14,4 @@ A map of cycle tracks and on-road cycle lanes in and around Cheltenham. Most of 
 
 Notes: The "mapped distance" figures below only count the portion of each route that falls within a 5 mile radius of Cheltenham centre, not the route's full length.
 
-Map also includes are curated list of pump/bike parks and trails. Leckhampton Hill has 35 different trail routes. Ride safely.
+Map also includes a curated list of pump/bike parks and trails. Leckhampton Hill has 35 different trail routes and is more advance, the pump parks at Cleve and Burrows field are a good start for beginners. Ride safely.
