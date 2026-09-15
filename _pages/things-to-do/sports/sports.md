@@ -7,6 +7,8 @@ description: "A guide to sport in Cheltenham: the professional clubs, parkrun, a
 type: "activities"
 ---
 
+{% include sponsor.html %}
+
 ## Sport in Cheltenham
 
 Cheltenham has one professional club of its own, a Premiership rugby side on its doorstep, and a strong grassroots scene — from parkrun's free weekly 5ks to running, cycling, hiking and climbing clubs for every level.

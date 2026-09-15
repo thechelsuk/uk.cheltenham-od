@@ -8,6 +8,8 @@ type: "activities"
 schema: parkrun
 ---
 
+{% include sponsor.html %}
+
 ## Parkrun in Cheltenham
 
 Parkrun organises free, weekly, timed 5k runs (and 2k junior runs for under-14s) in parks and open spaces across the world, every Saturday and Sunday morning. They're open to everyone, whatever your pace — walkers, joggers and runners all take part, and there's no need to have run before.
