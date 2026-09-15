@@ -7,6 +7,7 @@
             <p>{{page.description}}</p>
             <ul>
                 <li>{{ data.segments | size }} mapped cycle track/lane segments near Cheltenham</li>
+                <li>{{ data.mtb_spots | size }} pump tracks and bike parks nearby</li>
             </ul>
         </header>
 
@@ -44,6 +45,35 @@
             </table>
         </div>
 
+        <h2>Pump Tracks &amp; Bike Parks</h2>
+        <div class="table-scroll">
+            <table class="cycle-routes-mtb-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Source</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in data.mtb_spots %}
+                    <tr>
+                        <td>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</td>
+                        <td>{{ s.kind }}</td>
+                        <td>{% if s.source == "hand-curated" %}Hand-curated{% else %}OpenStreetMap{% endif %}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="cycle-routes-mtb-note"><small>
+            Most local pump tracks aren't yet mapped in OpenStreetMap, so the "hand-curated" ones above are added
+            directly from their published addresses rather than fetched automatically — they'll switch over
+            once/if someone adds them to OSM properly.
+        </small></p>
+
         <p class="cycle-routes-attribution"><small>
                 Cycle infrastructure from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
                 {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
@@ -57,5 +87,6 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script id="cycle-routes-data" type="application/json">{{ data.segments | jsonify }}</script>
+<script id="cycle-routes-poi-data" type="application/json">{{ data.mtb_spots | jsonify }}</script>
 <script src="/assets/scripts/cycle-routes-map.js"></script>
 {% include footer.html %}

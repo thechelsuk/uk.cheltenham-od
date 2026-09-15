@@ -1,6 +1,7 @@
 (function () {
     var el = document.getElementById("cycle-routes-map");
     var dataEl = document.getElementById("cycle-routes-data");
+    var poiEl = document.getElementById("cycle-routes-poi-data");
     if (!el || !dataEl || typeof L === "undefined") return;
 
     var segments = [];
@@ -9,7 +10,15 @@
     } catch (e) {
         return;
     }
-    if (!segments.length) return;
+
+    var spots = [];
+    try {
+        spots = poiEl ? JSON.parse(poiEl.textContent) || [] : [];
+    } catch (e) {
+        spots = [];
+    }
+
+    if (!segments.length && !spots.length) return;
 
     var map = L.map(el);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -37,6 +46,14 @@
         line.bindPopup(html);
 
         bounds = bounds.concat(seg.geometry);
+    });
+
+    spots.forEach(function (spot) {
+        if (spot.lat == null || spot.lon == null) return;
+        var html = "<strong>" + spot.name + "</strong><br>" + spot.kind;
+        if (spot.address) html += "<br>" + spot.address;
+        L.marker([spot.lat, spot.lon]).addTo(map).bindPopup(html);
+        bounds.push([spot.lat, spot.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
