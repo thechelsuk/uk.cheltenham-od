@@ -1,6 +1,6 @@
 # Adding a New Data Page
 
-This is the standard shape of a data page on Cheltenham Open Data. It's not a hard rule for every page on the site — a handful of pages are pure curated markdown (`_pages/sports.md`, `_pages/third-spaces.md`) with no fetcher behind them — but if you're adding something backed by an external source, follow this pattern so it's consistent with the rest of the site.
+This is the standard shape of a data page on Cheltenham Open Data. It's not a hard rule for every page on the site — a handful of pages are pure curated Markdown (`_pages/sports.md`, `_pages/third-spaces.md`) with no fetcher behind them — but if you're adding something backed by an external source, follow this pattern so it's consistent with the rest of the site.
 
 Good reference examples to read alongside this guide:
 
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 Notes:
 
 - Store `generated_at`, `source` and `source_url` (and `licence` where one genuinely applies) in the JSON itself — layouts read these back for the attribution line and JSON-LD `dateModified`/`license` fields, rather than hardcoding them in HTML.
-- If a source has no formal open licence (an unofficial feed, a free API's own terms), say so plainly rather than guessing OGL/ODbL. See `_data/sources.json` for the site-wide audit of what's actually confirmed.
+- If a source has no formal open licence (an unofficial feed, a free APIs own terms), say so plainly rather than guessing OGL/ODbL. See `_data/sources.json` for the site-wide audit of what's actually confirmed.
 - If you need coordinates from an Ordnance Survey National Grid reference (Easting/Northing) rather than lat/lon, convert with `pyproj` — see `_python/schools.py`.
 - Add the script to the right `.github/workflows/schedule-*.yml` based on how often the source actually changes: `schedule-monthly.yml` for things like school/parkrun locations, `schedule-daily.yml` for fixtures/prices/weather, `schedule-hourly.yml`/`schedule-minutely.yml` for anything closer to real-time. Don't default to a tight schedule just because you can — match it to the source.
 
