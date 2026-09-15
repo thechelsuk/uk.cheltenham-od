@@ -51,11 +51,6 @@ and the Environment Agency.
 ## Latest Flood Alerts
 
 <!-- flood_marker starts -->
-- Warning no longer in force: Tidal River Avon at Bristol, Pill and Shirehampton
-- There is no longer a threat of flooding, though standing water and debris may still remain. 
-We do not expect to see similar impacts from the next high tide.   
-We will continue to monitor the situation and will issue further alerts or warnings if necessary.   
-Continue to take care on waterside roads and footpaths and don't put yourself in unnecessary danger. Stay away from floodwater - it contains hidden dangers such as open manhole covers, sewage and chemicals.   
-
+> No current flood warnings reports in this area
 
 <!-- flood_marker ends -->
