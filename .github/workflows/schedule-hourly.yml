@@ -26,14 +26,17 @@ jobs:
               uses: actions/checkout@v7
 
             - name: Fetch latest FMS Data
+              continue-on-error: true
               run: |-
                   curl "https://ratings.food.gov.uk/api/open-data-files/FHRS124en-GB.xml" > _data/food-standards.xml
 
             - name: Fetch latest FMS Data
+              continue-on-error: true
               run: |-
                   curl "https://www.fixmystreet.com/rss/l/51.897991,-2.071308/10" > _data/fix-my-street.xml
 
             - name: Fetch latest FB Data
+              continue-on-error: true
               run: |-
                   curl "https://www.givefood.org.uk/api/2/foodbank/cheltenham/" | jq . > _data/foodbank-cheltenham.json
                   curl "https://www.givefood.org.uk/api/2/foodbank/cheltenham-open-door/" | jq . > _data/foodbank-open-door.json
