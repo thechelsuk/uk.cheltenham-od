@@ -44,4 +44,12 @@ jobs:
           # block (layout/permalink) before the raw XML, so Jekyll can serve
           # them as static files. That makes them invalid XML as source, by
           # design — the linter should only ever see the built output.
-          FILTER_REGEX_EXCLUDE: .*/feeds/.*\.xml
+          #
+          # _layouts/*.html and _includes/**/*.html are Jekyll fragments —
+          # partial templates full of Liquid tags ({% %}/{{ }}) that Jekyll
+          # assembles into a full page — never standalone documents. HTML
+          # linting/Prettier flags them for missing a doctype, or mistakes
+          # Liquid output in a class attribute for a malformed literal class
+          # name; both are false positives against source this repo never
+          # intends to be valid HTML on its own.
+          FILTER_REGEX_EXCLUDE: .*/feeds/.*\.xml|.*/_layouts/.*\.html|.*/_includes/.*\.html
