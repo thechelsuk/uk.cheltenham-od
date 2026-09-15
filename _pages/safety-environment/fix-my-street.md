@@ -41,6 +41,18 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Pothole (again!!!) on the railway bridge., 15th September :- [10103079](https://www.fixmystreet.com/report/10103079)
+- Road surface Deep cracks & subsidance drain cover near by, 15th September :- [10102992](https://www.fixmystreet.com/report/10102992)
+- Flytipping, 15th September :- [10102964](https://www.fixmystreet.com/report/10102964)
+- Overgrown bushes and brambles, 15th September :- [10102806](https://www.fixmystreet.com/report/10102806)
+- Rubbish dumped on street, 15th September :- [10102714](https://www.fixmystreet.com/report/10102714)
+- Huge amount of gravel left by contractors on this junction after a repair., 15th September :- [10102376](https://www.fixmystreet.com/report/10102376)
+- TMC - Defects -other CW6 problem, 15th September :- [10102092](https://www.fixmystreet.com/report/10102092)
+- TMC - Defects -other CW6 problem, 15th September :- [10102090](https://www.fixmystreet.com/report/10102090)
+- TMC - Defects -other CW6 problem, 15th September :- [10102089](https://www.fixmystreet.com/report/10102089)
+- TMC - Defects -other CW6 problem, 15th September :- [10102087](https://www.fixmystreet.com/report/10102087)
+- TMC - Defects - Other problem, 15th September :- [10101880](https://www.fixmystreet.com/report/10101880)
+- Freezer dumped on pavement, 15th September :- [10101643](https://www.fixmystreet.com/report/10101643)
 - Pothole on bridge, 15th September :- [10100235](https://www.fixmystreet.com/report/10100235)
 - Pothole in the road problem, 15th September :- [10100375](https://www.fixmystreet.com/report/10100375)
 - Orange parking barrier abandoned on pavement blocking pedestrians- moved to behind lamppost but still untidy and obstructive., 15th September :- [10100092](https://www.fixmystreet.com/report/10100092)
@@ -49,17 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Pothole outside no.5 Armada Close, 15th September :- [10099953](https://www.fixmystreet.com/report/10099953)
 - Pothole in line with ouderground drain pipe, 15th September :- [10099895](https://www.fixmystreet.com/report/10099895)
 - Previous repair getting worse, 15th September :- [10099380](https://www.fixmystreet.com/report/10099380)
-- Weeds in verge covering some of new cyclepath, 15th September :- [10099364](https://www.fixmystreet.com/report/10099364)
-- Overgrown hedge along footpath, 15th September :- [10099346](https://www.fixmystreet.com/report/10099346)
-- TMC - Defects - Other problem, 15th September :- [10099391](https://www.fixmystreet.com/report/10099391)
-- Stump needs grinding - tree causing subsidence, 15th September :- [10099079](https://www.fixmystreet.com/report/10099079)
-- Drain blocked by litter, 15th September :- [10099063](https://www.fixmystreet.com/report/10099063)
-- Flytipped freezer, 15th September :- [10099036](https://www.fixmystreet.com/report/10099036)
-- Flytipped waste, 15th September :- [10098793](https://www.fixmystreet.com/report/10098793)
-- Damage to play area floor and equipment, 15th September :- [10098776](https://www.fixmystreet.com/report/10098776)
-- Kerb edge pothole extending over a metre dropped kerb 2A Fairhaven Brockworth, 15th September :- [10094774](https://www.fixmystreet.com/report/10094774)
-- Tree vandalised bath terrace car park, 14th September :- [10098017](https://www.fixmystreet.com/report/10098017)
-- No timetable, 14th September :- [10097994](https://www.fixmystreet.com/report/10097994)
-- Perspex broken, 14th September :- [10097934](https://www.fixmystreet.com/report/10097934)
 
 <!-- fix_marker ends -->
