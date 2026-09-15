@@ -1,5 +1,6 @@
 {% include header.html %}
 {% assign data = site.data["cycle-routes"] %}
+{% assign venues = site.data["cycle-venues"] %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -7,6 +8,7 @@
             <p>{{page.description}}</p>
             <ul>
                 <li>{{ data.segments | size }} mapped cycle track/lane segments near Cheltenham</li>
+                <li>{{ venues.venues | size }} pump tracks and bike parks nearby</li>
             </ul>
         </header>
 
@@ -15,12 +17,13 @@
         {{ content }}
 
         <h2>Map</h2>
-        <div id="cycle-routes-map" style="height: 520px; border-radius: 8px;" aria-label="Map of cycle tracks and lanes near Cheltenham"></div>
+        <div id="cycle-routes-map" style="height: 520px; border-radius: 8px;"
+            aria-label="Map of cycle tracks and lanes near Cheltenham"></div>
         <p class="cycle-routes-legend"><small>
-            <span class="cycle-routes-swatch cycle-routes-swatch-track"></span> Dedicated track
-            &nbsp;&nbsp;<span class="cycle-routes-swatch cycle-routes-swatch-lane"></span> On-road lane
-            &nbsp;&nbsp;<span class="cycle-routes-swatch cycle-routes-swatch-named"></span> Named/numbered route
-        </small></p>
+                <span class="cycle-routes-swatch cycle-routes-swatch-track"></span> Dedicated track
+                &nbsp;&nbsp;<span class="cycle-routes-swatch cycle-routes-swatch-lane"></span> On-road lane
+                &nbsp;&nbsp;<span class="cycle-routes-swatch cycle-routes-swatch-named"></span> Named/numbered route
+            </small></p>
 
         <h2>Named Routes</h2>
         <div class="table-scroll">
@@ -44,12 +47,34 @@
             </table>
         </div>
 
+        <h2>Pump Tracks &amp; Bike Parks</h2>
+        <div class="table-scroll">
+            <table class="cycle-routes-mtb-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in venues.venues %}
+                    <tr>
+                        <td>{{ s.name }}</td>
+                        <td>{{ s.kind }}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
         <p class="cycle-routes-attribution"><small>
-                Cycle infrastructure from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
+                Cycle track/lane data from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
                 {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
-                Coverage depends on what's been mapped in OpenStreetMap — if you spot a missing or incorrect route,
-                it can be fixed at <a href="https://www.openstreetmap.org/">openstreetmap.org</a> and will appear
-                here next update.
+                <br />
+                Pump track/bike park locations curated by <a href="{{ venues.source_url }}">{{ venues.source }}</a>.
+                {% if venues.updated %}Last updated {{ venues.updated }}.{% endif %}
             </small></p>
     </div>
 </div>
@@ -57,5 +82,6 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script id="cycle-routes-data" type="application/json">{{ data.segments | jsonify }}</script>
+<script id="cycle-routes-poi-data" type="application/json">{{ venues.venues | jsonify }}</script>
 <script src="/assets/scripts/cycle-routes-map.js"></script>
 {% include footer.html %}

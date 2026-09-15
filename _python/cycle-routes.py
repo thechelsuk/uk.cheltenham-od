@@ -17,6 +17,9 @@ its constituent ways. Everything else renders on the map but isn't
 pulled out into its own table row (that's mostly ordinary street-level
 lanes, plus a handful of named mountain-bike park trails at Dog Bark/
 Leckhampton that aren't "getting around town" routes).
+
+Pump tracks/bike parks are a separate, hand-curated concern — see
+_data/cycle-venues.json — not fetched here.
 """
 import json
 import math
