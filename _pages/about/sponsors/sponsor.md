@@ -63,9 +63,8 @@ Each category is £100/month at the founding rate, with editorial included. One 
 
 ## Principal Sponsor — Home Page
 
-Front and centre on the site's busiest page, our news aggregation page plus an editorial feature each month. One slot only. [Buy today! →]({{page.link_principal}})
+Front and centre on the site's busiest page, our news aggregation page plus an editorial feature each month. One slot only. [Buy today! →]({{page.sponsor_principal}})
 
-> We don't place adverts on utility pages such as contact,about, and privacy.
 > By sponsoring you agree to our [sponsorship terms](/sponsor/terms).
 
 ## Frequently Asked Questions
@@ -81,7 +80,8 @@ clearly labelled as sponsored. No pop-ups, no auto-playing anything. Like the ad
 
 ### Which Pages Will My Advert Appear On?
 
-- You sponsor a whole category, so your card shows on every page in that section. Community pages like food banks and helplines stay advert-free on principle, and we don't place adverts on utility pages such as our contact, about and privacy pages.
+- You sponsor a whole category, so your card shows on every page in that section.
+- We don't place adverts on utility pages such as our contact, about, and privacy pages.
 - Subject to availability.
 
 ### How Do I Pay?
