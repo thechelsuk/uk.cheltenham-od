@@ -7,6 +7,8 @@ description: "Needed items for Cheltenham foodbanks"
 type: "community"
 ---
 
+{% include sponsor.html %}
+
 ## Cheltenham Food Banks - Needed Items
 
 A live list of the food and essential items most needed by food banks in Cheltenham, Gloucestershire — updated regularly so your donations go where they're needed today.

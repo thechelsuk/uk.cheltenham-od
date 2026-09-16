@@ -1,0 +1,135 @@
+{% include header.html %}
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+
+        {{ content }}
+
+        <h2>Categories You Can Sponsor</h2>
+        <p>Each category is £100/month at the founding rate, with editorial included. One sponsor per category.</p>
+        <div class="table-scroll">
+            <table class="sponsor-categories-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Pages included</th>
+                        <th scope="col">Ideal for</th>
+                        <th scope="col" class="action">Available now</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Getting Around</strong></td>
+                        <td>Fuel Prices, EV Charging, Car Parks, Bus Data, Cycle Routes, Public Toilets (6)</td>
+                        <td>Garages, MOT &amp; servicing, tyre fitters, EV installers, driving schools</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_gta }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Home &amp; Property</strong></td>
+                        <td>House Prices (incl. yearly archives, housing supply &amp; property stock), Planning Applications, Council Tax, Broadband &amp; Mobile Coverage, Recycling (12)</td>
+                        <td>Estate agents, mortgage brokers, conveyancers, architects, builders, extension &amp; loft firms</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_hap }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Safety &amp; Environment</strong></td>
+                        <td>Crime Data (incl. yearly archives), Water Quality &amp; Flooding (incl. sewage overflow status &amp; river quality), Air Quality, Security Alerts, Fix My Street (11)</td>
+                        <td>Alarm &amp; camera installers, insurance brokers, damp &amp; flood specialists, tree surgeons &amp; gardeners</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_sae }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Things to Do</strong></td>
+                        <td>Events, Sports &amp; Clubs (incl. Cheltenham Town FC &amp; parkrun), Points of Interest, Places to Stay, Public Holidays, Festivals (8)</td>
+                        <td>Venues, hotels &amp; guest houses, attractions, event organisers, hospitality</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_tdo }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Community &amp; Support</strong></td>
+                        <td>Classifieds, Food Bank, Helplines &amp; Contacts, GP &amp; Pharmacies, Food Hygiene Ratings (incl. rating bands), Third Spaces (10)</td>
+                        <td>Local shops &amp; services, health &amp; care providers, cafés, community businesses</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_cas }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>About &amp; Info</strong></td>
+                        <td>All About Cheltenham (incl. employment history, listed buildings &amp; council land &amp; assets), Schools &amp; Catchment Areas, Post Offices &amp; Lockers (incl. InPost &amp; DPD pickup points), Latest News, Weather (13)</td>
+                        <td>Schools suppliers, uniform &amp; shoe shops, removals &amp; storage, print &amp; stationery, professional services</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_aai }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Principal Sponsor — Home Page</h2>
+        <p><strong>£250/month.</strong> Front and centre on the site's busiest page — the homepage — plus an editorial feature each month. One slot only.</p>
+        <p><a class="latest-action-link" href="{{ page.sponsor_principal }}" rel="sponsored noopener">Buy Today &rarr;</a></p>
+
+        <blockquote>By sponsoring you agree to our <a href="/sponsor/terms">sponsorship terms</a>.</blockquote>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Does a Sponsorship Look Like?</h3>
+        <ul>
+            <li>A single tasteful card above the fold on a page — your logo, a short line and a link. Always
+                clearly labelled as sponsored. No pop-ups, no auto-playing anything. Like the advert at the top of
+                this page.</li>
+        </ul>
+
+        <h3>Is There a Limit on the Number of Adverts per Page?</h3>
+        <ul>
+            <li>Yes, pages are limited to a single advert per page. This reduces noise and clutter and puts your
+                business front and centre alongside the page content, directly in front of a local and engaged
+                person looking for relevant content.</li>
+        </ul>
+
+        <h3>Which Pages Will My Advert Appear On?</h3>
+        <ul>
+            <li>You sponsor a whole category, so your card shows on every page in that section.</li>
+            <li>We keep adverts off a handful of pure utility pages — contact, about, and privacy.</li>
+            <li>Subject to availability.</li>
+        </ul>
+
+        <h3>Why Do Some Categories Have More Pages Than Others?</h3>
+        <ul>
+            <li>The site is updated frequently and new pages are added over time, so category sizes shift
+                naturally as content grows — it isn't a fixed number.</li>
+            <li>Some categories are bigger simply because their topic has more closely-related pages, such as
+                yearly archives or filtered views of the same dataset.</li>
+            <li>Categories are kept well-balanced and targeted rather than forced to match — your card only ever
+                appears on pages genuinely relevant to your business.</li>
+        </ul>
+
+        <h3>How Do I Pay?</h3>
+        <ul>
+            <li>By card through Stripe, billed quarterly. Three-month minimum, then cancel any time.</li>
+        </ul>
+
+        <h3>Can I Change My Card Details or Listing?</h3>
+        <ul>
+            <li>Yes. You can manage your own payment details through Stripe, and email me any time to update your
+                wording or logo.</li>
+        </ul>
+
+        <h3>Will the Link Help My SEO?</h3>
+        <ul>
+            <li>Sponsor links are marked <code>rel="sponsored"</code> in line with Google's guidance — it's the
+                honest approach and keeps the site's standing healthy. You will however be visible to your target
+                market audience above the fold on the page that matters.</li>
+        </ul>
+
+        <h3>How Much Traffic Do You Get?</h3>
+        <ul>
+            <li>The site is new and growing quickly. I'm happy to share current visitor numbers on request — just
+                ask.</li>
+        </ul>
+
+        <h2>Get in Touch</h2>
+        <p><a href="/contact">Email via the contact form</a> and I'll send a quick mock-up of how your card would
+            look on the page you're interested in.</p>
+
+    </div>
+</div>
+
+{% include footer.html %}

@@ -9,6 +9,8 @@ type: "community"
 feed_url:
 ---
 
+{% include sponsor.html %}
+
 Some useful contacts and resources for cheltenham residents. If you have any suggestions for additions, post in the [r/Cheltenham subreddit](https://www.reddit.com/r/Cheltenham/).
 
 ## Water Incidents

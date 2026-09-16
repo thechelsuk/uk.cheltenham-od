@@ -7,6 +7,8 @@ description: "Cheltenham's year-round festival calendar — Literature, Racing, 
 type: "activities"
 ---
 
+{% include sponsor.html %}
+
 ## Cheltenham's Festivals
 
 Cheltenham hosts a festival for much of the year — literature, horse racing, jazz, science and music each draw visitors from across the country. Planning a trip around one? Our [visiting Cheltenham guide](/visiting-cheltenham) covers where to stay, eat and explore, and [places to stay](/staying-in-cheltenham) lists local hotels and guest houses — both worth checking early, especially around the busier dates below.

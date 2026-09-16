@@ -10,15 +10,22 @@ type: "cod"
 Plain-English terms for sponsoring Cheltenham Open Data. If anything's unclear,
 [just ask via the contact form](/contact).
 
-_Last updated: August 2026._
+_Last updated: September 2026._
 
 ## What You Get
 
-- **Founding / Standard**: one "supported by" card on the page you choose — your
-  logo, a short line about your business, and a link.
-- **Premium**: primary position across the site (excluding community pages),
-  plus a sponsored mention in a site announcement post.
-- No more than two sponsor cards appear on any one page.
+- **Category sponsorship — £100/month founding rate.** One "supported by" card
+  — your logo, a short line about your business, and a link — appearing on
+  every page in your chosen category. You're the only sponsor of your kind in
+  that category. Once the founding places for a category are taken, new
+  sponsors pay the standard rate.
+- **Principal Sponsor — £250/month.** Primary position on the site's busiest
+  page, the homepage. One slot only.
+- Either tier includes optional editorial: write your own post in your own
+  words (I have editorial rights to edit) published permanently as a site
+  announcement, which you're free to share on our socials — or, if you'd
+  rather keep it simple, I'll write you a short thank-you post instead.
+- No more than one sponsor card appears on any one page.
 - Your link is marked `rel="sponsored"`, in line with Google's guidance.
 
 ## Billing and Term
@@ -27,8 +34,8 @@ _Last updated: August 2026._
 - There is a **minimum term of three months** from your start date.
 - After the minimum term, sponsorship continues month to month until you cancel.
 - No VAT is charged.
-- **Founding rate:** if you join on a founding rate, that price is held for 12
-  months from your start date.
+- **Founding rate:** if you join a category on its founding rate, that price is
+  held for 12 months from your start date.
 
 ## Cancelling
 
@@ -50,11 +57,12 @@ _Last updated: August 2026._
 
 ## Placement
 
-- Card position within a page may vary, and where two sponsors share a page they
-  may appear in either order.
-- I can't guarantee a specific slot beyond what your tier describes.
-- Community pages (food banks, helplines) and utility pages (contact, about,
-  privacy) carry no adverts.
+- Your card appears once, at the top of the page and above the fold — the
+  same position on every eligible page in your category (or the homepage,
+  for Principal Sponsor).
+- A handful of pure utility pages — contact, about, and privacy — carry no
+  adverts. Otherwise, your card appears on every page in your category,
+  subject to availability.
 
 ## Traffic and Results
 

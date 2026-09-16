@@ -8,6 +8,8 @@
             <p>{{page.description}}</p>
         </header>
 
+        {% include sponsor.html %}
+
         {% assign wx = site.data.weather %}
         {% assign days = wx.days %}
         {% assign lo = days | map: "min" | sort | first %}
