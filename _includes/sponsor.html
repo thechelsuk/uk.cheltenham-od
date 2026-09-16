@@ -1,4 +1,32 @@
-{% assign sponsor = page.sponsor | default: site.sponsor %}
+{% assign sponsor_category = nil %}
+{% if page.url == "/" or page.url == "/cheltenham-news" or page.url == "/cheltenham-news/" %}
+{% assign sponsor_category = "Principal Sponsor" %}
+{% elsif page.group %}
+{% assign sponsor_category = page.group %}
+{% else %}
+{% for item in site.navigation_header %}
+{% if sponsor_category == nil and item.link == page.url %}
+{% assign sponsor_category = item.group %}
+{% endif %}
+{% if sponsor_category == nil and item.children %}
+{% for child in item.children %}
+{% if sponsor_category == nil and child.link == page.url %}
+{% assign sponsor_category = item.group %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% assign sponsor = nil %}
+{% if sponsor_category %}
+{% assign category_sponsor = site.data.sponsors[sponsor_category] %}
+{% if category_sponsor.active %}
+{% assign sponsor = category_sponsor %}
+{% endif %}
+{% endif %}
+{% assign sponsor = sponsor | default: page.sponsor | default: site.sponsor %}
+
 {% if sponsor %}
 
 <aside class="sponsor-card">
