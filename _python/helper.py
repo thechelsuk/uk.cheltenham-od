@@ -16,6 +16,15 @@ def repo_root():
     return pathlib.Path(__file__).parent.parent.resolve()
 
 
+def site_url():
+    """The site's canonical URL (no trailing slash), read from _config.yml's
+    `url:` key rather than hardcoded, so it tracks a domain change automatically."""
+    import yaml as _yaml
+
+    config = _yaml.safe_load((repo_root() / "_config.yml").read_text())
+    return config["url"].rstrip("/")
+
+
 def updated_timestamp():
     """The "updated" string used across _data/*.json payloads, e.g. '12 September 2026 at 20:53'."""
     return datetime.now().strftime("%-d %B %Y at %H:%M")

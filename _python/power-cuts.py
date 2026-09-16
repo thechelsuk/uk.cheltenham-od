@@ -136,7 +136,7 @@ def build_alert_html(incidents):
     )
 
 
-def build_atom_items(history_records):
+def build_atom_items(history_records, page_url):
     items = []
     for record in history_records[:50]:
         area = record["postcodes"][0] if record["postcodes"] else "Cheltenham"
@@ -149,7 +149,7 @@ def build_atom_items(history_records):
             summary_parts.append(f"Restored: {record['date_of_restoration']}")
         items.append({
             "title": title,
-            "link": "https://cod.thechels.uk/cheltenham-power-cuts",
+            "link": page_url,
             "summary": " · ".join(p for p in summary_parts if p),
             "published_iso": record.get("first_seen_iso"),
             "source": "National Grid Electricity Distribution",
@@ -213,15 +213,18 @@ if __name__ == "__main__":
     helper.write_json(history_path, history_payload)
     print(f"History now holds {len(history_records)} recorded incidents")
 
+    site = helper.site_url()
+    page_url = f"{site}/cheltenham-power-cuts"
+
     atom_path = feeds_dir / "power-cuts.xml"
     helper.write_items_atom(
-        items=build_atom_items(history_records),
+        items=build_atom_items(history_records, page_url),
         filename=atom_path,
         permalink_path="/feeds/power-cuts.xml",
         feed_title="Cheltenham Power Cuts",
         feed_subtitle="Live and recent power cuts affecting Cheltenham",
-        self_url="https://cod.thechels.uk/feeds/power-cuts.xml",
-        alternate_url="https://cod.thechels.uk/cheltenham-power-cuts",
+        self_url=f"{site}/feeds/power-cuts.xml",
+        alternate_url=page_url,
     )
     print(f"Atom feed saved to {atom_path}")
 
