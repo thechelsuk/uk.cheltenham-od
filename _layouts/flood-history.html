@@ -1,0 +1,51 @@
+{% include header.html %}
+{% assign history = site.data["flood-history"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-flood-warnings">&lAarr; Back to Cheltenham Flood Warnings</a></li>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if history.records.size > 0 %}
+        <div class="table-scroll">
+            <table class="flood-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Severity</th>
+                        <th scope="col">County</th>
+                        <th scope="col" class="date">First Seen</th>
+                        <th scope="col" class="date">Last Seen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in history.records %}
+                    <tr>
+                        <td>{{ r.description }}</td>
+                        <td>{{ r.severity }}</td>
+                        <td>{{ r.county }}</td>
+                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
+                        <td class="date">{% if r.last_seen_iso.size > 0 %}{{ r.last_seen_iso | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No flood warnings have been recorded for Gloucestershire since this page started tracking them.</p>
+        {% endif %}
+        <p class="flood-history-attribution"><small>
+                Data from the <a href="{{ history.source }}">Environment Agency</a>.
+            </small></p>
+    </div>
+</div>
+{% include footer.html %}

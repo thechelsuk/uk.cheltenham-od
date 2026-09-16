@@ -23,6 +23,5 @@ Call **999** as well if there's a risk to life, such as damage to power lines
 or a substation.
 
 When the list below is empty, there's no current power cut recorded against a
-Cheltenham postcode. A history of past incidents is kept underneath, and
-everything here is also published as an [Atom feed]({{ page.feed_url }}), so
-you can subscribe rather than checking back.
+Cheltenham postcode. A history of past incidents is kept below, and
+everything here is also published as an [Atom feed]({{ page.feed_url }}).

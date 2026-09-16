@@ -75,46 +75,6 @@ def build_incident(row):
     }
 
 
-def update_history(history_records, incidents, now_iso):
-    by_id = {r["fault_id"]: r for r in history_records}
-
-    for incident in incidents:
-        record = by_id.get(incident["fault_id"])
-        if record is None:
-            record = {
-                "fault_id": incident["fault_id"],
-                "category": incident["category"],
-                "planned": incident["planned"],
-                "voltage": incident["voltage"],
-                "postcodes": incident["postcodes"],
-                "lat": incident["lat"],
-                "lon": incident["lon"],
-                "first_seen_iso": now_iso,
-                "date_of_reported_fault": incident["date_of_reported_fault"],
-                "peak_confirmed_off": incident["confirmed_off"],
-            }
-            by_id[incident["fault_id"]] = record
-            history_records.append(record)
-
-        record["last_seen_iso"] = now_iso
-        record["status"] = incident["status"]
-        record["date_of_restoration"] = incident["date_of_restoration"]
-        record["peak_confirmed_off"] = max(record.get("peak_confirmed_off", 0), incident["confirmed_off"])
-
-    cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=HISTORY_RETENTION_DAYS)
-    kept = []
-    for record in history_records:
-        try:
-            last_seen = datetime.datetime.fromisoformat(record["last_seen_iso"])
-        except (KeyError, ValueError):
-            kept.append(record)
-            continue
-        if last_seen >= cutoff:
-            kept.append(record)
-    kept.sort(key=lambda r: r["last_seen_iso"], reverse=True)
-    return kept
-
-
 def build_alert_html(incidents):
     active = [i for i in incidents if i["status"] not in ("Restored",) and i["restored"] == 0]
     if not active:
@@ -137,21 +97,26 @@ def build_alert_html(incidents):
 
 
 def build_atom_items(history_records, page_url):
+    """One entry per incident, keyed by a stable per-fault_id link/id so a
+    feed reader treats it as the *same* item across runs rather than a new
+    one — and dated by last_seen_iso (not first_seen_iso), so a status change
+    such as being restored bumps its "updated" time and surfaces as an
+    update, not just a silent edit to an entry the reader already saw."""
     items = []
     for record in history_records[:50]:
         area = record["postcodes"][0] if record["postcodes"] else "Cheltenham"
         status = record.get("status", "")
         title = f"Power cut near {area} — {status}" if status else f"Power cut near {area}"
         summary_parts = [record.get("category") or ""]
-        if record.get("peak_confirmed_off"):
-            summary_parts.append(f"{record['peak_confirmed_off']} properties affected")
+        if record.get("confirmed_off"):
+            summary_parts.append(f"{record['confirmed_off']} properties affected (peak)")
         if record.get("date_of_restoration"):
             summary_parts.append(f"Restored: {record['date_of_restoration']}")
         items.append({
             "title": title,
-            "link": page_url,
+            "link": f"{page_url}#{record['fault_id']}",
             "summary": " · ".join(p for p in summary_parts if p),
-            "published_iso": record.get("first_seen_iso"),
+            "published_iso": record.get("last_seen_iso") or record.get("first_seen_iso"),
             "source": "National Grid Electricity Distribution",
         })
     return items
@@ -200,7 +165,10 @@ if __name__ == "__main__":
     else:
         history_records = []
 
-    history_records = update_history(history_records, incidents, now_iso)
+    history_records = helper.update_history(
+        history_records, incidents, id_key="fault_id", now_iso=now_iso,
+        peak_fields=["confirmed_off"], retention_days=HISTORY_RETENTION_DAYS,
+    )
     history_payload = {
         "generated_at": now.isoformat(),
         "note": "Rolling log of power cuts recorded affecting Cheltenham (GL50-GL54) postcodes, "
@@ -215,16 +183,17 @@ if __name__ == "__main__":
 
     site = helper.site_url()
     page_url = f"{site}/cheltenham-power-cuts"
+    history_url = f"{page_url}/history"
 
     atom_path = feeds_dir / "power-cuts.xml"
     helper.write_items_atom(
-        items=build_atom_items(history_records, page_url),
+        items=build_atom_items(history_records, history_url),
         filename=atom_path,
         permalink_path="/feeds/power-cuts.xml",
         feed_title="Cheltenham Power Cuts",
         feed_subtitle="Live and recent power cuts affecting Cheltenham",
         self_url=f"{site}/feeds/power-cuts.xml",
-        alternate_url=page_url,
+        alternate_url=history_url,
     )
     print(f"Atom feed saved to {atom_path}")
 

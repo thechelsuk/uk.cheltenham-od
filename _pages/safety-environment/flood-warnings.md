@@ -39,6 +39,8 @@ For the state of the River Chelt itself day-to-day, see our [sewage overflow sta
   company.
 - Subscribe to this page's [RSS feed]({{ page.feed_url }}) to receive Gloucestershire
   flood updates as they are published in your RSS/Feed reader or check this page.
+- Past warnings, including once they've been lifted, are kept on the
+  [flood warning history page](/cheltenham-flood-warnings/history).
 
 ### Preparing for a Flood
 

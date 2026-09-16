@@ -116,6 +116,10 @@ navigation_header:
     link: /cheltenham-bus-data
     description: "Bus routes serving Cheltenham and disruption statuses"
     group: "Getting Around"
+    children:
+      - name: Cheltenham Bus Disruptions History
+        link: /cheltenham-bus-data/history
+        description: "Historical log of bus disruptions recorded as affecting Cheltenham."
   - name: Cheltenham Cycle Routes
     link: /cheltenham-cycle-routes
     description: "Dedicated cycle tracks and on-road lanes near Cheltenham, including the Honeybourne Line and NCN 41."
@@ -199,6 +203,9 @@ navigation_header:
       - name: Cheltenham River Water Quality
         link: /cheltenham-water-quality
         description: "Chemical water quality readings for the River Chelt and nearby brooks."
+      - name: Cheltenham Flood Warnings History
+        link: /cheltenham-flood-warnings/history
+        description: "Historical log of flood warnings recorded for Gloucestershire."
   - name: Cheltenham Air Quality
     link: /cheltenham-air-quality
     description: "Local area air quality readings for Cheltenham."
@@ -215,6 +222,10 @@ navigation_header:
     link: /cheltenham-power-cuts
     description: "Live and recent power cuts affecting Cheltenham, from National Grid Electricity Distribution."
     group: "Safety & Environment"
+    children:
+      - name: Cheltenham Power Cuts History
+        link: /cheltenham-power-cuts/history
+        description: "Historical log of power cuts recorded against Cheltenham postcodes."
 
   # Things to Do
   - name: Cheltenham Events
@@ -410,6 +421,8 @@ footer_pages:
       link: /cheltenham-points-of-interest
     - name: Cheltenham Post Office Locations
       link: /cheltenham-post-office-locations
+    - name: Cheltenham Power Cuts
+      link: /cheltenham-power-cuts
     - name: Cheltenham Public Holidays
       link: /cheltenham-public-holidays
     - name: Cheltenham Public Toilets
@@ -452,13 +465,13 @@ footer_columns:
         link: /feeds/main.xml
       - name: Cheltenham Events (atom)
         link: /feeds/events.xml
+      - name: Cheltenham Classifieds (atom)
+        link: /feeds/classifieds.xml
       - name: Daily News Summary (atom)
         link: /feeds/news-summary.xml
       - name: Breaking News (atom)
         link: /feeds/news-breaking.xml
-      - name: Cheltenham Classifieds (atom)
-        link: /feeds/classifieds.xml
-      - name: Flood warnings (atom)
+      - name: Cheltenham Flood Warnings (atom)
         link: /feeds/flood.xml
       - name: Cheltenham Bus Disruptions (atom)
         link: /feeds/bus-disruptions.xml

@@ -9,10 +9,10 @@
     } catch (e) {
         return;
     }
-    if (!incidents.length) {
-        el.innerHTML = "<p>No current power cuts to show on the map.</p>";
-        return;
-    }
+
+    // Cheltenham town centre — used to keep the map showing Cheltenham even
+    // when there are no current power cuts to plot.
+    var CHELTENHAM = [51.897991, -2.071308];
 
     var map = L.map(el);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -35,6 +35,6 @@
     if (bounds.length) {
         map.fitBounds(bounds, { padding: [30, 30] });
     } else {
-        el.innerHTML = "<p>No current power cuts to show on the map.</p>";
+        map.setView(CHELTENHAM, 13);
     }
 })();

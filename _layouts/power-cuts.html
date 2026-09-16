@@ -1,6 +1,5 @@
 {% include header.html %}
 {% assign data = site.data["power-cuts"] %}
-{% assign history = site.data["power-cuts-history"] %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -8,6 +7,7 @@
             <p>{{page.description}}</p>
             <ul>
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><a href="/cheltenham-power-cuts/history">Incident History &rarr;</a></li>
             </ul>
         </header>
 
@@ -39,8 +39,8 @@
                         <td>{{ i.category }}{% if i.planned %} (Planned){% endif %}</td>
                         <td>{{ i.status }}</td>
                         <td class="number">{{ i.confirmed_off }}</td>
-                        <td class="date">{{ i.date_of_reported_fault }}</td>
-                        <td class="date">{{ i.etr | default: "Not yet known" }}</td>
+                        <td class="date">{% if i.date_of_reported_fault.size > 0 %}{{ i.date_of_reported_fault | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
+                        <td class="date">{% if i.etr.size > 0 %}{{ i.etr | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -53,41 +53,6 @@
                 Data from <a href="{{ data.source }}">National Grid Electricity Distribution</a>, under the
                 {{ data.licence }}. {% if data.updated %}Last updated {{ data.updated }}.{% endif %}
             </small></p>
-
-        <h2>Recent History</h2>
-        <p>Every power cut recorded against a Cheltenham postcode since this page started tracking them, most
-            recent first. This isn't a full historical archive — only incidents seen while this page has been
-            live.</p>
-        {% if history.records.size > 0 %}
-        <div class="table-scroll">
-            <table class="power-cuts-history-table data-table" data-sortable>
-                <thead>
-                    <tr>
-                        <th scope="col">Postcodes</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" class="number">Peak Properties Off</th>
-                        <th scope="col" class="date">First Seen</th>
-                        <th scope="col" class="date">Restored</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for r in history.records limit: 50 %}
-                    <tr>
-                        <td class="postcode">{{ r.postcodes | join: ", " }}</td>
-                        <td>{{ r.category }}{% if r.planned %} (Planned){% endif %}</td>
-                        <td>{{ r.status }}</td>
-                        <td class="number">{{ r.peak_confirmed_off }}</td>
-                        <td class="date">{{ r.first_seen_iso }}</td>
-                        <td class="date">{{ r.date_of_restoration | default: "Not yet restored" }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        {% else %}
-        <p>No power cuts have been recorded for Cheltenham since this page started tracking them.</p>
-        {% endif %}
 
         <h2>Power Cuts FAQs</h2>
 
@@ -111,6 +76,11 @@
         <h3>How Often Does This Update?</h3>
         <p>The underlying NGED feed updates near real-time; this page and its feed refresh roughly every two
             hours.</p>
+
+        <h3>Can I See Past Power Cuts?</h3>
+        <p>Yes — every power cut recorded against a Cheltenham postcode is kept on the <a
+                href="/cheltenham-power-cuts/history">incident history page</a>, including once it's been
+            restored.</p>
     </div>
 </div>
 

@@ -1,7 +1,5 @@
 import datetime
 import json
-import xml.etree.ElementTree as ET
-from xml.dom import minidom
 
 import helper
 
@@ -20,10 +18,11 @@ FALLBACK_OPERATOR_TERMS = [
     "red & white", "cheltenham & gloucester",
 ]
 
-ATOM_NS = "http://www.w3.org/2005/Atom"
-
 # BODS source data is a mix of ALL CAPS and Title Case — normalise to Title Case.
 ACRONYMS = {"UK", "LLP", "PLC"}
+
+# History entries are kept for two years, generous for a Cheltenham-only feed.
+HISTORY_RETENTION_DAYS = 730
 
 
 def local_operator_terms():
@@ -46,66 +45,72 @@ def row_is_local(row, operator_terms):
     return any(term in operators_affected for term in operator_terms)
 
 
-def convert_to_atom(disruptions, filename):
-    ET.register_namespace("", ATOM_NS)
-    feed = ET.Element("feed", xmlns=ATOM_NS)
+def build_disruption(r):
+    d = {
+        "organisation":       helper.clean_name(r.get("Organisation") or "", ACRONYMS),
+        "situation_number":   r.get("Situation Number") or r.get("ID") or "",
+        "validity_start":     r.get("Validity Start Date") or r.get("Validity start") or "",
+        "validity_end":       r.get("Validity End Date") or r.get("Validity end") or "",
+        "reason":             helper.clean_name(r.get("Reason") or "Unknown", ACRONYMS),
+        "planned":            r.get("Planned") or "",
+        "modes_affected":     helper.clean_name(r.get("Modes Affected") or r.get("Modes affected") or "", ACRONYMS),
+        "operators_affected": helper.clean_name(r.get("Operators Affected") or r.get("Operators affected") or "", ACRONYMS),
+        "services_affected":  r.get("Services Affected") or r.get("Services affected") or "",
+        "stops_affected":     r.get("Stops Affected") or r.get("Stops affected") or "",
+    }
+    # A situation number is usually present and unique, but not guaranteed —
+    # fall back to a composite key so two different disruptions never collide
+    # in the history log.
+    d["disruption_id"] = d["situation_number"] or "|".join([
+        d["organisation"], d["reason"], d["validity_start"],
+    ])
+    return d
 
-    title = ET.SubElement(feed, "title")
-    title.text = "Cheltenham Bus Disruptions"
 
-    link_self = ET.SubElement(feed, "link")
-    link_self.set("rel", "self")
-    link_self.set("href", "https://data.bus-data.dft.gov.uk/disruptions/download/")
+def build_alert_html(disruptions):
+    if not disruptions:
+        return ""
 
-    feed_id = ET.SubElement(feed, "id")
-    feed_id.text = f"{helper.site_url()}/feeds/bus-disruptions.xml"
+    now_str = datetime.datetime.now().strftime("%H:%M")
+    items = ""
+    for d in disruptions[:5]:
+        label = d["operators_affected"] or d["organisation"]
+        items += (
+            f'  <li><a href="/cheltenham-bus-data">'
+            f'Disruption to {label} bus services reported at {now_str}</a></li>\n'
+        )
+    return (
+        "<h2>Bus Disruption Alert</h2>\n"
+        "<ul>\n"
+        f"{items}"
+        "</ul>"
+    )
 
-    updated = ET.SubElement(feed, "updated")
-    updated.text = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    subtitle = ET.SubElement(feed, "subtitle")
-    subtitle.text = "Current bus service disruptions affecting Cheltenham"
-
-    for d in disruptions:
-        entry = ET.SubElement(feed, "entry")
-
-        entry_title = ET.SubElement(entry, "title")
-        entry_title.text = f"{d['reason']}: {d['organisation']}"
-
-        entry_id = ET.SubElement(entry, "id")
-        entry_id.text = d["situation_number"] or entry_title.text
-
-        entry_link = ET.SubElement(entry, "link")
-        entry_link.set("href", "https://data.bus-data.dft.gov.uk/disruptions/download/")
-
-        summary = ET.SubElement(entry, "summary")
-        parts = [f"Reason: {d['reason']}"]
-        if d["planned"]:
-            parts.append("Planned" if d["planned"].lower() == "true" else "Unplanned")
-        if d["modes_affected"]:
-            parts.append(f"Modes affected: {d['modes_affected']}")
-        if d["operators_affected"]:
-            parts.append(f"Operators affected: {d['operators_affected']}")
-        if d["validity_start"]:
-            parts.append(f"From: {d['validity_start']}")
-        if d["validity_end"]:
-            parts.append(f"To: {d['validity_end']}")
-        summary.text = " · ".join(parts)
-
-        entry_updated = ET.SubElement(entry, "updated")
-        entry_updated.text = d["validity_start"] or datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    tree = ET.ElementTree(feed)
-    filename = str(filename)
-    tree.write(filename, encoding="utf-8", xml_declaration=True)
-
-    with open(filename, "r") as f:
-        xml_content = f.read()
-    xml_pretty = minidom.parseString(xml_content).toprettyxml(indent="  ")
-
-    front_matter = "---\nlayout: empty\npermalink: /feeds/bus-disruptions.xml\n---\n"
-    with open(filename, "w") as f:
-        f.write(front_matter + xml_pretty)
+def build_atom_items(history_records, history_url):
+    """One entry per disruption, keyed by a stable disruption_id so a feed
+    reader treats it as the same item across runs — and dated by
+    last_seen_iso, so a disruption ending (once we still see it end) bumps
+    its "updated" time rather than the entry silently going stale."""
+    items = []
+    for record in history_records[:50]:
+        label = record.get("operators_affected") or record.get("organisation") or "Cheltenham"
+        title = f"{record.get('reason', 'Disruption')}: {label}"
+        summary_parts = []
+        if record.get("modes_affected"):
+            summary_parts.append(f"Modes affected: {record['modes_affected']}")
+        if record.get("validity_start"):
+            summary_parts.append(f"From: {record['validity_start']}")
+        if record.get("validity_end"):
+            summary_parts.append(f"To: {record['validity_end']}")
+        items.append({
+            "title": title,
+            "link": f"{history_url}#{record['disruption_id']}",
+            "summary": " · ".join(summary_parts) or title,
+            "published_iso": record.get("last_seen_iso") or record.get("first_seen_iso"),
+            "source": record.get("organisation") or "DfT Bus Open Data Service",
+        })
+    return items
 
 
 if __name__ == "__main__":
@@ -121,20 +126,7 @@ if __name__ == "__main__":
     local_rows = [r for r in rows if row_is_local(r, operator_terms)]
     print(f"  {len(local_rows)} disruptions affect Cheltenham")
 
-    disruptions = []
-    for r in local_rows:
-        disruptions.append({
-            "organisation":       helper.clean_name(r.get("Organisation") or "", ACRONYMS),
-            "situation_number":   r.get("Situation Number") or r.get("ID") or "",
-            "validity_start":     r.get("Validity Start Date") or r.get("Validity start") or "",
-            "validity_end":       r.get("Validity End Date") or r.get("Validity end") or "",
-            "reason":             helper.clean_name(r.get("Reason") or "Unknown", ACRONYMS),
-            "planned":            r.get("Planned") or "",
-            "modes_affected":     helper.clean_name(r.get("Modes Affected") or r.get("Modes affected") or "", ACRONYMS),
-            "operators_affected": helper.clean_name(r.get("Operators Affected") or r.get("Operators affected") or "", ACRONYMS),
-            "services_affected":  r.get("Services Affected") or r.get("Services affected") or "",
-            "stops_affected":     r.get("Stops Affected") or r.get("Stops affected") or "",
-        })
+    disruptions = [build_disruption(r) for r in local_rows]
 
     payload = {
         "updated":     helper.updated_timestamp(),
@@ -148,30 +140,48 @@ if __name__ == "__main__":
     helper.write_json(data_json, payload)
     print(f"Wrote {len(disruptions)} disruptions to {data_json}")
 
+    now = datetime.datetime.now(datetime.timezone.utc)
+    now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    history_path = data_dir / "bus-disruptions-history.json"
+    if history_path.exists():
+        history_payload = json.loads(history_path.read_text())
+        history_records = history_payload.get("records", [])
+    else:
+        history_records = []
+
+    history_records = helper.update_history(
+        history_records, disruptions, id_key="disruption_id", now_iso=now_iso,
+        retention_days=HISTORY_RETENTION_DAYS,
+    )
+    history_payload = {
+        "generated_at": now.isoformat(),
+        "note": "Rolling log of bus disruptions recorded affecting Cheltenham, built up incrementally "
+                "each run — not a full historical archive from before this page existed.",
+        "source": SOURCE_PAGE,
+        "count": len(history_records),
+        "records": history_records,
+    }
+    helper.write_json(history_path, history_payload)
+    print(f"History now holds {len(history_records)} recorded disruptions")
+
+    site = helper.site_url()
+    history_url = f"{site}/cheltenham-bus-data/history"
+
     atom_path = feeds_dir / "bus-disruptions.xml"
-    convert_to_atom(disruptions, atom_path)
+    helper.write_items_atom(
+        items=build_atom_items(history_records, history_url),
+        filename=atom_path,
+        permalink_path="/feeds/bus-disruptions.xml",
+        feed_title="Cheltenham Bus Disruptions",
+        feed_subtitle="Current and recent bus service disruptions affecting Cheltenham",
+        self_url=f"{site}/feeds/bus-disruptions.xml",
+        alternate_url=history_url,
+    )
     print(f"Atom feed saved to {atom_path}")
 
     # Homepage alert — only appears while a disruption is live, cleared automatically once it isn't.
-    if not disruptions:
-        alert_html = ""
-    else:
-        now_str = datetime.datetime.now().strftime("%H:%M")
-        items = ""
-        for d in disruptions[:5]:
-            label = d["operators_affected"] or d["organisation"]
-            items += (
-                f'  <li><a href="/cheltenham-bus-data">'
-                f'Disruption to {label} bus services reported at {now_str}</a></li>\n'
-            )
-        alert_html = (
-            '<h2>Bus Disruption Alert</h2>\n'
-            '<ul>\n'
-            f'{items}'
-            '</ul>'
-        )
-
     include_path = root / "_includes" / "bus-alert.html"
     include_contents = include_path.open().read()
-    include_contents = helper.replace_chunk(include_contents, "bus_alert_marker", alert_html)
+    include_contents = helper.replace_chunk(include_contents, "bus_alert_marker", build_alert_html(disruptions))
     include_path.open("w").write(include_contents)
