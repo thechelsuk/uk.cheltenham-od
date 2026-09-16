@@ -58,7 +58,7 @@ def convert_to_atom(disruptions, filename):
     link_self.set("href", "https://data.bus-data.dft.gov.uk/disruptions/download/")
 
     feed_id = ET.SubElement(feed, "id")
-    feed_id.text = "https://cod.thechels.uk/feeds/bus-disruptions.xml"
+    feed_id.text = f"{helper.site_url()}/feeds/bus-disruptions.xml"
 
     updated = ET.SubElement(feed, "updated")
     updated.text = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
