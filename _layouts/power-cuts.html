@@ -1,0 +1,121 @@
+{% include header.html %}
+{% assign data = site.data["power-cuts"] %}
+{% assign history = site.data["power-cuts-history"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <div id="power-cuts-map" style="height: 480px;" aria-label="Map of current power cuts affecting Cheltenham"></div>
+
+        <h2>Current Power Cuts</h2>
+        {% if data.incidents.size > 0 %}
+        <div class="table-scroll">
+            <table class="power-cuts-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Postcodes</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="number">Properties Off</th>
+                        <th scope="col" class="date">Reported</th>
+                        <th scope="col" class="date">Estimated Restoration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data.incidents %}
+                    <tr>
+                        <td class="postcode">{{ i.postcodes | join: ", " }}</td>
+                        <td>{{ i.category }}{% if i.planned %} (Planned){% endif %}</td>
+                        <td>{{ i.status }}</td>
+                        <td class="number">{{ i.confirmed_off }}</td>
+                        <td class="date">{{ i.date_of_reported_fault }}</td>
+                        <td class="date">{{ i.etr | default: "Not yet known" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No current power cuts recorded for Cheltenham.</p>
+        {% endif %}
+        <p class="power-cuts-attribution"><small>
+                Data from <a href="{{ data.source }}">National Grid Electricity Distribution</a>, under the
+                {{ data.licence }}. {% if data.updated %}Last updated {{ data.updated }}.{% endif %}
+            </small></p>
+
+        <h2>Recent History</h2>
+        <p>Every power cut recorded against a Cheltenham postcode since this page started tracking them, most
+            recent first. This isn't a full historical archive — only incidents seen while this page has been
+            live.</p>
+        {% if history.records.size > 0 %}
+        <div class="table-scroll">
+            <table class="power-cuts-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Postcodes</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="number">Peak Properties Off</th>
+                        <th scope="col" class="date">First Seen</th>
+                        <th scope="col" class="date">Restored</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in history.records limit: 50 %}
+                    <tr>
+                        <td class="postcode">{{ r.postcodes | join: ", " }}</td>
+                        <td>{{ r.category }}{% if r.planned %} (Planned){% endif %}</td>
+                        <td>{{ r.status }}</td>
+                        <td class="number">{{ r.peak_confirmed_off }}</td>
+                        <td class="date">{{ r.first_seen_iso }}</td>
+                        <td class="date">{{ r.date_of_restoration | default: "Not yet restored" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No power cuts have been recorded for Cheltenham since this page started tracking them.</p>
+        {% endif %}
+
+        <h2>Power Cuts FAQs</h2>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p><a href="https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts">National Grid Electricity
+                Distribution's Live Power Cuts dataset</a> — the electricity distribution network operator for
+            Gloucestershire, formerly Western Power Distribution.</p>
+
+        <h3>What Should I Do in a Power Cut?</h3>
+        <p>Call <strong>105</strong>, the free 24/7 national power cut number, to report it or check for known
+            outages in your area. Call <strong>999</strong> too if there's a risk to life, such as damage to
+            power lines or a substation.</p>
+
+        <h3>Why Is the List Sometimes Empty?</h3>
+        <p>Most of the time there's no power cut affecting Cheltenham, so the current list and map are empty —
+            that's expected, not a sign the feed has stopped working.</p>
+
+        <h3>Does This Cover Planned Outages Too?</h3>
+        <p>Yes. Planned maintenance outages are included and marked "(Planned)", alongside unplanned faults.</p>
+
+        <h3>How Often Does This Update?</h3>
+        <p>The underlying NGED feed updates near real-time; this page and its feed refresh roughly every two
+            hours.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="power-cuts-data" type="application/json">{{ data.incidents | jsonify }}</script>
+<script src="/assets/scripts/power-cuts-map.js"></script>
+{% include footer.html %}

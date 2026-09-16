@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Power Cuts",
+  "description": "Live and recent power cuts affecting Cheltenham, sourced from National Grid Electricity Distribution.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['power-cuts'].updated_iso }}",
+  "isAccessibleForFree": true,
+  "license": "https://connecteddata.nationalgrid.co.uk/pages/licence",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Postcode", "Category", "Status", "Properties affected", "Restoration time"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "National Grid Electricity Distribution's Live Power Cuts dataset — the electricity distribution network operator for Gloucestershire, formerly Western Power Distribution."} },
+    { "@type": "Question", "name": "What should I do in a power cut?", "acceptedAnswer": {"@type": "Answer", "text": "Call 105, the free 24/7 national power cut number, to report it or check for known outages in your area. Call 999 too if there's a risk to life, such as damage to power lines or a substation."} },
+    { "@type": "Question", "name": "Why is the list sometimes empty?", "acceptedAnswer": {"@type": "Answer", "text": "Most of the time there's no power cut affecting Cheltenham, so the current list and map are empty — that's expected, not a sign the feed has stopped working."} },
+    { "@type": "Question", "name": "Does this cover planned outages too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Planned maintenance outages are included and marked (Planned), alongside unplanned faults."} },
+    { "@type": "Question", "name": "How often does this update?", "acceptedAnswer": {"@type": "Answer", "text": "The underlying NGED feed updates near real-time; this page and its feed refresh roughly every two hours."} }
+  ]
+}
+</script>
