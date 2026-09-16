@@ -41,6 +41,8 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Flytipping in the back garages in Fiddlers green lane, 16th September :- [10109347](https://www.fixmystreet.com/report/10109347)
+- Broken window, 16th September :- [10109105](https://www.fixmystreet.com/report/10109105)
 - Union jack flags on Hubble road, 16th September :- [10109056](https://www.fixmystreet.com/report/10109056)
 - Ridiculously noisy, especially with vans and buses (every 10 mins minimum), 16th September :- [10109030](https://www.fixmystreet.com/report/10109030)
 - Cars parking on corner of Millham Road/station rooad, 16th September :- [10108783](https://www.fixmystreet.com/report/10108783)
@@ -59,7 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Guard rail or barrier problem, 16th September :- [10108112](https://www.fixmystreet.com/report/10108112)
 - TMC - Defects - Other FW6  Surface problem, 16th September :- [10107922](https://www.fixmystreet.com/report/10107922)
 - TMC - Defects -CW6 Potholes  problem, 16th September :- [10107907](https://www.fixmystreet.com/report/10107907)
-- Road studs problem, 16th September :- [10107906](https://www.fixmystreet.com/report/10107906)
-- TMC - Defects -CW6 Potholes  problem, 16th September :- [10107739](https://www.fixmystreet.com/report/10107739)
 
 <!-- fix_marker ends -->
