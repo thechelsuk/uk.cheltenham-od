@@ -41,6 +41,14 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- The drain is blocked solid I've tried to poke it clear, it's also full of weeds. This street is also in desperate need of a road sweep as are other surrounding streets. Thank you, 16th September :- [10104835](https://www.fixmystreet.com/report/10104835)
+- TMC - Defects -other CW6 problem, 16th September :- [10104849](https://www.fixmystreet.com/report/10104849)
+- Cracking and slipping of road, 16th September :- [10104756](https://www.fixmystreet.com/report/10104756)
+- TMC - Defects - Covers, Gratings & Frames problem, 16th September :- [10104848](https://www.fixmystreet.com/report/10104848)
+- Pedestrian control traffic lights not changing so pedestrians can cross., 16th September :- [10104732](https://www.fixmystreet.com/report/10104732)
+- Dangerous manhole, 16th September :- [10104579](https://www.fixmystreet.com/report/10104579)
+- Kerb stone and concrete between broken and lifted up, 16th September :- [10104552](https://www.fixmystreet.com/report/10104552)
+- Drain is lifted leaving a risk to those using the pavement, 16th September :- [10104411](https://www.fixmystreet.com/report/10104411)
 - Street light not working, 15th September :- [10104173](https://www.fixmystreet.com/report/10104173)
 - Contradictory road marking/signage, 15th September :- [10104155](https://www.fixmystreet.com/report/10104155)
 - St Georges Road bus stop shelter - light out, 15th September :- [10104079](https://www.fixmystreet.com/report/10104079)
@@ -53,13 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Road sign left behind after roadworks, 15th September :- [10103258](https://www.fixmystreet.com/report/10103258)
 - Pothole (again!!!) on the railway bridge., 15th September :- [10103079](https://www.fixmystreet.com/report/10103079)
 - Road surface Deep cracks & subsidance drain cover near by, 15th September :- [10102992](https://www.fixmystreet.com/report/10102992)
-- Flytipping, 15th September :- [10102964](https://www.fixmystreet.com/report/10102964)
-- Overgrown bushes and brambles, 15th September :- [10102806](https://www.fixmystreet.com/report/10102806)
-- Rubbish dumped on street, 15th September :- [10102714](https://www.fixmystreet.com/report/10102714)
-- Huge amount of gravel left by contractors on this junction after a repair., 15th September :- [10102376](https://www.fixmystreet.com/report/10102376)
-- TMC - Defects -other CW6 problem, 15th September :- [10102092](https://www.fixmystreet.com/report/10102092)
-- TMC - Defects -other CW6 problem, 15th September :- [10102090](https://www.fixmystreet.com/report/10102090)
-- TMC - Defects -other CW6 problem, 15th September :- [10102089](https://www.fixmystreet.com/report/10102089)
-- TMC - Defects -other CW6 problem, 15th September :- [10102087](https://www.fixmystreet.com/report/10102087)
 
 <!-- fix_marker ends -->
