@@ -5,6 +5,13 @@ seo: Sponsorship opportunities for Cheltenham Open Data
 type: "cod"
 permalink: /sponsor
 description: Reach local people right where they're already looking — tasteful, page-specific sponsorship on Cheltenham Open Data
+link_gta: "https://buy.stripe.com/dRm3cvfML5ej7OvdJY0Ny04"
+link_hap: "https://buy.stripe.com/8x29ATeIHcGLgl149o0Ny05"
+link_sae: "https://buy.stripe.com/00waEXfML7mr6Kr0Xc0Ny06"
+link_tdo: "https://buy.stripe.com/00wdR99on9uz4Cj8pE0Ny07"
+link_cas: "https://buy.stripe.com/14A6oH443gX1d8P0Xc0Ny08"
+link_aai: "https://buy.stripe.com/4gMaEX7gffSX5Gn6hw0Ny09"
+link_principal: "https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03"
 ---
 
 ## Reach Local People for Your Local Business
@@ -32,57 +39,34 @@ person reading it.
 - It stays tasteful. One clean card per page — never clutter. Your brand is
   associated with a service people value, not an ad they scroll past.
 
-## Sponsorship Tiers
+## How Sponsorship Works
 
-### Founding — £50 / Month (£150 for 3 Months)
+You sponsor a whole category, exclusively. Your "supported by" card appears on every page in that section of the site, and no rival business shares it — one clean card per page, clearly marked, above the fold, never a pop-up.
 
-The full Standard package at an early-bird price, locked for 12 months while the site is new. A clean "supported by" card — your logo, a line about what you do, and a link — on the page of your choice, subject to availability. Limited to the first 3 sponsors.
+- **Founding rate: £100/month**, locked for 12 months while the site grows. Once the founding places are taken, new sponsors pay the standard rate.
+- **Editorial included.** Every sponsor can provide a short written feature in our news — a local endorsement ideal for a sale or marketing.
+- **Exclusive.** One sponsor per category, so you're the only business of your kind in that section.
+- Three-month minimum, then cancel any time. Pay by card through Stripe.
 
-- [Become a founding sponsor &rarr;](https://buy.stripe.com/14AdR94437mr1q78pE0Ny00)
+## Categories You Can Sponsor
 
-### Standard — £125 / Month (£375 for 3 Months)
+Each category is £100/month at the founding rate, with editorial included. One sponsor per category.
 
-A clean "supported by" card on the available page of your choice: your logo, a line about what you do, and a link. Our standard rate once the founding places are gone.
+| Category | Pages included | Ideal for | |
+| --- | --- | --- | --- |
+| **Getting Around** | Fuel Prices, EV Charging, Car Parks, Bus Data, Cycle Routes, Public Toilets | Garages, MOT & servicing, tyre fitters, EV installers, driving schools | [Sponsor →]({{page.sponsor_gta}}) |
+| **Home & Property** | House Prices, Planning Applications, Council Tax, Housing Supply, Listed Buildings, Council Land & Assets, Recycling, Broadband & Mobile | Estate agents, mortgage brokers, conveyancers, architects, builders, extension & loft firms | [Sponsor →]({{page.sponsor_hap}}) |
+| **Safety & Environment** | Crime Data, Water Quality & Flooding, Air Quality, Security Alerts, Fix My Street | Alarm & camera installers, insurance brokers, damp & flood specialists, tree surgeons & gardeners | [Sponsor →]({{page.sponsor_sae}}T) |
+| **Things to Do** | Events, Sports & Clubs, Points of Interest, Places to Stay, Public Holidays, Festivals | Venues, hotels & guest houses, attractions, event organisers, hospitality | [Sponsor →]({{page.sponsor_tdo}}) |
+| **Community & Support** | Classifieds, GP & Pharmacies, Food Hygiene Ratings, Third Spaces | Local shops & services, health & care providers, cafés, community businesses | [Sponsor →]({{page.sponsor_cas}}) |
+| **About & Info** | All About Cheltenham, Schools & Catchment, Post Offices & Lockers, Weather, Employment History | Schools suppliers, uniform & shoe shops, print & stationery, storage, professional services | [Sponsor →]({{page.sponsor_iia}}) |
 
-- [Sponsor a page &rarr;](https://buy.stripe.com/fZu5kDfML9uz5GnfS60Ny01)
+## Principal Sponsor — Home Page
 
-### Premium Editorial Boost — £75, One Month, Active Sponsors Only
+Front and centre on the site's busiest page, our news aggregation page plus an editorial feature each month. One slot only. [Buy today! →]({{page.link_principal}})
 
-Available exclusively to current Founding and Standard sponsors. Adds one editorial post in our news & announcements for the month — ideal for a launch, promotion, or other one-off marketing moment. Just one boost slot per month across all sponsors, so it's first come, first served.
-
-- [Add an editorial boost &rarr;](https://buy.stripe.com/14AfZh5874afecTaxM0Ny02)
-
-### Principal Sponsor — £250 per Month (3 Month Minimum)
-
-Become our principal sponsor with an advert slot on our home page - front and centre, with one editorial post in our news & announcements each month — ideal for a long term local business supporting the local community. Just one slot, so it's first come, first served.
-
-- [Buy today! &rarr;](https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03)
-
-> See [current availability of the sponsorship slots](/sponsor/slots).
-> By sponsoring you agree to our a [sponsorship terms](/sponsor/terms).
-
-## Pages You Can Sponsor
-
-| Page | Ideal for |
-| --- | --- |
-| Fuel prices | Independent garages, MOT & servicing, tyre fitters, EV installers |
-| Crime Data | Camera, and security alarm systems |
-| Local news & homepage | A single anchor local brand |
-| Events | Any business organising a fair, meet-up or gathering |
-| House prices | Estate agents, mortgage brokers, conveyancing solicitors |
-| Planning applications | Architects, builders, extension & loft firms, party-wall surveyors, planning consultants |
-| Food Hygiene Ratings | Local food/catering service, pub, coffee shop or eatery |
-| GP and Pharmacies | Health and care providers, insurance firms |
-| Post Office | Business and stationery supplies, storage uits, printing and design |
-| Recycling | Reclaimation, collection, artists, makers, upcyclers, disposal, skip hire |
-| Fix my street | Tree surgeons, garderners, lanscapers and handy-person |
-| Air quality & flood warnings | Insurance brokers, damp & flood specialists, home-security installers |
-| Points of Interest | Travel agents, venues and hotels |
-| Public Holidays | Travel agents, venues and hotels |
-| Toilets | Drain and plumbing specialists, personal hygiene products |
-| Schools | School uniform, shoe shops, stationary products |
-| Security Alerts | Security, camera and alarm system providers and installers |
-| Third Spaces | Venues, hotels, facilities and spaces open to bookings |
+> We don't place adverts on utility pages such as contact,about, and privacy.
+> By sponsoring you agree to our [sponsorship terms](/sponsor/terms).
 
 ## Frequently Asked Questions
 
@@ -97,13 +81,12 @@ clearly labelled as sponsored. No pop-ups, no auto-playing anything. Like the ad
 
 ### Which Pages Will My Advert Appear On?
 
-- Any of the data pages — planning applications, house prices, fuel prices, air
-  quality, flood warnings and the rest. We keep community pages like food banks and helplines advert-free on principle, and we don't place adverts on utility pages such as our contact, about and privacy pages.
+- You sponsor a whole category, so your card shows on every page in that section. Community pages like food banks and helplines stay advert-free on principle, and we don't place adverts on utility pages such as our contact, about and privacy pages.
 - Subject to availability.
 
 ### How Do I Pay?
 
-- By card through Stripe, billed automatically each month. Three-month minimum, then cancel any time.
+- By card through Stripe, billed quarterly. Three-month minimum, then cancel any time.
 
 ### Can I Change My Card Details or Listing?
 
