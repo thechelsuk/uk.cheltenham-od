@@ -5,13 +5,13 @@ seo: Sponsorship opportunities for Cheltenham Open Data
 type: "cod"
 permalink: /sponsor
 description: Reach local people right where they're already looking — tasteful, page-specific sponsorship on Cheltenham Open Data
-link_gta: "https://buy.stripe.com/dRm3cvfML5ej7OvdJY0Ny04"
-link_hap: "https://buy.stripe.com/8x29ATeIHcGLgl149o0Ny05"
-link_sae: "https://buy.stripe.com/00waEXfML7mr6Kr0Xc0Ny06"
-link_tdo: "https://buy.stripe.com/00wdR99on9uz4Cj8pE0Ny07"
-link_cas: "https://buy.stripe.com/14A6oH443gX1d8P0Xc0Ny08"
-link_aai: "https://buy.stripe.com/4gMaEX7gffSX5Gn6hw0Ny09"
-link_principal: "https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03"
+sponsor_gta: "https://buy.stripe.com/dRm3cvfML5ej7OvdJY0Ny04"
+sponsor_hap: "https://buy.stripe.com/8x29ATeIHcGLgl149o0Ny05"
+sponsor_sae: "https://buy.stripe.com/00waEXfML7mr6Kr0Xc0Ny06"
+sponsor_tdo: "https://buy.stripe.com/00wdR99on9uz4Cj8pE0Ny07"
+sponsor_cas: "https://buy.stripe.com/14A6oH443gX1d8P0Xc0Ny08"
+sponsor_aai: "https://buy.stripe.com/4gMaEX7gffSX5Gn6hw0Ny09"
+sponsor_principal: "https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03"
 ---
 
 ## Reach Local People for Your Local Business
@@ -52,11 +52,11 @@ You sponsor a whole category, exclusively. Your "supported by" card appears on e
 
 Each category is £100/month at the founding rate, with editorial included. One sponsor per category.
 
-| Category | Pages included | Ideal for | |
+| Category | Pages included | Ideal for | Available now |
 | --- | --- | --- | --- |
 | **Getting Around** | Fuel Prices, EV Charging, Car Parks, Bus Data, Cycle Routes, Public Toilets | Garages, MOT & servicing, tyre fitters, EV installers, driving schools | [Sponsor →]({{page.sponsor_gta}}) |
 | **Home & Property** | House Prices, Planning Applications, Council Tax, Housing Supply, Listed Buildings, Council Land & Assets, Recycling, Broadband & Mobile | Estate agents, mortgage brokers, conveyancers, architects, builders, extension & loft firms | [Sponsor →]({{page.sponsor_hap}}) |
-| **Safety & Environment** | Crime Data, Water Quality & Flooding, Air Quality, Security Alerts, Fix My Street | Alarm & camera installers, insurance brokers, damp & flood specialists, tree surgeons & gardeners | [Sponsor →]({{page.sponsor_sae}}T) |
+| **Safety & Environment** | Crime Data, Water Quality & Flooding, Air Quality, Security Alerts, Fix My Street | Alarm & camera installers, insurance brokers, damp & flood specialists, tree surgeons & gardeners | [Sponsor →]({{page.sponsor_sae}}) |
 | **Things to Do** | Events, Sports & Clubs, Points of Interest, Places to Stay, Public Holidays, Festivals | Venues, hotels & guest houses, attractions, event organisers, hospitality | [Sponsor →]({{page.sponsor_tdo}}) |
 | **Community & Support** | Classifieds, GP & Pharmacies, Food Hygiene Ratings, Third Spaces | Local shops & services, health & care providers, cafés, community businesses | [Sponsor →]({{page.sponsor_cas}}) |
 | **About & Info** | All About Cheltenham, Schools & Catchment, Post Offices & Lockers, Weather, Employment History | Schools suppliers, uniform & shoe shops, print & stationery, storage, professional services | [Sponsor →]({{page.sponsor_iia}}) |
