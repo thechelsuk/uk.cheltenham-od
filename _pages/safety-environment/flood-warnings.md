@@ -27,7 +27,7 @@ catchments across Gloucestershire, are the main sources of flood risk in the
 area. Risk is highest during prolonged or heavy rainfall, particularly in
 autumn and winter.
 
-For the state of the River Chelt itself day-to-day, see our [sewage overflow status](/cheltenham-sewage-overflows) and [river water quality](/cheltenham-water-quality) pages.
+For the state of the River Chelt itself day-to-day, see our [sewage overflow status](/cheltenham-sewage-overflows) and [river water quality](/cheltenham-water-quality) pages. If it's a power cut rather than a flood you're checking, see [Cheltenham power cuts](/cheltenham-power-cuts).
 
 ### How to Check Your Flood Risk and Stay Informed
 
@@ -39,6 +39,8 @@ For the state of the River Chelt itself day-to-day, see our [sewage overflow sta
   company.
 - Subscribe to this page's [RSS feed]({{ page.feed_url }}) to receive Gloucestershire
   flood updates as they are published in your RSS/Feed reader or check this page.
+- Past warnings, including once they've been lifted, are kept on the
+  [flood warning history page](/cheltenham-flood-warnings/history).
 
 ### Preparing for a Flood
 

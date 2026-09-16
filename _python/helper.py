@@ -5,7 +5,7 @@ import json
 import requests
 import time
 import html
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from requests import get
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
@@ -16,6 +16,15 @@ def repo_root():
     return pathlib.Path(__file__).parent.parent.resolve()
 
 
+def site_url():
+    """The site's canonical URL (no trailing slash), read from _config.yml's
+    `url:` key rather than hardcoded, so it tracks a domain change automatically."""
+    import yaml as _yaml
+
+    config = _yaml.safe_load((repo_root() / "_config.yml").read_text())
+    return config["url"].rstrip("/")
+
+
 def updated_timestamp():
     """The "updated" string used across _data/*.json payloads, e.g. '12 September 2026 at 20:53'."""
     return datetime.now().strftime("%-d %B %Y at %H:%M")
@@ -23,6 +32,55 @@ def updated_timestamp():
 
 def write_json(path, payload):
     pathlib.Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+
+
+def update_history(history_records, current_items, id_key, now_iso, peak_fields=None, retention_days=730):
+    """Generic incremental history log, shared by any fetcher whose live
+    source only ever shows what's currently active (power cuts, bus
+    disruptions, flood warnings) and drops an item the moment it's no longer
+    live — so the live feed alone can never show "this has now ended".
+
+    On every run: a history record is created the first time an `id_key` is
+    seen, then refreshed from that item's current fields (so 'status' etc.
+    stay current) on every run it's still present; `peak_fields` are tracked
+    as a running max rather than overwritten. Anything not seen within
+    `retention_days` is dropped. Returns the updated list, most-recently-seen
+    first. `history_records`/`current_items` are both lists of plain dicts;
+    each dict in `current_items` must have an `id_key` key."""
+    peak_fields = peak_fields or []
+    by_id = {r[id_key]: r for r in history_records if id_key in r}
+
+    for item in current_items:
+        key = item[id_key]
+        record = by_id.get(key)
+        if record is None:
+            record = {"first_seen_iso": now_iso}
+            by_id[key] = record
+            history_records.append(record)
+
+        first_seen = record.get("first_seen_iso", now_iso)
+        previous_peaks = {f: record.get(f) for f in peak_fields}
+        record.update(item)
+        record["first_seen_iso"] = first_seen
+        record["last_seen_iso"] = now_iso
+        for f in peak_fields:
+            values = [v for v in (previous_peaks.get(f), item.get(f)) if isinstance(v, (int, float))]
+            if values:
+                record[f] = max(values)
+
+    cutoff = datetime.now(timezone.utc) - timedelta(days=retention_days)
+    kept = []
+    for record in history_records:
+        try:
+            last_seen = datetime.fromisoformat(record["last_seen_iso"].replace("Z", "+00:00"))
+        except (KeyError, ValueError):
+            kept.append(record)
+            continue
+        if last_seen >= cutoff:
+            kept.append(record)
+
+    kept.sort(key=lambda r: r.get("last_seen_iso", ""), reverse=True)
+    return kept
 
 
 DEFAULT_ACRONYMS = {"UK"}
@@ -155,65 +213,6 @@ def fetch_flood_data():
     ]
     data["items"] = filtered
     return data
-
-
-def convert_to_atom(data, filename):
-        """Write an Atom 1.0 feed to `filename` (a pathlib.Path or str)."""
-        ATOM_NS = "http://www.w3.org/2005/Atom"
-        ET.register_namespace("", ATOM_NS)
-
-        feed = ET.Element("feed", xmlns=ATOM_NS)
-
-        title = ET.SubElement(feed, "title")
-        title.text = "Flood Warnings"
-
-        link_self = ET.SubElement(feed, "link")
-        link_self.set("rel", "self")
-        link_self.set("href", "https://environment.data.gov.uk/flood-monitoring/id/floods")
-
-        feed_id = ET.SubElement(feed, "id")
-        feed_id.text = "https://environment.data.gov.uk/flood-monitoring/id/floods"
-
-        updated = ET.SubElement(feed, "updated")
-        updated.text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-        subtitle = ET.SubElement(feed, "subtitle")
-        subtitle.text = "Current flood warnings for Gloucestershire"
-
-        for item in data.get("items", []):
-            entry = ET.SubElement(feed, "entry")
-
-            severity = item.get("severity", "No severity")
-            description_text = item.get("description", "")
-            entry_title = ET.SubElement(entry, "title")
-            entry_title.text = f"{severity}: {description_text}"
-
-            # Atom requires a stable, unique id per entry — use the source item's own id/url if present
-            entry_id = ET.SubElement(entry, "id")
-            entry_id.text = item.get("@id") or item.get("floodAreaID") or description_text
-
-            entry_link = ET.SubElement(entry, "link")
-            entry_link.set("href", item.get("@id", "https://environment.data.gov.uk/flood-monitoring/id/floods"))
-
-            summary = ET.SubElement(entry, "summary")
-            summary.text = item.get("message", "No message")
-
-            # Atom wants ISO 8601 with a timezone; timeRaised from the API is already ISO 8601
-            time_raised = item.get("timeRaised")
-            entry_updated = ET.SubElement(entry, "updated")
-            entry_updated.text = time_raised if time_raised else datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-        tree = ET.ElementTree(feed)
-        filename = str(filename)
-        tree.write(filename, encoding="utf-8", xml_declaration=True)
-
-        with open(filename, "r") as f:
-            xml_content = f.read()
-        xml_pretty = minidom.parseString(xml_content).toprettyxml(indent="  ")
-
-        front_matter = "---\nlayout: empty\npermalink: /feeds/flood.xml\n---\n"
-        with open(filename, "w") as f:
-            f.write(front_matter + xml_pretty)
 
 
 def parse_front_matter(text):
