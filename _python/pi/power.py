@@ -148,7 +148,6 @@ if __name__ == "__main__":
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     payload = {
-        "updated": helper.updated_timestamp(),
         "updated_iso": datetime.date.today().isoformat(),
         "source": SOURCE_PAGE,
         "licence": LICENCE,
@@ -172,7 +171,6 @@ if __name__ == "__main__":
         peak_fields=["confirmed_off"], retention_days=HISTORY_RETENTION_DAYS,
     )
     history_payload = {
-        "generated_at": now.isoformat(),
         "note": "Rolling log of power cuts recorded affecting Cheltenham (GL50-GL54) postcodes, "
                 "built up incrementally each run — not a full historical archive from before this page existed.",
         "source": SOURCE_PAGE,

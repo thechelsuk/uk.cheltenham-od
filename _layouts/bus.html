@@ -31,7 +31,7 @@
         <p>No current bus disruptions reported for Cheltenham.</p>
         {% endif %}
         <p><small>Also published as an <a href="{{ page.feed_url }}">Atom feed</a>. The underlying BODS disruptions data
-                updates roughly every minute; this page and feed refresh every 10 minutes.</small></p>
+                updates roughly every minute; this page and feed are checked every 3 minutes.</small></p>
 
         {% assign town_routes = bus.routes | where: "is_school", false %}
         <h2>Routes Serving Cheltenham</h2>

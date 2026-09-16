@@ -131,7 +131,6 @@ if __name__ == "__main__":
     disruptions = [build_disruption(r) for r in local_rows]
 
     payload = {
-        "updated":     helper.updated_timestamp(),
         "updated_iso": datetime.date.today().isoformat(),
         "source":      SOURCE_PAGE,
         "count":       len(disruptions),
@@ -157,7 +156,6 @@ if __name__ == "__main__":
         retention_days=HISTORY_RETENTION_DAYS,
     )
     history_payload = {
-        "generated_at": now.isoformat(),
         "note": "Rolling log of bus disruptions recorded affecting Cheltenham, built up incrementally "
                 "each run — not a full historical archive from before this page existed.",
         "source": SOURCE_PAGE,

@@ -494,7 +494,6 @@ if __name__ == "__main__":
 
 
     payload = {
-        "updated":       helper.updated_timestamp(),
         "updated_iso":   today_str,
         "radius_miles":  RADIUS_MILES,
         "lookback_days": PRICE_LOOKBACK_DAYS,

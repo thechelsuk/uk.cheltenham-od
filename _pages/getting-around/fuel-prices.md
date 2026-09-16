@@ -5,18 +5,18 @@ seo: "Latest and Cheapest Fuel Prices in Cheltenham. Cheapest fuel in Glos, Chea
 permalink: /cheltenham-fuel-prices
 schema: fuel-prices
 type: travel
-description: Compare today's cheapest petrol and diesel prices across 100+ forecourts in Cheltenham, Gloucester and wider Gloucestershire — updated daily from official GOV.UK data.
+description: Compare today's cheapest petrol and diesel prices across 100+ forecourts in Cheltenham, Gloucester and wider Gloucestershire — updated hourly from official GOV.UK data.
 ---
 
 {% assign fuel = site.data["fuel-prices"] %}
 
-Data sourced from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-prices) under the [Open Government Licence v3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), and refreshed daily. They can change at any time, so treat them as a guide and check the forecourt's own display before filling up.
+Data sourced from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-prices) under the [Open Government Licence v3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), and checked hourly. They can change at any time, so treat them as a guide and check the forecourt's own display before filling up.
 
 ## Fuel Price FAQs
 
 ### How Often Are Prices Updated?
 
-- Daily. Figures come straight from the GOV.UK fuel price scheme, which forecourts are required to keep current.
+- Checked hourly. Figures come straight from the GOV.UK fuel price scheme, which forecourts are required to keep current.
 
 ### Where Does This Data Come From?
 
