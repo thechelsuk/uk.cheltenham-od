@@ -59,7 +59,7 @@ Each category is £100/month at the founding rate, with editorial included. One 
 | **Safety & Environment** | Crime Data, Water Quality & Flooding, Air Quality, Security Alerts, Fix My Street | Alarm & camera installers, insurance brokers, damp & flood specialists, tree surgeons & gardeners | [Sponsor →]({{page.sponsor_sae}}) |
 | **Things to Do** | Events, Sports & Clubs, Points of Interest, Places to Stay, Public Holidays, Festivals | Venues, hotels & guest houses, attractions, event organisers, hospitality | [Sponsor →]({{page.sponsor_tdo}}) |
 | **Community & Support** | Classifieds, GP & Pharmacies, Food Hygiene Ratings, Third Spaces | Local shops & services, health & care providers, cafés, community businesses | [Sponsor →]({{page.sponsor_cas}}) |
-| **About & Info** | All About Cheltenham, Schools & Catchment, Post Offices & Lockers, Weather, Employment History | Schools suppliers, uniform & shoe shops, print & stationery, storage, professional services | [Sponsor →]({{page.sponsor_iia}}) |
+| **About & Info** | All About Cheltenham, Schools & Catchment, Post Offices & Lockers, Weather, Employment History | Schools suppliers, uniform & shoe shops, print & stationery, storage, professional services | [Sponsor →]({{page.sponsor_aai}}) |
 
 ## Principal Sponsor — Home Page
 
