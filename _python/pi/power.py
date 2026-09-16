@@ -9,7 +9,7 @@ homepage alert include — but unlike those two, also keeps a real rolling
 history in _data/power-cuts-history.json, since the live feed only ever shows
 what's active right now and drops an incident the moment it's restored."""
 import datetime
-
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 import helper
 
 DETAILED_CSV_URL = (
