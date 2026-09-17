@@ -1,7 +1,7 @@
 ---
 layout: sponsor
 title: Sponsor Cheltenham Open Data
-seo: Sponsorship opportunities for Cheltenham Open Data
+seo: Sponsorship opportunities for Cheltenham Open Data - support location community resource, local marketing opportunities
 type: "cod"
 permalink: /sponsor
 description: Reach local people right where they're already looking — tasteful, page-specific sponsorship on Cheltenham Open Data

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Government Security Alerts"
-seo: "Government Alerts and Statuses for the Cheltenham area"
+seo: "Government Alerts and Statuses for the Cheltenham, gloucestershire area checked daily"
 permalink: /cheltenham-security-alerts
 description: "Government Alerts and Statuses for the Cheltenham area"
 type: "environment"

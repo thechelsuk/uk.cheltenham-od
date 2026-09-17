@@ -2,7 +2,7 @@
 
 layout: page
 title: "Fix My Street Reports for Cheltenham"
-seo: "Fix my street issues and reports in Cheltenham"
+seo: "Fix my street issues and reports in Cheltenham, Gloucestershire - recorded updated daily"
 description: "Fix my street issues and reports in Cheltenham"
 type: "environment"
 permalink: /cheltenham-fix-my-street

@@ -1,7 +1,7 @@
 ---
 layout: thirds
 title: "Cheltenham Third Spaces"
-seo: "Where to find third spaces in Cheltenham, Gloucestershire"
+seo: "Things to do in Cheltenham, places to go and Where to find third spaces in Cheltenham, Gloucestershire"
 permalink: /cheltenham-third-spaces
 description: "A curated list of local third spaces within Cheltenham. Last updated August 2026"
 type: "community"
