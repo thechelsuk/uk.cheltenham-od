@@ -227,6 +227,20 @@ def parse_front_matter(text):
     return front_matter, match.group(2)
 
 
+def _existing_feed_updated(filename, atom_ns):
+    """Best-effort read of an existing Atom file's feed-level <updated>, used
+    as a stable fallback when a rewrite has no items to derive one from.
+    The file has Jekyll front matter prepended, so isolate the XML first."""
+    try:
+        text = pathlib.Path(filename).read_text()
+        xml_start = text.index("<?xml")
+        root = ET.fromstring(text[xml_start:])
+        el = root.find(f"{{{atom_ns}}}updated")
+        return el.text if el is not None else None
+    except (FileNotFoundError, ValueError, ET.ParseError):
+        return None
+
+
 def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None):
     """Write an Atom 1.0 feed of arbitrary `items` (each a dict with title,
     link, published_iso, summary, source) to `filename`, with the usual
@@ -253,8 +267,8 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
     link_alt.set("href", alternate_url)
 
     ET.SubElement(feed, "id").text = feed_id or alternate_url
-    ET.SubElement(feed, "updated").text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
+    entry_updates = []
     for item in items:
         entry = ET.SubElement(feed, "entry")
         ET.SubElement(entry, "title").text = item.get("title", "")
@@ -271,13 +285,28 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
         summary.text = item.get("summary") or item.get("title", "")
 
         published_iso = item.get("published_iso")
-        updated_text = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        updated_text = None
         if published_iso:
             try:
                 updated_text = datetime.fromisoformat(published_iso).strftime("%Y-%m-%dT%H:%M:%SZ")
             except ValueError:
                 pass
+        updated_text = updated_text or "1970-01-01T00:00:00Z"
         ET.SubElement(entry, "updated").text = updated_text
+        entry_updates.append(updated_text)
+
+    # The feed-level <updated> reflects the most recent entry change, not the
+    # time this script happened to run — otherwise it (and the committed XML
+    # file) would change on every scheduled run even when nothing in the feed
+    # actually changed.
+    if entry_updates:
+        feed_updated = max(entry_updates)
+    else:
+        feed_updated = _existing_feed_updated(filename, ATOM_NS) or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    updated_el = ET.SubElement(feed, "updated")
+    updated_el.text = feed_updated
+    feed.remove(updated_el)
+    feed.insert(list(feed).index(feed.find("id")) + 1, updated_el)
 
     tree = ET.ElementTree(feed)
     filename = str(filename)
