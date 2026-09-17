@@ -6,6 +6,7 @@ description: Older headlines from our Cheltenham news aggregation archive.
 extra_css: /assets/news-aggregation.css
 type: about
 permalink: /cheltenham-news/page/7/
+robots: noindex,follow
 page_num: 7
 ---
 
