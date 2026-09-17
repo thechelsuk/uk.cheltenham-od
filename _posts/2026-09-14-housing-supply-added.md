@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds Housing Supply & Property Stock
+title: Adding Housing Supply & Property Stock
 type: cod
 description: How many homes Cheltenham builds each year, and how its total property stock has grown since 1993.
 seo: See how many net additional dwellings Cheltenham adds each year, student accommodation supply, and total property stock since 1993.

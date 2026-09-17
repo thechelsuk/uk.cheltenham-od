@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds a Places to Stay Guide to the Site
+title: Adding a Places to Stay Guide to the Site
 type: cod
 description: A guide to hotels and accommodation in Cheltenham, with a live availability map.
 seo: A guide to places to stay in Cheltenham, Gloucestershire — hotels near the racecourse, the Cheltenham Festival and the Cotswolds, with a live availability map.

@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds a Public Toilets Map to the Site
+title: Adding a Public Toilets Map to the Site
 type: cod
 description: Find public toilets across Cheltenham, with accessibility details, opening hours and map links.
 seo: A list of known public toilets in Cheltenham, including wheelchair access, baby changing, RADAR key requirements, charges and opening hours, with Map.

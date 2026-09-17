@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds a Curated List of Third Spaces
+title: Adding a Curated List of Third Spaces
 type: cod
 description: A curated list of third spaces in Cheltenham, from community cafés and council hubs to co-working spaces.
 seo: A curated list of third spaces in Cheltenham, including community cafés, council hubs, co-working spaces and drop-in centres, with addresses, websites and map.

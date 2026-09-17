@@ -1,9 +1,9 @@
 ---
 layout: posts
-title: A New Sport in Cheltenham Page
+title: Adding professional and amatuer sports page
 type: cod
 description: Cheltenham Town FC fixtures and results, parkrun locations, and local running, hiking and climbing clubs, all in one place.
-seo: Sport in Cheltenham — Cheltenham Town FC fixtures and results, parkrun events, and local running, hiking and climbing clubs.
+seo: Sports clubs in Cheltenham — Cheltenham Town FC fixtures and results, parkrun events, and local running, hiking and climbing clubs.
 date: 2026-09-13 06:00
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds Points of Interest to the Site
+title: Adding Points of Interest to the Site
 type: cod
 description: Museums, historic sites, stadiums, hills and commemorative plaques in and around Cheltenham, each with a map link.
 seo: A map of points of interest within 16 miles of Cheltenham — museums, historic sites, stadiums, hills and blue plaques with distances and links

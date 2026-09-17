@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds Post Office Locations to Site
+title: Adding Post Office Locations to Site
 type: cod
 description: Quickly find every Post Office branch in Cheltenham with addresses and map links.
 seo: Find your nearest Cheltenham Post Office branch with addresses and map links.

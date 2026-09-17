@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds Live Power Cuts Tracking
+title: Adding Live Power Cuts Tracking
 type: cod
 description: Live power cuts affecting Cheltenham, with a map, history and Atom feed.
 seo: Track live power cuts in Cheltenham, sourced from National Grid Electricity Distribution, with a map, history and Atom feed.

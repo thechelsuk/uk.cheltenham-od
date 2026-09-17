@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Cheltenham Open Data Adds InPost Locker and DPD Pickup Point Pages
+title: Adding InPost Locker and DPD Pickup Point Pages
 type: cod
 description: Every InPost self-service parcel locker and DPD Pickup point in Cheltenham, with maps and opening hours.
 seo: Find InPost lockers and DPD Pickup points in Cheltenham — locations, addresses and opening hours, for Vinted, eBay and marketplace sellers.
