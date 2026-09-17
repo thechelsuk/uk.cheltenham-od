@@ -41,6 +41,8 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Broken hanging tree branch over footpath, 17th September :- [10114873](https://www.fixmystreet.com/report/10114873)
+- Drain cover displaced pointing upward creating safety issue, 17th September :- [10114641](https://www.fixmystreet.com/report/10114641)
 - Deep, wide pothole that is very difficult to see, 17th September :- [10114267](https://www.fixmystreet.com/report/10114267)
 - Footlong Pothole, 17th September :- [10113923](https://www.fixmystreet.com/report/10113923)
 - Farmer has locked gatesin this field, with a notice saying that the footpath is closed due to gates being left open., 17th September :- [10113651](https://www.fixmystreet.com/report/10113651)
@@ -59,7 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Poor road conditions, 17th September :- [10112944](https://www.fixmystreet.com/report/10112944)
 - TMC - Defects - Other problem, 17th September :- [10112895](https://www.fixmystreet.com/report/10112895)
 - All drains are blocked around this area and a leak opposite at 77 is causing flooding to the roads because the drains are blocked, 17th September :- [10112696](https://www.fixmystreet.com/report/10112696)
-- Advertisement blocking view of incoming traffic, 17th September :- [10112693](https://www.fixmystreet.com/report/10112693)
-- Other issue with a footway/pavement problem, 17th September :- [10112736](https://www.fixmystreet.com/report/10112736)
 
 <!-- fix_marker ends -->
