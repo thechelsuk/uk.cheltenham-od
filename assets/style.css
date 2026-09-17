@@ -1508,7 +1508,7 @@ pre {
     order: 2;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     gap: 1em;
     margin: 2.5em 0 0;
@@ -1525,7 +1525,8 @@ pre {
 }
 
 .footer-legal-row .trustpilot-widget {
-    flex: 0 0 auto;
+    flex: 0 0 260px;
+    width: 260px;
     margin-left: auto;
 }
 
