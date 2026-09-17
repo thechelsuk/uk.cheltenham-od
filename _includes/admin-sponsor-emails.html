@@ -1,0 +1,252 @@
+<style>
+    .sponsor-email-card {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+    }
+
+    .sponsor-email-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: .75rem 1rem;
+        background: var(--bg-alt);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sponsor-email-head h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .sponsor-email-copy {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: .4rem .9rem;
+        font-weight: 600;
+        font-size: .85rem;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .sponsor-email-copy:hover {
+        opacity: .9;
+    }
+
+    .sponsor-email-copy.copied {
+        background: #3a8f4f;
+    }
+
+    .sponsor-email-body {
+        padding: 1rem 1.25rem;
+        line-height: 1.6;
+    }
+
+    .sponsor-email-body p {
+        margin: 0 0 .9rem;
+    }
+
+    .sponsor-email-body ul {
+        margin: 0 0 .9rem 1.2rem;
+        padding: 0;
+    }
+
+    .sponsor-email-body li {
+        margin-bottom: .3rem;
+    }
+</style>
+
+<p class="info-text">
+    Draft category-sponsor outreach emails, matching the one already sent to Cook Residential (Home &amp; Property).
+    Click "Copy HTML" and paste directly into Gmail/Outlook to keep the links and formatting.
+</p>
+
+{% capture email_getting_around %}
+<p>Subject: First refusal on Cheltenham Open Data's Getting Around page</p>
+<p>I recently launched Cheltenham Open Data (<a href="https://cheltenham-od.uk/">cheltenham-od.uk</a>) — a local site that pulls together the things residents actually look up: bus times, car parks, fuel prices, EV charging points and more. It's run here in Cheltenham, by hand.</p>
+<p>I'm opening the site to a small number of local sponsors, and wanted to give [Company] first refusal on the one that fits you: the Getting Around category. That's your "supported by" card across every page in that section — buses, car parks, cycle routes, EV charging and fuel prices — exclusively.</p>
+<p>The people on those pages are thinking about how they get around town — exactly the moment to be in front of them. Alongside the card, you'd get an optional short editorial feature in the site's news too — a local endorsement you can point people to, not just a logo.</p>
+<p>It's new and growing, so rather than throw figures at you, I'd sooner show you — let me know and I'll send over current visitor numbers and a quick mock-up of how your card would look.</p>
+<p>Founding terms while the site's young:</p>
+<ul>
+<li>£100/month, locked for 12 months (it moves to the standard rate once the founding places are taken)</li>
+<li>Exclusive to you across the whole Getting Around section</li>
+<li>Three-month minimum, then cancel any time — editorial included</li>
+</ul>
+<p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
+{% endcapture %}
+
+{% capture email_safety_environment %}
+<p>Subject: First refusal on Cheltenham Open Data's Safety &amp; Environment page</p>
+<p>I recently launched Cheltenham Open Data (<a href="https://cheltenham-od.uk/">cheltenham-od.uk</a>) — a local site that pulls together the things residents actually look up: crime data, flood warnings, power cuts, air and water quality, Fix My Street reports and more. It's run here in Cheltenham, by hand.</p>
+<p>I'm opening the site to a small number of local sponsors, and wanted to give [Company] first refusal on the one that fits you: the Safety &amp; Environment category. That's your "supported by" card across every page in that section, exclusively.</p>
+<p>The people on those pages are checking crime figures or flood risk for a reason — they're thinking about protecting their home. Alongside the card, you'd get an optional short editorial feature in the site's news too — a local endorsement you can point people to, not just a logo.</p>
+<p>It's new and growing, so rather than throw figures at you, I'd sooner show you — let me know and I'll send over current visitor numbers and a quick mock-up of how your card would look.</p>
+<p>Founding terms while the site's young:</p>
+<ul>
+<li>£100/month, locked for 12 months (it moves to the standard rate once the founding places are taken)</li>
+<li>Exclusive to you across the whole Safety &amp; Environment section</li>
+<li>Three-month minimum, then cancel any time — editorial included</li>
+</ul>
+<p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
+{% endcapture %}
+
+{% capture email_things_to_do %}
+<p>Subject: First refusal on Cheltenham Open Data's Things to Do page</p>
+<p>I recently launched Cheltenham Open Data (<a href="https://cheltenham-od.uk/">cheltenham-od.uk</a>) — a local site that pulls together the things residents actually look up: events, festivals, hotels, sports fixtures, parkrun and more. It's run here in Cheltenham, by hand.</p>
+<p>I'm opening the site to a small number of local sponsors, and wanted to give [Company] first refusal on the one that fits you: the Things to Do category. That's your "supported by" card across every page in that section, exclusively.</p>
+<p>The people on those pages are planning a night out or a visit — exactly the moment to catch them. Alongside the card, you'd get an optional short editorial feature in the site's news too — a local endorsement you can point people to, not just a logo.</p>
+<p>It's new and growing, so rather than throw figures at you, I'd sooner show you — let me know and I'll send over current visitor numbers and a quick mock-up of how your card would look.</p>
+<p>Founding terms while the site's young:</p>
+<ul>
+<li>£100/month, locked for 12 months (it moves to the standard rate once the founding places are taken)</li>
+<li>Exclusive to you across the whole Things to Do section</li>
+<li>Three-month minimum, then cancel any time — editorial included</li>
+</ul>
+<p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
+{% endcapture %}
+
+{% capture email_community_support %}
+<p>Subject: First refusal on Cheltenham Open Data's Community &amp; Support page</p>
+<p>I recently launched Cheltenham Open Data (<a href="https://cheltenham-od.uk/">cheltenham-od.uk</a>) — a local site that pulls together the things residents actually look up: foodbanks, GP and pharmacy listings, food hygiene ratings and more. It's run here in Cheltenham, by hand.</p>
+<p>I'm opening the site to a small number of local sponsors, and wanted to give [Company] first refusal on the one that fits you: the Community &amp; Support category. That's your "supported by" card across every page in that section, exclusively.</p>
+<p>The people on those pages are looking for care and support services close to home — a natural fit for a practice like yours. Alongside the card, you'd get an optional short editorial feature in the site's news too — a local endorsement you can point people to, not just a logo.</p>
+<p>It's new and growing, so rather than throw figures at you, I'd sooner show you — let me know and I'll send over current visitor numbers and a quick mock-up of how your card would look.</p>
+<p>Founding terms while the site's young:</p>
+<ul>
+<li>£100/month, locked for 12 months (it moves to the standard rate once the founding places are taken)</li>
+<li>Exclusive to you across the whole Community &amp; Support section</li>
+<li>Three-month minimum, then cancel any time — editorial included</li>
+</ul>
+<p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
+{% endcapture %}
+
+{% capture email_about_info %}
+<p>Subject: First refusal on Cheltenham Open Data's About &amp; Info page</p>
+<p>I recently launched Cheltenham Open Data (<a href="https://cheltenham-od.uk/">cheltenham-od.uk</a>) — a local site that pulls together the things residents actually look up: school catchment areas, local employment data, weather and more. It's run here in Cheltenham, by hand.</p>
+<p>I'm opening the site to a small number of local sponsors, and wanted to give [Company] first refusal on the one that fits you: the About &amp; Info category, including the schools and catchment area pages, exclusively.</p>
+<p>The people on those pages are parents checking catchments and school data — exactly who you want to reach. Alongside the card, you'd get an optional short editorial feature in the site's news too — a local endorsement you can point people to, not just a logo.</p>
+<p>It's new and growing, so rather than throw figures at you, I'd sooner show you — let me know and I'll send over current visitor numbers and a quick mock-up of how your card would look.</p>
+<p>Founding terms while the site's young:</p>
+<ul>
+<li>£100/month, locked for 12 months (it moves to the standard rate once the founding places are taken)</li>
+<li>Exclusive to you across the whole About &amp; Info section</li>
+<li>Three-month minimum, then cancel any time — editorial included</li>
+</ul>
+<p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
+{% endcapture %}
+
+{% capture email_principal %}
+<p>Subject: First refusal on Cheltenham Open Data's Principal Sponsor slot</p>
+<p>I recently launched Cheltenham Open Data (<a href="https://cheltenham-od.uk/">cheltenham-od.uk</a>) — a local site that pulls together the things residents actually look up: house prices, planning, crime data, bus times, school catchments and more. It's run here in Cheltenham, by hand.</p>
+<p>Most sponsors take one category. I wanted to flag the Principal Sponsor slot to [Company] first — it's site-wide rather than tied to one section, so it fits a business like yours that isn't chasing one specific audience, just visibility across everything Cheltenham residents check.</p>
+<p>Alongside the card, you'd get an optional short editorial feature in the site's news too — a local endorsement you can point people to, not just a logo.</p>
+<p>It's new and growing, so rather than throw figures at you, I'd sooner show you — let me know and I'll send over current visitor numbers and a quick mock-up of how it would look.</p>
+<p>Founding terms while the site's young:</p>
+<ul>
+<li>Founding rate locked for 12 months (it moves to the standard rate once the founding place is taken)</li>
+<li>Site-wide, exclusive placement</li>
+<li>Three-month minimum, then cancel any time — editorial included</li>
+</ul>
+<p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
+{% endcapture %}
+
+<div class="sponsor-email-card">
+    <div class="sponsor-email-head">
+        <h3>Getting Around &mdash; e.g. local garage / dealership</h3>
+        <button type="button" class="sponsor-email-copy" data-copy-target="content-getting-around">Copy HTML</button>
+    </div>
+    <div class="sponsor-email-body" id="content-getting-around">{{ email_getting_around }}</div>
+</div>
+
+<div class="sponsor-email-card">
+    <div class="sponsor-email-head">
+        <h3>Safety &amp; Environment &mdash; e.g. home insurance / security firm</h3>
+        <button type="button" class="sponsor-email-copy" data-copy-target="content-safety-environment">Copy HTML</button>
+    </div>
+    <div class="sponsor-email-body" id="content-safety-environment">{{ email_safety_environment }}</div>
+</div>
+
+<div class="sponsor-email-card">
+    <div class="sponsor-email-head">
+        <h3>Things to Do &mdash; e.g. hotel / restaurant group</h3>
+        <button type="button" class="sponsor-email-copy" data-copy-target="content-things-to-do">Copy HTML</button>
+    </div>
+    <div class="sponsor-email-body" id="content-things-to-do">{{ email_things_to_do }}</div>
+</div>
+
+<div class="sponsor-email-card">
+    <div class="sponsor-email-head">
+        <h3>Community &amp; Support &mdash; e.g. private GP / dental practice</h3>
+        <button type="button" class="sponsor-email-copy" data-copy-target="content-community-support">Copy HTML</button>
+    </div>
+    <div class="sponsor-email-body" id="content-community-support">{{ email_community_support }}</div>
+</div>
+
+<div class="sponsor-email-card">
+    <div class="sponsor-email-head">
+        <h3>About &amp; Info &mdash; e.g. tutoring service / private school</h3>
+        <button type="button" class="sponsor-email-copy" data-copy-target="content-about-info">Copy HTML</button>
+    </div>
+    <div class="sponsor-email-body" id="content-about-info">{{ email_about_info }}</div>
+</div>
+
+<div class="sponsor-email-card">
+    <div class="sponsor-email-head">
+        <h3>Principal Sponsor &mdash; e.g. larger local firm (accountants / solicitors / bank)</h3>
+        <button type="button" class="sponsor-email-copy" data-copy-target="content-principal">Copy HTML</button>
+    </div>
+    <div class="sponsor-email-body" id="content-principal">{{ email_principal }}</div>
+</div>
+
+<script>
+    (function () {
+        var buttons = Array.prototype.slice.call(document.querySelectorAll(".sponsor-email-copy"));
+        buttons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var source = document.getElementById(btn.dataset.copyTarget);
+                if (!source) return;
+                var html = source.innerHTML;
+                var text = source.innerText;
+
+                function flash() {
+                    var original = btn.textContent;
+                    btn.textContent = "Copied!";
+                    btn.classList.add("copied");
+                    setTimeout(function () {
+                        btn.textContent = original;
+                        btn.classList.remove("copied");
+                    }, 1500);
+                }
+
+                if (navigator.clipboard && window.ClipboardItem) {
+                    var item = new ClipboardItem({
+                        "text/html": new Blob([html], { type: "text/html" }),
+                        "text/plain": new Blob([text], { type: "text/plain" })
+                    });
+                    navigator.clipboard.write([item]).then(flash).catch(function () {
+                        fallbackCopy(source);
+                        flash();
+                    });
+                } else {
+                    fallbackCopy(source);
+                    flash();
+                }
+            });
+        });
+
+        function fallbackCopy(node) {
+            var range = document.createRange();
+            range.selectNodeContents(node);
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand("copy");
+            selection.removeAllRanges();
+        }
+    })();
+</script>
