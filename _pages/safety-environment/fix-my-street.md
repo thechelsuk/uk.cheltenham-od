@@ -41,6 +41,19 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Deep, wide pothole that is very difficult to see, 17th September :- [10114267](https://www.fixmystreet.com/report/10114267)
+- Footlong Pothole, 17th September :- [10113923](https://www.fixmystreet.com/report/10113923)
+- Farmer has locked gatesin this field, with a notice saying that the footpath is closed due to gates being left open., 17th September :- [10113651](https://www.fixmystreet.com/report/10113651)
+- Hedges all around priors Norton, 17th September :- [10113351](https://www.fixmystreet.com/report/10113351)
+- TMC - Defects - Footways Slabs problem, 17th September :- [10113487](https://www.fixmystreet.com/report/10113487)
+- TMC - Defects - Footways Slabs problem, 17th September :- [10113486](https://www.fixmystreet.com/report/10113486)
+- TMC - Defects -CW6 Potholes  problem, 17th September :- [10113296](https://www.fixmystreet.com/report/10113296)
+- Litter lining the A435, 17th September :- [10113155](https://www.fixmystreet.com/report/10113155)
+- Guard rail or barrier problem, 17th September :- [10113294](https://www.fixmystreet.com/report/10113294)
+- TMC - Defects - Fences & Barriers problem, 17th September :- [10113096](https://www.fixmystreet.com/report/10113096)
+- Tree is damaged problem, 17th September :- [10113081](https://www.fixmystreet.com/report/10113081)
+- TMC - Defects - Vegetation problem, 17th September :- [10113085](https://www.fixmystreet.com/report/10113085)
+- TMC - Defects - Vegetation problem, 17th September :- [10113084](https://www.fixmystreet.com/report/10113084)
 - Flytip/full bins, 17th September :- [10112994](https://www.fixmystreet.com/report/10112994)
 - Pothole on my cycle route swerving to avoid, 17th September :- [10112952](https://www.fixmystreet.com/report/10112952)
 - Poor road conditions, 17th September :- [10112944](https://www.fixmystreet.com/report/10112944)
@@ -48,18 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - All drains are blocked around this area and a leak opposite at 77 is causing flooding to the roads because the drains are blocked, 17th September :- [10112696](https://www.fixmystreet.com/report/10112696)
 - Advertisement blocking view of incoming traffic, 17th September :- [10112693](https://www.fixmystreet.com/report/10112693)
 - Other issue with a footway/pavement problem, 17th September :- [10112736](https://www.fixmystreet.com/report/10112736)
-- TMC - Defects - Covers, Gratings & Frames problem, 17th September :- [10112738](https://www.fixmystreet.com/report/10112738)
-- TMC - Defects - Other FW6  Surface problem, 17th September :- [10112569](https://www.fixmystreet.com/report/10112569)
-- Traffic approaching the traffic lights at montpellier, 17th September :- [10112508](https://www.fixmystreet.com/report/10112508)
-- Request for a tree to be planted on pavement outside number 48 Byron Road. Would like it to be in front of the pathway to front door so it doesn't block the driveway parking. Good time to do it now whilst Byron Road is being dug up. Thanks., 17th September :- [10112444](https://www.fixmystreet.com/report/10112444)
-- Tree blocking cycle path/road, 17th September :- [10112434](https://www.fixmystreet.com/report/10112434)
-- TMC - Defects - Signs & Street Furniture problem, 17th September :- [10112565](https://www.fixmystreet.com/report/10112565)
-- TMC - Defects - Signs & Street Furniture problem, 17th September :- [10112564](https://www.fixmystreet.com/report/10112564)
-- TMC - Defects - Vegetation problem, 17th September :- [10112396](https://www.fixmystreet.com/report/10112396)
-- TMC - Defects - Vegetation problem, 17th September :- [10112205](https://www.fixmystreet.com/report/10112205)
-- TMC - Defects - Vegetation problem, 17th September :- [10112203](https://www.fixmystreet.com/report/10112203)
-- TMC - Defects -CW6 Potholes  problem, 17th September :- [10112202](https://www.fixmystreet.com/report/10112202)
-- TMC - Defects - Covers, Gratings & Frames problem, 17th September :- [10112201](https://www.fixmystreet.com/report/10112201)
-- Tree is damaged problem, 17th September :- [10112179](https://www.fixmystreet.com/report/10112179)
 
 <!-- fix_marker ends -->
