@@ -41,6 +41,9 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Wrong direction timetable displayed, 16th September :- [10105382](https://www.fixmystreet.com/report/10105382)
+- Horrible odour on street coming from several storm water street drains. It’s been noticeable towards St. Mary’s playgroup but is now getting worse. Tonight we could smell it inside our house!, 16th September :- [10109662](https://www.fixmystreet.com/report/10109662)
+- The right-hand of the two 'No Entry' signs at the vehicular exit to Montpellier Walk has been twisted around 90 degrees by vandals so that it now faces the town centre (NE) rather than Montpellier Gardens (across the road)., 16th September :- [10109652](https://www.fixmystreet.com/report/10109652)
 - Flytipping in the back garages in Fiddlers green lane, 16th September :- [10109347](https://www.fixmystreet.com/report/10109347)
 - Broken window, 16th September :- [10109105](https://www.fixmystreet.com/report/10109105)
 - Union jack flags on Hubble road, 16th September :- [10109056](https://www.fixmystreet.com/report/10109056)
@@ -58,8 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Sloped paving causing damp, 16th September :- [10108172](https://www.fixmystreet.com/report/10108172)
 - Insufficient road signage to warn drivers of need to stop at crossing’s lights., 16th September :- [10108143](https://www.fixmystreet.com/report/10108143)
 - The grass and vegetation on the verge is significantly overgrown and has become obstructive to the adjacent footpath. This has been an ongoing issue for a number of years, with the vegetation repeatedly becoming overgrown and encroaching onto the path, restricting the available walking space and making it difficult for pedestrians to pass safely. The vegetation is also growing into/against the neighbouring property fence and is causing damage to the fence. The verge appears to be poorly maintained and requires cutting back and clearing to restore safe access to the footpath and prevent further damage to the property., 16th September :- [10108072](https://www.fixmystreet.com/report/10108072)
-- Guard rail or barrier problem, 16th September :- [10108112](https://www.fixmystreet.com/report/10108112)
-- TMC - Defects - Other FW6  Surface problem, 16th September :- [10107922](https://www.fixmystreet.com/report/10107922)
-- TMC - Defects -CW6 Potholes  problem, 16th September :- [10107907](https://www.fixmystreet.com/report/10107907)
 
 <!-- fix_marker ends -->
