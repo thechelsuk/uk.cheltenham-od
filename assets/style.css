@@ -2017,3 +2017,25 @@ pre {
 .cycle-routes-swatch-named {
     background: #1d4e89;
 }
+
+/* ================================
+   Fuel prices map
+   ================================ */
+
+.fuel-map-legend {
+    margin: 0.5em 0 1.5em;
+    color: var(--text-muted);
+}
+
+.fuel-map-legend-swatch {
+    color: var(--accent);
+}
+
+.pin-cheapest {
+    color: var(--accent);
+}
+
+.leaflet-container img {
+    /* override the global img border, which otherwise boxes every map tile and marker */
+    border: none;
+}

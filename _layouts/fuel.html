@@ -34,9 +34,11 @@
 
         <h2>Map of Local Forecourts</h2>
         <div id="fuel-map" style="height: 600px; border-radius: 8px;"></div>
+        <p class="fuel-map-legend"><span class="fuel-map-legend-swatch">&#9679;</span> Cheapest forecourts for each
+            fuel type are highlighted on the map.</p>
         <script id="fuel-map-data" type="application/json">
         [
-        {% for s in fuel.stations %}{% if s.lat and s.lon %}{"lat": {{ s.lat }}, "lon": {{ s.lon }}, "popup": {{ s.popup | jsonify }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}
+        {% for s in fuel.stations %}{% if s.lat and s.lon %}{% assign is_cheapest = false %}{% for c in s.cells %}{% if c.cheapest %}{% assign is_cheapest = true %}{% endif %}{% endfor %}{"lat": {{ s.lat }}, "lon": {{ s.lon }}, "popup": {{ s.popup | jsonify }}, "cheapest": {{ is_cheapest }}}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}
         ]
         </script>
 
@@ -66,8 +68,7 @@
                         </td>
                         {% endfor %}
                         <td class="date" data-val="{{ s.as_of }}">{{ s.as_of }}</td>
-                        <td class="map">{% if s.lat and s.lon %}{% include pin.html lat=s.lat lng=s.lon label=s.name
-                            %}{% endif %}
+                        <td class="map">{% if s.lat and s.lon %}{% assign is_cheapest = false %}{% for c in s.cells %}{% if c.cheapest %}{% assign is_cheapest = true %}{% endif %}{% endfor %}{% include pin.html lat=s.lat lng=s.lon label=s.name cheapest=is_cheapest %}{% endif %}
                         </td>
                         </tr>
                         {% endfor %}
