@@ -2,7 +2,7 @@
   "note": "Rolling log of power cuts recorded affecting Cheltenham (GL50-GL54) postcodes, built up incrementally each run — not a full historical archive from before this page existed.",
   "source": "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts",
   "licence": "WPD Open Data Licence",
-  "count": 1,
+  "count": 2,
   "records": [
     {
       "first_seen_iso": "2026-09-17T08:25:12Z",
@@ -23,7 +23,29 @@
       "postcodes": [
         "GL52 3NF"
       ],
-      "last_seen_iso": "2026-09-17T09:00:14Z"
+      "last_seen_iso": "2026-09-17T09:05:21Z"
+    },
+    {
+      "first_seen_iso": "2026-09-17T09:05:21Z",
+      "fault_id": "INCD-21091-l",
+      "status": "In Progress",
+      "planned": true,
+      "category": "Hv Planned",
+      "confirmed_off": 3,
+      "predicted_off": 0,
+      "restored": 0,
+      "voltage": "HV",
+      "date_of_reported_fault": "2026-09-17T09:30:00",
+      "last_updated": "2026-09-17T09:54:00",
+      "date_of_restoration": "",
+      "etr": "",
+      "lat": 51.909,
+      "lon": -1.771147,
+      "postcodes": [
+        "GL54 2JA",
+        "GL54 2JD"
+      ],
+      "last_seen_iso": "2026-09-17T09:05:21Z"
     }
   ]
 }
