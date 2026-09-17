@@ -2,7 +2,7 @@
 layout: posts
 type: cod
 title: Adding a Festival & Races Accommodation Guide
-seo: Where to stay for Cheltenham Festival and Races 2027 (16–19 March) hotels near Cheltenham Racecourse, sorted by distance, with live availability for raceweek and Gold Cup
+seo: "Where to stay in Cheltenham for the Festival and Races 2027 (16–19 March) hotels near Cheltenham Racecourse, sorted by distance, with live availability"
 date: 2026-09-07 13:00
 year: 2027
 ---

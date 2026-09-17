@@ -3,7 +3,7 @@ layout: posts
 title: Adding an EV Charging Map to the Site
 type: cod
 description: A live map and sortable list of public electric vehicle charging points across Cheltenham, with connectors, speeds and directions.
-seo: A map and directory of public EV charging points across Cheltenham — connector types, charging speeds and operators, sourced from Open Charge Map and refreshed daily.
+seo: A map and directory of public EV charging points across Cheltenham connector types, charging speeds, operators, updated daily.
 date: 2026-09-08 01:00
 ---
 

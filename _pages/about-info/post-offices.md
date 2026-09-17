@@ -1,7 +1,7 @@
 ---
 layout: post-offices
 title: "Cheltenham Post Office Locations"
-seo: "Cheltenham Post Office Locations - Find Your Nearest Branch, including High Street, Hesters Way, Charlton Kings, Up Hatherley and more, with addresses and map links"
+seo: "Cheltenham Post Office Locations - Find Your Nearest Branch, including High Street, Hesters Way, Charlton Kings, Up Hatherley and more, with addresses and maps"
 permalink: /cheltenham-post-office-locations
 description: "Every Post Office branch in Cheltenham, with map links"
 type: "about"

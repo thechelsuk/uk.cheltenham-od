@@ -1,8 +1,8 @@
 ---
 layout: interests
-title: "Cheltenham Points of Interest — Museums, Historic Sites & Plaques"
-seo: "Points of interest in and around Cheltenham Gloucestershire"
-description: "Explore points of interest in and around Cheltenham, Gloucestershire — museums, historic sites, stadiums and blue plaques, each with distance and a map link."
+title: "Cheltenham Museums, Historic Sites & Plaques"
+seo: "Explore points of interest in and around Cheltenham, Gloucestershire — museums, historic sites, stadiums and blue plaques, each with distance and a map link."
+description: "Explore points of interest in and around Cheltenham - museums, historic sites, stadiums and blue plaques, each with distance and a map link."
 type: "activities"
 permalink: /cheltenham-points-of-interest
 schema: interests

@@ -3,7 +3,7 @@ layout: posts
 title: Adding a Schools Directory to the Site
 type: cod
 description: A complete, sortable list of schools across Cheltenham, broken down by phase and type.
-seo: A full directory of Cheltenham schools across GL50–GL54 — primary, secondary, grammar, independent and special from DfE's Get Information about Schools register.
+seo: A full list of Cheltenham schools across GL50–GL54 — primary, secondary, grammar, independent and special from DfE's Get Information about Schools register.
 date: 2026-09-07 02:00
 ---
 

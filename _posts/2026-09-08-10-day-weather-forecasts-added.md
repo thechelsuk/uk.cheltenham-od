@@ -1,9 +1,9 @@
 ---
 layout: posts
-title: Adding a 10-Day Weather Forecast to the Site
+title: Adding 10-day Weather Forecasts
 type: cod
 description: A daily 10-day forecast for Cheltenham with highs, lows, rain chance, wind, UV and daylight, plus trend charts for the week and a half ahead.
-seo: A 10-day weather forecast for Cheltenham, Gloucestershire — daily high and low temperatures, chance of rain, wind, UV index and daylight, refreshed daily from OpenWeather.
+seo: A 10-day weather forecast for Cheltenham, Gloucestershire — daily high and low temperatures, chance of rain, wind, UV index and daylight, updated daily
 date: 2026-09-08 02:00
 ---
 

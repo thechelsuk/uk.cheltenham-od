@@ -1,7 +1,7 @@
 ---
 layout: about-cheltenham
-title: "All About Cheltenham: History, Population, Growth & Employment"
-seo: "Cheltenham population, history, population growth, employment rate and Census 2021 statistics, sourced directly from the ONS and Nomis."
+title: "Cheltenham's History, Population, Growth & Employment"
+seo: "Cheltenham population, history, population growth, employment rate and Census 2021 statistics, sourced from the ONS and Nomis."
 permalink: /about-cheltenham
 description: "Cheltenham's history, population, growth over time, employment rate and Census 2021 headline figures, sourced directly from the ONS's Nomis service."
 type: "about"

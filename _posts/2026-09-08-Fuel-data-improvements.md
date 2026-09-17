@@ -3,7 +3,7 @@ layout: posts
 title: Cheltenham Open Data Expands the Fuel Prices Page
 type: cod
 description: Live petrol and diesel prices across 100+ Gloucestershire forecourts, now with a map, distances and the cheapest pump for each fuel highlighted.
-seo: Compare live petrol and diesel prices across 116 forecourts within 20 miles of Cheltenham distance-from-town and cheapest-per-fuel highlighting, updated daily official data.
+seo: Compare live petrol and diesel prices across 116 forecourts within 20 miles of Cheltenham distance-from-town and cheapest-per-fuel highlighting updated daily.
 date: 2026-09-08 05:00
 ---
 

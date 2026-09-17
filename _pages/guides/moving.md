@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Moving to Cheltenham - a Local Data Guide
-seo: "Thinking of moving to Cheltenham? A local guide to areas, house prices, schools, crime, healthcare and getting set up in Cheltenham, Gloucestershire - backed by open data."
+seo: "Thinking of moving to Cheltenham? A local guide to areas, house prices, schools, crime, healthcare and getting set up in Cheltenham with data"
 description: "A practical guide to moving to Cheltenham, Gloucestershire. House prices, schools, neighbourhoods, safety and local services, all backed by open data."
 type: "landing"
 permalink: /moving-to-cheltenham

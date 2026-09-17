@@ -1,7 +1,7 @@
 ---
 layout: school-catchment-areas
 title: "Cheltenham Primary School Catchment Areas Map"
-seo: "Cheltenham primary school catchment areas map — which primary school is nearest to each part of town, by straight-line distance, sourced from the DfE's school register."
+seo: "Cheltenham primary school catchment areas map — which primary school is nearest to each part of town, by straight-line distance, from DfEs."
 permalink: /cheltenham-schools/catchment-areas/primary
 description: "A map of Cheltenham showing which primary school is nearest to each area, by straight-line distance — not an official catchment map."
 type: "about"

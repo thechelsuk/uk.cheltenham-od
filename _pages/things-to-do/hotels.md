@@ -1,7 +1,7 @@
 ---
 layout: hotels
 title: Places to Stay in Cheltenham
-seo: "Places to stay in Cheltenham, Gloucestershire — hotels and accommodation near the racecourse, the Cheltenham Festival and the Cotswolds, with live availability and prices."
+seo: "Places to stay in Cheltenham - hotels & accommodation near the racecourse, the Cheltenham Festival and the Cotswolds, with live availability & prices."
 description: "Compare hotels and accommodation in Cheltenham, from Regency townhouse hotels to budget stays near the centre and racecourse."
 type: "activities"
 schema: hotels
