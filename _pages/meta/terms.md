@@ -4,7 +4,7 @@ title: Cheltenham Open Data Terms of Use
 permalink: /terms
 description: "The terms of use for Cheltenham Open Data: how you may use the site and its data, licensing, classifieds and advert rules, and the limits of our liability."
 type: "cod"
-seo: "Terms of Use for Cheltenham Open Data — site and data licensing (OGL v3.0, CC BY 4.0, ODbL), classifieds and advertising rules, a data-accuracy disclaimer, and governing law."
+seo: "Terms of Use for Cheltenham Open Data — site and data licensing, classifieds and advertising rules, a data-accuracy disclaimer, and governing law."
 ---
 
 ## Terms of Use
