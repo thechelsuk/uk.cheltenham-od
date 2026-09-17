@@ -12,14 +12,14 @@ permalink: /sitemap.xml
   </url>
   <!-- pages-->
   {% for page in site.html_pages %}
-  {% if page.url != "/" and page.robots != "noindex"  %}
+  {% unless page.url == "/" or page.robots contains "noindex" %}
   <url>
     <loc>{{ site.url }}{{ page.url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-  {% endif %}
+  {% endunless %}
   {% endfor %}
      <!-- posts-->
   {% assign posts = site.posts %}
