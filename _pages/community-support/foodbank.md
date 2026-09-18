@@ -22,5 +22,10 @@ Three food banks serve Cheltenham itself:
 - [Cheltenham Open Door](/cheltenham-foodbank-needed-items/cheltenham-open-door), an independent charity supporting rough sleepers and vulnerable people.
 - [Springbank Community Group](/cheltenham-foodbank-needed-items/springbank-community-group), an independent food bank at the Ron Smith Pavilion.
 
+Nearby food banks in [Gloucester](/cheltenham-foodbank-needed-items/gloucester-foodbank),
+[Tewkesbury](/cheltenham-foodbank-needed-items/tewkesbury-foodbank) and
+[North Cotswold](/cheltenham-foodbank-needed-items/north-cotswold-foodbank) are
+listed too.
+
 If money's tight this term, our [student guide to Cheltenham](/student-guide-to-cheltenham)
 points to this page alongside other local budget help.
