@@ -170,6 +170,10 @@ if __name__ == "__main__":
         history_records, incidents, id_key="fault_id", now_iso=now_iso,
         peak_fields=["confirmed_off"], retention_days=HISTORY_RETENTION_DAYS,
     )
+    for record in history_records:
+        if record.get("resolved_iso") and not record.get("date_of_restoration"):
+            record["date_of_restoration"] = record["resolved_iso"]
+            record["status"] = "Restored"
     history_payload = {
         "note": "Rolling log of power cuts recorded affecting Cheltenham (GL50-GL54) postcodes, "
                 "built up incrementally each run — not a full historical archive from before this page existed.",

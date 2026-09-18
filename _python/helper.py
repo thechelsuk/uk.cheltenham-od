@@ -46,12 +46,21 @@ def update_history(history_records, current_items, id_key, now_iso, peak_fields=
     as a running max rather than overwritten. Anything not seen within
     `retention_days` is dropped. Returns the updated list, most-recently-seen
     first. `history_records`/`current_items` are both lists of plain dicts;
-    each dict in `current_items` must have an `id_key` key."""
+    each dict in `current_items` must have an `id_key` key.
+
+    The live feeds this backs only ever show what's currently active, so the
+    *only* signal that an item has ended is it no longer appearing in
+    `current_items`. The first run a previously-seen record goes missing, it
+    is stamped with `resolved_iso` (using that record's own last_seen_iso, the
+    last moment it was confirmed still active) so callers can render "ended"
+    state instead of it looking stuck active/unresolved forever."""
     peak_fields = peak_fields or []
     by_id = {r[id_key]: r for r in history_records if id_key in r}
+    seen_keys = set()
 
     for item in current_items:
         key = item[id_key]
+        seen_keys.add(key)
         record = by_id.get(key)
         if record is None:
             record = {"first_seen_iso": now_iso}
@@ -63,10 +72,16 @@ def update_history(history_records, current_items, id_key, now_iso, peak_fields=
         record.update(item)
         record["first_seen_iso"] = first_seen
         record["last_seen_iso"] = now_iso
+        record.pop("resolved_iso", None)
         for f in peak_fields:
             values = [v for v in (previous_peaks.get(f), item.get(f)) if isinstance(v, (int, float))]
             if values:
                 record[f] = max(values)
+
+    for record in history_records:
+        key = record.get(id_key)
+        if key is not None and key not in seen_keys and not record.get("resolved_iso"):
+            record["resolved_iso"] = record.get("last_seen_iso", now_iso)
 
     cutoff = datetime.now(timezone.utc) - timedelta(days=retention_days)
     kept = []
