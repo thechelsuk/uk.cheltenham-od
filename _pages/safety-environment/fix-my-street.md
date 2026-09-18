@@ -41,6 +41,10 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- TMC - Defects - Vegetation problem, 18th September :- [10115602](https://www.fixmystreet.com/report/10115602)
+- Graffiti on bin, 18th September :- [10115469](https://www.fixmystreet.com/report/10115469)
+- Street name Sign snapped and not visible, 18th September :- [10115389](https://www.fixmystreet.com/report/10115389)
+- GE Roundabout, Bishop’s Cleeve – lane markings/signage approaching from A435 Evesham Bypass, 18th September :- [10115276](https://www.fixmystreet.com/report/10115276)
 - Broken hanging tree branch over footpath, 17th September :- [10114873](https://www.fixmystreet.com/report/10114873)
 - Drain cover displaced pointing upward creating safety issue, 17th September :- [10114641](https://www.fixmystreet.com/report/10114641)
 - Deep, wide pothole that is very difficult to see, 17th September :- [10114267](https://www.fixmystreet.com/report/10114267)
@@ -57,9 +61,5 @@ over time but remain permanently viewable on FixMyStreet itself.
 - TMC - Defects - Vegetation problem, 17th September :- [10113085](https://www.fixmystreet.com/report/10113085)
 - TMC - Defects - Vegetation problem, 17th September :- [10113084](https://www.fixmystreet.com/report/10113084)
 - Flytip/full bins, 17th September :- [10112994](https://www.fixmystreet.com/report/10112994)
-- Pothole on my cycle route swerving to avoid, 17th September :- [10112952](https://www.fixmystreet.com/report/10112952)
-- Poor road conditions, 17th September :- [10112944](https://www.fixmystreet.com/report/10112944)
-- TMC - Defects - Other problem, 17th September :- [10112895](https://www.fixmystreet.com/report/10112895)
-- All drains are blocked around this area and a leak opposite at 77 is causing flooding to the roads because the drains are blocked, 17th September :- [10112696](https://www.fixmystreet.com/report/10112696)
 
 <!-- fix_marker ends -->
