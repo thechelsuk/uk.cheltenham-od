@@ -18,7 +18,7 @@
         <p>
             {{ history.count }} reports in the last {{ history.retention_days }} days.
         </p>
-        {% include fix-my-street-table.html reports=history.records groups=history.groups %}
+        {% include fix-my-street-table.html reports=history.records %}
         {% else %}
         <p>No reports have been recorded yet.</p>
         {% endif %}

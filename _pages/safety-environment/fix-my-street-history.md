@@ -9,8 +9,8 @@ permalink: /cheltenham-fix-my-street/history
 
 ## Fix My Street Report History
 
-Every report seen on this site over the last 90 days, most recent first. Use
-the category filter to narrow the list, and click a report to see its status
-on FixMyStreet. This is not a complete archive: it only includes reports
+Every report seen on this site over the last 90 days, most recent first. Click
+the column headings to sort, and click a report to see its status on
+FixMyStreet. This is not a complete archive: it only includes reports
 published while this page has been tracking them. For the newest reports and a
 map, see the [latest reports page](/cheltenham-fix-my-street).
