@@ -4,7 +4,7 @@ title: Updating Food Banks With a Map and Six Nearby Food Banks
 type: cod
 description: The food banks page now covers six food banks and 37 donation points, with a map and a page for each.
 seo: See what six food banks near Cheltenham need right now, what not to donate and where to drop off, with a map, opening hours and contact details.
-date: 2026-09-19 12:00
+date: 2026-09-19 00:30
 ---
 
 Cheltenham Open Data has rebuilt its [food banks page](/cheltenham-foodbank-needed-items). It used to list what two food banks needed. It now covers every food bank within ten miles of Cheltenham town centre, six in all, on a map and in a sortable table showing how far each one is, how many items it is asking for and when that list last changed.
