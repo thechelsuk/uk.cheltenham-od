@@ -15,6 +15,11 @@
         {{ content }}
 
         {% if history.records.size > 0 %}
+        <p>
+            {{ history.count }} reports, from {{ history.records.last.published_iso | date: "%-d %B %Y" }} to
+            {{ history.records.first.published_iso | date: "%-d %B %Y" }}.
+        </p>
+
         <h2>Reports by Month</h2>
         <canvas id="fms-history-chart" height="120" aria-label="Bar chart of Fix My Street reports per month around Cheltenham"></canvas>
         <p><small>The first month is a part-month, as the history starts on 21 June 2026.</small></p>
@@ -61,24 +66,9 @@
             </table>
         </div>
 
-        <h2>Download the Data</h2>
-        {% capture history_json %}{{ history | jsonify }}{% endcapture %}
-        {% assign history_mb = history_json.size | divided_by: 1048576.0 | round: 1 %}
         <p>
-            {{ history.count }} reports, from {{ history.records.last.published_iso | date: "%-d %B %Y" }} to
-            {{ history.records.first.published_iso | date: "%-d %B %Y" }}.
+            Need the full record of reports? <a href="/contact">Get in touch</a> and we can provide it.
         </p>
-        <p>
-            <a href="/feeds/fix-my-street-history.json" download>Download fix-my-street-history.json</a>
-            (about {{ history_mb }} MB)
-        </p>
-        <p>Each report in the file includes:</p>
-        <ul>
-            <li>the report title and a short description</li>
-            <li>the date and time it was reported</li>
-            <li>its latitude and longitude</li>
-            <li>a link to the original report on FixMyStreet</li>
-        </ul>
         {% else %}
         <p>No reports have been recorded yet.</p>
         {% endif %}
