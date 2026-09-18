@@ -1,0 +1,15 @@
+{% assign fb = site.data["foodbank"].foodbanks | where: "slug", page.foodbank | first %}
+{% if fb %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ fb.display_name | jsonify }},
+  "url": {{ fb.homepage | jsonify }},
+  "telephone": {{ fb.phone | jsonify }},
+  "email": {{ fb.email | jsonify }},
+  "address": { "@type": "PostalAddress", "streetAddress": {{ fb.address | jsonify }}, "postalCode": {{ fb.postcode | jsonify }}, "addressCountry": "GB" },
+  "geo": { "@type": "GeoCoordinates", "latitude": {{ fb.lat }}, "longitude": {{ fb.lon }} }
+}
+</script>
+{% endif %}

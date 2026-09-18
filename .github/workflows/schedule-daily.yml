@@ -48,7 +48,6 @@ jobs:
                   python '_python/forecast.py' || echo "::warning::forecast.py failed, continuing with other scripts"
                   python '_python/flood.py' || echo "::warning::flood.py failed, continuing with other scripts"
                   python '_python/sewage-overflows.py' || echo "::warning::sewage-overflows.py failed, continuing with other scripts"
-                  python '_python/foodbank.py' || echo "::warning::foodbank.py failed, continuing with other scripts"
                   python '_python/terrorism.py' || echo "::warning::terrorism.py failed, continuing with other scripts"
                   python '_python/pharmacy.py' || echo "::warning::pharmacy.py failed, continuing with other scripts"
                   python '_python/post-office.py' || echo "::warning::post-office.py failed, continuing with other scripts"

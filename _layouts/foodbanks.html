@@ -1,0 +1,104 @@
+{% include header.html %}
+{% assign data = site.data["foodbank"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/community-support">&lAarr; Back to Community &amp; Support</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if data.foodbanks.size > 0 %}
+        <h2>Food Banks at a Glance</h2>
+        <ul>
+            <li>{{ data.summary.foodbank_count }} food banks within {{ data.radius_miles }} miles of Cheltenham town centre</li>
+            <li>{{ data.summary.donation_point_count }} places to drop off donations</li>
+            {% if data.summary.latest_change %}
+            <li>Most recent change to a list of needed items: {{ data.summary.latest_change.name | escape }}, {{ data.summary.latest_change.found_iso | date: "%-d %B %Y" }}</li>
+            {% endif %}
+        </ul>
+
+        <h2>Map of Food Banks</h2>
+        <div id="foodbank-map" style="height: 480px;" aria-label="Map of food banks near Cheltenham"></div>
+
+        <h2>Nearest Food Banks</h2>
+        <div class="table-scroll">
+            <table class="foodbank-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Food Bank</th>
+                        <th scope="col">Network</th>
+                        <th scope="col" class="number">Distance (miles)</th>
+                        <th scope="col" class="number">Items Requested</th>
+                        <th scope="col" class="date">List Last Changed</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fb in data.foodbanks %}
+                    {% assign own = site.pages | where: "foodbank", fb.slug | first %}
+                    <tr data-map-lat="{{ fb.lat }}" data-map-lon="{{ fb.lon }}" data-map-name="{{ fb.display_name | escape }}" data-map-kind="foodbank" data-map-label="{{ fb.network | escape }} &middot; {{ fb.distance_mi }} miles" {% if own %}data-map-href="{{ own.url }}"{% endif %}>
+                        <td>{% if own %}<a href="{{ own.url }}">{{ fb.display_name | escape }}</a>{% else %}<a href="{{ fb.homepage }}" rel="noopener">{{ fb.display_name | escape }}</a>{% endif %}</td>
+                        <td>{{ fb.network | escape }}</td>
+                        <td class="number">{{ fb.distance_mi }}</td>
+                        <td class="number">{% if fb.need.has_list %}{{ fb.need.items.size }}{% else %}&mdash;{% endif %}</td>
+                        <td class="date" data-value="{{ fb.need.found_iso }}">{% if fb.need.has_list %}{{ fb.need.found_iso | date: "%Y-%m-%d" }}{% else %}&mdash;{% endif %}</td>
+                        <td class="postcode">{{ fb.postcode }}</td>
+                        <td class="map">{% include pin.html lat=fb.lat lng=fb.lon label=fb.display_name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>Food bank details are not available right now. Please check back shortly.</p>
+        {% endif %}
+
+        <p class="foodbank-attribution"><small>
+                Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under
+                <a href="{{ data.licence_url }}">{{ data.licence }}</a>. Last checked
+                {{ data.generated_at | date: "%-d %B %Y" }}. Lists of needed items are a guide, so check a food
+                bank's own shopping list before you donate.
+            </small></p>
+
+        <h2>Food Bank FAQs</h2>
+
+        <h3>How Do I Donate to a Food Bank in Cheltenham?</h3>
+        <p>Open a food bank's page to see what it currently needs, what it has plenty of, and where you can drop
+            donations off, including supermarket collection points and their opening hours.</p>
+
+        <h3>Where Does This Information Come From?</h3>
+        <p><a href="https://www.givefood.org.uk">Give Food</a>, a registered charity that keeps the UK's largest
+            public database of food banks and the items they ask for. Each food bank's page links back to the
+            original entry.</p>
+
+        <h3>How Often Is It Updated?</h3>
+        <p>Every few hours. Food banks change what they need often, so the date each list last changed is shown
+            next to it.</p>
+
+        <h3>Is the List of Needed Items Complete?</h3>
+        <p>Treat it as a guide. Food banks often have more detail than a simple list can show, so check the food
+            bank's own shopping list before you buy.</p>
+
+        <h3>Do I Need a Referral to Get Help From a Food Bank?</h3>
+        <p>Many food banks ask for a referral from a professional such as a GP, school or advice charity. Contact
+            the food bank first to check how it works.</p>
+
+        <h3>Why Are Some Food Banks Outside Cheltenham Listed?</h3>
+        <p>The table shows every food bank within {{ data.radius_miles }} miles of the town centre, so nearby
+            towns such as Gloucester and Tewkesbury are included. Food banks without a page here link to their
+            own websites.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/scripts/foodbank-map.js"></script>
+{% include footer.html %}
