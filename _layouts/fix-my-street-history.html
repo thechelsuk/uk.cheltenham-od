@@ -1,0 +1,81 @@
+{% include header.html %}
+{% assign history = site.data["fix-my-street-history"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-fix-my-street">&lAarr; Back to Cheltenham Fix My Street</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if history.records.size > 0 %}
+        <p>
+            {{ history.count }} reports, from {{ history.records.last.published_iso | date: "%-d %B %Y" }} to
+            {{ history.records.first.published_iso | date: "%-d %B %Y" }}.
+        </p>
+
+        <h2>Reports by Month</h2>
+        <canvas id="fms-history-chart" height="120" aria-label="Bar chart of Fix My Street reports per month around Cheltenham"></canvas>
+        <p><small>The first month is a part-month, as the history starts on 21 June 2026.</small></p>
+
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Month</th>
+                        <th scope="col" class="number">Reports</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign months = history.by_month | reverse %}
+                    {% for m in months %}
+                    <tr>
+                        <td class="date">{{ m.month }}</td>
+                        <td class="number">{{ m.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Reports by Category</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col" class="number">Reports</th>
+                        <th scope="col" class="number">Share (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for g in history.groups %}
+                    <tr>
+                        <td>{{ g.name | escape }}</td>
+                        <td class="number">{{ g.count }}</td>
+                        <td class="number">{{ g.count | times: 100.0 | divided_by: history.count | round: 1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% else %}
+        <p>No reports have been recorded yet.</p>
+        {% endif %}
+        <p class="fms-attribution"><small>
+                Reports from <a href="{{ history.source_url }}">FixMyStreet</a>, run by mySociety, within 10km of
+                Cheltenham town centre. Report text is written by members of the public.
+            </small></p>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="fms-history-months" type="application/json">{{ history.by_month | jsonify }}</script>
+<script src="/assets/scripts/fix-my-street-history-chart.js"></script>
+{% include footer.html %}

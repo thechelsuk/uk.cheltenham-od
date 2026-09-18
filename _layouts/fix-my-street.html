@@ -1,0 +1,86 @@
+{% include header.html %}
+{% assign data = site.data["fix-my-street"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-fix-my-street/history">Report History &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Latest Reports</h2>
+        {% if data.items.size > 0 %}
+        <p>
+            {{ data.count }} recent reports. Most reported:
+            {% for g in data.groups limit: 3 %}{{ g.name | escape }} ({{ g.count }}){% unless forloop.last %}, {% endunless %}{% endfor %}.
+        </p>
+
+        <div id="fms-map" style="height: 480px;" aria-label="Map of the latest street problems reported around Cheltenham"></div>
+
+        <div class="table-scroll">
+            <table class="fix-my-street-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Reported</th>
+                        <th scope="col">Report</th>
+                        <th scope="col">Details</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in data.items %}
+                    <tr>
+                        <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td><a href="{{ r.url }}" rel="noopener">{{ r.title | escape }}</a></td>
+                        <td>{{ r.description | escape }}</td>
+                        <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <p>No recent reports are available right now. Please check back shortly.</p>
+        {% endif %}
+        <p class="fms-attribution"><small>
+                Reports from <a href="{{ data.source_url }}">FixMyStreet</a>, run by mySociety, within 10km of
+                Cheltenham town centre. Report text is written by members of the public. Refreshed hourly.
+            </small></p>
+
+        <h2>Fix My Street FAQs</h2>
+
+        <h3>Who Fixes Problems Reported Here?</h3>
+        <p>It depends on the problem. <a href="https://www.gloucestershire.gov.uk/">Gloucestershire County
+                Council</a> looks after roads, pavements, street lights, road signs, drains and public
+            footpaths. <a href="https://www.cheltenham.gov.uk/">Cheltenham Borough Council</a> handles litter,
+            fly-tipping, graffiti and parks. FixMyStreet sends each report to the right authority for you.</p>
+
+        <h3>How Do I Report a Problem?</h3>
+        <p>Visit <a href="https://www.fixmystreet.com">FixMyStreet</a>, enter a postcode or street name, drop a
+            pin on the map, and add a short description and a photo if you can.</p>
+
+        <h3>How Do I Check the Status of a Report?</h3>
+        <p>Click any report in the list to open it on FixMyStreet, where you can see whether it is open,
+            investigating, fixed or closed, and read any update from the council.</p>
+
+        <h3>Why Do Some Reports Appear Outside Cheltenham?</h3>
+        <p>The list covers reports within 10km of the town centre, which includes Bishop's Cleeve, Churchdown and
+            parts of the neighbouring Tewkesbury and Cotswold districts.</p>
+
+        <h3>Can I See Older Reports?</h3>
+        <p>Yes &mdash; the <a href="/cheltenham-fix-my-street/history">report history page</a> keeps every report
+            since 21 June 2026.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="fms-data" type="application/json">{{ data.items | jsonify }}</script>
+<script src="/assets/scripts/fix-my-street.js"></script>
+{% include footer.html %}
