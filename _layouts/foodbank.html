@@ -43,7 +43,7 @@
 
         <h2>Contact Details</h2>
         <ul>
-            <li>Address: {{ fb.address | escape }} {% include pin.html lat=fb.lat lng=fb.lon label=fb.display_name %}</li>
+            <li>Address: {{ fb.address | escape }}</li>
             {% if fb.phone != "" %}<li>Tel: <a href="tel:{{ fb.phone | remove: ' ' }}">{{ fb.phone }}</a></li>{% endif %}
             {% if fb.secondary_phone != "" %}<li>Tel: <a href="tel:{{ fb.secondary_phone | remove: ' ' }}">{{ fb.secondary_phone }}</a></li>{% endif %}
             {% if fb.homepage != "" %}<li>Website: <a href="{{ fb.homepage }}" rel="noopener">{{ fb.homepage | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first }}</a></li>{% endif %}

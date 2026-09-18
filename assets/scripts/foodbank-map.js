@@ -17,8 +17,8 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    // Food banks get the standard pin, donation points a pin in the page's accent colour
-    // (as on the fuel prices map), and food bank locations an orange dot.
+    // Food banks and their locations get the standard pin; donation points get a pin in
+    // the page's accent colour (as on the fuel prices map).
     var accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#ca3393";
     var donationIcon = L.divIcon({
         className: "foodbank-map-pin",
@@ -32,7 +32,6 @@
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
     });
-    var LOCATION_COLOUR = "#b5561f";
 
     function escapeHtml(text) {
         var div = document.createElement("div");
@@ -48,14 +47,9 @@
         if (p.label) html += "<br>" + escapeHtml(p.label);
         if (p.href) html += '<br><a href="' + escapeHtml(p.href) + '">View details</a>';
 
-        var marker;
-        if (p.kind === "donation") {
-            marker = L.marker([p.lat, p.lon], { icon: donationIcon, zIndexOffset: 500 });
-        } else if (p.kind === "location") {
-            marker = L.circleMarker([p.lat, p.lon], { radius: 8, color: LOCATION_COLOUR, fillColor: LOCATION_COLOUR, fillOpacity: 0.8 });
-        } else {
-            marker = L.marker([p.lat, p.lon]);
-        }
+        var marker = p.kind === "donation"
+            ? L.marker([p.lat, p.lon], { icon: donationIcon, zIndexOffset: 500 })
+            : L.marker([p.lat, p.lon]);
         marker.addTo(map).bindPopup(html);
         bounds.push([p.lat, p.lon]);
     });
