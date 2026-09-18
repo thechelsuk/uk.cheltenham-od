@@ -27,11 +27,11 @@ Reports are grouped into plain-English categories such as potholes, trees and ve
 
 ### How Often Is It Updated?
 
-- Hourly. The feed only ever shows the newest handful of reports, so the history page builds up over time from each hourly check.
+- Hourly. The live feed only shows the newest handful of reports, so the history page is topped up from each hourly check.
 
 ### How Far Back Does the History Go?
 
-- The last 90 days of reports seen by this site, most recent first. It only includes reports published while the page has been tracking them, so it isn't a complete archive. Older reports remain viewable on FixMyStreet itself.
+- The last 90 days of reports within 10km of the town centre, most recent first. It covers reports sent to Gloucestershire County Council and Cheltenham Borough Council, so a few reports for neighbouring councils may be missing. Older reports remain viewable on FixMyStreet itself.
 
 ### Why Are Some Reports Outside Cheltenham?
 

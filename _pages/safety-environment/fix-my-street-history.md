@@ -9,8 +9,9 @@ permalink: /cheltenham-fix-my-street/history
 
 ## Fix My Street Report History
 
-Every report seen on this site over the last 90 days, most recent first. Click
+Street and highways problems reported within 10km of Cheltenham town centre over the last 90 days, most recent first. Click
 the column headings to sort, and click a report to see its status on
-FixMyStreet. This is not a complete archive: it only includes reports
-published while this page has been tracking them. For the newest reports and a
+FixMyStreet. It covers reports sent to Gloucestershire County Council and
+Cheltenham Borough Council, so a few reports for neighbouring councils may be
+missing. For the newest reports and a
 map, see the [latest reports page](/cheltenham-fix-my-street).
