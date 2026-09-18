@@ -9,13 +9,13 @@ date: 2026-09-18 22:00
 
 Cheltenham Open Data has updated its [Fix My Street page](/cheltenham-fix-my-street), turning a plain list of report links into a map and a sortable table of the latest street and highways problems reported around Cheltenham.
 
-Reports are grouped into plain-English categories such as potholes, trees and vegetation, footpaths and fly-tipping, so you can see at a glance what is being reported. There is also a new [report history page](/cheltenham-fix-my-street/history) with monthly and category counts of every report since 21 June 2026, so problems don't vanish from view after a day or two.
+Each report on the map is tagged with a plain-English category such as potholes, trees and vegetation, footpaths and fly-tipping, and the page shows which types are being reported most. There is also a new [report history page](/cheltenham-fix-my-street/history) with monthly and category counts of every report since 21 June 2026, so problems don't vanish from view after a day or two.
 
 ## FAQs
 
 ### What Does the Fix My Street Page Show?
 
-- The latest reports from [FixMyStreet](https://www.fixmystreet.com) within 10km of Cheltenham town centre, each with its title, category, date reported, a short description and a link to the original report. They are plotted on a map and listed in a table you can sort by any column.
+- The latest reports from [FixMyStreet](https://www.fixmystreet.com) within 10km of Cheltenham town centre, each with its title, date reported, a short description and a link to the original report. They are plotted on a map, where each pin also shows the report's category, and listed in a table you can sort by any column.
 
 ### What Is New?
 
