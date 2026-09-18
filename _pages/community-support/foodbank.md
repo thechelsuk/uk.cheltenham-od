@@ -1,9 +1,9 @@
 ---
 layout: foodbanks
 title: "Cheltenham Food Banks: Needed Items and Donation Points"
-seo: "Find food banks near Cheltenham, Gloucestershire, on a map, with what each one needs, what to avoid donating, where to drop donations off and how to contact them."
+seo: "What Cheltenham's food banks need right now, what not to donate and where to drop off, with a map, opening hours and contact details. Updated every few hours."
 permalink: /cheltenham-foodbank-needed-items
-description: "Food banks near Cheltenham, what they need and where to donate."
+description: "The food banks nearest Cheltenham, what each one needs and where to donate."
 type: "community"
 schema: foodbanks
 ---
