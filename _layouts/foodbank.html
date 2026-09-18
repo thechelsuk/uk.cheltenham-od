@@ -55,7 +55,9 @@
         {% if fb.locations.size > 0 or fb.donation_points.size > 0 %}
         <h2>Where to Donate and Get Help</h2>
         <div id="foodbank-map" style="height: 480px;" aria-label="Map of {{ fb.display_name | escape }} locations and donation points"></div>
-        <p><small>Blue pin: food bank. Orange dot: food bank location. Green dot: donation point.</small></p>
+        <p class="foodbank-map-legend">Blue pin: food bank.
+            <span class="foodbank-map-legend-donation">&#9679;</span> Pin in the page colour: donation point.
+            <span class="foodbank-map-legend-location">&#9679;</span> Orange dot: food bank location.</p>
         {% endif %}
 
         {% if fb.locations.size > 0 %}

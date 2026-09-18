@@ -11,8 +11,22 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    // Food banks get the standard pin; locations and donation points are coloured dots.
-    var DOT_COLOURS = { location: "#b5561f", donation: "#2a7f3f" };
+    // Food banks get the standard pin, donation points a pin in the page's accent colour
+    // (as on the fuel prices map), and food bank locations an orange dot.
+    var accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#ca3393";
+    var donationIcon = L.divIcon({
+        className: "foodbank-map-pin",
+        html:
+            '<svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">' +
+            '<path fill="' + accent + '" stroke="#000" stroke-opacity="0.3" ' +
+            'd="M12.5 0C5.6 0 0 5.6 0 12.5c0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z"/>' +
+            '<circle cx="12.5" cy="12.5" r="5.5" fill="#fff"/>' +
+            "</svg>",
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+    });
+    var LOCATION_COLOUR = "#b5561f";
 
     function escapeHtml(text) {
         var div = document.createElement("div");
@@ -32,9 +46,14 @@
         var html = "<strong>" + escapeHtml(name) + "</strong><br>" + escapeHtml(node.getAttribute("data-map-label") || "");
         if (href) html += '<br><a href="' + escapeHtml(href) + '">View details</a>';
 
-        var marker = DOT_COLOURS[kind]
-            ? L.circleMarker([lat, lon], { radius: 8, color: DOT_COLOURS[kind], fillColor: DOT_COLOURS[kind], fillOpacity: 0.8 })
-            : L.marker([lat, lon]);
+        var marker;
+        if (kind === "donation") {
+            marker = L.marker([lat, lon], { icon: donationIcon, zIndexOffset: 500 });
+        } else if (kind === "location") {
+            marker = L.circleMarker([lat, lon], { radius: 8, color: LOCATION_COLOUR, fillColor: LOCATION_COLOUR, fillOpacity: 0.8 });
+        } else {
+            marker = L.marker([lat, lon]);
+        }
         marker.addTo(map).bindPopup(html);
         bounds.push([lat, lon]);
     });
