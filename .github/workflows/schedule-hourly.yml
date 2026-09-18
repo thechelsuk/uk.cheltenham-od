@@ -39,16 +39,6 @@ jobs:
                     && mv /tmp/fix-my-street.xml _data/fix-my-street.xml \
                     || echo "::warning::Failed to fetch fix-my-street.xml, keeping existing data"
 
-            - name: Fetch latest FB Data
-              continue-on-error: true
-              run: |-
-                  curl -f "https://www.givefood.org.uk/api/2/foodbank/cheltenham/" | jq . > /tmp/foodbank-cheltenham.json \
-                    && mv /tmp/foodbank-cheltenham.json _data/foodbank-cheltenham.json \
-                    || echo "::warning::Failed to fetch foodbank-cheltenham.json, keeping existing data"
-                  curl -f "https://www.givefood.org.uk/api/2/foodbank/cheltenham-open-door/" | jq . > /tmp/foodbank-open-door.json \
-                    && mv /tmp/foodbank-open-door.json _data/foodbank-open-door.json \
-                    || echo "::warning::Failed to fetch foodbank-open-door.json, keeping existing data"
-
             - name: Set up Python
               uses: actions/setup-python@v7
               with:
@@ -78,6 +68,7 @@ jobs:
                   python '_python/planning.py' || echo "::warning::planning.py failed, continuing with other scripts"
                   python '_python/recycling.py' || echo "::warning::recycling.py failed, continuing with other scripts"
                   python '_python/fix-my-street.py' || echo "::warning::fix-my-street.py failed, continuing with other scripts"
+                  python '_python/foodbank.py' || echo "::warning::foodbank.py failed, continuing with other scripts"
                   python '_python/air-quality.py' || echo "::warning::air-quality.py failed, continuing with other scripts"
                   python _python/food-standards.py || echo "::warning::food-standards.py failed, continuing with other scripts"
                   python '_python/bus-data.py' || echo "::warning::bus-data.py failed, continuing with other scripts"

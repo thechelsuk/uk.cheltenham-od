@@ -1,0 +1,130 @@
+{% include header.html %}
+{% assign data = site.data["foodbank"] %}
+{% assign fb = data.foodbanks | where: "slug", page.foodbank | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-foodbank-needed-items">&lAarr; Back to Cheltenham Food Banks</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if fb %}
+        <h2>Items Needed</h2>
+        {% if fb.need.has_list %}
+        <p>List last changed {{ fb.need.found_iso | date: "%-d %B %Y" }}.</p>
+        <ul>
+            {% for item in fb.need.items %}
+            <li>{{ item | escape }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>This food bank hasn't published a list of needed items. Contact them or visit their website to find out how you can help.</p>
+        {% endif %}
+        {% if fb.shopping_list != "" and fb.shopping_list != fb.homepage %}
+        <p><a href="{{ fb.shopping_list }}" rel="noopener">See the food bank's own shopping list &rarr;</a></p>
+        {% endif %}
+
+        {% if fb.need.excess.size > 0 %}
+        <h2>Please Don't Donate</h2>
+        <p>The food bank says it has plenty of these items right now:</p>
+        <ul>
+            {% for item in fb.need.excess %}
+            <li>{{ item | escape }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <h2>Contact Details</h2>
+        <ul>
+            <li>Address: {{ fb.address | escape }}</li>
+            {% if fb.phone != "" %}<li>Tel: <a href="tel:{{ fb.phone | remove: ' ' }}">{{ fb.phone }}</a></li>{% endif %}
+            {% if fb.secondary_phone != "" %}<li>Tel: <a href="tel:{{ fb.secondary_phone | remove: ' ' }}">{{ fb.secondary_phone }}</a></li>{% endif %}
+            {% if fb.homepage != "" %}<li>Website: <a href="{{ fb.homepage }}" rel="noopener">{{ fb.homepage | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first }}</a></li>{% endif %}
+            {% if fb.email != "" %}<li>Email: <a href="mailto:{{ fb.email }}">{{ fb.email }}</a></li>{% endif %}
+            <li>Network: {{ fb.network | escape }}</li>
+            {% if fb.charity_number != "" %}<li>Charity number: <a href="{{ fb.charity_url }}" rel="noopener">{{ fb.charity_number }}</a></li>{% endif %}
+        </ul>
+
+        {% if fb.locations.size > 0 or fb.donation_points.size > 0 %}
+        <h2>Where to Donate and Get Help</h2>
+        <div id="foodbank-map" style="height: 480px;" aria-label="Map of {{ fb.display_name | escape }} locations and donation points"></div>
+        {% endif %}
+
+        {% if fb.locations.size > 0 %}
+        <h2>Locations</h2>
+        <div class="table-scroll">
+            <table class="foodbank-locations-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in fb.locations %}
+                    <tr>
+                        <td>{{ p.name | escape }}</td>
+                        <td>{{ p.address | escape }}</td>
+                        <td class="map">{% include pin.html lat=p.lat lng=p.lon label=p.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if fb.donation_points.size > 0 %}
+        <h2>Donation Points</h2>
+        <div class="table-scroll">
+            <table class="foodbank-donation-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Opening Hours</th>
+                        <th scope="col">Wheelchair Access</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in fb.donation_points %}
+                    <tr>
+                        <td>{% if p.url != "" %}<a href="{{ p.url }}" rel="noopener">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}</td>
+                        <td>{{ p.address | escape }}</td>
+                        <td>{% for line in p.opening_hours %}{{ line | escape }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
+                        <td>{% if p.wheelchair_accessible == true %}Yes{% elsif p.wheelchair_accessible == false %}No{% else %}Not known{% endif %}</td>
+                        <td class="map">{% include pin.html lat=p.lat lng=p.lon label=p.name flagged=true %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <p class="foodbank-attribution"><small>
+                Data from <a href="{{ fb.givefood_url }}">Give Food</a>, published under
+                <a href="{{ data.licence_url }}">{{ data.licence }}</a>. Last checked
+                {{ data.generated_at | date: "%-d %B %Y" }}. Lists of needed items are a guide, so check the food
+                bank's own shopping list before you donate.
+            </small></p>
+        {% else %}
+        <p>Details for this food bank are not available right now. Please check back shortly.</p>
+        {% endif %}
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="foodbank-data" type="application/json">
+[{"name": {{ fb.display_name | jsonify | replace: "</", "<\/" }}, "lat": {{ fb.lat }}, "lon": {{ fb.lon }}, "kind": "foodbank", "label": "Food bank"}{% for p in fb.locations %},{"name": {{ p.name | jsonify | replace: "</", "<\/" }}, "lat": {{ p.lat }}, "lon": {{ p.lon }}, "kind": "location", "label": {{ p.address | jsonify | replace: "</", "<\/" }}}{% endfor %}{% for p in fb.donation_points %},{"name": {{ p.name | jsonify | replace: "</", "<\/" }}, "lat": {{ p.lat }}, "lon": {{ p.lon }}, "kind": "donation", "label": {{ p.address | jsonify | replace: "</", "<\/" }}}{% endfor %}]
+</script>
+<script src="/assets/scripts/foodbank-map.js"></script>
+{% include footer.html %}

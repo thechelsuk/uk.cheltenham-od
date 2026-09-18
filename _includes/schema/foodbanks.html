@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Food Banks Near Cheltenham",
+  "description": "Food banks within ten miles of Cheltenham town centre, with the items they need, donation points and contact details, from Give Food.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['foodbank'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "{{ site.data['foodbank'].licence_url }}",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "isBasedOn": "{{ site.data['foodbank'].source_url }}",
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Food bank", "Network", "Distance", "Items requested", "Donation points", "Contact details"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I donate to a food bank in Cheltenham?", "acceptedAnswer": {"@type": "Answer", "text": "Open a food bank's page to see what it currently needs, what it has plenty of, and where you can drop donations off, including supermarket collection points and their opening hours."} },
+    { "@type": "Question", "name": "Where does this information come from?", "acceptedAnswer": {"@type": "Answer", "text": "Give Food, a registered charity that keeps the UK's largest public database of food banks and the items they ask for. Each food bank's page links back to the original entry."} },
+    { "@type": "Question", "name": "How often is it updated?", "acceptedAnswer": {"@type": "Answer", "text": "Every few hours. Food banks change what they need often, so the date each list last changed is shown next to it."} },
+    { "@type": "Question", "name": "Is the list of needed items complete?", "acceptedAnswer": {"@type": "Answer", "text": "Treat it as a guide. Food banks often have more detail than a simple list can show, so check the food bank's own shopping list before you buy."} },
+    { "@type": "Question", "name": "Do I need a referral to get help from a food bank?", "acceptedAnswer": {"@type": "Answer", "text": "Many food banks ask for a referral from a professional such as a GP, school or advice charity. Contact the food bank first to check how it works."} },
+    { "@type": "Question", "name": "Why are some food banks outside Cheltenham listed?", "acceptedAnswer": {"@type": "Answer", "text": "The table shows every food bank within ten miles of the town centre, so nearby places such as Gloucester and Tewkesbury are included."} }
+  ]
+}
+</script>
