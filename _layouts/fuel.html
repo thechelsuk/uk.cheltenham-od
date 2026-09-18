@@ -68,7 +68,7 @@
                         </td>
                         {% endfor %}
                         <td class="date" data-val="{{ s.as_of }}">{{ s.as_of }}</td>
-                        <td class="map">{% if s.lat and s.lon %}{% assign is_cheapest = false %}{% for c in s.cells %}{% if c.cheapest %}{% assign is_cheapest = true %}{% endif %}{% endfor %}{% include pin.html lat=s.lat lng=s.lon label=s.name cheapest=is_cheapest %}{% endif %}
+                        <td class="map">{% if s.lat and s.lon %}{% assign is_cheapest = false %}{% for c in s.cells %}{% if c.cheapest %}{% assign is_cheapest = true %}{% endif %}{% endfor %}{% include pin.html lat=s.lat lng=s.lon label=s.name flagged=is_cheapest %}{% endif %}
                         </td>
                         </tr>
                         {% endfor %}
