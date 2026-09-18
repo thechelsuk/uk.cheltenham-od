@@ -2,14 +2,14 @@
 layout: posts
 title: Updating Fix My Street With a Map and Report History
 type: cod
-description: Cheltenham Fix My Street reports now come with a map, category filter and a 90-day history.
-seo: See street problems reported around Cheltenham on a map, filter them by category, and browse the last 90 days of Fix My Street reports.
+description: Cheltenham Fix My Street reports now come with a map and a 90-day history.
+seo: See street problems reported around Cheltenham on a map and browse the last 90 days of Fix My Street reports.
 date: 2026-09-18 22:00
 ---
 
 Cheltenham Open Data has updated its [Fix My Street page](/cheltenham-fix-my-street), turning a plain list of report links into a map and a sortable table of the latest street and highways problems reported around Cheltenham.
 
-Reports are grouped into plain-English categories such as potholes, trees and vegetation, footpaths and fly-tipping, so you can filter the map and table together. There is also a new [report history page](/cheltenham-fix-my-street/history) that keeps the last 90 days of reports, so problems don't vanish from view after a day or two.
+Reports are grouped into plain-English categories such as potholes, trees and vegetation, footpaths and fly-tipping, so you can see at a glance what is being reported. There is also a new [report history page](/cheltenham-fix-my-street/history) that keeps the last 90 days of reports, so problems don't vanish from view after a day or two.
 
 ## FAQs
 
@@ -19,7 +19,7 @@ Reports are grouped into plain-English categories such as potholes, trees and ve
 
 ### What Is New?
 
-- A map of where reports are, a category filter that updates both the map and the table, cleaner report titles (council-generated titles like "TMC - Defects - Vegetation problem" now read "Highways defect: Vegetation"), a short description for each report, and a history page.
+- A map of where reports are, a Google Maps pin on every row, cleaner report titles (council-generated titles like "TMC - Defects - Vegetation problem" now read "Highways defect: Vegetation"), a short description for each report, and a history page.
 
 ### Where Does the Data Come From?
 

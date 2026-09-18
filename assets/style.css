@@ -2071,3 +2071,23 @@ pre {
 .fms-count {
     color: var(--text-muted);
 }
+
+/* ================================
+   Table pagination
+   ================================ */
+
+.paged-out {
+    display: none;
+}
+
+.table-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 1em;
+    margin: 1em 0;
+}
+
+.table-pagination-status {
+    color: var(--text-muted);
+}

@@ -18,7 +18,7 @@
         <p>
             {{ history.count }} reports in the last {{ history.retention_days }} days.
         </p>
-        {% include fix-my-street-table.html reports=history.records %}
+        {% include fix-my-street-table.html reports=history.records paginate=30 %}
         {% else %}
         <p>No reports have been recorded yet.</p>
         {% endif %}
@@ -28,5 +28,4 @@
             </small></p>
     </div>
 </div>
-<script src="/assets/scripts/fix-my-street.js"></script>
 {% include footer.html %}

@@ -23,7 +23,7 @@
 
         <div id="fms-map" style="height: 480px;" aria-label="Map of the latest street problems reported around Cheltenham"></div>
 
-        {% include fix-my-street-table.html reports=data.items groups=data.groups %}
+        {% include fix-my-street-table.html reports=data.items %}
         {% else %}
         <p>No recent reports are available right now. Please check back shortly.</p>
         {% endif %}

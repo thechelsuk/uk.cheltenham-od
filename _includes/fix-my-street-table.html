@@ -1,33 +1,23 @@
-{%- comment -%} Shared report table + filters. Pass `reports` (array); pass `groups` to show the category filter. {%- endcomment -%}
-{% if include.groups %}
-<div class="fms-filters">
-    <label for="fms-group-filter">Category:</label>
-    <select id="fms-group-filter">
-        <option value="">All categories</option>
-        {% for g in include.groups %}
-        <option value="{{ g.name | escape }}">{{ g.name | escape }} ({{ g.count }})</option>
-        {% endfor %}
-    </select>
-    <span id="fms-count" class="fms-count" aria-live="polite"></span>
-</div>
-{% endif %}
+{%- comment -%} Shared report table. Pass `reports` (array); pass `paginate` for a page size. {%- endcomment -%}
 <div class="table-scroll">
-    <table class="fms-table data-table" data-sortable>
+    <table class="fms-table data-table" data-sortable{% if include.paginate %} data-paginate="{{ include.paginate }}"{% endif %}>
         <thead>
             <tr>
                 <th scope="col" class="date">Reported</th>
                 <th scope="col" class="category">Category</th>
                 <th scope="col">Report</th>
                 <th scope="col">Details</th>
+                <th scope="col" class="map">Map</th>
             </tr>
         </thead>
         <tbody>
             {% for r in include.reports %}
-            <tr data-group="{{ r.group | escape }}">
+            <tr>
                 <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d %H:%M" }}</td>
                 <td class="category">{{ r.group | escape }}</td>
                 <td><a href="{{ r.url }}" rel="noopener">{{ r.title | escape }}</a></td>
                 <td>{{ r.description | escape }}</td>
+                <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
             </tr>
             {% endfor %}
         </tbody>
