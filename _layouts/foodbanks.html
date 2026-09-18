@@ -41,7 +41,7 @@
                 <tbody>
                     {% for fb in data.foodbanks %}
                     {% assign own = site.pages | where: "foodbank", fb.slug | first %}
-                    <tr data-map-lat="{{ fb.lat }}" data-map-lon="{{ fb.lon }}" data-map-name="{{ fb.display_name | escape }}" data-map-kind="foodbank" data-map-label="{{ fb.network | escape }} &middot; {{ fb.distance_mi }} miles" {% if own %}data-map-href="{{ own.url }}"{% endif %}>
+                    <tr>
                         <td>{% if own %}<a href="{{ own.url }}">{{ fb.display_name | escape }}</a>{% else %}<a href="{{ fb.homepage }}" rel="noopener">{{ fb.display_name | escape }}</a>{% endif %}</td>
                         <td>{{ fb.network | escape }}</td>
                         <td class="number">{{ fb.distance_mi }}</td>
@@ -96,5 +96,8 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="foodbank-data" type="application/json">
+[{% for fb in data.foodbanks %}{% assign own = site.pages | where: "foodbank", fb.slug | first %}{"name": {{ fb.display_name | jsonify | replace: "</", "<\/" }}, "lat": {{ fb.lat }}, "lon": {{ fb.lon }}, "kind": "foodbank", "label": {{ fb.network | append: ", " | append: fb.distance_mi | append: " miles" | jsonify | replace: "</", "<\/" }}, "href": {{ own.url | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+</script>
 <script src="/assets/scripts/foodbank-map.js"></script>
 {% include footer.html %}

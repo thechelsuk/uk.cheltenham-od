@@ -1,9 +1,15 @@
 (function () {
     var el = document.getElementById("foodbank-map");
-    if (!el || typeof L === "undefined") return;
+    var dataEl = document.getElementById("foodbank-data");
+    if (!el || !dataEl || typeof L === "undefined") return;
 
-    var nodes = document.querySelectorAll("[data-map-lat]");
-    if (!nodes.length) return;
+    var points = [];
+    try {
+        points = JSON.parse(dataEl.textContent) || [];
+    } catch (e) {
+        return;
+    }
+    if (!points.length) return;
 
     var map = L.map(el);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -35,27 +41,23 @@
     }
 
     var bounds = [];
-    Array.prototype.forEach.call(nodes, function (node) {
-        var lat = parseFloat(node.getAttribute("data-map-lat"));
-        var lon = parseFloat(node.getAttribute("data-map-lon"));
-        if (isNaN(lat) || isNaN(lon)) return;
+    points.forEach(function (p) {
+        if (p.lat == null || p.lon == null) return;
 
-        var kind = node.getAttribute("data-map-kind") || "foodbank";
-        var name = node.getAttribute("data-map-name");
-        var href = node.getAttribute("data-map-href");
-        var html = "<strong>" + escapeHtml(name) + "</strong><br>" + escapeHtml(node.getAttribute("data-map-label") || "");
-        if (href) html += '<br><a href="' + escapeHtml(href) + '">View details</a>';
+        var html = "<strong>" + escapeHtml(p.name) + "</strong>";
+        if (p.label) html += "<br>" + escapeHtml(p.label);
+        if (p.href) html += '<br><a href="' + escapeHtml(p.href) + '">View details</a>';
 
         var marker;
-        if (kind === "donation") {
-            marker = L.marker([lat, lon], { icon: donationIcon, zIndexOffset: 500 });
-        } else if (kind === "location") {
-            marker = L.circleMarker([lat, lon], { radius: 8, color: LOCATION_COLOUR, fillColor: LOCATION_COLOUR, fillOpacity: 0.8 });
+        if (p.kind === "donation") {
+            marker = L.marker([p.lat, p.lon], { icon: donationIcon, zIndexOffset: 500 });
+        } else if (p.kind === "location") {
+            marker = L.circleMarker([p.lat, p.lon], { radius: 8, color: LOCATION_COLOUR, fillColor: LOCATION_COLOUR, fillOpacity: 0.8 });
         } else {
-            marker = L.marker([lat, lon]);
+            marker = L.marker([p.lat, p.lon]);
         }
         marker.addTo(map).bindPopup(html);
-        bounds.push([lat, lon]);
+        bounds.push([p.lat, p.lon]);
     });
 
     if (bounds.length === 1) map.setView(bounds[0], 15);

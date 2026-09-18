@@ -8,7 +8,6 @@
             <p>{{page.description}}</p>
             <ul>
                 <li><a href="/cheltenham-foodbank-needed-items">&lAarr; Back to Cheltenham Food Banks</a></li>
-                {% if fb.homepage != "" %}<li><a href="{{ fb.homepage }}" rel="noopener">Food bank website &rarr;</a></li>{% endif %}
             </ul>
         </header>
 
@@ -44,9 +43,10 @@
 
         <h2>Contact Details</h2>
         <ul>
-            <li data-map-lat="{{ fb.lat }}" data-map-lon="{{ fb.lon }}" data-map-name="{{ fb.display_name | escape }}" data-map-kind="foodbank" data-map-label="Food bank">Address: {{ fb.address | escape }} {% include pin.html lat=fb.lat lng=fb.lon label=fb.display_name %}</li>
+            <li>Address: {{ fb.address | escape }} {% include pin.html lat=fb.lat lng=fb.lon label=fb.display_name %}</li>
             {% if fb.phone != "" %}<li>Tel: <a href="tel:{{ fb.phone | remove: ' ' }}">{{ fb.phone }}</a></li>{% endif %}
             {% if fb.secondary_phone != "" %}<li>Tel: <a href="tel:{{ fb.secondary_phone | remove: ' ' }}">{{ fb.secondary_phone }}</a></li>{% endif %}
+            {% if fb.homepage != "" %}<li>Website: <a href="{{ fb.homepage }}" rel="noopener">{{ fb.homepage | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first }}</a></li>{% endif %}
             {% if fb.email != "" %}<li>Email: <a href="mailto:{{ fb.email }}">{{ fb.email }}</a></li>{% endif %}
             <li>Network: {{ fb.network | escape }}</li>
             {% if fb.charity_number != "" %}<li>Charity number: <a href="{{ fb.charity_url }}" rel="noopener">{{ fb.charity_number }}</a></li>{% endif %}
@@ -55,9 +55,6 @@
         {% if fb.locations.size > 0 or fb.donation_points.size > 0 %}
         <h2>Where to Donate and Get Help</h2>
         <div id="foodbank-map" style="height: 480px;" aria-label="Map of {{ fb.display_name | escape }} locations and donation points"></div>
-        <p class="foodbank-map-legend">Blue pin: food bank.
-            <span class="foodbank-map-legend-donation">&#9679;</span> Pin in the page colour: donation point.
-            <span class="foodbank-map-legend-location">&#9679;</span> Orange dot: food bank location.</p>
         {% endif %}
 
         {% if fb.locations.size > 0 %}
@@ -73,7 +70,7 @@
                 </thead>
                 <tbody>
                     {% for p in fb.locations %}
-                    <tr data-map-lat="{{ p.lat }}" data-map-lon="{{ p.lon }}" data-map-name="{{ p.name | escape }}" data-map-kind="location" data-map-label="{{ p.address | escape }}">
+                    <tr>
                         <td>{{ p.name | escape }}</td>
                         <td>{{ p.address | escape }}</td>
                         <td class="map">{% include pin.html lat=p.lat lng=p.lon label=p.name %}</td>
@@ -99,7 +96,7 @@
                 </thead>
                 <tbody>
                     {% for p in fb.donation_points %}
-                    <tr data-map-lat="{{ p.lat }}" data-map-lon="{{ p.lon }}" data-map-name="{{ p.name | escape }}" data-map-kind="donation" data-map-label="{{ p.address | escape }}">
+                    <tr>
                         <td>{% if p.url != "" %}<a href="{{ p.url }}" rel="noopener">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}</td>
                         <td>{{ p.address | escape }}</td>
                         <td>{% for line in p.opening_hours %}{{ line | escape }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
@@ -126,5 +123,8 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="foodbank-data" type="application/json">
+[{"name": {{ fb.display_name | jsonify | replace: "</", "<\/" }}, "lat": {{ fb.lat }}, "lon": {{ fb.lon }}, "kind": "foodbank", "label": "Food bank"}{% for p in fb.locations %},{"name": {{ p.name | jsonify | replace: "</", "<\/" }}, "lat": {{ p.lat }}, "lon": {{ p.lon }}, "kind": "location", "label": {{ p.address | jsonify | replace: "</", "<\/" }}}{% endfor %}{% for p in fb.donation_points %},{"name": {{ p.name | jsonify | replace: "</", "<\/" }}, "lat": {{ p.lat }}, "lon": {{ p.lon }}, "kind": "donation", "label": {{ p.address | jsonify | replace: "</", "<\/" }}}{% endfor %}]
+</script>
 <script src="/assets/scripts/foodbank-map.js"></script>
 {% include footer.html %}
