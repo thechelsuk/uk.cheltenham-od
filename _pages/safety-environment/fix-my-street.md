@@ -41,6 +41,11 @@ over time but remain permanently viewable on FixMyStreet itself.
 
 <!-- fix_marker starts -->
 
+- Drain cover come out & sticking up, 18th September :- [10119440](https://www.fixmystreet.com/report/10119440)
+- Gate illegally locked, 18th September :- [10119229](https://www.fixmystreet.com/report/10119229)
+- Human waste and refuse, 18th September :- [10119228](https://www.fixmystreet.com/report/10119228)
+- Branches falling off Tree outside 177 arle road, 18th September :- [10119160](https://www.fixmystreet.com/report/10119160)
+- Road signs left on verge, also at end of Britannia Way, 18th September :- [10119140](https://www.fixmystreet.com/report/10119140)
 - Flying tipping, 18th September :- [10119068](https://www.fixmystreet.com/report/10119068)
 - 1m long pothole, 18th September :- [10119046](https://www.fixmystreet.com/report/10119046)
 - Pot hole in speed bump, 18th September :- [10118989](https://www.fixmystreet.com/report/10118989)
@@ -50,16 +55,11 @@ over time but remain permanently viewable on FixMyStreet itself.
 - Pavement is covered with holes and is a trip hazard. Roadside yellow grit bin is full of water and wine bottles., 18th September :- [10118219](https://www.fixmystreet.com/report/10118219)
 - TMC - Defects - Other problem, 18th September :- [10118296](https://www.fixmystreet.com/report/10118296)
 - TMC - Defects -other CW6 problem, 18th September :- [10118294](https://www.fixmystreet.com/report/10118294)
-- TMC - Defects - Kerbs and Channels problem, 18th September :- [10118108](https://www.fixmystreet.com/report/10118108)
 - TMC - Defects - Kerbs and Channels problem, 18th September :- [10118109](https://www.fixmystreet.com/report/10118109)
+- TMC - Defects - Kerbs and Channels problem, 18th September :- [10118108](https://www.fixmystreet.com/report/10118108)
 - Large dips and cracks in paving slabs very dangerous, 18th September :- [10117861](https://www.fixmystreet.com/report/10117861)
 - The drain is blocked problem, 18th September :- [10117905](https://www.fixmystreet.com/report/10117905)
 - TMC - Defects -CW6 Potholes  problem, 18th September :- [10117909](https://www.fixmystreet.com/report/10117909)
 - No give way to cycle lane sign, 18th September :- [10117792](https://www.fixmystreet.com/report/10117792)
-- TMC - Defects -CW6 Potholes  problem, 18th September :- [10117908](https://www.fixmystreet.com/report/10117908)
-- TMC - Defects -CW6 Potholes  problem, 18th September :- [10117907](https://www.fixmystreet.com/report/10117907)
-- Pothole forming in middle of road. Not easy to avoid, 18th September :- [10117506](https://www.fixmystreet.com/report/10117506)
-- DAMAGED and ABANDONED PAVEMENT., 18th September :- [10117464](https://www.fixmystreet.com/report/10117464)
-- Air ballon road works, 18th September :- [10117371](https://www.fixmystreet.com/report/10117371)
 
 <!-- fix_marker ends -->
