@@ -15,7 +15,6 @@ from email.utils import parsedate_to_datetime
 
 import helper
 
-HISTORY_RETENTION_DAYS = 90
 DESCRIPTION_MAX_CHARS = 220
 GEORSS = {"g": "http://www.georss.org/georss"}
 SOURCE_URL = "https://www.fixmystreet.com/"
@@ -108,6 +107,8 @@ def month_counts(records):
 
 
 def merge_history(existing, items, now_iso):
+    """Add new reports and refresh ones still in the feed. Nothing is ever
+    dropped, so the history only grows. Returns records newest-first."""
     by_id = {r["id"]: r for r in existing}
     for item in items:
         record = by_id.get(item["id"])
@@ -116,15 +117,7 @@ def merge_history(existing, items, now_iso):
             by_id[item["id"]] = record
         record.update(item)
         record["last_seen_iso"] = now_iso
-    cutoff = datetime.now(timezone.utc).timestamp() - HISTORY_RETENTION_DAYS * 86400
-    kept = []
-    for record in by_id.values():
-        try:
-            if datetime.fromisoformat(record["published_iso"]).timestamp() < cutoff:
-                continue
-        except (KeyError, ValueError):
-            pass
-        kept.append(record)
+    kept = list(by_id.values())
     kept.sort(key=lambda r: r.get("published_iso", ""), reverse=True)
     return kept
 
@@ -162,10 +155,9 @@ if __name__ == "__main__":
         "items": items,
     }))
     helper.write_json(history_path, payload(now, {
-        "retention_days": HISTORY_RETENTION_DAYS,
         "count": len(records),
         "groups": group_counts(records),
         "by_month": month_counts(records),
         "records": records,
     }))
-    print(f"Fix My Street: {len(items)} latest reports, {len(records)} in {HISTORY_RETENTION_DAYS}-day history")
+    print(f"Fix My Street: {len(items)} latest reports, {len(records)} in history")

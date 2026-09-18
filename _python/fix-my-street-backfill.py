@@ -4,7 +4,7 @@ Open311 API, since the hourly RSS feed only ever shows the newest 20 reports.
 
 Fetches every report sent to Gloucestershire County Council (highways) and
 Cheltenham Borough Council (litter, fly-tipping, graffiti, parks) over the
-history window, keeps those within 10km of the town centre, and merges them
+last 90 days, keeps those within 10km of the town centre, and merges them
 into the history log alongside whatever the hourly job has already recorded.
 Reports sent to neighbouring district councils (Tewkesbury, Cotswold) aren't
 covered, so those only appear from when the hourly job first sees them.
@@ -35,6 +35,7 @@ OPEN311_URL = "https://www.fixmystreet.com/open311/v2/requests.xml"
 AUTHORITIES = {"Gloucestershire County Council": 2226, "Cheltenham Borough Council": 2326}
 CENTRE = (51.897991, -2.071308)
 RADIUS_KM = 10
+BACKFILL_DAYS = 90
 PAGE_CAP = 1000
 PAUSE_SECONDS = 2
 HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk)"}
@@ -98,7 +99,7 @@ if __name__ == "__main__":
 
     now = datetime.now(timezone.utc)
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-    start = now - timedelta(days=fms.HISTORY_RETENTION_DAYS)
+    start = now - timedelta(days=BACKFILL_DAYS)
 
     history_path = data_dir / "fix-my-street-history.json"
     existing = json.loads(history_path.read_text()).get("records", []) if history_path.exists() else []
@@ -122,10 +123,9 @@ if __name__ == "__main__":
             added.append(record)
         time.sleep(PAUSE_SECONDS)
 
-    # An empty merge just prunes anything outside the window and re-sorts.
+    # An empty merge just re-sorts the combined records.
     records = fms.merge_history(existing + added, [], now_iso)
     helper.write_json(history_path, fms.payload(now, {
-        "retention_days": fms.HISTORY_RETENTION_DAYS,
         "count": len(records),
         "groups": fms.group_counts(records),
         "by_month": fms.month_counts(records),
