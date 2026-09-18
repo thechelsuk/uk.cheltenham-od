@@ -31,7 +31,7 @@ Reports are grouped into plain-English categories such as potholes, trees and ve
 
 ### How Far Back Does the History Go?
 
-- Every report since 21 June 2026 within 10km of the town centre, growing as new reports arrive, summarised by month and by category on the history page. If you need the full record, get in touch and we can provide it. It covers reports sent to Gloucestershire County Council and Cheltenham Borough Council, so a few reports for neighbouring councils may be missing. Older reports remain viewable on FixMyStreet itself.
+- Every report since 21 June 2026 within 10km of the town centre, growing as new reports arrive, summarised by month and by category on the history page. It covers reports sent to Gloucestershire County Council and Cheltenham Borough Council, so a few reports for neighbouring councils may be missing. Older reports remain viewable on FixMyStreet itself.
 
 ### Why Are Some Reports Outside Cheltenham?
 
