@@ -98,6 +98,15 @@ def group_counts(items):
     return [{"name": name, "count": n} for name, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))]
 
 
+def month_counts(records):
+    counts = {}
+    for record in records:
+        month = (record.get("published_iso") or "")[:7]
+        if month:
+            counts[month] = counts.get(month, 0) + 1
+    return [{"month": month, "count": counts[month]} for month in sorted(counts)]
+
+
 def merge_history(existing, items, now_iso):
     by_id = {r["id"]: r for r in existing}
     for item in items:
@@ -156,6 +165,7 @@ if __name__ == "__main__":
         "retention_days": HISTORY_RETENTION_DAYS,
         "count": len(records),
         "groups": group_counts(records),
+        "by_month": month_counts(records),
         "records": records,
     }))
     print(f"Fix My Street: {len(items)} latest reports, {len(records)} in {HISTORY_RETENTION_DAYS}-day history")

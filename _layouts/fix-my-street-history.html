@@ -15,10 +15,70 @@
         {{ content }}
 
         {% if history.records.size > 0 %}
+        <h2>Reports by Month</h2>
+        <canvas id="fms-history-chart" height="120" aria-label="Bar chart of Fix My Street reports per month around Cheltenham"></canvas>
+        <p><small>The first and last months are part-months, covering only the days within the 90-day window.</small></p>
+
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Month</th>
+                        <th scope="col" class="number">Reports</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign months = history.by_month | reverse %}
+                    {% for m in months %}
+                    <tr>
+                        <td class="date">{{ m.month }}</td>
+                        <td class="number">{{ m.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Reports by Category</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col" class="number">Reports</th>
+                        <th scope="col" class="number">Share (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for g in history.groups %}
+                    <tr>
+                        <td>{{ g.name | escape }}</td>
+                        <td class="number">{{ g.count }}</td>
+                        <td class="number">{{ g.count | times: 100.0 | divided_by: history.count | round: 1 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Download the Data</h2>
+        {% capture history_json %}{{ history | jsonify }}{% endcapture %}
+        {% assign history_mb = history_json.size | divided_by: 1048576.0 | round: 1 %}
         <p>
-            {{ history.count }} reports in the last {{ history.retention_days }} days.
+            {{ history.count }} reports, from {{ history.records.last.published_iso | date: "%-d %B %Y" }} to
+            {{ history.records.first.published_iso | date: "%-d %B %Y" }}.
         </p>
-        {% include fix-my-street-table.html reports=history.records paginate=30 %}
+        <p>
+            <a href="/feeds/fix-my-street-history.json" download>Download fix-my-street-history.json</a>
+            (about {{ history_mb }} MB)
+        </p>
+        <p>Each report in the file includes:</p>
+        <ul>
+            <li>the report title and a short description</li>
+            <li>the date and time it was reported</li>
+            <li>its latitude and longitude</li>
+            <li>a link to the original report on FixMyStreet</li>
+        </ul>
         {% else %}
         <p>No reports have been recorded yet.</p>
         {% endif %}
@@ -28,4 +88,7 @@
             </small></p>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="fms-history-months" type="application/json">{{ history.by_month | jsonify }}</script>
+<script src="/assets/scripts/fix-my-street-history-chart.js"></script>
 {% include footer.html %}

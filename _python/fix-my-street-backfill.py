@@ -128,6 +128,7 @@ if __name__ == "__main__":
         "retention_days": fms.HISTORY_RETENTION_DAYS,
         "count": len(records),
         "groups": fms.group_counts(records),
+        "by_month": fms.month_counts(records),
         "records": records,
     }))
     print(f"Added {len(added)} reports; history now holds {len(records)}")

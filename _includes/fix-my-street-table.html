@@ -1,10 +1,9 @@
-{%- comment -%} Shared report table. Pass `reports` (array); pass `paginate` for a page size. {%- endcomment -%}
+{%- comment -%} Shared report table. Pass `reports` (array). {%- endcomment -%}
 <div class="table-scroll">
-    <table class="fms-table data-table" data-sortable{% if include.paginate %} data-paginate="{{ include.paginate }}"{% endif %}>
+    <table class="fms-table data-table" data-sortable>
         <thead>
             <tr>
                 <th scope="col" class="date">Reported</th>
-                <th scope="col" class="category">Category</th>
                 <th scope="col">Report</th>
                 <th scope="col">Details</th>
                 <th scope="col" class="map">Map</th>
@@ -14,7 +13,6 @@
             {% for r in include.reports %}
             <tr>
                 <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d %H:%M" }}</td>
-                <td class="category">{{ r.group | escape }}</td>
                 <td><a href="{{ r.url }}" rel="noopener">{{ r.title | escape }}</a></td>
                 <td>{{ r.description | escape }}</td>
                 <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
