@@ -3,7 +3,7 @@ layout: foodbanks
 title: "Cheltenham Food Banks: Needed Items and Donation Points"
 seo: "What Cheltenham's food banks need right now, what not to donate and where to drop off, with a map, opening hours and contact details. Updated every few hours."
 permalink: /cheltenham-foodbank-needed-items
-description: "The food banks nearest Cheltenham, what each one needs and where to donate."
+description: "The food banks nearest Cheltenham on a map, with the items each one needs, what not to donate, donation points and opening hours, and how to get in touch."
 type: "community"
 schema: foodbanks
 ---
