@@ -1,0 +1,33 @@
+{%- comment -%} Shared report table + filters. Pass `reports` (array) and `label` (e.g. "reports"). {%- endcomment -%}
+<div class="fms-filters">
+    <label for="fms-group-filter">Category:</label>
+    <select id="fms-group-filter">
+        <option value="">All categories</option>
+        {% for g in include.groups %}
+        <option value="{{ g.name | escape }}">{{ g.name | escape }} ({{ g.count }})</option>
+        {% endfor %}
+    </select>
+    <span id="fms-count" class="fms-count" aria-live="polite"></span>
+</div>
+<div class="table-scroll">
+    <table class="fms-table data-table" data-sortable>
+        <thead>
+            <tr>
+                <th scope="col" class="date">Reported</th>
+                <th scope="col" class="category">Category</th>
+                <th scope="col">Report</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in include.reports %}
+            <tr data-group="{{ r.group | escape }}">
+                <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%-d %b %Y %H:%M" }}</td>
+                <td class="category">{{ r.group | escape }}</td>
+                <td><a href="{{ r.url }}" rel="noopener">{{ r.title | escape }}</a></td>
+                <td>{{ r.description | escape }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Fix My Street Reports",
+  "description": "The latest street and highways problems reported in Cheltenham and the surrounding area via FixMyStreet.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['fix-my-street'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Report title", "Category", "Date reported", "Location", "Description"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Who fixes problems reported here?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the problem. Gloucestershire County Council looks after roads, pavements, street lights, road signs, drains and public footpaths. Cheltenham Borough Council handles litter, fly-tipping, graffiti and parks. FixMyStreet sends each report to the right authority for you."} },
+    { "@type": "Question", "name": "How do I report a problem?", "acceptedAnswer": {"@type": "Answer", "text": "Visit FixMyStreet, enter a postcode or street name, drop a pin on the map, and add a short description and a photo if you can."} },
+    { "@type": "Question", "name": "How do I check the status of a report?", "acceptedAnswer": {"@type": "Answer", "text": "Click any report in the list to open it on FixMyStreet, where you can see whether it is open, investigating, fixed or closed, and read any update from the council."} },
+    { "@type": "Question", "name": "Why do some reports appear outside Cheltenham?", "acceptedAnswer": {"@type": "Answer", "text": "The list covers reports within 10km of the town centre, which includes Bishop's Cleeve, Churchdown and parts of the neighbouring Tewkesbury and Cotswold districts."} },
+    { "@type": "Question", "name": "Can I see older reports?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the report history page keeps the last 90 days of reports."} }
+  ]
+}
+</script>

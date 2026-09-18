@@ -2055,3 +2055,19 @@ pre {
     /* override the global img border, which otherwise boxes every map tile and marker */
     border: none;
 }
+
+/* ================================
+   Fix My Street
+   ================================ */
+
+.fms-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 1em;
+    margin: 1em 0;
+}
+
+.fms-count {
+    color: var(--text-muted);
+}

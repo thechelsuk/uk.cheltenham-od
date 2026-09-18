@@ -1,0 +1,32 @@
+{% include header.html %}
+{% assign history = site.data["fix-my-street-history"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-fix-my-street">&lAarr; Back to Cheltenham Fix My Street</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if history.records.size > 0 %}
+        <p>
+            {{ history.count }} reports in the last {{ history.retention_days }} days.
+        </p>
+        {% include fix-my-street-table.html reports=history.records groups=history.groups %}
+        {% else %}
+        <p>No reports have been recorded yet.</p>
+        {% endif %}
+        <p class="fms-attribution"><small>
+                Reports from <a href="{{ history.source_url }}">FixMyStreet</a>, run by mySociety, within 10km of
+                Cheltenham town centre. Report text is written by members of the public.
+            </small></p>
+    </div>
+</div>
+<script src="/assets/scripts/fix-my-street.js"></script>
+{% include footer.html %}
