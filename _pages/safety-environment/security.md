@@ -15,7 +15,14 @@ schema: security
 
 ##  MI5 Threat Level
 
-Given the Proximity to GCHQ
+GCHQ (Government Communications Headquarters) is based in Cheltenham. One of the
+UK's three intelligence and security agencies, alongside MI5 and MI6, it works
+from a circular headquarters in Benhall known locally as the Doughnut, and
+employs thousands of people in and around the town.
+
+The national threat level is set for the whole UK, so it doesn't measure a
+threat to Cheltenham specifically. We track it here because of that local
+connection, and to show how it has changed over time.
 
 ### {{ data.level_title | escape }}
 
@@ -37,7 +44,6 @@ Given the Proximity to GCHQ
                 <th scope="col" class="date">Changed</th>
                 <th scope="col">National Threat Level</th>
                 <th scope="col">Northern Ireland Threat Level</th>
-                <th scope="col">Notes</th>
             </tr>
         </thead>
         <tbody>
@@ -46,7 +52,6 @@ Given the Proximity to GCHQ
                 <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d" }}</td>
                 <td>{{ r.level_title | escape }}</td>
                 <td>{{ r.northern_ireland_level | capitalize | escape }}</td>
-                <td>{% if r.note %}{{ r.note | escape }}{% else %}&mdash;{% endif %}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -63,7 +68,6 @@ Given the Proximity to GCHQ
                 <th scope="col">International Terrorism</th>
                 <th scope="col">Northern Ireland-Related, in Northern Ireland</th>
                 <th scope="col">Northern Ireland-Related, in Great Britain</th>
-                <th scope="col">Notes</th>
             </tr>
         </thead>
         <tbody>
@@ -73,7 +77,6 @@ Given the Proximity to GCHQ
                 <td>{{ r.level_title | escape }}</td>
                 <td>{% if r.northern_ireland_level != "" %}{{ r.northern_ireland_level | capitalize | escape }}{% else %}Not reported{% endif %}</td>
                 <td>{% if r.great_britain_level != "" %}{{ r.great_britain_level | capitalize | escape }}{% else %}Not reported{% endif %}</td>
-                <td>{% if r.note %}{{ r.note | escape }}{% else %}&mdash;{% endif %}</td>
             </tr>
             {% endfor %}
         </tbody>
