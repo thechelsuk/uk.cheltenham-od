@@ -1,4 +1,5 @@
 {% assign ae = site.data["nhs-ae"] %}
+{% assign hospitals = site.data["nhs-hospitals"] %}
 {% assign oldest = ae.months | last %}
 {% assign newest = ae.months | first %}
 <script type="application/ld+json">
@@ -51,7 +52,7 @@
       "name": "Which Hospitals Have an A&E?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The NHS directory lists an A&E at {% include nhs-ae-sites.html %}. It doesn't record opening hours, so check NHS 111 or the hospital before you travel."
+        "text": "The NHS directory lists an A&E at {{ hospitals.ae_hospitals_display }}. It doesn't record opening hours, so check NHS 111 or the hospital before you travel."
       }
     },
     {

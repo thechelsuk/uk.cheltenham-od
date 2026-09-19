@@ -73,6 +73,13 @@ def display(n):
     return f"{n:,}"
 
 
+def period_display(period):
+    """'2026-08' -> 'August 2026', for prose. Layouts print this rather than
+    building it from the period in Liquid."""
+    year, month = period.split("-")
+    return f"{list(MONTH_NUMBERS)[int(month) - 1].title()} {year}"
+
+
 def parse_month(csv_text):
     """One monthly provider CSV -> this trust's record, or None if it isn't an A&E provider file."""
     reader = csv.DictReader(io.StringIO(csv_text.lstrip("﻿")))
@@ -140,9 +147,14 @@ def main():
             else:
                 print(f"  Skipped {url} (no {ORG_CODE} row / not a provider file)")
 
-    if not fetched and existing:
+    # Months saved before period_display existed get it added on the next run.
+    needs_backfill = any("period_display" not in m for m in months.values())
+    if not fetched and existing and not needs_backfill:
         print("No new NHS England files; leaving _data/nhs-ae.json alone")
         return
+
+    for m in months.values():
+        m["period_display"] = period_display(m["period"])
 
     kept = sorted(months.values(), key=lambda m: m["period"], reverse=True)[:MONTHS_KEPT]
     output = {

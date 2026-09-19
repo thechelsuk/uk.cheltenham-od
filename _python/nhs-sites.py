@@ -76,6 +76,12 @@ def distance_miles(lat, lon):
     return 3958.8 * 2 * math.asin(math.sqrt(a))
 
 
+def join_names(names):
+    """['A', 'B', 'C'] -> 'A, B and C'. Layouts print this display string
+    rather than joining names in Liquid."""
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1] if names else ""
+
+
 def address(code):
     loc = ods_get(f"organisations/{code}")["Organisation"]["GeoLoc"]["Location"]
     lines = [loc.get(k) for k in ("AddrLn1", "AddrLn2", "AddrLn3", "Town", "County")]
@@ -122,6 +128,7 @@ def main():
             "Source: Office for National Statistics licensed under the Open Government Licence v3.0."),
         "trust": {"name": TRUST_NAME, "code": TRUST_CODE},
         "radius_miles": RADIUS_MILES,
+        "ae_hospitals_display": join_names([h["name"] for h in items if h["has_ae"]]),
         "hospitals": items,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

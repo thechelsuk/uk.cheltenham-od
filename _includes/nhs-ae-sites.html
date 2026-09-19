@@ -1,3 +1,0 @@
-{%- comment -%}Prints the hospitals with an A&E listed as "A, B and C" — shared by the page FAQ and its schema so the two stay in sync.{%- endcomment -%}
-{%- assign ae_hospitals = site.data["nhs-hospitals"].hospitals | where: "has_ae", true -%}
-{%- for h in ae_hospitals -%}{{ h.name }}{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{%- endfor -%}

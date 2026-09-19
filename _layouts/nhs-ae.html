@@ -18,7 +18,7 @@
         {{ content }}
 
         <h2>Latest A&amp;E Figures</h2>
-        <p>In {{ latest.period | append: "-01" | date: "%B %Y" }}, {{ latest.within_4hrs_display }} of A&amp;E attendances
+        <p>In {{ latest.period_display }}, {{ latest.within_4hrs_display }} of A&amp;E attendances
             at {{ ae.trust.name }} were seen, admitted, transferred or discharged within four hours. There were
             {{ latest.attendances_display }} attendances in the month, and {{ latest.dta_12hrs_display }} patients waited
             12 hours or more between a decision to admit them and being admitted.</p>
@@ -151,7 +151,7 @@
             Hospital and Gloucestershire Royal Hospital, so they can't be split by site.</p>
 
         <h3>Which Hospitals Have an A&amp;E?</h3>
-        <p>The NHS directory lists an A&amp;E at {% include nhs-ae-sites.html %}. It doesn't record opening hours, so
+        <p>The NHS directory lists an A&amp;E at {{ hospitals.ae_hospitals_display }}. It doesn't record opening hours, so
             check <a href="https://111.nhs.uk/">NHS 111</a> or the hospital before you travel.</p>
 
         <h3>How Often Are the Figures Updated?</h3>
