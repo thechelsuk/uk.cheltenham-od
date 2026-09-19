@@ -1,0 +1,204 @@
+{% include header.html %}
+{% assign data = site.data["rail-times"] %}
+{% assign usage = site.data["station-usage"] %}
+{% assign dep_count = data.departures | size %}
+{% assign arr_count = data.arrivals | size %}
+{% assign departures_url = "https://www.nationalrail.co.uk/live-trains/departures/cheltenham-spa/" %}
+{% assign arrivals_url = "https://www.nationalrail.co.uk/live-trains/arrivals/cheltenham-spa/" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>Station code {{ data.station.crs | default: "CNM" }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <div id="rail-times" data-generated="{{ data.generated_at }}">
+            <blockquote id="rail-times-stale" hidden>
+                <p><strong>These times may be out of date.</strong> They were last updated <span></span> ago. Check
+                    National Rail for live <a href="{{ departures_url }}">departures</a> and
+                    <a href="{{ arrivals_url }}">arrivals</a>, or the station screens when you arrive.
+                </p>
+            </blockquote>
+
+            {% if data.messages.size > 0 %}
+            <h2>Station Messages</h2>
+            {% for message in data.messages %}
+            <blockquote>
+                <p>{{ message }}</p>
+            </blockquote>
+            {% endfor %}
+            {% endif %}
+
+            {% if data %}
+            <p>Times last updated {{ data.generated_at | date: "%Y-%m-%d %H:%M" }}.</p>
+            {% endif %}
+
+            <h2>Next Departures</h2>
+            {% if dep_count == 0 %}
+            <blockquote>
+                <p>Please check
+                    <a href="{{ departures_url }}">National Rail for the latest departures from Cheltenham Spa</a>.
+                </p>
+            </blockquote>
+            {% else %}
+            <div class="table-scroll">
+                <table class="rail-departures-table data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="date">Scheduled</th>
+                            <th scope="col" class="date">Expected</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Calling At</th>
+                            <th scope="col">Platform</th>
+                            <th scope="col">Operator</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in data.departures %}
+                        <tr>
+                            <td class="date" data-val="{{ s.scheduled }}">{{ s.scheduled | date: "%Y-%m-%d %H:%M" }}
+                            </td>
+                            <td class="date" data-val="{{ s.expected }}">{% if s.expected %}{{ s.expected | date:
+                                "%Y-%m-%d %H:%M" }}{% else %}&ndash;{% endif %}</td>
+                            <td>{{ s.destination }}</td>
+                            <td>{{ s.calling_at | join: ", " }}</td>
+                            <td>{{ s.platform | default: "TBC" }}</td>
+                            <td>{{ s.operator }}</td>
+                            <td>{{ s.status }}{% if s.reason != blank %}<br><small>{{ s.reason }}</small>{% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            <h2>Next Arrivals</h2>
+            {% if arr_count == 0 %}
+            <blockquote>
+                <p>Please check
+                    <a href="{{ arrivals_url }}">National Rail for the latest arrivals at Cheltenham Spa</a>.
+                </p>
+            </blockquote>
+            {% else %}
+            <div class="table-scroll">
+                <table class="rail-arrivals-table data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="date">Scheduled</th>
+                            <th scope="col" class="date">Expected</th>
+                            <th scope="col">From</th>
+                            <th scope="col">Platform</th>
+                            <th scope="col">Operator</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in data.arrivals %}
+                        <tr>
+                            <td class="date" data-val="{{ s.scheduled }}">{{ s.scheduled | date: "%Y-%m-%d %H:%M" }}
+                            </td>
+                            <td class="date" data-val="{{ s.expected }}">{% if s.expected %}{{ s.expected | date:
+                                "%Y-%m-%d %H:%M" }}{% else %}&ndash;{% endif %}</td>
+                            <td>{{ s.origin }}</td>
+                            <td>{{ s.platform | default: "TBC" }}</td>
+                            <td>{{ s.operator }}</td>
+                            <td>{{ s.status }}{% if s.reason != blank %}<br><small>{{ s.reason }}</small>{% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if usage %}
+        <h2>Station Usage</h2>
+        <p>The Office of Rail and Road estimates that {{ usage.station.name }} recorded
+            {{ usage.station.entries_exits_display.all }} passenger entries and exits for the year
+            {{ usage.period }}, ranking it number {{ usage.station.rank_display }} in Great Britain. The busiest journey to or
+            from the station is with {{ usage.station.main_destination }}, at
+            {{ usage.station.main_destination_journeys_display }} journeys.
+        </p>
+
+        <div class="table-scroll">
+            <table class="station-usage-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Measure</th>
+                        <th scope="col" class="number">Passengers, {{ usage.period }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Entries and exits, all tickets</td>
+                        <td class="number">{{ usage.station.entries_exits_display.all }}</td>
+                    </tr>
+                    <tr>
+                        <td>Entries and exits, full price tickets</td>
+                        <td class="number">{{ usage.station.entries_exits_display.full_price }}</td>
+                    </tr>
+                    <tr>
+                        <td>Entries and exits, reduced price tickets</td>
+                        <td class="number">{{ usage.station.entries_exits_display.reduced_price }}</td>
+                    </tr>
+                    <tr>
+                        <td>Entries and exits, season tickets</td>
+                        <td class="number">{{ usage.station.entries_exits_display.season }}</td>
+                    </tr>
+                    <tr>
+                        <td>Interchanges</td>
+                        <td class="number">{{ usage.station.interchanges_display }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <p class="rail-times-attribution"><small>
+                Train times from <a
+                    href="{{ data.source_url | default: 'https://raildata.org.uk/' }}">{{ data.source | default: 'National Rail Enquiries, via the Rail Data Marketplace' }}</a>.
+                {% if usage %}Passenger figures from the <a href="{{ usage.source_url }}">{{ usage.source }}</a>.{%
+                endif %}
+                Cheltenham Open Data is independent and is not endorsed by National Rail or the Rail Delivery Group.
+                Times can change at short notice, so check the station screens when you arrive at the station.
+            </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Which Trains Does This Page Show?</h3>
+        <p>The next departures and arrivals at Cheltenham Spa station, up to 10 of each. Trains that have already
+            left or arrived aren't shown.</p>
+
+        <h3>How Often Are the Train Times Updated?</h3>
+        <p>Regularly throughout the day, and the time of the latest update is shown above the tables. Delays and
+            platform changes can happen at short notice, so check
+            National Rail for live <a href="{{ departures_url }}">departures</a> and
+            <a href="{{ arrivals_url }}">arrivals</a> before you travel, and the station screens when you arrive at
+            the station.
+        </p>
+
+        <h3>What Do Scheduled and Expected Mean?</h3>
+        <p>Scheduled is the timetabled time. Expected is when National Rail now expects the train to depart or
+            arrive, which is later than the schedule when a train is running late.</p>
+
+        <h3>What Does Calling at Mean?</h3>
+        <p>The stations a train stops at after leaving Cheltenham Spa, in order.</p>
+
+        <h3>Where Does the Train Data Come From?</h3>
+        <p>Train times come from National Rail Enquiries' live departure boards. Passenger figures are estimates
+            from the Office of Rail and Road.</p>
+    </div>
+</div>
+
+<script src="/assets/scripts/rail-times.js"></script>
+{% include footer.html %}

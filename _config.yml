@@ -128,10 +128,51 @@ navigation_header:
     link: /cheltenham-cycle-routes
     description: "Dedicated cycle tracks and on-road lanes near Cheltenham, including the Honeybourne Line and NCN 41."
     group: "Getting Around"
+  - name: Cheltenham Train Times
+    link: /cheltenham-train-times
+    description: "Next departures and arrivals at Cheltenham Spa station."
+    group: "Getting Around"
+
+  # Things to Do
+  - name: Cheltenham Events
+    link: /cheltenham-events
+    description: "Events and Activities in Cheltenham and Gloucestershire"
+    group: "Things to Do"
+  - name: Cheltenham Sports &amp; Clubs
+    link: /cheltenham-sports
+    description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
+    group: "Things to Do"
+    children:
+      - name: Cheltenham Town FC
+        link: /cheltenham-sports/cheltenham-town-fc
+        description: "Cheltenham Town FC fixtures, results and getting to the ground."
+      - name: Cheltenham Parkrun
+        link: /cheltenham-sports/parkrun
+        description: "Cheltenham parkrun events and results."
+  - name: Cheltenham Points of Interest
+    link: /cheltenham-points-of-interest
+    description: "Local points of interests in and around Cheltenham."
+    group: "Things to Do"
+  - name: Cheltenham Play Parks
+    link: /cheltenham-play-parks
+    description: "Map of children's play parks and playgrounds in and around Cheltenham."
+    group: "Things to Do"
+  - name: Cheltenham Places to Stay
+    link: /staying-in-cheltenham
+    description: "Local hotels and guest houses in Cheltenham."
+    group: "Things to Do"
+  - name: Cheltenham Public Holidays
+    link: /cheltenham-public-holidays
+    description: "Confirmed public holidays."
+    group: "Things to Do"
+  - name: Cheltenham Festivals
+    link: /festivals
+    description: "Cheltenham's year-round festival calendar including Literature, Racing, Jazz, Science, and Music."
+    group: "Things to Do"
   - name: Cheltenham Public Toilets
     link: /cheltenham-public-toilets
     description: "Local public toilet with mapped locations and information."
-    group: "Getting Around"
+    group: "Things to Do"
 
   # Home & Property
   - name: Cheltenham House Prices
@@ -234,43 +275,6 @@ navigation_header:
       - name: Cheltenham Power Cuts History
         link: /cheltenham-power-cuts/history
         description: "Historical log of power cuts recorded against Cheltenham postcodes."
-
-  # Things to Do
-  - name: Cheltenham Events
-    link: /cheltenham-events
-    description: "Events and Activities in Cheltenham and Gloucestershire"
-    group: "Things to Do"
-  - name: Cheltenham Sports &amp; Clubs
-    link: /cheltenham-sports
-    description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
-    group: "Things to Do"
-    children:
-      - name: Cheltenham Town FC
-        link: /cheltenham-sports/cheltenham-town-fc
-        description: "Cheltenham Town FC fixtures, results and getting to the ground."
-      - name: Cheltenham Parkrun
-        link: /cheltenham-sports/parkrun
-        description: "Cheltenham parkrun events and results."
-  - name: Cheltenham Points of Interest
-    link: /cheltenham-points-of-interest
-    description: "Local points of interests in and around Cheltenham."
-    group: "Things to Do"
-  - name: Cheltenham Play Parks
-    link: /cheltenham-play-parks
-    description: "Map of children's play parks and playgrounds in and around Cheltenham."
-    group: "Things to Do"
-  - name: Cheltenham Places to Stay
-    link: /staying-in-cheltenham
-    description: "Local hotels and guest houses in Cheltenham."
-    group: "Things to Do"
-  - name: Cheltenham Public Holidays
-    link: /cheltenham-public-holidays
-    description: "Confirmed public holidays."
-    group: "Things to Do"
-  - name: Cheltenham Festivals
-    link: /festivals
-    description: "Cheltenham's year-round festival calendar including Literature, Racing, Jazz, Science, and Music."
-    group: "Things to Do"
 
   # Community & Support
   - name: Cheltenham Classifieds
@@ -476,6 +480,8 @@ footer_pages:
       link: /cheltenham-sports
     - name: Cheltenham Third Spaces
       link: /cheltenham-third-spaces
+    - name: Cheltenham Train Times
+      link: /cheltenham-train-times
     - name: Cheltenham Weather Forecast
       link: /cheltenham-10-day-weather-forecast
 
