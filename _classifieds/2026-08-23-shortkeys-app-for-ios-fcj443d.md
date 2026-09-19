@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: community
+type: about
 title: "ShortKeys - Multi-line Text Expansion/Replacement"
 category: digital
 company: "thechelsuk"

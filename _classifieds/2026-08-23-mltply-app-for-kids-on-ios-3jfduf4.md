@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: community
+type: about
 title: "Mltply - the Maths Chat Buddy for Kids"
 category: digital
 company: "thechelsuk"

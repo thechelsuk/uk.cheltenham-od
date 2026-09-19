@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: community
+type: about
 title: "Tomoz - Tomorrow's Calendar Today"
 category: digital
 company: "thechelsuk"
