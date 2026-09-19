@@ -4,7 +4,7 @@ title: Adding Play Parks
 type: cod
 description: A map of children's play parks and playgrounds within 10 miles of Cheltenham town centre, sourced from OpenStreetMap.
 seo: Cheltenham play parks — a map and list of children's playgrounds within 10 miles of the town centre, from OpenStreetMap.
-date: 2026-09-19 16:00
+date: 2026-09-19 14:00
 ---
 
 Cheltenham Open Data has published a new [play parks page](/cheltenham-play-parks), mapping children's playgrounds in and around Cheltenham.

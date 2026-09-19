@@ -54,6 +54,7 @@ jobs:
                   python '_python/toilets.py' || echo "::warning::toilets.py failed, continuing with other scripts"
                   python '_python/weather.py' || echo "::warning::weather.py failed, continuing with other scripts"
                   python '_python/cheltenham-town-fc.py' || echo "::warning::cheltenham-town-fc.py failed, continuing with other scripts"
+                  python '_python/roadworks.py' || echo "::warning::roadworks.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit

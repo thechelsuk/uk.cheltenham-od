@@ -1,0 +1,63 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Roadworks",
+  "description": "Planned roadworks and closures on the motorways and major A roads within 10 miles of Cheltenham, with dates, expected delay and location, from National Highways.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['roadworks'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Roads", "Description of works", "Start date", "End date", "Expected delay", "Distance from town centre", "Location"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which Roads Does This Page Cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The motorways and major A roads managed by National Highways within 10 miles of Cheltenham, which means the M5, A417, A40 and A46. Roadworks on local streets and side roads aren't included."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Far Ahead Are Roadworks Listed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Planned works are published about two weeks ahead. Emergency repairs and incidents aren't included, so check National Highways travel updates on the day for live conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why Isn't My Street Listed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Works on local roads are managed by Gloucestershire County Council and utility companies. See the council's roadworks map for those."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Does Expected Delay Mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is National Highways' own estimate of how much longer a typical journey will take because of the works, for example \"Slight (less than 10 mins)\" or \"Moderate (10 - 30 mins)\"."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where Does the Roadworks Data Come From?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "National Highways publishes its planned roadworks weekly as open data. Works that have finished are removed from this page each day."
+      }
+    }
+  ]
+}
+</script>

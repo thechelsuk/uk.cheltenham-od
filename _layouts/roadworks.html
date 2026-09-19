@@ -1,0 +1,97 @@
+{% include header.html %}
+{% assign data = site.data["roadworks"] %}
+{% assign count = data.items | size %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{% if count == 1 %}1 planned works{% else %}{{ count }} planned works{% endif %} within {{ data.radius_miles }} miles of Cheltenham</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <div id="roadworks-map" style="height: 480px; border-radius: 8px;" aria-label="Map of planned roadworks on major roads near Cheltenham"></div>
+
+        <h2>Planned Roadworks</h2>
+        {% if count == 0 %}
+        <p>There are no planned roadworks on the M5, A417, A40 or A46 within {{ data.radius_miles }} miles of Cheltenham
+            at the moment.</p>
+        {% else %}
+        <div class="table-scroll">
+            <table class="roadworks-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Roads</th>
+                        <th scope="col">Works</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="date">Starts</th>
+                        <th scope="col" class="date">Ends</th>
+                        <th scope="col">Expected Delay</th>
+                        <th scope="col" class="number">Miles from Town Centre</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in data.items %}
+                    {% assign road_label = w.roads | join: ", " %}
+                    <tr>
+                        <td data-val="{{ w.roads | first }}">{{ road_label }}</td>
+                        <td>{{ w.description }}</td>
+                        <td>{% if w.in_progress %}In progress{% else %}Planned{% endif %}</td>
+                        <td class="date" data-val="{{ w.start }}">{{ w.start | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td class="date" data-val="{{ w.end }}">{{ w.end | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td>{{ w.expected_delay }}</td>
+                        <td class="number" data-val="{{ w.distance_miles }}">{{ w.distance_miles }}</td>
+                        <td class="map">{% include pin.html lat=w.lat lng=w.lon label=road_label %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <p class="roadworks-attribution"><small>
+                Roadworks data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the
+                <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{{ data.licence }}</a>.
+                {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+                Markers show the centre point of each works, which may stretch further along the road. Dates and
+                closures can change at short notice, so check signage and live traffic updates before you travel.
+            </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Which Roads Does This Page Cover?</h3>
+        <p>The motorways and major A roads managed by National Highways within {{ data.radius_miles }} miles of
+            Cheltenham, which means the M5, A417, A40 and A46. Roadworks on local streets and side roads aren't
+            included.</p>
+
+        <h3>How Far Ahead Are Roadworks Listed?</h3>
+        <p>Planned works are published about two weeks ahead. Emergency repairs and incidents aren't included, so
+            check <a href="https://nationalhighways.co.uk/travel-updates/">National Highways travel updates</a> on the
+            day for live conditions.</p>
+
+        <h3>Why Isn't My Street Listed?</h3>
+        <p>Works on local roads are managed by Gloucestershire County Council and utility companies. See the
+            council's <a href="https://www.gloucestershire.gov.uk/roads/roadworks">roadworks map</a> for those.</p>
+
+        <h3>What Does Expected Delay Mean?</h3>
+        <p>It is National Highways' own estimate of how much longer a typical journey will take because of the works,
+            for example "Slight (less than 10 mins)" or "Moderate (10 - 30 mins)".</p>
+
+        <h3>Where Does the Roadworks Data Come From?</h3>
+        <p>National Highways publishes its planned roadworks weekly as open data. Works that have finished are removed
+            from this page each day.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="roadworks-data" type="application/json">{{ data.items | jsonify }}</script>
+<script src="/assets/scripts/roadworks-map.js"></script>
+{% include footer.html %}

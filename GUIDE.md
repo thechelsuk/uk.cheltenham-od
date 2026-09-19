@@ -58,6 +58,7 @@ if __name__ == "__main__":
 Notes:
 
 - Store `generated_at`, `source` and `source_url` (and `licence` where one genuinely applies) in the JSON itself — layouts read these back for the attribution line and JSON-LD `dateModified`/`license` fields, rather than hardcoding them in HTML.
+- Store any date or time value in the JSON as ISO 8601 — `2026-09-21T21:00` (or `2026-09-21` when there's no meaningful time) — not as a pre-formatted display string, so layouts can sort on it and format it in one consistent way (see the date rule in section 3).
 - If a source has no formal open licence (an unofficial feed, a free APIs own terms), say so plainly rather than guessing OGL/ODbL. See `_data/sources.json` for the site-wide audit of what's actually confirmed.
 - If you need coordinates from an Ordnance Survey National Grid reference (Easting/Northing) rather than lat/lon, convert with `pyproj` — see `_python/schools.py`.
 - Add the script to the right `.github/workflows/schedule-*.yml` based on how often the source actually changes: `schedule-monthly.yml` for things like school/parkrun locations, `schedule-daily.yml` for fixtures/prices/weather, `schedule-hourly.yml`/`schedule-minutely.yml` for anything closer to real-time. Don't default to a tight schedule just because you can — match it to the source.
@@ -144,6 +145,7 @@ Standard skeleton:
 - `data-sortable` on a `<table>` is picked up generically by `assets/scripts/table-sort.js` — no per-page JS needed for sorting.
 - Any numeric column — counts, prices, distances, years-as-quantities — gets `class="number"` on both the `<th>` and every `<td>` in that column, so it right-aligns instead of sitting left like text (see `assets/style.css`'s `.data-table .number` rule). Applies even to a single-number-column table like a simple `Year` / `Total` pair.
 - A postcode column gets `class="postcode"` on both `<th>` and `<td>` so it doesn't wrap mid-postcode (`.data-table .postcode` is one of a few columns — `.date`, `.type`, `.category`, `.rating-date`, `.listing` — the site already sets to `white-space: nowrap`).
+- **Dates and times shown as data are always `YYYY-MM-DD HH:MM`** (24-hour clock), or `YYYY-MM-DD` when there's no meaningful time — e.g. `2026-09-21 21:00`, never `21 Sep 2026`, `Sep 21` or `21/09/2026`. This covers every date/time cell in a table and every date in a map popup. In Liquid use `{{ item.start | date: "%Y-%m-%d %H:%M" }}` (`"%Y-%m-%d"` for date-only), put the raw ISO value from the JSON in `data-val` on the `<td>` so `table-sort.js` sorts chronologically rather than alphabetically, and give the `<th>` and `<td>`s `class="date"` so the value doesn't wrap. The prose "Last updated" line in the attribution `<small>` is a sentence rather than a data value and stays in the skeleton's `%-d %B %Y` form. See `_layouts/roadworks.html` for a worked example.
 - Pull page-specific values through front matter (`page.phase`, `page.max_miles`) rather than hardcoding them in the layout, if the same layout serves more than one page.
 
 ## 4. The map script (`assets/scripts/<name>-map.js`)
@@ -189,6 +191,8 @@ Reference examples, roughly in order of complexity:
 - `assets/scripts/third-spaces-map.js` — markers plus a separate `-centre` JSON script tag for the initial view
 - `assets/scripts/school-catchment-map.js` — the complex end: computes a Voronoi diagram client-side with `d3-delaunay` (loaded from unpkg alongside Leaflet), colours cells with golden-angle hue rotation so it scales to any number of points, reads its exclusion radius from a `data-max-miles` attribute on the map `<div>` so one script serves multiple pages
 
+Dates in a popup follow the same `YYYY-MM-DD HH:MM` rule as the table (section 3). Don't use `toLocaleString`/`toLocaleDateString` — they produce `21 Sept 2026` and vary by browser. Reformat the ISO string from the JSON instead, e.g. `iso.replace("T", " ")` for `2026-09-21T21:00` (see `assets/scripts/roadworks-map.js`).
+
 Load Leaflet (and `d3-delaunay` if needed) from unpkg in the layout, pinned to an exact version, before the page's own script tag.
 
 ## 5. Structured data (`schema:` front matter + `_includes/schema/<name>.html`)
@@ -224,6 +228,7 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump — reread every sentence as a visitor would: no implementation/data-decision notes ("hand-curated because OSM coverage is patchy") leaking into published copy
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
 - [ ] Every numeric table column has `class="number"` on its `<th>` and `<td>`s (right-aligned), and any postcode column has `class="postcode"` (no mid-postcode wrapping)
+- [ ] Every date/time cell in a table and every date in a map popup is `YYYY-MM-DD HH:MM` (or `YYYY-MM-DD` with no time), with the ISO value in `data-val` and `class="date"` on the `<th>`/`<td>`s
 - [ ] `assets/scripts/<name>-map.js` if there's a map, following the standard IIFE shape
 - [ ] Linked from the relevant parent/sibling pages
 - [ ] Decided whether this is a headline main-menu item or a sub-page of an existing one — if it's a genuine new topic, add it to `navigation_header`/`footer_columns` in `_config.yml`; if it's a filtered view or a natural sub-topic of an existing page (like `/cheltenham-employment-history` under `/about-cheltenham`, or `/cheltenham-listed-buildings` under `/about-cheltenham`), link it inline from the parent page's prose instead and leave the nav/footer alone

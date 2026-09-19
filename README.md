@@ -10,6 +10,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Cheapest local fuel prices](https://cheltenham-od.uk/cheltenham-fuel-prices), updated daily
 - [Bus routes serving Cheltenham](https://cheltenham-od.uk/cheltenham-bus-data) and their BODS publishing status, plus [live disruptions](https://cheltenham-od.uk/feeds/bus-disruptions.xml)
 - [EV charging point locations](https://cheltenham-od.uk/cheltenham-ev-charging)
+- [Planned roadworks and closures](https://cheltenham-od.uk/cheltenham-roadworks) on the M5, A417, A40 and A46
 - [Broadband and internet speed coverage by ward](https://cheltenham-od.uk/cheltenham-broadband-internet-speeds)
 
 ### Parcels & post
