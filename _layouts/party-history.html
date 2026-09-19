@@ -1,0 +1,95 @@
+{% include header.html %}
+{% assign data = site.data["election-results"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-politics">&larr; Back to Cheltenham Politics</a></li>
+                <li>{{ data.items | size }} general elections</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Results by Party, 1918 to 2024</h2>
+        <div class="table-scroll">
+            <table class="party-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Election</th>
+                        <th scope="col">Winning Party</th>
+                        <th scope="col" class="number">Electorate</th>
+                        <th scope="col" class="number">Turnout</th>
+                        {% for g in data.groups %}
+                        <th scope="col" class="number">{{ g.name }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data.items %}
+                    <tr>
+                        <td class="date" data-val="{{ i.date }}">{{ i.date | date: "%Y-%m-%d" }}</td>
+                        <td>{{ i.winner }}</td>
+                        <td class="number" data-val="{{ i.electorate }}">{{ i.electorate_display }}</td>
+                        <td class="number" data-val="{{ i.turnout_pct }}">{{ i.turnout_display }}</td>
+                        {% for p in i.parties %}
+                        <td class="number" data-val="{{ p.votes | default: 0 }}">{% if p.votes %}{{ p.votes_display }} ({{ p.share_display }}){% else %}&ndash;{% endif %}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="party-history-attribution"><small>
+                Data from the House of Commons Library:
+                <a href="{{ data.source_url }}">general election results from 1918 to 2019</a> and
+                <a href="{{ data.source_url_2024 }}">general election 2024 results</a>. Contains Parliamentary
+                information licensed under the
+                <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+                A dash means the party did not stand.
+            </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Why Do Party Names Change Over Time?</h3>
+        <p>Parties merge, split and rename. The Liberal Party contested Cheltenham until 1979. In 1983 and 1987 it
+            stood as part of the SDP&ndash;Liberal Alliance, and since 1992 as the Liberal Democrats, which were
+            formed from a merger of the Liberals and the Social Democratic Party. The Conservative Party's full name
+            is the Conservative and Unionist Party. The winning party is shown under the name it used at the time,
+            and each party's votes stay in one column so you can follow them across the years.</p>
+
+        <h3>What Does the Others Column Include?</h3>
+        <p>Every candidate who wasn't standing for the Conservatives, the Liberals or Labour: smaller parties, such as
+            the Greens, and independents. The source data doesn't break this group down, so individual smaller
+            parties can't be shown separately.</p>
+
+        <h3>Why Does 1945 Show Others as the Winner?</h3>
+        <p>In 1945 the Others group recorded the most votes. It can include more than one candidate, so the source
+            data can't tell us which party the winner belonged to.</p>
+
+        <h3>Are By-elections Included?</h3>
+        <p>No. The table covers general elections only, when the whole country votes at once.</p>
+
+        <h3>Have Cheltenham's Boundaries Changed?</h3>
+        <p>Yes, several times since 1918, including for the 2024 general election. Each row shows the results for
+            the constituency as it was drawn at the time, so earlier and later figures aren't a like-for-like
+            comparison.</p>
+
+        <h3>How Is Turnout Calculated?</h3>
+        <p>Turnout is the number of valid votes divided by the electorate, so rejected ballots aren't counted.</p>
+
+        <h3>Can the Figures Contain Errors?</h3>
+        <p>The House of Commons Library draws its figures from several sources and notes that they may contain errors. For each election it records the votes and vote share for each party, the electorate and the turnout. If you spot something that looks wrong, please <a href="/contact">get in touch</a>.</p>
+
+        <h3>Where Does the Election Data Come From?</h3>
+        <p>The House of Commons Library's general election datasets, published under the Open Parliament Licence.
+            For the current MP and the most recent elections, see <a href="/cheltenham-politics">Cheltenham
+            politics</a>.</p>
+    </div>
+</div>
+{% include footer.html %}

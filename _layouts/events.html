@@ -1,5 +1,5 @@
 {% include header.html %}
-{% assign items = site.events %}
+{% assign items = site.events | sort: "date" | reverse %}
 
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">

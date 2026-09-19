@@ -1,0 +1,41 @@
+{% assign mp = site.data["politics"].current_mp %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who Is the MP for Cheltenham?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ mp.name }} ({{ mp.party }}) has been the MP for Cheltenham since {{ mp.since | date: "%-d %B %Y" }}."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Do I Contact My MP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your MP's UK Parliament page lists how to get in touch. You can also write to them through WriteToThem, a free service that sends your message to your MP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Is the Difference Between an MP and a Councillor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An MP represents the constituency in the House of Commons and works on national laws and issues. Councillors are elected to local councils, such as Cheltenham Borough Council, and make decisions on local services such as planning and waste collection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where Does the Politics Data Come From?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The UK Parliament Members API, refreshed monthly, under the Open Parliament Licence. The party history page uses House of Commons Library election datasets."
+      }
+    }
+  ]
+}
+</script>

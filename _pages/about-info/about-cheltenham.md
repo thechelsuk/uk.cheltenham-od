@@ -18,6 +18,8 @@ Today Cheltenham's economy leans heavily on technology and cyber security, [educ
 
 This page pulls together the town's key population and [employment statistics](/cheltenham-employment-history), sourced directly from the Office for National Statistics, and refreshed automatically as new figures are published.
 
+Wondering who represents the town in Parliament? Our [politics page](/cheltenham-politics) shows Cheltenham's current MP and the result of every general election since 2010, and the [party history](/cheltenham-politics/party-history) goes back to 1918.
+
 ## Cheltenham Through the Years
 
 | Year | Event |

@@ -1,0 +1,112 @@
+{% include header.html %}
+{% assign data = site.data["politics"] %}
+{% assign mp = data.current_mp %}
+{% assign latest = data.elections | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/about-cheltenham">&larr; Back to All About Cheltenham</a></li>
+                <li><a href="/cheltenham-politics/party-history">Election history since 1918 &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Cheltenham's Current MP</h2>
+        <p>{{ mp.synopsis }}</p>
+
+        <div class="table-scroll">
+            <table class="mp-details-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">MP</th>
+                        <th scope="col">Party</th>
+                        <th scope="col">Constituency</th>
+                        <th scope="col" class="date">MP Since</th>
+                        <th scope="col" class="number">Majority ({{ latest.date | date: "%Y" }})</th>
+                        <th scope="col" class="number">Turnout ({{ latest.date | date: "%Y" }})</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ mp.name }}</td>
+                        <td>{{ mp.party }}</td>
+                        <td>{{ mp.constituency }}</td>
+                        <td class="date">{{ mp.since | date: "%Y-%m-%d" }}</td>
+                        <td class="number">{{ latest.majority_display }}</td>
+                        <td class="number">{{ latest.turnout_display }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><a href="{{ mp.profile_url }}">{{ mp.name }} on the UK Parliament website</a> has contact details and
+            more about their work in Parliament.</p>
+
+        <h2>MPs for Cheltenham Since 2010</h2>
+        <p>Results before 2024 are for the previous Cheltenham constituency, as its boundaries were redrawn for the
+            2024 general election.</p>
+
+        <div class="table-scroll">
+            <table class="mp-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Election</th>
+                        <th scope="col">MP</th>
+                        <th scope="col">Party</th>
+                        <th scope="col">Result</th>
+                        <th scope="col" class="number">Majority</th>
+                        <th scope="col" class="number">Turnout</th>
+                        <th scope="col" class="number">Electorate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in data.elections %}
+                    <tr>
+                        <td class="date" data-val="{{ e.date }}">{{ e.date | date: "%Y-%m-%d" }}</td>
+                        <td>{{ e.mp }}</td>
+                        <td>{{ e.party }}</td>
+                        <td>{{ e.party }} {% if e.result contains "Gain" %}gain{% elsif e.result contains "Hold" %}hold{% else %}{{ e.result }}{% endif %}</td>
+                        <td class="number" data-val="{{ e.majority }}">{{ e.majority_display }}</td>
+                        <td class="number" data-val="{{ e.turnout_pct }}">{{ e.turnout_display }}</td>
+                        <td class="number" data-val="{{ e.electorate }}">{{ e.electorate_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="politics-attribution"><small>
+                Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>. Contains Parliamentary
+                information licensed under the
+                <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+                {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Who Is the MP for Cheltenham?</h3>
+        <p>{{ mp.name }} ({{ mp.party }}) has been the MP for Cheltenham since
+            {{ mp.since | date: "%-d %B %Y" }}.</p>
+
+        <h3>How Do I Contact My MP?</h3>
+        <p>Your MP's <a href="{{ mp.profile_url }}">UK Parliament page</a> lists how to get in touch. You can also
+            write to them through <a href="https://www.writetothem.com/">WriteToThem</a>, a free service that
+            sends your message to your MP.</p>
+
+        <h3>What Is the Difference Between an MP and a Councillor?</h3>
+        <p>An MP represents the constituency in the House of Commons and works on national laws and issues.
+            Councillors are elected to local councils, such as Cheltenham Borough Council, and make decisions on
+            local services such as planning and waste collection.</p>
+
+        <h3>Where Does the Politics Data Come From?</h3>
+        <p>The UK Parliament Members API, refreshed monthly, under the Open Parliament Licence. The party history
+            page uses House of Commons Library election datasets.</p>
+    </div>
+</div>
+{% include footer.html %}

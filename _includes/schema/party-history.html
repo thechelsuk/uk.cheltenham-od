@@ -1,0 +1,88 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham General Election Results Since 1918",
+  "description": "Every general election in Cheltenham since 1918, with the winning party, electorate, turnout and votes for the Conservatives, Liberals and Liberal Democrats, Labour and other candidates, from the House of Commons Library.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['election-results'].generated_at }}",
+  "temporalCoverage": "1918/2024",
+  "isAccessibleForFree": true,
+  "license": "https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Election date", "Winning party", "Electorate", "Turnout", "Conservative votes", "Liberal votes", "Labour votes", "Other votes"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why Do Party Names Change Over Time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parties merge, split and rename. The Liberal Party contested Cheltenham until 1979. In 1983 and 1987 it stood as part of the SDP–Liberal Alliance, and since 1992 as the Liberal Democrats, which were formed from a merger of the Liberals and the Social Democratic Party. The Conservative Party's full name is the Conservative and Unionist Party. The winning party is shown under the name it used at the time, and each party's votes stay in one column so you can follow them across the years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Does the Others Column Include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every candidate who wasn't standing for the Conservatives, the Liberals or Labour: smaller parties, such as the Greens, and independents. The source data doesn't break this group down, so individual smaller parties can't be shown separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why Does 1945 Show Others as the Winner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In 1945 the Others group recorded the most votes. It can include more than one candidate, so the source data can't tell us which party the winner belonged to."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are By-elections Included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The table covers general elections only, when the whole country votes at once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Have Cheltenham's Boundaries Changed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, several times since 1918, including for the 2024 general election. Each row shows the results for the constituency as it was drawn at the time, so earlier and later figures aren't a like-for-like comparison."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Is Turnout Calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Turnout is the number of valid votes divided by the electorate, so rejected ballots aren't counted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the Figures Contain Errors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The House of Commons Library draws its figures from several sources and notes that they may contain errors. For each election it records the votes and vote share for each party, the electorate and the turnout. If you spot something that looks wrong, please get in touch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where Does the Election Data Come From?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The House of Commons Library's general election datasets, published under the Open Parliament Licence. For the current MP and the most recent elections, see Cheltenham politics."
+      }
+    }
+  ]
+}
+</script>
