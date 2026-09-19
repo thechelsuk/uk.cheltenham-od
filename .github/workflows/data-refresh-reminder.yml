@@ -31,6 +31,7 @@ jobs:
           - [ ] **Schools** — download the latest GIAS extract from the [GIAS downloads page](https://get-information-schools.service.gov.uk/Downloads), save as `_data-sources/edubasealldata.csv`, then run `_python/local/process-schools-data.py`.
           - [ ] **Ofcom Connected Nations** (mobile + fixed broadband coverage) — check the [Connected Nations and infrastructure reports hub](https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-and-infrastructure-reports) for a newer release, save the mobile coverage CSV and run `_python/local/process-mobile-coverage.py`, and save the fixed broadband coverage CSV and run `_python/local/process-wardband.py`.
           - [ ] **Ward boundaries** — check the [ONS Open Geography Portal](https://geoportal.statistics.gov.uk/) for a newer "Wards Boundaries UK BGC" release, save as `_data-sources/wards.geojson`, then re-run `_python/local/process-wardband.py`.
+          - [ ] **Election results** — only needed after a general election, so skip this item otherwise. Check the House of Commons Library's [elections data](https://commonslibrary.parliament.uk/tag/elections-data/) for a results dataset for the new election, save its by-candidate CSV in `_data-sources/`, run `_python/politics.py` first (it supplies the electorate), then update `_python/local/process-election-results.py` to read the new file and re-run it.
 
           Close this issue once done — a new one opens automatically next month.
           EOF
