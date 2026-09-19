@@ -1,9 +1,9 @@
 ---
 layout: page
 title: "Government Security Alerts"
-seo: "Government Alerts and Statuses for the Cheltenham, gloucestershire area checked daily"
+seo: "The current UK terrorism threat level, days since it last changed and every change since 2006, with what each level means. Tracked for Cheltenham, checked daily."
 permalink: /cheltenham-security-alerts
-description: "Government Alerts and Statuses for the Cheltenham area"
+description: "The UK terrorism threat level and how it has changed since 2006, with what each level means and how the government responds."
 type: "environment"
 schema: security
 ---
