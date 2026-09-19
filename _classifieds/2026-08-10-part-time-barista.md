@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: community
+type: about
 title: "Example Part-Time Barista"
 category: jobs
 company: "The Brewery Quarter Coffee Co."

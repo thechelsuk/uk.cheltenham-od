@@ -51,6 +51,7 @@ jobs:
                   python _python/housing-supply.py || echo "::warning::housing-supply.py failed, continuing with other scripts"
                   python _python/station-usage.py || echo "::warning::station-usage.py failed, continuing with other scripts"
                   python _python/politics.py || echo "::warning::politics.py failed, continuing with other scripts"
+                  python _python/nhs-sites.py || echo "::warning::nhs-sites.py failed, continuing with other scripts"
 
             - name: Commit and push if it changed
               id: commit

@@ -1,0 +1,76 @@
+{% assign ae = site.data["nhs-ae"] %}
+{% assign hospitals = site.data["nhs-hospitals"] %}
+{% assign oldest = ae.months | last %}
+{% assign newest = ae.months | first %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "{{ ae.trust.name }} A&E Waiting Times",
+  "description": "Monthly A&E attendances, four-hour performance, 12-hour waits from decision to admit and emergency admissions for {{ ae.trust.name }}, which runs Cheltenham General Hospital, from NHS England, with a map of the trust's hospitals near Cheltenham.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ ae.generated_at }}",
+  "temporalCoverage": "{{ oldest.period }}/{{ newest.period }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Month", "A&E attendances", "Seen within 4 hours", "Attendances over 4 hours", "Waited 12 hours or more from decision to admit", "Emergency admissions", "Hospital name", "Address", "Location"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What Does Seen Within Four Hours Mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the share of A&E attendances where the patient was admitted, transferred or discharged within four hours of arriving."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Is a 12-Hour Wait From Decision to Admit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A patient who needed a hospital bed waited 12 hours or more between the decision to admit them and being admitted. The table counts these each month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the Figures Cover Cheltenham General Hospital on Its Own?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. NHS England publishes the figures for the whole of {{ ae.trust.name }}, which runs Cheltenham General Hospital and Gloucestershire Royal Hospital, so they can't be split by site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Hospitals Have an A&E?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The NHS directory lists an A&E at {{ hospitals.ae_hospitals_display }}. It doesn't record opening hours, so check NHS 111 or the hospital before you travel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How Often Are the Figures Updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NHS England publishes them on the second Thursday of each month, covering the previous month, and this page checks for new figures every day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where Does the Data Come From?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The A&E figures come from NHS England's monthly A&E attendances and emergency admissions statistics, and the hospitals from the NHS Organisation Data Service. Both are published under the Open Government Licence."
+      }
+    }
+  ]
+}
+</script>

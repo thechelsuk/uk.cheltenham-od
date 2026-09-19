@@ -1,6 +1,6 @@
 ---
 layout: advert
-type: community
+type: about
 title: "Cybaa - DNS, Domain and Website Security Made Simple"
 category: digital
 company: "Cybaa"

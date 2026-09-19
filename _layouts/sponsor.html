@@ -30,11 +30,11 @@
 
         {% assign cas_items = site.navigation_header | where: "group", "Community & Support" %}
         {% assign cas_count = cas_items.size | plus: 1 %}
-        {% for item in cas_items %}{% if item.children %}{% for child in item.children %}{% unless child.link == "/submission" %}{% assign cas_count = cas_count | plus: 1 %}{% endunless %}{% endfor %}{% endif %}{% endfor %}
+        {% for item in cas_items %}{% if item.children %}{% assign cas_count = cas_count | plus: item.children.size %}{% endif %}{% endfor %}
 
         {% assign aai_items = site.navigation_header | where: "group", "About & Info" %}
         {% assign aai_count = aai_items.size | plus: 1 %}
-        {% for item in aai_items %}{% if item.children %}{% assign aai_count = aai_count | plus: item.children.size %}{% endif %}{% endfor %}
+        {% for item in aai_items %}{% if item.children %}{% for child in item.children %}{% unless child.link == "/submission" %}{% assign aai_count = aai_count | plus: 1 %}{% endunless %}{% endfor %}{% endif %}{% endfor %}
 
         <div class="table-scroll">
             <table class="sponsor-categories-table data-table">
@@ -78,14 +78,14 @@
                     </tr>
                     <tr>
                         <td><a href="/explore/community-support">Community &amp; Support</a></td>
-                        <td>Category overview, Classifieds, Food Bank, Helplines &amp; Contacts, GP &amp; Pharmacies, Food Hygiene Ratings (incl. rating bands), Third Spaces</td>
+                        <td>Category overview, Food Bank, Helplines &amp; Contacts, GP &amp; Pharmacies, A&amp;E Waiting Times, Food Hygiene Ratings (incl. rating bands), Third Spaces</td>
                         <td class="number">{{ cas_count }}</td>
                         <td>Local shops &amp; services, health &amp; care providers, cafés, community businesses</td>
                         <td class="action"><a class="latest-action-link" href="{{ page.sponsor_cas }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                     <tr>
                         <td><a href="/explore/about-info">About &amp; Info</a></td>
-                        <td>Category overview, All About Cheltenham (incl. employment history, listed buildings &amp; council land &amp; assets), Schools &amp; Catchment Areas, Post Offices &amp; Lockers (incl. InPost &amp; DPD pickup points), Latest News, Weather</td>
+                        <td>Category overview, All About Cheltenham (incl. employment history, listed buildings &amp; council land &amp; assets), Schools &amp; Catchment Areas, Post Offices &amp; Lockers (incl. InPost &amp; DPD pickup points), Latest News, Classifieds, Weather</td>
                         <td class="number">{{ aai_count }}</td>
                         <td>Schools suppliers, uniform &amp; shoe shops, removals &amp; storage, print &amp; stationery, professional services</td>
                         <td class="action"><a class="latest-action-link" href="{{ page.sponsor_aai }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
