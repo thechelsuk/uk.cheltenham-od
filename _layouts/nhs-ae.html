@@ -1,0 +1,175 @@
+{% include header.html %}
+{% assign ae = site.data["nhs-ae"] %}
+{% assign hospitals = site.data["nhs-hospitals"] %}
+{% assign latest = ae.months | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ ae.trust.name }}</li>
+                <li>{{ ae.months | size }} months of figures</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Latest A&amp;E Figures</h2>
+        <p>In {{ latest.period | append: "-01" | date: "%B %Y" }}, {{ latest.within_4hrs_display }} of A&amp;E attendances
+            at {{ ae.trust.name }} were seen, admitted, transferred or discharged within four hours. There were
+            {{ latest.attendances_display }} attendances in the month, and {{ latest.dta_12hrs_display }} patients waited
+            12 hours or more between a decision to admit them and being admitted.</p>
+
+        <div class="table-scroll">
+            <table class="nhs-ae-latest-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Measure</th>
+                        <th scope="col" class="number">{{ latest.period }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A&amp;E attendances</td>
+                        <td class="number">{{ latest.attendances_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Seen within 4 hours</td>
+                        <td class="number">{{ latest.within_4hrs_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Attendances over 4 hours</td>
+                        <td class="number">{{ latest.over_4hrs_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Waited 12 hours or more from decision to admit</td>
+                        <td class="number">{{ latest.dta_12hrs_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Emergency admissions</td>
+                        <td class="number">{{ latest.emergency_admissions_display }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>A&amp;E Performance Over Time</h2>
+        <p>The share of attendances seen within four hours, month by month.</p>
+        <canvas id="nhs-ae-performance-chart" height="120" aria-label="Line chart of the percentage of A&amp;E attendances seen within four hours by month"></canvas>
+
+        <p>Patients who waited 12 hours or more from the decision to admit them to being admitted.</p>
+        <canvas id="nhs-ae-waits-chart" height="120" aria-label="Line chart of patients waiting 12 hours or more from decision to admit by month"></canvas>
+
+        <div class="table-scroll">
+            <table class="nhs-ae-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Month</th>
+                        <th scope="col" class="number">Attendances</th>
+                        <th scope="col" class="number">Seen Within 4 Hours</th>
+                        <th scope="col" class="number">Over 4 Hours</th>
+                        <th scope="col" class="number">12-Hour Waits</th>
+                        <th scope="col" class="number">Emergency Admissions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in ae.months %}
+                    <tr>
+                        <td class="date" data-val="{{ m.period }}">{{ m.period }}</td>
+                        <td class="number" data-val="{{ m.attendances }}">{{ m.attendances_display }}</td>
+                        <td class="number" data-val="{{ m.within_4hrs_pct }}">{{ m.within_4hrs_display }}</td>
+                        <td class="number" data-val="{{ m.over_4hrs }}">{{ m.over_4hrs_display }}</td>
+                        <td class="number" data-val="{{ m.dta_12hrs }}">{{ m.dta_12hrs_display }}</td>
+                        <td class="number" data-val="{{ m.emergency_admissions }}">{{ m.emergency_admissions_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="nhs-ae-attribution"><small>
+                A&amp;E figures from <a href="{{ ae.source_url }}">{{ ae.source }}</a>, published under the
+                <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{{ ae.licence }}</a>.
+                {% if ae.generated_at %}Figures last updated {{ ae.generated_at | date: "%-d %B %Y" }}.{% endif %}
+                The figures cover the whole trust, not individual hospitals.
+            </small></p>
+
+        <h2>Hospitals Near Cheltenham</h2>
+        <p>These are the hospitals run by {{ hospitals.trust.name }} within {{ hospitals.radius_miles }} miles of
+            Cheltenham town centre.</p>
+        <div id="nhs-hospitals-map" style="height: 400px; border-radius: 8px;" aria-label="Map of hospitals run by {{ hospitals.trust.name }} near Cheltenham"></div>
+
+        <div class="table-scroll">
+            <table class="nhs-hospitals-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Hospital</th>
+                        <th scope="col">Address</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col">A&amp;E Listed</th>
+                        <th scope="col" class="number">Miles from Town Centre</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for h in hospitals.hospitals %}
+                    <tr>
+                        <td data-val="{{ h.name | downcase }}">{{ h.name }}</td>
+                        <td>{{ h.address }}</td>
+                        <td class="postcode">{{ h.postcode }}</td>
+                        <td>{% if h.has_ae %}Yes{% else %}&ndash;{% endif %}</td>
+                        <td class="number" data-val="{{ h.distance_miles }}">{{ h.distance_miles }}</td>
+                        <td class="map">{% include pin.html lat=h.lat lng=h.lon label=h.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="nhs-hospitals-attribution"><small>
+                Hospitals from the <a href="{{ hospitals.source_url }}">{{ hospitals.source }}</a>, published under the
+                <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{{ hospitals.licence }}</a>.
+                Locations from postcodes. {{ hospitals.geocoding_attribution }}
+                "A&amp;E listed" means the NHS directory records an A&amp;E at the site; it does not show opening hours.
+            </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>What Does Seen Within Four Hours Mean?</h3>
+        <p>It is the share of A&amp;E attendances where the patient was admitted, transferred or discharged within four
+            hours of arriving.</p>
+
+        <h3>What Is a 12-Hour Wait From Decision to Admit?</h3>
+        <p>A patient who needed a hospital bed waited 12 hours or more between the decision to admit them and being
+            admitted. The table counts these each month.</p>
+
+        <h3>Do the Figures Cover Cheltenham General Hospital on Its Own?</h3>
+        <p>No. NHS England publishes the figures for the whole of {{ ae.trust.name }}, which runs Cheltenham General
+            Hospital and Gloucestershire Royal Hospital, so they can't be split by site.</p>
+
+        <h3>Which Hospitals Have an A&amp;E?</h3>
+        <p>The NHS directory lists an A&amp;E at {% include nhs-ae-sites.html %}. It doesn't record opening hours, so
+            check <a href="https://111.nhs.uk/">NHS 111</a> or the hospital before you travel.</p>
+
+        <h3>How Often Are the Figures Updated?</h3>
+        <p>NHS England publishes them on the second Thursday of each month, covering the previous month, and this page
+            checks for new figures every day.</p>
+
+        <h3>Where Does the Data Come From?</h3>
+        <p>The A&amp;E figures come from NHS England's monthly A&amp;E attendances and emergency admissions statistics,
+            and the hospitals from the NHS Organisation Data Service. Both are published under the Open Government
+            Licence.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="nhs-ae-data" type="application/json">{{ ae.months | jsonify }}</script>
+<script id="nhs-hospitals-data" type="application/json">{{ hospitals.hospitals | jsonify }}</script>
+<script src="/assets/scripts/nhs-ae-chart.js"></script>
+<script src="/assets/scripts/nhs-hospitals-map.js"></script>
+{% include footer.html %}

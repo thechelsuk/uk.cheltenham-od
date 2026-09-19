@@ -23,6 +23,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 
 - [Schools](https://cheltenham-od.uk/cheltenham-schools) — primary, secondary, independent and special
 - [GP practices and pharmacies](https://cheltenham-od.uk/cheltenham-gp-pharmacies)
+- [Hospital A&E waiting times](https://cheltenham-od.uk/cheltenham-ae-waiting-times) for Gloucestershire Hospitals NHS Foundation Trust, with a map of nearby hospitals
 - [Public toilets](https://cheltenham-od.uk/cheltenham-public-toilets)
 - [Play parks and children's playgrounds](https://cheltenham-od.uk/cheltenham-play-parks)
 - [Recycling banks, centres and a recycling FAQ](https://cheltenham-od.uk/cheltenham-recycling)
