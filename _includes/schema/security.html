@@ -1,0 +1,29 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "UK Terrorism Threat Level History",
+  "description": "The current UK national terrorism threat level and every recorded change since August 2006, from MI5 and Wikipedia.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['terrorism'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "United Kingdom" },
+  "variableMeasured": ["Date of change", "National threat level", "Northern Ireland-related threat level"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What do the UK terrorism threat levels mean?", "acceptedAnswer": {"@type": "Answer", "text": "There are five levels. Low means an attack is highly unlikely. Moderate means an attack is possible, but not likely. Substantial means an attack is likely. Severe means an attack is highly likely. Critical means an attack is highly likely in the near future."} },
+    { "@type": "Question", "name": "How does the government respond to each threat level?", "acceptedAnswer": {"@type": "Answer", "text": "Government departments and agencies respond in one of three states. Normal applies at Low and Moderate and means routine protective security. Heightened applies at Substantial and Severe and means additional and sustainable protective security measures. Exceptional applies at Critical and means maximum protective security."} },
+    { "@type": "Question", "name": "Who sets the threat level and how?", "acceptedAnswer": {"@type": "Answer", "text": "The Joint Terrorism Analysis Centre sets the national threat level and MI5 sets the Northern Ireland-related level. They weigh the available intelligence, the capability and intentions of the terrorists involved, and how soon an attack might happen. Threat levels have no set expiry date but are reviewed regularly."} },
+    { "@type": "Question", "name": "What changed in the 2019 reporting format?", "acceptedAnswer": {"@type": "Answer", "text": "Before July 2019 the government published a national threat level for international terrorism and, from September 2010, threat levels for Northern Ireland-related terrorism in Northern Ireland and in Great Britain. Since 23 July 2019 there is a single national threat level covering all forms of terrorism, including Islamist, Northern Ireland, left-wing and right-wing terrorism, plus a separate Northern Ireland-related threat level for Northern Ireland."} },
+    { "@type": "Question", "name": "Why is the history shown in two tables?", "acceptedAnswer": {"@type": "Answer", "text": "Because the reporting format changed in 2019, the two periods can't be compared directly. The first table covers changes since July 2019 in the current format. The second covers August 2006 to July 2019, when international terrorism was reported separately from Northern Ireland-related terrorism."} },
+    { "@type": "Question", "name": "Where does the threat level history come from?", "acceptedAnswer": {"@type": "Answer", "text": "Changes since this page began tracking MI5's threat level feed on 19 September 2026 are recorded automatically. Earlier changes were compiled by hand from Wikipedia's UK Threat Levels article."} },
+    { "@type": "Question", "name": "How often is this page updated?", "acceptedAnswer": {"@type": "Answer", "text": "The threat level is checked once a day. It changes rarely, so the date of the last change is shown above."} }
+  ]
+}
+</script>

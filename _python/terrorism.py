@@ -2,9 +2,11 @@
 """Fetch MI5's national threat level feed and write it to _data/terrorism.json
 (the current level) and _data/terrorism-history.json (a log of every change).
 
-The feed only ever holds the current level, so the history is built up run by
+The feed only ever holds the current level, so changes are recorded run by
 run: a record is added the first time a new publication date appears, and
-never removed. Refreshed daily since the level changes rarely."""
+never removed. Changes before tracking began (2006 onwards) were added to the
+history file by hand from Wikipedia's "UK Threat Levels" article and are
+preserved as they are. Refreshed daily since the level changes rarely."""
 import html
 import json
 import re
@@ -20,11 +22,33 @@ import helper
 URL = "https://www.mi5.gov.uk/UKThreatLevel/UKThreatLevel.xml"
 SOURCE_URL = "https://www.mi5.gov.uk/threat-levels"
 LICENCE = "Crown copyright"
+# Where the hand-added history (everything before this script began tracking) came from.
+BACKFILL_SOURCE = {
+    "name": "Wikipedia's UK Threat Levels article",
+    "url": "https://en.wikipedia.org/wiki/UK_Threat_Levels",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+}
 
 
 def strip_html(text):
     text = re.sub(r"<[^>]+>", "", text or "")
     return re.sub(r"\s+", " ", html.unescape(text).replace("\xa0", " ")).strip()
+
+
+def parse_published(value):
+    """A record's publication time. Hand-added records only have a date, which
+    is taken as midnight UK time so records can always be compared."""
+    published = datetime.fromisoformat(value)
+    if published.tzinfo is None:
+        published = published.replace(tzinfo=ZoneInfo("Europe/London"))
+    return published
+
+
+def northern_ireland_level(details):
+    """The Northern Ireland-related level, which the feed gives in its text."""
+    match = re.search(r"Northern Ireland-related terrorism is (\w+)", details)
+    return match.group(1).upper() if match else ""
 
 
 def fetch_terrorism_xml(destination):
@@ -62,33 +86,34 @@ def parse_feed(xml_content):
     published = datetime.strptime(
         re.sub(r"\s+", " ", item.findtext("pubDate") or ""), "%A, %B %d, %Y - %H:%M"
     ).replace(tzinfo=ZoneInfo("Europe/London"))
+    details = strip_html(item.findtext("description"))
     return {
         "title": title,
         "level": level,
         "level_title": level.capitalize(),
-        "details": strip_html(item.findtext("description")),
+        "northern_ireland_level": northern_ireland_level(details),
+        "details": details,
         "published_iso": published.isoformat(),
     }
 
 
 def merge_history(records, current, now_iso):
     """Add the current level if its publication date is new, otherwise refresh
-    its details. Records are never dropped. Returns them newest first."""
+    its details. Records are never dropped, and any hand-written fields (such
+    as a note) are kept. Returns them newest first."""
     by_id = {r["published_iso"]: r for r in records}
     record = by_id.get(current["published_iso"])
     if record is None:
-        published = datetime.fromisoformat(current["published_iso"])
-        older = sorted((r for r in records if datetime.fromisoformat(r["published_iso"]) < published),
-                       key=lambda r: datetime.fromisoformat(r["published_iso"]), reverse=True)
         record = {
             "published_iso": current["published_iso"],
             "first_seen_iso": now_iso,
-            "previous_level": older[0]["level"] if older else "",
+            "reporting_format": "new",
+            "source": "mi5",
         }
         records.append(record)
-    record.update({key: current[key] for key in ("level", "level_title", "details")})
+    record.update({key: current[key] for key in ("level", "level_title", "northern_ireland_level", "details")})
     record["last_seen_iso"] = now_iso
-    records.sort(key=lambda r: datetime.fromisoformat(r["published_iso"]), reverse=True)
+    records.sort(key=lambda r: parse_published(r["published_iso"]), reverse=True)
     return records
 
 
@@ -127,5 +152,5 @@ if __name__ == "__main__":
     records = merge_history(records, current, now_iso)
 
     helper.write_json(current_path, payload(now, current))
-    helper.write_json(history_path, payload(now, {"count": len(records), "records": records}))
+    helper.write_json(history_path, payload(now, {"backfill_source": BACKFILL_SOURCE, "count": len(records), "records": records}))
     print(f"Threat level {current['level']}, {len(records)} recorded change(s)")
