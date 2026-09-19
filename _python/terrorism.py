@@ -1,17 +1,31 @@
-# importing modules
-import time
-import feedparser
-import requests
-import helper
-import re
+#!/usr/bin/env python3
+"""Fetch MI5's national threat level feed and write it to _data/terrorism.json
+(the current level) and _data/terrorism-history.json (a log of every change).
+
+The feed only ever holds the current level, so the history is built up run by
+run: a record is added the first time a new publication date appears, and
+never removed. Refreshed daily since the level changes rarely."""
 import html
-from datetime import datetime
+import json
+import re
+import time
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+
+import requests
+
+import helper
 
 URL = "https://www.mi5.gov.uk/UKThreatLevel/UKThreatLevel.xml"
+SOURCE_URL = "https://www.mi5.gov.uk/threat-levels"
+LICENCE = "Crown copyright"
+
 
 def strip_html(text):
-    text = re.sub(r'<[^>]+>', '', text)
-    return html.unescape(text).strip()
+    text = re.sub(r"<[^>]+>", "", text or "")
+    return re.sub(r"\s+", " ", html.unescape(text).replace("\xa0", " ")).strip()
+
 
 def fetch_terrorism_xml(destination):
     headers = {
@@ -36,43 +50,82 @@ def fetch_terrorism_xml(destination):
             time.sleep(2)
     raise last_error
 
-# processing
+
+def parse_feed(xml_content):
+    """The current threat level from the feed's single <item>."""
+    item = ET.fromstring(xml_content).find("./channel/item")
+    if item is None:
+        raise RuntimeError("No entries found in terrorism feed")
+    title = (item.findtext("title") or "").strip()
+    level = title.split()[-1].upper()
+    # e.g. "Thursday, April 30, 2026 -  06:09", UK local time.
+    published = datetime.strptime(
+        re.sub(r"\s+", " ", item.findtext("pubDate") or ""), "%A, %B %d, %Y - %H:%M"
+    ).replace(tzinfo=ZoneInfo("Europe/London"))
+    return {
+        "title": title,
+        "level": level,
+        "level_title": level.capitalize(),
+        "details": strip_html(item.findtext("description")),
+        "published_iso": published.isoformat(),
+    }
+
+
+def merge_history(records, current, now_iso):
+    """Add the current level if its publication date is new, otherwise refresh
+    its details. Records are never dropped. Returns them newest first."""
+    by_id = {r["published_iso"]: r for r in records}
+    record = by_id.get(current["published_iso"])
+    if record is None:
+        published = datetime.fromisoformat(current["published_iso"])
+        older = sorted((r for r in records if datetime.fromisoformat(r["published_iso"]) < published),
+                       key=lambda r: datetime.fromisoformat(r["published_iso"]), reverse=True)
+        record = {
+            "published_iso": current["published_iso"],
+            "first_seen_iso": now_iso,
+            "previous_level": older[0]["level"] if older else "",
+        }
+        records.append(record)
+    record.update({key: current[key] for key in ("level", "level_title", "details")})
+    record["last_seen_iso"] = now_iso
+    records.sort(key=lambda r: datetime.fromisoformat(r["published_iso"]), reverse=True)
+    return records
+
+
+def payload(now, extra):
+    return {
+        "generated_at": now.isoformat(),
+        "source": "MI5",
+        "source_url": SOURCE_URL,
+        "licence": LICENCE,
+        **extra,
+    }
+
+
 if __name__ == "__main__":
     root = helper.repo_root()
     terror_xml = root / "_data/terrorism.xml"
+    current_path = root / "_data/terrorism.json"
+    history_path = root / "_data/terrorism-history.json"
 
     try:
         xml_content = fetch_terrorism_xml(terror_xml)
     except Exception as error:
-        if terror_xml.exists():
-            print(f"Fetch failed, using cached terrorism.xml: {error}")
-            xml_content = terror_xml.read_text()
-        else:
+        if current_path.exists():
+            print(f"::warning::Fetch failed, keeping existing terrorism.json: {error}")
+            raise SystemExit(0)
+        if not terror_xml.exists():
             raise
+        print(f"Fetch failed, using cached terrorism.xml: {error}")
+        xml_content = terror_xml.read_text()
 
-    parsed = feedparser.parse(xml_content)
-    output = parsed["entries"]
-    if not output:
-        raise RuntimeError("No entries found in terrorism feed")
+    current = parse_feed(xml_content)
+    now = datetime.now(timezone.utc)
+    now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    for entry in output:
-        level = (f"{entry['title']}")
-        update = entry['published']
-        update = datetime.strptime(
-            update, "%A, %B %d, %Y -  %H:%M").strftime("%Y-%m-%d")
-        days_since_update = (datetime.now() -
-                             datetime.strptime(update, "%Y-%m-%d")).days
-        desc = entry['summary']
+    records = json.loads(history_path.read_text()).get("records", []) if history_path.exists() else []
+    records = merge_history(records, current, now_iso)
 
-        level_class = level.split()[-1].capitalize()
-
-    string =  f'### {level_class}\n\n'
-    string += f'- {level}\n'
-    string += f'- It has been {days_since_update} days since the last change ({update})\n'
-    string += f'- Details: {strip_html(desc)}\n'
-
-    f = root / "_pages/safety-environment/security.md"
-    m = f.open().read()
-    c = helper.replace_chunk(m, "threat_marker", string)
-    f.open("w").write(c)
-    print("threat completed")
+    helper.write_json(current_path, payload(now, current))
+    helper.write_json(history_path, payload(now, {"count": len(records), "records": records}))
+    print(f"Threat level {current['level']}, {len(records)} recorded change(s)")
