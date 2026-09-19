@@ -43,15 +43,15 @@ connection, and to show how it has changed over time.
             <tr>
                 <th scope="col" class="date">Changed</th>
                 <th scope="col">National Threat Level</th>
-                <th scope="col">Northern Ireland Threat Level</th>
             </tr>
         </thead>
         <tbody>
             {% for r in new_records %}
+            {% assign older = new_records[forloop.index] %}
+            {% if older and older.level == r.level %}{% continue %}{% endif %}
             <tr>
                 <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d" }}</td>
                 <td>{{ r.level_title | escape }}</td>
-                <td>{{ r.northern_ireland_level | capitalize | escape }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -66,7 +66,6 @@ connection, and to show how it has changed over time.
             <tr>
                 <th scope="col" class="date">Changed</th>
                 <th scope="col">International Terrorism</th>
-                <th scope="col">Northern Ireland-Related, in Northern Ireland</th>
                 <th scope="col">Northern Ireland-Related, in Great Britain</th>
             </tr>
         </thead>
@@ -75,7 +74,6 @@ connection, and to show how it has changed over time.
             <tr>
                 <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d" }}</td>
                 <td>{{ r.level_title | escape }}</td>
-                <td>{% if r.northern_ireland_level != "" %}{{ r.northern_ireland_level | capitalize | escape }}{% else %}Not reported{% endif %}</td>
                 <td>{% if r.great_britain_level != "" %}{{ r.great_britain_level | capitalize | escape }}{% else %}Not reported{% endif %}</td>
             </tr>
             {% endfor %}
