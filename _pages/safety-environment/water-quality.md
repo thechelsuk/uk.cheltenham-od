@@ -21,3 +21,7 @@ This is chemical water quality, not sewage discharge activity — see our
 [sewage overflow status](/cheltenham-sewage-overflows) page for that — and
 it isn't a flood risk indicator either; see [flood warnings](/cheltenham-flood-warnings)
 for that.
+
+## Water Incidents
+
+- [Severn Trent Incidents Page](https://www.stwater.co.uk/in-my-area/incidents/).

@@ -13,17 +13,6 @@ feed_url:
 
 Some useful contacts and resources for cheltenham residents. If you have any suggestions for additions, post in the [r/Cheltenham subreddit](https://www.reddit.com/r/Cheltenham/).
 
-## Water Incidents
-
-- [Severn Trent Incidents Page](https://www.stwater.co.uk/in-my-area/incidents/).
-
-## Cheltenham Spa Train Station
-
-Quick guide: Platform 1 is typically for trains to Wales and the south (Bristol, Exeter St Davids, Plymouth, Reading, and London). Platform 2 is typically for trains to the north (Worcester, Birmingham, Nottingham, Leeds, Glasgow) and associated connections.
-
-- [Departures](https://www.nationalrail.co.uk/live-trains/departures/cheltenham-spa/) (live).
-- [Arrivals](https://www.nationalrail.co.uk/live-trains/arrivals/cheltenham-spa/) (live).
-
 ## Hospitals
 
 - [Live waiting times](https://www.gloshospitals.nhs.uk/).
