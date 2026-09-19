@@ -4,7 +4,7 @@ title: Adding Train Times
 type: cod
 description: The next train departures and arrivals at Cheltenham Spa station, with platforms, delays and cancellations, plus annual passenger numbers.
 seo: Cheltenham train times — the next departures and arrivals at Cheltenham Spa station with platforms, delays and cancellations, plus station usage figures.
-date: 2026-09-25 09:00
+date: 2026-09-19 22:00
 ---
 
 Cheltenham Open Data has published a new [train times page](/cheltenham-train-times), showing the next departures and arrivals at Cheltenham Spa station.
