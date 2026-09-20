@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Opticians in Cheltenham",
+  "description": "Opticians listed in the NHS directory in the GL50 to GL54 postcodes in and around Cheltenham, with addresses and locations.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['opticians'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Optician name", "Address", "Postcode", "Location"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Are These NHS Opticians?", "acceptedAnswer": {"@type": "Answer", "text": "They are the opticians listed in the NHS's directory of optical sites. Many high-street opticians offer both NHS-funded sight tests, for people who qualify, and private eye care, glasses and contact lenses. Opticians that only offer private care are mostly not in the directory, so they won't appear here."}},
+    {"@type": "Question", "name": "Who Can Get a Free NHS Sight Test?", "acceptedAnswer": {"@type": "Answer", "text": "Among others, children under 16, 16 to 18 year olds in full-time education, people aged 60 or over, people with diabetes or glaucoma, people aged 40 or over whose parent, brother, sister or child has glaucoma, and people who get certain benefits such as Universal Credit or Pension Credit Guarantee Credit. The full list is on the NHS's page on free NHS eye tests and optical vouchers."}},
+    {"@type": "Question", "name": "How Often Should I Have an Eye Test?", "acceptedAnswer": {"@type": "Answer", "text": "The NHS recommends every 2 years, or more often if your optician advises it. An NHS sight test is free only if you are in an eligible group and the test is clinically necessary. Otherwise you pay for it."}},
+    {"@type": "Question", "name": "Is an Optician Taking New Patients or Appointments?", "acceptedAnswer": {"@type": "Answer", "text": "This page can't say. Book directly with the practice, by phone or on its own site, and ask whether your test will be an NHS one."}},
+    {"@type": "Question", "name": "How Much Do Glasses Cost?", "acceptedAnswer": {"@type": "Answer", "text": "Optical vouchers from the NHS help people who are eligible with the cost of glasses or contact lenses, and the value depends on your prescription. You don't have to buy from the practice that tested your eyes, so it's worth shopping around."}},
+    {"@type": "Question", "name": "What if I Have an Eye Emergency?", "acceptedAnswer": {"@type": "Answer", "text": "For a sudden loss of vision, an eye injury or a painful red eye, use NHS 111 online or call 111, or go to A&E. In a life-threatening emergency call 999."}},
+    {"@type": "Question", "name": "Where Does This Data Come From?", "acceptedAnswer": {"@type": "Answer", "text": "The NHS Organisation Data Service, refreshed monthly. It has no coordinates, so each optician is placed at the centre of its postcode, which puts a pin close to the practice rather than exactly on it. If an optician is missing or wrong, the directory may be out of date; tell us and we'll look into it."}}
+  ]
+}
+</script>
