@@ -298,7 +298,7 @@ def render_markdown(gps, pharmacies):
         "directly from [NHS England's Organisation Data Service]"
         "(https://digital.nhs.uk/services/organisation-data-service), the "
         "official register of NHS organisations, so names, addresses and "
-        f"phone numbers stay current automatically.\n"
+        "phone numbers stay current automatically.\n"
     )
     lines.append(
         "\nIf you need to register with a new GP, you can do this "
