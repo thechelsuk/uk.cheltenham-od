@@ -13,7 +13,7 @@ Land Registry sales take two to three months to appear, so the most recent month
 
 - measures the latest 12 months up to the last complete month, and says which months they are (for example "12 months to June 2026")
 - compares a year that isn't over yet with the same months of the year before, for example January to June 2026 with January to June 2025
-- leaves out a comparison when there is no complete earlier period to compare with, such as 2023 against the part-year of 2022 in the data
+- compares 2023 with the whole of 2022 using the [history back to 1995](/cheltenham-house-prices), since the live data only holds part of 2022, and leaves a comparison out where there is no complete earlier period at all
 - only shows a percentage change for new build sales when there are at least 10 sales in both periods, since a handful of sales can swing the figure wildly
 
 ## FAQs
