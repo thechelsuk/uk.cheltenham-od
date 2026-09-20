@@ -13,9 +13,10 @@ Cheltenham is a Regency spa town of around 116,000 people on the western edge of
 
 ## Finding Somewhere to Live
 
-Cheltenham's housing ranges from Regency townhouses and Victorian terraces around Montpellier and Pittville to newer developments on the edges of town, spread across the GL50–GL53 postcode districts. Start with recent sold prices to gauge the market, and check what's being built or changed nearby before you commit to an area.
+Cheltenham's housing ranges from Regency townhouses and Victorian terraces around Montpellier and Pittville to newer developments on the edges of town, spread across the GL50–GL53 postcode districts. Start with recent sold prices, or average rents if you plan to rent first, to gauge the market, and check what's being built or changed nearby before you commit to an area.
 
 - [Cheltenham house prices](/cheltenham-house-prices) — recent sold prices to benchmark areas and property types.
+- [Average rent in Cheltenham](/cheltenham-rent-prices) — what tenants pay on average by number of bedrooms and property type, if you're renting before you buy.
 - [Planning applications in Cheltenham](/cheltenham-planning-applications) — what's proposed or being built near a prospective home.
 
 ## Comparing Neighbourhoods

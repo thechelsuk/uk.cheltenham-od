@@ -16,6 +16,7 @@ Cheltenham is home to the University of Gloucestershire and thousands of student
 Most students rent, whether that's halls in the first year or a shared house after. Knowing the local market helps you spot a fair price and avoid the worst of the rush.
 
 - [Cheltenham classifieds](/cheltenham-classifieds) — rooms, house shares, second-hand furniture and bikes from local people.
+- [Average rent in Cheltenham](/cheltenham-rent-prices) — what tenants pay on average by number of bedrooms and property type, so you can spot a fair price.
 - [Cheltenham house prices](/cheltenham-house-prices) — recent sold prices to get a feel for which areas are pricier and why.
 - [Housing supply & student accommodation](/cheltenham-house-prices/housing-supply) — how much student accommodation has actually been added or lost year to year, alongside general house building.
 - [Total number of properties in Cheltenham](/cheltenham-house-prices/council-tax-stock) — how the town's overall housing stock has grown over time.
@@ -25,6 +26,7 @@ Most students rent, whether that's halls in the first year or a shared house aft
 
 Sort the boring-but-important admin early and the rest of term runs more smoothly.
 
+- [University of Gloucestershire campuses](/university-of-gloucestershire) — where each campus is, what is taught there and how far it is from the station.
 - [GPs and pharmacies](/cheltenham-gp-pharmacies) — register with a local practice as soon as you arrive, not when you're already ill.
 - [Recycling and bin collections](/cheltenham-recycling) — what goes in which bin and when it's collected, so your house avoids missed pickups.
 - [Post Office locations](/cheltenham-post-office-locations) — for parcels, ID documents and sending things home.
