@@ -16,6 +16,125 @@
 
         {{ content }}
 
+        {% assign rivers = site.data["river-levels"] %}
+        {% if rivers.stations.size > 0 %}
+        {% assign level_gauges = rivers.stations | where: "kind", "level" %}
+        {% assign rain_gauges = rivers.stations | where: "kind", "rainfall" %}
+        {% assign within = level_gauges | where: "status", "Within typical range" | size %}
+        {% assign above = level_gauges | where: "status", "Above typical range" | size %}
+        <h2>River Levels and Rainfall</h2>
+        <p>Live readings from the Environment Agency's {{ level_gauges | size }} river level gauges on the River Chelt
+            and its brooks in and around Cheltenham, and {{ rain_gauges | size }} nearby rainfall gauges. Right now
+            {{ within }} of the {{ level_gauges | size }} river gauges are within their typical range{% if above > 0 %} and {{ above }}
+            {% if above == 1 %}is{% else %}are{% endif %} above it{% endif %}. Readings are refreshed every couple of hours and
+            are shown in UTC.</p>
+
+        <div id="river-levels-map" style="height: 480px; border-radius: 8px;" aria-label="Map of river level and rainfall gauges around Cheltenham"></div>
+
+        <h3>River Level Gauges</h3>
+        <div class="table-scroll">
+            <table class="river-levels-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Gauge</th>
+                        <th scope="col">Watercourse</th>
+                        <th scope="col" class="number">Latest Level</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Typical Range</th>
+                        <th scope="col" class="number">Highest on Record</th>
+                        <th scope="col" class="date">Record Date</th>
+                        <th scope="col" class="date">Latest Reading (UTC)</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in level_gauges %}
+                    <tr>
+                        <td data-val="{{ s.label | downcase }}">{{ s.label }}</td>
+                        <td>{{ s.river | default: "River Chelt" }}</td>
+                        <td class="number" data-val="{{ s.latest }}">{{ s.latest_display }}</td>
+                        <td>{{ s.status | default: "No typical range published" }}</td>
+                        <td>{{ s.typical_range_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ s.record }}">{{ s.record_display | default: "—" }}</td>
+                        <td class="date" data-val="{{ s.record_date }}">{{ s.record_date | default: "—" }}</td>
+                        <td class="date" data-val="{{ s.latest_time }}">{{ s.latest_time | replace: "T", " " }}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.label %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3>River Chelt: the Last 48 Hours</h3>
+        <canvas id="river-chelt-chart" height="110" aria-label="Line chart of river levels at the River Chelt gauges over the last 48 hours"></canvas>
+
+        <h3>Brooks: the Last 48 Hours</h3>
+        <canvas id="river-brooks-chart" height="110" aria-label="Line chart of river levels at the Hatherley Brook, Lilley Brook and Wymans Brook gauges over the last 48 hours"></canvas>
+
+        <h3>Daily Peak River Levels</h3>
+        <canvas id="river-history-chart" height="110" aria-label="Line chart of the highest level recorded each day at the River Chelt gauges"></canvas>
+
+        <h3>Rainfall Gauges</h3>
+        <div class="table-scroll">
+            <table class="rainfall-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Gauge</th>
+                        <th scope="col" class="number">Distance from Town Centre</th>
+                        <th scope="col" class="number">Last 24 Hours</th>
+                        <th scope="col" class="number">Last 48 Hours</th>
+                        <th scope="col" class="date">Latest Reading (UTC)</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in rain_gauges %}
+                    <tr>
+                        <td data-val="{{ s.label | downcase }}">{{ s.label }}</td>
+                        <td class="number" data-val="{{ s.distance_km }}">{{ s.distance_km }} km</td>
+                        <td class="number" data-val="{{ s.rain_24h }}">{{ s.rain_24h_display }}</td>
+                        <td class="number" data-val="{{ s.rain_48h }}">{{ s.rain_48h_display }}</td>
+                        <td class="date" data-val="{{ s.latest_time }}">{{ s.latest_time | replace: "T", " " }}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.label %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="river-levels-attribution"><small>
+            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>, published under the Open Government
+            Licence v3.0. Last updated {{ rivers.generated_at | date: "%-d %B %Y" }}.
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h3>River Level FAQs</h3>
+
+        <h4>What Does the Typical Range Mean?</h4>
+        <p>The Environment Agency publishes a typical range for each gauge, the band the river normally sits in. A level
+            above it does not mean flooding, but it does mean the river is higher than usual, often after rain.</p>
+
+        <h4>What Is the Highest on Record?</h4>
+        <p>The highest level each gauge has ever recorded. Several of the gauges on the River Chelt and Hatherley Brook
+            hold their record from the floods of June and July 2007, which are covered on our
+            <a href="/cheltenham-flood-warnings/history">flood history page</a>.</p>
+
+        <h4>Why Are Some Levels Close to Zero?</h4>
+        <p>Levels are measured from each gauge's own zero point, not from sea level, and small streams can run very low in
+            dry weather. Compare a reading with its own typical range rather than with other gauges.</p>
+
+        <h4>How Often Is It Updated?</h4>
+        <p>The gauges take a reading every 15 minutes. This page is refreshed every couple of hours, so for a fast-moving
+            situation check the <a href="https://check-for-flooding.service.gov.uk/">Environment Agency's live service</a>.</p>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+        <script id="river-levels-data" type="application/json">{{ rivers.stations | jsonify }}</script>
+        <script id="river-levels-history-data" type="application/json">{{ site.data["river-levels-history"].days | jsonify }}</script>
+        <script src="/assets/scripts/river-levels.js"></script>
+        {% endif %}
+
     </div>
 </div>
 {% include footer.html %}
