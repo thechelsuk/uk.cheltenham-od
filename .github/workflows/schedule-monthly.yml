@@ -44,6 +44,7 @@ jobs:
                   python _python/cycle-routes.py || echo "::warning::cycle-routes.py failed, continuing with other scripts"
                   python _python/play-areas.py || echo "::warning::play-areas.py failed, continuing with other scripts"
                   python _python/cheltenham-stats.py || echo "::warning::cheltenham-stats.py failed, continuing with other scripts"
+                  python _python/earnings.py || echo "::warning::earnings.py failed, continuing with other scripts"
                   python _python/parkrun.py || echo "::warning::parkrun.py failed, continuing with other scripts"
                   python _python/listed-buildings.py || echo "::warning::listed-buildings.py failed, continuing with other scripts"
                   python _python/water-quality.py || echo "::warning::water-quality.py failed, continuing with other scripts"
