@@ -11,7 +11,7 @@ Cheltenham Open Data has published a new [University of Gloucestershire page](/u
 
 The map and table cover Park Campus and Francis Close Hall in Cheltenham, Pittville Student Village, and the Oxstalls, Oxstalls Sports Arena and City campuses in Gloucester. For each one there is the address, what is taught or based there, a map pin for directions and a link to the university's own interactive campus map. A second table lists the three academic schools, the Graduate School and the Countryside and Community Research Institute, with their subject areas and campuses.
 
-The page also answers the questions new students ask most, from which campus a course is at to how far each campus is from the station, and links to UCAS, the university's how to apply guide, open days and term dates. It is linked from the [student guide](/student-guide-to-cheltenham) and the [About & Info](/explore/about-info) overview.
+The page also answers the questions new students ask most, from which campus a course is at to how far each campus is from the station, and links to UCAS, the university's how to apply guide, open days and term dates. It is linked from the [student guide](/student-guide-to-cheltenham), the [guides](/guides) page and the [About & Info](/explore/about-info) overview.
 
 ## FAQs
 

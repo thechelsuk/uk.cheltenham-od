@@ -24,6 +24,7 @@ A practical guide for anyone relocating to the town: benchmarking house prices a
 Starting a course at the University of Gloucestershire? This guide covers renting and comparing areas, getting set up with a GP and bins, budget eating and going out, and where to turn if money's tight or something goes wrong.
 
 - [Read the student guide to Cheltenham](/student-guide-to-cheltenham)
+- [University of Gloucestershire campuses](/university-of-gloucestershire)
 - [Cheltenham classifieds](/cheltenham-classifieds)
 - [Five-star food hygiene ratings](/cheltenham-food-standards/rated-five)
 
