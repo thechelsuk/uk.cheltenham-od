@@ -2,7 +2,7 @@
 
 layout: page
 title: "Cheltenham Help and Support Contact Details"
-seo: "helpful phone numbers and contacts in Cheltenham area including utilities, hospitals, and crisis numbers"
+seo: "helpful phone numbers and contacts in Cheltenham area including utilities, hospitals, flooding, mental health, domestic abuse and crisis numbers"
 permalink: /cheltenham-helpful-contacts-reports
 description: "Helpful phone numbers and contacts in the Cheltenham area"
 type: "community"
@@ -31,16 +31,37 @@ Some useful contacts and resources for cheltenham residents. If you have any sug
 
 ## Useful Phone Numbers
 
+- Emergency (police, fire, ambulance): 999
 - Anti-Bullying Campaign: 0207 378 1446
 - Childline: 0800 1111
 - Child Protection: 0800 800 500
 - Police Non-Emergency: 101
 - Crimestoppers: 0800 555 111
+- NHS 111 (urgent medical help that isn't a 999 emergency): 111
 - Emergency Dental Helpline: 08452 220505
 - Electricity: 0800 328 1111
+- Power Cut: 105 (free, or 0800 6783 105)
 - Flooding (Sandbags): 01684 293 445
+- Floodline (Environment Agency flood warnings and advice): 0345 988 1188
+- Environment Agency Incident Hotline (pollution and flooding incidents): 0800 80 70 60
 - Gas: 0800 111 999
+- Water Emergencies (Severn Trent, 24 hours): 0800 783 4444
 - NHS Direct: 0845 4647
+- Cheltenham Borough Council: 01242 262626
+
+## Mental Health and Wellbeing
+
+- [Samaritans](https://www.samaritans.org/): 116 123 (free, any time of day)
+- [Shout](https://giveusashout.org/): text SHOUT to 85258 (free, 24-hour text support)
+- [Mind Infoline](https://www.mind.org.uk/): 0300 123 3393
+
+## Domestic Abuse
+
+- [National Domestic Abuse Helpline](https://www.nationaldahelpline.org.uk/): 0808 2000 247 (free, 24 hours)
+
+## Money and Housing Advice
+
+- [North and West Gloucestershire Citizens Advice](https://www.citizensadvice.org.uk/about-us/contact-us/local-citizens-advice/0014K000009EMMZQA4/): 0808 189 6280 (Monday to Thursday, 9.30am to 4pm), covering Cheltenham, Gloucester, Tewkesbury and the Forest of Dean
 
 ## Discounted and Free Food Offerings
 
