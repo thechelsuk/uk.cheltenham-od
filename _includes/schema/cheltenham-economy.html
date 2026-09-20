@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Economy: Jobs, Businesses and Claimants",
+  "description": "Employee jobs by industry, the number of registered businesses and the unemployment Claimant Count for Cheltenham, compared with England, from the ONS via Nomis.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['cheltenham-economy'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Employee jobs by industry", "Registered businesses by size", "Claimant Count", "Claimants as a share of residents aged 16 to 64"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What counts as an employee job?", "acceptedAnswer": {"@type": "Answer", "text": "The Business Register and Employment Survey counts jobs held by employees in registered businesses, in the place the job is based, whether or not the person lives in Cheltenham. It does not include the self-employed, and the published figures are rounded, which is why smaller industries show round numbers."} },
+    { "@type": "Question", "name": "What does the comparison with England mean?", "acceptedAnswer": {"@type": "Answer", "text": "It divides an industry's share of jobs in Cheltenham by its share of jobs across England. A figure of 1.00 means the same share, 1.50 means one and a half times the national share, and 0.50 means half."} },
+    { "@type": "Question", "name": "Which businesses are counted?", "acceptedAnswer": {"@type": "Answer", "text": "Businesses registered for VAT and, or, PAYE. Very small businesses that are below the VAT threshold and have no employees on PAYE are not included, so the true number of businesses, including sole traders, is higher."} },
+    { "@type": "Question", "name": "What is the Claimant Count?", "acceptedAnswer": {"@type": "Answer", "text": "The number of people claiming Jobseeker's Allowance or the part of Universal Credit that is paid because someone is out of work or on a low income and required to look for work. It is a measure of benefit claims, not the official unemployment rate, and the roll-out of Universal Credit between 2013 and 2018 raised it without a matching rise in unemployment."} },
+    { "@type": "Question", "name": "Where does this data come from?", "acceptedAnswer": {"@type": "Answer", "text": "The Office for National Statistics, through Nomis. Jobs and businesses are published once a year and the claimant count monthly, and this page is refreshed monthly."} }
+  ]
+}
+</script>

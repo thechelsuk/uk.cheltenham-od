@@ -22,7 +22,7 @@ Re-run this any time the raw data changes. Cheap and fast - no network calls.
 
 import json
 import sys
-from datetime import datetime, timezone, timedelta
+from datetime import date, datetime, timezone
 from pathlib import Path
 from statistics import median, mean
 
@@ -30,6 +30,12 @@ from statistics import median, mean
 DRY_RUN = False
 RAW_DATA_PATH = Path("_data/cheltenham-house-prices.json")
 SUMMARY_DATA_PATH = Path("_data/house-summary.json")
+HISTORY_DATA_PATH = Path("_data/cheltenham-house-price-history.json")
+
+# Smallest number of sales either side of a comparison for a subset's percentage
+# change (e.g. new builds) to be shown - a change from 126 sales to 1 says more
+# about a registration lag than about the market.
+MIN_SAMPLE = 10
 # ---------------------------------------------------------------------------
 
 
@@ -89,20 +95,45 @@ def change_str(current: float, prior: float, label: str, currency: bool = False)
     return f"{direction} {abs(change):.0f}% ({label}: {prior_str})"
 
 
-def split_rolling_12mo(transactions: list[dict]) -> tuple[list[dict], list[dict]]:
-    now = datetime.now(timezone.utc)
-    cutoff_12 = now - timedelta(days=365)
-    cutoff_24 = now - timedelta(days=730)
-    current, prior = [], []
-    for t in transactions:
-        if not t["date"]:
-            continue
-        d = datetime.fromisoformat(t["date"]).replace(tzinfo=timezone.utc)
-        if d >= cutoff_12:
-            current.append(t)
-        elif d >= cutoff_24:
-            prior.append(t)
-    return current, prior
+def month_index(d: date) -> int:
+    """Months since year 0, so ranges of whole months are plain integer ranges."""
+    return d.year * 12 + d.month - 1
+
+
+def month_name(idx: int) -> str:
+    return date(idx // 12, idx % 12 + 1, 1).strftime("%B %Y")
+
+
+def transaction_date(t: dict) -> date | None:
+    return date.fromisoformat(t["date"][:10]) if t.get("date") else None
+
+
+def data_bounds(transactions: list[dict]) -> tuple[int, int]:
+    """(first, last) whole months the data covers reliably.
+
+    Land Registry sales take two to three months to appear, so the latest month
+    in the data is never complete and the first month may be cut part-way
+    through; both are left out so every comparison is between full months."""
+    dates = [d for d in (transaction_date(t) for t in transactions) if d]
+    first, latest = min(dates), max(dates)
+    first_full = month_index(first) + (1 if first.day > 1 else 0)
+    return first_full, month_index(latest) - 1
+
+
+def in_months(transactions: list[dict], start: int, end: int) -> list[dict]:
+    return [t for t in transactions if (d := transaction_date(t)) and start <= month_index(d) <= end]
+
+
+def split_rolling_12mo(transactions: list[dict]) -> tuple[list[dict], list[dict], str, str | None]:
+    """The 12 complete months ending at the last full month of data, and the 12
+    months before them (empty if the data doesn't reach back that far), with a
+    label for each period."""
+    first_full, last_full = data_bounds(transactions)
+    current = in_months(transactions, last_full - 11, last_full)
+    prior_covered = last_full - 23 >= first_full
+    prior = in_months(transactions, last_full - 23, last_full - 12) if prior_covered else []
+    prior_label = f"12 months to {month_name(last_full - 12)}"
+    return current, prior, f"12 months to {month_name(last_full)}", prior_label if prior_covered else None
 
 
 def bucket_by_calendar_year(transactions: list[dict]) -> dict[str, list[dict]]:
@@ -114,20 +145,30 @@ def bucket_by_calendar_year(transactions: list[dict]) -> dict[str, list[dict]]:
     return by_year
 
 
-def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_label: str) -> dict:
+def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_label: str,
+                       prior_history: dict | None = None) -> dict:
     """One block of fully pre-formatted values: overall, new-build, domestic - all
-    with _display values and _change strings ready for direct Liquid output."""
+    with _display values and _change strings ready for direct Liquid output.
+
+    The earlier period is normally worked out from `prior_txns`. When the live data
+    doesn't reach back far enough, `prior_history` (a full year from the history
+    file) stands in for it."""
     overall = compute_stats(current_txns)
-    prior_overall = compute_stats(prior_txns) if prior_txns else {"count": 0}
-
     new_build = compute_stats([t for t in current_txns if t["new_build"]])
-    prior_new_build = compute_stats([t for t in prior_txns if t["new_build"]]) if prior_txns else {"count": 0}
-
     domestic = compute_stats([t for t in current_txns if normalize_property_type(t) != "Other"])
-    prior_domestic = compute_stats([t for t in prior_txns if normalize_property_type(t) != "Other"]) if prior_txns else {"count": 0}
-
     other_count = len([t for t in current_txns if normalize_property_type(t) == "Other"])
-    prior_other_count = len([t for t in prior_txns if normalize_property_type(t) == "Other"])
+
+    if prior_history:
+        prior_overall = prior_history
+        prior_new_build = prior_history.get("new_build") or {"count": 0}
+        prior_domestic = prior_history.get("domestic") or {"count": 0}
+        prior_other_count = prior_history.get("other_count", 0)
+    else:
+        prior_overall = compute_stats(prior_txns) if prior_txns else {"count": 0}
+        prior_new_build = compute_stats([t for t in prior_txns if t["new_build"]]) if prior_txns else {"count": 0}
+        prior_domestic = compute_stats([t for t in prior_txns if normalize_property_type(t) != "Other"]) if prior_txns else {"count": 0}
+        prior_other_count = len([t for t in prior_txns if normalize_property_type(t) == "Other"])
+    has_prior = bool(prior_txns) or bool(prior_history)
 
     block = {
         "count": overall.get("count", 0),
@@ -152,10 +193,10 @@ def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_l
         "new_build_count": new_build.get("count", 0),
         "new_build_count_display": f"{new_build.get('count', 0):,}",
         "new_build_count_change": change_str(new_build.get("count", 0), prior_new_build.get("count", 0), prior_label)
-            if new_build.get("count") else None,
+            if new_build.get("count", 0) >= MIN_SAMPLE and prior_new_build.get("count", 0) >= MIN_SAMPLE else None,
         "new_build_median_display": money(new_build["median"]) if new_build.get("count") else None,
         "new_build_median_change": change_str(new_build.get("median", 0), prior_new_build.get("median", 0), prior_label, currency=True)
-            if new_build.get("count") and prior_new_build.get("count") else None,
+            if new_build.get("count", 0) >= MIN_SAMPLE and prior_new_build.get("count", 0) >= MIN_SAMPLE else None,
 
         "domestic_count": domestic.get("count", 0),
         "domestic_count_display": f"{domestic.get('count', 0):,}",
@@ -169,25 +210,88 @@ def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_l
         "other_count": other_count,
         "other_count_prior": prior_other_count,
         "other_note": (
-            f"{other_count} sale{'s' if other_count != 1 else ''} this period and "
-            f"{prior_other_count} the period before "
-            f"{'were' if (other_count + prior_other_count) != 1 else 'was'} classed as \"Other\"."
+            (
+                f"{other_count} sale{'s' if other_count != 1 else ''} this period and "
+                f"{prior_other_count} the period before "
+                f"{'were' if (other_count + prior_other_count) != 1 else 'was'} classed as \"Other\"."
+            ) if has_prior else (
+                f"{other_count} sale{'s' if other_count != 1 else ''} "
+                f"{'were' if other_count != 1 else 'was'} classed as \"Other\"."
+            )
         ) if (other_count + prior_other_count) else None,
     }
     return block
 
 
+def period_label(year: int, start_month: int, end_month: int) -> str:
+    """'2025', 'January to June 2026' or 'June 2026'."""
+    if (start_month, end_month) == (1, 12):
+        return str(year)
+    if start_month == end_month:
+        return date(year, start_month, 1).strftime("%B %Y")
+    return f"{date(year, start_month, 1).strftime('%B')} to {date(year, end_month, 1).strftime('%B %Y')}"
+
+
+def load_history_years() -> dict[int, dict]:
+    """The history file's yearly figures (see _python/local/process-land-registry-history.py),
+    keyed by year - empty if there is no history file."""
+    if not HISTORY_DATA_PATH.exists():
+        return {}
+    return {y["year"]: y for y in json.loads(HISTORY_DATA_PATH.read_text(encoding="utf-8"))["years"]}
+
+
 def build_by_year(transactions: list[dict]) -> list[dict]:
-    by_year = bucket_by_calendar_year(transactions)
-    years_sorted = sorted(by_year.keys(), reverse=True)
+    """One block per calendar year, most recent first. A year that isn't over yet
+    (or that the data only covers part of) is measured over its complete months,
+    and compared with the same months of the year before - never with a full year.
+    A year with no fully covered year before it is compared with the history file's
+    full year where there is one (2023 against 2022), otherwise gets no comparison."""
+    first_full, last_full = data_bounds(transactions)
+    history_years = load_history_years()
+    years = sorted({d.year for d in (transaction_date(t) for t in transactions) if d}, reverse=True)
     results = []
-    for i, year in enumerate(years_sorted):
-        prior_year = years_sorted[i + 1] if i + 1 < len(years_sorted) else None
-        prior_txns = by_year.get(prior_year, []) if prior_year else []
-        block = build_period_block(by_year[year], prior_txns, prior_year or "prior year")
-        block["year"] = year
+    for year in years:
+        start = max(year * 12, first_full)
+        end = min(year * 12 + 11, last_full)
+        if start > end:
+            continue
+        start_month, end_month = start % 12 + 1, end % 12 + 1
+        prior_covered = start - 12 >= first_full
+        prior_txns = in_months(transactions, start - 12, end - 12) if prior_covered else []
+        prior_label = period_label(year - 1, start_month, end_month)
+        prior_history = None
+        if not prior_covered and (start_month, end_month) == (1, 12):
+            prior_history = history_years.get(year - 1)
+        block = build_period_block(in_months(transactions, start, end), prior_txns, prior_label, prior_history)
+        block["year"] = str(year)
+        block["period_label"] = period_label(year, start_month, end_month)
         results.append(block)
     return results
+
+
+def build_overall_since_history(transactions: list[dict]) -> dict | None:
+    """Every sale since the first year of the history file (see
+    _python/local/process-land-registry-history.py): its yearly figures up to
+    its last year, plus every live transaction after that. None if there is no
+    history file, so the page falls back gracefully."""
+    if not HISTORY_DATA_PATH.exists():
+        return None
+    history = json.loads(HISTORY_DATA_PATH.read_text(encoding="utf-8"))
+    live = [t for t in transactions if t.get("amount") and t["date"] and int(t["date"][:4]) > history["last_year"]]
+    count = sum(y["count"] for y in history["years"]) + len(live)
+    total = sum(y["total"] for y in history["years"]) + sum(t["amount"] for t in live)
+    lowest = min([y["min"] for y in history["years"]] + [t["amount"] for t in live])
+    highest = max([y["max"] for y in history["years"]] + [t["amount"] for t in live])
+    latest = max(t["date"] for t in transactions if t["date"])
+    return {
+        "first_year": history["first_year"],
+        "to_month": datetime.fromisoformat(latest).strftime("%B %Y"),
+        "count": count,
+        "count_display": f"{count:,}",
+        "mean_display": money(int(total / count)),
+        "min_display": money(lowest),
+        "max_display": money(highest),
+    }
 
 
 def write_summary(payload: dict, dry_run: bool) -> None:
@@ -204,9 +308,9 @@ def main():
     transactions, raw = load_transactions()
     print(f"Loaded {len(transactions)} transactions (source generated_at: {raw.get('generated_at')}).")
 
-    current_txns, prior_txns = split_rolling_12mo(transactions)
-    current_year = str(datetime.now(timezone.utc).year - 1)  # rolling-12mo label, financial-report style
-    rolling = build_period_block(current_txns, prior_txns, current_year)
+    current_txns, prior_txns, current_label, prior_label = split_rolling_12mo(transactions)
+    rolling = build_period_block(current_txns, prior_txns, prior_label or "prior period")
+    rolling["period_label"] = current_label
 
     full_dataset = compute_stats(transactions)
     full_dataset_display = {
@@ -226,6 +330,7 @@ def main():
         "current": rolling,          # rolling 12mo vs prior 12mo - for the main summary page
         "full_dataset": full_dataset_display,
         "by_year": by_year,          # calendar-year blocks, most recent first - for year subpages
+        "overall": build_overall_since_history(transactions),  # every sale since the history file's first year
     }
 
     write_summary(payload, DRY_RUN)

@@ -16,7 +16,7 @@ Cheltenham is a spa town in Gloucestershire, in the South West of England, known
 
 Today Cheltenham's economy leans heavily on technology and cyber security, [education](/cheltenham-schools), and [tourism](/visiting-cheltenham) around its [festivals](/festivals) and [racing](/cheltenham-festival-accommodation). GCHQ, the government's signals intelligence and cyber security agency, is based on the edge of town and has helped draw a wider cluster of tech and cyber firms to the area, alongside long-established independent [schools](/cheltenham-schools) including Cheltenham College and Cheltenham Ladies' College.
 
-This page pulls together the town's key population and [employment statistics](/cheltenham-employment-history), sourced directly from the Office for National Statistics, and refreshed automatically as new figures are published.
+This page pulls together the town's key population and [employment statistics](/cheltenham-employment-history), with separate pages for [median earnings](/cheltenham-earnings-history) and the [economy](/cheltenham-economy) (jobs, businesses and claimants), sourced directly from the Office for National Statistics, and refreshed automatically as new figures are published.
 
 Wondering who represents the town in Parliament? Our [politics page](/cheltenham-politics) shows Cheltenham's current MP and the result of every general election since 2010, and the [party history](/cheltenham-politics/party-history) goes back to 1918.
 
