@@ -17,6 +17,8 @@ The main list of useful phone numbers now includes:
 - Severn Trent's 24-hour water emergency line
 - Cheltenham Borough Council's customer services
 
+Three out-of-date numbers have been removed: NHS Direct, an old emergency dental helpline and an old electricity number. NHS 111 and 105 replace them.
+
 There are also three new sections: mental health and wellbeing (Samaritans, Shout and Mind), the National Domestic Abuse Helpline, and money and housing advice from North and West Gloucestershire Citizens Advice.
 
 ## FAQs

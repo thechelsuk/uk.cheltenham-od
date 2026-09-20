@@ -38,15 +38,12 @@ Some useful contacts and resources for cheltenham residents. If you have any sug
 - Police Non-Emergency: 101
 - Crimestoppers: 0800 555 111
 - NHS 111 (urgent medical help that isn't a 999 emergency): 111
-- Emergency Dental Helpline: 08452 220505
-- Electricity: 0800 328 1111
 - Power Cut: 105 (free, or 0800 6783 105)
 - Flooding (Sandbags): 01684 293 445
 - Floodline (Environment Agency flood warnings and advice): 0345 988 1188
 - Environment Agency Incident Hotline (pollution and flooding incidents): 0800 80 70 60
 - Gas: 0800 111 999
 - Water Emergencies (Severn Trent, 24 hours): 0800 783 4444
-- NHS Direct: 0845 4647
 - Cheltenham Borough Council: 01242 262626
 
 ## Mental Health and Wellbeing
