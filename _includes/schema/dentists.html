@@ -1,0 +1,30 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Dental Practices in Cheltenham",
+  "description": "Dental practices listed in the NHS directory in the GL50 to GL54 postcodes in and around Cheltenham, with addresses and locations.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['dentists'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Practice name", "Address", "Postcode", "Location"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Are These NHS Dentists?", "acceptedAnswer": {"@type": "Answer", "text": "They are the practices listed in the NHS's directory of dental practices. Some practices offer both NHS and private appointments, so ask for an NHS appointment when you book. Practices that only offer private care are mostly not in the directory, so they won't appear here."}},
+    {"@type": "Question", "name": "Is a Practice Taking New NHS Patients?", "acceptedAnswer": {"@type": "Answer", "text": "This page can't say. Availability changes often and isn't published as open data. Ring the practice, and check the NHS's Find a dentist service."}},
+    {"@type": "Question", "name": "Do I Have to Register With a Dentist?", "acceptedAnswer": {"@type": "Answer", "text": "Not in the way you register with a GP. Being seen at a practice once doesn't guarantee you can get NHS dental care there in the future, and some practices have a waiting list before they can offer an appointment."}},
+    {"@type": "Question", "name": "What if I Can't Find an NHS Dentist?", "acceptedAnswer": {"@type": "Answer", "text": "Contact your local integrated care board, which manages dental services in your area. The NHS's guide to finding an NHS dentist has the details."}},
+    {"@type": "Question", "name": "How Much Does NHS Dental Care Cost?", "acceptedAnswer": {"@type": "Answer", "text": "Most adults pay for NHS dental appointments. The NHS explains what treatment costs and who can get it free."}},
+    {"@type": "Question", "name": "What if I Need Urgent Dental Care?", "acceptedAnswer": {"@type": "Answer", "text": "Use NHS 111 online or call 111 for urgent dental problems. In a life-threatening emergency call 999."}},
+    {"@type": "Question", "name": "Where Does This Data Come From?", "acceptedAnswer": {"@type": "Answer", "text": "The NHS Organisation Data Service, refreshed monthly. It has no coordinates, so each practice is placed at the centre of its postcode, which puts a pin close to the practice rather than exactly on it. If a practice is missing or wrong, the directory may be out of date; tell us and we'll look into it."}}
+  ]
+}
+</script>

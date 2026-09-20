@@ -273,7 +273,7 @@ def render_entry_list(entries):
     lines = []
 
     for e in sorted(entries, key=lambda x: (x["name"], x["address"])):
-        heading = e["name"]
+        heading = e["name"].rstrip(" .,;:!?")  # a trailing comma in an ODS name breaks the heading lint
         if name_counts[e["name"]] > 1:
             street = e["address"].split(",")[0].strip()
             if street:
@@ -294,11 +294,11 @@ def render_markdown(gps, pharmacies):
     lines = []
     lines.append(
         "Finding a GP practice or pharmacy in Cheltenham shouldn't mean "
-        "digging through the NHS website. The listings below are pulled "
+        "digging through the NHS site. The listings below are pulled "
         "directly from [NHS England's Organisation Data Service]"
         "(https://digital.nhs.uk/services/organisation-data-service), the "
         "official register of NHS organisations, so names, addresses and "
-        f"phone numbers stay current automatically.\n"
+        "phone numbers stay current automatically.\n"
     )
     lines.append(
         "\nIf you need to register with a new GP, you can do this "

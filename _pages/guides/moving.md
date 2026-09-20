@@ -39,6 +39,7 @@ Cheltenham is well served for education, from state primaries and secondaries to
 Sorting the practical basics early makes a move smoother — registering with a GP, knowing your bin collection, and finding the nearest services.
 
 - [GPs and pharmacies in Cheltenham](/cheltenham-gp-pharmacies) — where to register and find local healthcare.
+- [Dentists in Cheltenham](/cheltenham-dentists) — dental practices on a map, and how to find an NHS dentist.
 - [Recycling and bin collections](/cheltenham-recycling) — what goes where and when it's collected.
 - [Fuel prices in Cheltenham](/cheltenham-fuel-prices) — local forecourt prices if you'll be driving.
 
