@@ -58,7 +58,7 @@ jobs:
                     exit 0
                   fi
 
-                  git commit -m "Chore: Daily news digest for `date +'%Y-%m-%d'`"
+                  git commit -m "Chore: Daily news digest for $(date +'%Y-%m-%d')"
                   git push
                   echo "changed=true" >> "$GITHUB_OUTPUT"
                   echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

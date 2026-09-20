@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Average Private Rents",
+  "description": "Average monthly private rent in Cheltenham since 2015, by number of bedrooms and property type, compared with the South West and England, from the ONS Price Index of Private Rents.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['rents'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Average monthly private rent", "Monthly rent change", "Annual rent change", "Rent by bedrooms", "Rent by property type"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Where does the rent data come from?", "acceptedAnswer": {"@type": "Answer", "text": "The Office for National Statistics' Price Index of Private Rents, published monthly under the Open Government Licence. It covers rents across all private tenancies in each local authority area in England, and we show Cheltenham alongside the South West and England for comparison."} },
+    { "@type": "Question", "name": "Are these asking rents or rents actually paid?", "acceptedAnswer": {"@type": "Answer", "text": "Rents actually paid. The index covers new and existing private tenancies, so it lags the asking rents on property websites, which reflect what landlords want for new lets today. If you are searching now, expect advertised rents to sit above the averages shown here."} },
+    { "@type": "Question", "name": "How often is it updated?", "acceptedAnswer": {"@type": "Answer", "text": "The ONS publishes a new month of data once a month, and this page is refreshed monthly to pick it up. The latest month is usually a few weeks behind the current date."} },
+    { "@type": "Question", "name": "Why do rents change month to month by only a small amount?", "acceptedAnswer": {"@type": "Answer", "text": "Because the index measures every private tenancy, and most tenancies only change rent once a year at most, monthly movements are small. The annual change is the better figure to look at."} },
+    { "@type": "Question", "name": "I'm a student. Where can I find more help with renting?", "acceptedAnswer": {"@type": "Answer", "text": "Our student guide to Cheltenham covers finding somewhere to live, the University of Gloucestershire page shows where its campuses are, and the housing supply page shows how much student accommodation has been added or lost."} }
+  ]
+}
+</script>
