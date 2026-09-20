@@ -15,22 +15,7 @@
         {{ content }}
 
         <h2>Map of Restaurants, Pubs and Takeaways</h2>
-        <fieldset class="where-to-eat-filter">
-            <legend>Show</legend>
-            {% for t in page.venue_types %}
-            {% assign type_count = venues | where: "type", t.type | size %}
-            <label><input type="checkbox" class="where-to-eat-type" value="{{ t.type }}" checked>
-                {{ t.label }} ({{ type_count }})</label>
-            {% endfor %}
-        </fieldset>
-        <div id="where-to-eat-map" style="height: 560px; border-radius: 8px;" aria-label="Map of restaurants, pubs and takeaways in Cheltenham coloured by food hygiene rating"></div>
-        <p><small>Pin colour shows the hygiene rating:
-            <span style="color: #2e8b57;">&#9679;</span> 5,
-            <span style="color: #8bc34a;">&#9679;</span> 4,
-            <span style="color: #f39c12;">&#9679;</span> 3,
-            <span style="color: #c0392b;">&#9679;</span> 0 to 2,
-            <span style="color: #7f8c8d;">&#9679;</span> awaiting inspection.
-            Venues without a recorded location are listed in the table but not on the map.</small></p>
+        <div id="where-to-eat-map" style="height: 560px; border-radius: 8px;" aria-label="Map of restaurants, pubs and takeaways in Cheltenham with their food hygiene ratings"></div>
 
         <h2>Restaurants, Pubs and Takeaways</h2>
         <div class="table-scroll">
@@ -49,7 +34,7 @@
                 <tbody>
                     {% for v in venues %}
                     {% assign vt = page.venue_types | where: "type", v.type | first %}
-                    <tr data-type="{{ v.type }}">
+                    <tr>
                         <td data-val="{{ v.name | downcase }}"><a href="https://ratings.food.gov.uk/business/{{ v.id }}">{{ v.name }}</a></td>
                         <td class="type">{{ vt.label }}</td>
                         <td class="number" data-val="{% if v.rating == '' or v.rating == 'AwaitingInspection' %}-1{% else %}{{ v.rating }}{% endif %}">{% if v.rating == 'AwaitingInspection' %}Awaiting inspection{% elsif v.rating == '' %}&mdash;{% else %}{{ v.rating }}{% endif %}</td>

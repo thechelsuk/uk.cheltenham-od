@@ -9,7 +9,7 @@ date: 2026-09-20 22:45
 
 Cheltenham Open Data has published a new [where to eat page](/cheltenham-where-to-eat), mapping the town's restaurants, cafés, pubs, bars and takeaways with their official food hygiene ratings.
 
-Every venue has a pin coloured by its rating, from green for a top rating of 5 through to red for the lowest, and selecting a pin shows the rating, when the venue was last inspected, its address and a link to its official record. Below the map, a sortable table lists every venue, and you can switch restaurants and cafés, pubs and bars, and takeaways on and off.
+Every venue has a pin on the map, and selecting one shows its rating, when it was last inspected, its address and a link to its official record. Below the map, a sortable table lists every venue with its rating and inspection date.
 
 The page sits under Things to Do and is linked from the [visiting Cheltenham guide](/visiting-cheltenham), the [student guide](/student-guide-to-cheltenham) and the [food hygiene ratings](/cheltenham-food-standards) pages, which still list every food business in Cheltenham.
 
