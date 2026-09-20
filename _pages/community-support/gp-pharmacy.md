@@ -12,7 +12,7 @@ seo: Cheltenham GP surgeries and pharmacies — addresses, phone numbers and dir
 Moving to the area or starting a course here? Our [moving to Cheltenham](/moving-to-cheltenham) and [student](/student-guide-to-cheltenham) guides both point here for registering with a GP, and our [dentists](/cheltenham-dentists) page lists local dental practices.
 
 <!-- gp_pharmacy_finder starts -->
-Finding a GP practice or pharmacy in Cheltenham shouldn't mean digging through the NHS website. The listings below are pulled directly from [NHS England's Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service), the official register of NHS organisations, so names, addresses and phone numbers stay current automatically.
+Finding a GP practice or pharmacy in Cheltenham shouldn't mean digging through the NHS site. The listings below are pulled directly from [NHS England's Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service), the official register of NHS organisations, so names, addresses and phone numbers stay current automatically.
 
 If you need to register with a new GP, you can do this directly with any practice that covers your address — you don't need a referral or your old practice's permission. For repeat prescriptions, most pharmacies listed below offer a free collection or delivery service; ask in branch or check the [NHS App](https://www.nhs.uk/nhs-app/) to nominate a regular pharmacy.
 
@@ -65,7 +65,7 @@ Addresses link to googlemaps and phone numbers use the `tel:` protocol and shoul
 - Address: [St. Pauls Medical Centre, 121 Swindon Road, Cheltenham, GL50 4DP](https://www.google.com/maps/search/?api=1&query=St.+Pauls+Medical+Centre%2C+121+Swindon+Road%2C+Cheltenham%2C+GL50+4DP)
 - Phone: [01242 215010](tel:01242215010)
 
-### The Stoke Road Surgery,
+### The Stoke Road Surgery
 
 - Address: [4 Stoke Road, Bishops Cleeve, Cheltenham, GL52 8RP](https://www.google.com/maps/search/?api=1&query=4+Stoke+Road%2C+Bishops+Cleeve%2C+Cheltenham%2C+GL52+8RP)
 - Phone: [01242 672007](tel:01242672007)
