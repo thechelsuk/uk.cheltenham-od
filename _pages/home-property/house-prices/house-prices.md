@@ -15,16 +15,16 @@ available-years:
 
 ## Cheltenham House Prices from Land Registry Price Paid Data
 
-Cheltenham has seen **{{ site.data.house-summary.current.count_display }}** properties change hands over the past year{% if site.data.house-summary.current.count_change %}, {{ site.data.house-summary.current.count_change }}{% endif %}. The typical sale (median) went for **{{ site.data.house-summary.current.median_display }}**{% if site.data.house-summary.current.median_change %}, {{ site.data.house-summary.current.median_change }}{% endif %}, with an average (mean) of **{{ site.data.house-summary.current.mean_display }}**{% if site.data.house-summary.current.mean_change %}, {{ site.data.house-summary.current.mean_change }}{% endif %}. Prices ranged from {{ site.data.house-summary.current.min_display }} up to {{ site.data.house-summary.current.max_display }}{% if site.data.house-summary.current.range_prior_display %} ({{ site.data.house-summary.current.range_prior_display }}){% endif %}.
+Cheltenham has seen **{{ site.data.house-summary.current.count_display }}** properties change hands in the {{ site.data.house-summary.current.period_label | default: "past year" }}{% if site.data.house-summary.current.count_change %}, {{ site.data.house-summary.current.count_change }}{% endif %}. The typical sale (median) went for **{{ site.data.house-summary.current.median_display }}**{% if site.data.house-summary.current.median_change %}, {{ site.data.house-summary.current.median_change }}{% endif %}, with an average (mean) of **{{ site.data.house-summary.current.mean_display }}**{% if site.data.house-summary.current.mean_change %}, {{ site.data.house-summary.current.mean_change }}{% endif %}. Prices ranged from {{ site.data.house-summary.current.min_display }} up to {{ site.data.house-summary.current.max_display }}{% if site.data.house-summary.current.range_prior_display %} ({{ site.data.house-summary.current.range_prior_display }}){% endif %}.
 
 {% if site.data.house-summary.current.new_build_count > 0 %}
-Of these, **{{ site.data.house-summary.current.new_build_count_display }}** were new build sales{% if site.data.house-summary.current.new_build_count_change %}, {{ site.data.house-summary.current.new_build_count_change }}{% endif %}, with a median price of {{ site.data.house-summary.current.new_build_median_display }}{% if site.data.house-summary.current.new_build_median_change %}, {{ site.data.house-summary.current.new_build_median_change }}{% endif %}.
+Of these, **{{ site.data.house-summary.current.new_build_count_display }}** {% if site.data.house-summary.current.new_build_count == 1 %}was a new build sale{% else %}were new build sales{% endif %}{% if site.data.house-summary.current.new_build_count_change %}, {{ site.data.house-summary.current.new_build_count_change }}{% endif %}, with a median price of {{ site.data.house-summary.current.new_build_median_display }}{% if site.data.house-summary.current.new_build_median_change %}, {{ site.data.house-summary.current.new_build_median_change }}{% endif %}.
 {% else %}
-No new build sales were recorded in Cheltenham over the past year.
+No new build sales were recorded in Cheltenham in the {{ site.data.house-summary.current.period_label | default: "past year" }}.
 {% endif %}
 
 {% if site.data.house-summary.current.domestic_count > 0 %}
-Excluding properties classed as "Other" in Land Registry data, {{ site.data.house-summary.current.domestic_count_display }} domestic sales were recorded over the past year{% if site.data.house-summary.current.domestic_count_change %}, {{ site.data.house-summary.current.domestic_count_change }}{% endif %}, with an average (mean) price of {{ site.data.house-summary.current.domestic_mean_display }}{% if site.data.house-summary.current.domestic_mean_change %}, {{ site.data.house-summary.current.domestic_mean_change }}{% endif %}. {% if site.data.house-summary.current.other_note %}{{ site.data.house-summary.current.other_note }}{% endif %}
+Excluding properties classed as "Other" in Land Registry data, {{ site.data.house-summary.current.domestic_count_display }} domestic sales were recorded in the {{ site.data.house-summary.current.period_label | default: "past year" }}{% if site.data.house-summary.current.domestic_count_change %}, {{ site.data.house-summary.current.domestic_count_change }}{% endif %}, with an average (mean) price of {{ site.data.house-summary.current.domestic_mean_display }}{% if site.data.house-summary.current.domestic_mean_change %}, {{ site.data.house-summary.current.domestic_mean_change }}{% endif %}. {% if site.data.house-summary.current.other_note %}{{ site.data.house-summary.current.other_note }}{% endif %}
 {% endif %}
 
 ### Overall Since 1995
@@ -40,7 +40,7 @@ Excluding properties classed as "Other" in Land Registry data, {{ site.data.hous
 
 Other exclusion is based on Land Registry's own property type classification which seems to indicate non-domestic buildings and should be treated as a indicative and not a guaranteed commercial/residential split.
 
-Recently completed sales may take 2-3 months to appear.
+Recently completed sales may take 2-3 months to appear, so comparisons only use complete months, and a year that isn't over yet is compared with the same months of the year before.
 
 Thinking of relocating? Our [moving to Cheltenham guide](/moving-to-cheltenham) pulls this together with schools, crime data and neighbourhood comparisons. See also our [council tax charges by area and band](/cheltenham-council-tax) page.
 

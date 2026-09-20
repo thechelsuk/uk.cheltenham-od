@@ -97,16 +97,24 @@ def summarise():
     with open(SRC, encoding="utf-8", newline="") as f:
         for row in csv.DictReader(f):
             price = int(row["price"])
-            by_year.setdefault(int(row["date"][:4]), []).append((price, TYPES.get(row["property_type"], "other")))
+            by_year.setdefault(int(row["date"][:4]), []).append(
+                (price, TYPES.get(row["property_type"], "other"), row["new_build"] == "Y")
+            )
 
     years = []
     for year in sorted(by_year):
         rows = by_year[year]
-        entry = {"year": year, **block([p for p, _ in rows])}
+        entry = {"year": year, **block([p for p, _, _ in rows])}
         entry["by_type"] = {
-            name: block([p for p, t in rows if t == name]) if any(t == name for _, t in rows) else None
+            name: block([p for p, t, _ in rows if t == name]) if any(t == name for _, t, _ in rows) else None
             for name in TYPES.values()
         }
+        # The splits house_summary.py compares year on year: new builds, and domestic sales (everything not "Other").
+        new_builds = [p for p, _, new in rows if new]
+        domestic = [p for p, t, _ in rows if t != "other"]
+        entry["new_build"] = block(new_builds) if new_builds else None
+        entry["domestic"] = block(domestic) if domestic else None
+        entry["other_count"] = sum(1 for _, t, _ in rows if t == "other")
         years.append(entry)
 
     output = {
