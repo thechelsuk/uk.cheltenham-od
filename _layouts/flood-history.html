@@ -15,6 +15,7 @@
 
         {{ content }}
 
+        <h2>Flood Warning Data</h2>
         {% if history.records.size > 0 %}
         <div class="table-scroll">
             <table class="flood-history-table data-table" data-sortable>
@@ -33,20 +34,19 @@
                         <td>{{ r.description }}</td>
                         <td>{{ r.severity }}</td>
                         <td>{{ r.county }}</td>
-                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
-                        <td class="date">{% if r.last_seen_iso.size > 0 %}{{ r.last_seen_iso | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
+                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%Y-%m-%d %H:%M"
+                            }}{% else %}Unknown{% endif %}</td>
+                        <td class="date">{% if r.last_seen_iso.size > 0 %}{{ r.last_seen_iso | date: "%Y-%m-%d %H:%M"
+                            }}{% else %}Unknown{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
         {% else %}
-        <p>No flood warnings have been recorded for Gloucestershire since this page started tracking them.</p>
+        <blockquote>No flood warnings have been recorded for Gloucestershire since this page started tracking them.
+        </blockquote>
         {% endif %}
-        <h2>The Summer 2007 Floods</h2>
-        <p>Cheltenham's worst modern flooding came before this page started tracking warnings. What happened in June
-            and July 2007, and the record river levels it left behind, is on
-            <a href="/cheltenham-flood-warnings/2007-floods">The Summer 2007 Floods in Cheltenham</a>.</p>
 
         <p class="flood-history-attribution"><small>
                 Data from the <a href="{{ history.source }}">Environment Agency</a>.
