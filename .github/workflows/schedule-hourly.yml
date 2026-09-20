@@ -74,6 +74,7 @@ jobs:
                   python '_python/bus-data.py' || echo "::warning::bus-data.py failed, continuing with other scripts"
                   python '_python/inpost.py' || echo "::warning::inpost.py failed, continuing with other scripts"
                   python '_python/dpd-pickup.py' || echo "::warning::dpd-pickup.py failed, continuing with other scripts"
+                  python '_python/river-levels.py' || echo "::warning::river-levels.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit

@@ -1,0 +1,52 @@
+{% include header.html %}
+{% assign rivers = site.data["river-levels"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-flood-warnings/history">&lAarr; Back to Flood Warnings History</a></li>
+                <li><a href="/cheltenham-flood-warnings">Live River Levels and Flood Warnings &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Highest Levels on Record at Each Gauge</h2>
+        <p>The gauges on the <a href="/cheltenham-flood-warnings">flood warnings page</a> still show the mark of that
+            summer: the Environment Agency's records give several of them a highest-ever level from June or July
+            2007.</p>
+        <div class="table-scroll">
+            <table class="flood-records-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Gauge</th>
+                        <th scope="col">Watercourse</th>
+                        <th scope="col" class="number">Highest Level on Record</th>
+                        <th scope="col" class="date">Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in rivers.stations %}
+                    {% if s.record %}
+                    <tr>
+                        <td data-val="{{ s.label | downcase }}">{{ s.label }}</td>
+                        <td>{{ s.river | default: "River Chelt" }}</td>
+                        <td class="number" data-val="{{ s.record }}">{{ s.record_display }}</td>
+                        <td class="date" data-val="{{ s.record_date }}">{{ s.record_date }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="flood-records-attribution"><small>
+            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>, published under the Open
+            Government Licence v3.0. Last updated {{ rivers.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+    </div>
+</div>
+{% include footer.html %}

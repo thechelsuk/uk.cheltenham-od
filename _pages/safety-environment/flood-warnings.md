@@ -2,8 +2,8 @@
 
 layout: flood-warnings
 title: Cheltenham Flood Warnings
-seo: Flood warnings and alerts for Cheltenham and Gloucestershire, sourced from the Environment Agency.
-description: "Live flood warnings for Cheltenham and Gloucestershire, sourced from the Environment Agency."
+seo: Flood warnings, live river levels and rainfall for Cheltenham and Gloucestershire, sourced from the Environment Agency.
+description: "Live flood warnings, river levels and rainfall for Cheltenham and Gloucestershire, sourced from the Environment Agency."
 type: "environment"
 feed_url: "/feeds/flood.xml"
 permalink: /cheltenham-flood-warnings
@@ -21,11 +21,11 @@ warnings or alerts in force for the area — which is common during drier period
 and through the summer months.
 
 Cheltenham sits in a low-lying part of the Severn Vale and has a history of
-surface-water and river flooding, most notably during the summer 2007 floods.
+surface-water and river flooding, most notably during the summer 2007 floods, which are covered on our [2007 floods page](/cheltenham-flood-warnings/2007-floods).
 Local watercourses including the River Chelt, along with the Severn and Avon
 catchments across Gloucestershire, are the main sources of flood risk in the
 area. Risk is highest during prolonged or heavy rainfall, particularly in
-autumn and winter.
+autumn and winter. Live river levels and rainfall from the Environment Agency's gauges around the town are further down this page, after the latest flood alerts.
 
 For the state of the River Chelt itself day-to-day, see our [sewage overflow status](/cheltenham-sewage-overflows) and [river water quality](/cheltenham-water-quality) pages. If it's a power cut rather than a flood you're checking, see [Cheltenham power cuts](/cheltenham-power-cuts).
 
