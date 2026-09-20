@@ -4,7 +4,7 @@ title: House Price History Back to 1995
 type: cod
 description: The Cheltenham house prices page now charts the median price and number of sales every year since 1995, overall and by property type, from HM Land Registry Price Paid Data.
 seo: Cheltenham house prices since 1995 — the median sale price and number of sales every year, overall and by property type, from HM Land Registry Price Paid Data.
-date: 2026-09-20 20:15
+date: 2026-09-20 20:10
 ---
 
 The [Cheltenham house prices page](/cheltenham-house-prices) now goes back to 1995, instead of starting in 2023.
