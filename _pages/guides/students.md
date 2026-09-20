@@ -26,6 +26,7 @@ Most students rent, whether that's halls in the first year or a shared house aft
 
 Sort the boring-but-important admin early and the rest of term runs more smoothly.
 
+- [University of Gloucestershire campuses](/university-of-gloucestershire) — where each campus is, what is taught there and how far it is from the station.
 - [GPs and pharmacies](/cheltenham-gp-pharmacies) — register with a local practice as soon as you arrive, not when you're already ill.
 - [Recycling and bin collections](/cheltenham-recycling) — what goes in which bin and when it's collected, so your house avoids missed pickups.
 - [Post Office locations](/cheltenham-post-office-locations) — for parcels, ID documents and sending things home.

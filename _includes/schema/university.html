@@ -1,0 +1,33 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollegeOrUniversity",
+  "name": "University of Gloucestershire",
+  "url": "https://www.glos.ac.uk/",
+  "sameAs": ["https://www.ucas.com/explore/unis/aa1a1601/university-of-gloucestershire"],
+  "location": [
+    {% for loc in site.data.university.locations %}
+    {
+      "@type": "Place",
+      "name": "{{ loc.name }}",
+      "address": { "@type": "PostalAddress", "streetAddress": "{{ loc.address }}", "postalCode": "{{ loc.postcode }}", "addressCountry": "GB" },
+      "geo": { "@type": "GeoCoordinates", "latitude": {{ loc.latitude }}, "longitude": {{ loc.longitude }} }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which campus will my course be taught at?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the subject. Broadly, business, accounting, law, sports, health and social care and performing arts are at Oxstalls Campus in Gloucester, creative courses and computing are at Park Campus, architecture, English, history, geography, environmental science and biosciences are at Francis Close Hall, and education, psychological sciences and social work are at City Campus in Gloucester. The course page on the university's website confirms where each course is based."} },
+    { "@type": "Question", "name": "How do I apply?", "acceptedAnswer": {"@type": "Answer", "text": "Undergraduate applications are made through UCAS, and the university has its own guide to applying. You can also book an open day to visit a campus first."} },
+    { "@type": "Question", "name": "Where can students live?", "acceptedAnswer": {"@type": "Answer", "text": "Pittville Student Village on Albert Road in Cheltenham offers student accommodation only, and the university publishes maps and addresses for its halls of residence. Many students rent privately after the first year: see our rent prices page, the housing supply page for how much student accommodation has been added, and the student guide."} },
+    { "@type": "Question", "name": "How far are the campuses from the railway station?", "acceptedAnswer": {"@type": "Answer", "text": "According to the university, Cheltenham Spa station is about a 25-minute walk from Park Campus and a 30-minute walk from Francis Close Hall. In Gloucester, the station is about a 20-minute walk from Oxstalls Campus and 7 minutes from City Campus, and the train between Cheltenham and Gloucester takes about 8 minutes. See our train times page for the next trains."} },
+    { "@type": "Question", "name": "Where can I find the university's term dates?", "acceptedAnswer": {"@type": "Answer", "text": "The university publishes its academic calendar with the dates of each term."} },
+    { "@type": "Question", "name": "Where does the information on this page come from?", "acceptedAnswer": {"@type": "Answer", "text": "The campus and school details come from the University of Gloucestershire's own website and are checked by hand rather than fetched automatically. Confirm anything time-sensitive, such as open day dates or where a course is based, with the university."} }
+  ]
+}
+</script>
