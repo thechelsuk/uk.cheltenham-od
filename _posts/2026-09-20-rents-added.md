@@ -11,7 +11,7 @@ Cheltenham Open Data has published a new [rent prices page](/cheltenham-rent-pri
 
 It shows the average private rent for the latest month with its change on a year earlier, and two charts that compare Cheltenham with the South West and England: the average monthly rent, and the annual percentage change. Tables below break the latest figures down by number of bedrooms and by property type, and show the average rent for the same month in every year since 2015.
 
-The page sits alongside [house prices](/cheltenham-house-prices) under Home & Property, and is linked from the [student guide](/student-guide-to-cheltenham) for anyone looking for somewhere to live.
+The page sits alongside [house prices](/cheltenham-house-prices) under Home & Property, and is linked from the [student guide](/student-guide-to-cheltenham) and the [moving to Cheltenham guide](/moving-to-cheltenham) for anyone looking for somewhere to live.
 
 ## FAQs
 
