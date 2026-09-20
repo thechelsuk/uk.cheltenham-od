@@ -1,0 +1,127 @@
+{% include header.html %}
+{% assign data = site.data["rents"] %}
+{% assign latest = data.latest %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/home-property">&lAarr; Back to Home &amp; Property</a></li>
+                <li>Latest figures for {{ latest.month_name }} {{ latest.year }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Average Monthly Rent since 2015</h2>
+        <canvas id="rents-price-chart" height="120" aria-label="Line chart of the average monthly private rent in Cheltenham, the South West and England since 2015"></canvas>
+
+        <h2>Annual Rent Change</h2>
+        <canvas id="rents-change-chart" height="120" aria-label="Line chart of the annual percentage change in private rents in Cheltenham, the South West and England"></canvas>
+
+        <h2>Rent by Number of Bedrooms</h2>
+        <div class="table-scroll">
+            <table class="rents-bedrooms-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Bedrooms</th>
+                        <th scope="col" class="number">Average Monthly Rent</th>
+                        <th scope="col" class="number">Change on a Year Earlier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data.by_bedrooms %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ row.label }}</td>
+                        <td class="number" data-val="{{ row.price }}">{{ row.price_display }}</td>
+                        <td class="number" data-val="{{ row.annual_change }}">{{ row.annual_change_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Rent by Property Type</h2>
+        <div class="table-scroll">
+            <table class="rents-type-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Property Type</th>
+                        <th scope="col" class="number">Average Monthly Rent</th>
+                        <th scope="col" class="number">Change on a Year Earlier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data.by_type %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ row.label }}</td>
+                        <td class="number" data-val="{{ row.price }}">{{ row.price_display }}</td>
+                        <td class="number" data-val="{{ row.annual_change }}">{{ row.annual_change_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Average Rent in {{ latest.month_name }} Each Year</h2>
+        <div class="table-scroll">
+            <table class="rents-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Month</th>
+                        <th scope="col" class="number">Average Monthly Rent</th>
+                        <th scope="col" class="number">Change on a Year Earlier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data.same_month_history reversed %}
+                    <tr>
+                        <td class="date" data-val="{{ row.period }}">{{ row.period }}</td>
+                        <td class="number" data-val="{{ row.price }}">{{ row.price_display }}</td>
+                        <td class="number" data-val="{% if row.annual_change != nil %}{{ row.annual_change }}{% else %}-999{% endif %}">{% if row.annual_change != nil %}{{ row.annual_change_display }}{% else %}&mdash;{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="rents-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, edition released {{ data.edition | date: "%-d %B %Y" }}.
+            Rents are not seasonally adjusted and are rounded to the nearest pound.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Where Does the Rent Data Come From?</h3>
+        <p>The Office for National Statistics' Price Index of Private Rents, published monthly under the Open
+            Government Licence. It covers rents across all private tenancies in each local authority area in England,
+            and we show Cheltenham alongside the South West and England for comparison.</p>
+
+        <h3>Are These Asking Rents or Rents Actually Paid?</h3>
+        <p>Rents actually paid. The index covers new and existing private tenancies, so it lags the asking rents on
+            property websites, which reflect what landlords want for new lets today. If you are searching now, expect
+            advertised rents to sit above the averages shown here.</p>
+
+        <h3>How Often Is It Updated?</h3>
+        <p>The ONS publishes a new month of data once a month, and this page is refreshed monthly to pick it up. The
+            latest month is usually a few weeks behind the current date.</p>
+
+        <h3>Why Do Rents Change Month to Month by Only a Small Amount?</h3>
+        <p>Because the index measures every private tenancy, and most tenancies only change rent once a year at most,
+            monthly movements are small. The annual change is the better figure to look at.</p>
+
+        <h3>I'm a Student. Where Can I Find More Help With Renting?</h3>
+        <p>Our <a href="/student-guide-to-cheltenham">student guide to Cheltenham</a> covers finding somewhere to live,
+            and the <a href="/cheltenham-house-prices/housing-supply">housing supply</a> page shows how much student
+            accommodation has been added or lost.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="rents-series-data" type="application/json">{{ data.series | jsonify }}</script>
+<script src="/assets/scripts/rents-chart.js"></script>
+{% include footer.html %}
