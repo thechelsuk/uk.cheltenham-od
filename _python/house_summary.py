@@ -145,30 +145,20 @@ def bucket_by_calendar_year(transactions: list[dict]) -> dict[str, list[dict]]:
     return by_year
 
 
-def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_label: str,
-                       prior_history: dict | None = None) -> dict:
+def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_label: str) -> dict:
     """One block of fully pre-formatted values: overall, new-build, domestic - all
-    with _display values and _change strings ready for direct Liquid output.
-
-    The earlier period is normally worked out from `prior_txns`. When the live data
-    doesn't reach back far enough, `prior_history` (a full year from the history
-    file) stands in for it."""
+    with _display values and _change strings ready for direct Liquid output."""
     overall = compute_stats(current_txns)
-    new_build = compute_stats([t for t in current_txns if t["new_build"]])
-    domestic = compute_stats([t for t in current_txns if normalize_property_type(t) != "Other"])
-    other_count = len([t for t in current_txns if normalize_property_type(t) == "Other"])
+    prior_overall = compute_stats(prior_txns) if prior_txns else {"count": 0}
 
-    if prior_history:
-        prior_overall = prior_history
-        prior_new_build = prior_history.get("new_build") or {"count": 0}
-        prior_domestic = prior_history.get("domestic") or {"count": 0}
-        prior_other_count = prior_history.get("other_count", 0)
-    else:
-        prior_overall = compute_stats(prior_txns) if prior_txns else {"count": 0}
-        prior_new_build = compute_stats([t for t in prior_txns if t["new_build"]]) if prior_txns else {"count": 0}
-        prior_domestic = compute_stats([t for t in prior_txns if normalize_property_type(t) != "Other"]) if prior_txns else {"count": 0}
-        prior_other_count = len([t for t in prior_txns if normalize_property_type(t) == "Other"])
-    has_prior = bool(prior_txns) or bool(prior_history)
+    new_build = compute_stats([t for t in current_txns if t["new_build"]])
+    prior_new_build = compute_stats([t for t in prior_txns if t["new_build"]]) if prior_txns else {"count": 0}
+
+    domestic = compute_stats([t for t in current_txns if normalize_property_type(t) != "Other"])
+    prior_domestic = compute_stats([t for t in prior_txns if normalize_property_type(t) != "Other"]) if prior_txns else {"count": 0}
+
+    other_count = len([t for t in current_txns if normalize_property_type(t) == "Other"])
+    prior_other_count = len([t for t in prior_txns if normalize_property_type(t) == "Other"])
 
     block = {
         "count": overall.get("count", 0),
@@ -214,7 +204,7 @@ def build_period_block(current_txns: list[dict], prior_txns: list[dict], prior_l
                 f"{other_count} sale{'s' if other_count != 1 else ''} this period and "
                 f"{prior_other_count} the period before "
                 f"{'were' if (other_count + prior_other_count) != 1 else 'was'} classed as \"Other\"."
-            ) if has_prior else (
+            ) if prior_txns else (
                 f"{other_count} sale{'s' if other_count != 1 else ''} "
                 f"{'were' if other_count != 1 else 'was'} classed as \"Other\"."
             )
@@ -232,22 +222,12 @@ def period_label(year: int, start_month: int, end_month: int) -> str:
     return f"{date(year, start_month, 1).strftime('%B')} to {date(year, end_month, 1).strftime('%B %Y')}"
 
 
-def load_history_years() -> dict[int, dict]:
-    """The history file's yearly figures (see _python/local/process-land-registry-history.py),
-    keyed by year - empty if there is no history file."""
-    if not HISTORY_DATA_PATH.exists():
-        return {}
-    return {y["year"]: y for y in json.loads(HISTORY_DATA_PATH.read_text(encoding="utf-8"))["years"]}
-
-
 def build_by_year(transactions: list[dict]) -> list[dict]:
     """One block per calendar year, most recent first. A year that isn't over yet
     (or that the data only covers part of) is measured over its complete months,
     and compared with the same months of the year before - never with a full year.
-    A year with no fully covered year before it is compared with the history file's
-    full year where there is one (2023 against 2022), otherwise gets no comparison."""
+    A year with no fully covered year before it gets no comparison."""
     first_full, last_full = data_bounds(transactions)
-    history_years = load_history_years()
     years = sorted({d.year for d in (transaction_date(t) for t in transactions) if d}, reverse=True)
     results = []
     for year in years:
@@ -259,10 +239,7 @@ def build_by_year(transactions: list[dict]) -> list[dict]:
         prior_covered = start - 12 >= first_full
         prior_txns = in_months(transactions, start - 12, end - 12) if prior_covered else []
         prior_label = period_label(year - 1, start_month, end_month)
-        prior_history = None
-        if not prior_covered and (start_month, end_month) == (1, 12):
-            prior_history = history_years.get(year - 1)
-        block = build_period_block(in_months(transactions, start, end), prior_txns, prior_label, prior_history)
+        block = build_period_block(in_months(transactions, start, end), prior_txns, prior_label)
         block["year"] = str(year)
         block["period_label"] = period_label(year, start_month, end_month)
         results.append(block)
