@@ -10,31 +10,39 @@
         {{ content }}
 
         <h2>Categories You Can Sponsor</h2>
-        <p>Each category is £100/month at the founding rate, with editorial included. One sponsor per category. The Pages column counts the category's own overview page plus every page listed in the site menu under that heading, so it updates itself as pages are added.</p>
+        <p>Each category is £100/month at the founding rate, with editorial included. One sponsor per category.
+            The Pages column shows how many pages site under each category and list the pages, so you can see how many
+            pages one sponsorship covers.</p>
 
         {% assign gta_items = site.navigation_header | where: "group", "Getting Around" %}
         {% assign gta_count = gta_items.size | plus: 1 %}
-        {% for item in gta_items %}{% if item.children %}{% assign gta_count = gta_count | plus: item.children.size %}{% endif %}{% endfor %}
+        {% for item in gta_items %}{% if item.children %}{% assign gta_count = gta_count | plus: item.children.size %}{%
+        endif %}{% endfor %}
 
         {% assign hap_items = site.navigation_header | where: "group", "Home & Property" %}
         {% assign hap_count = hap_items.size | plus: 1 %}
-        {% for item in hap_items %}{% if item.children %}{% assign hap_count = hap_count | plus: item.children.size %}{% endif %}{% endfor %}
+        {% for item in hap_items %}{% if item.children %}{% assign hap_count = hap_count | plus: item.children.size %}{%
+        endif %}{% endfor %}
 
         {% assign sae_items = site.navigation_header | where: "group", "Safety & Environment" %}
         {% assign sae_count = sae_items.size | plus: 1 %}
-        {% for item in sae_items %}{% if item.children %}{% assign sae_count = sae_count | plus: item.children.size %}{% endif %}{% endfor %}
+        {% for item in sae_items %}{% if item.children %}{% assign sae_count = sae_count | plus: item.children.size %}{%
+        endif %}{% endfor %}
 
         {% assign tdo_items = site.navigation_header | where: "group", "Things to Do" %}
         {% assign tdo_count = tdo_items.size | plus: 1 %}
-        {% for item in tdo_items %}{% if item.children %}{% assign tdo_count = tdo_count | plus: item.children.size %}{% endif %}{% endfor %}
+        {% for item in tdo_items %}{% if item.children %}{% assign tdo_count = tdo_count | plus: item.children.size %}{%
+        endif %}{% endfor %}
 
         {% assign cas_items = site.navigation_header | where: "group", "Community & Support" %}
         {% assign cas_count = cas_items.size | plus: 1 %}
-        {% for item in cas_items %}{% if item.children %}{% assign cas_count = cas_count | plus: item.children.size %}{% endif %}{% endfor %}
+        {% for item in cas_items %}{% if item.children %}{% assign cas_count = cas_count | plus: item.children.size %}{%
+        endif %}{% endfor %}
 
         {% assign aai_items = site.navigation_header | where: "group", "About & Info" %}
         {% assign aai_count = aai_items.size | plus: 1 %}
-        {% for item in aai_items %}{% if item.children %}{% for child in item.children %}{% unless child.link == "/submission" %}{% assign aai_count = aai_count | plus: 1 %}{% endunless %}{% endfor %}{% endif %}{% endfor %}
+        {% for item in aai_items %}{% if item.children %}{% for child in item.children %}{% unless child.link ==
+        "/submission" %}{% assign aai_count = aai_count | plus: 1 %}{% endunless %}{% endfor %}{% endif %}{% endfor %}
 
         <div class="table-scroll">
             <table class="sponsor-categories-table data-table">
@@ -50,53 +58,76 @@
                 <tbody>
                     <tr>
                         <td><a href="/explore/getting-around">Getting Around</a></td>
-                        <td>Category overview, Fuel Prices, EV Charging, Car Parks, Roadworks, Bus Data, Cycle Routes, Train Times</td>
+                        <td>Category overview, Fuel Prices, EV Charging, Car Parks, Roadworks, Bus Data, Cycle Routes,
+                            Train Times</td>
                         <td class="number">{{ gta_count }}</td>
                         <td>Garages, MOT &amp; servicing, tyre fitters, EV installers, driving schools</td>
-                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_gta }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_gta }}"
+                                rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                     <tr>
                         <td><a href="/explore/home-property">Home &amp; Property</a></td>
-                        <td>Category overview, House Prices (incl. yearly archives, housing supply &amp; property stock), Planning Applications, Council Tax, Rent Prices, Broadband &amp; Mobile Coverage, Recycling</td>
+                        <td>Category overview, House Prices (incl. yearly archives, housing supply &amp; property
+                            stock), Planning Applications, Council Tax, Rent Prices, Broadband &amp; Mobile Coverage,
+                            Recycling</td>
                         <td class="number">{{ hap_count }}</td>
-                        <td>Estate agents, mortgage brokers, conveyancers, architects, builders, extension &amp; loft firms</td>
-                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_hap }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                        <td>Estate agents, mortgage brokers, conveyancers, architects, builders, extension &amp; loft
+                            firms</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_hap }}"
+                                rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                     <tr>
                         <td><a href="/explore/safety-environment">Safety &amp; Environment</a></td>
-                        <td>Category overview, Crime Data (incl. yearly archives), Water Quality &amp; Flooding (incl. river levels, flood zones, sewage overflow status &amp; river quality), Air Quality, Security Alerts, Fix My Street, Power Cuts (incl. history)</td>
+                        <td>Category overview, Crime Data (incl. yearly archives), Water Quality &amp; Flooding (incl.
+                            river levels, flood zones, sewage overflow status &amp; river quality), Air Quality,
+                            Security Alerts, Fix My Street, Power Cuts (incl. history)</td>
                         <td class="number">{{ sae_count }}</td>
-                        <td>Alarm &amp; camera installers, insurance brokers, damp &amp; flood specialists, tree surgeons &amp; gardeners</td>
-                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_sae }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                        <td>Alarm &amp; camera installers, insurance brokers, damp &amp; flood specialists, tree
+                            surgeons &amp; gardeners</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_sae }}"
+                                rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                     <tr>
                         <td><a href="/explore/things-to-do">Things to Do</a></td>
-                        <td>Category overview, Events, Sports &amp; Clubs (incl. Cheltenham Town FC &amp; parkrun), Where to Eat, Points of Interest, Play Parks, Places to Stay, Public Holidays, Festivals, Public Toilets</td>
+                        <td>Category overview, Events, Sports &amp; Clubs (incl. Cheltenham Town FC &amp; parkrun),
+                            Where to Eat, Points of Interest, Play Parks, Places to Stay, Public Holidays, Festivals,
+                            Public Toilets</td>
                         <td class="number">{{ tdo_count }}</td>
                         <td>Venues, hotels &amp; guest houses, attractions, event organisers, hospitality</td>
-                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_tdo }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_tdo }}"
+                                rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                     <tr>
                         <td><a href="/explore/community-support">Community &amp; Support</a></td>
-                        <td>Category overview, Food Bank, Helplines &amp; Contacts, GP &amp; Pharmacies, Dentists, Opticians, A&amp;E Waiting Times, Food Hygiene Ratings (incl. rating bands), Third Spaces</td>
+                        <td>Category overview, Food Bank, Helplines &amp; Contacts, GP &amp; Pharmacies, Dentists,
+                            Opticians, A&amp;E Waiting Times, Food Hygiene Ratings (incl. rating bands), Third Spaces
+                        </td>
                         <td class="number">{{ cas_count }}</td>
                         <td>Local shops &amp; services, health &amp; care providers, cafés, community businesses</td>
-                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_cas }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_cas }}"
+                                rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                     <tr>
                         <td><a href="/explore/about-info">About &amp; Info</a></td>
-                        <td>Category overview, All About Cheltenham (incl. employment, earnings &amp; economy, politics, listed buildings &amp; council land &amp; assets), Schools &amp; Catchment Areas, University of Gloucestershire, Post Offices &amp; Lockers (incl. InPost &amp; DPD pickup points), Latest News, Classifieds, Weather</td>
+                        <td>Category overview, All About Cheltenham (incl. employment, earnings &amp; economy, politics,
+                            listed buildings &amp; council land &amp; assets), Schools &amp; Catchment Areas, University
+                            of Gloucestershire, Post Offices &amp; Lockers (incl. InPost &amp; DPD pickup points),
+                            Latest News, Classifieds, Weather</td>
                         <td class="number">{{ aai_count }}</td>
-                        <td>Schools suppliers, uniform &amp; shoe shops, removals &amp; storage, print &amp; stationery, professional services</td>
-                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_aai }}" rel="sponsored noopener">Sponsor &rarr;</a></td>
+                        <td>Schools suppliers, uniform &amp; shoe shops, removals &amp; storage, print &amp; stationery,
+                            professional services</td>
+                        <td class="action"><a class="latest-action-link" href="{{ page.sponsor_aai }}"
+                                rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <h2>Principal Sponsor — Home Page</h2>
-        <p><strong>£250/month.</strong> Front and centre on the site's busiest page — the homepage — plus an editorial feature each month. One slot only.</p>
-        <p><a class="latest-action-link" href="{{ page.sponsor_principal }}" rel="sponsored noopener">Buy Today &rarr;</a></p>
+        <p><strong>£250/month.</strong> Front and centre on the site's busiest page — the homepage — plus an editorial
+            feature each month. One slot only.</p>
+        <p><a class="latest-action-link" href="{{ page.sponsor_principal }}" rel="sponsored noopener">Buy Today
+                &rarr;</a></p>
 
         <blockquote>By sponsoring you agree to our <a href="/sponsor/terms">sponsorship terms</a>.</blockquote>
 
