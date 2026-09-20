@@ -1,0 +1,112 @@
+{% include header.html %}
+{% assign economy = site.data["cheltenham-economy"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/about-cheltenham">&lAarr; Back to All About Cheltenham</a></li>
+                <li>Jobs {{ economy.jobs.year }} &middot; Businesses {{ economy.businesses.year }} &middot; Claimants {{ economy.claimants.period_name }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Jobs by Industry</h2>
+        <p>Employee jobs in each industry in {{ economy.jobs.year }}, and each industry's share of all jobs in Cheltenham
+            compared with England. A comparison above 1.00 means the industry employs a larger share of people in
+            Cheltenham than it does nationally.</p>
+        <div class="economy-chart-wrap" style="position: relative; height: 560px;">
+            <canvas id="economy-industry-chart" aria-label="Bar chart comparing each industry's share of employee jobs in Cheltenham with England"></canvas>
+        </div>
+        <div class="table-scroll">
+            <table class="economy-industry-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Industry</th>
+                        <th scope="col" class="number">Jobs</th>
+                        <th scope="col" class="number">Share of Jobs</th>
+                        <th scope="col" class="number">England Share</th>
+                        <th scope="col" class="number">Compared With England</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in economy.jobs.industries %}
+                    <tr>
+                        <td data-val="{{ i.name | downcase }}">{{ i.name }}</td>
+                        <td class="number" data-val="{{ i.jobs }}">{{ i.jobs_display }}</td>
+                        <td class="number" data-val="{{ i.share }}">{{ i.share_display }}</td>
+                        <td class="number" data-val="{{ i.england_share }}">{{ i.england_share_display }}</td>
+                        <td class="number" data-val="{{ i.quotient }}">{{ i.quotient_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Employee Jobs over Time</h2>
+        <canvas id="economy-jobs-chart" height="100" aria-label="Line chart of the number of employee jobs in Cheltenham each year since {{ economy.jobs.series.first.year }}"></canvas>
+
+        <h2>Businesses</h2>
+        <canvas id="economy-business-chart" height="100" aria-label="Line chart of the number of registered businesses in Cheltenham each year since {{ economy.businesses.series.first.year }}"></canvas>
+        <div class="table-scroll">
+            <table class="economy-business-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Business Size in {{ economy.businesses.year }}</th>
+                        <th scope="col" class="number">Businesses</th>
+                        <th scope="col" class="number">Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in economy.businesses.by_size %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ s.label }}</td>
+                        <td class="number" data-val="{{ s.businesses }}">{{ s.businesses_display }}</td>
+                        <td class="number" data-val="{{ s.share_display | remove: '%' }}">{{ s.share_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Unemployment Claimants</h2>
+        <canvas id="economy-claimant-chart" height="100" aria-label="Line chart of claimants as a share of residents aged 16 to 64 in Cheltenham and England each month since January 2015"></canvas>
+
+        <p class="economy-attribution"><small>
+            Data from the <a href="{{ economy.source_url }}">{{ economy.source }}</a>, published under the Open
+            Government Licence v3.0. Last updated {{ economy.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>What Counts as an Employee Job?</h3>
+        <p>The Business Register and Employment Survey counts jobs held by employees in registered businesses, in the
+            place the job is based, whether or not the person lives in Cheltenham. It does not include the
+            self-employed, and the published figures are rounded, which is why smaller industries show round numbers.</p>
+
+        <h3>What Does the Comparison With England Mean?</h3>
+        <p>It divides an industry's share of jobs in Cheltenham by its share of jobs across England. A figure of 1.00
+            means the same share, 1.50 means one and a half times the national share, and 0.50 means half.</p>
+
+        <h3>Which Businesses Are Counted?</h3>
+        <p>Businesses registered for VAT and, or, PAYE. Very small businesses that are below the VAT threshold and have
+            no employees on PAYE are not included, so the true number of businesses, including sole traders, is higher.</p>
+
+        <h3>What Is the Claimant Count?</h3>
+        <p>The number of people claiming Jobseeker's Allowance or the part of Universal Credit that is paid because
+            someone is out of work or on a low income and required to look for work. It is a measure of benefit claims,
+            not the official unemployment rate, and the roll-out of Universal Credit between 2013 and 2018 raised it
+            without a matching rise in unemployment.</p>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>The Office for National Statistics, through Nomis. Jobs and businesses are published once a year and the
+            claimant count monthly, and this page is refreshed monthly.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="economy-data" type="application/json">{{ economy | jsonify }}</script>
+<script src="/assets/scripts/cheltenham-economy-chart.js"></script>
+{% include footer.html %}

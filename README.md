@@ -54,6 +54,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Population, growth, employment and Census 2021 statistics](https://cheltenham-od.uk/about-cheltenham), sourced from ONS/Nomis
 - [Full employment rate history since 2004](https://cheltenham-od.uk/cheltenham-employment-history)
 - [Median earnings history since 2008](https://cheltenham-od.uk/cheltenham-earnings-history), for residents and workplaces, from the ONS Annual Survey of Hours and Earnings
+- [The economy: jobs by industry, businesses and unemployment claimants](https://cheltenham-od.uk/cheltenham-economy), from ONS/Nomis
 - [Politics: Cheltenham's MP and general election results](https://cheltenham-od.uk/cheltenham-politics), with a [party history back to 1918](https://cheltenham-od.uk/cheltenham-politics/party-history)
 - A short history timeline of the town
 - [House prices from Land Registry and ONS](https://cheltenham-od.uk/cheltenham-house-prices)
