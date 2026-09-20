@@ -1,13 +1,13 @@
 ---
 layout: posts
-title: Fixing the House Price Comparisons
+title: Improving the House Price Comparisons
 type: cod
 description: House price comparisons now use complete months and like-for-like periods, so a part-finished year is no longer compared with a whole one.
 seo: Cheltenham house prices — comparisons now use complete months and like-for-like periods, fixing misleading year-on-year falls caused by late-registered sales.
 date: 2026-09-20 20:20
 ---
 
-The percentage changes on the [Cheltenham house prices](/cheltenham-house-prices) pages have been corrected, because some of them were misleading.
+The percentage changes on the [Cheltenham house prices](/cheltenham-house-prices) pages have been improved, because some of them were misleading.
 
 Land Registry sales take two to three months to appear, so the most recent months are always incomplete. The page was comparing the latest 12 months, and the current year so far, with full periods from a year earlier, which made sales look as though they had collapsed. It now:
 
