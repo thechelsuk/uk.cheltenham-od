@@ -27,6 +27,10 @@ The page sits under Things to Do and is linked from the [visiting Cheltenham gui
 
 - Every couple of hours, so a new rating appears soon after the council publishes it.
 
+### Do I Need to Check Opening Hours?
+
+- Yes. The page lists venues and their ratings but not when they are open, so check a venue's own site or phone line before you go.
+
 ### Does a Hygiene Rating Tell Me How Good the Food Is?
 
 - No. It measures how safely food is handled and how clean the premises are, not the taste, the service or the atmosphere.
