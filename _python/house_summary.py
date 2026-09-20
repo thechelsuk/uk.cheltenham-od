@@ -30,6 +30,7 @@ from statistics import median, mean
 DRY_RUN = False
 RAW_DATA_PATH = Path("_data/cheltenham-house-prices.json")
 SUMMARY_DATA_PATH = Path("_data/house-summary.json")
+HISTORY_DATA_PATH = Path("_data/cheltenham-house-price-history.json")
 
 # Smallest number of sales either side of a comparison for a subset's percentage
 # change (e.g. new builds) to be shown - a change from 126 sales to 1 says more
@@ -245,6 +246,31 @@ def build_by_year(transactions: list[dict]) -> list[dict]:
     return results
 
 
+def build_overall_since_history(transactions: list[dict]) -> dict | None:
+    """Every sale since the first year of the history file (see
+    _python/local/process-land-registry-history.py): its yearly figures up to
+    its last year, plus every live transaction after that. None if there is no
+    history file, so the page falls back gracefully."""
+    if not HISTORY_DATA_PATH.exists():
+        return None
+    history = json.loads(HISTORY_DATA_PATH.read_text(encoding="utf-8"))
+    live = [t for t in transactions if t.get("amount") and t["date"] and int(t["date"][:4]) > history["last_year"]]
+    count = sum(y["count"] for y in history["years"]) + len(live)
+    total = sum(y["total"] for y in history["years"]) + sum(t["amount"] for t in live)
+    lowest = min([y["min"] for y in history["years"]] + [t["amount"] for t in live])
+    highest = max([y["max"] for y in history["years"]] + [t["amount"] for t in live])
+    latest = max(t["date"] for t in transactions if t["date"])
+    return {
+        "first_year": history["first_year"],
+        "to_month": datetime.fromisoformat(latest).strftime("%B %Y"),
+        "count": count,
+        "count_display": f"{count:,}",
+        "mean_display": money(int(total / count)),
+        "min_display": money(lowest),
+        "max_display": money(highest),
+    }
+
+
 def write_summary(payload: dict, dry_run: bool) -> None:
     if dry_run:
         print(f"--- DRY RUN: would write {SUMMARY_DATA_PATH} ---")
@@ -281,6 +307,7 @@ def main():
         "current": rolling,          # rolling 12mo vs prior 12mo - for the main summary page
         "full_dataset": full_dataset_display,
         "by_year": by_year,          # calendar-year blocks, most recent first - for year subpages
+        "overall": build_overall_since_history(transactions),  # every sale since the history file's first year
     }
 
     write_summary(payload, DRY_RUN)

@@ -1,0 +1,129 @@
+{% include header.html %}
+{% assign earnings = site.data["cheltenham-earnings"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/about-cheltenham">&lAarr; Back to All About Cheltenham</a></li>
+                <li>{{ earnings.series | size }} years of data, {{ earnings.first_year }} to {{ earnings.latest_year }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Median Full-Time Pay since {{ earnings.first_year }}</h2>
+        <canvas id="earnings-chart" height="120" aria-label="Line chart of median annual full-time pay in Cheltenham, Gloucestershire, the South West and England since {{ earnings.first_year }}"></canvas>
+
+        <h2>Earnings in {{ earnings.latest_year }} Compared</h2>
+        <div class="table-scroll">
+            <table class="earnings-latest-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Full-Time Median</th>
+                        <th scope="col" class="number">Cheltenham</th>
+                        <th scope="col" class="number">South West</th>
+                        <th scope="col" class="number">England</th>
+                        <th scope="col" class="number">Cheltenham vs England</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in earnings.latest.rows %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ row.label }}</td>
+                        <td class="number" data-val="{{ row.cheltenham }}">{{ row.cheltenham_display }}</td>
+                        <td class="number" data-val="{{ row.south_west }}">{{ row.south_west_display }}</td>
+                        <td class="number" data-val="{{ row.england }}">{{ row.england_display }}</td>
+                        <td class="number" data-val="{{ row.vs_england }}">{{ row.vs_england_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p>These figures are for people who live in each area, before tax, and cover full-time employees only.</p>
+
+        <h2>Men and Women</h2>
+        <canvas id="earnings-gender-chart" height="120" aria-label="Line chart of median annual full-time pay for men and women living in Cheltenham since {{ earnings.first_year }}"></canvas>
+        {% if earnings.latest.gender_gap %}
+        <p>In {{ earnings.latest.year }}, the median full-time man living in Cheltenham earned {{ earnings.latest.male_display }}
+            and the median full-time woman {{ earnings.latest.female_display }}, so women's median pay was
+            {{ earnings.latest.gender_gap }}% below men's. This compares typical pay across all full-time jobs, not pay
+            for the same job, so it reflects the mix of jobs as well as pay within them.</p>
+        {% endif %}
+
+        <h2>Earnings by Year</h2>
+        <div class="table-scroll">
+            <table class="cheltenham-earnings-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Residents</th>
+                        <th scope="col" class="number">Workplace</th>
+                        <th scope="col" class="number">Men</th>
+                        <th scope="col" class="number">Women</th>
+                        <th scope="col" class="number">Gloucestershire</th>
+                        <th scope="col" class="number">South West</th>
+                        <th scope="col" class="number">England</th>
+                        <th scope="col">Reliability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign series_newest_first = earnings.series | sort: "year" | reverse %}
+                    {% for p in series_newest_first %}
+                    <tr>
+                        <td data-val="{{ p.year }}">{{ p.year }}</td>
+                        <td class="number" data-val="{{ p.resident }}">{{ p.resident_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ p.workplace }}">{{ p.workplace_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ p.male }}">{{ p.male_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ p.female }}">{{ p.female_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ p.gloucestershire }}">{{ p.gloucestershire_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ p.south_west }}">{{ p.south_west_display | default: "—" }}</td>
+                        <td class="number" data-val="{{ p.england }}">{{ p.england_display | default: "—" }}</td>
+                        <td>{{ p.reliability | default: "—" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="earnings-attribution"><small>
+            Data from the <a href="{{ earnings.source_url }}">{{ earnings.source }}</a>, published under the Open
+            Government Licence v3.0. Last updated {{ earnings.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>What Does Median Pay Mean?</h3>
+        <p>The median is the middle value: half of full-time employees earn more and half earn less. It is a better
+            guide to typical pay than the average, which a small number of very high earners can pull upwards.</p>
+
+        <h3>What Is the Difference Between Residents and Workplace Pay?</h3>
+        <p>Residents pay counts full-time employees who live in Cheltenham, wherever they work. Workplace pay counts
+            full-time employees whose job is in Cheltenham, wherever they live. Many people commute in and out of town,
+            so the two figures differ.</p>
+
+        <h3>Why Does the Figure Jump Around From Year to Year?</h3>
+        <p>The figures come from a sample survey of employees, so for a town the size of Cheltenham the estimate can
+            move by more than real pay does. The Reliability column shows the ONS's own rating of each year's
+            estimate, from precise to unreliable. Look at the overall trend rather than any single year.</p>
+
+        <h3>Why Does the Data Start in 2008?</h3>
+        <p>The ONS earnings figures available for Cheltenham start in 2008, so this is as far back as the local data goes.</p>
+
+        <h3>Are the Figures Adjusted for Inflation?</h3>
+        <p>No. They are the cash amounts employees were paid in each year, before tax, so they do not show how far
+            the money went.</p>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>The Office for National Statistics' Annual Survey of Hours and Earnings, accessed through Nomis. It is
+            published once a year in the autumn, and this page is refreshed monthly so the new year appears soon
+            after it is released. See <a href="/cheltenham-employment-history">employment rates</a> for the labour
+            market alongside pay.</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="earnings-series-data" type="application/json">{{ earnings.series | jsonify }}</script>
+<script src="/assets/scripts/cheltenham-earnings-chart.js"></script>
+{% include footer.html %}
