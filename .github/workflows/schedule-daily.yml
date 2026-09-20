@@ -70,7 +70,7 @@ jobs:
                     exit 0
                   fi
 
-                  git commit -m "Chore: Daily COD Data pull for `date +'%Y-%m-%d %H:%M'`"
+                  git commit -m "Chore: Daily COD Data pull for $(date +'%Y-%m-%d %H:%M')"
                   git push
                   echo "changed=true" >> "$GITHUB_OUTPUT"
                   echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
