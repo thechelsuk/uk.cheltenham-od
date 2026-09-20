@@ -1,16 +1,16 @@
 ---
 layout: explore-category
 title: "Community & Support in Cheltenham"
-seo: "Cheltenham food banks, helplines, GP and pharmacy locations, A&E waiting times, and food hygiene ratings."
+seo: "Cheltenham food banks, helplines, GP and pharmacy locations, A&E waiting times, food hygiene ratings and third spaces."
 permalink: /explore/community-support
-description: "Food banks, helplines, GP and pharmacy locations, A&E waiting times, and food hygiene ratings in Cheltenham."
+description: "Food banks, helplines, GP and pharmacy locations, A&E waiting times, food hygiene ratings and third spaces in Cheltenham."
 type: "community"
 group: "Community & Support"
 ---
 
 ## Community & Support
 
-Food banks, helplines, healthcare and food hygiene ratings — the everyday support and services that keep Cheltenham running.
+Food banks, helplines, healthcare, food hygiene ratings and community spaces — the everyday support and services that keep Cheltenham running.
 
 [Food banks](/cheltenham-foodbank-needed-items) shows what local foodbanks currently need most. If you need support, [helplines and contacts](/cheltenham-helpful-contacts-reports) lists numbers and links, and [GPs and pharmacies](/cheltenham-gp-pharmacies) helps you find a practice near you. For hospital care, [A&E waiting times](/cheltenham-ae-waiting-times) tracks monthly A&E performance at Gloucestershire Hospitals NHS Foundation Trust, which runs Cheltenham General Hospital, and maps its hospitals nearby.
 
