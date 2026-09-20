@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Flood Zones 2 and 3",
+  "description": "Flood Zone 2 and Flood Zone 3 land around Cheltenham from the Environment Agency's Flood Map for Planning, simplified for display.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['flood-zones'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Flood Zone 2 extent", "Flood Zone 3 extent"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What Are Flood Zones?", "acceptedAnswer": {"@type": "Answer", "text": "Flood zones are the Environment Agency's way of describing the chance of a river flooding a piece of land in any one year. Flood Zone 3 is 1 in 100 (1%) or greater, Flood Zone 2 is between 1 in 100 and 1 in 1,000 (0.1%), and Flood Zone 1 is less than 1 in 1,000. They are used mainly to decide where new building is appropriate."}},
+    {"@type": "Question", "name": "Does Flood Zone 1 Mean There Is No Flood Risk?", "acceptedAnswer": {"@type": "Answer", "text": "No. It means a lower chance of flooding from rivers. Land can still flood from surface water, drains and sewers, or groundwater, which caused much of the flooding in Cheltenham in 2007. See the summer 2007 floods."}},
+    {"@type": "Question", "name": "Do the Zones Take Flood Defences Into Account?", "acceptedAnswer": {"@type": "Answer", "text": "No. They show the risk as if there were no defences, so land protected by defences such as those on the River Chelt can still appear in a zone."}},
+    {"@type": "Question", "name": "Can I Use This Map to Check My Home?", "acceptedAnswer": {"@type": "Answer", "text": "Treat it as a guide only. The outlines here are simplified and small areas are left out to keep the page fast, so for a specific address use the Environment Agency's long term flood risk service, which also covers surface water and reservoirs. If you are planning a development, the Flood map for planning service gives the official flood zone for a site."}},
+    {"@type": "Question", "name": "Where Does This Data Come From and How Often Is It Updated?", "acceptedAnswer": {"@type": "Answer", "text": "The Environment Agency's Flood Map for Planning (Flood Zones 2 and 3), published under the Open Government Licence. The Environment Agency updates it as needed rather than on a fixed schedule, and this page is refreshed by hand when it does."}}
+  ]
+}
+</script>
