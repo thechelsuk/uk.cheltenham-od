@@ -1,22 +1,22 @@
 <!-- land_registry starts -->
 {% assign yr = site.data.house-summary.by_year | where: "year", page.pyear | first %}
-In Cheltenham, **{{ yr.count_display }}** properties changed hands in {{ page.pyear }}{% if yr.count_change %},
+In Cheltenham, **{{ yr.count_display }}** properties changed hands in {{ yr.period_label | default: page.pyear }}{% if yr.count_change %},
 {{ yr.count_change }}{% endif %}. The typical sale (median) went for **{{ yr.median_display }}**{% if yr.median_change
 %}, {{ yr.median_change }}{% endif %}, with an average (mean) of {{ yr.mean_display }}{% if yr.mean_change %},
 {{ yr.mean_change }}{% endif %}. Prices ranged from {{ yr.min_display }} up to {{ yr.max_display }}{% if
 yr.range_prior_display %} ({{ yr.range_prior_display }}){% endif %}.
 
 {% if yr.new_build_count > 0 %}
-Of these, **{{ yr.new_build_count_display }}** were new build sales{% if yr.new_build_count_change %},
+Of these, **{{ yr.new_build_count_display }}** {% if yr.new_build_count == 1 %}was a new build sale{% else %}were new build sales{% endif %}{% if yr.new_build_count_change %},
 {{ yr.new_build_count_change }}{% endif %}, with a median price of {{ yr.new_build_median_display }}{% if
 yr.new_build_median_change %}, {{ yr.new_build_median_change }}{% endif %}.
 {% else %}
-No new build sales were recorded in Cheltenham in {{ page.pyear }}.
+No new build sales were recorded in Cheltenham in {{ yr.period_label | default: page.pyear }}.
 {% endif %}
 
 {% if yr.domestic_count > 0 %}
 Excluding properties classed as "Other" in Land Registry data, **{{ yr.domestic_count_display }}** domestic sales were
-recorded in {{ page.pyear }}{% if yr.domestic_count_change %}, {{ yr.domestic_count_change }}{% endif %}, with an
+recorded in {{ yr.period_label | default: page.pyear }}{% if yr.domestic_count_change %}, {{ yr.domestic_count_change }}{% endif %}, with an
 average (mean) price of **{{ yr.domestic_mean_display }}**{% if yr.domestic_mean_change %},
 {{ yr.domestic_mean_change }}{% endif %}. {% if yr.other_note %}{{ yr.other_note }}{% endif %}
 {% endif %}
