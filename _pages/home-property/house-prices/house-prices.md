@@ -31,6 +31,14 @@ Excluding properties classed as "Other" in Land Registry data, {{ site.data.hous
 Across the full dataset, **{{ site.data.house-summary.full_dataset.count_display }}** Cheltenham property sales were recorded, with a median price of **{{ site.data.house-summary.full_dataset.median_display }}** (mean {{ site.data.house-summary.full_dataset.mean_display }}), ranging from {{ site.data.house-summary.full_dataset.min_display }} to {{ site.data.house-summary.full_dataset.max_display }}.
 {% endif %}
 
+### Since 1995
+
+{% assign history = site.data["cheltenham-house-price-history"] %}
+{% assign first_year = history.years | first %}
+{% capture previous_year %}{{ site.time | date: "%Y" | minus: 1 }}{% endcapture %}
+{% assign previous = site.data.house-summary.by_year | where: "year", previous_year | first %}
+Land Registry records go back to {{ history.first_year }}. The typical (median) sale in Cheltenham was **{{ first_year.median_display }}** in {{ first_year.year }}{% if previous %} and **{{ previous.median_display }}** in {{ previous.year }}{% endif %}. The charts and table below show every year in between, overall and by property type, and the figures are not adjusted for inflation. The current year is a part year, so its sales count is lower than a full year's.
+
 ### Notes
 
 Other exclusion is based on Land Registry's own property type classification which seems to indicate non-domestic buildings and should be treated as a indicative and not a guaranteed commercial/residential split.

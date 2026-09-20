@@ -55,7 +55,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Full employment rate history since 2004](https://cheltenham-od.uk/cheltenham-employment-history)
 - [Politics: Cheltenham's MP and general election results](https://cheltenham-od.uk/cheltenham-politics), with a [party history back to 1918](https://cheltenham-od.uk/cheltenham-politics/party-history)
 - A short history timeline of the town
-- [House prices from Land Registry and ONS](https://cheltenham-od.uk/cheltenham-house-prices)
+- [House prices from Land Registry and ONS](https://cheltenham-od.uk/cheltenham-house-prices), with the median price and sales every year back to 1995
 
 ### Weather
 
