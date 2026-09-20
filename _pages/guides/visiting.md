@@ -30,6 +30,7 @@ Pack the day with the things Cheltenham does best — history, green space and a
 
 The town is well served for food, from café culture to fine dining.
 
+- [Where to eat in Cheltenham](/cheltenham-where-to-eat) — restaurants, cafés, pubs and takeaways on a map, with official hygiene ratings.
 - [Five-star food hygiene ratings](/cheltenham-food-standards/rated-five) — venues with top official ratings.
 - [Third spaces in Cheltenham](/cheltenham-third-spaces) — relaxed places to sit, work or wait between plans.
 

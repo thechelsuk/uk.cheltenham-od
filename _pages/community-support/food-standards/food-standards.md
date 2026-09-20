@@ -10,7 +10,7 @@ schema: food-standards
 
 ## Cheltenham Food Hygiene Ratings
 
-Food hygiene ratings for food businesses in Cheltenham, sourced from the [Food Standards Agency](https://ratings.food.gov.uk/) and updated regularly.
+Food hygiene ratings for food businesses in Cheltenham, sourced from the [Food Standards Agency](https://ratings.food.gov.uk/) and updated regularly. Looking for somewhere to eat? [Where to eat](/cheltenham-where-to-eat) maps the restaurants, cafés, pubs and takeaways.
 
 The Food Hygiene Rating Scheme looks at how safely food is handled, how clean the premises are, and how well the business manages food safety. Ratings are issued by the local authority following an inspection and range from 0, which means urgent improvement is required, to 5, which means very good hygiene standards.
 

@@ -15,6 +15,16 @@ def value(establishment, name):
     return element.text.strip() if element is not None and element.text else ""
 
 
+def coordinate(establishment, name):
+    """The FSA's own latitude/longitude, or None where a venue has none (mostly mobile
+    and home-based caterers, which have no fixed premises to map)."""
+    text = establishment.findtext(f"Geocode/{name}")
+    try:
+        return float(text) if text else None
+    except ValueError:
+        return None
+
+
 def convert():
     root = ET.parse(SOURCE).getroot()
     establishments = root.findall(".//EstablishmentDetail")
@@ -39,6 +49,8 @@ def convert():
                 "postcode": value(establishment, "PostCode"),
                 "rating": value(establishment, "RatingValue"),
                 "rating_date": value(establishment, "RatingDate"),
+                "latitude": coordinate(establishment, "Latitude"),
+                "longitude": coordinate(establishment, "Longitude"),
             }
         )
 

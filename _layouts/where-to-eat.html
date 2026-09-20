@@ -1,0 +1,105 @@
+{% include header.html %}
+{% assign type_names = page.venue_types | map: "type" %}
+{% assign venues = site.data["food-standards"] | where_exp: "v", "type_names contains v.type" | sort_natural: "name" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/things-to-do">&lAarr; Back to Things to Do</a></li>
+                <li><a href="/cheltenham-food-standards">All food hygiene ratings &rarr;</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Map of Restaurants, Pubs and Takeaways</h2>
+        <fieldset class="where-to-eat-filter">
+            <legend>Show</legend>
+            {% for t in page.venue_types %}
+            {% assign type_count = venues | where: "type", t.type | size %}
+            <label><input type="checkbox" class="where-to-eat-type" value="{{ t.type }}" checked>
+                {{ t.label }} ({{ type_count }})</label>
+            {% endfor %}
+        </fieldset>
+        <div id="where-to-eat-map" style="height: 560px; border-radius: 8px;" aria-label="Map of restaurants, pubs and takeaways in Cheltenham coloured by food hygiene rating"></div>
+        <p><small>Pin colour shows the hygiene rating:
+            <span style="color: #2e8b57;">&#9679;</span> 5,
+            <span style="color: #8bc34a;">&#9679;</span> 4,
+            <span style="color: #f39c12;">&#9679;</span> 3,
+            <span style="color: #c0392b;">&#9679;</span> 0 to 2,
+            <span style="color: #7f8c8d;">&#9679;</span> awaiting inspection.
+            Venues without a recorded location are listed in the table but not on the map.</small></p>
+
+        <h2>Restaurants, Pubs and Takeaways</h2>
+        <div class="table-scroll">
+            <table id="where-to-eat-table" class="where-to-eat-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="type">Type</th>
+                        <th scope="col" class="number">Hygiene Rating (0 to 5)</th>
+                        <th scope="col" class="date">Inspected</th>
+                        <th scope="col">Address</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for v in venues %}
+                    {% assign vt = page.venue_types | where: "type", v.type | first %}
+                    <tr data-type="{{ v.type }}">
+                        <td data-val="{{ v.name | downcase }}"><a href="https://ratings.food.gov.uk/business/{{ v.id }}">{{ v.name }}</a></td>
+                        <td class="type">{{ vt.label }}</td>
+                        <td class="number" data-val="{% if v.rating == '' or v.rating == 'AwaitingInspection' %}-1{% else %}{{ v.rating }}{% endif %}">{% if v.rating == 'AwaitingInspection' %}Awaiting inspection{% elsif v.rating == '' %}&mdash;{% else %}{{ v.rating }}{% endif %}</td>
+                        <td class="date" data-val="{{ v.rating_date }}">{% if v.rating_date != '' %}{{ v.rating_date }}{% else %}&mdash;{% endif %}</td>
+                        <td>{{ v.address }}</td>
+                        <td class="postcode">{{ v.postcode }}</td>
+                        <td class="map">{% if v.latitude %}{% include pin.html lat=v.latitude lng=v.longitude label=v.name %}{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="where-to-eat-attribution"><small>
+            Ratings from the <a href="https://ratings.food.gov.uk/">Food Standards Agency's Food Hygiene Rating Scheme</a>,
+            published under the Open Government Licence v3.0. Map tiles &copy;
+            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>What Do the Hygiene Ratings Mean?</h3>
+        <p>The Food Standards Agency scores food businesses from 0 to 5 at inspection: 5 is very good, 4 is good, 3 is
+            generally satisfactory, 2 needs improvement, 1 needs major improvement and 0 needs urgent improvement. The
+            rating covers food hygiene and safety, not the quality of the food or the service.</p>
+
+        <h3>Which Venues Are Included?</h3>
+        <p>Every food business in Cheltenham that the Food Standards Agency classes as a restaurant, café or canteen, a
+            pub, bar or nightclub, or a takeaway or sandwich shop. Hotels, schools, shops, caterers and mobile food
+            businesses are not listed here, but you can find them on the
+            <a href="/cheltenham-food-standards">food hygiene ratings</a> pages.</p>
+
+        <h3>Why Is My Favourite Place Missing or Awaiting Inspection?</h3>
+        <p>New businesses appear once they are registered with the council, and are marked as awaiting inspection until
+            the council visits. A venue can also be classed under a different type, such as a hotel, in the Food
+            Standards Agency's data.</p>
+
+        <h3>Why Are Some Venues Not on the Map?</h3>
+        <p>A small number of venues have no location recorded by the Food Standards Agency. They are still in the
+            table.</p>
+
+        <h3>How Often Is It Updated?</h3>
+        <p>The ratings are refreshed every couple of hours from the Food Standards Agency, so a new rating appears soon
+            after the council publishes it.</p>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script id="where-to-eat-data" type="application/json">{{ venues | jsonify }}</script>
+    <script id="where-to-eat-types" type="application/json">{{ page.venue_types | jsonify }}</script>
+    <script src="/assets/scripts/where-to-eat-map.js"></script>
+</div>
+{% include footer.html %}

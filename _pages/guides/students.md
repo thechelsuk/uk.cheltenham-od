@@ -35,6 +35,7 @@ Sort the boring-but-important admin early and the rest of term runs more smoothl
 
 Cheltenham punches above its weight for food and nightlife, and a lot of it is student-friendly if you know where to look.
 
+- [Where to eat in Cheltenham](/cheltenham-where-to-eat) — cafés, pubs, takeaways and restaurants on a map, with official hygiene ratings.
 - [Five-star food hygiene ratings](/cheltenham-food-standards/rated-five) — the cafés, takeaways and restaurants with top ratings.
 - [Third spaces in Cheltenham](/cheltenham-third-spaces) — places to work, study or hang out that aren't home or a lecture hall.
 - [What's on in Cheltenham](/cheltenham-events) — gigs, markets and the town's festivals through the year.
