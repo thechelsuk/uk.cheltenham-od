@@ -84,6 +84,9 @@ def block(prices):
         "median_display": money(median(prices)),
         "mean": int(mean(prices)),
         "mean_display": money(mean(prices)),
+        "total": sum(prices),
+        "min": min(prices),
+        "max": max(prices),
     }
 
 
@@ -121,4 +124,7 @@ def summarise():
 
 
 if __name__ == "__main__":
-    download() if "--download" in sys.argv else summarise()
+    if "--download" in sys.argv:
+        download()
+    else:
+        summarise()

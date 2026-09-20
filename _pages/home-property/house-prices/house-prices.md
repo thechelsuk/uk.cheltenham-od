@@ -25,19 +25,16 @@ No new build sales were recorded in Cheltenham over the past year.
 
 {% if site.data.house-summary.current.domestic_count > 0 %}
 Excluding properties classed as "Other" in Land Registry data, {{ site.data.house-summary.current.domestic_count_display }} domestic sales were recorded over the past year{% if site.data.house-summary.current.domestic_count_change %}, {{ site.data.house-summary.current.domestic_count_change }}{% endif %}, with an average (mean) price of {{ site.data.house-summary.current.domestic_mean_display }}{% if site.data.house-summary.current.domestic_mean_change %}, {{ site.data.house-summary.current.domestic_mean_change }}{% endif %}. {% if site.data.house-summary.current.other_note %}{{ site.data.house-summary.current.other_note }}{% endif %}
-
-### Overall Since January 2023
-
-Across the full dataset, **{{ site.data.house-summary.full_dataset.count_display }}** Cheltenham property sales were recorded, with a median price of **{{ site.data.house-summary.full_dataset.median_display }}** (mean {{ site.data.house-summary.full_dataset.mean_display }}), ranging from {{ site.data.house-summary.full_dataset.min_display }} to {{ site.data.house-summary.full_dataset.max_display }}.
 {% endif %}
 
-### Since 1995
+### Overall Since 1995
 
 {% assign history = site.data["cheltenham-house-price-history"] %}
+{% assign overall = site.data.house-summary.overall %}
 {% assign first_year = history.years | first %}
 {% capture previous_year %}{{ site.time | date: "%Y" | minus: 1 }}{% endcapture %}
 {% assign previous = site.data.house-summary.by_year | where: "year", previous_year | first %}
-Land Registry records go back to {{ history.first_year }}. The typical (median) sale in Cheltenham was **{{ first_year.median_display }}** in {{ first_year.year }}{% if previous %} and **{{ previous.median_display }}** in {{ previous.year }}{% endif %}. The charts and table below show every year in between, overall and by property type, and the figures are not adjusted for inflation. The current year is a part year, so its sales count is lower than a full year's.
+{% if overall %}Land Registry has recorded **{{ overall.count_display }}** Cheltenham property sales from {{ overall.first_year }} to {{ overall.to_month }}, with a mean price of **{{ overall.mean_display }}**, ranging from {{ overall.min_display }} up to {{ overall.max_display }}. {% else %}Land Registry records go back to {{ history.first_year }}. {% endif %}The typical (median) sale in Cheltenham was **{{ first_year.median_display }}** in {{ first_year.year }}{% if previous %} and **{{ previous.median_display }}** in {{ previous.year }}{% endif %}. The charts and table below show every year in between, overall and by property type, and the figures are not adjusted for inflation. The current year is a part year, so its sales count is lower than a full year's.
 
 ### Notes
 
