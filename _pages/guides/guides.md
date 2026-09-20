@@ -13,10 +13,11 @@ Whatever's brought you to Cheltenham — moving here, studying here, visiting fo
 
 ### Moving to Cheltenham
 
-A practical guide for anyone relocating to the town: benchmarking house prices and planning applications, comparing neighbourhoods on crime and air quality, finding schools, registering with a GP, and sorting bins, recycling and other day-to-day essentials.
+A practical guide for anyone relocating to the town: benchmarking house prices, rents and planning applications, comparing neighbourhoods on crime and air quality, finding schools, registering with a GP, and sorting bins, recycling and other day-to-day essentials.
 
 - [Read the moving to Cheltenham guide](/moving-to-cheltenham)
 - [Cheltenham house prices](/cheltenham-house-prices)
+- [Average rent in Cheltenham](/cheltenham-rent-prices)
 - [Schools in Cheltenham](/cheltenham-schools)
 
 ### Student Guide to Cheltenham
