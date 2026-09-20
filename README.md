@@ -24,6 +24,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Schools](https://cheltenham-od.uk/cheltenham-schools) — primary, secondary, independent and special
 - [GP practices and pharmacies](https://cheltenham-od.uk/cheltenham-gp-pharmacies)
 - [Dentists](https://cheltenham-od.uk/cheltenham-dentists), with a map and how to find an NHS dentist
+- [Opticians](https://cheltenham-od.uk/cheltenham-opticians), with a map and who can get a free NHS sight test
 - [Hospital A&E waiting times](https://cheltenham-od.uk/cheltenham-ae-waiting-times) for Gloucestershire Hospitals NHS Foundation Trust, with a map of nearby hospitals
 - [Public toilets](https://cheltenham-od.uk/cheltenham-public-toilets)
 - [Play parks and children's playgrounds](https://cheltenham-od.uk/cheltenham-play-parks)

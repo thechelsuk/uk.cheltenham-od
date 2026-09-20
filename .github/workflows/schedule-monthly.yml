@@ -55,6 +55,7 @@ jobs:
                   python _python/politics.py || echo "::warning::politics.py failed, continuing with other scripts"
                   python _python/nhs-sites.py || echo "::warning::nhs-sites.py failed, continuing with other scripts"
                   python _python/dentists.py || echo "::warning::dentists.py failed, continuing with other scripts"
+                  python _python/opticians.py || echo "::warning::opticians.py failed, continuing with other scripts"
                   python _python/rents.py || echo "::warning::rents.py failed, continuing with other scripts"
                   python _python/racing.py || echo "::warning::racing.py failed, continuing with other scripts"
 

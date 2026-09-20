@@ -40,6 +40,7 @@ Sorting the practical basics early makes a move smoother — registering with a 
 
 - [GPs and pharmacies in Cheltenham](/cheltenham-gp-pharmacies) — where to register and find local healthcare.
 - [Dentists in Cheltenham](/cheltenham-dentists) — dental practices on a map, and how to find an NHS dentist.
+- [Opticians in Cheltenham](/cheltenham-opticians) — opticians on a map, and who can get a free NHS sight test.
 - [Recycling and bin collections](/cheltenham-recycling) — what goes where and when it's collected.
 - [Fuel prices in Cheltenham](/cheltenham-fuel-prices) — local forecourt prices if you'll be driving.
 
