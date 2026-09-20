@@ -4,8 +4,10 @@
 
 The council's own open data page (a Local Government Transparency Code
 requirement) has since gone offline, so this reads chrismytton's mirror of
-the original CSVs on GitHub. Refreshed manually, not on a schedule, since
-these are historical snapshots rather than a live feed."""
+the original CSVs on GitHub. Run manually, not on a schedule, since these are
+historical snapshots rather than a live feed; the data will not change again:
+
+  python _python/local/council-land-and-assets.py"""
 import csv
 import io
 import json
@@ -16,7 +18,7 @@ import requests
 from pyproj import Transformer
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "_data", "council-land-and-assets.json")
+OUT = os.path.join(HERE, "..", "..", "_data", "council-land-and-assets.json")
 
 REPO = "https://raw.githubusercontent.com/chrismytton/cheltenham-council-land-and-assets/main"
 SOURCE_URL = "https://github.com/chrismytton/cheltenham-council-land-and-assets"
