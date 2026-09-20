@@ -6,7 +6,7 @@
   Council Tax Listings and Bedspaces (MHCLG Live Table 124)
 - Total number of properties by year (VOA Council Tax stock of properties,
   CTSOP1.1) — the 1993-2024 run is a one-off backfill kept in
-  _data/council-tax-stock-history.json (see council-tax-stock-history-backfill.py);
+  _data/council-tax-stock-history.json (see local/council-tax-stock-history-backfill.py);
   this script only fetches the latest single-year snapshot and appends it
 
 The gov.uk asset URLs for these change with every release, so both pages are

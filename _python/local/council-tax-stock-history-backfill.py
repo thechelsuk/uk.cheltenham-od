@@ -2,13 +2,14 @@
 """One-off backfill for Cheltenham's historical Council Tax stock of
 properties total (1993-2024), written to _data/council-tax-stock-history.json.
 
+Run manually with `python _python/local/council-tax-stock-history-backfill.py`.
 This is NOT part of any scheduled workflow. The VOA's CTSOP1.1 time-series
 archive is a ~130MB zip of one ~4MB CSV per year for the whole of England and
 Wales, which is too heavy to re-download on every scheduled run just to read
 one Cheltenham row per year. Since 1993-2024 is now a fixed, closed series
 (the VOA's newer annual releases are single-year snapshots, not an updated
-time series — see council-tax-stock.py), run this once to seed the history,
-then council-tax-stock.py appends each new year's snapshot on top of it."""
+time series — see housing-supply.py), run this once to seed the history,
+then housing-supply.py appends each new year's snapshot on top of it."""
 import csv
 import io
 import json
@@ -20,7 +21,7 @@ from datetime import datetime, timezone
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "_data", "council-tax-stock-history.json")
+OUT = os.path.join(HERE, "..", "..", "_data", "council-tax-stock-history.json")
 
 SERIES_PAGE_URL = "https://www.gov.uk/government/statistics/council-tax-stock-of-properties-2024"
 ECODE = "E07000078"
