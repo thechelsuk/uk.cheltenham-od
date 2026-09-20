@@ -7,7 +7,7 @@ seo: Dentists in Cheltenham — a map and list of NHS-listed dental practices, w
 date: 2026-09-20 22:57
 ---
 
-Cheltenham Open Data has published a new [dentists page](/cheltenham-dentists), listing the dental practices in the NHS's directory across the GL50 to GL53 postcodes.
+Cheltenham Open Data has published a new [dentists page](/cheltenham-dentists), listing the dental practices in the NHS's directory across the GL50 to GL54 postcodes.
 
 There is a map and a sortable table with each practice's address and distance from the town centre. The page is upfront about what it can't tell you: whether a practice is currently taking new NHS patients isn't published as open data, so it explains how to find out, what to do if you can't find an NHS dentist, what NHS dental care costs and where to go for urgent dental care.
 
@@ -17,7 +17,7 @@ It sits under Community & Support next to [GPs and pharmacies](/cheltenham-gp-ph
 
 ### What Does the Dentists Page Show?
 
-- The dental practices in the NHS directory in Cheltenham's GL50 to GL53 postcodes, on a map and in a table, with guidance on finding an NHS dentist.
+- The dental practices in the NHS directory in Cheltenham's GL50 to GL54 postcodes, on a map and in a table, with guidance on finding an NHS dentist.
 
 ### Where Does the Data Come From?
 

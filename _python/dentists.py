@@ -27,7 +27,7 @@ POSTCODES = "https://api.postcodes.io/postcodes"
 HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 ROLE_ID = "RO110"                  # General Dental Practice
-DISTRICTS = ["GL50", "GL51", "GL52", "GL53"]  # the same catchment as the GP and pharmacy finder
+DISTRICTS = ["GL50", "GL51", "GL52", "GL53", "GL54"]  # the site's usual Cheltenham catchment
 LAT, LNG = 51.899, -2.078          # Cheltenham centre
 LIST_LIMIT = 1000
 ACRONYMS = helper.DEFAULT_ACRONYMS | {"NHS"}
