@@ -1,0 +1,93 @@
+{% include header.html %}
+{% assign dentists = site.data["dentists"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/community-support">&lAarr; Back to Community &amp; Support</a></li>
+                <li><a href="https://www.nhs.uk/service-search/find-a-dentist">NHS Find a dentist &rarr;</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Map of Dental Practices</h2>
+        <div id="dentists-map" style="height: 480px; border-radius: 8px;" aria-label="Map of dental practices in Cheltenham"></div>
+
+        <h2>Dental Practices in Cheltenham</h2>
+        <div class="table-scroll">
+            <table id="dentists-table" class="dentists-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Practice</th>
+                        <th scope="col">Address</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col" class="number">Distance from Centre (Miles)</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in dentists.practices %}
+                    <tr>
+                        <td data-val="{{ p.name | downcase }}">{{ p.name }}</td>
+                        <td>{{ p.address }}</td>
+                        <td class="postcode">{{ p.postcode }}</td>
+                        <td class="number" data-val="{% if p.distance_miles %}{{ p.distance_miles }}{% else %}9999{% endif %}">{% if p.distance_miles %}{{ p.distance_miles }}{% else %}&mdash;{% endif %}</td>
+                        <td class="map">{% if p.lat %}{% include pin.html lat=p.lat lng=p.lon label=p.name %}{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="dentists-attribution"><small>
+            Data from the <a href="{{ dentists.source_url }}">{{ dentists.source }}</a>, published under the Open
+            Government Licence v3.0, with locations from {{ dentists.geocoding_source }}.
+            {{ dentists.geocoding_attribution }} Last updated {{ dentists.generated_at | date: "%-d %B %Y" }}.
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>Are These NHS Dentists?</h3>
+        <p>They are the practices listed in the NHS's directory of dental practices. Some practices offer both NHS and
+            private appointments, so ask for an NHS appointment when you book. Practices that only offer private care
+            are mostly not in the directory, so they won't appear here.</p>
+
+        <h3>Is a Practice Taking New NHS Patients?</h3>
+        <p>This page can't say. Availability changes often and isn't published as open data. Ring the practice, and
+            check the NHS's <a href="https://www.nhs.uk/service-search/find-a-dentist">Find a dentist</a> service.</p>
+
+        <h3>Do I Have to Register With a Dentist?</h3>
+        <p>Not in the way you register with a GP. Being seen at a practice once doesn't guarantee you can get NHS dental
+            care there in the future, and some practices have a waiting list before they can offer an appointment.</p>
+
+        <h3>What if I Can't Find an NHS Dentist?</h3>
+        <p>Contact your local integrated care board, which manages dental services in your area. The NHS's guide to
+            <a href="https://www.nhs.uk/nhs-services/dentists/how-to-find-an-nhs-dentist/">finding an NHS dentist</a>
+            has the details.</p>
+
+        <h3>How Much Does NHS Dental Care Cost?</h3>
+        <p>Most adults pay for NHS dental appointments. The NHS explains
+            <a href="https://www.nhs.uk/nhs-services/dentists/how-much-nhs-dental-treatment-costs/">what treatment
+                costs and who can get it free</a>.</p>
+
+        <h3>What if I Need Urgent Dental Care?</h3>
+        <p>Use <a href="https://111.nhs.uk/">NHS 111</a> online or call 111 for urgent dental problems. In a
+            life-threatening emergency call 999.</p>
+
+        <h3>Where Does This Data Come From?</h3>
+        <p>The NHS Organisation Data Service, refreshed monthly. It has no coordinates, so each practice is placed at
+            the centre of its postcode, which puts a pin close to the practice rather than exactly on it. If a practice
+            is missing or wrong, the directory may be out of date; <a href="/contact">tell us</a> and we'll look into
+            it.</p>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script id="dentists-data" type="application/json">{{ dentists.practices | jsonify }}</script>
+    <script src="/assets/scripts/dentists-map.js"></script>
+</div>
+{% include footer.html %}

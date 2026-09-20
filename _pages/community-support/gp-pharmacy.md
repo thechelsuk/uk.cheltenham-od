@@ -9,7 +9,7 @@ seo: Cheltenham GP surgeries and pharmacies — addresses, phone numbers and dir
 
 {% include sponsor.html %}
 
-Moving to the area or starting a course here? Our [moving to Cheltenham](/moving-to-cheltenham) and [student](/student-guide-to-cheltenham) guides both point here for registering with a GP.
+Moving to the area or starting a course here? Our [moving to Cheltenham](/moving-to-cheltenham) and [student](/student-guide-to-cheltenham) guides both point here for registering with a GP, and our [dentists](/cheltenham-dentists) page lists local dental practices.
 
 <!-- gp_pharmacy_finder starts -->
 Finding a GP practice or pharmacy in Cheltenham shouldn't mean digging through the NHS website. The listings below are pulled directly from [NHS England's Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service), the official register of NHS organisations, so names, addresses and phone numbers stay current automatically.
