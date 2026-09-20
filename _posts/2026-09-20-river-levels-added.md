@@ -11,7 +11,7 @@ Cheltenham Open Data has added live river levels and rainfall to the [flood warn
 
 The flood warnings page now has a map, a table and charts for the Environment Agency's river level gauges on the River Chelt, Hatherley Brook, Lilley Brook and Wymans Brook, and its rainfall gauges nearby. Each gauge shows its latest level, whether that is within its typical range, and the highest level it has ever recorded. Charts show the last 48 hours of readings, and a further chart keeps the highest level each day, which builds up a record beyond the four weeks the Environment Agency keeps.
 
-The flood history page tells the story of the June and July 2007 floods, when around 600 properties flooded in Cheltenham, with a source for every figure so you can check them. It also lists the highest level each gauge has recorded, and several of those records date from June or July 2007.
+The flood history page tells the story of the June and July 2007 floods, when around 600 properties flooded in Cheltenham. It also lists the highest level each gauge has recorded, and several of those records date from June or July 2007.
 
 ## FAQs
 
