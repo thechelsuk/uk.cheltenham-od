@@ -53,3 +53,18 @@ jobs:
           # name; both are false positives against source this repo never
           # intends to be valid HTML on its own.
           FILTER_REGEX_EXCLUDE: .*/feeds/.*\.xml|.*/_layouts/.*\.html|.*/_includes/.*\.html
+          #
+          # Code style formatters: this repo's Python, browser JavaScript and
+          # generated JSON have never been formatted with Black, isort, pyink,
+          # Prettier or StandardJS (the scripts use 4-space indents and double
+          # quotes; the _data/*.json files are written by json.dump), so each
+          # PR that touches one fails for reasons that are style, not bugs.
+          # Real problems are still caught: flake8 (undefined names, unused
+          # imports, syntax errors) and pylint (errors) stay on, configured in
+          # .github/linters/.flake8 and .github/linters/.python-lint.
+          VALIDATE_PYTHON_BLACK: false
+          VALIDATE_PYTHON_PYINK: false
+          VALIDATE_PYTHON_ISORT: false
+          VALIDATE_JAVASCRIPT_PRETTIER: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_JSON_PRETTIER: false

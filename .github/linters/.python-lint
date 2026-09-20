@@ -1,0 +1,7 @@
+[MASTER]
+
+[MESSAGES CONTROL]
+# Keep pylint's errors (E), such as undefined variables and bad calls. Convention (C),
+# refactor (R) and warning (W) messages are style opinions this repo doesn't follow, and
+# import-error can't see the _python/helper.py module the scripts add to sys.path.
+disable=C,R,W,import-error
