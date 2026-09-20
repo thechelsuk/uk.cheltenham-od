@@ -16,6 +16,7 @@ Cheltenham is home to the University of Gloucestershire and thousands of student
 Most students rent, whether that's halls in the first year or a shared house after. Knowing the local market helps you spot a fair price and avoid the worst of the rush.
 
 - [Cheltenham classifieds](/cheltenham-classifieds) — rooms, house shares, second-hand furniture and bikes from local people.
+- [Average rent in Cheltenham](/cheltenham-rent-prices) — what tenants pay on average by number of bedrooms and property type, so you can spot a fair price.
 - [Cheltenham house prices](/cheltenham-house-prices) — recent sold prices to get a feel for which areas are pricier and why.
 - [Housing supply & student accommodation](/cheltenham-house-prices/housing-supply) — how much student accommodation has actually been added or lost year to year, alongside general house building.
 - [Total number of properties in Cheltenham](/cheltenham-house-prices/council-tax-stock) — how the town's overall housing stock has grown over time.
