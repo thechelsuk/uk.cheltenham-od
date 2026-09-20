@@ -44,6 +44,7 @@ jobs:
             - name: Processing Python Scripts
               env:
                   OPEN_WEATHER_KEY: ${{ secrets.OPEN_WEATHER_KEY }}
+                  OCM_API_KEY: ${{ secrets.OCM_API_KEY }}
               run: |-
                   python '_python/forecast.py' || echo "::warning::forecast.py failed, continuing with other scripts"
                   python '_python/flood.py' || echo "::warning::flood.py failed, continuing with other scripts"
@@ -56,6 +57,7 @@ jobs:
                   python '_python/cheltenham-town-fc.py' || echo "::warning::cheltenham-town-fc.py failed, continuing with other scripts"
                   python '_python/roadworks.py' || echo "::warning::roadworks.py failed, continuing with other scripts"
                   python '_python/nhs-ae.py' || echo "::warning::nhs-ae.py failed, continuing with other scripts"
+                  python '_python/ev-charging.py' || echo "::warning::ev-charging.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit
