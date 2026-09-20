@@ -24,17 +24,16 @@
                         <th scope="col">Practice</th>
                         <th scope="col">Address</th>
                         <th scope="col" class="postcode">Postcode</th>
-                        <th scope="col" class="number">Distance from Centre (Miles)</th>
                         <th scope="col" class="map">Map</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for p in dentists.practices %}
+                    {% assign practices_by_name = dentists.practices | sort_natural: "name" %}
+                    {% for p in practices_by_name %}
                     <tr>
                         <td data-val="{{ p.name | downcase }}">{{ p.name }}</td>
                         <td>{{ p.address }}</td>
                         <td class="postcode">{{ p.postcode }}</td>
-                        <td class="number" data-val="{% if p.distance_miles %}{{ p.distance_miles }}{% else %}9999{% endif %}">{% if p.distance_miles %}{{ p.distance_miles }}{% else %}&mdash;{% endif %}</td>
                         <td class="map">{% if p.lat %}{% include pin.html lat=p.lat lng=p.lon label=p.name %}{% endif %}</td>
                     </tr>
                     {% endfor %}
