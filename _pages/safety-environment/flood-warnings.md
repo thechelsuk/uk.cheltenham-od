@@ -21,7 +21,7 @@ warnings or alerts in force for the area — which is common during drier period
 and through the summer months.
 
 Cheltenham sits in a low-lying part of the Severn Vale and has a history of
-surface-water and river flooding, most notably during the summer 2007 floods, which are covered on our [flood history page](/cheltenham-flood-warnings/history).
+surface-water and river flooding, most notably during the summer 2007 floods, which are covered on our [2007 floods page](/cheltenham-flood-warnings/2007-floods).
 Local watercourses including the River Chelt, along with the Severn and Avon
 catchments across Gloucestershire, are the main sources of flood risk in the
 area. Risk is highest during prolonged or heavy rainfall, particularly in

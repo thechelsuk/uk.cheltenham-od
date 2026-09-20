@@ -38,7 +38,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Local planning applications](https://cheltenham-od.uk/cheltenham-planning-applications)
 - [Food hygiene ratings](https://cheltenham-od.uk/cheltenham-food-standards)
 - [Street-level crime data by neighbourhood](https://cheltenham-od.uk/cheltenham-crime-data)
-- [Flood warnings and alerts, with live river levels and rainfall](https://cheltenham-od.uk/cheltenham-flood-warnings), and the [summer 2007 flood history](https://cheltenham-od.uk/cheltenham-flood-warnings/history)
+- [Flood warnings and alerts, with live river levels and rainfall](https://cheltenham-od.uk/cheltenham-flood-warnings), and the [summer 2007 floods](https://cheltenham-od.uk/cheltenham-flood-warnings/2007-floods)
 - [Air quality readings](https://cheltenham-od.uk/cheltenham-air-quality)
 - [Fix My Street issue reports](https://cheltenham-od.uk/cheltenham-fix-my-street)
 - [Security alerts](https://cheltenham-od.uk/cheltenham-security-alerts) (MI5 threat level tracking)
