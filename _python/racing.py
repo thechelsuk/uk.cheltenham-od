@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Fetch hotels/guest houses near Cheltenham Racecourse from OpenStreetMap,
-write _data/festival_hotels.json sorted by distance to the course."""
+write _data/races.json sorted by distance to the course. Hotels change rarely, so it
+runs monthly with the other OpenStreetMap scripts."""
 import json
 import os
 import math
