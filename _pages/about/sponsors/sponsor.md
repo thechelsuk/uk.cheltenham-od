@@ -39,6 +39,10 @@ person reading it.
 - It stays tasteful. One clean card per page — never clutter. Your brand is
   associated with a service people value, not an ad they scroll past.
 
+## How Many People Use the Site?
+
+Wondering about the audience? The [traffic page](/sponsor/traffic) shows unique visitors, total requests and the share served from cache over the last 30 days, updated daily.
+
 ## How Sponsorship Works
 
 You sponsor a whole category, exclusively. Your "supported by" card appears on every page in that section of the site, and no rival business shares it — one clean card per page, clearly marked, above the fold, never a pop-up.
