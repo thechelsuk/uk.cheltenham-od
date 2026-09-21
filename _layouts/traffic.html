@@ -16,7 +16,7 @@
         <h2>Last 30 Days</h2>
         <p>{{ traffic.start }} to {{ traffic.end }}.</p>
 
-        <div class="traffic-card">
+        <div class="info-card info-card--chart">
             <div class="traffic-figure">
                 <h3>Unique Visitors</h3>
                 <p class="traffic-number">{{ traffic.totals.display_uniques }}</p>
@@ -24,7 +24,7 @@
             <div class="traffic-chart"><canvas id="traffic-uniques" aria-label="Line chart of unique visitors per day over the last 30 days"></canvas></div>
         </div>
 
-        <div class="traffic-card">
+        <div class="info-card info-card--chart">
             <div class="traffic-figure">
                 <h3>Total Requests</h3>
                 <p class="traffic-number">{{ traffic.totals.display_requests }}</p>
@@ -32,7 +32,7 @@
             <div class="traffic-chart"><canvas id="traffic-requests" aria-label="Line chart of total requests per day over the last 30 days"></canvas></div>
         </div>
 
-        <div class="traffic-card">
+        <div class="info-card info-card--chart">
             <div class="traffic-figure">
                 <h3>Percent Cached</h3>
                 <p class="traffic-number">{{ traffic.totals.cached_percent }}%</p>

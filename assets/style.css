@@ -1678,7 +1678,7 @@ pre {
     align-items: start;
 }
 
-.weather-glance {
+.info-card {
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1em 1.2em;
@@ -1686,27 +1686,41 @@ pre {
     box-shadow: var(--shadow);
 }
 
-.weather-glance-date {
+.info-card--chart {
+    display: grid;
+    grid-template-columns: minmax(9rem, 12rem) 1fr;
+    gap: 1em 1.5em;
+    align-items: center;
+    margin: 1em 0;
+}
+
+@media (max-width: 640px) {
+    .info-card--chart {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card__label {
     margin: 0 0 0.6em;
     font-size: 0.85rem;
     color: var(--text-muted);
 }
 
-.weather-glance-header {
+.info-card__header {
     display: flex;
     align-items: center;
     gap: 0.8em;
     margin-bottom: 0.8em;
 }
 
-.weather-glance-icon {
+.info-card__icon {
     flex: none;
     width: 64px;
     height: 64px;
     border: none;
 }
 
-.weather-glance-temp {
+.info-card__title {
     display: block;
     font-family:
         Archivo,
@@ -1721,13 +1735,13 @@ pre {
     line-height: 1.1;
 }
 
-.weather-glance-desc {
+.info-card__subtitle {
     display: block;
     color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
-.weather-glance-stats {
+.info-card__stats {
     list-style: none;
     margin: 0;
     padding: 0.6em 0 0;
@@ -1737,13 +1751,13 @@ pre {
     gap: 0.5em 1em;
 }
 
-.weather-glance-stats li {
+.info-card__stats li {
     display: flex;
     flex-direction: column;
     font-size: 0.85rem;
 }
 
-.weather-glance-stats li span {
+.info-card__stats li span {
     color: var(--text-muted);
 }
 
@@ -1813,14 +1827,14 @@ pre {
     font-size: 0.85rem;
 }
 
-.latest-actions {
+.action-row {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6em;
     margin-top: 0.9em;
 }
 
-.latest-action-link {
+.pill-link {
     display: inline-block;
     padding: 0.45em 1.1em;
     border: 1px solid var(--accent);
@@ -1831,8 +1845,8 @@ pre {
     font-size: 0.9rem;
 }
 
-.latest-action-link:hover,
-.latest-action-link:focus {
+.pill-link:hover,
+.pill-link:focus {
     background: var(--accent);
     color: var(--accent-text);
     text-decoration: none;
@@ -1942,19 +1956,6 @@ pre {
    Traffic page
    ================================ */
 
-.traffic-card {
-    display: grid;
-    grid-template-columns: minmax(9rem, 12rem) 1fr;
-    gap: 1em 1.5em;
-    align-items: center;
-    margin: 1em 0;
-    padding: 1em 1.25em;
-    background: var(--bg-raised);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-}
-
 .traffic-figure h3 {
     margin: 0;
     font-size: 0.95em;
@@ -1973,10 +1974,4 @@ pre {
     position: relative;
     height: 180px;
     min-width: 0;
-}
-
-@media (max-width: 640px) {
-    .traffic-card {
-        grid-template-columns: 1fr;
-    }
 }

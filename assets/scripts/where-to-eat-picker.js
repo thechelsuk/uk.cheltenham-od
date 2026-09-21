@@ -35,24 +35,24 @@
     }
 
     function actionLink(text, href) {
-        var a = el("a", "latest-action-link", text);
+        var a = el("a", "pill-link", text);
         a.href = href;
         return a;
     }
 
-    // Reuses the homepage weather card's styles for the result.
+    // The result is an info card, the same component the homepage weather glance uses.
     function show(v) {
-        var card = el("div", "weather-glance");
-        card.appendChild(el("p", "weather-glance-date", labels[v.type] || v.type));
+        var card = el("div", "info-card");
+        card.appendChild(el("p", "info-card__label", labels[v.type] || v.type));
 
-        var header = el("div", "weather-glance-header");
+        var header = el("div", "info-card__header");
         var heading = el("div");
-        heading.appendChild(el("span", "weather-glance-temp", v.name));
-        heading.appendChild(el("span", "weather-glance-desc", v.address + (v.postcode ? ", " + v.postcode : "")));
+        heading.appendChild(el("span", "info-card__title", v.name));
+        heading.appendChild(el("span", "info-card__subtitle", v.address + (v.postcode ? ", " + v.postcode : "")));
         header.appendChild(heading);
         card.appendChild(header);
 
-        var stats = el("ul", "weather-glance-stats");
+        var stats = el("ul", "info-card__stats");
         [["Hygiene rating", v.rating + " out of 5"], ["Inspected", v.rating_date || "Not recorded"]].forEach(function (row) {
             var li = el("li");
             li.appendChild(el("span", null, row[0]));
@@ -61,7 +61,7 @@
         });
         card.appendChild(stats);
 
-        var actions = el("p", "latest-actions");
+        var actions = el("p", "action-row");
         var record = actionLink("Official rating record", "https://ratings.food.gov.uk/business/" + v.id);
         record.target = "_blank";
         record.rel = "noopener";
