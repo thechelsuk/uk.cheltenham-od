@@ -21,11 +21,17 @@
             unsubscribe at any time. See how we use your email in our <a href="/privacy#newsletter">privacy policy</a>.</small></p>
 </form>
 <style>
+    .footer-newsletter {
+        margin-bottom: 2.5em;
+    }
+
     .newsletter-form label {
         display: block;
         margin-bottom: 0.4em;
-        font-family: var(--header-stack);
-        font-size: 0.9em;
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-secondary);
     }
 
     .newsletter-form-row {
@@ -35,43 +41,37 @@
         max-width: 32rem;
     }
 
+    /* The site's global input and button styles do the rest. */
     .newsletter-form-row input[type="email"] {
         flex: 1 1 14rem;
-        padding: 0.6em 0.8em;
-        border: 1px solid var(--tab);
-        border-radius: 4px;
-        font-size: 1em;
-        font-family: var(--font-stack);
-        color: var(--primary);
-        background-color: var(--alt-tab);
+        min-width: 0;
+        border-color: var(--border-strong);
+    }
+
+    .newsletter-form-row input[type="email"]::placeholder {
+        color: var(--text-secondary);
     }
 
     .newsletter-form-row input[type="email"]:focus {
-        outline: none;
-        border-color: var(--secondary);
-        box-shadow: 0 0 0 3px var(--code);
+        box-shadow: 0 0 0 2px var(--accent);
     }
 
+    /* accent-dark on accent-text is the theme's higher-contrast pairing in both light and dark mode. */
     .newsletter-submit {
-        padding: 0.6em 1.4em;
-        background: var(--secondary);
-        color: var(--background);
-        border: 1px solid var(--secondary);
-        border-radius: 4px;
-        font-family: var(--header-stack);
-        font-size: 1em;
-        cursor: pointer;
+        padding: 0.5em 1.4em;
+        font-weight: 700;
+        background: var(--accent-dark);
+        color: var(--accent-text);
     }
 
     .newsletter-submit:hover,
     .newsletter-submit:focus {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: var(--primary);
+        background: var(--accent-dark);
+        filter: brightness(1.12);
     }
 
     .newsletter-note {
-        margin: 0.6em 0 0;
+        margin: 0.7em 0 0;
     }
 </style>
 {% endif %}
