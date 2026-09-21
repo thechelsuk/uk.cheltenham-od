@@ -2,11 +2,6 @@
 name: Post to Social
 on:
     workflow_dispatch:
-        inputs:
-            dry_run:
-                description: "Show what would be posted without posting"
-                type: boolean
-                default: false
     workflow_run:
         workflows: ["Pages"]
         types: [completed]
@@ -43,13 +38,7 @@ jobs:
                   BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
                   BLUESKY_APP_TOKEN: ${{ secrets.BLUESKY_APP_TOKEN }}
                   MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
-                  DRY_RUN: ${{ inputs.dry_run }}
-              run: |-
-                  if [ "$DRY_RUN" = "true" ]; then
-                    python '_python/social.py' --dry-run
-                  else
-                    python '_python/social.py'
-                  fi
+              run: python '_python/social.py'
 
             - name: Commit and push if changed
               if: ${{ !cancelled() }}
