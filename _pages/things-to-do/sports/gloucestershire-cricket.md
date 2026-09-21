@@ -1,7 +1,7 @@
 ---
 layout: cricket
 title: "Gloucestershire Cricket in Cheltenham: Festival, Fixtures and Getting to the Ground"
-seo: "Gloucestershire cricket in Cheltenham: the men's and women's teams, the Cheltenham Cricket Festival at Cheltenham College, a map of their home grounds with directions, and links to official fixtures and tickets."
+seo: "Gloucestershire cricket in Cheltenham: the men's and women's teams, the Cheltenham Cricket Festival, a map and directions to home grounds, and fixtures."
 permalink: /cheltenham-sports/gloucestershire-cricket
 description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival, a map and directions to their home grounds, and links to official fixtures and tickets."
 type: "activities"

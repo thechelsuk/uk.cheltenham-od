@@ -3,7 +3,7 @@ layout: posts
 title: Adding Hospital A&E Waiting Times and a Hospitals Map
 type: cod
 description: Monthly A&E waiting times for Gloucestershire Hospitals NHS Foundation Trust, which runs Cheltenham General Hospital, with three years of history and a map of hospitals near Cheltenham.
-seo: Cheltenham A&E waiting times — monthly four-hour performance, attendances and 12-hour waits for the trust that runs Cheltenham General Hospital, with a map of nearby hospitals.
+seo: "Cheltenham A&E waiting times: monthly four-hour performance, attendances and 12-hour waits for Cheltenham General Hospital, with a map of nearby hospitals."
 date: 2026-09-19 21:00
 ---
 

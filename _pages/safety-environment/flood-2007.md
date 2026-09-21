@@ -1,7 +1,7 @@
 ---
 layout: flood-2007
 title: "The Summer 2007 Floods in Cheltenham"
-seo: "What happened in Cheltenham in the June and July 2007 floods: how many properties flooded, where, why the River Chelt defences were overwhelmed, and the highest river levels recorded since."
+seo: "What happened in Cheltenham's June and July 2007 floods: how many properties flooded, where, why River Chelt defences failed and the record river levels since."
 permalink: /cheltenham-flood-warnings/2007-floods
 description: "The June and July 2007 floods in Cheltenham: what happened, where, and the record river levels still held by the gauges around the town."
 type: "environment"

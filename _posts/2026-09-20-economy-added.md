@@ -3,7 +3,7 @@ layout: posts
 title: Adding the Cheltenham Economy Page
 type: cod
 description: Cheltenham's employee jobs by industry, the number of businesses and unemployment claimants, compared with England, from the ONS.
-seo: Cheltenham economy — employee jobs by industry, how many businesses there are and how many residents claim unemployment benefits, compared with England, from the ONS.
+seo: "Cheltenham economy: employee jobs by industry, business counts and residents claiming unemployment benefits, compared with England, from the ONS."
 date: 2026-09-20 20:30
 ---
 

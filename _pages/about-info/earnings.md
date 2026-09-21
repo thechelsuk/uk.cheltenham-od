@@ -1,7 +1,7 @@
 ---
 layout: cheltenham-earnings
 title: "Cheltenham Median Earnings History"
-seo: "Cheltenham median full-time earnings by year since 2008: annual, weekly and hourly pay for people who live and work in the town, compared with the South West and England, from the ONS."
+seo: "Cheltenham median full-time earnings since 2008: annual, weekly and hourly pay for residents and workers, compared with the South West and England."
 permalink: /cheltenham-earnings-history
 description: "Median full-time earnings in Cheltenham year by year since 2008, for people who live and people who work in the town, compared with Gloucestershire, the South West and England."
 type: "about"

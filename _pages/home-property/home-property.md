@@ -1,7 +1,7 @@
 ---
 layout: explore-category
 title: "Home & Property in Cheltenham"
-seo: "Cheltenham house prices, rents, housing supply, council tax, planning applications, broadband and mobile coverage and recycling — local data for homeowners and renters."
+seo: "Cheltenham house prices, rents, housing supply, council tax, planning applications, broadband, mobile coverage and recycling for homeowners and renters."
 permalink: /explore/home-property
 description: "House prices, rents, housing supply, council tax, planning applications, broadband and mobile coverage and recycling — local data for homeowners and renters."
 type: "property"

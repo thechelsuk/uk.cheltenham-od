@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Sport in Cheltenham"
-seo: "Sport in Cheltenham — Cheltenham Town FC, Gloucestershire Cricket, Gloucester Rugby, Cheltenham Town Women, parkrun, and local running, cycling, hiking and climbing clubs."
+seo: "Sport in Cheltenham: Cheltenham Town FC and Women, Gloucestershire Cricket, Gloucester Rugby, parkrun and local running, cycling and climbing clubs."
 permalink: /cheltenham-sports
 description: "A guide to sport in Cheltenham: the professional clubs, parkrun, and local running, cycling, hiking and climbing groups."
 type: "activities"

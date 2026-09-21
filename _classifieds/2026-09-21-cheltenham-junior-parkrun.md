@@ -10,7 +10,7 @@ job_type: "Weekly 2k run"
 date: 2026-09-21
 expires: 2030-01-01
 robots: noindex
-seo: "Cheltenham has two free weekly junior parkruns for 4 to 14 year olds every Sunday at 9am: Cheltenham junior parkrun at The Park and Burrow's Field junior parkrun."
+seo: "Two free weekly junior parkruns for 4 to 14 year olds in Cheltenham, every Sunday at 9am: Cheltenham junior parkrun at The Park and Burrow's Field."
 ---
 
 Cheltenham has two free, timed 2k junior parkruns for 4 to 14 year olds,

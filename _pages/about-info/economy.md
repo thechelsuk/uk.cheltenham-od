@@ -1,7 +1,7 @@
 ---
 layout: cheltenham-economy
 title: "Cheltenham Economy: Jobs, Businesses and Claimants"
-seo: "Cheltenham's economy in numbers: jobs by industry, how many businesses there are and how many people claim unemployment benefits, compared with England, from the ONS."
+seo: "Cheltenham's economy in numbers: jobs by industry, business counts and unemployment claimants, compared with England, from the ONS."
 permalink: /cheltenham-economy
 description: "How many people work in Cheltenham and in which industries, how many businesses the town has, and how many residents are claiming unemployment-related benefits, compared with England."
 type: "about"

@@ -32,7 +32,8 @@
 <p class="info-text">
     Title length includes the " - {{ site.title }}" suffix Google sees. Thresholds: title 30&ndash;60 characters,
     description 70&ndash;160 characters. Rows with noindex are shown greyed out since their title/description length
-    doesn't affect search results.
+    doesn't affect search results. Pages, news posts, events and classifieds are all listed; a post dated in the future
+    only appears once its date has passed, or when the site is served with <code>--future</code>.
 </p>
 
 <div class="table-scroll">
@@ -40,6 +41,7 @@
         <thead>
             <tr>
                 <th scope="col">Page</th>
+                <th scope="col">Type</th>
                 <th scope="col">Indexable</th>
                 <th scope="col">Title</th>
                 <th scope="col">Title length</th>
@@ -50,6 +52,7 @@
         <tbody>
             {% assign seo_pages = site.pages | concat: site.posts %}
             {% assign seo_pages = seo_pages | concat: site.events %}
+            {% assign seo_pages = seo_pages | concat: site.classifieds %}
             {% assign seo_pages = seo_pages | where_exp: "p", "p.title" | sort_natural: "title" %}
             {% for page in seo_pages %}
             {% assign is_noindex = false %}
@@ -70,6 +73,9 @@
 
             <tr{% if is_noindex %} style="opacity: .55;"{% endif %}>
                 <td data-val="{{ page.title | downcase | escape }}"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></td>
+                {% assign kind = "Page" %}
+                {% if page.collection == "posts" %}{% assign kind = "News" %}{% elsif page.collection == "events" %}{% assign kind = "Event" %}{% elsif page.collection == "classifieds" %}{% assign kind = "Classified" %}{% endif %}
+                <td data-val="{{ kind | downcase }}">{{ kind }}</td>
                 <td data-val="{% if is_noindex %}0{% else %}1{% endif %}">
                     {% if is_noindex %}<span class="status status-noindex">Noindex</span>{% else %}<span class="status status-ok">Index</span>{% endif %}
                 </td>
