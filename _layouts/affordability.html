@@ -1,0 +1,102 @@
+{% include header.html %}
+{% assign data = site.data["cheltenham-affordability"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-house-prices">&lAarr; Back to House Prices</a></li>
+                <li><a href="/cheltenham-earnings-history">Earnings History &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Share of Homes Sold Within Reach</h2>
+        <div style="position: relative; height: 320px;">
+            <canvas id="affordability-chart" aria-label="Line chart of the share of Cheltenham home sales within 4.5 times median pay, by year and property type"></canvas>
+        </div>
+
+        <h2>Year by Year</h2>
+        <div class="table-scroll">
+            <table class="affordability-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Year</th>
+                        <th scope="col" class="number">Median Pay</th>
+                        <th scope="col" class="number">Price Limit (4.5&times;)</th>
+                        <th scope="col" class="number">Sales</th>
+                        <th scope="col" class="number">Within Reach</th>
+                        <th scope="col" class="number">All Homes (%)</th>
+                        <th scope="col" class="number">Flats (%)</th>
+                        <th scope="col" class="number">Terraced (%)</th>
+                        <th scope="col" class="number">Semi-Detached (%)</th>
+                        <th scope="col" class="number">Detached (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign rows = data.years | reverse %}
+                    {% for y in rows %}
+                    <tr>
+                        <td class="date" data-val="{{ y.year }}">{{ y.year }}</td>
+                        <td class="number" data-val="{{ y.pay }}">{{ y.pay_display }}</td>
+                        <td class="number" data-val="{{ y.cap }}">{{ y.cap_display }}</td>
+                        <td class="number" data-val="{{ y.sales }}">{{ y.sales_display }}</td>
+                        <td class="number" data-val="{{ y.within }}">{{ y.within }}</td>
+                        <td class="number" data-val="{{ y.share }}">{{ y.share }}</td>
+                        <td class="number" data-val="{{ y.by_type.flat.share }}">{{ y.by_type.flat.share }}</td>
+                        <td class="number" data-val="{{ y.by_type.terraced.share }}">{{ y.by_type.terraced.share }}</td>
+                        <td class="number" data-val="{{ y.by_type.semi_detached.share }}">{{ y.by_type.semi_detached.share }}</td>
+                        <td class="number" data-val="{{ y.by_type.detached.share }}">{{ y.by_type.detached.share }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="affordability-attribution"><small>
+            Sales from <a href="{{ data.source_url }}">HM Land Registry Price Paid Data</a> and pay from the ONS Annual
+            Survey of Hours and Earnings via <a href="{{ data.earnings_source_url }}">Nomis</a>, both published under
+            the Open Government Licence v3.0. Sales exclude the Land Registry's "other" property type. Last updated
+            {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>How Is "Affordable" Worked Out?</h3>
+        <p>A home sale counts as affordable when its price is no more than 4.5 times the median gross annual pay of
+            full-time workers who live in Cheltenham that year. 4.5 times pay is roughly the most a lender will usually
+            offer one borrower.</p>
+
+        <h3>Does It Allow for a Deposit or Household Income?</h3>
+        <p>No. It uses one typical income and doesn't allow for a deposit, other debts or the mortgage rate. Two
+            earners, a large deposit or help from family would put more homes in reach, and no deposit, or a higher
+            interest rate, would put fewer.</p>
+
+        <h3>Why Do Flats Look So Different From Houses?</h3>
+        <p>Flats sell for far less than houses in Cheltenham, so a much larger share of them fall under the price limit.
+            Detached homes sell for much more, so almost none do.</p>
+
+        <h3>Why Does the Share Jump Between Some Years?</h3>
+        <p>Both sales and pay change from year to year. Pay comes from a survey each April, so a big move in one year's
+            estimate shows up straight away in the price limit, and the mix of homes that happen to sell also shifts.
+            Look at the trend over several years rather than any single year.</p>
+
+        <h3>Where Does the Data Come From?</h3>
+        <p>Sales are HM Land Registry Price Paid Data for Cheltenham, and pay is the ONS Annual Survey of Hours and
+            Earnings for residents of the borough. The page is refreshed monthly, and a year is added once it has
+            finished and its pay figure has been published.</p>
+
+        <h3>Can I Compare It With the ONS Affordability Ratio?</h3>
+        <p>Yes. The ONS publishes a <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/ratioofhousepricetoresidencebasedearningslowerquartileandmedian">house
+                price to earnings ratio</a> for every local authority, which is a single number for the whole market.
+            This page shows the same picture as a share of the homes actually sold.</p>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="affordability-data" type="application/json">{{ data.years | jsonify }}</script>
+<script src="/assets/scripts/affordability-chart.js"></script>
+{% include footer.html %}

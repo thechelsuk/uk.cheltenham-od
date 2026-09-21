@@ -31,6 +31,8 @@ from statistics import mean, median
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))          # _python/local/
+sys.path.insert(0, os.path.join(HERE, ".."))
+import affordability  # noqa: E402  (needs the path line above)
 SRC = os.path.join(HERE, "..", "..", "_data-sources", "pp-cheltenham-1995-2022.csv")
 OUT = os.path.join(HERE, "..", "..", "_data", "cheltenham-house-price-history.json")
 
@@ -129,6 +131,14 @@ def summarise():
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"Wrote {len(years)} years ({years[0]['year']}-{years[-1]['year']}) to {os.path.normpath(OUT)}")
+
+    # The same sales, as the share a typical earner could afford. affordability.py adds 2023 onwards.
+    pay = affordability.earnings_by_year()
+    types = {name: name for name in affordability.TYPE_NAMES}
+    seed = [affordability.build_year(year, [(p, t) for p, t, _ in by_year[year] if t in types], pay[year])
+            for year in sorted(by_year) if year in pay]
+    written = affordability.save(seed)
+    print(f"Wrote affordability for {len(seed)} years, {written['first_year']}-{written['last_year']} in total")
 
 
 if __name__ == "__main__":
