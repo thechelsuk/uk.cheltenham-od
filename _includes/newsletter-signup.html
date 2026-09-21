@@ -1,0 +1,77 @@
+{% comment %}
+    Newsletter sign-up form. Renders nothing until site.newsletter.buttondown_username is set (an empty string is not
+    "blank" in this Liquid version, so test its size).
+    Posts straight to Buttondown's embed endpoint, which must be a plain form post (not fetch),
+    sends the double opt-in confirmation email and may show its own CAPTCHA.
+    include.source tags the subscriber with where they signed up (footer, newsletter-page, ...).
+{% endcomment %}
+{% assign nl = site.newsletter %}
+{% if nl.buttondown_username.size > 0 %}
+{% assign field_id = "newsletter-email-" | append: include.source %}
+<form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/{{ nl.buttondown_username }}"
+    method="post" target="_blank" rel="noopener">
+    <label for="{{ field_id }}">Email address</label>
+    <div class="newsletter-form-row">
+        <input type="email" name="email" id="{{ field_id }}" required autocomplete="email" placeholder="you@example.com">
+        <input type="hidden" name="embed" value="1">
+        <input type="hidden" name="tag" value="{{ include.source }}">
+        <button type="submit" class="newsletter-submit">Subscribe</button>
+    </div>
+    <p class="newsletter-note"><small>Free, one email a week. We'll send a confirmation link first, and you can
+            unsubscribe at any time. See how we use your email in our <a href="/privacy#newsletter">privacy policy</a>.</small></p>
+</form>
+<style>
+    .newsletter-form label {
+        display: block;
+        margin-bottom: 0.4em;
+        font-family: var(--header-stack);
+        font-size: 0.9em;
+    }
+
+    .newsletter-form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6em;
+        max-width: 32rem;
+    }
+
+    .newsletter-form-row input[type="email"] {
+        flex: 1 1 14rem;
+        padding: 0.6em 0.8em;
+        border: 1px solid var(--tab);
+        border-radius: 4px;
+        font-size: 1em;
+        font-family: var(--font-stack);
+        color: var(--primary);
+        background-color: var(--alt-tab);
+    }
+
+    .newsletter-form-row input[type="email"]:focus {
+        outline: none;
+        border-color: var(--secondary);
+        box-shadow: 0 0 0 3px var(--code);
+    }
+
+    .newsletter-submit {
+        padding: 0.6em 1.4em;
+        background: var(--secondary);
+        color: var(--background);
+        border: 1px solid var(--secondary);
+        border-radius: 4px;
+        font-family: var(--header-stack);
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    .newsletter-submit:hover,
+    .newsletter-submit:focus {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--primary);
+    }
+
+    .newsletter-note {
+        margin: 0.6em 0 0;
+    }
+</style>
+{% endif %}

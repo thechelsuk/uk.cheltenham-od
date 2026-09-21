@@ -578,6 +578,14 @@ footer_pages:
     - name: University of Gloucestershire
       link: /university-of-gloucestershire
 
+# Weekly newsletter sign-up. Every sign-up form is hidden while buttondown_username is
+# blank; set it to the Buttondown account name (the part after buttondown.com/) to switch
+# the footer form and the /newsletter page form on.
+newsletter:
+  name: "The Cheltenham Week Ahead"
+  tagline: "A short Cheltenham briefing every Monday morning, starting soon: the week's weather, roadworks, events and top local stories."
+  buttondown_username: ""
+
 # The four columns under the Pages (A-Z) block: Guides, Feeds, About, Meta.
 footer_columns:
   - title: Guides
@@ -616,6 +624,8 @@ footer_columns:
     links:
       - name: Site Announcements
         link: /news
+      - name: Weekly Newsletter
+        link: /newsletter
       - name: About
         link: /about
       - name: Press
