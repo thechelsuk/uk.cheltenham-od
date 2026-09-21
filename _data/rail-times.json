@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T19:00:08+01:00",
+  "generated_at": "2026-09-21T19:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,32 +10,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-21T18:52",
-      "expected": "2026-09-21T19:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central",
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-21T19:02",
-      "expected": "2026-09-21T19:02",
-      "status": "On time",
+      "expected": "2026-09-21T19:06",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -147,19 +124,26 @@
       "calling_at": [
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-21T19:49",
+      "expected": "2026-09-21T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-21T18:50",
-      "expected": "2026-09-21T18:58",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-21T19:10",
       "expected": "2026-09-21T19:25",
@@ -192,13 +176,13 @@
     },
     {
       "scheduled": "2026-09-21T19:27",
-      "expected": "2026-09-21T19:27",
-      "status": "On time",
+      "expected": "2026-09-21T19:29",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by an operational incident"
     },
     {
       "scheduled": "2026-09-21T19:28",
@@ -228,6 +212,16 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-21T19:47",
+      "expected": "2026-09-21T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
       "reason": ""
     }
   ]
