@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Cheltenham Open Data
+seo_title: "About Cheltenham Open Data: Who Runs It and How It Works"
 permalink: /about
 description: "About Cheltenham Open Data — a fast, independent, privacy-first site putting useful local data in the hands of people in Cheltenham and Gloucestershire."
 type: "cod"
@@ -9,7 +10,7 @@ seo: "About Cheltenham Open Data: what the site offers, how the data is gathered
 
 ## Mission
 
-Cheltenham Open Data is a local website for local people — without the big-tech overlords, the data-harvesting, or pages full of pop-ups, scam adverts, and clickbait headlines. A quick, easy service that puts useful local data in the hands of the people who live here.
+Cheltenham Open Data is a local site for local people — without the big-tech overlords, the data-harvesting, or pages full of pop-ups, scam adverts, and clickbait headlines. A quick, easy service that puts useful local data in the hands of the people who live here.
 
 ## What You Will Find Here
 
@@ -37,7 +38,7 @@ Live, hand-checked data on the things that matter locally, across Cheltenham and
 
 ## How the Data Is Made
 
-Data is gathered and checked from public sources — official websites, RSS feeds, and local sources — pulled automatically, then checked and curated by hand. Each dataset carries its own licence and attribution on its page, and the full licensing summary lives in our [Terms of Use](/terms).
+Data is gathered and checked from public sources — official sites, RSS feeds, and local sources — pulled automatically, then checked and curated by hand. Each dataset carries its own licence and attribution on its page, and the full licensing summary lives in our [Terms of Use](/terms).
 
 ## How It Is Funded
 
@@ -57,6 +58,6 @@ The site is built as static HTML, CSS, and a little JavaScript, so it's lightnin
 
 ## Who Runs It
 
-The site is [built by Mat Benfield, thechels.uk](https://thechels.uk), a resident of Cheltenham for over 20 years. If you'd like a similar website, or have a data project in mind, I'd love to hear about it — [say hello](/contact).
+The site is [built by Mat Benfield, thechels.uk](https://thechels.uk), a resident of Cheltenham for over 20 years. If you'd like a similar site, or have a data project in mind, I'd love to hear about it — [say hello](/contact).
 
 [Check it out on Product Hunt →](https://www.producthunt.com/products/cheltenham-open-data?embed=true&utm_source=embed&utm_medium=post_embed)

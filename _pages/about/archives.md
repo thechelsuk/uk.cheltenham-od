@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: News and Announcements Archive
-seo: Get the latest Cheltenham Open Data news and announcements about local data
+seo: "News and announcements from Cheltenham Open Data: every new page, dataset and update to the site's local data, from house prices to train times."
 description: "Latest site news and announcements from Cheltenham Open Data"
 type: "cod"
 permalink: /news

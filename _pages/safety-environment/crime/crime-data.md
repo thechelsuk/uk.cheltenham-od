@@ -1,7 +1,8 @@
 ---
 layout: crime-data
 title: "Cheltenham Crime Data"
-seo: "Monthly street-level crime figures for Cheltenham neighbourhoods from the Police.uk API."
+seo_title: "Cheltenham Crime Data: Monthly Street-Level Crime Figures"
+seo: "Monthly street-level crime figures for Cheltenham, by month and by neighbourhood, from the Police.uk API, with links to each year's data."
 permalink: /cheltenham-crime-data
 description: "Monthly street-level crime figures for Cheltenham, broken down by neighbourhood."
 type: "environment"

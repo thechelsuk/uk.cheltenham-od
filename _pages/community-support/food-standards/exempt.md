@@ -1,7 +1,7 @@
 ---
 layout: food-standards
 title: "Exempt Food Businesses in Cheltenham"
-seo: "Food businesses in Cheltenham marked exempt in the Food Standards Agency ratings data."
+seo: "Food businesses in Cheltenham marked exempt from a food hygiene rating in the Food Standards Agency's data, with their addresses."
 permalink: /cheltenham-food-standards/exempt
 description: "Food businesses in Cheltenham marked exempt from a food hygiene rating."
 food_rating: "Exempt"

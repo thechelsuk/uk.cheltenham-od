@@ -3,7 +3,7 @@ layout: posts
 title: Adding Refillable Produce Recycling
 type: cod
 description: "Quickly find local shops that sell plastic free and environmentally friendly products in Cheltenham"
-seo: "Quickly find local shops that sell plastic free and environmentally friendly products in Cheltenham"
+seo: "New: find Cheltenham shops that sell plastic-free, refillable and environmentally friendly products, alongside recycling centres and bring banks."
 date: 2026-08-29 19:00
 ---
 

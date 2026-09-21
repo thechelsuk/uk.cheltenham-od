@@ -1,6 +1,7 @@
 ---
 layout: nhs-ae
 title: "Cheltenham A&E Waiting Times"
+seo_title: "Cheltenham A&E Waiting Times: Four-Hour and 12-Hour Waits"
 seo: "Cheltenham A&E waiting times: monthly four-hour performance, attendances and 12-hour waits for Cheltenham General Hospital, with a map of nearby hospitals."
 permalink: /cheltenham-ae-waiting-times
 description: "Monthly A&E waiting times for Gloucestershire Hospitals NHS Foundation Trust, which runs Cheltenham General Hospital, with a map of hospitals near Cheltenham."

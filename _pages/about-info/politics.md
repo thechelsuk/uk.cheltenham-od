@@ -1,6 +1,7 @@
 ---
 layout: politics
 title: "Cheltenham Politics"
+seo_title: "Cheltenham MP and General Election Results Since 2010"
 seo: "Cheltenham's MP and general election history: who represents Cheltenham in Parliament, with party, majority and turnout for every election since 2010."
 permalink: /cheltenham-politics
 description: "Cheltenham's current MP and the results of every general election since 2010."

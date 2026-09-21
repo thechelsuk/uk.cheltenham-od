@@ -1,7 +1,7 @@
 ---
 layout: food-standards
 title: "Food Hygiene Ratings 1 to 4 in Cheltenham"
-seo: "Food businesses in Cheltenham with Food Standards Agency ratings from 1 to 4."
+seo: "Cheltenham food businesses with a food hygiene rating of 1 to 4 from the Food Standards Agency, with the rating, address and last inspection date."
 permalink: /cheltenham-food-standards/rated-one-to-four
 description: "Food businesses in Cheltenham with food hygiene ratings from 1 to 4."
 food_rating: "rated-one-to-four"

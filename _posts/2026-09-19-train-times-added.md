@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Adding Train Times
+seo_title: "Cheltenham Train Times Added: Live Departures and Arrivals"
 type: cod
 description: The next train departures and arrivals at Cheltenham Spa station, with platforms, delays and cancellations, plus annual passenger numbers.
 seo: Cheltenham train times — the next departures and arrivals at Cheltenham Spa station with platforms, delays and cancellations, plus station usage figures.

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Cheltenham Air Quality
+seo_title: "Cheltenham Air Quality: Live PM2.5, PM10, NO2 and Ozone"
 permalink: /cheltenham-air-quality
 date: 2026-08-20 20:55 UTC
 description: "Live air quality readings for Cheltenham, updated regularly from official DEFRA monitoring stations, covering particulates, nitrogen dioxide, ozone and sulphur dioxide."

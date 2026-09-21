@@ -1,6 +1,7 @@
 ---
 layout: explore-category
 title: "Getting Around Cheltenham"
+seo_title: "Getting Around Cheltenham: Fuel, Parking, Buses and Trains"
 seo: "Fuel prices, EV charging, car parks, roadworks, bus data, train times and cycle routes in Cheltenham — everything for getting around town."
 permalink: /explore/getting-around
 description: "Fuel prices, EV charging, car parks, roadworks, buses, trains and cycle routes — everything for getting around Cheltenham."

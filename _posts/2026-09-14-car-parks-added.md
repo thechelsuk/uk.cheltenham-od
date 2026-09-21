@@ -1,9 +1,10 @@
 ---
 layout: posts
 title: Adding a Car Parks Page
+seo_title: "Cheltenham Car Parks Page Added: Fees and Charging Hours"
 type: cod
 description: Public car parks near Cheltenham, mapped with fees, charging hours, capacity and max stay where recorded.
-seo: Cheltenham car parks map with fees, charging hours, capacity and max stay times, sourced from OpenStreetMap.
+seo: "A new Cheltenham car parks page maps public car parks with fees, charging hours, capacity and maximum stay times, sourced from OpenStreetMap."
 date: 2026-09-14 14:00
 ---
 

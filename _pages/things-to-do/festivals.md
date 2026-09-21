@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Cheltenham Festivals"
-seo: "Cheltenham's festival calendar — Literature, Racing, Jazz, Science and Music Festivals, with dates and links."
+seo_title: "Cheltenham Festivals Calendar: Racing, Jazz, Science, Music"
+seo: "Cheltenham's year-round festival calendar: Literature, Racing, Jazz, Science, Music and Cricket, with dates and links to each festival."
 permalink: /festivals
 description: "Cheltenham's year-round festival calendar — Literature, Racing, Jazz, Science and Music, with dates and useful links."
 type: "activities"

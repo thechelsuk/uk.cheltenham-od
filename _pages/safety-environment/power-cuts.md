@@ -1,6 +1,7 @@
 ---
 layout: power-cuts
 title: Cheltenham Power Cuts
+seo_title: "Cheltenham Power Cuts: Live Map and Outage History"
 seo: "Live power cuts affecting Cheltenham, sourced from National Grid Electricity Distribution's open power cut feed, with a map, history and Atom feed."
 description: "Live and recent power cuts affecting Cheltenham, sourced from National Grid Electricity Distribution."
 type: "environment"

@@ -1,6 +1,7 @@
 ---
 layout: university
 title: "University of Gloucestershire Campuses in Cheltenham and Gloucester"
+seo_title: "University of Gloucestershire Campuses in Cheltenham"
 seo: "University of Gloucestershire campuses in Cheltenham and Gloucester: a map with addresses, what is taught at each, the academic schools and how to apply."
 permalink: /university-of-gloucestershire
 description: "A map and guide to the University of Gloucestershire's campuses in Cheltenham and Gloucester, with addresses, what is taught where and how to apply."
