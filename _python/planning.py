@@ -51,6 +51,18 @@ MONTHS_DEEP = 3
 # Keep/show a record if its received OR decision date is within this window.
 RETENTION_DAYS = 90
 
+# The council's register has no coordinates, so each application is placed at the centre of its
+# postcode with postcodes.io. A record that has been looked up keeps its lat/lon (null when the
+# postcode isn't found), so each postcode is only ever asked for once.
+POSTCODES_URL = "https://api.postcodes.io/postcodes"
+GEOCODING_SOURCE = "postcodes.io (ONS Postcode Directory)"
+GEOCODING_ATTRIBUTION = (
+    "Contains OS data © Crown copyright and database right 2026. "
+    "Contains Royal Mail data © Royal Mail copyright and database right 2026. "
+    "Source: Office for National Statistics licensed under the Open Government Licence v3.0."
+)
+GEOCODE_BATCH = 100
+
 DATA_DIR = Path("_data")
 DATA_FILE = DATA_DIR / "planning-applications.json"
 
@@ -370,6 +382,31 @@ def merge_records(existing, new_records):
     return existing
 
 
+def geocode_missing(records_by_ref):
+    """Add lat/lon to every record with a postcode that has not been looked up yet."""
+    todo = {r["postcode"] for r in records_by_ref.values() if r.get("postcode") and "lat" not in r}
+    if not todo:
+        return
+    coords = {}
+    postcodes = sorted(todo)
+    for i in range(0, len(postcodes), GEOCODE_BATCH):
+        try:
+            resp = requests.post(POSTCODES_URL, json={"postcodes": postcodes[i:i + GEOCODE_BATCH]},
+                                 headers=REQUEST_HEADERS, timeout=30)
+            resp.raise_for_status()
+        except requests.RequestException as exc:
+            log.warning("Could not geocode %s postcodes (%s); they will be retried next run", len(postcodes[i:i + GEOCODE_BATCH]), exc)
+            todo -= set(postcodes[i:i + GEOCODE_BATCH])
+            continue
+        for row in resp.json()["result"]:
+            result = row.get("result")
+            coords[row["query"]] = (result["latitude"], result["longitude"]) if result else (None, None)
+    for r in records_by_ref.values():
+        if r.get("postcode") in todo and r["postcode"] in coords:
+            r["lat"], r["lon"] = coords[r["postcode"]]
+    log.info("Geocoded %s postcodes", len(coords))
+
+
 def is_decision(status):
     s = (status or "").lower()
     return any(term in s for term in DECISION_TERMS)
@@ -414,6 +451,8 @@ def build_payload(records_by_ref):
         "updated": now.strftime("%d %B %Y"),
         "updated_iso": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "lookback_days": RETENTION_DAYS,
+        "geocoding_source": GEOCODING_SOURCE,
+        "geocoding_attribution": GEOCODING_ATTRIBUTION,
         "received_count": len(applications),
         "pending": pending,
         "decided_count": len(decided),
@@ -449,6 +488,7 @@ def main():
 
     merged = merge_records(load_existing(), new_records)
     merged = apply_retention(merged)
+    geocode_missing(merged)
     save_payload(build_payload(merged))
 
 
