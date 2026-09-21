@@ -38,6 +38,7 @@ html {
     --alt-tab: #b1b0aa;
     --code: #f7f767;
     --secondary: #a2a0d4;
+    --font-mono: ui-monospace, "Menlo", "Consolas", "Courier New", monospace;
     --saving: #1a7f37;
     --saving-bg: rgb(26 127 55 / 10%);
 }
@@ -369,14 +370,12 @@ cite {
 
 pre,
 code {
-    font-family:
-        ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.85em;
 }
 
 pre > code {
-    font-family:
-        ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+    font-family: var(--font-mono);
     font-size: 0.9em;
 }
 
@@ -1179,8 +1178,7 @@ textarea {
     width: 100%;
     min-height: 150px;
     resize: vertical;
-    font-family:
-        ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+    font-family: var(--font-mono);
     line-height: 1.4;
 }
 

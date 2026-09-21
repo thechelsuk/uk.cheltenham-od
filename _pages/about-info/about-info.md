@@ -3,7 +3,7 @@ layout: explore-category
 title: "About Cheltenham & Info"
 seo: "About Cheltenham, its employment and earnings history, listed buildings and council land, politics, schools, the University of Gloucestershire, post offices, classifieds, local news and the weather forecast."
 permalink: /explore/about-info
-description: "Population and history, employment, earnings and the economy, listed buildings, council land, politics, schools, the University of Gloucestershire, post offices, classifieds, local news and the weather forecast for Cheltenham."
+description: "Population and history, employment, earnings and the economy, listed buildings, council land, politics, schools, Uni, post offices, classifieds, local news and the weather forecast for Cheltenham."
 type: "about"
 group: "About & Info"
 ---
