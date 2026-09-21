@@ -48,6 +48,7 @@ jobs:
                   python _python/economy.py || echo "::warning::economy.py failed, continuing with other scripts"
                   python _python/parkrun.py || echo "::warning::parkrun.py failed, continuing with other scripts"
                   python _python/listed-buildings.py || echo "::warning::listed-buildings.py failed, continuing with other scripts"
+                  python _python/ward-politics.py || echo "::warning::ward-politics.py failed, continuing with other scripts"
                   python _python/water-quality.py || echo "::warning::water-quality.py failed, continuing with other scripts"
                   python _python/council-tax.py || echo "::warning::council-tax.py failed, continuing with other scripts"
                   python _python/housing-supply.py || echo "::warning::housing-supply.py failed, continuing with other scripts"

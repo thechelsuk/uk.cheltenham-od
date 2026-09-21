@@ -1,0 +1,236 @@
+{% include header.html %}
+{% assign data = site.data["ward-politics"] %}
+{% assign wards = site.data.wards.index.wards %}
+{% assign council = data.council %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-politics">&larr; Back to Cheltenham Politics</a></li>
+                <li><a href="/cheltenham-wards">Cheltenham wards &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Who Runs Cheltenham Borough Council?</h2>
+        <p>
+            {% assign top = council.parties.first %}
+            The {{ top.party }} group holds {{ top.seats }} of the council's {{ council.total }} seats.
+            The table shows the sitting councillors by party.
+        </p>
+        <div class="table-scroll">
+            <table class="elections-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Party</th>
+                        <th scope="col" class="number">Seats</th>
+                        <th scope="col" class="number">Share of seats (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in council.parties %}
+                    <tr>
+                        <td>{{ p.party }}</td>
+                        <td class="number">{{ p.seats }}</td>
+                        <td class="number">{{ p.share }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Map of Council Seats by Ward</h2>
+        <p><small>Each ward is coloured by the party of its councillors, or grey where its two councillors are from different parties. Click a ward to see who represents it.</small></p>
+        <div id="elections-legend" class="elections-legend"></div>
+        <div id="elections-map" style="height: 520px; border-radius: 8px;" aria-label="Map of Cheltenham's wards coloured by the party of their councillors"></div>
+        <script id="elections-map-wards" type="application/json">{{ wards | jsonify }}</script>
+        <script id="elections-map-summary" type="application/json">{{ data.wards_summary | jsonify }}</script>
+
+        <h2>Cheltenham's Councillors</h2>
+        <div class="table-scroll">
+            <table class="elections-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Councillor</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col">Party</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in wards %}
+                    {% assign pol = data.wards[w.slug] %}
+                    {% for c in pol.councillors %}
+                    <tr>
+                        <td><a href="{{ c.url }}" rel="noopener">{{ c.name }}</a></td>
+                        <td><a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }}</a></td>
+                        <td>{{ c.party }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Borough Election Results by Ward</h2>
+        {% assign summaries = data.election_summaries | reverse %}
+        {% for es in summaries %}
+        <h3>{{ es.title }}</h3>
+        <p>
+            {{ es.seats }} {% if es.seats == 1 %}seat was{% else %}seats were{% endif %} contested in {{ es.wards }} {% if es.wards == 1 %}ward{% else %}wards{% endif %}
+            on {{ es.date }}, with {{ es.ballots_cast_display }} ballot papers issued to
+            {{ es.electorate_display }} registered voters, a turnout of {{ es.turnout_pct }}%.
+        </p>
+
+        <div class="table-scroll">
+            <table class="elections-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Party</th>
+                        <th scope="col" class="number">Seats won</th>
+                        <th scope="col" class="number">Votes</th>
+                        <th scope="col" class="number">Share of votes (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in es.parties %}
+                    <tr>
+                        <td>{{ p.party }}</td>
+                        <td class="number">{{ p.seats }}</td>
+                        <td class="number" data-val="{{ p.votes }}">{{ p.votes_display }}</td>
+                        <td class="number">{{ p.share }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-scroll">
+            <table class="elections-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col">Elected</th>
+                        <th scope="col" class="number">Registered voters</th>
+                        <th scope="col" class="number">Turnout (%)</th>
+                        <th scope="col" class="number">Margin over runner-up (votes)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in wards %}
+                    {% assign pol = data.wards[w.slug] %}
+                    {% assign res = pol.elections | where: "date", es.date | first %}
+                    {% if res %}
+                    {% assign last_winner = res.seats | minus: 1 %}
+                    <tr>
+                        <td><a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }}</a></td>
+                        <td>{% for c in res.candidates %}{% if c.elected %}{{ c.name }} ({{ c.party }}){% unless forloop.last %}; {% endunless %}{% endif %}{% endfor %}</td>
+                        <td class="number" data-val="{{ res.electorate }}">{{ res.electorate_display }}</td>
+                        <td class="number">{{ res.turnout_pct }}</td>
+                        <td class="number">{{ res.candidates[last_winner].votes | minus: res.candidates[res.seats].votes }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <details>
+            <summary>Every candidate and their votes, {{ es.title }}</summary>
+            <div class="table-scroll">
+                <table class="elections-table data-table" data-sortable>
+                    <thead>
+                        <tr>
+                            <th scope="col">Ward</th>
+                            <th scope="col">Candidate</th>
+                            <th scope="col">Party</th>
+                            <th scope="col" class="number">Votes</th>
+                            <th scope="col" class="number">Share of votes (%)</th>
+                            <th scope="col">Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for w in wards %}
+                        {% assign pol = data.wards[w.slug] %}
+                        {% assign res = pol.elections | where: "date", es.date | first %}
+                        {% if res %}
+                        {% for c in res.candidates %}
+                        <tr>
+                            <td>{{ w.name }}</td>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.party }}</td>
+                            <td class="number" data-val="{{ c.votes }}">{{ c.votes_display }}</td>
+                            <td class="number">{{ c.share }}</td>
+                            <td>{% if c.elected %}Elected{% endif %}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </details>
+        {% endfor %}
+        <p><small>Each voter has as many votes as there are seats, so in a two-seat contest the votes can add up to more
+            than the ballot papers issued. Turnout is ballot papers issued as a share of registered voters, and the share of
+            votes is each party's share of all votes cast for candidates.</small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Often Are Cheltenham Councillors Elected?</h3>
+        <ul>
+            <li>Cheltenham Borough Council is elected by halves: one seat in each of the 20 wards is contested every two years.
+                All 40 seats were contested in 2024 because the ward boundaries were redrawn.</li>
+        </ul>
+
+        <h3>How Many Councillors Does Cheltenham Have?</h3>
+        <ul>
+            <li>Forty, two for each of the town's 20 wards.</li>
+        </ul>
+
+        <h3>Who Is My Local Councillor?</h3>
+        <ul>
+            <li>Find your ward on the Cheltenham wards page. Each ward profile lists its two councillors, with a link to
+                their page on the council's website.</li>
+        </ul>
+
+        <h3>Where Do These Results Come From?</h3>
+        <ul>
+            <li>Cheltenham Borough Council's own published election results and councillor pages, checked for consistency
+                and refreshed monthly.</li>
+        </ul>
+
+        <p class="elections-attribution"><small>
+            Election results and councillors from <a href="{{ data.source_url }}">Cheltenham Borough Council</a>.
+            Ward boundaries &copy; Office for National Statistics under the
+            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
+            Map &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+    </div>
+</div>
+
+<style>
+    .elections-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em 1em;
+        margin: 0.5em 0 1em;
+        font-size: 0.85rem;
+    }
+
+    .elections-legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/scripts/local-elections-map.js"></script>
+{% include footer.html %}

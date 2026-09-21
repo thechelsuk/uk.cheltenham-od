@@ -10,6 +10,7 @@
             <ul>
                 <li><a href="/about-cheltenham">&larr; Back to All About Cheltenham</a></li>
                 <li><a href="/cheltenham-politics/party-history">Election history since 1918 &rarr;</a></li>
+                <li><a href="/cheltenham-politics/local-elections">Local Elections &rarr;</a></li>
             </ul>
         </header>
 
@@ -71,7 +72,8 @@
                         <td class="date" data-val="{{ e.date }}">{{ e.date | date: "%Y-%m-%d" }}</td>
                         <td>{{ e.mp }}</td>
                         <td>{{ e.party }}</td>
-                        <td>{{ e.party }} {% if e.result contains "Gain" %}gain{% elsif e.result contains "Hold" %}hold{% else %}{{ e.result }}{% endif %}</td>
+                        <td>{{ e.party }} {% if e.result contains "Gain" %}gain{% elsif e.result contains "Hold"
+                            %}hold{% else %}{{ e.result }}{% endif %}</td>
                         <td class="number" data-val="{{ e.majority }}">{{ e.majority_display }}</td>
                         <td class="number" data-val="{{ e.turnout_pct }}">{{ e.turnout_display }}</td>
                         <td class="number" data-val="{{ e.electorate }}">{{ e.electorate_display }}</td>
@@ -84,7 +86,8 @@
         <p class="politics-attribution"><small>
                 Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>. Contains Parliamentary
                 information licensed under the
-                <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
+                <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open
+                    Parliament Licence v3.0</a>.
                 {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
             </small></p>
 
@@ -92,7 +95,8 @@
 
         <h3>Who Is the MP for Cheltenham?</h3>
         <p>{{ mp.name }} ({{ mp.party }}) has been the MP for Cheltenham since
-            {{ mp.since | date: "%-d %B %Y" }}.</p>
+            {{ mp.since | date: "%-d %B %Y" }}.
+        </p>
 
         <h3>How Do I Contact My MP?</h3>
         <p>Your MP's <a href="{{ mp.profile_url }}">UK Parliament page</a> lists how to get in touch. You can also
