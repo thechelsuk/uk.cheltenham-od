@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Sport in Cheltenham"
-seo: "Sport in Cheltenham — Cheltenham Town FC, Gloucester Rugby, Cheltenham Town Women, parkrun, and local running, cycling, hiking and climbing clubs."
+seo: "Sport in Cheltenham — Cheltenham Town FC, Gloucestershire Cricket, Gloucester Rugby, Cheltenham Town Women, parkrun, and local running, cycling, hiking and climbing clubs."
 permalink: /cheltenham-sports
 description: "A guide to sport in Cheltenham: the professional clubs, parkrun, and local running, cycling, hiking and climbing groups."
 type: "activities"
@@ -18,6 +18,10 @@ Cheltenham has one professional club of its own, a Premiership rugby side on its
 ### Cheltenham Town FC
 
 Cheltenham's own professional football club, "The Robins", play in EFL League Two at Whaddon Road. See our [Cheltenham Town FC page](/cheltenham-sports/cheltenham-town-fc) for the next fixture, recent results and how to get to the ground.
+
+### Gloucestershire Cricket
+
+Gloucestershire County Cricket Club's men's and women's teams play most home matches in Bristol, but come to Cheltenham College each summer for the Cheltenham Cricket Festival, the longest-running cricket festival on an outfield in the world. See our [Gloucestershire cricket page](/cheltenham-sports/gloucestershire-cricket) for the teams, a map and directions to the grounds, and links to official fixtures and tickets.
 
 ### Gloucester Rugby
 
