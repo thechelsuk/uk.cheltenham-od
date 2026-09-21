@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T16:30:09+01:00",
+  "generated_at": "2026-09-21T16:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-21T15:52",
-      "expected": "2026-09-21T16:31",
+      "expected": "2026-09-21T16:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -31,7 +31,7 @@
     },
     {
       "scheduled": "2026-09-21T16:12",
-      "expected": "2026-09-21T16:53",
+      "expected": "2026-09-21T16:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -81,8 +81,8 @@
     },
     {
       "scheduled": "2026-09-21T16:40",
-      "expected": "2026-09-21T16:40",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -133,8 +133,8 @@
     },
     {
       "scheduled": "2026-09-21T16:52",
-      "expected": "2026-09-21T16:52",
-      "status": "On time",
+      "expected": "2026-09-21T16:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
@@ -172,6 +172,26 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-09-21T17:03",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
     }
   ],
   "arrivals": [
@@ -187,23 +207,13 @@
     },
     {
       "scheduled": "2026-09-21T16:10",
-      "expected": "2026-09-21T16:52",
+      "expected": "2026-09-21T16:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by a passenger being taken ill on this train"
-    },
-    {
-      "scheduled": "2026-09-21T16:27",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of an operational incident"
     },
     {
       "scheduled": "2026-09-21T16:30",
@@ -247,8 +257,8 @@
     },
     {
       "scheduled": "2026-09-21T16:50",
-      "expected": "2026-09-21T16:50",
-      "status": "On time",
+      "expected": "2026-09-21T16:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
