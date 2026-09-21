@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T16:50:08+01:00",
+  "generated_at": "2026-09-21T16:55:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-21T16:12",
-      "expected": "2026-09-21T16:56",
+      "expected": "2026-09-21T16:57",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -39,13 +39,13 @@
     },
     {
       "scheduled": "2026-09-21T16:31",
-      "expected": "2026-09-21T17:01",
+      "expected": "2026-09-21T17:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Paignton",
-      "reason": "This service has been delayed by a fault with the signalling system",
+      "reason": "This service has been delayed by the fire alarm sounding in the signalling centre",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -79,25 +79,6 @@
       ]
     },
     {
-      "scheduled": "2026-09-21T16:40",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-09-21T16:52",
       "expected": null,
       "status": "Delayed",
@@ -105,7 +86,7 @@
       "operator": "CrossCountry",
       "origin": "Aberdeen",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by the fire alarm sounding in the signalling centre",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -119,7 +100,7 @@
     },
     {
       "scheduled": "2026-09-21T16:55",
-      "expected": null,
+      "expected": "2026-09-21T17:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -201,12 +182,30 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-21T17:25",
+      "expected": "2026-09-21T17:25",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-21T16:10",
-      "expected": "2026-09-21T16:55",
+      "expected": "2026-09-21T16:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -216,23 +215,13 @@
     },
     {
       "scheduled": "2026-09-21T16:30",
-      "expected": "2026-09-21T17:00",
+      "expected": "2026-09-21T16:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Paignton",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
-      "scheduled": "2026-09-21T16:38",
-      "expected": "2026-09-21T16:42",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
+      "reason": "This service has been delayed by the fire alarm sounding in the signalling centre"
     },
     {
       "scheduled": "2026-09-21T16:47",
@@ -246,17 +235,17 @@
     },
     {
       "scheduled": "2026-09-21T16:50",
-      "expected": null,
+      "expected": "2026-09-21T17:13",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
       "destination": "Plymouth",
-      "reason": ""
+      "reason": "This service has been delayed by the fire alarm sounding in the signalling centre"
     },
     {
       "scheduled": "2026-09-21T16:54",
-      "expected": null,
+      "expected": "2026-09-21T17:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -282,6 +271,16 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-21T17:24",
+      "expected": "2026-09-21T17:24",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
     }
   ]
