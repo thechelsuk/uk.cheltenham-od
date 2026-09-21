@@ -15,12 +15,12 @@
         {{ content }}
 
         {% assign picker_venues = venues | where_exp: "v", "v.rating == '4' or v.rating == '5'" %}
-        <div id="where-to-eat-picker" class="where-to-eat-picker" hidden>
+        <div id="where-to-eat-picker" hidden>
             <h2>Can't Decide Where to Eat?</h2>
             <p>Let us choose. Pick a place at random from the {{ picker_venues.size }} restaurants, cafés, pubs, bars and
                 takeaways below with a hygiene rating of 4 or 5. It is a random choice rather than a recommendation, and
                 a hygiene rating says nothing about the food, so check the venue's opening hours before you go.</p>
-            <p class="where-to-eat-picker-controls">
+            <p>
                 <label for="where-to-eat-picker-type">Type of place</label>
                 <select id="where-to-eat-picker-type">
                     <option value="">Anywhere</option>
@@ -30,7 +30,7 @@
                 </select>
                 <button type="button" id="where-to-eat-picker-button">Pick a place</button>
             </p>
-            <div id="where-to-eat-picker-result" class="where-to-eat-picker-result" aria-live="polite"></div>
+            <div id="where-to-eat-picker-result" aria-live="polite"></div>
         </div>
 
         <h2>Map of Restaurants, Pubs and Takeaways</h2>

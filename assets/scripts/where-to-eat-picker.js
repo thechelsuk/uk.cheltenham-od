@@ -27,52 +27,65 @@
     root.hidden = false;
     var last = null;
 
-    function line(text) {
-        var p = document.createElement("p");
-        p.textContent = text;
-        return p;
+    function el(tag, className, text) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text != null) node.textContent = text;
+        return node;
     }
 
-    function link(text, href) {
-        var a = document.createElement("a");
-        a.textContent = text;
+    function actionLink(text, href) {
+        var a = el("a", "latest-action-link", text);
         a.href = href;
-        a.target = "_blank";
-        a.rel = "noopener";
         return a;
     }
 
+    // Reuses the homepage weather card's styles for the result.
     function show(v) {
-        result.textContent = "";
-        var name = document.createElement("p");
-        var strong = document.createElement("strong");
-        strong.textContent = v.name;
-        name.appendChild(strong);
-        result.appendChild(name);
-        result.appendChild(line((labels[v.type] || v.type) + ". Hygiene rating " + v.rating + " out of 5" +
-            (v.rating_date ? ", inspected " + v.rating_date : "") + "."));
-        result.appendChild(line(v.address + (v.postcode ? ", " + v.postcode : "")));
+        var card = el("div", "weather-glance");
+        card.appendChild(el("p", "weather-glance-date", labels[v.type] || v.type));
 
-        var actions = document.createElement("p");
-        actions.appendChild(link("Official rating record", "https://ratings.food.gov.uk/business/" + v.id));
+        var header = el("div", "weather-glance-header");
+        var heading = el("div");
+        heading.appendChild(el("span", "weather-glance-temp", v.name));
+        heading.appendChild(el("span", "weather-glance-desc", v.address + (v.postcode ? ", " + v.postcode : "")));
+        header.appendChild(heading);
+        card.appendChild(header);
+
+        var stats = el("ul", "weather-glance-stats");
+        [["Hygiene rating", v.rating + " out of 5"], ["Inspected", v.rating_date || "Not recorded"]].forEach(function (row) {
+            var li = el("li");
+            li.appendChild(el("span", null, row[0]));
+            li.appendChild(el("strong", null, row[1]));
+            stats.appendChild(li);
+        });
+        card.appendChild(stats);
+
+        var actions = el("p", "latest-actions");
+        var record = actionLink("Official rating record", "https://ratings.food.gov.uk/business/" + v.id);
+        record.target = "_blank";
+        record.rel = "noopener";
+        actions.appendChild(record);
         if (v.latitude != null && v.longitude != null) {
-            actions.appendChild(document.createTextNode(" · "));
-            actions.appendChild(link("Directions", "https://www.google.com/maps/dir/?api=1&destination=" +
-                v.latitude + "," + v.longitude));
+            var directions = actionLink("Directions", "https://www.google.com/maps/dir/?api=1&destination=" +
+                v.latitude + "," + v.longitude);
+            directions.target = "_blank";
+            directions.rel = "noopener";
+            actions.appendChild(directions);
             if (window.whereToEatMap) {
-                actions.appendChild(document.createTextNode(" · "));
-                var showOnMap = document.createElement("button");
-                showOnMap.type = "button";
-                showOnMap.className = "where-to-eat-picker-map";
-                showOnMap.textContent = "Show on map";
-                showOnMap.addEventListener("click", function () {
+                var onMap = actionLink("Show on map", "#where-to-eat-map");
+                onMap.addEventListener("click", function (event) {
+                    event.preventDefault();
                     window.whereToEatMap.show(v.id);
                 });
-                actions.appendChild(showOnMap);
+                actions.appendChild(onMap);
             }
         }
-        result.appendChild(actions);
-        result.appendChild(line("Check opening hours before you go."));
+        card.appendChild(actions);
+        card.appendChild(el("p", null, "Check opening hours before you go."));
+
+        result.textContent = "";
+        result.appendChild(card);
     }
 
     button.addEventListener("click", function () {
@@ -81,8 +94,7 @@
             return !wanted || v.type === wanted;
         });
         if (!candidates.length) {
-            result.textContent = "";
-            result.appendChild(line("No places to pick from for that type."));
+            result.textContent = "No places to pick from for that type.";
             return;
         }
         // Avoid repeating the last pick when there is a choice.
