@@ -42,6 +42,8 @@
         data-admin-tab="seo">Title &amp; Description</button>
     <button type="button" role="tab" id="admin-tab-sponsor-emails" aria-controls="admin-panel-sponsor-emails"
         aria-selected="false" data-admin-tab="sponsor-emails">Sponsor Emails</button>
+    <button type="button" role="tab" id="admin-tab-social" aria-controls="admin-panel-social" aria-selected="false"
+        data-admin-tab="social">Social Posts</button>
 </div>
 
 <div class="admin-panel is-active" id="admin-panel-page-types" role="tabpanel" aria-labelledby="admin-tab-page-types">
@@ -54,6 +56,10 @@
 
 <div class="admin-panel" id="admin-panel-sponsor-emails" role="tabpanel" aria-labelledby="admin-tab-sponsor-emails">
     {% include admin-sponsor-emails.html %}
+</div>
+
+<div class="admin-panel" id="admin-panel-social" role="tabpanel" aria-labelledby="admin-tab-social">
+    {% include admin-social.html %}
 </div>
 
 <script>

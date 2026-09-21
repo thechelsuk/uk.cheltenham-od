@@ -1,0 +1,67 @@
+---
+name: Post to Social
+on:
+    workflow_dispatch:
+        inputs:
+            dry_run:
+                description: "Show what would be posted without posting"
+                type: boolean
+                default: false
+    workflow_run:
+        workflows: ["Pages"]
+        types: [completed]
+    schedule:
+        - cron: "17,47 * * * *"
+permissions:
+    contents: write
+
+concurrency:
+    group: social-post
+    cancel-in-progress: false
+
+jobs:
+    post:
+        # After a deploy, only when it succeeded. The schedule (which catches posts published by a
+        # scheduled data deploy) and manual runs always go ahead.
+        if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out Repo
+              uses: actions/checkout@v7
+
+            - name: Set up Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: 3.13.2
+
+            - name: Install Python Dependencies
+              run: |
+                  python -m pip install -r _python/requirements.txt
+
+            - name: Post new blog posts
+              env:
+                  BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+                  BLUESKY_APP_TOKEN: ${{ secrets.BLUESKY_APP_TOKEN }}
+                  MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+                  DRY_RUN: ${{ inputs.dry_run }}
+              run: |-
+                  if [ "$DRY_RUN" = "true" ]; then
+                    python '_python/social.py' --dry-run
+                  else
+                    python '_python/social.py'
+                  fi
+
+            - name: Commit and push if changed
+              if: ${{ !cancelled() }}
+              run: |-
+                  git config user.name "GitHub Action"
+                  git config user.email "action@github.com"
+                  git add _data/social-posted.json
+
+                  if git diff --staged --quiet; then
+                    exit 0
+                  fi
+
+                  git commit -m "Chore: Social posts sent $(date +'%Y-%m-%d %H:%M')"
+                  git pull --rebase
+                  git push
