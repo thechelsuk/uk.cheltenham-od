@@ -3,13 +3,6 @@
 </div>
 <footer class="footer">
     <div class="wrapper">
-        {% if site.newsletter.buttondown_username.size > 0 %}
-        <section class="footer-newsletter" aria-labelledby="footer-newsletter-title">
-            <h2 class="footer-col-title" id="footer-newsletter-title">{{ site.newsletter.name }}</h2>
-            <p>{{ site.newsletter.tagline }} <a href="/newsletter">Find out more</a>.</p>
-            {% include newsletter-signup.html source="footer" %}
-        </section>
-        {% endif %}
         <div class="footer-menu-wrap">
             <nav class="footer-pages-section" aria-label="{{ site.footer_pages.title }}">
                 <h2 class="footer-col-title footer-pages-title">{{ site.footer_pages.title }}</h2>
@@ -57,6 +50,12 @@
                 </nav>
                 {% endfor %}
             </div>
+
+            {% if site.newsletter.buttondown_username.size > 0 %}
+            <div class="footer-newsletter-corner">
+                {% include newsletter-signup.html source="footer" variant="compact" %}
+            </div>
+            {% endif %}
 
             <div class="footer-social-corner">
                 {% include social-icons.html %}
