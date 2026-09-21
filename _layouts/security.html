@@ -1,0 +1,105 @@
+{% include header.html %}
+{% assign history = site.data["terrorism-history"] %}
+{% assign new_records = history.records | where: "reporting_format", "new" %}
+{% assign old_records = history.records | where: "reporting_format", "old" %}
+{% assign data = site.data["terrorism"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                {% if page.feed_url %}
+                <li><a href="{{ page.feed_url}}">Subscribe via our feed/rss →</a></li>
+                {% endif %}
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Threat Level History</h2>
+
+        <h3>Changes Since July 2019</h3>
+
+        <div class="table-scroll">
+            <table class="security-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Changed</th>
+                        <th scope="col">National Threat Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in new_records %}
+                    {% assign older = new_records[forloop.index] %}
+                    {% if older and older.level == r.level %}{% continue %}{% endif %}
+                    <tr>
+                        <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d" }}</td>
+                        <td>{{ r.level_title | escape }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Changes From August 2006 to July 2019</h3>
+
+        <div class="table-scroll">
+            <table class="security-history-old-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Changed</th>
+                        <th scope="col">International Terrorism</th>
+                        <th scope="col">Northern Ireland-Related, in Great Britain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in old_records %}
+                    <tr>
+                        <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d" }}</td>
+                        <td>{{ r.level_title | escape }}</td>
+                        <td>{% if r.great_britain_level != "" %}{{ r.great_britain_level | capitalize | escape }}{% else %}Not reported{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="security-attribution"><small>
+        Current level from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}. Last checked
+        {{ data.generated_at | date: "%-d %B %Y" }}. Changes before 19 September 2026 were compiled from
+        <a href="{{ history.backfill_source.url }}">{{ history.backfill_source.name }}</a>
+        (<a href="{{ history.backfill_source.licence_url }}">{{ history.backfill_source.licence }}</a>).
+    </small></p>
+
+        <h2>Emergency Preparation</h2>
+
+        <p><a href="https://prepare.campaign.gov.uk/get-prepared-for-emergencies/">Get Prepared for Emergencies (Gov UK)</a></p>
+
+        <h2>Security Alerts FAQs</h2>
+
+        <h3>What Do the UK Terrorism Threat Levels Mean?</h3>
+        <p>There are five levels. Low means an attack is highly unlikely. Moderate means an attack is possible, but not likely. Substantial means an attack is likely. Severe means an attack is highly likely. Critical means an attack is highly likely in the near future.</p>
+
+        <h3>How Does the Government Respond to Each Threat Level?</h3>
+        <p>Government departments and agencies respond in one of three states. Normal applies at Low and Moderate and means routine protective security. Heightened applies at Substantial and Severe and means additional and sustainable protective security measures. Exceptional applies at Critical and means maximum protective security.</p>
+
+        <h3>Who Sets the Threat Level and How?</h3>
+        <p>The Joint Terrorism Analysis Centre sets the national threat level and MI5 sets the Northern Ireland-related level. They weigh the available intelligence, the capability and intentions of the terrorists involved, and how soon an attack might happen. Threat levels have no set expiry date but are reviewed regularly.</p>
+
+        <h3>What Changed in the 2019 Reporting Format?</h3>
+        <p>Before July 2019 the government published a national threat level for international terrorism and, from September 2010, threat levels for Northern Ireland-related terrorism in Northern Ireland and in Great Britain. Since 23 July 2019 there is a single national threat level covering all forms of terrorism, including Islamist, Northern Ireland, left-wing and right-wing terrorism, plus a separate Northern Ireland-related threat level for Northern Ireland.</p>
+
+        <h3>Why Is the History Shown in Two Tables?</h3>
+        <p>Because the reporting format changed in 2019, the two periods can't be compared directly. The first table covers changes since July 2019 in the current format. The second covers August 2006 to July 2019, when international terrorism was reported separately from Northern Ireland-related terrorism.</p>
+
+        <h3>Where Does the Threat Level History Come From?</h3>
+        <p>Changes since this page began tracking MI5's threat level feed on 19 September 2026 are recorded automatically. Earlier changes were compiled by hand from <a href="https://en.wikipedia.org/wiki/UK_Threat_Levels">Wikipedia's UK Threat Levels article</a>.</p>
+
+        <h3>How Often Is This Page Updated?</h3>
+        <p>The threat level is checked once a day. It changes rarely, so the date of the last change is shown above.</p>
+
+    </div>
+</div>
+
+{% include footer.html %}
