@@ -3,6 +3,7 @@ import json
 import math
 import re
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import feedparser
 import yaml
@@ -11,6 +12,7 @@ from dateutil.parser import parse as parse_date
 import helper
 
 PAGE_SIZE = 25
+SITE_TIMEZONE = ZoneInfo("Europe/London")
 SITE_URL = "https://cheltenham-od.uk"
 
 
@@ -146,7 +148,10 @@ if __name__ == "__main__":
         if item["link"]:
             merged[item["link"]] = item
 
-    all_items = list(merged.values())
+    # Jekyll hides anything dated in the future (future: false in _config.yml) until the
+    # first build after that time, so leave those items out too, or they link to pages that 404.
+    now = datetime.now(SITE_TIMEZONE).replace(tzinfo=None)
+    all_items = [item for item in merged.values() if datetime.fromisoformat(item["published_iso"]) <= now]
     for item in all_items:
         item["published_relative"] = time_ago(datetime.fromisoformat(item["published_iso"]))
     all_items.sort(key=lambda x: x["published_iso"], reverse=True)
