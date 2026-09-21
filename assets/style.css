@@ -2099,3 +2099,40 @@ pre {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================
+   Where to eat: random pick
+   ================================ */
+
+.where-to-eat-picker-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 0.75em;
+}
+
+.where-to-eat-picker-result {
+    margin: 1em 0;
+}
+
+.where-to-eat-picker-result:not(:empty) {
+    padding: 0.75em 1em;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.where-to-eat-picker-result p {
+    margin: 0.3em 0;
+}
+
+.where-to-eat-picker-map {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--link);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}

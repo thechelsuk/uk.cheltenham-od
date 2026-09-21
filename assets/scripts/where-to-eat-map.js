@@ -36,6 +36,7 @@
     }).addTo(map);
 
     var bounds = [];
+    var markers = {};
     venues.forEach(function (v) {
         if (v.latitude == null || v.longitude == null) return;
         var html = "<strong>" + escapeHtml(v.name) + "</strong><br>" + escapeHtml(labels[v.type] || v.type) +
@@ -43,9 +44,21 @@
             (v.rating_date ? "<br>Inspected " + v.rating_date : "") +
             "<br>" + escapeHtml(v.address) + (v.postcode ? ", " + escapeHtml(v.postcode) : "") +
             '<br><a href="https://ratings.food.gov.uk/business/' + v.id + '">Official rating record</a>';
-        L.marker([v.latitude, v.longitude]).addTo(map).bindPopup(html);
+        markers[v.id] = L.marker([v.latitude, v.longitude]).addTo(map).bindPopup(html);
         bounds.push([v.latitude, v.longitude]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    // Lets the "pick a place" section show a venue on this map.
+    window.whereToEatMap = {
+        show: function (id) {
+            var marker = markers[id];
+            if (!marker) return;
+            var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+            map.setView(marker.getLatLng(), 17);
+            marker.openPopup();
+        },
+    };
 })();

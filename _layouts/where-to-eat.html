@@ -14,6 +14,25 @@
 
         {{ content }}
 
+        {% assign picker_venues = venues | where_exp: "v", "v.rating == '4' or v.rating == '5'" %}
+        <div id="where-to-eat-picker" class="where-to-eat-picker" hidden>
+            <h2>Can't Decide Where to Eat?</h2>
+            <p>Let us choose. Pick a place at random from the {{ picker_venues.size }} restaurants, cafés, pubs, bars and
+                takeaways below with a hygiene rating of 4 or 5. It is a random choice rather than a recommendation, and
+                a hygiene rating says nothing about the food, so check the venue's opening hours before you go.</p>
+            <p class="where-to-eat-picker-controls">
+                <label for="where-to-eat-picker-type">Type of place</label>
+                <select id="where-to-eat-picker-type">
+                    <option value="">Anywhere</option>
+                    {% for vt in page.venue_types %}
+                    <option value="{{ vt.type | escape }}">{{ vt.label }}</option>
+                    {% endfor %}
+                </select>
+                <button type="button" id="where-to-eat-picker-button">Pick a place</button>
+            </p>
+            <div id="where-to-eat-picker-result" class="where-to-eat-picker-result" aria-live="polite"></div>
+        </div>
+
         <h2>Map of Restaurants, Pubs and Takeaways</h2>
         <div id="where-to-eat-map" style="height: 560px; border-radius: 8px;" aria-label="Map of restaurants, pubs and takeaways in Cheltenham with their food hygiene ratings"></div>
 
@@ -79,6 +98,11 @@
         <p>A small number of venues have no location recorded by the Food Standards Agency. They are still in the
             table.</p>
 
+        <h3>How Does the Random Pick Work?</h3>
+        <p>It chooses at random, in your browser, from the venues in the list below with a hygiene rating of 4 or 5,
+            optionally limited to restaurants and cafés, pubs and bars, or takeaways. Nothing is sent anywhere, no venue
+            pays to be included and it doesn't know about opening hours, so check them before you go.</p>
+
         <h3>How Often Is It Updated?</h3>
         <p>The ratings are refreshed every couple of hours from the Food Standards Agency, so a new rating appears soon
             after the council publishes it.</p>
@@ -89,5 +113,6 @@
     <script id="where-to-eat-data" type="application/json">{{ venues | jsonify }}</script>
     <script id="where-to-eat-types" type="application/json">{{ page.venue_types | jsonify }}</script>
     <script src="/assets/scripts/where-to-eat-map.js"></script>
+    <script src="/assets/scripts/where-to-eat-picker.js"></script>
 </div>
 {% include footer.html %}
