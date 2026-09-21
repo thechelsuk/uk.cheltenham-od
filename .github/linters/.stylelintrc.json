@@ -1,7 +1,7 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "no-descending-specificity": null,
+    "no-descending-specificity": [true, { "ignore": ["selectors-within-list"] }],
     "media-feature-range-notation": "prefix",
     "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$"
   }
