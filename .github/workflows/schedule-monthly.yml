@@ -58,6 +58,7 @@ jobs:
                   python _python/opticians.py || echo "::warning::opticians.py failed, continuing with other scripts"
                   python _python/rents.py || echo "::warning::rents.py failed, continuing with other scripts"
                   python _python/racing.py || echo "::warning::racing.py failed, continuing with other scripts"
+                  python _python/affordability.py || echo "::warning::affordability.py failed, continuing with other scripts"
 
             - name: Commit and push if it changed
               id: commit
