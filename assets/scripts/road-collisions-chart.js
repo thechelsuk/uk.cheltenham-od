@@ -42,8 +42,8 @@
             data: {
                 labels: hours.map((h) => h.label),
                 datasets: [
-                    { type: "bar", label: "All collisions", data: hours.map((h) => h.collisions), backgroundColor: "#94a3b8" },
-                    { type: "line", label: "Fatal or serious", data: hours.map((h) => h.ksi), borderColor: "#c2410c", backgroundColor: "#c2410c", tension: 0.25, pointRadius: 2 },
+                    { type: "bar", label: "All collisions", data: hours.map((h) => h.collisions), backgroundColor: "#94a3b8", order: 2 },
+                    { type: "line", label: "Fatal or serious", data: hours.map((h) => h.ksi), borderColor: "#c2410c", backgroundColor: "#c2410c", borderWidth: 3, tension: 0.25, pointRadius: 3, order: 1 },
                 ],
             },
             options: {

@@ -16,7 +16,7 @@
 
         <h2>Collisions and Casualties by Severity</h2>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Severity</th>
@@ -29,9 +29,6 @@
                     <tr><td>Serious</td><td class="number">{{ totals.serious }}</td><td class="number">{{ totals.casualties_serious }}</td></tr>
                     <tr><td>Slight</td><td class="number">{{ totals.slight }}</td><td class="number">{{ totals.casualties_slight }}</td></tr>
                 </tbody>
-                <tfoot>
-                    <tr><th scope="row">Total</th><th class="number">{{ totals.collisions_display }}</th><th class="number">{{ totals.casualties_display }}</th></tr>
-                </tfoot>
             </table>
         </div>
 
@@ -40,7 +37,7 @@
             <canvas id="road-collisions-years" aria-label="Stacked bar chart of Cheltenham road collisions per year by severity"></canvas>
         </div>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Year</th>
@@ -63,22 +60,12 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <th class="number">{{ totals.fatal }}</th>
-                        <th class="number">{{ totals.serious }}</th>
-                        <th class="number">{{ totals.slight }}</th>
-                        <th class="number">{{ totals.collisions_display }}</th>
-                        <th class="number">{{ totals.casualties_display }}</th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
 
         <h2>Casualties by Road User</h2>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Road user</th>
@@ -101,23 +88,13 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <th class="number">{{ totals.casualties_fatal }}</th>
-                        <th class="number">{{ totals.casualties_serious }}</th>
-                        <th class="number">{{ totals.casualties_slight }}</th>
-                        <th class="number">{{ totals.casualties_display }}</th>
-                        <th class="number">100</th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
 
         <h2>Vehicles Involved</h2>
-        <p>A collision often involves more than one vehicle, so the collisions in this table add up to more than the total.</p>
+        <p>A collision often involves more than one vehicle, so the collisions in this table add up to more than the {{ totals.collisions_display }} collisions overall.</p>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Vehicle</th>
@@ -136,14 +113,6 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">All vehicles</th>
-                        <th class="number">{{ totals.vehicles_display }}</th>
-                        <th class="number">{{ totals.collisions_display }}</th>
-                        <th class="number">100</th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
 
@@ -153,7 +122,7 @@
         </div>
         <p>{{ data.light.dark_share }}% of collisions ({{ data.light.dark }} of {{ totals.collisions }}) happened in the dark.</p>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Day</th>
@@ -163,19 +132,16 @@
                 </thead>
                 <tbody>
                     {% for d in data.by_day %}
-                    <tr><td>{{ d.day }}</td><td class="number">{{ d.collisions }}</td><td class="number">{{ d.ksi }}</td></tr>
+                    <tr><td data-val="{{ forloop.index }}">{{ d.day }}</td><td class="number">{{ d.collisions }}</td><td class="number">{{ d.ksi }}</td></tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr><th scope="row">Total</th><th class="number">{{ totals.collisions_display }}</th><th class="number">{{ totals.ksi }}</th></tr>
-                </tfoot>
             </table>
         </div>
 
         <h2>Where Collisions Happen</h2>
         <h3>By Type of Road</h3>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Road type</th>
@@ -198,22 +164,12 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <th class="number">{{ totals.fatal }}</th>
-                        <th class="number">{{ totals.serious }}</th>
-                        <th class="number">{{ totals.slight }}</th>
-                        <th class="number">{{ totals.collisions_display }}</th>
-                        <th class="number">100</th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
 
         <h3>By Speed Limit</h3>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Speed limit</th>
@@ -236,23 +192,13 @@
                     </tr>
                     {% endfor %}
                 </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row">Total</th>
-                        <th class="number">{{ totals.fatal }}</th>
-                        <th class="number">{{ totals.serious }}</th>
-                        <th class="number">{{ totals.slight }}</th>
-                        <th class="number">{{ totals.collisions_display }}</th>
-                        <th class="number">100</th>
-                    </tr>
-                </tfoot>
             </table>
         </div>
 
         <h3>Numbered Roads With the Most Collisions</h3>
         <p>The ten A, B and C roads with the most collisions. Most collisions happen on busy roads, so a long, busy road will always appear near the top.</p>
         <div class="table-scroll">
-            <table class="data-table">
+            <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Road</th>
