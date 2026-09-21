@@ -3,7 +3,7 @@ layout: posts
 title: Adding Cheltenham Average Rents
 type: cod
 description: Average private rents in Cheltenham by month since 2015, by number of bedrooms and property type, compared with the South West and England, from the ONS Price Index of Private Rents.
-seo: Cheltenham average rent — monthly private rents since 2015 by bedrooms and property type, compared with the South West and England, from the ONS Price Index of Private Rents.
+seo: "Cheltenham average rent: monthly private rents since 2015 by bedrooms and property type, compared with the South West and England, from ONS rent data."
 date: 2026-09-20 19:15
 ---
 
@@ -29,4 +29,4 @@ The page sits alongside [house prices](/cheltenham-house-prices) under Home & Pr
 
 ### Are These the Rents I See Advertised?
 
-- No. The figures cover rents tenants actually pay across all private tenancies, both new and existing, so they lag the asking rents on property websites.
+- No. The figures cover rents tenants actually pay across all private tenancies, both new and existing, so they lag the asking rents on property sites.

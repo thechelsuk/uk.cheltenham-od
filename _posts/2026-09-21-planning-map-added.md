@@ -3,7 +3,7 @@ layout: posts
 title: Adding a Map to Cheltenham Planning Applications
 type: cod
 description: Recent planning applications in Cheltenham are now on a map, with a pin link for each application in the tables, so you can see what is being planned near you.
-seo: Cheltenham planning applications on a map — see recent applications and decisions from Cheltenham Borough Council by location, with the status and a link to each case file.
+seo: "Cheltenham planning applications on a map: recent applications and decisions from Cheltenham Borough Council by location, with status and case file links."
 date: 2026-09-21 14:00
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: explore-category
 title: "Safety & Environment in Cheltenham"
-seo: "Cheltenham crime data, flood warnings and river levels, sewage overflows, river water quality, air quality, power cuts, security alerts and Fix My Street reports."
+seo: "Cheltenham crime data, flood warnings and river levels, sewage overflows, water and air quality, power cuts, security alerts and Fix My Street reports."
 permalink: /explore/safety-environment
 description: "Crime figures, flood warnings and river levels, river and water quality, air quality, power cuts, security alerts and street issue reports for Cheltenham."
 type: "environment"

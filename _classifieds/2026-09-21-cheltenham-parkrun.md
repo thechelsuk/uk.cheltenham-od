@@ -10,7 +10,7 @@ job_type: "Weekly 5k run"
 date: 2026-09-21
 expires: 2030-01-01
 robots: noindex
-seo: "Cheltenham has two free weekly 5k parkruns every Saturday at 9am: Cheltenham parkrun at Pittville Park and King George V Playing Field parkrun off Brooklyn Road."
+seo: "Two free weekly 5k parkruns in Cheltenham every Saturday at 9am: Cheltenham parkrun at Pittville Park and King George V Playing Field off Brooklyn Road."
 ---
 
 Cheltenham has two free, timed 5k parkruns, both starting at 9am every

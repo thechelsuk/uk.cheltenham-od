@@ -1,7 +1,7 @@
 ---
 layout: play-areas
 title: "Cheltenham Play Parks"
-seo: "Play parks and children's play areas in and around Cheltenham: a map and list of playgrounds within 10 miles, including Montpellier Gardens, Sandford Park and Pittville."
+seo: "Play parks and playgrounds around Cheltenham: a map and list within 10 miles, including Montpellier Gardens, Sandford Park and Pittville."
 permalink: /cheltenham-play-parks
 description: "A map of children's play parks and playgrounds in and around Cheltenham, with distance from the town centre."
 type: "activities"

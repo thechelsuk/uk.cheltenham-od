@@ -76,9 +76,9 @@ Front matter shape:
 ---
 layout: example              # matches _layouts/example.html
 title: "Example Page Title"
-seo: "Longer, keyword-rich description for search snippets."
+seo: "Keyword-rich meta description for search snippets, 160 characters or fewer."
 permalink: /cheltenham-example
-description: "Shorter description used in the page header and meta tags."
+description: "Description shown in the page header (and used as the meta description if seo is missing)."
 type: "third"                 # controls body theme class — check _includes/header.html
 schema: example                # optional — see step 4
 ---
@@ -88,6 +88,8 @@ schema: example                # optional — see step 4
 A paragraph or two of real prose introducing the page — layouts render
 `{{ content }}` above the data table/map, this isn't just filler.
 ```
+
+**Keep `seo` to 160 characters or fewer.** It is the meta description (`_includes/header.html` uses `seo`, then `description`), and search results cut descriptions off at about 160 characters. Lead with the main keyword and a concrete hook, and count the characters before you finish. This applies to pages, news posts, classifieds and events alike. `python _python/local/check-seo-length.py` lists any over the limit.
 
 Every sentence of that intro prose is copy for the site's actual visitors — write it as finished, SEO/GEO-friendly page content, not as a note explaining an implementation or data decision to whoever's reading the diff. "Curated by hand rather than fetched, since OpenStreetMap's coverage of these is patchy" is a fact about the pipeline, not something a visitor searching for a pump track needs to read. If a decision genuinely needs explaining, that's what a code comment, commit message, or PR description is for — never the page body. Before finalising any page's prose, reread it and ask: would this sentence make sense to someone who never saw the commit history?
 
@@ -227,6 +229,7 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] `_python/<name>.py` fetches and normalises, writes `_data/<name>.json` with `generated_at`/`source`/`source_url`/`licence`
 - [ ] Added to the right `schedule-*.yml` workflow for how often the source actually changes
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump — reread every sentence as a visitor would: no implementation/data-decision notes ("hand-curated because OSM coverage is patchy") leaking into published copy
+- [ ] `seo:` is 160 characters or fewer on the page and on any announcement post (`python _python/local/check-seo-length.py` should report none over)
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
 - [ ] Every numeric table column has `class="number"` on its `<th>` and `<td>`s (right-aligned), and any postcode column has `class="postcode"` (no mid-postcode wrapping)
 - [ ] Every date/time cell in a table and every date in a map popup is `YYYY-MM-DD HH:MM` (or `YYYY-MM-DD` with no time), with the ISO value in `data-val` and `class="date"` on the `<th>`/`<td>`s

@@ -3,7 +3,7 @@ layout: posts
 title: Adding Dentists in Cheltenham
 type: cod
 description: A map and list of dental practices in Cheltenham from the NHS directory, with answers on registering, NHS charges and finding a dentist taking new patients.
-seo: Dentists in Cheltenham — a map and list of NHS-listed dental practices, with how to find out whether a practice is taking new NHS patients and what NHS dental care costs.
+seo: "Dentists in Cheltenham: a map and list of NHS-listed dental practices, how to find out if one is taking new NHS patients and what NHS dental care costs."
 date: 2026-09-20 22:57
 ---
 

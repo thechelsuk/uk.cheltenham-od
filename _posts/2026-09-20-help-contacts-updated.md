@@ -3,7 +3,7 @@ layout: posts
 title: More Phone Numbers on the Help and Support Page
 type: cod
 description: The Cheltenham help and support page now lists power cut, flooding, water emergency, mental health, domestic abuse and local advice numbers.
-seo: Cheltenham helpful contacts — new phone numbers for power cuts, flooding, water emergencies, NHS 111, mental health support, domestic abuse and local Citizens Advice.
+seo: "Cheltenham helpful contacts: new phone numbers for power cuts, flooding, water emergencies, NHS 111, mental health, domestic abuse and Citizens Advice."
 date: 2026-09-20 18:45
 ---
 
@@ -25,7 +25,7 @@ There are also three new sections: mental health and wellbeing (Samaritans, Shou
 
 ### Where Do the Numbers Come From?
 
-- Each number is taken from the organisation's own website — [National Grid Electricity Distribution](https://www.nationalgrid.com/power-cuts), [Severn Trent](https://www.stwater.co.uk/help-and-contact/contact-us/), [Cheltenham Borough Council](https://www.cheltenham.gov.uk/), [Refuge](https://refuge.org.uk/i-need-help-now/how-we-can-help-you/national-domestic-abuse-helpline/), [Samaritans](https://www.samaritans.org/) and [Citizens Advice](https://www.citizensadvice.org.uk/about-us/contact-us/local-citizens-advice/0014K000009EMMZQA4/).
+- Each number is taken from the organisation's own site — [National Grid Electricity Distribution](https://www.nationalgrid.com/power-cuts), [Severn Trent](https://www.stwater.co.uk/help-and-contact/contact-us/), [Cheltenham Borough Council](https://www.cheltenham.gov.uk/), [Refuge](https://refuge.org.uk/i-need-help-now/how-we-can-help-you/national-domestic-abuse-helpline/), [Samaritans](https://www.samaritans.org/) and [Citizens Advice](https://www.citizensadvice.org.uk/about-us/contact-us/local-citizens-advice/0014K000009EMMZQA4/).
 
 ### How Do I Suggest a Number?
 

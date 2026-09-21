@@ -3,7 +3,7 @@ layout: posts
 title: Adding the University of Gloucestershire Campuses Page
 type: cod
 description: A map and guide to the University of Gloucestershire's campuses in Cheltenham and Gloucester, with addresses, what is taught at each and how to apply.
-seo: University of Gloucestershire campuses in Cheltenham and Gloucester — a map with addresses, what is taught at each campus, the academic schools and how to apply through UCAS.
+seo: "University of Gloucestershire campuses in Cheltenham and Gloucester: a map with addresses, what is taught at each, the academic schools and how to apply."
 date: 2026-09-20 19:40
 ---
 
@@ -21,7 +21,7 @@ The page also answers the questions new students ask most, from which campus a c
 
 ### Where Does the Information Come From?
 
-- The [University of Gloucestershire's website](https://www.glos.ac.uk/visit-us/how-to-find-us/). It is checked by hand rather than fetched automatically, so confirm anything time-sensitive with the university.
+- The [University of Gloucestershire's site](https://www.glos.ac.uk/visit-us/how-to-find-us/). It is checked by hand rather than fetched automatically, so confirm anything time-sensitive with the university.
 
 ### Does It Cover Other Colleges and Universities?
 

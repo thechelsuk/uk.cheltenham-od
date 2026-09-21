@@ -3,7 +3,7 @@ layout: posts
 title: Adding the Cheltenham Flood Zones Map
 type: cod
 description: A map of the land around Cheltenham in Flood Zone 2 and Flood Zone 3 from the Environment Agency, with what the zones mean and how to check an address.
-seo: Cheltenham flood zones map — land in Flood Zone 2 and Flood Zone 3 from the Environment Agency, what the zones mean and how to check the flood risk for an address.
+seo: "Cheltenham flood zones map: land in Flood Zone 2 and 3 from the Environment Agency, what the zones mean and how to check the flood risk for an address."
 date: 2026-09-20 23:42
 ---
 

@@ -3,7 +3,7 @@ layout: posts
 title: One in Nine Cheltenham Homes Sold in 2025 Was Within Reach of a Typical Earner
 type: cod
 description: Analysis of Land Registry sales and ONS earnings shows 11.4% of Cheltenham home sales in 2025 were within 4.5 times median pay, double the 2018 low and level with 2008, but only flats are realistically affordable.
-seo: How many Cheltenham homes can a typical earner afford? 11.4% of 2025 sales were within 4.5 times median full-time pay, up from 5.6% in 2018 and level with 2008, with flats making up the gain. Analysis of Land Registry and ONS data.
+seo: "One in nine Cheltenham homes sold in 2025 was within 4.5 times median pay: double the 2018 low, level with 2008, but flats drive the gain. Land Registry data."
 date: 2026-09-22 08:30
 ---
 
