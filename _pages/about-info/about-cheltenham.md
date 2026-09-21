@@ -18,6 +18,8 @@ Today Cheltenham's economy leans heavily on technology and cyber security, [educ
 
 This page pulls together the town's key population and [employment statistics](/cheltenham-employment-history), with separate pages for [median earnings](/cheltenham-earnings-history) and the [economy](/cheltenham-economy) (jobs, businesses and claimants), sourced directly from the Office for National Statistics, and refreshed automatically as new figures are published.
 
+Curious about a single neighbourhood? Our [Cheltenham wards](/cheltenham-wards) page maps all 20 electoral wards and compares them on crime, house prices and broadband, and each ward has its own profile with the nearest GPs, dentists, schools, parks and other services.
+
 Wondering who represents the town in Parliament? Our [politics page](/cheltenham-politics) shows Cheltenham's current MP and the result of every general election since 2010, and the [party history](/cheltenham-politics/party-history) goes back to 1918.
 
 ## Cheltenham Through the Years

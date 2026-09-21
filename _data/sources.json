@@ -128,7 +128,8 @@
       "/cheltenham-crime-data/2023",
       "/cheltenham-crime-data/2024",
       "/cheltenham-crime-data/2025",
-      "/cheltenham-crime-data/2026"
+      "/cheltenham-crime-data/2026",
+      "/cheltenham-wards"
     ]
   },
   {
@@ -239,7 +240,8 @@
       "/cheltenham-house-prices-2024",
       "/cheltenham-house-prices-2025",
       "/cheltenham-house-prices-2026",
-      "/cheltenham-house-prices/affordability"
+      "/cheltenham-house-prices/affordability",
+      "/cheltenham-wards"
     ]
   },
   {
@@ -298,13 +300,13 @@
     "id": "ofcom-connected-nations-broadband",
     "source_url": "https://www.ofcom.org.uk/phones-and-broadband/coverage/connected-nations-update/",
     "licence": "Open Government Licence v3.0",
-    "pages": ["/cheltenham-broadband-internet-speeds"]
+    "pages": ["/cheltenham-broadband-internet-speeds", "/cheltenham-wards"]
   },
   {
     "id": "ons-open-geography-ward-boundaries",
     "source_url": "https://geoportal.statistics.gov.uk/",
     "licence": "Open Government Licence v3.0",
-    "pages": ["/cheltenham-broadband-internet-speeds"]
+    "pages": ["/cheltenham-broadband-internet-speeds", "/cheltenham-wards"]
   },
   {
     "id": "gov-uk-bank-holidays",
@@ -353,5 +355,17 @@
     "source_url": "https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data",
     "licence": "Open Government Licence v3.0",
     "pages": ["/cheltenham-road-collisions"]
+  },
+  {
+    "id": "cheltenham-borough-council-election-results",
+    "source_url": "https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx",
+    "licence": "None stated — borough election results as published on the council's modern.gov site, read from its per-ward results pages",
+    "pages": ["/cheltenham-wards", "/cheltenham-politics/local-elections"]
+  },
+  {
+    "id": "cheltenham-borough-council-councillors",
+    "source_url": "https://democracy.cheltenham.gov.uk/mgFindMember.aspx",
+    "licence": "None stated — current councillors and their parties from the council's own modern.gov service",
+    "pages": ["/cheltenham-wards", "/cheltenham-politics/local-elections"]
   }
 ]

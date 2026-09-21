@@ -1,0 +1,125 @@
+{% include header.html %}
+{% assign data = site.data.wards.index %}
+{% assign wards = data.wards %}
+{% assign politics = site.data["ward-politics"].wards %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/home-property">&larr; Back to Home &amp; Property</a></li>
+                <li>{{ wards.size }} wards, {{ wards.first.crime_last_month | append: "-01" | date: "%B %Y" }} crime figures</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map of Cheltenham's Wards</h2>
+        <p><small>Shaded by median house sale price over the latest 12 months, from lowest to highest. Click a ward for its figures and a link to its full profile.</small></p>
+        <div id="wards-legend" class="wards-legend"></div>
+        <div id="wards-map" style="height: 560px; border-radius: 8px;" aria-label="Map of Cheltenham's {{ wards.size }} electoral wards"></div>
+        <script id="wards-map-data" type="application/json">{{ wards | jsonify }}</script>
+
+        <h2>Compare the Wards</h2>
+        <div class="table-scroll">
+            <table class="wards-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col">Part of town</th>
+                        <th scope="col" class="number">Postcodes</th>
+                        <th scope="col" class="number">Area (km&sup2;)</th>
+                        <th scope="col" class="number">Crimes, 12 months</th>
+                        <th scope="col" class="number">Median sale price</th>
+                        <th scope="col" class="number">Gigabit broadband (%)</th>
+                        <th scope="col" class="number">Listed buildings</th>
+                        <th scope="col" class="number">Registered voters</th>
+                        <th scope="col" class="number">Turnout (%)</th>
+                        <th scope="col">Councillors</th>
+                        <th scope="col" class="action">Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in wards %}
+                    {% assign pol = politics[w.slug] %}
+                    {% assign vote = pol.elections.first %}
+                    <tr>
+                        <td>{{ w.name }}</td>
+                        <td>{{ w.position | capitalize }}</td>
+                        <td class="number">{{ w.postcode_count }}</td>
+                        <td class="number">{{ w.area_km2 }}</td>
+                        <td class="number">{{ w.crime_total }}</td>
+                        <td class="number" data-val="{{ w.median }}">{{ w.median_display }}</td>
+                        <td class="number">{{ w.gigabit_pct }}</td>
+                        <td class="number">{{ w.listed }}</td>
+                        <td class="number" data-val="{{ vote.electorate }}">{{ vote.electorate_display }}</td>
+                        <td class="number">{{ vote.turnout_pct }}</td>
+                        <td>{{ pol.councillors_display }}</td>
+                        <td class="action"><a href="/cheltenham-wards/{{ w.slug }}">View {{ w.name }} &rarr;</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>Crimes are counts of police-recorded reports, not rates, and each ward's boundary is a simplified
+            outline, so places on an edge can be counted on either side. House prices are matched to wards by postcode.
+            Registered voters and turnout are from the most recent borough election, and
+            councillors are the current members. Election results and councillors from <a href="https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx">Cheltenham Borough Council</a>; see <a href="/cheltenham-politics/local-elections">local elections and councillors</a> for every ward's result.</small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is a Ward?</h3>
+        <ul>
+            <li>A ward is the area a councillor is elected to represent. Councils, the police and the Office for National
+                Statistics all publish figures by ward, which makes wards a convenient way to compare one part of a town
+                with another.</li>
+        </ul>
+
+        <h3>Why Are Some Wards Recording More Crime?</h3>
+        <ul>
+            <li>The table shows the number of crimes reported, not the rate per resident. Wards that include the town centre
+                have many visitors, shops and licensed premises, so they tend to record more crime than mainly residential
+                wards, and wards also differ a lot in size.</li>
+        </ul>
+
+        <h3>Where Does the Ward Data Come From?</h3>
+        <ul>
+            <li>Crime is street-level data from data.police.uk, election results and councillors are from
+                Cheltenham Borough Council, house prices are HM Land Registry Price Paid data, broadband
+                is from Ofcom's Connected Nations and ward boundaries are from the Office for National Statistics, all under the
+                Open Government Licence. Each ward profile adds services from the NHS, Historic England, the Food Standards
+                Agency and OpenStreetMap.</li>
+        </ul>
+
+        <p class="wards-attribution"><small>
+            Crime data &copy; data.police.uk, election results &copy; Cheltenham Borough Council, house prices &copy; HM Land Registry, ward boundaries &copy; Office for
+            National Statistics, all under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
+            Map &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+    </div>
+</div>
+
+<style>
+    .wards-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em 1em;
+        margin: 0.5em 0 1em;
+        font-size: 0.85rem;
+    }
+
+    .wards-legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/scripts/wards-map.js"></script>
+{% include footer.html %}
