@@ -51,6 +51,12 @@
                 {% endfor %}
             </div>
 
+            {% if site.newsletter.buttondown_username.size > 0 %}
+            <div class="footer-newsletter-corner">
+                {% include newsletter-signup.html source="footer" variant="compact" %}
+            </div>
+            {% endif %}
+
             <div class="footer-social-corner">
                 {% include social-icons.html %}
             </div>

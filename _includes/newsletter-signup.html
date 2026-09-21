@@ -1,0 +1,150 @@
+{% comment %}
+    Newsletter sign-up form. Renders nothing until site.newsletter.buttondown_username is set (an empty string is not
+    "blank" in this Liquid version, so test its size).
+    Posts straight to Buttondown's embed endpoint (same action and email field as the snippet
+    from the Buttondown dashboard), which must be a plain form post (not fetch), sends the
+    double opt-in confirmation email and may show its own CAPTCHA.
+    include.source tags the subscriber with where they signed up (footer, newsletter-page, ...).
+    include.variant "compact" is the single line used in the footer beside the social icons.
+{% endcomment %}
+{% assign nl = site.newsletter %}
+{% if nl.buttondown_username.size > 0 %}
+{% assign field_id = "newsletter-email-" | append: include.source %}
+{% if include.variant == "compact" %}
+<form class="newsletter-form newsletter-form--compact"
+    action="https://buttondown.com/api/emails/embed-subscribe/{{ nl.buttondown_username }}" method="post" target="_blank"
+    rel="noopener">
+    <label class="sr-only" for="{{ field_id }}">Email address for the weekly newsletter</label>
+    <input type="email" name="email" id="{{ field_id }}" required autocomplete="email"
+        placeholder="Your email address">
+    <input type="hidden" name="tag" value="{{ include.source }}">
+    <button type="submit" class="newsletter-submit">Subscribe</button>
+    <span class="newsletter-note">Free Monday briefing. <a href="/privacy#newsletter">Privacy</a></span>
+</form>
+{% else %}
+<form class="newsletter-form" action="https://buttondown.com/api/emails/embed-subscribe/{{ nl.buttondown_username }}"
+    method="post" target="_blank" rel="noopener">
+    <label for="{{ field_id }}">Email address</label>
+    <div class="newsletter-form-row">
+        <input type="email" name="email" id="{{ field_id }}" required autocomplete="email" placeholder="you@example.com">
+        <input type="hidden" name="tag" value="{{ include.source }}">
+        <button type="submit" class="newsletter-submit">Subscribe</button>
+    </div>
+    <p class="newsletter-note"><small>Free, one email a week. We'll send a confirmation link first, and you can
+            unsubscribe at any time. See how we use your email in our <a href="/privacy#newsletter">privacy policy</a>.</small></p>
+</form>
+{% endif %}
+<style>
+    .newsletter-form label:not(.sr-only) {
+        display: block;
+        margin-bottom: 0.4em;
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+    }
+
+    .newsletter-form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6em;
+        max-width: 32rem;
+    }
+
+    /* The site's global input and button styles do the rest. */
+    .newsletter-form input[type="email"] {
+        flex: 1 1 14rem;
+        min-width: 0;
+        border-color: var(--border-strong);
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+        color: var(--text-secondary);
+    }
+
+    .newsletter-form input[type="email"]:focus {
+        box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    /* The button keeps the site's global accent styling so it matches every other button. */
+    .newsletter-submit {
+        padding: 0.5em 1.4em;
+        font-weight: 700;
+    }
+
+    .newsletter-note {
+        margin: 0.7em 0 0;
+    }
+
+    /* Footer: in normal flow (left-aligned above the social icons) until there is room to pin it
+       bottom-left, level with the icons pinned bottom-right. */
+    .footer-newsletter-corner {
+        display: flex;
+        align-items: center;
+        margin-top: 1.5em;
+    }
+
+    @media screen and (min-width: 1041px) {
+        .footer-newsletter-corner {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            min-height: 3.5rem;
+            margin-top: 0;
+        }
+    }
+
+    /* Compact form: field on top and note underneath in the first column, with the button spanning
+       both rows so the whole block is as tall as the social icons (3.5rem) it sits beside. */
+    .newsletter-form--compact {
+        display: grid;
+        grid-template-columns: 15rem auto;
+        grid-template-rows: auto 1fr;
+        column-gap: 0.6em;
+        width: max-content;
+        max-width: 100%;
+        min-height: 3.5rem;
+    }
+
+    .newsletter-form--compact input[type="email"] {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .newsletter-form--compact .newsletter-submit {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: stretch;
+    }
+
+    .newsletter-form--compact .newsletter-note {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: end;
+        margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.2;
+        color: var(--text-secondary);
+        white-space: nowrap;
+    }
+
+    /* Same breakpoint as the social icons: newsletter above them, both centred. */
+    @media screen and (max-width: 640px) {
+        .footer-newsletter-corner {
+            justify-content: center;
+        }
+
+        .newsletter-form--compact {
+            grid-template-columns: minmax(0, 1fr) auto;
+            width: 100%;
+        }
+
+        .newsletter-form--compact .newsletter-note {
+            justify-self: center;
+        }
+    }
+</style>
+{% endif %}
