@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Open Data Traffic",
+  "description": "Daily unique visitors, total requests and the percentage of requests served from cache for Cheltenham Open Data over the last 30 complete days.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['traffic'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "variableMeasured": ["Date", "Unique visitors", "Total requests", "Percent of requests cached"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What Is a Unique Visitor?", "acceptedAnswer": {"@type": "Answer", "text": "A unique visitor is a single device or browser that visited the site on a given day, however many pages it looked at. The headline figure adds up each day's unique visitors across the 30 days, so someone who visits on five different days is counted five times. It is a measure of how often the site is used, not of how many different people used it."}},
+    {"@type": "Question", "name": "What Counts as a Request?", "acceptedAnswer": {"@type": "Answer", "text": "Every file the site serves: pages, images, scripts, data files and feeds. One visit to a page usually makes several requests, which is why total requests is much larger than unique visitors."}},
+    {"@type": "Question", "name": "Do the Figures Include Bots and Search Engines?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Search engine crawlers, feed readers and other automated tools also request pages, and they are included in the requests and in the unique visitor counts. Some are useful, since they are how people find the site, but the figures will be higher than the number of people reading the site."}},
+    {"@type": "Question", "name": "What Does Percent Cached Mean?", "acceptedAnswer": {"@type": "Answer", "text": "Cloudflare keeps copies of the site's files in data centres around the world. When a request is answered from one of those copies it is counted as cached. A higher percentage means the site loads quickly for more people and needs less work from the server behind it. Pages and data change through the day, so the figure rises and falls."}},
+    {"@type": "Question", "name": "Do These Figures Identify Me?", "acceptedAnswer": {"@type": "Answer", "text": "No. These counts come from the service that delivers the site, not from cookies or scripts running in your browser, and they contain no names or personal details."}},
+    {"@type": "Question", "name": "How Often Are the Figures Updated?", "acceptedAnswer": {"@type": "Answer", "text": "Every day, and the page always shows the latest 30 complete days. Today is left out until it has finished, so the newest day on the page is yesterday."}},
+    {"@type": "Question", "name": "Can I Use These Figures When Deciding on Sponsorship?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, that is why the page is public. Bear in mind the points above about bots and repeat visits."}}
+  ]
+}
+</script>

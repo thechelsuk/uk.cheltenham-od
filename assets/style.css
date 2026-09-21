@@ -2055,3 +2055,52 @@ pre {
     /* override the global img border, which otherwise boxes every map tile and marker */
     border: none;
 }
+
+/* ================================
+   Traffic page
+   ================================ */
+
+.traffic-card {
+    display: grid;
+    grid-template-columns: minmax(9rem, 12rem) 1fr;
+    gap: 1em 1.5em;
+    align-items: center;
+    margin: 1em 0;
+    padding: 1em 1.25em;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.traffic-figure h3 {
+    margin: 0;
+    font-size: 0.95em;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.traffic-number {
+    margin: 0.15em 0 0;
+    font-size: 1.9em;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.traffic-note {
+    margin: 0;
+    font-size: 0.85em;
+    color: var(--text-muted);
+}
+
+.traffic-chart {
+    position: relative;
+    height: 180px;
+    min-width: 0;
+}
+
+@media (max-width: 640px) {
+    .traffic-card {
+        grid-template-columns: 1fr;
+    }
+}
