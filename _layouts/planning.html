@@ -13,6 +13,9 @@
         {% include sponsor.html %}
 
         {{ content }}
+        <h2>Map of Applications</h2>
+        <div id="planning-map" style="height: 480px; border-radius: 8px;" aria-label="Map of recent planning applications in Cheltenham"></div>
+
         <h2>Recent Applications</h2>
         <div class="table-scroll">
             <table class="planning-table data-table" data-sortable>
@@ -24,6 +27,7 @@
                         <th class="postcode">Postcode</th>
                         <th class="number">Units</th>
                         <th>Status</th>
+                        <th class="map">Map</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +44,7 @@
                         <td>{% if application.url %}<a href="{{ application.url }}" target="_blank"
                                 rel="noopener">{{ application.status }}</a>{% else %}{{ application.status }}{% endif %}
                         </td>
+                        <td class="map">{% if application.lat %}{% include pin.html lat=application.lat lng=application.lon label=application.ref %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -61,6 +66,7 @@
                         <th class="postcode">Postcode</th>
                         <th class="number">Units</th>
                         <th>Decision</th>
+                        <th class="map">Map</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,6 +82,7 @@
                         <td>{% if application.url %}<a href="{{ application.url }}" target="_blank"
                                 rel="noopener">{{ application.status }}</a>{% else %}{{ application.status }}{% endif %}
                         </td>
+                        <td class="map">{% if application.lat %}{% include pin.html lat=application.lat lng=application.lon label=application.ref %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -95,7 +102,13 @@
 
         <p><small>Data sourced from <a href="https://publicaccess.cheltenham.gov.uk/online-applications/">Cheltenham
                     Borough Council's Planning Portal</a>. Provided for general information — always check the portal
-                for the definitive record.</small></p>
+                for the definitive record. Map locations from {{ planning.geocoding_source }}.
+                {{ planning.geocoding_attribution }} Map tiles &copy; <a
+                    href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</small></p>
     </div>
 </div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="planning-data" type="application/json">{{ planning.applications | concat: planning.decided | jsonify }}</script>
+<script src="/assets/scripts/planning-map.js"></script>
 {% include footer.html %}
