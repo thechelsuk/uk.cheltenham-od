@@ -67,58 +67,6 @@ html {
     --saving-bg: rgb(111 216 138 / 12%);
 }
 
-/* ================================
-   Page header (.header) — full-bleed background,
-   content centered at 1120px
-   ================================ */
-.header {
-    background: var(--accent);
-    color: var(--accent-text);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding: 1.5em calc(50vw - 560px + 1.5em);
-    border-radius: 0;
-    margin-bottom: 1.5em;
-}
-
-@media screen and (max-width: 1120px) {
-    .header {
-        padding: 1.5em;
-    }
-}
-
-.header h1 {
-    color: var(--accent-text);
-    margin-top: 0;
-}
-
-.header p {
-    color: var(--accent-text);
-    opacity: 0.92;
-}
-
-.header ul {
-    list-style: none;
-    margin: 0.8em 0 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5em;
-    flex-wrap: wrap;
-}
-
-.header a {
-    color: var(--accent-text);
-    text-decoration: underline;
-}
-
-.header a:hover {
-    opacity: 0.85;
-}
-
 body {
     margin: 0;
     font-family: var(--font-sans);
@@ -298,6 +246,55 @@ a {
     text-decoration-thickness: 1px;
 }
 
+/* ================================
+   Page header (.header) — full-bleed background,
+   content centered at 1120px
+   ================================ */
+
+.header {
+    background: var(--accent);
+    color: var(--accent-text);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 1.5em calc(50vw - 560px + 1.5em);
+    border-radius: 0;
+    margin-bottom: 1.5em;
+}
+
+@media screen and (max-width: 1120px) {
+    .header {
+        padding: 1.5em;
+    }
+}
+
+.header h1 {
+    color: var(--accent-text);
+    margin-top: 0;
+}
+
+.header p {
+    color: var(--accent-text);
+    opacity: 0.92;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0.8em 0 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+}
+
+.header a {
+    color: var(--accent-text);
+    text-decoration: underline;
+}
+
 a:hover,
 a:focus,
 a:active {
@@ -330,6 +327,17 @@ cite {
 .footnote sup {
     color: var(--text);
     margin-right: 0.3em;
+}
+
+pre {
+    background: var(--code-bg);
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 1em;
+    border: 1px solid var(--border);
 }
 
 .highlight > pre {
@@ -502,10 +510,6 @@ pre > code {
     border-bottom-color: transparent;
 }
 
-.nav-toggle[aria-expanded="true"] svg {
-    transform: rotate(180deg);
-}
-
 /* ================================
    Menu panel — full-bleed background,
    content centered at 1120px
@@ -659,14 +663,6 @@ pre > code {
 }
 
 .theme-toggle .icon-sun {
-    display: block;
-}
-
-[data-theme="dark"] .theme-toggle .icon-sun {
-    display: none;
-}
-
-[data-theme="dark"] .theme-toggle .icon-moon {
     display: block;
 }
 
@@ -837,11 +833,6 @@ table[data-sortable] th.sort-desc::after {
     font-size: 0.9rem;
 }
 
-.classifieds-nav a:hover {
-    border-color: var(--accent);
-    color: var(--accent-dark);
-}
-
 .classifieds-nav .empty {
     display: inline-block;
     padding: 0.4em 0.9em;
@@ -894,10 +885,6 @@ table[data-sortable] th.sort-desc::after {
     text-decoration: none;
 }
 
-.classifieds-item a:hover {
-    text-decoration: underline;
-}
-
 .classifieds-item .loc,
 .classifieds-item .price,
 .classifieds-item .closes {
@@ -922,46 +909,6 @@ table[data-sortable] th.sort-desc::after {
     display: flex;
     flex-direction: column;
     gap: 0.4em;
-}
-
-.form-field label {
-    font-family: var(--font-sans);
-    font-size: 0.9em;
-    color: var(--text);
-}
-
-.form-field .optional {
-    font-weight: normal;
-    color: var(--text-muted);
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-    padding: 0.6em 0.8em;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 1em;
-    font-family: var(--font-sans);
-    color: var(--text);
-    background-color: var(--bg-alt);
-    transition:
-        border-color 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
-}
-
-.form-field textarea {
-    resize: vertical;
-    min-height: 120px;
-    font-family: var(--font-sans);
 }
 
 .hp-field {
@@ -1051,6 +998,46 @@ textarea {
     line-height: 1.4;
 }
 
+.form-field label {
+    font-family: var(--font-sans);
+    font-size: 0.9em;
+    color: var(--text);
+}
+
+.form-field .optional {
+    font-weight: normal;
+    color: var(--text-muted);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    padding: 0.6em 0.8em;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: var(--font-sans);
+    color: var(--text);
+    background-color: var(--bg-alt);
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: var(--font-sans);
+}
+
 button,
 .button {
     font-family: var(--font-sans);
@@ -1108,17 +1095,6 @@ button:disabled,
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-}
-
-pre {
-    background: var(--code-bg);
-    padding: 1em;
-    border-radius: 4px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin-bottom: 1em;
-    border: 1px solid var(--border);
 }
 
 .sr-only {
@@ -1295,6 +1271,14 @@ pre {
     display: none !important;
 }
 
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: block;
+}
+
 [data-theme="dark"] .footer-theme-toggle-icon .icon-sun {
     display: none !important;
 }
@@ -1313,6 +1297,10 @@ pre {
     width: 18px;
     height: 18px;
     flex: 0 0 18px;
+}
+
+.nav-toggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
 }
 
 /* #################################### */
@@ -1339,6 +1327,15 @@ pre {
     align-items: center;
     text-decoration: none;
     color: var(--text);
+}
+
+.classifieds-nav a:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+}
+
+.classifieds-item a:hover {
+    text-decoration: underline;
 }
 
 .sponsor-card a:hover .sponsor-card__text strong,
@@ -1785,4 +1782,8 @@ pre {
     position: relative;
     height: 180px;
     min-width: 0;
+}
+
+.header a:hover {
+    opacity: 0.85;
 }
