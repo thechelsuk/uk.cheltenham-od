@@ -20,7 +20,6 @@
             <div class="traffic-figure">
                 <h3>Unique Visitors</h3>
                 <p class="traffic-number">{{ traffic.totals.display_uniques }}</p>
-                <p class="traffic-note">About {{ traffic.totals.display_average_uniques }} a day</p>
             </div>
             <div class="traffic-chart"><canvas id="traffic-uniques" aria-label="Line chart of unique visitors per day over the last 30 days"></canvas></div>
         </div>
@@ -38,7 +37,7 @@
                 <h3>Percent Cached</h3>
                 <p class="traffic-number">{{ traffic.totals.cached_percent }}%</p>
             </div>
-            <div class="traffic-chart"><canvas id="traffic-cached" aria-label="Line chart of the percentage of requests served from cache per day over the last 30 days"></canvas></div>
+            <div class="traffic-chart"><canvas id="traffic-cached" aria-label="Line chart of the percentage of data served from cache per day over the last 30 days"></canvas></div>
         </div>
 
         <p class="traffic-attribution"><small>
@@ -52,10 +51,10 @@
         <h2>FAQs</h2>
 
         <h3>What Is a Unique Visitor?</h3>
-        <p>A unique visitor is a single device or browser that visited the site on a given day, however many pages it
-            looked at. The headline figure adds up each day's unique visitors across the 30 days, so someone who visits
-            on five different days is counted five times. It is a measure of how often the site is used, not of how
-            many different people used it.</p>
+        <p>A unique visitor is a single device or browser that visited the site at least once in the 30 days, however
+            many pages it looked at or how often it came back. The daily chart counts each day separately, so someone
+            who returns on several days appears on every one of those days but only once in the headline figure. It
+            counts devices rather than people, so someone who uses a phone and a laptop counts twice.</p>
 
         <h3>What Counts as a Request?</h3>
         <p>Every file the site serves: pages, images, scripts, data files and feeds. One visit to a page usually makes
@@ -68,10 +67,10 @@
             blocks before they reach the site are not shown as visitors.</p>
 
         <h3>What Does Percent Cached Mean?</h3>
-        <p>Cloudflare keeps copies of the site's files in data centres around the world. When a request is answered
-            from one of those copies it is counted as cached. A higher percentage means the site loads quickly for more
-            people and needs less work from the server behind it. Pages and data change through the day, so the figure
-            rises and falls.</p>
+        <p>Cloudflare keeps copies of the site's files in data centres around the world. This is the share of the data
+            sent to visitors that came from one of those copies rather than from the site's own server. A higher
+            percentage means the site loads quickly for more people and needs less work from the server behind it.
+            Pages and data change through the day, so the figure rises and falls.</p>
 
         <h3>Do These Figures Identify Me?</h3>
         <p>No. These counts come from the service that delivers the site, not from cookies or scripts running in your

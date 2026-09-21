@@ -5,7 +5,13 @@ GraphQL Analytics API and write _data/traffic.json.
 Refreshed daily so the page is always a rolling 30 days. Cloudflare reports each
 day as a whole, so today is left out until it has finished.
 
-Needs two environment variables (repository secrets in GitHub Actions):
+Unique visitors for the 30 days is Cloudflare's own count across the whole period,
+so someone who visits on several days is counted once. It is not the sum of the
+daily figures. Percent cached is the share of bytes served from cache, which is
+how the Cloudflare dashboard works it out.
+
+Needs two environment variables (repository secrets in GitHub Actions, or in the
+gitignored .env file when running locally):
   CLOUDFLARE_API_TOKEN  a token with the Zone > Analytics > Read permission
   CLOUDFLARE_ZONE_ID    the zone ID shown on the site's Cloudflare overview page
 """
@@ -15,6 +21,17 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 import requests
+
+import helper
+
+# Load .env file for local development if present
+_env_file = helper.repo_root() / ".env"
+if _env_file.exists():
+    for _line in _env_file.read_text().splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip().strip("\"'"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "traffic.json")
@@ -28,10 +45,14 @@ QUERY = """
 query Traffic($zone: String!, $start: Date!, $end: Date!) {
   viewer {
     zones(filter: {zoneTag: $zone}) {
-      httpRequests1dGroups(limit: 40, orderBy: [date_ASC],
-                           filter: {date_geq: $start, date_leq: $end}) {
+      days: httpRequests1dGroups(limit: 40, orderBy: [date_ASC],
+                                  filter: {date_geq: $start, date_leq: $end}) {
         dimensions { date }
-        sum { requests cachedRequests }
+        sum { requests bytes cachedBytes }
+        uniq { uniques }
+      }
+      period: httpRequests1dGroups(limit: 1, filter: {date_geq: $start, date_leq: $end}) {
+        sum { requests bytes cachedBytes }
         uniq { uniques }
       }
     }
@@ -51,13 +72,12 @@ def build_days(groups, start, end):
     while day <= end:
         iso = day.isoformat()
         g = by_date.get(iso)
-        requests_total = g["sum"]["requests"] if g else 0
-        cached = g["sum"]["cachedRequests"] if g else 0
+        sent = g["sum"]["bytes"] if g else 0
+        cached = g["sum"]["cachedBytes"] if g else 0
         days.append({
             "date": iso,
-            "requests": requests_total,
-            "cached_requests": cached,
-            "cached_percent": percent(cached, requests_total),
+            "requests": g["sum"]["requests"] if g else 0,
+            "cached_percent": percent(cached, sent),
             "uniques": g["uniq"]["uniques"] if g else 0,
         })
         day += timedelta(days=1)
@@ -87,10 +107,10 @@ def main():
     if not zones:
         sys.exit("Cloudflare returned no zone for that ID and token.")
 
-    days = build_days(zones[0]["httpRequests1dGroups"], start, end)
-    requests_total = sum(d["requests"] for d in days)
-    cached_total = sum(d["cached_requests"] for d in days)
-    uniques_total = sum(d["uniques"] for d in days)
+    days = build_days(zones[0]["days"], start, end)
+    period = zones[0]["period"][0]
+    uniques_total = period["uniq"]["uniques"]
+    requests_total = period["sum"]["requests"]
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -102,19 +122,11 @@ def main():
         "totals": {
             "uniques": uniques_total,
             "display_uniques": f"{uniques_total:,}",
-            "average_uniques": round(uniques_total / len(days)),
-            "display_average_uniques": f"{round(uniques_total / len(days)):,}",
             "requests": requests_total,
             "display_requests": f"{requests_total:,}",
-            "cached_requests": cached_total,
-            "cached_percent": percent(cached_total, requests_total),
+            "cached_percent": percent(period["sum"]["cachedBytes"], period["sum"]["bytes"]),
         },
-        "days": [
-            {**d,
-             "display_uniques": f"{d['uniques']:,}",
-             "display_requests": f"{d['requests']:,}"}
-            for d in days
-        ],
+        "days": days,
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
