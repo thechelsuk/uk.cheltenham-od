@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T19:30:08+01:00",
+  "generated_at": "2026-09-21T19:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,29 +10,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-21T19:12",
-      "expected": "2026-09-21T19:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
-    {
       "scheduled": "2026-09-21T19:30",
-      "expected": "2026-09-21T19:30",
-      "status": "On time",
+      "expected": "2026-09-21T19:33",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -45,13 +25,13 @@
     },
     {
       "scheduled": "2026-09-21T19:40",
-      "expected": "2026-09-21T19:47",
+      "expected": "2026-09-21T19:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by an operational incident earlier today",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -114,7 +94,7 @@
     },
     {
       "scheduled": "2026-09-21T19:59",
-      "expected": "2026-09-21T20:01",
+      "expected": "2026-09-21T20:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -155,22 +135,34 @@
         "Reading",
         "London Paddington"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-21T19:10",
-      "expected": "2026-09-21T19:28",
+      "scheduled": "2026-09-21T20:12",
+      "expected": "2026-09-21T20:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
-      "reason": ""
-    },
+      "reason": "This service has been delayed by train crew being delayed",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "Wakefield Westgate",
+        "Leeds"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-21T19:27",
-      "expected": "2026-09-21T19:36",
+      "expected": "2026-09-21T19:37",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -210,8 +202,8 @@
     },
     {
       "scheduled": "2026-09-21T19:47",
-      "expected": "2026-09-21T19:47",
-      "status": "On time",
+      "expected": "2026-09-21T19:49",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -230,13 +222,23 @@
     },
     {
       "scheduled": "2026-09-21T19:58",
-      "expected": "2026-09-21T20:00",
+      "expected": "2026-09-21T20:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-21T20:10",
+      "expected": "2026-09-21T20:15",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "This service has been delayed by train crew being delayed"
     }
   ]
 }
