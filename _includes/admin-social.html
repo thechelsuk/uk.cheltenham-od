@@ -1,0 +1,145 @@
+<style>
+    .social-card {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+    }
+
+    .social-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: .75rem 1rem;
+        background: var(--bg-alt);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .social-head h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .social-actions {
+        display: flex;
+        gap: .5rem;
+    }
+
+    .social-copy {
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: .4rem .9rem;
+        font-weight: 600;
+        font-size: .85rem;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .social-copy:hover {
+        opacity: .9;
+    }
+
+    .social-copy.copied {
+        background: #3a8f4f;
+    }
+
+    .social-body {
+        padding: 1rem 1.25rem;
+        line-height: 1.6;
+    }
+
+    .social-body p {
+        margin: 0 0 .9rem;
+    }
+
+    .social-count {
+        font-size: .85rem;
+        color: var(--text-muted);
+    }
+
+    .social-count.over {
+        color: #b3261e;
+        font-weight: 600;
+    }
+</style>
+
+<p class="info-text">
+    Ready-made posts for the latest blog posts, for networks that don't post automatically. "Copy text" gives plain
+    text for X or Nextdoor, and "Copy HTML" keeps the link when pasting into an editor that accepts formatting.
+    The count is against X's 280 characters, with every link counting as 23.
+</p>
+
+{% assign social_tags = site.data.social.hashtags | join: " " %}
+{% assign social_posts = site.posts | slice: 0, 10 %}
+{% for post in social_posts %}
+{% comment %}Production address on purpose: jekyll serve swaps site.url for localhost.{% endcomment %}
+{% assign post_url = post.url | prepend: "https://cheltenham-od.uk" %}
+<div class="social-card">
+    <div class="social-head">
+        <h3>{{ post.title }} <span class="social-count" data-social-count="social-text-{{ forloop.index }}"></span></h3>
+        <div class="social-actions">
+            <button type="button" class="social-copy" data-copy-target="social-text-{{ forloop.index }}"
+                data-copy-mode="text">Copy text</button>
+            <button type="button" class="social-copy" data-copy-target="social-text-{{ forloop.index }}"
+                data-copy-mode="html">Copy HTML</button>
+        </div>
+    </div>
+    <div class="social-body" id="social-text-{{ forloop.index }}">
+        <p>{{ post.title }}</p>
+        <p>{{ post.description }}</p>
+        <p><a href="{{ post_url }}">{{ post_url }}</a></p>
+        <p>{{ social_tags }}</p>
+    </div>
+</div>
+{% endfor %}
+
+<script>
+    (function () {
+        var buttons = Array.prototype.slice.call(document.querySelectorAll(".social-copy"));
+
+        function plain(node) {
+            return Array.prototype.map.call(node.querySelectorAll("p"), function (p) {
+                return p.innerText.trim();
+            }).join("\n\n");
+        }
+
+        Array.prototype.forEach.call(document.querySelectorAll("[data-social-count]"), function (badge) {
+            var source = document.getElementById(badge.dataset.socialCount);
+            if (!source) return;
+            var counted = plain(source).replace(/https?:\/\/\S+/g, "x".repeat(23)).length;
+            badge.textContent = "(" + counted + "/280)";
+            if (counted > 280) badge.classList.add("over");
+        });
+
+        buttons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                var source = document.getElementById(btn.dataset.copyTarget);
+                if (!source) return;
+                var text = plain(source);
+                var html = source.innerHTML;
+
+                function flash() {
+                    var original = btn.textContent;
+                    btn.textContent = "Copied!";
+                    btn.classList.add("copied");
+                    setTimeout(function () {
+                        btn.textContent = original;
+                        btn.classList.remove("copied");
+                    }, 1500);
+                }
+
+                if (btn.dataset.copyMode === "text" && navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(flash);
+                } else if (navigator.clipboard && window.ClipboardItem) {
+                    navigator.clipboard.write([new ClipboardItem({
+                        "text/html": new Blob([html], { type: "text/html" }),
+                        "text/plain": new Blob([text], { type: "text/plain" })
+                    })]).then(flash);
+                }
+            });
+        });
+    })();
+</script>
