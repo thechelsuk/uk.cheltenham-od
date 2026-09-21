@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Sponsorship Terms
+seo_title: "Sponsorship Terms for Cheltenham Open Data Categories"
 permalink: /sponsor/terms
-seo: Terms for sponsoring Cheltenham Open Data - local data for local people community resource
+seo: "Plain-English terms for sponsoring a category on Cheltenham Open Data: what sponsors get, the founding rate, the minimum term and how to cancel."
 description: The simple terms for sponsoring a page on Cheltenham Open Data.
 type: "cod"
 ---

@@ -1,7 +1,7 @@
 ---
 layout: foodbank
 title: "Tewkesbury Foodbank: Needed Items and Donation Points"
-seo: "What Tewkesbury Foodbank needs right now, where to drop donations off and how to contact it."
+seo: "What Tewkesbury Foodbank needs right now, where to drop off donations and how to contact it, updated from live needed-items data."
 description: "Needed items, donation points and contact details for Tewkesbury Foodbank."
 type: "community"
 schema: foodbank

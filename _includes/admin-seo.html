@@ -30,7 +30,7 @@
 </style>
 
 <p class="info-text">
-    Title length includes the " - {{ site.title }}" suffix Google sees. Thresholds: title 30&ndash;60 characters,
+    Title length is the title tag Google sees, which is <code>seo_title</code> if set, otherwise the page title, with no site name suffix. Thresholds: title 30&ndash;60 characters,
     description 70&ndash;160 characters. Rows with noindex are shown greyed out since their title/description length
     doesn't affect search results. Pages, news posts, events and classifieds are all listed; a post dated in the future
     only appears once its date has passed, or when the site is served with <code>--future</code>.
@@ -59,7 +59,7 @@
             {% if page.robots contains "noindex" %}{% assign is_noindex = true %}{% endif %}
 
             {% assign seo_title = page.seo_title | default: page.title %}
-            {% capture full_title %}{{ seo_title }} - {{ site.title }}{% endcapture %}
+            {% assign full_title = seo_title | default: site.title %}
             {% assign title_len = full_title | strip_html | size %}
 
             {% assign meta_description = page.seo | default: page.description | default: site.description %}

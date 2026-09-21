@@ -3,7 +3,7 @@ layout: posts
 title: Cheltenham Open Data Maps Broadband Speeds by Ward
 type: cod
 description: Cheltenham broadband coverage and speeds, mapped ward by ward.
-seo: See broadband speeds and gigabit coverage across Cheltenham, mapped ward by ward.
+seo: "A new page maps Cheltenham broadband speeds and gigabit coverage ward by ward, from Ofcom data, so you can see what is available in your area."
 date: 2026-09-09 18:00
 ---
 

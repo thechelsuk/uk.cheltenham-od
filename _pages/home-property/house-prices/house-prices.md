@@ -1,7 +1,8 @@
 ---
 layout: house
 title: "Cheltenham House Price Data"
-seo: "Is cheltenham expensive area to live, check out the average house prices in the area"
+seo_title: "Cheltenham House Prices: Average Prices and Sales Data"
+seo: "Cheltenham house prices: average and median sale prices, number of sales and price changes by property type, from Land Registry and ONS data."
 permalink: /cheltenham-house-prices
 description: "Property Data from Land Registry and ONS datasets."
 type: "property"

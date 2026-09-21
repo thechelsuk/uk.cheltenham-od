@@ -1,7 +1,8 @@
 ---
 layout: car-parks
 title: Cheltenham Car Parks
-seo: "Cheltenham car parks: locations, fees, opening/charging hours and max stay times, mapped from OpenStreetMap."
+seo_title: "Cheltenham Car Parks: Locations, Fees and Maximum Stay"
+seo: "Cheltenham car parks mapped: locations, fees, charging and opening hours, capacity and maximum stay times where recorded, from OpenStreetMap."
 permalink: /cheltenham-car-parks
 description: "Public car parks in and around Cheltenham, with fees, charging hours and max stay times where recorded."
 type: "travel"

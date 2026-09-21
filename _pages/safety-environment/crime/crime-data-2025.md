@@ -1,7 +1,8 @@
 ---
 layout: crime-data
 title: "Cheltenham Crime Data 2025"
-seo: "Monthly street-level crime figures for Cheltenham neighbourhoods in 2025 from the Police.uk API."
+seo_title: "Cheltenham Crime Data 2025: Monthly Street-Level Figures"
+seo: "Monthly street-level crime figures for Cheltenham in 2025, by month and by neighbourhood, from the Police.uk API, with crime report totals."
 permalink: /cheltenham-crime-data/2025
 description: "Monthly street-level crime figures for Cheltenham in 2025, broken down by neighbourhood."
 crime_year: "2025"

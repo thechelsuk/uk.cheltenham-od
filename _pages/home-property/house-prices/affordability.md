@@ -1,6 +1,7 @@
 ---
 layout: affordability
 title: "Cheltenham Home Affordability: How Many Homes Can a Typical Earner Afford?"
+seo_title: "Cheltenham Home Affordability: Can a Typical Earner Buy?"
 seo: "How many homes sold in Cheltenham each year could a typical full-time earner afford? The share within 4.5 times median pay since 2008, by property type."
 permalink: /cheltenham-house-prices/affordability
 description: "The share of homes sold in Cheltenham each year that a typical full-time earner could afford, since 2008, for all homes and for flats, terraced, semi-detached and detached homes."

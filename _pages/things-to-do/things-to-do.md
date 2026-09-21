@@ -1,6 +1,7 @@
 ---
 layout: explore-category
 title: "Things to Do in Cheltenham"
+seo_title: "Things to Do in Cheltenham: Events, Festivals and Food"
 seo: "Cheltenham events, festivals, sport, where to eat, play parks, points of interest, places to stay, public toilets and public holidays."
 permalink: /explore/things-to-do
 description: "Events, festivals, sport, where to eat, play parks, points of interest, places to stay, public toilets and public holidays in Cheltenham."

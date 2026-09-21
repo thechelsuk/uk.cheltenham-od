@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Adding Cycle Routes
+seo_title: "Cheltenham Cycle Routes Page Added: Tracks and Lanes"
 type: cod
 description: Dedicated cycle tracks and on-road cycle lanes in and around Cheltenham, including the Honeybourne Line and National Cycle Network Route 41, mapped from OpenStreetMap.
 seo: Cheltenham cycle routes — dedicated tracks, on-road lanes, the Honeybourne Line and NCN 41 — mapped from OpenStreetMap.

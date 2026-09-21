@@ -1,9 +1,10 @@
 ---
 layout: posts
 title: Adding Food Hygiene Ratings
+seo_title: "Food Hygiene Ratings Added for Cheltenham Venues"
 type: cod
 description: Food hygiene ratings for Cheltenham venues, sourced from the Food Standards Agency and updated regularly.
-seo: Food hygiene ratings for Cheltenham venues, including ratings, exemptions and businesses awaiting inspection.
+seo: "Cheltenham food hygiene ratings added: every food business with its Food Standards Agency rating, plus exemptions and those awaiting inspection."
 date: 2026-09-04 21:00
 ---
 

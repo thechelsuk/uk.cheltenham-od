@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Cheltenham GP Pharmacy Finder
+seo_title: "Cheltenham GP Surgeries and Pharmacies: Contact Details"
 permalink: /cheltenham-gp-pharmacies
 type: "community"
 description: Find GP practices and pharmacies in Cheltenham, with addresses, phone numbers and map links, updated automatically from the NHS national register.
