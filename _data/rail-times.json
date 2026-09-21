@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T22:00:13+01:00",
+  "generated_at": "2026-09-21T22:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,26 +10,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-21T22:00",
-      "expected": "2026-09-21T22:00",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-21T22:03",
-      "expected": null,
+      "expected": "2026-09-21T22:09",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -116,22 +98,25 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-21T23:02",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-21T21:59",
-      "expected": "2026-09-21T21:59",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-21T22:01",
-      "expected": null,
+      "expected": "2026-09-21T22:08",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -141,8 +126,8 @@
     },
     {
       "scheduled": "2026-09-21T22:06",
-      "expected": "2026-09-21T22:06",
-      "status": "On time",
+      "expected": "2026-09-21T22:10",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Westbury",
@@ -198,6 +183,16 @@
       "origin": "St Erth",
       "destination": "Birmingham New Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-21T23:00",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
