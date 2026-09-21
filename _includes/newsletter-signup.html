@@ -94,23 +94,39 @@
         }
     }
 
+    /* Compact form: field on top and note underneath in the first column, with the button spanning
+       both rows so the whole block is as tall as the social icons (3.5rem) it sits beside. */
     .newsletter-form--compact {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 0.5em 0.6em;
+        display: grid;
+        grid-template-columns: 15rem auto;
+        grid-template-rows: auto 1fr;
+        column-gap: 0.6em;
         width: max-content;
         max-width: 100%;
+        min-height: 3.5rem;
     }
 
     .newsletter-form--compact input[type="email"] {
-        width: 15rem;
-        flex: 0 1 15rem;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .newsletter-form--compact .newsletter-submit {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: stretch;
     }
 
     .newsletter-form--compact .newsletter-note {
+        grid-column: 1;
+        grid-row: 2;
+        align-self: end;
         margin: 0;
         font-size: 0.8rem;
+        line-height: 1.2;
         color: var(--text-secondary);
         white-space: nowrap;
     }
@@ -122,12 +138,12 @@
         }
 
         .newsletter-form--compact {
-            justify-content: center;
-            text-align: center;
+            grid-template-columns: minmax(0, 1fr) auto;
+            width: 100%;
         }
 
-        .newsletter-form--compact input[type="email"] {
-            flex: 1 1 12rem;
+        .newsletter-form--compact .newsletter-note {
+            justify-self: center;
         }
     }
 </style>
