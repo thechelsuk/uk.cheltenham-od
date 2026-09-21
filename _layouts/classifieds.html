@@ -51,7 +51,7 @@
     <section class="classifieds-category" id="{{ category.value }}">
         <h2>{{ category.label }} <span class="count">({{ in_cat.size }})</span></h2>
         <p>{{category.description}}</p>
-        <ul class="classifieds-list">
+        <ul class="plain-list">
             {%- for ad in in_cat -%}
             <li class="classifieds-item">
                 <a href="{{ ad.url | relative_url }}">{{ ad.title }}</a>

@@ -17,7 +17,7 @@
                     {% assign pages_offset = i | times: pages_chunk %}
                     {% assign pages_sub = pages_links | slice: pages_offset, pages_chunk %}
                     {% if pages_sub.size > 0 %}
-                    <ul class="footer-pages-col">
+                    <ul class="footer-pages-col plain-list">
                         {% for item in pages_sub %}
                         <li><a href="{{ item.link }}">{{ item.name }}</a></li>
                         {% endfor %}
@@ -33,7 +33,7 @@
                     {% if col.title %}
                     <h2 class="footer-col-title">{{ col.title }}</h2>
                     {% endif %}
-                    <ul>
+                    <ul class="plain-list">
                         {% assign col_links = col.links %}
                         {% if col.sort_alpha %}
                         {% assign col_links = col.links | sort_natural: "name" %}

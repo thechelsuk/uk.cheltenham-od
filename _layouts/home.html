@@ -61,7 +61,7 @@
         </div>
 
         <h2>Latest from Cheltenham Open Data</h2>
-        <ul class="latest-list">
+        <ul class="latest-list plain-list">
             {% assign latest = site.posts | concat: site.events | sort: "date" | reverse %}
             {% for post in latest limit: 5 %}
             {% if post.collection == "events" %}

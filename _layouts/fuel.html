@@ -17,7 +17,7 @@
         {% include sponsor.html %}
 
         <h2>Headline Prices</h2>
-        <ul class="headline-list">
+        <ul class="plain-list">
             {% for h in fuel.headline %}
             <li class="headline-row">
                 <span class="headline-main">&rarr; {{ h.label }} @ {{ h.price }}p/L from {{ h.name }}{% if h.brand !=
