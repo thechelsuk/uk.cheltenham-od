@@ -75,7 +75,8 @@
 {% assign social_tags = site.data.social.hashtags | join: " " %}
 {% assign social_posts = site.posts | slice: 0, 10 %}
 {% for post in social_posts %}
-{% assign post_url = post.url | absolute_url %}
+{% comment %}Production address on purpose: jekyll serve swaps site.url for localhost.{% endcomment %}
+{% assign post_url = post.url | prepend: "https://cheltenham-od.uk" %}
 <div class="social-card">
     <div class="social-head">
         <h3>{{ post.title }} <span class="social-count" data-social-count="social-text-{{ forloop.index }}"></span></h3>
