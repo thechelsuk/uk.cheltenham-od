@@ -4,10 +4,10 @@
 body.theme-default,
 body.theme-cod,
 .theme-cod,
-.theme-default  {
+.theme-default {
     --accent: #ca3393;
     --accent-dark: #77267e;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-default,
@@ -19,13 +19,14 @@ body.theme-cod,
     --accent-text: #0a1420;
 }
 
-/*--------------------------------------------------*/
+/* -------------------------------------------------- */
+
 /* environment: air, flood, sewage, water quality, security — Safety & Environment */
 body.theme-environment,
 .theme-environment {
     --accent: #0f6e8c;
     --accent-dark: #0a4f65;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-environment,
@@ -35,15 +36,14 @@ body.theme-environment,
     --accent-text: #0a1420;
 }
 
-/*--------------------------------------------------*/
-
+/* -------------------------------------------------- */
 
 /* community: Community & Support category */
 body.theme-community,
 .theme-community {
     --accent: #6a3f6b;
     --accent-dark: #4d2d4e;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-community,
@@ -53,14 +53,14 @@ body.theme-community,
     --accent-text: #0a1420;
 }
 
-/*--------------------------------------------------*/
+/* -------------------------------------------------- */
 
 /* travel: fuel, EV charging, buses — Getting Around */
 body.theme-travel,
 .theme-travel {
     --accent: #b5561f;
     --accent-dark: #863f16;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-travel,
@@ -70,8 +70,7 @@ body.theme-travel,
     --accent-text: #0a1420;
 }
 
-
-/*--------------------------------------------------*/
+/* -------------------------------------------------- */
 
 /* landing: cross-category guide pages (moving, visiting, students, racing, guides) */
 body.theme-landing,
@@ -88,13 +87,14 @@ body.theme-landing,
     --accent-text: #0a1420;
 }
 
-/*--------------------------------------------------*/
+/* -------------------------------------------------- */
+
 /* about: About & Info category */
 body.theme-about,
 .theme-about {
     --accent: #7a5230;
     --accent-dark: #593b22;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-about,
@@ -104,13 +104,14 @@ body.theme-about,
     --accent-text: #0a1420;
 }
 
-/*--------------------------------------------------*/
+/* -------------------------------------------------- */
+
 /* property: Home & Property category */
 body.theme-property,
 .theme-property {
     --accent: #8a2f3d;
     --accent-dark: #661f2a;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-property,
@@ -120,15 +121,14 @@ body.theme-property,
     --accent-text: #0a1420;
 }
 
-
-/*--------------------------------------------------*/
+/* -------------------------------------------------- */
 
 /* activities: Things to Do category */
 body.theme-activities,
 .theme-activities {
     --accent: #2f6b4f;
     --accent-dark: #204a37;
-    --accent-text: #ffffff;
+    --accent-text: #fff;
 }
 
 [data-theme="dark"] body.theme-activities,
@@ -136,7 +136,6 @@ body.theme-activities,
     --accent: #5ba07f;
     --accent-dark: #8ac3a8;
     --accent-text: #0a1420;
-
 }
 
 .tier-badge {
@@ -152,7 +151,7 @@ body.theme-activities,
     height: 12px;
     border-radius: 3px;
     flex: 0 0 auto;
-    border: 1px solid rgba(0, 0, 0, .2);
+    border: 1px solid rgb(0 0 0 / 20%);
 }
 
 .shade-0 {
