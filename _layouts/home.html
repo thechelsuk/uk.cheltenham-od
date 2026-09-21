@@ -17,21 +17,21 @@
         <div class="home-hero-grid">
             <div>
                 <h2>Today's Weather at a Glance</h2>
-                <div class="weather-glance">
+                <div class="info-card">
                     {% if weather %}
-                    <p class="weather-glance-date">{{ weather.date }}</p>
-                    <div class="weather-glance-header">
+                    <p class="info-card__label">{{ weather.date }}</p>
+                    <div class="info-card__header">
                         {% if weather.icon %}
                         <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="{{ weather.desc }}"
-                            class="weather-glance-icon" width="64" height="64">
+                            class="info-card__icon" width="64" height="64">
                         {% endif %}
                         <div>
-                            <span class="weather-glance-temp">{{ weather.temp }}&deg;C</span>
-                            <span class="weather-glance-desc">{{ weather.desc | capitalize }} &middot; feels like
+                            <span class="info-card__title">{{ weather.temp }}&deg;C</span>
+                            <span class="info-card__subtitle">{{ weather.desc | capitalize }} &middot; feels like
                                 {{ weather.feels_like }}&deg;C</span>
                         </div>
                     </div>
-                    <ul class="weather-glance-stats">
+                    <ul class="info-card__stats">
                         <li><span>High / Low</span><strong>{{ weather.high }}&deg; / {{ weather.low }}&deg;</strong>
                         </li>
                         <li><span>Wind</span><strong>{{ weather.wind }} m/s</strong></li>
@@ -41,8 +41,8 @@
                     </ul>
                     {% endif %}
                 </div>
-                <p class="latest-actions">
-                    <a href="/cheltenham-10-day-weather-forecast" class="latest-action-link">See a full 10-day
+                <p class="action-row">
+                    <a href="/cheltenham-10-day-weather-forecast" class="pill-link">See a full 10-day
                         Cheltenham forecast &rarr;</a>
                 </p>
             </div>
@@ -79,9 +79,9 @@
             {% endif %}
             {% endfor %}
         </ul>
-        <p class="latest-actions">
-            <a href="/news" class="latest-action-link">See all announcements &rarr;</a>
-            <a href="/cheltenham-events" class="latest-action-link">See all events &rarr;</a>
+        <p class="action-row">
+            <a href="/news" class="pill-link">See all announcements &rarr;</a>
+            <a href="/cheltenham-events" class="pill-link">See all events &rarr;</a>
         </p>
 
         <div class="home-hero-grid">
@@ -97,8 +97,8 @@
                 {% endfor %}
                 <p><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live
                         classifieds</a></p>
-                <p class="latest-actions">
-                    <a href="/submission" class="latest-action-link">Add your classified &rarr;</a>
+                <p class="action-row">
+                    <a href="/submission" class="pill-link">Add your classified &rarr;</a>
                 </p>
             </div>
             <div>
