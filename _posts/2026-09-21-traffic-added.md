@@ -9,7 +9,7 @@ date: 2026-09-21 12:00
 
 Cheltenham Open Data has published a [traffic page](/sponsor/traffic) showing how much the site is used.
 
-It shows three charts covering the last 30 complete days: unique visitors, total requests and the percentage of requests served from cache. Under them is a table of each day's figures. The numbers update every day, so the page is always a rolling month. It is linked from the [sponsorship page](/sponsor) for local businesses thinking about supporting a category.
+It shows three charts covering the last 30 complete days: unique visitors, total requests and the percentage of requests served from cache. The numbers update every day, so the page is always a rolling month. It is linked from the [sponsorship page](/sponsor) for local businesses thinking about supporting a category.
 
 The page is upfront about what the figures include. Unique visitors are counted per day and added together, and the counts include search engines and other automated tools as well as people.
 

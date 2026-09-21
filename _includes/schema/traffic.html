@@ -3,12 +3,12 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Cheltenham Open Data Traffic",
-  "description": "Daily unique visitors, total requests and the percentage of requests served from cache for Cheltenham Open Data over the last 30 complete days.",
+  "description": "Unique visitors, total requests and the percentage of requests served from cache for Cheltenham Open Data over the last 30 complete days.",
   "url": "{{ page.url | absolute_url }}",
   "dateModified": "{{ site.data['traffic'].generated_at }}",
   "isAccessibleForFree": true,
   "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
-  "variableMeasured": ["Date", "Unique visitors", "Total requests", "Percent of requests cached"]
+  "variableMeasured": ["Unique visitors", "Total requests", "Percent of requests cached"]
 }
 </script>
 <script type="application/ld+json">

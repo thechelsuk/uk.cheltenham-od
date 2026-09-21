@@ -41,31 +41,6 @@
             <div class="traffic-chart"><canvas id="traffic-cached" aria-label="Line chart of the percentage of requests served from cache per day over the last 30 days"></canvas></div>
         </div>
 
-        <h2>Daily Figures</h2>
-        <div class="table-scroll">
-            <table class="data-table" data-sortable>
-                <thead>
-                    <tr>
-                        <th scope="col" class="date">Date</th>
-                        <th scope="col" class="number">Unique Visitors</th>
-                        <th scope="col" class="number">Total Requests</th>
-                        <th scope="col" class="number">Cached (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% assign days = traffic.days | reverse %}
-                    {% for d in days %}
-                    <tr>
-                        <td class="date" data-val="{{ d.date }}">{{ d.date }}</td>
-                        <td class="number" data-val="{{ d.uniques }}">{{ d.display_uniques }}</td>
-                        <td class="number" data-val="{{ d.requests }}">{{ d.display_requests }}</td>
-                        <td class="number" data-val="{{ d.cached_percent }}">{{ d.cached_percent }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-
         <p class="traffic-attribution"><small>
             Figures from <a href="{{ traffic.source_url }}">{{ traffic.source }}</a>, which delivers this site. Each
             day is counted from midnight to midnight UTC. Last updated {{ traffic.generated_at | date: "%-d %B %Y" }}.
