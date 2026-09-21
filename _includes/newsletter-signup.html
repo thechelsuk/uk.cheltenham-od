@@ -1,8 +1,9 @@
 {% comment %}
     Newsletter sign-up form. Renders nothing until site.newsletter.buttondown_username is set (an empty string is not
     "blank" in this Liquid version, so test its size).
-    Posts straight to Buttondown's embed endpoint, which must be a plain form post (not fetch),
-    sends the double opt-in confirmation email and may show its own CAPTCHA.
+    Posts straight to Buttondown's embed endpoint (same action and email field as the snippet
+    from the Buttondown dashboard), which must be a plain form post (not fetch), sends the
+    double opt-in confirmation email and may show its own CAPTCHA.
     include.source tags the subscriber with where they signed up (footer, newsletter-page, ...).
 {% endcomment %}
 {% assign nl = site.newsletter %}
@@ -13,7 +14,6 @@
     <label for="{{ field_id }}">Email address</label>
     <div class="newsletter-form-row">
         <input type="email" name="email" id="{{ field_id }}" required autocomplete="email" placeholder="you@example.com">
-        <input type="hidden" name="embed" value="1">
         <input type="hidden" name="tag" value="{{ include.source }}">
         <button type="submit" class="newsletter-submit">Subscribe</button>
     </div>
