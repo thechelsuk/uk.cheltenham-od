@@ -15,12 +15,15 @@ leaves the file alone until HEARTBEAT_MINUTES have passed, so the page's
 "last updated" time (and its stale-data warning) still moves on quiet nights
 without a commit every few minutes.
 
-Needs RDM_LDBWS_KEY (the "Consumer key" from the free "LDBWS - Public" product
-on raildata.org.uk) in the environment or in the repo's gitignored .env.
+Needs RDM_LDBWS_KEY (the "Consumer key" from the free "Live Arrival and
+Departure Boards" product on raildata.org.uk) in the environment or in the
+repo's gitignored .env.
 
-The departures path and the JSON field names below are from the LDBWS
-documentation; the arrivals method name (GetArrBoardWithDetails) follows the
-same convention but has not been tested against the live service.
+That product has one combined board, GetArrDepBoardWithDetails. Each service on
+it carries whichever of the scheduled arrival (sta) and departure (std) times
+apply at this station, so a train that starts here has only std, one that
+terminates has only sta, and a through train has both. One call therefore feeds
+both tables: departures are the services with a std, arrivals the ones with a sta.
 """
 import html
 import json
@@ -46,9 +49,8 @@ if _env_file.exists():
 
 OUT = helper.repo_root() / "_data" / "rail-times.json"
 
-BASE_URL = "https://api1.raildata.org.uk/1010-live-departure-board-dep1_2/LDBWS/api/20220120"
-DEPARTURES_METHOD = "GetDepBoardWithDetails"
-ARRIVALS_METHOD = "GetArrBoardWithDetails"
+BASE_URL = "https://api1.raildata.org.uk/1010-live-arrival-and-departure-boards-arr-and-dep1_1/LDBWS/api/20220120"
+BOARD_METHOD = "GetArrDepBoardWithDetails"
 HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 STATION_NAME = "Cheltenham Spa"
@@ -61,9 +63,9 @@ LONDON = ZoneInfo("Europe/London")
 TIME_PATTERN = re.compile(r"^\d{1,2}:\d{2}$")
 
 
-def fetch_board(method, api_key):
+def fetch_board(api_key):
     resp = requests.get(
-        f"{BASE_URL}/{method}/{CRS}",
+        f"{BASE_URL}/{BOARD_METHOD}/{CRS}",
         params={"numRows": NUM_ROWS},
         headers={**HEADERS, "x-apikey": api_key},
         timeout=30,
@@ -169,13 +171,12 @@ def parse_board(board, kind):
     return services[:MAX_SERVICES]
 
 
-def station_messages(*boards):
+def station_messages(board):
     messages = []
-    for board in boards:
-        for message in board.get("nrccMessages") or []:
-            text = clean_text(message.get("value"))
-            if text and text not in messages:
-                messages.append(text)
+    for message in board.get("nrccMessages") or []:
+        text = clean_text(message.get("value"))
+        if text and text not in messages:
+            messages.append(text)
     return messages
 
 
@@ -197,19 +198,18 @@ def main():
     if not api_key:
         sys.exit("Error: RDM_LDBWS_KEY environment variable is required")
 
-    departures_board = fetch_board(DEPARTURES_METHOD, api_key)
-    arrivals_board = fetch_board(ARRIVALS_METHOD, api_key)
+    board = fetch_board(api_key)
 
     now = datetime.now(LONDON)
     output = {
         "generated_at": now.isoformat(timespec="seconds"),
         "source":       "National Rail Enquiries, via the Rail Data Marketplace",
         "source_url":   "https://raildata.org.uk/",
-        "licence":      "Rail Data Marketplace LDBWS Public licence (OGL3-based; per-product Schedule 1 terms apply)",
+        "licence":      "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
         "station":      {"name": STATION_NAME, "crs": CRS},
-        "messages":     station_messages(departures_board, arrivals_board),
-        "departures":   parse_board(departures_board, "departure"),
-        "arrivals":     parse_board(arrivals_board, "arrival"),
+        "messages":     station_messages(board),
+        "departures":   parse_board(board, "departure"),
+        "arrivals":     parse_board(board, "arrival"),
     }
 
     if unchanged(output, now):
