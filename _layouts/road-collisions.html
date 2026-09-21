@@ -1,0 +1,362 @@
+{% include header.html %}
+{% assign data = site.data["road-collisions"] %}
+{% assign totals = data.totals %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ totals.collisions_display }} collisions and {{ totals.casualties_display }} casualties, {{ data.first_year }} to {{ data.last_year }}</li>
+                <li><a href="/explore/safety-environment">&lAarr; Back to Safety &amp; Environment</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Collisions and Casualties by Severity</h2>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Severity</th>
+                        <th scope="col" class="number">Collisions</th>
+                        <th scope="col" class="number">Casualties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Fatal</td><td class="number">{{ totals.fatal }}</td><td class="number">{{ totals.casualties_fatal }}</td></tr>
+                    <tr><td>Serious</td><td class="number">{{ totals.serious }}</td><td class="number">{{ totals.casualties_serious }}</td></tr>
+                    <tr><td>Slight</td><td class="number">{{ totals.slight }}</td><td class="number">{{ totals.casualties_slight }}</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><th scope="row">Total</th><th class="number">{{ totals.collisions_display }}</th><th class="number">{{ totals.casualties_display }}</th></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h2>Collisions by Year</h2>
+        <div style="position: relative; height: 300px;">
+            <canvas id="road-collisions-years" aria-label="Stacked bar chart of Cheltenham road collisions per year by severity"></canvas>
+        </div>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Fatal</th>
+                        <th scope="col" class="number">Serious</th>
+                        <th scope="col" class="number">Slight</th>
+                        <th scope="col" class="number">Collisions</th>
+                        <th scope="col" class="number">Casualties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for y in data.by_year %}
+                    <tr>
+                        <td>{{ y.year }}</td>
+                        <td class="number">{{ y.fatal }}</td>
+                        <td class="number">{{ y.serious }}</td>
+                        <td class="number">{{ y.slight }}</td>
+                        <td class="number">{{ y.collisions }}</td>
+                        <td class="number">{{ y.casualties }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <th class="number">{{ totals.fatal }}</th>
+                        <th class="number">{{ totals.serious }}</th>
+                        <th class="number">{{ totals.slight }}</th>
+                        <th class="number">{{ totals.collisions_display }}</th>
+                        <th class="number">{{ totals.casualties_display }}</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h2>Casualties by Road User</h2>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Road user</th>
+                        <th scope="col" class="number">Fatal</th>
+                        <th scope="col" class="number">Serious</th>
+                        <th scope="col" class="number">Slight</th>
+                        <th scope="col" class="number">Total</th>
+                        <th scope="col" class="number">Share (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in data.by_user %}
+                    <tr>
+                        <td>{{ u.user }}</td>
+                        <td class="number">{{ u.fatal }}</td>
+                        <td class="number">{{ u.serious }}</td>
+                        <td class="number">{{ u.slight }}</td>
+                        <td class="number">{{ u.total }}</td>
+                        <td class="number">{{ u.share }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <th class="number">{{ totals.casualties_fatal }}</th>
+                        <th class="number">{{ totals.casualties_serious }}</th>
+                        <th class="number">{{ totals.casualties_slight }}</th>
+                        <th class="number">{{ totals.casualties_display }}</th>
+                        <th class="number">100</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h2>Vehicles Involved</h2>
+        <p>A collision often involves more than one vehicle, so the collisions in this table add up to more than the total.</p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Vehicle</th>
+                        <th scope="col" class="number">Vehicles</th>
+                        <th scope="col" class="number">Collisions involving one</th>
+                        <th scope="col" class="number">Share of collisions (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for v in data.by_vehicle %}
+                    <tr>
+                        <td>{{ v.vehicle }}</td>
+                        <td class="number">{{ v.vehicles }}</td>
+                        <td class="number">{{ v.collisions }}</td>
+                        <td class="number">{{ v.share_of_collisions }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">All vehicles</th>
+                        <th class="number">{{ totals.vehicles_display }}</th>
+                        <th class="number">{{ totals.collisions_display }}</th>
+                        <th class="number">100</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h2>When Collisions Happen</h2>
+        <div style="position: relative; height: 300px;">
+            <canvas id="road-collisions-hours" aria-label="Bar chart of Cheltenham road collisions by hour of the day"></canvas>
+        </div>
+        <p>{{ data.light.dark_share }}% of collisions ({{ data.light.dark }} of {{ totals.collisions }}) happened in the dark.</p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col" class="number">Collisions</th>
+                        <th scope="col" class="number">Fatal or serious</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in data.by_day %}
+                    <tr><td>{{ d.day }}</td><td class="number">{{ d.collisions }}</td><td class="number">{{ d.ksi }}</td></tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr><th scope="row">Total</th><th class="number">{{ totals.collisions_display }}</th><th class="number">{{ totals.ksi }}</th></tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h2>Where Collisions Happen</h2>
+        <h3>By Type of Road</h3>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Road type</th>
+                        <th scope="col" class="number">Fatal</th>
+                        <th scope="col" class="number">Serious</th>
+                        <th scope="col" class="number">Slight</th>
+                        <th scope="col" class="number">Total</th>
+                        <th scope="col" class="number">Share (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in data.by_road_class %}
+                    <tr>
+                        <td>{{ r.road }}</td>
+                        <td class="number">{{ r.fatal }}</td>
+                        <td class="number">{{ r.serious }}</td>
+                        <td class="number">{{ r.slight }}</td>
+                        <td class="number">{{ r.total }}</td>
+                        <td class="number">{{ r.share }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <th class="number">{{ totals.fatal }}</th>
+                        <th class="number">{{ totals.serious }}</th>
+                        <th class="number">{{ totals.slight }}</th>
+                        <th class="number">{{ totals.collisions_display }}</th>
+                        <th class="number">100</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>By Speed Limit</h3>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Speed limit</th>
+                        <th scope="col" class="number">Fatal</th>
+                        <th scope="col" class="number">Serious</th>
+                        <th scope="col" class="number">Slight</th>
+                        <th scope="col" class="number">Total</th>
+                        <th scope="col" class="number">Share (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in data.by_speed_limit %}
+                    <tr>
+                        <td>{{ s.speed_limit }} mph</td>
+                        <td class="number">{{ s.fatal }}</td>
+                        <td class="number">{{ s.serious }}</td>
+                        <td class="number">{{ s.slight }}</td>
+                        <td class="number">{{ s.total }}</td>
+                        <td class="number">{{ s.share }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <th class="number">{{ totals.fatal }}</th>
+                        <th class="number">{{ totals.serious }}</th>
+                        <th class="number">{{ totals.slight }}</th>
+                        <th class="number">{{ totals.collisions_display }}</th>
+                        <th class="number">100</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h3>Numbered Roads With the Most Collisions</h3>
+        <p>The ten A, B and C roads with the most collisions. Most collisions happen on busy roads, so a long, busy road will always appear near the top.</p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Road</th>
+                        <th scope="col" class="number">Fatal</th>
+                        <th scope="col" class="number">Serious</th>
+                        <th scope="col" class="number">Slight</th>
+                        <th scope="col" class="number">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in data.top_roads %}
+                    <tr>
+                        <td>{{ r.road }}</td>
+                        <td class="number">{{ r.fatal }}</td>
+                        <td class="number">{{ r.serious }}</td>
+                        <td class="number">{{ r.slight }}</td>
+                        <td class="number">{{ r.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Map of Fatal and Serious Collisions</h2>
+        <p>Each pin is one collision in which someone was killed or seriously injured. Select a pin for the date, road, road users and vehicles involved.</p>
+        <div id="road-collisions-map" style="height: 560px; border-radius: 8px;" aria-label="Map of fatal and serious road collisions in Cheltenham"></div>
+
+        <h2>Fatal and Serious Collisions</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Severity</th>
+                        <th scope="col">Road</th>
+                        <th scope="col" class="number">Speed limit (mph)</th>
+                        <th scope="col">Casualties</th>
+                        <th scope="col">Vehicles</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.serious_collisions %}
+                    <tr>
+                        <td class="date" data-val="{{ c.date }}">{{ c.date }}</td>
+                        <td>{{ c.time }}</td>
+                        <td>{{ c.severity }}</td>
+                        <td>{{ c.road }}</td>
+                        <td class="number" data-val="{{ c.speed_limit | default: 0 }}">{{ c.speed_limit | default: "&mdash;" }}</td>
+                        <td>{{ c.casualties_summary }}</td>
+                        <td>{{ c.vehicles }}</td>
+                        <td class="map">{% include pin.html lat=c.lat lng=c.lon label="the collision" %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="road-collisions-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the Open Government
+            Licence v3.0, covering collisions in the Cheltenham district reported to the police. Last updated
+            {{ data.generated_at | date: "%-d %B %Y" }}. Map tiles &copy;
+            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h2>FAQs</h2>
+
+        <h3>What Counts as a Road Collision Here?</h3>
+        <p>Only collisions on public roads in which at least one person was injured and that were reported to the police.
+            Damage-only collisions are not recorded, and neither are collisions that nobody reported. Slight injuries are
+            the most likely to go unreported, so the real number of injury collisions is higher than shown.</p>
+
+        <h3>How Is Severity Decided?</h3>
+        <p>The police record each casualty as fatal, serious or slight. Fatal means the person died within 30 days of the
+            collision. Serious covers injuries such as fractures, or an injury that needs a stay in hospital. Slight
+            covers less severe injuries such as sprains and bruising. A collision takes the severity of its worst
+            casualty.</p>
+
+        <h3>Why Does the Map Show Only Fatal and Serious Collisions?</h3>
+        <p>There are hundreds of slight collisions, and mapping them all would hide the ones that matter most. Slight
+            collisions are still included in every total and breakdown on this page.</p>
+
+        <h3>Does It Say Who Was at Fault?</h3>
+        <p>No. The data records what happened, where and who was involved, not who was to blame, and it holds no names or
+            personal details.</p>
+
+        <h3>Does a Road With More Collisions Mean It Is More Dangerous?</h3>
+        <p>Not necessarily. The figures count collisions but not how much traffic a road carries, so busy roads have more
+            collisions than quiet ones. A count is a starting point for asking questions, not a ranking of danger.</p>
+
+        <h3>Where Does the Data Come From and How Often Is It Updated?</h3>
+        <p>The Department for Transport publishes road safety data, known as STATS19, from police reports, and it is
+            published under the Open Government Licence v3.0. This page is refreshed by hand when a new release is
+            published, which is once a year.</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script id="road-collisions-years-data" type="application/json">{{ data.by_year | jsonify }}</script>
+<script id="road-collisions-hours-data" type="application/json">{{ data.by_hour | jsonify }}</script>
+<script id="road-collisions-map-data" type="application/json">{{ data.serious_collisions | jsonify }}</script>
+<script src="/assets/scripts/road-collisions-chart.js"></script>
+<script src="/assets/scripts/road-collisions-map.js"></script>
+{% include footer.html %}

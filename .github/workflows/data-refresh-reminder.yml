@@ -35,6 +35,8 @@ jobs:
 
           - [ ] **Flood zones** — no file to download: run `_python/local/process-flood-zones.py`, which fetches the Environment Agency's latest Flood Zone 2 and 3 outlines itself, and commit the updated `_data/flood-zones.json`. The Environment Agency updates the data as needed, so this is only worth doing if the [dataset page](https://environment.data.gov.uk/dataset/04532375-a198-476e-985e-0579a0a11b47) shows a newer release.
 
+          - [ ] **Road collisions** — check the [DfT road safety data](https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data) for a newer release (it is published once a year). Download the "last 5 years" collision, casualty and vehicle CSVs into `_data-sources/` (`https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-last-5-years.csv`, and the same with `casualty` and `vehicle` in place of `collision`), update the three file name constants at the top of `_python/local/process-road-collisions.py` if the names have changed, run it, and commit the updated `_data/road-collisions.json`.
+
           Close this issue once done — a new one opens automatically next month.
           EOF
 
