@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T19:45:08+01:00",
+  "generated_at": "2026-09-22T19:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,22 +10,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-22T19:30",
-      "expected": "2026-09-22T19:45",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-22T19:40",
-      "expected": "2026-09-22T19:50",
+      "expected": "2026-09-22T19:51",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -43,21 +29,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-22T19:43",
-      "expected": "2026-09-22T19:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street"
-      ]
-    },
-    {
       "scheduled": "2026-09-22T19:49",
-      "expected": "2026-09-22T19:55",
+      "expected": "2026-09-22T19:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -74,8 +47,8 @@
     },
     {
       "scheduled": "2026-09-22T19:52",
-      "expected": "2026-09-22T19:54",
-      "status": "Delayed",
+      "expected": "2026-09-22T19:52",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -194,28 +167,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-22T19:28",
-      "expected": "2026-09-22T19:43",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by congestion"
-    },
-    {
-      "scheduled": "2026-09-22T19:42",
-      "expected": "2026-09-22T19:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-22T19:47",
-      "expected": "2026-09-22T19:54",
+      "expected": "2026-09-22T19:53",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -225,8 +178,8 @@
     },
     {
       "scheduled": "2026-09-22T19:51",
-      "expected": "2026-09-22T19:53",
-      "status": "Delayed",
+      "expected": "2026-09-22T19:51",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -272,6 +225,26 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T20:27",
+      "expected": "2026-09-22T20:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T20:33",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by a gas leak near the railway"
     }
   ]
 }
