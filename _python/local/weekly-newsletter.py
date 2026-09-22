@@ -160,15 +160,16 @@ def weather_section(today):
     days = [d for d in data["days"] if today <= iso_date(d["date"]) <= forecast_end]
     if not days:
         return None
-    rows = []
+    lines = []
     for d in days:
         label = iso_date(d["date"]).strftime("%a %-d %b")
         pop = round((d.get("pop") or 0) * 100)
-        rows.append(f"| {label} | {round(d['max'])}° | {round(d['min'])}° | {pop}% | {d['desc'].capitalize()} |")
-    return (
-        "| Day | High | Low | Rain | Weather |\n"
-        "| --- | ---: | ---: | ---: | --- |\n" + "\n".join(rows)
-    )
+        rain = f", {pop}% chance of rain" if pop >= 20 else ""
+        lines.append(
+            f"- **{label}:** {d['desc'].capitalize()}, high {round(d['max'])}°C, "
+            f"low {round(d['min'])}°C{rain}."
+        )
+    return "\n".join(lines)
 
 
 def roadworks_section(week_start, week_end):
@@ -286,10 +287,10 @@ def venue_section(recent_venues):
         return None, None
     venue = random.choice(pool)
     maps_url = f"https://www.google.com/maps/search/?api=1&query={venue['lat']},{venue['lon']}"
-    kind = "a pub" if venue["type"] == "Pub or bar" else "a restaurant or cafe"
     body = (
-        f"This week, why not try **[{md_escape(venue['name'])}]({maps_url})**, "
-        f"{kind} at {md_escape(venue['address'])}."
+        "Each week we pick a local eatery at random from around the area. "
+        f"This week, why not try **{md_escape(venue['name'])}**, located at "
+        f"{md_escape(venue['address'])}. [Check opening hours on Google Maps]({maps_url})."
     )
     return body, venue["name"]
 
