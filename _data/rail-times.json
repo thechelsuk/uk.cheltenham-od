@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T21:25:08+01:00",
+  "generated_at": "2026-09-22T21:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,20 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-22T21:33",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been cancelled because of a gas leak near the railway",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-09-22T21:52",
       "expected": null,
@@ -115,19 +101,23 @@
       "calling_at": [
         "Gloucester"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T22:52",
+      "expected": "2026-09-22T22:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-22T21:33",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been cancelled because of a gas leak near the railway"
-    },
     {
       "scheduled": "2026-09-22T21:50",
       "expected": null,
@@ -200,12 +190,22 @@
     },
     {
       "scheduled": "2026-09-22T22:34",
-      "expected": "2026-09-22T22:34",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T22:50",
+      "expected": "2026-09-22T22:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
