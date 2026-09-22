@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T11:30:07+01:00",
+  "generated_at": "2026-09-22T11:35:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-22T10:52",
-      "expected": "2026-09-22T11:32",
+      "expected": "2026-09-22T11:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -30,26 +30,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-22T11:23",
-      "expected": "2026-09-22T11:28",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-22T11:29",
-      "expected": "2026-09-22T11:34",
+      "expected": "2026-09-22T11:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -116,7 +98,7 @@
     },
     {
       "scheduled": "2026-09-22T11:52",
-      "expected": null,
+      "expected": "2026-09-22T12:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -154,12 +136,68 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T12:03",
+      "expected": "2026-09-22T12:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-09-22T12:12",
+      "expected": "2026-09-22T12:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Inverkeithing",
+        "Kirkcaldy",
+        "Markinch",
+        "Ladybank",
+        "Cupar",
+        "Leuchars",
+        "Dundee",
+        "Aberdeen"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-22T10:50",
-      "expected": "2026-09-22T11:31",
+      "expected": "2026-09-22T11:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -168,28 +206,8 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-22T11:21",
-      "expected": "2026-09-22T11:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-22T11:26",
-      "expected": "2026-09-22T11:31",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a safety inspection on a train"
-    },
-    {
       "scheduled": "2026-09-22T11:27",
-      "expected": "2026-09-22T11:33",
+      "expected": "2026-09-22T11:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -199,7 +217,7 @@
     },
     {
       "scheduled": "2026-09-22T11:31",
-      "expected": "2026-09-22T11:34",
+      "expected": "2026-09-22T11:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -229,7 +247,7 @@
     },
     {
       "scheduled": "2026-09-22T11:51",
-      "expected": null,
+      "expected": "2026-09-22T12:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -245,6 +263,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T12:11",
+      "expected": "2026-09-22T12:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Leeds",
       "reason": ""
     }
   ]
