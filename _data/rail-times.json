@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T11:35:09+01:00",
+  "generated_at": "2026-09-22T11:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-22T10:52",
-      "expected": "2026-09-22T11:35",
+      "expected": "2026-09-22T11:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -30,22 +30,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-22T11:29",
-      "expected": "2026-09-22T11:35",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-22T11:40",
-      "expected": "2026-09-22T11:42",
+      "expected": "2026-09-22T11:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -64,8 +50,8 @@
     },
     {
       "scheduled": "2026-09-22T11:40",
-      "expected": "2026-09-22T11:40",
-      "status": "On time",
+      "expected": "2026-09-22T11:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -192,6 +178,22 @@
         "Dundee",
         "Aberdeen"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T12:15",
+      "expected": "2026-09-22T12:27",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by train crew being delayed by service disruption",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
@@ -206,29 +208,9 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-22T11:27",
-      "expected": "2026-09-22T11:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-22T11:31",
-      "expected": "2026-09-22T11:35",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-22T11:38",
-      "expected": "2026-09-22T11:38",
-      "status": "On time",
+      "expected": "2026-09-22T11:41",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -273,6 +255,26 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T12:14",
+      "expected": "2026-09-22T12:26",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by train crew being delayed by service disruption"
+    },
+    {
+      "scheduled": "2026-09-22T12:27",
+      "expected": "2026-09-22T12:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
