@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T17:55:07+01:00",
+  "generated_at": "2026-09-22T18:00:18+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,26 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-22T17:52",
-      "expected": "2026-09-22T17:56",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-09-22T17:59",
       "expected": null,
@@ -72,8 +52,8 @@
     },
     {
       "scheduled": "2026-09-22T18:12",
-      "expected": "2026-09-22T18:12",
-      "status": "On time",
+      "expected": "2026-09-22T18:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -97,7 +77,7 @@
     },
     {
       "scheduled": "2026-09-22T18:19",
-      "expected": "2026-09-22T18:24",
+      "expected": "2026-09-22T18:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -146,6 +126,20 @@
       "scheduled": "2026-09-22T18:40",
       "expected": "2026-09-22T18:40",
       "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ]
+    },
+    {
+      "scheduled": "2026-09-22T18:40",
+      "expected": "2026-09-22T18:40",
+      "status": "On time",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -164,16 +158,6 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-22T17:50",
-      "expected": "2026-09-22T17:55",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-22T17:58",
       "expected": null,
       "status": "Cancelled",
@@ -185,8 +169,8 @@
     },
     {
       "scheduled": "2026-09-22T18:11",
-      "expected": "2026-09-22T18:11",
-      "status": "On time",
+      "expected": "2026-09-22T18:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -195,7 +179,7 @@
     },
     {
       "scheduled": "2026-09-22T18:18",
-      "expected": "2026-09-22T18:23",
+      "expected": "2026-09-22T18:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -241,6 +225,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T18:38",
+      "expected": "2026-09-22T18:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
