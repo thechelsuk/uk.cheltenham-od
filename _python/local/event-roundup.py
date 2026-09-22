@@ -7,6 +7,10 @@ the next ~30 days, fuzzy-dedupes near-identical listings across feeds, lets
 you pick which ones to keep via a terminal checkbox list, then writes a
 Jekyll markdown post straight into _posts/.
 
+A source whose url ends in ".json" (e.g. "/_data/sport-fixtures.json") is
+read as a local fixtures file instead of an RSS feed — see
+fetch_json_events() for the expected shape.
+
 Usage:
     python _python/event_roundup.py
     python _python/event_roundup.py --days 45
@@ -18,6 +22,7 @@ Run from the repo root (or pass --sources / --posts-dir explicitly).
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from dataclasses import dataclass, field
@@ -291,6 +296,58 @@ def extract_source_name(link: str, source_id: str) -> str:
     return source_id
 
 
+def fetch_json_events(source_id: str, url: str, start: date, horizon: date) -> list[Event]:
+    """Reads a local fixtures-style JSON file (e.g. _data/sport-fixtures.json)
+    instead of an RSS feed. `url` is a site-root path like
+    "/_data/sport-fixtures.json"; resolved relative to the repo root (this
+    script must be run from there, same as the RSS sources).
+
+    Expects {"source_url": ..., "fixtures": [{"home", "away", "date",
+    "end_date"?, "time"?, "competition"?, "venue"?}, ...]} — the shape
+    _python/sport-fixtures.py writes."""
+    path = Path(url.lstrip("/"))
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    link = payload.get("source_url") or url
+
+    events: list[Event] = []
+    for fx in payload.get("fixtures", []):
+        home, away = (fx.get("home") or "").strip(), (fx.get("away") or "").strip()
+        if not home or not away:
+            continue
+        try:
+            event_date = date.fromisoformat(fx["date"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        end_date = None
+        if fx.get("end_date"):
+            try:
+                end_date = date.fromisoformat(fx["end_date"])
+            except ValueError:
+                pass
+
+        span_end = end_date or event_date
+        if span_end < start or event_date > horizon:
+            continue
+
+        bits = [fx.get("competition") or ""]
+        if fx.get("time"):
+            bits.append(f"kick-off {fx['time']}")
+        description = " — ".join(b for b in bits if b)
+
+        events.append(Event(
+            source_id=source_id,
+            source_url=url,
+            title=f"{home} vs {away}",
+            event_date=event_date,
+            end_date=end_date,
+            link=link,
+            venue=fx.get("venue") or "",
+            description=description,
+            raw_entry=fx,
+        ))
+    return events
+
+
 def fetch_events(sources: list[dict], days_ahead: int) -> list[Event]:
     today = date.today()
     start = today + timedelta(days=1)  # exclude today — typically too late to act on
@@ -300,6 +357,17 @@ def fetch_events(sources: list[dict], days_ahead: int) -> list[Event]:
     for source in sources:
         source_id, url = source["id"], source["url"]
         print(f"  fetching {source_id} ...", end=" ")
+
+        if url.lower().endswith(".json"):
+            try:
+                new_events = fetch_json_events(source_id, url, start, horizon)
+            except Exception as exc:
+                print(f"FAILED ({exc})")
+                continue
+            events.extend(new_events)
+            print(f"{len(new_events)} candidate(s) in range")
+            continue
+
         try:
             parsed = feedparser.parse(url)
         except Exception as exc:
