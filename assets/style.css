@@ -1539,6 +1539,16 @@ button:disabled,
     width: 64px;
     height: 64px;
     border: none;
+
+    /* OpenWeatherMap's cloud icons are pale grey linework that all but disappears on a light
+       card; a drop shadow gives the strokes an edge to read against in light mode, and stays
+       subtle in dark mode, where the icon already has enough contrast on its own. */
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 35%));
+}
+
+[data-theme="dark"] .info-card__icon {
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 60%))
+        drop-shadow(0 0 1px rgb(255 255 255 / 30%));
 }
 
 .info-card__title {
