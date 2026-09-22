@@ -24,7 +24,7 @@ Pack the day with the things Cheltenham does best — history, green space and a
 
 - [Points of interest](/cheltenham-points-of-interest) — museums, historic sites, parks and blue plaques, each with a map link.
 - [Listed buildings](/cheltenham-listed-buildings) — every listed building, scheduled monument and registered park & garden in Cheltenham, graded and mapped.
-- [What's on in Cheltenham](/cheltenham-events) — events and the town's year-round festival calendar.
+- [The Cheltenham Week Ahead](/newsletter) — a free weekly newsletter covering events and what's on.
 
 ## Eating and Drinking
 

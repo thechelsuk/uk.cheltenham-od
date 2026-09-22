@@ -62,26 +62,17 @@
 
         <h2>Latest from Cheltenham Open Data</h2>
         <ul class="latest-list plain-list">
-            {% assign latest = site.posts | concat: site.events | sort: "date" | reverse %}
+            {% assign latest = site.posts | sort: "date" | reverse %}
             {% for post in latest limit: 5 %}
-            {% if post.collection == "events" %}
-            <li class="latest-item">
-                <a href="/cheltenham-events" class="latest-pill latest-pill-events">Events</a>
-                <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
-                <span class="latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
-            </li>
-            {% else %}
             <li class="latest-item">
                 <a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>
                 <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
                 <span class="latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
-            {% endif %}
             {% endfor %}
         </ul>
         <p class="action-row">
             <a href="/news" class="pill-link">See all announcements &rarr;</a>
-            <a href="/cheltenham-events" class="pill-link">See all events &rarr;</a>
         </p>
 
         <div class="home-hero-grid">

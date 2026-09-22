@@ -48,9 +48,9 @@ collections:
   classifieds:
     output: true
     permalink: /ads/:title/
-  events:
+  newsletters:
     output: true
-    permalink: /events/:title/
+    permalink: /newsletter/:title/
 defaults:
   - scope:
       path: ""
@@ -63,6 +63,12 @@ defaults:
     values:
       layout: advert
       robots: "noindex"
+  - scope:
+      path: ""
+      type: newsletters
+    values:
+      layout: newsletter-issue
+      type: "cod"
 
 classified_categories:
   - value: "jobs"
@@ -93,8 +99,6 @@ feed:
       path: "/feeds/main.xml"
     classifieds:
       path: "/feeds/classifieds.xml"
-    events:
-      path: "/feeds/events.xml"
 
 # Site Navigation
 ## Header
@@ -134,10 +138,6 @@ navigation_header:
     group: "Getting Around"
 
   # Things to Do
-  - name: Cheltenham Events
-    link: /cheltenham-events
-    description: "Events and Activities in Cheltenham and Gloucestershire"
-    group: "Things to Do"
   - name: Cheltenham Where to Eat
     link: /cheltenham-where-to-eat
     description: "Restaurants, cafés, pubs and takeaways in Cheltenham on a map, with official food hygiene ratings."
@@ -483,8 +483,6 @@ footer_pages:
       link: /cheltenham-economy
     - name: Cheltenham Employment History
       link: /cheltenham-employment-history
-    - name: Cheltenham Events
-      link: /cheltenham-events
     - name: Cheltenham EV Charging
       link: /cheltenham-ev-charging
     - name: Cheltenham Festivals
@@ -604,8 +602,6 @@ footer_columns:
     links:
       - name: Announcements Feed (atom)
         link: /feeds/main.xml
-      - name: Cheltenham Events (atom)
-        link: /feeds/events.xml
       - name: Cheltenham Classifieds (atom)
         link: /feeds/classifieds.xml
       - name: Daily News Summary (atom)

@@ -32,7 +32,7 @@ permalink: /sitemap.xml
   </url>
   {% endfor %}
      <!-- posts-->
-  {% assign posts = site.events %}
+  {% assign posts = site.newsletters %}
   {% for post in posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
@@ -41,4 +41,5 @@ permalink: /sitemap.xml
     <priority>0.8</priority>
   </url>
   {% endfor %}
+     <!-- newsletters-->
 </urlset>
