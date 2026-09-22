@@ -1,25 +1,31 @@
 #!/usr/bin/env python3
-"""Build the next issue of The Cheltenham Week Ahead newsletter.
+"""Build a draft issue of The Cheltenham Week Ahead newsletter for review.
 
 Nothing is fetched — every section reads data the site's own fetchers
 already maintain (weather, roadworks, the news archive, the latest curated
 events post) plus the hand-picked venue shortlist in newsletter-venues.json.
-Writes one page to the `newsletters` collection, _newsletters/<monday>.md,
-covering the coming Monday to Sunday.
+Nothing is published either: this writes _data/newsletter-draft.json, a
+single scratch slot holding the complete text of one issue (front matter and
+all), which the "Newsletter" tab on /admin shows with a one-click copy. This
+is deliberately not the finished newsletter — "What's On" in particular is
+just a list of candidates for you to pick from, not events chosen for you.
 
-Bus disruptions, power cuts and flood warnings are deliberately left out —
-those are breaking-news timescales (minutes to days), not something anyone
-can know on a Sunday night for the Thursday after. Roadworks are kept
-because they're planned weeks or months ahead, which does suit a week-ahead
-email.
+To publish a reviewed draft, copy it from /admin and save it yourself as
+_newsletters/<monday>.md (VS Code, the GitHub web editor, whatever's
+convenient) — there's no auto-publish step, on purpose, so nothing reaches
+the public /newsletter archive without you having looked at it first.
 
-This does not send anything — Buttondown has no free-plan API for that.
-Review the generated page (or the file itself), then copy its body into
-Buttondown's compose window and send it yourself. Run manually or from the
-Sunday-evening schedule workflow:
+Bus disruptions, power cuts and flood warnings are deliberately left out of
+the roadworks section — those are breaking-news timescales (minutes to
+days), not something anyone can know on a Sunday night for the Thursday
+after. Roadworks are kept because they're planned weeks or months ahead,
+which does suit a week-ahead email.
 
-    python3 _python/week-ahead.py              # builds the coming week's issue
-    python3 _python/week-ahead.py --overwrite  # rebuilds it if it already exists
+Run manually or from the Sunday-evening schedule workflow, which commits the
+refreshed draft the same way the site's other scheduled fetchers commit data:
+
+    python3 _python/week-ahead.py                        # draft the coming week
+    python3 _python/week-ahead.py --for-date 2026-10-05   # draft a specific Monday
 """
 import argparse
 import json
@@ -31,7 +37,8 @@ import helper
 
 ROOT = helper.repo_root()
 DATA = ROOT / "_data"
-OUT_DIR = ROOT / "_newsletters"
+OUT_DIR = ROOT / "_newsletters"          # published issues live here, but this script never writes to it
+DRAFT_PATH = DATA / "newsletter-draft.json"
 
 TOP_STORIES = 4
 MAX_ROADWORKS = 5
@@ -279,15 +286,10 @@ def venue_section(recent_venues):
 
 # --------------------------------------------------------------------------
 
-def build(week_start, since_date, overwrite):
+def build(week_start, since_date):
     week_end = week_start + timedelta(days=6)
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
-
-    out_path = OUT_DIR / f"{week_start.isoformat()}.md"
-    if out_path.exists() and not overwrite:
-        print(f"{out_path.relative_to(ROOT)} already exists — use --overwrite to rebuild it")
-        return
 
     whats_on = ("*Pick this week's events by hand — see [Cheltenham events](/cheltenham-events) "
                 "for everything on, or the candidates below in an editing comment (not shown to "
@@ -317,7 +319,9 @@ def build(week_start, since_date, overwrite):
     ]
     body = "\n\n".join(b for b in blocks if b) + "\n"
 
-    front = "\n".join([
+    # This exact text is what a reviewer copies from /admin and saves as _newsletters/<monday>.md
+    # to publish it — so it needs to be the complete, valid file, front matter included.
+    full_file = "\n".join([
         "---",
         "layout: newsletter-issue",
         f'title: "{title}"',
@@ -338,26 +342,34 @@ def build(week_start, since_date, overwrite):
         body,
     ])
 
-    OUT_DIR.mkdir(exist_ok=True)
-    out_path.write_text(front, encoding="utf-8")
-    print(f"Wrote {out_path.relative_to(ROOT)}")
+    draft = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "issue_date": week_start.isoformat(),
+        "title": title,
+        "filename": f"{week_start.isoformat()}.md",
+        "save_as": f"_newsletters/{week_start.isoformat()}.md",
+        "content": full_file,
+    }
+    DATA.mkdir(exist_ok=True)
+    with open(DRAFT_PATH, "w", encoding="utf-8") as f:
+        json.dump(draft, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    print(f"Wrote {DRAFT_PATH.relative_to(ROOT)} — review and copy it from /admin, "
+          f"save as {draft['save_as']} to publish")
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--overwrite", action="store_true", help="rebuild the issue if it already exists")
-    parser.add_argument("--for-date", help="build for a specific Monday (YYYY-MM-DD), mainly for testing")
+    parser.add_argument("--for-date", help="draft a specific Monday (YYYY-MM-DD) instead of the coming one")
     args = parser.parse_args()
 
     today = date.today()
     week_start = date.fromisoformat(args.for_date) if args.for_date else next_monday(today)
 
-    # The issue being (re)built doesn't count as "the last issue" — with --overwrite it would
-    # otherwise use its own previous version as the "since" marker and find nothing new.
-    prior = [i for i in existing_issues() if i["issue_date"] and i["issue_date"] != week_start.isoformat()]
-    since_date = date.fromisoformat(prior[-1]["issue_date"]) if prior else week_start - timedelta(days=7)
+    issues = existing_issues()
+    since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else week_start - timedelta(days=7)
 
-    build(week_start, since_date, args.overwrite)
+    build(week_start, since_date)
 
 
 if __name__ == "__main__":
