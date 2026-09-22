@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T13:55:07+01:00",
+  "generated_at": "2026-09-22T14:00:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,26 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-22T13:52",
-      "expected": "2026-09-22T13:55",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-09-22T13:59",
       "expected": "2026-09-22T13:59",
@@ -72,8 +52,8 @@
     },
     {
       "scheduled": "2026-09-22T14:12",
-      "expected": "2026-09-22T14:12",
-      "status": "On time",
+      "expected": "2026-09-22T14:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -101,7 +81,7 @@
     },
     {
       "scheduled": "2026-09-22T14:15",
-      "expected": "2026-09-22T14:20",
+      "expected": "2026-09-22T14:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -165,19 +145,28 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T14:40",
+      "expected": "2026-09-22T14:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-22T13:50",
-      "expected": "2026-09-22T13:54",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Plymouth",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-22T13:58",
       "expected": "2026-09-22T13:58",
@@ -190,8 +179,8 @@
     },
     {
       "scheduled": "2026-09-22T14:10",
-      "expected": "2026-09-22T14:10",
-      "status": "On time",
+      "expected": "2026-09-22T14:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -200,7 +189,7 @@
     },
     {
       "scheduled": "2026-09-22T14:14",
-      "expected": "2026-09-22T14:19",
+      "expected": "2026-09-22T14:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -246,6 +235,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T14:38",
+      "expected": "2026-09-22T14:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
