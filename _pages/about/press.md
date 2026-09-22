@@ -81,7 +81,7 @@ _(Happy to provide a tailored quote for your story — just [ask](/contact).)_
 - Site announcements feed: [/feeds/main.xml](/feeds/main.xml)
 - Daily news summary feed: [/feeds/news-summary.xml](/feeds/news-summary.xml)
 - Flood warnings feed: [/feeds/flood.xml](/feeds/flood.xml)
-- Cheltenham What's on events feed: [/feeds/events.xml](/feeds/events.xml)
+- Newsletter: [/newsletter](/newsletter)
 
 ## Logo & Brand Assets
 
