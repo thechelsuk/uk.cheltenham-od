@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T09:10:08+01:00",
+  "generated_at": "2026-09-22T09:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,26 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-22T08:52",
-      "expected": "2026-09-22T09:08",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-09-22T09:12",
       "expected": "2026-09-22T09:15",
@@ -58,7 +38,7 @@
     },
     {
       "scheduled": "2026-09-22T09:15",
-      "expected": "2026-09-22T09:24",
+      "expected": "2026-09-22T09:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -156,19 +136,29 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-22T08:50",
-      "expected": "2026-09-22T09:07",
+      "scheduled": "2026-09-22T09:52",
+      "expected": "2026-09-22T09:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Leeds",
+      "origin": "York",
       "destination": "Plymouth",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
+      "reason": "This service has been delayed by a fault with the signalling system",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-22T09:10",
       "expected": "2026-09-22T09:14",
@@ -181,7 +171,7 @@
     },
     {
       "scheduled": "2026-09-22T09:14",
-      "expected": "2026-09-22T09:23",
+      "expected": "2026-09-22T09:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -248,6 +238,16 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T09:50",
+      "expected": "2026-09-22T09:56",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a fault with the signalling system"
     }
   ]
 }
