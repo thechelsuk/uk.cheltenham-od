@@ -184,6 +184,9 @@ SINGLE_DATE_RE = re.compile(
     rf"\b(\d{{1,2}})(?:st|nd|rd|th)?\s+({MONTH_NAMES})\b",
     flags=re.IGNORECASE,
 )
+# "19/9/26" / "10/10/2026" (UK day/month/year — seen on club sites that write up a
+# race after the fact, e.g. Cheltenham & County Harriers)
+NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})/(\d{1,2})/(\d{2}|\d{4})\b")
 
 
 def _resolve_year(month: int, day: int, today: date) -> int:
@@ -248,6 +251,19 @@ def find_dates_in_text(text: str, today: date) -> list[tuple[date, Optional[date
         month = MONTHS[mon.lower()]
         year = _resolve_year(month, int(d1), today)
         try:
+            start = date(year, month, int(d1))
+        except ValueError:
+            continue
+        found.append((start, None))
+        consumed_spans.append(m.span())
+
+    for m in NUMERIC_DATE_RE.finditer(text):
+        if overlaps_consumed(m.span()):
+            continue
+        d1, mon, yr = m.groups()
+        try:
+            month = int(mon)
+            year = int(yr) if len(yr) == 4 else 2000 + int(yr)
             start = date(year, month, int(d1))
         except ValueError:
             continue
