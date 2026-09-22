@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T11:20:08+01:00",
+  "generated_at": "2026-09-22T11:25:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-22T10:52",
-      "expected": "2026-09-22T11:28",
+      "expected": "2026-09-22T11:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -27,22 +27,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ]
-    },
-    {
-      "scheduled": "2026-09-22T11:15",
-      "expected": "2026-09-22T11:21",
-      "status": "Delayed",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -132,13 +116,13 @@
     },
     {
       "scheduled": "2026-09-22T11:52",
-      "expected": "2026-09-22T11:58",
+      "expected": "2026-09-22T12:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by a late running freight train",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -149,28 +133,39 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T11:59",
+      "expected": "2026-09-22T11:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-22T10:50",
-      "expected": "2026-09-22T11:27",
+      "expected": "2026-09-22T11:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
-      "scheduled": "2026-09-22T11:14",
-      "expected": "2026-09-22T11:20",
-      "status": "Delayed",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
     },
     {
       "scheduled": "2026-09-22T11:21",
@@ -184,7 +179,7 @@
     },
     {
       "scheduled": "2026-09-22T11:26",
-      "expected": "2026-09-22T11:29",
+      "expected": "2026-09-22T11:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -234,12 +229,22 @@
     },
     {
       "scheduled": "2026-09-22T11:51",
-      "expected": "2026-09-22T11:57",
+      "expected": "2026-09-22T12:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
+      "reason": "This service has been delayed by a late running freight train"
+    },
+    {
+      "scheduled": "2026-09-22T11:58",
+      "expected": "2026-09-22T11:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
