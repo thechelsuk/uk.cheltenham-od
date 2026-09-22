@@ -28,6 +28,19 @@ Each Monday morning, one short email built from the same open data that powers t
 
 It is free, it goes out once a week, and you can unsubscribe with one click from any email.
 
+## Past Issues
+
+{% assign issues = site.newsletters | sort: "issue_date" | reverse %}
+{% if issues.size > 0 %}
+<ul>
+    {% for issue in issues %}
+    <li><a href="{{ issue.url }}">{{ issue.title }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+No issues yet — the first one lands soon after sign-up opens.
+{% endif %}
+
 ## Your Email Address
 
 We only use your email address to send you the newsletter and the confirmation link you need to click when you sign up. We don't sell it or share it with anyone, including sponsors. The [privacy policy](/privacy#newsletter) explains exactly what we collect and who handles it for us.

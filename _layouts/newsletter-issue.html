@@ -1,0 +1,20 @@
+{% include header.html %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/newsletter">&larr; Newsletter archive</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Get This Every Monday</h2>
+        {% include newsletter-signup.html source="issue-page" %}
+    </div>
+</div>
+{% include footer.html %}

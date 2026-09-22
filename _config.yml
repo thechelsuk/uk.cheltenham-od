@@ -51,6 +51,9 @@ collections:
   events:
     output: true
     permalink: /events/:title/
+  newsletters:
+    output: true
+    permalink: /newsletter/:title/
 defaults:
   - scope:
       path: ""
@@ -63,6 +66,12 @@ defaults:
     values:
       layout: advert
       robots: "noindex"
+  - scope:
+      path: ""
+      type: newsletters
+    values:
+      layout: newsletter-issue
+      type: "cod"
 
 classified_categories:
   - value: "jobs"

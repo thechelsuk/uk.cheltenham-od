@@ -1,0 +1,75 @@
+---
+name: Scheduled Newsletter Issue
+on:
+    workflow_dispatch:
+    schedule:
+        # Sunday evening UK time, ready to review before Monday morning. This is a fixed
+        # UTC time and drifts an hour either side of 8pm UK clocks across the DST change,
+        # same trade-off the daily news digest makes.
+        - cron: "0 19 * * 0"
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+    pull-requests: read
+    issues: read
+
+jobs:
+    build:
+        outputs:
+            changed: ${{ steps.commit.outputs.changed }}
+            ref: ${{ steps.commit.outputs.ref }}
+        permissions:
+            contents: write
+            pull-requests: read
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out Repo
+              uses: actions/checkout@v7
+
+            - name: Set up Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: 3.13.2
+
+            - uses: actions/cache@v6
+              name: Configure pip Caching
+              with:
+                  path: ~/.cache/pip
+                  key: ${{ runner.os }}-pip-${{ hashFiles('_python/requirements.txt') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pip-
+
+            - name: Install Python Dependencies
+              run: |
+                  python -m pip install -r _python/requirements.txt
+
+            - name: Build next week's newsletter issue
+              run: |-
+                  python '_python/week-ahead.py'
+
+            - name: Commit and push if changed
+              id: commit
+              run: |-
+                  git diff
+                  git config user.name "GitHub Action"
+                  git config user.email "action@github.com"
+                  git add -A
+
+                  if git diff --staged --quiet; then
+                    echo "changed=false" >> "$GITHUB_OUTPUT"
+                    exit 0
+                  fi
+
+                  git commit -m "Chore: Newsletter issue for $(date -d 'next monday' +'%Y-%m-%d')"
+                  git push
+                  echo "changed=true" >> "$GITHUB_OUTPUT"
+                  echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+    deploy:
+        needs: build
+        if: needs.build.outputs.changed == 'true'
+        uses: ./.github/workflows/deploy-pages.yml
+        with:
+            ref: ${{ needs.build.outputs.ref }}
+        secrets: inherit
