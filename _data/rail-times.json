@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:40:08+01:00",
+  "generated_at": "2026-09-22T20:45:12+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,28 +10,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-22T20:41",
-      "expected": "2026-09-22T20:41",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-09-22T20:52",
-      "expected": "2026-09-22T20:52",
-      "status": "On time",
+      "expected": "2026-09-22T20:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -93,8 +74,8 @@
     },
     {
       "scheduled": "2026-09-22T21:12",
-      "expected": "2026-09-22T21:12",
-      "status": "On time",
+      "expected": "2026-09-22T21:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -127,12 +108,12 @@
     {
       "scheduled": "2026-09-22T21:33",
       "expected": null,
-      "status": "Delayed",
+      "status": "Cancelled",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by a gas leak near the railway",
+      "reason": "This service has been cancelled because of a gas leak near the railway",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
@@ -168,12 +149,30 @@
         "University",
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T22:00",
+      "expected": "2026-09-22T22:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-22T20:50",
-      "expected": "2026-09-22T20:52",
+      "expected": "2026-09-22T20:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -193,8 +192,8 @@
     },
     {
       "scheduled": "2026-09-22T21:10",
-      "expected": "2026-09-22T21:10",
-      "status": "On time",
+      "expected": "2026-09-22T21:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -214,12 +213,12 @@
     {
       "scheduled": "2026-09-22T21:33",
       "expected": null,
-      "status": "Delayed",
+      "status": "Cancelled",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by a gas leak near the railway"
+      "reason": "This service has been cancelled because of a gas leak near the railway"
     },
     {
       "scheduled": "2026-09-22T21:50",
@@ -240,6 +239,16 @@
       "origin": "Cardiff Central",
       "destination": "Birmingham New Street",
       "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-09-22T21:59",
+      "expected": "2026-09-22T21:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
     }
   ]
 }
