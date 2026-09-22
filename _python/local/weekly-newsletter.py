@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Interactively build a draft issue of The Cheltenham Week Ahead newsletter.
 
-You run this yourself, whenever you want to prepare the coming week's issue —
-there's no schedule. Most sections read data the site's own fetchers already
+You run this yourself, whenever you want to prepare an issue — there's no
+schedule. The issue covers a rolling 7-day window starting the day you run
+it (today to today + 6), not the calendar Monday-to-Sunday week — otherwise
+running it mid-week produces an issue dated for a week that hasn't started
+yet while every section's actual content (weather, roadworks) is anchored to
+today. Most sections read data the site's own fetchers already
 maintain (weather, roadworks, the news archive) plus the hand-picked venue
 shortlist in newsletter-venues.json. "What's On" reuses
 _python/local/event-roundup.py's own fetch/dedupe/review pipeline (loaded
@@ -17,12 +21,12 @@ slot holding the complete text of the issue (front matter and all), which
 the "Newsletter" tab on /admin shows with a one-click copy. That file is
 gitignored: it's working state for you, not something the site needs to
 ship. To publish a reviewed draft, copy it from /admin and save it yourself
-as _newsletters/<monday>.md, then commit and push — there's no auto-publish
-step, on purpose, so nothing reaches the public /newsletter archive without
-you having looked at it first.
+as _newsletters/<issue-date>.md, then commit and push — there's no
+auto-publish step, on purpose, so nothing reaches the public /newsletter
+archive without you having looked at it first.
 
-    python3 _python/weekly-newsletter.py                        # draft the coming week
-    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft a specific Monday
+    python3 _python/weekly-newsletter.py                        # draft today's 7-day window
+    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft a specific 7-day window
     python3 _python/weekly-newsletter.py --days 45              # widen the events search window
 """
 import argparse
@@ -70,11 +74,6 @@ def load(name):
         return None
     with open(path, encoding="utf-8") as f:
         return json.load(f)
-
-
-def next_monday(today):
-    days_ahead = (7 - today.weekday()) % 7 or 7    # weekday(): Monday == 0
-    return today + timedelta(days=days_ahead)
 
 
 def iso_date(value):
@@ -149,10 +148,8 @@ def existing_issues():
 # --------------------------------------------------------------------------
 
 def weather_section(today):
-    """The next 7 days from the day you actually run this, not the newsletter's Monday-to-Sunday
-    week — otherwise running it a few days before next Monday only catches the tail of the
-    forecast (weather.json only looks ~10 days ahead), and running it a day late shows a week
-    that's already half gone."""
+    """The next 7 days from `today` — weather.json only looks ~10 days ahead, so this stays
+    within its range regardless of which day of the week you run this on."""
     data = load("weather.json")
     if not data:
         return None
@@ -297,24 +294,26 @@ def venue_section(recent_venues):
 
 # --------------------------------------------------------------------------
 
-def build(week_start, since_date, event_days_ahead):
-    week_end = week_start + timedelta(days=6)
-    today = date.today()
+def build(today, since_date, event_days_ahead):
+    """`today` is the first day of the issue's rolling 7-day window — every section (weather,
+    roadworks, title, front matter) is anchored to this one date, so they can never drift apart
+    the way they did when the title used a different date than the content."""
+    week_end = today + timedelta(days=6)
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
 
     whats_on = pick_events(event_days_ahead)
     venue_body, venue_name = venue_section(recent_venues)
 
-    date_range = f"{week_start.strftime('%-d')} to {week_end.strftime('%-d %B %Y')}" \
-        if week_start.month == week_end.month else f"{week_start.strftime('%-d %B')} to {week_end.strftime('%-d %B %Y')}"
+    date_range = f"{today.strftime('%-d')} to {week_end.strftime('%-d %B %Y')}" \
+        if today.month == week_end.month else f"{today.strftime('%-d %B')} to {week_end.strftime('%-d %B %Y')}"
     title = f"The Cheltenham Week Ahead: {date_range}"
     seo = f"This week in Cheltenham, {date_range}: weather, roadworks, events and the week's top local stories."
 
     blocks = [
         f"Good morning! Here's what's happening in Cheltenham from {date_range}.",
         section("Weather for the Next 7 Days", weather_section(today)),
-        section("Roadworks", roadworks_section(week_start, week_end)),
+        section("Roadworks", roadworks_section(today, week_end)),
         section("What's On", whats_on),
         section("New on Cheltenham Open Data", new_on_site_section(since_date)),
         section("This Week's Top Stories", top_stories_section()),
@@ -337,8 +336,8 @@ def build(week_start, since_date, event_days_ahead):
         # the site's Europe/London timezone can register as a little in the future and get
         # silently skipped, right when this is generated and built in the same few minutes.
         f"date: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S %z')}",
-        f"issue_date: {week_start.isoformat()}",
-        f"week_start: {week_start.isoformat()}",
+        f"issue_date: {today.isoformat()}",
+        f"week_start: {today.isoformat()}",
         f"week_end: {week_end.isoformat()}",
         f'venue: "{venue_name or ""}"',
         'type: "cod"',
@@ -349,10 +348,10 @@ def build(week_start, since_date, event_days_ahead):
 
     draft = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "issue_date": week_start.isoformat(),
+        "issue_date": today.isoformat(),
         "title": title,
-        "filename": f"{week_start.isoformat()}.md",
-        "save_as": f"_newsletters/{week_start.isoformat()}.md",
+        "filename": f"{today.isoformat()}.md",
+        "save_as": f"_newsletters/{today.isoformat()}.md",
         "content": full_file,
     }
     DATA.mkdir(exist_ok=True)
@@ -365,18 +364,18 @@ def build(week_start, since_date, event_days_ahead):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--for-date", help="draft a specific Monday (YYYY-MM-DD) instead of the coming one")
+    parser.add_argument("--for-date", help="draft a specific 7-day window starting on this date (YYYY-MM-DD) "
+                                            "instead of the rolling window starting today")
     parser.add_argument("--days", type=int, default=EVENT_DAYS_AHEAD,
                          help=f"how many days ahead to search for events (default {EVENT_DAYS_AHEAD})")
     args = parser.parse_args()
 
-    today = date.today()
-    week_start = date.fromisoformat(args.for_date) if args.for_date else next_monday(today)
+    today = date.fromisoformat(args.for_date) if args.for_date else date.today()
 
     issues = existing_issues()
-    since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else week_start - timedelta(days=7)
+    since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else today - timedelta(days=7)
 
-    build(week_start, since_date, args.days)
+    build(today, since_date, args.days)
 
 
 if __name__ == "__main__":
