@@ -148,11 +148,16 @@ def existing_issues():
 # Sections
 # --------------------------------------------------------------------------
 
-def weather_section(week_start, week_end):
+def weather_section(today):
+    """The next 7 days from the day you actually run this, not the newsletter's Monday-to-Sunday
+    week — otherwise running it a few days before next Monday only catches the tail of the
+    forecast (weather.json only looks ~10 days ahead), and running it a day late shows a week
+    that's already half gone."""
     data = load("weather.json")
     if not data:
         return None
-    days = [d for d in data["days"] if week_start <= iso_date(d["date"]) <= week_end]
+    forecast_end = today + timedelta(days=6)
+    days = [d for d in data["days"] if today <= iso_date(d["date"]) <= forecast_end]
     if not days:
         return None
     rows = []
@@ -227,21 +232,25 @@ def pick_events(days_ahead):
     return "\n".join(lines)
 
 
-def new_on_site_section(since):
+def new_on_site_section(since, min_items=3):
+    """Everything posted since the last issue — but if a quiet week leaves fewer than
+    min_items, keep going back further rather than publish a thin (or empty) section."""
     posts_dir = ROOT / "_posts"
-    items = []
+    all_posts = []
     for path in sorted(posts_dir.glob("*.md")):
         m = re.match(r"(\d{4}-\d{2}-\d{2})-(.+)\.md$", path.name)
         if not m:
             continue
         post_date = date.fromisoformat(m.group(1))
-        if post_date <= since:
-            continue
         title = re.search(r'^title:\s*"?(.*?)"?\s*$', path.read_text(encoding="utf-8"), re.M)
-        items.append((post_date, title.group(1) if title else m.group(2), f"{SITE_URL}/news/{m.group(2)}"))
-    if not items:
+        all_posts.append((post_date, title.group(1) if title else m.group(2), f"{SITE_URL}/news/{m.group(2)}"))
+    if not all_posts:
         return None
-    items.sort(reverse=True)
+    all_posts.sort(reverse=True)
+
+    items = [p for p in all_posts if p[0] > since]
+    if len(items) < min_items:
+        items = all_posts[:min_items]
     return "\n".join(f"- [{md_escape(title)}]({link})" for _, title, link in items)
 
 
@@ -289,6 +298,7 @@ def venue_section(recent_venues):
 
 def build(week_start, since_date, event_days_ahead):
     week_end = week_start + timedelta(days=6)
+    today = date.today()
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
 
@@ -302,7 +312,7 @@ def build(week_start, since_date, event_days_ahead):
 
     blocks = [
         f"Good morning! Here's what's happening in Cheltenham from {date_range}.",
-        section("This Week's Weather", weather_section(week_start, week_end)),
+        section("Weather for the Next 7 Days", weather_section(today)),
         section("Roadworks", roadworks_section(week_start, week_end)),
         section("What's On", whats_on),
         section("New on Cheltenham Open Data", new_on_site_section(since_date)),
