@@ -271,9 +271,9 @@ def find_dates_in_text(text: str, today: date) -> list[tuple[date, Optional[date
         consumed_spans.append(m.span())
 
     # Keep original left-to-right order of appearance in the text.
-    found_with_pos = []
-    for start, end in found:
-        found_with_pos.append((start, end))
+    found_with_pos: list[tuple[date, Optional[date]]] = []
+    for found_start, found_end in found:
+        found_with_pos.append((found_start, found_end))
     return found_with_pos
 
 
@@ -476,10 +476,10 @@ def create_front_matter(post_date: date, events: list[Event]) -> str:
         "layout: posts",
         f"title: \"{title}\"",
         f"date: {post_date.isoformat()}",
-        f"type: news",
-        f"description: \"A curated list of what's up and coming in Cheltenham in the next month or so.\"",
-        f"seo: \"A curated list of what's on in Cheltenham in the next month or so.\"",
-        f"categories: [events]",
+        "type: news",
+        "description: \"A curated list of what's up and coming in Cheltenham in the next month or so.\"",
+        "seo: \"A curated list of what's on in Cheltenham in the next month or so.\"",
+        "categories: [events]",
         "---",
     ]
     return "\n".join(lines)
@@ -501,9 +501,11 @@ def build_post_body(events: list[Event]) -> str:
     events_sorted = sorted(events, key=lambda e: (e.event_date or date.max, e.title))
 
     blocks: list[str] = []
-    current_date = None
+    current_date: Optional[date] = None
 
     for ev in events_sorted:
+        if ev.event_date is None:
+            continue  # fetch_events() never keeps an undated event, but keep mypy honest
         if ev.event_date != current_date:
             current_date = ev.event_date
             blocks.append(f"## {current_date.strftime('%A %d %B')}")
