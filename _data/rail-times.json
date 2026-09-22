@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T10:45:08+01:00",
+  "generated_at": "2026-09-22T10:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,47 +10,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-22T10:40",
-      "expected": "2026-09-22T10:46",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a speed restriction over defective track",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-09-22T10:40",
-      "expected": "2026-09-22T10:46",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-09-22T10:45",
-      "expected": "2026-09-22T10:45",
-      "status": "On time",
+      "expected": "2026-09-22T10:50",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -64,7 +26,7 @@
     },
     {
       "scheduled": "2026-09-22T10:52",
-      "expected": "2026-09-22T11:18",
+      "expected": "2026-09-22T11:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -208,23 +170,27 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T11:29",
+      "expected": "2026-09-22T11:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-22T10:38",
-      "expected": "2026-09-22T10:42",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-22T10:44",
-      "expected": "2026-09-22T10:44",
-      "status": "On time",
+      "expected": "2026-09-22T10:48",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -233,7 +199,7 @@
     },
     {
       "scheduled": "2026-09-22T10:50",
-      "expected": "2026-09-22T11:17",
+      "expected": "2026-09-22T11:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -289,6 +255,26 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T11:26",
+      "expected": "2026-09-22T11:26",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T11:27",
+      "expected": "2026-09-22T11:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
