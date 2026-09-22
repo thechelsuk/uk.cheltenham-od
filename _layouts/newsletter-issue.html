@@ -11,10 +11,18 @@
 
         {% include sponsor.html %}
 
-        {{ content }}
+        <p>
+            <button type="button" id="newsletter-copy-btn" class="button">Copy for Buttondown</button>
+            <span id="newsletter-copy-status" role="status" hidden></span>
+        </p>
+
+        <div id="newsletter-body">
+            {{ content }}
+        </div>
 
         <h2>Get This Every Monday</h2>
         {% include newsletter-signup.html source="issue-page" %}
     </div>
 </div>
+<script src="/assets/scripts/newsletter-copy.js"></script>
 {% include footer.html %}

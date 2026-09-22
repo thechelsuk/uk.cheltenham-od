@@ -21,7 +21,7 @@ Sign-up opens soon.
 
 Each Monday morning, one short email built from the same open data that powers this site:
 
-- **This week in Cheltenham:** the forecast, roadworks and disruption, and what's on.
+- **This week in Cheltenham:** the forecast, roadworks, and what's on this week and later in the month.
 - **New on the site:** new pages and refreshed data, so you know what has changed.
 - **The week's top stories:** a handful of local headlines, each with a line of context and a link to the original.
 - **Somewhere to eat:** one place to try, picked from local venues.
@@ -30,7 +30,10 @@ It is free, it goes out once a week, and you can unsubscribe with one click from
 
 ## Past Issues
 
-{% assign issues = site.newsletters | sort: "issue_date" | reverse %}
+{% assign issues = site.newsletters %}
+{% if issues %}
+{% assign issues = issues | sort: "issue_date" | reverse %}
+{% endif %}
 {% if issues.size > 0 %}
 <ul>
     {% for issue in issues %}
