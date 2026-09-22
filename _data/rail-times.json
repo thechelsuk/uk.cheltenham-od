@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:10:13+01:00",
+  "generated_at": "2026-09-22T20:15:13+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,28 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-22T20:12",
-      "expected": "2026-09-22T20:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
     {
       "scheduled": "2026-09-22T20:15",
       "expected": null,
@@ -107,7 +85,7 @@
       "scheduled": "2026-09-22T21:02",
       "expected": "2026-09-22T21:02",
       "status": "On time",
-      "platform": "1",
+      "platform": "",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
       "destination": "London Paddington",
@@ -159,19 +137,28 @@
         "Worcestershire Parkway",
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T21:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-22T20:10",
-      "expected": "2026-09-22T20:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-22T20:14",
       "expected": null,
@@ -241,6 +228,16 @@
       "origin": "Plymouth",
       "destination": "Birmingham New Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T21:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
