@@ -286,9 +286,16 @@
                 font-weight: 600
             }
 
+            /* Same fix as .info-card__icon on the home page: a shadow gives OpenWeatherMap's
+               pale cloud icons an edge to read against on a light card. */
             .wx-icon {
                 display: block;
-                margin: 0 auto
+                margin: 0 auto;
+                filter: drop-shadow(0 1px 2px rgb(0 0 0 / 35%))
+            }
+
+            [data-theme="dark"] .wx-icon {
+                filter: drop-shadow(0 1px 2px rgb(0 0 0 / 60%)) drop-shadow(0 0 1px rgb(255 255 255 / 30%))
             }
 
             .wx-desc {
