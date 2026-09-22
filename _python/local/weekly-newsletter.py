@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Interactively build a draft issue of The Cheltenham Week Ahead newsletter.
 
-You run this yourself, whenever you want to prepare the coming week's issue —
-there's no schedule. Most sections read data the site's own fetchers already
+You run this yourself, whenever you want to prepare an issue — there's no
+schedule. The issue covers a rolling 7-day window starting the day you run
+it (today to today + 6), not the calendar Monday-to-Sunday week — otherwise
+running it mid-week produces an issue dated for a week that hasn't started
+yet while every section's actual content (weather, roadworks) is anchored to
+today. Most sections read data the site's own fetchers already
 maintain (weather, roadworks, the news archive) plus the hand-picked venue
 shortlist in newsletter-venues.json. "What's On" reuses
 _python/local/event-roundup.py's own fetch/dedupe/review pipeline (loaded
@@ -17,12 +21,12 @@ slot holding the complete text of the issue (front matter and all), which
 the "Newsletter" tab on /admin shows with a one-click copy. That file is
 gitignored: it's working state for you, not something the site needs to
 ship. To publish a reviewed draft, copy it from /admin and save it yourself
-as _newsletters/<monday>.md, then commit and push — there's no auto-publish
-step, on purpose, so nothing reaches the public /newsletter archive without
-you having looked at it first.
+as _newsletters/<issue-date>.md, then commit and push — there's no
+auto-publish step, on purpose, so nothing reaches the public /newsletter
+archive without you having looked at it first.
 
-    python3 _python/weekly-newsletter.py                        # draft the coming week
-    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft a specific Monday
+    python3 _python/weekly-newsletter.py                        # draft today's 7-day window
+    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft a specific 7-day window
     python3 _python/weekly-newsletter.py --days 45              # widen the events search window
 """
 import argparse
@@ -70,11 +74,6 @@ def load(name):
         return None
     with open(path, encoding="utf-8") as f:
         return json.load(f)
-
-
-def next_monday(today):
-    days_ahead = (7 - today.weekday()) % 7 or 7    # weekday(): Monday == 0
-    return today + timedelta(days=days_ahead)
 
 
 def iso_date(value):
@@ -149,10 +148,8 @@ def existing_issues():
 # --------------------------------------------------------------------------
 
 def weather_section(today):
-    """The next 7 days from the day you actually run this, not the newsletter's Monday-to-Sunday
-    week — otherwise running it a few days before next Monday only catches the tail of the
-    forecast (weather.json only looks ~10 days ahead), and running it a day late shows a week
-    that's already half gone."""
+    """The next 7 days from `today` — weather.json only looks ~10 days ahead, so this stays
+    within its range regardless of which day of the week you run this on."""
     data = load("weather.json")
     if not data:
         return None
@@ -365,13 +362,14 @@ def build(week_start, since_date, event_days_ahead):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--for-date", help="draft a specific Monday (YYYY-MM-DD) instead of the coming one")
+    parser.add_argument("--for-date", help="draft a specific 7-day window starting on this date (YYYY-MM-DD) "
+                                            "instead of the rolling window starting today")
     parser.add_argument("--days", type=int, default=EVENT_DAYS_AHEAD,
                          help=f"how many days ahead to search for events (default {EVENT_DAYS_AHEAD})")
     args = parser.parse_args()
 
     today = date.today()
-    week_start = date.fromisoformat(args.for_date) if args.for_date else next_monday(today)
+    week_start = date.fromisoformat(args.for_date) if args.for_date else today
 
     issues = existing_issues()
     since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else week_start - timedelta(days=7)
