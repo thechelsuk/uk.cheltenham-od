@@ -61,6 +61,7 @@ jobs:
                   python '_python/nhs-ae.py' || echo "::warning::nhs-ae.py failed, continuing with other scripts"
                   python '_python/ev-charging.py' || echo "::warning::ev-charging.py failed, continuing with other scripts"
                   python '_python/traffic.py' || echo "::warning::traffic.py failed, continuing with other scripts"
+                  python '_python/sport-fixtures.py' || echo "::warning::sport-fixtures.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit
