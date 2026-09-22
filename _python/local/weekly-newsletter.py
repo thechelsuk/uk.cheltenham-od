@@ -289,8 +289,8 @@ def venue_section(recent_venues):
     maps_url = f"https://www.google.com/maps/search/?api=1&query={venue['lat']},{venue['lon']}"
     body = (
         "Each week we pick a local eatery at random from around the area. "
-        f"This week, why not try **{md_escape(venue['name'])}**, located at "
-        f"{md_escape(venue['address'])}. [Check opening hours on Google Maps]({maps_url})."
+        f"This week, why not try **[{md_escape(venue['name'])}]({maps_url})**, located at "
+        f"{md_escape(venue['address'])}. [Check for opening hours]({maps_url})."
     )
     return body, venue["name"]
 
