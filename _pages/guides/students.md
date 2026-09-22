@@ -40,7 +40,7 @@ Cheltenham punches above its weight for food and nightlife, and a lot of it is s
 - [Where to eat in Cheltenham](/cheltenham-where-to-eat) — cafés, pubs, takeaways and restaurants on a map, with official hygiene ratings.
 - [Five-star food hygiene ratings](/cheltenham-food-standards/rated-five) — the cafés, takeaways and restaurants with top ratings.
 - [Third spaces in Cheltenham](/cheltenham-third-spaces) — places to work, study or hang out that aren't home or a lecture hall.
-- [What's on in Cheltenham](/cheltenham-events) — gigs, markets and the town's festivals through the year.
+- [The Cheltenham Week Ahead](/newsletter) — a free weekly newsletter covering gigs, markets and what's on.
 - [Points of interest](/cheltenham-points-of-interest) — museums, parks and historic spots for when family visit.
 
 ## On a Budget

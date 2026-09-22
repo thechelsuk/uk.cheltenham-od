@@ -42,4 +42,4 @@ Planning a day out, a weekend or a festival trip? This guide covers where to sta
 
 - [Read the visiting Cheltenham guide](/visiting-cheltenham)
 - [Points of interest in and around Cheltenham](/cheltenham-points-of-interest)
-- [What's on in Cheltenham](/cheltenham-events)
+- [What's on in Cheltenham](/newsletter) — sign up for the weekly newsletter

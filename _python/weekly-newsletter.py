@@ -1,33 +1,32 @@
 #!/usr/bin/env python3
-"""Build a draft issue of The Cheltenham Week Ahead newsletter for review.
+"""Interactively build a draft issue of The Cheltenham Week Ahead newsletter.
 
-Nothing is fetched — every section reads data the site's own fetchers
-already maintain (weather, roadworks, the news archive, the latest curated
-events post) plus the hand-picked venue shortlist in newsletter-venues.json.
-Nothing is published either: this writes _data/newsletter-draft.json, a
-single scratch slot holding the complete text of one issue (front matter and
-all), which the "Newsletter" tab on /admin shows with a one-click copy. This
-is deliberately not the finished newsletter — "What's On" in particular is
-just a list of candidates for you to pick from, not events chosen for you.
+You run this yourself, whenever you want to prepare the coming week's issue —
+there's no schedule. Most sections read data the site's own fetchers already
+maintain (weather, roadworks, the news archive) plus the hand-picked venue
+shortlist in newsletter-venues.json. "What's On" reuses
+_python/local/event-roundup.py's own fetch/dedupe/review pipeline (loaded
+directly, not reimplemented — it already does real text-based event-date
+extraction, fuzzy deduplication across feeds and a proper terminal checkbox
+review) to fetch _data/event-sources.yml live and ask you which events to
+include, formatting your picks into the issue instead of writing its usual
+_events/*.md post.
 
-To publish a reviewed draft, copy it from /admin and save it yourself as
-_newsletters/<monday>.md (VS Code, the GitHub web editor, whatever's
-convenient) — there's no auto-publish step, on purpose, so nothing reaches
-the public /newsletter archive without you having looked at it first.
+Nothing is published. This writes _data/newsletter-draft.json — one scratch
+slot holding the complete text of the issue (front matter and all), which
+the "Newsletter" tab on /admin shows with a one-click copy. That file is
+gitignored: it's working state for you, not something the site needs to
+ship. To publish a reviewed draft, copy it from /admin and save it yourself
+as _newsletters/<monday>.md, then commit and push — there's no auto-publish
+step, on purpose, so nothing reaches the public /newsletter archive without
+you having looked at it first.
 
-Bus disruptions, power cuts and flood warnings are deliberately left out of
-the roadworks section — those are breaking-news timescales (minutes to
-days), not something anyone can know on a Sunday night for the Thursday
-after. Roadworks are kept because they're planned weeks or months ahead,
-which does suit a week-ahead email.
-
-Run manually or from the Sunday-evening schedule workflow, which commits the
-refreshed draft the same way the site's other scheduled fetchers commit data:
-
-    python3 _python/week-ahead.py                        # draft the coming week
-    python3 _python/week-ahead.py --for-date 2026-10-05   # draft a specific Monday
+    python3 _python/weekly-newsletter.py                        # draft the coming week
+    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft a specific Monday
+    python3 _python/weekly-newsletter.py --days 45              # widen the events search window
 """
 import argparse
+import importlib.util
 import json
 import random
 import re
@@ -39,11 +38,28 @@ ROOT = helper.repo_root()
 DATA = ROOT / "_data"
 OUT_DIR = ROOT / "_newsletters"          # published issues live here, but this script never writes to it
 DRAFT_PATH = DATA / "newsletter-draft.json"
+SITE_URL = helper.site_url()             # links in the draft must resolve outside the site, e.g. in an email
 
 TOP_STORIES = 4
 MAX_ROADWORKS = 5
-SELF_SOURCE = "Cheltenham OD News"          # our own posts, already covered by "New on the site"
-VENUE_REPEAT_GAP = 8                        # issues to avoid repeating a venue within
+EVENT_DAYS_AHEAD = 28                    # a weekly issue doesn't need event-roundup's own 60-day default
+SELF_SOURCE = "Cheltenham OD News"       # our own posts, already covered by "New on the site"
+VENUE_REPEAT_GAP = 8                     # issues to avoid repeating a venue within
+
+
+def load_event_roundup():
+    """_python/local/event-roundup.py, imported by path — its filename has a hyphen, so it can't
+    be a normal `import`."""
+    import sys
+
+    path = ROOT / "_python" / "local" / "event-roundup.py"
+    spec = importlib.util.spec_from_file_location("event_roundup", path)
+    module = importlib.util.module_from_spec(spec)
+    # dataclasses looks itself up via sys.modules[cls.__module__] while the class body runs, so
+    # the module must be registered before exec_module(), not after.
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
 
 
 def load(name):
@@ -164,65 +180,48 @@ def roadworks_section(week_start, week_end):
     for r in active[:MAX_ROADWORKS]:
         roads = "/".join(r.get("roads") or []) or "Nearby road"
         lines.append(f"- **{md_escape(roads)}** — {clean_prose(trim(r['description'], 140))}")
-    lines.append("\nSee [roadworks](/cheltenham-roadworks) for the full picture, including anything "
+    lines.append(f"\nSee [roadworks]({SITE_URL}/cheltenham-roadworks) for the full picture, including anything "
                   "that comes up at shorter notice during the week.")
     return "\n".join(lines)
 
 
-def parse_events_file():
-    """[{date, title, description, source_name, source_url}] from the most recent curated
-    'Upcoming Events' post, sorted by date. Each event there is two bullets: a description, then
-    "More info at [site](url)." — the closest thing to a venue this source gives us; it's the
-    feed the event came from, not necessarily where it's held, so it's offered as a lead to
-    follow up on, not stated as the venue."""
-    files = sorted((ROOT / "_events").glob("*.md"), reverse=True)
-    if not files:
-        return []
-    text = files[0].read_text(encoding="utf-8")
-    body = text.split("---", 2)[2] if text.startswith("---") else text
-    day_blocks = re.split(r"^## (.+)$", body, flags=re.M)[1:]   # alternating heading, content
-    events = []
-    for heading, day_content in zip(day_blocks[0::2], day_blocks[1::2]):
-        try:
-            event_date = datetime.strptime(f"{heading.strip()} {date.today().year}", "%A %d %B %Y").date()
-        except ValueError:
-            continue
-        # The post has no year in its day headings, and can span a New Year; a date that reads as
-        # months in the past is next year's, not this one.
-        if event_date < date.today() - timedelta(days=180):
-            event_date = event_date.replace(year=event_date.year + 1)
-        for title, content in re.findall(r"^### (.+)$\n((?:(?!^##).*\n?)*)", day_content, re.M):
-            desc = re.search(r"^- (.+)$", content, re.M)
-            link = re.search(r"More info at \[([^\]]+)\]\(([^)]+)\)", content)
-            events.append({
-                "date": event_date,
-                "title": title.strip(),
-                "description": desc.group(1).strip() if desc else "",
-                "source_name": link.group(1) if link else "",
-                "source_url": link.group(2) if link else "",
-            })
-    events.sort(key=lambda e: e["date"])
-    return events
+# --------------------------------------------------------------------------
+# Events — event-roundup.py's own fetch/dedupe/review pipeline, reused as-is
+# --------------------------------------------------------------------------
 
+def pick_events(days_ahead):
+    """Run event-roundup's fetch → dedupe → terminal checkbox review, then format whatever you
+    selected as 'What's On' markdown. Returns None if you selected nothing."""
+    event_roundup = load_event_roundup()
 
-def events_candidates_comment(week_start):
-    """An HTML comment listing every upcoming event with what detail is available, for you to
-    pick from by hand — see the module docstring for why this isn't auto-picked into the email."""
-    events = [e for e in parse_events_file() if e["date"] >= week_start]
-    if not events:
+    sources = event_roundup.load_sources(DATA / "event-sources.yml")
+    print(f"{len(sources)} event source(s) loaded.\n")
+    print("Fetching feeds:")
+    raw_events = event_roundup.fetch_events(sources, days_ahead)
+    print(f"\n{len(raw_events)} total candidate(s) before dedupe.")
+
+    unique_events, flagged = event_roundup.dedupe(raw_events)
+    print(f"{len(unique_events)} unique event(s) after fuzzy dedupe.")
+    event_roundup.show_flagged(flagged)
+
+    selected = event_roundup.review_events(unique_events)
+    if not selected:
         return None
-    lines = ["<!-- Event candidates from the latest 'Upcoming Events' post — pick a handful for",
-             "     above, skip duplicates and anything recurring you've covered recently, and",
-             "     drop anything with no useful detail below. Delete this whole comment once",
-             "     you're done; nothing in it is shown to readers."]
-    for e in events:
-        bits = [e["date"].strftime("%a %-d %b"), e["title"]]
-        if e["description"]:
-            bits.append(trim(e["description"], 140))
-        if e["source_name"]:
-            bits.append(f"more info: {e['source_name']} {e['source_url']}")
-        lines.append("     - " + " | ".join(bits))
-    lines.append("-->")
+
+    lines = []
+    for ev in sorted(selected, key=lambda e: (e.event_date or date.max, e.title)):
+        bit = f"- **{ev.date_label()}:** {md_escape(ev.title)}"
+        detail = []
+        if ev.venue:
+            detail.append(md_escape(ev.venue))
+        if ev.description:
+            detail.append(clean_prose(trim(ev.description, 120)))
+        if detail:
+            bit += " — " + "; ".join(detail)
+        if ev.link:
+            source_name = event_roundup.extract_source_name(ev.link, ev.source_id)
+            bit += f" ([{md_escape(source_name)}]({ev.link}))"
+        lines.append(bit)
     return "\n".join(lines)
 
 
@@ -237,7 +236,7 @@ def new_on_site_section(since):
         if post_date <= since:
             continue
         title = re.search(r'^title:\s*"?(.*?)"?\s*$', path.read_text(encoding="utf-8"), re.M)
-        items.append((post_date, title.group(1) if title else m.group(2), f"/news/{m.group(2)}"))
+        items.append((post_date, title.group(1) if title else m.group(2), f"{SITE_URL}/news/{m.group(2)}"))
     if not items:
         return None
     items.sort(reverse=True)
@@ -286,19 +285,12 @@ def venue_section(recent_venues):
 
 # --------------------------------------------------------------------------
 
-def build(week_start, since_date):
+def build(week_start, since_date, event_days_ahead):
     week_end = week_start + timedelta(days=6)
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
 
-    whats_on = ("*Pick this week's events by hand — see [Cheltenham events](/cheltenham-events) "
-                "for everything on, or the candidates below in an editing comment (not shown to "
-                "readers). Skip anything recurring you've mentioned recently, and leave out "
-                "anything without a time or venue worth telling people.*")
-    events_comment = events_candidates_comment(week_start)
-    if events_comment:
-        whats_on += f"\n\n{events_comment}"
-
+    whats_on = pick_events(event_days_ahead)
     venue_body, venue_name = venue_section(recent_venues)
 
     date_range = f"{week_start.strftime('%-d')} to {week_end.strftime('%-d %B %Y')}" \
@@ -314,13 +306,13 @@ def build(week_start, since_date):
         section("New on Cheltenham Open Data", new_on_site_section(since_date)),
         section("This Week's Top Stories", top_stories_section()),
         section("Somewhere to Eat", venue_body),
-        "---\n\nThat's the week ahead. Missed an issue? The [newsletter archive](/newsletter) has "
-        "every one, and you can read the day's headlines any time on [Cheltenham Open Data](/).",
+        f"---\n\nThat's the week ahead. Missed an issue? The [newsletter archive]({SITE_URL}/newsletter) has "
+        f"every one, and you can read the day's headlines any time on [Cheltenham Open Data]({SITE_URL}/).",
     ]
     body = "\n\n".join(b for b in blocks if b) + "\n"
 
-    # This exact text is what a reviewer copies from /admin and saves as _newsletters/<monday>.md
-    # to publish it — so it needs to be the complete, valid file, front matter included.
+    # This exact text is what you copy from /admin and save as _newsletters/<monday>.md to
+    # publish it — so it needs to be the complete, valid file, front matter included.
     full_file = "\n".join([
         "---",
         "layout: newsletter-issue",
@@ -354,13 +346,15 @@ def build(week_start, since_date):
     with open(DRAFT_PATH, "w", encoding="utf-8") as f:
         json.dump(draft, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    print(f"Wrote {DRAFT_PATH.relative_to(ROOT)} — review and copy it from /admin, "
+    print(f"\nWrote {DRAFT_PATH.relative_to(ROOT)} — review and copy it from /admin, "
           f"save as {draft['save_as']} to publish")
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--for-date", help="draft a specific Monday (YYYY-MM-DD) instead of the coming one")
+    parser.add_argument("--days", type=int, default=EVENT_DAYS_AHEAD,
+                         help=f"how many days ahead to search for events (default {EVENT_DAYS_AHEAD})")
     args = parser.parse_args()
 
     today = date.today()
@@ -369,7 +363,7 @@ def main():
     issues = existing_issues()
     since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else week_start - timedelta(days=7)
 
-    build(week_start, since_date)
+    build(week_start, since_date, args.days)
 
 
 if __name__ == "__main__":

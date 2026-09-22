@@ -30,7 +30,7 @@ Live, hand-checked data on the things that matter locally, across Cheltenham and
 
 ### What Is Happening
 
-[Latest News](/cheltenham-news), [Events](/cheltenham-events), [Planning Applications](/cheltenham-planning-applications), [Weekly Newsletter](/newsletter)
+[Latest News](/cheltenham-news), [Planning Applications](/cheltenham-planning-applications), [Weekly Newsletter](/newsletter)
 
 ### Community Tools
 

@@ -32,7 +32,7 @@
 <p class="info-text">
     Title length is the title tag Google sees, which is <code>seo_title</code> if set, otherwise the page title, with no site name suffix. Thresholds: title 30&ndash;60 characters,
     description 70&ndash;160 characters. Rows with noindex are shown greyed out since their title/description length
-    doesn't affect search results. Pages, news posts, events and classifieds are all listed; a post dated in the future
+    doesn't affect search results. Pages, news posts, newsletter issues and classifieds are all listed; a post dated in the future
     only appears once its date has passed, or when the site is served with <code>--future</code>.
 </p>
 
@@ -51,7 +51,7 @@
         </thead>
         <tbody>
             {% assign seo_pages = site.pages | concat: site.posts %}
-            {% assign seo_pages = seo_pages | concat: site.events %}
+            {% assign seo_pages = seo_pages | concat: site.newsletters %}
             {% assign seo_pages = seo_pages | concat: site.classifieds %}
             {% assign seo_pages = seo_pages | where_exp: "p", "p.title" | sort_natural: "title" %}
             {% for page in seo_pages %}
@@ -74,7 +74,7 @@
             <tr{% if is_noindex %} style="opacity: .55;"{% endif %}>
                 <td data-val="{{ page.title | downcase | escape }}"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></td>
                 {% assign kind = "Page" %}
-                {% if page.collection == "posts" %}{% assign kind = "News" %}{% elsif page.collection == "events" %}{% assign kind = "Event" %}{% elsif page.collection == "classifieds" %}{% assign kind = "Classified" %}{% endif %}
+                {% if page.collection == "posts" %}{% assign kind = "News" %}{% elsif page.collection == "newsletters" %}{% assign kind = "Newsletter" %}{% elsif page.collection == "classifieds" %}{% assign kind = "Classified" %}{% endif %}
                 <td data-val="{{ kind | downcase }}">{{ kind }}</td>
                 <td data-val="{% if is_noindex %}0{% else %}1{% endif %}">
                     {% if is_noindex %}<span class="status status-noindex">Noindex</span>{% else %}<span class="status status-ok">Index</span>{% endif %}

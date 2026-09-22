@@ -49,7 +49,7 @@ Sorting the practical basics early makes a move smoother — registering with a 
 Once you've arrived, the fun part — finding your way around and settling in.
 
 - [Points of interest in and around Cheltenham](/cheltenham-points-of-interest) — museums, historic sites, parks and more, with map links.
-- [What's on in Cheltenham](/cheltenham-events) — local events and the town's festival calendar.
+- [The Cheltenham Week Ahead](/newsletter) — a free weekly newsletter covering local events and what's on.
 - [Food hygiene ratings](/cheltenham-food-standards) — official ratings for local restaurants, cafés and takeaways.
 
 ## Useful Local Contacts
