@@ -46,7 +46,7 @@
     text-decoration: none;
     white-space: nowrap;
     background: color-mix(in srgb, var(--pill-color) 16%, var(--bg-raised));
-    color: var(--pill-color);
+    color: color-mix(in srgb, var(--pill-color) 50%, var(--text));
 }
 
 .news-pill-tag:hover {
