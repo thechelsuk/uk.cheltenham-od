@@ -249,6 +249,19 @@
         </article>
 
         <style>
+            /* Card, muted-text and temperature colours follow the site's light and dark tokens. */
+            .wx {
+                --wx-card-bg: var(--bg-alt);
+                --wx-border: var(--border);
+                --wx-muted: var(--text-secondary);
+                --wx-track: var(--border);
+                --wx-min: #0773ac;
+                --wx-max: #c04212
+            }
+            [data-theme="dark"] .wx {
+                --wx-min: #4aa3df;
+                --wx-max: #e6653b
+            }
             .wx-grid {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -308,11 +321,11 @@
             }
 
             .wx-min {
-                color: #4aa3df
+                color: var(--wx-min)
             }
 
             .wx-max {
-                color: #e6653b
+                color: var(--wx-max)
             }
 
             .wx-pop {
