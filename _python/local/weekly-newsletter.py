@@ -294,24 +294,26 @@ def venue_section(recent_venues):
 
 # --------------------------------------------------------------------------
 
-def build(week_start, since_date, event_days_ahead):
-    week_end = week_start + timedelta(days=6)
-    today = date.today()
+def build(today, since_date, event_days_ahead):
+    """`today` is the first day of the issue's rolling 7-day window — every section (weather,
+    roadworks, title, front matter) is anchored to this one date, so they can never drift apart
+    the way they did when the title used a different date than the content."""
+    week_end = today + timedelta(days=6)
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
 
     whats_on = pick_events(event_days_ahead)
     venue_body, venue_name = venue_section(recent_venues)
 
-    date_range = f"{week_start.strftime('%-d')} to {week_end.strftime('%-d %B %Y')}" \
-        if week_start.month == week_end.month else f"{week_start.strftime('%-d %B')} to {week_end.strftime('%-d %B %Y')}"
+    date_range = f"{today.strftime('%-d')} to {week_end.strftime('%-d %B %Y')}" \
+        if today.month == week_end.month else f"{today.strftime('%-d %B')} to {week_end.strftime('%-d %B %Y')}"
     title = f"The Cheltenham Week Ahead: {date_range}"
     seo = f"This week in Cheltenham, {date_range}: weather, roadworks, events and the week's top local stories."
 
     blocks = [
         f"Good morning! Here's what's happening in Cheltenham from {date_range}.",
         section("Weather for the Next 7 Days", weather_section(today)),
-        section("Roadworks", roadworks_section(week_start, week_end)),
+        section("Roadworks", roadworks_section(today, week_end)),
         section("What's On", whats_on),
         section("New on Cheltenham Open Data", new_on_site_section(since_date)),
         section("This Week's Top Stories", top_stories_section()),
@@ -334,8 +336,8 @@ def build(week_start, since_date, event_days_ahead):
         # the site's Europe/London timezone can register as a little in the future and get
         # silently skipped, right when this is generated and built in the same few minutes.
         f"date: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S %z')}",
-        f"issue_date: {week_start.isoformat()}",
-        f"week_start: {week_start.isoformat()}",
+        f"issue_date: {today.isoformat()}",
+        f"week_start: {today.isoformat()}",
         f"week_end: {week_end.isoformat()}",
         f'venue: "{venue_name or ""}"',
         'type: "cod"',
@@ -346,10 +348,10 @@ def build(week_start, since_date, event_days_ahead):
 
     draft = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "issue_date": week_start.isoformat(),
+        "issue_date": today.isoformat(),
         "title": title,
-        "filename": f"{week_start.isoformat()}.md",
-        "save_as": f"_newsletters/{week_start.isoformat()}.md",
+        "filename": f"{today.isoformat()}.md",
+        "save_as": f"_newsletters/{today.isoformat()}.md",
         "content": full_file,
     }
     DATA.mkdir(exist_ok=True)
@@ -368,13 +370,12 @@ def main():
                          help=f"how many days ahead to search for events (default {EVENT_DAYS_AHEAD})")
     args = parser.parse_args()
 
-    today = date.today()
-    week_start = date.fromisoformat(args.for_date) if args.for_date else today
+    today = date.fromisoformat(args.for_date) if args.for_date else date.today()
 
     issues = existing_issues()
-    since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else week_start - timedelta(days=7)
+    since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else today - timedelta(days=7)
 
-    build(week_start, since_date, args.days)
+    build(today, since_date, args.days)
 
 
 if __name__ == "__main__":
