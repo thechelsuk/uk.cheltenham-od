@@ -184,6 +184,9 @@ SINGLE_DATE_RE = re.compile(
     rf"\b(\d{{1,2}})(?:st|nd|rd|th)?\s+({MONTH_NAMES})\b",
     flags=re.IGNORECASE,
 )
+# "19/9/26" / "10/10/2026" (UK day/month/year — seen on club sites that write up a
+# race after the fact, e.g. Cheltenham & County Harriers)
+NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})/(\d{1,2})/(\d{2}|\d{4})\b")
 
 
 def _resolve_year(month: int, day: int, today: date) -> int:
@@ -254,10 +257,23 @@ def find_dates_in_text(text: str, today: date) -> list[tuple[date, Optional[date
         found.append((start, None))
         consumed_spans.append(m.span())
 
+    for m in NUMERIC_DATE_RE.finditer(text):
+        if overlaps_consumed(m.span()):
+            continue
+        d1, mon, yr = m.groups()
+        try:
+            month = int(mon)
+            year = int(yr) if len(yr) == 4 else 2000 + int(yr)
+            start = date(year, month, int(d1))
+        except ValueError:
+            continue
+        found.append((start, None))
+        consumed_spans.append(m.span())
+
     # Keep original left-to-right order of appearance in the text.
-    found_with_pos = []
-    for start, end in found:
-        found_with_pos.append((start, end))
+    found_with_pos: list[tuple[date, Optional[date]]] = []
+    for found_start, found_end in found:
+        found_with_pos.append((found_start, found_end))
     return found_with_pos
 
 
@@ -460,10 +476,10 @@ def create_front_matter(post_date: date, events: list[Event]) -> str:
         "layout: posts",
         f"title: \"{title}\"",
         f"date: {post_date.isoformat()}",
-        f"type: news",
-        f"description: \"A curated list of what's up and coming in Cheltenham in the next month or so.\"",
-        f"seo: \"A curated list of what's on in Cheltenham in the next month or so.\"",
-        f"categories: [events]",
+        "type: news",
+        "description: \"A curated list of what's up and coming in Cheltenham in the next month or so.\"",
+        "seo: \"A curated list of what's on in Cheltenham in the next month or so.\"",
+        "categories: [events]",
         "---",
     ]
     return "\n".join(lines)
@@ -485,9 +501,11 @@ def build_post_body(events: list[Event]) -> str:
     events_sorted = sorted(events, key=lambda e: (e.event_date or date.max, e.title))
 
     blocks: list[str] = []
-    current_date = None
+    current_date: Optional[date] = None
 
     for ev in events_sorted:
+        if ev.event_date is None:
+            continue  # fetch_events() never keeps an undated event, but keep mypy honest
         if ev.event_date != current_date:
             current_date = ev.event_date
             blocks.append(f"## {current_date.strftime('%A %d %B')}")
