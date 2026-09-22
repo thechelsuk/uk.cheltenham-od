@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T06:10:08+01:00",
+  "generated_at": "2026-09-22T06:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,25 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-22T06:08",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-22T06:14",
       "expected": "2026-09-22T06:14",
@@ -188,19 +169,22 @@
         "Torquay",
         "Paignton"
       ]
+    },
+    {
+      "scheduled": "2026-09-22T07:35",
+      "expected": "2026-09-22T07:35",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Worcester Shrub Hill"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-22T06:06",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time"
-    },
     {
       "scheduled": "2026-09-22T06:13",
       "expected": "2026-09-22T06:17",
@@ -269,6 +253,16 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-22T07:33",
+      "expected": "2026-09-22T07:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
       "reason": ""
     }
   ]
