@@ -34,9 +34,7 @@ DATA = ROOT / "_data"
 OUT_DIR = ROOT / "_newsletters"
 
 TOP_STORIES = 4
-MAX_EVENTS = 6
 MAX_ROADWORKS = 5
-COMING_UP_DAYS = 28                         # how far past this week "coming up" reaches
 SELF_SOURCE = "Cheltenham OD News"          # our own posts, already covered by "New on the site"
 VENUE_REPEAT_GAP = 8                        # issues to avoid repeating a venue within
 
@@ -165,35 +163,60 @@ def roadworks_section(week_start, week_end):
 
 
 def parse_events_file():
-    """[(date, title)] from the most recent curated 'Upcoming Events' post, sorted by date."""
+    """[{date, title, description, source_name, source_url}] from the most recent curated
+    'Upcoming Events' post, sorted by date. Each event there is two bullets: a description, then
+    "More info at [site](url)." — the closest thing to a venue this source gives us; it's the
+    feed the event came from, not necessarily where it's held, so it's offered as a lead to
+    follow up on, not stated as the venue."""
     files = sorted((ROOT / "_events").glob("*.md"), reverse=True)
     if not files:
         return []
     text = files[0].read_text(encoding="utf-8")
     body = text.split("---", 2)[2] if text.startswith("---") else text
-    reference_year = date.today().year
     day_blocks = re.split(r"^## (.+)$", body, flags=re.M)[1:]   # alternating heading, content
     events = []
-    for heading, content in zip(day_blocks[0::2], day_blocks[1::2]):
+    for heading, day_content in zip(day_blocks[0::2], day_blocks[1::2]):
         try:
-            event_date = datetime.strptime(f"{heading.strip()} {reference_year}", "%A %d %B %Y").date()
+            event_date = datetime.strptime(f"{heading.strip()} {date.today().year}", "%A %d %B %Y").date()
         except ValueError:
             continue
         # The post has no year in its day headings, and can span a New Year; a date that reads as
         # months in the past is next year's, not this one.
         if event_date < date.today() - timedelta(days=180):
             event_date = event_date.replace(year=event_date.year + 1)
-        for title, _ in re.findall(r"^### (.+)$\n((?:(?!^##).*\n?)*)", content, re.M):
-            events.append((event_date, title.strip()))
-    events.sort()
+        for title, content in re.findall(r"^### (.+)$\n((?:(?!^##).*\n?)*)", day_content, re.M):
+            desc = re.search(r"^- (.+)$", content, re.M)
+            link = re.search(r"More info at \[([^\]]+)\]\(([^)]+)\)", content)
+            events.append({
+                "date": event_date,
+                "title": title.strip(),
+                "description": desc.group(1).strip() if desc else "",
+                "source_name": link.group(1) if link else "",
+                "source_url": link.group(2) if link else "",
+            })
+    events.sort(key=lambda e: e["date"])
     return events
 
 
-def events_window(events, start, end, limit):
-    picked = [(d, t) for d, t in events if start <= d <= end][:limit]
-    if not picked:
+def events_candidates_comment(week_start):
+    """An HTML comment listing every upcoming event with what detail is available, for you to
+    pick from by hand — see the module docstring for why this isn't auto-picked into the email."""
+    events = [e for e in parse_events_file() if e["date"] >= week_start]
+    if not events:
         return None
-    return "\n".join(f"- **{d.strftime('%a %-d %b')}:** {md_escape(t)}" for d, t in picked)
+    lines = ["<!-- Event candidates from the latest 'Upcoming Events' post — pick a handful for",
+             "     above, skip duplicates and anything recurring you've covered recently, and",
+             "     drop anything with no useful detail below. Delete this whole comment once",
+             "     you're done; nothing in it is shown to readers."]
+    for e in events:
+        bits = [e["date"].strftime("%a %-d %b"), e["title"]]
+        if e["description"]:
+            bits.append(trim(e["description"], 140))
+        if e["source_name"]:
+            bits.append(f"more info: {e['source_name']} {e['source_url']}")
+        lines.append("     - " + " | ".join(bits))
+    lines.append("-->")
+    return "\n".join(lines)
 
 
 def new_on_site_section(since):
@@ -266,10 +289,14 @@ def build(week_start, since_date, overwrite):
         print(f"{out_path.relative_to(ROOT)} already exists — use --overwrite to rebuild it")
         return
 
-    events = parse_events_file()
-    this_week_events = events_window(events, week_start, week_end, MAX_EVENTS)
-    coming_up_events = events_window(events, week_end + timedelta(days=1),
-                                      week_end + timedelta(days=COMING_UP_DAYS), MAX_EVENTS)
+    whats_on = ("*Pick this week's events by hand — see [Cheltenham events](/cheltenham-events) "
+                "for everything on, or the candidates below in an editing comment (not shown to "
+                "readers). Skip anything recurring you've mentioned recently, and leave out "
+                "anything without a time or venue worth telling people.*")
+    events_comment = events_candidates_comment(week_start)
+    if events_comment:
+        whats_on += f"\n\n{events_comment}"
+
     venue_body, venue_name = venue_section(recent_venues)
 
     date_range = f"{week_start.strftime('%-d')} to {week_end.strftime('%-d %B %Y')}" \
@@ -281,8 +308,7 @@ def build(week_start, since_date, overwrite):
         f"Good morning! Here's what's happening in Cheltenham from {date_range}.",
         section("This Week's Weather", weather_section(week_start, week_end)),
         section("Roadworks", roadworks_section(week_start, week_end)),
-        section("What's On This Week", this_week_events),
-        section("Coming Up Later This Month", coming_up_events),
+        section("What's On", whats_on),
         section("New on Cheltenham Open Data", new_on_site_section(since_date)),
         section("This Week's Top Stories", top_stories_section()),
         section("Somewhere to Eat", venue_body),

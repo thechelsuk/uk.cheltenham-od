@@ -21,7 +21,7 @@ Sign-up opens soon.
 
 Each Monday morning, one short email built from the same open data that powers this site:
 
-- **This week in Cheltenham:** the forecast, roadworks, and what's on this week and later in the month.
+- **This week in Cheltenham:** the forecast, roadworks, and what's on.
 - **New on the site:** new pages and refreshed data, so you know what has changed.
 - **The week's top stories:** a handful of local headlines, each with a line of context and a link to the original.
 - **Somewhere to eat:** one place to try, picked from local venues.

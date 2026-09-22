@@ -11,10 +11,19 @@
 
         {% include sponsor.html %}
 
+        {% unless jekyll.environment == "production" %}
+        {% comment %}
+            Authoring aid, never for readers: copies the issue for pasting into Buttondown.
+            jekyll.environment is only "production" on the real deploy (set by
+            .github/workflows/deploy-pages.yml); it's unset — so anything but "production" —
+            on your own machine, whether serving locally or just running a one-off build, which
+            is the only place this button should ever appear.
+        {% endcomment %}
         <p>
             <button type="button" id="newsletter-copy-btn" class="button">Copy for Buttondown</button>
             <span id="newsletter-copy-status" role="status" hidden></span>
         </p>
+        {% endunless %}
 
         <div id="newsletter-body">
             {{ content }}
@@ -24,5 +33,7 @@
         {% include newsletter-signup.html source="issue-page" %}
     </div>
 </div>
+{% unless jekyll.environment == "production" %}
 <script src="/assets/scripts/newsletter-copy.js"></script>
+{% endunless %}
 {% include footer.html %}
