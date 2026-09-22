@@ -30,8 +30,10 @@ import importlib.util
 import json
 import random
 import re
+import os
+import sys
 from datetime import date, datetime, timedelta, timezone
-
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 import helper
 
 ROOT = helper.repo_root()
