@@ -1,4 +1,7 @@
 from dateutil.parser import parse
+import csv
+import io
+import math
 import pathlib
 import re
 import json
@@ -6,9 +9,10 @@ import requests
 import time
 import html
 from datetime import datetime, timedelta, timezone
-from requests import get
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+
+import config
 
 
 def repo_root():
@@ -31,7 +35,9 @@ def updated_timestamp():
 
 
 def write_json(path, payload):
-    pathlib.Path(path).write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    path = pathlib.Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
 
 
 def update_history(history_records, current_items, id_key, now_iso, peak_fields=None, retention_days=730):
@@ -167,14 +173,6 @@ def date_to_iso(string):
     dt = parse(string)
     return dt.strftime('%Y-%m-%d')
 
-def get_data(endpoint):
-    print(endpoint)
-    response = get(endpoint, timeout=20)
-    if response.status_code >= 400:
-        print(response.status_code)
-        print(f"Request failed: { response.text }")
-    return response.json()
-
 
 def request_with_retry(method, url, max_attempts=5, retry_statuses=(429, 500, 502, 503, 504), **kwargs):
     """requests.request(), retrying transient failures: a connection error/
@@ -208,6 +206,81 @@ def request_with_retry(method, url, max_attempts=5, retry_statuses=(429, 500, 50
         return response
 
     raise last_error
+
+
+def get(url, headers=None, timeout=30, **kwargs):
+    """GET with retries (request_with_retry), the site's User-Agent and a
+    30-second timeout unless told otherwise. Extra headers are added to the
+    User-Agent rather than replacing it."""
+    return request_with_retry("GET", url, headers={**config.HEADERS, **(headers or {})}, timeout=timeout, **kwargs)
+
+
+def post(url, headers=None, timeout=30, **kwargs):
+    """POST counterpart of get()."""
+    return request_with_retry("POST", url, headers={**config.HEADERS, **(headers or {})}, timeout=timeout, **kwargs)
+
+
+def haversine_miles(lat1, lon1, lat2, lon2):
+    """Great-circle distance in miles between two points."""
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dp, dl = p2 - p1, math.radians(lon2 - lon1)
+    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 3958.8 * 2 * math.asin(math.sqrt(a))
+
+
+def haversine_km(lat1, lon1, lat2, lon2):
+    """Great-circle distance in kilometres between two points."""
+    return haversine_miles(lat1, lon1, lat2, lon2) * 1.609344
+
+
+def miles_from_centre(lat, lon):
+    """Distance in miles from Cheltenham town centre (config.CENTRE)."""
+    return haversine_miles(*config.CENTRE, lat, lon)
+
+
+def overpass(query, timeout=120):
+    """Run an Overpass (OpenStreetMap) query and return its elements. Each
+    server in config.OVERPASS_ENDPOINTS gets two tries; a server that is
+    down, busy or replies with something other than JSON passes the query
+    to the next one. A reply whose remark reports a runtime error (the query
+    ran out of time or memory) is only partial, so it counts as a failure too."""
+    last_error = None
+    for endpoint in config.OVERPASS_ENDPOINTS:
+        try:
+            body = post(endpoint, data={"data": query}, timeout=timeout, max_attempts=2).json()
+            if "runtime error" in body.get("remark", ""):
+                raise ValueError(body["remark"])
+            return body["elements"]
+        except (requests.RequestException, ValueError, KeyError) as error:
+            last_error = error
+            print(f"Overpass {endpoint} failed: {error}")
+    raise RuntimeError(f"All Overpass endpoints failed: {last_error}")
+
+
+def nomis_rows(dataset, timeout=30, **params):
+    """Rows of a Nomis dataset's CSV download, as dicts keyed by column name.
+    Keyword arguments other than timeout are the query parameters."""
+    response = get(f"{config.NOMIS_API}/{dataset}.data.csv", params=params, timeout=timeout)
+    return list(csv.DictReader(io.StringIO(response.text)))
+
+
+def ods_get(path, **params):
+    """JSON from the NHS Organisation Data Service (ODS) directory."""
+    return get(f"{config.ODS_API}/{path}", params=params, headers={"Accept": "application/json"}).json()
+
+
+def ods_address(code, acronyms=None):
+    """An ODS organisation's address as one tidy line."""
+    location = ods_get(f"organisations/{code}")["Organisation"]["GeoLoc"]["Location"]
+    lines = [location.get(k) for k in ("AddrLn1", "AddrLn2", "AddrLn3", "Town", "County")]
+    return ", ".join(clean_name(line, acronyms or DEFAULT_ACRONYMS) for line in lines if line)
+
+
+def geocode_postcodes(postcodes):
+    """postcodes.io bulk lookup: {postcode: (lat, lon)}; unknown ones are left out."""
+    response = post(config.POSTCODES_API, json={"postcodes": sorted(postcodes)})
+    return {r["query"]: (r["result"]["latitude"], r["result"]["longitude"])
+            for r in response.json()["result"] if r.get("result")}
 
 
 def fetch_flood_data():

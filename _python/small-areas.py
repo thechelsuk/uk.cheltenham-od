@@ -10,19 +10,18 @@ Run from the repository root:
 	.venv/bin/python _python/small-areas.py
 """
 
-import csv
-import io
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+import config
 import helper
 
 
-GEOGRAPHY = "E07000078"  # Cheltenham (ONS/GSS area code)
+GEOGRAPHY = config.AREA_CODE
 OUT = Path(__file__).resolve().parents[1] / "_data" / "small-areas.json"
 TIMEOUT = 60
 
-NOMIS_URL = "https://www.nomisweb.co.uk/api/v01/dataset/NM_2014_1.data.csv"
+NOMIS_DATASET = "NM_2014_1"  # small-area population estimates, 2021 based
 # Nomis geography types for this dataset: 2021 LSOAs, and wards as of May 2025
 # (the boundaries Cheltenham has used since the 2024 borough elections).
 LSOA_TYPE = "TYPE151"
@@ -39,17 +38,15 @@ BOUNDARIES_SOURCE_URL = "https://geoportal.statistics.gov.uk/"
 
 def fetch_populations(geography_type):
 	"""{area code: {year: population}} for every year Nomis has published."""
-	response = helper.request_with_retry(
-		"GET", NOMIS_URL, timeout=TIMEOUT,
-		params={
-			"geography": f"{GEOGRAPHY}{geography_type}",
-			"date": f"{FIRST_YEAR}-{date.today().year}",
-			"gender": 0, "c_age": 200, "measures": 20100,
-			"select": "date_name,geography_code,geography_name,obs_value",
-		},
+	rows = helper.nomis_rows(
+		NOMIS_DATASET, timeout=TIMEOUT,
+		geography=f"{GEOGRAPHY}{geography_type}",
+		date=f"{FIRST_YEAR}-{date.today().year}",
+		gender=0, c_age=200, measures=20100,
+		select="date_name,geography_code,geography_name,obs_value",
 	)
 	populations, names = {}, {}
-	for row in csv.DictReader(io.StringIO(response.text)):
+	for row in rows:
 		code = row["GEOGRAPHY_CODE"]
 		populations.setdefault(code, {})[row["DATE_NAME"]] = int(row["OBS_VALUE"])
 		names[code] = row["GEOGRAPHY_NAME"]
@@ -59,10 +56,7 @@ def fetch_populations(geography_type):
 
 
 def arcgis_query(url, **params):
-	response = helper.request_with_retry(
-		"GET", url, timeout=TIMEOUT,
-		params={"outFields": "*", "f": "json", **params},
-	)
+	response = helper.get(url, timeout=TIMEOUT, params={"outFields": "*", "f": "json", **params})
 	payload = response.json()
 	if "error" in payload:
 		raise RuntimeError(f"ArcGIS error from {url}: {payload['error']}")

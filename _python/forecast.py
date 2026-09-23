@@ -6,8 +6,10 @@ import os
 import sys
 from datetime import datetime, time, timezone
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+
 import requests
 
+import config
 import helper
 
 # Load .env file for local development if present
@@ -24,7 +26,7 @@ OUT  = os.path.join(HERE, "..", "_data", "weather.json")
 
 # Constants — no CLI args.
 LOCATION = "Cheltenham"
-LAT, LON = 51.90, -2.08
+LAT, LON = config.CENTRE
 DAYS     = 10
 UNITS    = "metric"
 BASE     = "https://api.openweathermap.org/data/4.0/onecall/timeline/1day"

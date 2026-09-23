@@ -16,15 +16,13 @@ script is refreshed monthly with the other Nomis data.
 Source: https://www.nomisweb.co.uk/api/v01/
 """
 
-import csv
 import datetime
-import io
 import json
 
+import config
 import helper
 
-BASE_URL = "https://www.nomisweb.co.uk/api/v01/dataset"
-CHELTENHAM, ENGLAND = "E07000078", "E92000001"
+CHELTENHAM, ENGLAND = config.AREA_CODE, "E92000001"
 
 BRES = "NM_189_1"              # Business Register and Employment Survey: open access
 BRES_START_YEAR = 2015         # start of the current BRES series
@@ -42,12 +40,7 @@ COUNT, RATE = 1, 2             # claimant count; claimants as a proportion of re
 
 
 def fetch(dataset, select, **params):
-    resp = helper.request_with_retry(
-        "GET", f"{BASE_URL}/{dataset}.data.csv",
-        params={**params, "measures": 20100, "select": select},
-        timeout=30,
-    )
-    return list(csv.DictReader(io.StringIO(resp.text)))
+    return helper.nomis_rows(dataset, **params, measures=20100, select=select)
 
 
 def number(value):

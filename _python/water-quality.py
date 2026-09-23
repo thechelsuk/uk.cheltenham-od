@@ -9,13 +9,11 @@ readings for every open freshwater-river sampling point within a radius of
 Cheltenham, one row per determinand (a "tidy" table) rather than picking a
 curated subset — that's a judgement call better left to the reader.
 """
-import json
 import os
 import re
 from datetime import datetime, timedelta, timezone
 
-import requests
-
+import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -25,25 +23,15 @@ BASE_URL = "https://environment.data.gov.uk/water-quality"
 HEADERS = {
     "Accept": "application/ld+json",
     "Accept-Crs": "http://www.opengis.net/def/crs/EPSG/0/4326",
-    "User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)",
 }
 
-CHELTENHAM_LAT  = 51.899
-CHELTENHAM_LON  = -2.078
-RADIUS_KM       = 8            # ~5 miles, matches the sewage overflow catchment
+CHELTENHAM_LAT, CHELTENHAM_LON = config.CENTRE
+RADIUS_KM = config.WATER_QUALITY_RADIUS_KM  # ~5 miles, matches the sewage overflow catchment
 LOOKBACK_DAYS   = 150          # comfortably covers at least one monthly visit
-EARTH_RADIUS_MI = 3958.8
 
 WKT_POINT = re.compile(r"POINT\(([-\d.]+) ([-\d.]+)\)")
 
 
-def haversine_miles(lat1, lon1, lat2, lon2):
-    import math
-    phi1, phi2 = math.radians(lat1), math.radians(lat2)
-    dphi       = math.radians(lat2 - lat1)
-    dlambda    = math.radians(lon2 - lon1)
-    a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
-    return 2 * EARTH_RADIUS_MI * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
 def fetch_nearby_points():
@@ -55,18 +43,14 @@ def fetch_nearby_points():
         "samplingPointType": "F6",      # FRESHWATER - RIVERS
         "limit": 100,
     }
-    resp = requests.get(f"{BASE_URL}/sampling-point", params=params, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    return resp.json().get("member", [])
+    return helper.get(f"{BASE_URL}/sampling-point", params=params, headers=HEADERS).json().get("member", [])
 
 
 def fetch_latest_readings(notation):
     since = (datetime.now(timezone.utc) - timedelta(days=LOOKBACK_DAYS)).strftime("%Y-%m-%d")
     params = {"dateFrom": since, "limit": 250}
-    resp = requests.get(f"{BASE_URL}/sampling-point/{notation}/observation",
-                         params=params, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    observations = resp.json().get("member", [])
+    observations = helper.get(f"{BASE_URL}/sampling-point/{notation}/observation",
+                              params=params, headers=HEADERS).json().get("member", [])
     if not observations:
         return None, []
 
@@ -103,7 +87,7 @@ def main():
             "notation":     notation,
             "name":         helper.clean_name(point.get("prefLabel", "")),
             "latest_date":  latest_date,
-            "distance_miles": round(haversine_miles(CHELTENHAM_LAT, CHELTENHAM_LON, lat, lon), 2),
+            "distance_miles": round(helper.miles_from_centre(lat, lon), 2),
             "lat":          lat,
             "lon":          lon,
             "readings":     readings,
@@ -120,9 +104,7 @@ def main():
         "sampling_points": sampling_points,
     }
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     total_readings = sum(len(p["readings"]) for p in sampling_points)
     print(f"Wrote {len(sampling_points)} sampling points ({total_readings} readings) to {OUT}")

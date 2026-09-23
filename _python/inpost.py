@@ -8,13 +8,13 @@ Source: https://api-uk-global-points.easypack24.net
 import datetime
 import re
 
+import config
 import helper
 
 API_URL = "https://api-uk-global-points.easypack24.net/v1/points"
 
-CHELTENHAM_LAT = 51.899
-CHELTENHAM_LON = -2.078
-MAX_DISTANCE_M = 15000
+CHELTENHAM_LAT, CHELTENHAM_LON = config.CENTRE
+MAX_DISTANCE_M = config.INPOST_MAX_DISTANCE_M
 LIMIT = 100
 AREA_NAME = "cheltenham"
 

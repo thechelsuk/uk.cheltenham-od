@@ -10,7 +10,6 @@ Data © Open Charge Map contributors, licensed CC-BY-SA 4.0.
 """
 
 import json
-import math
 import os
 import pathlib
 import sys
@@ -18,6 +17,9 @@ import urllib.parse
 import urllib.request
 from collections import defaultdict
 from datetime import datetime, timezone
+
+import config
+import helper
 
 # --- Configuration (edit these, no CLI args) --------------------------------
 
@@ -28,9 +30,8 @@ DATA_DIR = SCRIPT_DIR.parent / "_data"                        # .../_data
 OUTPUT_FILE = DATA_DIR / "ev-charging.json"
 
 # Cheltenham town centre — search radius is measured from here.
-CENTRE_LAT = 51.9000
-CENTRE_LNG = -2.0800
-RADIUS_KM = 6.0
+CENTRE_LAT, CENTRE_LNG = config.CENTRE
+RADIUS_KM = config.EV_CHARGING_RADIUS_KM
 
 COUNTRY_CODE = "GB"
 MAX_RESULTS = 500
@@ -48,14 +49,6 @@ LICENCE = "CC-BY-SA 4.0 — Data © Open Charge Map contributors"
 # --- Helpers ----------------------------------------------------------------
 
 
-def haversine_miles(lat1, lng1, lat2, lng2):
-    """Great-circle distance in miles between two points."""
-    r = 3958.7613  # Earth radius in miles
-    p1, p2 = math.radians(lat1), math.radians(lat2)
-    dphi = math.radians(lat2 - lat1)
-    dlmb = math.radians(lng2 - lng1)
-    a = math.sin(dphi / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dlmb / 2) ** 2
-    return round(2 * r * math.asin(math.sqrt(a)), 2)
 
 
 def google_maps_url(lat, lng):
@@ -119,7 +112,7 @@ def transform(poi):
         "postcode": addr.get("Postcode"),
         "latitude": lat,
         "longitude": lng,
-        "distance_miles": haversine_miles(CENTRE_LAT, CENTRE_LNG, lat, lng),
+        "distance_miles": round(helper.miles_from_centre(lat, lng), 2),
         "access": (poi.get("UsageType") or {}).get("Title"),
         "status": (poi.get("StatusType") or {}).get("Title"),
         "num_points": poi.get("NumberOfPoints"),
@@ -191,9 +184,7 @@ def main():
         "stations": stations,
     }
 
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUTPUT_FILE, payload)
 
     print(f"Wrote {len(stations)} charging locations to {OUTPUT_FILE}")
 

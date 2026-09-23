@@ -24,10 +24,12 @@ Requires:
 """
 import re
 import sys
-import math
 import argparse
 import datetime
+
 import requests
+
+import config
 import helper
 
 # ---------------------------------------------------------------------------
@@ -38,12 +40,11 @@ BASE_URL = "https://uk-air.defra.gov.uk/sos-ukair/api/v1"
 HEADERS = {"Accept": "application/json"}
 
 # Cheltenham town centre, used as the search origin
-CENTRE_LAT = 51.8994
-CENTRE_LON = -2.0783
+CENTRE_LAT, CENTRE_LON = config.CENTRE
 
 # Covers Cheltenham + immediate surrounding area (Cheltenham, Bishop's
 # Cleeve, Charlton Kings, etc). Increase if you want Gloucester included.
-RADIUS_KM = 20
+RADIUS_KM = config.AIR_QUALITY_RADIUS_KM
 
 # Radius used for client-side distance filtering after fetching the full
 # station list (the DEFRA SOS instance's server-side bbox/near params
@@ -57,16 +58,6 @@ def debug_print(*args):
     if DEBUG:
         print("[debug]", *args, file=sys.stderr)
 
-
-def haversine_km(lat1, lon1, lat2, lon2):
-    R = 6371.0
-    dlat = math.radians(lat2 - lat1)
-    dlon = math.radians(lon2 - lon1)
-    a = (
-        math.sin(dlat / 2) ** 2
-        + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlon / 2) ** 2
-    )
-    return R * 2 * math.asin(math.sqrt(a))
 
 # Pollutants we care about for a public-facing summary. UK-AIR labels vary
 # by station/procedure so this is a best-effort keyword match against the
@@ -154,8 +145,6 @@ def get_all_stations():
     likely a bug in their old 52North/Tomcat deployment). Paginates using
     offset/limit since the full UK list can be large. Filtering to
     Cheltenham happens client-side afterwards."""
-    import json as _json
-
     all_stations = []
     offset = 0
     limit = 200
@@ -209,7 +198,7 @@ def filter_stations_by_distance(all_stations):
         # NOT the GeoJSON-standard [lon, lat]. Confirmed via live debug
         # output (e.g. "Cheltenham A40..." -> [51.896592, -2.113747, NaN]).
         lat, lon = float(coords[0]), float(coords[1])
-        dist = haversine_km(CENTRE_LAT, CENTRE_LON, lat, lon)
+        dist = helper.haversine_km(CENTRE_LAT, CENTRE_LON, lat, lon)
 
         if min_dist is None or dist < min_dist:
             min_dist = dist
@@ -360,7 +349,7 @@ def render_markdown(readings):
         "weather and wider weather patterns. The readings below come directly "
         "from [DEFRA's UK-AIR monitoring network](https://uk-air.defra.gov.uk/), "
         "the UK government's official air pollution data source, and are pulled "
-        f"from the nearest monitoring stations to Cheltenham.\n"
+        "from the nearest monitoring stations to Cheltenham.\n"
     )
     lines.append(
         "\nThe main pollutants tracked here are fine particulates (PM2.5 and "

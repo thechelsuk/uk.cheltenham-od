@@ -16,13 +16,12 @@ back later" JSON body instead of the data, which silently produced an empty
 overflows list (no exception, since .get("features", []) just came back
 empty) until this was noticed on the live site."""
 import json
-import math
 import os
 from datetime import datetime, timezone
 
-import requests
 from dateutil.parser import parse as parse_date
 
+import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -31,20 +30,11 @@ OUT  = os.path.join(HERE, "..", "_data", "sewage-overflows.json")
 QUERY_URL = ("https://services1.arcgis.com/NO7lTIlnxRMMG9Gw/arcgis/rest/services/"
              "Severn_Trent_Water_Storm_Overflow_Activity/FeatureServer/0/query")
 FRIENDLY_SOURCE_URL = "https://www.stwater.co.uk/in-my-area/storm-overflow-map/"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
-CHELTENHAM_LAT  = 51.899
-CHELTENHAM_LON  = -2.078
-RADIUS_MILES    = 4          # covers the Chelt catchment without pulling in Gloucester's own brooks
-EARTH_RADIUS_MI = 3958.8
+CHELTENHAM_LAT, CHELTENHAM_LON = config.CENTRE
+RADIUS_MILES = config.SEWAGE_RADIUS_MILES  # covers the Chelt catchment without pulling in Gloucester's own brooks
 
 
-def haversine_miles(lat1, lon1, lat2, lon2):
-    phi1, phi2 = math.radians(lat1), math.radians(lat2)
-    dphi       = math.radians(lat2 - lat1)
-    dlambda    = math.radians(lon2 - lon1)
-    a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
-    return 2 * EARTH_RADIUS_MI * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
 def parse_field_date(raw):
@@ -77,9 +67,7 @@ def main():
         "units": "esriSRUnit_StatuteMile",
         "spatialRel": "esriSpatialRelIntersects",
     }
-    resp = requests.get(QUERY_URL, params=params, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    body = resp.json()
+    body = helper.get(QUERY_URL, params=params).json()
     if "features" not in body:
         raise SystemExit(f"Unexpected response from storm overflow query (no 'features' key): {body}")
     features = body["features"]
@@ -90,7 +78,7 @@ def main():
         lat, lon = props.get("Latitude"), props.get("Longitude")
         if lat is None or lon is None:
             continue
-        dist = haversine_miles(CHELTENHAM_LAT, CHELTENHAM_LON, lat, lon)
+        dist = helper.miles_from_centre(lat, lon)
         if dist > RADIUS_MILES:
             continue
 
@@ -124,9 +112,7 @@ def main():
         "overflows":    overflows,
     }
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     discharging = sum(1 for o in overflows if o["discharging"])
     print(f"Wrote {len(overflows)} overflow points to {OUT} ({discharging} currently discharging)")

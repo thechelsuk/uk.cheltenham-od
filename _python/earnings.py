@@ -16,19 +16,17 @@ Nomis data.
 Source: https://www.nomisweb.co.uk/api/v01/
 """
 
-import csv
 import datetime
-import io
 import json
 
+import config
 import helper
 
-BASE_URL = "https://www.nomisweb.co.uk/api/v01/dataset"
 RESIDENT = "NM_30_1"   # ASHE - resident analysis (where employees live)
 WORKPLACE = "NM_99_1"  # ASHE - workplace analysis (where employees work)
 START_YEAR = 2008      # Nomis holds no Cheltenham figures before this
 
-CHELTENHAM = "E07000078"
+CHELTENHAM = config.AREA_CODE
 COMPARATORS = {"gloucestershire": "E10000013", "south_west": "E12000009", "england": "E92000001"}
 
 # Nomis codes: sex 8 = full-time employees, 1 = male full-time, 3 = female full-time;
@@ -43,13 +41,9 @@ def fetch(dataset, geography, sex, pay, measures=VALUE, date=None):
     """{year: value} for one geography/sex/pay/measure. Years Nomis has no
     figure for (suppressed or not surveyed) come back empty and are left out."""
     date = date or f"{START_YEAR}-{datetime.date.today().year}"
-    resp = helper.request_with_retry(
-        "GET", f"{BASE_URL}/{dataset}.data.csv",
-        params={"geography": geography, "date": date, "sex": sex, "item": MEDIAN, "pay": pay,
-                "measures": measures, "select": "date_name,obs_value"},
-        timeout=30,
-    )
-    return {int(r["DATE_NAME"]): float(r["OBS_VALUE"]) for r in csv.DictReader(io.StringIO(resp.text)) if r["OBS_VALUE"]}
+    rows = helper.nomis_rows(dataset, geography=geography, date=date, sex=sex, item=MEDIAN, pay=pay,
+                             measures=measures, select="date_name,obs_value")
+    return {int(r["DATE_NAME"]): float(r["OBS_VALUE"]) for r in rows if r["OBS_VALUE"]}
 
 
 def pounds(value, pence=False):

@@ -5,14 +5,12 @@ keyless API — and write normalised JSON to Jekyll's _data dir.
 Source: https://www.nomisweb.co.uk/api/v01/
 """
 
-import csv
 import datetime
-import io
 
+import config
 import helper
 
-BASE_URL = "https://www.nomisweb.co.uk/api/v01/dataset"
-GEOGRAPHY = "E07000078"  # Cheltenham (ONS/GSS area code)
+GEOGRAPHY = config.AREA_CODE
 
 # Mid-year population estimates by single year of age and sex. Nomis has
 # annual data from 2001 onwards for this geography — request every year in
@@ -36,12 +34,7 @@ EMPLOYMENT_START_YEAR = 2004
 
 
 def fetch_csv_rows(dataset, **params):
-    resp = helper.request_with_retry(
-        "GET", f"{BASE_URL}/{dataset}.data.csv",
-        params={"geography": GEOGRAPHY, **params},
-        timeout=20,
-    )
-    return list(csv.DictReader(io.StringIO(resp.text)))
+    return helper.nomis_rows(dataset, geography=GEOGRAPHY, **params)
 
 
 def fetch_population_series():

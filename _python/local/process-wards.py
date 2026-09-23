@@ -30,7 +30,11 @@ from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import config  # noqa: E402
+import helper  # noqa: E402
+
+ROOT = helper.repo_root()
 DATA = ROOT / "_data"
 SOURCES = ROOT / "_data-sources"
 OUT_DIR = DATA / "wards"
@@ -42,7 +46,7 @@ WARDS = [
     "College", "Hesters Way", "Lansdown", "Leckhampton", "Oakley", "Park", "Pittville", "Prestbury",
     "Springbank", "St Mark's", "St Paul's", "St Peter's", "Swindon Village", "Up Hatherley", "Warden Hill",
 ]
-TOWN_CENTRE = (51.8994, -2.0783)   # lat, lon, used to say which side of town a ward is on
+TOWN_CENTRE = config.CENTRE   # lat, lon, used to say which side of town a ward is on
 
 NEAREST = 5          # how many of the nearest to show for each amenity type
 LISTED_ENOUGH = 3    # a ward with this many of something shows only its own
@@ -72,13 +76,6 @@ PROPERTY_TYPES = {"D": "Detached", "S": "Semi-detached", "T": "Terraced", "F": "
 # --------------------------------------------------------------------------
 # Geometry
 # --------------------------------------------------------------------------
-
-def haversine_miles(lat1, lon1, lat2, lon2):
-    r = 3958.8
-    p1, p2 = math.radians(lat1), math.radians(lat2)
-    dp, dl = p2 - p1, math.radians(lon2 - lon1)
-    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
-    return 2 * r * math.asin(math.sqrt(a))
 
 
 def in_ring(lon, lat, ring):
@@ -128,7 +125,7 @@ def centroid_and_area(polygons):
 
 def position_from_centre(lat, lon):
     """Compass side of town as an adjective ('western'), or 'central' near the middle."""
-    miles = haversine_miles(TOWN_CENTRE[0], TOWN_CENTRE[1], lat, lon)
+    miles = helper.haversine_miles(TOWN_CENTRE[0], TOWN_CENTRE[1], lat, lon)
     if miles < 0.6:
         return "central", round(miles, 1)
     dy = lat - TOWN_CENTRE[0]
@@ -143,7 +140,7 @@ def touches(polys_a, polys_b, tolerance_miles=0.03):
     for rings in polys_a:
         for lon, lat in rings[0]:
             for blon, blat in pts_b:
-                if haversine_miles(lat, lon, blat, blon) < tolerance_miles:
+                if helper.haversine_miles(lat, lon, blat, blon) < tolerance_miles:
                     return True
     return False
 
@@ -347,20 +344,20 @@ def parse_gp_page(postcodes):
     text = (ROOT / "_pages/community-support/gp-pharmacy.md").read_text(encoding="utf-8")
     sections = {"GP Practices": [], "Pharmacies": []}
     section = None
-    entry = None
+    entry = {}  # the practice being read; empty until its "###" heading
     for line in text.splitlines():
         if line.startswith("## "):
             section = line[3:].strip()
-            entry = None
+            entry = {}
         elif line.startswith("### ") and section in sections:
             entry = {"name": line[4:].strip()}
             sections[section].append(entry)
-        elif entry is not None and line.startswith("- Address:"):
+        elif entry and line.startswith("- Address:"):
             m = re.match(r"- Address: \[(.*?)\]\(", line)
             if m:
                 entry["address"] = m.group(1)
                 entry["postcode"] = postcode_in(m.group(1))
-        elif entry is not None and line.startswith("- Phone:"):
+        elif entry and line.startswith("- Phone:"):
             m = re.match(r"- Phone: \[(.*?)\]\(", line)
             if m:
                 entry["detail"] = m.group(1)
@@ -395,7 +392,7 @@ def build_services(polygons, centre, postcodes):
             item["lat"] = round(lat, 6)
             item["lon"] = round(lon, 6)
             item["in_ward"] = in_polygons(lon, lat, polygons)
-            item["distance_miles"] = round(haversine_miles(centre[1], centre[0], lat, lon), 2)
+            item["distance_miles"] = round(helper.haversine_miles(centre[1], centre[0], lat, lon), 2)
             items.append(item)
         items.sort(key=lambda i: (i["distance_miles"], i["name"]))
         inside = [i for i in items if i["in_ward"]]

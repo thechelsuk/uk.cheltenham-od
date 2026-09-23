@@ -21,21 +21,17 @@ Leckhampton that aren't "getting around town" routes).
 Pump tracks/bike parks are a separate, hand-curated concern — see
 _data/cycle-venues.json — not fetched here.
 """
-import json
 import math
 import os
 
-import requests
-
+import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "cycle-routes.json")
 
-LAT, LNG = 51.899, -2.078   # Cheltenham centre
-RADIUS_M = 8000             # a little wider than car-parks.py/hotels.py — routes run further
-OVERPASS = "https://overpass-api.de/api/interpreter"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
+LAT, LNG = config.CENTRE
+RADIUS_M = config.CYCLE_ROUTES_RADIUS_M
 
 REAL_LANE_VALUES = {"track", "lane", "shared_lane", "share_busway", "opposite_lane", "both"}
 HONEYBOURNE_NAME = "Honeybourne"
@@ -85,9 +81,7 @@ def haversine_km(points):
 
 
 def main():
-    resp = requests.post(OVERPASS, data={"data": build_query()}, headers=HEADERS, timeout=90)
-    resp.raise_for_status()
-    elements = resp.json().get("elements", [])
+    elements = helper.overpass(build_query(), timeout=90)
 
     segments = []
     route_lengths = {}   # (name, ref) -> km
@@ -136,9 +130,7 @@ def main():
         "segments": segments,
     }
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(segments)} segments ({len(routes)} named routes) to {OUT}")
 

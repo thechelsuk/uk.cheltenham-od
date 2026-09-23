@@ -19,15 +19,14 @@ Source: https://environment.data.gov.uk/flood-monitoring/doc/reference
 
 import datetime
 import json
-import math
 
+import config
 import helper
 
 BASE_URL = "https://environment.data.gov.uk/flood-monitoring"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
-CENTRE = (51.8994, -2.0783)  # Cheltenham town centre
-RADIUS_KM = {"level": 6, "rainfall": 12}
+CENTRE = config.CENTRE
+RADIUS_KM = config.RIVER_LEVELS_RADIUS_KM
 
 CHART_HOURS = 48
 BACKFILL_DAYS = 28   # about as far back as the API keeps readings
@@ -37,15 +36,10 @@ STALE_AFTER = datetime.timedelta(days=7)  # a gauge with nothing newer is treate
 
 
 def get(path, **params):
-    response = helper.request_with_retry("GET", f"{BASE_URL}{path}", params=params, headers=HEADERS, timeout=60)
+    response = helper.get(f"{BASE_URL}{path}", params=params, timeout=60)
     return response.json()
 
 
-def distance_km(lat, lon):
-    """Straight-line distance from the town centre (haversine)."""
-    lat1, lon1, lat2, lon2 = map(math.radians, (CENTRE[0], CENTRE[1], lat, lon))
-    a = math.sin((lat2 - lat1) / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin((lon2 - lon1) / 2) ** 2
-    return 6371 * 2 * math.asin(math.sqrt(a))
 
 
 def parse_time(value):
@@ -136,7 +130,7 @@ def main():
             "river": item.get("riverName") or "",
             "lat": item["lat"],
             "lon": item["long"],
-            "distance_km": round(distance_km(item["lat"], item["long"]), 1),
+            "distance_km": round(helper.haversine_km(*CENTRE, item["lat"], item["long"]), 1),
             "unit": "mm" if kind == "rainfall" else "m",
             "latest_time": latest_time.strftime("%Y-%m-%dT%H:%M"),
             "readings": [[t.strftime("%Y-%m-%dT%H:%M"), v] for t, v in recent],

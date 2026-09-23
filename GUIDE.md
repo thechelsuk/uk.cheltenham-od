@@ -12,29 +12,29 @@ Good reference examples to read alongside this guide:
 
 ## 1. The Python fetcher (`_python/<name>.py`)
 
-One script, one job: hit a source, normalise it, write one `_data/<name>.json`. Follow the shape of `_python/hotels.py` or `_python/schools.py`:
+One script, one job: hit a source, normalise it, write one `_data/<name>.json`. Shared settings live in `_python/config.py` (the site's User-Agent, the town-centre point, the Cheltenham area code, postcode districts, shared API addresses and each dataset's search radius) and shared functions in `_python/helper.py`, so a new fetcher uses those rather than defining its own. Follow the shape of `_python/hotels.py` or `_python/dentists.py`:
 
 ```python
 #!/usr/bin/env python3
 """One-line description of what this fetches and why the refresh cadence
 makes sense (e.g. 'refreshed monthly since locations rarely change')."""
-import json
 import os
 from datetime import datetime, timezone
 
-import requests
+import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT  = os.path.join(HERE, "..", "_data", "example.json")
+OUT = os.path.join(HERE, "..", "_data", "example.json")
 
 SOURCE_URL = "https://example.gov.uk/api/"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
+RADIUS_MILES = config.EXAMPLE_RADIUS_MILES   # add the setting to config.py
 
 
 def main():
-    resp = requests.get(SOURCE_URL, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    items = [...]  # normalise the raw response into plain dicts
+    raw = helper.get(SOURCE_URL).json()   # retries, site User-Agent, 30s timeout
+    items = [...]  # normalise the raw response into plain dicts, e.g. with
+                   # round(helper.miles_from_centre(lat, lon), 1) for distance
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -44,16 +44,24 @@ def main():
         "items": items,
     }
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-
+    helper.write_json(OUT, output)
     print(f"Wrote {len(items)} items to {OUT}")
 
 
 if __name__ == "__main__":
     main()
 ```
+
+What's already shared, so don't write your own:
+
+- `helper.get()` / `helper.post()`: requests with retries, the site's User-Agent (extra headers are added to it) and a default timeout.
+- `helper.miles_from_centre()`, `helper.haversine_miles()`, `helper.haversine_km()`: distances, all measured from `config.CENTRE` for "from the town centre".
+- `helper.overpass(query)`: OpenStreetMap queries, falling back through `config.OVERPASS_ENDPOINTS` when a server is busy.
+- `helper.nomis_rows(dataset, **params)`: rows from a Nomis CSV download.
+- `helper.ods_get()`, `helper.ods_address()`, `helper.geocode_postcodes()`: the NHS organisation directory and postcodes.io bulk lookups.
+- `helper.write_json(path, payload)`: writes the file (creating its folder) with 2-space indents and unescaped Unicode.
+
+Scripts in `_python/local/` and `_python/pi/` add the parent folder to the import path first: `sys.path.insert(0, str(Path(__file__).resolve().parents[1]))`, then `import config` and `import helper`. Offline tests for the shared code are in `_python/tests/`; run them with `.venv/bin/python -m pytest _python/tests` (`pip install -r _python/requirements-dev.txt` once).
 
 Notes:
 
