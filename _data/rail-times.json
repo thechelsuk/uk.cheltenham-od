@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T12:15:16+01:00",
+  "generated_at": "2026-09-23T12:20:18+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-23T12:12",
-      "expected": "2026-09-23T12:19",
+      "expected": "2026-09-23T12:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -43,22 +43,6 @@
         "Leuchars",
         "Dundee",
         "Aberdeen"
-      ]
-    },
-    {
-      "scheduled": "2026-09-23T12:15",
-      "expected": "2026-09-23T12:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -114,13 +98,13 @@
     },
     {
       "scheduled": "2026-09-23T12:40",
-      "expected": "2026-09-23T12:54",
+      "expected": "2026-09-23T13:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by a problem currently under investigation",
       "calling_at": [
         "Birmingham New Street",
         "Wolverhampton",
@@ -176,6 +160,28 @@
         "St Erth",
         "Penzance"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T12:55",
+      "expected": "2026-09-23T12:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
@@ -187,16 +193,6 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-23T12:14",
-      "expected": "2026-09-23T12:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     },
     {
@@ -241,13 +237,13 @@
     },
     {
       "scheduled": "2026-09-23T12:38",
-      "expected": "2026-09-23T12:53",
+      "expected": "2026-09-23T13:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
+      "reason": "This service has been delayed by a problem currently under investigation"
     },
     {
       "scheduled": "2026-09-23T12:43",
@@ -267,6 +263,16 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Penzance",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T12:54",
+      "expected": "2026-09-23T12:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
