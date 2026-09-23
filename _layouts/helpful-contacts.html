@@ -26,13 +26,14 @@
         {% if page.listing == "contacts" %}
         {% assign contacts = site.data["helpful-contacts"] %}
 
-        <div class="info-card">
-            <p class="info-card__label">Quick numbers: tap to call</p>
-            <ul class="info-card__stats">
-                {% for q in contacts.quick %}
-                <li><span>{{ q.label }}</span><strong><a href="tel:{{ q.tel }}">{{ q.number }}</a></strong></li>
-                {% endfor %}
-            </ul>
+        <div class="contacts-glance">
+            {% for q in contacts.quick %}
+            <div class="info-card">
+                <p class="info-card__label">{{ q.label }}</p>
+                <a class="info-card__title" href="tel:{{ q.tel }}">{{ q.number }}</a>
+                <span class="info-card__subtitle">{{ q.detail }}</span>
+            </div>
+            {% endfor %}
         </div>
 
         {% for category in contacts.categories %}
@@ -158,4 +159,19 @@
         {% endif %}
     </div>
 </div>
+<style>
+    .contacts-glance {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+        margin: 1em 0 1.5em;
+    }
+
+    @media (max-width: 800px) {
+        .contacts-glance {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+
 {% include footer.html %}
