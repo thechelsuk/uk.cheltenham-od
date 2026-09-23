@@ -3,126 +3,168 @@
     "id": "mhclg-live-tables-net-supply-of-housing",
     "source_url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/housing-supply.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-house-prices/housing-supply"]
   },
   {
     "id": "voa-council-tax-stock-of-properties",
     "source_url": "https://www.gov.uk/government/collections/valuation-office-agency-council-tax-statistics",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/council-tax-stock-history.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-house-prices/council-tax-stock"]
   },
   {
     "id": "cheltenham-2007-flood-reports",
     "source_url": "https://www.gloucestershire.gov.uk/media/6442/cheltenham_borough_council_level_1_sfra_final-28375.pdf",
     "licence": "None stated — figures quoted from Cheltenham Borough Council's 2008 strategic flood risk assessment and Gloucestershire County Council's 2011 surface water management plan, and from Wikipedia (CC BY-SA 4.0); each is linked on the page",
+    "licence_type": "None stated",
+    "data": [],
     "pages": ["/cheltenham-flood-warnings/2007-floods"]
   },
   {
     "id": "ons-ashe-earnings-nomis",
     "source_url": "https://www.nomisweb.co.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/cheltenham-earnings.json", "schedule": "monthly"}, {"file": "_data/cheltenham-affordability.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-earnings-history", "/cheltenham-house-prices/affordability"]
   },
   {
     "id": "ons-nomis-economy-jobs-businesses-claimants",
     "source_url": "https://www.nomisweb.co.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/cheltenham-economy.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-economy"]
   },
   {
     "id": "university-of-gloucestershire-website",
     "source_url": "https://www.glos.ac.uk/visit-us/how-to-find-us/",
     "licence": "None stated — campus addresses and subject areas summarised by hand from the university's website (© University of Gloucestershire) and linked to at source",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/university.json", "schedule": "manual"}],
     "pages": ["/university-of-gloucestershire"]
   },
   {
     "id": "ons-price-index-of-private-rents",
     "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/rents.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-rent-prices"]
   },
   {
     "id": "ofcom-connected-nations-mobile",
     "source_url": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-update-spring-2026",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/mobile-coverage.json", "schedule": "manual"}],
     "pages": ["/cheltenham-mobile-coverage"]
   },
   {
     "id": "historic-england-nhle",
     "source_url": "https://www.api.gov.uk/he/national-heritage-list-for-england-nhle/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/listed-buildings.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-listed-buildings"]
   },
   {
     "id": "rail-data-marketplace-ldbws",
     "source_url": "https://raildata.org.uk/",
     "licence": "Rail Data Marketplace 'Live Arrival and Departure Boards' data product licence. RDM data products use an OGL3-based licence with a per-product Schedule 1 set by the publisher (permitted purposes, term, attribution text, data retention) — not yet confirmed against the account's actual agreement",
+    "licence_type": "Rail Data Marketplace",
+    "data": [{"file": "_data/rail-times.json", "schedule": "every 5 minutes"}],
     "pages": ["/cheltenham-train-times"]
   },
   {
     "id": "orr-estimates-of-station-usage",
     "source_url": "https://dataportal.orr.gov.uk/statistics/usage/estimates-of-station-usage",
     "licence": "Licence not stated on the ORR data portal page and not independently confirmed here — check the ORR Data Portal terms before reuse",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/station-usage.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-train-times"]
   },
   {
     "id": "uk-parliament-members-api",
     "source_url": "https://members-api.parliament.uk/",
     "licence": "Open Parliament Licence v3.0",
+    "licence_type": "OPL v3.0",
+    "data": [{"file": "_data/politics.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-politics"]
   },
   {
     "id": "commons-library-general-election-results",
     "source_url": "https://commonslibrary.parliament.uk/research-briefings/cbp-8647/",
     "licence": "Open Parliament Licence v3.0",
+    "licence_type": "OPL v3.0",
+    "data": [{"file": "_data/election-results.json", "schedule": "manual"}],
     "pages": ["/cheltenham-politics/party-history"]
   },
   {
     "id": "nhs-england-ae-statistics",
     "source_url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/nhs-ae.json", "schedule": "daily"}],
     "pages": ["/cheltenham-ae-waiting-times"]
   },
   {
     "id": "nhs-organisation-data-service",
     "source_url": "https://digital.nhs.uk/services/organisation-data-service",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/nhs-hospitals.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-ae-waiting-times"]
   },
   {
     "id": "postcodes-io",
     "source_url": "https://postcodes.io/",
     "licence": "ONS Postcode Directory data under the Open Government Licence v3.0 / Open Database Licence (ODbL) — postcodes.io combines Ordnance Survey, ONS and Royal Mail data; see postcodes.io/about for full attribution. The exact terms have not been independently confirmed here",
+    "licence_type": "OGL v3.0",
+    "data": [],
     "pages": ["/cheltenham-ae-waiting-times", "/cheltenham-broadband-internet-speeds", "/cheltenham-dentists", "/cheltenham-opticians", "/cheltenham-planning-applications"]
   },
   {
     "id": "national-highways-planned-roadworks",
     "source_url": "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/roadworks.json", "schedule": "daily"}],
     "pages": ["/cheltenham-roadworks", "/newsletter"]
   },
   {
     "id": "dft-bus-open-data-service",
     "source_url": "https://data.bus-data.dft.gov.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/bus-routes.json", "schedule": "every two hours"}, {"file": "_data/bus-disruptions.json", "schedule": "every 5 minutes"}, {"file": "_data/bus-disruptions-history.json", "schedule": "every 5 minutes"}],
     "pages": ["/cheltenham-bus-data", "/cheltenham-bus-data/history", "/"]
   },
   {
     "id": "ons-nomis-labour-market-population",
     "source_url": "https://www.nomisweb.co.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/cheltenham-stats.json", "schedule": "monthly"}, {"file": "_data/cheltenham-employment.json", "schedule": "monthly"}],
     "pages": ["/about-cheltenham", "/cheltenham-employment-history"]
   },
   {
     "id": "thesportsdb",
     "source_url": "https://www.thesportsdb.com/",
     "licence": "TheSportsDB free API terms (no formal open licence)",
+    "licence_type": "API terms",
+    "data": [{"file": "_data/cheltenham-town-fc.json", "schedule": "daily"}],
     "pages": ["/cheltenham-sports/cheltenham-town-fc"]
   },
   {
     "id": "police-uk-street-level-crime",
     "source_url": "https://data.police.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/crime/index.json", "schedule": "monthly"}, {"file": "_data/crime-map.json", "schedule": "monthly"}],
     "pages": [
       "/cheltenham-crime-data",
       "/cheltenham-crime-data/2023",
@@ -137,54 +179,72 @@
     "id": "dpd-pickup-api",
     "source_url": "https://pickup.dpd.co.uk/",
     "licence": "Unofficial public API (no API key required) used under DPD's own website terms — no formal open licence",
+    "licence_type": "API terms",
+    "data": [{"file": "_data/dpd-pickup-points.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-dpd-pickup-points"]
   },
   {
     "id": "open-charge-map",
     "source_url": "https://openchargemap.org",
     "licence": "Creative Commons Attribution-ShareAlike 4.0 (CC-BY-SA 4.0) — Data © Open Charge Map contributors",
+    "licence_type": "CC BY-SA 4.0",
+    "data": [{"file": "_data/ev-charging.json", "schedule": "daily"}],
     "pages": ["/cheltenham-ev-charging"]
   },
   {
     "id": "mi5-uk-threat-level",
     "source_url": "https://www.mi5.gov.uk/threat-levels",
     "licence": "Crown copyright; not explicitly published under the Open Government Licence on mi5.gov.uk — treat as Crown copyright content and verify reuse terms before relying on this. Threat level changes before 19 September 2026 were compiled by hand from Wikipedia's UK Threat Levels article (CC BY-SA 4.0)",
+    "licence_type": "Crown copyright",
+    "data": [{"file": "_data/terrorism.json", "schedule": "daily"}, {"file": "_data/terrorism-history.json", "schedule": "daily"}],
     "pages": ["/cheltenham-security-alerts"]
   },
   {
     "id": "defra-uk-air-quality",
     "source_url": "https://uk-air.defra.gov.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_pages/safety-environment/air-quality.md", "schedule": "every two hours"}],
     "pages": ["/cheltenham-air-quality"]
   },
   {
     "id": "environment-agency-flood-map-for-planning",
     "source_url": "https://environment.data.gov.uk/dataset/04532375-a198-476e-985e-0579a0a11b47",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/flood-zones.json", "schedule": "manual"}],
     "pages": ["/cheltenham-flood-zones"]
   },
   {
     "id": "environment-agency-flood-monitoring",
     "source_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/flood.json", "schedule": "daily"}, {"file": "_data/flood-history.json", "schedule": "daily"}, {"file": "_data/river-levels.json", "schedule": "every two hours"}, {"file": "_data/river-levels-history.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-flood-warnings", "/cheltenham-flood-warnings/history", "/cheltenham-flood-warnings/2007-floods"]
   },
   {
     "id": "water-uk-national-storm-overflow-hub",
     "source_url": "https://www.stwater.co.uk/in-my-area/storm-overflow-map/",
     "licence": "No formal licence stated — published as a free public near-real-time data feed by Severn Trent Water via Water UK's National Storm Overflow Hub",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/sewage-overflows.json", "schedule": "daily"}],
     "pages": ["/cheltenham-sewage-overflows"]
   },
   {
     "id": "chrismytton-cheltenham-council-land-and-assets",
     "source_url": "https://github.com/chrismytton/cheltenham-council-land-and-assets",
     "licence": "Not formally stated — originally published by Cheltenham Borough Council under the Local Government Transparency Code, but the council's own open data page for this dataset is now offline and this GitHub mirror states no licence of its own",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/council-land-and-assets.json", "schedule": "manual"}],
     "pages": ["/cheltenham-council-land-and-assets", "/cheltenham-council-land-and-assets/2021"]
   },
   {
     "id": "environment-agency-water-quality-archive",
     "source_url": "https://environment.data.gov.uk/water-quality/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/water-quality.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-water-quality"]
   },
   {
@@ -194,6 +254,8 @@
     "refresh": "every two hours",
     "source_url": "https://ratings.food.gov.uk/open-data-resources",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/food-standards.json", "schedule": "every two hours"}],
     "pages": [
       "/cheltenham-food-standards",
       "/cheltenham-food-standards/rated-one-to-four",
@@ -206,18 +268,24 @@
     "id": "givefood-foodbank-api",
     "source_url": "https://www.givefood.org.uk/api/",
     "licence": "CC BY 4.0 (per the Give Food data repository); credit with a link, and show lists of needed items as published",
+    "licence_type": "CC BY 4.0",
+    "data": [{"file": "_data/foodbank.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-foodbank-needed-items", "/cheltenham-foodbank-needed-items/cheltenham-foodbank", "/cheltenham-foodbank-needed-items/cheltenham-open-door", "/cheltenham-foodbank-needed-items/springbank-community-group", "/cheltenham-foodbank-needed-items/gloucester-foodbank", "/cheltenham-foodbank-needed-items/tewkesbury-foodbank", "/cheltenham-foodbank-needed-items/north-cotswold-foodbank"]
   },
   {
     "id": "openweather-onecall",
     "source_url": "https://openweathermap.org/",
     "licence": "OpenWeather One Call API subscription terms (requires an API key) — proprietary/commercial terms, not an open data licence",
+    "licence_type": "API terms",
+    "data": [{"file": "_data/weather.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-10-day-weather-forecast", "/", "/newsletter"]
   },
   {
     "id": "uk-fuel-finder-service",
     "source_url": "https://www.fuel-finder.service.gov.uk",
     "licence": "Open Government Licence v3.0 (published under the statutory Motor Fuel Prices Transparency Scheme; access requires a registered API client but the underlying price data is intended as open government data)",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/fuel-prices.json", "schedule": "hourly"}],
     "pages": ["/cheltenham-fuel-prices"]
   },
   {
@@ -226,6 +294,8 @@
     "licence_name": "Open Database Licence (ODbL)",
     "source_url": "https://www.openstreetmap.org/",
     "licence": "Open Database Licence (ODbL)",
+    "licence_type": "ODbL",
+    "data": [{"file": "_data/hotels.json", "schedule": "monthly"}, {"file": "_data/points_of_interest.json", "schedule": "monthly"}, {"file": "_data/post-offices.json", "schedule": "daily"}, {"file": "_data/races.json", "schedule": "monthly"}, {"file": "_data/car-parks.json", "schedule": "monthly"}, {"file": "_data/cycle-routes.json", "schedule": "monthly"}, {"file": "_data/play-areas.json", "schedule": "monthly"}],
     "pages": [
       "/staying-in-cheltenham",
       "/cheltenham-points-of-interest",
@@ -240,6 +310,8 @@
     "id": "hm-land-registry-price-paid-data",
     "source_url": "https://landregistry.data.gov.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/cheltenham-house-prices.json", "schedule": "every two hours"}, {"file": "_data/house-summary.json", "schedule": "every two hours"}, {"file": "_data/cheltenham-house-price-history.json", "schedule": "manual"}],
     "pages": [
       "/cheltenham-house-prices",
       "/cheltenham-house-prices-2023",
@@ -254,36 +326,48 @@
     "id": "local-news-rss-aggregator",
     "source_url": "https://github.com/thechelsuk/uk.cheltenham-od/blob/main/_data/news-sources.yml",
     "licence": "Aggregates RSS feeds from multiple independent publishers (BBC News, Gloucestershire Police, Cheltenham Borough Council, Cheltenham BID, local blogs, GOV.UK Alerts, etc.) — each publisher retains its own copyright/terms; no single formal licence covers the aggregate, used under standard RSS syndication with attribution links back to the source",
+    "licence_type": "Mixed",
+    "data": [{"file": "_data/news_archive.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-news"]
   },
   {
     "id": "parkrun-events-feed",
     "source_url": "https://www.parkrun.org.uk/",
     "licence": "Unofficial public events feed (events.json); no formal open licence stated by parkrun",
+    "licence_type": "API terms",
+    "data": [{"file": "_data/parkrun.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-sports/parkrun"]
   },
   {
     "id": "nhs-ods-organisation-data-service",
     "source_url": "https://digital.nhs.uk/services/organisation-data-service",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/dentists.json", "schedule": "monthly"}, {"file": "_data/opticians.json", "schedule": "monthly"}, {"file": "_pages/community-support/gp-pharmacy.md", "schedule": "daily"}],
     "pages": ["/cheltenham-gp-pharmacies", "/cheltenham-dentists", "/cheltenham-opticians"]
   },
   {
     "id": "cheltenham-bc-planning-portal",
     "source_url": "https://publicaccess.cheltenham.gov.uk/online-applications/",
     "licence": "Not explicitly stated on the scraped planning register pages; Cheltenham Borough Council publishes most site content under the Open Government Licence v3.0 but this has not been confirmed for the PublicAccess/Idox planning portal specifically",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/planning-applications.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-planning-applications"]
   },
   {
     "id": "cheltenham-bc-recycling-banks",
     "source_url": "https://www.cheltenham.gov.uk/recyclingbanks",
     "licence": "Not explicitly stated on the scraped page; assumed to fall under Cheltenham Borough Council's general Open Government Licence v3.0 website terms, but this is unconfirmed for this specific page",
+    "licence_type": "None stated",
+    "data": [{"file": "_pages/home-property/recycling.md", "schedule": "every two hours"}],
     "pages": ["/cheltenham-recycling"]
   },
   {
     "id": "cheltenham-bc-council-tax-charges",
     "source_url": "https://www.cheltenham.gov.uk/council-tax-and-benefits/council-tax-bands-charges-and-appeals/",
     "licence": "Not explicitly stated on the scraped page; assumed to fall under Cheltenham Borough Council's general Open Government Licence v3.0 website terms, but this is unconfirmed for this specific page. No CSV or open data file is published for this data.",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/council-tax.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-council-tax"]
   },
   {
@@ -292,6 +376,8 @@
     "licence_name": "Open Government Licence v3.0",
     "source_url": "https://get-information-schools.service.gov.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/schools.json", "schedule": "manual"}],
     "pages": [
       "/cheltenham-schools",
       "/cheltenham-schools/catchment-areas/secondary",
@@ -304,30 +390,40 @@
     "licence_name": "Creative Commons Attribution 4.0 licence (CC BY 4.0)",
     "source_url": "https://www.toiletmap.org.uk/dataset",
     "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0), as stated on the Toilet Map dataset page",
+    "licence_type": "CC BY 4.0",
+    "data": [{"file": "_data/toilets.json", "schedule": "daily"}],
     "pages": ["/cheltenham-public-toilets"]
   },
   {
     "id": "ofcom-connected-nations-broadband",
     "source_url": "https://www.ofcom.org.uk/phones-and-broadband/coverage/connected-nations-update/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/broadband-summary.json", "schedule": "manual"}],
     "pages": ["/cheltenham-broadband-internet-speeds", "/cheltenham-wards"]
   },
   {
     "id": "ons-open-geography-ward-boundaries",
     "source_url": "https://geoportal.statistics.gov.uk/",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/broadband-map.json", "schedule": "manual"}],
     "pages": ["/cheltenham-broadband-internet-speeds", "/cheltenham-wards", "/cheltenham-crime-data/map"]
   },
   {
     "id": "ons-open-geography-lsoa-boundaries-and-ward-lookup",
     "source_url": "https://geoportal.statistics.gov.uk/",
     "licence": "Open Government Licence v3.0 (contains OS data © Crown copyright and database right)",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/small-areas.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-crime-data/map"]
   },
   {
     "id": "ons-nomis-small-area-population-estimates",
     "source_url": "https://www.nomisweb.co.uk/datasets/pestoa2021",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [],
     "pages": ["/cheltenham-crime-data/map"]
   },
   {
@@ -336,60 +432,80 @@
     "licence_name": "Open Government Licence v3.0",
     "source_url": "https://www.gov.uk/bank-holidays",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/holidays.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-public-holidays"]
   },
   {
     "id": "inpost-locker-api",
     "source_url": "https://www.inpost.co.uk/",
     "licence": "Unofficial public API (no API key required) used under InPost's own website terms — no formal open licence",
+    "licence_type": "API terms",
+    "data": [{"file": "_data/inpost-lockers.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-inpost-lockers"]
   },
   {
     "id": "fixmystreet-rss",
     "source_url": "https://www.fixmystreet.com/",
     "licence": "mySociety FixMyStreet public RSS feed terms; no formal open licence stated",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/fix-my-street.json", "schedule": "every two hours"}, {"file": "_data/fix-my-street-history.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-fix-my-street", "/cheltenham-fix-my-street/history"]
   },
   {
     "id": "local-events-rss-aggregator",
     "source_url": "https://github.com/thechelsuk/uk.cheltenham-od/blob/main/_data/event-sources.yml",
     "licence": "Aggregates RSS feeds from multiple independent publishers (Cheltenham Festivals, Visit Cheltenham, Cheltenham Town Hall, Wilson Art Gallery and Museum, Pittville Pump Rooms) — each publisher retains its own copyright/terms; no single formal licence covers the aggregate, used under standard RSS syndication with attribution links back to the source",
+    "licence_type": "Mixed",
+    "data": [{"file": "_data/sport-fixtures.json", "schedule": "daily"}],
     "pages": ["/newsletter"]
   },
   {
     "id": "cheltenham-od-manually-curated",
     "source_url": "https://cheltenham-od.uk",
     "licence": "None — manually curated by site editors",
+    "licence_type": "Own data",
+    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}],
     "pages": ["/cheltenham-third-spaces", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket"]
   },
   {
     "id": "nged-live-power-cuts",
     "source_url": "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts",
     "licence": "WPD Open Data Licence",
+    "licence_type": "NGED Open Data Licence",
+    "data": [{"file": "_data/power-cuts.json", "schedule": "every 5 minutes"}, {"file": "_data/power-cuts-history.json", "schedule": "every 5 minutes"}],
     "pages": ["/cheltenham-power-cuts", "/cheltenham-power-cuts/history"]
   },
   {
     "id": "cloudflare-graphql-analytics",
     "source_url": "https://developers.cloudflare.com/analytics/graphql-api/",
     "licence": "The site's own traffic figures from Cloudflare; no open licence applies",
+    "licence_type": "Own data",
+    "data": [{"file": "_data/traffic.json", "schedule": "daily"}],
     "pages": ["/sponsor/traffic"]
   },
   {
     "id": "dft-road-safety-data",
     "source_url": "https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data",
     "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/road-collisions.json", "schedule": "manual"}],
     "pages": ["/cheltenham-road-collisions"]
   },
   {
     "id": "cheltenham-borough-council-election-results",
     "source_url": "https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx",
     "licence": "None stated — borough election results as published on the council's modern.gov site, read from its per-ward results pages",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/ward-politics.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-wards", "/cheltenham-politics/local-elections"]
   },
   {
     "id": "cheltenham-borough-council-councillors",
     "source_url": "https://democracy.cheltenham.gov.uk/mgFindMember.aspx",
     "licence": "None stated — current councillors and their parties from the council's own modern.gov service",
+    "licence_type": "None stated",
+    "data": [],
     "pages": ["/cheltenham-wards", "/cheltenham-politics/local-elections"]
   }
 ]

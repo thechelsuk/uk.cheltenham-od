@@ -1,0 +1,94 @@
+<style>
+    #freshness-table .status {
+        font-size: .78rem;
+        font-weight: 600;
+        letter-spacing: .02em;
+        white-space: nowrap;
+    }
+
+    #freshness-table .status-ok {
+        color: #3a8f4f;
+    }
+
+    #freshness-table .status-stale,
+    #freshness-table .status-unknown {
+        color: #b3541e;
+    }
+
+    #freshness-table .status-unchanged {
+        color: #8a6d1f;
+    }
+
+    #freshness-table .status-manual {
+        color: var(--text-muted);
+    }
+</style>
+
+{% assign rows = site.data.data_freshness %}
+{% assign stale = rows | where: "status", "stale" %}
+{% assign unknown = rows | where: "status", "unknown" %}
+{% assign unchanged = rows | where: "status", "unchanged" %}
+{% assign ok = rows | where: "status", "ok" %}
+{% assign manual = rows | where: "status", "manual" %}
+
+<p class="info-text">
+    When each source's data file last changed, from the date of the last git commit that touched it, against
+    how long its schedule allows: 2 days for data checked every 5 minutes, hourly or every two hours, 4 days for
+    daily and 45 days for monthly. Scheduled fetchers fail quietly (the workflows carry on past an error), so:
+</p>
+<ul class="info-text">
+    <li><strong>Stale</strong>: the file records a date on every run, so no change means the fetcher hasn't
+        succeeded. Worth a look.</li>
+    <li><strong>Unchanged</strong>: the file only changes when its data does (a plain list or a raw feed), so
+        it may be healthy with nothing new. Check the source if it seems too long.</li>
+    <li><strong>Manual</strong>: refreshed by hand, never flagged.</li>
+</ul>
+<p class="info-text">
+    Files and schedules are listed per source in <code>_data/sources.json</code>.
+</p>
+
+{% if rows %}
+<p class="info-text">{{ stale.size }} stale, {{ unchanged.size }} unchanged, {{ unknown.size }} unknown, {{ ok.size }} up to date and
+    {{ manual.size }} manual, across {{ rows.size }} data files.</p>
+
+<div class="table-scroll">
+    <table class="broadband-table data-table" data-sortable id="freshness-table">
+        <thead>
+            <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Source</th>
+                <th scope="col">Licence</th>
+                <th scope="col">Data file</th>
+                <th scope="col">Schedule</th>
+                <th scope="col" class="date">Last changed</th>
+                <th scope="col" class="number">Days ago</th>
+                <th scope="col">Pages</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            {% case row.status %}
+            {% when "stale" %}{% assign rank = 0 %}
+            {% when "unknown" %}{% assign rank = 1 %}
+            {% when "unchanged" %}{% assign rank = 2 %}
+            {% when "ok" %}{% assign rank = 3 %}
+            {% else %}{% assign rank = 4 %}
+            {% endcase %}
+            <tr>
+                <td data-val="{{ rank }}"><span class="status status-{{ row.status }}">{{ row.status | capitalize }}</span></td>
+                <td data-val="{{ row.name | downcase | escape }}"><a href="{{ row.source_url }}">{{ row.name }}</a></td>
+                <td>{{ row.licence_type }}</td>
+                <td><code>{{ row.file }}</code></td>
+                <td>{{ row.schedule }}</td>
+                <td class="date" data-val="{{ row.last_changed }}">{% if row.last_changed %}{{ row.last_changed | date: "%Y-%m-%d %H:%M" }}{% else %}&mdash;{% endif %}</td>
+                <td class="number" data-val="{{ row.age_days | default: 99999 }}">{% if row.age_days %}{{ row.age_days }}{% else %}&mdash;{% endif %}</td>
+                <td>{% for page in row.pages %}<a href="{{ page }}">{{ page }}</a>{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p class="info-text">No freshness data: this panel is filled in by <code>_plugins/data_freshness.rb</code> when the
+    admin page is built locally from a git checkout.</p>
+{% endif %}
