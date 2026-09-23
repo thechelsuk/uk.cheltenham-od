@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T20:05:19+01:00",
+  "generated_at": "2026-09-23T20:10:18+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-23T20:02",
-      "expected": "2026-09-23T20:04",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-09-23T20:12",
       "expected": "2026-09-23T20:12",
@@ -54,7 +34,7 @@
     },
     {
       "scheduled": "2026-09-23T20:15",
-      "expected": "2026-09-23T20:18",
+      "expected": "2026-09-23T20:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -69,13 +49,13 @@
     },
     {
       "scheduled": "2026-09-23T20:23",
-      "expected": "2026-09-23T20:23",
-      "status": "On time",
+      "expected": "2026-09-23T20:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a gas leak near the railway",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -166,13 +146,27 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T21:12",
+      "expected": "2026-09-23T21:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-23T20:10",
-      "expected": "2026-09-23T20:10",
-      "status": "On time",
+      "expected": "2026-09-23T20:12",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -181,7 +175,7 @@
     },
     {
       "scheduled": "2026-09-23T20:14",
-      "expected": "2026-09-23T20:17",
+      "expected": "2026-09-23T20:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -191,13 +185,13 @@
     },
     {
       "scheduled": "2026-09-23T20:21",
-      "expected": "2026-09-23T20:23",
+      "expected": "2026-09-23T20:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
+      "reason": "This service has been delayed by a gas leak near the railway"
     },
     {
       "scheduled": "2026-09-23T20:27",
@@ -237,6 +231,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T21:10",
+      "expected": "2026-09-23T21:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
