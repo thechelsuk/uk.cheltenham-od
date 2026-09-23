@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T17:30:18+01:00",
+  "generated_at": "2026-09-23T17:35:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,27 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-23T17:25",
-      "expected": "2026-09-23T17:28",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-23T17:31",
-      "expected": "2026-09-23T17:31",
-      "status": "On time",
+      "expected": "2026-09-23T17:33",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -44,8 +26,8 @@
     },
     {
       "scheduled": "2026-09-23T17:40",
-      "expected": "2026-09-23T17:40",
-      "status": "On time",
+      "expected": "2026-09-23T17:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
@@ -181,23 +163,46 @@
         "Durham",
         "Newcastle"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T18:19",
+      "expected": "2026-09-23T18:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-09-23T18:25",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train crew",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-23T17:24",
-      "expected": "2026-09-23T17:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-23T17:29",
-      "expected": "2026-09-23T17:29",
-      "status": "On time",
+      "expected": "2026-09-23T17:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -205,18 +210,8 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-09-23T17:31",
-      "expected": "2026-09-23T17:31",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-23T17:38",
-      "expected": "2026-09-23T17:40",
+      "expected": "2026-09-23T17:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -263,6 +258,26 @@
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T18:18",
+      "expected": "2026-09-23T18:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T18:24",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train crew"
     }
   ]
 }
