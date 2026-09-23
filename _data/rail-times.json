@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T21:15:16+01:00",
+  "generated_at": "2026-09-23T21:20:17+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,39 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-23T21:12",
-      "expected": "2026-09-23T21:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street"
-      ]
-    },
-    {
-      "scheduled": "2026-09-23T21:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-23T21:33",
       "expected": "2026-09-23T21:33",
@@ -108,8 +75,8 @@
     },
     {
       "scheduled": "2026-09-23T22:03",
-      "expected": "2026-09-23T22:03",
-      "status": "On time",
+      "expected": "2026-09-23T22:05",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -136,29 +103,22 @@
         "Kemble",
         "Swindon"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T22:21",
+      "expected": "2026-09-23T22:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-23T21:10",
-      "expected": "2026-09-23T21:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-23T21:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers"
-    },
     {
       "scheduled": "2026-09-23T21:33",
       "expected": "2026-09-23T21:33",
@@ -201,7 +161,7 @@
     },
     {
       "scheduled": "2026-09-23T22:01",
-      "expected": "2026-09-23T22:03",
+      "expected": "2026-09-23T22:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -216,6 +176,36 @@
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Westbury",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T22:20",
+      "expected": "2026-09-23T22:20",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T22:27",
+      "expected": "2026-09-23T22:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T22:34",
+      "expected": "2026-09-23T22:34",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
       "destination": "Cheltenham Spa",
       "reason": ""
     }
