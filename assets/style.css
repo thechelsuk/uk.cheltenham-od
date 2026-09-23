@@ -802,6 +802,35 @@ table[data-sortable] th.sort-desc::after {
 }
 
 /* ================================
+   Maps
+   ================================ */
+
+.map-canvas {
+    height: 600px;
+    border-radius: 8px;
+}
+
+iframe.map-canvas {
+    width: 100%;
+    border: none;
+}
+
+/* Swatch legends drawn above a map; each item is a direct child span. */
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em 1em;
+    margin: 0.5em 0 1em;
+    font-size: 0.85rem;
+}
+
+.map-legend > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ================================
    Classifieds navigation
    ================================ */
 
@@ -1467,20 +1496,6 @@ button:disabled,
         font-size: 1.2rem;
         padding: 0.5rem 0.7rem;
     }
-}
-
-.catchment-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3em 1em;
-    margin-top: 0.75em;
-}
-
-.catchment-legend-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4em;
-    font-size: 0.9rem;
 }
 
 .catchment-swatch {
