@@ -42,15 +42,7 @@ jobs:
 
             - name: Commit and push if changed
               if: ${{ !cancelled() }}
-              run: |-
-                  git config user.name "GitHub Action"
-                  git config user.email "action@github.com"
-                  git add _data/social-posted.json
-
-                  if git diff --staged --quiet; then
-                    exit 0
-                  fi
-
-                  git commit -m "Chore: Social posts sent $(date +'%Y-%m-%d %H:%M')"
-                  git pull --rebase
-                  git push
+              uses: ./.github/actions/commit-and-push
+              with:
+                  message: "Chore: Social posts sent"
+                  paths: _data/social-posted.json
