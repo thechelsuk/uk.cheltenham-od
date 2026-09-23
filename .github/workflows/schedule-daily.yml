@@ -77,7 +77,22 @@ jobs:
                   fi
 
                   git commit -m "Chore: Daily COD Data pull for $(date +'%Y-%m-%d %H:%M')"
-                  git push
+                  # main moves on while this job runs (the Pi pushes every 5 minutes),
+                  # so rebase onto the latest main and retry rather than losing the data.
+                  pushed=false
+                  for attempt in 1 2 3; do
+                    if git pull --rebase --autostash && git push; then
+                      pushed=true
+                      break
+                    fi
+                    git rebase --abort 2>/dev/null || true
+                    echo "Push attempt $attempt failed; retrying"
+                    sleep $((attempt * 10))
+                  done
+                  if [ "$pushed" != true ]; then
+                    echo "::error::Could not push the data update after 3 attempts"
+                    exit 1
+                  fi
                   echo "changed=true" >> "$GITHUB_OUTPUT"
                   echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
