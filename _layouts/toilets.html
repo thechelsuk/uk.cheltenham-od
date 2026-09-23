@@ -55,6 +55,13 @@
                 </tbody>
             </table>
         </div>
+        {% assign src = site.data.sources | where: "id", "great-british-toilet-map" | first %}
+        <p class="toilet-attribution"><small>
+                Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
+                the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+                Listings are based on user submissions and may contain errors or omissions, so confirm
+                before travelling.
+            </small></p>
 
         <h2>Good to Know</h2>
 
@@ -68,14 +75,6 @@
             <a href="https://www.toiletmap.org.uk/" target="_blank" rel="noopener">Great British Toilet Map</a>,
             which keeps this data up to date through user submissions.
         </p>
-
-
-        {% assign src = site.data.sources | where: "id", "great-british-toilet-map" | first %}
-        <p class="toilet-attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-            Listings are based on user submissions and may contain errors or omissions, so confirm
-            before travelling.
-        </small></p>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script id="toilet-data" type="application/json">{{ site.data.toilets | jsonify }}</script>

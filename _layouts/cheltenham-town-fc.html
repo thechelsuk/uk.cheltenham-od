@@ -74,25 +74,23 @@
                 </tbody>
             </table>
         </div>
-        <p><small>Our free data source only reliably returns the single most recent result — see the club's own <a
-                    href="{{ ctfc.team.website }}" target="_blank" rel="noopener">results and fixtures page</a> for
-                the full season.</small></p>
         {% else %}
-        <p>No recent results available — see the club's own <a href="{{ ctfc.team.website }}" target="_blank"
-                rel="noopener">results and fixtures page</a>.</p>
+        <p>No recent results available — see the club's own results and fixtures page.</p>
         {% endif %}
 
         <p class="cheltenham-town-fc-attribution"><small>
-            Data from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>{% if ctfc.licence %}, published under the {{ ctfc.licence }}{% endif %}.
-            {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Fixtures and results come from a free, crowd-sourced database, so check the club's own website for
-            confirmed dates and kick-off times.
-        </small></p>
+                Data from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>{% if ctfc.licence %}, published under
+                the {{ ctfc.licence }}{% endif %}.
+                {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y" }}.{% endif %}
+                Check the <a href="{{ ctfc.team.website }}" target="_blank" rel="noopener">club's own site</a> for
+                confirmed dates and kick-off times.
+            </small></p>
 
         <h2>Getting to Whaddon Road</h2>
 
         {% assign home_record = ctfc.next_fixtures | where: "venue_type", "Home" | first %}
-        {% if home_record == nil %}{% assign home_record = ctfc.last_results | where: "venue_type", "Home" | first %}{% endif %}
+        {% if home_record == nil %}{% assign home_record = ctfc.last_results | where: "venue_type", "Home" | first %}{%
+        endif %}
         <p>Cheltenham Town play at Whaddon Road, Whaddon, Cheltenham, GL52 5NA{% if home_record.venue %} — currently
             known by its sponsor's name, "{{ home_record.venue }}"{% endif %}.</p>
 
