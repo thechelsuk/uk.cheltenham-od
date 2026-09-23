@@ -48,45 +48,57 @@
         <p>The traffic figures are being refreshed and will be back shortly.</p>
         {% endif %}
 
-        <section class="faqs">
-        <h2>FAQs</h2>
+        <h2>Frequently Asked Questions</h2>
 
         <h3>What Is a Unique Visitor?</h3>
-        <p>A unique visitor is a single device or browser that visited the site at least once in the 30 days, however
-            many pages it looked at or how often it came back. The daily chart counts each day separately, so someone
-            who returns on several days appears on every one of those days but only once in the headline figure. It
-            counts devices rather than people, so someone who uses a phone and a laptop counts twice.</p>
+        <ul>
+            <li>A unique visitor is a single device or browser that visited the site at least once in the 30 days, however
+                many pages it looked at or how often it came back. The daily chart counts each day separately, so someone
+                who returns on several days appears on every one of those days but only once in the headline figure. It
+                counts devices rather than people, so someone who uses a phone and a laptop counts twice.</li>
+        </ul>
 
         <h3>What Counts as a Request?</h3>
-        <p>Every file the site serves: pages, images, scripts, data files and feeds. One visit to a page usually makes
-            several requests, which is why total requests is much larger than unique visitors.</p>
+        <ul>
+            <li>Every file the site serves: pages, images, scripts, data files and feeds. One visit to a page usually makes
+                several requests, which is why total requests is much larger than unique visitors.</li>
+        </ul>
 
         <h3>Do the Figures Include Bots and Search Engines?</h3>
-        <p>Yes. Search engine crawlers, feed readers and other automated tools also request pages, and they are
-            included in the requests and in the unique visitor counts. Some are useful, since they are how people find
-            the site, but the figures will be higher than the number of people reading the site. Bots that Cloudflare
-            blocks before they reach the site are not shown as visitors.</p>
+        <ul>
+            <li>Yes. Search engine crawlers, feed readers and other automated tools also request pages, and they are
+                included in the requests and in the unique visitor counts. Some are useful, since they are how people find
+                the site, but the figures will be higher than the number of people reading the site. Bots that Cloudflare
+                blocks before they reach the site are not shown as visitors.</li>
+        </ul>
 
         <h3>What Does Percent Cached Mean?</h3>
-        <p>Cloudflare keeps copies of the site's files in data centres around the world. This is the share of the data
-            sent to visitors that came from one of those copies rather than from the site's own server. A higher
-            percentage means the site loads quickly for more people and needs less work from the server behind it.
-            Pages and data change through the day, so the figure rises and falls.</p>
+        <ul>
+            <li>Cloudflare keeps copies of the site's files in data centres around the world. This is the share of the data
+                sent to visitors that came from one of those copies rather than from the site's own server. A higher
+                percentage means the site loads quickly for more people and needs less work from the server behind it.
+                Pages and data change through the day, so the figure rises and falls.</li>
+        </ul>
 
         <h3>Do These Figures Identify Me?</h3>
-        <p>No. These counts come from the service that delivers the site, not from cookies or scripts running in your
-            browser, and they contain no names or personal details. See the <a href="/privacy">privacy policy</a> for
-            more.</p>
+        <ul>
+            <li>No. These counts come from the service that delivers the site, not from cookies or scripts running in your
+                browser, and they contain no names or personal details. See the <a href="/privacy">privacy policy</a> for
+                more.</li>
+        </ul>
 
         <h3>How Often Are the Figures Updated?</h3>
-        <p>Every day, and the page always shows the latest 30 complete days. Today is left out until it has finished, so
-            the newest day on the page is yesterday.</p>
+        <ul>
+            <li>Every day, and the page always shows the latest 30 complete days. Today is left out until it has finished, so
+                the newest day on the page is yesterday.</li>
+        </ul>
 
         <h3>Can I Use These Figures When Deciding on Sponsorship?</h3>
-        <p>Yes, that is why the page is public. Bear in mind the points above about bots and repeat visits. If you have
-            questions, <a href="/contact">get in touch</a> or read more about <a href="/sponsor">sponsoring a
-                category</a>.</p>
-        </section>
+        <ul>
+            <li>Yes, that is why the page is public. Bear in mind the points above about bots and repeat visits. If you have
+                questions, <a href="/contact">get in touch</a> or read more about <a href="/sponsor">sponsoring a
+                category</a>.</li>
+        </ul>
     </div>
 </div>
 {% if traffic.days.size > 0 %}

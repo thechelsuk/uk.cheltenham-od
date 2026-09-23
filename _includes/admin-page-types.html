@@ -52,10 +52,11 @@
             {% assign pages = site.pages | where_exp: "p", "p.title" | sort_natural: "title" %}
             {% for page in pages %}
             {% assign has_dataset = false %}
-            {% assign has_faq = page.has_faqs %}
+            {% assign has_faq = false %}
             {% if page.schema %}
             {% capture schema_content %}{% include schema/{{ page.schema }}.html %}{% endcapture %}
             {% if schema_content contains "Dataset" %}{% assign has_dataset = true %}{% endif %}
+            {% if schema_content contains "FAQPage" %}{% assign has_faq = true %}{% endif %}
             {% endif %}
             {% assign page_category = page.group %}
             {% unless page_category %}

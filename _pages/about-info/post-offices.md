@@ -27,9 +27,7 @@ Most branches offer core postal and banking services, though exact services vary
 - Cash withdrawals and deposits (banking services)
 - Click & Collect parcel pickup
 
-<section class="faqs" markdown="1">
-
-## Post Office FAQs
+## Frequently Asked Questions
 
 ### Where Can I Send a Parcel Outside Post Office Opening Hours?
 
@@ -40,5 +38,3 @@ Most branches offer core postal and banking services, though exact services vary
 - Yes — see our [Cheltenham DPD Pickup points](/cheltenham-dpd-pickup-points) page for a full list of local shops, newsagents and petrol station kiosks that accept DPD drop-offs and collections, many with longer opening hours than a typical Post Office branch.
 
 New to the area? Our [student guide to Cheltenham](/student-guide-to-cheltenham) covers this alongside registering with a GP and other first-week admin.
-
-</section>

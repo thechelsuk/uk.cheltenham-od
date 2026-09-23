@@ -4,11 +4,3 @@
 # signal for this content, so it's switched off rather than chased file by
 # file.
 MD013: false
-
-# Inline HTML stays flagged, except for what content pages genuinely need:
-# <section class="faqs" markdown="1"> marks a page's FAQs so the build can
-# generate their FAQPage structured data (see _plugins/faq_schema.rb), and
-# lists of links built in a Liquid loop (the newsletter archive) can't be
-# written as Markdown.
-MD033:
-  allowed_elements: [section, ul, li, a]

@@ -91,28 +91,33 @@
                 {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
             </small></p>
 
-        <section class="faqs">
-        <h2>FAQs</h2>
+        <h2>Frequently Asked Questions</h2>
 
         <h3>Who Is the MP for Cheltenham?</h3>
-        <p>{{ mp.name }} ({{ mp.party }}) has been the MP for Cheltenham since
-            {{ mp.since | date: "%-d %B %Y" }}.
-        </p>
+        <ul>
+            <li>{{ mp.name }} ({{ mp.party }}) has been the MP for Cheltenham since
+                {{ mp.since | date: "%-d %B %Y" }}.</li>
+        </ul>
 
         <h3>How Do I Contact My MP?</h3>
-        <p>Your MP's <a href="{{ mp.profile_url }}">UK Parliament page</a> lists how to get in touch. You can also
-            write to them through <a href="https://www.writetothem.com/">WriteToThem</a>, a free service that
-            sends your message to your MP.</p>
+        <ul>
+            <li>Your MP's <a href="{{ mp.profile_url }}">UK Parliament page</a> lists how to get in touch. You can also
+                write to them through <a href="https://www.writetothem.com/">WriteToThem</a>, a free service that
+                sends your message to your MP.</li>
+        </ul>
 
         <h3>What Is the Difference Between an MP and a Councillor?</h3>
-        <p>An MP represents the constituency in the House of Commons and works on national laws and issues.
-            Councillors are elected to local councils, such as Cheltenham Borough Council, and make decisions on
-            local services such as planning and waste collection.</p>
+        <ul>
+            <li>An MP represents the constituency in the House of Commons and works on national laws and issues.
+                Councillors are elected to local councils, such as Cheltenham Borough Council, and make decisions on
+                local services such as planning and waste collection.</li>
+        </ul>
 
         <h3>Where Does the Politics Data Come From?</h3>
-        <p>The UK Parliament Members API, refreshed monthly, under the Open Parliament Licence. The party history
-            page uses House of Commons Library election datasets.</p>
-        </section>
+        <ul>
+            <li>The UK Parliament Members API, refreshed monthly, under the Open Parliament Licence. The party history
+                page uses House of Commons Library election datasets.</li>
+        </ul>
     </div>
 </div>
 {% include footer.html %}

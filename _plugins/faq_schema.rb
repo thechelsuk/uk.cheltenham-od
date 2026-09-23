@@ -2,23 +2,21 @@
 
 # FAQ structured data, generated from the FAQs a visitor actually sees.
 #
-# Wrap a page's FAQ section in <section class="faqs"> (or, in Markdown,
-# <section class="faqs" markdown="1">). The first heading inside is the
-# section title, headings at the next level down are the questions, and
-# everything up to the following question is the answer. After the page is
-# rendered, this adds a matching FAQPage JSON-LD block to its <head>, so the
-# structured data can never drift from the page text. It works for Liquid
-# values in templated FAQs (the ward pages) because it reads the final HTML.
-#
-# It also sets page.has_faqs before rendering, for the admin page's checks.
+# Every page writes its FAQs the same way: an <h2> reading "Frequently Asked
+# Questions", then each question as an <h3> followed by its answer as a <ul>
+# (one <li> per point). In Markdown that is "## Frequently Asked Questions",
+# "### Question?" and "- answer". After a page is rendered, this reads those
+# question and answer pairs and adds a matching FAQPage JSON-LD block to its
+# <head>, so the structured data can never drift from the page text. It reads
+# the final HTML, so FAQs that use Liquid values (the ward pages) work too.
 
 require "json"
 require "kramdown"
 
 module FaqSchema
-  SECTION = %r{<section\b[^>]*\bclass="[^"]*\bfaqs\b[^"]*"[^>]*>(.*?)</section>}m.freeze
-  HEADING = %r{<h([2-6])\b[^>]*>(.*?)</h\1>}m.freeze
-  MARKER = /class="[^"]*\bfaqs\b/.freeze
+  HEADING = %r{<h2\b[^>]*>\s*Frequently Asked Questions\s*</h2>}.freeze
+  QUESTION = %r{\G\s*<h3\b[^>]*>(.*?)</h3>\s*}m.freeze
+  LIST_TAG = %r{<(/?)ul\b[^>]*>}.freeze
 
   module_function
 
@@ -44,18 +42,30 @@ module FaqSchema
     "&#{name};"
   end
 
-  # [[question, answer], ...] from the inner HTML of one faqs section.
-  def pairs(section)
-    headings = section.to_enum(:scan, HEADING).map { Regexp.last_match }
-    return [] if headings.length < 2
+  # End index of the <ul> starting at pos, counting nested lists, or nil.
+  def list_end(html, pos)
+    return nil unless html[pos, 3] == "<ul"
 
-    level = headings[1][1]
-    questions = headings.drop(1).select { |m| m[1] == level }
-    questions.map do |q|
-      stop = headings.find { |m| m.begin(0) > q.begin(0) && m[1] <= level }
-      answer = section[q.end(0)...(stop ? stop.begin(0) : section.length)]
-      [text(q[2]), text(answer)]
-    end.reject { |question, answer| question.empty? || answer.empty? }
+    depth = 0
+    while (tag = LIST_TAG.match(html, pos))
+      depth += tag[1].empty? ? 1 : -1
+      pos = tag.end(0)
+      return pos if depth.zero?
+    end
+    nil
+  end
+
+  # [[question, answer], ...] for the <h3> + <ul> pairs that follow pos.
+  def pairs(html, pos)
+    found = []
+    while (question = QUESTION.match(html, pos))
+      finish = list_end(html, question.end(0))
+      break unless finish
+
+      found << [text(question[1]), text(html[question.end(0)...finish])]
+      pos = finish
+    end
+    found.reject { |q, a| q.empty? || a.empty? }
   end
 
   def json_ld(pairs)
@@ -72,42 +82,22 @@ module FaqSchema
     %(<script type="application/ld+json">\n#{json}\n</script>\n)
   end
 
-  def inject(doc)
-    return unless doc.output_ext == ".html" && doc.output&.include?("faqs")
+  def inject(page)
+    html = page.output
+    return unless page.output_ext == ".html" && html&.include?("Frequently Asked Questions")
 
-    found = doc.output.scan(SECTION).flat_map { |(inner)| pairs(inner) }
+    found = []
+    html.scan(HEADING) { found.concat(pairs(html, Regexp.last_match.end(0))) }
     return if found.empty?
 
-    if doc.output.include?('"FAQPage"')
-      Jekyll.logger.warn "FAQ schema:", "#{doc.relative_path} already has FAQPage JSON-LD; skipped"
+    if html.include?('"FAQPage"')
+      Jekyll.logger.warn "FAQ schema:", "#{page.relative_path} already has FAQPage JSON-LD; skipped"
       return
     end
-    doc.output = doc.output.sub("</head>") { "#{json_ld(found)}</head>" }
-  end
-
-  # True when the page's own content or any layout it renders through has a
-  # faqs section.
-  def faqs?(doc, site)
-    return true if doc.content.to_s.match?(MARKER)
-
-    name = doc.data["layout"]
-    seen = []
-    while name && !seen.include?(name) && (layout = site.layouts[name])
-      return true if layout.content.match?(MARKER)
-
-      seen << name
-      name = layout.data["layout"]
-    end
-    false
+    page.output = html.sub("</head>") { "#{json_ld(found)}</head>" }
   end
 end
 
-Jekyll::Hooks.register :site, :pre_render do |site|
-  (site.pages + site.documents).each do |doc|
-    doc.data["has_faqs"] = FaqSchema.faqs?(doc, site)
-  end
-end
-
-Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
-  FaqSchema.inject(doc)
+Jekyll::Hooks.register :pages, :post_render do |page|
+  FaqSchema.inject(page)
 end
