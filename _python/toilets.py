@@ -13,6 +13,7 @@ from pathlib import Path
 
 import requests
 
+import config
 import helper
 
 try:
@@ -170,7 +171,7 @@ def find_json_download_url(page_url: str = DATASET_PAGE_URL) -> str:
     """
     resp = requests.get(
         page_url,
-        headers={"User-Agent": "Mozilla/5.0 (compatible; toilet-data-fetcher/1.0)"},
+        headers=config.HEADERS,
         timeout=20,
     )
     resp.raise_for_status()

@@ -37,7 +37,7 @@ import helper
 # ---------------------------------------------------------------------------
 
 BASE_URL = "https://uk-air.defra.gov.uk/sos-ukair/api/v1"
-HEADERS = {"Accept": "application/json"}
+HEADERS = {**config.HEADERS, "Accept": "application/json"}
 
 # Cheltenham town centre, used as the search origin
 CENTRE_LAT, CENTRE_LON = config.CENTRE

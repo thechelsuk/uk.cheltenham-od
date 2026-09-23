@@ -20,12 +20,13 @@ from datetime import datetime, timezone
 import openpyxl
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "rents.json")
 
 DATASET_URL = "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics"
 FILE_PATTERN = re.compile(r'href="(/file\?uri=[^"]*?/(\d{1,2})([a-z]+)(\d{4})/[^"]*\.xlsx)"')
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 AREA_CODE = "E07000078"  # Cheltenham
 COMPARATORS = {"south_west": "E12000009", "england": "E92000001"}
@@ -37,7 +38,7 @@ TYPES = [("Detached", "detached"), ("Semi-detached", "semidetached"), ("Terraced
 
 
 def latest_edition_url():
-    resp = requests.get(DATASET_URL, headers=HEADERS, timeout=30)
+    resp = requests.get(DATASET_URL, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     editions = []
     for href, day, month, year in FILE_PATTERN.findall(resp.text):
@@ -100,7 +101,7 @@ def point(row, suffix=""):
 def main():
     released, url = latest_edition_url()
     print(f"Latest ONS edition: {released} — {url}")
-    resp = requests.get(url, headers=HEADERS, timeout=180)
+    resp = requests.get(url, headers=config.HEADERS, timeout=180)
     resp.raise_for_status()
     rows = read_rows(resp.content)
 

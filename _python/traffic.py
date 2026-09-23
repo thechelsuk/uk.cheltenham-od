@@ -22,6 +22,9 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+import config
+
+# Load .env file for local development if present
 import helper
 
 # Load .env file for local development if present
@@ -38,7 +41,6 @@ OUT = os.path.join(HERE, "..", "_data", "traffic.json")
 
 SOURCE_URL = "https://developers.cloudflare.com/analytics/graphql-api/"
 ENDPOINT = "https://api.cloudflare.com/client/v4/graphql"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 DAYS = 30
 
 QUERY = """
@@ -95,7 +97,7 @@ def main():
 
     resp = requests.post(
         ENDPOINT,
-        headers={**HEADERS, "Authorization": f"Bearer {token}"},
+        headers={**config.HEADERS, "Authorization": f"Bearer {token}"},
         json={"query": QUERY, "variables": {"zone": zone, "start": start.isoformat(), "end": end.isoformat()}},
         timeout=30,
     )

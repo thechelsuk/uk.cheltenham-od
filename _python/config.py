@@ -41,6 +41,16 @@ OVERPASS_ENDPOINTS = (
 
 # --- How far each dataset searches from CENTRE (or RACECOURSE) ---------------
 # Units differ by source, as each API takes them; the suffix says which.
+# Overpass only takes metres.
+
+# Measures
+# ---------
+# The Environment Agency APIs (river levels, water quality) take kilometres.
+# Open Charge Map (EV) takes km or miles.
+# InPost takes metres.
+# The others (DEFRA, sewage, foodbank, hospitals, roadworks) search wider
+# and filter by distance in our own code, so any unit works.
+
 
 AIR_QUALITY_RADIUS_KM = 20
 CAR_PARKS_RADIUS_M = 6000

@@ -28,6 +28,9 @@ import feedparser
 import requests
 import yaml
 
+import config
+
+# Load .env file for local development if present
 import helper
 
 # Load .env file for local development if present
@@ -42,7 +45,6 @@ if _env_file.exists():
 ROOT = helper.repo_root()
 STATE = ROOT / "_data" / "social-posted.json"
 FEED_URL = f"{helper.site_url()}/feeds/main.xml"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 DESCRIPTION_MAX = 200           # a brief description; the link and hashtags matter more than the detail
 MAX_AGE = timedelta(days=3)     # older posts are never sent, whatever the state file says
@@ -84,7 +86,7 @@ def save_state(state):
 
 def recent_entries():
     """Posts from the live feed within MAX_AGE whose page is actually up, oldest first."""
-    feed = feedparser.parse(FEED_URL, agent=HEADERS["User-Agent"])
+    feed = feedparser.parse(FEED_URL, agent=config.USER_AGENT)
     if feed.bozo and not feed.entries:
         sys.exit(f"Could not read {FEED_URL}")
     cutoff = datetime.now(timezone.utc) - MAX_AGE
@@ -98,7 +100,7 @@ def recent_entries():
 
 def page_is_live(link):
     try:
-        return requests.head(link, headers=HEADERS, allow_redirects=True, timeout=20).status_code == 200
+        return requests.head(link, headers=config.HEADERS, allow_redirects=True, timeout=20).status_code == 200
     except requests.RequestException:
         return False
 
@@ -125,11 +127,11 @@ def bluesky_facets(text, link):
 def bluesky_thumbnail(link, token):
     """Upload the page's social image, so the link card has a picture. Cards work without one."""
     try:
-        page = requests.get(link, headers=HEADERS, timeout=20).text
+        page = requests.get(link, headers=config.HEADERS, timeout=20).text
         match = re.search(r'<meta property="og:image" content="([^"]+)"', page)
         if not match:
             return None
-        image = requests.get(match.group(1), headers=HEADERS, timeout=20)
+        image = requests.get(match.group(1), headers=config.HEADERS, timeout=20)
         image.raise_for_status()
         resp = requests.post(f"{BLUESKY_HOST}/xrpc/com.atproto.repo.uploadBlob", data=image.content, timeout=30,
                              headers={"Authorization": f"Bearer {token}",

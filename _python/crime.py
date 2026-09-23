@@ -14,8 +14,7 @@ import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
-
+import config
 import helper
 
 
@@ -24,7 +23,6 @@ FORCE = {"id": "gloucestershire", "name": "Gloucestershire Constabulary"}
 AREA_NAME = "Cheltenham"
 TIMEOUT = 60
 OUTPUT_DIR = Path(__file__).resolve().parents[1] / "_data" / "crime"
-HEADERS = {"User-Agent": "uk.cheltenham-od crime data importer"}
 
 # These are the Cheltenham neighbourhoods in the Gloucestershire force area.
 # Keeping the names explicit prevents nearby Gloucester and Tewkesbury areas
@@ -53,7 +51,7 @@ log = logging.getLogger(__name__)
 def request_json(method, url, **kwargs):
 	response = helper.request_with_retry(
 		method, url, max_attempts=5, retry_statuses=(429, 502, 503, 504),
-		headers=HEADERS, timeout=TIMEOUT, **kwargs,
+		headers=config.HEADERS, timeout=TIMEOUT, **kwargs,
 	)
 	return response.json()
 

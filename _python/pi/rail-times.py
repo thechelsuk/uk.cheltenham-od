@@ -36,6 +36,9 @@ from zoneinfo import ZoneInfo
 import requests
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
+
+# Load .env file for local development / the Pi if present
+import config
 import helper
 
 # Load .env file for local development / the Pi if present
@@ -51,7 +54,6 @@ OUT = helper.repo_root() / "_data" / "rail-times.json"
 
 BASE_URL = "https://api1.raildata.org.uk/1010-live-arrival-and-departure-boards-arr-and-dep1_1/LDBWS/api/20220120"
 BOARD_METHOD = "GetArrDepBoardWithDetails"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 STATION_NAME = "Cheltenham Spa"
 CRS = "CNM"
@@ -67,7 +69,7 @@ def fetch_board(api_key):
     resp = requests.get(
         f"{BASE_URL}/{BOARD_METHOD}/{CRS}",
         params={"numRows": NUM_ROWS},
-        headers={**HEADERS, "x-apikey": api_key},
+        headers={**config.HEADERS, "x-apikey": api_key},
         timeout=30,
     )
     resp.raise_for_status()

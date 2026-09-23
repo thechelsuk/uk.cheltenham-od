@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 
 import requests
 
+import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +20,6 @@ SERVICE = (
     "National_Heritage_List_for_England_NHLE_v02_VIEW/FeatureServer"
 )
 SOURCE_URL = "https://www.api.gov.uk/he/national-heritage-list-for-england-nhle/"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 # Rough bounding box around Cheltenham (British National Grid, EPSG:27700).
 # Slightly wider than the borough boundary; there is no local-authority field
@@ -47,7 +47,7 @@ def query_layer(layer, out_fields):
         "outSR": 4326,
         "f": "geojson",
     }
-    resp = requests.get(f"{SERVICE}/{layer}/query", params=params, headers=HEADERS, timeout=30)
+    resp = requests.get(f"{SERVICE}/{layer}/query", params=params, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     data = resp.json()
     if "error" in data:

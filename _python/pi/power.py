@@ -12,6 +12,7 @@ import datetime
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
+import config
 import helper
 
 DETAILED_CSV_URL = (
@@ -20,7 +21,6 @@ DETAILED_CSV_URL = (
 )
 SOURCE_PAGE = "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts"
 LICENCE = "WPD Open Data Licence"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 CHELTENHAM_POSTCODE_PREFIXES = ("GL50", "GL51", "GL52", "GL53", "GL54")
 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     feeds_dir = root / "feeds"
 
     print("Downloading NGED live power cuts feed...")
-    resp = requests.get(DETAILED_CSV_URL, headers=HEADERS, timeout=30)
+    resp = requests.get(DETAILED_CSV_URL, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     rows = list(csv.DictReader(io.StringIO(resp.text)))
     print(f"  {len(rows):,} incidents nationally")

@@ -39,7 +39,6 @@ MAX_RESULTS = 500
 OCM_API_BASE = "https://api.openchargemap.io/v3/poi/"
 OCM_API_KEY = os.environ.get("OCM_API_KEY", "")
 
-USER_AGENT = "cheltenham-od.uk EV charging fetcher (+https://cheltenham-od.uk)"
 REQUEST_TIMEOUT = 60  # seconds
 
 SOURCE_NAME = "Open Charge Map"
@@ -69,7 +68,7 @@ def fetch_pois():
     }
     url = OCM_API_BASE + "?" + urllib.parse.urlencode(params)
     req = urllib.request.Request(url, headers={
-        "User-Agent": USER_AGENT,
+        "User-Agent": config.USER_AGENT,
         "X-API-Key": OCM_API_KEY,
         "Accept": "application/json",
     })

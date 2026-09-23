@@ -30,6 +30,8 @@ from datetime import datetime, timezone
 import requests
 from bs4 import BeautifulSoup
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "ward-politics.json")
 
@@ -39,7 +41,6 @@ AREAS_URL = BASE + "mgElectionElectionAreaResults.aspx?Page=all&EID={id}"
 WARD_URL = BASE + "mgElectionAreaResults.aspx?XXR=0&ID={id}&RPID=0"
 COUNCILLORS_URL = BASE + "mgWebService.asmx/GetCouncillorsByWard"
 PROFILE_URL = BASE + "mgUserInfo.aspx?UID={id}"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 PAUSE_SECONDS = 1
 
 ELECTIONS = [
@@ -72,7 +73,7 @@ def slugify(name):
 
 def get(url):
     time.sleep(PAUSE_SECONDS)
-    resp = requests.get(url, headers=HEADERS, timeout=60)
+    resp = requests.get(url, headers=config.HEADERS, timeout=60)
     resp.raise_for_status()
     return resp
 
