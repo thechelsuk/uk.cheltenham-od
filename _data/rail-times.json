@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T13:05:17+01:00",
+  "generated_at": "2026-09-23T13:10:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -9,25 +9,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-23T12:40",
-      "expected": "2026-09-23T13:05",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by a problem currently under investigation",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
     {
       "scheduled": "2026-09-23T13:12",
       "expected": "2026-09-23T13:17",
@@ -58,7 +39,7 @@
     },
     {
       "scheduled": "2026-09-23T13:15",
-      "expected": "2026-09-23T13:19",
+      "expected": "2026-09-23T13:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -74,8 +55,8 @@
     },
     {
       "scheduled": "2026-09-23T13:23",
-      "expected": "2026-09-23T13:23",
-      "status": "On time",
+      "expected": "2026-09-23T13:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -92,7 +73,7 @@
     },
     {
       "scheduled": "2026-09-23T13:29",
-      "expected": "2026-09-23T13:42",
+      "expected": "2026-09-23T13:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -156,19 +137,29 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T13:52",
+      "expected": "2026-09-23T13:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-23T12:38",
-      "expected": "2026-09-23T13:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by a problem currently under investigation"
-    },
     {
       "scheduled": "2026-09-23T13:10",
       "expected": "2026-09-23T13:16",
@@ -181,7 +172,7 @@
     },
     {
       "scheduled": "2026-09-23T13:14",
-      "expected": "2026-09-23T13:18",
+      "expected": "2026-09-23T13:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -191,8 +182,8 @@
     },
     {
       "scheduled": "2026-09-23T13:22",
-      "expected": "2026-09-23T13:22",
-      "status": "On time",
+      "expected": "2026-09-23T13:25",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -211,7 +202,7 @@
     },
     {
       "scheduled": "2026-09-23T13:27",
-      "expected": "2026-09-23T13:41",
+      "expected": "2026-09-23T13:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -247,6 +238,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T13:50",
+      "expected": "2026-09-23T13:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
