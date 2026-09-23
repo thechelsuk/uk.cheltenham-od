@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T07:30:17+01:00",
+  "generated_at": "2026-09-23T07:35:17+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -11,7 +11,7 @@
   "departures": [
     {
       "scheduled": "2026-09-23T07:29",
-      "expected": "2026-09-23T07:33",
+      "expected": "2026-09-23T07:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -31,7 +31,7 @@
     },
     {
       "scheduled": "2026-09-23T07:35",
-      "expected": "2026-09-23T07:39",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -44,7 +44,7 @@
     },
     {
       "scheduled": "2026-09-23T07:36",
-      "expected": "2026-09-23T07:40",
+      "expected": "2026-09-23T07:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -62,7 +62,7 @@
     },
     {
       "scheduled": "2026-09-23T07:40",
-      "expected": "2026-09-23T07:42",
+      "expected": "2026-09-23T07:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -186,6 +186,22 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T08:15",
+      "expected": "2026-09-23T08:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
@@ -200,18 +216,8 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-09-23T07:29",
-      "expected": "2026-09-23T07:31",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-23T07:33",
-      "expected": "2026-09-23T07:38",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -221,7 +227,7 @@
     },
     {
       "scheduled": "2026-09-23T07:36",
-      "expected": "2026-09-23T07:40",
+      "expected": "2026-09-23T07:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -231,7 +237,7 @@
     },
     {
       "scheduled": "2026-09-23T07:38",
-      "expected": "2026-09-23T07:41",
+      "expected": "2026-09-23T07:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -277,6 +283,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T08:14",
+      "expected": "2026-09-23T08:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
