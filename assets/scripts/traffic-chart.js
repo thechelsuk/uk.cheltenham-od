@@ -11,9 +11,6 @@
     if (!days.length) return;
 
     const labels = days.map((d) => d.date.slice(5));
-    const dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const line = dark ? "rgba(125, 176, 232, 0.8)" : "rgba(29, 78, 137, 0.6)";
-    const fill = dark ? "rgba(125, 176, 232, 0.12)" : "rgba(29, 78, 137, 0.08)";
 
     function draw(id, label, values, options) {
         const canvas = document.getElementById(id);
@@ -26,8 +23,6 @@
                     {
                         label: label,
                         data: values,
-                        borderColor: line,
-                        backgroundColor: fill,
                         borderWidth: 2,
                         fill: true,
                         pointRadius: 0,

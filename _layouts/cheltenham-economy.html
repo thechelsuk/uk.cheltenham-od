@@ -17,7 +17,7 @@
         <p>Employee jobs in each industry in {{ economy.jobs.year }}, and each industry's share of all jobs in Cheltenham
             compared with England. A comparison above 1.00 means the industry employs a larger share of people in
             Cheltenham than it does nationally.</p>
-        <div class="economy-chart-wrap" style="position: relative; height: 560px;">
+        <div class="chart-canvas">
             <canvas id="economy-industry-chart" aria-label="Bar chart comparing each industry's share of employee jobs in Cheltenham with England"></canvas>
         </div>
         <div class="table-scroll">
@@ -46,10 +46,10 @@
         </div>
 
         <h2>Employee Jobs over Time</h2>
-        <canvas id="economy-jobs-chart" height="100" aria-label="Line chart of the number of employee jobs in Cheltenham each year since {{ economy.jobs.series.first.year }}"></canvas>
+        <div class="chart-canvas"><canvas id="economy-jobs-chart" aria-label="Line chart of the number of employee jobs in Cheltenham each year since {{ economy.jobs.series.first.year }}"></canvas></div>
 
         <h2>Businesses</h2>
-        <canvas id="economy-business-chart" height="100" aria-label="Line chart of the number of registered businesses in Cheltenham each year since {{ economy.businesses.series.first.year }}"></canvas>
+        <div class="chart-canvas"><canvas id="economy-business-chart" aria-label="Line chart of the number of registered businesses in Cheltenham each year since {{ economy.businesses.series.first.year }}"></canvas></div>
         <div class="table-scroll">
             <table class="economy-business-table data-table" data-sortable>
                 <thead>
@@ -72,7 +72,7 @@
         </div>
 
         <h2>Unemployment Claimants</h2>
-        <canvas id="economy-claimant-chart" height="100" aria-label="Line chart of claimants as a share of residents aged 16 to 64 in Cheltenham and England each month since January 2015"></canvas>
+        <div class="chart-canvas"><canvas id="economy-claimant-chart" aria-label="Line chart of claimants as a share of residents aged 16 to 64 in Cheltenham and England each month since January 2015"></canvas></div>
 
         <p class="economy-attribution"><small>
             Data from the <a href="{{ economy.source_url }}">{{ economy.source }}</a>, published under the Open
@@ -106,7 +106,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="economy-data" type="application/json">{{ economy | jsonify }}</script>
 <script src="/assets/scripts/cheltenham-economy-chart.js"></script>
 {% include footer.html %}

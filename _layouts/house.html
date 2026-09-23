@@ -22,27 +22,27 @@
         <div class="land-registry-widget scroll">
 
             <h2>Median Sale Price by Month</h2>
-            <canvas id="land-registry-chart" height="120"></canvas>
+            <div class="chart-canvas"><canvas id="land-registry-chart"></canvas></div>
 
             <h2>Sales Volume by Month</h2>
-            <canvas id="land-registry-volume-chart" height="120"></canvas>
+            <div class="chart-canvas"><canvas id="land-registry-volume-chart"></canvas></div>
 
             <h2>Median Price by Property Type</h2>
-            <canvas id="land-registry-type-chart" height="120"></canvas>
+            <div class="chart-canvas"><canvas id="land-registry-type-chart"></canvas></div>
 
             <h2>Price Distribution</h2>
-            <canvas id="land-registry-histogram" height="120"></canvas>
+            <div class="chart-canvas"><canvas id="land-registry-histogram"></canvas></div>
 
             {% assign history = site.data["cheltenham-house-price-history"] %}
             {% assign summary = site.data["house-summary"] %}
             {% assign current_year = site.time | date: "%Y" %}
             <h2>Median House Price by Year since {{ history.first_year }}</h2>
-            <canvas id="land-registry-history-chart" height="120"
-                aria-label="Line chart of the median house price in Cheltenham each year since {{ history.first_year }}, overall and by property type"></canvas>
+            <div class="chart-canvas"><canvas id="land-registry-history-chart"
+                aria-label="Line chart of the median house price in Cheltenham each year since {{ history.first_year }}, overall and by property type"></canvas></div>
 
             <h2>Sales by Year since {{ history.first_year }}</h2>
-            <canvas id="land-registry-history-volume-chart" height="120"
-                aria-label="Bar chart of the number of house sales in Cheltenham each year since {{ history.first_year }}"></canvas>
+            <div class="chart-canvas"><canvas id="land-registry-history-volume-chart"
+                aria-label="Bar chart of the number of house sales in Cheltenham each year since {{ history.first_year }}"></canvas></div>
 
             <h2>House Prices by Year</h2>
             <div class="table-scroll">
@@ -116,7 +116,7 @@
 
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    {% include chartjs.html %}
     <script id="house-price-data"
         type="application/json">{{ site.data["cheltenham-house-prices"].transactions | jsonify }}</script>
     <script id="house-price-history-data" type="application/json">{{ site.data["cheltenham-house-price-history"].years | jsonify }}</script>

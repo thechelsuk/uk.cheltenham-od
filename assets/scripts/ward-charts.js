@@ -18,7 +18,7 @@
             type: "bar",
             data: {
                 labels: months.map(function (m) { return m.month; }),
-                datasets: [{ label: "Crimes reported", data: months.map(function (m) { return m.count; }), backgroundColor: "#94a3b8" }],
+                datasets: [{ label: "Crimes reported", data: months.map(function (m) { return m.count; }) }],
             },
             options: {
                 responsive: true,
@@ -41,8 +41,6 @@
                 datasets: [{
                     label: "Median sale price",
                     data: years.map(function (y) { return y.median; }),
-                    borderColor: "#1d4ed8",
-                    backgroundColor: "#1d4ed8",
                     borderWidth: 3,
                     tension: 0.25,
                     pointRadius: 2,

@@ -12,10 +12,10 @@
     if (!years.length) return;
 
     const series = [
-        { label: "All homes", get: (y) => y.share, color: "#1d4e89", width: 3 },
-        { label: "Flats", get: (y) => y.by_type.flat && y.by_type.flat.share, color: "#c2410c", width: 2 },
-        { label: "Terraced", get: (y) => y.by_type.terraced && y.by_type.terraced.share, color: "#2f6b4f", width: 2 },
-        { label: "Semi-detached", get: (y) => y.by_type.semi_detached && y.by_type.semi_detached.share, color: "#7a5195", width: 2 },
+        { label: "All homes", get: (y) => y.share, width: 3 },
+        { label: "Flats", get: (y) => y.by_type.flat && y.by_type.flat.share, width: 2 },
+        { label: "Terraced", get: (y) => y.by_type.terraced && y.by_type.terraced.share, width: 2 },
+        { label: "Semi-detached", get: (y) => y.by_type.semi_detached && y.by_type.semi_detached.share, width: 2 },
     ];
 
     new Chart(canvas, {
@@ -25,8 +25,6 @@
             datasets: series.map((s) => ({
                 label: s.label,
                 data: years.map(s.get),
-                borderColor: s.color,
-                backgroundColor: s.color,
                 borderWidth: s.width,
                 pointRadius: 2,
                 tension: 0.25,

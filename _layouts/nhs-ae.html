@@ -58,10 +58,10 @@
 
         <h2>A&amp;E Performance Over Time</h2>
         <p>The share of attendances seen within four hours, month by month.</p>
-        <canvas id="nhs-ae-performance-chart" height="120" aria-label="Line chart of the percentage of A&amp;E attendances seen within four hours by month"></canvas>
+        <div class="chart-canvas"><canvas id="nhs-ae-performance-chart" aria-label="Line chart of the percentage of A&amp;E attendances seen within four hours by month"></canvas></div>
 
         <p>Patients who waited 12 hours or more from the decision to admit them to being admitted.</p>
-        <canvas id="nhs-ae-waits-chart" height="120" aria-label="Line chart of patients waiting 12 hours or more from decision to admit by month"></canvas>
+        <div class="chart-canvas"><canvas id="nhs-ae-waits-chart" aria-label="Line chart of patients waiting 12 hours or more from decision to admit by month"></canvas></div>
 
         <div class="table-scroll">
             <table class="nhs-ae-table data-table" data-sortable>
@@ -167,7 +167,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="nhs-ae-data" type="application/json">{{ ae.months | jsonify }}</script>
 <script id="nhs-hospitals-data" type="application/json">{{ hospitals.hospitals | jsonify }}</script>
 <script src="/assets/scripts/nhs-ae-chart.js"></script>

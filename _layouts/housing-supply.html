@@ -16,7 +16,7 @@
         {{ content }}
 
         <h2>Net Additional Dwellings by Year</h2>
-        <canvas id="net-additional-dwellings-chart" height="120"></canvas>
+        <div class="chart-canvas"><canvas id="net-additional-dwellings-chart"></canvas></div>
 
         <div class="table-scroll">
             <table class="net-additional-dwellings-table data-table" data-sortable>
@@ -51,7 +51,7 @@
             classed as student or other accommodation, reported both as council tax valuation listings and as
             individual bedspaces.</p>
 
-        <canvas id="communal-accommodation-chart" height="120"></canvas>
+        <div class="chart-canvas"><canvas id="communal-accommodation-chart"></canvas></div>
 
         <div class="table-scroll">
             <table class="communal-accommodation-table data-table" data-sortable>
@@ -89,7 +89,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="net-additional-dwellings-data" type="application/json">{{ data.net_additional_dwellings.years | jsonify }}</script>
 <script id="communal-accommodation-data" type="application/json">{{ data.communal_accommodation.entries | jsonify }}</script>
 <script src="/assets/scripts/housing-supply-charts.js"></script>

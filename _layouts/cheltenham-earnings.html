@@ -14,7 +14,7 @@
         {{ content }}
 
         <h2>Median Full-Time Pay since {{ earnings.first_year }}</h2>
-        <canvas id="earnings-chart" height="120" aria-label="Line chart of median annual full-time pay in Cheltenham, Gloucestershire, the South West and England since {{ earnings.first_year }}"></canvas>
+        <div class="chart-canvas"><canvas id="earnings-chart" aria-label="Line chart of median annual full-time pay in Cheltenham, Gloucestershire, the South West and England since {{ earnings.first_year }}"></canvas></div>
 
         <h2>Earnings in {{ earnings.latest_year }} Compared</h2>
         <div class="table-scroll">
@@ -44,7 +44,7 @@
         <p>These figures are for people who live in each area, before tax, and cover full-time employees only.</p>
 
         <h2>Men and Women</h2>
-        <canvas id="earnings-gender-chart" height="120" aria-label="Line chart of median annual full-time pay for men and women living in Cheltenham since {{ earnings.first_year }}"></canvas>
+        <div class="chart-canvas"><canvas id="earnings-gender-chart" aria-label="Line chart of median annual full-time pay for men and women living in Cheltenham since {{ earnings.first_year }}"></canvas></div>
         {% if earnings.latest.gender_gap %}
         <p>In {{ earnings.latest.year }}, the median full-time man living in Cheltenham earned {{ earnings.latest.male_display }}
             and the median full-time woman {{ earnings.latest.female_display }}, so women's median pay was
@@ -123,7 +123,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="earnings-series-data" type="application/json">{{ earnings.series | jsonify }}</script>
 <script src="/assets/scripts/cheltenham-earnings-chart.js"></script>
 {% include footer.html %}

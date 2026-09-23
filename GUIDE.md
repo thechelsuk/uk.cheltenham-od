@@ -199,6 +199,24 @@ Dates in a popup follow the same `YYYY-MM-DD HH:MM` rule as the table (section 3
 
 Load Leaflet (and `d3-delaunay` if needed) from unpkg in the layout, pinned to an exact version, before the page's own script tag.
 
+### Charts
+
+Charts use Chart.js. Load it with `{% include chartjs.html %}` rather than a script tag of your own. The include pins the Chart.js version and adds `assets/scripts/chart-defaults.js`, which:
+
+- sets the font, text colour and gridline colour from the site's CSS variables, and redraws charts when the light/dark toggle changes
+- colours any series that has no colour of its own from a fixed, colour-blind-safe palette in both themes. Places keep one colour everywhere (Cheltenham, South West, England, Gloucestershire), and other series take the remaining colours in order
+- makes each chart fill its wrapper instead of keeping an aspect ratio
+
+Wrap every canvas in the standard 400px container, and don't add a `height` attribute or inline style:
+
+```html
+<div class="chart-canvas"><canvas id="example-chart" aria-label="Line chart of …"></canvas></div>
+{% include chartjs.html %}
+<script src="/assets/scripts/example-chart.js"></script>
+```
+
+Leave `borderColor`/`backgroundColor` off datasets so the palette applies. Only set them when a colour carries meaning, as with the fatal/serious/slight severity colours on the road collisions page.
+
 ## 5. Structured data (`schema:` front matter + `_includes/schema/<name>.html`)
 
 Add `schema: example` to the page's front matter, then create `_includes/schema/example.html` — `_includes/header.html` picks it up automatically (`{% include schema/{{ page.schema }}.html %}`).

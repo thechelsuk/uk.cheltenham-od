@@ -73,7 +73,7 @@
                 responsive: true,
                 interaction: { mode: "index", intersect: false },
                 plugins: { legend: { display: true }, tooltip: { callbacks: { label: function (ctx) { return ctx.dataset.label + ": " + ctx.parsed.y.toFixed(2) + " m"; } } } },
-                scales: { x: { ticks: { maxTicksLimit: 10 } }, y: { title: { display: true, text: "Level (m)" }, ticks: { callback: function (v) { return v.toFixed(1); } } } },
+                scales: { x: { ticks: { maxTicksLimit: 10 } }, y: { title: { display: true, text: "Level (m)" }, ticks: { callback: function (v) { return v.toFixed(2); } } } },
             },
         });
     }
@@ -101,7 +101,7 @@
                 responsive: true,
                 interaction: { mode: "index", intersect: false },
                 plugins: { legend: { display: true }, tooltip: { callbacks: { label: function (ctx) { return ctx.dataset.label + ": " + ctx.parsed.y.toFixed(2) + " m"; } } } },
-                scales: { x: { ticks: { maxTicksLimit: 10 } }, y: { title: { display: true, text: "Highest level each day (m)" }, ticks: { callback: function (v) { return v.toFixed(1); } } } },
+                scales: { x: { ticks: { maxTicksLimit: 10 } }, y: { title: { display: true, text: "Highest level each day (m)" }, ticks: { callback: function (v) { return v.toFixed(2); } } } },
             },
         });
     }

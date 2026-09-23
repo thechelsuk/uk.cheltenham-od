@@ -21,7 +21,7 @@
                 <h3>Unique Visitors</h3>
                 <p class="traffic-number">{{ traffic.totals.display_uniques }}</p>
             </div>
-            <div class="traffic-chart"><canvas id="traffic-uniques" aria-label="Line chart of unique visitors per day over the last 30 days"></canvas></div>
+            <div class="chart-canvas"><canvas id="traffic-uniques" aria-label="Line chart of unique visitors per day over the last 30 days"></canvas></div>
         </div>
 
         <div class="info-card info-card--chart">
@@ -29,7 +29,7 @@
                 <h3>Total Requests</h3>
                 <p class="traffic-number">{{ traffic.totals.display_requests }}</p>
             </div>
-            <div class="traffic-chart"><canvas id="traffic-requests" aria-label="Line chart of total requests per day over the last 30 days"></canvas></div>
+            <div class="chart-canvas"><canvas id="traffic-requests" aria-label="Line chart of total requests per day over the last 30 days"></canvas></div>
         </div>
 
         <div class="info-card info-card--chart">
@@ -37,7 +37,7 @@
                 <h3>Percent Cached</h3>
                 <p class="traffic-number">{{ traffic.totals.cached_percent }}%</p>
             </div>
-            <div class="traffic-chart"><canvas id="traffic-cached" aria-label="Line chart of the percentage of data served from cache per day over the last 30 days"></canvas></div>
+            <div class="chart-canvas"><canvas id="traffic-cached" aria-label="Line chart of the percentage of data served from cache per day over the last 30 days"></canvas></div>
         </div>
 
         <p class="traffic-attribution"><small>
@@ -88,7 +88,7 @@
     </div>
 </div>
 {% if traffic.days.size > 0 %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="traffic-days" type="application/json">{{ traffic.days | jsonify }}</script>
 <script src="/assets/scripts/traffic-chart.js"></script>
 {% endif %}

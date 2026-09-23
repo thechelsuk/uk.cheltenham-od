@@ -16,7 +16,7 @@
         {{ content }}
 
         <h2>Total Number of Properties by Year</h2>
-        <canvas id="council-tax-stock-chart" height="120"></canvas>
+        <div class="chart-canvas"><canvas id="council-tax-stock-chart"></canvas></div>
 
         <div class="table-scroll">
             <table class="council-tax-stock-table data-table" data-sortable>
@@ -50,7 +50,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="council-tax-stock-data" type="application/json">{{ data.council_tax_stock.years | jsonify }}</script>
 <script src="/assets/scripts/council-tax-stock-chart.js"></script>
 {% include footer.html %}

@@ -23,7 +23,7 @@
             {{ stats.population_latest.year }} — an increase of {{ stats.growth_pct }}% over {{ stats.growth_years }}
             years, according to the ONS's official mid-year population estimates.</p>
 
-        <canvas id="population-chart" height="120"></canvas>
+        <div class="chart-canvas"><canvas id="population-chart"></canvas></div>
 
         <div class="table-scroll">
             <table class="cheltenham-stats-table data-table" data-sortable>
@@ -83,7 +83,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="population-series-data" type="application/json">{{ stats.population_series | jsonify }}</script>
 <script src="/assets/scripts/cheltenham-stats-chart.js"></script>
 {% include footer.html %}

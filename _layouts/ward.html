@@ -108,7 +108,7 @@
             The most common category was {{ crime.by_category[0].label | downcase }} ({{ crime.by_category[0].count }}),
             followed by {{ crime.by_category[1].label | downcase }} ({{ crime.by_category[1].count }}).
         </p>
-        <div style="position: relative; height: 300px;">
+        <div class="chart-canvas">
             <canvas id="ward-crime-months" aria-label="Bar chart of crimes reported in {{ w.name }} each month"></canvas>
         </div>
         <script id="ward-crime-months-data" type="application/json">{{ crime.by_month | jsonify }}</script>
@@ -165,7 +165,7 @@
             Over the latest 12 months to {{ prices.latest_sale }} the median sale price was
             <strong>{{ prices.last12_median_display }}</strong> across {{ prices.last12_sales }} sales.
         </p>
-        <div style="position: relative; height: 300px;">
+        <div class="chart-canvas">
             <canvas id="ward-price-years" aria-label="Chart of the median home sale price in {{ w.name }} for each year"></canvas>
         </div>
         <script id="ward-price-years-data" type="application/json">{{ prices.by_year | jsonify }}</script>
@@ -495,7 +495,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="ward-map-data" type="application/json">{{ w | jsonify }}</script>
 <script src="/assets/scripts/ward-map.js"></script>
 <script src="/assets/scripts/ward-charts.js"></script>
