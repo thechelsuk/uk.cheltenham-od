@@ -6,7 +6,6 @@ seo: "Cheltenham recycling options in Cheltenham including locations, recycling 
 permalink: /cheltenham-recycling
 description: "Cheltenham reducing, recycling, and refilling Options in Cheltenham"
 type: "property"
-schema: recycling
 ---
 
 {% include sponsor.html %}
@@ -106,6 +105,8 @@ There are a number of local shops that offer refillable (bring your own containe
 - 208 Bath Road, Cheltenham GL53 7NE
 - [01242 526 333](tel:01242526333)
 
+<section class="faqs" markdown="1">
+
 ## Frequently Asked Questions
 
 ### Can I Recycle Batteries?
@@ -143,3 +144,5 @@ There are a number of local shops that offer refillable (bring your own containe
 ### What Do I Do If a Recycling Bank Is Full?
 
 - If a bank is full and needs emptying please let Cheltenham Borough Council know on 01242 262626.
+
+</section>

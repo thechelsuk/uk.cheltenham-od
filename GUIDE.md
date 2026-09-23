@@ -241,7 +241,32 @@ Not every page needs this. Add it when there's a real dataset and it's worth a s
 </script>
 ```
 
-If the page also has a real `## FAQs` section, add a second `FAQPage` block in the same file, copying the FAQ text verbatim so the two stay in sync — see `_includes/schema/inpost.html` or `_includes/schema/schools-catchment-secondary.html`. Don't invent an `FAQPage` block for a page that doesn't actually have FAQ content on it, and don't force a `Dataset` schema onto something too thin or short-lived to be worth indexing as one (a live fixtures page with one upcoming match, say) — `/cheltenham-sports/cheltenham-town-fc` deliberately has none.
+**FAQs don't need a schema block.** Wrap the page's FAQ section in `<section class="faqs">` and `_plugins/faq_schema.rb` generates the `FAQPage` JSON-LD from it at build time. The first heading inside is the section title, the headings one level below it are the questions, and everything up to the next question is the answer. Because the structured data is read from the visible text, the two can't drift apart, and FAQs that use Liquid values (like the ward pages) work too. In a layout:
+
+```html
+<section class="faqs">
+    <h2>FAQs</h2>
+
+    <h3>Where Does the Data Come From?</h3>
+    <p>…</p>
+</section>
+```
+
+In a Markdown page, add `markdown="1"` so the headings inside are still parsed, with blank lines around the content:
+
+```markdown
+<section class="faqs" markdown="1">
+
+## Fuel Price FAQs
+
+### How Often Are Prices Updated?
+
+Checked hourly…
+
+</section>
+```
+
+Don't write an `FAQPage` block by hand; the plugin skips any page that already has one and logs a warning. Don't force a `Dataset` schema onto something too thin or short-lived to be worth indexing as one (a live fixtures page with one upcoming match, say) — `/cheltenham-sports/cheltenham-town-fc` deliberately has none.
 
 ## 6. Checklist
 
@@ -256,7 +281,7 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] Linked from the relevant parent/sibling pages. If the page is in `navigation_header`, its category overview page (`_pages/<category>/<category>.md`, e.g. `_pages/getting-around/getting-around.md`) must mention and link it in the prose too, along with any child pages — every page in the category should appear there. The list of links under the prose is generated from the nav and updates itself, but the prose (and the page's `seo`/`description` text) is hand-written and won't.
 - [ ] Decided whether this is a headline main-menu item or a sub-page of an existing one — if it's a genuine new topic, add it to `navigation_header`/`footer_columns` in `_config.yml`; if it's a filtered view or a natural sub-topic of an existing page (like `/cheltenham-employment-history` under `/about-cheltenham`, or `/cheltenham-listed-buildings` under `/about-cheltenham`), link it inline from the parent page's prose instead and leave the nav/footer alone
 - [ ] If the page went into `navigation_header`, **asked** whether to add it to its category's row in the sponsor categories table (`_layouts/sponsor.html`, the `/sponsor` page) — don't edit that table without an answer, since it's sales copy the site owner words themselves. The **Pages** count in that table is calculated from `navigation_header`, so it updates itself; the **Pages included** text is hardcoded per row, is kept deliberately loose (short names, only some sub-pages in an `(incl. …)` note) and will not change on its own, so it goes stale unless the question is asked. If the answer is yes, add the page's short name in nav order (e.g. `Roadworks`); for a child of an existing entry, only add it to that entry's `(incl. …)` note if it's worth a sponsor knowing about. A page linked inline from a parent (no nav entry) doesn't need the question.
-- [ ] `schema:` + `_includes/schema/<name>.html` if the page has a real dataset and/or a real FAQ section worth marking up
+- [ ] `schema:` + `_includes/schema/<name>.html` if the page has a real dataset worth marking up, and any FAQ section wrapped in `<section class="faqs">` (its `FAQPage` markup is generated for you)
 - [ ] Checked `_data/sources.json` — add or update the entry for this source, being honest about the licence
 - [ ] Ask whether a `_posts/<date>-<name>-added.md` news post announcing the new page is warranted — follow the shape of recent posts like `_posts/2026-09-09-broadband-internet-added.md` (intro paragraph linking the new page, a short "what it shows" summary, an FAQs section). Not every page needs one (a minor filter/sub-page usually doesn't), but a genuinely new dataset or page usually does. Two things to know about posts: `future: false` in `_config.yml` hides any post dated later than the build time until the first site build after it, so date it in the past to publish straight away, or in the future to schedule it (it appears on the next deploy after that time); and the post's URL (`/news/<name>-added`) comes from its filename, not its title, so the title can be as descriptive as you like.
 - [ ] If you changed a style sheet (`assets/*.css`), checked it with the CSS linters as CI runs them. Super-linter 7.1.0 bundles Prettier 3.3.3 and stylelint 15.11, and newer Prettier releases wrap long `font-family` and custom property values differently, so a file that passes with a newer version can still fail in CI. Keep such values short enough to sit on one line, and check with the same versions. CI's Prettier finds its settings (4-space indents) through the `.prettierrc.json` at the repository root, not the copy in `.github/linters/`, so run it without `--config`:

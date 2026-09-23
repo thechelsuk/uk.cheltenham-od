@@ -23,6 +23,8 @@ Planning a day out? Our [visiting Cheltenham guide](/visiting-cheltenham) pairs 
 
 Many of the historic sites on this page are also protected as listed buildings — see the full official register on our [Cheltenham listed buildings](/cheltenham-listed-buildings) page, with a map and grade for every entry.
 
+<section class="faqs" markdown="1">
+
 ## Cheltenham Points of Interest — FAQ
 
 ### What Is Cheltenham Known For?
@@ -48,3 +50,5 @@ Many of the historic sites on this page are also protected as listed buildings �
 ### Where Does This Data Come From?
 
 - The points of interest are sourced from [OpenStreetMap](https://www.openstreetmap.org/), a free, community-maintained map of the world, and distances are calculated from Cheltenham's town centre. Because it's community data, coverage grows over time — if something's missing, it can be added to OpenStreetMap and will appear here on the next update.
+
+</section>
