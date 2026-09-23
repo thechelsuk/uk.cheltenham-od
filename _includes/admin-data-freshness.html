@@ -62,7 +62,6 @@
                 <th scope="col">Schedule</th>
                 <th scope="col" class="date">Last changed</th>
                 <th scope="col" class="number">Days ago</th>
-                <th scope="col">Pages</th>
             </tr>
         </thead>
         <tbody>
@@ -82,7 +81,6 @@
                 <td>{{ row.schedule }}</td>
                 <td class="date" data-val="{{ row.last_changed }}">{% if row.last_changed %}{{ row.last_changed | date: "%Y-%m-%d %H:%M" }}{% else %}&mdash;{% endif %}</td>
                 <td class="number" data-val="{{ row.age_days | default: 99999 }}">{% if row.age_days %}{{ row.age_days }}{% else %}&mdash;{% endif %}</td>
-                <td>{% for page in row.pages %}<a href="{{ page }}">{{ page }}</a>{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
             </tr>
             {% endfor %}
         </tbody>

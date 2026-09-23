@@ -68,7 +68,6 @@ module DataFreshness
           "name" => source["name"] || source["id"],
           "source_url" => source["source_url"],
           "licence_type" => source["licence_type"],
-          "pages" => source["pages"],
           "file" => item["file"],
           "schedule" => item["schedule"],
           "last_changed" => changed&.iso8601,
