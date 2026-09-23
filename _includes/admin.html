@@ -36,8 +36,10 @@
 </style>
 
 <div class="admin-tabs" role="tablist">
+    <button type="button" role="tab" id="admin-tab-data-freshness" aria-controls="admin-panel-data-freshness"
+        aria-selected="true" data-admin-tab="data-freshness">Data Freshness</button>
     <button type="button" role="tab" id="admin-tab-page-types" aria-controls="admin-panel-page-types"
-        aria-selected="true" data-admin-tab="page-types">Page Types</button>
+        aria-selected="false" data-admin-tab="page-types">Page Types</button>
     <button type="button" role="tab" id="admin-tab-seo" aria-controls="admin-panel-seo" aria-selected="false"
         data-admin-tab="seo">Title &amp; Description</button>
     <button type="button" role="tab" id="admin-tab-sponsor-emails" aria-controls="admin-panel-sponsor-emails"
@@ -48,7 +50,11 @@
         aria-selected="false" data-admin-tab="newsletter">Newsletter</button>
 </div>
 
-<div class="admin-panel is-active" id="admin-panel-page-types" role="tabpanel" aria-labelledby="admin-tab-page-types">
+<div class="admin-panel is-active" id="admin-panel-data-freshness" role="tabpanel" aria-labelledby="admin-tab-data-freshness">
+    {% include admin-data-freshness.html %}
+</div>
+
+<div class="admin-panel" id="admin-panel-page-types" role="tabpanel" aria-labelledby="admin-tab-page-types">
     {% include admin-page-types.html %}
 </div>
 
