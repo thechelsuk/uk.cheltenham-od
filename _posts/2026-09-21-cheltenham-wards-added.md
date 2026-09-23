@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds Ward Profiles and Local Election Results
+seo_title: Cheltenham by Wards and Lasted Local Election Results
 type: cod
 description: A profile of every Cheltenham ward, and borough election results and councillors by ward.
 seo: "New Cheltenham ward pages compare crime, house prices, broadband and councillors for all 20 wards, plus borough election results from the council."

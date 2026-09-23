@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Maps Crime Rates Across Every Part of Town
+seo_title: Cheltenham Crime Rates Hotspots Mapped
 type: cod
 description: Cheltenham crime rates per 1,000 residents, mapped by small area and ward.
 seo: "A new map shows Cheltenham crime rates per 1,000 residents for 77 small areas and 20 wards, with a slider to see how each area has changed over time."
