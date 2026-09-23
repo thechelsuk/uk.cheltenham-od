@@ -7,7 +7,8 @@
             <p>{{page.description}}</p>
             <ul>
                 <li><a href="/cheltenham-sports">&lAarr; Back to Sports</a></li>
-                <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official Club Website &rarr;</a></li>
+                <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official Club Website &rarr;</a>
+                </li>
             </ul>
         </header>
 
@@ -17,7 +18,8 @@
         <p>Fixtures change through the season, so use the club's own pages for the latest.</p>
         <ul>
             {% for link in cricket.links %}
-            <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a> &mdash; {{ link.note }}</li>
+            <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a> &mdash; {{ link.note }}
+            </li>
             {% endfor %}
         </ul>
 
@@ -50,58 +52,69 @@
             </table>
         </div>
 
+        <p class="cricket-attribution"><small>
+                Data from <a href="{{ cricket.source_url }}">{{ cricket.source }}</a>.
+                {% if cricket.updated %}Last updated {{ cricket.updated | date: "%-d %B %Y" }}.{% endif %}
+                Always check the club's website for current fixtures, tickets and travel information.
+                Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+            </small></p>
+
         {% for g in cricket.grounds %}
         <h3>Getting to the {{ g.short_name }}</h3>
         <p>{{ g.role }}.
             <a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ g.lat }},{{ g.lon }}" target="_blank"
-                rel="noopener">Directions on Google Maps &rarr;</a></p>
+                rel="noopener">Directions on Google Maps &rarr;</a>
+        </p>
         <ul>
             {% for line in g.getting_there %}
-            <li>{{ line }}{% if line contains "train times page" %} <a href="/cheltenham-train-times">Train times &rarr;</a>{% endif %}</li>
+            <li>{{ line }}{% if line contains "train times page" %} <a href="/cheltenham-train-times">Train times
+                    &rarr;</a>{% endif %}</li>
             {% endfor %}
         </ul>
         {% endfor %}
 
-        <p class="cricket-attribution"><small>
-            Data from <a href="{{ cricket.source_url }}">{{ cricket.source }}</a>.
-            {% if cricket.updated %}Last updated {{ cricket.updated | date: "%-d %B %Y" }}.{% endif %}
-            Always check the club's website for current fixtures, tickets and travel information.
-            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Do Gloucestershire Play Their Home Matches?</h3>
         <ul>
-            <li>Most home matches are at the Bristol County Ground, also known as the Seat Unique Stadium, in Bishopston. Each
-                summer some are played at the College Ground in Cheltenham as part of the Cheltenham Cricket Festival.</li>
+            <li>Most home matches are at the Bristol County Ground, also known as the Seat Unique Stadium, in
+                Bishopston. Each
+                summer some are played at the College Ground in Cheltenham as part of the Cheltenham Cricket Festival.
+            </li>
         </ul>
 
         <h3>When Is the Cheltenham Cricket Festival?</h3>
         <ul>
-            <li>It is held each summer. The 2026 festival ran from 8 to 23 August. Gloucestershire Cricket announces the dates
-                for each year's festival, so check its <a href="https://www.gloscricket.co.uk/towergate-cheltenham-cricket-festival/"
-                target="_blank" rel="noopener">official festival page</a> for the next one.</li>
+            <li>It is held each summer. The 2026 festival ran from 8 to 23 August. Gloucestershire Cricket announces the
+                dates
+                for each year's festival, so check its <a
+                    href="https://www.gloscricket.co.uk/towergate-cheltenham-cricket-festival/" target="_blank"
+                    rel="noopener">official festival page</a> for the next one.</li>
         </ul>
 
         <h3>Do the Women's Team Play in Cheltenham?</h3>
         <ul>
-            <li>Yes. Gloucestershire Women play at the Cheltenham Cricket Festival. In 2026 they played Sussex Sharks on 8
+            <li>Yes. Gloucestershire Women play at the Cheltenham Cricket Festival. In 2026 they played Sussex Sharks on
+                8
                 August and Kent on 16 August.</li>
         </ul>
 
         <h3>Where Can I Find Fixtures and Buy Tickets?</h3>
         <ul>
-            <li>On the club's own website. Use the fixtures, women's cricket and tickets links above, since dates, formats and
+            <li>On the club's own website. Use the fixtures, women's cricket and tickets links above, since dates,
+                formats and
                 ticket prices change from year to year.</li>
         </ul>
 
         <h3>How Do I Get to the College Ground?</h3>
         <ul>
-            <li>It is in the grounds of Cheltenham College on the south side of the town, about half a mile from the Promenade
+            <li>It is in the grounds of Cheltenham College on the south side of the town, about half a mile from the
+                Promenade
                 and 1.2 miles from Cheltenham Spa railway station. Check the club's festival page for parking and travel
                 advice before you go, and see our <a href="/cheltenham-train-times">train times</a> and
-                <a href="/cheltenham-car-parks">car parks</a> pages.</li>
+                <a href="/cheltenham-car-parks">car parks</a> pages.
+            </li>
         </ul>
     </div>
 </div>
