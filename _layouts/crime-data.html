@@ -98,10 +98,55 @@
         <p>Crime data is not available yet.</p>
         {% endif %}
 
-        {% if site.data.crime.index.generated_at %}
-        <p>Data last refreshed {{ site.data.crime.index.generated_at | date: "%-d %B %Y" }}</p>
-        {% endif %}
-        <p><a href="{{ site.data.crime.index.source }}">Source: Police.uk API &rarr;</a></p>
+        <p class="crime-data-attribution"><small>
+            Data from <a href="{{ crime_data.source_url }}">{{ crime_data.source_name }}</a>, published under the
+            {{ crime_data.licence }}.
+            {% if crime_data.generated_at %}Last updated {{ crime_data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Where Does the Crime Data Come From?</h3>
+        <ul>
+            <li>From Police.uk, which publishes the street-level crime reported to each police force in England and
+                Wales. Cheltenham's figures are recorded by Gloucestershire Constabulary, and this page is updated
+                each month as new figures are released.</li>
+        </ul>
+
+        <h3>Why Are the 2026 Figures so Low?</h3>
+        <ul>
+            <li>From August 2023 to January 2026, around 1,000 crimes a month were reported in Cheltenham. From
+                February 2026, only a handful a month have been published, which points to a problem with how the
+                data reaches Police.uk rather than a real fall in crime.</li>
+            <li>The problem has been reported to the police data team, who are working on a fix at the source. The
+                figures on this page will be updated as soon as the corrected data is published.</li>
+        </ul>
+
+        <h3>Why Isn't the Latest Month Shown Yet?</h3>
+        <ul>
+            <li>Police.uk usually publishes each month's figures early in the month after next, so January's
+                crimes normally appear in early March.</li>
+        </ul>
+
+        <h3>Are Crime Locations Exact?</h3>
+        <ul>
+            <li>No. To protect the privacy of victims, Police.uk moves each crime to a nearby anonymous map point, so
+                a figure shows roughly where a crime happened rather than an exact address.</li>
+        </ul>
+
+        <h3>What Are the Neighbourhoods?</h3>
+        <ul>
+            <li>They are the {{ crime_data.months.last.neighbourhoods.size }} neighbourhood policing areas that
+                Gloucestershire Constabulary uses for Cheltenham. They are not the same as the town's electoral
+                wards; for crime counted by ward, see our <a href="/cheltenham-wards">ward profiles</a>.</li>
+        </ul>
+
+        <h3>How Can I Compare Areas Fairly?</h3>
+        <ul>
+            <li>Busier areas naturally record more crime. Our <a href="/cheltenham-crime-data/map">crime map</a>
+                compares every part of Cheltenham by crimes per 1,000 residents over 12 months, which makes areas
+                of different sizes easier to compare.</li>
+        </ul>
 
     </div>
 
