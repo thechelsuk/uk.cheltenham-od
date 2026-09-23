@@ -252,7 +252,7 @@ Not every page needs this. Add it when there's a real dataset and it's worth a s
 </section>
 ```
 
-In a Markdown page, add `markdown="1"` so the headings inside are still parsed, with blank lines around the content:
+In a Markdown page, add `markdown="1"` so the headings inside are still parsed, with empty lines around the content:
 
 ```markdown
 <section class="faqs" markdown="1">

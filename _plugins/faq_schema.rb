@@ -29,7 +29,8 @@ module FaqSchema
       ref = Regexp.last_match(1)
       if ref.start_with?("#x", "#X") then [ref[2..].to_i(16)].pack("U")
       elsif ref.start_with?("#") then [ref[1..].to_i].pack("U")
-      else named_entity(ref)
+      else
+        named_entity(ref)
       end
     end
     plain.gsub(/\s+/, " ").strip

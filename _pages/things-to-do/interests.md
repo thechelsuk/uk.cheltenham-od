@@ -17,7 +17,7 @@ A Regency spa town known for its horse-racing Festival, its literature, music, j
 
 Use the category summary to jump to what you're after, or sort the full table by name, category or distance. Everything nearest to the centre appears first, so it doubles as a quick guide to what's within walking distance and what's a short drive out into the surrounding Cotswold villages.
 
-Links go to official website, or wikipedia for more information.
+Links go to the official site, or to Wikipedia for more information.
 
 Planning a day out? Our [visiting Cheltenham guide](/visiting-cheltenham) pairs this list with where to stay, eat and get around.
 
