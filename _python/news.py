@@ -74,11 +74,10 @@ def as_datetime(value):
 
 
 def fetch_local_items(source, root):
-    """Pull items straight from this site's own _posts/_events collections,
-    rather than round-tripping through our own already-derived Atom feeds."""
-    kind = source["kind"]
-    collection_dir = root / ("_posts" if kind == "posts" else "_events")
-    link_template = "/news/{slug}.html" if kind == "posts" else "/events/{slug}/"
+    """Pull items straight from this site's own _posts collection, rather
+    than round-tripping through our own already-derived Atom feed."""
+    collection_dir = root / "_posts"
+    link_template = "/news/{slug}.html"
 
     items = []
     for path in sorted(collection_dir.glob("*.md")):
@@ -137,7 +136,7 @@ if __name__ == "__main__":
 
     fetched_items = []
     for source in sources:
-        if source.get("kind") in ("posts", "events"):
+        if source.get("kind") == "posts":
             fetched_items.extend(fetch_local_items(source, root))
         else:
             fetched_items.extend(fetch_rss_items(source))
