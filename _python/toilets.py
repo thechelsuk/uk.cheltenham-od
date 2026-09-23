@@ -58,7 +58,7 @@ def parse_opening_times(raw) -> dict | None:
     if not raw or not isinstance(raw, list):
         return None
 
-    parsed = {}
+    parsed: dict[str, str | None] = {}
     for i, day in enumerate(DAYS):
         if i >= len(raw):
             parsed[day] = None
