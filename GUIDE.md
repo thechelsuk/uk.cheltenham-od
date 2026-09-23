@@ -241,7 +241,7 @@ Not every page needs this. Add it when there's a real dataset and it's worth a s
 </script>
 ```
 
-**FAQs don't need a schema block.** Write them in the standard shape and `_plugins/faq_schema.rb` generates the `FAQPage` JSON-LD from them at build time: an `<h2>` reading exactly "Frequently Asked Questions", then each question as an `<h3>`, with its answer as a `<ul>` (one `<li>` per point, so a longer answer is several bullets). Because the structured data is read from the visible text, the two can't drift apart, and FAQs that use Liquid values (like the ward pages) work too. In a layout:
+**FAQs don't need a schema block.** Write them in the standard shape and `_plugins/faq_schema.rb` generates the `FAQPage` JSON-LD from them at build time: an `<h2>` reading exactly "Frequently Asked Questions", then each question as an `<h3>`, with its answer as a `<ul>` (one `<li>` per point, so a longer answer is several bullets). Because the structured data is read from the visible text, the two can't drift apart, and FAQs that use Liquid values (like the ward pages) work too. Put the FAQs at the bottom of the page, after the data: in the page's own layout when it has one, and in the Markdown only for pages on the shared `page` layout (such as recycling and the newsletter). In a layout:
 
 ```html
 <h2>Frequently Asked Questions</h2>
