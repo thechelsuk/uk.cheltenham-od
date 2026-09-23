@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T21:00:18+01:00",
+  "generated_at": "2026-09-23T21:05:19+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,29 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-23T20:52",
-      "expected": "2026-09-23T21:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-23T21:02",
-      "expected": "2026-09-23T21:02",
-      "status": "On time",
+      "expected": "2026-09-23T21:06",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -75,7 +55,7 @@
     },
     {
       "scheduled": "2026-09-23T21:12",
-      "expected": "2026-09-23T21:16",
+      "expected": "2026-09-23T21:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -168,19 +148,23 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T22:03",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-23T20:50",
-      "expected": "2026-09-23T20:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-23T21:05",
       "expected": "2026-09-23T21:05",
@@ -193,7 +177,7 @@
     },
     {
       "scheduled": "2026-09-23T21:10",
-      "expected": "2026-09-23T21:15",
+      "expected": "2026-09-23T21:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -249,6 +233,16 @@
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T22:01",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": ""
     }
   ]
