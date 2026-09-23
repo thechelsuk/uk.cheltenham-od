@@ -2,8 +2,8 @@
 {% comment %}
     Shared by the helplines page (page.listing: contacts, from
     _data/helpful-contacts.json) and the local help and support page
-    (page.listing: support, from _data/local-support.json). Header links to
-    each other come from page.header_links.
+    (page.listing: support, from _data/local-support.json), each linking to
+    the other in the header.
 {% endcomment %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
@@ -11,9 +11,11 @@
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
             <ul>
-                {% for link in page.header_links %}
-                <li><a href="{{ link.url }}">{{ link.label }}</a></li>
-                {% endfor %}
+                {% if page.listing == "contacts" %}
+                <li><a href="/cheltenham-helpful-contacts-reports/local-support">Local Help and Support &rarr;</a></li>
+                {% else %}
+                <li><a href="/cheltenham-helpful-contacts-reports">&larr; Back to Helplines and Contacts</a></li>
+                {% endif %}
             </ul>
         </header>
 
