@@ -1,0 +1,138 @@
+{% include header.html %}
+{% assign data = site.data["crime-map"] %}
+{% assign latest = data.windows | last %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>Latest 12 months: {{ latest.first_month }} to {{ latest.last_month }}</li>
+                <li>{{ data.lsoa.areas.size }} small areas and {{ data.ward.areas.size }} wards</li>
+                <li><a href="/cheltenham-crime-data">&larr; Back to Crime Data</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Crime Rate Map</h2>
+        <p>
+            <label for="crime-map-level">Show:</label>
+            <select id="crime-map-level">
+                <option value="lsoa">Small areas ({{ data.lsoa.areas.size }})</option>
+                <option value="ward">Wards ({{ data.ward.areas.size }})</option>
+            </select>
+        </p>
+        <p>
+            <label for="crime-map-window">12 months ending:</label>
+            <input type="range" id="crime-map-window" min="0" max="{{ data.windows.size | minus: 1 }}"
+                value="{{ data.windows.size | minus: 1 }}" step="1" aria-describedby="crime-map-window-label">
+            <output id="crime-map-window-label" for="crime-map-window">{{ latest.first_month }} to {{ latest.last_month }}</output>
+        </p>
+        <p><small>Crimes per 1,000 residents over 12 months</small></p>
+        <div class="crime-map-legend" id="crime-map-legend"></div>
+        <div id="crime-map" style="height: 600px; border-radius: 8px;" aria-label="Map of Cheltenham shaded by crimes per 1,000 residents"></div>
+
+        <h2>Crime Rate by Ward</h2>
+        <p><small>{{ latest.first_month }} to {{ latest.last_month }}, using mid-{{ latest.population_year }} population estimates</small></p>
+        <div class="table-scroll">
+            <table class="crime-map-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Residents</th>
+                        <th scope="col" class="number">Crimes</th>
+                        <th scope="col" class="number">Per 1,000</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign wards = data.ward.areas | sort: "name" %}
+                    {% for area in wards %}
+                    <tr>
+                        <td>{% if area.slug %}<a href="/cheltenham-wards/{{ area.slug }}">{{ area.name }}</a>{% else %}{{ area.name }}{% endif %}</td>
+                        <td class="number" data-val="{{ area.latest.residents }}">{{ area.latest.residents_display }}</td>
+                        <td class="number" data-val="{{ area.latest.crimes }}">{{ area.latest.crimes_display }}</td>
+                        <td class="number" data-val="{{ area.latest.rate }}">{{ area.latest.rate_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Crime Rate by Small Area</h2>
+        <p><small>{{ latest.first_month }} to {{ latest.last_month }}, using mid-{{ latest.population_year }} population estimates</small></p>
+        <div class="table-scroll">
+            <table class="crime-map-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Residents</th>
+                        <th scope="col" class="number">Crimes</th>
+                        <th scope="col" class="number">Per 1,000</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for area in data.lsoa.areas %}
+                    <tr>
+                        <td>{{ area.name }}</td>
+                        <td>{{ area.ward_name }}</td>
+                        <td class="number" data-val="{{ area.latest.residents }}">{{ area.latest.residents_display }}</td>
+                        <td class="number" data-val="{{ area.latest.crimes }}">{{ area.latest.crimes_display }}</td>
+                        <td class="number" data-val="{{ area.latest.rate }}">{{ area.latest.rate_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>FAQs</h2>
+
+        <h3>How Is the Crime Rate Worked Out?</h3>
+        <p>We count every street-level crime published by Police.uk within an area's boundary over 12 months, then divide by the number of people living there and multiply by 1,000. Population figures are the Office for National Statistics' mid-year estimates for the year each 12-month period ends in, or the latest year published.</p>
+
+        <h3>What Are the Small Areas?</h3>
+        <p>They are the Office for National Statistics' Lower Layer Super Output Areas, small neighbourhoods of roughly 1,000 to 3,000 residents used for census and official statistics. Each is named after the borough and a code, such as Cheltenham 004D, and the table shows which ward each one mostly falls in.</p>
+
+        <h3>Why Does the Town Centre Have Such a High Rate?</h3>
+        <p>Crime rates are measured against the people who live in an area, but the town centre is where many more people shop, work and go out. Violence, anti-social behaviour and shoplifting, the most common crimes in the centre, push its rate up even though relatively few people live there.</p>
+
+        <h3>Why Might a Crime Appear in the Wrong Area?</h3>
+        <p>Police.uk moves each crime to a nearby anonymous map point to protect the privacy of victims, so a crime near a boundary can be counted on the other side of it. Treat the map as a guide to how areas compare rather than an exact count for any one street.</p>
+
+        <h3>Which Months Does the Map Cover?</h3>
+        <p>Each view covers 12 complete months of published data. Police.uk usually publishes each month's figures early in the month after next, and any month the police have not yet published in full is left out until it is.</p>
+
+        <p class="crime-map-attribution"><small>
+            Crime data from <a href="{{ data.source_url }}">{{ data.source }}</a>. Population from
+            <a href="{{ data.population_source_url }}">{{ data.population_source }}</a>, and area boundaries from the
+            <a href="{{ data.boundaries_source_url }}">{{ data.boundaries_source }}</a> (contains OS data &copy; Crown
+            copyright and database right). All licensed under the {{ data.licence }}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+    </div>
+</div>
+
+<style>
+    .crime-map-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em 1em;
+        margin: 0.5em 0 1em;
+        font-size: 0.85rem;
+    }
+
+    .crime-map-legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="crime-map-data" type="application/json">{{ data | jsonify }}</script>
+<script src="/assets/scripts/crime-map.js"></script>
+{% include footer.html %}
