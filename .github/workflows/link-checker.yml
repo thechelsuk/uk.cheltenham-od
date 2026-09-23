@@ -23,7 +23,7 @@ jobs:
           bundler-cache: true
 
       - name: Build site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --config _config.yml,_config.production.yml
 
       - name: Link Checker
         id: lychee

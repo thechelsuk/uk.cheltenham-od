@@ -1,0 +1,26 @@
+# Published-site overrides, applied after _config.yml by the deploy and
+# link checker builds (--config _config.yml,_config.production.yml). A
+# local `jekyll serve` uses _config.yml alone, so the admin page stays
+# available there.
+#
+# Jekyll replaces a list rather than adding to it, so this repeats the
+# exclude list from _config.yml, plus admin.md.
+# _python/tests/test_site_config.py fails if the two drift apart.
+exclude:
+  - CNAME
+  - README.md
+  - LICENSE.md
+  - SECURITY.md
+  - _python/
+  - .github/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - admin.md
