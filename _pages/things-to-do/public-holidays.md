@@ -5,7 +5,6 @@ seo: "Confirmed public holidays for Cheltenham and the UK, including Christmas a
 permalink: /cheltenham-public-holidays
 description: Public holidays in Cheltenham and the UK
 type: "activities"
-schema: holidays
 ---
 
 {% include sponsor.html %}

@@ -35,11 +35,8 @@ It is free, it goes out once a week, and you can unsubscribe with one click from
 {% assign issues = issues | sort: "issue_date" | reverse %}
 {% endif %}
 {% if issues.size > 0 %}
-<ul>
-    {% for issue in issues %}
-    <li><a href="{{ issue.url }}">{{ issue.title }}</a></li>
-    {% endfor %}
-</ul>
+{% for issue in issues %}- [{{ issue.title }}]({{ issue.url }})
+{% endfor %}
 {% else %}
 No issues yet — the first one lands soon after sign-up opens.
 {% endif %}
@@ -48,7 +45,7 @@ No issues yet — the first one lands soon after sign-up opens.
 
 We only use your email address to send you the newsletter and the confirmation link you need to click when you sign up. We don't sell it or share it with anyone, including sponsors. The [privacy policy](/privacy#newsletter) explains exactly what we collect and who handles it for us.
 
-## FAQs
+## Frequently Asked Questions
 
 ### How Often Will I Hear From You?
 

@@ -6,7 +6,6 @@ seo: "Cheltenham's MP and general election history: who represents Cheltenham in
 permalink: /cheltenham-politics
 description: "Cheltenham's current MP and the results of every general election since 2010."
 type: "about"
-schema: politics
 group: "About & Info"
 ---
 

@@ -20,31 +20,36 @@
             aria-label="Map of Cheltenham shaded by nearest {{ page.phase | downcase }} school"></div>
         <p id="catchment-legend" class="map-legend"></p>
 
-        <h2>FAQs</h2>
+        <h2>Frequently Asked Questions</h2>
 
         <h3>Why Isn't This an Official Catchment Map?</h3>
-        <p>Because Gloucestershire doesn't have one. Unlike some local authorities, Gloucestershire County Council
-            doesn't draw fixed catchment boundaries for {{ page.phase | downcase }} schools — it ranks applicants by
-            measured distance once a school is oversubscribed, alongside criteria such as siblings and faith. The
-            zones on this map are a straight-line "nearest school" approximation calculated from official school
-            locations, not a reproduction of any council boundary.</p>
+        <ul>
+            <li>Because Gloucestershire doesn't have one. Unlike some local authorities, Gloucestershire County Council
+                doesn't draw fixed catchment boundaries for {{ page.phase | downcase }} schools — it ranks applicants by
+                measured distance once a school is oversubscribed, alongside criteria such as siblings and faith. The
+                zones on this map are a straight-line "nearest school" approximation calculated from official school
+                locations, not a reproduction of any council boundary.</li>
+        </ul>
 
         <h3>Which Schools Are Included?</h3>
-        <p>Cheltenham's {{ page.phase | downcase }} schools that fall within the town and its immediate edge.
-            Schools sharing a Cheltenham postcode district but sitting in a separate village or town further out —
-            {% if page.phase == "Primary" %}places like Winchcombe, Bourton-on-the-Water and Stow-on-the-Wold{% else %}Winchcombe School and The Cotswold Academy in Fairford{% endif %}
-            — are excluded, since including them would stretch zones across open countryside rather than reflect
-            how people actually choose between Cheltenham schools.</p>
+        <ul>
+            <li>Cheltenham's {{ page.phase | downcase }} schools that fall within the town and its immediate edge.
+                Schools sharing a Cheltenham postcode district but sitting in a separate village or town further out —
+                {% if page.phase == "Primary" %}places like Winchcombe, Bourton-on-the-Water and Stow-on-the-Wold{% else %}Winchcombe School and The Cotswold Academy in Fairford{% endif %}
+                — are excluded, since including them would stretch zones across open countryside rather than reflect
+                how people actually choose between Cheltenham schools.</li>
+        </ul>
 
         <h3>Where Does the Data Come From?</h3>
-        <p>School names and locations come from the Department for Education's <a
+        <ul>
+            <li>School names and locations come from the Department for Education's <a
                 href="https://get-information-schools.service.gov.uk/">Get Information about Schools (GIAS)</a>
-            register, refreshed monthly. Grid references are converted from the register's Ordnance Survey National
-            Grid coordinates.</p>
-
-        <p>Public sector information licensed under the <a
+                register, refreshed monthly. Grid references are converted from the register's Ordnance Survey National
+                Grid coordinates.</li>
+            <li>Public sector information licensed under the <a
                 href="https://www.nationalarchives.gov.uk/doc/open-government-licence/">Open Government Licence
-                v3.0 &rarr;</a></p>
+                v3.0 &rarr;</a></li>
+        </ul>
     </div>
 </div>
 

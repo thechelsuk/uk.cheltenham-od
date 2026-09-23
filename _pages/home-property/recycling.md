@@ -6,7 +6,6 @@ seo: "Cheltenham recycling options in Cheltenham including locations, recycling 
 permalink: /cheltenham-recycling
 description: "Cheltenham reducing, recycling, and refilling Options in Cheltenham"
 type: "property"
-schema: recycling
 ---
 
 {% include sponsor.html %}

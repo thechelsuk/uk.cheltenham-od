@@ -6,7 +6,6 @@ seo: "Gloucestershire cricket in Cheltenham: the men's and women's teams, the Ch
 permalink: /cheltenham-sports/gloucestershire-cricket
 description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival, a map and directions to their home grounds, and links to official fixtures and tickets."
 type: "activities"
-schema: cricket
 ---
 
 {% include sponsor.html %}

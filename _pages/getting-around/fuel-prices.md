@@ -10,30 +10,10 @@ description: Compare today's cheapest petrol and diesel prices across 100+ forec
 
 {% assign fuel = site.data["fuel-prices"] %}
 
-Data sourced from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-prices) under the [Open Government Licence v3](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), and checked hourly. They can change at any time, so treat them as a guide and check the forecourt's own display before filling up.
+## Compare Petrol and Diesel Prices Around Cheltenham
 
-## Fuel Price FAQs
+Fuel prices can vary by several pence a litre between forecourts only a few miles apart. This page compares the latest pump prices at {{ fuel.stations | size }} forecourts within {{ fuel.radius_miles }} miles of Cheltenham town centre, taking in Gloucester, Tewkesbury, Stroud, Cirencester and the villages in between as well as the town itself. Prices come from the official GOV.UK fuel price scheme and are checked every hour.
 
-### How Often Are Prices Updated?
+The headline prices show the cheapest place to buy each type of fuel today, and how much you would save on a 55-litre tank compared with the typical local price. The map shows where every forecourt is, with the cheapest highlighted, and the full table lists prices for unleaded, premium unleaded, diesel, premium diesel and B10 at each one, so you can sort by price or by distance from the town centre.
 
-- Checked hourly. Figures come straight from the GOV.UK fuel price scheme, which forecourts are required to keep current.
-
-### Where Does This Data Come From?
-
-- The UK government's official fuel price disclosure scheme. We show every reporting forecourt within {{ fuel.radius_miles }} miles of Cheltenham town centre, from supermarket pumps to independent garages. That's {{ fuel.stations | size}} forecourts.
-
-### Why isn’t My Local Station Listed?
-
-- Only stations that have reported a price in the last {{ fuel.lookback_days }} days are shown. If yours is missing it probably hasn't filed a change recently — check directly before assuming it's the cheapest. We've also only included forecourts located within 20 miles of the centre of Cheltenham.
-
-### How Do I Read the Table?
-
-- Click any column header to sort — by price, distance, or when a price was last reported. The lowest price in each fuel column is highlighted, and forecourts with no update in {{ fuel.stale_days }} days are greyed out.
-
-### How Is "Typical" Calculated?
-
-- It's the median price for that fuel type across all listed local forecourts — the middle value when every price is lined up in order — not the average. Median is less skewed by the odd unusually cheap or expensive forecourt, so it's a fairer read of what you'd typically pay locally.
-
-### How Are the "Savings" Worked Out?
-
-- The percentage compares the cheapest local price against the local typical (median) price. The £ figure scales that per-litre saving up to a 55-litre tank — about the size of an average UK car's — as a simple, comparable reference point. Most people don't fill from empty, so treat it as an upper bound: if you're topping up 30 litres instead of 55, the saving is roughly 30/55 of what's shown.
+Driving an electric car? Our [EV charging map](/cheltenham-ev-charging) shows public charge points around Cheltenham. If you are heading into town, see our [car parks](/cheltenham-car-parks) and [roadworks](/cheltenham-roadworks) pages too.
