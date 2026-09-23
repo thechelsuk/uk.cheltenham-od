@@ -1,65 +1,3 @@
-<style>
-    .sponsor-email-card {
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        margin-bottom: 1.5rem;
-        overflow: hidden;
-    }
-
-    .sponsor-email-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: .75rem 1rem;
-        background: var(--bg-alt);
-        border-bottom: 1px solid var(--border);
-    }
-
-    .sponsor-email-head h3 {
-        margin: 0;
-        font-size: 1rem;
-    }
-
-    .sponsor-email-copy {
-        background: var(--accent);
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: .4rem .9rem;
-        font-weight: 600;
-        font-size: .85rem;
-        cursor: pointer;
-        white-space: nowrap;
-    }
-
-    .sponsor-email-copy:hover {
-        opacity: .9;
-    }
-
-    .sponsor-email-copy.copied {
-        background: #3a8f4f;
-    }
-
-    .sponsor-email-body {
-        padding: 1rem 1.25rem;
-        line-height: 1.6;
-    }
-
-    .sponsor-email-body p {
-        margin: 0 0 .9rem;
-    }
-
-    .sponsor-email-body ul {
-        margin: 0 0 .9rem 1.2rem;
-        padding: 0;
-    }
-
-    .sponsor-email-body li {
-        margin-bottom: .3rem;
-    }
-</style>
-
 <p class="info-text">
     Draft category-sponsor outreach emails, matching the one already sent to Cook Residential (Home &amp; Property).
     Click "Copy HTML" and paste directly into Gmail/Outlook to keep the links and formatting.
@@ -155,52 +93,52 @@
 <p>If it's of interest, I can have you live this week. Full details are at <a href="https://cheltenham-od.uk/sponsor">cheltenham-od.uk/sponsor</a>.</p>
 {% endcapture %}
 
-<div class="sponsor-email-card">
-    <div class="sponsor-email-head">
+<div class="admin-card">
+    <div class="admin-card-head">
         <h3>Getting Around &mdash; e.g. local garage / dealership</h3>
-        <button type="button" class="sponsor-email-copy" data-copy-target="content-getting-around">Copy HTML</button>
+        <button type="button" class="admin-copy sponsor-email-copy" data-copy-target="content-getting-around">Copy HTML</button>
     </div>
-    <div class="sponsor-email-body" id="content-getting-around">{{ email_getting_around }}</div>
+    <div class="admin-card-body" id="content-getting-around">{{ email_getting_around }}</div>
 </div>
 
-<div class="sponsor-email-card">
-    <div class="sponsor-email-head">
+<div class="admin-card">
+    <div class="admin-card-head">
         <h3>Safety &amp; Environment &mdash; e.g. home insurance / security firm</h3>
-        <button type="button" class="sponsor-email-copy" data-copy-target="content-safety-environment">Copy HTML</button>
+        <button type="button" class="admin-copy sponsor-email-copy" data-copy-target="content-safety-environment">Copy HTML</button>
     </div>
-    <div class="sponsor-email-body" id="content-safety-environment">{{ email_safety_environment }}</div>
+    <div class="admin-card-body" id="content-safety-environment">{{ email_safety_environment }}</div>
 </div>
 
-<div class="sponsor-email-card">
-    <div class="sponsor-email-head">
+<div class="admin-card">
+    <div class="admin-card-head">
         <h3>Things to Do &mdash; e.g. hotel / restaurant group</h3>
-        <button type="button" class="sponsor-email-copy" data-copy-target="content-things-to-do">Copy HTML</button>
+        <button type="button" class="admin-copy sponsor-email-copy" data-copy-target="content-things-to-do">Copy HTML</button>
     </div>
-    <div class="sponsor-email-body" id="content-things-to-do">{{ email_things_to_do }}</div>
+    <div class="admin-card-body" id="content-things-to-do">{{ email_things_to_do }}</div>
 </div>
 
-<div class="sponsor-email-card">
-    <div class="sponsor-email-head">
+<div class="admin-card">
+    <div class="admin-card-head">
         <h3>Community &amp; Support &mdash; e.g. private GP / dental practice</h3>
-        <button type="button" class="sponsor-email-copy" data-copy-target="content-community-support">Copy HTML</button>
+        <button type="button" class="admin-copy sponsor-email-copy" data-copy-target="content-community-support">Copy HTML</button>
     </div>
-    <div class="sponsor-email-body" id="content-community-support">{{ email_community_support }}</div>
+    <div class="admin-card-body" id="content-community-support">{{ email_community_support }}</div>
 </div>
 
-<div class="sponsor-email-card">
-    <div class="sponsor-email-head">
+<div class="admin-card">
+    <div class="admin-card-head">
         <h3>About &amp; Info &mdash; e.g. tutoring service / private school</h3>
-        <button type="button" class="sponsor-email-copy" data-copy-target="content-about-info">Copy HTML</button>
+        <button type="button" class="admin-copy sponsor-email-copy" data-copy-target="content-about-info">Copy HTML</button>
     </div>
-    <div class="sponsor-email-body" id="content-about-info">{{ email_about_info }}</div>
+    <div class="admin-card-body" id="content-about-info">{{ email_about_info }}</div>
 </div>
 
-<div class="sponsor-email-card">
-    <div class="sponsor-email-head">
+<div class="admin-card">
+    <div class="admin-card-head">
         <h3>Principal Sponsor &mdash; e.g. larger local firm (accountants / solicitors / bank)</h3>
-        <button type="button" class="sponsor-email-copy" data-copy-target="content-principal">Copy HTML</button>
+        <button type="button" class="admin-copy sponsor-email-copy" data-copy-target="content-principal">Copy HTML</button>
     </div>
-    <div class="sponsor-email-body" id="content-principal">{{ email_principal }}</div>
+    <div class="admin-card-body" id="content-principal">{{ email_principal }}</div>
 </div>
 
 <script>

@@ -1,41 +1,5 @@
-<style>
-    #theme-table .swatch {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 5.5rem;
-        padding: .4rem .85rem;
-        background: var(--accent);
-        color: var(--accent-text);
-        border-radius: 6px;
-        font-size: .8rem;
-        font-weight: 600;
-        letter-spacing: .02em;
-        border: 1px solid rgba(0, 0, 0, .08);
-    }
-
-    #theme-table .hex {
-        margin-left: .55rem;
-        font-size: .78rem;
-        vertical-align: middle;
-        opacity: .65;
-    }
-
-    #theme-table .swatch-cell {
-        white-space: nowrap;
-    }
-
-    #theme-table .schema-yes {
-        color: var(--saving);
-    }
-
-    #theme-table .schema-no {
-        color: var(--text-muted);
-    }
-</style>
-
 <div class="table-scroll">
-    <table class="broadband-table" data-sortable id="theme-table">
+    <table class="data-table" data-sortable id="theme-table">
         <thead>
             <tr>
                 <th scope="col">Page</th>
@@ -43,7 +7,6 @@
                 <th scope="col">Type</th>
                 <th scope="col">Sponsor</th>
                 <th scope="col">Dataset Schema</th>
-                <th scope="col">FAQ Schema</th>
                 <th scope="col">Light</th>
                 <th scope="col">Dark</th>
             </tr>
@@ -52,11 +15,9 @@
             {% assign pages = site.pages | where_exp: "p", "p.title" | sort_natural: "title" %}
             {% for page in pages %}
             {% assign has_dataset = false %}
-            {% assign has_faq = false %}
             {% if page.schema %}
             {% capture schema_content %}{% include schema/{{ page.schema }}.html %}{% endcapture %}
             {% if schema_content contains "Dataset" %}{% assign has_dataset = true %}{% endif %}
-            {% if schema_content contains "FAQPage" %}{% assign has_faq = true %}{% endif %}
             {% endif %}
             {% assign page_category = page.group %}
             {% unless page_category %}
@@ -76,12 +37,8 @@
                 <td data-val="{% if page.sponsor.size > 0 %}1{% else %}0{% endif %}">{% if page.sponsor.size > 0
                     %}True{% else %}False{% endif %}</td>
                 <td data-val="{% if has_dataset %}1{% else %}0{% endif %}">
-                    {% if has_dataset %}<span class="schema-yes">&check;</span>{% else %}<span
-                        class="schema-no">&cross;</span>{% endif %}
-                </td>
-                <td data-val="{% if has_faq %}1{% else %}0{% endif %}">
-                    {% if has_faq %}<span class="schema-yes">&check;</span>{% else %}<span
-                        class="schema-no">&cross;</span>{% endif %}
+                    {% if has_dataset %}<span class="admin-status admin-status-ok">&check;</span>{% else %}<span
+                        class="admin-status admin-status-muted">&cross;</span>{% endif %}
                 </td>
                 <td class="swatch-cell" data-swatch-cell><span class="swatch theme-{{ page.type }}"
                         data-swatch>Light</span><code class="hex"></code></td>

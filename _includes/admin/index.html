@@ -1,0 +1,58 @@
+{% comment %}
+    The local admin page (admin.md). Each tab is "id:Label"; its panel is
+    _includes/admin/<id>.html. The first tab opens by default, and /admin#<id>
+    opens any other. admin.md is left out of the published site by
+    _config.production.yml.
+{% endcomment %}
+{% assign admin_tabs = "data-freshness:Data Freshness|page-types:Page Types|seo:Title &amp; Description|sponsor-emails:Sponsor Emails|social:Social Posts|newsletter:Newsletter" | split: "|" %}
+
+<style>
+{% include admin/admin.css %}
+</style>
+
+<div class="admin-tabs" role="tablist">
+    {% for entry in admin_tabs %}
+    {% assign tab = entry | split: ":" %}
+    <button type="button" role="tab" id="admin-tab-{{ tab[0] }}" aria-controls="admin-panel-{{ tab[0] }}"
+        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-admin-tab="{{ tab[0] }}">{{ tab[1] }}</button>
+    {% endfor %}
+</div>
+
+{% for entry in admin_tabs %}
+{% assign tab = entry | split: ":" %}
+{% assign panel = tab[0] %}
+<div class="admin-panel{% if forloop.first %} is-active{% endif %}" id="admin-panel-{{ panel }}" role="tabpanel"
+    aria-labelledby="admin-tab-{{ panel }}">
+    {% include admin/{{ panel }}.html %}
+</div>
+{% endfor %}
+
+<script>
+    (function () {
+        var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-admin-tab]"));
+        if (!tabs.length) return;
+
+        function activate(name, updateHash) {
+            tabs.forEach(function (tab) {
+                var active = tab.dataset.adminTab === name;
+                tab.setAttribute("aria-selected", active ? "true" : "false");
+                var panel = document.getElementById("admin-panel-" + tab.dataset.adminTab);
+                if (panel) panel.classList.toggle("is-active", active);
+            });
+            if (updateHash && history.replaceState) {
+                history.replaceState(null, "", "#" + name);
+            }
+        }
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+                activate(tab.dataset.adminTab, true);
+            });
+        });
+
+        var fromHash = window.location.hash.replace("#", "");
+        if (fromHash && document.getElementById("admin-panel-" + fromHash)) {
+            activate(fromHash, false);
+        }
+    })();
+</script>

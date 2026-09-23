@@ -1,29 +1,3 @@
-<style>
-    #freshness-table .status {
-        font-size: .78rem;
-        font-weight: 600;
-        letter-spacing: .02em;
-        white-space: nowrap;
-    }
-
-    #freshness-table .status-ok {
-        color: #3a8f4f;
-    }
-
-    #freshness-table .status-stale,
-    #freshness-table .status-unknown {
-        color: #b3541e;
-    }
-
-    #freshness-table .status-unchanged {
-        color: #8a6d1f;
-    }
-
-    #freshness-table .status-manual {
-        color: var(--text-muted);
-    }
-</style>
-
 {% assign rows = site.data.data_freshness %}
 {% assign stale = rows | where: "status", "stale" %}
 {% assign unknown = rows | where: "status", "unknown" %}
@@ -52,7 +26,7 @@
     {{ manual.size }} manual, across {{ rows.size }} data files.</p>
 
 <div class="table-scroll">
-    <table class="broadband-table data-table" data-sortable id="freshness-table">
+    <table class="data-table" data-sortable id="freshness-table">
         <thead>
             <tr>
                 <th scope="col">Status</th>
@@ -67,14 +41,14 @@
         <tbody>
             {% for row in rows %}
             {% case row.status %}
-            {% when "stale" %}{% assign rank = 0 %}
-            {% when "unknown" %}{% assign rank = 1 %}
-            {% when "unchanged" %}{% assign rank = 2 %}
-            {% when "ok" %}{% assign rank = 3 %}
-            {% else %}{% assign rank = 4 %}
+            {% when "stale" %}{% assign rank = 0 %}{% assign tone = "warn" %}
+            {% when "unknown" %}{% assign rank = 1 %}{% assign tone = "warn" %}
+            {% when "unchanged" %}{% assign rank = 2 %}{% assign tone = "caution" %}
+            {% when "ok" %}{% assign rank = 3 %}{% assign tone = "ok" %}
+            {% else %}{% assign rank = 4 %}{% assign tone = "muted" %}
             {% endcase %}
             <tr>
-                <td data-val="{{ rank }}"><span class="status status-{{ row.status }}">{{ row.status | capitalize }}</span></td>
+                <td data-val="{{ rank }}"><span class="admin-status admin-status-{{ tone }}">{{ row.status | capitalize }}</span></td>
                 <td data-val="{{ row.name | downcase | escape }}"><a href="{{ row.source_url }}">{{ row.name }}</a></td>
                 <td>{{ row.licence_type }}</td>
                 <td><code>{{ row.file }}</code></td>
