@@ -33,7 +33,7 @@
         </div>
 
         <h2>Collisions by Year</h2>
-        <div style="position: relative; height: 300px;">
+        <div class="chart-canvas">
             <canvas id="road-collisions-years" aria-label="Stacked bar chart of Cheltenham road collisions per year by severity"></canvas>
         </div>
         <div class="table-scroll">
@@ -117,7 +117,7 @@
         </div>
 
         <h2>When Collisions Happen</h2>
-        <div style="position: relative; height: 300px;">
+        <div class="chart-canvas">
             <canvas id="road-collisions-hours" aria-label="Bar chart of Cheltenham road collisions by hour of the day"></canvas>
         </div>
         <p>{{ data.light.dark_share }}% of collisions ({{ data.light.dark }} of {{ totals.collisions }}) happened in the dark.</p>
@@ -299,7 +299,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="road-collisions-years-data" type="application/json">{{ data.by_year | jsonify }}</script>
 <script id="road-collisions-hours-data" type="application/json">{{ data.by_hour | jsonify }}</script>
 <script id="road-collisions-map-data" type="application/json">{{ data.serious_collisions | jsonify }}</script>

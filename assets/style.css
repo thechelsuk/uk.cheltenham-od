@@ -1785,9 +1785,11 @@ button:disabled,
     line-height: 1.2;
 }
 
-.traffic-chart {
+/* Every Chart.js chart sits in one of these; chart-defaults.js turns off
+   maintainAspectRatio so the chart fills it at any screen width. */
+.chart-canvas {
     position: relative;
-    height: 180px;
+    height: 400px;
     min-width: 0;
 }
 

@@ -16,7 +16,7 @@
         {{ content }}
 
         <h2>Share of Homes Sold Within Reach</h2>
-        <div style="position: relative; height: 320px;">
+        <div class="chart-canvas">
             <canvas id="affordability-chart" aria-label="Line chart of the share of Cheltenham home sales within 4.5 times median pay, by year and property type"></canvas>
         </div>
 
@@ -96,7 +96,7 @@
             This page shows the same picture as a share of the homes actually sold.</p>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="affordability-data" type="application/json">{{ data.years | jsonify }}</script>
 <script src="/assets/scripts/affordability-chart.js"></script>
 {% include footer.html %}

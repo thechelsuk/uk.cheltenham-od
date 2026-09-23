@@ -66,13 +66,13 @@
         </div>
 
         <h3>River Chelt: the Last 48 Hours</h3>
-        <canvas id="river-chelt-chart" height="110" aria-label="Line chart of river levels at the River Chelt gauges over the last 48 hours"></canvas>
+        <div class="chart-canvas"><canvas id="river-chelt-chart" aria-label="Line chart of river levels at the River Chelt gauges over the last 48 hours"></canvas></div>
 
         <h3>Brooks: the Last 48 Hours</h3>
-        <canvas id="river-brooks-chart" height="110" aria-label="Line chart of river levels at the Hatherley Brook, Lilley Brook and Wymans Brook gauges over the last 48 hours"></canvas>
+        <div class="chart-canvas"><canvas id="river-brooks-chart" aria-label="Line chart of river levels at the Hatherley Brook, Lilley Brook and Wymans Brook gauges over the last 48 hours"></canvas></div>
 
         <h3>Daily Peak River Levels</h3>
-        <canvas id="river-history-chart" height="110" aria-label="Line chart of the highest level recorded each day at the River Chelt gauges"></canvas>
+        <div class="chart-canvas"><canvas id="river-history-chart" aria-label="Line chart of the highest level recorded each day at the River Chelt gauges"></canvas></div>
 
         <h3>Rainfall Gauges</h3>
         <div class="table-scroll">
@@ -129,7 +129,7 @@
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+        {% include chartjs.html %}
         <script id="river-levels-data" type="application/json">{{ rivers.stations | jsonify }}</script>
         <script id="river-levels-history-data" type="application/json">{{ site.data["river-levels-history"].days | jsonify }}</script>
         <script src="/assets/scripts/river-levels.js"></script>

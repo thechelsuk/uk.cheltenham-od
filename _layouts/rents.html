@@ -17,10 +17,10 @@
         {{ content }}
 
         <h2>Average Monthly Rent since 2015</h2>
-        <canvas id="rents-price-chart" height="120" aria-label="Line chart of the average monthly private rent in Cheltenham, the South West and England since 2015"></canvas>
+        <div class="chart-canvas"><canvas id="rents-price-chart" aria-label="Line chart of the average monthly private rent in Cheltenham, the South West and England since 2015"></canvas></div>
 
         <h2>Annual Rent Change</h2>
-        <canvas id="rents-change-chart" height="120" aria-label="Line chart of the annual percentage change in private rents in Cheltenham, the South West and England"></canvas>
+        <div class="chart-canvas"><canvas id="rents-change-chart" aria-label="Line chart of the annual percentage change in private rents in Cheltenham, the South West and England"></canvas></div>
 
         <h2>Rent by Number of Bedrooms</h2>
         <div class="table-scroll">
@@ -122,7 +122,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+{% include chartjs.html %}
 <script id="rents-series-data" type="application/json">{{ data.series | jsonify }}</script>
 <script src="/assets/scripts/rents-chart.js"></script>
 {% include footer.html %}
