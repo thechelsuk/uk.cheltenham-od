@@ -75,7 +75,7 @@ if __name__ == "__main__":
     ]
     print(f"  {len(local)} in Cheltenham")
 
-    lockers = sorted((clean_point(p) for p in local), key=lambda l: l["name"].lower())
+    lockers = sorted((clean_point(p) for p in local), key=lambda locker: locker["name"].lower())
 
     payload = {
         "updated":     helper.updated_timestamp(),

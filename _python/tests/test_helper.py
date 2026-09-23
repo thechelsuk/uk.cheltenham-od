@@ -4,7 +4,11 @@ touches the network: requests.request is replaced with a fake.
 Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
+import ast
 import json
+import pathlib
+import subprocess
+import sys
 
 import pytest
 import requests
@@ -216,11 +220,6 @@ def test_write_json_creates_the_folder_and_keeps_unicode(tmp_path):
 
 
 # --- every script can reach helper and config ------------------------------
-
-import ast
-import pathlib
-import subprocess
-import sys
 
 PYTHON_DIR = pathlib.Path(__file__).resolve().parents[1]
 SCRIPTS = sorted(p for folder in ("", "local", "pi") for p in (PYTHON_DIR / folder).glob("*.py"))
