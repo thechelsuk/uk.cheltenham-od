@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T14:25:16+01:00",
+  "generated_at": "2026-09-23T14:30:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "licence": "Rail Data Marketplace Live Arrival and Departure Boards licence (OGL3-based; per-product Schedule 1 terms apply)",
@@ -10,26 +10,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-23T14:24",
-      "expected": "2026-09-23T14:24",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-23T14:30",
-      "expected": "2026-09-23T14:34",
+      "expected": "2026-09-23T14:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -62,8 +44,8 @@
     },
     {
       "scheduled": "2026-09-23T14:40",
-      "expected": "2026-09-23T14:40",
-      "status": "On time",
+      "expected": "2026-09-23T14:44",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -154,19 +136,39 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T15:12",
+      "expected": "2026-09-23T15:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Glasgow Central via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Motherwell",
+        "Glasgow Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-23T14:22",
-      "expected": "2026-09-23T14:22",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-23T14:27",
       "expected": "2026-09-23T14:27",
@@ -179,7 +181,7 @@
     },
     {
       "scheduled": "2026-09-23T14:28",
-      "expected": "2026-09-23T14:33",
+      "expected": "2026-09-23T14:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -199,7 +201,7 @@
     },
     {
       "scheduled": "2026-09-23T14:38",
-      "expected": "2026-09-23T14:40",
+      "expected": "2026-09-23T14:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -235,6 +237,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T15:10",
+      "expected": "2026-09-23T15:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Glasgow Central via Leeds",
       "reason": ""
     }
   ]
