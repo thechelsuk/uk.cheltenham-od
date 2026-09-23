@@ -42,29 +42,7 @@ jobs:
 
             - name: Commit and push if changed
               if: ${{ !cancelled() }}
-              run: |-
-                  git config user.name "GitHub Action"
-                  git config user.email "action@github.com"
-                  git add _data/social-posted.json
-
-                  if git diff --staged --quiet; then
-                    exit 0
-                  fi
-
-                  git commit -m "Chore: Social posts sent $(date +'%Y-%m-%d %H:%M')"
-                  # main moves on while this job runs (the Pi pushes every 5 minutes),
-                  # so rebase onto the latest main and retry rather than losing the data.
-                  pushed=false
-                  for attempt in 1 2 3; do
-                    if git pull --rebase --autostash && git push; then
-                      pushed=true
-                      break
-                    fi
-                    git rebase --abort 2>/dev/null || true
-                    echo "Push attempt $attempt failed; retrying"
-                    sleep $((attempt * 10))
-                  done
-                  if [ "$pushed" != true ]; then
-                    echo "::error::Could not push the data update after 3 attempts"
-                    exit 1
-                  fi
+              uses: ./.github/actions/commit-and-push
+              with:
+                  message: "Chore: Social posts sent"
+                  paths: _data/social-posted.json

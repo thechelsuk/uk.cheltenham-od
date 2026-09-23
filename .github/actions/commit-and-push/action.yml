@@ -1,0 +1,67 @@
+name: Commit and push data
+description: >-
+    Commit any changed files and push them to the current branch. main usually
+    moves on while a scheduled job runs (the Pi pushes every 5 minutes), so the
+    push rebases onto the latest commit and retries, rather than failing and
+    losing the run's data.
+
+inputs:
+    message:
+        description: Commit message; the date is added to the end.
+        required: true
+    date-format:
+        description: date(1) format for the date added to the message.
+        default: "%Y-%m-%d %H:%M"
+    paths:
+        description: What to stage, as git add arguments.
+        default: "-A"
+
+outputs:
+    changed:
+        description: "true when a commit was pushed, otherwise false."
+        value: ${{ steps.push.outputs.changed }}
+    ref:
+        description: The pushed commit, for the deploy job to build.
+        value: ${{ steps.push.outputs.ref }}
+
+runs:
+    using: composite
+    steps:
+        - id: push
+          shell: bash
+          env:
+              MESSAGE: ${{ inputs.message }}
+              DATE_FORMAT: ${{ inputs.date-format }}
+              PATHS: ${{ inputs.paths }}
+          run: |
+              git diff
+              git config user.name "GitHub Action"
+              git config user.email "action@github.com"
+              # PATHS is a list of git add arguments, so it is split on purpose.
+              # shellcheck disable=SC2086
+              git add $PATHS
+
+              if git diff --staged --quiet; then
+                echo "changed=false" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+
+              git commit -m "$MESSAGE $(date +"$DATE_FORMAT")"
+
+              pushed=false
+              for attempt in 1 2 3; do
+                if git pull --rebase --autostash && git push; then
+                  pushed=true
+                  break
+                fi
+                git rebase --abort 2>/dev/null || true
+                echo "Push attempt $attempt failed; retrying"
+                sleep $((attempt * 10))
+              done
+              if [ "$pushed" != true ]; then
+                echo "::error::Could not push the data update after 3 attempts"
+                exit 1
+              fi
+
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
