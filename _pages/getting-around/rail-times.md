@@ -5,7 +5,6 @@ seo: "Cheltenham Spa station train times: the next departures and arrivals with 
 permalink: /cheltenham-train-times
 description: "The next trains departing from and arriving at Cheltenham Spa station, with platforms, delays and cancellations."
 type: "travel"
-robots: "noindex,follow"
 ---
 
 ## Trains at Cheltenham Spa
