@@ -70,9 +70,10 @@
         <p>No reports have been recorded yet.</p>
         {% endif %}
         <p class="fms-attribution"><small>
-                Reports from <a href="{{ history.source_url }}">FixMyStreet</a>, run by mySociety, within 10km of
-                Cheltenham town centre. Report text is written by members of the public.
-            </small></p>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
+            Checked {{ history.refresh }}.
+            Reports within 10km of Cheltenham town centre, written by members of the public.
+        </small></p>
     </div>
 </div>
 {% include chartjs.html %}

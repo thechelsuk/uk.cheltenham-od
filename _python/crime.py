@@ -160,8 +160,7 @@ def save_data(records_by_month):
 	index = {
 		"schema_version": 1,
 		"generated_at": datetime.now(timezone.utc).isoformat(),
-		"source": "https://data.police.uk/docs/method/crime-street/",
-		"source_name": "Police.uk",
+		"source": "Police.uk",
 		"source_url": "https://data.police.uk/",
 		"licence": "Open Government Licence v3.0",
 		"force": FORCE,

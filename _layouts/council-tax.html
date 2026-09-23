@@ -41,10 +41,10 @@
         </div>
 
         <p class="council-tax-attribution"><small>
-                Charges from <a href="{{ data.source_url }}">{{ data.source }}</a> for {{ data.tax_year }}.
-                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
-                {{ data.licence }}.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Charges are for {{ data.tax_year }}.
+        </small></p>
     </div>
 </div>
 {% include footer.html %}

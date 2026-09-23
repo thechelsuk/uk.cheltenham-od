@@ -46,9 +46,9 @@
         <p>No power cuts have been recorded for Cheltenham since this page started tracking them.</p>
         {% endif %}
         <p class="power-cuts-attribution"><small>
-                Data from <a href="{{ history.source }}">National Grid Electricity Distribution</a>, under the
-                {{ history.licence }}.
-            </small></p>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
+            Checked {{ history.refresh }}.
+        </small></p>
     </div>
 </div>
 {% include footer.html %}

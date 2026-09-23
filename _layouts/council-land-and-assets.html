@@ -46,13 +46,13 @@
         </div>
 
         <p class="council-land-and-assets-attribution"><small>
-                Originally published by Cheltenham Borough Council under the
-                <a href="https://www.gov.uk/government/publications/local-government-transparency-code-2015">Local
-                    Government Transparency Code</a>; the council's own open data page for this dataset is no longer
-                online. Sourced here via a <a href="{{ data.source_url }}">GitHub mirror</a> of the original CSV
-                export.
-                {% if data.generated_at %}Last fetched {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            The list was originally published by Cheltenham Borough Council under the
+            <a href="https://www.gov.uk/government/publications/local-government-transparency-code-2015">Local Government
+            Transparency Code</a>; the council's own open data page is no longer online, so it comes from a mirror of the
+            original CSV export.
+        </small></p>
     </div>
 </div>
 

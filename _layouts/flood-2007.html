@@ -44,8 +44,8 @@
             </table>
         </div>
         <p class="flood-records-attribution"><small>
-            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>, published under the Open
-            Government Licence v3.0. Last updated {{ rivers.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
+            Checked {{ rivers.refresh }}.
         </small></p>
     </div>
 </div>

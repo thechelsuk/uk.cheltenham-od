@@ -88,8 +88,8 @@
         </div>
 
         <p class="earnings-attribution"><small>
-            Data from the <a href="{{ earnings.source_url }}">{{ earnings.source }}</a>, published under the Open
-            Government Licence v3.0. Last updated {{ earnings.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ earnings.source_url }}">{{ earnings.source }}</a>{% if earnings.licence %}, published under the {{ earnings.licence }}{% endif %}.
+            {% if earnings.generated_at %}Last updated {{ earnings.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
 
         <h2>Frequently Asked Questions</h2>

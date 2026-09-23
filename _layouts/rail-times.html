@@ -165,13 +165,13 @@
         {% endif %}
 
         <p class="rail-times-attribution"><small>
-                Train times from <a
-                    href="{{ data.source_url | default: 'https://raildata.org.uk/' }}">{{ data.source | default: 'National Rail Enquiries, via the Rail Data Marketplace' }}</a>.
-                {% if usage %}Passenger figures from the <a href="{{ usage.source_url }}">{{ usage.source }}</a>.{%
-                endif %}
-                Cheltenham Open Data is independent and is not endorsed by National Rail or the Rail Delivery Group.
-                Times can change at short notice, so check the station screens when you arrive at the station.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            Checked {{ data.refresh }}.
+            {% if usage %}Passenger figures from the <a href="{{ usage.source_url }}">{{ usage.source }}</a>{% if usage.generated_at %},
+            last updated {{ usage.generated_at | date: "%-d %B %Y" }}{% endif %}.{% endif %}
+            Cheltenham Open Data is independent and is not endorsed by National Rail or the Rail Delivery Group.
+            Times can change at short notice, so check the station screens when you arrive.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

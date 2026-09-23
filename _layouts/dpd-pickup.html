@@ -47,6 +47,11 @@
         </div>
         <p>Last updated {{ dpd.updated }}</p>
 
+        <p class="dpd-pickup-attribution"><small>
+            Data from <a href="{{ dpd.source_url }}">{{ dpd.source }}</a>{% if dpd.licence %}, published under the {{ dpd.licence }}{% endif %}.
+            Checked {{ dpd.refresh }}.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is a DPD Pickup Point?</h3>

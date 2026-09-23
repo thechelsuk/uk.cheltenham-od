@@ -45,6 +45,11 @@
         </div>
         <p>Last updated {{ inpost.updated }}</p>
 
+        <p class="inpost-attribution"><small>
+            Data from <a href="{{ inpost.source_url }}">{{ inpost.source }}</a>{% if inpost.licence %}, published under the {{ inpost.licence }}{% endif %}.
+            Checked {{ inpost.refresh }}.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is an InPost Locker?</h3>

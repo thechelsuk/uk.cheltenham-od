@@ -97,12 +97,11 @@
 
 
             <p class="ev-charging-attribution"><small>
-                    Charging location data from <a href="{{ ev.source_url }}">{{ ev.source }}</a>,
-                    licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-                    Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-                    {% if ev.generated_at %}Last updated {{ ev.generated_at | date: "%-d %B %Y" }}.{% endif %}
-                    Always check the operator's app for live availability and pricing.
-                </small></p>
+                Data from <a href="{{ ev.source_url }}">{{ ev.source }}</a>{% if ev.licence %}, published under the {{ ev.licence }}{% endif %}.
+                {% if ev.generated_at %}Last updated {{ ev.generated_at | date: "%-d %B %Y" }}.{% endif %}
+                Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+                Always check the operator's app for live availability and pricing.
+            </small></p>
 
         </div>
 

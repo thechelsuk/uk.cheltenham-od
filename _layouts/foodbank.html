@@ -110,11 +110,11 @@
         {% endif %}
 
         <p class="foodbank-attribution"><small>
-                Data from <a href="{{ fb.givefood_url }}">Give Food</a>, published under
-                <a href="{{ data.licence_url }}">{{ data.licence }}</a>. Last checked
-                {{ data.generated_at | date: "%-d %B %Y" }}. Lists of needed items are a guide, so check the food
-                bank's own shopping list before you donate.
-            </small></p>
+            Data from <a href="{{ fb.givefood_url }}">{{ data.source }}</a>, published under the
+            <a href="{{ data.licence_url }}">{{ data.licence }}</a>.
+            Checked {{ data.refresh }}.
+            Lists of needed items are a guide, so check the food bank's own shopping list before you donate.
+        </small></p>
         {% else %}
         <p>Details for this food bank are not available right now. Please check back shortly.</p>
         {% endif %}

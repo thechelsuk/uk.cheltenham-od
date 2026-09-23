@@ -76,16 +76,14 @@
                 those.</small></p>
 
         <h2>About This Data</h2>
-        <p>Data from <a href="{{ mobile.source_url }}" target="_blank" rel="noopener">{{ mobile.source }}</a>, licensed
-            under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank"
-                rel="noopener">Open Government Licence v3.0</a>. Figures are predictions submitted by the four mobile
-            network operators (EE, O2, Three and Vodafone) with a reference date of
+        <p>Figures are predictions submitted by the four mobile network operators (EE, O2, Three and Vodafone) with a reference date of
             {{ mobile.reference_date | date: "%-d %B %Y" }}, covering the {{ mobile.geography_name }}
             {{ mobile.geography }}.</p>
 
         <p class="mobile-coverage-attribution"><small>
-                {% if mobile.generated_at %}Last updated {{ mobile.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from <a href="{{ mobile.source_url }}">{{ mobile.source }}</a>{% if mobile.licence %}, published under the {{ mobile.licence }}{% endif %}.
+            {% if mobile.generated_at %}Last updated {{ mobile.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

@@ -74,8 +74,10 @@
                 </tbody>
             </table>
         </div>
-        <p>Table data sourced from OpenStreetMap and licensed under the Open Data Commons Open Database License (ODbL)
-        </p>
+        {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
+        <p class="races-attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+        </small></p>
 
     </div>
 </div>

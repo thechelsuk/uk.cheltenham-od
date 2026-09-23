@@ -130,7 +130,10 @@ if __name__ == "__main__":
     payload = {
         "updated":            helper.updated_timestamp(),
         "updated_iso":        datetime.date.today().isoformat(),
-        "source":             "https://www.nomisweb.co.uk/",
+        "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "source":             "Office for National Statistics via Nomis",
+        "source_url": "https://www.nomisweb.co.uk/",
+        "licence": "Open Government Licence v3.0",
         "geography_code":     GEOGRAPHY,
         "population_series":  population_series,
         "population_latest":  latest,
@@ -148,7 +151,10 @@ if __name__ == "__main__":
     employment_payload = {
         "updated":     helper.updated_timestamp(),
         "updated_iso": datetime.date.today().isoformat(),
-        "source":      "https://www.nomisweb.co.uk/",
+        "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "source":      "Office for National Statistics via Nomis",
+        "source_url": "https://www.nomisweb.co.uk/",
+        "licence": "Open Government Licence v3.0",
         "series":      employment_series,
     }
     helper.write_json(employment_out_path, employment_payload)

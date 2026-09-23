@@ -37,13 +37,6 @@
             </table>
         </div>
 
-        <p class="housing-supply-attribution"><small>
-                Net additional dwellings data from the <a href="{{ data.net_additional_dwellings.source_url }}">Ministry
-                    of Housing, Communities &amp; Local Government's live tables on housing supply</a> (Table 122).
-                Licensed under the <a
-                    href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
-                    Licence v3.0</a>.
-            </small></p>
 
         <h2>Student &amp; Other Communal Accommodation</h2>
 
@@ -79,13 +72,11 @@
         </div>
 
         <p class="housing-supply-attribution"><small>
-                Communal accommodation data from the <a href="{{ data.communal_accommodation.source_url }}">Ministry
-                    of Housing, Communities &amp; Local Government's live tables on housing supply</a> (Table 124).
-                Licensed under the <a
-                    href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
-                    Licence v3.0</a>.
-                {% if data.generated_at %}Last fetched {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from the Ministry of Housing, Communities &amp; Local Government's live tables on housing supply
+            (<a href="{{ data.net_additional_dwellings.source_url }}">Table 122</a> and
+            <a href="{{ data.communal_accommodation.source_url }}">Table 124</a>), published under the {{ data.licence }}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
     </div>
 </div>
 

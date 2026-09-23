@@ -20,6 +20,12 @@
             aria-label="Map of Cheltenham shaded by nearest {{ page.phase | downcase }} school"></div>
         <p id="catchment-legend" class="map-legend"></p>
 
+        {% assign src = site.data.sources | where: "id", "dfe-gias-schools" | first %}
+        <p class="school-catchment-areas-attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Catchments here are the nearest school by straight-line distance, not official admissions areas.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>Why Isn't This an Official Catchment Map?</h3>

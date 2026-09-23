@@ -82,7 +82,7 @@ if __name__ == "__main__":
     # recently modified variation, but a route still counts as needing attention
     # if ANY of its variations does — an older, stale-but-still-live registration
     # shouldn't be hidden just because a newer variation happens to be clean.
-    groups = {}
+    groups: dict[tuple, list] = {}
     for route in routes:
         key = (route["service_number"], route["operator"], route["start_point"], route["finish_point"])
         groups.setdefault(key, []).append(route)
@@ -108,7 +108,10 @@ if __name__ == "__main__":
     payload = {
         "updated":            helper.updated_timestamp(),
         "updated_iso":        datetime.date.today().isoformat(),
-        "source":             SOURCE_PAGE,
+        "source":             "Bus Open Data Service (Department for Transport)",
+        "source_url":         SOURCE_PAGE,
+        "licence":            "Open Government Licence v3.0",
+        "refresh":            "every two hours",
         "source_catalogue":   CATALOGUE_URL,
         "total_routes":       len(routes),
         "attention_count":    attention_count,

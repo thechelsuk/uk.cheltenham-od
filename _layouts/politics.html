@@ -84,12 +84,10 @@
         </div>
 
         <p class="politics-attribution"><small>
-                Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>. Contains Parliamentary
-                information licensed under the
-                <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open
-                    Parliament Licence v3.0</a>.
-                {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>.
+            Contains Parliamentary information licensed under the {{ data.licence }}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

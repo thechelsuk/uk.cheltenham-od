@@ -97,6 +97,11 @@
             </table>
         </div>
 
+        <p class="bus-attribution"><small>
+            Data from <a href="{{ disruptions.source_url }}">{{ disruptions.source }}</a>{% if disruptions.licence %}, published under the {{ disruptions.licence }}{% endif %}.
+            Checked {{ disruptions.refresh }}.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Does This Data Come From?</h3>

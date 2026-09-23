@@ -67,10 +67,10 @@
             </table>
         </div>
 
+        {% assign src = site.data.sources | where: "id", "fsa-food-hygiene-ratings" | first %}
         <p class="where-to-eat-attribution"><small>
-            Ratings from the <a href="https://ratings.food.gov.uk/">Food Standards Agency's Food Hygiene Rating Scheme</a>,
-            published under the Open Government Licence v3.0. Map tiles &copy;
-            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 
         <h2>Frequently Asked Questions</h2>

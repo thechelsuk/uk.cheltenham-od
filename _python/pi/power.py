@@ -149,8 +149,10 @@ if __name__ == "__main__":
 
     payload = {
         "updated_iso": datetime.date.today().isoformat(),
-        "source": SOURCE_PAGE,
+        "source": "National Grid Electricity Distribution",
+        "source_url": SOURCE_PAGE,
         "licence": LICENCE,
+        "refresh": "every 5 minutes",
         "count": len(incidents),
         "incidents": incidents,
     }
@@ -177,8 +179,10 @@ if __name__ == "__main__":
     history_payload = {
         "note": "Rolling log of power cuts recorded affecting Cheltenham (GL50-GL54) postcodes, "
                 "built up incrementally each run — not a full historical archive from before this page existed.",
-        "source": SOURCE_PAGE,
+        "source": "National Grid Electricity Distribution",
+        "source_url": SOURCE_PAGE,
         "licence": LICENCE,
+        "refresh": "every 5 minutes",
         "count": len(history_records),
         "records": history_records,
     }

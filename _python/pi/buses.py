@@ -132,7 +132,10 @@ if __name__ == "__main__":
 
     payload = {
         "updated_iso": datetime.date.today().isoformat(),
-        "source":      SOURCE_PAGE,
+        "source": "Bus Open Data Service (Department for Transport)",
+        "source_url": SOURCE_PAGE,
+        "licence": "Open Government Licence v3.0",
+        "refresh": "every 5 minutes",
         "count":       len(disruptions),
         "disruptions": disruptions,
     }
@@ -158,7 +161,10 @@ if __name__ == "__main__":
     history_payload = {
         "note": "Rolling log of bus disruptions recorded affecting Cheltenham, built up incrementally "
                 "each run — not a full historical archive from before this page existed.",
-        "source": SOURCE_PAGE,
+        "source": "Bus Open Data Service (Department for Transport)",
+        "source_url": SOURCE_PAGE,
+        "licence": "Open Government Licence v3.0",
+        "refresh": "every 5 minutes",
         "count": len(history_records),
         "records": history_records,
     }

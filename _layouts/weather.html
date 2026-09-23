@@ -515,6 +515,11 @@
             }
         </style>
 
+        <p class="weather-attribution"><small>
+            Data from <a href="{{ wx.source_url }}">{{ wx.source }}</a>{% if wx.licence %}, published under the {{ wx.licence }}{% endif %}.
+            Checked {{ wx.refresh }}.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Accurate Is a 10-day Forecast?</h3>

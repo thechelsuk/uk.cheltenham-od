@@ -42,9 +42,9 @@
         </div>
 
         <p class="opticians-attribution"><small>
-            Data from the <a href="{{ opticians.source_url }}">{{ opticians.source }}</a>, published under the Open
-            Government Licence v3.0, with locations from {{ opticians.geocoding_source }}.
-            {{ opticians.geocoding_attribution }} Last updated {{ opticians.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ opticians.source_url }}">{{ opticians.source }}</a>{% if opticians.licence %}, published under the {{ opticians.licence }}{% endif %}.
+            {% if opticians.generated_at %}Last updated {{ opticians.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Locations from {{ opticians.geocoding_source }}. {{ opticians.geocoding_attribution }}
             Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 

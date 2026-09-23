@@ -49,8 +49,9 @@
         {% endif %}
 
         <p class="flood-history-attribution"><small>
-                Data from the <a href="{{ history.source }}">Environment Agency</a>.
-            </small></p>
+            Data from the <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
+            {% if history.generated_at %}Last updated {{ history.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
     </div>
 </div>
 {% include footer.html %}

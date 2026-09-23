@@ -13,6 +13,7 @@ play area (OSM often splits a single site into several polygons).
 """
 import math
 import os
+from datetime import datetime, timezone
 
 import config
 import helper
@@ -76,10 +77,10 @@ def main():
     play_areas.sort(key=lambda p: (p["distance_miles"], p["name"]))
 
     output = {
-        "generated_at": helper.updated_timestamp(),
-        "source":       "OpenStreetMap contributors, via Overpass",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source":       "OpenStreetMap contributors",
         "source_url":   "https://www.openstreetmap.org/copyright",
-        "licence":      "Open Database Licence (ODbL) — © OpenStreetMap contributors",
+        "licence":      "Open Database Licence (ODbL)",
         "radius_miles": RADIUS_MILES,
         "play_areas":   play_areas,
     }

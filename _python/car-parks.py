@@ -17,6 +17,7 @@ reported as true and the time range is used as `charging_hours`.
 """
 import os
 import re
+from datetime import datetime, timezone
 
 import config
 import helper
@@ -92,10 +93,10 @@ def main():
     car_parks.sort(key=lambda c: c["name"])
 
     output = {
-        "generated_at": helper.updated_timestamp(),
-        "source":       "OpenStreetMap contributors, via Overpass",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source":       "OpenStreetMap contributors",
         "source_url":   "https://www.openstreetmap.org/copyright",
-        "licence":      "Open Database Licence (ODbL) — © OpenStreetMap contributors",
+        "licence":      "Open Database Licence (ODbL)",
         "car_parks":    car_parks,
     }
 

@@ -51,11 +51,11 @@
         </div>
 
         <p class="car-parks-attribution"><small>
-                Car park locations from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
-                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
-                Some fields (fee, opening hours, capacity) may be incomplete or out of date — always check the
-                signage on arrival.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Some fields (fee, opening hours, capacity) may be incomplete or out of date, so check the
+            signage on arrival.
+        </small></p>
     </div>
 </div>
 

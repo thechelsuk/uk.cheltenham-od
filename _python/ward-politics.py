@@ -247,7 +247,6 @@ def main():
         "source": "Cheltenham Borough Council",
         "source_url": RESULTS_INDEX,
         "councillors_source_url": BASE + "mgFindMember.aspx",
-        "licence": "None stated on the council's election results pages",
         "elections": [{"date": e["date"], "title": e["title"]} for e in ELECTIONS],
         "parties": parties,
         "council": council_composition(wards),

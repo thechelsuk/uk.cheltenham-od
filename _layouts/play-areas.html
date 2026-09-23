@@ -48,11 +48,11 @@
         </div>
 
         <p class="play-areas-attribution"><small>
-                Play area locations from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
-                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
-                Equipment, age suitability and opening arrangements aren't recorded for most play areas, so check
-                on arrival.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Equipment, age suitability and opening arrangements aren't recorded for most play areas, so
+            check on arrival.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

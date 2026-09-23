@@ -16,12 +16,12 @@ ordinary electoral wards, is the "All other parts of Cheltenham" rate.
 import json
 import os
 import re
+from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
 
 import config
-import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "council-tax.json")
@@ -77,13 +77,10 @@ def main():
         })
 
     output = {
-        "generated_at": helper.updated_timestamp(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "tax_year":     best_year_label,
         "source":       "Cheltenham Borough Council",
         "source_url":   SOURCE_URL,
-        "licence":      ("Not explicitly stated on the scraped page; assumed to fall under "
-                          "Cheltenham Borough Council's general Open Government Licence v3.0 "
-                          "website terms, but this is unconfirmed for this specific page"),
         "band_check_url": "https://www.gov.uk/council-tax-bands",
         "areas":        areas,
     }

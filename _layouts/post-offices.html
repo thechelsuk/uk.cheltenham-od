@@ -64,6 +64,12 @@
             high-street bank branches have closed.</p>
 
 
+        {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
+        <p class="post-office-attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Opening hours and services can change, so confirm with the branch before travelling.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Can I Send a Parcel Outside Post Office Opening Hours?</h3>
@@ -76,15 +82,6 @@
             <li>Yes — see our <a href="/cheltenham-dpd-pickup-points">Cheltenham DPD Pickup points</a> page for a full list of local shops, newsagents and petrol station kiosks that accept DPD drop-offs and collections, many with longer opening hours than a typical Post Office branch.</li>
         </ul>
 
-        <p class="post-office-attribution"><small>
-                Contains data from <a href="https://www.openstreetmap.org/copyright" target="_blank"
-                    rel="noopener">OpenStreetMap</a>,
-                © OpenStreetMap contributors, available under the
-                <a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener">Open Database
-                    Licence
-                    (ODbL)</a>.
-                Opening hours and services can change — please confirm with the branch before travelling.
-            </small></p>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script id="po-data" type="application/json">{{ site.data.post-offices | jsonify }}</script>

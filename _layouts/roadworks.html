@@ -57,12 +57,12 @@
         {% endif %}
 
         <p class="roadworks-attribution"><small>
-                Roadworks data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the
-                <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{{ data.licence }}</a>.
-                {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-                Markers show the centre point of each works, which may stretch further along the road. Dates and
-                closures can change at short notice, so check signage and live traffic updates before you travel.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Markers show the centre point of each works, which may stretch further along the road. Dates
+            and closures can change at short notice, so check signage and live traffic updates before you
+            travel.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

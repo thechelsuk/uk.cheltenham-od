@@ -76,14 +76,12 @@
                 </tbody>
             </table>
         </div>
-        <p class="fuel-attribution"><small>Data sourced from the <a href="https://www.gov.uk/check-fuel-prices">GOV.UK
-                    fuel
-                    price scheme</a> under the <a
-                    href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
-                    Licence
-                    v3</a>, and checked hourly. They can change at any time, so treat them as a guide and check the
-                forecourt's
-                own display before filling up.</small></p>
+        <p class="fuel-attribution"><small>
+            Data from the <a href="{{ fuel.source_url }}">{{ fuel.source }}</a>{% if fuel.licence %}, published under the {{ fuel.licence }}{% endif %}.
+            Checked {{ fuel.refresh }}.
+            Prices can change at any time, so treat them as a guide and check the forecourt's
+            own display before filling up.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

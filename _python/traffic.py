@@ -118,7 +118,6 @@ def main():
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "Cloudflare",
         "source_url": SOURCE_URL,
-        "licence": "The site's own traffic figures; no open licence applies",
         "start": start.isoformat(),
         "end": end.isoformat(),
         "totals": {

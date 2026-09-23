@@ -168,6 +168,7 @@ def main():
         "generated_at": now.isoformat(),
         "source": "Environment Agency flood monitoring API",
         "source_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+        "refresh": "every two hours",
         "licence": "Open Government Licence v3.0",
         "centre": {"latitude": CENTRE[0], "longitude": CENTRE[1]},
         "radius_km": RADIUS_KM,

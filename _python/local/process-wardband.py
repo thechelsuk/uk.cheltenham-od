@@ -226,8 +226,10 @@ def main():
         b = wards[norm(code)]
         b["name"] = w.get("ward_name")
         b["n"] += 1
-        b["sfbb"] += r["sfbb"]; b["u100"] += r["u100"]
-        b["u300"] += r["u300"]; b["giga"] += r["giga"]
+        b["sfbb"] += r["sfbb"]
+        b["u100"] += r["u100"]
+        b["u300"] += r["u300"]
+        b["giga"] += r["giga"]
 
     if unmatched_pc:
         print(f"Note: {unmatched_pc} postcodes had no ward from postcodes.io (skipped).",
@@ -308,6 +310,9 @@ def main():
 
     summary = {
         "updated": date.today().isoformat(),
+        "source": "Ofcom Connected Nations",
+        "source_url": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-and-infrastructure-reports",
+        "licence": "Open Government Licence v3.0",
         "shade_metric": SHADE_METRIC,
         "outcodes": sorted(TARGET_OUTCODES),
         "unit_total": len(rows),

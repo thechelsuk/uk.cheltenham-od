@@ -88,6 +88,15 @@
             </table>
         </div>
 
+        <p class="crime-map-attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a> (crime), the
+            <a href="{{ data.population_source_url }}">{{ data.population_source }}</a> (population) and the
+            <a href="{{ data.boundaries_source_url }}">{{ data.boundaries_source }}</a> (area boundaries), all
+            published under the {{ data.licence }}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Contains OS data &copy; Crown copyright and database right.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Is the Crime Rate Worked Out?</h3>
@@ -115,13 +124,6 @@
             <li>Each view covers 12 complete months of published data. Police.uk usually publishes each month's figures early in the month after next, and any month the police have not yet published in full is left out until it is.</li>
         </ul>
 
-        <p class="crime-map-attribution"><small>
-            Crime data from <a href="{{ data.source_url }}">{{ data.source }}</a>. Population from
-            <a href="{{ data.population_source_url }}">{{ data.population_source }}</a>, and area boundaries from the
-            <a href="{{ data.boundaries_source_url }}">{{ data.boundaries_source }}</a> (contains OS data &copy; Crown
-            copyright and database right). All licensed under the {{ data.licence }}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
     </div>
 </div>
 

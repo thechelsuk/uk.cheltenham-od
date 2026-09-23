@@ -447,6 +447,9 @@ def build_payload(records_by_ref):
 
     return {
         "updated": now.strftime("%d %B %Y"),
+        "source": "Cheltenham Borough Council planning register",
+        "source_url": "https://publicaccess.cheltenham.gov.uk/online-applications/",
+        "refresh": "every two hours",
         "updated_iso": now.strftime("%Y-%m-%dT%H:%M:%S"),
         "lookback_days": RETENTION_DAYS,
         "geocoding_source": GEOCODING_SOURCE,

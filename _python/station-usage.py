@@ -89,7 +89,6 @@ def main():
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "Office of Rail and Road, estimates of station usage",
         "source_url": PAGE_URL,
-        "licence": "Not confirmed here — check the ORR Data Portal terms before reuse",
         "csv_url": csv_url,
         "period": period,
         "station": {

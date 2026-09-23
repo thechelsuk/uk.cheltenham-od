@@ -437,6 +437,14 @@
         <p>See how {{ w.name }} compares with every other ward on the
             <a href="/cheltenham-broadband-internet-speeds">Cheltenham broadband</a> page.</p>
 
+        <p class="ward-attribution"><small>
+            Data from Police.uk (crime), HM Land Registry (house prices) and the Office for National Statistics
+            (ward boundaries), published under the Open Government Licence v3.0, and from Cheltenham Borough Council
+            (election results).
+            {% if w.generated_at %}Last updated {{ w.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Does the {{ w.name }} Data Come From?</h3>
@@ -463,12 +471,6 @@
                 with another.</li>
         </ul>
 
-        <p class="ward-attribution"><small>
-            Crime data &copy; data.police.uk, election results &copy; Cheltenham Borough Council, house prices &copy; HM Land Registry, ward boundaries &copy; Office for
-            National Statistics, all under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
-            Map &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-            Last updated {{ w.generated_at | date: "%-d %B %Y" }}.
-        </small></p>
     </div>
 </div>
 

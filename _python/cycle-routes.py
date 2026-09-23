@@ -23,6 +23,7 @@ _data/cycle-venues.json — not fetched here.
 """
 import math
 import os
+from datetime import datetime, timezone
 
 import config
 import helper
@@ -122,10 +123,10 @@ def main():
     ]
 
     output = {
-        "generated_at": helper.updated_timestamp(),
-        "source": "OpenStreetMap contributors, via Overpass",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "OpenStreetMap contributors",
         "source_url": "https://www.openstreetmap.org/copyright",
-        "licence": "Open Database Licence (ODbL) — © OpenStreetMap contributors",
+        "licence": "Open Database Licence (ODbL)",
         "routes": routes,
         "segments": segments,
     }

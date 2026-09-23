@@ -59,11 +59,11 @@
         {% endif %}
 
         <p class="foodbank-attribution"><small>
-                Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under
-                <a href="{{ data.licence_url }}">{{ data.licence }}</a>. Last checked
-                {{ data.generated_at | date: "%-d %B %Y" }}. Lists of needed items are a guide, so check a food
-                bank's own shopping list before you donate.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the
+            <a href="{{ data.licence_url }}">{{ data.licence }}</a>.
+            Checked {{ data.refresh }}.
+            Lists of needed items are a guide, so check a food bank's own shopping list before you donate.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

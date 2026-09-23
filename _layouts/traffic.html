@@ -41,8 +41,9 @@
         </div>
 
         <p class="traffic-attribution"><small>
-            Figures from <a href="{{ traffic.source_url }}">{{ traffic.source }}</a>, which delivers this site. Each
-            day is counted from midnight to midnight UTC. Last updated {{ traffic.generated_at | date: "%-d %B %Y" }}.
+            Data from <a href="{{ traffic.source_url }}">{{ traffic.source }}</a>{% if traffic.licence %}, published under the {{ traffic.licence }}{% endif %}.
+            {% if traffic.generated_at %}Last updated {{ traffic.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Each day is counted from midnight to midnight UTC.
         </small></p>
         {% else %}
         <p>The traffic figures are being refreshed and will be back shortly.</p>
