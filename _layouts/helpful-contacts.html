@@ -1,0 +1,177 @@
+{% include header.html %}
+{% comment %}
+    Shared by the helplines page (page.listing: contacts, from
+    _data/helpful-contacts.json) and the local help and support page
+    (page.listing: support, from _data/local-support.json), each linking to
+    the other in the header.
+{% endcomment %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                {% if page.listing == "contacts" %}
+                <li><a href="/cheltenham-helpful-contacts-reports/local-support">Local Help and Support &rarr;</a></li>
+                {% else %}
+                <li><a href="/cheltenham-helpful-contacts-reports">&larr; Back to Helplines and Contacts</a></li>
+                {% endif %}
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if page.listing == "contacts" %}
+        {% assign contacts = site.data["helpful-contacts"] %}
+
+        <div class="contacts-glance">
+            {% for q in contacts.quick %}
+            <div class="info-card">
+                <p class="info-card__label">{{ q.label }}</p>
+                <a class="info-card__title" href="tel:{{ q.tel }}">{{ q.number }}</a>
+                <span class="info-card__subtitle">{{ q.detail }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% for category in contacts.categories %}
+        <h2 id="{{ category.id }}">{{ category.name }}</h2>
+        <div class="table-scroll">
+            <table class="helpful-contacts-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Service</th>
+                        <th scope="col" class="action">Number</th>
+                        <th scope="col">When</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">More</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in category.contacts %}
+                    <tr>
+                        <td><strong>{{ c.name }}</strong>{% if c.note %}<br><small>{{ c.note }}</small>{% endif %}</td>
+                        <td class="action">{% if c.sms %}<a href="sms:{{ c.sms }}?&amp;body={{ c.sms_body }}">{{ c.number }}</a>{% elsif c.tel %}<a href="tel:{{ c.tel }}">{{ c.number }}</a>{% else %}{{ c.number }}{% endif %}</td>
+                        <td>{{ c.hours | default: "&mdash;" }}</td>
+                        <td>{{ c.cost }}</td>
+                        <td>{% if c.internal_url %}<a href="{{ c.internal_url }}">{{ c.internal_label }}</a>{% if c.url %}<br>{% endif %}{% endif %}{% if c.url %}<a href="{{ c.url }}">Website</a>{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
+        <p class="helpful-contacts-attribution"><small>
+            Data from <a href="{{ contacts.source_url }}">{{ contacts.source }}</a>, with every number checked against the
+            provider's own site.
+            {% if contacts.last_checked %}Last checked {{ contacts.last_checked | date: "%-d %B %Y" }}.{% endif %}
+            Services can change their numbers and hours, so check the provider's site if a call doesn't connect.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Number Do I Call in an Emergency?</h3>
+        <ul>
+            <li>Call 999 when someone's life is at risk, someone is badly hurt, or a crime is happening now.</li>
+            <li>For urgent medical help that isn't a 999 emergency, call NHS 111. To report a crime that isn't an
+                emergency, call the police on 101.</li>
+        </ul>
+
+        <h3>Is There a 24-Hour Mental Health Crisis Line in Gloucestershire?</h3>
+        <ul>
+            <li>Yes. Call 111 and choose option 2 to reach the NHS mental health crisis team run by Gloucestershire Health
+                and Care, at any time of day or night. On a textphone, call 18001 111.</li>
+            <li>You can also call Samaritans free on 116 123 or text SHOUT to 85258, both at any time.</li>
+        </ul>
+
+        <h3>Who Do I Call About a Power Cut?</h3>
+        <ul>
+            <li>Call 105, free from any phone, or 0800 6783 105. Both put you through to the local electricity network
+                operator. Our <a href="/cheltenham-power-cuts">power cuts page</a> shows current cuts around Cheltenham.</li>
+        </ul>
+
+        <h3>Who Do I Call About Flooding?</h3>
+        <ul>
+            <li>It depends on where the water is coming from. For flooding from a river, call the Environment Agency on
+                0800 80 70 60. For surface water or groundwater, contact Gloucestershire County Council on 01452 425 000.
+                For flooding on a road, call county highways on 08000 514 514, and for a public sewer, Severn Trent on
+                0800 783 4444.</li>
+            <li>Floodline, on 0345 988 1188, gives flood warnings and advice, and our
+                <a href="/cheltenham-flood-warnings">flood warnings page</a> shows live warnings and river levels.</li>
+        </ul>
+
+        <h3>Does the Council Give Out Sandbags?</h3>
+        <ul>
+            <li>No. Cheltenham Borough Council doesn't supply sandbags to individual homes. It keeps a small stock to
+                protect places such as hospitals, schools and electricity substations if flooding affects the town.</li>
+            <li>Sandbags, flood boards and air brick covers are sold by most builders' merchants and online.</li>
+        </ul>
+
+        <h3>Are These Numbers Free to Call?</h3>
+        <ul>
+            <li>Numbers starting 0800 and 0808, and 999, 111, 101, 105 and 116 123, are free from landlines and mobiles.
+            </li>
+            <li>Numbers starting 01, 0300 and 0345 are charged at the standard rate, and are usually included in call
+                bundles. Each table shows the cost of every number.</li>
+        </ul>
+
+        <h3>How Up to Date Are These Numbers?</h3>
+        <ul>
+            <li>Every number is checked against the provider's own site, and the date of the latest check is shown
+                above. If you find one that's changed, please <a href="/contact">let us know</a>.</li>
+        </ul>
+        {% endif %}
+
+        {% if page.listing == "support" %}
+        {% assign support = site.data["local-support"] %}
+        {% for category in support.categories %}
+        <h2 id="{{ category.id }}">{{ category.name }}</h2>
+        {% if category.intro %}<p>{{ category.intro }}</p>{% endif %}
+        <div class="table-scroll">
+            <table class="local-support-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Service</th>
+                        <th scope="col">What It Offers</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in category.items %}
+                    <tr>
+                        <td><strong>{{ item.name }}</strong></td>
+                        <td>{{ item.description }}</td>
+                        <td><a href="{{ item.url }}">{{ item.link_label | default: "Visit" }}</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
+        <p class="local-support-attribution"><small>
+            Data from <a href="{{ support.source_url }}">{{ support.source }}</a>.
+            {% if support.last_checked %}Last checked {{ support.last_checked | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+        {% endif %}
+    </div>
+</div>
+<style>
+    .contacts-glance {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1em;
+        margin: 1em 0 1.5em;
+    }
+
+    @media (max-width: 800px) {
+        .contacts-glance {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+
+{% include footer.html %}
