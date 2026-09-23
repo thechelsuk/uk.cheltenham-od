@@ -82,6 +82,13 @@
                 rel="noopener">results and fixtures page</a>.</p>
         {% endif %}
 
+        <p class="cheltenham-town-fc-attribution"><small>
+            Data from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>{% if ctfc.licence %}, published under the {{ ctfc.licence }}{% endif %}.
+            {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Fixtures and results come from a free, crowd-sourced database, so check the club's own website for
+            confirmed dates and kick-off times.
+        </small></p>
+
         <h2>Getting to Whaddon Road</h2>
 
         {% assign home_record = ctfc.next_fixtures | where: "venue_type", "Home" | first %}
@@ -103,9 +110,6 @@
             short taxi on to the ground; neither runs a direct matchday shuttle to Whaddon Road, so allow extra time
             on top of the bus journey.</p>
 
-        <p>Fixture and result data from <a href="{{ ctfc.source_url }}" target="_blank" rel="noopener">{{ ctfc.source
-                }}</a>'s free, crowd-sourced API.
-            {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y %H:%M" }}.{% endif %}</p>
     </div>
 </div>
 {% include footer.html %}

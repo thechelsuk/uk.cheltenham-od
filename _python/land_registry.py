@@ -158,6 +158,10 @@ def fetch_transactions(months: int, expected_count: int | None = None) -> list[d
 def write_json(transactions: list[dict], months: int, dry_run: bool) -> None:
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": "HM Land Registry Price Paid Data",
+        "source_url": "https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads",
+        "licence": "Open Government Licence v3.0",
+        "refresh": "every two hours",
         "months_fetched": months,
         "transactions": transactions,
     }

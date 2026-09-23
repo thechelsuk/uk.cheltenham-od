@@ -43,7 +43,7 @@ REQUEST_TIMEOUT = 60  # seconds
 
 SOURCE_NAME = "Open Charge Map"
 SOURCE_URL = "https://openchargemap.org"
-LICENCE = "CC-BY-SA 4.0 — Data © Open Charge Map contributors"
+LICENCE = "Creative Commons Attribution-ShareAlike 4.0 licence (CC BY-SA 4.0)"
 
 # --- Helpers ----------------------------------------------------------------
 

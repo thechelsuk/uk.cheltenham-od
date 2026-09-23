@@ -105,11 +105,7 @@ def main():
         "generated_at": None,
         "source": "chrismytton/cheltenham-council-land-and-assets (GitHub mirror)",
         "source_url": SOURCE_URL,
-        "original_source_url": ORIGINAL_SOURCE_URL,
-        "licence": "Not formally stated — underlying data was published by Cheltenham Borough Council "
-                   "under the Local Government Transparency Code, but the council's own open data page "
-                   "is offline and the GitHub mirror states no licence of its own",
-        "items": items,
+        "original_source_url": ORIGINAL_SOURCE_URL,        "items": items,
     }
     output["generated_at"] = datetime.now(timezone.utc).isoformat()
 

@@ -66,11 +66,12 @@
         </div>
 
         <p class="security-attribution"><small>
-        Current level from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}. Last checked
-        {{ data.generated_at | date: "%-d %B %Y" }}. Changes before 19 September 2026 were compiled from
-        <a href="{{ history.backfill_source.url }}">{{ history.backfill_source.name }}</a>
-        (<a href="{{ history.backfill_source.licence_url }}">{{ history.backfill_source.licence }}</a>).
-    </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Changes before 19 September 2026 were compiled from
+            <a href="{{ history.backfill_source.url }}">{{ history.backfill_source.name }}</a>
+            (<a href="{{ history.backfill_source.licence_url }}">{{ history.backfill_source.licence }}</a>).
+        </small></p>
 
         <h2>Emergency Preparation</h2>
 

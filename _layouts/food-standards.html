@@ -106,7 +106,10 @@
         </div>
         {% endif %}
 
-        <p>Data is sourced from <a href="https://ratings.food.gov.uk/">Food Standards Agency &rarr;</a></p>
+        {% assign src = site.data.sources | where: "id", "fsa-food-hygiene-ratings" | first %}
+        <p class="food-standards-attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+        </small></p>
 
     </div>
 

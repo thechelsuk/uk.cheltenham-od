@@ -94,7 +94,9 @@ if __name__ == "__main__":
         "generated_at": now.isoformat(),
         "note": "Rolling log of flood warnings recorded for Gloucestershire, built up incrementally each "
                 "run — not a full historical archive from before this page existed.",
-        "source": "https://environment.data.gov.uk/flood-monitoring/id/floods",
+        "source": "Environment Agency flood monitoring API",
+        "source_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
+        "licence": "Open Government Licence v3.0",
         "count": len(history_records),
         "records": history_records,
     }

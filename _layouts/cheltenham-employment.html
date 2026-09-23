@@ -44,6 +44,11 @@
 
         <p>Full data last refreshed {{ employment.updated }}.</p>
 
+        <p class="cheltenham-employment-attribution"><small>
+            Data from <a href="{{ employment.source_url }}">{{ employment.source }}</a>{% if employment.licence %}, published under the {{ employment.licence }}{% endif %}.
+            {% if employment.generated_at %}Last updated {{ employment.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>Why Does the Rate Jump Around so Much Year to Year?</h3>

@@ -1,5 +1,3 @@
-import html
-import pathlib
 import json
 import os
 import math
@@ -203,7 +201,7 @@ def fetch_local_prices(local_node_ids, token, since_date, label="prices "):
         if len(page) < 500:
             break  # last page
         if not remaining:
-            print(f"  All local stations covered — stopping early")
+            print("  All local stations covered — stopping early")
             break
         batch += 1
         time.sleep(BATCH_DELAY_SECS)
@@ -363,7 +361,7 @@ if __name__ == "__main__":
     priced = {nid: s for nid, s in station_cache.items() if s.get("fuel_prices")}
 
     # 6. De-dupe: same name + postcode = same forecourt; keep the freshest.
-    deduped = {}
+    deduped: dict[tuple, str] = {}
     for nid, s in priced.items():
         key = ((s.get("trading_name") or "").strip().lower(),
                (s.get("postcode") or "").replace(" ", "").upper())
@@ -384,8 +382,8 @@ if __name__ == "__main__":
                      sorted(ft for ft in present if ft not in FUEL_ORDER)
 
     # 8. Cheapest station per fuel type + area context (min / typical).
-    cheapest = {}          # ft -> {"price","nid"}
-    all_vals = {ft: [] for ft in fuel_type_cols}
+    cheapest: dict[str, dict] = {}          # ft -> {"price","nid"}
+    all_vals: dict[str, list] = {ft: [] for ft in fuel_type_cols}
     for nid in kept_nids:
         lookup = {p["fuel_type"]: p for p in station_cache[nid]["fuel_prices"] if p.get("fuel_type")}
         for ft in fuel_type_cols:
@@ -495,6 +493,10 @@ if __name__ == "__main__":
 
     payload = {
         "updated_iso":   today_str,
+        "source":        "GOV.UK fuel price scheme",
+        "source_url":    "https://www.gov.uk/check-fuel-prices",
+        "licence":       "Open Government Licence v3.0",
+        "refresh":       "hourly",
         "radius_miles":  RADIUS_MILES,
         "lookback_days": PRICE_LOOKBACK_DAYS,
         "stale_days":    STALE_DAYS,

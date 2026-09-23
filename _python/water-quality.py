@@ -96,7 +96,7 @@ def main():
     sampling_points.sort(key=lambda p: p["distance_miles"])
 
     output = {
-        "generated_at":   helper.updated_timestamp(),
+        "generated_at":   datetime.now(timezone.utc).isoformat(),
         "source":         "Environment Agency Water Quality Archive",
         "source_url":     "https://environment.data.gov.uk/water-quality/",
         "licence":        "Open Government Licence v3.0",

@@ -90,12 +90,6 @@
             </table>
         </div>
 
-        <p class="nhs-ae-attribution"><small>
-                A&amp;E figures from <a href="{{ ae.source_url }}">{{ ae.source }}</a>, published under the
-                <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{{ ae.licence }}</a>.
-                {% if ae.generated_at %}Figures last updated {{ ae.generated_at | date: "%-d %B %Y" }}.{% endif %}
-                The figures cover the whole trust, not individual hospitals.
-            </small></p>
 
         <h2>Hospitals Near Cheltenham</h2>
         <p>These are the hospitals run by {{ hospitals.trust.name }} within {{ hospitals.radius_miles }} miles of
@@ -129,12 +123,14 @@
             </table>
         </div>
 
-        <p class="nhs-hospitals-attribution"><small>
-                Hospitals from the <a href="{{ hospitals.source_url }}">{{ hospitals.source }}</a>, published under the
-                <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">{{ hospitals.licence }}</a>.
-                Locations from postcodes. {{ hospitals.geocoding_attribution }}
-                "A&amp;E listed" means the NHS directory records an A&amp;E at the site; it does not show opening hours.
-            </small></p>
+        <p class="nhs-ae-attribution"><small>
+            Data from <a href="{{ ae.source_url }}">{{ ae.source }}</a> (A&amp;E figures) and the
+            <a href="{{ hospitals.source_url }}">{{ hospitals.source }}</a> (hospitals), both published under the {{ ae.licence }}.
+            {% if ae.generated_at %}Last updated {{ ae.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            The figures cover the whole trust, not individual hospitals. Hospital locations come from their postcodes.
+            {{ hospitals.geocoding_attribution }} "A&amp;E listed" means the NHS directory records an A&amp;E at the site;
+            it does not show opening hours.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

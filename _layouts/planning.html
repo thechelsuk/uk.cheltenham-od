@@ -90,6 +90,11 @@
         </div>
         {% endif %}
 
+        <p class="planning-attribution"><small>
+            Data from <a href="{{ planning.source_url }}">{{ planning.source }}</a>{% if planning.licence %}, published under the {{ planning.licence }}{% endif %}.
+            Checked {{ planning.refresh }}.
+        </small></p>
+
 
         <h2>Understanding the References</h2>
 

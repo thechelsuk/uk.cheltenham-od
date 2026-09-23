@@ -18,11 +18,11 @@
         <p><small>Darker blue is Flood Zone 3 and lighter blue is Flood Zone 2. Select a shaded area to see what its zone means.</small></p>
 
         <p class="flood-zones-attribution"><small>
-            {{ zones.source }} from the Environment Agency, published under the Open Government Licence v3.0. Contains
-            Environment Agency information &copy; Environment Agency and database right. Outlines are simplified to
-            about 9 metres and fragments under about 760 square metres are left out. Map tiles &copy;
-            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors. Data last processed
-            {{ zones.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ zones.source_url }}">{{ zones.source }}</a>{% if zones.licence %}, published under the {{ zones.licence }}{% endif %}.
+            {% if zones.generated_at %}Last updated {{ zones.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Contains Environment Agency information &copy; Environment Agency and database right. Outlines are
+            simplified to about 9 metres and fragments under about 760 square metres are left out.
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 
         <h2>Frequently Asked Questions</h2>

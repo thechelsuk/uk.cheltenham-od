@@ -22,7 +22,6 @@ import helper
 
 URL = "https://www.mi5.gov.uk/UKThreatLevel/UKThreatLevel.xml"
 SOURCE_URL = "https://www.mi5.gov.uk/threat-levels"
-LICENCE = "Crown copyright"
 # Where the hand-added history (everything before this script began tracking) came from.
 BACKFILL_SOURCE = {
     "name": "Wikipedia's UK Threat Levels article",
@@ -123,7 +122,6 @@ def payload(now, extra):
         "generated_at": now.isoformat(),
         "source": "MI5",
         "source_url": SOURCE_URL,
-        "licence": LICENCE,
         **extra,
     }
 

@@ -48,12 +48,10 @@
         </div>
 
         <p class="third-spaces-attribution"><small>
-                Data from <a href="{{ spaces.source_url }}">{{ spaces.source }}</a>{% if spaces.licence and
-                spaces.licence != "" %},
-                licensed under {{ spaces.licence }}{% endif %}.
-                Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-                {% if spaces.generated_at %}Last updated {{ spaces.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from <a href="{{ spaces.source_url }}">{{ spaces.source }}</a>{% if spaces.licence %}, published under the {{ spaces.licence }}{% endif %}.
+            {% if spaces.generated_at %}Last updated {{ spaces.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
 
     </div>
 

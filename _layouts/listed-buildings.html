@@ -94,9 +94,9 @@
         <p>Listings are drawn from Historic England's National Heritage List for England, the official register of all nationally protected historic buildings and sites in England. A building's grade reflects its level of special architectural or historic interest, not its condition — Grade I is exceptional national importance, Grade II* is particularly important, and Grade II is special interest. Listing does not by itself grant public access to a building; most entries on this page are private property.</p>
 
         <p class="listed-buildings-attribution"><small>
-            Data from <a href="{{ heritage.source_url }}" target="_blank" rel="noopener">{{ heritage.source }}</a>, licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/" target="_blank" rel="noopener">Open Government Licence v3.0</a>.
-            {{ heritage.attribution }}
+            Data from <a href="{{ heritage.source_url }}">{{ heritage.source }}</a>{% if heritage.licence %}, published under the {{ heritage.licence }}{% endif %}.
             {% if heritage.generated_at %}Last updated {{ heritage.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            {{ heritage.attribution }}
         </small></p>
     </div>
 </div>

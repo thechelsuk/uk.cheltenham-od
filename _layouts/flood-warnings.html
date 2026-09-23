@@ -103,8 +103,8 @@
         </div>
 
         <p class="river-levels-attribution"><small>
-            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>, published under the Open Government
-            Licence v3.0. Last updated {{ rivers.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
+            Checked {{ rivers.refresh }}.
             Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 

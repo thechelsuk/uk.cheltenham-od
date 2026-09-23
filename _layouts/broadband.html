@@ -90,9 +90,12 @@
             </table>
         </div>
 
-        <p><small>Source: Ofcom Connected Nations, postcode-unit data, aggregated to postcode
-                {{ summary.agg_level }}s. A postcode is banded into a tier when at least half its
-                premises have that level of coverage; area figures are the mean across their postcodes.</small></p>
+        <p class="broadband-attribution"><small>
+            Data from <a href="{{ summary.source_url }}">{{ summary.source }}</a>{% if summary.licence %}, published under the {{ summary.licence }}{% endif %}.
+            {% if summary.updated %}Last updated {{ summary.updated | date: "%-d %B %Y" }}.{% endif %}
+            Postcode-level coverage is grouped into postcode {{ summary.agg_level }}s. A postcode is banded into a tier when
+            at least half its premises have that level of coverage; area figures are the mean across their postcodes.
+        </small></p>
         <h2>Frequently Asked Questions</h2>
 
         <h3>How to Read the Map?</h3>

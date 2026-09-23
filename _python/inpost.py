@@ -80,7 +80,9 @@ if __name__ == "__main__":
     payload = {
         "updated":     helper.updated_timestamp(),
         "updated_iso": datetime.date.today().isoformat(),
-        "source":      "https://www.inpost.co.uk/",
+        "source":      "InPost",
+        "source_url":  "https://www.inpost.co.uk/",
+        "refresh":     "every two hours",
         "count":       len(lockers),
         "lockers":     lockers,
     }

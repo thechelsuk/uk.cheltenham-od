@@ -105,9 +105,6 @@ def main():
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source":       "Water UK National Storm Overflow Hub (Severn Trent Water EDM feed)",
         "source_url":   FRIENDLY_SOURCE_URL,
-        "licence":      ("No formal licence stated — published as a free public near-real-time "
-                          "data feed by Severn Trent Water via Water UK's National Storm "
-                          "Overflow Hub"),
         "radius_miles": RADIUS_MILES,
         "overflows":    overflows,
     }

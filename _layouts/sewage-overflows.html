@@ -47,10 +47,9 @@
         </div>
 
         <p class="sewage-attribution"><small>
-                Sewage overflow data from <a href="{{ sewage.source_url }}">{{ sewage.source }}</a>.
-                {% if sewage.generated_at %}Last updated {{ sewage.generated_at | date: "%-d %B %Y at %H:%M" }}.{% endif %}
-                {{ sewage.licence }}.
-            </small></p>
+            Data from <a href="{{ sewage.source_url }}">{{ sewage.source }}</a>{% if sewage.licence %}, published under the {{ sewage.licence }}{% endif %}.
+            {% if sewage.generated_at %}Last updated {{ sewage.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
 
     </div>
 </div>

@@ -50,11 +50,11 @@
         </div>
 
         <p class="water-quality-attribution"><small>
-                Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
-                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
-                Each sampling point is only tested periodically (roughly monthly) — the "Sample Date" is when that
-                point was last visited, not when this page was updated.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Each sampling point is only tested periodically (roughly monthly), so the "Sample Date" is
+            when that point was last visited, not when this page was updated.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

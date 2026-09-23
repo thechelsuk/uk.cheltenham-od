@@ -65,7 +65,9 @@ Scripts in `_python/local/` and `_python/pi/` add the parent folder to the impor
 
 Notes:
 
-- Store `generated_at`, `source` and `source_url` (and `licence` where one genuinely applies) in the JSON itself — layouts read these back for the attribution line and JSON-LD `dateModified`/`license` fields, rather than hardcoding them in HTML.
+- Store `source` (the display name, not a URL), `source_url`, and `licence` in the JSON itself. Layouts read these back for the attribution line and JSON-LD `dateModified`/`license` fields, rather than hardcoding them in HTML. `licence` is the display name of a real licence (for example "Open Government Licence v3.0" or "Open Database Licence (ODbL)"). Leave the key out entirely when there is no formal licence; the honest note about it belongs in `_data/sources.json`.
+- Freshness: data refreshed daily or less often stores an ISO `generated_at`, shown as "Last updated". Data checked every two hours or more often (the "hourly" workflow and the Pi) stores a fixed `refresh` phrase instead, such as `"every two hours"`, `"hourly"` or `"every 5 minutes"`, shown as "Checked every two hours." That value only changes when the schedule does, so it doesn't cause a commit on every run.
+- A fetcher whose output is a plain list, with no room for these fields, gets them from its entry in `_data/sources.json` instead: add `name`, `licence_name` (only for a real licence) and, if needed, `refresh`, and have the layout look the entry up by `id`. See `_layouts/hotels.html`.
 - Store any date or time value in the JSON as ISO 8601 — `2026-09-21T21:00` (or `2026-09-21` when there's no meaningful time) — not as a pre-formatted display string, so layouts can sort on it and format it in one consistent way (see the date rule in section 3).
 - Format numbers for display in the fetcher, not in Liquid: alongside each raw number, store a `*_display` string with thousands separators (`f"{n:,}"`, and `f"£{n:,}"` for money) — e.g. `amount: 344350` and `display_amount: "£344,350"`. Liquid has no built-in way to add separators, so layouts just print the `_display` field and keep the raw value for sorting (`data-val`). See `_python/house_summary.py`, `_python/land_registry.py` and `_python/station-usage.py`. (Dates are the exception — store those as ISO only, as above, and format them in Liquid.)
 - If a source has no formal open licence (an unofficial feed, a free APIs own terms), say so plainly rather than guessing OGL/ODbL. See `_data/sources.json` for the site-wide audit of what's actually confirmed.
@@ -140,7 +142,7 @@ Standard skeleton:
         </div>
 
         <p class="example-attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>.
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
             {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
     </div>
@@ -278,7 +280,7 @@ Don't write an `FAQPage` block by hand; the plugin skips any page that already h
 - [ ] Added to the right `schedule-*.yml` workflow for how often the source actually changes
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump — reread every sentence as a visitor would: no implementation/data-decision notes ("hand-curated because OSM coverage is patchy") leaking into published copy
 - [ ] `seo:` is 160 characters or fewer on the page and on any announcement post (the admin page flags any over the limit)
-- [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page
+- [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page. The attribution goes directly under the last table or map and before the FAQs: `Data from SOURCE, published under the LICENCE.` then `Last updated DATE.` or `Checked REFRESH.`, then any required notices (such as "Contains OS data © Crown copyright") and caveats. Pages with several sources name each one in the same sentence.
 - [ ] Every numeric table column has `class="number"` on its `<th>` and `<td>`s (right-aligned), and any postcode column has `class="postcode"` (no mid-postcode wrapping)
 - [ ] Every date/time cell in a table and every date in a map popup is `YYYY-MM-DD HH:MM` (or `YYYY-MM-DD` with no time), with the ISO value in `data-val` and `class="date"` on the `<th>`/`<td>`s
 - [ ] `assets/scripts/<name>-map.js` if there's a map, following the standard IIFE shape

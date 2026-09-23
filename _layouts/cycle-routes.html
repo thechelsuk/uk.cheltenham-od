@@ -70,12 +70,10 @@
         </div>
 
         <p class="cycle-routes-attribution"><small>
-                Cycle track/lane data from <a href="{{ data.source_url }}">{{ data.source }}</a>, {{ data.licence }}.
-                {% if data.generated_at %}Last updated {{ data.generated_at }}.{% endif %}
-                <br />
-                Pump track/bike park locations curated by <a href="{{ venues.source_url }}">{{ venues.source }}</a>.
-                {% if venues.updated %}Last updated {{ venues.updated }}.{% endif %}
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Pump track and bike park locations curated by <a href="{{ venues.source_url }}">{{ venues.source }}</a>.
+        </small></p>
     </div>
 </div>
 

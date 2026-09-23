@@ -42,9 +42,9 @@
         </div>
 
         <p class="dentists-attribution"><small>
-            Data from the <a href="{{ dentists.source_url }}">{{ dentists.source }}</a>, published under the Open
-            Government Licence v3.0, with locations from {{ dentists.geocoding_source }}.
-            {{ dentists.geocoding_attribution }} Last updated {{ dentists.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ dentists.source_url }}">{{ dentists.source }}</a>{% if dentists.licence %}, published under the {{ dentists.licence }}{% endif %}.
+            {% if dentists.generated_at %}Last updated {{ dentists.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Locations from {{ dentists.geocoding_source }}. {{ dentists.geocoding_attribution }}
             Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 

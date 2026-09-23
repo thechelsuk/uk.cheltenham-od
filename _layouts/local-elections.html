@@ -179,6 +179,14 @@
             than the ballot papers issued. Turnout is ballot papers issued as a share of registered voters, and the share of
             votes is each party's share of all votes cast for candidates.</small></p>
 
+        <p class="elections-attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a> (election results and councillors) and
+            the Office for National Statistics (ward boundaries, published under the Open Government Licence
+            v3.0).
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Often Are Cheltenham Councillors Elected?</h3>
@@ -204,13 +212,6 @@
                 and refreshed monthly.</li>
         </ul>
 
-        <p class="elections-attribution"><small>
-            Election results and councillors from <a href="{{ data.source_url }}">Cheltenham Borough Council</a>.
-            Ward boundaries &copy; Office for National Statistics under the
-            <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
-            Map &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-        </small></p>
     </div>
 </div>
 

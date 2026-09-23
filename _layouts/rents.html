@@ -89,9 +89,10 @@
         </div>
 
         <p class="rents-attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, edition released {{ data.edition | date: "%-d %B %Y" }}.
-            Rents are not seasonally adjusted and are rounded to the nearest pound.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            This edition was released {{ data.edition | date: "%-d %B %Y" }}. Rents are not seasonally
+            adjusted and are rounded to the nearest pound.
         </small></p>
 
         <h2>Frequently Asked Questions</h2>

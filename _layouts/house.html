@@ -89,12 +89,14 @@
             </ul>
         </div>
 
-        <p class="land-registry-attribution"><small>Contains HM Land Registry data © Crown copyright and
-                database
-                right. Licensed under the <a
-                    href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open
-                    Government
-                    Licence v3.0</a>.</small></p>
+        {% assign prices = site.data["cheltenham-house-prices"] %}
+        {% assign prices = site.data["cheltenham-house-prices"] %}
+        {% assign prices = site.data["cheltenham-house-prices"] %}
+        <p class="land-registry-attribution"><small>
+            Data from <a href="{{ prices.source_url }}">{{ prices.source }}</a>{% if prices.licence %}, published under the {{ prices.licence }}{% endif %}.
+            Checked {{ prices.refresh }}.
+            Contains HM Land Registry data &copy; Crown copyright and database right.
+        </small></p>
 
         <h2>Annual House Price Changes in Cheltenham</h2>
 

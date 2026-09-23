@@ -50,9 +50,9 @@
         <p>No current power cuts recorded for Cheltenham.</p>
         {% endif %}
         <p class="power-cuts-attribution"><small>
-                Data from <a href="{{ data.source }}">National Grid Electricity Distribution</a>, under the
-                {{ data.licence }}. Sources checked every 3 minutes.
-            </small></p>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            Checked {{ data.refresh }}.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

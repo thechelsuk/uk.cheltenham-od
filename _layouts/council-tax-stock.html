@@ -38,15 +38,12 @@
         </div>
 
         <p class="housing-supply-attribution"><small>
-                Total properties data from the Valuation Office Agency's <a
-                    href="{{ data.council_tax_stock.source_url }}">Council Tax: stock of properties</a>
-                (Table CTSOP1.1), with the 1993-2024 series backfilled from the
-                <a href="{{ data.council_tax_stock.history_source_url }}">2024 release</a>.
-                Licensed under the <a
-                    href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government
-                    Licence v3.0</a>.
-                {% if data.generated_at %}Last fetched {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from the Valuation Office Agency's <a href="{{ data.council_tax_stock.source_url }}">Council
+            Tax: stock of properties</a> (Table CTSOP1.1), with the 1993-2024 series from the
+            <a href="{{ data.council_tax_stock.history_source_url }}">2024 release</a>, published under the
+            {{ data.licence }}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
     </div>
 </div>
 

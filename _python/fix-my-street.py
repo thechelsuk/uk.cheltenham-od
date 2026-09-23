@@ -127,7 +127,7 @@ def payload(now, extra):
         "generated_at": now.isoformat(),
         "source": "FixMyStreet (mySociety)",
         "source_url": SOURCE_URL,
-        "licence": "mySociety FixMyStreet public RSS feed terms; no formal open licence stated",
+        "refresh": "every two hours",
         **extra,
     }
 

@@ -46,8 +46,9 @@
         <p>No bus disruptions have been recorded for Cheltenham since this page started tracking them.</p>
         {% endif %}
         <p class="bus-disruptions-attribution"><small>
-                Data from the <a href="{{ history.source }}">DfT Bus Open Data Service</a>.
-            </small></p>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
+            Checked {{ history.refresh }}.
+        </small></p>
     </div>
 </div>
 {% include footer.html %}

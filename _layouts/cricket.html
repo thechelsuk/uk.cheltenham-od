@@ -63,10 +63,10 @@
         {% endfor %}
 
         <p class="cricket-attribution"><small>
-            Details from <a href="{{ cricket.source_url }}">Gloucestershire Cricket</a> and Cheltenham College, last
-            checked {{ cricket.updated }}. Always check the club's website for current fixtures, tickets and travel
-            information. Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-            contributors.
+            Data from <a href="{{ cricket.source_url }}">{{ cricket.source }}</a>.
+            {% if cricket.updated %}Last updated {{ cricket.updated | date: "%-d %B %Y" }}.{% endif %}
+            Always check the club's website for current fixtures, tickets and travel information.
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 
         <h2>Frequently Asked Questions</h2>

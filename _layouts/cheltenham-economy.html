@@ -75,8 +75,8 @@
         <div class="chart-canvas"><canvas id="economy-claimant-chart" aria-label="Line chart of claimants as a share of residents aged 16 to 64 in Cheltenham and England each month since January 2015"></canvas></div>
 
         <p class="economy-attribution"><small>
-            Data from the <a href="{{ economy.source_url }}">{{ economy.source }}</a>, published under the Open
-            Government Licence v3.0. Last updated {{ economy.generated_at | date: "%-d %B %Y" }}.
+            Data from the <a href="{{ economy.source_url }}">{{ economy.source }}</a>{% if economy.licence %}, published under the {{ economy.licence }}{% endif %}.
+            {% if economy.generated_at %}Last updated {{ economy.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
 
         <h2>Frequently Asked Questions</h2>

@@ -46,13 +46,12 @@
         </div>
 
         <p class="party-history-attribution"><small>
-                Data from the House of Commons Library:
-                <a href="{{ data.source_url }}">general election results from 1918 to 2019</a> and
-                <a href="{{ data.source_url_2024 }}">general election 2024 results</a>. Contains Parliamentary
-                information licensed under the
-                <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>.
-                A dash means the party did not stand.
-            </small></p>
+            Data from the House of Commons Library: <a href="{{ data.source_url }}">general election results
+            from 1918 to 2019</a> and <a href="{{ data.source_url_2024 }}">general election 2024 results</a>.
+            Contains Parliamentary information licensed under the {{ data.licence }}.
+            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            A dash means the party did not stand.
+        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

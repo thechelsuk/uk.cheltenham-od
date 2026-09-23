@@ -99,8 +99,7 @@
         {% endif %}
 
         <p class="crime-data-attribution"><small>
-            Data from <a href="{{ crime_data.source_url }}">{{ crime_data.source_name }}</a>, published under the
-            {{ crime_data.licence }}.
+            Data from <a href="{{ crime_data.source_url }}">{{ crime_data.source }}</a>{% if crime_data.licence %}, published under the {{ crime_data.licence }}{% endif %}.
             {% if crime_data.generated_at %}Last updated {{ crime_data.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
 

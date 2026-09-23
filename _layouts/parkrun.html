@@ -40,10 +40,10 @@
         </div>
 
         <p class="parkrun-attribution"><small>
-                Event locations from <a href="{{ parkrun.source_url }}">parkrun</a>'s own public events feed.
-                Map tiles © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-                {% if parkrun.generated_at %}Last updated {{ parkrun.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            </small></p>
+            Data from <a href="{{ parkrun.source_url }}">{{ parkrun.source }}</a>{% if parkrun.licence %}, published under the {{ parkrun.licence }}{% endif %}.
+            {% if parkrun.generated_at %}Last updated {{ parkrun.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
     </div>
 </div>
 
