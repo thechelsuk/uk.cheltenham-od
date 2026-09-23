@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T18:30:18+01:00",
+  "generated_at": "2026-09-23T18:35:18+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -155,19 +155,22 @@
         "Wakefield Westgate",
         "Leeds"
       ]
+    },
+    {
+      "scheduled": "2026-09-23T19:15",
+      "expected": "2026-09-23T19:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-23T18:27",
-      "expected": "2026-09-23T18:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-23T18:29",
       "expected": "2026-09-23T18:41",
@@ -180,8 +183,8 @@
     },
     {
       "scheduled": "2026-09-23T18:31",
-      "expected": "2026-09-23T18:31",
-      "status": "On time",
+      "expected": "2026-09-23T18:35",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
@@ -236,6 +239,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-23T19:14",
+      "expected": "2026-09-23T19:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
       "reason": ""
     }
   ]
