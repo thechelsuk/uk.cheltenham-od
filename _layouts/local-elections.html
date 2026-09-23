@@ -46,8 +46,8 @@
 
         <h2>Map of Council Seats by Ward</h2>
         <p><small>Each ward is coloured by the party of its councillors, or grey where its two councillors are from different parties. Click a ward to see who represents it.</small></p>
-        <div id="elections-legend" class="elections-legend"></div>
-        <div id="elections-map" style="height: 520px; border-radius: 8px;" aria-label="Map of Cheltenham's wards coloured by the party of their councillors"></div>
+        <div id="elections-legend" class="map-legend"></div>
+        <div id="elections-map" class="map-canvas" aria-label="Map of Cheltenham's wards coloured by the party of their councillors"></div>
         <script id="elections-map-wards" type="application/json">{{ wards | jsonify }}</script>
         <script id="elections-map-summary" type="application/json">{{ data.wards_summary | jsonify }}</script>
 
@@ -213,22 +213,6 @@
         </small></p>
     </div>
 </div>
-
-<style>
-    .elections-legend {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4em 1em;
-        margin: 0.5em 0 1em;
-        font-size: 0.85rem;
-    }
-
-    .elections-legend span {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-    }
-</style>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

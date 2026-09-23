@@ -21,8 +21,8 @@
         <h2>Map of Cheltenham's Wards</h2>
         <p><small>Shaded by median house sale price over the latest 12 months, from lowest to highest. Click a ward for
                 its figures and a link to its full profile.</small></p>
-        <div id="wards-legend" class="wards-legend"></div>
-        <div id="wards-map" style="height: 560px; border-radius: 8px;"
+        <div id="wards-legend" class="map-legend"></div>
+        <div id="wards-map" class="map-canvas"
             aria-label="Map of Cheltenham's {{ wards.size }} electoral wards"></div>
         <script id="wards-map-data" type="application/json">{{ wards | jsonify }}</script>
 
@@ -115,22 +115,6 @@
             </small></p>
     </div>
 </div>
-
-<style>
-    .wards-legend {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4em 1em;
-        margin: 0.5em 0 1em;
-        font-size: 0.85rem;
-    }
-
-    .wards-legend span {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-    }
-</style>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

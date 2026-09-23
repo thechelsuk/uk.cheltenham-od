@@ -16,9 +16,9 @@
         {{ content }}
 
         <h2>Nearest {{ page.phase }} School by Area</h2>
-        <div id="catchment-map" style="height: 600px;" data-max-miles="{{ page.max_miles }}"
+        <div id="catchment-map" class="map-canvas" data-max-miles="{{ page.max_miles }}"
             aria-label="Map of Cheltenham shaded by nearest {{ page.phase | downcase }} school"></div>
-        <p id="catchment-legend" class="catchment-legend"></p>
+        <p id="catchment-legend" class="map-legend"></p>
 
         <h2>FAQs</h2>
 

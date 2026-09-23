@@ -20,7 +20,7 @@
 
         <h2>Map of Local Coverage</h2>
         <p><small>Shaded by gigabit-capable availability (% of premises)</small></p>
-        <div class="broadband-legend">
+        <div class="map-legend">
             <span><i class="tier-swatch shade-0"></i> &lt;75%</span>
             <span><i class="tier-swatch shade-1"></i> 75–80%</span>
             <span><i class="tier-swatch shade-2"></i> 80–85%</span>
@@ -29,7 +29,7 @@
             <span><i class="tier-swatch shade-5"></i> 95%+</span>
         </div>
 
-        <div id="broadband-map" style="height: 600px; border-radius: 8px;"></div>
+        <div id="broadband-map" class="map-canvas"></div>
         <script id="broadband-map-data" type="application/json">
         {{ mapdata | jsonify }}
         </script>

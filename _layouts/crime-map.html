@@ -32,8 +32,8 @@
             <output id="crime-map-window-label" for="crime-map-window">{{ latest.first_month }} to {{ latest.last_month }}</output>
         </p>
         <p><small>Crimes per 1,000 residents over 12 months</small></p>
-        <div class="crime-map-legend" id="crime-map-legend"></div>
-        <div id="crime-map" style="height: 600px; border-radius: 8px;" aria-label="Map of Cheltenham shaded by crimes per 1,000 residents"></div>
+        <div class="map-legend" id="crime-map-legend"></div>
+        <div id="crime-map" class="map-canvas" aria-label="Map of Cheltenham shaded by crimes per 1,000 residents"></div>
 
         <h2>Crime Rate by Ward</h2>
         <p><small>{{ latest.first_month }} to {{ latest.last_month }}, using mid-{{ latest.population_year }} population estimates</small></p>
@@ -114,22 +114,6 @@
         </small></p>
     </div>
 </div>
-
-<style>
-    .crime-map-legend {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4em 1em;
-        margin: 0.5em 0 1em;
-        font-size: 0.85rem;
-    }
-
-    .crime-map-legend span {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-    }
-</style>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

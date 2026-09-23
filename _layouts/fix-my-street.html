@@ -21,7 +21,7 @@
             {% for g in data.groups limit: 3 %}{{ g.name | escape }} ({{ g.count }}){% unless forloop.last %}, {% endunless %}{% endfor %}.
         </p>
 
-        <div id="fms-map" style="height: 480px;" aria-label="Map of the latest street problems reported around Cheltenham"></div>
+        <div id="fms-map" class="map-canvas" aria-label="Map of the latest street problems reported around Cheltenham"></div>
 
         <div class="table-scroll">
             <table class="fix-my-street-table data-table" data-sortable>

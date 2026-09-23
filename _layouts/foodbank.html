@@ -54,7 +54,7 @@
 
         {% if fb.locations.size > 0 or fb.donation_points.size > 0 %}
         <h2>Where to Donate and Get Help</h2>
-        <div id="foodbank-map" style="height: 480px;" aria-label="Map of {{ fb.display_name | escape }} locations and donation points"></div>
+        <div id="foodbank-map" class="map-canvas" aria-label="Map of {{ fb.display_name | escape }} locations and donation points"></div>
         {% endif %}
 
         {% if fb.locations.size > 0 %}

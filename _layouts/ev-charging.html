@@ -29,7 +29,7 @@
             {% endif %}
 
             <h2>Charging Locations Map</h2>
-            <div id="ev-map" style="height: 480px;" aria-label="Map of EV charging locations in Cheltenham"></div>
+            <div id="ev-map" class="map-canvas" aria-label="Map of EV charging locations in Cheltenham"></div>
 
             {% if ev.summary.connector_types and ev.summary.connector_types.size > 0 %}
             <h2>Connectors by Type</h2>

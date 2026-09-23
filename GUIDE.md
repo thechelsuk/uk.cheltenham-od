@@ -117,7 +117,7 @@ Standard skeleton:
         {{ content }}
 
         <h2>Map</h2>
-        <div id="example-map" style="height: 480px;" aria-label="Map of examples in Cheltenham"></div>
+        <div id="example-map" class="map-canvas" aria-label="Map of examples in Cheltenham"></div>
 
         <h2>Table</h2>
         <div class="table-scroll">
@@ -145,6 +145,7 @@ Standard skeleton:
 {% include footer.html %}
 ```
 
+- Give every map container `class="map-canvas"` (600px, rounded corners) rather than an inline height, and a swatch legend above it `class="map-legend"` with one `<span>` per item. Don't use `class="map"`: it belongs to the pin-link table cells.
 - `data-sortable` on a `<table>` is picked up generically by `assets/scripts/table-sort.js` — no per-page JS needed for sorting.
 - Any numeric column — counts, prices, distances, years-as-quantities — gets `class="number"` on both the `<th>` and every `<td>` in that column, so it right-aligns instead of sitting left like text (see `assets/style.css`'s `.data-table .number` rule). Applies even to a single-number-column table like a simple `Year` / `Total` pair. Print the fetcher's pre-formatted `*_display` value (`2,418,292`, `£344,350`) in the cell and put the raw number in `data-val` so sorting is numeric.
 - A postcode column gets `class="postcode"` on both `<th>` and `<td>` so it doesn't wrap mid-postcode (`.data-table .postcode` is one of a few columns — `.date`, `.type`, `.category`, `.rating-date`, `.listing` — the site already sets to `white-space: nowrap`).
@@ -240,9 +241,9 @@ If the page also has a real `## FAQs` section, add a second `FAQPage` block in t
 - [ ] `schema:` + `_includes/schema/<name>.html` if the page has a real dataset and/or a real FAQ section worth marking up
 - [ ] Checked `_data/sources.json` — add or update the entry for this source, being honest about the licence
 - [ ] Ask whether a `_posts/<date>-<name>-added.md` news post announcing the new page is warranted — follow the shape of recent posts like `_posts/2026-09-09-broadband-internet-added.md` (intro paragraph linking the new page, a short "what it shows" summary, an FAQs section). Not every page needs one (a minor filter/sub-page usually doesn't), but a genuinely new dataset or page usually does. Two things to know about posts: `future: false` in `_config.yml` hides any post dated later than the build time until the first site build after it, so date it in the past to publish straight away, or in the future to schedule it (it appears on the next deploy after that time); and the post's URL (`/news/<name>-added`) comes from its filename, not its title, so the title can be as descriptive as you like.
-- [ ] If you changed a style sheet (`assets/*.css`), checked it with the CSS linters as CI runs them. Super-linter 7.1.0 bundles Prettier 3.3.3 and stylelint 15.11, and newer Prettier releases wrap long `font-family` and custom property values differently, so a file that passes with a newer version can still fail in CI. Keep such values short enough to sit on one line, and check with the same versions:
-  - `npx prettier@3.3.3 --config .github/linters/.prettierrc.json --check assets/*.css`
-  - `npx -p stylelint@15.11.0 -p stylelint-config-standard@34 stylelint --config .github/linters/.stylelintrc.json "assets/*.css"`
+- [ ] If you changed a style sheet (`assets/*.css`), checked it with the CSS linters as CI runs them. Super-linter 7.1.0 bundles Prettier 3.3.3 and stylelint 15.11, and newer Prettier releases wrap long `font-family` and custom property values differently, so a file that passes with a newer version can still fail in CI. Keep such values short enough to sit on one line, and check with the same versions. CI's Prettier finds its settings (4-space indents) through the `.prettierrc.json` at the repository root, not the copy in `.github/linters/`, so run it without `--config`:
+  - `npx prettier@3.3.3 --check assets/*.css`
+  - `npm i --prefix /tmp/stylelint stylelint@15.11.0 stylelint-config-standard@34 && /tmp/stylelint/node_modules/.bin/stylelint --config .github/linters/.stylelintrc.json --config-basedir /tmp/stylelint "assets/*.css"` (stylelint needs `--config-basedir` to find `stylelint-config-standard`; `npx -p` cannot resolve it)
 
 ## Maps
 

@@ -19,7 +19,7 @@
         {% assign pois = site.data.points_of_interest %}
 
         <h2>Points of Interest Map</h2>
-        <div id="poi-map" style="height: 600px;" aria-label="Map of points of interest"></div>
+        <div id="poi-map" class="map-canvas" aria-label="Map of points of interest"></div>
         <script id="poi-data" type="application/json">{{ pois | jsonify }}</script>
 
         {% assign cats = pois | map: "category" | uniq | sort %}
