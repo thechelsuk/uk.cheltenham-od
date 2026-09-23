@@ -22,4 +22,6 @@ This page shows monthly street-level crime counts for Cheltenham's neighbourhood
 
 Crime locations are approximate and anonymised by the Police.uk API. A report count does not indicate that a crime occurred at an exact mapped location.
 
+To see how crime rates compare across Cheltenham, our [crime map](/cheltenham-crime-data/map) shades every small area and ward by crimes per 1,000 residents over the last 12 months.
+
 Comparing areas before you commit? Our [moving to Cheltenham guide](/moving-to-cheltenham) and [student guide](/student-guide-to-cheltenham) both use this data to help compare neighbourhoods.
