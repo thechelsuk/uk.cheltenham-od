@@ -17,7 +17,6 @@ completed works between the weekly files.
 This only covers National Highways roads (here: M5, A417, A40, A46). Works on
 local streets are held in Street Manager, which is push-only and not covered.
 """
-import json
 import math
 import os
 import re
@@ -28,15 +27,18 @@ from zoneinfo import ZoneInfo
 import requests
 from pyproj import Transformer
 
+import config
+import helper
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "roadworks.json")
 
 FILE_BASE = "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/"
 DATASET_URL = "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
+HEADERS = config.HEADERS
 
-LAT, LNG = 51.899, -2.078    # Cheltenham centre
-RADIUS_MILES = 10
+LAT, LNG = config.CENTRE
+RADIUS_MILES = config.ROADWORKS_RADIUS_MILES
 LOOKBACK_DAYS = 14           # newest file is at most a week old; allow for a missed week
 NS = "{WebTeam}"             # the XML's default namespace
 LONDON = ZoneInfo("Europe/London")
@@ -134,9 +136,7 @@ def main():
         "items":        items,
     }
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(items)} roadworks (file published {published}) to {OUT}")
 

@@ -21,18 +21,21 @@ or greater chance, both ignoring the effect of flood defences.
   Service:  https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1
   Dataset:  https://environment.data.gov.uk/dataset/04532375-a198-476e-985e-0579a0a11b47
 """
+import sys
 import json
 import os
 from datetime import datetime, timezone
 
 import requests
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+import config  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))          # _python/local/
 OUT = os.path.join(HERE, "..", "..", "_data", "flood-zones.json")
 
 SERVICE = "https://environment.data.gov.uk/spatialdata/flood-map-for-planning-flood-zones/ogc/features/v1"
 COLLECTION = "Flood_Zones_2_3_Rivers_and_Sea"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 # The area covered, as west, south, east, north in longitude/latitude. It takes in the
 # whole borough and a margin.
@@ -49,7 +52,7 @@ def fetch_features():
     reports numberMatched, so stop when it has them all rather than trusting the page size."""
     features, start = [], 0
     while True:
-        resp = requests.get(f"{SERVICE}/collections/{COLLECTION}/items", headers=HEADERS, timeout=120,
+        resp = requests.get(f"{SERVICE}/collections/{COLLECTION}/items", headers=config.HEADERS, timeout=120,
                             params={"f": "json", "bbox": f"{WEST},{SOUTH},{EAST},{NORTH}",
                                     "limit": PAGE_SIZE, "startIndex": start})
         resp.raise_for_status()

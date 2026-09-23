@@ -27,13 +27,14 @@ from urllib.parse import urljoin
 
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "nhs-ae.json")
 
 PAGE_URL = ("https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/"
             "ae-attendances-and-emergency-admissions-{fy}/")
 LANDING_URL = "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 ORG_CODE = "RTE"
 TRUST_NAME = "Gloucestershire Hospitals NHS Foundation Trust"
@@ -52,7 +53,7 @@ def financial_year_labels(today):
 
 
 def fetch_text(url):
-    resp = requests.get(url, headers=HEADERS, timeout=60)
+    resp = requests.get(url, headers=config.HEADERS, timeout=60)
     if resp.status_code == 404:
         return None
     resp.raise_for_status()
@@ -135,7 +136,7 @@ def main():
             url = urljoin(page_url, href)
             if url in files:
                 continue
-            resp = requests.get(url, headers=HEADERS, timeout=60)
+            resp = requests.get(url, headers=config.HEADERS, timeout=60)
             resp.raise_for_status()
             record = parse_month(resp.content.decode("utf-8-sig", errors="replace"))
             files[url] = record["period"] if record else None    # remember non-A&E files too

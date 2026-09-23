@@ -9,26 +9,21 @@ items are stored verbatim. The API data is CC BY 4.0, so the licence and a
 credit link are stored alongside it for the layouts to render.
 
 Refreshed on every scheduled run because the source changes several times a day."""
-import json
 import re
 import time
 from datetime import datetime, timezone
 
-import requests
-
+import config
 import helper
 
 API = "https://www.givefood.org.uk/api/2"
-CENTRE = "51.897991,-2.071308"
-RADIUS_MILES = 10
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk)"}
+CENTRE = ",".join(str(c) for c in config.CENTRE)
+RADIUS_MILES = config.FOODBANK_RADIUS_MILES
 PAUSE_SECONDS = 1
 
 
 def get(path, **params):
-    resp = requests.get(f"{API}/{path}", params=params, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    return resp.json()
+    return helper.get(f"{API}/{path}", params=params).json()
 
 
 def lines(text):

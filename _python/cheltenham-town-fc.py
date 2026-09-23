@@ -14,16 +14,17 @@ from datetime import datetime, timezone
 
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "cheltenham-town-fc.json")
 
 API = "https://www.thesportsdb.com/api/v1/json/3"
 TEAM_ID = "134362"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 
 def get(path, **params):
-    resp = requests.get(f"{API}/{path}", params=params, headers=HEADERS, timeout=30)
+    resp = requests.get(f"{API}/{path}", params=params, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     return resp.json()
 

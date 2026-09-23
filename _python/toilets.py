@@ -13,6 +13,7 @@ from pathlib import Path
 
 import requests
 
+import config
 import helper
 
 try:
@@ -57,7 +58,7 @@ def parse_opening_times(raw) -> dict | None:
     if not raw or not isinstance(raw, list):
         return None
 
-    parsed = {}
+    parsed: dict[str, str | None] = {}
     for i, day in enumerate(DAYS):
         if i >= len(raw):
             parsed[day] = None
@@ -170,7 +171,7 @@ def find_json_download_url(page_url: str = DATASET_PAGE_URL) -> str:
     """
     resp = requests.get(
         page_url,
-        headers={"User-Agent": "Mozilla/5.0 (compatible; toilet-data-fetcher/1.0)"},
+        headers=config.HEADERS,
         timeout=20,
     )
     resp.raise_for_status()

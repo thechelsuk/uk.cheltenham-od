@@ -22,6 +22,8 @@ from datetime import datetime, timezone
 import pandas as pd
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "housing-supply.json")
 HISTORY_PATH = os.path.join(HERE, "..", "_data", "council-tax-stock-history.json")
@@ -29,11 +31,10 @@ HISTORY_PATH = os.path.join(HERE, "..", "_data", "council-tax-stock-history.json
 LIVE_TABLES_PAGE_URL = "https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing"
 CTSOP_COLLECTION_URL = "https://www.gov.uk/government/collections/valuation-office-agency-council-tax-statistics"
 DCLG_CODE, FORMER_ONS_CODE, ECODE = "B1605", "23UB", "E07000078"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 
 def find_link(page_url, pattern):
-    resp = requests.get(page_url, headers=HEADERS, timeout=30)
+    resp = requests.get(page_url, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     match = re.search(rf'href="({re.escape("https://assets.publishing.service.gov.uk/media/")}[^"]*{pattern}[^"]*)"', resp.text)
     if not match:
@@ -42,7 +43,7 @@ def find_link(page_url, pattern):
 
 
 def download(url, timeout=60):
-    resp = requests.get(url, headers=HEADERS, timeout=timeout)
+    resp = requests.get(url, headers=config.HEADERS, timeout=timeout)
     resp.raise_for_status()
     return resp.content
 
@@ -97,7 +98,7 @@ def fetch_communal_accommodation():
 
 
 def find_latest_ctsop_page():
-    resp = requests.get(CTSOP_COLLECTION_URL, headers=HEADERS, timeout=30)
+    resp = requests.get(CTSOP_COLLECTION_URL, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     years = [int(y) for y in re.findall(r"council-tax-stock-of-properties-(\d{4})", resp.text)]
     if not years:

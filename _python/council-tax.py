@@ -20,19 +20,19 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
+import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "council-tax.json")
 
 SOURCE_URL = "https://www.cheltenham.gov.uk/council-tax-and-benefits/council-tax-bands-charges-and-appeals/"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 BAND_ORDER = ["A", "B", "C", "D", "E", "F", "G", "H"]
 
 
 def main():
-    resp = requests.get(SOURCE_URL, headers=HEADERS, timeout=30)
+    resp = requests.get(SOURCE_URL, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 

@@ -16,22 +16,17 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+import config
 import helper
 
 URL = "https://www.cheltenham.gov.uk/recyclingbanks"
 OUTPUT_PATH = Path("_pages/home-property/recycling.md")
 MARKER = "recycling_banks"
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (compatible; recycling-bank-scraper/1.0; "
-        "+https://github.com/)"
-    )
-}
 
 
 def fetch_page(url: str) -> str:
-    response = requests.get(url, headers=HEADERS, timeout=30)
+    response = requests.get(url, headers=config.HEADERS, timeout=30)
     response.raise_for_status()
     return response.text
 

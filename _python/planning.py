@@ -33,6 +33,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+import config
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("planning")
 
@@ -65,10 +67,6 @@ GEOCODE_BATCH = 100
 
 DATA_DIR = Path("_data")
 DATA_FILE = DATA_DIR / "planning-applications.json"
-
-REQUEST_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-}
 
 REQUEST_DELAY_SECONDS = 1.5
 MAX_PAGES = 10
@@ -329,7 +327,7 @@ def fetch_by_date_type(session, form_html, date_type, months):
 
 def fetch_all(months):
     session = requests.Session()
-    session.headers.update(REQUEST_HEADERS)
+    session.headers.update(config.HEADERS)
 
     log.info("Loading list search form: %s", MONTHLY_LIST_URL)
     form_resp = session.get(MONTHLY_LIST_URL, timeout=30)
@@ -392,7 +390,7 @@ def geocode_missing(records_by_ref):
     for i in range(0, len(postcodes), GEOCODE_BATCH):
         try:
             resp = requests.post(POSTCODES_URL, json={"postcodes": postcodes[i:i + GEOCODE_BATCH]},
-                                 headers=REQUEST_HEADERS, timeout=30)
+                                 headers=config.HEADERS, timeout=30)
             resp.raise_for_status()
         except requests.RequestException as exc:
             log.warning("Could not geocode %s postcodes (%s); they will be retried next run", len(postcodes[i:i + GEOCODE_BATCH]), exc)

@@ -10,6 +10,7 @@ one Cheltenham row per year. Since 1993-2024 is now a fixed, closed series
 (the VOA's newer annual releases are single-year snapshots, not an updated
 time series — see housing-supply.py), run this once to seed the history,
 then housing-supply.py appends each new year's snapshot on top of it."""
+import sys
 import csv
 import io
 import json
@@ -20,16 +21,18 @@ from datetime import datetime, timezone
 
 import requests
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+import config  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "..", "_data", "council-tax-stock-history.json")
 
 SERIES_PAGE_URL = "https://www.gov.uk/government/statistics/council-tax-stock-of-properties-2024"
 ECODE = "E07000078"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 
 def find_series_zip_url():
-    resp = requests.get(SERIES_PAGE_URL, headers=HEADERS, timeout=30)
+    resp = requests.get(SERIES_PAGE_URL, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     match = re.search(r'href="(https://assets\.publishing\.service\.gov\.uk/media/[^"]+CTSOP1-1-1993-2024\.zip)"', resp.text)
     if not match:
@@ -39,7 +42,7 @@ def find_series_zip_url():
 
 def main():
     zip_url = find_series_zip_url()
-    resp = requests.get(zip_url, headers=HEADERS, timeout=120)
+    resp = requests.get(zip_url, headers=config.HEADERS, timeout=120)
     resp.raise_for_status()
 
     years = []

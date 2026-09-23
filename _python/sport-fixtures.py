@@ -25,15 +25,13 @@ from datetime import date, datetime, timedelta, timezone
 
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "sport-fixtures.json")
 
 BASE_URL = "https://web-cdn.api.bbci.co.uk/wc-poll-data/container/sport-data-scores-fixtures"
-HEADERS = {
-    "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"),
-    "Accept": "application/json",
-}
+HEADERS = {**config.HEADERS, "Accept": "application/json"}
 REQUEST_DELAY_SECONDS = 0.6
 LOOKAHEAD_DAYS = 7  # today + the next 6 days
 NOT_STARTED_STATUS = "PreEvent"

@@ -2,18 +2,16 @@
 """Fetch OSM points of interest (incl. plaques) near Cheltenham via Overpass,
 write _data/points_of_interest.json as a distance-sorted array."""
 import re
-import json
 import os
-import math
-import requests
+
+import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "points_of_interest.json")
 
-LAT, LNG = 51.894, -2.083          # Cheltenham centre (from postcode-info)
-RADIUS_M = 26000                   # ~16 miles
-OVERPASS = "https://overpass-api.de/api/interpreter"
-HEADERS  = {"User-Agent": "cheltenham-od/1.1 (https://uk.cheltenham-od; contact@cheltenham-od.uk)"}
+LAT, LNG = config.CENTRE
+RADIUS_M = config.INTERESTS_RADIUS_M
 
 # Each entry: (Overpass selector, human label).
 CATEGORIES = [
@@ -28,15 +26,6 @@ CATEGORIES = [
     ('["tourism"="attraction"]',                      "Attraction"),
     ('["historic"="memorial"]["memorial"="plaque"]',  "Plaque"),
 ]
-
-
-def haversine_miles(lat1, lon1, lat2, lon2):
-    r = 3958.8
-    p1, p2 = math.radians(lat1), math.radians(lat2)
-    dp = math.radians(lat2 - lat1)
-    dl = math.radians(lon2 - lon1)
-    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
-    return round(r * 2 * math.asin(math.sqrt(a)), 1)
 
 
 def classify(tags):
@@ -81,10 +70,7 @@ def normalize_url(url: str) -> str:
     return url
 
 def main():
-    resp = requests.post(OVERPASS, data={"data": build_query()},
-                         headers=HEADERS, timeout=120)
-    resp.raise_for_status()
-    elements = resp.json()["elements"]
+    elements = helper.overpass(build_query(), timeout=120)
 
     seen, pois = set(), []
     for el in elements:
@@ -100,7 +86,7 @@ def main():
         pois.append({
             "name":        name,
             "category":    classify(tags),
-            "distance":    haversine_miles(LAT, LNG, lat, lon),
+            "distance":    round(helper.miles_from_centre(lat, lon), 1),
             "postcode":    tags.get("addr:postcode", ""),
             "website": normalize_url(tags.get("website") or tags.get("contact:website", "")),
             "wikipedia":   wiki_url(tags),
@@ -112,9 +98,7 @@ def main():
 
     pois.sort(key=lambda p: p["distance"])
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(pois, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, pois)
 
     print(f"Wrote {len(pois)} points of interest to {OUT}")
 

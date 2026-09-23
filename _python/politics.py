@@ -17,18 +17,19 @@ from datetime import datetime, timezone
 
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "politics.json")
 
 API = "https://members-api.parliament.uk/api"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 CONSTITUENCY_IDS = [3976, 3406]   # current boundaries first
 PROFILE_URL = "https://members.parliament.uk/member/{id}/contact"
 
 
 def get(path):
-    resp = requests.get(f"{API}/{path}", headers=HEADERS, timeout=30)
+    resp = requests.get(f"{API}/{path}", headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     return resp.json()["value"]
 

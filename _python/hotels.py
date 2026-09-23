@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """Fetch hotels and guest houses near Cheltenham from OpenStreetMap via Overpass,
 write _data/hotels.json."""
-import json
 import os
-import requests
+
+import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "hotels.json")
 
-LAT, LNG = 51.894, -2.083          # Cheltenham centre
-RADIUS_M = 6000                    # ~3.7 miles — keeps it to the town
-OVERPASS = "https://overpass-api.de/api/interpreter"
-HEADERS  = {"User-Agent": "cheltenham-od/1.2 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
+LAT, LNG = config.CENTRE
+RADIUS_M = config.HOTELS_RADIUS_M
 
 TYPES = {"hotel": "Hotel", "guest_house": "Guest house"}
 
@@ -37,10 +36,7 @@ def build_query():
 
 
 def main():
-    resp = requests.post(OVERPASS, data={"data": build_query()},
-                         headers=HEADERS, timeout=120)
-    resp.raise_for_status()
-    elements = resp.json()["elements"]
+    elements = helper.overpass(build_query(), timeout=120)
 
     seen, hotels = set(), []
     for el in elements:
@@ -62,9 +58,7 @@ def main():
 
     hotels.sort(key=lambda h: h["name"])
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(hotels, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, hotels)
 
     print(f"Wrote {len(hotels)} hotels and guest houses to {OUT}")
 

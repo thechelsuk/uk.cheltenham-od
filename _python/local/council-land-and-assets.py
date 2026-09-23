@@ -8,6 +8,7 @@ the original CSVs on GitHub. Run manually, not on a schedule, since these are
 historical snapshots rather than a live feed; the data will not change again:
 
   python _python/local/council-land-and-assets.py"""
+import sys
 import csv
 import io
 import json
@@ -17,13 +18,15 @@ from datetime import datetime, timezone
 import requests
 from pyproj import Transformer
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+import config  # noqa: E402
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "..", "_data", "council-land-and-assets.json")
 
 REPO = "https://raw.githubusercontent.com/chrismytton/cheltenham-council-land-and-assets/main"
 SOURCE_URL = "https://github.com/chrismytton/cheltenham-council-land-and-assets"
 ORIGINAL_SOURCE_URL = "https://web.archive.org/web/2023/https://www.cheltenham.gov.uk/info/16/open_data/1190/local_authority_land_and_assets"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 YEARS = [2021, 2023]
 
@@ -32,7 +35,7 @@ _to_wgs84 = Transformer.from_crs("EPSG:27700", "EPSG:4326", always_xy=True)
 
 def fetch_csv(year):
     url = f"{REPO}/local_authority_land_and_assets_{year}.csv"
-    resp = requests.get(url, headers=HEADERS, timeout=30)
+    resp = requests.get(url, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     return list(csv.DictReader(io.StringIO(resp.text)))
 

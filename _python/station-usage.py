@@ -17,12 +17,13 @@ from datetime import datetime, timezone
 
 import requests
 
+import config
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "station-usage.json")
 
 PAGE_URL = "https://dataportal.orr.gov.uk/statistics/usage/estimates-of-station-usage"
 BASE_URL = "https://dataportal.orr.gov.uk"
-HEADERS = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
 
 CRS = "CNM"   # Cheltenham Spa
 
@@ -31,7 +32,7 @@ PERIOD_PATTERN = re.compile(r"annual data, (.+)$")
 
 
 def find_csv_url():
-    resp = requests.get(PAGE_URL, headers=HEADERS, timeout=30)
+    resp = requests.get(PAGE_URL, headers=config.HEADERS, timeout=30)
     resp.raise_for_status()
     match = LINK_PATTERN.search(resp.text)
     if not match:
@@ -69,7 +70,7 @@ def parse_row(rows, crs):
 
 def main():
     csv_url = find_csv_url()
-    resp = requests.get(csv_url, headers=HEADERS, timeout=60)
+    resp = requests.get(csv_url, headers=config.HEADERS, timeout=60)
     resp.raise_for_status()
     rows = list(csv.reader(io.StringIO(resp.content.decode("utf-8-sig"))))
     period, record = parse_row(rows, CRS)

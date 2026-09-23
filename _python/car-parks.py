@@ -15,21 +15,17 @@ hours* recorded in OSM's `fee` tag instead of a proper `opening_hours` tag
 tagging quirk, not a mistake in this script. Where that's detected, `fee` is
 reported as true and the time range is used as `charging_hours`.
 """
-import json
 import os
 import re
 
-import requests
-
+import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "car-parks.json")
 
-LAT, LNG = 51.899, -2.078          # Cheltenham centre
-RADIUS_M = 6000                    # ~3.7 miles — keeps it to the town, matches hotels.py
-OVERPASS = "https://overpass-api.de/api/interpreter"
-HEADERS  = {"User-Agent": "cheltenham-od/1.0 (https://cheltenham-od.uk; contact@cheltenham-od.uk)"}
+LAT, LNG = config.CENTRE
+RADIUS_M = config.CAR_PARKS_RADIUS_M
 
 EXCLUDE_ACCESS   = {"private", "customers", "residents", "no"}
 PUBLIC_OPERATORS = {"cheltenham borough council", "national car parks",
@@ -70,9 +66,7 @@ def parse_fee_and_hours(tags):
 
 
 def main():
-    resp = requests.post(OVERPASS, data={"data": build_query()}, headers=HEADERS, timeout=90)
-    resp.raise_for_status()
-    elements = resp.json().get("elements", [])
+    elements = helper.overpass(build_query(), timeout=90)
 
     seen, car_parks = set(), []
     for el in elements:
@@ -105,9 +99,7 @@ def main():
         "car_parks":    car_parks,
     }
 
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(car_parks)} car parks to {OUT}")
 
