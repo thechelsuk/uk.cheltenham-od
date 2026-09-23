@@ -286,8 +286,8 @@ def geocode_postcodes(postcodes):
 def fetch_flood_data():
     url = "https://environment.data.gov.uk/flood-monitoring/id/floods"
     headers = {
+        **config.HEADERS,
         "Accept": "application/json",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Referer": "https://environment.data.gov.uk/flood-monitoring/",
     }
     response = request_with_retry(
