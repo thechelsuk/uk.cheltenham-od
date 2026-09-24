@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T17:40:09+01:00",
+  "generated_at": "2026-09-24T17:45:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T17:40",
-      "expected": "2026-09-24T17:40",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
     {
       "scheduled": "2026-09-24T17:45",
       "expected": null,
@@ -151,8 +132,8 @@
     },
     {
       "scheduled": "2026-09-24T18:19",
-      "expected": "2026-09-24T18:19",
-      "status": "On time",
+      "expected": "2026-09-24T18:22",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -181,19 +162,23 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T18:31",
+      "expected": "2026-09-24T18:31",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-24T17:38",
-      "expected": "2026-09-24T17:40",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-24T17:47",
       "expected": "2026-09-24T17:49",
@@ -236,8 +221,8 @@
     },
     {
       "scheduled": "2026-09-24T18:18",
-      "expected": "2026-09-24T18:18",
-      "status": "On time",
+      "expected": "2026-09-24T18:21",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -262,6 +247,16 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T18:29",
+      "expected": "2026-09-24T18:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
