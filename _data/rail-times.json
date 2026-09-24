@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T08:15:12+01:00",
+  "generated_at": "2026-09-24T08:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,49 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T08:12",
-      "expected": "2026-09-24T08:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T08:15",
-      "expected": "2026-09-24T08:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-24T08:29",
       "expected": "2026-09-24T08:29",
@@ -150,6 +107,26 @@
       "scheduled": "2026-09-24T09:03",
       "expected": "2026-09-24T09:03",
       "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-09-24T09:03",
+      "expected": "2026-09-24T09:03",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Salisbury",
@@ -160,29 +137,36 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T09:12",
+      "expected": "2026-09-24T09:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-24T08:10",
-      "expected": "2026-09-24T08:13",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-24T08:14",
-      "expected": "2026-09-24T08:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-24T08:27",
       "expected": "2026-09-24T08:32",
@@ -251,6 +235,16 @@
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T09:10",
+      "expected": "2026-09-24T09:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Edinburgh via Leeds",
       "reason": ""
     }
   ]
