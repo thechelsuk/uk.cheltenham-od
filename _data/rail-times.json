@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T12:40:13+01:00",
+  "generated_at": "2026-09-24T12:45:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,26 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-24T12:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central",
-      "reason": "This service has been cancelled because of a safety inspection of the track",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T12:40",
-      "expected": "2026-09-24T12:42",
+      "expected": "2026-09-24T12:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -50,8 +31,8 @@
     },
     {
       "scheduled": "2026-09-24T12:45",
-      "expected": "2026-09-24T12:49",
-      "status": "Delayed",
+      "expected": "2026-09-24T12:45",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -65,8 +46,8 @@
     },
     {
       "scheduled": "2026-09-24T12:52",
-      "expected": "2026-09-24T12:52",
-      "status": "On time",
+      "expected": "2026-09-24T12:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -96,7 +77,7 @@
     },
     {
       "scheduled": "2026-09-24T12:55",
-      "expected": "2026-09-24T13:10",
+      "expected": "2026-09-24T13:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -166,8 +147,8 @@
     },
     {
       "scheduled": "2026-09-24T13:15",
-      "expected": "2026-09-24T13:15",
-      "status": "On time",
+      "expected": "2026-09-24T13:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -197,12 +178,26 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T13:29",
+      "expected": "2026-09-24T13:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-24T12:38",
-      "expected": "2026-09-24T12:41",
+      "expected": "2026-09-24T12:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -212,7 +207,7 @@
     },
     {
       "scheduled": "2026-09-24T12:43",
-      "expected": "2026-09-24T12:48",
+      "expected": "2026-09-24T12:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -222,7 +217,7 @@
     },
     {
       "scheduled": "2026-09-24T12:50",
-      "expected": "2026-09-24T12:52",
+      "expected": "2026-09-24T12:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -232,7 +227,7 @@
     },
     {
       "scheduled": "2026-09-24T12:54",
-      "expected": "2026-09-24T13:09",
+      "expected": "2026-09-24T13:12",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -252,8 +247,8 @@
     },
     {
       "scheduled": "2026-09-24T13:14",
-      "expected": "2026-09-24T13:14",
-      "status": "On time",
+      "expected": "2026-09-24T13:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -279,6 +274,16 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been cancelled because of urgent repairs to the track"
+    },
+    {
+      "scheduled": "2026-09-24T13:27",
+      "expected": "2026-09-24T13:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
     }
   ]
 }
