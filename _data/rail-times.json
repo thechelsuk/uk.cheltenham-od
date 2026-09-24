@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T17:10:08+01:00",
+  "generated_at": "2026-09-24T17:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,28 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T16:55",
-      "expected": "2026-09-24T17:09",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a safety inspection of the track earlier today",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ]
-    },
     {
       "scheduled": "2026-09-24T17:12",
       "expected": "2026-09-24T17:17",
@@ -61,7 +39,7 @@
     },
     {
       "scheduled": "2026-09-24T17:19",
-      "expected": "2026-09-24T17:21",
+      "expected": "2026-09-24T17:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -160,19 +138,29 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T17:52",
+      "expected": "2026-09-24T17:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-24T16:54",
-      "expected": "2026-09-24T17:07",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a safety inspection of the track earlier today"
-    },
     {
       "scheduled": "2026-09-24T17:10",
       "expected": "2026-09-24T17:16",
@@ -185,7 +173,7 @@
     },
     {
       "scheduled": "2026-09-24T17:18",
-      "expected": "2026-09-24T17:20",
+      "expected": "2026-09-24T17:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +239,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T17:50",
+      "expected": "2026-09-24T17:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
