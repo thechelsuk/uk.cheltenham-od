@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T18:25:08+01:00",
+  "generated_at": "2026-09-24T18:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T18:19",
-      "expected": "2026-09-24T18:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-24T18:25",
       "expected": "2026-09-24T18:30",
@@ -59,7 +44,7 @@
     },
     {
       "scheduled": "2026-09-24T18:40",
-      "expected": "2026-09-24T18:42",
+      "expected": "2026-09-24T18:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -149,19 +134,28 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T19:02",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Reading",
+        "London Paddington"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-24T18:18",
-      "expected": "2026-09-24T18:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-24T18:24",
       "expected": "2026-09-24T18:29",
@@ -174,7 +168,7 @@
     },
     {
       "scheduled": "2026-09-24T18:27",
-      "expected": "2026-09-24T18:30",
+      "expected": "2026-09-24T18:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -204,7 +198,7 @@
     },
     {
       "scheduled": "2026-09-24T18:38",
-      "expected": "2026-09-24T18:41",
+      "expected": "2026-09-24T18:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
