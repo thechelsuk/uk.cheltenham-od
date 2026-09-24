@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:50:09+01:00",
+  "generated_at": "2026-09-24T16:55:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -18,35 +18,15 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a safety inspection of the track",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
       ]
     },
     {
-      "scheduled": "2026-09-24T16:52",
-      "expected": "2026-09-24T16:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-24T16:55",
-      "expected": "2026-09-24T17:04",
+      "expected": "2026-09-24T17:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -88,7 +68,7 @@
     },
     {
       "scheduled": "2026-09-24T17:12",
-      "expected": "2026-09-24T17:15",
+      "expected": "2026-09-24T17:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -161,6 +141,25 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T17:40",
+      "expected": "2026-09-24T17:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
@@ -172,21 +171,11 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-24T16:50",
-      "expected": "2026-09-24T16:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": ""
+      "reason": "This service has been delayed by a safety inspection of the track"
     },
     {
       "scheduled": "2026-09-24T16:54",
-      "expected": "2026-09-24T17:03",
+      "expected": "2026-09-24T17:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -196,7 +185,7 @@
     },
     {
       "scheduled": "2026-09-24T17:10",
-      "expected": "2026-09-24T17:14",
+      "expected": "2026-09-24T17:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -252,6 +241,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T17:38",
+      "expected": "2026-09-24T17:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
