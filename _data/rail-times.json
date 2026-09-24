@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T11:35:08+01:00",
+  "generated_at": "2026-09-24T11:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-24T11:40",
-      "expected": "2026-09-24T11:46",
+      "expected": "2026-09-24T11:47",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -65,7 +65,7 @@
     },
     {
       "scheduled": "2026-09-24T11:52",
-      "expected": "2026-09-24T12:00",
+      "expected": "2026-09-24T12:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -91,7 +91,7 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
-      "reason": "",
+      "reason": "This service has been delayed by a safety inspection of the track",
       "calling_at": [
         "Worcestershire Parkway",
         "University",
@@ -179,18 +179,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-24T11:26",
-      "expected": "2026-09-24T11:35",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a speed restriction over defective track"
-    },
-    {
       "scheduled": "2026-09-24T11:31",
-      "expected": "2026-09-24T11:39",
+      "expected": "2026-09-24T11:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -200,8 +190,8 @@
     },
     {
       "scheduled": "2026-09-24T11:38",
-      "expected": "2026-09-24T11:38",
-      "status": "On time",
+      "expected": "2026-09-24T11:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -210,8 +200,8 @@
     },
     {
       "scheduled": "2026-09-24T11:46",
-      "expected": "2026-09-24T11:46",
-      "status": "On time",
+      "expected": "2026-09-24T11:48",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -220,7 +210,7 @@
     },
     {
       "scheduled": "2026-09-24T11:51",
-      "expected": "2026-09-24T11:59",
+      "expected": "2026-09-24T12:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -236,7 +226,7 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
-      "reason": ""
+      "reason": "This service has been delayed by a safety inspection of the track"
     },
     {
       "scheduled": "2026-09-24T12:11",
@@ -257,6 +247,16 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T12:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of a safety inspection of the track"
     }
   ]
 }
