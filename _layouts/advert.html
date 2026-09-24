@@ -38,6 +38,12 @@
             {%- endif -%}
         </header>
 
+        {%- if page.image -%}
+        <figure class="classifieds-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" loading="lazy">
+        </figure>
+        {%- endif -%}
+
         <div class="classifieds-body">
             {{ content }}
         </div>
