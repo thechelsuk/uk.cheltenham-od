@@ -931,6 +931,24 @@ iframe.map-canvas {
     border-radius: 8px;
 }
 
+/* On wider screens the advert text wraps around the image instead of leaving a gap beside it */
+@media (min-width: 720px) {
+    .classifieds-image {
+        float: right;
+        width: 36%;
+        max-width: 340px;
+        margin: 0.5em 0 1.5em 2.5em;
+    }
+
+    .classifieds-body h2 {
+        overflow: hidden; /* keeps heading underlines beside the image, not behind it */
+    }
+
+    .classifieds-footer {
+        clear: both;
+    }
+}
+
 .contact-form-wrapper {
     max-width: 832px;
     margin: 2em auto;
