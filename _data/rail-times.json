@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T12:10:09+01:00",
+  "generated_at": "2026-09-24T12:15:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-24T11:52",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-24T11:59",
-      "expected": "2026-09-24T12:19",
+      "expected": "2026-09-24T12:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -53,7 +33,7 @@
     },
     {
       "scheduled": "2026-09-24T12:03",
-      "expected": null,
+      "expected": "2026-09-24T12:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -73,8 +53,8 @@
     },
     {
       "scheduled": "2026-09-24T12:12",
-      "expected": "2026-09-24T12:12",
-      "status": "On time",
+      "expected": "2026-09-24T12:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -157,6 +137,25 @@
     },
     {
       "scheduled": "2026-09-24T12:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central",
+      "reason": "This service has been cancelled because of a safety inspection of the track",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-09-24T12:40",
       "expected": "2026-09-24T12:40",
       "status": "On time",
       "platform": "2",
@@ -177,18 +176,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-24T11:51",
-      "expected": "2026-09-24T11:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a late running train being in front of this one"
-    },
-    {
       "scheduled": "2026-09-24T11:58",
-      "expected": "2026-09-24T12:18",
+      "expected": "2026-09-24T12:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
