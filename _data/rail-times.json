@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T19:05:08+01:00",
+  "generated_at": "2026-09-24T19:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T19:02",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been cancelled because of a fault on a train",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-09-24T19:12",
       "expected": "2026-09-24T19:12",
@@ -142,6 +123,26 @@
         "Malvern Link",
         "Great Malvern"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T19:52",
+      "expected": "2026-09-24T19:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
@@ -167,8 +168,8 @@
     },
     {
       "scheduled": "2026-09-24T19:21",
-      "expected": "2026-09-24T19:21",
-      "status": "On time",
+      "expected": "2026-09-24T19:23",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -223,6 +224,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Great Malvern",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T19:51",
+      "expected": "2026-09-24T19:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
