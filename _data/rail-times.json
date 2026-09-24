@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T09:00:08+01:00",
+  "generated_at": "2026-09-24T09:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-24T08:59",
-      "expected": "2026-09-24T09:01",
+      "expected": "2026-09-24T09:06",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -33,8 +33,8 @@
     },
     {
       "scheduled": "2026-09-24T09:03",
-      "expected": "2026-09-24T09:03",
-      "status": "On time",
+      "expected": "2026-09-24T09:13",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -53,7 +53,7 @@
     },
     {
       "scheduled": "2026-09-24T09:03",
-      "expected": "2026-09-24T09:05",
+      "expected": "2026-09-24T09:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -68,7 +68,7 @@
     },
     {
       "scheduled": "2026-09-24T09:12",
-      "expected": "2026-09-24T09:19",
+      "expected": "2026-09-24T09:21",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -140,22 +140,31 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T09:40",
+      "expected": "2026-09-24T09:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-24T08:32",
-      "expected": "2026-09-24T09:00",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by this train being late from the depot"
-    },
-    {
       "scheduled": "2026-09-24T08:57",
-      "expected": "2026-09-24T09:00",
+      "expected": "2026-09-24T09:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -165,7 +174,7 @@
     },
     {
       "scheduled": "2026-09-24T09:02",
-      "expected": "2026-09-24T09:04",
+      "expected": "2026-09-24T09:06",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -175,7 +184,7 @@
     },
     {
       "scheduled": "2026-09-24T09:10",
-      "expected": "2026-09-24T09:18",
+      "expected": "2026-09-24T09:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -231,6 +240,16 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T09:39",
+      "expected": "2026-09-24T09:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
