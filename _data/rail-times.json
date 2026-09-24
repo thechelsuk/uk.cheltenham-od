@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:30:09+01:00",
+  "generated_at": "2026-09-24T16:35:24+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -34,7 +34,7 @@
     },
     {
       "scheduled": "2026-09-24T16:40",
-      "expected": "2026-09-24T16:42",
+      "expected": "2026-09-24T16:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -53,13 +53,13 @@
     },
     {
       "scheduled": "2026-09-24T16:40",
-      "expected": "2026-09-24T16:48",
+      "expected": "2026-09-24T16:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by a safety inspection of the track",
       "calling_at": [
         "Birmingham New Street",
         "Wolverhampton",
@@ -72,7 +72,7 @@
     },
     {
       "scheduled": "2026-09-24T16:50",
-      "expected": "2026-09-24T16:55",
+      "expected": "2026-09-24T16:53",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -106,7 +106,7 @@
     },
     {
       "scheduled": "2026-09-24T16:55",
-      "expected": "2026-09-24T17:02",
+      "expected": "2026-09-24T17:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -172,19 +172,26 @@
         "Alnmouth",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T17:19",
+      "expected": "2026-09-24T17:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-24T16:27",
-      "expected": "2026-09-24T16:32",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a safety inspection on a train earlier today"
-    },
     {
       "scheduled": "2026-09-24T16:30",
       "expected": "2026-09-24T16:40",
@@ -197,7 +204,7 @@
     },
     {
       "scheduled": "2026-09-24T16:31",
-      "expected": "2026-09-24T16:34",
+      "expected": "2026-09-24T16:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -207,17 +214,17 @@
     },
     {
       "scheduled": "2026-09-24T16:38",
-      "expected": "2026-09-24T16:47",
+      "expected": "2026-09-24T16:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
+      "reason": "This service has been delayed by a safety inspection of the track"
     },
     {
       "scheduled": "2026-09-24T16:47",
-      "expected": "2026-09-24T16:54",
+      "expected": "2026-09-24T16:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -237,7 +244,7 @@
     },
     {
       "scheduled": "2026-09-24T16:54",
-      "expected": "2026-09-24T17:01",
+      "expected": "2026-09-24T17:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -253,6 +260,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T17:18",
+      "expected": "2026-09-24T17:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
