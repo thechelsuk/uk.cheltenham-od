@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T22:00:13+01:00",
+  "generated_at": "2026-09-24T22:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,38 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T22:00",
-      "expected": "2026-09-24T22:00",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T22:03",
-      "expected": "2026-09-24T22:03",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-09-24T22:16",
       "expected": "2026-09-24T22:16",
@@ -117,29 +85,38 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-24T21:59",
-      "expected": "2026-09-24T21:59",
+      "scheduled": "2026-09-24T23:02",
+      "expected": "2026-09-24T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
+    },
+    {
+      "scheduled": "2026-09-24T23:04",
+      "expected": "2026-09-24T23:04",
       "status": "On time",
       "platform": "1",
       "operator": "Great Western Railway",
-      "origin": "Great Malvern",
+      "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-24T22:01",
-      "expected": "2026-09-24T22:01",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-24T22:06",
       "expected": "2026-09-24T22:06",
@@ -198,6 +175,26 @@
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T23:00",
+      "expected": "2026-09-24T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T23:02",
+      "expected": "2026-09-24T23:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
     }
   ]
