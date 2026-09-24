@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T09:15:08+01:00",
+  "generated_at": "2026-09-24T09:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-24T09:03",
-      "expected": "2026-09-24T09:15",
+      "expected": "2026-09-24T09:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -28,21 +28,6 @@
         "Didcot Parkway",
         "Reading",
         "London Paddington"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T09:03",
-      "expected": "2026-09-24T09:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Worcester Foregate Street",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
       ]
     },
     {
@@ -74,8 +59,8 @@
     },
     {
       "scheduled": "2026-09-24T09:15",
-      "expected": "2026-09-24T09:15",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -141,7 +126,7 @@
     },
     {
       "scheduled": "2026-09-24T09:40",
-      "expected": "2026-09-24T09:43",
+      "expected": "2026-09-24T09:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -157,19 +142,24 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T09:47",
+      "expected": "2026-09-24T09:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-24T09:02",
-      "expected": "2026-09-24T09:13",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Worcester Foregate Street",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-24T09:10",
       "expected": "2026-09-24T09:20",
@@ -182,8 +172,8 @@
     },
     {
       "scheduled": "2026-09-24T09:14",
-      "expected": "2026-09-24T09:14",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -232,12 +222,22 @@
     },
     {
       "scheduled": "2026-09-24T09:39",
-      "expected": "2026-09-24T09:42",
+      "expected": "2026-09-24T09:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T09:45",
+      "expected": "2026-09-24T09:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": ""
     }
   ]
