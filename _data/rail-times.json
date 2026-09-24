@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:10:07+01:00",
+  "generated_at": "2026-09-24T16:15:13+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-24T16:03",
-      "expected": "2026-09-24T16:10",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-09-24T16:12",
-      "expected": "2026-09-24T16:18",
+      "expected": "2026-09-24T16:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -60,8 +40,8 @@
     },
     {
       "scheduled": "2026-09-24T16:15",
-      "expected": "2026-09-24T16:17",
-      "status": "Delayed",
+      "expected": "2026-09-24T16:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -95,7 +75,7 @@
     },
     {
       "scheduled": "2026-09-24T16:31",
-      "expected": "2026-09-24T16:37",
+      "expected": "2026-09-24T16:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -166,12 +146,32 @@
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T16:52",
+      "expected": "2026-09-24T16:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Aberdeen",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-24T16:10",
-      "expected": "2026-09-24T16:17",
+      "expected": "2026-09-24T16:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -181,8 +181,8 @@
     },
     {
       "scheduled": "2026-09-24T16:15",
-      "expected": "2026-09-24T16:17",
-      "status": "Delayed",
+      "expected": "2026-09-24T16:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -211,7 +211,7 @@
     },
     {
       "scheduled": "2026-09-24T16:30",
-      "expected": "2026-09-24T16:36",
+      "expected": "2026-09-24T16:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -241,12 +241,22 @@
     },
     {
       "scheduled": "2026-09-24T16:47",
-      "expected": "2026-09-24T16:47",
-      "status": "On time",
+      "expected": "2026-09-24T16:49",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T16:50",
+      "expected": "2026-09-24T16:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Aberdeen",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
