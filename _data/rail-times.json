@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T15:25:08+01:00",
+  "generated_at": "2026-09-24T15:30:13+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T15:23",
-      "expected": "2026-09-24T15:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-24T15:29",
       "expected": "2026-09-24T15:29",
@@ -44,7 +26,7 @@
     },
     {
       "scheduled": "2026-09-24T15:40",
-      "expected": "2026-09-24T15:44",
+      "expected": "2026-09-24T15:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -63,7 +45,7 @@
     },
     {
       "scheduled": "2026-09-24T15:40",
-      "expected": "2026-09-24T15:42",
+      "expected": "2026-09-24T15:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -97,7 +79,7 @@
     },
     {
       "scheduled": "2026-09-24T15:52",
-      "expected": "2026-09-24T15:59",
+      "expected": "2026-09-24T16:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -155,22 +137,40 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T16:12",
+      "expected": "2026-09-24T16:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Dunbar",
+        "Edinburgh"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-24T15:21",
-      "expected": "2026-09-24T15:21",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-24T15:26",
-      "expected": "2026-09-24T15:34",
+      "expected": "2026-09-24T15:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -200,7 +200,7 @@
     },
     {
       "scheduled": "2026-09-24T15:38",
-      "expected": "2026-09-24T15:41",
+      "expected": "2026-09-24T15:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -220,7 +220,7 @@
     },
     {
       "scheduled": "2026-09-24T15:50",
-      "expected": "2026-09-24T15:58",
+      "expected": "2026-09-24T15:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -236,6 +236,16 @@
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T16:10",
+      "expected": "2026-09-24T16:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Edinburgh via Leeds",
       "reason": ""
     }
   ]
