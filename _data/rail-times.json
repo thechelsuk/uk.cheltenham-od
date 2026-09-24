@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T09:50:09+01:00",
+  "generated_at": "2026-09-24T09:55:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-24T09:40",
-      "expected": "2026-09-24T09:53",
+      "expected": "2026-09-24T09:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -31,7 +31,7 @@
     },
     {
       "scheduled": "2026-09-24T09:40",
-      "expected": "2026-09-24T09:52",
+      "expected": "2026-09-24T09:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -50,7 +50,7 @@
     },
     {
       "scheduled": "2026-09-24T09:47",
-      "expected": "2026-09-24T09:51",
+      "expected": "2026-09-24T09:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -64,29 +64,9 @@
       ]
     },
     {
-      "scheduled": "2026-09-24T09:52",
-      "expected": "2026-09-24T09:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "York",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-24T09:59",
-      "expected": "2026-09-24T09:59",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -184,22 +164,35 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T10:29",
+      "expected": "2026-09-24T10:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Paignton",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Weston-super-Mare",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Dawlish",
+        "Teignmouth",
+        "Newton Abbot",
+        "Torquay",
+        "Paignton"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-24T09:30",
-      "expected": "2026-09-24T09:48",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-24T09:39",
-      "expected": "2026-09-24T09:51",
+      "expected": "2026-09-24T09:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -209,7 +202,7 @@
     },
     {
       "scheduled": "2026-09-24T09:45",
-      "expected": "2026-09-24T09:50",
+      "expected": "2026-09-24T09:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -218,19 +211,9 @@
       "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
-      "scheduled": "2026-09-24T09:50",
-      "expected": "2026-09-24T09:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "York",
-      "destination": "Plymouth",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-24T09:58",
-      "expected": "2026-09-24T09:58",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -265,6 +248,26 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T10:27",
+      "expected": "2026-09-24T10:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T10:28",
+      "expected": "2026-09-24T10:28",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Paignton",
       "reason": ""
     }
   ]
