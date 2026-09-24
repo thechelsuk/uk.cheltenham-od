@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T10:30:08+01:00",
+  "generated_at": "2026-09-24T10:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,31 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-24T10:29",
-      "expected": "2026-09-24T10:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Weston-super-Mare",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ]
-    },
-    {
       "scheduled": "2026-09-24T10:40",
-      "expected": "2026-09-24T10:42",
+      "expected": "2026-09-24T10:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -54,13 +31,13 @@
     },
     {
       "scheduled": "2026-09-24T10:40",
-      "expected": "2026-09-24T10:50",
+      "expected": "2026-09-24T10:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on this train",
       "calling_at": [
         "Birmingham New Street",
         "Wolverhampton",
@@ -182,12 +159,28 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T11:15",
+      "expected": "2026-09-24T11:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-24T10:27",
-      "expected": "2026-09-24T10:32",
+      "expected": "2026-09-24T10:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -196,18 +189,8 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-09-24T10:28",
-      "expected": "2026-09-24T10:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-24T10:31",
-      "expected": null,
+      "expected": "2026-09-24T10:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -217,13 +200,13 @@
     },
     {
       "scheduled": "2026-09-24T10:38",
-      "expected": "2026-09-24T10:49",
+      "expected": "2026-09-24T10:51",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
+      "reason": "This service has been delayed by a fault on this train"
     },
     {
       "scheduled": "2026-09-24T10:44",
@@ -263,6 +246,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T11:14",
+      "expected": "2026-09-24T11:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
