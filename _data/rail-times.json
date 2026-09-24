@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T09:25:08+01:00",
+  "generated_at": "2026-09-24T09:30:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-24T09:12",
-      "expected": "2026-09-24T09:27",
+      "expected": "2026-09-24T09:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -35,22 +35,6 @@
         "Alnmouth",
         "Berwick-upon-Tweed",
         "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T09:15",
-      "expected": "2026-09-24T09:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -87,8 +71,8 @@
     },
     {
       "scheduled": "2026-09-24T09:40",
-      "expected": "2026-09-24T09:40",
-      "status": "On time",
+      "expected": "2026-09-24T09:44",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -106,7 +90,7 @@
     },
     {
       "scheduled": "2026-09-24T09:40",
-      "expected": "2026-09-24T09:42",
+      "expected": "2026-09-24T09:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -157,27 +141,38 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T09:59",
+      "expected": "2026-09-24T09:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-24T09:10",
-      "expected": "2026-09-24T09:26",
+      "expected": "2026-09-24T09:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-24T09:14",
-      "expected": "2026-09-24T09:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     },
     {
@@ -192,17 +187,17 @@
     },
     {
       "scheduled": "2026-09-24T09:26",
-      "expected": "2026-09-24T09:29",
+      "expected": "2026-09-24T09:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by a safety inspection of the track"
     },
     {
       "scheduled": "2026-09-24T09:30",
-      "expected": "2026-09-24T09:33",
+      "expected": "2026-09-24T09:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -222,7 +217,7 @@
     },
     {
       "scheduled": "2026-09-24T09:39",
-      "expected": "2026-09-24T09:41",
+      "expected": "2026-09-24T09:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -248,6 +243,16 @@
       "operator": "CrossCountry",
       "origin": "York",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T09:58",
+      "expected": "2026-09-24T09:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
