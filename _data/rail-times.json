@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T12:20:09+01:00",
+  "generated_at": "2026-09-24T12:25:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,43 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-24T11:59",
-      "expected": "2026-09-24T12:20",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a safety inspection of the track",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T12:15",
-      "expected": "2026-09-24T12:20",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-24T12:29",
       "expected": "2026-09-24T12:29",
@@ -162,29 +125,51 @@
         "St Erth",
         "Penzance"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-24T11:58",
-      "expected": "2026-09-24T12:19",
+      "scheduled": "2026-09-24T12:55",
+      "expected": "2026-09-24T13:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
-      "reason": "This service has been delayed by a safety inspection of the track"
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     },
     {
-      "scheduled": "2026-09-24T12:14",
-      "expected": "2026-09-24T12:18",
-      "status": "Delayed",
+      "scheduled": "2026-09-24T13:03",
+      "expected": "2026-09-24T13:03",
+      "status": "On time",
       "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-24T12:27",
       "expected": null,
@@ -227,8 +212,8 @@
     },
     {
       "scheduled": "2026-09-24T12:38",
-      "expected": "2026-09-24T12:40",
-      "status": "Delayed",
+      "expected": "2026-09-24T12:38",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
@@ -253,6 +238,16 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Penzance",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T12:54",
+      "expected": "2026-09-24T13:04",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
