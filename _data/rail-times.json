@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T10:05:08+01:00",
+  "generated_at": "2026-09-24T10:10:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,42 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-24T09:40",
-      "expected": "2026-09-24T10:03",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a speed restriction over defective track",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-09-24T09:47",
-      "expected": "2026-09-24T10:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
-    {
       "scheduled": "2026-09-24T09:59",
-      "expected": "2026-09-24T10:10",
+      "expected": "2026-09-24T10:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -67,7 +33,7 @@
     },
     {
       "scheduled": "2026-09-24T10:03",
-      "expected": "2026-09-24T10:06",
+      "expected": "2026-09-24T10:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -168,22 +134,50 @@
         "Torquay",
         "Paignton"
       ]
+    },
+    {
+      "scheduled": "2026-09-24T10:40",
+      "expected": "2026-09-24T10:40",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-09-24T10:40",
+      "expected": "2026-09-24T10:48",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-24T09:45",
-      "expected": "2026-09-24T10:02",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a late running train being in front of this one"
-    },
-    {
       "scheduled": "2026-09-24T09:58",
-      "expected": "2026-09-24T10:09",
+      "expected": "2026-09-24T10:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -249,6 +243,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-24T10:38",
+      "expected": "2026-09-24T10:47",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
