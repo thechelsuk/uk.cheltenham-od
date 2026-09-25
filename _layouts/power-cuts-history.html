@@ -31,7 +31,7 @@
                 <tbody>
                     {% for r in history.records %}
                     <tr>
-                        <td class="postcode">{{ r.postcodes | join: ", " }}</td>
+                        <td>{% for p in r.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
                         <td>{{ r.category }}{% if r.planned %} (Planned){% endif %}</td>
                         <td>{{ r.status }}</td>
                         <td class="number">{{ r.confirmed_off }}</td>

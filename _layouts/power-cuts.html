@@ -35,7 +35,7 @@
                 <tbody>
                     {% for i in data.incidents %}
                     <tr>
-                        <td class="postcode">{{ i.postcodes | join: ", " }}</td>
+                        <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
                         <td>{{ i.category }}{% if i.planned %} (Planned){% endif %}</td>
                         <td>{{ i.status }}</td>
                         <td class="number">{{ i.confirmed_off }}</td>

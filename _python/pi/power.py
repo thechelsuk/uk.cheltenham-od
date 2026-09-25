@@ -30,8 +30,11 @@ HISTORY_RETENTION_DAYS = 730
 
 
 def is_cheltenham_postcode(postcode):
+    # Compare the whole outward code, not a prefix: "GL5 1HH" (Stroud)
+    # squashed to "GL51HH" would otherwise pass as GL51. The inward code is
+    # always the last three characters, so everything before it is outward.
     compact = postcode.replace(" ", "").upper()
-    return compact.startswith(CHELTENHAM_POSTCODE_PREFIXES)
+    return len(compact) > 3 and compact[:-3] in CHELTENHAM_POSTCODE_PREFIXES
 
 
 def row_postcodes(row):
