@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T18:25:13+01:00",
+  "generated_at": "2026-09-25T18:30:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,39 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-25T18:19",
-      "expected": "2026-09-25T18:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-09-25T18:25",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a shortage of train crew",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-25T18:31",
       "expected": "2026-09-25T18:31",
@@ -72,8 +39,8 @@
     },
     {
       "scheduled": "2026-09-25T18:40",
-      "expected": "2026-09-25T18:40",
-      "status": "On time",
+      "expected": "2026-09-25T18:42",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -149,32 +116,51 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-09-25T19:02",
+      "expected": "2026-09-25T19:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-09-25T19:12",
+      "expected": "2026-09-25T19:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-25T18:18",
-      "expected": "2026-09-25T18:23",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-25T18:24",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a shortage of train crew"
-    },
-    {
       "scheduled": "2026-09-25T18:27",
-      "expected": "2026-09-25T18:30",
+      "expected": "2026-09-25T18:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -194,7 +180,7 @@
     },
     {
       "scheduled": "2026-09-25T18:31",
-      "expected": "2026-09-25T18:43",
+      "expected": "2026-09-25T18:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -240,6 +226,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-25T19:10",
+      "expected": "2026-09-25T19:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
       "reason": ""
     }
   ]
