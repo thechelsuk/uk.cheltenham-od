@@ -14,6 +14,11 @@ RADIUS_M = config.HOTELS_RADIUS_M
 
 TYPES = {"hotel": "Hotel", "guest_house": "Guest house"}
 
+# OpenStreetMap tags both Ellenborough Park's grounds (way 448480127) and its
+# listed building (way 448480136) as tourism=hotel; skip the building so the
+# hotel is listed once. Remove once the building's hotel tag is fixed upstream.
+EXCLUDED_NAMES = {"Ellenborough Park Hotel"}
+
 
 def address(tags):
     line = " ".join(p for p in (tags.get("addr:housenumber", "").strip(),
@@ -42,7 +47,7 @@ def main():
     for el in elements:
         tags = el.get("tags", {})
         name = tags.get("name")
-        if not name or name in seen:
+        if not name or name in seen or name in EXCLUDED_NAMES:
             continue
         seen.add(name)
         hotels.append({
