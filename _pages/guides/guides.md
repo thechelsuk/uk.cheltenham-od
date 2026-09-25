@@ -2,8 +2,8 @@
 layout: page
 title: Cheltenham Open Data Guides
 seo_title: "Cheltenham Guides: Moving, Visiting and Student Life"
-seo: "Thinking of moving to Cheltenham? A local guide to areas, house prices, schools, crime, healthcare and getting set up in Cheltenham"
-description: "A practical guide to moving to Cheltenham, Gloucestershire. House prices, schools, neighbourhoods, safety and local services, all backed by open data."
+seo: "Cheltenham guides for moving, studying, visiting and race week: house prices, schools, rents, places to stay and eat, and getting around."
+description: "Local guides to Cheltenham, backed by open data: moving here, student life, visiting, and where to stay for the Cheltenham Festival."
 type: "landing"
 permalink: /guides
 ---
