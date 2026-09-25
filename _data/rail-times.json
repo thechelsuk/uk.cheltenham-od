@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T16:30:08+01:00",
+  "generated_at": "2026-09-25T16:35:12+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,28 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-25T16:31",
-      "expected": "2026-09-25T16:31",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ]
-    },
     {
       "scheduled": "2026-09-25T16:40",
       "expected": "2026-09-25T16:40",
@@ -148,13 +126,13 @@
     },
     {
       "scheduled": "2026-09-25T17:12",
-      "expected": "2026-09-25T17:15",
+      "expected": "2026-09-25T17:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -188,29 +166,27 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-25T17:25",
+      "expected": "2026-09-25T17:25",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-25T16:30",
-      "expected": "2026-09-25T16:30",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-25T16:31",
-      "expected": "2026-09-25T16:31",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-25T16:38",
       "expected": "2026-09-25T16:40",
@@ -233,8 +209,8 @@
     },
     {
       "scheduled": "2026-09-25T16:50",
-      "expected": "2026-09-25T16:50",
-      "status": "On time",
+      "expected": "2026-09-25T16:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
@@ -253,13 +229,13 @@
     },
     {
       "scheduled": "2026-09-25T17:10",
-      "expected": "2026-09-25T17:14",
+      "expected": "2026-09-25T17:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": ""
+      "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
       "scheduled": "2026-09-25T17:18",
@@ -269,6 +245,26 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-25T17:24",
+      "expected": "2026-09-25T17:24",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-25T17:27",
+      "expected": "2026-09-25T17:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
