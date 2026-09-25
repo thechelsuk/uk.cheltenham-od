@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T14:35:08+01:00",
+  "generated_at": "2026-09-25T14:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,13 +12,13 @@
   "departures": [
     {
       "scheduled": "2026-09-25T14:12",
-      "expected": "2026-09-25T14:36",
+      "expected": "2026-09-25T14:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -40,22 +40,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-25T14:30",
-      "expected": "2026-09-25T14:33",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-25T14:37",
-      "expected": "2026-09-25T14:41",
+      "expected": "2026-09-25T14:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -74,7 +60,7 @@
     },
     {
       "scheduled": "2026-09-25T14:40",
-      "expected": "2026-09-25T14:44",
+      "expected": "2026-09-25T14:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -169,8 +155,8 @@
     },
     {
       "scheduled": "2026-09-25T15:12",
-      "expected": "2026-09-25T15:12",
-      "status": "On time",
+      "expected": "2026-09-25T15:16",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -196,6 +182,22 @@
         "Motherwell",
         "Glasgow Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-25T15:15",
+      "expected": "2026-09-25T15:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
@@ -207,21 +209,11 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-25T14:28",
-      "expected": "2026-09-25T14:31",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
+      "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
       "scheduled": "2026-09-25T14:31",
-      "expected": "2026-09-25T14:37",
+      "expected": "2026-09-25T14:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -231,7 +223,7 @@
     },
     {
       "scheduled": "2026-09-25T14:38",
-      "expected": "2026-09-25T14:43",
+      "expected": "2026-09-25T14:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -271,12 +263,22 @@
     },
     {
       "scheduled": "2026-09-25T15:10",
-      "expected": "2026-09-25T15:12",
+      "expected": "2026-09-25T15:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-25T15:14",
+      "expected": "2026-09-25T15:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
