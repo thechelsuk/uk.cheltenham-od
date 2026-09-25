@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T17:00:12+01:00",
+  "generated_at": "2026-09-25T17:05:12+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-25T17:03",
-      "expected": "2026-09-25T17:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-09-25T17:12",
-      "expected": "2026-09-25T17:28",
+      "expected": "2026-09-25T17:27",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -145,24 +125,44 @@
     },
     {
       "scheduled": "2026-09-25T17:50",
-      "expected": null,
-      "status": "Delayed",
+      "expected": "2026-09-25T17:50",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "reason": "",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
+      ]
+    },
+    {
+      "scheduled": "2026-09-25T17:52",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
       ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-25T17:10",
-      "expected": "2026-09-25T17:27",
+      "expected": "2026-09-25T17:26",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -232,13 +232,23 @@
     },
     {
       "scheduled": "2026-09-25T17:47",
-      "expected": null,
+      "expected": "2026-09-25T17:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a late running train being in front of this one"
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-25T17:50",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
     }
   ]
 }
