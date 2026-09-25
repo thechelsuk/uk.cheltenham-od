@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T20:25:18+01:00",
+  "generated_at": "2026-09-25T20:30:17+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-25T20:15",
-      "expected": "2026-09-25T20:23",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-09-25T20:23",
-      "expected": "2026-09-25T20:26",
+      "expected": "2026-09-25T20:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -64,7 +49,7 @@
     },
     {
       "scheduled": "2026-09-25T20:52",
-      "expected": "2026-09-25T20:56",
+      "expected": "2026-09-25T20:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -157,22 +142,26 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-25T21:33",
+      "expected": "2026-09-25T21:45",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by a road vehicle colliding with a bridge",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-25T20:14",
-      "expected": "2026-09-25T20:21",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-25T20:21",
-      "expected": "2026-09-25T20:25",
+      "expected": "2026-09-25T20:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -181,18 +170,8 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-25T20:27",
-      "expected": "2026-09-25T20:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-25T20:33",
-      "expected": "2026-09-25T20:49",
+      "expected": "2026-09-25T20:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -202,7 +181,7 @@
     },
     {
       "scheduled": "2026-09-25T20:50",
-      "expected": "2026-09-25T20:55",
+      "expected": "2026-09-25T20:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -239,6 +218,16 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-09-25T21:33",
+      "expected": "2026-09-25T21:44",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by a road vehicle colliding with a bridge"
     }
   ]
 }
