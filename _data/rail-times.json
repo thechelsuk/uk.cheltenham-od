@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T12:05:08+01:00",
+  "generated_at": "2026-09-25T12:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,34 +11,14 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-25T11:52",
-      "expected": "2026-09-25T12:04",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-25T12:03",
-      "expected": "2026-09-25T12:05",
+      "expected": "2026-09-25T12:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
       "destination": "London Paddington",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Gloucester",
         "Stonehouse",
@@ -88,7 +68,7 @@
     },
     {
       "scheduled": "2026-09-25T12:15",
-      "expected": "2026-09-25T12:18",
+      "expected": "2026-09-25T12:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -161,7 +141,7 @@
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by passengers causing a disturbance on this train",
       "calling_at": [
         "Birmingham New Street",
         "Wolverhampton",
@@ -171,19 +151,24 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-09-25T12:45",
+      "expected": "2026-09-25T12:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-25T11:51",
-      "expected": "2026-09-25T12:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-25T12:11",
       "expected": "2026-09-25T12:13",
@@ -196,7 +181,7 @@
     },
     {
       "scheduled": "2026-09-25T12:14",
-      "expected": "2026-09-25T12:17",
+      "expected": "2026-09-25T12:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -252,6 +237,16 @@
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been delayed by passengers causing a disturbance on this train"
+    },
+    {
+      "scheduled": "2026-09-25T12:43",
+      "expected": "2026-09-25T12:43",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": ""
     }
   ]
