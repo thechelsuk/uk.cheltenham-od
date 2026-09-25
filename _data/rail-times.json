@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T11:40:08+01:00",
+  "generated_at": "2026-09-25T11:45:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,26 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-25T11:40",
-      "expected": "2026-09-25T11:40",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-09-25T11:40",
-      "expected": "2026-09-25T11:42",
+      "expected": "2026-09-25T11:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -50,13 +31,13 @@
     },
     {
       "scheduled": "2026-09-25T11:48",
-      "expected": "2026-09-25T11:48",
-      "status": "On time",
+      "expected": "2026-09-25T11:51",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill",
@@ -65,7 +46,7 @@
     },
     {
       "scheduled": "2026-09-25T11:52",
-      "expected": "2026-09-25T12:02",
+      "expected": "2026-09-25T12:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -208,17 +189,17 @@
     },
     {
       "scheduled": "2026-09-25T11:46",
-      "expected": "2026-09-25T11:48",
+      "expected": "2026-09-25T11:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
-      "reason": ""
+      "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
       "scheduled": "2026-09-25T11:51",
-      "expected": "2026-09-25T12:01",
+      "expected": "2026-09-25T12:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -274,6 +255,16 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-25T12:32",
+      "expected": "2026-09-25T12:32",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
