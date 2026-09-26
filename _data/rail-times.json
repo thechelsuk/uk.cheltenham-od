@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T07:50:16+01:00",
+  "generated_at": "2026-09-26T07:55:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-26T07:15",
-      "expected": "2026-09-26T07:53",
+      "expected": "2026-09-26T07:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -33,27 +33,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-26T07:40",
-      "expected": "2026-09-26T07:51",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-09-26T07:48",
-      "expected": "2026-09-26T07:59",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -63,26 +44,6 @@
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
-      ]
-    },
-    {
-      "scheduled": "2026-09-26T07:52",
-      "expected": "2026-09-26T07:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
       ]
     },
     {
@@ -184,12 +145,26 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T08:29",
+      "expected": "2026-09-26T08:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-26T07:14",
-      "expected": "2026-09-26T07:52",
+      "expected": "2026-09-26T07:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -198,34 +173,14 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-26T07:38",
-      "expected": "2026-09-26T07:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
       "scheduled": "2026-09-26T07:46",
-      "expected": "2026-09-26T07:58",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
       "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
-      "scheduled": "2026-09-26T07:50",
-      "expected": "2026-09-26T07:47",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": ""
     },
     {
       "scheduled": "2026-09-26T07:54",
@@ -276,6 +231,26 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T08:27",
+      "expected": "2026-09-26T08:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T08:30",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of a fault with the signalling system"
     }
   ]
 }
