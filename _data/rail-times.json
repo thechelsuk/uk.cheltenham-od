@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T07:10:15+01:00",
+  "generated_at": "2026-09-26T07:20:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-26T06:49",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-09-26T07:10",
       "expected": null,
@@ -56,13 +36,13 @@
     },
     {
       "scheduled": "2026-09-26T07:15",
-      "expected": "2026-09-26T07:32",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcestershire Parkway",
@@ -116,7 +96,7 @@
     },
     {
       "scheduled": "2026-09-26T07:40",
-      "expected": "2026-09-26T07:44",
+      "expected": "2026-09-26T07:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -154,7 +134,7 @@
     },
     {
       "scheduled": "2026-09-26T07:48",
-      "expected": "2026-09-26T07:55",
+      "expected": "2026-09-26T07:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -185,6 +165,28 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T07:55",
+      "expected": "2026-09-26T07:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
@@ -200,13 +202,13 @@
     },
     {
       "scheduled": "2026-09-26T07:14",
-      "expected": "2026-09-26T07:31",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
-      "reason": ""
+      "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
       "scheduled": "2026-09-26T07:17",
@@ -220,8 +222,8 @@
     },
     {
       "scheduled": "2026-09-26T07:27",
-      "expected": "2026-09-26T07:27",
-      "status": "On time",
+      "expected": "2026-09-26T07:29",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -240,7 +242,7 @@
     },
     {
       "scheduled": "2026-09-26T07:38",
-      "expected": "2026-09-26T07:43",
+      "expected": "2026-09-26T07:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -250,7 +252,7 @@
     },
     {
       "scheduled": "2026-09-26T07:46",
-      "expected": "2026-09-26T07:54",
+      "expected": "2026-09-26T07:53",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -266,6 +268,16 @@
       "operator": "CrossCountry",
       "origin": "Derby",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T07:54",
+      "expected": "2026-09-26T07:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
