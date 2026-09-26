@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T14:25:16+01:00",
+  "generated_at": "2026-09-26T14:30:20+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -45,8 +45,8 @@
     },
     {
       "scheduled": "2026-09-26T14:40",
-      "expected": "2026-09-26T14:40",
-      "status": "On time",
+      "expected": "2026-09-26T14:44",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -158,19 +158,25 @@
         "Durham",
         "Newcastle"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T15:15",
+      "expected": "2026-09-26T15:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-26T14:25",
-      "expected": "2026-09-26T14:25",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-26T14:27",
       "expected": "2026-09-26T14:27",
@@ -183,17 +189,17 @@
     },
     {
       "scheduled": "2026-09-26T14:31",
-      "expected": "2026-09-26T14:35",
+      "expected": "2026-09-26T14:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
       "scheduled": "2026-09-26T14:38",
-      "expected": "2026-09-26T14:40",
+      "expected": "2026-09-26T14:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -239,6 +245,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T15:14",
+      "expected": "2026-09-26T15:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
