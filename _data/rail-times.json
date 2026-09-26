@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T07:30:16+01:00",
+  "generated_at": "2026-09-26T07:35:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,8 +11,28 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-26T07:10",
+      "scheduled": "2026-09-26T06:49",
       "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "This service has been delayed by a fault with the signalling system",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-09-26T07:10",
+      "expected": "2026-09-26T07:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -57,28 +77,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-26T07:29",
-      "expected": "2026-09-26T07:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ]
-    },
-    {
       "scheduled": "2026-09-26T07:40",
-      "expected": "2026-09-26T07:46",
+      "expected": "2026-09-26T07:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -218,7 +218,7 @@
   "arrivals": [
     {
       "scheduled": "2026-09-26T07:07",
-      "expected": null,
+      "expected": "2026-09-26T07:57",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -237,18 +237,8 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-26T07:27",
-      "expected": "2026-09-26T07:27",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-26T07:38",
-      "expected": "2026-09-26T07:45",
+      "expected": "2026-09-26T07:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
