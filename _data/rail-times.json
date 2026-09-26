@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T08:30:15+01:00",
+  "generated_at": "2026-09-26T08:35:20+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-26T08:29",
-      "expected": "2026-09-26T08:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-26T08:40",
       "expected": "2026-09-26T08:40",
@@ -180,22 +166,28 @@
         "Durham",
         "Newcastle"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T09:15",
+      "expected": "2026-09-26T09:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-26T08:27",
-      "expected": "2026-09-26T08:27",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-26T08:30",
-      "expected": "2026-09-26T08:34",
+      "expected": "2026-09-26T08:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -251,6 +243,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T09:14",
+      "expected": "2026-09-26T09:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
