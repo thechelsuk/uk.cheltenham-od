@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T21:00:21+01:00",
+  "generated_at": "2026-09-26T21:05:47+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -32,7 +32,7 @@
     },
     {
       "scheduled": "2026-09-26T21:12",
-      "expected": "2026-09-26T21:19",
+      "expected": "2026-09-26T21:23",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -133,22 +133,31 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T21:59",
+      "expected": "2026-09-26T21:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Derby",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-26T20:42",
-      "expected": "2026-09-26T21:00",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a late running train being in front of this one"
-    },
-    {
       "scheduled": "2026-09-26T21:11",
-      "expected": "2026-09-26T21:18",
+      "expected": "2026-09-26T21:22",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -204,6 +213,16 @@
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T21:58",
+      "expected": "2026-09-26T21:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Derby",
       "reason": ""
     }
   ]
