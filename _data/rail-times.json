@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T11:10:14+01:00",
+  "generated_at": "2026-09-26T11:20:14+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -32,22 +32,6 @@
         "Darlington",
         "Durham",
         "Newcastle"
-      ]
-    },
-    {
-      "scheduled": "2026-09-26T11:15",
-      "expected": "2026-09-26T11:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -137,8 +121,8 @@
     },
     {
       "scheduled": "2026-09-26T11:52",
-      "expected": "2026-09-26T11:52",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
@@ -154,6 +138,27 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T11:59",
+      "expected": "2026-09-26T11:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
@@ -165,16 +170,6 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-26T11:14",
-      "expected": "2026-09-26T11:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     },
     {
@@ -219,8 +214,8 @@
     },
     {
       "scheduled": "2026-09-26T11:38",
-      "expected": "2026-09-26T11:38",
-      "status": "On time",
+      "expected": "2026-09-26T11:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -239,12 +234,22 @@
     },
     {
       "scheduled": "2026-09-26T11:50",
-      "expected": "2026-09-26T11:50",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T11:58",
+      "expected": "2026-09-26T11:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
