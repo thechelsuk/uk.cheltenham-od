@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T21:20:23+01:00",
+  "generated_at": "2026-09-26T21:25:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-26T21:12",
-      "expected": "2026-09-26T21:24",
+      "expected": "2026-09-26T21:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -25,28 +25,6 @@
         "Tamworth",
         "Burton-on-Trent",
         "Derby"
-      ]
-    },
-    {
-      "scheduled": "2026-09-26T21:17",
-      "expected": "2026-09-26T21:21",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Willington",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
       ]
     },
     {
@@ -88,7 +66,7 @@
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by the emergency services dealing with an incident",
       "calling_at": [
         "Gloucester",
         "Bristol Parkway",
@@ -131,27 +109,30 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T22:51",
+      "expected": "2026-09-26T22:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-26T21:11",
-      "expected": "2026-09-26T21:23",
+      "expected": "2026-09-26T21:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Derby",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-26T21:16",
-      "expected": "2026-09-26T21:20",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
       "reason": ""
     },
     {
@@ -182,7 +163,7 @@
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
+      "reason": "This service has been delayed by the emergency services dealing with an incident"
     },
     {
       "scheduled": "2026-09-26T21:58",
@@ -222,6 +203,16 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T22:50",
+      "expected": "2026-09-26T22:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Gloucester",
       "reason": ""
     }
   ]
