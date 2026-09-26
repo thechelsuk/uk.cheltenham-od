@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T20:40:18+01:00",
+  "generated_at": "2026-09-26T20:45:29+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-26T20:41",
-      "expected": "2026-09-26T20:41",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-26T20:52",
       "expected": "2026-09-26T20:52",
@@ -71,7 +52,7 @@
     },
     {
       "scheduled": "2026-09-26T21:12",
-      "expected": null,
+      "expected": "2026-09-26T21:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -143,12 +124,26 @@
         "Kemble",
         "Swindon"
       ]
+    },
+    {
+      "scheduled": "2026-09-26T21:46",
+      "expected": "2026-09-26T21:46",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-26T20:42",
-      "expected": "2026-09-26T20:56",
+      "expected": "2026-09-26T20:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -168,7 +163,7 @@
     },
     {
       "scheduled": "2026-09-26T21:11",
-      "expected": null,
+      "expected": "2026-09-26T21:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -204,6 +199,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-26T21:45",
+      "expected": "2026-09-26T21:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Shrub Hill",
       "reason": ""
     }
   ]
