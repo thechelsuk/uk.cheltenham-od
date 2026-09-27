@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T14:25:15+01:00",
+  "generated_at": "2026-09-27T14:30:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-27T14:23",
-      "expected": "2026-09-27T14:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-27T14:29",
       "expected": "2026-09-27T14:29",
@@ -44,8 +26,8 @@
     },
     {
       "scheduled": "2026-09-27T14:40",
-      "expected": "2026-09-27T14:42",
-      "status": "Delayed",
+      "expected": "2026-09-27T14:40",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -177,23 +159,32 @@
         "Torquay",
         "Paignton"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T15:40",
+      "expected": "2026-09-27T15:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-27T14:22",
-      "expected": "2026-09-27T14:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-27T14:27",
-      "expected": "2026-09-27T14:27",
-      "status": "On time",
+      "expected": "2026-09-27T14:29",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -212,7 +203,7 @@
     },
     {
       "scheduled": "2026-09-27T14:38",
-      "expected": "2026-09-27T14:41",
+      "expected": "2026-09-27T14:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -269,6 +260,16 @@
       "origin": "Manchester Piccadilly",
       "destination": "Paignton",
       "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-09-27T15:38",
+      "expected": "2026-09-27T15:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
     }
   ]
 }
