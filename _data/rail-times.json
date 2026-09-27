@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T12:00:22+01:00",
+  "generated_at": "2026-09-27T12:05:17+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-27T12:00",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-27T12:10",
       "expected": "2026-09-27T12:10",
@@ -47,7 +32,7 @@
     },
     {
       "scheduled": "2026-09-27T12:11",
-      "expected": "2026-09-27T12:18",
+      "expected": "2026-09-27T12:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -175,19 +160,33 @@
         "Kemble",
         "Swindon"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T13:11",
+      "expected": "2026-09-27T13:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-27T11:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers"
-    },
     {
       "scheduled": "2026-09-27T12:08",
       "expected": "2026-09-27T12:08",
@@ -200,7 +199,7 @@
     },
     {
       "scheduled": "2026-09-27T12:09",
-      "expected": "2026-09-27T12:17",
+      "expected": "2026-09-27T12:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -257,6 +256,16 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-09-27T13:08",
+      "expected": "2026-09-27T13:08",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": ""
     }
   ]
 }
