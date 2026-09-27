@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T19:40:17+01:00",
+  "generated_at": "2026-09-27T19:45:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,21 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-27T19:40",
-      "expected": "2026-09-27T19:40",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street"
-      ]
-    },
-    {
       "scheduled": "2026-09-27T19:54",
-      "expected": "2026-09-27T20:05",
+      "expected": "2026-09-27T20:06",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -132,12 +119,25 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T20:40",
+      "expected": "2026-09-27T20:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Exeter St Davids",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-27T19:29",
-      "expected": null,
+      "expected": "2026-09-27T19:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -146,18 +146,8 @@
       "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
-      "scheduled": "2026-09-27T19:38",
-      "expected": "2026-09-27T19:38",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-27T19:44",
-      "expected": "2026-09-27T19:47",
+      "expected": "2026-09-27T19:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -167,7 +157,7 @@
     },
     {
       "scheduled": "2026-09-27T19:52",
-      "expected": "2026-09-27T20:04",
+      "expected": "2026-09-27T20:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,6 +203,16 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-27T20:39",
+      "expected": "2026-09-27T20:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Exeter St Davids",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
