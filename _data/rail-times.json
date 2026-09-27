@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T15:05:22+01:00",
+  "generated_at": "2026-09-27T15:10:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-27T14:52",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a passenger being taken ill on this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-09-27T15:00",
-      "expected": null,
+      "expected": "2026-09-27T15:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -174,19 +154,32 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T16:11",
+      "expected": "2026-09-27T16:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-27T14:50",
-      "expected": "2026-09-27T14:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a passenger being taken ill on this train"
-    },
     {
       "scheduled": "2026-09-27T15:08",
       "expected": "2026-09-27T15:12",
@@ -245,6 +238,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-27T16:08",
+      "expected": "2026-09-27T16:08",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
       "reason": ""
     }
   ]
