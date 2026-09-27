@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T09:25:15+01:00",
+  "generated_at": "2026-09-27T09:30:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,23 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-27T09:28",
-      "expected": "2026-09-27T09:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon"
-      ]
-    },
     {
       "scheduled": "2026-09-27T10:10",
       "expected": "2026-09-27T10:10",
@@ -80,8 +63,8 @@
     },
     {
       "scheduled": "2026-09-27T10:21",
-      "expected": "2026-09-27T10:21",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
@@ -167,6 +150,29 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T11:11",
+      "expected": "2026-09-27T11:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Newcastle via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ]
     }
   ],
   "arrivals": [
@@ -202,8 +208,8 @@
     },
     {
       "scheduled": "2026-09-27T10:21",
-      "expected": "2026-09-27T10:21",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
@@ -238,6 +244,16 @@
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-27T11:08",
+      "expected": "2026-09-27T11:08",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Newcastle via Leeds",
       "reason": ""
     }
   ]
