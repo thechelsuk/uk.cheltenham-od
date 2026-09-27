@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:15:16+01:00",
+  "generated_at": "2026-09-27T16:20:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-27T16:15",
-      "expected": "2026-09-27T16:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-27T16:22",
       "expected": "2026-09-27T16:22",
@@ -59,8 +44,8 @@
     },
     {
       "scheduled": "2026-09-27T16:39",
-      "expected": "2026-09-27T16:39",
-      "status": "On time",
+      "expected": "2026-09-27T16:41",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -169,19 +154,23 @@
         "Durham",
         "Newcastle"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-27T16:14",
-      "expected": "2026-09-27T16:14",
+      "scheduled": "2026-09-27T17:26",
+      "expected": "2026-09-27T17:26",
       "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-27T16:21",
       "expected": "2026-09-27T16:21",
@@ -214,8 +203,8 @@
     },
     {
       "scheduled": "2026-09-27T16:38",
-      "expected": "2026-09-27T16:38",
-      "status": "On time",
+      "expected": "2026-09-27T16:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -260,6 +249,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-27T17:21",
+      "expected": "2026-09-27T17:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
