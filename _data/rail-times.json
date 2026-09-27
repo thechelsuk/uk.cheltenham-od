@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:30:24+01:00",
+  "generated_at": "2026-09-27T16:35:34+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-27T16:29",
-      "expected": "2026-09-27T16:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-27T16:39",
       "expected": "2026-09-27T16:41",
@@ -60,8 +46,8 @@
     },
     {
       "scheduled": "2026-09-27T16:52",
-      "expected": "2026-09-27T16:52",
-      "status": "On time",
+      "expected": "2026-09-27T16:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
@@ -150,19 +136,29 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-27T16:27",
-      "expected": "2026-09-27T16:24",
+      "scheduled": "2026-09-27T17:52",
+      "expected": "2026-09-27T17:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
+      "origin": "Newcastle",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by trespassers on the railway",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-27T16:38",
       "expected": "2026-09-27T16:40",
@@ -185,7 +181,7 @@
     },
     {
       "scheduled": "2026-09-27T16:50",
-      "expected": "2026-09-27T16:52",
+      "expected": "2026-09-27T16:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -235,13 +231,23 @@
     },
     {
       "scheduled": "2026-09-27T17:45",
-      "expected": "2026-09-27T17:45",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-27T17:50",
+      "expected": "2026-09-27T17:55",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by trespassers on the railway"
     }
   ]
 }
