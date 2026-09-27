@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T14:20:15+01:00",
+  "generated_at": "2026-09-27T14:25:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,24 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-27T14:15",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-09-27T14:23",
-      "expected": "2026-09-27T14:23",
-      "status": "On time",
+      "expected": "2026-09-27T14:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -59,8 +44,8 @@
     },
     {
       "scheduled": "2026-09-27T14:40",
-      "expected": "2026-09-27T14:40",
-      "status": "On time",
+      "expected": "2026-09-27T14:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -170,23 +155,35 @@
         "Durham",
         "Newcastle"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T15:26",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Paignton",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Dawlish",
+        "Teignmouth",
+        "Newton Abbot",
+        "Torquay",
+        "Paignton"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-27T14:14",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-27T14:22",
-      "expected": "2026-09-27T14:22",
-      "status": "On time",
+      "expected": "2026-09-27T14:25",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -215,8 +212,8 @@
     },
     {
       "scheduled": "2026-09-27T14:38",
-      "expected": "2026-09-27T14:38",
-      "status": "On time",
+      "expected": "2026-09-27T14:41",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -262,6 +259,16 @@
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-27T15:21",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Paignton",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
