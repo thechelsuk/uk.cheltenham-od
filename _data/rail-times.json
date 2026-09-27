@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:50:27+01:00",
+  "generated_at": "2026-09-27T16:55:36+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-27T16:45",
-      "expected": "2026-09-27T16:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
-    {
       "scheduled": "2026-09-27T16:52",
-      "expected": "2026-09-27T16:56",
+      "expected": "2026-09-27T16:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -154,22 +139,31 @@
         "Kemble",
         "Swindon"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T18:11",
+      "expected": "2026-09-27T18:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-27T16:43",
-      "expected": "2026-09-27T16:48",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-27T16:50",
-      "expected": "2026-09-27T16:55",
+      "expected": "2026-09-27T16:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -189,8 +183,8 @@
     },
     {
       "scheduled": "2026-09-27T17:08",
-      "expected": "2026-09-27T17:08",
-      "status": "On time",
+      "expected": "2026-09-27T17:11",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -236,6 +230,16 @@
       "origin": "Newcastle",
       "destination": "Plymouth",
       "reason": "This service has been delayed by trespassers on the railway"
+    },
+    {
+      "scheduled": "2026-09-27T18:08",
+      "expected": "2026-09-27T18:08",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": ""
     }
   ]
 }
