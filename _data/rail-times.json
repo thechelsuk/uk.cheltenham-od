@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T16:45:23+01:00",
+  "generated_at": "2026-09-27T16:50:27+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-27T16:39",
-      "expected": "2026-09-27T16:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-09-27T16:45",
-      "expected": "2026-09-27T16:45",
-      "status": "On time",
+      "expected": "2026-09-27T16:50",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -125,8 +106,8 @@
     },
     {
       "scheduled": "2026-09-27T17:26",
-      "expected": null,
-      "status": "Delayed",
+      "expected": "2026-09-27T17:26",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -139,7 +120,7 @@
     },
     {
       "scheduled": "2026-09-27T17:52",
-      "expected": "2026-09-27T17:56",
+      "expected": "2026-09-27T17:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -156,22 +137,29 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-27T18:00",
+      "expected": "2026-09-27T18:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-27T16:38",
-      "expected": "2026-09-27T16:41",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-27T16:43",
-      "expected": "2026-09-27T16:45",
+      "expected": "2026-09-27T16:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -211,7 +199,7 @@
     },
     {
       "scheduled": "2026-09-27T17:21",
-      "expected": null,
+      "expected": "2026-09-27T17:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -231,7 +219,7 @@
     },
     {
       "scheduled": "2026-09-27T17:45",
-      "expected": null,
+      "expected": "2026-09-27T18:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -241,7 +229,7 @@
     },
     {
       "scheduled": "2026-09-27T17:50",
-      "expected": "2026-09-27T17:55",
+      "expected": "2026-09-27T17:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
