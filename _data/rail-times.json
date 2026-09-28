@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T14:25:07+01:00",
+  "generated_at": "2026-09-28T14:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,26 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-28T14:24",
-      "expected": "2026-09-28T14:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-28T14:30",
-      "expected": "2026-09-28T14:33",
+      "expected": "2026-09-28T14:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -44,7 +26,7 @@
     },
     {
       "scheduled": "2026-09-28T14:37",
-      "expected": "2026-09-28T14:43",
+      "expected": "2026-09-28T14:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -97,8 +79,8 @@
     },
     {
       "scheduled": "2026-09-28T14:52",
-      "expected": "2026-09-28T14:52",
-      "status": "On time",
+      "expected": "2026-09-28T14:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
@@ -155,22 +137,42 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-09-28T15:12",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Glasgow Central via Leeds",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Motherwell",
+        "Glasgow Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-28T14:22",
-      "expected": "2026-09-28T14:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-28T14:27",
-      "expected": "2026-09-28T14:33",
+      "expected": "2026-09-28T14:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -180,7 +182,7 @@
     },
     {
       "scheduled": "2026-09-28T14:28",
-      "expected": "2026-09-28T14:32",
+      "expected": "2026-09-28T14:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -220,7 +222,7 @@
     },
     {
       "scheduled": "2026-09-28T14:50",
-      "expected": "2026-09-28T14:52",
+      "expected": "2026-09-28T14:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -237,6 +239,16 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-28T15:10",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Glasgow Central via Leeds",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident"
     }
   ]
 }
