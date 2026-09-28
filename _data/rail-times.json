@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T10:25:08+01:00",
+  "generated_at": "2026-09-28T10:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-28T10:23",
-      "expected": "2026-09-28T10:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-28T10:29",
       "expected": "2026-09-28T10:29",
@@ -172,19 +154,37 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-09-28T11:12",
+      "expected": "2026-09-28T11:14",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-28T10:22",
-      "expected": "2026-09-28T10:22",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-28T10:27",
       "expected": "2026-09-28T10:30",
@@ -207,7 +207,7 @@
     },
     {
       "scheduled": "2026-09-28T10:31",
-      "expected": "2026-09-28T10:44",
+      "expected": "2026-09-28T10:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -254,6 +254,16 @@
       "origin": "Cardiff Central",
       "destination": "Edinburgh via Leeds",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-28T11:10",
+      "expected": "2026-09-28T11:13",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been delayed by a late running train being in front of this one"
     }
   ]
 }
