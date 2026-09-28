@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T20:25:18+01:00",
+  "generated_at": "2026-09-28T20:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-28T20:23",
-      "expected": "2026-09-28T20:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-28T20:41",
       "expected": "2026-09-28T20:41",
@@ -142,19 +124,23 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-28T21:33",
+      "expected": "2026-09-28T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-28T20:21",
-      "expected": "2026-09-28T20:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-28T20:27",
       "expected": "2026-09-28T20:30",
@@ -167,7 +153,7 @@
     },
     {
       "scheduled": "2026-09-28T20:33",
-      "expected": null,
+      "expected": "2026-09-28T20:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -214,6 +200,16 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-09-28T21:33",
+      "expected": "2026-09-28T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": ""
     }
   ]
 }
