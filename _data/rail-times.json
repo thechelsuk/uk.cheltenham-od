@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T09:05:07+01:00",
+  "generated_at": "2026-09-28T09:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-28T09:03",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been cancelled because of a fault on a train",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
-      "scheduled": "2026-09-28T09:03",
-      "expected": "2026-09-28T09:13",
+      "expected": "2026-09-28T09:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -157,12 +137,27 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-09-28T09:47",
+      "expected": "2026-09-28T09:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-28T09:02",
-      "expected": "2026-09-28T09:12",
+      "expected": "2026-09-28T09:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -238,6 +233,16 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-28T09:45",
+      "expected": "2026-09-28T09:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": ""
     }
   ]
