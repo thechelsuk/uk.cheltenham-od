@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T12:30:07+01:00",
+  "generated_at": "2026-09-28T12:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -30,8 +30,8 @@
     },
     {
       "scheduled": "2026-09-28T12:35",
-      "expected": "2026-09-28T12:35",
-      "status": "On time",
+      "expected": "2026-09-28T12:37",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -63,7 +63,7 @@
     },
     {
       "scheduled": "2026-09-28T12:40",
-      "expected": "2026-09-28T12:45",
+      "expected": "2026-09-28T12:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -97,7 +97,7 @@
     },
     {
       "scheduled": "2026-09-28T12:52",
-      "expected": "2026-09-28T12:59",
+      "expected": "2026-09-28T13:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -170,7 +170,7 @@
     },
     {
       "scheduled": "2026-09-28T13:12",
-      "expected": "2026-09-28T13:16",
+      "expected": "2026-09-28T13:21",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -195,6 +195,22 @@
         "Dunbar",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-09-28T13:15",
+      "expected": "2026-09-28T13:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
@@ -209,19 +225,9 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-09-28T12:32",
-      "expected": "2026-09-28T12:32",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-28T12:33",
-      "expected": "2026-09-28T12:33",
-      "status": "On time",
+      "expected": "2026-09-28T12:36",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -230,7 +236,7 @@
     },
     {
       "scheduled": "2026-09-28T12:38",
-      "expected": "2026-09-28T12:44",
+      "expected": "2026-09-28T12:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -250,7 +256,7 @@
     },
     {
       "scheduled": "2026-09-28T12:50",
-      "expected": "2026-09-28T12:58",
+      "expected": "2026-09-28T13:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -270,12 +276,22 @@
     },
     {
       "scheduled": "2026-09-28T13:10",
-      "expected": "2026-09-28T13:15",
+      "expected": "2026-09-28T13:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-28T13:14",
+      "expected": "2026-09-28T13:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
