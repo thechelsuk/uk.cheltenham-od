@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T10:30:08+01:00",
+  "generated_at": "2026-09-28T10:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,29 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-28T10:29",
-      "expected": "2026-09-28T10:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Weston-super-Mare",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ]
-    },
     {
       "scheduled": "2026-09-28T10:40",
       "expected": "2026-09-28T10:40",
@@ -157,7 +134,7 @@
     },
     {
       "scheduled": "2026-09-28T11:12",
-      "expected": "2026-09-28T11:14",
+      "expected": "2026-09-28T11:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -182,32 +159,46 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-09-28T11:15",
+      "expected": "2026-09-28T11:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-09-28T11:23",
+      "expected": "2026-09-28T11:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-28T10:27",
-      "expected": "2026-09-28T10:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-28T10:28",
-      "expected": "2026-09-28T10:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-28T10:31",
-      "expected": "2026-09-28T10:46",
+      "expected": "2026-09-28T10:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -257,13 +248,33 @@
     },
     {
       "scheduled": "2026-09-28T11:10",
-      "expected": "2026-09-28T11:13",
+      "expected": "2026-09-28T11:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by a late running train being in front of this one"
+    },
+    {
+      "scheduled": "2026-09-28T11:14",
+      "expected": "2026-09-28T11:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-28T11:21",
+      "expected": "2026-09-28T11:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
     }
   ]
 }
