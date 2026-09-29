@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T13:15:08+01:00",
+  "generated_at": "2026-09-29T13:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,65 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-29T12:52",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "Lostwithiel",
-        "Par",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "Camborne",
-        "Hayle",
-        "St Erth",
-        "Penzance"
-      ]
-    },
-    {
-      "scheduled": "2026-09-29T13:12",
-      "expected": "2026-09-29T13:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Berwick-upon-Tweed",
-        "Dunbar",
-        "Edinburgh"
-      ]
-    },
     {
       "scheduled": "2026-09-29T13:15",
       "expected": "2026-09-29T13:20",
@@ -87,7 +28,7 @@
     },
     {
       "scheduled": "2026-09-29T13:23",
-      "expected": "2026-09-29T13:25",
+      "expected": "2026-09-29T13:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -105,8 +46,8 @@
     },
     {
       "scheduled": "2026-09-29T13:29",
-      "expected": "2026-09-29T13:29",
-      "status": "On time",
+      "expected": "2026-09-29T13:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -169,29 +110,50 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-29T12:50",
-      "expected": "2026-09-29T13:11",
+      "scheduled": "2026-09-29T13:52",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "This service has been delayed by a late running train being in front of this one"
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     },
     {
-      "scheduled": "2026-09-29T13:10",
-      "expected": "2026-09-29T13:14",
+      "scheduled": "2026-09-29T13:59",
+      "expected": "2026-09-29T14:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been delayed by a fault on this train",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-29T13:14",
       "expected": "2026-09-29T13:19",
@@ -204,7 +166,7 @@
     },
     {
       "scheduled": "2026-09-29T13:22",
-      "expected": "2026-09-29T13:24",
+      "expected": "2026-09-29T13:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -224,8 +186,8 @@
     },
     {
       "scheduled": "2026-09-29T13:27",
-      "expected": "2026-09-29T13:27",
-      "status": "On time",
+      "expected": "2026-09-29T13:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -234,8 +196,8 @@
     },
     {
       "scheduled": "2026-09-29T13:31",
-      "expected": "2026-09-29T13:31",
-      "status": "On time",
+      "expected": "2026-09-29T13:34",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -261,6 +223,26 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T13:50",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T13:58",
+      "expected": "2026-09-29T14:04",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been delayed by a fault on this train"
     }
   ]
 }
