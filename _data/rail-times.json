@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T09:30:08+01:00",
+  "generated_at": "2026-09-29T09:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,25 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-29T09:15",
-      "expected": "2026-09-29T09:32",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by overcrowding",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-09-29T09:32",
-      "expected": "2026-09-29T09:32",
-      "status": "On time",
+      "expected": "2026-09-29T09:35",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -42,7 +26,7 @@
     },
     {
       "scheduled": "2026-09-29T09:40",
-      "expected": "2026-09-29T09:44",
+      "expected": "2026-09-29T09:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -153,22 +137,55 @@
         "Reading",
         "London Paddington"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-29T09:14",
-      "expected": "2026-09-29T09:31",
-      "status": "Delayed",
+      "scheduled": "2026-09-29T10:12",
+      "expected": "2026-09-29T10:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
+    },
+    {
+      "scheduled": "2026-09-29T10:15",
+      "expected": "2026-09-29T10:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by overcrowding"
-    },
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-29T09:26",
-      "expected": "2026-09-29T09:34",
+      "expected": "2026-09-29T09:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -177,19 +194,9 @@
       "reason": "This service has been delayed by animals on the railway"
     },
     {
-      "scheduled": "2026-09-29T09:30",
-      "expected": "2026-09-29T09:30",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-29T09:31",
-      "expected": "2026-09-29T09:31",
-      "status": "On time",
+      "expected": "2026-09-29T09:34",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -235,6 +242,26 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been delayed by a late running train being in front of this one"
+    },
+    {
+      "scheduled": "2026-09-29T10:11",
+      "expected": "2026-09-29T10:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T10:14",
+      "expected": "2026-09-29T10:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": ""
     }
   ]
 }
