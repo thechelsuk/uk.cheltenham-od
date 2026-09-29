@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T22:05:07+01:00",
+  "generated_at": "2026-09-29T22:10:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,27 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-29T21:15",
-      "expected": "2026-09-29T22:06",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a passenger being taken ill on a train",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-09-29T21:52",
-      "expected": "2026-09-29T22:07",
+      "expected": "2026-09-29T22:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -119,38 +100,49 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T23:02",
+      "expected": "2026-09-29T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ]
+    },
+    {
+      "scheduled": "2026-09-29T23:04",
+      "expected": "2026-09-29T23:04",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-29T21:14",
-      "expected": "2026-09-29T22:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a passenger being taken ill on a train"
-    },
-    {
       "scheduled": "2026-09-29T21:50",
-      "expected": "2026-09-29T22:06",
+      "expected": "2026-09-29T22:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "This service has been delayed by a passenger being taken ill on a train"
-    },
-    {
-      "scheduled": "2026-09-29T22:06",
-      "expected": "2026-09-29T22:06",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Westbury",
-      "destination": "Cheltenham Spa",
-      "reason": ""
     },
     {
       "scheduled": "2026-09-29T22:20",
@@ -201,6 +193,26 @@
       "origin": "Penzance",
       "destination": "Birmingham New Street",
       "reason": "This service has been delayed by a broken down train"
+    },
+    {
+      "scheduled": "2026-09-29T23:00",
+      "expected": "2026-09-29T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T23:02",
+      "expected": "2026-09-29T23:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
     }
   ]
 }
