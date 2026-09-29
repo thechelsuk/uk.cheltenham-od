@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T09:35:08+01:00",
+  "generated_at": "2026-09-29T09:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-29T09:32",
-      "expected": "2026-09-29T09:35",
+      "expected": "2026-09-29T09:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -26,13 +26,13 @@
     },
     {
       "scheduled": "2026-09-29T09:40",
-      "expected": "2026-09-29T09:45",
+      "expected": "2026-09-29T09:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by animals on the railway",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -79,8 +79,8 @@
     },
     {
       "scheduled": "2026-09-29T09:52",
-      "expected": "2026-09-29T09:52",
-      "status": "On time",
+      "expected": "2026-09-29T10:00",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "York",
@@ -99,7 +99,7 @@
     },
     {
       "scheduled": "2026-09-29T09:59",
-      "expected": "2026-09-29T10:04",
+      "expected": "2026-09-29T10:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -140,8 +140,8 @@
     },
     {
       "scheduled": "2026-09-29T10:12",
-      "expected": "2026-09-29T10:12",
-      "status": "On time",
+      "expected": "2026-09-29T10:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -180,22 +180,30 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T10:23",
+      "expected": "2026-09-29T10:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-29T09:26",
-      "expected": "2026-09-29T09:35",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by animals on the railway"
-    },
-    {
       "scheduled": "2026-09-29T09:31",
-      "expected": "2026-09-29T09:34",
+      "expected": "2026-09-29T09:37",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -225,8 +233,8 @@
     },
     {
       "scheduled": "2026-09-29T09:50",
-      "expected": "2026-09-29T09:50",
-      "status": "On time",
+      "expected": "2026-09-29T09:59",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "York",
@@ -235,7 +243,7 @@
     },
     {
       "scheduled": "2026-09-29T09:58",
-      "expected": "2026-09-29T10:03",
+      "expected": "2026-09-29T10:06",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -245,8 +253,8 @@
     },
     {
       "scheduled": "2026-09-29T10:11",
-      "expected": "2026-09-29T10:11",
-      "status": "On time",
+      "expected": "2026-09-29T10:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -261,6 +269,16 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T10:22",
+      "expected": "2026-09-29T10:22",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
     }
   ]
