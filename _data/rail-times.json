@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T20:10:08+01:00",
+  "generated_at": "2026-09-29T20:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,28 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-29T20:12",
-      "expected": "2026-09-29T20:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
     {
       "scheduled": "2026-09-29T20:15",
       "expected": "2026-09-29T20:15",
@@ -160,19 +138,28 @@
         "Worcestershire Parkway",
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T21:15",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a passenger being taken ill on a train",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-29T20:10",
-      "expected": "2026-09-29T20:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-29T20:14",
       "expected": "2026-09-29T20:14",
@@ -242,6 +229,16 @@
       "origin": "Plymouth",
       "destination": "Birmingham New Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T21:14",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a passenger being taken ill on a train"
     }
   ]
 }
