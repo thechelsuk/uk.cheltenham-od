@@ -54,6 +54,24 @@ and the Environment Agency.
 ## Latest Flood Alerts
 
 <!-- flood_marker starts -->
-> No current flood warnings reports in this area
+- Flood alert: Wye Estuary in Gloucestershire
+- High tides today may lead to flooding. 
+Flooding is possible due to a series of fairly high tides over the next few days. 
+Flooding may affect low lying land and roads adjacent the Wye Estuary from Redbrook to Chepstow. Predicted peaks:- Avonmouth Portbury 7.3m to 7.6m on 29/09 at 21:45, Newport 7.0m to 7.3m on 29/09 at 21:45. 
+We are closely monitoring the situation . 
+Avoid coastal roads and low lying roads near rivers, which may be flooded . 
+This message will be updated by 10:00AM on 30 September 2026 or as the situation changes.
+
+
+- Flood alert: Tidal River Avon at Bristol, Pill and Shirehampton
+- Higher than normal tides today may lead to flooding. 
+Flooding is possible either side of high water, which is at 9:45 PM on 29 September 2026 
+Spring tides are forecast to peak above the level published in tide tables due to additional surge.  The forecast high water is 9:45 PM on Tuesday 29 September 2026 with a level of 7.46 mAOD and a Force 5 South-easterly wind.
+Areas most at risk include the tidal River Avon from Sea Mills to Conham in Bristol and between the Avonmouth Bridge and Shirehampton Park including Pill and Shirehampton. 
+We are checking flood defences . 
+Avoid beaches and coastal promenades, which may be flooded . 
+This message will be updated by 9:00AM on 30 September 2026 or as the situation changes.
+
+
 
 <!-- flood_marker ends -->
