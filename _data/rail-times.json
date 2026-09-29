@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T19:15:08+01:00",
+  "generated_at": "2026-09-29T19:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-29T19:12",
-      "expected": "2026-09-29T19:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
-    {
       "scheduled": "2026-09-29T19:15",
-      "expected": "2026-09-29T19:19",
+      "expected": "2026-09-29T19:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -45,8 +25,8 @@
     },
     {
       "scheduled": "2026-09-29T19:23",
-      "expected": "2026-09-29T19:23",
-      "status": "On time",
+      "expected": "2026-09-29T19:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -143,22 +123,36 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T19:59",
+      "expected": "2026-09-29T19:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Willington",
+        "Derby",
+        "Spondon",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-29T19:10",
-      "expected": "2026-09-29T19:13",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-29T19:14",
-      "expected": "2026-09-29T19:18",
+      "expected": "2026-09-29T19:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -168,7 +162,7 @@
     },
     {
       "scheduled": "2026-09-29T19:21",
-      "expected": "2026-09-29T19:23",
+      "expected": "2026-09-29T19:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -188,8 +182,8 @@
     },
     {
       "scheduled": "2026-09-29T19:28",
-      "expected": "2026-09-29T19:28",
-      "status": "On time",
+      "expected": "2026-09-29T19:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -234,6 +228,16 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T19:58",
+      "expected": "2026-09-29T19:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
