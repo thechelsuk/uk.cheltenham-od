@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T18:20:08+01:00",
+  "generated_at": "2026-09-29T18:25:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-29T18:12",
-      "expected": "2026-09-29T18:33",
+      "expected": "2026-09-29T18:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -33,21 +33,6 @@
         "Darlington",
         "Durham",
         "Newcastle"
-      ]
-    },
-    {
-      "scheduled": "2026-09-29T18:19",
-      "expected": "2026-09-29T18:19",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -151,28 +136,41 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T18:55",
+      "expected": "2026-09-29T18:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-29T18:11",
-      "expected": "2026-09-29T18:32",
+      "expected": "2026-09-29T18:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
       "reason": "This service has been delayed by trespassers on the railway"
-    },
-    {
-      "scheduled": "2026-09-29T18:18",
-      "expected": "2026-09-29T18:18",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
     },
     {
       "scheduled": "2026-09-29T18:24",
@@ -206,8 +204,8 @@
     },
     {
       "scheduled": "2026-09-29T18:31",
-      "expected": "2026-09-29T18:31",
-      "status": "On time",
+      "expected": "2026-09-29T18:33",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -242,6 +240,16 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T18:54",
+      "expected": "2026-09-29T18:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
