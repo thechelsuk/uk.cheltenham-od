@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T20:35:08+01:00",
+  "generated_at": "2026-09-29T20:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,8 +12,8 @@
   "departures": [
     {
       "scheduled": "2026-09-29T20:41",
-      "expected": "2026-09-29T20:41",
-      "status": "On time",
+      "expected": "2026-09-29T20:45",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -31,7 +31,7 @@
     },
     {
       "scheduled": "2026-09-29T20:52",
-      "expected": "2026-09-29T21:13",
+      "expected": "2026-09-29T21:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -94,8 +94,8 @@
     },
     {
       "scheduled": "2026-09-29T21:12",
-      "expected": "2026-09-29T21:12",
-      "status": "On time",
+      "expected": "2026-09-29T21:16",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -108,7 +108,7 @@
     },
     {
       "scheduled": "2026-09-29T21:15",
-      "expected": null,
+      "expected": "2026-09-29T21:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,22 +169,30 @@
         "University",
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T22:00",
+      "expected": "2026-09-29T22:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-29T20:33",
-      "expected": "2026-09-29T20:33",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-29T20:50",
-      "expected": "2026-09-29T21:12",
+      "expected": "2026-09-29T21:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -204,8 +212,8 @@
     },
     {
       "scheduled": "2026-09-29T21:10",
-      "expected": "2026-09-29T21:10",
-      "status": "On time",
+      "expected": "2026-09-29T21:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -214,7 +222,7 @@
     },
     {
       "scheduled": "2026-09-29T21:14",
-      "expected": null,
+      "expected": "2026-09-29T21:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +259,16 @@
       "origin": "Cardiff Central",
       "destination": "Birmingham New Street",
       "reason": "This service has been cancelled because of a fault on a train"
+    },
+    {
+      "scheduled": "2026-09-29T21:59",
+      "expected": "2026-09-29T21:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
     }
   ]
 }
