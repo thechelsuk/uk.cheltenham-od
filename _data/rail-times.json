@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T09:10:07+01:00",
+  "generated_at": "2026-09-29T09:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-29T09:03",
-      "expected": "2026-09-29T09:08",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a late running freight train",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
     {
       "scheduled": "2026-09-29T09:12",
       "expected": "2026-09-29T09:21",
@@ -54,7 +39,7 @@
     },
     {
       "scheduled": "2026-09-29T09:15",
-      "expected": "2026-09-29T09:24",
+      "expected": "2026-09-29T09:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -152,19 +137,29 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-29T09:52",
+      "expected": "2026-09-29T09:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-29T09:02",
-      "expected": "2026-09-29T09:07",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a late running freight train"
-    },
     {
       "scheduled": "2026-09-29T09:10",
       "expected": "2026-09-29T09:20",
@@ -177,7 +172,7 @@
     },
     {
       "scheduled": "2026-09-29T09:14",
-      "expected": "2026-09-29T09:23",
+      "expected": "2026-09-29T09:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -197,7 +192,7 @@
     },
     {
       "scheduled": "2026-09-29T09:26",
-      "expected": "2026-09-29T09:31",
+      "expected": "2026-09-29T09:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -243,6 +238,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-29T09:50",
+      "expected": "2026-09-29T09:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
