@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T18:05:08+01:00",
+  "generated_at": "2026-09-30T18:15:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,6 +10,23 @@
   },
   "messages": [],
   "departures": [
+    {
+      "scheduled": "2026-09-30T17:19",
+      "expected": "2026-09-30T18:17",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a fault with the signalling system",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
     {
       "scheduled": "2026-09-30T17:40",
       "expected": null,
@@ -36,7 +53,7 @@
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Plymouth",
+      "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Bristol Parkway",
@@ -113,12 +130,12 @@
     {
       "scheduled": "2026-09-30T18:25",
       "expected": null,
-      "status": "Delayed",
+      "status": "Cancelled",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by a fault with the signalling system",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault with the signalling system",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -141,28 +158,19 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
-    },
-    {
-      "scheduled": "2026-09-30T18:40",
-      "expected": "2026-09-30T18:40",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
     }
   ],
   "arrivals": [
+    {
+      "scheduled": "2026-09-30T17:18",
+      "expected": "2026-09-30T18:16",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a fault with the signalling system"
+    },
     {
       "scheduled": "2026-09-30T17:38",
       "expected": "2026-09-30T17:47",
@@ -180,7 +188,7 @@
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Plymouth",
+      "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
@@ -216,12 +224,12 @@
     {
       "scheduled": "2026-09-30T18:24",
       "expected": null,
-      "status": "Delayed",
+      "status": "Cancelled",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by a fault with the signalling system"
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault with the signalling system"
     },
     {
       "scheduled": "2026-09-30T18:27",
@@ -245,7 +253,7 @@
     },
     {
       "scheduled": "2026-09-30T18:31",
-      "expected": "2026-09-30T18:33",
+      "expected": "2026-09-30T18:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
