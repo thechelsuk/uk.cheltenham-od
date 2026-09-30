@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T07:25:08+01:00",
+  "generated_at": "2026-09-30T07:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-30T07:24",
-      "expected": "2026-09-30T07:24",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-09-30T07:29",
       "expected": "2026-09-30T07:29",
@@ -46,13 +32,13 @@
     },
     {
       "scheduled": "2026-09-30T07:35",
-      "expected": "2026-09-30T07:35",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a safety inspection of the track",
       "calling_at": [
         "Worcester Shrub Hill"
       ]
@@ -135,7 +121,7 @@
     },
     {
       "scheduled": "2026-09-30T07:55",
-      "expected": "2026-09-30T07:58",
+      "expected": "2026-09-30T07:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -174,19 +160,52 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-30T08:12",
+      "expected": "2026-09-30T08:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
+    },
+    {
+      "scheduled": "2026-09-30T08:15",
+      "expected": "2026-09-30T08:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-30T07:22",
-      "expected": "2026-09-30T07:22",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-30T07:27",
       "expected": "2026-09-30T07:27",
@@ -198,24 +217,14 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-09-30T07:29",
-      "expected": "2026-09-30T07:29",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-30T07:33",
-      "expected": "2026-09-30T07:33",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Worcester Shrub Hill",
-      "reason": ""
+      "reason": "This service has been delayed by a safety inspection of the track"
     },
     {
       "scheduled": "2026-09-30T07:36",
@@ -229,8 +238,8 @@
     },
     {
       "scheduled": "2026-09-30T07:38",
-      "expected": "2026-09-30T07:40",
-      "status": "Delayed",
+      "expected": "2026-09-30T07:38",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -249,7 +258,7 @@
     },
     {
       "scheduled": "2026-09-30T07:54",
-      "expected": "2026-09-30T07:57",
+      "expected": "2026-09-30T07:58",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -265,6 +274,26 @@
       "operator": "CrossCountry",
       "origin": "Derby",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T08:10",
+      "expected": "2026-09-30T08:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T08:14",
+      "expected": "2026-09-30T08:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
