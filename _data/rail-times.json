@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T18:50:07+01:00",
+  "generated_at": "2026-09-30T18:55:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-30T17:25",
-      "expected": "2026-09-30T18:50",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-09-30T17:31",
       "expected": null,
@@ -44,7 +26,7 @@
     },
     {
       "scheduled": "2026-09-30T17:52",
-      "expected": "2026-09-30T18:55",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -88,41 +70,8 @@
       ]
     },
     {
-      "scheduled": "2026-09-30T18:25",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a fault with the signalling system",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-09-30T18:48",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been cancelled because of a fault with the signalling system",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
-    {
       "scheduled": "2026-09-30T18:52",
-      "expected": "2026-09-30T19:13",
+      "expected": "2026-09-30T19:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -204,19 +153,40 @@
         "Wakefield Westgate",
         "Leeds"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-09-30T17:24",
-      "expected": "2026-09-30T18:49",
-      "status": "Delayed",
+      "scheduled": "2026-09-30T19:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables",
+      "calling_at": [
+        "Gloucester"
+      ]
+    },
+    {
+      "scheduled": "2026-09-30T19:23",
+      "expected": "2026-09-30T19:23",
+      "status": "On time",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-09-30T17:29",
       "expected": null,
@@ -229,7 +199,7 @@
     },
     {
       "scheduled": "2026-09-30T17:50",
-      "expected": "2026-09-30T18:54",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -248,28 +218,8 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-30T18:24",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a fault with the signalling system"
-    },
-    {
-      "scheduled": "2026-09-30T18:46",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been cancelled because of a fault with the signalling system"
-    },
-    {
       "scheduled": "2026-09-30T18:50",
-      "expected": "2026-09-30T19:12",
+      "expected": "2026-09-30T19:13",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -295,6 +245,36 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T19:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables"
+    },
+    {
+      "scheduled": "2026-09-30T19:21",
+      "expected": "2026-09-30T19:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T19:27",
+      "expected": "2026-09-30T19:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
