@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T17:35:08+01:00",
+  "generated_at": "2026-09-30T17:40:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -61,13 +61,13 @@
     },
     {
       "scheduled": "2026-09-30T17:40",
-      "expected": "2026-09-30T17:40",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Birmingham New Street",
         "Wolverhampton",
@@ -114,7 +114,7 @@
     },
     {
       "scheduled": "2026-09-30T17:52",
-      "expected": "2026-09-30T17:58",
+      "expected": "2026-09-30T17:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -172,6 +172,31 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-09-30T18:12",
+      "expected": "2026-09-30T18:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ]
     }
   ],
   "arrivals": [
@@ -206,16 +231,6 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
-      "scheduled": "2026-09-30T17:31",
-      "expected": "2026-09-30T17:34",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-30T17:38",
       "expected": "2026-09-30T17:38",
       "status": "On time",
@@ -223,7 +238,7 @@
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
+      "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
       "scheduled": "2026-09-30T17:47",
@@ -237,7 +252,7 @@
     },
     {
       "scheduled": "2026-09-30T17:50",
-      "expected": "2026-09-30T17:57",
+      "expected": "2026-09-30T17:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -253,6 +268,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T18:11",
+      "expected": "2026-09-30T18:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
       "reason": ""
     }
   ]
