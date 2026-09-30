@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T11:30:08+01:00",
+  "generated_at": "2026-09-30T11:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-30T11:12",
-      "expected": "2026-09-30T11:39",
+      "expected": "2026-09-30T11:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -39,20 +39,6 @@
       ]
     },
     {
-      "scheduled": "2026-09-30T11:29",
-      "expected": "2026-09-30T11:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-30T11:40",
       "expected": "2026-09-30T11:40",
       "status": "On time",
@@ -73,7 +59,7 @@
     },
     {
       "scheduled": "2026-09-30T11:40",
-      "expected": "2026-09-30T11:46",
+      "expected": "2026-09-30T11:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -107,8 +93,8 @@
     },
     {
       "scheduled": "2026-09-30T11:52",
-      "expected": "2026-09-30T11:52",
-      "status": "On time",
+      "expected": "2026-09-30T11:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -201,12 +187,28 @@
         "Dundee",
         "Aberdeen"
       ]
+    },
+    {
+      "scheduled": "2026-09-30T12:15",
+      "expected": "2026-09-30T12:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-09-30T11:10",
-      "expected": "2026-09-30T11:38",
+      "expected": "2026-09-30T11:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -215,28 +217,8 @@
       "reason": "This service has been delayed by a fault on this train"
     },
     {
-      "scheduled": "2026-09-30T11:27",
-      "expected": "2026-09-30T11:27",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-30T11:31",
-      "expected": "2026-09-30T11:31",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-09-30T11:38",
-      "expected": "2026-09-30T11:45",
+      "expected": "2026-09-30T11:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -256,8 +238,8 @@
     },
     {
       "scheduled": "2026-09-30T11:51",
-      "expected": "2026-09-30T11:51",
-      "status": "On time",
+      "expected": "2026-09-30T11:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -282,6 +264,26 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T12:14",
+      "expected": "2026-09-30T12:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T12:27",
+      "expected": "2026-09-30T12:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
