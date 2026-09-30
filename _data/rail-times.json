@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T19:00:09+01:00",
+  "generated_at": "2026-09-30T19:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,22 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-09-30T17:31",
-      "expected": "2026-09-30T19:01",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-09-30T17:52",
-      "expected": "2026-09-30T19:03",
+      "expected": "2026-09-30T19:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -71,7 +57,7 @@
     },
     {
       "scheduled": "2026-09-30T18:52",
-      "expected": "2026-09-30T19:13",
+      "expected": "2026-09-30T19:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -94,8 +80,8 @@
     },
     {
       "scheduled": "2026-09-30T19:02",
-      "expected": "2026-09-30T19:02",
-      "status": "On time",
+      "expected": "2026-09-30T19:06",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -179,18 +165,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-09-30T17:29",
-      "expected": "2026-09-30T19:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
       "scheduled": "2026-09-30T17:50",
-      "expected": "2026-09-30T19:02",
+      "expected": "2026-09-30T19:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -210,7 +186,7 @@
     },
     {
       "scheduled": "2026-09-30T18:50",
-      "expected": "2026-09-30T19:12",
+      "expected": "2026-09-30T19:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -250,13 +226,13 @@
     },
     {
       "scheduled": "2026-09-30T19:27",
-      "expected": "2026-09-30T19:27",
-      "status": "On time",
+      "expected": "2026-09-30T19:30",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by more trains than usual needing repairs at the same time"
     },
     {
       "scheduled": "2026-09-30T19:28",
@@ -267,6 +243,16 @@
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been cancelled because of attempted theft of signalling cables"
+    },
+    {
+      "scheduled": "2026-09-30T19:34",
+      "expected": "2026-09-30T19:34",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": ""
     }
   ]
 }
