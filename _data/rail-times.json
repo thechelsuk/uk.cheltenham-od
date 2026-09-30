@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T13:15:08+01:00",
+  "generated_at": "2026-09-30T13:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,50 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-30T13:12",
-      "expected": "2026-09-30T13:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Berwick-upon-Tweed",
-        "Dunbar",
-        "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-09-30T13:15",
-      "expected": "2026-09-30T13:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-09-30T13:23",
       "expected": "2026-09-30T13:23",
@@ -74,8 +30,8 @@
     },
     {
       "scheduled": "2026-09-30T13:29",
-      "expected": "2026-09-30T13:29",
-      "status": "On time",
+      "expected": "2026-09-30T13:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -158,29 +114,50 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-09-30T13:59",
+      "expected": "2026-09-30T13:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
+    },
+    {
+      "scheduled": "2026-09-30T14:03",
+      "expected": "2026-09-30T14:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-09-30T13:10",
-      "expected": "2026-09-30T13:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-09-30T13:14",
-      "expected": "2026-09-30T13:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-09-30T13:22",
       "expected": "2026-09-30T13:22",
@@ -203,8 +180,8 @@
     },
     {
       "scheduled": "2026-09-30T13:27",
-      "expected": "2026-09-30T13:27",
-      "status": "On time",
+      "expected": "2026-09-30T13:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -249,6 +226,16 @@
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T13:58",
+      "expected": "2026-09-30T13:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
