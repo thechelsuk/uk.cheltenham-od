@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T17:00:08+01:00",
+  "generated_at": "2026-09-30T17:05:38+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-09-30T17:03",
-      "expected": "2026-09-30T17:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-09-30T17:12",
       "expected": "2026-09-30T17:12",
@@ -59,8 +39,8 @@
     },
     {
       "scheduled": "2026-09-30T17:19",
-      "expected": "2026-09-30T17:19",
-      "status": "On time",
+      "expected": "2026-09-30T17:21",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -158,6 +138,26 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-09-30T17:52",
+      "expected": "2026-09-30T17:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
@@ -173,8 +173,8 @@
     },
     {
       "scheduled": "2026-09-30T17:18",
-      "expected": "2026-09-30T17:18",
-      "status": "On time",
+      "expected": "2026-09-30T17:20",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -239,6 +239,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-09-30T17:50",
+      "expected": "2026-09-30T17:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
