@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T18:35:08+01:00",
+  "generated_at": "2026-09-30T18:40:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-09-30T17:25",
-      "expected": "2026-09-30T18:35",
+      "expected": "2026-09-30T18:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -43,8 +43,28 @@
       ]
     },
     {
+      "scheduled": "2026-09-30T17:52",
+      "expected": "2026-09-30T18:56",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a fault with the signalling system",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
+    },
+    {
       "scheduled": "2026-09-30T17:59",
-      "expected": "2026-09-30T18:34",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -65,7 +85,7 @@
     },
     {
       "scheduled": "2026-09-30T18:12",
-      "expected": "2026-09-30T19:00",
+      "expected": "2026-09-30T19:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -103,20 +123,6 @@
         "Yate",
         "Bristol Parkway",
         "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-09-30T18:31",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a fault with the signalling system",
-      "calling_at": [
-        "Bristol Parkway",
         "Bristol Temple Meads"
       ]
     },
@@ -171,7 +177,7 @@
   "arrivals": [
     {
       "scheduled": "2026-09-30T17:24",
-      "expected": "2026-09-30T18:34",
+      "expected": "2026-09-30T18:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -190,6 +196,16 @@
       "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
+      "scheduled": "2026-09-30T17:50",
+      "expected": "2026-09-30T18:55",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a fault with the signalling system"
+    },
+    {
       "scheduled": "2026-09-30T17:58",
       "expected": "2026-09-30T18:33",
       "status": "Delayed",
@@ -201,7 +217,7 @@
     },
     {
       "scheduled": "2026-09-30T18:11",
-      "expected": "2026-09-30T18:59",
+      "expected": "2026-09-30T19:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -216,16 +232,6 @@
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a fault with the signalling system"
-    },
-    {
-      "scheduled": "2026-09-30T18:29",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been cancelled because of a fault with the signalling system"
     },
