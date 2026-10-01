@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T10:10:08+01:00",
+  "generated_at": "2026-10-01T10:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,51 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-01T10:12",
-      "expected": "2026-10-01T10:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-10-01T10:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of attempted theft of signalling cables",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-01T10:23",
-      "expected": "2026-10-01T10:26",
+      "expected": "2026-10-01T10:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -96,13 +53,13 @@
     },
     {
       "scheduled": "2026-10-01T10:40",
-      "expected": "2026-10-01T10:45",
+      "expected": "2026-10-01T10:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -149,8 +106,8 @@
     },
     {
       "scheduled": "2026-10-01T10:52",
-      "expected": "2026-10-01T10:52",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
@@ -166,32 +123,61 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T10:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
+    },
+    {
+      "scheduled": "2026-10-01T11:03",
+      "expected": "2026-10-01T11:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-01T10:11",
-      "expected": "2026-10-01T10:11",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-01T10:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of attempted theft of signalling cables"
-    },
-    {
       "scheduled": "2026-10-01T10:22",
-      "expected": "2026-10-01T10:25",
+      "expected": "2026-10-01T10:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -201,7 +187,7 @@
     },
     {
       "scheduled": "2026-10-01T10:27",
-      "expected": "2026-10-01T10:35",
+      "expected": "2026-10-01T10:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -251,13 +237,23 @@
     },
     {
       "scheduled": "2026-10-01T10:50",
-      "expected": "2026-10-01T10:50",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Plymouth",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-01T10:57",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables"
     }
   ]
 }
