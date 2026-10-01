@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T10:00:08+01:00",
+  "generated_at": "2026-10-01T10:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,65 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-01T09:47",
-      "expected": "2026-10-01T09:59",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by attempted theft of signalling cables earlier today",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
-    {
-      "scheduled": "2026-10-01T09:52",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "York",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by attempted theft of signalling cables",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
-      "scheduled": "2026-10-01T09:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of attempted theft of signalling cables",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ]
-    },
-    {
       "scheduled": "2026-10-01T10:03",
-      "expected": "2026-10-01T10:03",
-      "status": "On time",
+      "expected": "2026-10-01T10:05",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -131,13 +75,13 @@
     },
     {
       "scheduled": "2026-10-01T10:23",
-      "expected": "2026-10-01T10:23",
-      "status": "On time",
+      "expected": "2026-10-01T10:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by congestion",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -169,39 +113,62 @@
         "Torquay",
         "Paignton"
       ]
-    }
-  ],
-  "arrivals": [
-    {
-      "scheduled": "2026-10-01T09:45",
-      "expected": "2026-10-01T09:56",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by attempted theft of signalling cables earlier today"
     },
     {
-      "scheduled": "2026-10-01T09:50",
-      "expected": "2026-10-01T09:59",
+      "scheduled": "2026-10-01T10:40",
+      "expected": "2026-10-01T10:44",
       "status": "Delayed",
       "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "York",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by attempted theft of signalling cables"
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     },
     {
-      "scheduled": "2026-10-01T09:58",
+      "scheduled": "2026-10-01T10:40",
       "expected": null,
       "status": "Cancelled",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of attempted theft of signalling cables"
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     },
+    {
+      "scheduled": "2026-10-01T10:45",
+      "expected": "2026-10-01T10:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-01T10:11",
       "expected": "2026-10-01T10:11",
@@ -224,13 +191,13 @@
     },
     {
       "scheduled": "2026-10-01T10:22",
-      "expected": "2026-10-01T10:22",
-      "status": "On time",
+      "expected": "2026-10-01T10:25",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
+      "reason": "This service has been delayed by congestion"
     },
     {
       "scheduled": "2026-10-01T10:27",
@@ -260,6 +227,26 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-01T10:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables"
+    },
+    {
+      "scheduled": "2026-10-01T10:44",
+      "expected": "2026-10-01T10:44",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": ""
     }
   ]
