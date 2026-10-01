@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T06:55:07+01:00",
+  "generated_at": "2026-10-01T07:00:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,28 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-01T06:48",
-      "expected": "2026-10-01T06:54",
+      "scheduled": "2026-10-01T06:08",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by attempted theft of signalling cables near Cheltenham Spa",
       "calling_at": [
         "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
       ]
     },
     {
       "scheduled": "2026-10-01T07:14",
-      "expected": "2026-10-01T07:14",
-      "status": "On time",
+      "expected": "2026-10-01T07:20",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -101,8 +101,8 @@
     },
     {
       "scheduled": "2026-10-01T07:29",
-      "expected": "2026-10-01T07:29",
-      "status": "On time",
+      "expected": "2026-10-01T07:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -191,9 +191,19 @@
   ],
   "arrivals": [
     {
+      "scheduled": "2026-10-01T06:06",
+      "expected": "2026-10-01T06:58",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by attempted theft of signalling cables near Cheltenham Spa"
+    },
+    {
       "scheduled": "2026-10-01T07:12",
-      "expected": "2026-10-01T07:12",
-      "status": "On time",
+      "expected": "2026-10-01T07:19",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -222,8 +232,8 @@
     },
     {
       "scheduled": "2026-10-01T07:27",
-      "expected": "2026-10-01T07:27",
-      "status": "On time",
+      "expected": "2026-10-01T07:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
