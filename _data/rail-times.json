@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T06:15:08+01:00",
+  "generated_at": "2026-10-01T06:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -27,39 +27,6 @@
         "Severn Tunnel Junction",
         "Newport (South Wales)",
         "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-10-01T06:14",
-      "expected": "2026-10-01T06:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-10-01T06:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Gloucester",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been cancelled because of a fault with the signalling system",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
       ]
     },
     {
@@ -189,6 +156,37 @@
         "Torquay",
         "Paignton"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T07:35",
+      "expected": "2026-10-01T07:35",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Worcester Shrub Hill"
+      ]
+    },
+    {
+      "scheduled": "2026-10-01T07:36",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault with the signalling system",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
@@ -201,16 +199,6 @@
       "origin": "Birmingham New Street",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been delayed by attempted theft of signalling cables near Cheltenham Spa"
-    },
-    {
-      "scheduled": "2026-10-01T06:13",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Gloucester",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been cancelled because of a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T06:40",
@@ -271,6 +259,26 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-01T07:33",
+      "expected": "2026-10-01T07:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-01T07:36",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault with the signalling system"
     }
   ]
 }
