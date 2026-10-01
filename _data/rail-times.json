@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T07:45:08+01:00",
+  "generated_at": "2026-10-01T07:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -90,33 +90,14 @@
       ]
     },
     {
-      "scheduled": "2026-10-01T07:43",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central",
-      "reason": "This service has been cancelled because of a fault with the signalling system",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-01T07:55",
-      "expected": "2026-10-01T07:55",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "London Paddington",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Gloucester",
         "Stonehouse",
@@ -130,7 +111,7 @@
     },
     {
       "scheduled": "2026-10-01T07:55",
-      "expected": "2026-10-01T07:58",
+      "expected": "2026-10-01T08:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -172,8 +153,8 @@
     },
     {
       "scheduled": "2026-10-01T08:12",
-      "expected": "2026-10-01T08:12",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -217,7 +198,7 @@
   "arrivals": [
     {
       "scheduled": "2026-10-01T07:12",
-      "expected": null,
+      "expected": "2026-10-01T07:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -227,7 +208,7 @@
     },
     {
       "scheduled": "2026-10-01T07:27",
-      "expected": null,
+      "expected": "2026-10-01T07:50",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -257,17 +238,17 @@
     },
     {
       "scheduled": "2026-10-01T07:50",
-      "expected": "2026-10-01T07:50",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "London Paddington",
-      "reason": ""
+      "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T07:54",
-      "expected": "2026-10-01T07:57",
+      "expected": "2026-10-01T07:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -287,8 +268,8 @@
     },
     {
       "scheduled": "2026-10-01T08:10",
-      "expected": "2026-10-01T08:10",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -304,6 +285,16 @@
       "origin": "Derby",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of attempted theft of signalling cables"
+    },
+    {
+      "scheduled": "2026-10-01T08:27",
+      "expected": "2026-10-01T08:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
     }
   ]
 }
