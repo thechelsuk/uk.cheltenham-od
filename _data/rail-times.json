@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T15:50:07+01:00",
+  "generated_at": "2026-10-01T15:55:11+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-01T15:48",
-      "expected": "2026-10-01T15:48",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
     {
       "scheduled": "2026-10-01T15:52",
       "expected": "2026-10-01T16:07",
@@ -170,19 +155,28 @@
         "Torquay",
         "Paignton"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T16:40",
+      "expected": "2026-10-01T16:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-01T15:47",
-      "expected": "2026-10-01T15:47",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-01T15:50",
       "expected": "2026-10-01T16:06",
@@ -255,13 +249,23 @@
     },
     {
       "scheduled": "2026-10-01T16:31",
-      "expected": "2026-10-01T16:39",
+      "expected": "2026-10-01T16:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a fault with the signalling system"
+    },
+    {
+      "scheduled": "2026-10-01T16:38",
+      "expected": "2026-10-01T16:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
     }
   ]
 }
