@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T16:55:07+01:00",
+  "generated_at": "2026-10-01T17:00:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-01T16:55",
-      "expected": "2026-10-01T16:59",
+      "expected": "2026-10-01T17:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -54,8 +54,8 @@
     },
     {
       "scheduled": "2026-10-01T17:12",
-      "expected": "2026-10-01T17:12",
-      "status": "On time",
+      "expected": "2026-10-01T17:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -145,22 +145,31 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T17:45",
+      "expected": "2026-10-01T17:45",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-01T16:31",
-      "expected": "2026-10-01T16:53",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
       "scheduled": "2026-10-01T16:54",
-      "expected": "2026-10-01T16:58",
+      "expected": "2026-10-01T16:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -170,8 +179,8 @@
     },
     {
       "scheduled": "2026-10-01T17:10",
-      "expected": "2026-10-01T17:10",
-      "status": "On time",
+      "expected": "2026-10-01T17:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
