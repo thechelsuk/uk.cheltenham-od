@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T07:30:07+01:00",
+  "generated_at": "2026-10-01T07:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -17,7 +17,7 @@
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
-      "destination": "Edinburgh via Leeds",
+      "destination": "Birmingham New Street",
       "reason": "This service has been delayed by attempted theft of signalling cables",
       "calling_at": [
         "Birmingham New Street",
@@ -39,13 +39,13 @@
     },
     {
       "scheduled": "2026-10-01T07:18",
-      "expected": "2026-10-01T07:29",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Stansted Airport",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcestershire Parkway",
@@ -119,7 +119,7 @@
     },
     {
       "scheduled": "2026-10-01T07:40",
-      "expected": "2026-10-01T07:53",
+      "expected": "2026-10-01T07:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -196,6 +196,26 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T08:01",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
@@ -206,7 +226,7 @@
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
-      "destination": "Edinburgh via Leeds",
+      "destination": "Birmingham New Street",
       "reason": "This service has been delayed by attempted theft of signalling cables"
     },
     {
@@ -217,7 +237,7 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Stansted Airport",
-      "reason": ""
+      "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T07:27",
@@ -228,16 +248,6 @@
       "origin": "Birmingham New Street",
       "destination": "Paignton",
       "reason": "This service has been delayed by attempted theft of signalling cables"
-    },
-    {
-      "scheduled": "2026-10-01T07:29",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T07:33",
@@ -261,7 +271,7 @@
     },
     {
       "scheduled": "2026-10-01T07:38",
-      "expected": "2026-10-01T07:52",
+      "expected": "2026-10-01T07:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -288,6 +298,16 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-01T07:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of attempted theft of signalling cables"
     }
   ]
 }
