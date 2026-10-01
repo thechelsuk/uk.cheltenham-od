@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T12:45:07+01:00",
+  "generated_at": "2026-10-01T12:50:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,27 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-01T12:40",
-      "expected": "2026-10-01T12:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Newton Abbot",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-10-01T12:45",
-      "expected": "2026-10-01T12:48",
+      "expected": "2026-10-01T12:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -119,7 +100,7 @@
     },
     {
       "scheduled": "2026-10-01T13:12",
-      "expected": "2026-10-01T13:19",
+      "expected": "2026-10-01T13:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -178,28 +159,32 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T13:29",
+      "expected": "2026-10-01T13:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-01T12:32",
-      "expected": "2026-10-01T12:55",
+      "expected": "2026-10-01T12:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a late running train being in front of this one"
-    },
-    {
-      "scheduled": "2026-10-01T12:38",
-      "expected": "2026-10-01T12:42",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Newton Abbot",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
     },
     {
       "scheduled": "2026-10-01T12:43",
@@ -233,7 +218,7 @@
     },
     {
       "scheduled": "2026-10-01T13:10",
-      "expected": "2026-10-01T13:18",
+      "expected": "2026-10-01T13:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -270,6 +255,16 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been cancelled because of a fault on a train earlier"
+    },
+    {
+      "scheduled": "2026-10-01T13:27",
+      "expected": "2026-10-01T13:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
     }
   ]
 }
