@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T06:20:07+01:00",
+  "generated_at": "2026-10-01T06:40:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-01T06:08",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by attempted theft of signalling cables near Cheltenham Spa",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-01T06:41",
       "expected": null,
@@ -187,19 +168,28 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-01T07:40",
+      "expected": "2026-10-01T07:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-01T06:06",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by attempted theft of signalling cables near Cheltenham Spa"
-    },
     {
       "scheduled": "2026-10-01T06:40",
       "expected": null,
@@ -279,6 +269,16 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been cancelled because of a fault with the signalling system"
+    },
+    {
+      "scheduled": "2026-10-01T07:38",
+      "expected": "2026-10-01T07:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
     }
   ]
 }
