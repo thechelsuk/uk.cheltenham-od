@@ -1,0 +1,112 @@
+{% include header.html %}
+{% assign data = site.data["permit-zones"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-car-parks">&lAarr; Back to Car Parks</a></li>
+                <li>{{ data.zones | size }} zones, {{ data.streets | size }} streets</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Map</h2>
+        <p id="permit-zones-legend" class="map-legend"></p>
+        <div id="permit-zones-map" class="map-canvas" aria-label="Map of permit parking zone streets in Cheltenham"></div>
+
+        <h2>Zones</h2>
+        <div class="table-scroll">
+            <table class="permit-zones-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Zone</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="number">Streets</th>
+                        <th scope="col">Parking Order</th>
+                        <th scope="col">Council Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for z in data.zones %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ z.code }}</td>
+                        <td>{{ z.name }}</td>
+                        <td class="number" data-val="{{ z.street_count }}">{{ z.street_count }}</td>
+                        <td>{{ z.order }}</td>
+                        <td><a href="{{ z.map_url }}">Zone {{ z.code }} map (PDF)</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Streets</h2>
+        <div class="table-scroll">
+            <table class="permit-streets-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Street</th>
+                        <th scope="col">Zone</th>
+                        <th scope="col">Coverage</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in data.streets %}
+                    {% assign zone = data.zones | where: "code", s.zone | first %}
+                    <tr>
+                        <td data-val="{{ s.name | downcase }}">{{ s.name }}</td>
+                        <td>Zone {{ s.zone }}{% if zone.name != "" %}: {{ zone.name }}{% endif %}</td>
+                        <td>{% if s.part %}Part of street{% else %}Whole street{% endif %}</td>
+                        <td class="map">{% if s.lat and s.lon %}{% include pin.html lat=s.lat lng=s.lon label=s.name %}{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="permit-zones-attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a> (zone streets, checked {{ data.checked | date: "%-d %B %Y" }}) and <a href="{{ data.geometry_source_url }}">{{ data.geometry_source }}</a> (street lines), published under the {{ data.geometry_licence }}.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            The council's zone maps and the signs on the street are the authority on where a zone starts and ends.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Which Permit Zone Is My Street In?</h3>
+        <ul>
+            <li>Find your street in the Streets table above, or click a coloured line on the map to see its zone.</li>
+            <li>Some streets appear in more than one zone, where a zone boundary runs along or across them.</li>
+            <li>If your street isn't listed, it isn't in a residents' permit zone, but other parking restrictions such as yellow lines or limited waiting bays may still apply.</li>
+        </ul>
+
+        <h3>What Does "Part of Street" Mean?</h3>
+        <ul>
+            <li>Only some of the street's length is inside the zone. Those streets are drawn as dashed lines on the map, near the part covered by the zone.</li>
+            <li>Open the council's zone map in the Zones table to see exactly where the boundary falls.</li>
+        </ul>
+
+        <h3>How Do I Get a Parking Permit?</h3>
+        <ul>
+            <li>Residents' permits in Cheltenham are issued by Gloucestershire County Council, which manages on-street parking across the county.</li>
+            <li>See the council's <a href="https://www.gloucestershire.gov.uk/parking/permit-information/">permit information</a> pages for eligibility, prices and how to apply.</li>
+        </ul>
+
+        <h3>Is Zone 15 Permanent?</h3>
+        <ul>
+            <li>Zone 15 was introduced under an experimental traffic order, which lets the council test a scheme and review it before deciding whether to keep it.</li>
+            <li>The council's <a href="https://www.gloucestershire.gov.uk/zone-15/">Zone 15 page</a> has the latest on the review.</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="permit-zones-data" type="application/json">{{ data.zones | jsonify }}</script>
+<script src="/assets/scripts/permit-zones-map.js"></script>
+{% include footer.html %}

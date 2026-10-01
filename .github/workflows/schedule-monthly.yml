@@ -43,6 +43,7 @@ jobs:
                   python _python/interests.py || echo "::warning::interests.py failed, continuing with other scripts"
                   python _python/hotels.py || echo "::warning::hotels.py failed, continuing with other scripts"
                   python _python/car-parks.py || echo "::warning::car-parks.py failed, continuing with other scripts"
+                  python _python/permit-zones.py || echo "::warning::permit-zones.py failed, continuing with other scripts"
                   python _python/cycle-routes.py || echo "::warning::cycle-routes.py failed, continuing with other scripts"
                   python _python/play-areas.py || echo "::warning::play-areas.py failed, continuing with other scripts"
                   python _python/cheltenham-stats.py || echo "::warning::cheltenham-stats.py failed, continuing with other scripts"

@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Permit Parking Zones",
+  "description": "Streets in each of Cheltenham's residents' permit parking zones, listed from Gloucestershire County Council's zone maps and drawn with OpenStreetMap street lines.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['permit-zones'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.openstreetmap.org/copyright",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Street", "Zone", "Coverage"]
+}
+</script>

@@ -295,7 +295,7 @@
     "source_url": "https://www.openstreetmap.org/",
     "licence": "Open Database Licence (ODbL)",
     "licence_type": "ODbL",
-    "data": [{"file": "_data/hotels.json", "schedule": "monthly"}, {"file": "_data/points_of_interest.json", "schedule": "monthly"}, {"file": "_data/post-offices.json", "schedule": "daily"}, {"file": "_data/races.json", "schedule": "monthly"}, {"file": "_data/car-parks.json", "schedule": "monthly"}, {"file": "_data/cycle-routes.json", "schedule": "monthly"}, {"file": "_data/play-areas.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/hotels.json", "schedule": "monthly"}, {"file": "_data/points_of_interest.json", "schedule": "monthly"}, {"file": "_data/post-offices.json", "schedule": "daily"}, {"file": "_data/races.json", "schedule": "monthly"}, {"file": "_data/car-parks.json", "schedule": "monthly"}, {"file": "_data/cycle-routes.json", "schedule": "monthly"}, {"file": "_data/play-areas.json", "schedule": "monthly"}, {"file": "_data/permit-zones.json", "schedule": "monthly"}],
     "pages": [
       "/staying-in-cheltenham",
       "/cheltenham-points-of-interest",
@@ -303,8 +303,18 @@
       "/cheltenham-festival-accommodation",
       "/cheltenham-car-parks",
       "/cheltenham-cycle-routes",
-      "/cheltenham-play-parks"
+      "/cheltenham-play-parks",
+      "/cheltenham-permit-parking-zones"
     ]
+  },
+  {
+    "id": "gcc-permit-zone-maps",
+    "name": "Gloucestershire County Council",
+    "source_url": "https://www.gloucestershire.gov.uk/parking/permit-information/permit-zone-maps",
+    "licence": "None stated — the streets in each zone are listed by hand from the council's PDF zone maps. The maps' boundaries are drawn on Ordnance Survey data that may not be redistributed, so they are not reproduced",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/permit-zone-streets.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-permit-parking-zones"]
   },
   {
     "id": "hm-land-registry-price-paid-data",
