@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T09:00:08+01:00",
+  "generated_at": "2026-10-01T09:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-01T08:12",
-      "expected": "2026-10-01T09:07",
+      "expected": "2026-10-01T09:09",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -39,13 +39,13 @@
     },
     {
       "scheduled": "2026-10-01T08:52",
-      "expected": "2026-10-01T09:00",
+      "expected": "2026-10-01T09:06",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -59,13 +59,13 @@
     },
     {
       "scheduled": "2026-10-01T08:59",
-      "expected": "2026-10-01T08:59",
-      "status": "On time",
+      "expected": "2026-10-01T09:03",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Worcestershire Parkway",
         "University",
@@ -100,7 +100,7 @@
     },
     {
       "scheduled": "2026-10-01T09:03",
-      "expected": "2026-10-01T09:08",
+      "expected": "2026-10-01T09:11",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -121,7 +121,7 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by congestion at Bristol Temple Meads",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -178,7 +178,7 @@
   "arrivals": [
     {
       "scheduled": "2026-10-01T08:10",
-      "expected": "2026-10-01T09:06",
+      "expected": "2026-10-01T09:08",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -188,13 +188,13 @@
     },
     {
       "scheduled": "2026-10-01T08:50",
-      "expected": "2026-10-01T08:59",
+      "expected": "2026-10-01T09:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
-      "reason": ""
+      "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T08:57",
@@ -204,11 +204,11 @@
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
-      "reason": ""
+      "reason": "This service has been delayed by a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T09:02",
-      "expected": "2026-10-01T09:07",
+      "expected": "2026-10-01T09:10",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -224,7 +224,7 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": ""
+      "reason": "This service has been delayed by congestion at Bristol Temple Meads"
     },
     {
       "scheduled": "2026-10-01T09:14",
@@ -248,23 +248,23 @@
     },
     {
       "scheduled": "2026-10-01T09:26",
-      "expected": "2026-10-01T09:26",
-      "status": "On time",
+      "expected": null,
+      "status": "Cancelled",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been cancelled because of a fault with the signalling system"
     },
     {
       "scheduled": "2026-10-01T09:30",
-      "expected": "2026-10-01T09:32",
-      "status": "Delayed",
+      "expected": "2026-10-01T09:30",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by attempted theft of signalling cables earlier today"
+      "reason": ""
     }
   ]
 }
