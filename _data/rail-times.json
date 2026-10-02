@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T15:30:07+01:00",
+  "generated_at": "2026-10-02T15:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,38 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-02T15:23",
-      "expected": "2026-10-02T15:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-10-02T15:29",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-02T15:40",
       "expected": "2026-10-02T15:40",
@@ -97,7 +65,7 @@
     },
     {
       "scheduled": "2026-10-02T15:52",
-      "expected": "2026-10-02T15:55",
+      "expected": "2026-10-02T15:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -158,8 +126,8 @@
     },
     {
       "scheduled": "2026-10-02T16:12",
-      "expected": "2026-10-02T16:12",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
@@ -183,43 +151,48 @@
         "Dunbar",
         "Edinburgh"
       ]
-    }
-  ],
-  "arrivals": [
-    {
-      "scheduled": "2026-10-02T15:21",
-      "expected": "2026-10-02T15:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
     },
     {
-      "scheduled": "2026-10-02T15:28",
+      "scheduled": "2026-10-02T16:15",
       "expected": null,
       "status": "Cancelled",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been cancelled because of a fault on this train"
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     },
     {
-      "scheduled": "2026-10-02T15:31",
-      "expected": "2026-10-02T15:31",
+      "scheduled": "2026-10-02T16:23",
+      "expected": "2026-10-02T16:23",
       "status": "On time",
-      "platform": "2",
+      "platform": "1",
       "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-02T15:38",
-      "expected": "2026-10-02T15:38",
-      "status": "On time",
+      "expected": "2026-10-02T15:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -238,7 +211,7 @@
     },
     {
       "scheduled": "2026-10-02T15:50",
-      "expected": "2026-10-02T15:54",
+      "expected": "2026-10-02T15:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -258,12 +231,42 @@
     },
     {
       "scheduled": "2026-10-02T16:10",
-      "expected": "2026-10-02T16:10",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T16:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-10-02T16:21",
+      "expected": "2026-10-02T16:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T16:27",
+      "expected": "2026-10-02T16:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
