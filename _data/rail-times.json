@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T09:30:07+01:00",
+  "generated_at": "2026-10-02T09:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-02T09:32",
-      "expected": "2026-10-02T09:35",
+      "expected": "2026-10-02T09:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -164,32 +164,46 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-10-02T10:15",
+      "expected": "2026-10-02T10:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-10-02T10:23",
+      "expected": "2026-10-02T10:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-02T09:26",
-      "expected": "2026-10-02T09:28",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-02T09:30",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of a fault on this train"
-    },
-    {
       "scheduled": "2026-10-02T09:31",
-      "expected": "2026-10-02T09:34",
+      "expected": "2026-10-02T09:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -245,6 +259,26 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T10:14",
+      "expected": "2026-10-02T10:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T10:22",
+      "expected": "2026-10-02T10:22",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
     }
   ]
