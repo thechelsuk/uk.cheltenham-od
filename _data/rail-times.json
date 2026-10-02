@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T11:15:07+01:00",
+  "generated_at": "2026-10-02T11:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,22 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-02T11:15",
-      "expected": "2026-10-02T11:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-02T11:23",
       "expected": "2026-10-02T11:23",
@@ -151,19 +135,29 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-10-02T12:03",
+      "expected": "2026-10-02T12:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-02T11:14",
-      "expected": "2026-10-02T11:16",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-02T11:21",
       "expected": "2026-10-02T11:23",
@@ -176,18 +170,18 @@
     },
     {
       "scheduled": "2026-10-02T11:26",
-      "expected": "2026-10-02T11:26",
-      "status": "On time",
+      "expected": "2026-10-02T11:28",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by the train departing late to maintain customer connections"
     },
     {
       "scheduled": "2026-10-02T11:27",
-      "expected": "2026-10-02T11:27",
-      "status": "On time",
+      "expected": "2026-10-02T11:29",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -196,7 +190,7 @@
     },
     {
       "scheduled": "2026-10-02T11:31",
-      "expected": "2026-10-02T11:33",
+      "expected": "2026-10-02T11:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
