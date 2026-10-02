@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:25:07+01:00",
+  "generated_at": "2026-10-02T18:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-02T18:19",
-      "expected": "2026-10-02T18:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-02T18:25",
-      "expected": "2026-10-02T18:29",
+      "expected": "2026-10-02T18:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -45,7 +30,7 @@
     },
     {
       "scheduled": "2026-10-02T18:31",
-      "expected": "2026-10-02T18:40",
+      "expected": "2026-10-02T18:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -149,22 +134,52 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-10-02T19:02",
+      "expected": "2026-10-02T19:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-10-02T19:12",
+      "expected": "2026-10-02T19:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-02T18:18",
-      "expected": "2026-10-02T18:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-02T18:24",
-      "expected": "2026-10-02T18:28",
+      "expected": "2026-10-02T18:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -173,18 +188,8 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-10-02T18:27",
-      "expected": "2026-10-02T18:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-02T18:29",
-      "expected": "2026-10-02T18:39",
+      "expected": "2026-10-02T18:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -194,8 +199,8 @@
     },
     {
       "scheduled": "2026-10-02T18:31",
-      "expected": "2026-10-02T18:33",
-      "status": "Delayed",
+      "expected": "2026-10-02T18:31",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -241,6 +246,16 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers"
+    },
+    {
+      "scheduled": "2026-10-02T19:10",
+      "expected": "2026-10-02T19:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": ""
     }
   ]
 }
