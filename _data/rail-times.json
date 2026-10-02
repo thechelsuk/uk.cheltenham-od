@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T21:00:08+01:00",
+  "generated_at": "2026-10-02T21:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-02T21:02",
-      "expected": "2026-10-02T21:02",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-10-02T21:07",
-      "expected": "2026-10-02T21:10",
+      "expected": "2026-10-02T21:11",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -133,13 +113,13 @@
     },
     {
       "scheduled": "2026-10-02T22:00",
-      "expected": "2026-10-02T22:00",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by trespassers on the railway",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -167,7 +147,7 @@
   "arrivals": [
     {
       "scheduled": "2026-10-02T21:05",
-      "expected": "2026-10-02T21:09",
+      "expected": "2026-10-02T21:10",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -227,13 +207,13 @@
     },
     {
       "scheduled": "2026-10-02T21:59",
-      "expected": "2026-10-02T21:59",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
+      "reason": "This service has been delayed by trespassers on the railway"
     },
     {
       "scheduled": "2026-10-02T22:01",
@@ -243,6 +223,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T22:06",
+      "expected": "2026-10-02T22:06",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Westbury",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
