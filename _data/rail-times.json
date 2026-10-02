@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:15:08+01:00",
+  "generated_at": "2026-10-02T18:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,31 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-02T18:12",
-      "expected": "2026-10-02T18:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "York",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle"
-      ]
-    },
     {
       "scheduled": "2026-10-02T18:19",
       "expected": "2026-10-02T18:24",
@@ -52,7 +27,7 @@
     },
     {
       "scheduled": "2026-10-02T18:25",
-      "expected": "2026-10-02T18:27",
+      "expected": "2026-10-02T18:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -70,7 +45,7 @@
     },
     {
       "scheduled": "2026-10-02T18:31",
-      "expected": "2026-10-02T18:38",
+      "expected": "2026-10-02T18:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -151,19 +126,32 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-10-02T18:55",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-02T18:11",
-      "expected": "2026-10-02T18:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "York",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-02T18:18",
       "expected": "2026-10-02T18:23",
@@ -176,7 +164,7 @@
     },
     {
       "scheduled": "2026-10-02T18:24",
-      "expected": "2026-10-02T18:26",
+      "expected": "2026-10-02T18:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -196,7 +184,7 @@
     },
     {
       "scheduled": "2026-10-02T18:29",
-      "expected": "2026-10-02T18:37",
+      "expected": "2026-10-02T18:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -243,6 +231,16 @@
       "origin": "Edinburgh",
       "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T18:54",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
