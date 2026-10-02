@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T20:20:08+01:00",
+  "generated_at": "2026-10-02T20:25:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-02T20:15",
-      "expected": "2026-10-02T20:20",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-02T20:23",
       "expected": "2026-10-02T20:26",
@@ -158,19 +143,28 @@
         "Worcestershire Parkway",
         "Birmingham New Street"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-02T20:14",
-      "expected": "2026-10-02T20:19",
-      "status": "Delayed",
+      "scheduled": "2026-10-02T21:15",
+      "expected": null,
+      "status": "Cancelled",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-02T20:21",
       "expected": "2026-10-02T20:25",
@@ -240,6 +234,16 @@
       "origin": "Plymouth",
       "destination": "Birmingham New Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T21:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
