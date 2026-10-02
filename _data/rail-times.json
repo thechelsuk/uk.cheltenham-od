@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:45:08+01:00",
+  "generated_at": "2026-10-02T18:50:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,22 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-02T18:31",
-      "expected": "2026-10-02T18:43",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-10-02T18:40",
-      "expected": "2026-10-02T18:47",
+      "expected": "2026-10-02T18:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -60,8 +46,8 @@
     },
     {
       "scheduled": "2026-10-02T18:52",
-      "expected": "2026-10-02T18:52",
-      "status": "On time",
+      "expected": "2026-10-02T18:57",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -125,8 +111,8 @@
     },
     {
       "scheduled": "2026-10-02T19:12",
-      "expected": "2026-10-02T19:12",
-      "status": "On time",
+      "expected": "2026-10-02T19:16",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -174,19 +160,23 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-02T18:29",
-      "expected": "2026-10-02T18:42",
-      "status": "Delayed",
+      "scheduled": "2026-10-02T19:30",
+      "expected": "2026-10-02T19:30",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-02T18:46",
       "expected": "2026-10-02T18:46",
@@ -199,7 +189,7 @@
     },
     {
       "scheduled": "2026-10-02T18:50",
-      "expected": "2026-10-02T18:52",
+      "expected": "2026-10-02T18:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -219,7 +209,7 @@
     },
     {
       "scheduled": "2026-10-02T19:10",
-      "expected": "2026-10-02T19:12",
+      "expected": "2026-10-02T19:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -255,6 +245,16 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T19:28",
+      "expected": "2026-10-02T19:28",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
