@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T12:10:07+01:00",
+  "generated_at": "2026-10-02T12:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-02T12:03",
-      "expected": "2026-10-02T12:08",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-10-02T12:12",
-      "expected": "2026-10-02T12:16",
+      "expected": "2026-10-02T12:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -135,7 +115,7 @@
     },
     {
       "scheduled": "2026-10-02T12:40",
-      "expected": null,
+      "expected": "2026-10-02T12:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -166,12 +146,43 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-02T12:52",
+      "expected": "2026-10-02T12:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth",
+        "Liskeard",
+        "Bodmin Parkway",
+        "Lostwithiel",
+        "Par",
+        "St Austell",
+        "Truro",
+        "Redruth",
+        "Camborne",
+        "Hayle",
+        "St Erth",
+        "Penzance"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-02T12:11",
-      "expected": "2026-10-02T12:15",
+      "expected": "2026-10-02T12:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -231,7 +242,7 @@
     },
     {
       "scheduled": "2026-10-02T12:38",
-      "expected": null,
+      "expected": "2026-10-02T12:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -247,6 +258,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T12:50",
+      "expected": "2026-10-02T12:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
       "reason": ""
     }
   ]
