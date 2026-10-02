@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:00:07+01:00",
+  "generated_at": "2026-10-02T18:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-02T17:52",
-      "expected": "2026-10-02T18:02",
+      "expected": "2026-10-02T18:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,27 +28,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ]
-    },
-    {
-      "scheduled": "2026-10-02T17:59",
-      "expected": "2026-10-02T17:59",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
       ]
     },
     {
@@ -73,7 +52,7 @@
     },
     {
       "scheduled": "2026-10-02T18:12",
-      "expected": "2026-10-02T18:15",
+      "expected": "2026-10-02T18:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -131,8 +110,8 @@
     },
     {
       "scheduled": "2026-10-02T18:31",
-      "expected": "2026-10-02T18:31",
-      "status": "On time",
+      "expected": "2026-10-02T18:33",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -141,6 +120,19 @@
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
+      ]
+    },
+    {
+      "scheduled": "2026-10-02T18:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Birmingham New Street"
       ]
     },
     {
@@ -175,18 +167,8 @@
       "reason": "This service has been delayed by damage to the overhead electric wires"
     },
     {
-      "scheduled": "2026-10-02T17:58",
-      "expected": "2026-10-02T17:58",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-02T18:11",
-      "expected": "2026-10-02T18:14",
+      "expected": "2026-10-02T18:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -226,8 +208,8 @@
     },
     {
       "scheduled": "2026-10-02T18:29",
-      "expected": "2026-10-02T18:29",
-      "status": "On time",
+      "expected": "2026-10-02T18:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -243,6 +225,16 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-02T18:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a fault on this train"
     }
   ]
 }
