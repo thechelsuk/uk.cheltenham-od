@@ -1,7 +1,7 @@
 ---
 layout: rail-times
 title: "Cheltenham Train Times"
-seo_title: "Cheltenham Spa Train Station - Live arrivals and depatures board, updated every 5 minutes"
+seo_title: "Cheltenham Spa Train Station - Live arrivals and depatures board, updated every 5 mins."
 seo: "Cheltenham Spa station train times: the next departures and arrivals with platforms, delays and cancellations, plus annual passenger numbers."
 permalink: /cheltenham-train-times
 description: "The next trains departing from and arriving at Cheltenham Spa station, with platforms, delays and cancellations."
