@@ -22,7 +22,7 @@ module FaqSchema
 
   def text(html)
     # Block tags become spaces; inline ones (links, emphasis) just go.
-    plain = html.gsub(%r{</?(p|li|ul|ol|br|div|h[1-6]|tr|td|th)\b[^>]*>}i, " ").gsub(/<[^>]+>/, "")
+    plain = strip_tags(html.gsub(%r{</?(p|li|ul|ol|br|div|h[1-6]|tr|td|th)\b[^>]*>}i, " "))
     plain = plain.gsub(/&(#x?[0-9a-f]+|[a-z][a-z0-9]*);/i) do
       ref = Regexp.last_match(1)
       if ref.start_with?("#x", "#X") then [ref[2..].to_i(16)].pack("U")
@@ -32,6 +32,17 @@ module FaqSchema
       end
     end
     plain.gsub(/\s+/, " ").strip
+  end
+
+  # Removes tags until none are left, so a tag split by another
+  # ("<scr<b>ipt>") can't reassemble once the inner one goes.
+  def strip_tags(html)
+    loop do
+      stripped = html.gsub(/<[^<>]*>/, "")
+      return stripped if stripped == html
+
+      html = stripped
+    end
   end
 
   # Kramdown's entity table covers the named references it writes itself
@@ -77,8 +88,9 @@ module FaqSchema
           "acceptedAnswer" => { "@type" => "Answer", "text" => answer } }
       end,
     }
-    # "</" would close the script element early.
-    json = JSON.pretty_generate(data).gsub("</", "<\\/")
+    # Escape every <, > and & (valid JSON escapes, read back as the same
+    # characters) so no text can close or confuse the script element.
+    json = JSON.pretty_generate(data).gsub("<", "\\u003c").gsub(">", "\\u003e").gsub("&", "\\u0026")
     %(<script type="application/ld+json">\n#{json}\n</script>\n)
   end
 
