@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T16:50:07+01:00",
+  "generated_at": "2026-10-05T16:55:11+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,13 +12,13 @@
   "departures": [
     {
       "scheduled": "2026-10-05T16:40",
-      "expected": "2026-10-05T16:51",
+      "expected": "2026-10-05T16:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a speed restriction",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -30,27 +30,8 @@
       ]
     },
     {
-      "scheduled": "2026-10-05T16:40",
-      "expected": "2026-10-05T16:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-10-05T16:50",
-      "expected": "2026-10-05T17:01",
+      "expected": "2026-10-05T17:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -60,26 +41,6 @@
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
-      ]
-    },
-    {
-      "scheduled": "2026-10-05T16:52",
-      "expected": "2026-10-05T16:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
       ]
     },
     {
@@ -184,38 +145,32 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-05T17:31",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a safety inspection of the track",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-05T16:38",
-      "expected": "2026-10-05T16:49",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-05T16:47",
-      "expected": "2026-10-05T17:00",
+      "expected": "2026-10-05T17:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
       "reason": "This service has been delayed by congestion"
-    },
-    {
-      "scheduled": "2026-10-05T16:50",
-      "expected": "2026-10-05T16:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": ""
     },
     {
       "scheduled": "2026-10-05T16:54",
@@ -266,6 +221,26 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been cancelled because of a road vehicle colliding with a bridge"
+    },
+    {
+      "scheduled": "2026-10-05T17:29",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a safety inspection of the track"
+    },
+    {
+      "scheduled": "2026-10-05T17:31",
+      "expected": "2026-10-05T17:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": ""
     }
   ]
 }
