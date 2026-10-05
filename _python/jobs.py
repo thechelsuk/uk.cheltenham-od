@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Job vacancies within five miles of Cheltenham, from GOV.UK's Work Hub job
-search, written as one classified advert per job in _classifieds/.
+search, written as one classified advert per job in _classifieds/jobs/.
 
 Each run asks for jobs posted since yesterday and skips any job already in
-_classifieds/ (matched on its Work Hub ID), so the list builds up day by day.
+_classifieds/jobs/ (matched on its Work Hub ID), so the list builds up day by day.
 Work Hub's five-mile search also returns national and county-wide jobs, so
 only those whose location is in or around Cheltenham are kept. A new job's page is fetched once for its closing date, hours and job
 type. Each advert carries the job's facts and the first sentences of its
@@ -26,7 +26,7 @@ import config
 import helper
 
 ROOT = Path(__file__).resolve().parents[1]
-CLASSIFIEDS = ROOT / "_classifieds"
+CLASSIFIEDS = ROOT / "_classifieds" / "jobs"
 
 BASE_URL = "https://www.jobs.service.gov.uk"
 SEARCH_PARAMS = {
@@ -182,6 +182,7 @@ def write_advert(job, details, today):
 
 def main():
     today = date.today()
+    CLASSIFIEDS.mkdir(parents=True, exist_ok=True)
     on_disk = existing()
 
     # Drop expired imported adverts.
