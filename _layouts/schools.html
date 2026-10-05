@@ -46,24 +46,44 @@
                         <th scope="col">Name</th>
                         <th scope="col">Type</th>
                         <th scope="col">Phase</th>
+                        <th scope="col">Latest Ofsted</th>
                         <th scope="col">Address</th>
                         <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col" class="link"><span class="sr-only">School site</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for school in schools %}
+                    {% assign urn = school.urn_url | split: "/" | last %}
+                    {% assign ofsted = site.data.ofsted.schools[urn] %}
                     <tr>
                         <td>
-                            {% if school.website %}
-                            <a href="{{ school.website }}" rel="nofollow">{{ school.name }}</a>
+                            {% if ofsted %}
+                            <a href="/cheltenham-schools/{{ ofsted.slug }}">{{ school.name }}</a>
                             {% else %}
-                            <a href="{{ school.urn_url }}" rel="nofollow">{{ school.name }}</a>
+                            {{ school.name }}
                             {% endif %}
                         </td>
                         <td>{{ school.type }}</td>
                         <td>{{ school.phase }}</td>
+                        {% if ofsted.latest_rated %}
+                        <td>{{ ofsted.latest_rated.outcome }} ({{ ofsted.latest_rated.date | date: "%Y-%m-%d" }})</td>
+                        {% else %}
+                        <td>&ndash;</td>
+                        {% endif %}
                         <td>{{ school.address }}</td>
                         <td class="postcode">{{ school.postcode }}</td>
+                        <td class="link">
+                            <a href="{{ school.website | default: school.urn_url }}" rel="nofollow noopener" target="_blank"
+                                title="{{ school.name }} {% if school.website %}site{% else %}official record{% endif %}"
+                                aria-label="{{ school.name }} {% if school.website %}site{% else %}official record{% endif %} (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -71,10 +91,95 @@
         </div>
 
         {% assign src = site.data.sources | where: "id", "dfe-gias-schools" | first %}
+        {% assign ofsted = site.data.ofsted %}
         <p class="schools-attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ ofsted.source_url }}">{{ ofsted.source }}</a>, published under the {{ src.licence_name }}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Ofsted outcomes last updated {{ ofsted.generated_at | date: "%-d %B %Y" }}.
+            Independent schools inspected by the Independent Schools Inspectorate have no Ofsted outcome.
             Proposed, closed, nursery-only, higher-education and alternative-provision establishments are excluded.
         </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Do the School Types Mean?</h3>
+        <ul>
+            <li>Community schools are run by Gloucestershire County Council, which employs the staff and sets the admissions rules.</li>
+            <li>Foundation schools are also council-funded, but the governing body employs the staff and sets the admissions rules.</li>
+            <li>Voluntary aided and voluntary controlled schools are mostly church schools. At a voluntary aided school the governors
+                employ the staff and set admissions, which can give priority on faith grounds; a voluntary controlled school is run
+                by the council, much like a community school.</li>
+            <li>Academies are funded directly by the government and run by an academy trust rather than the council. A converter
+                academy chose to become one; a sponsor-led academy was paired with a sponsor trust, often to turn the school
+                around. A free school is an academy set up from scratch.</li>
+            <li>Special schools are for pupils with special educational needs and disabilities, usually with an education, health
+                and care plan. The Gloucestershire Hospital Education Service teaches children who are too unwell to attend their
+                own school.</li>
+            <li>Independent schools charge fees and are not run by the council or the government.</li>
+        </ul>
+
+        <h3>What Does the Phase Column Mean?</h3>
+        <ul>
+            <li>Primary covers ages 4 to 11, including separate infant (4 to 7) and junior (7 to 11) schools. Secondary covers 11
+                to 16, or 18 where the school has a sixth form.</li>
+            <li>"Not applicable" is used for schools that don't fit one phase, such as special schools and independent schools
+                that take pupils from nursery or prep age through to 18.</li>
+        </ul>
+
+        <h3>What Do the Ofsted Outcomes Mean?</h3>
+        <ul>
+            <li><strong>Outstanding, Good, Requires improvement and Inadequate</strong> are the overall grades from a full graded
+                inspection. Older reports also use Satisfactory, which Requires improvement replaced in 2012.</li>
+            <li><strong>Remains Good</strong> or <strong>Remains Outstanding</strong> come from a shorter inspection that checks a
+                school is still at its previous grade, without grading it afresh. "May be improving" means inspectors saw signs it
+                could now earn a higher grade; "some concerns" means they weren't sure it would keep its grade. Either way the
+                next inspection is a full graded one.</li>
+            <li><strong>Standards maintained</strong> and <strong>Some aspects not as strong</strong> are the same kind of check
+                under the rules used from September 2024: the first means the school is still at its previous standard, the
+                second that some areas have slipped and a graded inspection will follow.</li>
+            <li><strong>Graded by area</strong> means a full inspection between September 2024 and November 2025, when Ofsted
+                graded each area, such as quality of education and behaviour and attitudes, on the
+                four-point scale but stopped giving a single overall grade.</li>
+            <li><strong>Report card</strong> means the school has been inspected under Ofsted's current framework, which grades
+                each area on a five-point scale (exceptional, strong standard, expected standard, needs attention, urgent
+                improvement) and judges safeguarding as met or not met.</li>
+            <li>Select a school's name to see its grades for each area and every past inspection.</li>
+        </ul>
+
+        <h3>Why Do Schools Have Different Kinds of Ofsted Outcome?</h3>
+        <ul>
+            <li>Ofsted has changed how it reports on schools twice since 2024: it dropped single-word overall grades in September
+                2024 and introduced report cards in November 2025. A school's outcome depends on when it was last inspected, so
+                schools in the same table can have been judged under different systems.</li>
+            <li>Schools are normally inspected about every four years, so it will take a few years for every school to have a
+                report card.</li>
+        </ul>
+
+        <h3>Why Don't Independent Schools Have an Ofsted Rating?</h3>
+        <ul>
+            <li>Most of Cheltenham's independent schools, including Cheltenham College, Cheltenham Ladies' College and Dean Close,
+                belong to associations whose schools are inspected by the Independent Schools Inspectorate instead of Ofsted. Their
+                reports are on the <a href="https://www.isi.net/" rel="noopener">Independent Schools Inspectorate's site</a>.</li>
+        </ul>
+
+        <h3>Which School Is Nearest to My Home?</h3>
+        <ul>
+            <li>Our <a href="/cheltenham-schools/catchment-areas/primary">primary school catchment map</a> and
+                <a href="/cheltenham-schools/catchment-areas/secondary">secondary school catchment map</a> shade every part of
+                Cheltenham by the school closest to it in a straight line, so you can see at a glance which school's zone a
+                street falls in.</li>
+            <li>Distance by road can differ from straight-line distance, so a school just across a zone boundary may be the
+                closer one in practice.</li>
+        </ul>
+
+        <h3>Do Cheltenham Schools Have Official Catchment Areas?</h3>
+        <ul>
+            <li>No. Gloucestershire County Council doesn't publish fixed catchment boundaries, which is why our maps show the
+                nearest school instead. When a school is oversubscribed, places usually go by criteria such as siblings and, for
+                some schools, faith, then by distance from home to school.</li>
+            <li>To check the admissions rules for a specific address, use the council's
+                <a href="https://www.gloucestershire.gov.uk/education-and-learning/find-a-school" rel="noopener">Find a School</a>
+                tool.</li>
+        </ul>
     </div>
     {% include footer.html %}
 </div>

@@ -44,7 +44,7 @@
         {{ content }}
 
         <h2>{{ w.name }} at a Glance</h2>
-        <div class="ward-glance">
+        <div class="glance-grid">
             <div class="info-card">
                 <p class="info-card__label">Crimes reported, 12 months to {{ crime.last_month | append: "-01" | date: "%B %Y" }}</p>
                 <span class="info-card__title">{{ crime.total }}</span>
@@ -473,27 +473,6 @@
 
     </div>
 </div>
-
-<style>
-    .ward-glance {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1em;
-        margin: 1em 0 1.5em;
-    }
-
-    @media (max-width: 800px) {
-        .ward-glance {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (max-width: 480px) {
-        .ward-glance {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

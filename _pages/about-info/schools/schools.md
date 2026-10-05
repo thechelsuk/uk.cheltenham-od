@@ -2,7 +2,7 @@
 layout: schools
 title: "Schools in Cheltenham — Primary, Secondary & Independent"
 description: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools"
-seo: "A complete list of schools in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special schools, with catchment areas."
+seo: "Every school in Cheltenham, Gloucestershire (GL50–GL54): primary, secondary, grammar, independent and special, with Ofsted ratings and catchment areas."
 permalink: /cheltenham-schools
 type: "about"
 schema: schools
@@ -28,6 +28,6 @@ straight from the official register.
 
 ## Using the Data
 
-Sort the table by name, type or phase to find what you're after, or use the summary to see how the schools break down across phases. Each entry links through to its official record, where you'll find inspection reports, contact details and admissions information.
+Sort the table by name, type or phase to find what you're after, or use the summary to see how the schools break down across phases. Select a school's name for its full Ofsted inspection history: its latest report card or graded inspection, area by area, and every Ofsted report since records began. The arrow at the end of each row opens the school's own site.
 
 Moving with children? Our [moving to Cheltenham guide](/moving-to-cheltenham) covers school catchments alongside house prices and neighbourhood safety.

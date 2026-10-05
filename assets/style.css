@@ -1544,6 +1544,26 @@ button:disabled,
     align-items: start;
 }
 
+/* A row of info cards: three across, two on tablets, one on phones */
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin: 1em 0 1.5em;
+}
+
+@media (max-width: 800px) {
+    .glance-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .glance-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .info-card {
     border: 1px solid var(--border);
     border-radius: 8px;

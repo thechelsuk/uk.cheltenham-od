@@ -1,0 +1,229 @@
+{% include header.html %}
+{% assign data = site.data.ofsted %}
+{% assign s = data.schools[page.urn] %}
+{% assign gias = site.data.schools | where_exp: "x", "x.name == s.name" | first %}
+{% assign latest = s.latest_rated %}
+{% assign rc = s.report_card %}
+{% assign graded = s.graded %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/cheltenham-schools">&larr; Back to Cheltenham Schools</a></li>
+                <li>Latest inspection {{ s.inspections.first.date | date: "%Y-%m-%d" }}</li>
+                <li>URN {{ s.urn }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        <h2>About {{ s.name }}</h2>
+        <p>
+            {% if s.phase == "Primary" or s.phase == "Secondary" %}{% assign kind = s.phase | downcase | append: " school" %}{% elsif s.type contains "special school" or s.type contains "special converter" or s.type contains "special sponsor" %}{% assign kind = "special school" %}{% elsif s.type contains "post 16" %}{% assign kind = "specialist college" %}{% elsif s.type contains "referral" %}{% assign kind = "pupil referral unit" %}{% else %}{% assign kind = "school" %}{% endif %}
+            {{ s.name }} is a {{ kind }}{% if gias.address %} at {{ gias.address }}{% endif %}{% if gias.postcode %}, {{ gias.postcode }}{% endif %}.
+            Ofsted has published {{ s.inspections.size }} inspection reports and letters for it since {{ s.first_year }},
+            {% if latest.outcome == "Report card" %}and its latest inspection, on {{ latest.date | date: "%Y-%m-%d" }}, produced a report card
+            grading each area of its work, shown below.{% elsif latest.outcome == "Graded by area" %}and its latest graded inspection, on {{ latest.date | date: "%Y-%m-%d" }},
+            graded each area of its work separately, shown below.{% elsif latest %}and the most recent outcome, from
+            {{ latest.date | date: "%Y-%m-%d" }}, was <strong>&ldquo;{{ latest.outcome }}&rdquo;</strong>.{% else %}none of which carries an overall grade.{% endif %}
+        </p>
+        <p>
+            This page brings the school's full Ofsted record together: the latest report card or graded inspection, area by
+            area, and every inspection since records began, with a link to each report.
+            {% if s.predecessors.size > 0 %}It includes the reports for the school it replaced when it became an academy or
+            merged, since Ofsted lists those under a different reference number.{% endif %}
+            To compare it with other schools in town, see the full list of <a href="/cheltenham-schools">schools in
+            Cheltenham</a>{% if s.phase == "Primary" or s.phase == "Secondary" %} or the
+            <a href="/cheltenham-schools/catchment-areas/{{ s.phase | downcase }}">{{ s.phase | downcase }} school catchment map</a>{% endif %}.
+        </p>
+
+        {{ content }}
+
+        <h2>{{ s.name }} at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Latest outcome</p>
+                <span class="info-card__title">{% if latest %}{{ latest.outcome }}{% else %}Not graded{% endif %}</span>
+                {% if latest %}<span class="info-card__subtitle">{{ latest.type }}, {{ latest.date | date: "%Y-%m-%d" }}</span>{% endif %}
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Reports on record</p>
+                <span class="info-card__title">{{ s.inspections.size }}</span>
+                <span class="info-card__subtitle">since {{ s.first_year }}, {{ s.rated_count }} with an outcome</span>
+            </div>
+            {% if rc %}
+            <div class="info-card">
+                <p class="info-card__label">Safeguarding</p>
+                <span class="info-card__title">{{ rc.safeguarding }}</span>
+                <span class="info-card__subtitle">report card, {{ rc.date | date: "%Y-%m-%d" }}</span>
+            </div>
+            {% elsif graded %}
+            <div class="info-card">
+                <p class="info-card__label">Quality of education</p>
+                {% assign qoe = graded.areas | where: "area", "Quality of education" | first %}
+                <span class="info-card__title">{{ qoe.grade | default: "Not graded" }}</span>
+                <span class="info-card__subtitle">graded inspection, {{ graded.date | date: "%Y-%m-%d" }}</span>
+            </div>
+            {% else %}
+            <div class="info-card">
+                <p class="info-card__label">School type</p>
+                <span class="info-card__title">{{ s.phase }}</span>
+                <span class="info-card__subtitle">{{ s.type }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if rc %}
+        <h2>Latest Report Card</h2>
+        <p>
+            Ofsted inspected {{ s.name }} on {{ rc.date | date: "%Y-%m-%d" }} under its report card framework, which grades each
+            area of a school's work on a five-point scale: exceptional, strong standard, expected standard, needs attention
+            and urgent improvement. Safeguarding is judged separately as met or not met, and for this school it was
+            <strong>{{ rc.safeguarding | downcase }}</strong>.
+        </p>
+        <div class="table-scroll">
+            <table class="school-ofsted-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in rc.areas %}
+                    <tr>
+                        <td>{{ a.area }}</td>
+                        {% assign rank = 0 %}{% for g in data.card_grades %}{% if g == a.grade %}{% assign rank = forloop.index %}{% endif %}{% endfor %}
+                        <td data-val="{{ rank }}">{{ a.grade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if graded %}
+        <h2>{% if rc %}Previous{% else %}Latest{% endif %} Graded Inspection</h2>
+        <p>
+            {% if graded.overall %}At its graded inspection on {{ graded.date | date: "%Y-%m-%d" }}, Ofsted judged the school's overall
+            effectiveness to be <strong>{{ graded.overall | downcase }}</strong>, on the four-point scale it used until 2025:
+            outstanding, good, requires improvement and inadequate.
+            {% else %}Ofsted's graded inspection on {{ graded.date | date: "%Y-%m-%d" }} came between September 2024 and November 2025,
+            when inspections graded each area on the four-point scale (outstanding, good, requires improvement and inadequate)
+            but gave no single overall grade.{% endif %}
+            {% if graded.urn != s.urn %}The inspection was of the school before it became an academy.{% endif %}
+        </p>
+        <div class="table-scroll">
+            <table class="school-ofsted-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in graded.areas %}
+                    <tr>
+                        <td>{{ a.area }}</td>
+                        <td>{{ a.grade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <h2>Ofsted Inspection History ({{ s.inspections.size }} Reports)</h2>
+        <p>
+            Every report Ofsted has published for {{ s.name }}{% if s.predecessors.size > 0 %} and the school it replaced{% endif %},
+            newest first. Short and ungraded inspections check that a school is still at its previous grade rather than
+            grading it afresh, and letters and monitoring visits carry no grade at all.
+        </p>
+        <div class="table-scroll">
+            <table class="school-ofsted-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Inspection</th>
+                        <th scope="col">Outcome</th>
+                        {% if s.predecessors.size > 0 %}<th scope="col">School at the Time</th>{% endif %}
+                        <th scope="col">Report</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in s.inspections %}
+                    <tr>
+                        <td class="date" data-val="{{ i.date }}">{{ i.date | date: "%Y-%m-%d" }}</td>
+                        <td>{{ i.type }}</td>
+                        <td>{{ i.outcome | default: "&ndash;" }}</td>
+                        {% if s.predecessors.size > 0 %}<td>{{ i.school }}{% if i.urn != s.urn %} (URN {{ i.urn }}){% endif %}</td>{% endif %}
+                        <td><a href="{{ i.report_url }}" rel="nofollow noopener">PDF</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="school-ofsted-attribution"><small>
+            Data from <a href="{{ s.ofsted_url }}" rel="noopener">{{ data.source }}</a> and its
+            <a href="{{ data.mi_url }}" rel="noopener">monthly management information</a>, published under the {{ data.licence }}.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is {{ s.name }}'s Ofsted Rating?</h3>
+        {% assign last_overall = s.last_overall %}
+        <ul>
+            {% if rc %}
+            <li>{{ s.name }} was last inspected on {{ rc.date | date: "%Y-%m-%d" }} under Ofsted's report card framework, which
+                grades each area separately instead of giving one overall rating.{% assign best = rc.areas | where: "grade", "Strong standard" %}{% if best.size > 0 %} It was graded strong standard for {{ best | map: "area" | join: ", " | downcase }}.{% endif %}</li>
+            {% elsif latest.outcome == "Graded by area" %}
+            <li>{{ s.name }}'s latest graded inspection, on {{ graded.date | date: "%Y-%m-%d" }}, graded each area separately
+                with no single overall rating.{% assign qoe = graded.areas | where: "area", "Quality of education" | first %}{% if qoe %} Quality of education was graded {{ qoe.grade | downcase }}.{% endif %}</li>
+            {% elsif latest and latest.urn == last_overall.urn and latest.date == last_overall.date %}
+            <li>{{ s.name }}'s latest overall Ofsted rating is {{ latest.outcome }}, from its inspection on {{ latest.date | date: "%Y-%m-%d" }}.</li>
+            {% elsif latest %}
+            <li>The most recent outcome Ofsted has published for {{ s.name }} is &ldquo;{{ latest.outcome }}&rdquo;, from {{ latest.date | date: "%Y-%m-%d" }}.</li>
+            {% endif %}
+            {% if last_overall and last_overall.date != latest.date %}
+            <li>Its last single overall rating was {{ last_overall.outcome }}, from {{ last_overall.date | date: "%Y-%m-%d" }}.</li>
+            {% endif %}
+            <li>The full report for each inspection is linked in the table above and on <a href="{{ s.ofsted_url }}" rel="noopener">Ofsted's page for the school</a>.</li>
+        </ul>
+
+        <h3>How Often Does Ofsted Inspect {{ s.name }}?</h3>
+        <ul>
+            <li>Ofsted normally inspects a state school about every four years, and sooner if it has concerns or the school
+                was graded needs attention or urgent improvement in any area.</li>
+            <li>Its last inspection was on {{ s.inspections.first.date | date: "%Y-%m-%d" }}.</li>
+        </ul>
+
+        <h3>Why Do Some Older Inspections Have No Grade?</h3>
+        <ul>
+            <li>Letters, monitoring visits and some light-touch inspections don't give a grade.</li>
+            <li>Where a report did give one but Ofsted no longer shows it alongside the report, the grade is left blank here;
+                the PDF report itself still states the judgement.</li>
+        </ul>
+
+        {% if s.predecessors.size > 0 %}
+        <h3>Why Are Some Reports Under a Different Reference Number?</h3>
+        <ul>
+            <li>When a school becomes an academy, or two schools merge, it gets a new unique reference number (URN), and Ofsted
+                files the reports from before the change under the old one. They're included here so you can see the whole
+                history in one place.</li>
+        </ul>
+        {% endif %}
+
+        <h3>Where Does This Data Come From?</h3>
+        <ul>
+            <li>The list of reports comes from Ofsted's Find an Inspection Report service, and the area grades come from
+                Ofsted's monthly management information on school inspections. Both are checked once a month.</li>
+            <li>Links between a school and the school it replaced come from the Department for Education's Get Information
+                about Schools register.</li>
+        </ul>
+    </div>
+    {% include footer.html %}
+</div>

@@ -1,0 +1,17 @@
+{% assign s = site.data.ofsted.schools[page.urn] %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": {{ s.name | append: " Ofsted inspection history" | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.ofsted.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "about": { "@type": "School", "name": {{ s.name | jsonify }}, "sameAs": "{{ s.ofsted_url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Inspection date", "Inspection type", "Outcome", "Grade by area"]
+}
+</script>
