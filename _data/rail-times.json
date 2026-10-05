@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T12:45:08+01:00",
+  "generated_at": "2026-10-05T12:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-05T12:45",
-      "expected": "2026-10-05T12:45",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
     {
       "scheduled": "2026-10-05T12:52",
       "expected": "2026-10-05T12:52",
@@ -58,8 +43,8 @@
     },
     {
       "scheduled": "2026-10-05T12:55",
-      "expected": "2026-10-05T12:55",
-      "status": "On time",
+      "expected": "2026-10-05T12:57",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -100,8 +85,8 @@
     },
     {
       "scheduled": "2026-10-05T13:12",
-      "expected": "2026-10-05T13:12",
-      "status": "On time",
+      "expected": "2026-10-05T13:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -174,19 +159,28 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-05T13:40",
+      "expected": "2026-10-05T13:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-05T12:43",
-      "expected": "2026-10-05T12:43",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-05T12:50",
       "expected": "2026-10-05T12:50",
@@ -199,8 +193,8 @@
     },
     {
       "scheduled": "2026-10-05T12:54",
-      "expected": "2026-10-05T12:54",
-      "status": "On time",
+      "expected": "2026-10-05T12:56",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -209,7 +203,7 @@
     },
     {
       "scheduled": "2026-10-05T13:10",
-      "expected": "2026-10-05T13:12",
+      "expected": "2026-10-05T13:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -259,12 +253,22 @@
     },
     {
       "scheduled": "2026-10-05T13:31",
-      "expected": "2026-10-05T13:31",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-05T13:38",
+      "expected": "2026-10-05T13:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
