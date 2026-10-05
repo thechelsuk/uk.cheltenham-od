@@ -845,6 +845,10 @@ iframe.map-canvas {
     font-family: var(--font-sans);
 }
 
+.filter-bar[hidden] {
+    display: none;
+}
+
 .filter-bar .filter-label {
     display: inline;
     margin: 0;
@@ -894,7 +898,7 @@ iframe.map-canvas {
 /* Override the site-wide button:hover, which would paint the accent
    behind dark text: hovering underlines, as links do, and the selected
    button doesn't change. */
-.filter-buttons button:hover {
+.filter-buttons button:not(:disabled):hover {
     background: var(--bg);
     color: var(--text);
     text-decoration: underline;
@@ -991,48 +995,8 @@ iframe.map-canvas {
 }
 
 /* ================================
-   Classifieds navigation
+   Classifieds
    ================================ */
-
-.classifieds-nav {
-    margin-bottom: 2em;
-}
-
-.classifieds-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6em;
-}
-
-.classifieds-nav li {
-    margin: 0;
-}
-
-.classifieds-nav a {
-    display: inline-block;
-    padding: 0.4em 0.9em;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 0.9rem;
-}
-
-.classifieds-nav .empty {
-    display: inline-block;
-    padding: 0.4em 0.9em;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-.classifieds-nav .count {
-    font-size: 0.8em;
-}
 
 .classifieds-empty {
     color: var(--text-secondary);
@@ -1544,11 +1508,6 @@ button:disabled,
     align-items: center;
     text-decoration: none;
     color: var(--text);
-}
-
-.classifieds-nav a:hover {
-    border-color: var(--accent);
-    color: var(--accent-dark);
 }
 
 .classifieds-item a:hover {

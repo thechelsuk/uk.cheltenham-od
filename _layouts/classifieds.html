@@ -24,20 +24,22 @@
         </ul>
     </header>
 
-    <nav class="classifieds-nav" aria-label="Advert categories">
-        <ul>
+    {% include sponsor.html %}
+
+    <h2>Browse Local Classifieds</h2>
+    {%- comment -%} Hidden until classifieds-filter.js runs: without JavaScript every section shows. {%- endcomment %}
+    <div class="filter-bar" id="classifieds-filter" role="group" aria-label="Filter adverts by category" hidden>
+        <span class="filter-label">Category</span>
+        <div class="filter-buttons">
+            <button type="button" data-value="" aria-pressed="true">All ({{ live_ads.size }})</button>
             {%- for category in site.classified_categories -%}
-            {%- assign in_cat = live_ads | where: "category", category.value -%}
-            <li>
-                {%- if in_cat.size > 0 -%}
-                <a href="#{{ category.value }}">{{ category.label }} <span class="count">{{ in_cat.size }}</span></a>
-                {%- else -%}
-                <span class="empty">{{ category.label }} <span class="count">0</span></span>
-                {%- endif -%}
-            </li>
-            {%- endfor -%}
-        </ul>
-    </nav>
+            {%- assign in_cat = live_ads | where: "category", category.value %}
+            <button type="button" data-value="{{ category.value }}" aria-pressed="false"{% if in_cat.size == 0 %} disabled{% endif %}>{{ category.label }} ({{ in_cat.size }})</button>
+            {%- endfor %}
+        </div>
+        <button type="button" class="filter-clear is-idle">Clear</button>
+        <span class="filter-count" aria-live="polite">Showing {{ live_ads.size }} adverts</span>
+    </div>
 
     {%- if live_ads.size == 0 -%}
     <p class="classifieds-empty">No adverts at the moment. Be the first to
@@ -69,6 +71,5 @@
     {%- endif -%}
 </div>
 
-{% include sponsor.html %}
-
+<script src="/assets/scripts/classifieds-filter.js" defer></script>
 {% include footer.html %}
