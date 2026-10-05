@@ -12,6 +12,9 @@ ayears:
     - 2025
     - 2024
     - 2023
+filters:
+  - table: 1
+    column: "Type"
 ---
 
 ## Cheltenham House Price Data Summary {{ page.pyear}}

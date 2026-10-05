@@ -149,7 +149,7 @@
                         <th scope="col">Inspection</th>
                         <th scope="col">Outcome</th>
                         {% if s.predecessors.size > 0 %}<th scope="col">School at the Time</th>{% endif %}
-                        <th scope="col">Report</th>
+                        <th scope="col" class="link">Report</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -159,7 +159,8 @@
                         <td>{{ i.type }}</td>
                         <td>{{ i.outcome | default: "&ndash;" }}</td>
                         {% if s.predecessors.size > 0 %}<td>{{ i.school }}{% if i.urn != s.urn %} (URN {{ i.urn }}){% endif %}</td>{% endif %}
-                        <td><a href="{{ i.report_url }}" rel="nofollow noopener">PDF</a></td>
+                        {% assign report_label = i.type | append: " report, " | append: i.date | append: " (PDF)" %}
+                        <td class="link">{% include link-icon.html url=i.report_url label=report_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

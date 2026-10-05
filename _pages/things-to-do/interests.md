@@ -7,6 +7,9 @@ type: "activities"
 permalink: /cheltenham-points-of-interest
 schema: interests
 
+filters:
+  - table: 2
+    column: "Category"
 ---
 
 ## Cheltenham Sits on the Western Edge of the Cotswolds in Gloucestershire

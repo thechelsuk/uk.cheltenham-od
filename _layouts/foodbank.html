@@ -92,16 +92,19 @@
                         <th scope="col">Opening Hours</th>
                         <th scope="col">Wheelchair Access</th>
                         <th scope="col" class="map">Map</th>
+                        <th scope="col" class="link">Store</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for p in fb.donation_points %}
                     <tr>
-                        <td>{% if p.url != "" %}<a href="{{ p.url }}" rel="noopener">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}</td>
+                        <td>{{ p.name | escape }}</td>
                         <td>{{ p.address | escape }}</td>
                         <td>{% for line in p.opening_hours %}{{ line | escape }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
                         <td>{% if p.wheelchair_accessible == true %}Yes{% elsif p.wheelchair_accessible == false %}No{% else %}Not known{% endif %}</td>
                         <td class="map">{% include pin.html lat=p.lat lng=p.lon label=p.name flagged=true %}</td>
+                        {% assign store_label = p.name | escape | append: " store page" %}
+                        <td class="link">{% if p.url != "" %}{% include link-icon.html url=p.url label=store_label nofollow=true %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

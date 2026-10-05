@@ -50,6 +50,7 @@
                         <th scope="col">Address</th>
                         <th scope="col" class="postcode">Postcode</th>
                         <th scope="col">Map</th>
+                        <th scope="col" class="link">Ofsted</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,12 +59,12 @@
                         <td>{{ p.name }}</td>
                         <td class="type">{{ p.type }}</td>
                         <td class="number" data-val="{{ p.places | default: 0 }}">{{ p.places_display | default: "&ndash;" }}</td>
-                        <td data-val="{{ p.latest.outcome }}">
-                            <a href="{{ p.ofsted_url }}" rel="nofollow noopener">{{ p.latest.outcome }}</a>{% if p.latest.date %} ({{ p.latest.date | date: "%Y-%m-%d" }}){% endif %}
-                        </td>
+                        <td data-val="{{ p.latest.outcome }}">{{ p.latest.outcome }}{% if p.latest.date %} ({{ p.latest.date | date: "%Y-%m-%d" }}){% endif %}</td>
                         <td>{{ p.address }}</td>
                         <td class="postcode">{{ p.postcode }}</td>
                         <td class="map">{% if p.lat %}{% include pin.html lat=p.lat lng=p.lon label=p.name %}{% endif %}</td>
+                        {% assign ofsted_label = p.name | append: " on Ofsted" %}
+                        <td class="link">{% include link-icon.html url=p.ofsted_url label=ofsted_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

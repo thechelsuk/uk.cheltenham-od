@@ -74,17 +74,8 @@
         </div>
 
         <h2>All Charities ({{ data.charities.size }})</h2>
-        <p>
-            <label for="charity-cause">Cause:</label>
-            <select id="charity-cause">
-                <option value="">All causes</option>
-                {% for c in data.summary.causes %}<option value="{{ c.cause }}">{{ c.cause }}</option>{% endfor %}
-            </select>
-            <label for="charity-search">Search:</label>
-            <input id="charity-search" type="search" placeholder="Name or activity">
-        </p>
         <div class="table-scroll">
-            <table class="charities-table charities-list data-table" data-sortable>
+            <table class="charities-table data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Charity</th>
@@ -92,29 +83,22 @@
                         <th scope="col" class="number">Income</th>
                         <th scope="col" class="postcode">Area</th>
                         <th scope="col" class="date">Registered</th>
-                        <th scope="col" class="link"><span class="sr-only">Charity site</span></th>
+                        <th scope="col" class="link">Register</th>
+                        <th scope="col" class="link">Site</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for c in data.charities %}
-                    <tr data-causes="{{ c.causes | join: '|' }}">
-                        <td><a href="{{ c.register_url }}" rel="nofollow noopener">{{ c.name }}</a></td>
+                    <tr>
+                        <td>{{ c.name }}</td>
                         <td>{{ c.activities }}</td>
                         <td class="number" data-val="{{ c.income | default: 0 }}">{{ c.income_display | default: "&ndash;" }}</td>
                         <td class="postcode">{{ c.district }}</td>
                         <td class="date" data-val="{{ c.registered }}">{{ c.registered | date: "%Y-%m-%d" }}</td>
-                        <td class="link">
-                            {% if c.website %}
-                            <a href="{{ c.website }}" rel="nofollow noopener" target="_blank" title="{{ c.name }} site"
-                                aria-label="{{ c.name }} site (opens in a new tab)">
-                                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                                    <path fill="currentColor"
-                                        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z">
-                                    </path>
-                                </svg>
-                            </a>
-                            {% endif %}
-                        </td>
+                        {% assign register_label = c.name | append: " on the charity register" %}
+                        {% assign site_label = c.name | append: " site" %}
+                        <td class="link">{% include link-icon.html url=c.register_url label=register_label %}</td>
+                        <td class="link">{% if c.website %}{% include link-icon.html url=c.website label=site_label nofollow=true %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -141,7 +125,7 @@
         <h3>Why Isn't There a Map or Contact Details?</h3>
         <ul>
             <li>Many small charities give a trustee's home address, phone number or email as their contact details, so we
-                don't republish them. Each charity's entry on the register, linked from its name, has the contact details it
+                don't republish them. Each charity's entry on the register, linked in the Register column, has the contact details it
                 has chosen to make public.</li>
         </ul>
 
@@ -168,4 +152,3 @@
     </div>
     {% include footer.html %}
 </div>
-<script src="/assets/scripts/charities-filter.js"></script>

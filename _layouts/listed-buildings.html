@@ -24,15 +24,6 @@
         <div id="listed-buildings-map" class="map-canvas" aria-label="Map of listed buildings, scheduled monuments and registered parks and gardens in Cheltenham"></div>
 
         <h2>Listed Buildings</h2>
-        <p>
-            <label for="grade-filter">Filter by grade:</label>
-            <select id="grade-filter">
-                <option value="">All grades</option>
-                <option value="I">Grade I</option>
-                <option value="II*">Grade II*</option>
-                <option value="II">Grade II</option>
-            </select>
-        </p>
         <div class="table-scroll">
             <table class="listed-buildings-table data-table" data-sortable>
                 <thead>
@@ -40,18 +31,19 @@
                         <th scope="col">Name</th>
                         <th scope="col">Grade</th>
                         <th scope="col">Listed</th>
-                        <th scope="col">Listing</th>
                         <th class="map" scope="col">Map</th>
+                        <th scope="col" class="link">Historic England</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for building in heritage.buildings %}
-                    <tr data-grade="{{ building.grade }}">
+                    <tr>
                         <td>{{ building.name }}</td>
                         <td data-value="{{ building.grade }}">{{ building.grade }}</td>
                         <td class="date" data-value="{{ building.list_date }}">{{ building.list_date }}</td>
-                        <td class="listing"><a href="{{ building.hyperlink }}" target="_blank" rel="noopener">View listing &#8599;</a></td>
                         <td class="map">{% include pin.html lat=building.lat lng=building.lon label=building.name %}</td>
+                        {% assign he_label = building.name | append: " on Historic England" %}
+                        <td class="link">{% include link-icon.html url=building.hyperlink label=he_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -66,7 +58,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Type</th>
                         <th scope="col">Designated</th>
-                        <th scope="col">Listing</th>
+                        <th scope="col" class="link">Historic England</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,7 +67,8 @@
                         <td>{{ site_item.name }}</td>
                         <td>Scheduled Monument</td>
                         <td class="date" data-value="{{ site_item.list_date }}">{{ site_item.list_date }}</td>
-                        <td class="listing"><a href="{{ site_item.hyperlink }}" target="_blank" rel="noopener">View listing &#8599;</a></td>
+                        {% assign he_label = site_item.name | append: " on Historic England" %}
+                        <td class="link">{% include link-icon.html url=site_item.hyperlink label=he_label %}</td>
                     </tr>
                     {% endfor %}
                     {% for site_item in heritage.parks_and_gardens %}
@@ -83,7 +76,8 @@
                         <td>{{ site_item.name }}</td>
                         <td>Registered Park &amp; Garden{% if site_item.grade %} (Grade {{ site_item.grade }}){% endif %}</td>
                         <td class="date" data-value="{{ site_item.list_date }}">{{ site_item.list_date }}</td>
-                        <td class="listing"><a href="{{ site_item.hyperlink }}" target="_blank" rel="noopener">View listing &#8599;</a></td>
+                        {% assign he_label = site_item.name | append: " on Historic England" %}
+                        <td class="link">{% include link-icon.html url=site_item.hyperlink label=he_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -106,5 +100,4 @@
 <script id="listed-buildings-data" type="application/json">{{ heritage.buildings | jsonify }}</script>
 <script id="listed-buildings-areas-data" type="application/json">{{ heritage.scheduled_monuments | concat: heritage.parks_and_gardens | jsonify }}</script>
 <script src="/assets/scripts/listed-buildings-map.js"></script>
-<script src="/assets/scripts/listed-buildings-filter.js"></script>
 {% include footer.html %}

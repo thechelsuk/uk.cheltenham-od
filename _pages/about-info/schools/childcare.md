@@ -6,6 +6,9 @@ permalink: /cheltenham-nurseries-childcare
 description: "Every registered nursery, pre-school and out-of-school club in Cheltenham, with the number of places and its latest Ofsted outcome."
 type: "about"
 schema: childcare
+filters:
+  - table: 1
+    column: "Type"
 ---
 
 ## Nurseries and Childcare in Cheltenham

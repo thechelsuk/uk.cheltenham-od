@@ -6,6 +6,9 @@ seo: "Every school in Cheltenham, Gloucestershire (GL50–GL54): primary, second
 permalink: /cheltenham-schools
 type: "about"
 schema: schools
+filters:
+  - table: 2
+    column: "Phase"
 ---
 
 ## Schools in Cheltenham
@@ -29,6 +32,6 @@ straight from the official register.
 
 ## Using the Data
 
-Sort the table by name, type or phase to find what you're after, or use the summary to see how the schools break down across phases. Select a school's name for its full Ofsted inspection history: its latest report card or graded inspection, area by area, and every Ofsted report since records began. The arrow at the end of each row opens the school's own site.
+Sort the table by name, type or phase, or filter it by phase, to find what you're after, or use the summary to see how the schools break down across phases. Select a school's name for its full Ofsted inspection history: its latest report card or graded inspection, area by area, and every Ofsted report since records began. The Site column opens the school's own site.
 
 Moving with children? Our [moving to Cheltenham guide](/moving-to-cheltenham) covers school catchments alongside house prices and neighbourhood safety.

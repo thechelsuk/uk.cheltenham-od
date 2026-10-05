@@ -36,19 +36,22 @@
                         <th scope="col" class="date">List Last Changed</th>
                         <th scope="col" class="postcode">Postcode</th>
                         <th scope="col" class="map">Map</th>
+                        <th scope="col" class="link">Site</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for fb in data.foodbanks %}
                     {% assign own = site.pages | where: "foodbank", fb.slug | first %}
                     <tr>
-                        <td>{% if own %}<a href="{{ own.url }}">{{ fb.display_name | escape }}</a>{% else %}<a href="{{ fb.homepage }}" rel="noopener">{{ fb.display_name | escape }}</a>{% endif %}</td>
+                        <td>{% if own %}<a href="{{ own.url }}">{{ fb.display_name | escape }}</a>{% else %}{{ fb.display_name | escape }}{% endif %}</td>
                         <td>{{ fb.network | escape }}</td>
                         <td class="number">{{ fb.distance_mi }}</td>
                         <td class="number">{% if fb.need.has_list %}{{ fb.need.items.size }}{% else %}&mdash;{% endif %}</td>
                         <td class="date" data-value="{{ fb.need.found_iso }}">{% if fb.need.has_list %}{{ fb.need.found_iso | date: "%Y-%m-%d" }}{% else %}&mdash;{% endif %}</td>
                         <td class="postcode">{{ fb.postcode }}</td>
                         <td class="map">{% include pin.html lat=fb.lat lng=fb.lon label=fb.display_name %}</td>
+                        {% assign fb_label = fb.display_name | escape | append: " site" %}
+                        <td class="link">{% if fb.homepage %}{% include link-icon.html url=fb.homepage label=fb_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

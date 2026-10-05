@@ -369,17 +369,20 @@
                         <th scope="col" class="number">Distance (mi)</th>
                         <th scope="col">Where</th>
                         <th scope="col">Map</th>
+                        <th scope="col" class="link">Site</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for i in s.items %}
                     {% if s.id == "school" %}{% assign ofsted = site.data.ofsted.schools | where: "name", i.name | first %}{% else %}{% assign ofsted = nil %}{% endif %}
                     <tr>
-                        <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ i.name }}</a>{% elsif i.url and i.url contains "http" and s.id != "toilet" %}<a href="{{ i.url }}" rel="noopener">{{ i.name }}</a>{% else %}{{ i.name }}{% endif %}</td>
+                        <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ i.name }}</a>{% else %}{{ i.name }}{% endif %}</td>
                         <td>{% if i.type %}{{ i.type }}{% if i.detail %}, {% endif %}{% endif %}{% if i.detail %}{{ i.detail }}{% if i.address %}. {% endif %}{% endif %}{% if i.address %}{{ i.address }}{% endif %}{% if ofsted.latest_rated %}. Ofsted: {{ ofsted.latest_rated.outcome }} ({{ ofsted.latest_rated.date | date: "%Y-%m-%d" }}){% endif %}</td>
                         <td class="number">{{ i.distance_miles }}</td>
                         <td>{% if i.in_ward %}In ward{% else %}Nearby{% endif %}</td>
                         <td class="map">{% include pin.html lat=i.lat lng=i.lon label=i.name %}</td>
+                        {% assign item_label = i.name | append: " site" %}
+                        <td class="link">{% if i.url and i.url contains "http" and s.id != "toilet" %}{% include link-icon.html url=i.url label=item_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -400,15 +403,18 @@
                         <th scope="col" class="category">Category</th>
                         <th scope="col" class="date">Reported</th>
                         <th scope="col">Map</th>
+                        <th scope="col" class="link">FixMyStreet</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for r in issues.fix_my_street %}
                     <tr>
-                        <td><a href="{{ r.url }}" rel="noopener">{{ r.title }}</a></td>
+                        <td>{{ r.title }}</td>
                         <td class="category">{{ r.group }}</td>
                         <td class="date" data-val="{{ r.published }}">{{ r.published }}</td>
                         <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
+                        {% assign fms_label = r.title | append: " on FixMyStreet" %}
+                        <td class="link">{% include link-icon.html url=r.url label=fms_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -428,15 +434,18 @@
                         <th scope="col">Address</th>
                         <th scope="col">Status</th>
                         <th scope="col" class="date">Received</th>
+                        <th scope="col" class="link">Council</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for p in issues.planning %}
                     <tr>
-                        <td><a href="{{ p.url }}" rel="noopener">{{ p.ref }}</a></td>
+                        <td>{{ p.ref }}</td>
                         <td>{{ p.address }}</td>
                         <td>{{ p.status }}</td>
                         <td class="date" data-val="{{ p.received }}">{{ p.received }}</td>
+                        {% assign council_label = "Application " | append: p.ref | append: " on the council's planning site" %}
+                        <td class="link">{% include link-icon.html url=p.url label=council_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -9,7 +9,7 @@ date: 2026-10-08 16:00
 
 Cheltenham Open Data has published a new [charities page](/cheltenham-charities), listing every registered charity based in Cheltenham and the GL50–GL54 postcodes.
 
-There are 587 of them, from village hall committees and school parent associations to national organisations headquartered in the town, with a combined income of more than £400 million in their latest accounts. You can filter the list by cause or search it by name, then follow each charity through to its entry on the Charity Commission's register.
+There are 587 of them, from village hall committees and school parent associations to national organisations headquartered in the town, with a combined income of more than £400 million in their latest accounts. You can sort the list by name, income or registration date, see how many charities work on each cause, and follow each charity through to its entry on the Charity Commission's register.
 
 ## FAQs
 

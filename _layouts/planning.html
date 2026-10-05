@@ -28,6 +28,7 @@
                         <th class="number">Units</th>
                         <th>Status</th>
                         <th class="map">Map</th>
+                        <th class="link">Council</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,10 +42,10 @@
                         <td class="number" data-value="{{ application.units | default: 0 }}">
                             {{ application.units | default: "-" }}
                         </td>
-                        <td>{% if application.url %}<a href="{{ application.url }}" target="_blank"
-                                rel="noopener">{{ application.status }}</a>{% else %}{{ application.status }}{% endif %}
-                        </td>
+                        <td>{{ application.status }}</td>
                         <td class="map">{% if application.lat %}{% include pin.html lat=application.lat lng=application.lon label=application.ref %}{% endif %}</td>
+                        {% assign council_label = "Application " | append: application.ref | append: " on the council's planning site" %}
+                        <td class="link">{% if application.url %}{% include link-icon.html url=application.url label=council_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -67,6 +68,7 @@
                         <th class="number">Units</th>
                         <th>Decision</th>
                         <th class="map">Map</th>
+                        <th class="link">Council</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,10 +81,10 @@
                         <td class="number" data-value="{{ application.units | default: 0 }}">
                             {{ application.units | default: "-" }}
                         </td>
-                        <td>{% if application.url %}<a href="{{ application.url }}" target="_blank"
-                                rel="noopener">{{ application.status }}</a>{% else %}{{ application.status }}{% endif %}
-                        </td>
+                        <td>{{ application.status }}</td>
                         <td class="map">{% if application.lat %}{% include pin.html lat=application.lat lng=application.lon label=application.ref %}{% endif %}</td>
+                        {% assign council_label = "Application " | append: application.ref | append: " on the council's planning site" %}
+                        <td class="link">{% if application.url %}{% include link-icon.html url=application.url label=council_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

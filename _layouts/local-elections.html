@@ -59,6 +59,7 @@
                         <th scope="col">Councillor</th>
                         <th scope="col">Ward</th>
                         <th scope="col">Party</th>
+                        <th scope="col" class="link">Council</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,9 +67,11 @@
                     {% assign pol = data.wards[w.slug] %}
                     {% for c in pol.councillors %}
                     <tr>
-                        <td><a href="{{ c.url }}" rel="noopener">{{ c.name }}</a></td>
+                        <td>{{ c.name }}</td>
                         <td><a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }}</a></td>
                         <td>{{ c.party }}</td>
+                        {% assign councillor_label = c.name | append: " on the council's site" %}
+                        <td class="link">{% if c.url %}{% include link-icon.html url=c.url label=councillor_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                     {% endfor %}

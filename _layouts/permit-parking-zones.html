@@ -28,7 +28,7 @@
                         <th scope="col">Name</th>
                         <th scope="col" class="number">Streets</th>
                         <th scope="col">Parking Order</th>
-                        <th scope="col">Council Map</th>
+                        <th scope="col" class="link">Council Map</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +38,8 @@
                         <td>{{ z.name }}</td>
                         <td class="number" data-val="{{ z.street_count }}">{{ z.street_count }}</td>
                         <td>{{ z.order }}</td>
-                        <td><a href="{{ z.map_url }}">Zone {{ z.code }} map (PDF)</a></td>
+                        {% assign zone_label = "Zone " | append: z.code | append: " map (PDF) on the council's site" %}
+                        <td class="link">{% include link-icon.html url=z.map_url label=zone_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

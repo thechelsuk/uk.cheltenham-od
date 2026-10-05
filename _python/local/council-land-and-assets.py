@@ -60,7 +60,8 @@ def normalise_2021(row):
         "asset_code": row.get("AssetCode", "").strip(),
         "address": address,
         "postcode": row.get("PostCode", "").strip().replace("\n", ""),
-        "tenure_type": row.get("TenureType", "").strip(),
+        # The 2021 register has one "Freehold" with a stray "Ā" (U+0100) after it.
+        "tenure_type": row.get("TenureType", "").strip().rstrip("\u0100"),
         "tenure_detail": row.get("TenureDetail", "").strip(),
         "holding_type": row.get("HoldingType", "").strip(),
         "lat": lat,
@@ -76,7 +77,7 @@ def normalise_2023(row):
         "asset_code": row.get("AssetCode", "").strip(),
         "address": row.get("Site Address", "").strip(),
         "postcode": "",
-        "tenure_type": row.get("TenureType", "").strip(),
+        "tenure_type": row.get("TenureType", "").strip().rstrip("\u0100"),
         "tenure_detail": row.get("Tenure Detail", "").strip(),
         "holding_type": row.get("Holding Type", "").strip(),
         "lat": lat,

@@ -7,6 +7,9 @@ description: "Food businesses in Cheltenham with food hygiene ratings from 1 to 
 food_rating: "rated-one-to-four"
 type: "community"
 schema: food-standards
+filters:
+  - table: 1
+    column: "Type"
 ---
 
 ## One to Four Star Food Businesses

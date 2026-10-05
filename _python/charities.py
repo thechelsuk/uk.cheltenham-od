@@ -122,7 +122,10 @@ def main():
             "income_band": band(income),
             "activities": sentence(row["charity_activities"]) or None,
             "website": website(row["charity_contact_web"]),
-            "register_url": REGISTER_URL.format(number),
+            # The register's page address takes the Commission's internal
+            # organisation number; for older charities it equals the charity
+            # number, for newer ones it doesn't.
+            "register_url": REGISTER_URL.format(row["organisation_number"]),
             "causes": [],
         }
 

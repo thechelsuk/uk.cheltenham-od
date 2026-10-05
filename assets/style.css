@@ -830,6 +830,166 @@ iframe.map-canvas {
     gap: 6px;
 }
 
+/* Table filter bar, built by table-filter.js from a page's "filters" front
+   matter: buttons for up to four short options, otherwise a dropdown. */
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 1em;
+    margin: 0.75em 0;
+    padding: 0.6em 0.8em;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+}
+
+.filter-bar .filter-label {
+    display: inline;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.filter-bar select {
+    font-size: 0.95rem;
+    padding: 0.35em 0.6em;
+    border-color: var(--border-strong);
+}
+
+.filter-bar input[type="range"] {
+    accent-color: var(--accent);
+}
+
+.filter-buttons {
+    display: inline-flex;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.filter-buttons button {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    padding: 0.35em 0.9em;
+    border: 0;
+    border-right: 1px solid var(--border-strong);
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.filter-buttons button:last-child {
+    border-right: 0;
+}
+
+.filter-buttons button[aria-pressed="true"] {
+    background: var(--accent);
+    color: var(--accent-text);
+    font-weight: 600;
+}
+
+/* Override the site-wide button:hover, which would paint the accent
+   behind dark text: hovering underlines, as links do, and the selected
+   button doesn't change. */
+.filter-buttons button:hover {
+    background: var(--bg);
+    color: var(--text);
+    text-decoration: underline;
+}
+
+.filter-buttons button[aria-pressed="true"]:hover {
+    background: var(--accent);
+    color: var(--accent-text);
+    text-decoration: none;
+}
+
+.filter-bar select:focus-visible,
+.filter-buttons button:focus-visible,
+.filter-clear:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.filter-clear {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--link);
+    background: none;
+    border: 0;
+    padding: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.filter-clear:hover {
+    background: none;
+    color: var(--link-hover);
+}
+
+/* Keeps its space while no filter is set, so the table doesn't move. */
+.filter-clear.is-idle {
+    visibility: hidden;
+}
+
+.filter-count {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-bar select,
+    .filter-buttons {
+        width: 100%;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .filter-buttons button {
+        padding: 0.6em 0.8em;
+        border-right: 0;
+        border-bottom: 1px solid var(--border-strong);
+    }
+
+    .filter-buttons button:last-child {
+        border-bottom: 0;
+    }
+
+    .filter-count,
+    .filter-clear {
+        align-self: flex-start;
+        margin-left: 0;
+    }
+}
+
+/* External link columns: one icon per link, the column heading says where
+   it goes (link-icon.html). */
+.data-table th.link,
+.data-table td.link {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.link-icon {
+    display: inline-flex;
+    color: var(--link);
+}
+
+.link-icon:hover {
+    color: var(--accent);
+}
+
 /* ================================
    Classifieds navigation
    ================================ */

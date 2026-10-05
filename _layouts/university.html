@@ -26,20 +26,24 @@
                         <th scope="col">Address</th>
                         <th scope="col" class="postcode">Postcode</th>
                         <th scope="col">What Is There</th>
-                        <th scope="col">Campus Map</th>
                         <th scope="col" class="map">Map</th>
+                        <th scope="col" class="link">Campus Map</th>
+                        <th scope="col" class="link">Site</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for loc in uni.locations %}
                     <tr>
-                        <td data-val="{{ loc.name | downcase }}"><a href="{{ loc.website }}">{{ loc.name }}</a></td>
+                        <td data-val="{{ loc.name | downcase }}">{{ loc.name }}</td>
                         <td class="type">{{ loc.town }}</td>
                         <td>{{ loc.address }}</td>
                         <td class="postcode">{{ loc.postcode }}</td>
                         <td>{{ loc.description }}</td>
-                        <td><a href="{{ loc.campus_map }}">Interactive map</a></td>
                         <td class="map">{% include pin.html lat=loc.latitude lng=loc.longitude label=loc.name %}</td>
+                        {% assign campus_map_label = loc.name | append: " interactive campus map" %}
+                        {% assign campus_label = loc.name | append: " on the university's site" %}
+                        <td class="link">{% if loc.campus_map %}{% include link-icon.html url=loc.campus_map label=campus_map_label %}{% endif %}</td>
+                        <td class="link">{% if loc.website %}{% include link-icon.html url=loc.website label=campus_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -54,14 +58,17 @@
                         <th scope="col">School</th>
                         <th scope="col">Subject Areas</th>
                         <th scope="col">Campuses</th>
+                        <th scope="col" class="link">Site</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for school in uni.schools %}
                     <tr>
-                        <td data-val="{{ school.name | downcase }}"><a href="{{ school.url }}">{{ school.name }}</a></td>
+                        <td data-val="{{ school.name | downcase }}">{{ school.name }}</td>
                         <td>{{ school.subjects }}</td>
                         <td>{% if school.campuses != "" %}{{ school.campuses }}{% else %}&mdash;{% endif %}</td>
+                        {% assign school_label = school.name | append: " on the university's site" %}
+                        <td class="link">{% include link-icon.html url=school.url label=school_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

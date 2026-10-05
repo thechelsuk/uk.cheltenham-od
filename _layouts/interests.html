@@ -57,15 +57,14 @@
                         <th scope="col" class="number">Miles</th>
                         <th scope="col" class="postcode">Postcode</th>
                         <th scope="col">Map</th>
+                        <th scope="col" class="link">More Info</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for p in pois %}
                     <tr>
                         <td>
-                            {% if p.wikipedia != "" %}<a href="{{ p.wikipedia }}">{{ p.name }}</a>
-                            {% elsif p.website != "" %}<a href="{{ p.website }}">{{ p.name }}</a>
-                            {% else %}{{ p.name }}{% endif %}
+                            {{ p.name }}
                             {% if p.inscription != "" %}<small class="inscription">{{ p.inscription }}</small>{% endif
                             %}
                         </td>
@@ -73,6 +72,8 @@
                         <td class="number">{{ p.distance }}</td>
                         <td class="postcode">{{ p.postcode | default: "—" }}</td>
                         <td class="map">{% include pin.html lat=p.lat lng=p.lng label=p.name %}</td>
+                        {% if p.wikipedia != "" %}{% assign more_url = p.wikipedia %}{% assign more_label = p.name | append: " on Wikipedia" %}{% elsif p.website != "" %}{% assign more_url = p.website %}{% assign more_label = p.name | append: " site" %}{% else %}{% assign more_url = nil %}{% endif %}
+                        <td class="link">{% if more_url %}{% include link-icon.html url=more_url label=more_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

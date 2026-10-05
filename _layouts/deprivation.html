@@ -34,12 +34,12 @@
         </div>
 
         <h2>Map of Deprivation in Cheltenham</h2>
-        <p>
-            <label for="deprivation-domain">Show</label>
+        <div class="filter-bar">
+            <label class="filter-label" for="deprivation-domain">Show</label>
             <select id="deprivation-domain">
                 {% for d in dep.domains %}<option value="{{ d.key }}">{{ d.label }}</option>{% endfor %}
             </select>
-        </p>
+        </div>
         <div class="map-legend">
             <span><i class="tier-swatch shade-5"></i> Most deprived 20% in England</span>
             <span><i class="tier-swatch shade-4"></i> 20–40%</span>

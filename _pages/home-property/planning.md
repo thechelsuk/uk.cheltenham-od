@@ -6,6 +6,11 @@ permalink: /cheltenham-planning-applications
 description: "Recent planning applications submitted to Cheltenham Borough Council, on a map and in a table, updated daily from the council's PublicAccess portal."
 type: "property"
 schema: planschema
+filters:
+  - table: 1
+    column: "Status"
+  - table: 2
+    column: "Decision"
 ---
 
 {% assign planning = site.data["planning-applications"] %}

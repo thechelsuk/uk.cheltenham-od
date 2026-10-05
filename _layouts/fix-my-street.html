@@ -31,15 +31,18 @@
                         <th scope="col">Report</th>
                         <th scope="col">Details</th>
                         <th scope="col" class="map">Map</th>
+                        <th scope="col" class="link">FixMyStreet</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for r in data.items %}
                     <tr>
                         <td class="date" data-value="{{ r.published_iso }}">{{ r.published_iso | date: "%Y-%m-%d %H:%M" }}</td>
-                        <td><a href="{{ r.url }}" rel="noopener">{{ r.title | escape }}</a></td>
+                        <td>{{ r.title | escape }}</td>
                         <td>{{ r.description | escape }}</td>
                         <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
+                        {% assign fms_label = r.title | escape | append: " on FixMyStreet" %}
+                        <td class="link">{% include link-icon.html url=r.url label=fms_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

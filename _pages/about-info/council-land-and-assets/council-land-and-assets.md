@@ -9,6 +9,9 @@ year: 2023
 other_year_label: "2021"
 other_year_link: /cheltenham-council-land-and-assets/2021
 schema: council-land-and-assets
+filters:
+  - table: 1
+    column: "Tenure Type"
 ---
 
 ## Cheltenham Council Land & Assets

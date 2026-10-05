@@ -6,6 +6,9 @@ permalink: /cheltenham-road-collisions
 description: "How safe are Cheltenham's roads? Every police-recorded injury collision from 2021 to 2025 by severity, road user, road and time of day, with a map of the fatal and serious ones."
 type: "environment"
 schema: road-collisions
+filters:
+  - table: 9
+    column: "Severity"
 ---
 
 {% include sponsor.html %}

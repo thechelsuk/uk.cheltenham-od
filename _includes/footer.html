@@ -107,6 +107,10 @@
 <script src="/assets/scripts/theme-toggle.js" defer></script>
 <script src="/assets/scripts/nav-menu.js" defer></script>
 <script src="/assets/scripts/table-sort.js" defer></script>
+{% if page.filters %}
+<script id="table-filters" type="application/json">{{ page.filters | jsonify }}</script>
+<script src="/assets/scripts/table-filter.js" defer></script>
+{% endif %}
 </body>
 
 </html>

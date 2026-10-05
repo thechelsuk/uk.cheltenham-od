@@ -13,6 +13,10 @@ venue_types:
     label: "Pubs and bars"
   - type: "Takeaway/sandwich shop"
     label: "Takeaways and sandwich shops"
+filters:
+  - table: 1
+    column: "Type"
+    style: buttons
 ---
 
 {% include sponsor.html %}

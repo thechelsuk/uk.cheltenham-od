@@ -48,19 +48,23 @@
                         <th scope="col">Address</th>
                         <th scope="col" class="postcode">Postcode</th>
                         <th scope="col" class="map">Map</th>
+                        <th scope="col" class="link">FSA</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for v in venues %}
                     {% assign vt = page.venue_types | where: "type", v.type | first %}
                     <tr>
-                        <td data-val="{{ v.name | downcase }}"><a href="https://ratings.food.gov.uk/business/{{ v.id }}">{{ v.name }}</a></td>
+                        <td data-val="{{ v.name | downcase }}">{{ v.name }}</td>
                         <td class="type">{{ vt.label }}</td>
                         <td class="number" data-val="{% if v.rating == '' or v.rating == 'AwaitingInspection' %}-1{% else %}{{ v.rating }}{% endif %}">{% if v.rating == 'AwaitingInspection' %}Awaiting inspection{% elsif v.rating == '' %}&mdash;{% else %}{{ v.rating }}{% endif %}</td>
                         <td class="date" data-val="{{ v.rating_date }}">{% if v.rating_date != '' %}{{ v.rating_date }}{% else %}&mdash;{% endif %}</td>
                         <td>{{ v.address }}</td>
                         <td class="postcode">{{ v.postcode }}</td>
                         <td class="map">{% if v.latitude %}{% include pin.html lat=v.latitude lng=v.longitude label=v.name %}{% endif %}</td>
+                        {% assign fsa_url = "https://ratings.food.gov.uk/business/" | append: v.id %}
+                        {% assign fsa_label = v.name | append: " hygiene rating on the Food Standards Agency site" %}
+                        <td class="link">{% include link-icon.html url=fsa_url label=fsa_label %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

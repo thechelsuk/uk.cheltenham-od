@@ -49,7 +49,7 @@
                         <th scope="col">Latest Ofsted</th>
                         <th scope="col">Address</th>
                         <th scope="col" class="postcode">Postcode</th>
-                        <th scope="col" class="link"><span class="sr-only">School site</span></th>
+                        <th scope="col" class="link">Site</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,17 +73,8 @@
                         {% endif %}
                         <td>{{ school.address }}</td>
                         <td class="postcode">{{ school.postcode }}</td>
-                        <td class="link">
-                            <a href="{{ school.website | default: school.urn_url }}" rel="nofollow noopener" target="_blank"
-                                title="{{ school.name }} {% if school.website %}site{% else %}official record{% endif %}"
-                                aria-label="{{ school.name }} {% if school.website %}site{% else %}official record{% endif %} (opens in a new tab)">
-                                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                                    <path fill="currentColor"
-                                        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z">
-                                    </path>
-                                </svg>
-                            </a>
-                        </td>
+                        {% assign site_label = school.name | append: " site" %}
+                        <td class="link">{% if school.website %}{% include link-icon.html url=school.website label=site_label nofollow=true %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

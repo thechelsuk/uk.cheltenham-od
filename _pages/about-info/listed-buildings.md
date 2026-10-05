@@ -6,6 +6,9 @@ permalink: /cheltenham-listed-buildings
 description: "Listed buildings, scheduled monuments and registered parks & gardens in Cheltenham, sourced from Historic England's National Heritage List."
 type: "about"
 schema: listed-buildings
+filters:
+  - table: 1
+    column: "Grade"
 ---
 
 {% assign heritage = site.data["listed-buildings"] %}

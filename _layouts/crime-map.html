@@ -18,19 +18,17 @@
         {{ content }}
 
         <h2>Crime Rate Map</h2>
-        <p>
-            <label for="crime-map-level">Show:</label>
+        <div class="filter-bar">
+            <label class="filter-label" for="crime-map-level">Show</label>
             <select id="crime-map-level">
                 <option value="lsoa">Small areas ({{ data.lsoa.areas.size }})</option>
                 <option value="ward">Wards ({{ data.ward.areas.size }})</option>
             </select>
-        </p>
-        <p>
-            <label for="crime-map-window">12 months ending:</label>
+            <label class="filter-label" for="crime-map-window">12 months ending</label>
             <input type="range" id="crime-map-window" min="0" max="{{ data.windows.size | minus: 1 }}"
                 value="{{ data.windows.size | minus: 1 }}" step="1" aria-describedby="crime-map-window-label">
             <output id="crime-map-window-label" for="crime-map-window">{{ latest.first_month }} to {{ latest.last_month }}</output>
-        </p>
+        </div>
         <p><small>Crimes per 1,000 residents over 12 months</small></p>
         <div class="map-legend" id="crime-map-legend"></div>
         <div id="crime-map" class="map-canvas" aria-label="Map of Cheltenham shaded by crimes per 1,000 residents"></div>
