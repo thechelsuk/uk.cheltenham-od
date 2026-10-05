@@ -18,6 +18,8 @@ Usage:
 import sys
 import argparse
 import datetime
+import json
+import os
 import requests
 from collections import Counter
 
@@ -32,6 +34,8 @@ CHELTENHAM_POSTCODES = ["GL50", "GL51", "GL52", "GL53"]
 GP_NON_PRIMARY_ROLE_ID = "RO76"  # confirmed: "GP Practice Prescribing Cost Centre"
 
 OUTPUT_FILE = "_pages/community-support/gp-pharmacy.md"
+# GP ratings come from the CQC data written by cqc.py, matched on ODS code.
+CQC_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_data", "cqc.json")
 MARKER_NAME = "gp_pharmacy_finder"  # CHECK: matches your template's marker name?
 
 DEBUG = False
@@ -188,8 +192,18 @@ def extract_detail_fields(detail_json):
     return address, phone
 
 
+def cqc_ratings():
+    """{ODS code: CQC location} for rated GP practices, if cqc.py has run."""
+    if not os.path.exists(CQC_FILE):
+        return {}
+    with open(CQC_FILE, encoding="utf-8") as f:
+        locations = json.load(f).get("locations", [])
+    return {loc["ods_code"]: loc for loc in locations if loc.get("ods_code") and loc.get("overall")}
+
+
 def fetch_gp_practices():
     summaries = fetch_orgs_for_postcodes({"NonPrimaryRoleId": GP_NON_PRIMARY_ROLE_ID})
+    ratings = cqc_ratings()
     results = []
     for s in summaries:
         detail = get_org_detail(s["OrgId"])
@@ -198,6 +212,7 @@ def fetch_gp_practices():
             "name": to_title_case(s.get("Name", "Unknown")),
             "address": to_title_case(address),
             "phone": phone,
+            "cqc": ratings.get(s["OrgId"]),
         })
     return results
 
@@ -283,6 +298,9 @@ def render_entry_list(entries):
         lines.append(f"\n- Address: [{e['address']}]({maps_link(e['address'])})")
         if e["phone"]:
             lines.append(f"\n- Phone: [{e['phone']}](tel:{e['phone'].replace(' ', '')})")
+        if e.get("cqc"):
+            published = f" ({e['cqc']['published']})" if e["cqc"].get("published") else ""
+            lines.append(f"\n- CQC rating: [{e['cqc']['overall']}]({e['cqc']['url']}){published}")
         lines.append("\n")
 
     return lines
@@ -308,6 +326,12 @@ def render_markdown(gps, pharmacies):
         "collection or delivery service; ask in branch or check the "
         "[NHS App](https://www.nhs.uk/nhs-app/) to nominate a regular "
         "pharmacy.\n")
+
+    lines.append(
+        "\nEach GP practice shows its latest rating from the [Care Quality Commission]"
+        "(https://www.cqc.org.uk/), the independent regulator of health and social care in "
+        "England, with the date the report was published. The rating links to the full report.\n"
+    )
 
     lines.append(
         "\nAddresses link to googlemaps and phone numbers use the `tel:` protocol and should prompt to call on your device.\n"

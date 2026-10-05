@@ -404,6 +404,16 @@
     "pages": ["/cheltenham-classifieds"]
   },
   {
+    "id": "cqc-care-directory-and-ratings",
+    "name": "Care Quality Commission",
+    "licence_name": "Open Government Licence v3.0",
+    "source_url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
+    "licence": "Open Government Licence v3.0, as stated on the CQC's Using CQC data page, which asks reusers to acknowledge CQC information. Read from the monthly care directory CSV and latest ratings ODS (_python/cqc_source.py); the CQC API needs a subscription key and can replace that module later.",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/cqc.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-care-homes", "/cheltenham-gp-pharmacies"]
+  },
+  {
     "id": "charity-commission-register",
     "name": "Charity Commission for England and Wales",
     "licence_name": "Open Government Licence v3.0",

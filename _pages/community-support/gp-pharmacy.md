@@ -17,6 +17,8 @@ Finding a GP practice or pharmacy in Cheltenham shouldn't mean digging through t
 
 If you need to register with a new GP, you can do this directly with any practice that covers your address — you don't need a referral or your old practice's permission. For repeat prescriptions, most pharmacies listed below offer a free collection or delivery service; ask in branch or check the [NHS App](https://www.nhs.uk/nhs-app/) to nominate a regular pharmacy.
 
+Each GP practice shows its latest rating from the [Care Quality Commission](https://www.cqc.org.uk/), the independent regulator of health and social care in England, with the date the report was published. The rating links to the full report.
+
 Addresses link to googlemaps and phone numbers use the `tel:` protocol and should prompt to call on your device.
 
 ## GP Practices
@@ -25,71 +27,85 @@ Addresses link to googlemaps and phone numbers use the `tel:` protocol and shoul
 
 - Address: [Wilson Health Centre, 236 Prestbury Road, Cheltenham, GL52 3EY](https://www.google.com/maps/search/?api=1&query=Wilson+Health+Centre%2C+236+Prestbury+Road%2C+Cheltenham%2C+GL52+3EY)
 - Phone: [01242 513975](tel:01242513975)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-13348181895) (2016-11-07)
 
 ### Cleevelands Medical Centre
 
 - Address: [Sapphire Road, Bishops Cleeve, Cheltenham, GL52 7YU](https://www.google.com/maps/search/?api=1&query=Sapphire+Road%2C+Bishops+Cleeve%2C+Cheltenham%2C+GL52+7YU)
 - Phone: [01242 244868](tel:01242244868)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-6253589990) (2020-04-03)
 
 ### Overton Park Surgery
 
 - Address: [Overton Park Road, Cheltenham, GL50 3BP](https://www.google.com/maps/search/?api=1&query=Overton+Park+Road%2C+Cheltenham%2C+GL50+3BP)
 - Phone: [01242 580511](tel:01242580511)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-589508826) (2020-10-07)
 
 ### Royal Crescent Surgery
 
 - Address: [Wilson Health Centre, 236 Prestbury Road, Cheltenham, GL52 3EY](https://www.google.com/maps/search/?api=1&query=Wilson+Health+Centre%2C+236+Prestbury+Road%2C+Cheltenham%2C+GL52+3EY)
 - Phone: [01242 580248](tel:01242580248)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-13349020103) (2018-10-25)
 
 ### Sixways Clinic
 
 - Address: [London Road, Charlton Kings, Cheltenham, GL52 6HS](https://www.google.com/maps/search/?api=1&query=London+Road%2C+Charlton+Kings%2C+Cheltenham%2C+GL52+6HS)
 - Phone: [01242 223810](tel:01242223810)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-542818757) (2017-01-18)
 
 ### St. Catherine's Surgery
 
 - Address: [St. Pauls Medical Centre, 121 Swindon Road, Cheltenham, GL50 4DP](https://www.google.com/maps/search/?api=1&query=St.+Pauls+Medical+Centre%2C+121+Swindon+Road%2C+Cheltenham%2C+GL50+4DP)
 - Phone: [01242 215005](tel:01242215005)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-13904283795) (2016-06-16)
 
 ### St. George's Surgery
 
 - Address: [St. Pauls Medical Centre, 121 Swindon Road, Cheltenham, GL50 4DP](https://www.google.com/maps/search/?api=1&query=St.+Pauls+Medical+Centre%2C+121+Swindon+Road%2C+Cheltenham%2C+GL50+4DP)
 - Phone: [01242 215015](tel:01242215015)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-550081350) (2018-06-28)
 
 ### The Leckhampton Surgery
 
 - Address: [17 Moorend Park Road, Cheltenham, GL53 0LA](https://www.google.com/maps/search/?api=1&query=17+Moorend+Park+Road%2C+Cheltenham%2C+GL53+0LA)
 - Phone: [01242 539080](tel:01242539080)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-568140008) (2018-08-16)
 
 ### The Royal Well Surgery
 
 - Address: [St. Pauls Medical Centre, 121 Swindon Road, Cheltenham, GL50 4DP](https://www.google.com/maps/search/?api=1&query=St.+Pauls+Medical+Centre%2C+121+Swindon+Road%2C+Cheltenham%2C+GL50+4DP)
 - Phone: [01242 215010](tel:01242215010)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-555957231) (2022-09-15)
 
 ### The Stoke Road Surgery
 
 - Address: [4 Stoke Road, Bishops Cleeve, Cheltenham, GL52 8RP](https://www.google.com/maps/search/?api=1&query=4+Stoke+Road%2C+Bishops+Cleeve%2C+Cheltenham%2C+GL52+8RP)
 - Phone: [01242 672007](tel:01242672007)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-565309719) (2017-08-31)
 
 ### Underwood Surgery
 
 - Address: [139 St. Georges Road, Cheltenham, GL50 3EQ](https://www.google.com/maps/search/?api=1&query=139+St.+Georges+Road%2C+Cheltenham%2C+GL50+3EQ)
 - Phone: [01242 580644](tel:01242580644)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-552884491) (2016-08-22)
 
 ### West Cheltenham Medical
 
 - Address: [Hesters Way Resource Ctr, Cassin Drive, Cheltenham, GL51 7SU](https://www.google.com/maps/search/?api=1&query=Hesters+Way+Resource+Ctr%2C+Cassin+Drive%2C+Cheltenham%2C+GL51+7SU)
 - Phone: [01242 507111](tel:01242507111)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-6017194923) (2019-09-23)
 
 ### Weston House Practice
 
 - Address: [St. Pauls Medical Centre, 121 Swindon Road, Cheltenham, GL50 4DP](https://www.google.com/maps/search/?api=1&query=St.+Pauls+Medical+Centre%2C+121+Swindon+Road%2C+Cheltenham%2C+GL50+4DP)
 - Phone: [01242 215000](tel:01242215000)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-545971756) (2016-08-12)
 
 ### Yorkleigh Surgery(ct)
 
 - Address: [93 St. Georges Road, Cheltenham, GL50 3ED](https://www.google.com/maps/search/?api=1&query=93+St.+Georges+Road%2C+Cheltenham%2C+GL50+3ED)
 - Phone: [01242 519049](tel:01242519049)
+- CQC rating: [Good](https://www.cqc.org.uk/location/1-541199747) (2019-02-19)
 
 ## Pharmacies
 
@@ -263,6 +279,6 @@ Addresses link to googlemaps and phone numbers use the `tel:` protocol and shoul
 - Address: [Windyridge Road, Cheltenham, GL50 4RA](https://www.google.com/maps/search/?api=1&query=Windyridge+Road%2C+Cheltenham%2C+GL50+4RA)
 - Phone: [01242 221988](tel:01242221988)
 
-*Source: [NHS Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service). Data last refreshed 2026-10-05 10:52 UTC.*
+*Source: [NHS Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service). Data last refreshed 2026-10-05 19:43 UTC.*
 
 <!-- gp_pharmacy_finder ends -->

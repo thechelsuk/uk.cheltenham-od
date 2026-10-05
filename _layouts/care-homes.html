@@ -1,0 +1,175 @@
+{% include header.html %}
+{% assign data = site.data.cqc %}
+{% assign nursing = data.locations | where: "kind", "nursing_home" %}
+{% assign residential = data.locations | where: "kind", "residential_home" %}
+{% assign care_homes = nursing | concat: residential | sort: "name" %}
+{% assign home_care = data.locations | where: "kind", "home_care" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/explore/community-support">&larr; Back to Community &amp; Support</a></li>
+                <li>CQC data checked {{ data.generated_at | date: "%Y-%m-%d" }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Care Homes at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Care homes</p>
+                <span class="info-card__title">{{ data.summary.care_homes }}</span>
+                <span class="info-card__subtitle">{{ data.summary.nursing_homes }} with nursing care</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Rated good or outstanding</p>
+                <span class="info-card__title">{{ data.summary.care_homes_good_or_better }}</span>
+                <span class="info-card__subtitle">of {{ data.summary.care_homes_rated }} care homes with a rating</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Home care services</p>
+                <span class="info-card__title">{{ data.summary.home_care }}</span>
+                <span class="info-card__subtitle">carers who visit people at home</span>
+            </div>
+        </div>
+
+        <h2>Map of Care Homes</h2>
+        <div id="care-homes-map" class="map-canvas" aria-label="Map of care homes in Cheltenham"></div>
+
+        <h2>All Care Homes ({{ care_homes.size }})</h2>
+        <p>
+            Select a home's name for its ratings on each of the five questions CQC inspectors ask, the care it offers and
+            a link to its full report.
+        </p>
+        <div class="table-scroll">
+            <table class="care-homes-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Care Home</th>
+                        <th scope="col" class="type">Type</th>
+                        <th scope="col">CQC Rating</th>
+                        <th scope="col" class="date">Report</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col">Map</th>
+                        <th scope="col" class="link"><span class="sr-only">Care home site</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in care_homes %}
+                    <tr>
+                        <td><a href="/cheltenham-care-homes/{{ c.slug }}">{{ c.name }}</a></td>
+                        <td class="type">{% if c.kind == "nursing_home" %}Nursing{% else %}Residential{% endif %}</td>
+                        <td data-val="{{ c.overall_rank }}">{{ c.overall | default: "Not yet rated" }}</td>
+                        <td class="date" data-val="{{ c.published }}">{% if c.published %}{{ c.published | date: "%Y-%m-%d" }}{% else %}&ndash;{% endif %}</td>
+                        <td class="postcode">{{ c.postcode }}</td>
+                        <td class="map">{% if c.lat %}{% include pin.html lat=c.lat lng=c.lon label=c.name %}{% endif %}</td>
+                        <td class="link">
+                            <a href="{{ c.website | default: c.url }}" rel="nofollow noopener" target="_blank"
+                                title="{{ c.name }} {% if c.website %}site{% else %}on the CQC site{% endif %}"
+                                aria-label="{{ c.name }} {% if c.website %}site{% else %}on the CQC site{% endif %} (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Home Care Services ({{ home_care.size }})</h2>
+        <p>
+            Home care agencies, also called domiciliary care, provide carers who visit people in their own homes to help
+            with washing, dressing, meals and medication. Most cover a wide area, so one based elsewhere in Cheltenham may
+            still visit you.
+        </p>
+        <div class="table-scroll">
+            <table class="care-homes-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Service</th>
+                        <th scope="col">CQC Rating</th>
+                        <th scope="col" class="date">Report</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col" class="link"><span class="sr-only">Service site</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in home_care %}
+                    <tr>
+                        <td><a href="/cheltenham-care-homes/{{ c.slug }}">{{ c.name }}</a></td>
+                        <td data-val="{{ c.overall_rank }}">{{ c.overall | default: "Not yet rated" }}</td>
+                        <td class="date" data-val="{{ c.published }}">{% if c.published %}{{ c.published | date: "%Y-%m-%d" }}{% else %}&ndash;{% endif %}</td>
+                        <td class="postcode">{{ c.postcode }}</td>
+                        <td class="link">
+                            <a href="{{ c.website | default: c.url }}" rel="nofollow noopener" target="_blank"
+                                title="{{ c.name }} {% if c.website %}site{% else %}on the CQC site{% endif %}"
+                                aria-label="{{ c.name }} {% if c.website %}site{% else %}on the CQC site{% endif %} (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="care-homes-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            Locations from {{ data.geocoding_source }}. {{ data.geocoding_attribution }}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Do CQC Ratings Mean?</h3>
+        <ul>
+            <li>The Care Quality Commission rates services outstanding, good, requires improvement or inadequate, overall and
+                for each of five questions: are they safe, effective, caring, responsive to people's needs, and well-led?</li>
+            <li>A rating reflects the service at its last inspection, so check the date of the report. Older reports may not
+                reflect how a home is run today.</li>
+        </ul>
+
+        <h3>What's the Difference Between a Residential and a Nursing Home?</h3>
+        <ul>
+            <li>Residential care homes provide personal care, such as help with washing, dressing and medication. Nursing
+                homes also have qualified nurses on duty around the clock for people with more complex medical needs.</li>
+        </ul>
+
+        <h3>Why Do Some Services Have No Rating?</h3>
+        <ul>
+            <li>New services, or ones that have recently changed owner, aren't rated until the CQC has inspected them.</li>
+        </ul>
+
+        <h3>Who Pays for a Care Home?</h3>
+        <ul>
+            <li>It depends on your needs and your savings. Gloucestershire County Council can assess what care you need and
+                whether it will help with the cost; its
+                <a href="https://www.gloucestershire.gov.uk/health-and-social-care/" rel="noopener">health and social care
+                pages</a> explain how to ask for an assessment.</li>
+        </ul>
+
+        <h3>Where Does This Data Come From?</h3>
+        <ul>
+            <li>The Care Quality Commission's directory of registered services and its latest ratings, both published
+                monthly under the Open Government Licence. Each home is placed at the centre of its postcode on the map.</li>
+        </ul>
+    </div>
+    {% include footer.html %}
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="care-homes-data" type="application/json">{{ care_homes | jsonify }}</script>
+<script src="/assets/scripts/care-homes-map.js"></script>

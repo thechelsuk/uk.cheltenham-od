@@ -1,0 +1,17 @@
+{% assign c = site.data.cqc.locations | where: "id", page.cqc_id | first %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": {{ c.name | append: " CQC ratings" | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.cqc.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "about": { "@type": "LocalBusiness", "name": {{ c.name | jsonify }}, "address": {{ c.address | append: ", " | append: c.postcode | jsonify }}, "sameAs": "{{ c.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Overall CQC rating", "Key question ratings", "Care offered"]
+}
+</script>

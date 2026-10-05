@@ -1,0 +1,127 @@
+{% include header.html %}
+{% assign data = site.data.cqc %}
+{% assign c = data.locations | where: "id", page.cqc_id | first %}
+{% if c.kind == "nursing_home" %}{% assign kind = "nursing home" %}{% elsif c.kind == "residential_home" %}{% assign kind = "residential care home" %}{% else %}{% assign kind = "home care service" %}{% endif %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/cheltenham-care-homes">&larr; Back to Cheltenham Care Homes</a></li>
+                {% if c.published %}<li>CQC report {{ c.published | date: "%Y-%m-%d" }}</li>{% endif %}
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        <h2>About {{ c.name }}</h2>
+        <p>
+            {{ c.name }} is a {{ kind }} at {{ c.address }}, {{ c.postcode }}, registered with the Care Quality Commission
+            (CQC), the independent regulator of health and social care in England.
+            {% if c.overall %}At its latest inspection{% if c.published %}, reported on {{ c.published | date: "%Y-%m-%d" }},{% endif %}
+            the CQC rated it <strong>{{ c.overall | downcase }}</strong> overall.{% else %}The CQC hasn't published a rating
+            for it yet, usually because it is newly registered.{% endif %}
+            {% if c.previous_registration %}That rating was given under its previous registration, before it changed provider;
+            the CQC will rate it again under its current registration.{% endif %}
+        </p>
+        <p>
+            Compare it with the other care homes and home care services in town on our
+            <a href="/cheltenham-care-homes">Cheltenham care homes</a> page.
+        </p>
+
+        <h2>{{ c.name }} at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Overall CQC rating</p>
+                <span class="info-card__title">{{ c.overall | default: "Not yet rated" }}</span>
+                {% if c.published %}<span class="info-card__subtitle">report {{ c.published | date: "%Y-%m-%d" }}</span>{% endif %}
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Type of care</p>
+                <span class="info-card__title">{{ kind | capitalize }}</span>
+                {% if c.service_types.size > 1 %}<span class="info-card__subtitle">{{ c.service_types | join: ", " }}</span>{% endif %}
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Location</p>
+                <span class="info-card__title">{{ c.postcode }}</span>
+                {% if c.distance_miles %}<span class="info-card__subtitle">{{ c.distance_miles }} miles from the town centre</span>{% endif %}
+            </div>
+        </div>
+
+        {% if c.overall %}
+        <h2>CQC Ratings</h2>
+        <p>
+            CQC inspectors rate every service on five questions, as well as overall: is it safe, effective, caring,
+            responsive to people's needs and well-led?
+        </p>
+        <div class="table-scroll">
+            <table class="care-home-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Question</th>
+                        <th scope="col">Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Overall</td><td>{{ c.overall }}</td></tr>
+                    <tr><td>Safe</td><td>{{ c.ratings.safe | default: "&ndash;" }}</td></tr>
+                    <tr><td>Effective</td><td>{{ c.ratings.effective | default: "&ndash;" }}</td></tr>
+                    <tr><td>Caring</td><td>{{ c.ratings.caring | default: "&ndash;" }}</td></tr>
+                    <tr><td>Responsive</td><td>{{ c.ratings.responsive | default: "&ndash;" }}</td></tr>
+                    <tr><td>Well-led</td><td>{{ c.ratings.well_led | default: "&ndash;" }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        {% if c.specialisms.size > 0 %}
+        <h2>Care Offered</h2>
+        <p>{{ c.name }} is registered with the CQC to provide care for:</p>
+        <ul>
+            {% for s in c.specialisms %}<li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <h2>Contact and Reports</h2>
+        <ul>
+            <li>Address: {{ c.address }}, {{ c.postcode }} {% if c.lat %}{% include pin.html lat=c.lat lng=c.lon label=c.name %}{% endif %}</li>
+            {% if c.website %}<li><a href="{{ c.website }}" rel="nofollow noopener">{{ c.name }}'s own site</a></li>{% endif %}
+            <li><a href="{{ c.url }}" rel="noopener">Full CQC report and inspection history</a></li>
+            {% if c.previous_registration %}<li><a href="{{ c.previous_url }}" rel="noopener">CQC report under its previous registration</a></li>{% endif %}
+        </ul>
+
+        <p class="care-home-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is {{ c.name }}'s CQC Rating?</h3>
+        <ul>
+            {% if c.overall %}
+            <li>{{ c.name }} is rated {{ c.overall | downcase }} overall by the Care Quality Commission{% if c.published %}, in a report published on {{ c.published | date: "%Y-%m-%d" }}{% endif %}.</li>
+            {% else %}
+            <li>{{ c.name }} hasn't been rated by the Care Quality Commission yet.</li>
+            {% endif %}
+            <li>The full report is on <a href="{{ c.url }}" rel="noopener">the CQC's page for {{ c.name }}</a>.</li>
+        </ul>
+
+        <h3>What Do CQC Ratings Mean?</h3>
+        <ul>
+            <li>Services are rated outstanding, good, requires improvement or inadequate, overall and on each of the five
+                key questions. A rating reflects the service at its last inspection, so check how recent the report is.</li>
+        </ul>
+
+        {% if c.kind != "home_care" %}
+        <h3>What's the Difference Between a Residential and a Nursing Home?</h3>
+        <ul>
+            <li>Residential care homes provide personal care, such as help with washing, dressing and medication. Nursing
+                homes also have qualified nurses on duty around the clock for people with more complex medical needs.</li>
+        </ul>
+        {% endif %}
+    </div>
+    {% include footer.html %}
+</div>

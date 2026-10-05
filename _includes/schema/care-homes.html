@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Care Homes and Home Care Services in Cheltenham with CQC Ratings",
+  "description": "Registered care homes, nursing homes and home care services in the GL50 to GL54 postcodes, with their latest Care Quality Commission ratings and specialisms.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.cqc.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Type of care", "Overall CQC rating", "Key question ratings", "Specialisms", "Location"]
+}
+</script>
