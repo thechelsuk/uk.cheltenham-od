@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Nurseries and Childcare Providers in Cheltenham",
+  "description": "Registered nurseries, pre-schools and out-of-school clubs in the GL50 to GL54 postcodes, with places and latest Ofsted outcome, from Ofsted's childcare register.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.childcare.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Provider name", "Type of care", "Places", "Latest Ofsted outcome", "Address", "Location"]
+}
+</script>

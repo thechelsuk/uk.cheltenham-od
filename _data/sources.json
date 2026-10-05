@@ -395,6 +395,36 @@
     ]
   },
   {
+    "id": "charity-commission-register",
+    "name": "Charity Commission for England and Wales",
+    "licence_name": "Open Government Licence v3.0",
+    "source_url": "https://register-of-charities.charitycommission.gov.uk/en/register/full-register-download",
+    "licence": "Open Government Licence v3.0, as stated on the full register download page. Contact addresses, phone numbers and emails are deliberately not republished, since small charities often give a trustee's home details.",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/charities.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-charities"]
+  },
+  {
+    "id": "mhclg-english-indices-of-deprivation",
+    "name": "English Indices of Deprivation 2025 (Ministry of Housing, Communities and Local Government)",
+    "licence_name": "Open Government Licence v3.0",
+    "source_url": "https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025",
+    "licence": "Open Government Licence v3.0. Published on GOV.UK as official statistics. Neighbourhood (LSOA) boundaries and the ward lookup come from _data/small-areas.json (ONS Open Geography Portal).",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/deprivation.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-deprivation", "/cheltenham-wards"]
+  },
+  {
+    "id": "ofsted-childcare-providers",
+    "name": "Ofsted",
+    "licence_name": "Open Government Licence v3.0",
+    "source_url": "https://www.gov.uk/government/statistical-data-sets/childcare-providers-and-inspections-management-information",
+    "licence": "Open Government Licence v3.0. Ofsted's childcare providers and inspections management information is published on GOV.UK under the OGL. Ofsted redacts childminders' and home childcarers' names and addresses, so only childcare on non-domestic premises is listed. Locations from postcodes.io (ONS Postcode Directory).",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/childcare.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-nurseries-childcare"]
+  },
+  {
     "id": "ofsted-school-inspections",
     "name": "Ofsted",
     "licence_name": "Open Government Licence v3.0",

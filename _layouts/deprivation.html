@@ -1,0 +1,189 @@
+{% include header.html %}
+{% assign dep = site.data.deprivation %}
+{% assign ward_index = site.data.wards.index.wards %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/about-cheltenham">&larr; Back to All About Cheltenham</a></li>
+                <li>{{ dep.summary.rank_of_average_score }}th of {{ dep.summary.district_count }} districts (1 = most deprived)</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Cheltenham at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Rank among districts in England</p>
+                <span class="info-card__title">{{ dep.summary.rank_of_average_score }} of {{ dep.summary.district_count }}</span>
+                <span class="info-card__subtitle">1 is the most deprived</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Neighbourhoods in most deprived 20%</p>
+                <span class="info-card__title">{{ dep.summary.most_deprived_20 }} of {{ dep.summary.lsoa_count }}</span>
+                <span class="info-card__subtitle">{{ dep.summary.deciles["1"] }} in the most deprived 10%</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Neighbourhoods in least deprived 20%</p>
+                <span class="info-card__title">{{ dep.summary.least_deprived_20 }} of {{ dep.summary.lsoa_count }}</span>
+                <span class="info-card__subtitle">{{ dep.summary.deciles["10"] }} in the least deprived 10%</span>
+            </div>
+        </div>
+
+        <h2>Map of Deprivation in Cheltenham</h2>
+        <p>
+            <label for="deprivation-domain">Show</label>
+            <select id="deprivation-domain">
+                {% for d in dep.domains %}<option value="{{ d.key }}">{{ d.label }}</option>{% endfor %}
+            </select>
+        </p>
+        <div class="map-legend">
+            <span><i class="tier-swatch shade-5"></i> Most deprived 20% in England</span>
+            <span><i class="tier-swatch shade-4"></i> 20–40%</span>
+            <span><i class="tier-swatch shade-3"></i> 40–60%</span>
+            <span><i class="tier-swatch shade-2"></i> 60–80%</span>
+            <span><i class="tier-swatch shade-1"></i> Least deprived 20%</span>
+        </div>
+        <div id="deprivation-map" class="map-canvas" aria-label="Map of Cheltenham neighbourhoods shaded by deprivation"></div>
+
+        <h2>Wards Ranked by Deprivation</h2>
+        <p>
+            Each ward's score is the average of its neighbourhoods' scores, weighted by how many people live in each. A higher
+            score means more deprived. The deciles show the range across the ward's neighbourhoods, where 1 is the most
+            deprived 10% in England and 10 the least.
+        </p>
+        <div class="table-scroll">
+            <table class="deprivation-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="number">Rank</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Score</th>
+                        <th scope="col" class="number">Most Deprived Decile</th>
+                        <th scope="col" class="number">Least Deprived Decile</th>
+                        <th scope="col" class="number">Neighbourhoods</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pair in dep.wards %}
+                    {% assign w = pair[1] %}
+                    {% assign wi = ward_index | where: "code", w.code | first %}
+                    <tr>
+                        <td class="number">{{ w.rank }}</td>
+                        <td>{% if wi %}<a href="/cheltenham-wards/{{ wi.slug }}">{{ w.name }}</a>{% else %}{{ w.name }}{% endif %}</td>
+                        <td class="number">{{ w.score }}</td>
+                        <td class="number">{{ w.most_deprived_decile }}</td>
+                        <td class="number">{{ w.least_deprived_decile }}</td>
+                        <td class="number">{{ w.lsoa_count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Every Neighbourhood ({{ dep.lsoas.size }})</h2>
+        <p>
+            National rank is out of {{ dep.lsoa_count_england_display }} neighbourhoods in England, where 1 is the most
+            deprived. The other columns are deciles for each kind of deprivation: 1 is the most deprived 10% in England and
+            10 the least.
+        </p>
+        <div class="table-scroll">
+            <table class="deprivation-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Neighbourhood</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">National Rank</th>
+                        <th scope="col" class="number">Overall</th>
+                        <th scope="col" class="number">Income</th>
+                        <th scope="col" class="number">Employment</th>
+                        <th scope="col" class="number">Education</th>
+                        <th scope="col" class="number">Health</th>
+                        <th scope="col" class="number">Crime</th>
+                        <th scope="col" class="number">Housing</th>
+                        <th scope="col" class="number">Living Environment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in dep.lsoas %}
+                    <tr>
+                        <td>{{ a.name }}</td>
+                        <td>{{ a.ward_name }}</td>
+                        <td class="number" data-val="{{ a.rank }}">{{ a.rank_display }}</td>
+                        <td class="number">{{ a.deciles.imd }}</td>
+                        <td class="number">{{ a.deciles.income }}</td>
+                        <td class="number">{{ a.deciles.employment }}</td>
+                        <td class="number">{{ a.deciles.education }}</td>
+                        <td class="number">{{ a.deciles.health }}</td>
+                        <td class="number">{{ a.deciles.crime }}</td>
+                        <td class="number">{{ a.deciles.housing }}</td>
+                        <td class="number">{{ a.deciles.environment }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="deprivation-attribution"><small>
+            Data from the <a href="{{ dep.source_url }}">{{ dep.source }}</a>, published under the {{ dep.licence }}.
+            Last updated {{ dep.generated_at | date: "%-d %B %Y" }}.
+            Neighbourhood boundaries from the Office for National Statistics; contains OS data &copy; Crown copyright and
+            database right. Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Are the Indices of Deprivation?</h3>
+        <ul>
+            <li>The government's official measure of relative deprivation in England. They rank all
+                {{ dep.lsoa_count_england_display }} small neighbourhoods from most to least deprived, combining seven kinds
+                of deprivation: income, employment, education and skills, health and disability, crime, barriers to housing
+                and services, and living environment.</li>
+            <li>The overall ranking, the Index of Multiple Deprivation, weights income and employment most heavily.</li>
+        </ul>
+
+        <h3>What Is a Neighbourhood Here?</h3>
+        <ul>
+            <li>A lower layer super output area: a small area the Office for National Statistics draws to hold roughly
+                1,500 residents. Cheltenham has {{ dep.summary.lsoa_count }} of them, and each ward contains between three
+                and five.</li>
+        </ul>
+
+        <h3>What Do the Deciles Mean?</h3>
+        <ul>
+            <li>England's neighbourhoods are split into ten equal groups. Decile 1 is the most deprived 10% in the country
+                and decile 10 the least deprived 10%. A neighbourhood in decile 1 for crime, for example, is among the 10% of
+                neighbourhoods in England with the highest levels of crime.</li>
+        </ul>
+
+        <h3>Does It Mean Everyone in a Neighbourhood Is Deprived?</h3>
+        <ul>
+            <li>No. The indices describe an area as a whole. Plenty of people in a deprived neighbourhood are not deprived,
+                and the reverse is true of less deprived ones.</li>
+            <li>They're relative, too: they show which areas are more deprived than others, not by how much, and not
+                whether an area has got better or worse in absolute terms.</li>
+        </ul>
+
+        <h3>How Is Cheltenham's Overall Rank Worked Out?</h3>
+        <ul>
+            <li>Districts are ranked by the average deprivation score of their neighbourhoods, weighted by population.
+                Cheltenham's average score of {{ dep.summary.average_score }} puts it {{ dep.summary.rank_of_average_score }}th
+                of {{ dep.summary.district_count }} districts, where 1 is the most deprived.</li>
+        </ul>
+
+        <h3>How Often Are the Figures Updated?</h3>
+        <ul>
+            <li>Every four to six years. The {{ dep.edition }} edition was published in October 2025; the previous one was
+                published in 2019.</li>
+        </ul>
+    </div>
+    {% include footer.html %}
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="deprivation-data" type="application/json">{{ dep.lsoas | jsonify }}</script>
+<script src="/assets/scripts/deprivation-map.js"></script>

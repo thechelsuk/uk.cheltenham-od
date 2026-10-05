@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Deprivation in Cheltenham: English Indices of Deprivation 2025",
+  "description": "Ranks and deciles from the English Indices of Deprivation 2025 for every neighbourhood (LSOA) and ward in Cheltenham, overall and for income, employment, education, health, crime, housing and living environment.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.deprivation.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "2025",
+  "variableMeasured": ["Index of Multiple Deprivation rank", "Deprivation decile by domain", "Ward deprivation score"]
+}
+</script>

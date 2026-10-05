@@ -1,0 +1,130 @@
+{% include header.html %}
+{% assign data = site.data.childcare %}
+{% assign providers = data.providers %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/cheltenham-schools">&larr; Back to Cheltenham Schools</a></li>
+                <li>Ofsted register as at {{ data.as_at | date: "%Y-%m-%d" }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Childcare at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Registered providers</p>
+                <span class="info-card__title">{{ data.summary.providers }}</span>
+                <span class="info-card__subtitle">nurseries, pre-schools and clubs</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Childcare places</p>
+                <span class="info-card__title">{{ data.summary.places_display }}</span>
+                <span class="info-card__subtitle">across all providers</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Rated good or outstanding</p>
+                <span class="info-card__title">{{ data.summary.good_or_better }}</span>
+                <span class="info-card__subtitle">of {{ data.summary.graded }} with an Ofsted grade or report card</span>
+            </div>
+        </div>
+
+        <h2>Map of Nurseries and Childcare</h2>
+        <div id="childcare-map" class="map-canvas" aria-label="Map of nurseries and childcare providers in Cheltenham"></div>
+
+        <h2>All Childcare Providers ({{ providers.size }})</h2>
+        <div class="table-scroll">
+            <table class="childcare-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="type">Type</th>
+                        <th scope="col" class="number">Places</th>
+                        <th scope="col">Latest Ofsted</th>
+                        <th scope="col">Address</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in providers %}
+                    <tr>
+                        <td>{{ p.name }}</td>
+                        <td class="type">{{ p.type }}</td>
+                        <td class="number" data-val="{{ p.places | default: 0 }}">{{ p.places_display | default: "&ndash;" }}</td>
+                        <td data-val="{{ p.latest.outcome }}">
+                            <a href="{{ p.ofsted_url }}" rel="nofollow noopener">{{ p.latest.outcome }}</a>{% if p.latest.date %} ({{ p.latest.date | date: "%Y-%m-%d" }}){% endif %}
+                        </td>
+                        <td>{{ p.address }}</td>
+                        <td class="postcode">{{ p.postcode }}</td>
+                        <td class="map">{% if p.lat %}{% include pin.html lat=p.lat lng=p.lon label=p.name %}{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="childcare-attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            Locations from {{ data.geocoding_source }}. {{ data.geocoding_attribution }}
+            Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+            Childminders and home childcarers are not listed, as Ofsted doesn't publish their names or addresses.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Do the Ofsted Outcomes Mean?</h3>
+        <ul>
+            <li><strong>Outstanding, Good, Requires improvement and Inadequate</strong> are the overall grades from a full
+                early years inspection.</li>
+            <li><strong>Report card</strong> means the provider has been inspected under Ofsted's newer framework, which grades
+                each area, such as inclusion and children's welfare, on a five-point scale from exceptional to urgent
+                improvement instead of giving one overall grade. The full report has the grades.</li>
+            <li><strong>Requirements met</strong> or <strong>not met</strong> applies to out-of-school clubs and providers on
+                the Childcare Register only, which Ofsted checks against its requirements rather than grading.</li>
+            <li><strong>Voluntary register</strong> providers, such as some tutors and holiday camps, have chosen to register
+                with Ofsted; it only inspects them if it has concerns.</li>
+            <li><strong>Not yet inspected</strong> usually means a provider registered recently.</li>
+        </ul>
+
+        <h3>Why Aren't Childminders Listed?</h3>
+        <ul>
+            <li>Most childminders work from their own homes, so Ofsted doesn't publish their names or addresses. Gloucestershire
+                County Council's <a href="https://www.glosfamilies.org.uk/" rel="noopener">Glosfamilies
+                directory</a> lists childminders who have chosen to advertise.</li>
+        </ul>
+
+        <h3>Can I Get Funded Childcare Hours?</h3>
+        <ul>
+            <li>Many working parents of children from nine months old, and all three and four-year-olds, can get free
+                childcare hours with a registered provider. Check what you're entitled to on the government's
+                <a href="https://www.childcarechoices.gov.uk/" rel="noopener">Childcare Choices</a> site.</li>
+        </ul>
+
+        <h3>Does a Provider Have Places Available?</h3>
+        <ul>
+            <li>The number shown is how many children a provider is registered to care for at once, not how many places
+                are free. Contact the provider directly to ask about availability.</li>
+        </ul>
+
+        <h3>Where Does This Data Come From?</h3>
+        <ul>
+            <li>Ofsted's register of childcare providers and their latest inspections, which it publishes every three
+                months. The list is checked monthly. Each provider is placed at the centre of its postcode, so a pin is
+                close to the setting rather than exactly on it.</li>
+        </ul>
+    </div>
+    {% include footer.html %}
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="childcare-data" type="application/json">{{ providers | jsonify }}</script>
+<script src="/assets/scripts/childcare-map.js"></script>

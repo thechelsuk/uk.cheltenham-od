@@ -22,6 +22,7 @@ straight from the official register.
 
 - [Secondary school catchment areas map](/cheltenham-schools/catchment-areas/secondary) — which secondary school is nearest to each part of town.
 - [Primary school catchment areas map](/cheltenham-schools/catchment-areas/primary) — which primary school is nearest to each part of town.
+- [Nurseries and childcare](/cheltenham-nurseries-childcare) — every registered nursery, pre-school and out-of-school club, with its latest Ofsted outcome.
 - [Gloucester County Council Find a School](https://www.gloucestershire.gov.uk/education-and-learning/find-a-school)
 - [Dynamic Maps for Schools](https://gcc.dynamicmaps.co.uk/MapThatPublic/Default.aspx)
 - [Term Dates from Gloucestershire County Council](https://www.gloucestershire.gov.uk/education-and-learning/term-dates/)

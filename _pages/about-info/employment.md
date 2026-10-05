@@ -12,4 +12,4 @@ schema: cheltenham-employment
 
 ## Cheltenham Employment Rate History
 
-This page shows the year-by-year history behind the current employment figures on our [All About Cheltenham](/about-cheltenham) page — economic activity, employment and unemployment rates for Cheltenham residents aged 16-64, back to 2004.
+This page shows the year-by-year history behind the current employment figures on our [All About Cheltenham](/about-cheltenham) page — economic activity, employment and unemployment rates for Cheltenham residents aged 16-64, back to 2004. To see how employment and income vary between neighbourhoods, see our [deprivation](/cheltenham-deprivation) map.

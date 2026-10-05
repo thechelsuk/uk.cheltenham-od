@@ -1,0 +1,171 @@
+{% include header.html %}
+{% assign data = site.data.charities %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/explore/community-support">&larr; Back to Community &amp; Support</a></li>
+                <li>Register checked {{ data.generated_at | date: "%Y-%m-%d" }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2>Charities at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Registered charities</p>
+                <span class="info-card__title">{{ data.summary.count }}</span>
+                <span class="info-card__subtitle">based in GL50–GL54</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Combined income</p>
+                <span class="info-card__title">{{ data.summary.total_income_display }}</span>
+                <span class="info-card__subtitle">in their latest accounts</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Income of £1 million or more</p>
+                <span class="info-card__title">{{ data.summary.over_million }}</span>
+                <span class="info-card__subtitle">charities</span>
+            </div>
+        </div>
+
+        <h2>Charities by Size</h2>
+        <div class="table-scroll">
+            <table class="charities-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Latest Income</th>
+                        <th scope="col" class="number">Charities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in data.summary.income_bands %}
+                    <tr>
+                        <td>{{ b.band }}</td>
+                        <td class="number">{{ b.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Charities by Cause</h2>
+        <p>Charities choose the causes they work on when they register, and many choose more than one.</p>
+        <div class="table-scroll">
+            <table class="charities-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Cause</th>
+                        <th scope="col" class="number">Charities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.summary.causes %}
+                    <tr>
+                        <td>{{ c.cause }}</td>
+                        <td class="number">{{ c.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>All Charities ({{ data.charities.size }})</h2>
+        <p>
+            <label for="charity-cause">Cause:</label>
+            <select id="charity-cause">
+                <option value="">All causes</option>
+                {% for c in data.summary.causes %}<option value="{{ c.cause }}">{{ c.cause }}</option>{% endfor %}
+            </select>
+            <label for="charity-search">Search:</label>
+            <input id="charity-search" type="search" placeholder="Name or activity">
+        </p>
+        <div class="table-scroll">
+            <table class="charities-table charities-list data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Charity</th>
+                        <th scope="col">What It Does</th>
+                        <th scope="col" class="number">Income</th>
+                        <th scope="col" class="postcode">Area</th>
+                        <th scope="col" class="date">Registered</th>
+                        <th scope="col" class="link"><span class="sr-only">Charity site</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.charities %}
+                    <tr data-causes="{{ c.causes | join: '|' }}">
+                        <td><a href="{{ c.register_url }}" rel="nofollow noopener">{{ c.name }}</a></td>
+                        <td>{{ c.activities }}</td>
+                        <td class="number" data-val="{{ c.income | default: 0 }}">{{ c.income_display | default: "&ndash;" }}</td>
+                        <td class="postcode">{{ c.district }}</td>
+                        <td class="date" data-val="{{ c.registered }}">{{ c.registered | date: "%Y-%m-%d" }}</td>
+                        <td class="link">
+                            {% if c.website %}
+                            <a href="{{ c.website }}" rel="nofollow noopener" target="_blank" title="{{ c.name }} site"
+                                aria-label="{{ c.name }} site (opens in a new tab)">
+                                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                                    <path fill="currentColor"
+                                        d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z">
+                                    </path>
+                                </svg>
+                            </a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="charities-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>'s register of charities, published under the
+            {{ data.licence }}. Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            Lists main registered charities whose contact postcode is in GL50–GL54; linked subsidiary charities are not
+            listed separately.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Which Charities Are Included?</h3>
+        <ul>
+            <li>Every charity on the Charity Commission's register for England and Wales whose contact address is in the
+                Cheltenham postcodes GL50 to GL54, which includes the villages and small towns around Cheltenham.</li>
+            <li>Charities based elsewhere that work in Cheltenham, and small charities that don't have to register, such as
+                those with an income under £5,000, aren't listed.</li>
+        </ul>
+
+        <h3>Why Isn't There a Map or Contact Details?</h3>
+        <ul>
+            <li>Many small charities give a trustee's home address, phone number or email as their contact details, so we
+                don't republish them. Each charity's entry on the register, linked from its name, has the contact details it
+                has chosen to make public.</li>
+        </ul>
+
+        <h3>What Does the Income Figure Show?</h3>
+        <ul>
+            <li>The total income in the charity's most recent accounts filed with the Charity Commission, which can be up
+                to a year or two old. It includes donations, grants, fees and trading income, so a large figure doesn't
+                always mean a charity relies on donations.</li>
+        </ul>
+
+        <h3>How Can I Check a Charity Is Genuine?</h3>
+        <ul>
+            <li>Look it up on the Charity Commission's
+                <a href="https://register-of-charities.charitycommission.gov.uk/" rel="noopener">register of charities</a>
+                using its name or registered charity number, and check its name and number match any appeal or collection.
+                A registered charity's entry shows its latest accounts and when they were filed.</li>
+        </ul>
+
+        <h3>Where Does This Data Come From?</h3>
+        <ul>
+            <li>The Charity Commission's full register download, which it updates daily, published under the Open
+                Government Licence. This page is refreshed monthly.</li>
+        </ul>
+    </div>
+    {% include footer.html %}
+</div>
+<script src="/assets/scripts/charities-filter.js"></script>

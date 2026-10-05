@@ -9,6 +9,8 @@
 {% assign ward_count = site.data.wards.index.wards.size %}
 {% assign pol = site.data["ward-politics"].wards[page.ward] %}
 {% assign latest_vote = pol.elections.first %}
+{% assign dep = site.data.deprivation %}
+{% assign ward_dep = dep.wards[w.code] %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -93,6 +95,13 @@
                 <span class="info-card__title">{{ issues.serious_collisions.size }}</span>
                 {% if issues.serious_collisions.size > 0 %}<span class="info-card__subtitle">{{ issues.serious_collisions_by_year.first.year }} to {{ issues.serious_collisions_by_year.last.year }}</span>{% endif %}
             </div>
+            {% if ward_dep %}
+            <div class="info-card">
+                <p class="info-card__label">Deprivation rank in Cheltenham</p>
+                <span class="info-card__title">{{ ward_dep.rank }} of {{ dep.wards.size }}</span>
+                <span class="info-card__subtitle">1 is the most deprived ward</span>
+            </div>
+            {% endif %}
         </div>
 
         <h2>Map of {{ w.name }}</h2>
@@ -219,6 +228,55 @@
         </div>
         <p><small>The latest year is part-year, so its sale count is lower. Prices come from HM Land Registry's
             Price Paid data, matched to the ward by postcode.</small></p>
+
+        {% if ward_dep %}
+        <h2>Deprivation in {{ w.name }}</h2>
+        <p>
+            On the English Indices of Deprivation {{ dep.edition }}, {{ w.name }} is the
+            {% if ward_dep.rank == 1 %}most deprived{% elsif ward_dep.rank == dep.wards.size %}least deprived{% else %}{{ ward_dep.rank }}{% case ward_dep.rank %}{% when 2 or 22 %}nd{% when 3 or 23 %}rd{% else %}th{% endcase %} most deprived{% endif %}
+            of Cheltenham's {{ dep.wards.size }} wards. Its {{ ward_dep.lsoa_count }} neighbourhoods range from decile
+            {{ ward_dep.most_deprived_decile }} to decile {{ ward_dep.least_deprived_decile }} nationally, where 1 is the
+            most deprived 10% in England and 10 the least. See every ward and neighbourhood on the
+            <a href="/cheltenham-deprivation">Cheltenham deprivation map</a>.
+        </p>
+        <div class="table-scroll">
+            <table class="ward-deprivation-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Neighbourhood</th>
+                        <th scope="col" class="number">National Rank</th>
+                        <th scope="col" class="number">Overall</th>
+                        <th scope="col" class="number">Income</th>
+                        <th scope="col" class="number">Employment</th>
+                        <th scope="col" class="number">Education</th>
+                        <th scope="col" class="number">Health</th>
+                        <th scope="col" class="number">Crime</th>
+                        <th scope="col" class="number">Housing</th>
+                        <th scope="col" class="number">Living Environment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign ward_lsoas = dep.lsoas | where: "ward_code", w.code %}
+                    {% for a in ward_lsoas %}
+                    <tr>
+                        <td>{{ a.name }}</td>
+                        <td class="number" data-val="{{ a.rank }}">{{ a.rank_display }}</td>
+                        <td class="number">{{ a.deciles.imd }}</td>
+                        <td class="number">{{ a.deciles.income }}</td>
+                        <td class="number">{{ a.deciles.employment }}</td>
+                        <td class="number">{{ a.deciles.education }}</td>
+                        <td class="number">{{ a.deciles.health }}</td>
+                        <td class="number">{{ a.deciles.crime }}</td>
+                        <td class="number">{{ a.deciles.housing }}</td>
+                        <td class="number">{{ a.deciles.environment }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>National rank is out of {{ dep.lsoa_count_england_display }} neighbourhoods in England (1 = most
+            deprived); the other columns are deciles. Data from the {{ dep.source }}, published under the {{ dep.licence }}.</small></p>
+        {% endif %}
 
         {% if pol %}
         <h2>Politics and Voting in {{ w.name }}</h2>
@@ -455,7 +513,8 @@
                 Broadband is from Ofcom's Connected Nations, and ward boundaries are from the Office for National
                 Statistics. Everything else comes from the same open datasets behind the rest of this site, such as
                 the NHS, the Food Standards Agency, Historic England and OpenStreetMap, sorted into the ward by location.
-                Each school's latest outcome is from Ofsted, and its name links to the school's full inspection history.</li>
+                Each school's latest outcome is from Ofsted, and its name links to the school's full inspection history.
+                Deprivation figures are from the English Indices of Deprivation {{ dep.edition }}.</li>
         </ul>
 
         <h3>How Accurate Is the Ward Boundary?</h3>

@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Registered Charities in Cheltenham",
+  "description": "Main registered charities with a contact postcode in GL50 to GL54, with their activities, causes and latest income, from the Charity Commission for England and Wales.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.charities.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Charity name", "Registered charity number", "Activities", "Causes", "Latest income", "Registration date"]
+}
+</script>
