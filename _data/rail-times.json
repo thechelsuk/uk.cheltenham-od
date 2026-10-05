@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T17:45:07+01:00",
+  "generated_at": "2026-10-05T17:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -30,27 +30,8 @@
       ]
     },
     {
-      "scheduled": "2026-10-05T17:45",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-05T17:50",
-      "expected": "2026-10-05T17:54",
+      "expected": "2026-10-05T17:57",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -85,8 +66,8 @@
     },
     {
       "scheduled": "2026-10-05T17:59",
-      "expected": "2026-10-05T17:59",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -166,19 +147,33 @@
     },
     {
       "scheduled": "2026-10-05T18:25",
-      "expected": "2026-10-05T18:25",
-      "status": "On time",
+      "expected": "2026-10-05T18:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by train crew being delayed",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
         "Yate",
         "Bristol Parkway",
         "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
+    },
+    {
+      "scheduled": "2026-10-05T18:31",
+      "expected": "2026-10-05T18:31",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
         "Bristol Temple Meads"
       ]
     }
@@ -196,7 +191,7 @@
     },
     {
       "scheduled": "2026-10-05T17:47",
-      "expected": "2026-10-05T17:53",
+      "expected": "2026-10-05T17:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -206,8 +201,8 @@
     },
     {
       "scheduled": "2026-10-05T17:50",
-      "expected": "2026-10-05T17:52",
-      "status": "Delayed",
+      "expected": "2026-10-05T17:50",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -216,8 +211,8 @@
     },
     {
       "scheduled": "2026-10-05T17:58",
-      "expected": "2026-10-05T17:58",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -246,13 +241,13 @@
     },
     {
       "scheduled": "2026-10-05T18:24",
-      "expected": "2026-10-05T18:24",
-      "status": "On time",
+      "expected": "2026-10-05T18:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
+      "reason": "This service has been delayed by train crew being delayed"
     },
     {
       "scheduled": "2026-10-05T18:27",
@@ -262,6 +257,16 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-05T18:29",
+      "expected": "2026-10-05T18:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
