@@ -22,7 +22,8 @@
 
         {% assign src = site.data.sources | where: "id", "dfe-gias-schools" | first %}
         <p class="school-catchment-areas-attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ site.data.ofsted.source_url }}">{{ site.data.ofsted.source }}</a>, published under the {{ src.licence_name }}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Ofsted outcomes last updated {{ site.data.ofsted.generated_at | date: "%-d %B %Y" }}.
             Catchments here are the nearest school by straight-line distance, not official admissions areas.
         </small></p>
 
@@ -52,6 +53,8 @@
                 href="https://get-information-schools.service.gov.uk/">Get Information about Schools (GIAS)</a>
                 register, refreshed monthly. Grid references are converted from the register's Ordnance Survey National
                 Grid coordinates.</li>
+            <li>Each school's latest Ofsted outcome, shown when you select it on the map, comes from Ofsted and links to
+                the school's full inspection history.</li>
             <li>Public sector information licensed under the <a
                 href="https://www.nationalarchives.gov.uk/doc/open-government-licence/">Open Government Licence
                 v3.0 &rarr;</a></li>
@@ -63,5 +66,6 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/d3-delaunay@6/dist/d3-delaunay.min.js"></script>
 <script id="catchment-data" type="application/json">{{ phase_schools | jsonify }}</script>
+<script id="catchment-ofsted" type="application/json">{ {% for p in phase_schools %}{% assign o = site.data.ofsted.schools | where: "name", p.name | first %}{{ p.name | jsonify }}: {% if o %}{ "url": "/cheltenham-schools/{{ o.slug }}", "outcome": {{ o.latest_rated.outcome | jsonify }}, "date": {{ o.latest_rated.date | jsonify }} }{% else %}null{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %} }</script>
 <script src="/assets/scripts/school-catchment-map.js"></script>
 {% include footer.html %}

@@ -11,6 +11,15 @@
         return;
     }
 
+    // Latest Ofsted outcome and inspection history page, keyed by school name.
+    var ofsted = {};
+    var ofstedEl = document.getElementById("catchment-ofsted");
+    try {
+        ofsted = (ofstedEl && JSON.parse(ofstedEl.textContent)) || {};
+    } catch (e) {
+        ofsted = {};
+    }
+
     // Cheltenham town centre — schools further than this are a different
     // village or town (e.g. Winchcombe, Bourton-on-the-Water) sharing a
     // Cheltenham postcode district, and including them would stretch the
@@ -114,15 +123,19 @@
     if (legendEl) legendEl.innerHTML = legendHtml;
 
     function popupHtml(p) {
-        var html = "<strong>" + (p.name || "School") + "</strong>";
+        var o = ofsted[p.name];
+        var name = p.name || "School";
+        var html = "<strong>" + (o ? '<a href="' + o.url + '">' + name + "</a>" : name) + "</strong>";
         if (p.type) html += "<br>" + p.type;
         if (p.address) html += "<br>" + p.address;
+        if (o && o.outcome) html += "<br>Ofsted: " + o.outcome + " (" + o.date + ")";
+        if (o) html += '<br><a href="' + o.url + '">Ofsted inspection history</a>';
         var link = p.website || p.urn_url;
         if (link) {
             html +=
                 '<br><a href="' +
                 link +
-                '" target="_blank" rel="noopener">More details ↗</a>';
+                '" target="_blank" rel="noopener">School site ↗</a>';
         }
         html += '<br><small>Nearest by straight-line distance only</small>';
         return html;

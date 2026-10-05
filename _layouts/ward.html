@@ -315,9 +315,10 @@
                 </thead>
                 <tbody>
                     {% for i in s.items %}
+                    {% if s.id == "school" %}{% assign ofsted = site.data.ofsted.schools | where: "name", i.name | first %}{% else %}{% assign ofsted = nil %}{% endif %}
                     <tr>
-                        <td>{% if i.url and i.url contains "http" and s.id != "toilet" %}<a href="{{ i.url }}" rel="noopener">{{ i.name }}</a>{% else %}{{ i.name }}{% endif %}</td>
-                        <td>{% if i.type %}{{ i.type }}{% if i.detail %}, {% endif %}{% endif %}{% if i.detail %}{{ i.detail }}{% if i.address %}. {% endif %}{% endif %}{% if i.address %}{{ i.address }}{% endif %}</td>
+                        <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ i.name }}</a>{% elsif i.url and i.url contains "http" and s.id != "toilet" %}<a href="{{ i.url }}" rel="noopener">{{ i.name }}</a>{% else %}{{ i.name }}{% endif %}</td>
+                        <td>{% if i.type %}{{ i.type }}{% if i.detail %}, {% endif %}{% endif %}{% if i.detail %}{{ i.detail }}{% if i.address %}. {% endif %}{% endif %}{% if i.address %}{{ i.address }}{% endif %}{% if ofsted.latest_rated %}. Ofsted: {{ ofsted.latest_rated.outcome }} ({{ ofsted.latest_rated.date | date: "%Y-%m-%d" }}){% endif %}</td>
                         <td class="number">{{ i.distance_miles }}</td>
                         <td>{% if i.in_ward %}In ward{% else %}Nearby{% endif %}</td>
                         <td class="map">{% include pin.html lat=i.lat lng=i.lon label=i.name %}</td>
@@ -453,7 +454,8 @@
                 Election results and councillors are from Cheltenham Borough Council.
                 Broadband is from Ofcom's Connected Nations, and ward boundaries are from the Office for National
                 Statistics. Everything else comes from the same open datasets behind the rest of this site, such as
-                the NHS, the Food Standards Agency, Historic England and OpenStreetMap, sorted into the ward by location.</li>
+                the NHS, the Food Standards Agency, Historic England and OpenStreetMap, sorted into the ward by location.
+                Each school's latest outcome is from Ofsted, and its name links to the school's full inspection history.</li>
         </ul>
 
         <h3>How Accurate Is the Ward Boundary?</h3>
