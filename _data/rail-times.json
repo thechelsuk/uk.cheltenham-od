@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T17:05:08+01:00",
+  "generated_at": "2026-10-05T17:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,42 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-05T16:50",
-      "expected": "2026-10-05T17:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
-    {
-      "scheduled": "2026-10-05T17:03",
-      "expected": "2026-10-05T17:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-10-05T17:12",
-      "expected": "2026-10-05T17:24",
+      "expected": "2026-10-05T17:26",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -156,22 +122,47 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-05T17:50",
+      "expected": "2026-10-05T17:50",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
+    },
+    {
+      "scheduled": "2026-10-05T17:52",
+      "expected": "2026-10-05T17:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-05T16:47",
-      "expected": "2026-10-05T17:02",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by congestion"
-    },
-    {
       "scheduled": "2026-10-05T17:10",
-      "expected": "2026-10-05T17:23",
+      "expected": "2026-10-05T17:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -237,6 +228,26 @@
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-05T17:47",
+      "expected": "2026-10-05T17:50",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-05T17:50",
+      "expected": "2026-10-05T17:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
