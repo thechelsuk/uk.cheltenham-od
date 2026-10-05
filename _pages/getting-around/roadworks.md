@@ -9,7 +9,7 @@ type: "travel"
 schema: roadworks
 ---
 
-## Roadworks Near Cheltenham
+## Roadworks near Cheltenham
 
 Planning a journey in or out of Cheltenham? This page lists the planned roadworks and closures on the main roads around the town: the M5, the A417 including the Air Balloon roundabout, the A40 towards Gloucester and the A46 at Shurdington. Each entry shows when the works start and finish, the expected delay and, where one is given, the diversion route.
 

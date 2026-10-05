@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:40.607200+00:00",
+  "generated_at": "2026-10-05T21:24:48.704510+00:00",
   "name": "Battledown",
   "slug": "battledown",
   "code": "E05015705",
@@ -534,13 +534,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-24",
+    "latest_sale": "2026-08-06",
     "first_year": "1995",
-    "sales_total": 4137,
-    "sales_total_display": "4,137",
-    "last12_sales": 121,
-    "last12_median": 390000,
-    "last12_median_display": "£390,000",
+    "sales_total": 4148,
+    "sales_total_display": "4,148",
+    "last12_sales": 129,
+    "last12_median": 412500,
+    "last12_median_display": "£412,500",
     "by_year": [
       {
         "year": "1995",
@@ -724,13 +724,13 @@
       },
       {
         "year": "2025",
-        "sales": 136,
-        "median": 394500,
-        "median_display": "£394,500"
+        "sales": 137,
+        "median": 399000,
+        "median_display": "£399,000"
       },
       {
         "year": "2026",
-        "sales": 57,
+        "sales": 67,
         "median": 367000,
         "median_display": "£367,000"
       }
@@ -738,15 +738,15 @@
     "by_type": [
       {
         "type": "Detached",
-        "sales": 47,
-        "median": 720000,
-        "median_display": "£720,000",
-        "min_display": "£255,000",
+        "sales": 52,
+        "median": 742500,
+        "median_display": "£742,500",
+        "min_display": "£290,000",
         "max_display": "£3,250,000"
       },
       {
         "type": "Terraced",
-        "sales": 30,
+        "sales": 34,
         "median": 300000,
         "median_display": "£300,000",
         "min_display": "£175,000",
@@ -754,11 +754,11 @@
       },
       {
         "type": "Semi-detached",
-        "sales": 28,
-        "median": 381250,
-        "median_display": "£381,250",
+        "sales": 27,
+        "median": 380000,
+        "median_display": "£380,000",
         "min_display": "£260,000",
-        "max_display": "£1,135,000"
+        "max_display": "£803,000"
       },
       {
         "type": "Flat or maisonette",
@@ -779,17 +779,28 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Barbed wire hazard",
-        "group": "Trees & vegetation",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128550",
-        "lat": 51.899682,
-        "lon": -2.036948
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01512/FUL",
+        "address": "Woodbury House Battledown Approach Cheltenham Gloucestershire GL52 6RE",
+        "description": "Proposed single-storey rear extension and two-storey front extension and external remodelling to the existing dwelling.",
+        "status": "Pending Consideration",
+        "received": "2026-09-23",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLSZDPELLYI00&activeTab=summary",
+        "lat": 51.895876,
+        "lon": -2.056448
+      },
+      {
+        "ref": "26/01501/FUL",
+        "address": "132 Ryeworth Road Charlton Kings Cheltenham Gloucestershire GL52 6LY",
+        "description": "Single storey extension to rear.",
+        "status": "Pending Consideration",
+        "received": "2026-09-21",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLPA5YELLXQ00&activeTab=summary",
+        "lat": 51.88824,
+        "lon": -2.042518
+      },
       {
         "ref": "26/01467/FUL",
         "address": "Lancaster House 2 Sovereign View Cheltenham Gloucestershire GL52 6FD",
@@ -804,7 +815,7 @@
         "ref": "26/01441/FUL",
         "address": "15 Ham Close Charlton Kings Cheltenham Gloucestershire GL52 6NP",
         "description": "Erection of first floor rear extension on stilts with associated balcony and fenestration alterations.",
-        "status": "Pending Consideration",
+        "status": "Permit",
         "received": "2026-09-08",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TL1LAWELLTX00&activeTab=summary",
         "lat": 51.888843,
@@ -889,7 +900,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1221,7 +1232,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1278,7 +1289,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1308,7 +1319,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1344,7 +1355,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1405,7 +1416,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1454,7 +1465,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1533,7 +1544,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1562,7 +1573,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1616,7 +1627,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1671,7 +1682,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1740,7 +1751,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1803,7 +1814,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 3,
       "items": [
@@ -1845,7 +1856,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1902,7 +1913,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 26,
       "items": [

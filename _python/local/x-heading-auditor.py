@@ -25,6 +25,7 @@ Requires: beautifulsoup4
     pip install beautifulsoup4
 """
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -40,6 +41,40 @@ MINOR_WORDS = {
     "vs", "from", "into", "like", "near", "onto", "over", "past", "than",
     "with",
 }
+
+
+# Proper names and brands whose own capitalisation wins over the rules
+# (a minor word that is part of a name, or a lower-case brand).
+ALLOWLIST = ["Up Hatherley", "Aim Up", "parkrun", "parkruns"]
+
+DATA = Path(__file__).resolve().parents[2] / "_data"
+
+
+def name_allowlist():
+    """ALLOWLIST plus every school and care home whose name starts with
+    "The", read from the site's data so new ones are covered too."""
+    names = list(ALLOWLIST)
+    for file, key in (("schools.json", None), ("cqc.json", "locations")):
+        path = DATA / file
+        if not path.exists():
+            continue
+        records = json.loads(path.read_text(encoding="utf-8"))
+        for record in records[key] if key else records:
+            if record.get("name", "").startswith("The "):
+                names.append(record["name"])
+    # Longest first, so a full name wins over any shorter one inside it.
+    return sorted(set(names), key=len, reverse=True)
+
+
+PROTECTED = name_allowlist()
+
+
+def protect_names(original: str, suggestion: str) -> str:
+    """Put allowlisted names back exactly as they appear in the original."""
+    for name in PROTECTED:
+        if name in original:
+            suggestion = re.sub(re.escape(name), lambda _m, n=name: n, suggestion, flags=re.IGNORECASE)
+    return suggestion
 
 
 def is_word_token(token: str) -> bool:
@@ -74,12 +109,19 @@ def apply_title_case(text: str) -> str:
     is_all_caps_heading = text.isupper()
 
     raw_words = text.split(" ")
-    word_tokens = [w for w in raw_words if is_word_token(w)]
+    # Numbers count as words for first/last ("Years 1 to 7"), so take
+    # positions from any token with a letter or digit.
+    word_positions = [i for i, w in enumerate(raw_words) if re.search(r"[A-Za-z0-9]", w)]
+    first_pos = word_positions[0] if word_positions else -1
+    last_pos = word_positions[-1] if word_positions else -1
     corrected = []
+    after_colon = False
 
-    for word in raw_words:
+    for position, word in enumerate(raw_words):
         if not is_word_token(word):
             corrected.append(word)
+            # A number or symbol after a colon takes the "first word" slot.
+            after_colon = word.endswith(":") or (after_colon and not re.search(r"[0-9]", word))
             continue
 
         m = re.match(r"^(\W*)([A-Za-z][\w'-]*)(\W*)$", word)
@@ -97,7 +139,11 @@ def apply_title_case(text: str) -> str:
 
         work_core = core.lower() if is_all_caps_heading else core
         core_lower = work_core.lower()
-        is_first_or_last_word = (word == word_tokens[0]) or (word == word_tokens[-1])
+        # By position, not by text, so a minor word that also happens to
+        # start or end the heading isn't capitalised everywhere. The first
+        # word after a colon starts a new phrase, so it is capitalised too.
+        is_first_or_last_word = position in (first_pos, last_pos) or after_colon
+        after_colon = word.endswith(":")
 
         should_lowercase = (core_lower in MINOR_WORDS) and not is_first_or_last_word
 
@@ -138,7 +184,7 @@ def main():
     for html_path in html_files:
         rel_path = html_path.relative_to(site_dir)
         for tag_name, text in find_headings(html_path):
-            suggestion = apply_title_case(text)
+            suggestion = protect_names(text, apply_title_case(text))
             needs_fix = suggestion != text
             all_rows.append((str(rel_path), tag_name.upper(), text, suggestion, needs_fix))
 

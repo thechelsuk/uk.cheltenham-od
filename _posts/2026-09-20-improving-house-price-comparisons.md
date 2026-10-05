@@ -18,7 +18,7 @@ Land Registry sales take two to three months to appear, so the most recent month
 
 ## FAQs
 
-### Why Do Sales Still Look Lower Than a Year Ago?
+### Why Do Sales Still Look Lower than a Year Ago?
 
 - Sales volumes have been lower in 2026 than in the same months of 2025, and early 2025 was busier than usual as buyers rushed to complete before the stamp duty changes in April 2025. The figures now compare the same months, so what remains is a genuine difference in registered sales.
 

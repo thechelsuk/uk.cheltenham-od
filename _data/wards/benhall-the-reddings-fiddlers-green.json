@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:40.884177+00:00",
+  "generated_at": "2026-10-05T21:24:49.002826+00:00",
   "name": "Benhall, the Reddings & Fiddler's Green",
   "slug": "benhall-the-reddings-fiddlers-green",
   "code": "E05015706",
@@ -419,11 +419,11 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-24",
+    "latest_sale": "2026-08-17",
     "first_year": "1995",
-    "sales_total": 3546,
-    "sales_total_display": "3,546",
-    "last12_sales": 81,
+    "sales_total": 3553,
+    "sales_total_display": "3,553",
+    "last12_sales": 78,
     "last12_median": 385000,
     "last12_median_display": "£385,000",
     "by_year": [
@@ -615,33 +615,33 @@
       },
       {
         "year": "2026",
-        "sales": 29,
-        "median": 440000,
-        "median_display": "£440,000"
+        "sales": 36,
+        "median": 412500,
+        "median_display": "£412,500"
       }
     ],
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 33,
-        "median": 375000,
-        "median_display": "£375,000",
-        "min_display": "£273,000",
+        "sales": 34,
+        "median": 373000,
+        "median_display": "£373,000",
+        "min_display": "£150,000",
         "max_display": "£545,000"
       },
       {
         "type": "Detached",
-        "sales": 25,
-        "median": 595000,
-        "median_display": "£595,000",
+        "sales": 24,
+        "median": 602500,
+        "median_display": "£602,500",
         "min_display": "£315,000",
         "max_display": "£1,080,000"
       },
       {
         "type": "Terraced",
-        "sales": 14,
-        "median": 205250,
-        "median_display": "£205,250",
+        "sales": 11,
+        "median": 240000,
+        "median_display": "£240,000",
         "min_display": "£140,000",
         "max_display": "£500,000"
       },
@@ -656,25 +656,38 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
+    "fix_my_street": [],
+    "planning": [
       {
-        "title": "Tree",
-        "group": "Trees & vegetation",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128758",
-        "lat": 51.89904,
-        "lon": -2.130606
+        "ref": "26/01553/FUL",
+        "address": "ASDA Stores Limited Hatherley Lane Cheltenham Gloucestershire GL51 6PN",
+        "description": "Removal of existing locker units and replacement with 4 No. new Click and Collect parking bays.",
+        "status": "Pending Consideration",
+        "received": "2026-09-30",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM6BYWELM1200&activeTab=summary",
+        "lat": 51.890931,
+        "lon": -2.12545
       },
       {
-        "title": "Highways defect: Vegetation",
-        "group": "Trees & vegetation",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128694",
-        "lat": 51.8932585879191,
-        "lon": -2.11082215456622
-      }
-    ],
-    "planning": [
+        "ref": "26/01553/ADV",
+        "address": "ASDA Stores Limited Hatherley Lane Cheltenham Gloucestershire GL51 6PN",
+        "description": "Installation of new signage associated with the click and collect bays, including slat replacement sign within existing Totem sign, directional twin post signage, post mounted directional signage, and courier collection twin post signage.",
+        "status": "Pending Consideration",
+        "received": "2026-09-30",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM6BYYELM1300&activeTab=summary",
+        "lat": 51.890931,
+        "lon": -2.12545
+      },
+      {
+        "ref": "26/01550/FUL",
+        "address": "Tasheda The Reddings Cheltenham Gloucestershire GL51 6RL",
+        "description": "Erect single storey rear extension following removal of existing conservatory.",
+        "status": "Pending Consideration",
+        "received": "2026-09-30",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM5Y2YELM0V00&activeTab=summary",
+        "lat": 51.886753,
+        "lon": -2.138719
+      },
       {
         "ref": "26/01494/FUL",
         "address": "Ultra Electronics Hatherley Lane Cheltenham Gloucestershire GL51 6PL",
@@ -829,7 +842,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1169,7 +1182,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 9,
       "items": [
@@ -1250,7 +1263,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1308,7 +1321,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1353,7 +1366,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1406,7 +1419,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1455,7 +1468,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1534,7 +1547,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1573,7 +1586,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1627,7 +1640,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1683,7 +1696,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 5,
       "items": [
@@ -1742,7 +1755,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1778,7 +1791,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 15,
       "items": [
@@ -1952,7 +1965,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -2009,7 +2022,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 10,
       "items": [

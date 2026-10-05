@@ -27,6 +27,6 @@ Pins sit at the centre of each application's postcode, so they show the area rat
 
 - The applications come from Cheltenham Borough Council's planning portal, refreshed daily, and the locations from postcodes.io using Office for National Statistics postcode data.
 
-### Why Is an Application Missing From the Map?
+### Why Is an Application Missing from the Map?
 
 - Some applications have no postcode in their address in the council's register, so they appear in the tables but can't be placed on the map.

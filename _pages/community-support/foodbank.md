@@ -8,7 +8,7 @@ type: "community"
 schema: foodbanks
 ---
 
-## Food Banks Near Cheltenham
+## Food Banks near Cheltenham
 
 This page lists the food banks within ten miles of Cheltenham town centre, with
 a map and a table showing how far each one is, how many items it is asking for

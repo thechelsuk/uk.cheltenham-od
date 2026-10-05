@@ -44,9 +44,9 @@ PROFILE_URL = BASE + "mgUserInfo.aspx?UID={id}"
 PAUSE_SECONDS = 1
 
 ELECTIONS = [
-    {"id": 21, "date": "2024-05-02", "title": "2024 borough election"},
-    {"id": 23, "date": "2025-05-01", "title": "2025 Charlton Kings by-election"},
-    {"id": 24, "date": "2026-05-07", "title": "2026 borough election"},
+    {"id": 21, "date": "2024-05-02", "title": "2024 Borough Election"},
+    {"id": 23, "date": "2025-05-01", "title": "2025 Charlton Kings By-election"},
+    {"id": 24, "date": "2026-05-07", "title": "2026 Borough Election"},
 ]
 
 PARTIES = {

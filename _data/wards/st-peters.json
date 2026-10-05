@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:44.781843+00:00",
+  "generated_at": "2026-10-05T21:24:52.932667+00:00",
   "name": "St Peter's",
   "slug": "st-peters",
   "code": "E05015720",
@@ -373,13 +373,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-17",
+    "latest_sale": "2026-08-13",
     "first_year": "1995",
-    "sales_total": 4689,
-    "sales_total_display": "4,689",
-    "last12_sales": 128,
-    "last12_median": 260000,
-    "last12_median_display": "£260,000",
+    "sales_total": 4699,
+    "sales_total_display": "4,699",
+    "last12_sales": 123,
+    "last12_median": 255000,
+    "last12_median_display": "£255,000",
     "by_year": [
       {
         "year": "1995",
@@ -563,47 +563,47 @@
       },
       {
         "year": "2025",
-        "sales": 150,
+        "sales": 152,
         "median": 260000,
         "median_display": "£260,000"
       },
       {
         "year": "2026",
-        "sales": 58,
-        "median": 258750,
-        "median_display": "£258,750"
+        "sales": 66,
+        "median": 258250,
+        "median_display": "£258,250"
       }
     ],
     "by_type": [
       {
         "type": "Flat or maisonette",
-        "sales": 45,
-        "median": 155000,
-        "median_display": "£155,000",
+        "sales": 47,
+        "median": 150000,
+        "median_display": "£150,000",
         "min_display": "£97,500",
         "max_display": "£325,000"
       },
       {
         "type": "Terraced",
-        "sales": 43,
-        "median": 300000,
-        "median_display": "£300,000",
+        "sales": 42,
+        "median": 297500,
+        "median_display": "£297,500",
         "min_display": "£125,000",
         "max_display": "£675,000"
       },
       {
         "type": "Semi-detached",
-        "sales": 29,
-        "median": 350000,
-        "median_display": "£350,000",
-        "min_display": "£210,000",
-        "max_display": "£750,000"
+        "sales": 24,
+        "median": 352500,
+        "median_display": "£352,500",
+        "min_display": "£160,000",
+        "max_display": "£705,000"
       },
       {
         "type": "Detached",
-        "sales": 8,
-        "median": 327500,
-        "median_display": "£327,500",
+        "sales": 7,
+        "median": 325000,
+        "median_display": "£325,000",
         "min_display": "£132,000",
         "max_display": "£552,500"
       },
@@ -619,7 +619,18 @@
   },
   "local_issues": {
     "fix_my_street": [],
-    "planning": [],
+    "planning": [
+      {
+        "ref": "26/01502/FUL",
+        "address": "14 Graduate Court Cheltenham Gloucestershire GL51 8PE",
+        "description": "Proposed building within rear garden to provide garden office, shed and gym",
+        "status": "Pending Consideration",
+        "received": "2026-09-21",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLPA6RELLXS00&activeTab=summary",
+        "lat": 51.907062,
+        "lon": -2.096553
+      }
+    ],
     "serious_collisions": [
       {
         "date": "2025-05-23",
@@ -768,7 +779,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1137,7 +1148,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1170,7 +1181,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 6,
       "items": [
@@ -1221,7 +1232,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1266,7 +1277,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1337,7 +1348,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1386,7 +1397,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 4,
       "items": [
@@ -1435,7 +1446,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1474,7 +1485,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1528,7 +1539,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1576,7 +1587,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1644,7 +1655,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1716,7 +1727,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 18,
       "items": [
@@ -1923,7 +1934,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1980,7 +1991,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 7,
       "items": [

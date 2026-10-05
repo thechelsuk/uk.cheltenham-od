@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:41.774666+00:00",
+  "generated_at": "2026-10-05T21:24:49.896294+00:00",
   "name": "College",
   "slug": "college",
   "code": "E05015709",
@@ -445,13 +445,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-15",
+    "latest_sale": "2026-08-17",
     "first_year": "1995",
-    "sales_total": 4950,
-    "sales_total_display": "4,950",
-    "last12_sales": 112,
-    "last12_median": 378750,
-    "last12_median_display": "£378,750",
+    "sales_total": 4968,
+    "sales_total_display": "4,968",
+    "last12_sales": 116,
+    "last12_median": 395000,
+    "last12_median_display": "£395,000",
     "by_year": [
       {
         "year": "1995",
@@ -635,56 +635,56 @@
       },
       {
         "year": "2025",
-        "sales": 145,
+        "sales": 147,
         "median": 425000,
         "median_display": "£425,000"
       },
       {
         "year": "2026",
-        "sales": 44,
-        "median": 344000,
-        "median_display": "£344,000"
+        "sales": 60,
+        "median": 361750,
+        "median_display": "£361,750"
       }
     ],
     "by_type": [
       {
         "type": "Terraced",
-        "sales": 43,
-        "median": 400000,
-        "median_display": "£400,000",
+        "sales": 44,
+        "median": 380000,
+        "median_display": "£380,000",
         "min_display": "£170,000",
-        "max_display": "£1,025,000"
+        "max_display": "£1,065,000"
       },
       {
         "type": "Flat or maisonette",
         "sales": 40,
-        "median": 237500,
-        "median_display": "£237,500",
+        "median": 253000,
+        "median_display": "£253,000",
         "min_display": "£115,000",
         "max_display": "£1,350,000"
       },
       {
         "type": "Semi-detached",
-        "sales": 21,
-        "median": 591000,
-        "median_display": "£591,000",
+        "sales": 22,
+        "median": 608000,
+        "median_display": "£608,000",
         "min_display": "£280,000",
-        "max_display": "£1,190,513"
+        "max_display": "£1,730,000"
       },
       {
         "type": "Other",
-        "sales": 6,
-        "median": 570000,
-        "median_display": "£570,000",
+        "sales": 8,
+        "median": 575000,
+        "median_display": "£575,000",
         "min_display": "£140,000",
-        "max_display": "£1,685,000"
+        "max_display": "£2,050,000"
       },
       {
         "type": "Detached",
         "sales": 2,
-        "median": 565250,
-        "median_display": "£565,250",
-        "min_display": "£545,500",
+        "median": 576250,
+        "median_display": "£576,250",
+        "min_display": "£567,500",
         "max_display": "£585,000"
       }
     ]
@@ -692,6 +692,46 @@
   "local_issues": {
     "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01545/CACN",
+        "address": "Cheltenham College Preparatory School Thirlestaine Road Cheltenham Gloucestershire GL53 7AB",
+        "description": "5 day notice Removal of Fagus sylvatica; Common Beech due to decay, severe irrecoverable drought stress",
+        "status": "Allow",
+        "received": "2026-09-29",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM48JFEL0M300&activeTab=summary",
+        "lat": 51.889671,
+        "lon": -2.075257
+      },
+      {
+        "ref": "26/01518/LBC",
+        "address": "The Mahal Eagle Lodge Montpellier Drive Cheltenham Gloucestershire GL50 1TY",
+        "description": "Proposed Change of Use from restuarant with staff accommodation on second floor to 5 flats.",
+        "status": "Pending Consideration",
+        "received": "2026-09-28",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM2HPSEL0M300&activeTab=summary",
+        "lat": 51.89439,
+        "lon": -2.076486
+      },
+      {
+        "ref": "26/01518/FUL",
+        "address": "The Mahal Eagle Lodge Montpellier Drive Cheltenham Gloucestershire GL50 1TY",
+        "description": "Proposed Change of Use from restuarant with staff accommodation on second floor to 5 flats.",
+        "status": "Pending Consideration",
+        "received": "2026-09-24",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLUU2YELLYZ00&activeTab=summary",
+        "lat": 51.89439,
+        "lon": -2.076486
+      },
+      {
+        "ref": "26/01519/TPO",
+        "address": "6 Verney Close Cheltenham Gloucestershire GL53 7DD",
+        "description": "Honey Locust (Gleditsia Triacanthos) - T1. 2-3m all round crown reduction, up to 15% crown thinning and removal of deadwood to maintain health of tree and contain tree in relation to nearby house and highway.",
+        "status": "Permit",
+        "received": "2026-09-24",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLUU4UELLZ200&activeTab=summary",
+        "lat": 51.886879,
+        "lon": -2.069266
+      },
       {
         "ref": "26/01478/FUL",
         "address": "3 The Verneys Cheltenham Gloucestershire GL53 7DB",
@@ -995,7 +1035,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1373,7 +1413,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 9,
       "items": [
@@ -1454,7 +1494,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1512,7 +1552,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1557,7 +1597,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 5,
       "items": [
@@ -1608,7 +1648,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1673,9 +1713,9 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
-      "in_ward": 3,
+      "in_ward": 4,
       "items": [
         {
           "name": "Bath Road Post Office",
@@ -1698,6 +1738,16 @@
           "distance_miles": 0.38
         },
         {
+          "name": "Tesco Express Promenade Cheltenham",
+          "address": "106 Promenade",
+          "postcode": "GL50 1NB",
+          "detail": "InPost locker",
+          "lat": 51.89822,
+          "lon": -2.07785,
+          "in_ward": true,
+          "distance_miles": 0.57
+        },
+        {
           "name": "Cheltenham High Street Post Office",
           "address": "192-194 High Street",
           "postcode": "GL50 1EP",
@@ -1712,7 +1762,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1751,7 +1801,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1823,7 +1873,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1887,7 +1937,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1956,7 +2006,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -2010,7 +2060,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 87,
       "items": [
@@ -2974,7 +3024,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -3023,7 +3073,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 206,
       "items": [

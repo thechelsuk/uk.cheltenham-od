@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:45.347348+00:00",
+  "generated_at": "2026-10-05T21:24:53.502998+00:00",
   "name": "Up Hatherley",
   "slug": "up-hatherley",
   "code": "E05015722",
@@ -403,13 +403,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-06-26",
+    "latest_sale": "2026-08-17",
     "first_year": "1995",
-    "sales_total": 3816,
-    "sales_total_display": "3,816",
-    "last12_sales": 79,
-    "last12_median": 339000,
-    "last12_median_display": "£339,000",
+    "sales_total": 3827,
+    "sales_total_display": "3,827",
+    "last12_sales": 65,
+    "last12_median": 350000,
+    "last12_median_display": "£350,000",
     "by_year": [
       {
         "year": "1995",
@@ -593,56 +593,48 @@
       },
       {
         "year": "2025",
-        "sales": 109,
+        "sales": 111,
         "median": 325000,
         "median_display": "£325,000"
       },
       {
         "year": "2026",
-        "sales": 27,
-        "median": 350000,
-        "median_display": "£350,000"
+        "sales": 36,
+        "median": 413750,
+        "median_display": "£413,750"
       }
     ],
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 35,
-        "median": 350000,
-        "median_display": "£350,000",
+        "sales": 30,
+        "median": 352500,
+        "median_display": "£352,500",
         "min_display": "£230,000",
         "max_display": "£905,000"
       },
       {
         "type": "Terraced",
-        "sales": 24,
-        "median": 260500,
-        "median_display": "£260,500",
+        "sales": 18,
+        "median": 263000,
+        "median_display": "£263,000",
         "min_display": "£152,500",
-        "max_display": "£435,000"
+        "max_display": "£350,000"
       },
       {
         "type": "Detached",
         "sales": 16,
-        "median": 439000,
-        "median_display": "£439,000",
+        "median": 527500,
+        "median_display": "£527,500",
         "min_display": "£280,000",
-        "max_display": "£845,000"
-      },
-      {
-        "type": "Flat or maisonette",
-        "sales": 2,
-        "median": 183500,
-        "median_display": "£183,500",
-        "min_display": "£167,000",
-        "max_display": "£200,000"
+        "max_display": "£850,000"
       },
       {
         "type": "Other",
-        "sales": 2,
-        "median": 3657000,
-        "median_display": "£3,657,000",
-        "min_display": "£264,000",
+        "sales": 1,
+        "median": 7050000,
+        "median_display": "£7,050,000",
+        "min_display": "£7,050,000",
         "max_display": "£7,050,000"
       }
     ]
@@ -726,7 +718,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1094,7 +1086,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 6,
       "items": [
@@ -1151,7 +1143,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1209,7 +1201,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1254,7 +1246,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1307,7 +1299,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1364,7 +1356,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 4,
       "items": [
@@ -1413,7 +1405,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1452,7 +1444,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1506,7 +1498,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1554,7 +1546,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1613,7 +1605,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1676,7 +1668,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 9,
       "items": [
@@ -1784,7 +1776,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1833,7 +1825,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 2,
       "items": [

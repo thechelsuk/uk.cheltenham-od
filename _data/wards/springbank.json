@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:44.048239+00:00",
+  "generated_at": "2026-10-05T21:24:52.195034+00:00",
   "name": "Springbank",
   "slug": "springbank",
   "code": "E05015717",
@@ -480,10 +480,10 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-24",
+    "latest_sale": "2026-08-13",
     "first_year": "1995",
-    "sales_total": 4138,
-    "sales_total_display": "4,138",
+    "sales_total": 4146,
+    "sales_total_display": "4,146",
     "last12_sales": 83,
     "last12_median": 263000,
     "last12_median_display": "£263,000",
@@ -670,21 +670,21 @@
       },
       {
         "year": "2025",
-        "sales": 116,
-        "median": 253750,
-        "median_display": "£253,750"
+        "sales": 117,
+        "median": 253500,
+        "median_display": "£253,500"
       },
       {
         "year": "2026",
-        "sales": 32,
-        "median": 269000,
-        "median_display": "£269,000"
+        "sales": 39,
+        "median": 265000,
+        "median_display": "£265,000"
       }
     ],
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 38,
+        "sales": 40,
         "median": 278850,
         "median_display": "£278,850",
         "min_display": "£170,000",
@@ -692,11 +692,11 @@
       },
       {
         "type": "Terraced",
-        "sales": 31,
-        "median": 225000,
-        "median_display": "£225,000",
-        "min_display": "£135,000",
-        "max_display": "£310,000"
+        "sales": 30,
+        "median": 228500,
+        "median_display": "£228,500",
+        "min_display": "£150,000",
+        "max_display": "£303,000"
       },
       {
         "type": "Detached",
@@ -708,10 +708,10 @@
       },
       {
         "type": "Flat or maisonette",
-        "sales": 6,
-        "median": 106750,
-        "median_display": "£106,750",
-        "min_display": "£64,000",
+        "sales": 5,
+        "median": 140000,
+        "median_display": "£140,000",
+        "min_display": "£96,000",
         "max_display": "£255,000"
       },
       {
@@ -726,7 +726,18 @@
   },
   "local_issues": {
     "fix_my_street": [],
-    "planning": [],
+    "planning": [
+      {
+        "ref": "26/01276/FUL",
+        "address": "Appleton Hope Orchard Springbank Road Cheltenham Gloucestershire GL51 0LT",
+        "description": "Side extensions on both sides, porch extension, garage extension and replacement of door to window at rear.",
+        "status": "Permit",
+        "received": "2026-08-10",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TJJI66ELLJC00&activeTab=summary",
+        "lat": 51.911281,
+        "lon": -2.123166
+      }
+    ],
     "serious_collisions": [
       {
         "date": "2025-05-06",
@@ -810,7 +821,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1130,7 +1141,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 8,
       "items": [
@@ -1203,7 +1214,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1233,7 +1244,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1278,7 +1289,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1331,7 +1342,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1380,7 +1391,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1415,6 +1426,16 @@
           "distance_miles": 0.53
         },
         {
+          "name": "YEEP! The Umbrella",
+          "address": "Orchard Way",
+          "postcode": "GL51 7LD",
+          "detail": "DPD Pickup",
+          "lat": 51.908485,
+          "lon": -2.107552,
+          "in_ward": false,
+          "distance_miles": 0.54
+        },
+        {
           "name": "Aldi Tewkesbury Road",
           "address": "Tewkesbury Road",
           "postcode": "GL51 0SN",
@@ -1443,23 +1464,13 @@
           "lon": -2.104,
           "in_ward": false,
           "distance_miles": 0.72
-        },
-        {
-          "name": "Shell Arle Service Station",
-          "address": "24 Princess Elizabeth Way, Arle",
-          "postcode": "GL51 7PA",
-          "detail": "InPost locker",
-          "lat": 51.91234,
-          "lon": -2.1003,
-          "in_ward": false,
-          "distance_miles": 0.79
         }
       ]
     },
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1498,7 +1509,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1552,7 +1563,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1600,7 +1611,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1669,7 +1680,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1732,7 +1743,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 4,
       "items": [
@@ -1785,7 +1796,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1834,7 +1845,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 3,
       "items": [

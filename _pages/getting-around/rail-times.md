@@ -16,6 +16,6 @@ This page shows the next departures from and arrivals at the station, with the p
 
 Heading to the station by road? Check the [roadworks](/cheltenham-roadworks) page for closures on the way, and [car parks](/cheltenham-car-parks) for somewhere to leave the car. [Cycle routes](/cheltenham-cycle-routes) and [bus data](/cheltenham-bus-data) cover the other ways of getting there.
 
-### Quick guide
+### Quick Guide
 
 Platform 1 (Car-park side) is typically for trains to Wales and the south (Bristol, Exeter St Davids, Plymouth, Reading, and London). Platform 2 (Gloucester Rd side) is typically for trains to the north (Worcester, Birmingham, Nottingham, Leeds, Glasgow) and associated connections.

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:43.402401+00:00",
+  "generated_at": "2026-10-05T21:24:51.546075+00:00",
   "name": "Pittville",
   "slug": "pittville",
   "code": "E05015715",
@@ -528,13 +528,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-23",
+    "latest_sale": "2026-08-14",
     "first_year": "1995",
-    "sales_total": 5107,
-    "sales_total_display": "5,107",
-    "last12_sales": 113,
-    "last12_median": 340000,
-    "last12_median_display": "£340,000",
+    "sales_total": 5124,
+    "sales_total_display": "5,124",
+    "last12_sales": 118,
+    "last12_median": 347500,
+    "last12_median_display": "£347,500",
     "by_year": [
       {
         "year": "1995",
@@ -718,71 +718,62 @@
       },
       {
         "year": "2025",
-        "sales": 150,
+        "sales": 152,
         "median": 373750,
         "median_display": "£373,750"
       },
       {
         "year": "2026",
-        "sales": 40,
-        "median": 310000,
-        "median_display": "£310,000"
+        "sales": 55,
+        "median": 320000,
+        "median_display": "£320,000"
       }
     ],
     "by_type": [
       {
         "type": "Flat or maisonette",
-        "sales": 41,
-        "median": 215000,
-        "median_display": "£215,000",
-        "min_display": "£125,000",
-        "max_display": "£700,000"
-      },
-      {
-        "type": "Semi-detached",
-        "sales": 26,
-        "median": 421000,
-        "median_display": "£421,000",
-        "min_display": "£295,000",
-        "max_display": "£1,690,000"
+        "sales": 49,
+        "median": 223000,
+        "median_display": "£223,000",
+        "min_display": "£67,000",
+        "max_display": "£2,450,000"
       },
       {
         "type": "Terraced",
-        "sales": 25,
-        "median": 334500,
-        "median_display": "£334,500",
+        "sales": 23,
+        "median": 315000,
+        "median_display": "£315,000",
         "min_display": "£148,135",
-        "max_display": "£785,000"
+        "max_display": "£855,000"
+      },
+      {
+        "type": "Semi-detached",
+        "sales": 21,
+        "median": 422000,
+        "median_display": "£422,000",
+        "min_display": "£305,000",
+        "max_display": "£1,690,000"
       },
       {
         "type": "Detached",
-        "sales": 16,
-        "median": 602500,
-        "median_display": "£602,500",
+        "sales": 19,
+        "median": 599950,
+        "median_display": "£599,950",
         "min_display": "£332,500",
         "max_display": "£3,150,000"
       },
       {
         "type": "Other",
-        "sales": 5,
-        "median": 600000,
-        "median_display": "£600,000",
-        "min_display": "£14,500",
-        "max_display": "£1,250,000"
+        "sales": 6,
+        "median": 875000,
+        "median_display": "£875,000",
+        "min_display": "£255,000",
+        "max_display": "£2,275,000"
       }
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Road closed sign forgotten after half marathon",
-        "group": "Roadworks & utilities",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128405",
-        "lat": 51.90427,
-        "lon": -2.068013
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
       {
         "ref": "26/01480/CACN",
@@ -1037,7 +1028,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1311,7 +1302,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 17,
       "items": [
@@ -1456,7 +1447,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1486,7 +1477,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1531,7 +1522,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 4,
       "items": [
@@ -1575,7 +1566,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1624,7 +1615,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 4,
       "items": [
@@ -1673,7 +1664,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1712,7 +1703,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1766,7 +1757,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1829,7 +1820,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1898,7 +1889,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1961,7 +1952,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 17,
       "items": [
@@ -2156,7 +2147,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -2189,7 +2180,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 131,
       "items": [

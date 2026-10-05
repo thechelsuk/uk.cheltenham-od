@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:44.541797+00:00",
+  "generated_at": "2026-10-05T21:24:52.692787+00:00",
   "name": "St Paul's",
   "slug": "st-pauls",
   "code": "E05015719",
@@ -413,13 +413,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-16",
+    "latest_sale": "2026-08-21",
     "first_year": "1995",
-    "sales_total": 3824,
-    "sales_total_display": "3,824",
-    "last12_sales": 96,
-    "last12_median": 250000,
-    "last12_median_display": "£250,000",
+    "sales_total": 3842,
+    "sales_total_display": "3,842",
+    "last12_sales": 100,
+    "last12_median": 260000,
+    "last12_median_display": "£260,000",
     "by_year": [
       {
         "year": "1995",
@@ -609,35 +609,35 @@
       },
       {
         "year": "2026",
-        "sales": 46,
-        "median": 260000,
-        "median_display": "£260,000"
+        "sales": 64,
+        "median": 277500,
+        "median_display": "£277,500"
       }
     ],
     "by_type": [
       {
         "type": "Terraced",
-        "sales": 58,
-        "median": 250000,
-        "median_display": "£250,000",
+        "sales": 57,
+        "median": 255000,
+        "median_display": "£255,000",
         "min_display": "£170,000",
-        "max_display": "£360,000"
+        "max_display": "£1,315,000"
+      },
+      {
+        "type": "Flat or maisonette",
+        "sales": 22,
+        "median": 207500,
+        "median_display": "£207,500",
+        "min_display": "£114,000",
+        "max_display": "£1,265,000"
       },
       {
         "type": "Semi-detached",
         "sales": 18,
-        "median": 277500,
-        "median_display": "£277,500",
+        "median": 281500,
+        "median_display": "£281,500",
         "min_display": "£195,000",
         "max_display": "£625,000"
-      },
-      {
-        "type": "Flat or maisonette",
-        "sales": 17,
-        "median": 174060,
-        "median_display": "£174,060",
-        "min_display": "£114,000",
-        "max_display": "£1,265,000"
       },
       {
         "type": "Other",
@@ -650,49 +650,18 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Highways defect: Covers, Gratings & Frames",
-        "group": "Drains & flooding",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128699",
-        "lat": 51.9022512,
-        "lon": -2.07535549999999
-      },
-      {
-        "title": "Highways defect: Kerbs and Channels",
-        "group": "Footpaths & pavements",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128696",
-        "lat": 51.9019508,
-        "lon": -2.0751122
-      },
-      {
-        "title": "Highways defect: Kerbs and Channels",
-        "group": "Footpaths & pavements",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128697",
-        "lat": 51.9017745,
-        "lon": -2.0751365
-      },
-      {
-        "title": "Highways defect: other CW6",
-        "group": "Potholes & road surface",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128698",
-        "lat": 51.9021452,
-        "lon": -2.0749058
-      },
-      {
-        "title": "Pothole in the pavement or footway",
-        "group": "Footpaths & pavements",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128480",
-        "lat": 51.901759,
-        "lon": -2.07591
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01505/CACN",
+        "address": "11 St Pauls Street South Cheltenham Gloucestershire GL50 4AW",
+        "description": "Reduce ash by 2m, reduce other trees on site as per photo.",
+        "status": "No objection",
+        "received": "2026-09-21",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLPA9OELLXY00&activeTab=summary",
+        "lat": 51.904117,
+        "lon": -2.079308
+      },
       {
         "ref": "26/01411/CACN",
         "address": "22 Henrietta Street Cheltenham Gloucestershire GL50 4AA",
@@ -722,6 +691,16 @@
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TJPHWHEL08300&activeTab=summary",
         "lat": 51.907967,
         "lon": -2.076989
+      },
+      {
+        "ref": "26/01251/FUL",
+        "address": "21 Courtenay Street Cheltenham Gloucestershire GL50 4LR",
+        "description": "Proposed single storey rear extension",
+        "status": "Permit",
+        "received": "2026-08-05",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TJAMPXELLHR00&activeTab=summary",
+        "lat": 51.907348,
+        "lon": -2.074778
       }
     ],
     "serious_collisions": [
@@ -822,7 +801,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 4,
       "items": [
@@ -1171,7 +1150,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 5,
       "items": [
@@ -1220,7 +1199,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1271,7 +1250,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1316,7 +1295,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1377,7 +1356,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1426,7 +1405,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1505,7 +1484,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1544,7 +1523,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1616,7 +1595,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1680,7 +1659,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1738,7 +1717,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1792,7 +1771,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 56,
       "items": [
@@ -2417,7 +2396,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -2466,7 +2445,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 26,
       "items": [

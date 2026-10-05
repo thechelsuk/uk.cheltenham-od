@@ -51,6 +51,6 @@ A typical earner buying alone has a realistic choice of flats and very little el
 
 - No. It uses one typical income and a simple 4.5 times limit, so it is a guide to how much of the market is in reach, not a mortgage calculation.
 
-### Why Are Flats So Different From Houses?
+### Why Are Flats so Different from Houses?
 
 - Flats sell for far less than houses in Cheltenham, so a much larger share of them fall under the price limit, while almost no detached homes do.

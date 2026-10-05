@@ -315,26 +315,26 @@ def src_food_venues():
 # (id, group, label, source, mode, limit). mode "nearest" shows everything in the
 # ward plus the nearest few outside; "in_ward" shows only what is inside.
 SERVICES = [
-    ("gp", "Health", "GP practices", None, "nearest"),      # parsed from the GP page
+    ("gp", "Health", "GP Practices", None, "nearest"),      # parsed from the GP page
     ("pharmacy", "Health", "Pharmacies", None, "nearest"),  # parsed from the GP page
     ("dentist", "Health", "Dentists", src_dentists, "nearest"),
     ("optician", "Health", "Opticians", src_opticians, "nearest"),
     ("hospital", "Health", "Hospitals", src_hospitals, "nearest"),
     ("school", "Schools", "Schools", src_schools, "nearest"),
-    ("park", "Parks and Play", "Parks and open spaces", src_parks, "nearest"),
-    ("play", "Parks and Play", "Play areas", src_play_areas, "nearest"),
-    ("parkrun", "Parks and Play", "Running events", src_parkrun, "nearest"),
-    ("toilet", "Everyday Services", "Public toilets", src_toilets, "nearest"),
-    ("post", "Everyday Services", "Post offices", src_post_offices, "nearest"),
-    ("parcel", "Everyday Services", "Parcel pick-up points", src_parcels, "nearest"),
-    ("foodbank", "Everyday Services", "Food banks", src_foodbanks, "nearest"),
-    ("space", "Everyday Services", "Community spaces", src_third_spaces, "nearest"),
-    ("carpark", "Getting Around", "Car parks", src_car_parks, "nearest"),
-    ("ev", "Getting Around", "EV charging", src_ev, "nearest"),
-    ("fuel", "Getting Around", "Fuel stations", src_fuel, "nearest"),
-    ("venue", "Food and Drink", "Pubs, cafes and takeaways", src_food_venues, "in_ward"),
-    ("sight", "Heritage", "Places to visit", src_sights, "nearest"),
-    ("listed", "Heritage", "Listed buildings", src_listed, "in_ward"),
+    ("park", "Parks and Play", "Parks and Open Spaces", src_parks, "nearest"),
+    ("play", "Parks and Play", "Play Areas", src_play_areas, "nearest"),
+    ("parkrun", "Parks and Play", "Running Events", src_parkrun, "nearest"),
+    ("toilet", "Everyday Services", "Public Toilets", src_toilets, "nearest"),
+    ("post", "Everyday Services", "Post Offices", src_post_offices, "nearest"),
+    ("parcel", "Everyday Services", "Parcel Pick-up Points", src_parcels, "nearest"),
+    ("foodbank", "Everyday Services", "Food Banks", src_foodbanks, "nearest"),
+    ("space", "Everyday Services", "Community Spaces", src_third_spaces, "nearest"),
+    ("carpark", "Getting Around", "Car Parks", src_car_parks, "nearest"),
+    ("ev", "Getting Around", "EV Charging", src_ev, "nearest"),
+    ("fuel", "Getting Around", "Fuel Stations", src_fuel, "nearest"),
+    ("venue", "Food and Drink", "Pubs, Cafes and Takeaways", src_food_venues, "in_ward"),
+    ("sight", "Heritage", "Places to Visit", src_sights, "nearest"),
+    ("listed", "Heritage", "Listed Buildings", src_listed, "in_ward"),
 ]
 
 

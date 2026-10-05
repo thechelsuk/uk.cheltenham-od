@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Updating Fix My Street With a Map and Report History
+title: Updating Fix My Street with a Map and Report History
 type: cod
 description: Cheltenham Fix My Street reports now come with a map and a running history.
 seo: See street problems reported around Cheltenham on a map and see how many Fix My Street reports are made each month since 21 June 2026.

@@ -36,11 +36,11 @@
             {% assign history = site.data["cheltenham-house-price-history"] %}
             {% assign summary = site.data["house-summary"] %}
             {% assign current_year = site.time | date: "%Y" %}
-            <h2>Median House Price by Year since {{ history.first_year }}</h2>
+            <h2>Median House Price by Year Since {{ history.first_year }}</h2>
             <div class="chart-canvas"><canvas id="land-registry-history-chart"
                 aria-label="Line chart of the median house price in Cheltenham each year since {{ history.first_year }}, overall and by property type"></canvas></div>
 
-            <h2>Sales by Year since {{ history.first_year }}</h2>
+            <h2>Sales by Year Since {{ history.first_year }}</h2>
             <div class="chart-canvas"><canvas id="land-registry-history-volume-chart"
                 aria-label="Bar chart of the number of house sales in Cheltenham each year since {{ history.first_year }}"></canvas></div>
 

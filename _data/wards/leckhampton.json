@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:42.585599+00:00",
+  "generated_at": "2026-10-05T21:24:50.712376+00:00",
   "name": "Leckhampton",
   "slug": "leckhampton",
   "code": "E05015712",
@@ -476,13 +476,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-24",
+    "latest_sale": "2026-08-21",
     "first_year": "1995",
-    "sales_total": 3387,
-    "sales_total_display": "3,387",
-    "last12_sales": 82,
-    "last12_median": 508500,
-    "last12_median_display": "£508,500",
+    "sales_total": 3401,
+    "sales_total_display": "3,401",
+    "last12_sales": 86,
+    "last12_median": 517250,
+    "last12_median_display": "£517,250",
     "by_year": [
       {
         "year": "1995",
@@ -660,19 +660,19 @@
       },
       {
         "year": "2024",
-        "sales": 90,
+        "sales": 91,
         "median": 640000,
         "median_display": "£640,000"
       },
       {
         "year": "2025",
-        "sales": 87,
-        "median": 485000,
-        "median_display": "£485,000"
+        "sales": 88,
+        "median": 485750,
+        "median_display": "£485,750"
       },
       {
         "year": "2026",
-        "sales": 38,
+        "sales": 50,
         "median": 517250,
         "median_display": "£517,250"
       }
@@ -680,23 +680,23 @@
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 31,
-        "median": 620000,
-        "median_display": "£620,000",
+        "sales": 32,
+        "median": 562750,
+        "median_display": "£562,750",
         "min_display": "£250,000",
         "max_display": "£1,225,000"
       },
       {
         "type": "Detached",
-        "sales": 22,
-        "median": 603000,
-        "median_display": "£603,000",
+        "sales": 26,
+        "median": 718000,
+        "median_display": "£718,000",
         "min_display": "£211,950",
-        "max_display": "£994,000"
+        "max_display": "£1,225,000"
       },
       {
         "type": "Terraced",
-        "sales": 15,
+        "sales": 17,
         "median": 460000,
         "median_display": "£460,000",
         "min_display": "£314,000",
@@ -704,9 +704,9 @@
       },
       {
         "type": "Flat or maisonette",
-        "sales": 13,
-        "median": 231000,
-        "median_display": "£231,000",
+        "sales": 10,
+        "median": 204250,
+        "median_display": "£204,250",
         "min_display": "£70,000",
         "max_display": "£320,000"
       },
@@ -721,25 +721,28 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
+    "fix_my_street": [],
+    "planning": [
       {
-        "title": "Dog mess all over the pavement outside 239 Old Bath Road",
-        "group": "Litter, fly-tipping & graffiti",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128455",
-        "lat": 51.878813,
-        "lon": -2.071015
+        "ref": "26/01523/CONDIT",
+        "address": "20 Merlin Way Cheltenham Gloucestershire GL53 0LT",
+        "description": "Variation of condition 3.(External Facing Materials) of granted permission 25/00792/FUL. To amend the approved colour of the facing material from Gallant Grey to black. To alter the approved facing material finish, changing the colour of the brickwork from Gallant Grey to black.",
+        "status": "Pending Consideration",
+        "received": "2026-09-25",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLWOQOELLZF00&activeTab=summary",
+        "lat": 51.882354,
+        "lon": -2.086432
       },
       {
-        "title": "Highways defect: Potholes",
-        "group": "Potholes & road surface",
-        "published": "2026-09-21",
-        "url": "https://www.fixmystreet.com/report/10128267",
-        "lat": 51.8730570899732,
-        "lon": -2.08628295638212
-      }
-    ],
-    "planning": [
+        "ref": "26/01507/CACN",
+        "address": "132 Leckhampton Road Cheltenham Gloucestershire GL53 0BX",
+        "description": "T1 Field Maple on rear boundary of back garden; fell.",
+        "status": "Pending Consideration",
+        "received": "2026-09-21",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLPABHELLY200&activeTab=summary",
+        "lat": 51.881173,
+        "lon": -2.077814
+      },
       {
         "ref": "26/01470/DISCON",
         "address": "The Co-operative Food 143 Leckhampton Road Cheltenham Gloucestershire GL53 0DQ",
@@ -774,7 +777,7 @@
         "ref": "26/01436/FUL",
         "address": "15 Treelands Close Cheltenham Gloucestershire GL53 0DF",
         "description": "Proposed rear conservatory.",
-        "status": "Pending Consideration",
+        "status": "Permit",
         "received": "2026-09-08",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TL17GMELLTQ00&activeTab=summary",
         "lat": 51.880329,
@@ -909,7 +912,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1260,7 +1263,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1293,7 +1296,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1337,7 +1340,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1382,7 +1385,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1433,7 +1436,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1482,7 +1485,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1541,7 +1544,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1580,7 +1583,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1634,7 +1637,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1681,7 +1684,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1740,7 +1743,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1794,7 +1797,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 4,
       "items": [
@@ -1846,7 +1849,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1895,7 +1898,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 23,
       "items": [

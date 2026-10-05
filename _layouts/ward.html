@@ -145,7 +145,7 @@
             </table>
         </div>
 
-        <h3>Streets With the Most Reports</h3>
+        <h3>Streets with the Most Reports</h3>
         <div class="table-scroll">
             <table class="ward-crime-table data-table" data-sortable>
                 <thead>
@@ -348,7 +348,7 @@
         {% endif %}
 
         {% for group in groups %}
-        <h2>{{ group.name }} Near {{ w.name }}</h2>
+        <h2>{{ group.name }} near {{ w.name }}</h2>
         {% for s in group.items %}
         {% assign outside = s.items.size | minus: s.in_ward %}
         <h3>{{ s.label }}</h3>

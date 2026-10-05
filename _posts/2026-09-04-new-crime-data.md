@@ -32,7 +32,7 @@ The data available goes back to August 2023.
   - 2025: **12,745** reported crimes.
   - 2026: **1,030** reported crimes.
 
-### Did Reported Crime Rise or Fall In 2025?
+### Did Reported Crime Rise or Fall in 2025?
 
 - There were **47** more reported crimes across Cheltenham in 2025 than in 2024, an increase from **12,698** to **12,745**.
 
@@ -40,7 +40,7 @@ The data available goes back to August 2023.
 
 - March 2024 was the busiest complete-year month in the dataset, with **1,216** reported crimes.
 
-### Which Neighbourhood Saw the Largest Increase In 2025?
+### Which Neighbourhood Saw the Largest Increase in 2025?
 
 - Swindon Village and Wyman's Brook increased from **854** reported crimes in 2024 to **1011** in 2025, an increase of **157**.
 

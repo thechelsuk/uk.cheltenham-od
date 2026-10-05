@@ -27,6 +27,6 @@ This joins our [flood warnings](/cheltenham-flood-warnings) and [sewage overflow
 
 - No — each sampling point is only tested periodically, roughly monthly. The "Sample Date" column shows when that specific point was last visited, which may be several weeks before the page's own "last updated" date.
 
-### How Is This Different From the Sewage Overflow Page?
+### How Is This Different from the Sewage Overflow Page?
 
 - The sewage overflow page tracks discharge *activity* (is an overflow currently releasing wastewater) in near-real-time. This page tracks actual chemical water quality from lab-tested samples, refreshed much less often.

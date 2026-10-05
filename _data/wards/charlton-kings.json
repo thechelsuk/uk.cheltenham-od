@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T20:35:41.158122+00:00",
+  "generated_at": "2026-10-05T21:24:49.289452+00:00",
   "name": "Charlton Kings",
   "slug": "charlton-kings",
   "code": "E05015707",
@@ -495,13 +495,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-03",
+    "latest_sale": "2026-08-18",
     "first_year": "1995",
-    "sales_total": 3389,
-    "sales_total_display": "3,389",
-    "last12_sales": 88,
-    "last12_median": 477500,
-    "last12_median_display": "£477,500",
+    "sales_total": 3400,
+    "sales_total_display": "3,400",
+    "last12_sales": 84,
+    "last12_median": 492500,
+    "last12_median_display": "£492,500",
     "by_year": [
       {
         "year": "1995",
@@ -691,15 +691,15 @@
       },
       {
         "year": "2026",
-        "sales": 27,
-        "median": 463000,
-        "median_display": "£463,000"
+        "sales": 38,
+        "median": 492500,
+        "median_display": "£492,500"
       }
     ],
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 36,
+        "sales": 34,
         "median": 492500,
         "median_display": "£492,500",
         "min_display": "£256,000",
@@ -707,25 +707,25 @@
       },
       {
         "type": "Terraced",
-        "sales": 23,
-        "median": 310000,
-        "median_display": "£310,000",
+        "sales": 22,
+        "median": 326250,
+        "median_display": "£326,250",
         "min_display": "£225,000",
         "max_display": "£610,000"
       },
       {
         "type": "Detached",
         "sales": 21,
-        "median": 860000,
-        "median_display": "£860,000",
+        "median": 920000,
+        "median_display": "£920,000",
         "min_display": "£470,000",
-        "max_display": "£1,550,000"
+        "max_display": "£1,900,000"
       },
       {
         "type": "Flat or maisonette",
-        "sales": 6,
-        "median": 210000,
-        "median_display": "£210,000",
+        "sales": 5,
+        "median": 185000,
+        "median_display": "£185,000",
         "min_display": "£165,000",
         "max_display": "£285,000"
       },
@@ -743,10 +743,30 @@
     "fix_my_street": [],
     "planning": [
       {
+        "ref": "26/01563/AMEND",
+        "address": "193 London Road Charlton Kings Cheltenham Gloucestershire GL52 6HT",
+        "description": "Non-material amendment to planning permission 25/01778/FUL, seeking changes to windows.",
+        "status": "Pending Consideration",
+        "received": "2026-10-01",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM86NHELM1P00&activeTab=summary",
+        "lat": 51.889385,
+        "lon": -2.05657
+      },
+      {
+        "ref": "26/01503/FUL",
+        "address": "31 Copt Elm Road Charlton Kings Cheltenham Gloucestershire GL53 8AG",
+        "description": "Single storey rear extension",
+        "status": "Pending Consideration",
+        "received": "2026-09-21",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLPA74ELLXU00&activeTab=summary",
+        "lat": 51.885368,
+        "lon": -2.052686
+      },
+      {
         "ref": "26/01433/FUL",
         "address": "4 Copt Elm Road Charlton Kings Cheltenham Gloucestershire GL53 8AB",
         "description": "Proposed two storey and single storey side/rear extension to include removal of existing conservatory/detached garage.",
-        "status": "Pending Consideration",
+        "status": "Permit",
         "received": "2026-09-07",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TKZR76EL08300&activeTab=summary",
         "lat": 51.886977,
@@ -897,7 +917,7 @@
     {
       "id": "gp",
       "group": "Health",
-      "label": "GP practices",
+      "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1200,7 +1220,7 @@
     {
       "id": "park",
       "group": "Parks and Play",
-      "label": "Parks and open spaces",
+      "label": "Parks and Open Spaces",
       "mode": "nearest",
       "in_ward": 9,
       "items": [
@@ -1281,7 +1301,7 @@
     {
       "id": "play",
       "group": "Parks and Play",
-      "label": "Play areas",
+      "label": "Play Areas",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1332,7 +1352,7 @@
     {
       "id": "parkrun",
       "group": "Parks and Play",
-      "label": "Running events",
+      "label": "Running Events",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1368,7 +1388,7 @@
     {
       "id": "toilet",
       "group": "Everyday Services",
-      "label": "Public toilets",
+      "label": "Public Toilets",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1428,7 +1448,7 @@
     {
       "id": "post",
       "group": "Everyday Services",
-      "label": "Post offices",
+      "label": "Post Offices",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1485,7 +1505,7 @@
     {
       "id": "parcel",
       "group": "Everyday Services",
-      "label": "Parcel pick-up points",
+      "label": "Parcel Pick-up Points",
       "mode": "nearest",
       "in_ward": 3,
       "items": [
@@ -1524,7 +1544,7 @@
     {
       "id": "foodbank",
       "group": "Everyday Services",
-      "label": "Food banks",
+      "label": "Food Banks",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1543,7 +1563,7 @@
     {
       "id": "space",
       "group": "Everyday Services",
-      "label": "Community spaces",
+      "label": "Community Spaces",
       "mode": "nearest",
       "in_ward": 0,
       "items": [
@@ -1597,7 +1617,7 @@
     {
       "id": "carpark",
       "group": "Getting Around",
-      "label": "Car parks",
+      "label": "Car Parks",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1650,7 +1670,7 @@
     {
       "id": "ev",
       "group": "Getting Around",
-      "label": "EV charging",
+      "label": "EV Charging",
       "mode": "nearest",
       "in_ward": 1,
       "items": [
@@ -1719,7 +1739,7 @@
     {
       "id": "fuel",
       "group": "Getting Around",
-      "label": "Fuel stations",
+      "label": "Fuel Stations",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -1791,7 +1811,7 @@
     {
       "id": "venue",
       "group": "Food and Drink",
-      "label": "Pubs, cafes and takeaways",
+      "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
       "in_ward": 24,
       "items": [
@@ -2064,7 +2084,7 @@
     {
       "id": "sight",
       "group": "Heritage",
-      "label": "Places to visit",
+      "label": "Places to Visit",
       "mode": "nearest",
       "in_ward": 2,
       "items": [
@@ -2129,7 +2149,7 @@
     {
       "id": "listed",
       "group": "Heritage",
-      "label": "Listed buildings",
+      "label": "Listed Buildings",
       "mode": "in_ward",
       "in_ward": 68,
       "items": [
