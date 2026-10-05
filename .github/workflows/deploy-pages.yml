@@ -13,9 +13,12 @@ permissions:
     pages: write
     id-token: write
 
+# Let a running deploy finish: GitHub keeps at most one run waiting and
+# replaces it with each newer push, so the latest commit still goes out
+# without a slow runner letting every deploy be cancelled by the next.
 concurrency:
     group: pages
-    cancel-in-progress: true
+    cancel-in-progress: false
 
 jobs:
     build:
