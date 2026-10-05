@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T11:10:08+01:00",
+  "generated_at": "2026-10-05T11:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,29 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-05T10:52",
-      "expected": "2026-10-05T11:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a fault on this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-10-05T11:12",
-      "expected": "2026-10-05T11:12",
-      "status": "On time",
+      "expected": "2026-10-05T11:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -60,7 +40,7 @@
     },
     {
       "scheduled": "2026-10-05T11:15",
-      "expected": "2026-10-05T11:20",
+      "expected": "2026-10-05T11:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -94,7 +74,7 @@
     },
     {
       "scheduled": "2026-10-05T11:29",
-      "expected": "2026-10-05T11:40",
+      "expected": "2026-10-05T11:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -158,23 +138,33 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-05T11:52",
+      "expected": "2026-10-05T11:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-05T10:50",
-      "expected": "2026-10-05T11:08",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a fault on this train"
-    },
-    {
       "scheduled": "2026-10-05T11:10",
-      "expected": "2026-10-05T11:12",
-      "status": "Delayed",
+      "expected": "2026-10-05T11:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -183,7 +173,7 @@
     },
     {
       "scheduled": "2026-10-05T11:14",
-      "expected": "2026-10-05T11:19",
+      "expected": "2026-10-05T11:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,7 +203,7 @@
     },
     {
       "scheduled": "2026-10-05T11:27",
-      "expected": "2026-10-05T11:39",
+      "expected": "2026-10-05T11:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -249,6 +239,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-05T11:51",
+      "expected": "2026-10-05T11:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
