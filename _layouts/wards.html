@@ -49,7 +49,7 @@
                     {% assign pol = politics[w.slug] %}
                     {% assign vote = pol.elections.first %}
                     <tr>
-                        <td><a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }} &rarr;</a></td>
+                        <td><a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }}</a></td>
                         <td>{{ w.position | capitalize }}</td>
                         <td class="number">{{ w.postcode_count }}</td>
                         <td class="number">{{ w.area_km2 }}</td>
