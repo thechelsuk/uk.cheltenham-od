@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T11:55:08+01:00",
+  "generated_at": "2026-10-06T12:00:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,27 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-06T11:40",
-      "expected": "2026-10-06T11:54",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-10-06T11:59",
-      "expected": "2026-10-06T12:07",
+      "expected": "2026-10-06T12:08",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -108,7 +89,7 @@
     },
     {
       "scheduled": "2026-10-06T12:12",
-      "expected": "2026-10-06T12:23",
+      "expected": "2026-10-06T12:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -189,22 +170,31 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-06T12:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-06T11:38",
-      "expected": "2026-10-06T11:53",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
       "scheduled": "2026-10-06T11:58",
-      "expected": "2026-10-06T12:06",
+      "expected": "2026-10-06T12:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -224,7 +214,7 @@
     },
     {
       "scheduled": "2026-10-06T12:11",
-      "expected": "2026-10-06T12:22",
+      "expected": "2026-10-06T12:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -281,6 +271,16 @@
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T12:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident"
     }
   ]
 }
