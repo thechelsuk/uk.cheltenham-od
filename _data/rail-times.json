@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T16:30:09+01:00",
+  "generated_at": "2026-10-06T16:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-06T16:31",
-      "expected": "2026-10-06T16:41",
+      "expected": "2026-10-06T16:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -36,7 +36,7 @@
       "scheduled": "2026-10-06T16:40",
       "expected": "2026-10-06T16:40",
       "status": "On time",
-      "platform": "2",
+      "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
@@ -171,22 +171,29 @@
         "Alnmouth",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-10-06T17:19",
+      "expected": "2026-10-06T17:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-06T16:27",
-      "expected": "2026-10-06T16:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-06T16:30",
-      "expected": "2026-10-06T16:40",
+      "expected": "2026-10-06T16:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -196,7 +203,7 @@
     },
     {
       "scheduled": "2026-10-06T16:31",
-      "expected": "2026-10-06T16:33",
+      "expected": "2026-10-06T16:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -252,6 +259,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T17:18",
+      "expected": "2026-10-06T17:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
