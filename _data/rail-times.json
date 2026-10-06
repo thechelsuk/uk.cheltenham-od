@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T08:00:08+01:00",
+  "generated_at": "2026-10-06T08:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,48 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-06T07:55",
-      "expected": "2026-10-06T07:59",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ]
-    },
-    {
-      "scheduled": "2026-10-06T08:01",
-      "expected": "2026-10-06T08:01",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-10-06T08:12",
       "expected": "2026-10-06T08:12",
@@ -81,7 +39,7 @@
     },
     {
       "scheduled": "2026-10-06T08:15",
-      "expected": "2026-10-06T08:19",
+      "expected": "2026-10-06T08:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -166,33 +124,49 @@
         "Totnes",
         "Plymouth"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-06T07:54",
-      "expected": "2026-10-06T07:58",
-      "status": "Delayed",
+      "scheduled": "2026-10-06T08:59",
+      "expected": "2026-10-06T08:59",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
-      "reason": ""
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     },
     {
-      "scheduled": "2026-10-06T07:59",
-      "expected": "2026-10-06T07:59",
+      "scheduled": "2026-10-06T09:03",
+      "expected": "2026-10-06T09:03",
       "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": ""
-    },
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Westbury",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-06T08:10",
-      "expected": "2026-10-06T08:12",
-      "status": "Delayed",
+      "expected": "2026-10-06T08:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -201,7 +175,7 @@
     },
     {
       "scheduled": "2026-10-06T08:14",
-      "expected": "2026-10-06T08:18",
+      "expected": "2026-10-06T08:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -257,6 +231,26 @@
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T08:57",
+      "expected": "2026-10-06T08:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T09:02",
+      "expected": "2026-10-06T09:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Westbury",
+      "destination": "Worcester Foregate Street",
       "reason": ""
     }
   ]
