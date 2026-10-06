@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T18:40:07+01:00",
+  "generated_at": "2026-10-06T18:45:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,38 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-06T18:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "This service has been cancelled because of emergency services dealing with an incident near the railway earlier today",
-      "calling_at": [
-        "Birmingham New Street"
-      ]
-    },
-    {
-      "scheduled": "2026-10-06T18:40",
-      "expected": "2026-10-06T18:40",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-06T18:48",
       "expected": "2026-10-06T18:48",
@@ -172,19 +140,23 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-06T19:30",
+      "expected": "2026-10-06T19:30",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-06T18:38",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "This service has been cancelled because of emergency services dealing with an incident near the railway earlier today"
-    },
     {
       "scheduled": "2026-10-06T18:46",
       "expected": "2026-10-06T18:46",
@@ -254,6 +226,26 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time"
+    },
+    {
+      "scheduled": "2026-10-06T19:28",
+      "expected": "2026-10-06T19:28",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T19:34",
+      "expected": "2026-10-06T19:34",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": ""
     }
   ]
 }
