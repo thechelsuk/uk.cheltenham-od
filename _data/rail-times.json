@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T12:10:08+01:00",
+  "generated_at": "2026-10-06T12:15:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-06T11:59",
-      "expected": "2026-10-06T12:11",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a fault on a train in front of this one",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ]
-    },
     {
       "scheduled": "2026-10-06T12:12",
       "expected": null,
@@ -69,7 +48,7 @@
     },
     {
       "scheduled": "2026-10-06T12:12",
-      "expected": "2026-10-06T12:33",
+      "expected": "2026-10-06T12:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -188,19 +167,24 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-10-06T12:45",
+      "expected": "2026-10-06T12:50",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-06T11:58",
-      "expected": "2026-10-06T12:10",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a fault on a train in front of this one"
-    },
     {
       "scheduled": "2026-10-06T12:11",
       "expected": null,
@@ -213,7 +197,7 @@
     },
     {
       "scheduled": "2026-10-06T12:11",
-      "expected": "2026-10-06T12:32",
+      "expected": "2026-10-06T12:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -280,6 +264,16 @@
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "This service has been cancelled because of the emergency services dealing with an incident"
+    },
+    {
+      "scheduled": "2026-10-06T12:43",
+      "expected": "2026-10-06T12:49",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "This service has been delayed by a late running train being in front of this one"
     }
   ]
 }
