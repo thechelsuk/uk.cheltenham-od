@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T14:30:07+01:00",
+  "generated_at": "2026-10-06T14:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-06T14:12",
-      "expected": "2026-10-06T14:49",
+      "expected": "2026-10-06T14:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -40,20 +40,6 @@
       ]
     },
     {
-      "scheduled": "2026-10-06T14:30",
-      "expected": "2026-10-06T14:30",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-10-06T14:37",
       "expected": "2026-10-06T14:37",
       "status": "On time",
@@ -74,7 +60,7 @@
     },
     {
       "scheduled": "2026-10-06T14:40",
-      "expected": "2026-10-06T14:54",
+      "expected": "2026-10-06T14:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -196,12 +182,46 @@
         "Motherwell",
         "Glasgow Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-06T15:15",
+      "expected": "2026-10-06T15:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-10-06T15:23",
+      "expected": "2026-10-06T15:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-06T14:10",
-      "expected": "2026-10-06T14:48",
+      "expected": "2026-10-06T14:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -210,28 +230,8 @@
       "reason": "This service has been delayed by emergency services dealing with an incident near the railway earlier today"
     },
     {
-      "scheduled": "2026-10-06T14:28",
-      "expected": "2026-10-06T14:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-06T14:31",
-      "expected": "2026-10-06T14:31",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-06T14:38",
-      "expected": "2026-10-06T14:53",
+      "expected": "2026-10-06T14:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -277,6 +277,26 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T15:14",
+      "expected": "2026-10-06T15:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-06T15:21",
+      "expected": "2026-10-06T15:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
     }
   ]
