@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T12:05:11+01:00",
+  "generated_at": "2026-10-07T12:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-07T12:03",
-      "expected": "2026-10-07T12:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-10-07T12:12",
-      "expected": "2026-10-07T12:25",
+      "expected": "2026-10-07T12:28",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -68,7 +48,7 @@
     },
     {
       "scheduled": "2026-10-07T12:15",
-      "expected": "2026-10-07T12:18",
+      "expected": "2026-10-07T12:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -166,12 +146,43 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-07T12:52",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth",
+        "Liskeard",
+        "Bodmin Parkway",
+        "Lostwithiel",
+        "Par",
+        "St Austell",
+        "Truro",
+        "Redruth",
+        "Camborne",
+        "Hayle",
+        "St Erth",
+        "Penzance"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-07T12:11",
-      "expected": "2026-10-07T12:24",
+      "expected": "2026-10-07T12:27",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -181,7 +192,7 @@
     },
     {
       "scheduled": "2026-10-07T12:14",
-      "expected": "2026-10-07T12:17",
+      "expected": "2026-10-07T12:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -248,6 +259,16 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T12:50",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident"
     }
   ]
 }
