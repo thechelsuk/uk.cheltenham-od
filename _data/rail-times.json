@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T11:50:08+01:00",
+  "generated_at": "2026-10-07T11:55:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,46 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-07T11:52",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by the emergency services dealing with an incident",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
-      "scheduled": "2026-10-07T11:52",
-      "expected": "2026-10-07T11:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "York",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-10-07T11:59",
       "expected": "2026-10-07T11:59",
@@ -93,7 +53,7 @@
     },
     {
       "scheduled": "2026-10-07T12:12",
-      "expected": "2026-10-07T12:22",
+      "expected": "2026-10-07T12:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -129,7 +89,7 @@
     },
     {
       "scheduled": "2026-10-07T12:15",
-      "expected": "2026-10-07T12:18",
+      "expected": "2026-10-07T12:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -160,39 +120,61 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
-    }
-  ],
-  "arrivals": [
-    {
-      "scheduled": "2026-10-07T11:31",
-      "expected": "2026-10-07T11:51",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by trespassers on the railway"
     },
     {
-      "scheduled": "2026-10-07T11:51",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by the emergency services dealing with an incident"
-    },
-    {
-      "scheduled": "2026-10-07T11:51",
-      "expected": "2026-10-07T11:51",
+      "scheduled": "2026-10-07T12:35",
+      "expected": "2026-10-07T12:35",
       "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "York",
-      "destination": "Plymouth",
-      "reason": ""
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     },
+    {
+      "scheduled": "2026-10-07T12:40",
+      "expected": "2026-10-07T12:40",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-10-07T12:40",
+      "expected": "2026-10-07T12:47",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-07T11:58",
       "expected": "2026-10-07T11:58",
@@ -205,7 +187,7 @@
     },
     {
       "scheduled": "2026-10-07T12:11",
-      "expected": "2026-10-07T12:21",
+      "expected": "2026-10-07T12:23",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -215,7 +197,7 @@
     },
     {
       "scheduled": "2026-10-07T12:14",
-      "expected": "2026-10-07T12:17",
+      "expected": "2026-10-07T12:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +233,26 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T12:33",
+      "expected": "2026-10-07T12:33",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T12:38",
+      "expected": "2026-10-07T12:46",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
