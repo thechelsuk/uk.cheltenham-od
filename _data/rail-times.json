@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T14:10:09+01:00",
+  "generated_at": "2026-10-07T14:15:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-07T14:03",
-      "expected": "2026-10-07T14:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-10-07T14:12",
       "expected": "2026-10-07T14:16",
@@ -61,7 +41,7 @@
     },
     {
       "scheduled": "2026-10-07T14:15",
-      "expected": "2026-10-07T14:18",
+      "expected": "2026-10-07T14:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -95,7 +75,7 @@
     },
     {
       "scheduled": "2026-10-07T14:30",
-      "expected": "2026-10-07T14:34",
+      "expected": "2026-10-07T14:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -159,6 +139,26 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-07T14:52",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
@@ -174,7 +174,7 @@
     },
     {
       "scheduled": "2026-10-07T14:14",
-      "expected": "2026-10-07T14:17",
+      "expected": "2026-10-07T14:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -204,7 +204,7 @@
     },
     {
       "scheduled": "2026-10-07T14:28",
-      "expected": "2026-10-07T14:33",
+      "expected": "2026-10-07T14:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -241,6 +241,16 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T14:50",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident"
     }
   ]
 }
