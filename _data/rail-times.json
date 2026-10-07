@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T12:00:08+01:00",
+  "generated_at": "2026-10-07T12:05:11+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,30 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-07T11:59",
-      "expected": "2026-10-07T11:59",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ]
-    },
-    {
       "scheduled": "2026-10-07T12:03",
-      "expected": "2026-10-07T12:03",
-      "status": "On time",
+      "expected": "2026-10-07T12:05",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -59,7 +38,7 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by animals on the railway",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -89,7 +68,7 @@
     },
     {
       "scheduled": "2026-10-07T12:15",
-      "expected": "2026-10-07T12:17",
+      "expected": "2026-10-07T12:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -156,13 +135,13 @@
     },
     {
       "scheduled": "2026-10-07T12:40",
-      "expected": "2026-10-07T12:48",
+      "expected": "2026-10-07T12:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by animals on the railway",
       "calling_at": [
         "Birmingham New Street",
         "Wolverhampton",
@@ -172,19 +151,24 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-10-07T12:45",
+      "expected": "2026-10-07T12:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-07T11:58",
-      "expected": "2026-10-07T11:58",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-07T12:11",
       "expected": "2026-10-07T12:24",
@@ -193,11 +177,11 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Leeds",
-      "reason": ""
+      "reason": "This service has been delayed by animals on the railway"
     },
     {
       "scheduled": "2026-10-07T12:14",
-      "expected": "2026-10-07T12:16",
+      "expected": "2026-10-07T12:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -247,12 +231,22 @@
     },
     {
       "scheduled": "2026-10-07T12:38",
-      "expected": "2026-10-07T12:47",
+      "expected": "2026-10-07T12:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been delayed by animals on the railway"
+    },
+    {
+      "scheduled": "2026-10-07T12:43",
+      "expected": "2026-10-07T12:43",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": ""
     }
   ]
