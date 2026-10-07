@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T13:45:08+01:00",
+  "generated_at": "2026-10-07T13:50:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,26 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-07T13:23",
-      "expected": "2026-10-07T13:44",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-10-07T13:29",
-      "expected": "2026-10-07T13:47",
+      "expected": "2026-10-07T13:51",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -44,7 +26,7 @@
     },
     {
       "scheduled": "2026-10-07T13:40",
-      "expected": "2026-10-07T13:44",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -63,7 +45,7 @@
     },
     {
       "scheduled": "2026-10-07T13:40",
-      "expected": "2026-10-07T13:45",
+      "expected": "2026-10-07T13:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -82,8 +64,8 @@
     },
     {
       "scheduled": "2026-10-07T13:46",
-      "expected": "2026-10-07T13:46",
-      "status": "On time",
+      "expected": "2026-10-07T13:51",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -178,8 +160,8 @@
     },
     {
       "scheduled": "2026-10-07T14:12",
-      "expected": "2026-10-07T14:12",
-      "status": "On time",
+      "expected": "2026-10-07T14:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -204,22 +186,28 @@
         "Motherwell",
         "Glasgow Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-07T14:15",
+      "expected": "2026-10-07T14:17",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-07T13:22",
-      "expected": "2026-10-07T13:43",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-07T13:27",
-      "expected": "2026-10-07T13:46",
+      "expected": "2026-10-07T13:50",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -229,7 +217,7 @@
     },
     {
       "scheduled": "2026-10-07T13:38",
-      "expected": "2026-10-07T13:44",
+      "expected": "2026-10-07T13:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -239,7 +227,7 @@
     },
     {
       "scheduled": "2026-10-07T13:44",
-      "expected": "2026-10-07T13:46",
+      "expected": "2026-10-07T13:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -279,12 +267,22 @@
     },
     {
       "scheduled": "2026-10-07T14:10",
-      "expected": "2026-10-07T14:12",
+      "expected": "2026-10-07T14:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T14:14",
+      "expected": "2026-10-07T14:16",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
