@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T14:25:07+01:00",
+  "generated_at": "2026-10-07T14:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-07T14:24",
-      "expected": "2026-10-07T14:24",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-07T14:30",
       "expected": "2026-10-07T14:38",
@@ -44,7 +26,7 @@
     },
     {
       "scheduled": "2026-10-07T14:37",
-      "expected": "2026-10-07T14:39",
+      "expected": "2026-10-07T14:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -155,22 +137,32 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-10-07T15:03",
+      "expected": "2026-10-07T15:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-07T14:22",
-      "expected": "2026-10-07T14:22",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-07T14:27",
-      "expected": "2026-10-07T14:29",
+      "expected": "2026-10-07T14:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -190,18 +182,18 @@
     },
     {
       "scheduled": "2026-10-07T14:31",
-      "expected": "2026-10-07T14:31",
-      "status": "On time",
+      "expected": "2026-10-07T14:37",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by congestion"
     },
     {
       "scheduled": "2026-10-07T14:38",
-      "expected": "2026-10-07T14:40",
-      "status": "Delayed",
+      "expected": "2026-10-07T14:38",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
