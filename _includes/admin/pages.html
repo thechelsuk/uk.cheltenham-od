@@ -1,0 +1,117 @@
+<p class="info-text">
+    Every page, news post, newsletter issue and classified, one row each. Title length is the title tag Google sees,
+    which is <code>seo_title</code> if set, otherwise the page title, with no site name suffix. Thresholds: title
+    30&ndash;60 characters, description 70&ndash;160 characters. Rows with noindex are greyed out since their
+    title/description length doesn't affect search results. A post dated in the future only appears once its date
+    has passed, or when the site is served with <code>--future</code>. Click a heading to sort.
+</p>
+
+<div class="table-scroll">
+    <table class="data-table" data-sortable id="pages-table">
+        <thead>
+            <tr>
+                <th scope="col">Page</th>
+                <th scope="col">Kind</th>
+                <th scope="col">Category</th>
+                <th scope="col">Type</th>
+                <th scope="col">Sponsor</th>
+                <th scope="col">Dataset Schema</th>
+                <th scope="col">Indexable</th>
+                <th scope="col">Title</th>
+                <th scope="col" class="number">Title length</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="number">Description length</th>
+                <th scope="col">Light</th>
+                <th scope="col">Dark</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% assign all_pages = site.pages | concat: site.posts %}
+            {% assign all_pages = all_pages | concat: site.newsletters %}
+            {% assign all_pages = all_pages | concat: site.classifieds %}
+            {% assign all_pages = all_pages | where_exp: "p", "p.title" | sort_natural: "title" %}
+            {% for page in all_pages %}
+            {% assign kind = "Page" %}
+            {% if page.collection == "posts" %}{% assign kind = "News" %}{% elsif page.collection == "newsletters" %}{% assign kind = "Newsletter" %}{% elsif page.collection == "classifieds" %}{% assign kind = "Classified" %}{% endif %}
+
+            {% assign is_noindex = false %}
+            {% if page.robots contains "noindex" %}{% assign is_noindex = true %}{% endif %}
+
+            {% assign has_dataset = false %}
+            {% if page.schema %}
+            {% capture schema_content %}{% include schema/{{ page.schema }}.html %}{% endcapture %}
+            {% if schema_content contains "Dataset" %}{% assign has_dataset = true %}{% endif %}
+            {% endif %}
+
+            {% assign page_category = page.group %}
+            {% unless page_category %}
+            {% assign page_category = "" %}
+            {% for nav_item in site.navigation_header %}
+            {% if nav_item.link == page.url %}{% assign page_category = nav_item.group %}{% endif %}
+            {% for nav_child in nav_item.children %}
+            {% if nav_child.link == page.url %}{% assign page_category = nav_item.group %}{% endif %}
+            {% endfor %}
+            {% endfor %}
+            {% endunless %}
+
+            {% assign seo_title = page.seo_title | default: page.title %}
+            {% assign full_title = seo_title | default: site.title %}
+            {% assign title_len = full_title | strip_html | size %}
+            {% assign meta_description = page.seo | default: page.description | default: site.description %}
+            {% assign desc_len = meta_description | strip_html | size %}
+
+            {% assign title_status = "ok" %}
+            {% if title_len < 30 %}{% assign title_status = "short" %}{% elsif title_len > 60 %}{% assign title_status = "long" %}{% endif %}
+            {% assign desc_status = "ok" %}
+            {% if desc_len < 70 %}{% assign desc_status = "short" %}{% elsif desc_len > 160 %}{% assign desc_status = "long" %}{% endif %}
+
+            <tr{% if is_noindex %} class="admin-noindex"{% endif %}>
+                <td data-val="{{ page.title | downcase | escape }}"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></td>
+                <td data-val="{{ kind | downcase }}">{{ kind }}</td>
+                <td data-val="{{ page_category | downcase }}">{{ page_category }}</td>
+                <td data-val="{{ page.type }}">{{ page.type }}</td>
+                <td data-val="{% if page.sponsor.size > 0 %}1{% else %}0{% endif %}">{% if page.sponsor.size > 0 %}True{% else %}False{% endif %}</td>
+                <td data-val="{% if has_dataset %}1{% else %}0{% endif %}">
+                    {% if has_dataset %}<span class="admin-status admin-status-ok">&check;</span>{% else %}<span class="admin-status admin-status-muted">&cross;</span>{% endif %}
+                </td>
+                <td data-val="{% if is_noindex %}0{% else %}1{% endif %}">
+                    {% if is_noindex %}<span class="admin-status admin-status-muted">Noindex</span>{% else %}<span class="admin-status admin-status-ok">Index</span>{% endif %}
+                </td>
+                <td class="text-cell" data-val="{{ full_title | downcase | escape }}">{{ full_title | strip_html }}</td>
+                <td class="number" data-val="{{ title_len }}">
+                    {{ title_len }}
+                    {% unless is_noindex %}
+                    {% if title_status == "short" %}<span class="admin-status admin-status-warn">Short</span>{% endif %}
+                    {% if title_status == "long" %}<span class="admin-status admin-status-warn">Long</span>{% endif %}
+                    {% endunless %}
+                </td>
+                <td class="text-cell" data-val="{{ meta_description | strip_html | downcase | escape }}">{{ meta_description | strip_html }}</td>
+                <td class="number" data-val="{{ desc_len }}">
+                    {{ desc_len }}
+                    {% unless is_noindex %}
+                    {% if desc_status == "short" %}<span class="admin-status admin-status-warn">Short</span>{% endif %}
+                    {% if desc_status == "long" %}<span class="admin-status admin-status-warn">Long</span>{% endif %}
+                    {% endunless %}
+                </td>
+                <td class="swatch-cell" data-swatch-cell><span class="swatch theme-{{ page.type }}" data-swatch>Light</span><code class="hex"></code></td>
+                <td class="swatch-cell" data-swatch-cell><span class="theme-preview--dark" data-theme="dark"><span class="swatch theme-{{ page.type }}" data-swatch>Dark</span></span><code class="hex"></code></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    (function () {
+        var table = document.getElementById("pages-table");
+        if (!table) return;
+        table.querySelectorAll("td[data-swatch-cell]").forEach(function (td) {
+            var sw = td.querySelector("[data-swatch]");
+            var code = td.querySelector(".hex");
+            if (!sw) return;
+            var hex = getComputedStyle(sw).getPropertyValue("--accent").trim();
+            if (code) code.textContent = hex;
+            td.setAttribute("data-val", hex);
+        });
+    })();
+</script>

@@ -18,9 +18,9 @@ _events/*.md post.
 
 Nothing is published. This writes _data/newsletter-draft.json — one scratch
 slot holding the complete text of the issue (front matter and all), which
-the "Newsletter" tab on /admin shows with a one-click copy. That file is
-gitignored: it's working state for you, not something the site needs to
-ship. To publish a reviewed draft, copy it from /admin and save it yourself
+the "Newsletter" tab in the studio app (uk.cheltenham-od.studio) shows with
+a one-click copy. That file is gitignored: it's working state for you, not
+something the site needs to ship. To publish a reviewed draft, copy it from the studio and save it yourself
 as _newsletters/<issue-date>.md, then commit and push — there's no
 auto-publish step, on purpose, so nothing reaches the public /newsletter
 archive without you having looked at it first.
@@ -323,7 +323,7 @@ def build(today, since_date, event_days_ahead):
     ]
     body = "\n\n".join(b for b in blocks if b) + "\n"
 
-    # This exact text is what you copy from /admin and save as _newsletters/<monday>.md to
+    # This exact text is what you copy from the studio and save as _newsletters/<monday>.md to
     # publish it — so it needs to be the complete, valid file, front matter included.
     full_file = "\n".join([
         "---",
@@ -358,7 +358,7 @@ def build(today, since_date, event_days_ahead):
     with open(DRAFT_PATH, "w", encoding="utf-8") as f:
         json.dump(draft, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    print(f"\nWrote {DRAFT_PATH.relative_to(ROOT)} — review and copy it from /admin, "
+    print(f"\nWrote {DRAFT_PATH.relative_to(ROOT)} — review and copy it from the studio's Newsletter tab, "
           f"save as {draft['save_as']} to publish")
 
 

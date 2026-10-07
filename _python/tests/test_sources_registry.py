@@ -1,5 +1,5 @@
-"""_data/sources.json is the site's register of data sources. The admin page's
-data freshness panel reads each source's files and schedule from it, so these
+"""_data/sources.json is the site's register of data sources. The studio app's
+data freshness tab reads each source's files and schedule from it, so these
 checks keep it complete and consistent. Offline; reads files only.
 
 Run from the repository root:
