@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T08:40:08+01:00",
+  "generated_at": "2026-10-07T08:45:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,44 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-07T08:40",
-      "expected": "2026-10-07T08:40",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
-      "scheduled": "2026-10-07T08:43",
-      "expected": "2026-10-07T08:43",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-07T08:52",
       "expected": "2026-10-07T08:52",
@@ -153,8 +115,8 @@
     },
     {
       "scheduled": "2026-10-07T09:15",
-      "expected": "2026-10-07T09:15",
-      "status": "On time",
+      "expected": "2026-10-07T09:19",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -189,23 +151,13 @@
   "arrivals": [
     {
       "scheduled": "2026-10-07T08:32",
-      "expected": null,
+      "expected": "2026-10-07T08:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by engineering works not being finished on time"
-    },
-    {
-      "scheduled": "2026-10-07T08:39",
-      "expected": "2026-10-07T08:39",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
     },
     {
       "scheduled": "2026-10-07T08:50",
@@ -249,8 +201,8 @@
     },
     {
       "scheduled": "2026-10-07T09:14",
-      "expected": "2026-10-07T09:14",
-      "status": "On time",
+      "expected": "2026-10-07T09:18",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -265,6 +217,26 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T09:26",
+      "expected": "2026-10-07T09:26",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-07T09:30",
+      "expected": "2026-10-07T09:30",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
