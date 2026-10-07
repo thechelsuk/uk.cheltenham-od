@@ -9,6 +9,7 @@
 
 module CareHomePages
   SEO_LIMIT = 160
+  TITLE_LIMIT = 60
   KINDS = {
     "nursing_home" => "nursing home",
     "residential_home" => "residential care home",
@@ -22,6 +23,27 @@ module CareHomePages
     return location["name"] if town.empty? || location["name"].downcase.include?(town.downcase)
 
     "#{location['name']}, #{town}"
+  end
+
+  # The search-result title: the fullest version that fits within TITLE_LIMIT, so short names still get a
+  # descriptive title and long ones don't run over. "Name - Detail" names fall back to just the name.
+  TITLE_KINDS = {
+    "nursing_home" => "Nursing Home",
+    "residential_home" => "Care Home",
+    "home_care" => "Home Care",
+  }.freeze
+
+  def seo_title(location)
+    name = location["name"]
+    short = name.split(" - ").first
+    kind = TITLE_KINDS[location["kind"]]
+    [
+      "#{name}: #{kind} CQC Rating, Cheltenham",
+      "#{name}: CQC Rating, Cheltenham",
+      "#{name} CQC Rating",
+      "#{short}: CQC Rating, Cheltenham",
+      "#{short} CQC Rating",
+    ].find { |text| text.length <= TITLE_LIMIT } || short
   end
 
   def seo(location)
@@ -47,7 +69,7 @@ module CareHomePages
           "layout" => "care-home",
           "cqc_id" => location["id"],
           "title" => "#{location['name']}: CQC Rating and Care",
-          "seo_title" => "#{location['name']} CQC Rating",
+          "seo_title" => CareHomePages.seo_title(location),
           "seo" => CareHomePages.seo(location),
           "description" => "The latest Care Quality Commission rating and the care offered by #{CareHomePages.place(location)}, " \
                            "a #{CareHomePages::KINDS[location['kind']]} in Cheltenham.",

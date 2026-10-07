@@ -4,7 +4,7 @@ title: "Cheltenham House Price Data"
 seo_title: "Cheltenham House Prices: Average Prices and Sales Data"
 seo: "Cheltenham house prices: average and median sale prices, number of sales and price changes by property type, from Land Registry and ONS data."
 permalink: /cheltenham-house-prices
-description: "Property Data from Land Registry and ONS datasets."
+description: "Average and median house prices in Cheltenham, with sales and price changes by property type, from Land Registry and ONS data."
 type: "property"
 schema: house-prices
 available-years:

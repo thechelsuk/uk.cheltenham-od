@@ -5,7 +5,7 @@ seo_title: "Sponsor Cheltenham Open Data: Reach Local Residents"
 seo: Sponsorship opportunities for Cheltenham Open Data - support location community resource, local marketing opportunities
 type: "cod"
 permalink: /sponsor
-description: Reach local people right where they're already looking — tasteful, page-specific sponsorship on Cheltenham Open Data
+description: Reach local people right where they're already looking — tasteful, page-specific sponsorship on Cheltenham Open Data.
 sponsor_gta: "https://buy.stripe.com/dRm3cvfML5ej7OvdJY0Ny04"
 sponsor_hap: "https://buy.stripe.com/8x29ATeIHcGLgl149o0Ny05"
 sponsor_sae: "https://buy.stripe.com/00waEXfML7mr6Kr0Xc0Ny06"

@@ -4,7 +4,7 @@ title: "Cheltenham Third Spaces"
 seo_title: "Cheltenham Third Spaces: Places to Go Beyond Home and Work"
 seo: "A curated list of Cheltenham third spaces: places to meet, work or relax that are neither home nor the office, on a map with addresses."
 permalink: /cheltenham-third-spaces
-description: "A curated list of local third spaces within Cheltenham. Last updated August 2026"
+description: "A hand-picked list of third spaces in Cheltenham: places to meet, work or relax beyond home and the office, on a map with addresses."
 type: "community"
 schema: thirds
 ---

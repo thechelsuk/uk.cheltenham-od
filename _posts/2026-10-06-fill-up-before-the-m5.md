@@ -1,9 +1,10 @@
 ---
 layout: posts
 title: Fill Up in Town, Not on the M5 - Cheltenham Fuel Prices Compared
+seo_title: "Fill Up in Town, Not on the M5: Cheltenham Fuel Prices"
 type: cod
 description: Petrol at the M5 services near Cheltenham costs up to 31p a litre more than the cheapest local supermarket. Here's what that means for a tank.
-seo: "Cheltenham fuel prices compared: motorway services near Cheltenham charge up to 31p a litre more for unleaded than local supermarkets, about £17 on a 55-litre tank."
+seo: "Cheltenham fuel prices compared: motorway services near Cheltenham charge up to 31p a litre more for unleaded than local supermarkets, about £17 a tank."
 date: 2026-10-06 15:00
 ---
 

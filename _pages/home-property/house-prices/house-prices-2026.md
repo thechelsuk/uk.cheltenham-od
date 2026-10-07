@@ -3,7 +3,7 @@ layout: house-year
 title: "Cheltenham House Price Data 2026"
 seo: "Cheltenham house price sales data for 2026 so far: average and median prices and sales by property type, from Land Registry price paid data."
 permalink: /cheltenham-house-prices-2026
-description: "Property Data from Land Registry and ONS datasets."
+description: "Cheltenham house prices in 2026: average and median prices, sales and changes by property type, from Land Registry and ONS data."
 type: "property"
 schema: house-prices
 pyear: "2026"

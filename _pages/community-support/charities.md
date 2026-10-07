@@ -1,6 +1,7 @@
 ---
 layout: charities
 title: "Charities in Cheltenham"
+seo_title: "Charities in Cheltenham: Every Registered Local Charity"
 seo: "Every registered charity based in Cheltenham: what each one does, its income and its cause, from the Charity Commission register. Find one to support."
 permalink: /cheltenham-charities
 description: "Registered charities based in Cheltenham and the GL50–GL54 postcodes, with what each one does, its latest income and a link to its entry on the register."

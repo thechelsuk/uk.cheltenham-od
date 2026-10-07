@@ -4,7 +4,7 @@ title: "Cheltenham Recycling"
 seo_title: "Cheltenham Recycling: Centres, Bring Banks and FAQs"
 seo: "Cheltenham recycling options in Cheltenham including locations, recycling items FAQ, and refillable and plastic free shopping"
 permalink: /cheltenham-recycling
-description: "Cheltenham reducing, recycling, and refilling Options in Cheltenham"
+description: "Where to recycle, reuse and refill in Cheltenham: recycling centres and banks, what goes where, and plastic-free shops."
 type: "property"
 ---
 

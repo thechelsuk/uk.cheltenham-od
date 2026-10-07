@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Nurseries, Pre-Schools and Out-of-School Clubs in Cheltenham, With Ofsted Ratings
+seo_title: "Cheltenham Nurseries and Pre-Schools With Ofsted Ratings"
 type: cod
 description: Every registered nursery, pre-school and out-of-school club in Cheltenham, mapped with places and Ofsted outcomes.
 seo: "A new page maps every registered nursery, pre-school and out-of-school club in Cheltenham, with places and the latest Ofsted rating for each."

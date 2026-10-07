@@ -4,7 +4,7 @@ listing: support
 title: "Cheltenham Local Help and Support"
 seo: "Local help and support in Cheltenham: online community groups, places to meet people, food banks, and apps for free or cheap food like Olio and Too Good To Go."
 permalink: /cheltenham-helpful-contacts-reports/local-support
-description: "Community groups, places to meet and ways to save on food in Cheltenham"
+description: "Community groups, places to meet and ways to save on food in Cheltenham."
 type: "community"
 ---
 

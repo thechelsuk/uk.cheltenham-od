@@ -22,6 +22,20 @@ module SchoolOfstedPages
     "#{school['name']}, #{town}"
   end
 
+  # The search-result title: the fullest version that fits within TITLE_LIMIT, so short names still get a
+  # descriptive title and long ones don't run over.
+  TITLE_LIMIT = 60
+
+  def seo_title(school)
+    name = school["name"]
+    [
+      "#{name}: Ofsted Rating and Reports, Cheltenham",
+      "#{name} Ofsted Rating and Reports",
+      "#{name} Ofsted Reports",
+      "#{name} Ofsted",
+    ].find { |text| text.length <= TITLE_LIMIT } || name
+  end
+
   # The longest description that fits the meta description limit.
   def seo(school)
     name = school["name"]
@@ -47,7 +61,7 @@ module SchoolOfstedPages
           "layout" => "school-ofsted",
           "urn" => urn,
           "title" => "#{school['name']} Ofsted Rating and Inspection History",
-          "seo_title" => "#{school['name']} Ofsted Reports",
+          "seo_title" => SchoolOfstedPages.seo_title(school),
           "seo" => SchoolOfstedPages.seo(school),
           "description" => "The latest Ofsted rating, grades by area and full inspection history for #{SchoolOfstedPages.place(school, gias[school['name']])}.",
           "permalink" => "/cheltenham-schools/#{school['slug']}",

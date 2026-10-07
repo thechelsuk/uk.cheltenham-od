@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Care Homes in Cheltenham and Their CQC Ratings, Now on One Map
+seo_title: "Cheltenham Care Homes and Their CQC Ratings on One Map"
 type: cod
 description: Every care home, nursing home and home care service in Cheltenham with its latest CQC rating, plus ratings for GP practices.
 seo: "A new page maps every care home and nursing home in Cheltenham with its latest CQC rating, and GP practices now show their CQC ratings too."

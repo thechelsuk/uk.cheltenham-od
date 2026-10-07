@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Ofsted Ratings and Inspection History for Every Cheltenham School
+seo_title: "Ofsted Ratings and Inspection History for Cheltenham Schools"
 type: cod
 description: The latest Ofsted rating and full inspection history for 63 schools in and around Cheltenham.
 seo: "Ofsted ratings and inspection history for 63 Cheltenham schools: the latest report card grades, past ratings and every report since records began."

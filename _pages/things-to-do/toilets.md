@@ -4,7 +4,7 @@ title: "Cheltenham Public Toilets"
 seo_title: "Public Toilets in Cheltenham: Map and Accessible Facilities"
 seo: "Public Toilets in Cheltenham - Find Your Nearest Facility, including accessible, all-gender and baby-changing locations, with opening hours and map links"
 permalink: /cheltenham-public-toilets
-description: "Every known public toilet in Cheltenham, with opening hours, accessibility info and map links"
+description: "Every known public toilet in Cheltenham, with opening hours, accessibility info and map links."
 type: "activities"
 schema: toilets
 ---

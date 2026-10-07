@@ -4,7 +4,7 @@ listing: contacts
 title: "Cheltenham Helplines and Contacts"
 seo: "Helpline and emergency numbers for Cheltenham: NHS, police, power cuts, flooding, mental health crisis lines, abuse, children, older people and the council."
 permalink: /cheltenham-helpful-contacts-reports
-description: "Tap-to-call helpline and emergency numbers for Cheltenham residents"
+description: "Tap-to-call helpline and emergency numbers for Cheltenham residents."
 type: "community"
 ---
 

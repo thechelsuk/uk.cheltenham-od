@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: How Deprived Is Your Part of Cheltenham? Indices of Deprivation 2025 Mapped
+seo_title: "Cheltenham Deprivation: Indices of Deprivation 2025 Mapped"
 type: cod
 description: A map of the English Indices of Deprivation 2025 for every Cheltenham neighbourhood and ward.
 seo: "A new map ranks every Cheltenham neighbourhood and ward on the English Indices of Deprivation 2025: income, employment, health, crime and housing."

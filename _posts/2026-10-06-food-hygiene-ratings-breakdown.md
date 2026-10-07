@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Nine in Ten Cheltenham Food Businesses Have a Five-Star Hygiene Rating
+seo_title: "Nine in Ten Cheltenham Food Businesses Rated Five Stars"
 type: cod
 description: Of 1,020 rated food businesses in Cheltenham, 913 have the top food hygiene rating of 5. Here's how the town's ratings break down.
 seo: "Cheltenham food hygiene ratings 2026: 913 of 1,020 rated restaurants, takeaways, shops and caterers have the top rating of 5, and just four are rated 1 or 2."

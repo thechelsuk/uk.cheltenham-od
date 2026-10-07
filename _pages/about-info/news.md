@@ -2,10 +2,7 @@
 layout: news-aggregation
 title: Latest Cheltenham News Aggregation
 seo: "Cheltenham local news in one place, updated hourly from Gov.uk, Gloucestershire Police, the council, BBC, Cheltenham Post and more, without the clutter."
-description: 'Cheltenham local news without the bloat, updated hourly. Aggregation
-  from a variety of sources: <br/><i>Gov.uk, Glos Police, Cheltenham Borough Council,
-  Gloucestershire County Council, Cheltenham BID, Golden Valley UK, BBC, Cheltenham
-  Post, Glos News Centre, and our own Cheltenham Open Data news and events</i>'
+description: "Local news from more than a dozen sources, from the council and police to the BBC, in one list refreshed every couple of hours."
 extra_css: /assets/news-aggregation.css
 type: about
 permalink: /cheltenham-news
