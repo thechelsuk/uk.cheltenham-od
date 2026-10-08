@@ -4,12 +4,12 @@
 # available there.
 #
 # Jekyll replaces a list rather than adding to it, so this repeats the
-# exclude list from _config.yml, plus admin.md.
+# exclude list from _config.yml, plus admin.md and the admin/ folder
+# (the site guide).
 # _python/tests/test_site_config.py fails if the two drift apart.
 exclude:
   - CNAME
   - README.md
-  - GUIDE.md
   - LICENSE.md
   - SECURITY.md
   - _python/
@@ -25,3 +25,4 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - admin.md
+  - admin/

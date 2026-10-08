@@ -60,19 +60,19 @@
             </div>
         </div>
 
-        <h2>Latest from Cheltenham Open Data</h2>
+        <h2>Latest News from Cheltenham Open Data</h2>
         <ul class="latest-list plain-list">
             {% assign latest = site.posts | sort: "date" | reverse %}
             {% for post in latest limit: 5 %}
             <li class="latest-item">
-                <a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>
+                {% if post.finding %}<a href="/news" class="latest-pill latest-pill-events">Analysis</a>{% else %}<a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>{% endif %}
                 <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
                 <span class="latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endfor %}
         </ul>
         <p class="action-row">
-            <a href="/news" class="pill-link">See all announcements &rarr;</a>
+            <a href="/news" class="pill-link">See all news &rarr;</a>
         </p>
 
         <div class="home-hero-grid">

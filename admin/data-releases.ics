@@ -1,0 +1,228 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Cheltenham Open Data//Data releases//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Cheltenham Open Data releases
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:20261021-ons-private-rents--september-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20261021T093000
+DTEND;TZID=Europe/London:20261021T100000
+SUMMARY:ONS private rents (September data)
+DESCRIPTION:Feeds /cheltenham-rent-prices through rents.py in the monthly w
+ orkflow\, which next runs on 2 November. Run the monthly workflow by hand 
+ to show it sooner.\n\nhttps://www.ons.gov.uk/economy/inflationandpriceindi
+ ces/bulletins/privaterentandhousepricesuk/previousreleases
+URL:https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/priva
+ terentandhousepricesuk/previousreleases
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261022-ons-employee-earnings--ashe-2026@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20261022T093000
+DTEND;TZID=Europe/London:20261022T100000
+SUMMARY:ONS employee earnings (ASHE 2026)
+DESCRIPTION:Feeds /cheltenham-earnings-history and /cheltenham-house-prices
+ /affordability through earnings.py and affordability.py in the monthly wor
+ kflow. Run the monthly workflow by hand afterwards so the housing squeeze 
+ draft can add 2026 pay to its rent share chart (rebuild cheltenham-rent-sh
+ are-of-pay with --force).\n\nhttps://www.gov.uk/government/statistics/anno
+ uncements/employee-earnings-in-the-uk-2026
+URL:https://www.gov.uk/government/statistics/announcements/employee-earning
+ s-in-the-uk-2026
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261102-check--housing-supply-net-additional-dwellings-2025-26-date@ch
+ eltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+SUMMARY:[Expected] Check: housing supply net additional dwellings 2025-26 d
+ ate
+DESCRIPTION:Expected November 2026 (provisional). Look for the confirmed da
+ y on the GOV.UK release calendar\, then re-date the housing squeeze draft 
+ (filename and date) and move its release-day event in admin/data-releases.
+ json to match.\n\nhttps://www.gov.uk/government/statistics/announcements/h
+ ousing-supply-net-additional-dwellings-england-2025-to-2026
+URL:https://www.gov.uk/government/statistics/announcements/housing-supply-n
+ et-additional-dwellings-england-2025-to-2026
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261112-nhs-a-e-figures--october-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20261112T093000
+DTEND;TZID=Europe/London:20261112T100000
+SUMMARY:NHS A&E figures (October data)
+DESCRIPTION:A&E draft publishes today at 11:30. After the 09:30 release: ru
+ n the daily workflow by hand (or nhs-ae.py)\, then build-findings.py glouc
+ estershire-ae-12-hour-waits --force\, update the figures in the post\, mov
+ e it from _drafts to _posts and commit.\n\nhttps://www.england.nhs.uk/stat
+ istics/statistical-work-areas/ae-waiting-times-and-activity/
+URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
+ -times-and-activity/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261116-check--ofcom-connected-nations-2026-report@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:[Expected] Check: Ofcom Connected Nations 2026 report
+DESCRIPTION:Not confirmed. The 2025 report came out on 19 November 2025. Ma
+ nual: save the new coverage CSVs\, then run process-mobile-coverage.py and
+  process-wardband.py.\n\nhttps://www.ofcom.org.uk/phones-and-broadband/cov
+ erage-and-speeds/connected-nations-and-infrastructure-reports
+URL:https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/conne
+ cted-nations-and-infrastructure-reports
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261118-ons-private-rents--october-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20261118T093000
+DTEND;TZID=Europe/London:20261118T100000
+SUMMARY:ONS private rents (October data)
+DESCRIPTION:Feeds /cheltenham-rent-prices through rents.py in the monthly w
+ orkflow\, which next runs on 2 December.\n\nhttps://www.ons.gov.uk/release
+ s/privaterentandhousepricesuknovember2026
+URL:https://www.ons.gov.uk/releases/privaterentandhousepricesuknovember2026
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261126-refresh-the-housing-squeeze-draft@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20261126T093000
+DTEND;TZID=Europe/London:20261126T100000
+SUMMARY:[Expected] Housing supply figures and housing squeeze post
+DESCRIPTION:Provisional release day (late-November Thursday\; confirm on GO
+ V.UK). The housing squeeze draft publishes today at 11:30. After the relea
+ se: run housing-supply.py (or the monthly workflow by hand)\, then build-f
+ indings.py cheltenham-housing-supply-slowdown --force and update the avera
+ ges. If not done since 22 October\, also rebuild cheltenham-rent-share-of-
+ pay with --force for 2026 pay. Then move the draft from _drafts to _posts 
+ and commit.\n\nhttps://www.gov.uk/government/statistics/announcements/hous
+ ing-supply-net-additional-dwellings-england-2025-to-2026
+URL:https://www.gov.uk/government/statistics/announcements/housing-supply-n
+ et-additional-dwellings-england-2025-to-2026
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20261210-nhs-a-e-figures--november-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20261210T093000
+DTEND;TZID=Europe/London:20261210T100000
+SUMMARY:NHS A&E figures (November data)
+DESCRIPTION:nhs-ae.py picks this up in the daily workflow.\n\nhttps://www.e
+ ngland.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activ
+ ity/
+URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
+ -times-and-activity/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270114-nhs-a-e-figures--december-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20270114T093000
+DTEND;TZID=Europe/London:20270114T100000
+SUMMARY:NHS A&E figures (December data)
+DESCRIPTION:nhs-ae.py picks this up in the daily workflow.\n\nhttps://www.e
+ ngland.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activ
+ ity/
+URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
+ -times-and-activity/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270211-nhs-a-e-figures--january-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20270211T093000
+DTEND;TZID=Europe/London:20270211T100000
+SUMMARY:NHS A&E figures (January data)
+DESCRIPTION:nhs-ae.py picks this up in the daily workflow. January is the w
+ inter peak\, the month the A&E analysis compares year on year.\n\nhttps://
+ www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-
+ activity/
+URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
+ -times-and-activity/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270311-nhs-a-e-figures--february-data@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;TZID=Europe/London:20270311T093000
+DTEND;TZID=Europe/London:20270311T100000
+SUMMARY:NHS A&E figures (February data)
+DESCRIPTION:nhs-ae.py picks this up in the daily workflow. This is the last
+  date in NHS England's current 12-month plan: add the next dates from http
+ s://www.england.nhs.uk/statistics/12-months-statistics-calendar/\n\nhttps:
+ //www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-an
+ d-activity/
+URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
+ -times-and-activity/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270503-check--dft-road-casualties-provisional-2026-results@cheltenham
+ -od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;VALUE=DATE:20270503
+DTEND;VALUE=DATE:20270504
+SUMMARY:[Expected] Check: DfT road casualties provisional 2026 results
+DESCRIPTION:Announced for May 2027 (provisional). Provisional figures only\
+ ; the site uses the final results in July.\n\nhttps://www.gov.uk/governmen
+ t/statistics/announcements/reported-road-casualties-great-britain-provisio
+ nal-results-2026
+URL:https://www.gov.uk/government/statistics/announcements/reported-road-ca
+ sualties-great-britain-provisional-results-2026
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270504-check--ofcom-connected-nations-spring-update@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;VALUE=DATE:20270504
+DTEND;VALUE=DATE:20270505
+SUMMARY:[Expected] Check: Ofcom Connected Nations spring update
+DESCRIPTION:Usually early May (13 May in 2026). Manual: save the new covera
+ ge CSVs\, then run process-mobile-coverage.py and process-wardband.py.\n\n
+ https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connecte
+ d-nations-and-infrastructure-reports
+URL:https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/conne
+ cted-nations-and-infrastructure-reports
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270701-check--dft-road-casualties-final-2026-results@cheltenham-od.uk
+DTSTAMP:20261008T021608Z
+DTSTART;VALUE=DATE:20270701
+DTEND;VALUE=DATE:20270702
+SUMMARY:[Expected] Check: DfT road casualties final 2026 results
+DESCRIPTION:Announced for July 2027 (provisional)\; 2025 results came out o
+ n 30 July 2026. Manual: download the last-5-years collision\, casualty and
+  vehicle CSVs into _data-sources/\, then run process-road-collisions.py.\n
+ \nhttps://www.gov.uk/government/statistics/announcements/reported-road-cas
+ ualties-great-britain-final-results-2026
+URL:https://www.gov.uk/government/statistics/announcements/reported-road-ca
+ sualties-great-britain-final-results-2026
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

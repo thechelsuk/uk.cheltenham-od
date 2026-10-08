@@ -1047,6 +1047,19 @@ iframe.map-canvas {
     margin: 1.5em 0;
 }
 
+.finding-figure {
+    max-width: 800px;
+    margin: 1.5em 0;
+}
+
+.finding-figure img {
+    width: 100%;
+}
+
+.finding-figure figcaption {
+    margin-top: 0.5em;
+}
+
 .classifieds-image img {
     display: block;
     width: 100%;
@@ -1784,10 +1797,10 @@ button:disabled,
 }
 
 .latest-item {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
     align-items: baseline;
-    gap: 0.6em;
+    gap: 0.2em 0.6em;
     padding: 0.5em 0;
     border-bottom: 1px solid var(--border);
 }
@@ -1797,8 +1810,8 @@ button:disabled,
 }
 
 .latest-pill {
-    flex: 0 0 auto;
     font-size: 0.75rem;
+    text-align: center;
     font-weight: 600;
     padding: 0.2em 0.7em;
     border-radius: 999px;
@@ -1823,12 +1836,11 @@ button:disabled,
 }
 
 .latest-title {
-    flex: 1 1 auto;
     min-width: 0;
 }
 
 .latest-date {
-    flex: 0 0 auto;
+    grid-column: 2;
     color: var(--text-muted);
     font-size: 0.85rem;
 }
@@ -1897,6 +1909,19 @@ button:disabled,
     .headline-row {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .latest-item {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .latest-pill {
+        justify-self: start;
+        width: 7.5rem;
+    }
+
+    .latest-date {
+        grid-column: 1;
     }
 }
 

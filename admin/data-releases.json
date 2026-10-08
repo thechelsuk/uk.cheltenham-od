@@ -1,0 +1,113 @@
+{
+  "about": "Dated releases and deadlines for admin/data-releases.ics. Build the calendar with: python _python/local/release-calendar.py. status is confirmed (date published by the source), expected (usual timing, check the release calendar) or deadline (a draft that needs refreshing). Give an event a fixed \"id\" before changing its date or title, so re-importing updates it rather than adding a copy. Checked 2026-10-08.",
+  "events": [
+    {
+      "date": "2026-10-21",
+      "time": "09:30",
+      "title": "ONS private rents (September data)",
+      "status": "confirmed",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/privaterentandhousepricesuk/previousreleases",
+      "notes": "Feeds /cheltenham-rent-prices through rents.py in the monthly workflow, which next runs on 2 November. Run the monthly workflow by hand to show it sooner."
+    },
+    {
+      "date": "2026-10-22",
+      "time": "09:30",
+      "title": "ONS employee earnings (ASHE 2026)",
+      "status": "confirmed",
+      "url": "https://www.gov.uk/government/statistics/announcements/employee-earnings-in-the-uk-2026",
+      "notes": "Feeds /cheltenham-earnings-history and /cheltenham-house-prices/affordability through earnings.py and affordability.py in the monthly workflow. Run the monthly workflow by hand afterwards so the housing squeeze draft can add 2026 pay to its rent share chart (rebuild cheltenham-rent-share-of-pay with --force)."
+    },
+    {
+      "date": "2026-11-02",
+      "title": "Check: housing supply net additional dwellings 2025-26 date",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/housing-supply-net-additional-dwellings-england-2025-to-2026",
+      "notes": "Expected November 2026 (provisional). Look for the confirmed day on the GOV.UK release calendar, then re-date the housing squeeze draft (filename and date) and move its release-day event in admin/data-releases.json to match."
+    },
+    {
+      "date": "2026-11-12",
+      "time": "09:30",
+      "title": "NHS A&E figures (October data)",
+      "status": "confirmed",
+      "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
+      "notes": "A&E draft publishes today at 11:30. After the 09:30 release: run the daily workflow by hand (or nhs-ae.py), then build-findings.py gloucestershire-ae-12-hour-waits --force, update the figures in the post, move it from _drafts to _posts and commit."
+    },
+    {
+      "date": "2026-11-16",
+      "title": "Check: Ofcom Connected Nations 2026 report",
+      "status": "expected",
+      "url": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-and-infrastructure-reports",
+      "notes": "Not confirmed. The 2025 report came out on 19 November 2025. Manual: save the new coverage CSVs, then run process-mobile-coverage.py and process-wardband.py."
+    },
+    {
+      "date": "2026-11-18",
+      "time": "09:30",
+      "title": "ONS private rents (October data)",
+      "status": "confirmed",
+      "url": "https://www.ons.gov.uk/releases/privaterentandhousepricesuknovember2026",
+      "notes": "Feeds /cheltenham-rent-prices through rents.py in the monthly workflow, which next runs on 2 December."
+    },
+    {
+      "id": "20261126-refresh-the-housing-squeeze-draft",
+      "date": "2026-11-26",
+      "title": "Housing supply figures and housing squeeze post",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/housing-supply-net-additional-dwellings-england-2025-to-2026",
+      "notes": "Provisional release day (late-November Thursday; confirm on GOV.UK). The housing squeeze draft publishes today at 11:30. After the release: run housing-supply.py (or the monthly workflow by hand), then build-findings.py cheltenham-housing-supply-slowdown --force and update the averages. If not done since 22 October, also rebuild cheltenham-rent-share-of-pay with --force for 2026 pay. Then move the draft from _drafts to _posts and commit.",
+      "time": "09:30"
+    },
+    {
+      "date": "2026-12-10",
+      "time": "09:30",
+      "title": "NHS A&E figures (November data)",
+      "status": "confirmed",
+      "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
+      "notes": "nhs-ae.py picks this up in the daily workflow."
+    },
+    {
+      "date": "2027-01-14",
+      "time": "09:30",
+      "title": "NHS A&E figures (December data)",
+      "status": "confirmed",
+      "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
+      "notes": "nhs-ae.py picks this up in the daily workflow."
+    },
+    {
+      "date": "2027-02-11",
+      "time": "09:30",
+      "title": "NHS A&E figures (January data)",
+      "status": "confirmed",
+      "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
+      "notes": "nhs-ae.py picks this up in the daily workflow. January is the winter peak, the month the A&E analysis compares year on year."
+    },
+    {
+      "date": "2027-03-11",
+      "time": "09:30",
+      "title": "NHS A&E figures (February data)",
+      "status": "confirmed",
+      "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
+      "notes": "nhs-ae.py picks this up in the daily workflow. This is the last date in NHS England's current 12-month plan: add the next dates from https://www.england.nhs.uk/statistics/12-months-statistics-calendar/"
+    },
+    {
+      "date": "2027-05-03",
+      "title": "Check: DfT road casualties provisional 2026 results",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/reported-road-casualties-great-britain-provisional-results-2026",
+      "notes": "Announced for May 2027 (provisional). Provisional figures only; the site uses the final results in July."
+    },
+    {
+      "date": "2027-05-04",
+      "title": "Check: Ofcom Connected Nations spring update",
+      "status": "expected",
+      "url": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/connected-nations-and-infrastructure-reports",
+      "notes": "Usually early May (13 May in 2026). Manual: save the new coverage CSVs, then run process-mobile-coverage.py and process-wardband.py."
+    },
+    {
+      "date": "2027-07-01",
+      "title": "Check: DfT road casualties final 2026 results",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/reported-road-casualties-great-britain-final-results-2026",
+      "notes": "Announced for July 2027 (provisional); 2025 results came out on 30 July 2026. Manual: download the last-5-years collision, casualty and vehicle CSVs into _data-sources/, then run process-road-collisions.py."
+    }
+  ]
+}

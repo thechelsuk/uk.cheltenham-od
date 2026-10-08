@@ -5,13 +5,13 @@ title: "Cheltenham Open Data"
 description: "Local Data for Local People in Cheltenham and Gloucestershire"
 author: "thechelsuk"
 url: https://cheltenham-od.uk
-icon: "/assets/images/logo.png"
+icon: "/assets/images/apple-touch-icon.png"
 copyright: "Cheltenham Open Data — site, content, code and compilation &copy; Cheltenham Open Data, all rights reserved."
 disclaimer: "Underlying data &copy; respective providers, used under licence. No liability accepted for data accuracy."
 encoding: UTF-8
 future: false
 repository: thechelsuk/uk.cheltenham-od
-defaultImagePath: "/assets/images/logo.png"
+defaultImagePath: "/assets/images/apple-touch-icon.png"
 github:
   repository_url: https://github.com/thechelsuk/uk.cheltenham-od
   branch: main
@@ -24,7 +24,6 @@ plugins:
 exclude:
   - CNAME
   - README.md
-  - GUIDE.md
   - LICENSE.md
   - SECURITY.md
   - _python/
@@ -58,6 +57,8 @@ defaults:
       type: posts
     values:
       permalink: ./news/:title
+      author: Mat Benfield
+      author_url: /about
   - scope:
       path: ""
       type: classifieds

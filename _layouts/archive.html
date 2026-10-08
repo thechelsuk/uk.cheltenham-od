@@ -7,19 +7,20 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul>
-                <li><b>{{ items | size }}</b> total announcements.</li>
+                <li><b>{{ items | size }}</b> total posts.</li>
                 <li><a href="/feeds/main.xml">Subscribe via our feed/rss →</a></li>
             </ul>
         </header>
 
-        <h2>Recent Announcements</h2>
+        <h2>Latest News from Cheltenham Open Data</h2>
 
         <ul class="latest-list plain-list">
             {% for post in items %}
             <li class="latest-item">
-                <a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>
+                {% if post.finding %}<a href="/news" class="latest-pill latest-pill-events">Analysis</a>{% else %}<a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>{% endif %}
                 <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
-                <span class="latest-date">{{ post.content | number_of_words }} words on
+                {% assign words = post.content | number_of_words %}
+                <span class="latest-date">{% if words >= 1000 %}{{ words | divided_by: 1000 }},{{ words | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ words }}{% endif %} words on
                     {{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endfor %}

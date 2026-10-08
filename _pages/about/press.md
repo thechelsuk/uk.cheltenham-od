@@ -30,7 +30,7 @@ Cheltenham Open Data is a free, independent hub that pulls public data about Che
 - **Launched:** August 2026
 - **Run by:**  Mat Benfield, an independent resident and developer — [thechels.uk](https://thechels.uk).
 - **Funding:** Independent and self-funded, supported by local sponsors, hyper-relevant affiliate links and [Ko-fi](https://ko-fi.com/thechelsuk).
-- **Website:** <https://cheltenham-od.uk>
+- **Site:** <https://cheltenham-od.uk>
 
 ## What We Cover
 
@@ -62,6 +62,21 @@ A few ways to frame a piece:
 - **Community resilience** — real-time flood warnings, air quality, security, and live food bank needs lists.
 - **Civic transparency** — planning applications and crime data made readable for residents.
 - **Independent, local tech** — a self-funded project putting open data to work for one town.
+
+{% assign findings = site.posts | where_exp: "post", "post.finding" %}
+{% if findings.size > 0 %}
+
+## Latest Findings
+
+Our own analysis of the data, each with a quotable figure, a chart you can embed and the data as a CSV.
+
+{% for post in findings limit: 8 %}
+
+- **[{{ post.title }}]({{ post.url }})** ({{ post.date | date: "%Y-%m-%d" }}): {{ post.finding.quote }}
+
+{% endfor %}
+
+{% endif %}
 
 ## Quotes You Can Use
 

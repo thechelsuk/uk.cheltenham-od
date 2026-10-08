@@ -10,4 +10,6 @@ filters:
     column: "Type"
 ---
 
+How the site is built: see the [site guide](/admin/guide).
+
 {% include admin/index.html %}
