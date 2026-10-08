@@ -26,8 +26,8 @@ def test_production_config_only_changes_exclude():
 
 def test_admin_page_is_tracked_not_ignored():
     ignored = (ROOT / ".gitignore").read_text().splitlines()
-    assert "admin.md" not in ignored
-    assert (ROOT / "admin.md").exists()
+    assert "admin" not in ignored and "admin/" not in ignored
+    assert (ROOT / "admin" / "admin.md").exists()
     assert (ROOT / "admin" / "guide" / "index.md").exists()
 
 
