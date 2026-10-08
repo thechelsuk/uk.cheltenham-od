@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T21:50:08+01:00",
+  "generated_at": "2026-10-08T21:55:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-08T21:52",
-      "expected": "2026-10-08T21:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-08T21:53",
       "expected": "2026-10-08T21:53",
@@ -116,23 +101,26 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-08T22:57",
+      "expected": "2026-10-08T22:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-08T21:50",
-      "expected": "2026-10-08T21:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-08T21:51",
-      "expected": "2026-10-08T21:53",
-      "status": "Delayed",
+      "expected": "2026-10-08T21:51",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -151,8 +139,8 @@
     },
     {
       "scheduled": "2026-10-08T22:01",
-      "expected": "2026-10-08T22:01",
-      "status": "On time",
+      "expected": "2026-10-08T22:03",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -161,13 +149,13 @@
     },
     {
       "scheduled": "2026-10-08T22:06",
-      "expected": null,
-      "status": "Delayed",
+      "expected": "2026-10-08T22:06",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Westbury",
       "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by congestion"
+      "reason": ""
     },
     {
       "scheduled": "2026-10-08T22:20",
@@ -207,6 +195,16 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-08T22:55",
+      "expected": "2026-10-08T22:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
