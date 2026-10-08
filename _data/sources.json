@@ -548,6 +548,22 @@
     "pages": ["/cheltenham-power-cuts", "/cheltenham-power-cuts/history"]
   },
   {
+    "id": "met-office-fire-severity-index",
+    "source_url": "https://openaccess.naturalengland.org.uk/",
+    "licence": "No licence stated. The Met Office produces the Fire Severity Index and Natural England publishes it on its Open Access site through a public ArcGIS feature service; neither states reuse terms for it. Confirm terms with the Met Office before any commercial use, such as a paid alert service",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/wildfire.json", "schedule": "daily"}, {"file": "_data/wildfire-history.json", "schedule": "daily"}],
+    "pages": ["/cheltenham-wildfire-risk", "/cheltenham-wildfire-risk/history"]
+  },
+  {
+    "id": "mhclg-outdoor-fires",
+    "source_url": "https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets",
+    "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/wildfire-incidents.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-wildfire-risk/history"]
+  },
+  {
     "id": "cloudflare-graphql-analytics",
     "source_url": "https://developers.cloudflare.com/analytics/graphql-api/",
     "licence": "The site's own traffic figures from Cloudflare; no open licence applies",

@@ -312,6 +312,14 @@ navigation_header:
       - name: Cheltenham Power Cuts History
         link: /cheltenham-power-cuts/history
         description: "Historical log of power cuts recorded against Cheltenham postcodes."
+  - name: Cheltenham Wildfire Risk
+    link: /cheltenham-wildfire-risk
+    description: "Today's Met Office fire severity level and five-day forecast for Cheltenham and the land within 10 km."
+    group: "Safety & Environment"
+    children:
+      - name: Cheltenham Wildfire History
+        link: /cheltenham-wildfire-risk/history
+        description: "Grassland, woodland and crop fires recorded around Cheltenham since 2010, and days of high fire severity."
 
   # Community & Support
   - name: Cheltenham Food Banks
@@ -610,6 +618,8 @@ footer_pages:
       link: /cheltenham-10-day-weather-forecast
     - name: Cheltenham Where to Eat
       link: /cheltenham-where-to-eat
+    - name: Cheltenham Wildfire Risk
+      link: /cheltenham-wildfire-risk
     - name: University of Gloucestershire
       link: /university-of-gloucestershire
 
@@ -651,6 +661,8 @@ footer_columns:
         link: /feeds/bus-disruptions.xml
       - name: Cheltenham Power Cuts (atom)
         link: /feeds/power-cuts.xml
+      - name: Cheltenham Wildfire Risk (atom)
+        link: /feeds/wildfire.xml
 
   - title: About
     links:

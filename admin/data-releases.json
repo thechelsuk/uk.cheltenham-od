@@ -108,6 +108,13 @@
       "status": "expected",
       "url": "https://www.gov.uk/government/statistics/announcements/reported-road-casualties-great-britain-final-results-2026",
       "notes": "Announced for July 2027 (provisional); 2025 results came out on 30 July 2026. Manual: download the last-5-years collision, casualty and vehicle CSVs into _data-sources/, then run process-road-collisions.py."
+    },
+    {
+      "date": "2027-07-21",
+      "title": "Check: MHCLG fire statistics incident level datasets",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets",
+      "notes": "Usually late July (22 July in 2026). Manual: download the outdoor fires dataset .ods files into _data-sources/outdoor-fires/, replacing the old ones, then run process-wildfire-incidents.py."
     }
   ]
 }

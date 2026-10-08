@@ -39,6 +39,8 @@ jobs:
 
           - [ ] **Road collisions** — check the [DfT road safety data](https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data) for a newer release (it is published once a year). Download the "last 5 years" collision, casualty and vehicle CSVs into `_data-sources/` (`https://data.dft.gov.uk/road-accidents-safety-data/dft-road-casualty-statistics-collision-last-5-years.csv`, and the same with `casualty` and `vehicle` in place of `collision`), update the three file name constants at the top of `_python/local/process-road-collisions.py` if the names have changed, run it, and commit the updated `_data/road-collisions.json`.
 
+          - [ ] **Wildfire history** — check the [fire statistics incident level datasets](https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets) for a newer release (it is published once a year, in late July). Download every "Outdoor fires dataset" `.ods` file into `_data-sources/outdoor-fires/`, replacing the old ones, run `_python/local/process-wildfire-incidents.py`, and commit the updated `_data/wildfire-incidents.json`.
+
           Close this issue once done — a new one opens automatically next month.
           EOF
 

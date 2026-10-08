@@ -1,0 +1,236 @@
+{% include header.html %}
+{% assign fsi = site.data["wildfire-history"] %}
+{% assign data = site.data["wildfire-incidents"] %}
+{% assign totals = data.totals %}
+{% assign located_years = data.by_year | where: "located", true %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-wildfire-risk">&lAarr; Back to Cheltenham Wildfire Risk</a></li>
+                <li>{{ totals.all_display }} grassland, woodland and crop fires, {{ data.first_year }} to {{ data.last_located_year }}</li>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="fires-by-year">Fires by Year</h2>
+        <div class="chart-canvas">
+            <canvas id="wildfire-years" aria-label="Stacked bar chart of grassland, woodland and crop fires per year in Cheltenham and the surrounding area"></canvas>
+        </div>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Cheltenham</th>
+                        <th scope="col" class="number">Surrounding area</th>
+                        <th scope="col" class="number">Total</th>
+                        <th scope="col" class="number">All {{ data.county }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for y in data.by_year %}
+                    <tr>
+                        <td>{{ y.year }}</td>
+                        {% if y.located %}
+                        <td class="number">{{ y.cheltenham }}</td>
+                        <td class="number">{{ y.surrounding }}</td>
+                        <td class="number">{{ y.total }}</td>
+                        {% else %}
+                        <td class="number" data-val="-1">Not yet published</td>
+                        <td class="number" data-val="-1">Not yet published</td>
+                        <td class="number" data-val="-1">Not yet published</td>
+                        {% endif %}
+                        <td class="number">{{ y.county }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="fires-by-month">Fires by Month</h2>
+        <div class="chart-canvas">
+            <canvas id="wildfire-months" aria-label="Stacked bar chart of grassland, woodland and crop fires by month of the year in Cheltenham and the surrounding area"></canvas>
+        </div>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Month</th>
+                        <th scope="col" class="number">Cheltenham</th>
+                        <th scope="col" class="number">Surrounding area</th>
+                        <th scope="col" class="number">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in data.by_month %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ m.month }}</td>
+                        <td class="number">{{ m.cheltenham }}</td>
+                        <td class="number">{{ m.surrounding }}</td>
+                        <td class="number">{{ m.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="busiest-days">Busiest Days</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col" class="number">Cheltenham</th>
+                        <th scope="col" class="number">Surrounding area</th>
+                        <th scope="col" class="number">Fires</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in data.busiest_days %}
+                    <tr>
+                        <td class="date" data-val="{{ d.date }}">{{ d.date }}</td>
+                        <td class="number">{{ d.cheltenham }}</td>
+                        <td class="number">{{ d.surrounding }}</td>
+                        <td class="number">{{ d.fires }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="where">Where Fires Happen</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">District</th>
+                        <th scope="col">Part of</th>
+                        <th scope="col" class="number">Fires</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in data.by_place %}
+                    <tr>
+                        <td>{{ p.place }}</td>
+                        <td>{{ p.district }}</td>
+                        <td>{% if p.area == "cheltenham" %}Cheltenham{% else %}Surrounding area{% endif %}</td>
+                        <td class="number">{{ p.fires }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="largest">Largest Fires</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">District</th>
+                        <th scope="col">Part of</th>
+                        <th scope="col">Area burned</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in data.largest %}
+                    <tr>
+                        <td class="date" data-val="{{ f.date }}">{{ f.date }}</td>
+                        <td>{{ f.place }}</td>
+                        <td>{{ f.district }}</td>
+                        <td>{% if f.area == "cheltenham" %}Cheltenham{% else %}Surrounding area{% endif %}</td>
+                        <td data-val="{{ forloop.index }}">{{ f.damage }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="fire-severity">High Fire Severity Days</h2>
+        <p>Every day since {{ fsi.tracking_since }} when the Met Office rated fire severity high ({{ fsi.level }} of 5) or above in any of the {{ fsi.radius_km }} km grid squares around Cheltenham.</p>
+        {% if fsi.records.size > 0 %}
+        <div class="table-scroll">
+            <table class="wildfire-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Fire severity</th>
+                        <th scope="col" class="number">Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in fsi.records %}
+                    <tr id="{{ r.date }}">
+                        <td class="date" data-val="{{ r.date }}">{{ r.date }}</td>
+                        <td>{{ r.label }}</td>
+                        <td class="number">{{ r.rating }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No days have reached high fire severity around Cheltenham since {{ fsi.tracking_since }}.</p>
+        </blockquote>
+        {% endif %}
+
+        <p class="wildfire-attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }} fire statistics</a>, published under the {{ data.licence }}, and from the <a href="{{ fsi.source_url }}">{{ fsi.source }}</a>.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}. Fire severity checked daily.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Which Fires Are Counted?</h3>
+        <ul>
+            <li>Every fire that fire and rescue services recorded on grassland, woodland or crops, from small grass fires to large field and hillside fires.</li>
+            <li>Fires in gardens, parks, bins and buildings are not included.</li>
+            <li>Official statistics do not define a wildfire, so these counts include small fires that would not meet the fire service's definition of one.</li>
+        </ul>
+
+        <h3>What Counts as Cheltenham and the Surrounding Area?</h3>
+        <ul>
+            <li>Cheltenham is every small census area in the GL50 to GL54 postcodes, which takes in Bishop's Cleeve, Winchcombe and the villages of the north Cotswolds as well as the town.</li>
+            <li>The surrounding area is every other small census area whose centre is within {{ data.radius_km }} km of Cheltenham town centre, such as Churchdown, Brockworth, Badgeworth and the east of Gloucester.</li>
+        </ul>
+
+        {% if data.last_located_year != data.last_year %}
+        {% assign county_max = data.by_year | map: "county" | sort | last %}
+        <h3>Why Is the Latest Year Missing for Cheltenham?</h3>
+        <ul>
+            <li>Fire services across England moved to a new national recording system in November 2025. The fire statistics for {{ data.last_year }} were published without the location of any fire in England, so fires for that year cannot be split between Cheltenham and the surrounding area.</li>
+            <li>It is not yet known whether locations will be added in a later release. The {{ data.county }} column covers every year, so the county-wide trend continues either way.</li>
+            <li>{{ data.county }} recorded {{ data.by_year.last.county }} grassland, woodland and crop fires in {{ data.last_year }}{% if data.by_year.last.county == county_max %}, the most in any year since {{ data.first_year }}{% endif %}.</li>
+        </ul>
+        {% endif %}
+
+        <h3>Are Most Fires Started Deliberately?</h3>
+        <ul>
+            <li>{{ totals.deliberate_pct }}% of the fires around Cheltenham since {{ data.first_year }} ({{ totals.deliberate_display }} of {{ totals.all_display }}) were recorded as started deliberately.</li>
+            <li>The rest were recorded as accidental or with no known cause.</li>
+        </ul>
+
+        <h3>Which Fire Severity Days Are Recorded?</h3>
+        <ul>
+            <li>The Met Office issues a new fire severity forecast each morning. Any day rated high ({{ fsi.level }} of 5), very high or exceptional around Cheltenham is added to the table here.</li>
+            <li>Low and moderate days, which make up most of the year, are not listed.</li>
+            <li>The current forecast for the next five days is on the <a href="/cheltenham-wildfire-risk">wildfire risk page</a>.</li>
+        </ul>
+    </div>
+</div>
+
+{% include chartjs.html %}
+<script id="wildfire-years-data" type="application/json">{{ located_years | jsonify }}</script>
+<script id="wildfire-months-data" type="application/json">{{ data.by_month | jsonify }}</script>
+<script src="/assets/scripts/wildfire-history-chart.js"></script>
+{% include footer.html %}

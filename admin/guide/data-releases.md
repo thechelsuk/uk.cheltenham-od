@@ -93,6 +93,13 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 - **When it publishes:** once a year. Final results for 2025 came out on 30 July 2026. Final results for 2026 are announced for July 2027 (provisional), with provisional figures in May 2027. Use the final results.
 - **Feeds:** `/cheltenham-road-collisions`; road casualties analysis.
 
+### Wildfire History (MHCLG Outdoor Fires Dataset)
+
+- **Download:** every "Outdoor fires dataset" `.ods` file from the [fire statistics incident level datasets](https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets) into `_data-sources/outdoor-fires/`, replacing the old files. The script reads every `.ods` file in that folder. It also needs `_data-sources/gloucestershire-postcodes.csv` and fetches LSOA centroids from the ONS itself.
+- **Run:** `process-wildfire-incidents.py` (about a minute), then commit `_data/wildfire-incidents.json`.
+- **When it publishes:** once a year in late July (22 July in 2026), covering fires to the end of the previous March. The newest year can arrive with no LSOA for Gloucestershire; the page then shows the county total for that year only, and the next release usually fills it in.
+- **Feeds:** `/cheltenham-wildfire-risk/history`. The live fire severity level comes from `wildfire.py` in the daily workflow and needs no manual step.
+
 ## Analysis Posts and Their Sources
 
 | Post | Depends on | Refresh needed |

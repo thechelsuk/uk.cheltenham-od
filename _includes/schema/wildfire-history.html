@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Grassland, Woodland and Crop Fires",
+  "description": "Grassland, woodland and crop fires recorded by fire and rescue services in Cheltenham (GL50 to GL54) and within {{ site.data['wildfire-incidents'].radius_km }} km of the town from {{ site.data['wildfire-incidents'].first_year }}, by year, month, area and size, with every day of high Met Office fire severity. From the fire statistics incident level datasets.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['wildfire-incidents'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "isBasedOn": "{{ site.data['wildfire-incidents'].source_url }}",
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "{{ site.data['wildfire-incidents'].first_date }}/{{ site.data['wildfire-incidents'].last_date }}",
+  "variableMeasured": ["Fires by financial year", "Fires by month", "Fires by area", "Area burned", "Deliberate fires", "Days of high fire severity"]
+}
+</script>

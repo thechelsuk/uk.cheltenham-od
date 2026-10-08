@@ -1,0 +1,123 @@
+{% include header.html %}
+{% assign data = site.data["wildfire"] %}
+{% assign today = data.today %}
+{% assign peak = data.days | sort: "rating" | last %}
+{% assign build_date = site.time | date: "%Y-%m-%d" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/safety-environment">&lAarr; Back to Safety &amp; Environment</a></li>
+                <li>Today: {{ today.label }} ({{ today.rating }} of 5)</li>
+                <li><a href="/cheltenham-wildfire-risk/history">Wildfire history &rarr;</a></li>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="today">Fire Severity Today</h2>
+        {% if today.date < build_date %}
+        <p>The Met Office has not yet issued a fire severity forecast for {{ build_date }}. The figures below are from the latest forecast, issued for {{ today.date }}.</p>
+        {% endif %}
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Fire severity on {{ today.date }}</p>
+                <span class="info-card__title">{{ today.label }}</span>
+                <span class="info-card__subtitle">{{ today.rating }} of 5, the highest of {{ data.squares.size }} grid squares within {{ data.radius_km }} km</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Highest in the {{ data.days.size }}-day forecast</p>
+                <span class="info-card__title">{{ peak.label }}</span>
+                <span class="info-card__subtitle">{{ peak.rating }} of 5, first on {% for d in data.days %}{% if d.rating == peak.rating %}{{ d.date }}{% break %}{% endif %}{% endfor %}</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Forecast issued</p>
+                <span class="info-card__title">{% if data.issued_iso %}{{ data.issued_iso | date: "%H:%M" }}{% else %}Unknown{% endif %}</span>
+                <span class="info-card__subtitle">{% if data.issued_iso %}{{ data.issued_iso | date: "%Y-%m-%d" }}, {% endif %}updated once a day</span>
+            </div>
+        </div>
+
+        <h2 id="forecast">Fire Severity Forecast</h2>
+        <div class="glance-grid">
+            {% for day in data.days %}
+            <div class="info-card" id="{{ day.date }}">
+                <p class="info-card__label">{{ day.date }}</p>
+                <span class="info-card__title">{{ day.label }}</span>
+                <span class="info-card__subtitle">{{ day.rating }} of 5{% if day.squares_at_max.size < data.squares.size %} in {{ day.squares_at_max | join: ", " }}{% else %} across the area{% endif %}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2 id="map">Fire Severity by Grid Square</h2>
+        <p>The Met Office rates fire severity for each 10 km Ordnance Survey grid square. Each square on the map is labelled with its grid reference and today's level.</p>
+        <div id="wildfire-map" class="map-canvas" aria-label="Map of fire severity by 10 km grid square around Cheltenham"></div>
+
+        <div class="table-scroll">
+            <table class="wildfire-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Grid square</th>
+                        {% for day in data.days %}<th scope="col" class="date">{{ day.date }}</th>{% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sq in data.squares %}
+                    <tr>
+                        <td>{{ sq.ref }}</td>
+                        {% for d in sq.days %}<td data-val="{{ d.rating }}">{{ d.rating }} {{ d.label }}</td>{% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="wildfire-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>.
+            {% if data.issued_iso %}Last updated {{ data.issued_iso | date: "%-d %B %Y" }}.{% endif %}
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is the Fire Severity Index?</h3>
+        <ul>
+            <li>The Met Office Fire Severity Index rates how severe a wildfire could become if one started, from 1 (low) to 5 (exceptional).</li>
+            <li>It is worked out from the weather: recent rainfall, drought, temperature, humidity and wind.</li>
+            <li>It does not forecast whether a fire will start. Most wildfires in England are started by people, by accident or on purpose.</li>
+        </ul>
+
+        <h3>What Happens at Exceptional (Level 5)?</h3>
+        <ul>
+            <li>At level 5, landowners and Natural England can close open access land to the public to reduce the chance of a fire starting.</li>
+            <li>Check the <a href="https://openaccess.naturalengland.org.uk/">Natural England Open Access site</a> for restrictions before walking on open hillsides such as Cleeve Common or Leckhampton Hill.</li>
+        </ul>
+
+        <h3>Which Area Does This Page Cover?</h3>
+        <ul>
+            <li>Every 10 km grid square that comes within {{ data.radius_km }} km of Cheltenham town centre: {% for sq in data.squares %}{{ sq.ref }}{% unless forloop.last %}, {% endunless %}{% endfor %}.</li>
+            <li>That takes in the Cotswold escarpment from Cleeve Hill to Crickley Hill, the Severn Vale towards Gloucester and Tewkesbury, and the land beyond, as smoke from a fire nearby can drift over the town.</li>
+        </ul>
+
+        <h3>How Often Is It Updated?</h3>
+        <ul>
+            <li>The Met Office issues a new forecast every morning for today and the next five days. This page picks it up several times a day.</li>
+            <li>Every day rated high (3) or above is recorded on the <a href="/cheltenham-wildfire-risk/history">wildfire history page</a>.</li>
+        </ul>
+
+        <h3>How Can I Get Alerts?</h3>
+        <ul>
+            <li>Subscribe to the <a href="{{ page.feed_url }}">wildfire risk feed</a> in any RSS or feed reader. It lists every day forecast at high (3) or above.</li>
+            <li>When the level reaches very high (4) or exceptional (5) today or tomorrow, an alert also shows on the Cheltenham Open Data homepage.</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="wildfire-data" type="application/json">{{ data.squares | jsonify }}</script>
+<script src="/assets/scripts/wildfire-map.js"></script>
+{% include footer.html %}
