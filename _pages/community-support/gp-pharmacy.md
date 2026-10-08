@@ -250,6 +250,10 @@ Addresses link to googlemaps and phone numbers use the `tel:` protocol and shoul
 - Address: [244 Bath Road, Leckhampton, Cheltenham, GL53 7NB](https://www.google.com/maps/search/?api=1&query=244+Bath+Road%2C+Leckhampton%2C+Cheltenham%2C+GL53+7NB)
 - Phone: [01242 523270](tel:01242523270)
 
+### Spa Hc Ltd
+
+- Address: [12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW](https://www.google.com/maps/search/?api=1&query=12+Rotunda+Terrace%2C+Montpellier+Street%2C+Cheltenham%2C+GL50+1SW)
+
 ### Spa Pharmacy
 
 - Address: [12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW](https://www.google.com/maps/search/?api=1&query=12+Rotunda+Terrace%2C+Montpellier+Street%2C+Cheltenham%2C+GL50+1SW)
@@ -279,6 +283,6 @@ Addresses link to googlemaps and phone numbers use the `tel:` protocol and shoul
 - Address: [Windyridge Road, Cheltenham, GL50 4RA](https://www.google.com/maps/search/?api=1&query=Windyridge+Road%2C+Cheltenham%2C+GL50+4RA)
 - Phone: [01242 221988](tel:01242221988)
 
-*Source: [NHS Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service). Data last refreshed 2026-10-07 19:33 UTC.*
+*Source: [NHS Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service). Data last refreshed 2026-10-08 10:57 UTC.*
 
 <!-- gp_pharmacy_finder ends -->
