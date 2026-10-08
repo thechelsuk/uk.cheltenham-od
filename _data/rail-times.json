@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T11:45:07+01:00",
+  "generated_at": "2026-10-08T11:50:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-08T11:29",
-      "expected": "2026-10-08T11:44",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-08T11:48",
       "expected": "2026-10-08T11:48",
@@ -41,8 +27,8 @@
     },
     {
       "scheduled": "2026-10-08T11:52",
-      "expected": "2026-10-08T11:54",
-      "status": "Delayed",
+      "expected": "2026-10-08T11:52",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -169,19 +155,23 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-08T11:27",
-      "expected": "2026-10-08T11:43",
-      "status": "Delayed",
+      "scheduled": "2026-10-08T12:35",
+      "expected": "2026-10-08T12:35",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a late running train being in front of this one"
-    },
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-08T11:46",
       "expected": "2026-10-08T11:46",
@@ -194,8 +184,8 @@
     },
     {
       "scheduled": "2026-10-08T11:51",
-      "expected": "2026-10-08T11:53",
-      "status": "Delayed",
+      "expected": "2026-10-08T11:51",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -260,6 +250,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-08T12:33",
+      "expected": "2026-10-08T12:33",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
