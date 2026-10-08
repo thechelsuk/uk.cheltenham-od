@@ -1,6 +1,8 @@
 {% include header.html %}
 {% assign data = site.data["roadworks"] %}
 {% assign count = data.items | size %}
+{% assign unplanned = site.data["unplanned-closures"] %}
+{% assign unplanned_active = unplanned.items | where: "status", "Active" | size %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -8,6 +10,8 @@
             <p>{{page.description}}</p>
             <ul>
                 <li>{% if count == 1 %}1 planned works{% else %}{{ count }} planned works{% endif %} within {{ data.radius_miles }} miles of Cheltenham</li>
+                <li>{% if unplanned_active == 1 %}1 unplanned closure{% else %}{{ unplanned_active }} unplanned closures{% endif %} now</li>
+                <li><a href="/cheltenham-roadworks/unplanned-closures">Unplanned closures history &rarr;</a></li>
             </ul>
         </header>
 
@@ -15,13 +19,54 @@
 
         {{ content }}
 
+        <h2 id="unplanned">Unplanned Closures</h2>
+        <p>Lanes and roads closed at short notice on National Highways roads within {{ unplanned.radius_miles }} miles of Cheltenham, for example after an incident or a breakdown, including any that have cleared in the last 24 hours.</p>
+        {% if unplanned.items.size == 0 %}
+        <blockquote>
+            <p>There are no unplanned closures on the M5, A417, A40 or A46 within {{ unplanned.radius_miles }} miles of Cheltenham at the moment.</p>
+        </blockquote>
+        {% else %}
+        <div class="table-scroll">
+            <table class="roadworks-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Road</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Closure</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="date">Started</th>
+                        <th scope="col" class="date">Ended</th>
+                        <th scope="col" class="number">Miles from Town Centre</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in unplanned.items %}
+                    <tr>
+                        <td>{{ c.road }}</td>
+                        <td>{{ c.description }}</td>
+                        <td>{{ c.closure }}</td>
+                        <td>{{ c.status }}</td>
+                        <td class="date" data-val="{{ c.start }}">{{ c.start | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td class="date" data-val="{% if c.status == "Ended" %}{{ c.end }}{% endif %}">{% if c.status == "Ended" %}{{ c.end | date: "%Y-%m-%d %H:%M" }}{% else %}–{% endif %}</td>
+                        <td class="number" data-val="{{ c.distance_miles }}">{{ c.distance_miles }}</td>
+                        <td class="map">{% include pin.html lat=c.lat lng=c.lon label=c.road %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
         <h2>Map</h2>
         <div id="roadworks-map" class="map-canvas" aria-label="Map of planned roadworks on major roads near Cheltenham"></div>
 
         <h2>Planned Roadworks</h2>
         {% if count == 0 %}
-        <p>There are no planned roadworks on the M5, A417, A40 or A46 within {{ data.radius_miles }} miles of Cheltenham
-            at the moment.</p>
+        <blockquote>
+            <p>There are no planned roadworks on the M5, A417, A40 or A46 within {{ data.radius_miles }} miles of Cheltenham
+                at the moment.</p>
+        </blockquote>
         {% else %}
         <div class="table-scroll">
             <table class="roadworks-table data-table" data-sortable>
@@ -59,6 +104,7 @@
         <p class="roadworks-attribution"><small>
             Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
             {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            Unplanned closures from the <a href="{{ unplanned.source_url }}">{{ unplanned.source }} Road and Lane Closures service</a>, published under the {{ unplanned.licence }}. Checked {{ unplanned.refresh }}.
             Markers show the centre point of each works, which may stretch further along the road. Dates
             and closures can change at short notice, so check signage and live traffic updates before you
             travel.
@@ -75,9 +121,10 @@
 
         <h3>How Far Ahead Are Roadworks Listed?</h3>
         <ul>
-            <li>Planned works are published about two weeks ahead. Emergency repairs and incidents aren't included, so
-                check <a href="https://nationalhighways.co.uk/travel-updates/">National Highways travel updates</a> on the
-                day for live conditions.</li>
+            <li>Planned works are published about two weeks ahead.</li>
+            <li>Unplanned closures, such as lanes closed after an incident or a breakdown, are listed as they
+                happen and checked every five minutes. For the full live picture on the day, see
+                <a href="https://nationalhighways.co.uk/travel-updates/">National Highways travel updates</a>.</li>
         </ul>
 
         <h3>Why Isn't My Street Listed?</h3>
@@ -96,6 +143,8 @@
         <ul>
             <li>National Highways publishes its planned roadworks weekly as open data. Works that have finished are removed
                 from this page each day.</li>
+            <li>Unplanned closures come from National Highways' Road and Lane Closures service, which reports closures
+                as they are set, including lanes closed using overhead signs.</li>
         </ul>
     </div>
 </div>

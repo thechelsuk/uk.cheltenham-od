@@ -136,6 +136,14 @@
     "pages": ["/cheltenham-roadworks", "/newsletter"]
   },
   {
+    "id": "national-highways-road-and-lane-closures",
+    "source_url": "https://developer.data.nationalhighways.co.uk/",
+    "licence": "Open Government Licence v3.0 (stated on the National Highways developer portal; access needs a free subscription key)",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/unplanned-closures.json", "schedule": "every 5 minutes"}, {"file": "_data/unplanned-closures-history.json", "schedule": "every 5 minutes"}],
+    "pages": ["/cheltenham-roadworks", "/cheltenham-roadworks/unplanned-closures"]
+  },
+  {
     "id": "dft-bus-open-data-service",
     "source_url": "https://data.bus-data.dft.gov.uk/",
     "licence": "Open Government Licence v3.0",

@@ -1,0 +1,84 @@
+{% include header.html %}
+{% assign history = site.data["unplanned-closures-history"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-roadworks">&lAarr; Back to Cheltenham Roadworks</a></li>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if history.records.size > 0 %}
+        <div class="table-scroll">
+            <table class="unplanned-closures-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Road</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Closure</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="date">Started</th>
+                        <th scope="col" class="date">Ended</th>
+                        <th scope="col" class="number">Miles from Town Centre</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in history.records %}
+                    <tr id="{{ c.id }}">
+                        <td>{{ c.road }}</td>
+                        <td>{{ c.description }}</td>
+                        <td>{{ c.closure }}</td>
+                        <td>{{ c.status }}</td>
+                        <td class="date" data-val="{{ c.start }}">{{ c.start | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td class="date" data-val="{% if c.status == "Ended" %}{{ c.end }}{% endif %}">{% if c.status == "Ended" %}{{ c.end | date: "%Y-%m-%d %H:%M" }}{% else %}–{% endif %}</td>
+                        <td class="number" data-val="{{ c.distance_miles }}">{{ c.distance_miles }}</td>
+                        <td class="map">{% include pin.html lat=c.lat lng=c.lon label=c.road %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No unplanned closures have been recorded within {{ history.radius_miles }} miles of Cheltenham since this page started tracking them.</p>
+        </blockquote>
+        {% endif %}
+
+        <p class="unplanned-closures-attribution"><small>
+            Data from the <a href="{{ history.source_url }}">{{ history.source }} Road and Lane Closures service</a>, published under the {{ history.licence }}.
+            Checked {{ history.refresh }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Counts as an Unplanned Closure?</h3>
+        <ul>
+            <li>A lane or road on the M5, A417, A40 or A46 closed at short notice rather than for planned roadworks, for example after an incident or a breakdown, including lanes closed using overhead signs.</li>
+            <li>Planned roadworks are listed on the <a href="/cheltenham-roadworks">roadworks page</a>.</li>
+        </ul>
+
+        <h3>How Long Are Closures Kept Here?</h3>
+        <ul>
+            <li>Every unplanned closure within {{ history.radius_miles }} miles of Cheltenham is kept for two years from when it was last seen, newest first.</li>
+        </ul>
+
+        <h3>How Is the End Time Worked Out?</h3>
+        <ul>
+            <li>National Highways reports when a closure ends. If a closure stops being reported before an end is given, the time it was last seen is used instead.</li>
+        </ul>
+
+        <h3>Can I Get Alerts?</h3>
+        <ul>
+            <li>Yes. Subscribe to the <a href="{{ page.feed_url }}">unplanned closures feed</a> in any RSS or feed reader to see each new closure, and when it ends.</li>
+        </ul>
+    </div>
+</div>
+{% include footer.html %}

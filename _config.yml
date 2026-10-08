@@ -128,8 +128,12 @@ navigation_header:
         description: "Cheltenham's permit parking zones, with a map and details of the restrictions."
   - name: Cheltenham Roadworks
     link: /cheltenham-roadworks
-    description: "Planned roadworks and closures on the M5, A417, A40 and A46 near Cheltenham."
+    description: "Planned roadworks and unplanned closures on the M5, A417, A40 and A46 near Cheltenham."
     group: "Getting Around"
+    children:
+      - name: Cheltenham Unplanned Road Closures
+        link: /cheltenham-roadworks/unplanned-closures
+        description: "A log of unplanned lane and road closures on National Highways roads near Cheltenham."
   - name: Cheltenham Bus Data
     link: /cheltenham-bus-data
     description: "Bus routes serving Cheltenham and disruption statuses"
@@ -673,6 +677,8 @@ footer_columns:
         link: /feeds/power-cuts.xml
       - name: Cheltenham Wildfire Risk (atom)
         link: /feeds/wildfire.xml
+      - name: Cheltenham Unplanned Road Closures (atom)
+        link: /feeds/unplanned-closures.xml
 
   - title: About
     links:
