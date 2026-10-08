@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T07:25:07+01:00",
+  "generated_at": "2026-10-08T07:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-08T07:24",
-      "expected": "2026-10-08T07:26",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-10-08T07:29",
       "expected": "2026-10-08T07:29",
@@ -174,19 +160,36 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-10-08T08:12",
+      "expected": "2026-10-08T08:14",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been delayed by a fault on this train",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-08T07:22",
-      "expected": "2026-10-08T07:25",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-08T07:27",
       "expected": "2026-10-08T07:27",
@@ -266,6 +269,16 @@
       "origin": "Derby",
       "destination": "Plymouth",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-08T08:10",
+      "expected": "2026-10-08T08:13",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been delayed by a fault on this train"
     }
   ]
 }
