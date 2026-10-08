@@ -93,6 +93,13 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 - **When it publishes:** once a year. Final results for 2025 came out on 30 July 2026. Final results for 2026 are announced for July 2027 (provisional), with provisional figures in May 2027. Use the final results.
 - **Feeds:** `/cheltenham-road-collisions`; road casualties analysis.
 
+### COVID-19 History (UKHSA Data Dashboard)
+
+- **Download:** none. `process-covid.py` fetches everything from the UKHSA data dashboard API itself.
+- **Run:** `process-covid.py`, then commit `_data/covid.json`.
+- **When it publishes:** never, for this page. It is a fixed record of February 2020 to December 2023 and is not in any workflow or the monthly reminder. Only re-run it if UKHSA revises figures for that period. The key dates in the timeline are hand-curated in `_data/covid-timeline.json`.
+- **Feeds:** `/cheltenham-covid-19`.
+
 ### Wildfire History (MHCLG Outdoor Fires Dataset)
 
 - **Download:** every "Outdoor fires dataset" `.ods` file from the [fire statistics incident level datasets](https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets) into `_data-sources/outdoor-fires/`, replacing the old files. The script reads every `.ods` file in that folder. It also needs `_data-sources/gloucestershire-postcodes.csv` and fetches LSOA centroids from the ONS itself.

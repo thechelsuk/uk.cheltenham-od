@@ -536,8 +536,8 @@
     "source_url": "https://cheltenham-od.uk",
     "licence": "None — manually curated by site editors",
     "licence_type": "Own data",
-    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}, {"file": "_data/helpful-contacts.json", "schedule": "manual"}, {"file": "_data/local-support.json", "schedule": "manual"}],
-    "pages": ["/cheltenham-third-spaces", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support"]
+    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}, {"file": "_data/helpful-contacts.json", "schedule": "manual"}, {"file": "_data/local-support.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support"]
   },
   {
     "id": "nged-live-power-cuts",
@@ -546,6 +546,14 @@
     "licence_type": "NGED Open Data Licence",
     "data": [{"file": "_data/power-cuts.json", "schedule": "every 5 minutes"}, {"file": "_data/power-cuts-history.json", "schedule": "every 5 minutes"}],
     "pages": ["/cheltenham-power-cuts", "/cheltenham-power-cuts/history"]
+  },
+  {
+    "id": "ukhsa-data-dashboard-covid-19",
+    "source_url": "https://ukhsa-dashboard.data.gov.uk/respiratory-viruses/covid-19",
+    "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/covid.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-covid-19"]
   },
   {
     "id": "met-office-fire-severity-index",

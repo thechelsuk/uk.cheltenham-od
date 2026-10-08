@@ -1,0 +1,201 @@
+{% include header.html %}
+{% assign data = site.data["covid"] %}
+{% assign timeline = site.data["covid-timeline"] %}
+{% assign totals = data.totals %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/community-support">&lAarr; Back to Community &amp; Support</a></li>
+                <li>{{ data.first_date }} to {{ data.last_date }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="at-a-glance">COVID-19 in Cheltenham at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Confirmed cases in Cheltenham</p>
+                <span class="info-card__title">{{ totals.cases_display }}</span>
+                <span class="info-card__subtitle">busiest week: {{ data.peaks.cases.value_display }}</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Deaths in Cheltenham involving COVID-19</p>
+                <span class="info-card__title">{{ totals.deaths_display }}</span>
+                <span class="info-card__subtitle">busiest week: {{ data.peaks.deaths.value_display }}</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Patients admitted to Gloucestershire hospitals</p>
+                <span class="info-card__title">{{ totals.admissions_display }}</span>
+                <span class="info-card__subtitle">busiest week: {{ data.peaks.admissions.value_display }}</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">PCR tests of Cheltenham residents</p>
+                <span class="info-card__title">{{ totals.tests_display }}</span>
+                <span class="info-card__subtitle">busiest week: {{ data.peaks.tests.value_display }}</span>
+            </div>
+        </div>
+
+        <h2 id="busiest-weeks">Busiest Weeks</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Measure</th>
+                        <th scope="col" class="date">Week starting</th>
+                        <th scope="col" class="number">Figure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Confirmed cases in Cheltenham</td><td class="date" data-val="{{ data.peaks.cases.week }}">{{ data.peaks.cases.week }}</td><td class="number" data-val="{{ data.peaks.cases.value }}">{{ data.peaks.cases.value_display }}</td></tr>
+                    <tr><td>PCR tests of Cheltenham residents</td><td class="date" data-val="{{ data.peaks.tests.week }}">{{ data.peaks.tests.week }}</td><td class="number" data-val="{{ data.peaks.tests.value }}">{{ data.peaks.tests.value_display }}</td></tr>
+                    <tr><td>Share of tests positive (%)</td><td class="date" data-val="{{ data.peaks.positivity.week }}">{{ data.peaks.positivity.week }}</td><td class="number" data-val="{{ data.peaks.positivity.value }}">{{ data.peaks.positivity.value }}</td></tr>
+                    <tr><td>Deaths in Cheltenham</td><td class="date" data-val="{{ data.peaks.deaths.week }}">{{ data.peaks.deaths.week }}</td><td class="number" data-val="{{ data.peaks.deaths.value }}">{{ data.peaks.deaths.value_display }}</td></tr>
+                    <tr><td>Hospital admissions</td><td class="date" data-val="{{ data.peaks.admissions.week }}">{{ data.peaks.admissions.week }}</td><td class="number" data-val="{{ data.peaks.admissions.value }}">{{ data.peaks.admissions.value_display }}</td></tr>
+                    <tr><td>Occupied hospital beds (average)</td><td class="date" data-val="{{ data.peaks.beds.week }}">{{ data.peaks.beds.week }}</td><td class="number" data-val="{{ data.peaks.beds.value }}">{{ data.peaks.beds.value_display }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="by-year">COVID-19 by Year</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Confirmed cases</th>
+                        <th scope="col" class="number">PCR tests</th>
+                        <th scope="col" class="number">Deaths</th>
+                        <th scope="col" class="number">Hospital admissions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for y in data.years %}
+                    <tr>
+                        <td>{{ y.year }}</td>
+                        <td class="number" data-val="{{ y.cases }}">{{ y.cases_display }}</td>
+                        <td class="number" data-val="{{ y.tests }}">{{ y.tests_display }}</td>
+                        <td class="number" data-val="{{ y.deaths }}">{{ y.deaths_display }}</td>
+                        <td class="number" data-val="{{ y.admissions }}">{{ y.admissions_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="cases">Confirmed Cases</h2>
+        <p>New confirmed cases among Cheltenham residents each week. Cases depend on how many people were tested, so the low counts after free testing ended in April 2022 do not mean the virus had gone.</p>
+        <div class="chart-canvas">
+            <canvas id="covid-cases" aria-label="Bar chart of weekly confirmed COVID-19 cases in Cheltenham, 2020 to 2023"></canvas>
+        </div>
+
+        <h2 id="testing">Testing and Positivity</h2>
+        <p>PCR tests of Cheltenham residents each week, and the share of people tested who had a positive result. In the first weeks of the pandemic, tests were mostly limited to people in hospital, so a large share came back positive. After free testing ended in April 2022, so few tests were taken that the share swings widely from week to week.</p>
+        <div class="chart-canvas">
+            <canvas id="covid-testing" aria-label="Bar chart of weekly PCR tests in Cheltenham with a line for the percentage testing positive, 2020 to 2023"></canvas>
+        </div>
+
+        <h2 id="hospital">Hospital Admissions and Beds</h2>
+        <p>Patients with COVID-19 admitted each week to {{ data.trust }}, which runs Cheltenham General Hospital and Gloucestershire Royal Hospital, and the average number of beds they occupied. Figures start in {{ data.weekly.admissions.first.week | date: "%B %Y" }}.</p>
+        <div class="chart-canvas">
+            <canvas id="covid-hospital" aria-label="Bar chart of weekly COVID-19 hospital admissions with a line for occupied beds at Gloucestershire Hospitals NHS Foundation Trust, 2020 to 2023"></canvas>
+        </div>
+
+        <h2 id="deaths">Deaths</h2>
+        <p>Deaths of Cheltenham residents with COVID-19 mentioned on the death certificate, each week.</p>
+        <div class="chart-canvas">
+            <canvas id="covid-deaths" aria-label="Bar chart of weekly deaths involving COVID-19 in Cheltenham, 2020 to 2023"></canvas>
+        </div>
+
+        <h2 id="vaccinations">Vaccine Uptake</h2>
+        <p>The share of eligible Cheltenham residents vaccinated in each seasonal booster campaign, as at the last figures published for that campaign up to {{ data.last_date }}.</p>
+        {% for c in data.vaccinations %}
+        <h3>{{ c.campaign }}</h3>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Age</th>
+                        <th scope="col" class="number">Vaccinated (%)</th>
+                        <th scope="col" class="date">As at</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in c.ages %}
+                    <tr>
+                        <td>{{ a.age }}</td>
+                        <td class="number">{{ a.uptake }}</td>
+                        <td class="date" data-val="{{ a.date }}">{{ a.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
+        <h2 id="timeline">Timeline</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">What happened</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in timeline.events %}
+                    <tr>
+                        <td class="date" data-val="{{ e.date }}">{{ e.date }}</td>
+                        <td>{{ e.event }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="covid-attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, including deaths from the Office for National Statistics, published under the {{ data.licence }}.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Why Does This Page Stop at the End of 2023?</h3>
+        <ul>
+            <li>Most of the local figures stopped being collected or published by then. Free testing ended for most people in April 2022, so confirmed cases fell to a handful a week, and weekly COVID-19 deaths for Cheltenham are published only up to the end of 2023.</li>
+            <li>This page is a record of the pandemic in Cheltenham from {{ data.first_date }} to {{ data.last_date }}. We no longer collect new figures for it, so it will not change unless the published figures for that period are revised.</li>
+        </ul>
+
+        <h3>Why Did Cases Fall So Sharply in 2022?</h3>
+        <ul>
+            <li>Because far fewer people were tested, not because far fewer people caught COVID-19. After free testing ended on 1 April 2022, most people with symptoms stopped taking a test, so far fewer results were reported.</li>
+            <li>Hospital admissions are a steadier guide to how COVID-19 rose and fell across the whole period.</li>
+        </ul>
+
+        <h3>Is COVID-19 Still Around?</h3>
+        <ul>
+            <li>Yes. COVID-19 still circulates in waves, but it is now tracked through national surveillance rather than mass testing, so there are no reliable figures for Cheltenham alone.</li>
+            <li>For the latest national and regional picture, see the <a href="https://ukhsa-dashboard.data.gov.uk/respiratory-viruses/covid-19">UKHSA data dashboard</a>. For advice about vaccination, speak to your GP or pharmacy.</li>
+        </ul>
+
+        <h3>Which Hospitals Do the Admissions Cover?</h3>
+        <ul>
+            <li>{{ data.trust }}, which runs Cheltenham General Hospital and Gloucestershire Royal Hospital in Gloucester. Admissions are counted for the trust as a whole, so they include patients from across Gloucestershire, not just Cheltenham.</li>
+        </ul>
+
+        <h3>How Are Deaths Counted?</h3>
+        <ul>
+            <li>Deaths of Cheltenham residents where COVID-19 was mentioned anywhere on the death certificate, from the Office for National Statistics. This includes deaths where COVID-19 contributed but was not the main cause.</li>
+        </ul>
+    </div>
+</div>
+
+{% include chartjs.html %}
+<script id="covid-data" type="application/json">{{ data.weekly | jsonify }}</script>
+<script src="/assets/scripts/covid-charts.js"></script>
+{% include footer.html %}

@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "COVID-19 in Cheltenham, 2020 to 2023",
+  "description": "Weekly confirmed COVID-19 cases, PCR tests, test positivity and deaths for Cheltenham, hospital admissions and occupied beds for Gloucestershire Hospitals NHS Foundation Trust, and seasonal booster vaccine uptake by age, from {{ site.data['covid'].first_date }} to {{ site.data['covid'].last_date }}. From the UK Health Security Agency data dashboard.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['covid'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "isBasedOn": "{{ site.data['covid'].source_url }}",
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "{{ site.data['covid'].first_date }}/{{ site.data['covid'].last_date }}",
+  "variableMeasured": ["Confirmed cases", "PCR tests", "Test positivity", "Deaths involving COVID-19", "Hospital admissions", "Occupied hospital beds", "Vaccine uptake"]
+}
+</script>
