@@ -21,6 +21,7 @@
         {%- assign meta_description = page.seo | default: page.description | default: site.description -%}
         {%- assign social_title = page.title | default: site.title -%}
         {%- assign social_image ='/assets/images/og-default.png' | absolute_url -%}
+        {%- if page.finding -%}{%- assign social_image = '/assets/findings/' | append: page.finding.data | append: '-social.png' | absolute_url -%}{%- endif -%}
 
         {% assign seo_title = page.seo_title | default: page.title %}
         <title>{% if seo_title %}{{ seo_title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -148,8 +149,27 @@
     }
     </script>
 
+        {% if page.collection == "posts" and page.author %}
+        <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ meta_description | jsonify }},
+      "image": "{{ social_image }}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "mainEntityOfPage": "{{ page.url | absolute_url }}",
+      "author": { "@type": "Person", "name": {{ page.author | jsonify }}{% if page.author_url %}, "url": "{{ page.author_url | absolute_url }}"{% endif %} },
+      "publisher": { "@type": "Organization", "name": "{{ site.title }}", "logo": { "@type": "ImageObject", "url": "{{ site.icon | absolute_url }}" } }
+    }
+    </script>
+        {% endif %}
+
         {% if page.schema %}
         {% include schema/{{ page.schema }}.html %}
+        {% elsif page.finding %}
+        {% include schema/finding.html %}
         {% endif %}
 
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">

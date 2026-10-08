@@ -1,4 +1,5 @@
 {% include header.html %}
+{% assign f = page.finding %}
 
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
@@ -14,7 +15,23 @@
         <p class="footnote">By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %} · Published {{ page.date | date: "%Y-%m-%d" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%Y-%m-%d" }}{% endif %}</p>
         {% endif %}
 
+        <blockquote>
+            <p><strong>{{ f.quote }}</strong></p>
+            <p>Source: {{ f.source }}.</p>
+        </blockquote>
+
+        {% include finding-figure.html slug=f.data alt=f.chart_alt page=f.page %}
+
         {{ content }}
+
+        {% if page.corrections %}
+        <h2 id="corrections">Corrections</h2>
+        <ul>
+            {% for c in page.corrections %}
+            <li><b>{{ c.date | date: "%Y-%m-%d" }}:</b> {{ c.note }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
     </div>
     {% include footer.html %}

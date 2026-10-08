@@ -1,5 +1,5 @@
 """The published site is built with _config.yml plus _config.production.yml,
-which leaves the local admin page out. Jekyll replaces a list setting rather
+which leaves the local admin page and site guide out. Jekyll replaces a list setting rather
 than merging it, so the production exclude list must repeat the main one;
 these checks keep the two in step. Offline; reads files only.
 
@@ -17,7 +17,7 @@ PRODUCTION = yaml.safe_load((ROOT / "_config.production.yml").read_text())
 
 
 def test_production_excludes_everything_the_main_config_does_plus_admin():
-    assert PRODUCTION["exclude"] == BASE["exclude"] + ["admin.md"]
+    assert PRODUCTION["exclude"] == BASE["exclude"] + ["admin.md", "admin/"]
 
 
 def test_production_config_only_changes_exclude():
@@ -28,6 +28,7 @@ def test_admin_page_is_tracked_not_ignored():
     ignored = (ROOT / ".gitignore").read_text().splitlines()
     assert "admin.md" not in ignored
     assert (ROOT / "admin.md").exists()
+    assert (ROOT / "admin" / "guide" / "index.md").exists()
 
 
 def test_site_builds_use_the_production_config():

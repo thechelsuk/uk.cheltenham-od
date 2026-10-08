@@ -1,0 +1,7 @@
+{% assign chart = "/assets/findings/" | append: include.slug | append: ".svg" %}
+{% assign png = "/assets/findings/" | append: include.slug | append: ".png" %}
+{% assign csv = "/assets/findings/" | append: include.slug | append: ".csv" %}
+<figure class="finding-figure">
+    <a href="{{ chart }}"><img src="{{ chart }}" alt="{{ include.alt }}" width="640" loading="lazy"></a>
+    <figcaption class="footnote">Download the chart as <a href="{{ chart }}" download>SVG</a> or <a href="{{ png }}" download>PNG</a> · <a href="{{ csv }}" download>Download the data (CSV)</a>{% if include.page %} · <a href="{{ include.page }}">See the live data</a>{% endif %}</figcaption>
+</figure>

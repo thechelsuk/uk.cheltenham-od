@@ -1,0 +1,24 @@
+{% assign f = page.finding %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": {{ f.dataset_name | jsonify }},
+  "description": {{ f.dataset_description | jsonify }},
+  "url": "{{ page.url | absolute_url }}",
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "isAccessibleForFree": true,
+  "license": "{{ f.licence_url }}",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": {{ f.place | default: "Cheltenham, Gloucestershire, UK" | jsonify }} },
+  "temporalCoverage": "{{ f.temporal }}",
+  "variableMeasured": {{ f.variables | jsonify }},
+  "isBasedOn": {{ f.source | jsonify }},
+  "distribution": [
+    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "{{ '/assets/findings/' | append: f.data | append: '.csv' | absolute_url }}" },
+    { "@type": "DataDownload", "encodingFormat": "image/svg+xml", "contentUrl": "{{ '/assets/findings/' | append: f.data | append: '.svg' | absolute_url }}" },
+    { "@type": "DataDownload", "encodingFormat": "image/png", "contentUrl": "{{ '/assets/findings/' | append: f.data | append: '.png' | absolute_url }}" }{% for extra in f.extra_data %},
+    { "@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "{{ '/assets/findings/' | append: extra | append: '.csv' | absolute_url }}" }{% endfor %}
+  ]
+}
+</script>

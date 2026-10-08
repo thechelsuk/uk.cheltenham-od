@@ -1,0 +1,16 @@
+{% assign f = page.finding %}
+{% assign chart = "/assets/findings/" | append: f.data | append: ".svg" | absolute_url %}
+{% capture embed %}<a href="{{ page.url | absolute_url }}"><img src="{{ chart }}" alt="{{ f.chart_alt }}" width="640"></a>{% endcapture %}
+<h2 id="cite-this">Cite This</h2>
+
+<p>Please credit {{ site.title }} and link to this page. Suggested citation:</p>
+
+<pre><code>{{ site.title }} ({{ page.date | date: "%Y" }}). {{ page.title }}. Published {{ page.date | date: "%Y-%m-%d" }}. {{ page.url | absolute_url }}. Data: {{ f.source }}, published under the {{ f.licence }}.</code></pre>
+
+<p>To embed the chart on your own site, copy this code:</p>
+
+<pre><code>{{ embed | xml_escape }}</code></pre>
+
+<p>The chart and data are free to reuse with credit. The underlying data is published under the <a href="{{ f.licence_url }}">{{ f.licence }}</a>.</p>
+
+<p>Spotted an error? <a href="/contact">Tell us</a> and we will correct it, with a note on this page saying what changed and when.</p>
