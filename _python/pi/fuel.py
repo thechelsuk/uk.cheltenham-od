@@ -8,6 +8,7 @@ import requests
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 import helper
+import fuel_history
 
 # Load .env file for local development if present
 _env_file = helper.repo_root() / ".env"
@@ -508,4 +509,9 @@ if __name__ == "__main__":
 
     helper.write_json(out_path, payload)
     print(f"Wrote {len(stations)} stations to {out_path}")
+
+    # 10. Add today's cheapest, average and highest prices to the history. Each
+    #     run replaces today's row, so the day keeps its prices as last checked.
+    history = fuel_history.update_history(root / "_data" / "fuel-prices-history.json", payload)
+    print(f"Fuel price history now holds {len(history)} days")
 

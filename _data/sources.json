@@ -285,8 +285,16 @@
     "source_url": "https://www.fuel-finder.service.gov.uk",
     "licence": "Open Government Licence v3.0 (published under the statutory Motor Fuel Prices Transparency Scheme; access requires a registered API client but the underlying price data is intended as open government data)",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/fuel-prices.json", "schedule": "hourly"}],
-    "pages": ["/cheltenham-fuel-prices"]
+    "data": [{"file": "_data/fuel-prices.json", "schedule": "hourly"}, {"file": "_data/fuel-prices-history.json", "schedule": "hourly"}],
+    "pages": ["/cheltenham-fuel-prices", "/cheltenham-fuel-prices/history"]
+  },
+  {
+    "id": "desnz-weekly-road-fuel-prices",
+    "source_url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
+    "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/fuel-uk-weekly.json", "schedule": "daily"}],
+    "pages": ["/cheltenham-fuel-prices/history"]
   },
   {
     "id": "openstreetmap-overpass",

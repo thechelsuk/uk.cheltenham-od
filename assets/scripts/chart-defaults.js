@@ -49,14 +49,18 @@
     }
 
     // Hands out palette slots: places first, then everything else in order,
-    // skipping any slot a place on the same chart already holds.
+    // skipping any slot a place on the same chart already holds. A dataset can
+    // ask for a slot with `paletteSlot`, so related series (such as the
+    // cheapest, average and highest of one measure) can share a colour.
     function slotsFor(datasets) {
         var taken = {};
         datasets.forEach(function (ds) {
             if (ds.label in PLACES) taken[PLACES[ds.label]] = true;
+            if (typeof ds.paletteSlot === "number") taken[ds.paletteSlot] = true;
         });
         var next = 0;
         return datasets.map(function (ds) {
+            if (typeof ds.paletteSlot === "number") return ds.paletteSlot;
             if (ds.label in PLACES) return PLACES[ds.label];
             while (taken[next]) next++;
             taken[next] = true;

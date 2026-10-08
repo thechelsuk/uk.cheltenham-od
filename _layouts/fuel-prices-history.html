@@ -1,0 +1,136 @@
+{% include header.html %}
+{% assign history = site.data["fuel-prices-history"] %}
+{% assign uk = site.data["fuel-uk-weekly"] %}
+{% assign fuel = site.data["fuel-prices"] %}
+{% assign days = history.records | reverse %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-fuel-prices">&lAarr; Back to Cheltenham Fuel Prices</a></li>
+                <li>{{ history.count }} days since {{ history.first_date }}</li>
+                <li>Forecourts within {{ fuel.radius_miles }} miles</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="unleaded">Unleaded Prices</h2>
+        <div class="chart-canvas">
+            <canvas id="fuel-history-unleaded" aria-label="Line chart of the cheapest, average and highest unleaded petrol prices within {{ fuel.radius_miles }} miles of Cheltenham each day, with the UK weekly average"></canvas>
+        </div>
+
+        <h2 id="diesel">Diesel Prices</h2>
+        <div class="chart-canvas">
+            <canvas id="fuel-history-diesel" aria-label="Line chart of the cheapest, average and highest diesel prices within {{ fuel.radius_miles }} miles of Cheltenham each day, with the UK weekly average"></canvas>
+        </div>
+
+        <h2 id="daily">Daily Prices</h2>
+        <p>Prices in pence per litre, as last checked each day.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col" class="number">Forecourts</th>
+                        <th scope="col" class="number">Unleaded cheapest</th>
+                        <th scope="col" class="number">Unleaded average</th>
+                        <th scope="col" class="number">Unleaded highest</th>
+                        <th scope="col" class="number">Diesel cheapest</th>
+                        <th scope="col" class="number">Diesel average</th>
+                        <th scope="col" class="number">Diesel highest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in days %}
+                    {% assign u = r.fuels["Unleaded"] %}
+                    {% assign d = r.fuels["Diesel"] %}
+                    <tr id="{{ r.date }}">
+                        <td class="date" data-val="{{ r.date }}">{{ r.date }}</td>
+                        <td class="number">{{ r.forecourts }}</td>
+                        <td class="number">{{ u.cheapest }}</td>
+                        <td class="number">{{ u.average }}</td>
+                        <td class="number">{{ u.highest }}</td>
+                        <td class="number">{{ d.cheapest }}</td>
+                        <td class="number">{{ d.average }}</td>
+                        <td class="number">{{ d.highest }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="premium">Premium Fuels</h2>
+        <p>Average prices in pence per litre, and how many forecourts had a current price for each premium fuel that day.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col" class="number">Premium unleaded average</th>
+                        <th scope="col" class="number">Forecourts</th>
+                        <th scope="col" class="number">Premium diesel average</th>
+                        <th scope="col" class="number">Forecourts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in days %}
+                    {% assign pu = r.fuels["Prem Unleaded"] %}
+                    {% assign pd = r.fuels["Prem Diesel"] %}
+                    <tr>
+                        <td class="date" data-val="{{ r.date }}">{{ r.date }}</td>
+                        <td class="number">{% if pu %}{{ pu.average }}{% else %}–{% endif %}</td>
+                        <td class="number">{% if pu %}{{ pu.forecourts }}{% else %}0{% endif %}</td>
+                        <td class="number">{% if pd %}{{ pd.average }}{% else %}–{% endif %}</td>
+                        <td class="number">{% if pd %}{{ pd.forecourts }}{% else %}0{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="fuel-history-attribution"><small>
+            Data from the <a href="{{ history.source_url }}">{{ history.source }}</a> and the <a href="{{ uk.source_url }}">{{ uk.source }}</a> weekly road fuel prices, both published under the {{ history.licence }}.
+            Checked {{ history.refresh }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Are the Daily Prices Worked Out?</h3>
+        <ul>
+            <li>Each day records the prices at every forecourt within {{ fuel.radius_miles }} miles of Cheltenham as they were last checked that day. Prices are checked every hour, and the last check of the day is the one kept.</li>
+            <li>The cheapest and highest are the lowest and highest prices at any one forecourt. The average is the mean across all of them.</li>
+            <li>A forecourt that has not updated its prices for more than {{ fuel.stale_days }} days is left out, so out-of-date prices do not pull the figures up or down.</li>
+        </ul>
+
+        <h3>Why Does the Number of Forecourts Change?</h3>
+        <ul>
+            <li>Only forecourts with a current price are counted each day. When a forecourt stops updating its prices, it drops out of the count until it reports again.</li>
+        </ul>
+
+        <h3>What Is the UK Average?</h3>
+        <ul>
+            <li>The Department for Energy Security and Net Zero publishes average pump prices for the UK each week, taken on Mondays. The charts show each week's figure for every day of that week.</li>
+        </ul>
+
+        <h3>Why Is B10 Not Included?</h3>
+        <ul>
+            <li>Only one forecourt near Cheltenham sells B10 diesel, so there is no range of prices to compare. Its current price is on the <a href="/cheltenham-fuel-prices">fuel prices page</a>.</li>
+        </ul>
+
+        <h3>How Far Back Does the History Go?</h3>
+        <ul>
+            <li>To {{ history.first_date }}, when this site started recording local fuel prices. A few days early on have no record. A new day is added every day from now on.</li>
+        </ul>
+    </div>
+</div>
+
+{% include chartjs.html %}
+<script id="fuel-history-data" type="application/json">{{ history.records | jsonify }}</script>
+<script id="fuel-uk-data" type="application/json">{{ uk.weeks | jsonify }}</script>
+<script src="/assets/scripts/fuel-prices-history-chart.js"></script>
+{% include footer.html %}
