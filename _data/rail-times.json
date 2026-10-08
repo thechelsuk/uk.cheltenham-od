@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T07:35:09+01:00",
+  "generated_at": "2026-10-08T07:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,37 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-08T07:35",
-      "expected": "2026-10-08T07:35",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Worcester Shrub Hill"
-      ]
-    },
-    {
-      "scheduled": "2026-10-08T07:36",
-      "expected": "2026-10-08T07:36",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-08T07:40",
       "expected": "2026-10-08T07:40",
@@ -143,13 +112,13 @@
     },
     {
       "scheduled": "2026-10-08T08:12",
-      "expected": "2026-10-08T08:12",
-      "status": "On time",
+      "expected": "2026-10-08T08:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on this train",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -183,29 +152,23 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-08T08:29",
+      "expected": "2026-10-08T08:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-08T07:33",
-      "expected": "2026-10-08T07:33",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-08T07:36",
-      "expected": "2026-10-08T07:36",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-08T07:38",
       "expected": "2026-10-08T07:38",
@@ -248,13 +211,13 @@
     },
     {
       "scheduled": "2026-10-08T08:10",
-      "expected": "2026-10-08T08:12",
+      "expected": "2026-10-08T08:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": ""
+      "reason": "This service has been delayed by a fault on this train"
     },
     {
       "scheduled": "2026-10-08T08:14",
@@ -273,6 +236,26 @@
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-08T08:27",
+      "expected": "2026-10-08T08:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-08T08:32",
+      "expected": "2026-10-08T08:32",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": ""
     }
