@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T08:50:07+01:00",
+  "generated_at": "2026-10-09T08:55:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-09T08:40",
-      "expected": "2026-10-09T08:48",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
       "scheduled": "2026-10-09T08:52",
-      "expected": "2026-10-09T08:52",
-      "status": "On time",
+      "expected": "2026-10-09T08:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -165,19 +146,23 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T09:32",
+      "expected": "2026-10-09T09:46",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by damage to the overhead electric wires",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-09T08:39",
-      "expected": "2026-10-09T08:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-09T08:50",
       "expected": "2026-10-09T08:50",
@@ -257,6 +242,16 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T09:31",
+      "expected": "2026-10-09T09:45",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by damage to the overhead electric wires"
     }
   ]
 }
