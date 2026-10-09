@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T20:15:08+01:00",
+  "generated_at": "2026-10-09T20:20:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,30 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-09T20:12",
-      "expected": "2026-10-09T20:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
-    {
       "scheduled": "2026-10-09T20:15",
-      "expected": "2026-10-09T20:25",
+      "expected": "2026-10-09T20:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -86,13 +64,13 @@
     },
     {
       "scheduled": "2026-10-09T20:52",
-      "expected": "2026-10-09T20:52",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by a speed restriction over defective track",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -160,22 +138,31 @@
         "Worcestershire Parkway",
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T21:15",
+      "expected": "2026-10-09T21:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-09T20:10",
-      "expected": "2026-10-09T20:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-09T20:14",
-      "expected": "2026-10-09T20:24",
+      "expected": "2026-10-09T20:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -215,13 +202,13 @@
     },
     {
       "scheduled": "2026-10-09T20:50",
-      "expected": "2026-10-09T20:50",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": ""
+      "reason": "This service has been delayed by a speed restriction over defective track"
     },
     {
       "scheduled": "2026-10-09T21:05",
@@ -241,6 +228,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T21:14",
+      "expected": "2026-10-09T21:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
