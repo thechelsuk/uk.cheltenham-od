@@ -30,7 +30,7 @@
       "title": "NHS A&E figures (October data)",
       "status": "confirmed",
       "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
-      "notes": "A&E draft publishes today at 11:30. After the 09:30 release: run the daily workflow by hand (or nhs-ae.py), then build-findings.py gloucestershire-ae-12-hour-waits --force, update the figures in the post, move it from _drafts to _posts and commit."
+      "notes": "nhs-ae.py runs in the daily workflow, but missed the September release, so check the A&E page updates and run it by hand if not. The September analysis post went out on 2026-10-09; October's figures could follow it up."
     },
     {
       "date": "2026-11-16",

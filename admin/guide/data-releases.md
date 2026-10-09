@@ -117,7 +117,7 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 | Road casualties (draft, 2026-10-20) | DfT STATS19 | None |
 | Turnout (draft, 2026-10-27) | Council election results, Indices of Deprivation | None |
 | Care homes (draft, 2026-11-03) | CQC | None |
-| A&E (draft, 2026-11-12 11:30) | NHS England A&E | **Yes, on release day.** Rebuild with the October figures after the 09:30 release, then publish |
+| A&E busiest September (published 2026-10-09) | NHS England A&E | None. October's figures (2026-11-12) could follow it up |
 | Housing squeeze (draft, provisionally 2026-11-26) | Net additional dwellings, ONS rents, ASHE | **Yes, on release day.** Publish the day the new housing figures come out (expected late November; re-date the draft once GOV.UK confirms it), with 2026 pay (22 October) added beforehand |
 
 ## The Release Calendar

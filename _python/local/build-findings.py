@@ -446,7 +446,7 @@ def turnout() -> None:
 
 
 def ae_waits() -> None:
-    """Post 5: monthly 12-hour trolley waits at Gloucestershire Hospitals."""
+    """A&E post: monthly 12-hour trolley waits, with each September highlighted."""
     months = sorted(load("nhs-ae.json")["months"], key=lambda m: m["period"])
     rows = [
         {
@@ -459,17 +459,19 @@ def ae_waits() -> None:
         for m in months
     ]
     write_csv("gloucestershire-ae-12-hour-waits", rows)
+    focus = "-09"  # the month the post compares year on year
     cats = [m["period"][:4] if m["period"].endswith("-01") else "" for m in months]
     stacks = [
-        [(float(m["dta_12hrs"]), "s1" if m["period"].endswith("-01") else "mute")]
+        [(float(m["dta_12hrs"]), "s1" if m["period"].endswith(focus) else "mute")]
         for m in months
     ]
     marks, height = vbars(cats, stacks, value_labels=False)
+    top = max(r["dta_12hrs"] for r in months)
+    slot = (WIDTH - 68) / len(months)
     for i, m in enumerate(months):
-        if m["period"].endswith("-01") or i == len(months) - 1:
-            slot = (WIDTH - 68) / len(months)
+        if m["period"].endswith(focus) or m["dta_12hrs"] == top:
             x = 48 + i * slot + slot / 2
-            y = 76 + 220 - 220 * m["dta_12hrs"] / max(r["dta_12hrs"] for r in months)
+            y = 76 + 220 - 220 * m["dta_12hrs"] / top
             marks.append(f'<text class="val" x="{x:.1f}" y="{y - 6:.1f}" '
                          f'text-anchor="middle">{m["dta_12hrs"]}</text>')
     frame(
@@ -478,7 +480,7 @@ def ae_waits() -> None:
         (
             "12-hour waits from decision to admit, Gloucestershire Hospitals",
             f"Monthly, {months[0]['period']} to {months[-1]['period']}; "
-            "Januarys highlighted",
+            "Septembers highlighted",
             "Source: NHS England A&E Attendances and Emergency Admissions (OGL v3.0)",
         ),
         marks,

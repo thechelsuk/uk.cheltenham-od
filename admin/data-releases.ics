@@ -22,7 +22,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:20261021-ons-private-rents--september-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20261021T093000
 DTEND;TZID=Europe/London:20261021T100000
 SUMMARY:ONS private rents (September data)
@@ -36,7 +36,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261022-ons-employee-earnings--ashe-2026@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20261022T093000
 DTEND;TZID=Europe/London:20261022T100000
 SUMMARY:ONS employee earnings (ASHE 2026)
@@ -53,7 +53,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20261102-check--housing-supply-net-additional-dwellings-2025-26-date@ch
  eltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;VALUE=DATE:20261102
 DTEND;VALUE=DATE:20261103
 SUMMARY:[Expected] Check: housing supply net additional dwellings 2025-26 d
@@ -69,22 +69,22 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261112-nhs-a-e-figures--october-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20261112T093000
 DTEND;TZID=Europe/London:20261112T100000
 SUMMARY:NHS A&E figures (October data)
-DESCRIPTION:A&E draft publishes today at 11:30. After the 09:30 release: ru
- n the daily workflow by hand (or nhs-ae.py)\, then build-findings.py glouc
- estershire-ae-12-hour-waits --force\, update the figures in the post\, mov
- e it from _drafts to _posts and commit.\n\nhttps://www.england.nhs.uk/stat
- istics/statistical-work-areas/ae-waiting-times-and-activity/
+DESCRIPTION:nhs-ae.py runs in the daily workflow\, but missed the September
+  release\, so check the A&E page updates and run it by hand if not. The Se
+ ptember analysis post went out on 2026-10-09\; October's figures could fol
+ low it up.\n\nhttps://www.england.nhs.uk/statistics/statistical-work-areas
+ /ae-waiting-times-and-activity/
 URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
  -times-and-activity/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261116-check--ofcom-connected-nations-2026-report@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:[Expected] Check: Ofcom Connected Nations 2026 report
@@ -98,7 +98,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261118-ons-private-rents--october-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20261118T093000
 DTEND;TZID=Europe/London:20261118T100000
 SUMMARY:ONS private rents (October data)
@@ -110,7 +110,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261126-refresh-the-housing-squeeze-draft@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20261126T093000
 DTEND;TZID=Europe/London:20261126T100000
 SUMMARY:[Expected] Housing supply figures and housing squeeze post
@@ -128,7 +128,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261210-nhs-a-e-figures--november-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20261210T093000
 DTEND;TZID=Europe/London:20261210T100000
 SUMMARY:NHS A&E figures (November data)
@@ -141,7 +141,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270114-nhs-a-e-figures--december-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20270114T093000
 DTEND;TZID=Europe/London:20270114T100000
 SUMMARY:NHS A&E figures (December data)
@@ -154,7 +154,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270211-nhs-a-e-figures--january-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20270211T093000
 DTEND;TZID=Europe/London:20270211T100000
 SUMMARY:NHS A&E figures (January data)
@@ -168,7 +168,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270311-nhs-a-e-figures--february-data@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;TZID=Europe/London:20270311T093000
 DTEND;TZID=Europe/London:20270311T100000
 SUMMARY:NHS A&E figures (February data)
@@ -184,7 +184,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270503-check--dft-road-casualties-provisional-2026-results@cheltenham
  -od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;VALUE=DATE:20270503
 DTEND;VALUE=DATE:20270504
 SUMMARY:[Expected] Check: DfT road casualties provisional 2026 results
@@ -198,7 +198,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270504-check--ofcom-connected-nations-spring-update@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;VALUE=DATE:20270504
 DTEND;VALUE=DATE:20270505
 SUMMARY:[Expected] Check: Ofcom Connected Nations spring update
@@ -212,7 +212,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270701-check--dft-road-casualties-final-2026-results@cheltenham-od.uk
-DTSTAMP:20261008T021608Z
+DTSTAMP:20261009T130738Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270702
 SUMMARY:[Expected] Check: DfT road casualties final 2026 results
@@ -223,6 +223,21 @@ DESCRIPTION:Announced for July 2027 (provisional)\; 2025 results came out o
  ualties-great-britain-final-results-2026
 URL:https://www.gov.uk/government/statistics/announcements/reported-road-ca
  sualties-great-britain-final-results-2026
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:20270721-check--mhclg-fire-statistics-incident-level-datasets@cheltenha
+ m-od.uk
+DTSTAMP:20261009T130738Z
+DTSTART;VALUE=DATE:20270721
+DTEND;VALUE=DATE:20270722
+SUMMARY:[Expected] Check: MHCLG fire statistics incident level datasets
+DESCRIPTION:Usually late July (22 July in 2026). Manual: download the outdo
+ or fires dataset .ods files into _data-sources/outdoor-fires/\, replacing 
+ the old ones\, then run process-wildfire-incidents.py.\n\nhttps://www.gov.
+ uk/government/statistics/fire-statistics-incident-level-datasets
+URL:https://www.gov.uk/government/statistics/fire-statistics-incident-level
+ -datasets
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR
