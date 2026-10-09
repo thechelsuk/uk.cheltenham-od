@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T21:35:08+01:00",
+  "generated_at": "2026-10-09T21:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-09T21:33",
-      "expected": "2026-10-09T21:33",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-10-09T21:52",
       "expected": "2026-10-09T22:02",
@@ -116,19 +102,23 @@
       "calling_at": [
         "Gloucester"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T22:52",
+      "expected": "2026-10-09T22:59",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-09T21:33",
-      "expected": "2026-10-09T21:33",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-09T21:50",
       "expected": "2026-10-09T22:01",
@@ -208,6 +198,16 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T22:50",
+      "expected": "2026-10-09T22:58",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a late running train being in front of this one"
     }
   ]
 }
