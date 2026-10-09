@@ -91,12 +91,26 @@ _(Happy to provide a tailored quote for your story — just [ask](/contact).)_
 
 ## Follow & Feeds
 
-- Bluesky: [@cheltenham-od.uk](https://bsky.app/profile/cheltenham-od.uk)
-- Mastodon: [@CheltenhamOD](https://mastodon.social/@CheltenhamOD)
-- Site announcements feed: [/feeds/main.xml](/feeds/main.xml)
-- Daily news summary feed: [/feeds/news-summary.xml](/feeds/news-summary.xml)
-- Flood warnings feed: [/feeds/flood.xml](/feeds/flood.xml)
+### Social Media
+
+- Bluesky: [@cheltenham-od.uk]({{ site.social.bluesky }})
+- Mastodon: [@CheltenhamOD]({{ site.social.mastodon }})
+- Threads: [@cheltenhamod]({{ site.social.threads }})
+- Instagram: [@cheltenhamod]({{ site.social.instagram }})
+- LinkedIn: [Cheltenham Open Data]({{ site.social.linkedin }})
+- Nextdoor: [Cheltenham Open Data]({{ site.social.nextdoor }})
 - Newsletter: [/newsletter](/newsletter)
+
+### Feeds
+
+Subscribe in any RSS or feed reader. These are the main ones; every feed we publish is on the [feeds page](/feeds).
+
+{% assign key_feeds = site.feeds | where: "key", true %}
+{% for feed in key_feeds %}
+
+- {{ feed.name }}: [{{ feed.link }}]({{ feed.link }})
+
+{% endfor %}
 
 ## Logo & Brand Assets
 

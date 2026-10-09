@@ -85,21 +85,10 @@
         <link href="/assets/fonts/Archivo-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
         <link href="/assets/fonts/SourceSerif4-Variable.woff2" rel="preload" crossorigin as="font" type="font/woff2">
 
-        <!-- Feeds -->
-        <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - main site announcements feed"
-            href="/feeds/main.xml">
-        <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Local Flood warnings"
-            href="/feeds/flood.xml">
-        <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Local Bus Disruptions"
-            href="/feeds/bus-disruptions.xml">
-        <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Cheltenham Daily News Summary"
-            href="/feeds/news-summary.xml">
-        <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Breaking Cheltenham News"
-            href="/feeds/news-breaking.xml">
-        <link rel="alternate" type="application/atom+xml" title="Cheltenham OD - Cheltenham Classifieds"
-            href="/feeds/classifieds.xml">
-        <link rel="alternate" type="application/atom+xml"
-            title="Cheltenham OD - Cheltenham what's on events and activities feed" href="/feeds/events.xml">
+        <!-- Feeds, from the feeds list in _config.yml -->
+        {% for feed in site.feeds %}
+        <link rel="alternate" type="application/atom+xml" title="Cheltenham Open Data - {{ feed.name }}" href="{{ feed.link }}">
+        {% endfor %}
 
         <!-- Linking socials -->
         <meta name="fediverse:creator" content="@cheltenham-od.uk" />

@@ -7,6 +7,7 @@ permalink: /cheltenham-security-alerts
 description: "The UK terrorism threat level and how it has changed since 2006, with what each level means and how the government responds."
 type: "environment"
 schema: security
+feed_url: "/feeds/security.xml"
 ---
 
 {% assign data = site.data["terrorism"] %}

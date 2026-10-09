@@ -644,6 +644,59 @@ newsletter:
   tagline: "A short Cheltenham briefing every Monday morning, starting soon: the week's weather, roadworks, events and top local stories."
   buttondown_username: "CheltenhamOD"
 
+# Every Atom feed the site publishes, for the /feeds page and the press page.
+# `key: true` marks the few the press page lists; the footer's Feeds column
+# links those by hand, plus /feeds.
+feeds:
+  - name: Our Feed
+    link: /feeds/main.xml
+    group: From Cheltenham Open Data
+    key: true
+    description: "New pages, site announcements and our own analysis of local data."
+  - name: Cheltenham Classifieds
+    link: /feeds/classifieds.xml
+    group: From Cheltenham Open Data
+    description: "New classified adverts from local people and businesses."
+  - name: Daily News Summary
+    link: /feeds/news-summary.xml
+    group: Local News
+    key: true
+    description: "One round-up a day of the top local headlines."
+  - name: Breaking News
+    link: /feeds/news-breaking.xml
+    group: Local News
+    key: true
+    description: "Every local headline from Cheltenham news, council, police and community sources, as it is picked up."
+  - name: Cheltenham Alerts, All in One
+    link: /feeds/alerts.xml
+    group: Alerts
+    key: true
+    description: "Flood warnings, power cuts, bus disruptions, wildfire risk, road closures and threat level changes in one feed."
+  - name: Flood Warnings
+    link: /feeds/flood.xml
+    group: Alerts
+    description: "Current and recent Environment Agency flood warnings for Gloucestershire."
+  - name: Power Cuts
+    link: /feeds/power-cuts.xml
+    group: Alerts
+    description: "Live and recent power cuts affecting Cheltenham postcodes."
+  - name: Bus Disruptions
+    link: /feeds/bus-disruptions.xml
+    group: Alerts
+    description: "Current and recent bus service disruptions affecting Cheltenham."
+  - name: Wildfire Risk
+    link: /feeds/wildfire.xml
+    group: Alerts
+    description: "Days forecast at high, very high or exceptional fire severity around Cheltenham."
+  - name: Unplanned Road Closures
+    link: /feeds/unplanned-closures.xml
+    group: Alerts
+    description: "Unplanned lane and road closures on the M5, A417, A40 and A46 near Cheltenham."
+  - name: UK Threat Level
+    link: /feeds/security.xml
+    group: Alerts
+    description: "Changes to the UK national terrorism threat level, from MI5."
+
 # The four columns under the Pages (A-Z) block: Guides, Feeds, About, Meta.
 footer_columns:
   - title: Guides
@@ -661,24 +714,16 @@ footer_columns:
 
   - title: Feeds
     links:
-      - name: Announcements Feed (atom)
+      - name: Our Feed (atom)
         link: /feeds/main.xml
-      - name: Cheltenham Classifieds (atom)
-        link: /feeds/classifieds.xml
+      - name: Cheltenham Alerts, All in One (atom)
+        link: /feeds/alerts.xml
       - name: Daily News Summary (atom)
         link: /feeds/news-summary.xml
       - name: Breaking News (atom)
         link: /feeds/news-breaking.xml
-      - name: Cheltenham Flood Warnings (atom)
-        link: /feeds/flood.xml
-      - name: Cheltenham Bus Disruptions (atom)
-        link: /feeds/bus-disruptions.xml
-      - name: Cheltenham Power Cuts (atom)
-        link: /feeds/power-cuts.xml
-      - name: Cheltenham Wildfire Risk (atom)
-        link: /feeds/wildfire.xml
-      - name: Cheltenham Unplanned Road Closures (atom)
-        link: /feeds/unplanned-closures.xml
+      - name: All Feeds
+        link: /feeds
 
   - title: About
     links:

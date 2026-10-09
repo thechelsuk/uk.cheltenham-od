@@ -3,6 +3,7 @@ import json
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
+import alerts_feed
 import helper
 
 # -- Configuration ------------------------------------------------------------
@@ -191,3 +192,5 @@ if __name__ == "__main__":
     include_contents = include_path.open().read()
     include_contents = helper.replace_chunk(include_contents, "bus_alert_marker", build_alert_html(disruptions))
     include_path.open("w").write(include_contents)
+
+    alerts_feed.rebuild()

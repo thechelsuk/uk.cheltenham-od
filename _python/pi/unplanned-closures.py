@@ -22,6 +22,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 import config  # noqa: E402
+import alerts_feed  # noqa: E402
 import helper  # noqa: E402
 
 API_URL = "https://api.data.nationalhighways.co.uk/roads/v2.0/closures"
@@ -223,6 +224,7 @@ def main():
         self_url=f"{site}/feeds/unplanned-closures.xml",
         alternate_url=history_url,
     )
+    alerts_feed.rebuild()
 
 
 if __name__ == "__main__":

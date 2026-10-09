@@ -331,7 +331,7 @@ def _existing_feed_updated(filename, atom_ns):
 
 def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None):
     """Write an Atom 1.0 feed of arbitrary `items` (each a dict with title,
-    link, published_iso, summary, source) to `filename`, with the usual
+    link, published_iso, summary, source and an optional category) to `filename`, with the usual
     front-matter + layout:empty wrapper so Jekyll serves it as a static file.
     `permalink_path` is the site-relative path (e.g. '/feeds/news-summary.xml')
     written into that front matter; `self_url`/`alternate_url` are the full
@@ -368,6 +368,9 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
 
         author = ET.SubElement(entry, "author")
         ET.SubElement(author, "name").text = item.get("source", feed_title)
+
+        if item.get("category"):
+            ET.SubElement(entry, "category").set("term", item["category"])
 
         summary = ET.SubElement(entry, "summary")
         summary.text = item.get("summary") or item.get("title", "")

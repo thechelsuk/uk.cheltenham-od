@@ -21,10 +21,10 @@ permalink: /llms.txt
 ## Feeds & data sources
 
 - [Sitemap](https://cheltenham-od.uk/sitemap.xml): Full list of site URLs.
-- [Announcements Feed](https://cheltenham-od.uk/feeds/main.xml): Site announcements feed (Atom).
-- [Flood Warnings Feed](https://cheltenham-od.uk/feeds/flood.xml): Flood warnings feed (Atom).
-- [Daily News Summary Feed](https://cheltenham-od.uk/feeds/news-summary.xml): Daily news updates feed (Atom).
-- [Cheltenham Classifieds Feed](https://cheltenham-od.uk/feeds/classifieds.xml): Classifieds feed (Atom).
+- [All feeds](https://cheltenham-od.uk/feeds): Every feed the site publishes.
+{% for feed in site.feeds -%}
+- [{{ feed.name }}]({{ site.url }}{{ feed.link }}): {{ feed.description }} (Atom)
+{% endfor -%}
 
 ## Other
 

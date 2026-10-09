@@ -117,6 +117,24 @@ def merge_history(records, current, now_iso):
     return records
 
 
+def build_atom_items(records, page_url):
+    """One entry per threat level change, dated by when the level changed, so
+    a feed reader only sees an update when the level actually moves."""
+    items = []
+    for r in records:
+        published = r["published_iso"]
+        if "T" not in published:
+            published = f"{published}T00:00:00+00:00"
+        items.append({
+            "title": f"UK threat level: {r['level_title']}",
+            "link": f"{page_url}#{r['published_iso'][:10]}",
+            "summary": r.get("details") or f"The UK national threat level was set to {r['level_title']}.",
+            "published_iso": published,
+            "source": "MI5",
+        })
+    return items
+
+
 def payload(now, extra):
     return {
         "generated_at": now.isoformat(),
@@ -153,3 +171,15 @@ if __name__ == "__main__":
     helper.write_json(current_path, payload(now, current))
     helper.write_json(history_path, payload(now, {"backfill_source": BACKFILL_SOURCE, "count": len(records), "records": records}))
     print(f"Threat level {current['level']}, {len(records)} recorded change(s)")
+
+    site = helper.site_url()
+    page_url = f"{site}/cheltenham-security-alerts"
+    helper.write_items_atom(
+        items=build_atom_items(records, page_url),
+        filename=root / "feeds" / "security.xml",
+        permalink_path="/feeds/security.xml",
+        feed_title="UK Threat Level",
+        feed_subtitle="Changes to the UK national terrorism threat level, from MI5",
+        self_url=f"{site}/feeds/security.xml",
+        alternate_url=page_url,
+    )
