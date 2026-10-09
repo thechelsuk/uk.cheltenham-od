@@ -40,7 +40,7 @@ These update themselves. The "Feeds" column lists the analysis posts that would 
 | ONS Annual Survey of Hours and Earnings | `earnings.py` and `affordability.py`, monthly | Once a year, in October or November | 2026-10-22 at 09:30 (confirmed) | `/cheltenham-earnings-history`, `/cheltenham-house-prices/affordability`; affordability and housing squeeze analyses |
 | MHCLG net additional dwellings | `housing-supply.py`, monthly | Once a year, in November | November 2026 (expected, day not yet announced) | `/cheltenham-house-prices/housing-supply`; housing squeeze analysis |
 | HM Land Registry Price Paid Data | `land_registry.py`, every two hours | Monthly. Recent months keep growing as late sales are registered | No fixed date | House price pages, `/cheltenham-house-prices/affordability`; affordability analysis |
-| Care Quality Commission ratings | `cqc.py`, monthly | Updated continuously as inspections are published | No fixed date | `/cheltenham-care-homes`; care homes analysis |
+| Care Quality Commission ratings | `cqc.py`, weekly | Updated continuously as inspections are published | No fixed date | `/cheltenham-care-homes`; care homes analysis |
 | Food Standards Agency hygiene ratings | `food-standards.py`, every two hours | Updated continuously as councils publish inspections | No fixed date | `/cheltenham-food-standards`; food hygiene analysis |
 | English Indices of Deprivation | `deprivation.py`, by hand | Every four to six years. The 2025 edition is current | Next edition not announced | `/cheltenham-deprivation`, `/cheltenham-wards`; deprivation and turnout analyses |
 

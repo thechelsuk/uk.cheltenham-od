@@ -1,0 +1,49 @@
+---
+name: Scheduled Weekly
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "23 4 * * 1"
+
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
+jobs:
+    scheduled:
+        outputs:
+            changed: ${{ steps.commit.outputs.changed }}
+            ref: ${{ steps.commit.outputs.ref }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out this repo
+              uses: actions/checkout@v7
+
+            - name: Set up Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: 3.13.2
+
+            - name: Install Python dependencies
+              run: python -m pip install -r _python/requirements.txt
+
+            - name: Fetch weekly data
+              env:
+                  CQC_KEY: ${{ secrets.CQC_KEY }}
+              run: |
+                  python _python/cqc.py || echo "::warning::cqc.py failed, continuing with other scripts"
+
+            - name: Commit and push if changed
+              id: commit
+              uses: ./.github/actions/commit-and-push
+              with:
+                  message: "Chore: Weekly COD data pull for"
+
+    deploy:
+        needs: scheduled
+        if: needs.scheduled.outputs.changed == 'true'
+        uses: ./.github/workflows/deploy-pages.yml
+        with:
+            ref: ${{ needs.scheduled.outputs.ref }}
+        secrets: inherit

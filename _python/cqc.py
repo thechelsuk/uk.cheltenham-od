@@ -3,12 +3,12 @@
 Care Quality Commission (CQC) ratings, written to _data/cqc.json.
 
 The records come from cqc_source.load_locations(), which hides where they
-are fetched from (the CQC's monthly files for now, its API later). This
+are fetched from (the CQC API). This
 script keeps the Cheltenham postcode districts, groups the locations, adds
 coordinates from postcodes.io and writes the data file. The GP and
 pharmacy finder (pharmacy.py) reads GP ratings from it by ODS code.
 
-The CQC publishes its files monthly, so a monthly refresh matches.
+The CQC's ratings change as inspections are published, so it runs weekly.
 """
 import os
 import re

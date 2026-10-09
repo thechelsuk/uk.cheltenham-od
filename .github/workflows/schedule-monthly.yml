@@ -66,7 +66,6 @@ jobs:
                   python _python/ofsted.py || echo "::warning::ofsted.py failed, continuing with other scripts"
                   python _python/childcare.py || echo "::warning::childcare.py failed, continuing with other scripts"
                   python _python/charities.py || echo "::warning::charities.py failed, continuing with other scripts"
-                  python _python/cqc.py || echo "::warning::cqc.py failed, continuing with other scripts"
                   python _python/taxi-ranks.py || echo "::warning::taxi-ranks.py failed, continuing with other scripts"
 
             - name: Commit and push if changed

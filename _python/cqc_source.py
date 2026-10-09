@@ -1,19 +1,11 @@
 """Where the Care Quality Commission (CQC) data comes from, kept apart from
 cqc.py so the source can be swapped without touching anything else.
 
-For now it reads the two files the CQC publishes each month on its "Using
-CQC data" page, which need no key:
-
-- the care directory CSV: every registered location with its service types
-  and specialisms;
-- the latest ratings spreadsheet (ODS): each location's latest rating,
-  overall and for each key question. The file is about 30MB zipped but holds
-  over 1GB of XML, so it is read as a stream rather than with a spreadsheet
-  library, which takes over ten minutes.
-
-The CQC's API (https://api.service.cqc.org.uk) has the same information but
-needs a subscription key. To switch to it, replace load_locations() with a
-version that calls the API and returns records in the same shape.
+It reads the CQC API (https://api.service.cqc.org.uk), which needs a
+subscription key in the CQC_KEY environment variable (a GitHub secret in
+Actions, .env locally). The list endpoint gives every location in
+Gloucestershire with its postcode; the ones in our postcode districts are
+then fetched one by one for their service types, specialisms and ratings.
 
 load_locations(postcode_districts) returns one dict per location:
     id, ods_code, name, address, postcode, website, url,
@@ -21,91 +13,50 @@ load_locations(postcode_districts) returns one dict per location:
     overall, published (YYYY-MM-DD or None),
     ratings: {"safe", "effective", "caring", "responsive", "well_led"}
 """
-import csv
-import io
+import os
 import re
-import zipfile
-import xml.etree.ElementTree as ET
-from datetime import datetime
 
 import helper
 
+API = "https://api.service.cqc.org.uk/public/v1"
 DATA_PAGE = "https://www.cqc.org.uk/about-us/transparency/using-cqc-data"
-SOURCE_NAME = "CQC care directory and latest ratings"
+SOURCE_NAME = "CQC API: registered locations and latest ratings"
 
-_TABLE = "{urn:oasis:names:tc:opendocument:xmlns:table:1.0}"
-_TEXT = "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}"
+COUNTY = "Gloucestershire"
 KEY_QUESTIONS = {"Safe": "safe", "Effective": "effective", "Caring": "caring",
                  "Responsive": "responsive", "Well-led": "well_led"}
+VALID_RATINGS = ("Outstanding", "Good", "Requires improvement", "Inadequate")
+
+# Load .env file for local development if present
+_env_file = helper.repo_root() / ".env"
+if _env_file.exists():
+    for _line in _env_file.read_text().splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _v = _line.split("=", 1)
+            os.environ.setdefault(_k.strip(), _v.strip().strip("\"'"))
 
 
-def _links():
-    """The current directory CSV and ratings ODS, found on the data page."""
-    html = helper.get(DATA_PAGE).text
-    directory = re.search(r'href="([^"]+_CQC_directory\.csv)"', html)
-    ratings = re.search(r'href="([^"]+_Latest_ratings\.ods)"', html)
-    if not directory or not ratings:
-        raise RuntimeError("Couldn't find the CQC directory or ratings file on the data page")
-    return directory.group(1), ratings.group(1)
+def _get(path, **params):
+    key = os.environ.get("CQC_KEY")
+    if not key:
+        raise RuntimeError("CQC_KEY is not set")
+    return helper.get(API + path, headers={"Ocp-Apim-Subscription-Key": key}, params=params, timeout=60).json()
 
 
 def _postcode_ok(postcode, districts):
     return (postcode or "").strip().upper().split(" ")[0] in districts
 
 
-def _directory(url, districts):
-    text = helper.get(url, timeout=180).content.decode("utf-8-sig", errors="replace")
-    lines = text.splitlines()
-    header = next(i for i, line in enumerate(lines) if line.startswith("Name,"))
-    found = {}
-    for row in csv.DictReader(io.StringIO("\n".join(lines[header:]))):
-        if not _postcode_ok(row["Postcode"], districts):
-            continue
-        found[row["CQC Location ID (for office use only)"]] = row
-    return found
-
-
-def _ods_rows(data, sheet):
-    """Rows of one sheet of an ODS file, as lists of cell text, streamed."""
-    with zipfile.ZipFile(io.BytesIO(data)) as archive, archive.open("content.xml") as f:
-        inside = False
-        for event, el in ET.iterparse(f, events=("start", "end")):
-            if el.tag == _TABLE + "table":
-                if event == "start":
-                    inside = el.get(_TABLE + "name") == sheet
-                elif inside:
-                    return
-            elif event == "end" and el.tag == _TABLE + "table-row" and inside:
-                cells = []
-                for cell in el:
-                    if cell.tag != _TABLE + "table-cell":
-                        continue
-                    repeat = min(int(cell.get(_TABLE + "number-columns-repeated", "1")), 50)
-                    cells.extend([" ".join("".join(p.itertext()) for p in cell.findall(_TEXT + "p"))] * repeat)
-                yield cells
-                el.clear()
-
-
-def _ratings(url, districts):
-    """{location id: {"overall", "published", "ratings", "row"}} for locations in the districts."""
-    rows = _ods_rows(helper.get(url, timeout=300).content, "Locations")
-    header = next(rows)
-    found = {}
-    for cells in rows:
-        row = dict(zip(header, cells))
-        if not _postcode_ok(row.get("Location Post Code"), districts):
-            continue
-        if row["Service / Population Group"] != "Overall":
-            continue
-        entry = found.setdefault(row["Location ID"], {"overall": None, "published": None, "ratings": {}, "row": row})
-        rating = row["Latest Rating"] if row["Latest Rating"] not in ("", "Not applicable", "Not Rated") else None
-        if row["Domain"] == "Overall":
-            entry["overall"] = rating
-            entry["published"] = datetime.strptime(row["Publication Date"], "%d/%m/%Y").date().isoformat() \
-                if row["Publication Date"] else None
-        elif row["Domain"] in KEY_QUESTIONS:
-            entry["ratings"][KEY_QUESTIONS[row["Domain"]]] = rating
-    return found
+def _listed(districts):
+    """Ids of every location in the county whose postcode is in the districts."""
+    ids, page = [], 1
+    while True:
+        data = _get("/locations", localAuthority=COUNTY, perPage=1000, page=page)
+        ids.extend(loc["locationId"] for loc in data["locations"] if _postcode_ok(loc.get("postalCode"), districts))
+        if page >= data["totalPages"]:
+            return ids
+        page += 1
 
 
 def _website(url):
@@ -115,33 +66,59 @@ def _website(url):
     return url if re.match(r"^https?://", url, re.I) else "https://" + url
 
 
-def load_locations(postcode_districts):
-    directory_url, ratings_url = _links()
-    directory = _directory(directory_url, postcode_districts)
-    ratings = _ratings(ratings_url, postcode_districts)
+def _rating(value):
+    """The rating as CQC spells it elsewhere (the API varies the capitals), or None."""
+    return next((r for r in VALID_RATINGS if r.lower() == (value or "").strip().lower()), None)
 
+
+def _latest_rating(d):
+    """(overall, published, key question ratings) from whichever is newest of the
+    older inspection ratings (currentRatings) and the newer assessment
+    ratings, which locations assessed under the current framework have
+    instead."""
+    candidates = []
+    overall = (d.get("currentRatings") or {}).get("overall") or {}
+    if _rating(overall.get("rating")):
+        candidates.append((overall.get("reportDate") or "", _rating(overall["rating"]), overall.get("keyQuestionRatings") or []))
+    for assessment in d.get("assessment") or []:
+        published = (assessment.get("assessmentPlanPublishedDateTime") or "")[:10]
+        for group in (assessment.get("ratings") or {}).get("asgRatings") or []:
+            if _rating(group.get("rating")):
+                candidates.append((published, _rating(group["rating"]), group.get("keyQuestionRatings") or []))
+    if not candidates:
+        return None, None, {}
+    published, rating, questions = max(candidates, key=lambda c: c[0])
+    return rating, published or None, {KEY_QUESTIONS[q["name"]]: _rating(q.get("rating"))
+                                       for q in questions if q["name"] in KEY_QUESTIONS}
+
+
+def _location(d):
+    types = list(dict.fromkeys(t["name"].replace("Doctors/Gps", "Doctors/GPs") for t in d.get("gacServiceTypes") or []))
+    overall, published, ratings = _latest_rating(d)
+    lines = (d.get("postalAddressLine1"), d.get("postalAddressLine2"), d.get("postalAddressTownCity"))
+    primary = next((c["name"] for c in d.get("inspectionCategories") or [] if str(c.get("primary")).lower() == "true"), None)
+    return {
+        "id": d["locationId"],
+        "ods_code": d.get("odsCode") or None,
+        "name": d["name"],
+        "address": ", ".join(p.strip().strip(",") for p in lines if p and p.strip(" ,")),
+        "postcode": (d.get("postalCode") or "").strip().upper(),
+        "website": _website(d.get("website")),
+        "url": f"https://www.cqc.org.uk/location/{d['locationId']}",
+        "service_types": types,
+        "specialisms": [s["name"] for s in d.get("specialisms") or []],
+        "category": primary,
+        "care_home": d.get("careHome") == "Y" or any(t in ("Residential homes", "Nursing homes") for t in types),
+        "overall": overall,
+        "published": published,
+        "ratings": {key: ratings.get(key) for key in KEY_QUESTIONS.values()},
+    }
+
+
+def load_locations(postcode_districts):
     locations = []
-    for location_id in sorted(set(directory) | set(ratings)):
-        d = directory.get(location_id, {})
-        r = ratings.get(location_id, {})
-        row = r.get("row", {})
-        types = [t.strip() for t in d.get("Service types", "").split("|") if t.strip()]
-        locations.append({
-            "id": location_id,
-            "ods_code": row.get("Location ODS Code") or None,
-            "name": d.get("Name") or row.get("Location Name"),
-            "address": ", ".join(p.strip() for p in (d.get("Address") or "").split(",") if p.strip())
-                       or ", ".join(p for p in (row.get("Location Street Address"), row.get("Location Address Line 2"),
-                                                row.get("Location City")) if p),
-            "postcode": (d.get("Postcode") or row.get("Location Post Code") or "").strip().upper(),
-            "website": _website(d.get("Service's website (if available)")),
-            "url": d.get("Location URL") or row.get("URL", "").replace("http://", "https://"),
-            "service_types": types,
-            "specialisms": [s.strip() for s in d.get("Specialisms/services", "").split("|") if s.strip()],
-            "category": row.get("Location Primary Inspection Category") or None,
-            "care_home": row.get("Care Home?") == "Y" or any(t in ("Residential homes", "Nursing homes") for t in types),
-            "overall": r.get("overall"),
-            "published": r.get("published"),
-            "ratings": r.get("ratings", {}),
-        })
+    for location_id in sorted(_listed(postcode_districts)):
+        detail = _get(f"/locations/{location_id}")
+        if detail.get("registrationStatus", "Registered") == "Registered":
+            locations.append(_location(detail))
     return locations

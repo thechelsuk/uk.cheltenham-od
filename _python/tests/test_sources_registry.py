@@ -12,7 +12,7 @@ import pytest
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SOURCES = json.loads((ROOT / "_data" / "sources.json").read_text())
-SCHEDULES = {"every 5 minutes", "hourly", "every two hours", "daily", "monthly", "manual"}
+SCHEDULES = {"every 5 minutes", "hourly", "every two hours", "daily", "weekly", "monthly", "manual"}
 
 # _data files that are site plumbing rather than data from a source.
 NOT_SOURCE_DATA = {
