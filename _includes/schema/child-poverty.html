@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Children in Low-Income Families by Cheltenham Ward",
+  "description": "Department for Work and Pensions estimates of the number and share of children aged 0 to 15 in relative low-income families before and after housing costs, and absolute low-income families before housing costs, for Cheltenham's 20 wards.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.low-income-kids.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "2022/2025",
+  "variableMeasured": ["Children in relative low-income families", "Children in absolute low-income families"]
+}
+</script>

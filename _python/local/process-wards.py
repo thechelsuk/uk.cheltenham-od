@@ -587,6 +587,35 @@ def build_local_issues(polygons):
     }
 
 
+def build_child_poverty(ward_code):
+    """Latest relative low-income after-housing-cost figure for one ward."""
+    data = load_json(DATA / "low-income-kids.json")
+    series = next((item for item in data["series"] if item["key"] == "relative_ahc"), None)
+    if series is None:
+        raise ValueError("The low-income children data has no relative AHC series")
+
+    ward = next((item for item in series["wards"] if item["code"] == ward_code), None)
+    if ward is None:
+        raise ValueError(f"No low-income children data for ward code {ward_code}")
+
+    value = next(
+        (item for item in ward["values"] if item["year"] == series["latest_year"]),
+        None,
+    )
+    if value is None:
+        raise ValueError(
+            f"No FYE {series['latest_year']} relative AHC figure for ward code {ward_code}"
+        )
+    return {
+        "year": value["year"],
+        "children": value["children"],
+        "children_display": value["children_display"],
+        "percentage": value["percentage"],
+        "percentage_display": value["percentage_display"],
+        "source_url": data["source_url"],
+    }
+
+
 def build_ward(name, features, ward_cache, postcodes, in_use):
     feature = next(f for f in features if f["properties"]["name"] == name)
     code = feature["properties"]["ward_code"]
@@ -618,6 +647,7 @@ def build_ward(name, features, ward_cache, postcodes, in_use):
         "neighbours": neighbours,
         "boundary": [[round(lat, 5), round(lon, 5)] for lon, lat in outer],
         "broadband": broadband,
+        "child_poverty": build_child_poverty(code),
         "crime": build_crime(polygons),
         "house_prices": build_house_prices(ward_postcodes),
         "local_issues": build_local_issues(polygons),

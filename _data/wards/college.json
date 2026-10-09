@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:41.957313+00:00",
+  "generated_at": "2026-10-09T15:50:34.574578+00:00",
   "name": "College",
   "slug": "college",
   "code": "E05015709",
@@ -170,6 +170,14 @@
     "ufbb100_pct": 88.6,
     "ufbb300_pct": 87.3,
     "gigabit_pct": 85.5
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 58,
+    "children_display": "58",
+    "percentage": 6.5,
+    "percentage_display": "6.5%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -690,8 +698,27 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Blocked drain",
+        "group": "Drains & flooding",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10214049",
+        "lat": 51.893036,
+        "lon": -2.077798
+      }
+    ],
     "planning": [
+      {
+        "ref": "26/01613/CACN",
+        "address": "30 Leckhampton Road Cheltenham Gloucestershire GL53 0BB",
+        "description": "T1 Variegated maple reduce 2m and shape, T2 Whitebeam reduce 2m and shape, T3 Silk bush reduce 1.5m (same height as adjacent shrub).",
+        "status": "Decision Awaiting Issue",
+        "received": "2026-10-08",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TML59YELM4V00&activeTab=summary",
+        "lat": 51.88591,
+        "lon": -2.079653
+      },
       {
         "ref": "26/01545/CACN",
         "address": "Cheltenham College Preparatory School Thirlestaine Road Cheltenham Gloucestershire GL53 7AB",

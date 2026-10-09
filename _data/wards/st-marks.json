@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:44.529984+00:00",
+  "generated_at": "2026-10-09T15:50:37.160314+00:00",
   "name": "St Mark's",
   "slug": "st-marks",
   "code": "E05015718",
@@ -101,6 +101,14 @@
     "ufbb100_pct": 99.5,
     "ufbb300_pct": 99.5,
     "gigabit_pct": 99.4
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 417,
+    "children_display": "417",
+    "percentage": 37.3,
+    "percentage_display": "37.3%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -613,7 +621,24 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Flytipping",
+        "group": "Litter, fly-tipping & graffiti",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10214985",
+        "lat": 51.901114,
+        "lon": -2.114666
+      },
+      {
+        "title": "Flytippin",
+        "group": "Litter, fly-tipping & graffiti",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10214963",
+        "lat": 51.901369,
+        "lon": -2.116321
+      }
+    ],
     "planning": [],
     "serious_collisions": [
       {
@@ -1096,7 +1121,7 @@
           "name": "Dalkeith",
           "address": "285 Gloucester Road, Cheltenham",
           "postcode": "GL51 7AD",
-          "detail": "Rated Requires improvement",
+          "detail": "Rated Good",
           "url": "https://www.cqc.org.uk/location/1-840613286",
           "lat": 51.895871,
           "lon": -2.103781,
@@ -1550,16 +1575,6 @@
           "distance_miles": 0.25
         },
         {
-          "name": "Tesco Express Queens Road Cheltenham",
-          "address": "Queens Road",
-          "postcode": "GL50 2NH",
-          "detail": "InPost locker",
-          "lat": 51.89749,
-          "lon": -2.09842,
-          "in_ward": false,
-          "distance_miles": 0.42
-        },
-        {
           "name": "YEEP! The Umbrella",
           "address": "Orchard Way",
           "postcode": "GL51 7LD",
@@ -1598,6 +1613,16 @@
           "lon": -2.11747,
           "in_ward": false,
           "distance_miles": 0.79
+        },
+        {
+          "name": "YEEP! Premier Springbank Store",
+          "address": "124 Springbank Road",
+          "postcode": "GL51 0PG",
+          "detail": "DPD Pickup",
+          "lat": 51.905334,
+          "lon": -2.125066,
+          "in_ward": false,
+          "distance_miles": 0.84
         }
       ]
     },

@@ -11,6 +11,7 @@
 {% assign latest_vote = pol.elections.first %}
 {% assign dep = site.data.deprivation %}
 {% assign ward_dep = dep.wards[w.code] %}
+{% assign child_poverty = w.child_poverty %}
 {% assign street_works = site.data["street-works"] %}
 {% assign ward_works = street_works.items | where: "ward_slug", w.slug %}
 {% assign fires = site.data["wildfire-incidents"] %}
@@ -128,6 +129,7 @@
                 <li><a href="#environment">Flood risk and grass fires</a></li>
                 <li><a href="#house-prices">House prices</a></li>
                 {% if ward_dep %}<li><a href="#deprivation">Deprivation</a></li>{% endif %}
+                {% if child_poverty %}<li><a href="#children-in-low-income-families">Children in low-income families</a></li>{% endif %}
                 <li><a href="#broadband">Broadband</a></li>
                 {% if pol %}<li><a href="#politics">Politics and voting</a></li>{% endif %}
                 <li><a href="#faq">Frequently asked questions</a></li>
@@ -479,7 +481,40 @@
             deprived); the other columns are deciles. Data from the {{ dep.source }}, published under the {{ dep.licence }}.</small></p>
         {% endif %}
 
-        <h2 id="broadband">Broadband in {{ w.name }}</h2>
+            {% if child_poverty %}
+            <h2 id="children-in-low-income-families">Children in Low-Income Families in {{ w.name }}</h2>
+            <p>
+                In FYE {{ child_poverty.year }}, {{ child_poverty.children_display }} children aged 0 to 15 in
+                {{ w.name }} ward lived in relative low-income families after housing costs, equal to
+                {{ child_poverty.percentage_display }} of children in the ward.
+            </p>
+            <div class="table-scroll">
+                <table class="ward-child-poverty-table data-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Measure</th>
+                            <th scope="col" class="number">Children</th>
+                            <th scope="col" class="number">Share of children</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Relative low income after housing costs (FYE {{ child_poverty.year }})</td>
+                            <td class="number" data-val="{{ child_poverty.children }}">{{ child_poverty.children_display }}</td>
+                            <td class="number" data-val="{{ child_poverty.percentage }}">{{ child_poverty.percentage_display }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><small>
+                DWP figures are estimates for areas, not individual families. Counts are rounded and subject to statistical
+                disclosure control. See all 20 wards and other income measures on the
+                <a href="/cheltenham-child-poverty">Cheltenham child poverty page</a>; data from the
+                <a href="{{ child_poverty.source_url }}">Department for Work and Pensions</a>, under the Open Government Licence v3.0.
+            </small></p>
+            {% endif %}
+
+            <h2 id="broadband">Broadband in {{ w.name }}</h2>
         <div class="table-scroll">
             <table class="ward-broadband-table data-table">
                 <thead>

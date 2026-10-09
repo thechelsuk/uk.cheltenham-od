@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:40.213380+00:00",
+  "generated_at": "2026-10-09T15:50:32.796308+00:00",
   "name": "All Saints",
   "slug": "all-saints",
   "code": "E05015704",
@@ -107,6 +107,14 @@
     "ufbb100_pct": 98.8,
     "ufbb300_pct": 98.2,
     "gigabit_pct": 96.9
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 70,
+    "children_display": "70",
+    "percentage": 9.6,
+    "percentage_display": "9.6%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -627,17 +635,18 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Tree is damaged",
-        "group": "Trees & vegetation",
-        "published": "2026-10-08",
-        "url": "https://www.fixmystreet.com/report/10211671",
-        "lat": 51.895686,
-        "lon": -2.065549
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01614/CACN",
+        "address": "141 Hewlett Road Cheltenham Gloucestershire GL52 6TS",
+        "description": "T1 Horse Chestnut - Crown height reduction of 2m and spread by 1.5, crown lift roadside only up to 5m, prune back limb over car parking spaces, as indicated in red on image, cutting back to strong suitable secondary growth. Shape and balance. New shape indicated in red on image. T2 Maple - Crown height reduction of 3m and spread by 1.5m, cutting back to strong suitable secondary growth. Shape and balance. New shape indicated in red.",
+        "status": "Decision Awaiting Issue",
+        "received": "2026-10-08",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TML5B1ELM4X00&activeTab=summary",
+        "lat": 51.9009,
+        "lon": -2.061716
+      },
       {
         "ref": "26/01580/CACN",
         "address": "10 Sydenham Road South Cheltenham Gloucestershire GL52 6EF",
@@ -1202,7 +1211,7 @@
           "name": "Astell House",
           "address": "Overton Park Road, Cheltenham",
           "postcode": "GL50 3BT",
-          "detail": "Rated Requires improvement",
+          "detail": "Not yet rated",
           "url": "https://www.cqc.org.uk/location/1-26660132168",
           "lat": 51.899347,
           "lon": -2.086232,

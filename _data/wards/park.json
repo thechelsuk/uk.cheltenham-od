@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:43.322474+00:00",
+  "generated_at": "2026-10-09T15:50:35.937826+00:00",
   "name": "Park",
   "slug": "park",
   "code": "E05015714",
@@ -116,6 +116,14 @@
     "ufbb100_pct": 98.1,
     "ufbb300_pct": 97.3,
     "gigabit_pct": 96.7
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 54,
+    "children_display": "54",
+    "percentage": 8.6,
+    "percentage_display": "8.6%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -636,8 +644,63 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Highways defect: other CW10",
+        "group": "Potholes & road surface",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10215813",
+        "lat": 51.8862867506741,
+        "lon": -2.09270151899339
+      },
+      {
+        "title": "Highways defect: other CW10",
+        "group": "Potholes & road surface",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10215812",
+        "lat": 51.8863642,
+        "lon": -2.09249599999999
+      },
+      {
+        "title": "Trees are overgrown and fallen into our boundary’s",
+        "group": "Trees & vegetation",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10215387",
+        "lat": 51.885511,
+        "lon": -2.093813
+      }
+    ],
     "planning": [
+      {
+        "ref": "26/01605/CACN",
+        "address": "Flat 8 Albany Park Albany Road Cheltenham Gloucestershire GL50 2UL",
+        "description": "T1 Walnut reduce by 2.5m as it's very close to house.",
+        "status": "Decision Awaiting Issue",
+        "received": "2026-10-08",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMKRH2ELM4E00&activeTab=summary",
+        "lat": 51.889436,
+        "lon": -2.089642
+      },
+      {
+        "ref": "26/01612/TPO",
+        "address": "6 St Stephens Manor Cheltenham Gloucestershire GL51 3GF",
+        "description": "T2 Oak Remove.",
+        "status": "Pending Consideration",
+        "received": "2026-10-08",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TML59OELM4T00&activeTab=summary",
+        "lat": 51.889119,
+        "lon": -2.09217
+      },
+      {
+        "ref": "26/01611/CACN",
+        "address": "74 Suffolk Road Cheltenham Gloucestershire GL50 2SZ",
+        "description": "T1 Ash reduce by 2.5m, and shape, T2 Holly by shed remove.",
+        "status": "Decision Awaiting Issue",
+        "received": "2026-10-08",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TML591ELM4R00&activeTab=summary",
+        "lat": 51.892047,
+        "lon": -2.084271
+      },
       {
         "ref": "26/01599/CACN",
         "address": "Pegasus Court St Stephens Road Cheltenham Gloucestershire GL51 3GB",
@@ -1723,14 +1786,14 @@
           "distance_miles": 0.68
         },
         {
-          "name": "Tesco Express Queens Road Cheltenham",
-          "address": "Queens Road",
-          "postcode": "GL50 2NH",
-          "detail": "InPost locker",
-          "lat": 51.89749,
-          "lon": -2.09842,
+          "name": "Premier",
+          "address": "78 Bath Road",
+          "postcode": "GL53 7JT",
+          "detail": "DPD Pickup",
+          "lat": 51.895885,
+          "lon": -2.074432,
           "in_ward": false,
-          "distance_miles": 0.74
+          "distance_miles": 0.75
         }
       ]
     },

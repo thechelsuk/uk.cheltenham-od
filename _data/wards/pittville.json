@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:43.612101+00:00",
+  "generated_at": "2026-10-09T15:50:36.237138+00:00",
   "name": "Pittville",
   "slug": "pittville",
   "code": "E05015715",
@@ -253,6 +253,14 @@
     "ufbb100_pct": 91.2,
     "ufbb300_pct": 90.7,
     "gigabit_pct": 88.5
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 125,
+    "children_display": "125",
+    "percentage": 15.5,
+    "percentage_display": "15.5%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -773,7 +781,16 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Highways defect: Vegetation",
+        "group": "Trees & vegetation",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10215290",
+        "lat": 51.9090279,
+        "lon": -2.0656489
+      }
+    ],
     "planning": [
       {
         "ref": "26/01567/CACN",
@@ -1321,7 +1338,7 @@
           "name": "Astell House",
           "address": "Overton Park Road, Cheltenham",
           "postcode": "GL50 3BT",
-          "detail": "Rated Requires improvement",
+          "detail": "Not yet rated",
           "url": "https://www.cqc.org.uk/location/1-26660132168",
           "lat": 51.899347,
           "lon": -2.086232,

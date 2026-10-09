@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:42.499808+00:00",
+  "generated_at": "2026-10-09T15:50:35.110024+00:00",
   "name": "Lansdown",
   "slug": "lansdown",
   "code": "E05015711",
@@ -112,6 +112,14 @@
     "ufbb100_pct": 87.7,
     "ufbb300_pct": 84.7,
     "gigabit_pct": 82.7
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 85,
+    "children_display": "85",
+    "percentage": 9.6,
+    "percentage_display": "9.6%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -632,7 +640,16 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Broken Up footpath slabs",
+        "group": "Footpaths & pavements",
+        "published": "2026-10-09",
+        "url": "https://www.fixmystreet.com/report/10215617",
+        "lat": 51.897446,
+        "lon": -2.089749
+      }
+    ],
     "planning": [
       {
         "ref": "26/01598/DISCON",
@@ -1206,7 +1223,7 @@
           "name": "Astell House",
           "address": "Overton Park Road, Cheltenham",
           "postcode": "GL50 3BT",
-          "detail": "Rated Requires improvement",
+          "detail": "Not yet rated",
           "url": "https://www.cqc.org.uk/location/1-26660132168",
           "lat": 51.899347,
           "lon": -2.086232,
@@ -1725,16 +1742,6 @@
           "distance_miles": 0.49
         },
         {
-          "name": "Tesco Express Queens Road Cheltenham",
-          "address": "Queens Road",
-          "postcode": "GL50 2NH",
-          "detail": "InPost locker",
-          "lat": 51.89749,
-          "lon": -2.09842,
-          "in_ward": false,
-          "distance_miles": 0.5
-        },
-        {
           "name": "Tesco Superstore Cheltenham",
           "address": "Colletts Drive, Lansdown",
           "postcode": "GL51 8JQ",
@@ -1763,6 +1770,16 @@
           "lon": -2.074432,
           "in_ward": false,
           "distance_miles": 0.54
+        },
+        {
+          "name": "Tesco Express",
+          "address": "111 High Street",
+          "postcode": "GL50 1DW",
+          "detail": "InPost locker",
+          "lat": 51.89938,
+          "lon": -2.07235,
+          "in_ward": false,
+          "distance_miles": 0.62
         }
       ]
     },

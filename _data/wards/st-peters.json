@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T02:35:45.027118+00:00",
+  "generated_at": "2026-10-09T15:50:37.663801+00:00",
   "name": "St Peter's",
   "slug": "st-peters",
   "code": "E05015720",
@@ -98,6 +98,14 @@
     "ufbb100_pct": 96.8,
     "ufbb300_pct": 96.7,
     "gigabit_pct": 96.6
+  },
+  "child_poverty": {
+    "year": 2025,
+    "children": 332,
+    "children_display": "332",
+    "percentage": 25.1,
+    "percentage_display": "25.1%",
+    "source_url": "https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics"
   },
   "crime": {
     "first_month": "2025-02",
@@ -1487,8 +1495,18 @@
       "group": "Everyday Services",
       "label": "Parcel Pick-up Points",
       "mode": "nearest",
-      "in_ward": 3,
+      "in_ward": 2,
       "items": [
+        {
+          "name": "Post Office Tewkesbury Road",
+          "address": "93 Tewkesbury Road",
+          "postcode": "GL51 9DB",
+          "detail": "DPD Pickup",
+          "lat": 51.909538,
+          "lon": -2.091068,
+          "in_ward": false,
+          "distance_miles": 0.32
+        },
         {
           "name": "Tesco Superstore Cheltenham",
           "address": "Colletts Drive, Lansdown",
@@ -1510,14 +1528,44 @@
           "distance_miles": 0.49
         },
         {
-          "name": "Tesco Express Queens Road Cheltenham",
-          "address": "Queens Road",
-          "postcode": "GL50 2NH",
+          "name": "YEEP! The Umbrella",
+          "address": "Orchard Way",
+          "postcode": "GL51 7LD",
+          "detail": "DPD Pickup",
+          "lat": 51.908485,
+          "lon": -2.107552,
+          "in_ward": false,
+          "distance_miles": 0.54
+        },
+        {
+          "name": "Hesters Way Post Office",
+          "address": "8-10 Hesters Way Road",
+          "postcode": "GL51 0DA",
+          "detail": "DPD Pickup",
+          "lat": 51.90963,
+          "lon": -2.1125,
+          "in_ward": false,
+          "distance_miles": 0.77
+        },
+        {
+          "name": "Family Shopper",
+          "address": "278-282 High Street",
+          "postcode": "GL50 3HQ",
+          "detail": "DPD Pickup",
+          "lat": 51.902645,
+          "lon": -2.078019,
+          "in_ward": false,
+          "distance_miles": 0.78
+        },
+        {
+          "name": "Wymans Brook Shopping Centre",
+          "address": "Wyman's Brook",
+          "postcode": "GL50 4RA",
           "detail": "InPost locker",
-          "lat": 51.89749,
-          "lon": -2.09842,
-          "in_ward": true,
-          "distance_miles": 0.59
+          "lat": 51.91603,
+          "lon": -2.08702,
+          "in_ward": false,
+          "distance_miles": 0.79
         }
       ]
     },

@@ -72,6 +72,13 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 - **Note:** `process-wardband.py` describes its input as the May 2024 boundaries. Check whether any Cheltenham ward has changed since, and if not, there is nothing to do.
 - **Feeds:** the ward broadband figures and the broadband ward map.
 
+### Children in Low-Income Families
+
+- **Download:** the latest workbook from the DWP's [Children in low income families: local area statistics](https://www.gov.uk/government/collections/children-in-low-income-families-local-area-statistics) collection, saved in `_data-sources/`. Update `SOURCE_ODS` in `process-low-income-kids.py` if the filename changes.
+- **Run:** `_python/local/process-low-income-kids.py`, then `_python/local/process-wards.py` to refresh the relevant row on all 20 ward profiles, then commit the generated data.
+- **When it publishes:** annually. The current workbook covers FYE 2022 to FYE 2025; the DWP says no further release is scheduled later in 2026.
+- **Feeds:** `/cheltenham-child-poverty`, `/cheltenham-wards`, and `/about-cheltenham`.
+
 ### Election Results
 
 - **Download:** only after a general election. The by-candidate CSV for the new election from the House of Commons Library's [elections data](https://commonslibrary.parliament.uk/tag/elections-data/).

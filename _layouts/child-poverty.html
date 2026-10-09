@@ -1,0 +1,149 @@
+{% include header.html %}
+{% assign kids = site.data.low-income-kids %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul>
+                <li><a href="/cheltenham-wards">&larr; Back to Cheltenham wards</a></li>
+                <li>{{ kids.geography }} — children aged {{ kids.age_range }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% assign ahc = kids.series | where: "key", "relative_ahc" | first %}
+        {% assign bhc = kids.series | where: "key", "relative_bhc" | first %}
+        <h2>Latest ward comparisons (FYE {{ ahc.latest_year }})</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Highest relative low-income rate after housing costs</p>
+                <span class="info-card__title">{{ ahc.summary.highest.percentage_display }}</span>
+                <span class="info-card__subtitle">{{ ahc.summary.highest.ward }} — {{ ahc.summary.highest.children_display }} children</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Lowest relative low-income rate after housing costs</p>
+                <span class="info-card__title">{{ ahc.summary.lowest.percentage_display }}</span>
+                <span class="info-card__subtitle">{{ ahc.summary.lowest.ward }} — {{ ahc.summary.lowest.children_display }} children</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Highest relative low-income rate before housing costs</p>
+                <span class="info-card__title">{{ bhc.summary.highest.percentage_display }}</span>
+                <span class="info-card__subtitle">{{ bhc.summary.highest.ward }} — {{ bhc.summary.highest.children_display }} children</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Lowest relative low-income rate before housing costs</p>
+                <span class="info-card__title">{{ bhc.summary.lowest.percentage_display }}</span>
+                <span class="info-card__subtitle">{{ bhc.summary.lowest.ward }} — {{ bhc.summary.lowest.children_display }} children</span>
+            </div>
+        </div>
+
+        <h2>Map of Low-Income Rates by Ward</h2>
+        <p>Choose a measure to see how the latest ward rates compare. Click a ward for its figures and profile.</p>
+        <div class="filter-bar">
+            <label class="filter-label" for="child-poverty-measure">Show</label>
+            <select id="child-poverty-measure">
+                {% for metric in kids.series %}
+                <option value="{{ metric.key }}"{% if metric.key == "relative_ahc" %} selected{% endif %}>
+                    {{ metric.label }} (FYE {{ metric.latest_year }})
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="map-legend">
+            <span><i class="tier-swatch shade-1"></i> Under 10%</span>
+            <span><i class="tier-swatch shade-2"></i> 10–19.9%</span>
+            <span><i class="tier-swatch shade-3"></i> 20–29.9%</span>
+            <span><i class="tier-swatch shade-4"></i> 30–39.9%</span>
+            <span><i class="tier-swatch shade-5"></i> 40% or more</span>
+        </div>
+        <div id="child-poverty-map" class="map-canvas" aria-label="Map of low-income child rates by Cheltenham ward"></div>
+        <script id="child-poverty-map-data" type="application/json">{{ kids.map_wards | jsonify }}</script>
+
+        {% for metric in kids.series %}
+        <h2>{{ metric.label }}</h2>
+        <p>{{ metric.description }} Select a column heading to sort the table.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        {% for year in metric.years %}
+                        <th scope="col" class="number">{{ year }} children</th>
+                        <th scope="col" class="number">{{ year }} share</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ward in metric.wards %}
+                    <tr>
+                        <td><a href="/cheltenham-wards/{{ ward.slug }}">{{ ward.name }}</a></td>
+                        {% for value in ward.values %}
+                        <td class="number" data-val="{{ value.children }}">{{ value.children_display }}</td>
+                        <td class="number" data-val="{{ value.percentage }}">{{ value.percentage_display }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
+        <h2>About these figures</h2>
+        <p>
+            These are Department for Work and Pensions estimates of children aged 0 to 15 living in low-income families.
+            Relative low income measures families against the current UK median income; absolute low income compares
+            against a 2010/11 income threshold adjusted for inflation. Before-housing-cost figures use income before
+            rent and other housing costs; after-housing-cost figures deduct those costs. The source publishes after-
+            housing-cost ward figures only for FYE 2024 and 2025 in this release.
+        </p>
+        <p>
+            The figures describe areas, not individual families. The DWP's source notes:
+        </p>
+        <ul>
+            {% for note in kids.notes %}
+            <li>{{ note }}</li>
+            {% endfor %}
+        </ul>
+        <p class="child-poverty-attribution"><small>
+            Data from the <a href="{{ kids.source_url }}">{{ kids.source }}</a>, published under the {{ kids.licence }}.
+            Last updated {{ kids.generated_at | date: "%-d %B %Y" }}.
+            Ward boundaries from the Office for National Statistics; map tiles &copy;
+            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Does "Low Income" Mean?</h3>
+        <ul>
+            <li>Relative low income compares family income with the UK median. Absolute low income compares income with a
+                fixed 2010/11 threshold adjusted for inflation. The figures are reported both before and after housing
+                costs, which can change a family's income position substantially.</li>
+        </ul>
+
+        <h3>Why Are There No After-Housing-Cost Figures for 2022 and 2023?</h3>
+        <ul>
+            <li>The DWP's current local-area release provides after-housing-cost ward figures for FYE 2024 and FYE 2025.
+                The two before-housing-cost series cover FYE 2022 to FYE 2025.</li>
+        </ul>
+
+        <h3>How Often Are the Figures Updated?</h3>
+        <ul>
+            <li>The DWP publishes the local-area statistics annually. This page is updated manually when a new workbook
+                is released; figures can be revised in a later edition.</li>
+        </ul>
+
+        <h3>Can These Figures Be Added Up to Get an Exact Town Total?</h3>
+        <ul>
+            <li>Not exactly. The source rounds counts and applies statistical disclosure control to guard against
+                identifying individuals, so ward counts may not sum to a Cheltenham-wide total.</li>
+        </ul>
+    </div>
+</div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/assets/scripts/child-poverty-map.js"></script>
+{% include footer.html %}
