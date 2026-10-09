@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T17:45:38+01:00",
+  "generated_at": "2026-10-09T17:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-09T17:45",
-      "expected": "2026-10-09T17:45",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-09T17:50",
       "expected": "2026-10-09T17:50",
@@ -46,7 +27,7 @@
     },
     {
       "scheduled": "2026-10-09T17:52",
-      "expected": "2026-10-09T18:01",
+      "expected": "2026-10-09T18:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -107,7 +88,7 @@
     },
     {
       "scheduled": "2026-10-09T18:12",
-      "expected": "2026-10-09T18:18",
+      "expected": "2026-10-09T18:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -132,7 +113,7 @@
     },
     {
       "scheduled": "2026-10-09T18:19",
-      "expected": "2026-10-09T18:23",
+      "expected": "2026-10-09T18:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -162,23 +143,27 @@
         "Filton Abbey Wood",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T18:31",
+      "expected": "2026-10-09T18:31",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-09T17:31",
-      "expected": "2026-10-09T17:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a fault with the signalling system"
-    },
-    {
       "scheduled": "2026-10-09T17:47",
-      "expected": "2026-10-09T17:47",
-      "status": "On time",
+      "expected": "2026-10-09T17:49",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -187,7 +172,7 @@
     },
     {
       "scheduled": "2026-10-09T17:50",
-      "expected": "2026-10-09T18:00",
+      "expected": "2026-10-09T17:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,7 +192,7 @@
     },
     {
       "scheduled": "2026-10-09T18:11",
-      "expected": "2026-10-09T18:17",
+      "expected": "2026-10-09T18:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -217,7 +202,7 @@
     },
     {
       "scheduled": "2026-10-09T18:18",
-      "expected": "2026-10-09T18:22",
+      "expected": "2026-10-09T18:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -242,6 +227,26 @@
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T18:29",
+      "expected": "2026-10-09T18:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T18:31",
+      "expected": "2026-10-09T18:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": ""
     }
