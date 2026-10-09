@@ -167,6 +167,12 @@ def load_postcodes():
     return lookup
 
 
+def load_in_use_postcodes():
+    """The postcodes still in use, from the local postcode lookup."""
+    with open(SOURCES / "gloucestershire-postcodes.csv", encoding="utf-8", newline="") as f:
+        return {row["Postcode"] for row in csv.DictReader(f) if row["In Use?"] == "Yes"}
+
+
 def postcode_in(text):
     m = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?)\s*(\d[A-Z]{2})\b", text.upper())
     return f"{m.group(1)} {m.group(2)}" if m else ""
@@ -278,6 +284,23 @@ def src_parcels():
                "detail": "DPD Pickup"}
 
 
+def src_childcare():
+    for c in load_json(DATA / "childcare.json")["providers"]:
+        if c.get("lat") in (None, "") or c.get("lon") in (None, ""):
+            continue
+        yield {"name": c["name"], "address": c["address"], "postcode": c["postcode"],
+               "lat": float(c["lat"]), "lon": float(c["lon"]), "detail": c.get("type", "")}
+
+
+def src_care_homes():
+    for c in load_json(DATA / "cqc.json")["locations"]:
+        if not c.get("care_home") or c.get("lat") is None:
+            continue
+        rating = c.get("overall")
+        yield {"name": c["name"], "address": c["address"], "postcode": c["postcode"], "lat": c["lat"], "lon": c["lon"],
+               "detail": f"Rated {rating}" if rating else "Not yet rated", "url": c.get("url", "")}
+
+
 def src_foodbanks():
     for f in load_json(DATA / "foodbank.json")["foodbanks"]:
         yield {"name": f["display_name"], "address": f["address"], "postcode": f["postcode"], "lat": f["lat"], "lon": f["lon"],
@@ -315,12 +338,14 @@ def src_food_venues():
 # (id, group, label, source, mode, limit). mode "nearest" shows everything in the
 # ward plus the nearest few outside; "in_ward" shows only what is inside.
 SERVICES = [
-    ("gp", "Health", "GP Practices", None, "nearest"),      # parsed from the GP page
-    ("pharmacy", "Health", "Pharmacies", None, "nearest"),  # parsed from the GP page
-    ("dentist", "Health", "Dentists", src_dentists, "nearest"),
-    ("optician", "Health", "Opticians", src_opticians, "nearest"),
-    ("hospital", "Health", "Hospitals", src_hospitals, "nearest"),
-    ("school", "Schools", "Schools", src_schools, "nearest"),
+    ("gp", "Health and Care", "GP Practices", None, "nearest"),      # parsed from the GP page
+    ("pharmacy", "Health and Care", "Pharmacies", None, "nearest"),  # parsed from the GP page
+    ("dentist", "Health and Care", "Dentists", src_dentists, "nearest"),
+    ("optician", "Health and Care", "Opticians", src_opticians, "nearest"),
+    ("hospital", "Health and Care", "Hospitals", src_hospitals, "nearest"),
+    ("carehome", "Health and Care", "Care Homes", src_care_homes, "nearest"),
+    ("school", "Schools and Childcare", "Schools", src_schools, "nearest"),
+    ("childcare", "Schools and Childcare", "Nurseries and Childcare", src_childcare, "nearest"),
     ("park", "Parks and Play", "Parks and Open Spaces", src_parks, "nearest"),
     ("play", "Parks and Play", "Play Areas", src_play_areas, "nearest"),
     ("parkrun", "Parks and Play", "Running Events", src_parkrun, "nearest"),
@@ -512,6 +537,37 @@ def build_house_prices(ward_postcodes):
     }
 
 
+def build_flood(ward_postcodes, postcodes, in_use):
+    """How many of the ward's postcodes still in use sit in Flood Zone 3, and
+    in Flood Zone 2 or 3. The Environment Agency's Flood Zone 2 extent includes the Flood
+    Zone 3 areas, so the second count includes the first."""
+    zones = {}
+    for feature in load_json(DATA / "flood-zones.json")["features"]:
+        polys = polygons_of(feature["geometry"])
+        boxes = []
+        for rings in polys:
+            lons = [p[0] for p in rings[0]]
+            lats = [p[1] for p in rings[0]]
+            boxes.append((min(lons), max(lons), min(lats), max(lats), rings))
+        zones[feature["properties"]["zone"]] = boxes
+
+    def inside(zone, lat, lon):
+        return any(x0 <= lon <= x1 and y0 <= lat <= y1 and in_polygons(lon, lat, [rings])
+                   for x0, x1, y0, y1, rings in zones.get(zone, []))
+
+    located = [postcodes[pc] for pc in ward_postcodes if pc in postcodes and pc in in_use]
+    zone3 = sum(1 for lat, lon in located if inside("FZ3", lat, lon))
+    zone2 = sum(1 for lat, lon in located if inside("FZ3", lat, lon) or inside("FZ2", lat, lon))
+    total = len(located)
+    return {
+        "postcodes": total,
+        "zone3": zone3,
+        "zone2_or_3": zone2,
+        "zone3_pct": round(100 * zone3 / total, 1) if total else 0,
+        "zone2_or_3_pct": round(100 * zone2 / total, 1) if total else 0,
+    }
+
+
 def build_local_issues(polygons):
     def inside(items, lat="lat", lon="lon"):
         return [i for i in items if i.get(lat) is not None and in_polygons(i[lon], i[lat], polygons)]
@@ -531,7 +587,7 @@ def build_local_issues(polygons):
     }
 
 
-def build_ward(name, features, ward_cache, postcodes):
+def build_ward(name, features, ward_cache, postcodes, in_use):
     feature = next(f for f in features if f["properties"]["name"] == name)
     code = feature["properties"]["ward_code"]
     polygons = polygons_of(feature["geometry"])
@@ -565,6 +621,7 @@ def build_ward(name, features, ward_cache, postcodes):
         "crime": build_crime(polygons),
         "house_prices": build_house_prices(ward_postcodes),
         "local_issues": build_local_issues(polygons),
+        "flood": build_flood(ward_postcodes, postcodes, in_use),
         "venue_types": [{"type": t, "count": n} for t, n in Counter(i["type"] for i in venues["items"]).most_common()],
         "listed_grades": [{"grade": g, "count": n} for g, n in sorted(Counter(i["detail"] for i in listed["items"]).items())],
         "services": services,
@@ -604,9 +661,10 @@ def main(argv):
     features = load_json(DATA / "broadband-map.json")["features"]
     ward_cache = load_json(SOURCES / "_ward-cache.json")
     postcodes = load_postcodes()
+    in_use = load_in_use_postcodes()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     for name in names:
-        ward = build_ward(name, features, ward_cache, postcodes)
+        ward = build_ward(name, features, ward_cache, postcodes, in_use)
         path = OUT_DIR / f"{ward['slug']}.json"
         with open(path, "w", encoding="utf-8") as f:
             json.dump(ward, f, indent=2, ensure_ascii=False)

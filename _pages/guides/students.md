@@ -49,6 +49,7 @@ Money's tight as a student, and there's local help if you need it.
 
 - [Cheltenham food banks — needed items](/cheltenham-foodbank-needed-items) — where to get support, and what to donate if you can.
 - [Fuel prices in Cheltenham](/cheltenham-fuel-prices) — cheapest local forecourts if you run a car.
+- [Street works in Cheltenham](/cheltenham-street-works) — road closures and works on local streets, handy if you cycle or drive.
 - [Cheltenham weather forecast](/cheltenham-10-day-weather-forecast) — plan around the 10-day outlook.
 
 ## Staying Safe and Sorting Problems

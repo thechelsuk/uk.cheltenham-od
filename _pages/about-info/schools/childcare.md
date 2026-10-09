@@ -4,7 +4,7 @@ title: "Nurseries and Childcare in Cheltenham"
 seo: "Nurseries, pre-schools and out-of-school clubs in Cheltenham on a map, with places and each provider's latest Ofsted rating, from Ofsted's register."
 permalink: /cheltenham-nurseries-childcare
 description: "Every registered nursery, pre-school and out-of-school club in Cheltenham, with the number of places and its latest Ofsted outcome."
-type: "about"
+type: "property"
 schema: childcare
 filters:
   - table: 1

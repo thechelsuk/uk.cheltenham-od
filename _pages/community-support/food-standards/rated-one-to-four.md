@@ -5,7 +5,7 @@ seo: "Cheltenham food businesses with a food hygiene rating of 1 to 4 from the F
 permalink: /cheltenham-food-standards/rated-one-to-four
 description: "Food businesses in Cheltenham with food hygiene ratings from 1 to 4."
 food_rating: "rated-one-to-four"
-type: "community"
+type: "activities"
 schema: food-standards
 filters:
   - table: 1

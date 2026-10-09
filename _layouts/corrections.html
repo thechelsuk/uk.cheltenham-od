@@ -1,0 +1,42 @@
+{% include header.html %}
+{% assign corrections = site.data.corrections.corrections %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+
+        {{ content }}
+
+        {% if corrections.size > 0 %}
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Page</th>
+                        <th scope="col">What changed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in corrections %}
+                    <tr>
+                        <td class="date" data-val="{{ c.date }}">{{ c.date }}</td>
+                        <td><a href="{{ c.page }}">{{ c.page_title }}</a></td>
+                        <td>{{ c.correction }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No corrections have been needed so far.</p>
+        </blockquote>
+        {% endif %}
+
+        <p>Spotted something wrong? <a href="/contact">Tell us</a> what it is and where you found it.</p>
+    </div>
+</div>
+{% include footer.html %}

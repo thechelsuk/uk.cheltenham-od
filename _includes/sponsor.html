@@ -3,6 +3,8 @@
 {% assign sponsor_category = "Principal Sponsor" %}
 {% elsif page.group %}
 {% assign sponsor_category = page.group %}
+{% elsif page.section %}
+{% assign sponsor_category = page.section %}
 {% else %}
 {% for item in site.navigation_header %}
 {% if sponsor_category == nil and item.link == page.url %}

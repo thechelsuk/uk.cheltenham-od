@@ -22,6 +22,7 @@ of the town centre count as the surrounding area. The ward and district named
 for each area are those of its nearest postcode.
 """
 import csv
+import json
 import math
 import sys
 import zipfile
@@ -233,12 +234,28 @@ def summarise(fires, years, county=None, located=None):
     return summary
 
 
+def by_ward(fires, lsoa_ward, years, recent_years=5):
+    """Fires per Cheltenham ward, all years and the last `recent_years` years,
+    using the ONS best-fit lookup from small census area to ward."""
+    recent = set(years[-recent_years:])
+    counts = {}
+    for f in fires:
+        ward = lsoa_ward.get(f.get("lsoa"))
+        if not ward:
+            continue
+        row = counts.setdefault(ward, {"ward": ward, "fires": 0, "recent": 0})
+        row["fires"] += 1
+        row["recent"] += f["financial_year"] in recent
+    return sorted(counts.values(), key=lambda r: r["ward"])
+
+
 def main():
     files = sorted(SOURCE_DIR.glob("*.ods"))
     if not files:
         sys.exit(f"No .ods files in {SOURCE_DIR}; see the instructions at the top of this script.")
 
     postcodes = load_postcodes()
+    lsoa_ward = {a["code"]: a["ward_name"] for a in json.loads((ROOT / "_data" / "small-areas.json").read_text())["lsoas"]}
     places = place_areas(fetch_centroids(), postcodes)
     print(f"{len(places)} small areas: "
           f"{sum(p['area'] == 'cheltenham' for p in places.values())} Cheltenham, "
@@ -261,6 +278,7 @@ def main():
             if not place:
                 continue
             fires.append({
+                "lsoa": row["LSOA_CODE"],
                 "date": incident_date(row),
                 "financial_year": row["FINANCIAL_YEAR"],
                 "deliberate": "deliberate" in (row.get("ACCIDENTAL_OR_DELIBERATE") or "").lower(),
@@ -284,6 +302,8 @@ def main():
         "last_located_year": max(located) if located else None,
         "county": COUNTY,
         **summarise(fires, years, county=county, located=located),
+        "recent_years": sorted(located)[-5:],
+        "by_ward": by_ward(fires, lsoa_ward, sorted(located)),
     }
     helper.write_json(OUT, output)
     print(f"Wrote {len(fires):,} fires ({years[0]} to {years[-1]}) to {OUT}")

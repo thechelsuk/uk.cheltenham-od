@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Cheltenham Open Data Feeds
+seo_title: "Cheltenham Open Data RSS & Atom Feeds"
 seo: "Every Cheltenham Open Data RSS and Atom feed: local news, our announcements and live alerts for floods, power cuts, road closures and more."
 permalink: /feeds
 description: "Every feed Cheltenham Open Data publishes, from local news to live alerts, to follow in any RSS or feed reader."

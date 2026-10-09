@@ -1,6 +1,7 @@
 ---
 layout: posts
 title: Cheltenham Open Data Adds Daily Wildfire Risk and 15 Years of Grass Fires
+seo_title: "Cheltenham Wildfire Risk & 15 Years of Grass Fires"
 type: cod
 description: Today's wildfire risk around Cheltenham, and every grass and woodland fire since 2010.
 seo: "A new page shows today's Met Office wildfire risk around Cheltenham and the Cotswold edge, with a history of grass and woodland fires back to 2010."

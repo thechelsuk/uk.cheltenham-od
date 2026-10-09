@@ -1,0 +1,124 @@
+{% include header.html %}
+{% assign data = site.data["street-works"] %}
+{% assign s = data.summary %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/getting-around">&lAarr; Back to Getting Around</a></li>
+                <li>{% if s.total == 1 %}1 street works{% else %}{{ s.total }} street works{% endif %} within {{ data.radius_miles }} miles of Cheltenham</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="at-a-glance">Street Works at a Glance</h2>
+        <div class="glance-grid">
+            <div class="info-card">
+                <p class="info-card__label">Works in progress</p>
+                <span class="info-card__title">{{ s.in_progress }}</span>
+                <span class="info-card__subtitle">started and not yet finished</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Unplanned works</p>
+                <span class="info-card__title">{{ s.unplanned }}</span>
+                <span class="info-card__subtitle">urgent and emergency repairs</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">Road closures</p>
+                <span class="info-card__title">{{ s.road_closures }}</span>
+                <span class="info-card__subtitle">roads shut while works take place</span>
+            </div>
+            <div class="info-card">
+                <p class="info-card__label">All works listed</p>
+                <span class="info-card__title">{{ s.total }}</span>
+                <span class="info-card__subtitle">current and coming up</span>
+            </div>
+        </div>
+
+        <h2 id="map">Map</h2>
+        <div id="street-works-map" class="map-canvas" aria-label="Map of street works on local roads around Cheltenham"></div>
+
+        <h2 id="works">Street Works</h2>
+        {% if data.items.size == 0 %}
+        <blockquote>
+            <p>There are no street works listed on local roads within {{ data.radius_miles }} miles of Cheltenham at the moment.</p>
+        </blockquote>
+        {% else %}
+        <div class="table-scroll">
+            <table class="street-works-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Street</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Traffic Management</th>
+                        <th scope="col">Carried Out By</th>
+                        <th scope="col" class="date">Starts</th>
+                        <th scope="col" class="date">Ends</th>
+                        <th scope="col" class="number">Miles from Town Centre</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in data.items %}
+                    <tr>
+                        <td>{{ w.street }}</td>
+                        <td>{{ w.area }}</td>
+                        <td>{{ w.kind }}{% if w.category.size > 0 %} ({{ w.category }}){% endif %}</td>
+                        <td>{{ w.status }}</td>
+                        <td>{{ w.traffic_management }}</td>
+                        <td>{{ w.promoter }}</td>
+                        <td class="date" data-val="{{ w.start }}">{% if w.start.size > 10 %}{{ w.start | date: "%Y-%m-%d %H:%M" }}{% else %}{{ w.start }}{% endif %}</td>
+                        <td class="date" data-val="{{ w.end }}">{{ w.end }}</td>
+                        <td class="number" data-val="{{ w.distance_miles }}">{{ w.distance_miles }}</td>
+                        <td class="map">{% include pin.html lat=w.lat lng=w.lon label=w.street %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <p class="street-works-attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            Checked {{ data.refresh }}. Each marker shows the middle of the works, which may stretch further along the street.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Which Roads Does This Page Cover?</h3>
+        <ul>
+            <li>Local streets and roads looked after by Gloucestershire County Council within {{ data.radius_miles }} miles of Cheltenham town centre, including works by utility companies such as water, gas, electricity and broadband providers.</li>
+            <li>Motorways and major A roads are run by National Highways and are on the <a href="/cheltenham-roadworks">roadworks page</a>.</li>
+        </ul>
+
+        <h3>What Is the Difference Between Planned and Unplanned Works?</h3>
+        <ul>
+            <li>Planned works are booked in advance, from a few days to several months ahead.</li>
+            <li>Unplanned works are urgent or emergency repairs, such as a burst water main or a gas leak, which can start straight away and are listed as soon as they are reported.</li>
+        </ul>
+
+        <h3>Where Does the Data Come From?</h3>
+        <ul>
+            <li>Street Manager, the Department for Transport's service that councils and utility companies use to plan and record every street works in England.</li>
+            <li>New works and changes are sent to this site as they happen, and the page is updated every two hours.</li>
+        </ul>
+
+        <h3>Why Isn't a Works on My Street Listed?</h3>
+        <ul>
+            <li>Emergency repairs can be recorded after they start, so they may appear here a little after work begins. For anything not listed, see Gloucestershire County Council's <a href="https://www.gloucestershire.gov.uk/roads/roadworks">roadworks map</a>.</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="street-works-data" type="application/json">{{ data.items | jsonify }}</script>
+<script src="/assets/scripts/street-works-map.js"></script>
+{% include footer.html %}

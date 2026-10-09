@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:50.992142+00:00",
+  "generated_at": "2026-10-09T02:35:43.059970+00:00",
   "name": "Oakley",
   "slug": "oakley",
   "code": "E05015713",
@@ -766,6 +766,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 148,
+    "zone3": 16,
+    "zone2_or_3": 23,
+    "zone3_pct": 10.8,
+    "zone2_or_3_pct": 15.5
+  },
   "venue_types": [
     {
       "type": "Takeaway/sandwich shop",
@@ -793,7 +800,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -852,7 +859,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 1,
@@ -920,7 +927,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -974,7 +981,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1028,7 +1035,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1055,8 +1062,72 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 0,
+      "items": [
+        {
+          "name": "Oakhaven Residential Care Home",
+          "address": "136-140 Hales Road, Cheltenham",
+          "postcode": "GL52 6TB",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-123788035",
+          "lat": 51.900633,
+          "lon": -2.05532,
+          "in_ward": false,
+          "distance_miles": 0.41
+        },
+        {
+          "name": "Windsor Street Care Centre",
+          "address": "35-37 Windsor Street, Cheltenham",
+          "postcode": "GL52 2DG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-723347537",
+          "lat": 51.907157,
+          "lon": -2.063483,
+          "in_ward": false,
+          "distance_miles": 0.57
+        },
+        {
+          "name": "Bay Tree Court Care Centre",
+          "address": "High Street, Prestbury, Cheltenham",
+          "postcode": "GL52 3AU",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-14316247051",
+          "lat": 51.913523,
+          "lon": -2.042775,
+          "in_ward": false,
+          "distance_miles": 0.63
+        },
+        {
+          "name": "Bradbury Gardens",
+          "address": "West Drive, Pittville, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2148821492",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 0.87
+        },
+        {
+          "name": "Thirlestaine Park Care Home",
+          "address": "Humphris Place, Off Sandford Road, Cheltenham",
+          "postcode": "GL53 7GA",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-1919525815",
+          "lat": 51.890224,
+          "lon": -2.068065,
+          "in_ward": false,
+          "distance_miles": 1.31
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1130,6 +1201,85 @@
           "lon": -2.055846,
           "in_ward": false,
           "distance_miles": 0.68
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Oakwood Children Centre Nursery",
+          "address": "Oakwood Children Centre, Clyde Crescent, Cheltenham",
+          "postcode": "GL52 5QH",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.904582,
+          "lon": -2.051517,
+          "in_ward": true,
+          "distance_miles": 0.09
+        },
+        {
+          "name": "4-2-11 Activity Camp",
+          "address": "Prestbury St Mary's Infant School, Bouncers Lane, Cheltenham",
+          "postcode": "GL52 5JB",
+          "detail": "Out-of-school club",
+          "lat": 51.909979,
+          "lon": -2.04613,
+          "in_ward": false,
+          "distance_miles": 0.35
+        },
+        {
+          "name": "Treetops Prestbury Road",
+          "address": "213 Prestbury Road, Cheltenham",
+          "postcode": "GL52 3ES",
+          "detail": "Nursery (full day care)",
+          "lat": 51.908985,
+          "lon": -2.057933,
+          "in_ward": true,
+          "distance_miles": 0.4
+        },
+        {
+          "name": "Berkhampstead Day Nursery",
+          "address": "Berkhampstead School, Pittville Circus Road, Cheltenham",
+          "postcode": "GL52 2QA",
+          "detail": "Nursery (full day care)",
+          "lat": 51.902474,
+          "lon": -2.060162,
+          "in_ward": false,
+          "distance_miles": 0.47
+        },
+        {
+          "name": "Little Explorers @ Pavilion",
+          "address": "New Barn Close, Prestbury, Cheltenham",
+          "postcode": "GL52 3LP",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.91306,
+          "lon": -2.052384,
+          "in_ward": false,
+          "distance_miles": 0.52
+        },
+        {
+          "name": "Circus Day Nursery Ltd",
+          "address": "Pittville Circus Road, Cheltenham",
+          "postcode": "GL52 2PZ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.902913,
+          "lon": -2.062663,
+          "in_ward": false,
+          "distance_miles": 0.56
+        },
+        {
+          "name": "Ashbourne Day Nurseries at Cheltenham",
+          "address": "49 All Saints Road, Cheltenham",
+          "postcode": "GL52 2HF",
+          "detail": "Nursery (full day care)",
+          "lat": 51.90133,
+          "lon": -2.064434,
+          "in_ward": false,
+          "distance_miles": 0.67
         }
       ]
     },

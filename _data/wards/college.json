@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:49.896294+00:00",
+  "generated_at": "2026-10-09T02:35:41.957313+00:00",
   "name": "College",
   "slug": "college",
   "code": "E05015709",
@@ -999,6 +999,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 227,
+    "zone3": 26,
+    "zone2_or_3": 34,
+    "zone3_pct": 11.5,
+    "zone2_or_3_pct": 15.0
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -1034,7 +1041,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -1093,7 +1100,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 1,
@@ -1110,6 +1117,15 @@
         },
         {
           "name": "Nkd Healthcare Limited",
+          "address": "12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW",
+          "postcode": "GL50 1SW",
+          "lat": 51.895618,
+          "lon": -2.082781,
+          "in_ward": false,
+          "distance_miles": 0.53
+        },
+        {
+          "name": "Spa Hc Ltd",
           "address": "12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW",
           "postcode": "GL50 1SW",
           "lat": 51.895618,
@@ -1146,22 +1162,12 @@
           "lon": -2.08004,
           "in_ward": false,
           "distance_miles": 0.65
-        },
-        {
-          "name": "Badham Pharmacy (62 Hewlett Road)",
-          "address": "62 Hewlett Road, Cheltenham, GL52 6AH",
-          "postcode": "GL52 6AH",
-          "detail": "01242 523762",
-          "lat": 51.899207,
-          "lon": -2.066466,
-          "in_ward": false,
-          "distance_miles": 0.68
         }
       ]
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 5,
@@ -1215,7 +1221,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 9,
@@ -1305,7 +1311,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 1,
@@ -1332,8 +1338,83 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 1,
+      "items": [
+        {
+          "name": "Thirlestaine Park Care Home",
+          "address": "Humphris Place, Off Sandford Road, Cheltenham",
+          "postcode": "GL53 7GA",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-1919525815",
+          "lat": 51.890224,
+          "lon": -2.068065,
+          "in_ward": true,
+          "distance_miles": 0.24
+        },
+        {
+          "name": "Faithfull House",
+          "address": "Suffolk Square, Cheltenham",
+          "postcode": "GL50 2DT",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490622",
+          "lat": 51.89276,
+          "lon": -2.080523,
+          "in_ward": false,
+          "distance_miles": 0.33
+        },
+        {
+          "name": "Alexander House Care Home - Cheltenham",
+          "address": "Alexander House, 16 Tivoli Road, Cheltenham",
+          "postcode": "GL50 2TG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-112309865",
+          "lat": 51.891345,
+          "lon": -2.085446,
+          "in_ward": false,
+          "distance_miles": 0.51
+        },
+        {
+          "name": "The Hamptons",
+          "address": "94 Leckhampton Road, Cheltenham",
+          "postcode": "GL53 0BN",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-108741211",
+          "lat": 51.883699,
+          "lon": -2.078908,
+          "in_ward": false,
+          "distance_miles": 0.52
+        },
+        {
+          "name": "The Vicarage",
+          "address": "59 Andover Road, Tivoli, Cheltenham",
+          "postcode": "GL50 2TS",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-115336828",
+          "lat": 51.892773,
+          "lon": -2.087949,
+          "in_ward": false,
+          "distance_miles": 0.63
+        },
+        {
+          "name": "Ravenswood House",
+          "address": "Lansdown Road, Westall Green, Cheltenham",
+          "postcode": "GL50 2JA",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-414375677",
+          "lat": 51.893483,
+          "lon": -2.08811,
+          "in_ward": false,
+          "distance_miles": 0.65
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1407,6 +1488,65 @@
           "lon": -2.083433,
           "in_ward": false,
           "distance_miles": 0.73
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 5,
+      "items": [
+        {
+          "name": "Cheltenham Activity Camps",
+          "address": "Cheltenham College Sports Centre, Thirlestaine Road, Cheltenham",
+          "postcode": "GL53 7AA",
+          "detail": "Childcare",
+          "lat": 51.890542,
+          "lon": -2.076421,
+          "in_ward": true,
+          "distance_miles": 0.12
+        },
+        {
+          "name": "Little Apples Day Nursery",
+          "address": "Cunningham House, Christowe Lane, Cheltenham",
+          "postcode": "GL53 7BY",
+          "detail": "Nursery (full day care)",
+          "lat": 51.890735,
+          "lon": -2.070173,
+          "in_ward": true,
+          "distance_miles": 0.15
+        },
+        {
+          "name": "Angel Day Nursery",
+          "address": "16 Keynsham Road, Cheltenham",
+          "postcode": "GL53 7PX",
+          "detail": "Nursery (full day care)",
+          "lat": 51.89239,
+          "lon": -2.069405,
+          "in_ward": true,
+          "distance_miles": 0.22
+        },
+        {
+          "name": "Naunton Park Pre-School Playgroup",
+          "address": "Naunton Lane, Leckhampton, Cheltenham",
+          "postcode": "GL53 7BJ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.884681,
+          "lon": -2.075016,
+          "in_ward": true,
+          "distance_miles": 0.4
+        },
+        {
+          "name": "Hickory Dickorys Day Nursery Ltd",
+          "address": "19 Cambray Place, Cheltenham",
+          "postcode": "GL50 1JS",
+          "detail": "Nursery (full day care)",
+          "lat": 51.898798,
+          "lon": -2.073717,
+          "in_ward": true,
+          "distance_miles": 0.58
         }
       ]
     },

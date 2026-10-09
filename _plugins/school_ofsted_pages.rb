@@ -65,7 +65,7 @@ module SchoolOfstedPages
           "seo" => SchoolOfstedPages.seo(school),
           "description" => "The latest Ofsted rating, grades by area and full inspection history for #{SchoolOfstedPages.place(school, gias[school['name']])}.",
           "permalink" => "/cheltenham-schools/#{school['slug']}",
-          "type" => "about",
+          "type" => "property",
           "schema" => "school-ofsted"
         )
         site.pages << page

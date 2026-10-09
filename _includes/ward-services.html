@@ -1,0 +1,50 @@
+{% comment %}
+  The services in one group on a ward page (e.g. "Health and Care"), each as a
+  heading and a table. Ward pages show different groups in different sections,
+  so this is called once per group: include ward-services.html group="Health and Care"
+  Expects `w` (the ward) to be assigned by the layout.
+{% endcomment %}
+{% assign ward_group = w.services | where: "group", include.group %}
+{% for s in ward_group %}
+{% assign outside = s.items.size | minus: s.in_ward %}
+<h3>{{ s.label }}</h3>
+{% if s.mode == "in_ward" %}
+<p><small>{{ s.in_ward }} in {{ w.name }}.</small></p>
+{% else %}
+<p><small>{{ s.in_ward }} in {{ w.name }}{% if outside > 0 %}, plus the nearest {{ outside }} beyond its boundary{% endif %}. Distances are in miles from the middle of the ward.</small></p>
+{% endif %}
+{% if s.items.size == 0 %}
+<blockquote>
+    <p>{% if s.mode == "in_ward" %}None in {{ w.name }}.{% else %}Nothing in {{ w.name }} or within three miles of it.{% endif %}</p>
+</blockquote>
+{% else %}
+<div class="table-scroll">
+    <table class="ward-services-table data-table" data-sortable>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Details</th>
+                <th scope="col" class="number">Distance (mi)</th>
+                <th scope="col">Where</th>
+                <th scope="col">Map</th>
+                <th scope="col" class="link">Site</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in s.items %}
+            {% if s.id == "school" %}{% assign ofsted = site.data.ofsted.schools | where: "name", i.name | first %}{% else %}{% assign ofsted = nil %}{% endif %}
+            <tr>
+                <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ i.name }}</a>{% else %}{{ i.name }}{% endif %}</td>
+                <td>{% if i.type %}{{ i.type }}{% if i.detail %}, {% endif %}{% endif %}{% if i.detail %}{{ i.detail }}{% if i.address %}. {% endif %}{% endif %}{% if i.address %}{{ i.address }}{% endif %}{% if ofsted.latest_rated %}. Ofsted: {{ ofsted.latest_rated.outcome }} ({{ ofsted.latest_rated.date | date: "%Y-%m-%d" }}){% endif %}</td>
+                <td class="number">{{ i.distance_miles }}</td>
+                <td>{% if i.in_ward %}In ward{% else %}Nearby{% endif %}</td>
+                <td class="map">{% include pin.html lat=i.lat lng=i.lon label=i.name %}</td>
+                {% assign item_label = i.name | append: " site" %}
+                <td class="link">{% if i.url and i.url contains "http" and s.id != "toilet" %}{% include link-icon.html url=i.url label=item_label %}{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endfor %}

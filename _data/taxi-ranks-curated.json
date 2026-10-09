@@ -1,0 +1,33 @@
+{
+  "note": "Taxi ranks checked in person by Cheltenham Open Data. 'exclude_osm' drops an OpenStreetMap entry that isn't a public rank, 'names' gives an OSM rank a clearer name, and 'add' lists ranks missing from both the council's map and OpenStreetMap, with the date each was checked.",
+  "exclude_osm": [
+    {
+      "id": 2376633485,
+      "reason": "Starline at 6 Royal Well Place is a private hire firm's office, not a public rank"
+    },
+    {
+      "id": 11833078480,
+      "reason": "Bennington Street: marked where a taxi office used to be, long gone; not a public rank (checked 2026-10-09)"
+    },
+    {
+      "id": 1021591012,
+      "reason": "Crescent Terrace: rank has closed (checked 2026-10-09)"
+    }
+  ],
+  "names": [
+    {
+      "osm_id": 2748335972,
+      "name": "Cheltenham Spa station"
+    }
+  ],
+  "add": [
+    {
+      "name": "Queen's Hotel",
+      "street": "Promenade",
+      "lat": 51.896427,
+      "lon": -2.079838,
+      "verified": "2026-10-09",
+      "note": "Outside the Queen's Hotel; designated as a rank in 2024, checked in person"
+    }
+  ]
+}

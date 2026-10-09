@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:48.119580+00:00",
+  "generated_at": "2026-10-09T02:35:40.213380+00:00",
   "name": "All Saints",
   "slug": "all-saints",
   "code": "E05015704",
@@ -627,8 +627,27 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Tree is damaged",
+        "group": "Trees & vegetation",
+        "published": "2026-10-08",
+        "url": "https://www.fixmystreet.com/report/10211671",
+        "lat": 51.895686,
+        "lon": -2.065549
+      }
+    ],
     "planning": [
+      {
+        "ref": "26/01580/CACN",
+        "address": "10 Sydenham Road South Cheltenham Gloucestershire GL52 6EF",
+        "description": "T1 Apple - remove, as tree is resting on the summerhouse now and has fungus on stem.",
+        "status": "No objection",
+        "received": "2026-10-06",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMH24HELM3100&activeTab=summary",
+        "lat": 51.89581,
+        "lon": -2.062653
+      },
       {
         "ref": "26/01556/CLPUD",
         "address": "28 Jersey Avenue Cheltenham Gloucestershire GL52 2SZ",
@@ -843,6 +862,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 191,
+    "zone3": 0,
+    "zone2_or_3": 0,
+    "zone3_pct": 0.0,
+    "zone2_or_3_pct": 0.0
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -878,7 +904,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -937,7 +963,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 3,
@@ -976,7 +1002,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 4,
@@ -1021,7 +1047,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 1,
@@ -1084,7 +1110,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1111,8 +1137,83 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 1,
+      "items": [
+        {
+          "name": "Oakhaven Residential Care Home",
+          "address": "136-140 Hales Road, Cheltenham",
+          "postcode": "GL52 6TB",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-123788035",
+          "lat": 51.900633,
+          "lon": -2.05532,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Windsor Street Care Centre",
+          "address": "35-37 Windsor Street, Cheltenham",
+          "postcode": "GL52 2DG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-723347537",
+          "lat": 51.907157,
+          "lon": -2.063483,
+          "in_ward": false,
+          "distance_miles": 0.54
+        },
+        {
+          "name": "Thirlestaine Park Care Home",
+          "address": "Humphris Place, Off Sandford Road, Cheltenham",
+          "postcode": "GL53 7GA",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-1919525815",
+          "lat": 51.890224,
+          "lon": -2.068065,
+          "in_ward": false,
+          "distance_miles": 0.64
+        },
+        {
+          "name": "Bradbury Gardens",
+          "address": "West Drive, Pittville, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2148821492",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 0.67
+        },
+        {
+          "name": "Faithfull House",
+          "address": "Suffolk Square, Cheltenham",
+          "postcode": "GL50 2DT",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490622",
+          "lat": 51.89276,
+          "lon": -2.080523,
+          "in_ward": false,
+          "distance_miles": 0.81
+        },
+        {
+          "name": "Astell House",
+          "address": "Overton Park Road, Cheltenham",
+          "postcode": "GL50 3BT",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-26660132168",
+          "lat": 51.899347,
+          "lon": -2.086232,
+          "in_ward": false,
+          "distance_miles": 0.91
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1186,6 +1287,65 @@
           "lon": -2.071051,
           "in_ward": false,
           "distance_miles": 0.68
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 5,
+      "items": [
+        {
+          "name": "All Saints Playgroup",
+          "address": "John Wood Room, All Saints Church, All Saints Road",
+          "postcode": "GL52 2EY",
+          "detail": "Nursery (full day care)",
+          "lat": 51.900592,
+          "lon": -2.065102,
+          "in_ward": true,
+          "distance_miles": 0.09
+        },
+        {
+          "name": "Ashbourne Day Nurseries at Cheltenham",
+          "address": "49 All Saints Road, Cheltenham",
+          "postcode": "GL52 2HF",
+          "detail": "Nursery (full day care)",
+          "lat": 51.90133,
+          "lon": -2.064434,
+          "in_ward": true,
+          "distance_miles": 0.14
+        },
+        {
+          "name": "OSCA ST JOHNS",
+          "address": "St. Johns Primary School, Albion Street, Cheltenham",
+          "postcode": "GL52 2SN",
+          "detail": "Out-of-school club",
+          "lat": 51.898567,
+          "lon": -2.069037,
+          "in_ward": true,
+          "distance_miles": 0.19
+        },
+        {
+          "name": "Circus Day Nursery Ltd",
+          "address": "Pittville Circus Road, Cheltenham",
+          "postcode": "GL52 2PZ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.902913,
+          "lon": -2.062663,
+          "in_ward": true,
+          "distance_miles": 0.26
+        },
+        {
+          "name": "Berkhampstead Day Nursery",
+          "address": "Berkhampstead School, Pittville Circus Road, Cheltenham",
+          "postcode": "GL52 2QA",
+          "detail": "Nursery (full day care)",
+          "lat": 51.902474,
+          "lon": -2.060162,
+          "in_ward": true,
+          "distance_miles": 0.29
         }
       ]
     },

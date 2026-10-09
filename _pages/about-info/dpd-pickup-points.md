@@ -5,7 +5,7 @@ seo_title: "DPD Pickup Points in Cheltenham: Where to Collect Parcels"
 seo: "Cheltenham DPD Pickup points — drop off and collect parcels at local shops, newsagents and Post Offices, sourced from DPD's own pickup point finder."
 permalink: /cheltenham-dpd-pickup-points
 description: "Every DPD Pickup drop-off and collection point in Cheltenham, with a map and opening hours, sourced from DPD's own pickup point finder."
-type: "about"
+type: "community"
 schema: dpd-pickup
 ---
 

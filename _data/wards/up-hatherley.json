@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:53.502998+00:00",
+  "generated_at": "2026-10-09T02:35:45.604926+00:00",
   "name": "Up Hatherley",
   "slug": "up-hatherley",
   "code": "E05015722",
@@ -640,7 +640,16 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Bad pavement lighting and overgrown weeds etc",
+        "group": "Footpaths & pavements",
+        "published": "2026-10-08",
+        "url": "https://www.fixmystreet.com/report/10212100",
+        "lat": 51.889183,
+        "lon": -2.114253
+      }
+    ],
     "planning": [
       {
         "ref": "26/01495/CONDIT",
@@ -690,6 +699,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 162,
+    "zone3": 0,
+    "zone2_or_3": 9,
+    "zone3_pct": 0.0,
+    "zone2_or_3_pct": 5.6
+  },
   "venue_types": [
     {
       "type": "Takeaway/sandwich shop",
@@ -717,7 +733,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -776,7 +792,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 2,
@@ -852,7 +868,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 1,
@@ -915,7 +931,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 1,
@@ -978,7 +994,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1005,8 +1021,72 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 0,
+      "items": [
+        {
+          "name": "Richmond Village Cheltenham",
+          "address": "Care Home, Hatherley Lane, Cheltenham",
+          "postcode": "GL51 6PN",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-8379263850",
+          "lat": 51.890931,
+          "lon": -2.12545,
+          "in_ward": false,
+          "distance_miles": 0.56
+        },
+        {
+          "name": "Ambleside",
+          "address": "69 Hatherley Road, Cheltenham",
+          "postcode": "GL51 6EG",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-137768877",
+          "lat": 51.890964,
+          "lon": -2.101357,
+          "in_ward": false,
+          "distance_miles": 0.73
+        },
+        {
+          "name": "Whittington House Nursing Home",
+          "address": "58 Whittington Road, Cheltenham",
+          "postcode": "GL51 6BL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-948485961",
+          "lat": 51.894717,
+          "lon": -2.124734,
+          "in_ward": false,
+          "distance_miles": 0.75
+        },
+        {
+          "name": "The Granleys",
+          "address": "21 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-138901716",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.81
+        },
+        {
+          "name": "The Knole",
+          "address": "23 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-442981675",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.81
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1080,6 +1160,75 @@
           "lon": -2.100005,
           "in_ward": false,
           "distance_miles": 0.74
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 6,
+      "items": [
+        {
+          "name": "Pip and Jim's",
+          "address": "Lakeside Primary School, Hatherley Road, Cheltenham",
+          "postcode": "GL51 6HR",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.88755,
+          "lon": -2.117885,
+          "in_ward": true,
+          "distance_miles": 0.18
+        },
+        {
+          "name": "Playhouse Day Nursery",
+          "address": "287 Hatherley Road, Cheltenham",
+          "postcode": "GL51 6HT",
+          "detail": "Nursery (full day care)",
+          "lat": 51.886478,
+          "lon": -2.119655,
+          "in_ward": true,
+          "distance_miles": 0.18
+        },
+        {
+          "name": "Stay And Play",
+          "address": "Lakeside Primary School, Hatherley Road, Cheltenham",
+          "postcode": "GL51 6HR",
+          "detail": "Out-of-school club",
+          "lat": 51.88755,
+          "lon": -2.117885,
+          "in_ward": true,
+          "distance_miles": 0.18
+        },
+        {
+          "name": "11 Plus Tutoring Academy Cheltenham",
+          "address": "St Margaret's Hall, 20 Coniston Road, Cheltenham",
+          "postcode": "GL51 3NU",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.889238,
+          "lon": -2.110435,
+          "in_ward": true,
+          "distance_miles": 0.35
+        },
+        {
+          "name": "Atlas Camps Cheltenham - Greatfield Park",
+          "address": "Greatfield Park Primary School, Hulbert Crescent, Up Hatherley, Cheltenham",
+          "postcode": "GL51 3FZ",
+          "detail": "Out-of-school club",
+          "lat": 51.880987,
+          "lon": -2.107945,
+          "in_ward": true,
+          "distance_miles": 0.45
+        },
+        {
+          "name": "The Reddings Playgroup",
+          "address": "Greatfield Park Primary School, Hulbert Crescent, Up Hatherley, Cheltenham",
+          "postcode": "GL51 3FZ",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.880987,
+          "lon": -2.107945,
+          "in_ward": true,
+          "distance_miles": 0.45
         }
       ]
     },

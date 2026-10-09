@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:53.217258+00:00",
+  "generated_at": "2026-10-09T02:35:45.317449+00:00",
   "name": "Swindon Village",
   "slug": "swindon-village",
   "code": "E05015721",
@@ -820,6 +820,16 @@
     "fix_my_street": [],
     "planning": [
       {
+        "ref": "26/01590/FUL",
+        "address": "8 Seneca Way Cheltenham Gloucestershire GL50 4SG",
+        "description": "Single storey rear extension.",
+        "status": "Pending Consideration",
+        "received": "2026-10-07",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMIWRBELM3K00&activeTab=summary",
+        "lat": 51.916869,
+        "lon": -2.088171
+      },
+      {
         "ref": "26/01557/FUL",
         "address": "McDonalds Restaurants Ltd Kingsditch Retail Park Kingsditch Lane Cheltenham Gloucestershire GL51 9PX",
         "description": "Refurbishment of the restaurant to include a minor extension and associated internal and external works.",
@@ -1048,6 +1058,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 165,
+    "zone3": 5,
+    "zone2_or_3": 7,
+    "zone3_pct": 3.0,
+    "zone2_or_3_pct": 4.2
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -1079,7 +1096,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -1138,7 +1155,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 2,
@@ -1216,7 +1233,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 1,
@@ -1279,7 +1296,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 1,
@@ -1342,7 +1359,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1360,8 +1377,72 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 0,
+      "items": [
+        {
+          "name": "Orchard Leigh",
+          "address": "Hayden Road, Cheltenham",
+          "postcode": "GL51 0SN",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-129459945",
+          "lat": 51.916034,
+          "lon": -2.108582,
+          "in_ward": false,
+          "distance_miles": 0.95
+        },
+        {
+          "name": "Wentworth Court Care Home",
+          "address": "Village Road, Cheltenham",
+          "postcode": "GL51 0BG",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-1955636004",
+          "lat": 51.912573,
+          "lon": -2.107469,
+          "in_ward": false,
+          "distance_miles": 1.07
+        },
+        {
+          "name": "Bradbury Gardens",
+          "address": "West Drive, Pittville, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2148821492",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 1.38
+        },
+        {
+          "name": "Sandfields",
+          "address": "St. Georges Road, Cheltenham",
+          "postcode": "GL50 3EL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-19896801053",
+          "lat": 51.90142,
+          "lon": -2.091265,
+          "in_ward": false,
+          "distance_miles": 1.56
+        },
+        {
+          "name": "St Faith's Nursing Home",
+          "address": "Malvern Road, Cheltenham",
+          "postcode": "GL50 2NR",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490637",
+          "lat": 51.900485,
+          "lon": -2.090856,
+          "in_ward": false,
+          "distance_miles": 1.63
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 1,
@@ -1425,6 +1506,75 @@
           "lon": -2.071051,
           "in_ward": false,
           "distance_miles": 1.36
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 6,
+      "items": [
+        {
+          "name": "Swindon Village Early Years",
+          "address": "Swindon Village Hall, Church Road, Swindon Village, Cheltenham",
+          "postcode": "GL51 9QP",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.924104,
+          "lon": -2.091384,
+          "in_ward": true,
+          "distance_miles": 0.04
+        },
+        {
+          "name": "The Terrapins Out of Hours Club",
+          "address": "Swindon Village Primary School, Church Road, Swindon Village, Cheltenham",
+          "postcode": "GL51 9QP",
+          "detail": "Out-of-school club",
+          "lat": 51.924104,
+          "lon": -2.091384,
+          "in_ward": true,
+          "distance_miles": 0.04
+        },
+        {
+          "name": "Mary Godwin Under Fives",
+          "address": "The Mary Godwin Pavillion, Wymans Lane, Swindon Village, Cheltenham",
+          "postcode": "GL51 9QS",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.923194,
+          "lon": -2.094116,
+          "in_ward": true,
+          "distance_miles": 0.17
+        },
+        {
+          "name": "Explore Learning Cheltenham",
+          "address": "Sainsburys Supermarkets Ltd, Gallagher Retail Park, Cheltenham",
+          "postcode": "GL51 9RR",
+          "detail": "Out-of-school club",
+          "lat": 51.918421,
+          "lon": -2.103659,
+          "in_ward": true,
+          "distance_miles": 0.68
+        },
+        {
+          "name": "Gardners Lane Children Centre Nursery",
+          "address": "Gardners Lane Children's Centre, Gardners Lane, Cheltenham",
+          "postcode": "GL51 9JW",
+          "detail": "Nursery (full day care)",
+          "lat": 51.913039,
+          "lon": -2.087131,
+          "in_ward": true,
+          "distance_miles": 0.77
+        },
+        {
+          "name": "Happy Kids Education Centre Ltd",
+          "address": "Unit 6, Manchester Park, Tewkesbury Road, Cheltenham",
+          "postcode": "GL51 9EJ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.912161,
+          "lon": -2.095125,
+          "in_ward": true,
+          "distance_miles": 0.84
         }
       ]
     },

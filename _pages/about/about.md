@@ -16,7 +16,7 @@ It's free, fast and independent: no pop-ups, no tracking cookies and no clickbai
 
 ## Why It Exists
 
-Useful local information is scattered across council PDFs, government spreadsheets and national websites that rarely focus on Cheltenham. This site brings it together and keeps it current, so you can check the cheapest fuel nearby, whether a street is in a flood zone or how a school was rated in a few seconds. [Read why Cheltenham Open Data was built →](/news/why-cheltenham-open-data-exists)
+Useful local information is scattered across council PDFs, government spreadsheets and national sites that rarely focus on Cheltenham. This site brings it together and keeps it current, so you can check the cheapest fuel nearby, whether a street is in a flood zone or how a school was rated in a few seconds. [Read why Cheltenham Open Data was built →](/news/why-cheltenham-open-data-exists)
 
 ## Who Runs It
 
@@ -24,14 +24,15 @@ Cheltenham Open Data is built and run by Mat Benfield ([thechels.uk](https://the
 
 ## What You'll Find Here
 
-More than 130 pages, in six topics:
+{% include site-figures.html %}
+{{ data_pages_count }} data pages in six topics, drawn from {{ site.data.sources | size }} data sources:
 
-- **[Safety & Environment](/explore/safety-environment)**: crime figures, road collisions, flood warnings and river levels, air and water quality, power cuts and street reports.
-- **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks, roadworks, buses, trains and cycle routes.
+- **[Safety & Environment](/explore/safety-environment)**: crime figures, road collisions, flood warnings and river levels, air and water quality, power cuts, wildfire risk and street reports.
+- **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks, roadworks, street works, buses, trains and cycle routes.
 - **[Home & Property](/explore/home-property)**: house prices, rents, council tax, planning, broadband and a profile of every ward.
-- **[Community & Support](/explore/community-support)**: food banks, helplines, GPs, pharmacies and dentists, A&E waiting times, care homes and charities.
+- **[Community & Support](/explore/community-support)**: food banks, helplines, GPs, pharmacies and dentists, A&E waiting times, care homes, charities and the COVID-19 pandemic.
 - **[Things to Do](/explore/things-to-do)**: events, festivals, sport, where to eat, play parks and places to stay.
-- **[About Cheltenham](/explore/about-info)**: population, the economy, politics, schools and childcare, local news and the weather.
+- **[About Cheltenham](/explore/about-info)**: the town [in numbers](/cheltenham-in-numbers), population, the economy, politics, schools and childcare, local news and the weather.
 
 There's also a free [weekly newsletter](/newsletter), local [classifieds](/cheltenham-classifieds) and [Fix My Street](/cheltenham-fix-my-street).
 

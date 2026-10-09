@@ -1,7 +1,7 @@
 ---
 layout: covid
 title: "COVID-19 in Cheltenham"
-seo_title: "COVID-19 in Cheltenham: Cases, Deaths and Hospital Admissions 2020 to 2023"
+seo_title: "COVID-19 in Cheltenham: Cases, Deaths & Admissions 2020-23"
 seo: "COVID-19 in Cheltenham from 2020 to 2023: weekly cases, testing, deaths, hospital admissions and vaccine uptake, with a timeline of the pandemic."
 permalink: /cheltenham-covid-19
 description: "How the COVID-19 pandemic unfolded in Cheltenham from February 2020 to December 2023: cases, testing, deaths, hospital admissions and vaccine uptake."

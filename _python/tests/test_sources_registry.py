@@ -20,6 +20,8 @@ NOT_SOURCE_DATA = {
     "news_digests.json", "fix-my-street-categories.json", "general-election-dates.json",
     "ignore-stations.json", "fuel-stations.json", "weather-today.json", "wards/index.json",
     "newsletter-venues.json",
+    # Built only from other _data files, each registered under its own source.
+    "cheltenham-numbers.json",
 }
 
 

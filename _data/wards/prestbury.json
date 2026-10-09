@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:51.885122+00:00",
+  "generated_at": "2026-10-09T02:35:43.954291+00:00",
   "name": "Prestbury",
   "slug": "prestbury",
   "code": "E05015716",
@@ -980,6 +980,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 169,
+    "zone3": 2,
+    "zone2_or_3": 9,
+    "zone3_pct": 1.2,
+    "zone2_or_3_pct": 5.3
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -1007,7 +1014,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -1066,7 +1073,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 0,
@@ -1124,7 +1131,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -1178,7 +1185,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1232,7 +1239,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1259,8 +1266,83 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 1,
+      "items": [
+        {
+          "name": "Bay Tree Court Care Centre",
+          "address": "High Street, Prestbury, Cheltenham",
+          "postcode": "GL52 3AU",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-14316247051",
+          "lat": 51.913523,
+          "lon": -2.042775,
+          "in_ward": true,
+          "distance_miles": 0.64
+        },
+        {
+          "name": "Windsor Street Care Centre",
+          "address": "35-37 Windsor Street, Cheltenham",
+          "postcode": "GL52 2DG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-723347537",
+          "lat": 51.907157,
+          "lon": -2.063483,
+          "in_ward": false,
+          "distance_miles": 0.81
+        },
+        {
+          "name": "Bradbury Gardens",
+          "address": "West Drive, Pittville, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2148821492",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 0.89
+        },
+        {
+          "name": "Oakhaven Residential Care Home",
+          "address": "136-140 Hales Road, Cheltenham",
+          "postcode": "GL52 6TB",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-123788035",
+          "lat": 51.900633,
+          "lon": -2.05532,
+          "in_ward": false,
+          "distance_miles": 1.2
+        },
+        {
+          "name": "Astell House",
+          "address": "Overton Park Road, Cheltenham",
+          "postcode": "GL50 3BT",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-26660132168",
+          "lat": 51.899347,
+          "lon": -2.086232,
+          "in_ward": false,
+          "distance_miles": 1.82
+        },
+        {
+          "name": "Sandfields",
+          "address": "St. Georges Road, Cheltenham",
+          "postcode": "GL50 3EL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-19896801053",
+          "lat": 51.90142,
+          "lon": -2.091265,
+          "in_ward": false,
+          "distance_miles": 1.89
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1334,6 +1416,85 @@
           "lon": -2.059515,
           "in_ward": false,
           "distance_miles": 1.12
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Little Explorers @ Pavilion",
+          "address": "New Barn Close, Prestbury, Cheltenham",
+          "postcode": "GL52 3LP",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.91306,
+          "lon": -2.052384,
+          "in_ward": true,
+          "distance_miles": 0.37
+        },
+        {
+          "name": "Treetops Prestbury Road",
+          "address": "213 Prestbury Road, Cheltenham",
+          "postcode": "GL52 3ES",
+          "detail": "Nursery (full day care)",
+          "lat": 51.908985,
+          "lon": -2.057933,
+          "in_ward": false,
+          "distance_miles": 0.63
+        },
+        {
+          "name": "4-2-11 Activity Camp",
+          "address": "Prestbury St Mary's Infant School, Bouncers Lane, Cheltenham",
+          "postcode": "GL52 5JB",
+          "detail": "Out-of-school club",
+          "lat": 51.909979,
+          "lon": -2.04613,
+          "in_ward": true,
+          "distance_miles": 0.69
+        },
+        {
+          "name": "Kumon Pittville Park",
+          "address": "Old Civil Defence HQ, Central Cross Dr, Cheltenham",
+          "postcode": "GL52 2TW",
+          "detail": "Out-of-school club",
+          "lat": 51.907146,
+          "lon": -2.066856,
+          "in_ward": false,
+          "distance_miles": 0.88
+        },
+        {
+          "name": "Atlas Camps Cheltenham - Dunalley",
+          "address": "Dunalley Cp School, West Drive, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Out-of-school club",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 0.89
+        },
+        {
+          "name": "Oakwood Children Centre Nursery",
+          "address": "Oakwood Children Centre, Clyde Crescent, Cheltenham",
+          "postcode": "GL52 5QH",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.904582,
+          "lon": -2.051517,
+          "in_ward": false,
+          "distance_miles": 0.94
+        },
+        {
+          "name": "Treetops Wellington Road",
+          "address": "2 Wellington Road, Cheltenham",
+          "postcode": "GL52 2DY",
+          "detail": "Nursery (full day care)",
+          "lat": 51.90541,
+          "lon": -2.067638,
+          "in_ward": false,
+          "distance_miles": 1.0
         }
       ]
     },

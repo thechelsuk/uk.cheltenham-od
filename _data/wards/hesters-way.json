@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:50.176670+00:00",
+  "generated_at": "2026-10-09T02:35:42.242101+00:00",
   "name": "Hesters Way",
   "slug": "hesters-way",
   "code": "E05015710",
@@ -767,6 +767,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 213,
+    "zone3": 0,
+    "zone2_or_3": 0,
+    "zone3_pct": 0.0,
+    "zone2_or_3_pct": 0.0
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -785,7 +792,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
@@ -854,7 +861,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 0,
@@ -910,7 +917,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -964,7 +971,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1018,7 +1025,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1045,8 +1052,94 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Royal Court",
+          "address": "Fiddlers Green Lane, Cheltenham",
+          "postcode": "GL51 0SF",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2869231168",
+          "lat": 51.904107,
+          "lon": -2.122086,
+          "in_ward": true,
+          "distance_miles": 0.21
+        },
+        {
+          "name": "Monkscroft Care Centre",
+          "address": "Shelley Road, Cheltenham",
+          "postcode": "GL51 7DP",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-451476070",
+          "lat": 51.900426,
+          "lon": -2.116654,
+          "in_ward": false,
+          "distance_miles": 0.28
+        },
+        {
+          "name": "CareTech Community Services Limited - 15 Brooklyn Road",
+          "address": "15 Brooklyn Road, Cheltenham",
+          "postcode": "GL51 8DT",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-133435604",
+          "lat": 51.902977,
+          "lon": -2.110353,
+          "in_ward": false,
+          "distance_miles": 0.31
+        },
+        {
+          "name": "Wentworth Court Care Home",
+          "address": "Village Road, Cheltenham",
+          "postcode": "GL51 0BG",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-1955636004",
+          "lat": 51.912573,
+          "lon": -2.107469,
+          "in_ward": true,
+          "distance_miles": 0.69
+        },
+        {
+          "name": "Bredon View",
+          "address": "24-26 Libertus Road, Cheltenham",
+          "postcode": "GL51 7EL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-122110107",
+          "lat": 51.898478,
+          "lon": -2.104121,
+          "in_ward": false,
+          "distance_miles": 0.7
+        },
+        {
+          "name": "Whittington House Nursing Home",
+          "address": "58 Whittington Road, Cheltenham",
+          "postcode": "GL51 6BL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-948485961",
+          "lat": 51.894717,
+          "lon": -2.124734,
+          "in_ward": false,
+          "distance_miles": 0.75
+        },
+        {
+          "name": "The Granleys",
+          "address": "21 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-138901716",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.76
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 3,
@@ -1080,6 +1173,65 @@
           "lon": -2.111337,
           "in_ward": true,
           "distance_miles": 0.48
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 5,
+      "items": [
+        {
+          "name": "Dingley's Promise Cheltenham",
+          "address": "Dingley's Promise Centre, Lewis Road, Cheltenham",
+          "postcode": "GL51 0HZ",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.903589,
+          "lon": -2.119134,
+          "in_ward": true,
+          "distance_miles": 0.11
+        },
+        {
+          "name": "Puddles Nursery",
+          "address": "Hesters Way Community Resource Centre, Cassin Drive, Cheltenham",
+          "postcode": "GL51 7SU",
+          "detail": "Nursery (full day care)",
+          "lat": 51.902026,
+          "lon": -2.116935,
+          "in_ward": true,
+          "distance_miles": 0.17
+        },
+        {
+          "name": "Code Ninjas Cheltenham",
+          "address": "Gloucestershire College, Cheltenham Campus, Princess Elizabeth Way, Cheltenham",
+          "postcode": "GL51 7SJ",
+          "detail": "Out-of-school club",
+          "lat": 51.90162,
+          "lon": -2.118184,
+          "in_ward": true,
+          "distance_miles": 0.21
+        },
+        {
+          "name": "My Ohana Nursery Cheltenham",
+          "address": "Gloscat, Cheltenham Campus, Princess Elizabeth Way, Cheltenham",
+          "postcode": "GL51 7SJ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.90162,
+          "lon": -2.118184,
+          "in_ward": true,
+          "distance_miles": 0.21
+        },
+        {
+          "name": "Hester Way Children Centre Nursery",
+          "address": "Hester Way Children Centre, Dill Avenue, Cheltenham",
+          "postcode": "GL51 0ES",
+          "detail": "Nursery (full day care)",
+          "lat": 51.91105,
+          "lon": -2.111521,
+          "in_ward": true,
+          "distance_miles": 0.51
         }
       ]
     },

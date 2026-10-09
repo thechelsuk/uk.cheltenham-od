@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:49.590112+00:00",
+  "generated_at": "2026-10-09T02:35:41.667551+00:00",
   "name": "Charlton Park",
   "slug": "charlton-park",
   "code": "E05015708",
@@ -764,13 +764,22 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Vegetation around culvert by 57 Sandy Lane up to southfield Manor is overgrown",
+        "group": "Trees & vegetation",
+        "published": "2026-10-08",
+        "url": "https://www.fixmystreet.com/report/10211317",
+        "lat": 51.87491,
+        "lon": -2.062773
+      }
+    ],
     "planning": [
       {
         "ref": "26/01529/CLPUD",
         "address": "284 Old Bath Road Cheltenham Gloucestershire GL53 9AP",
-        "description": "Proposed rear dormer to exiting loft conversion.",
-        "status": "Pending Consideration",
+        "description": "Proposed rear dormer to existing loft conversion.",
+        "status": "Issued",
         "received": "2026-09-25",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLX8X8EL0M300&activeTab=summary",
         "lat": 51.875872,
@@ -780,7 +789,7 @@
         "ref": "26/01517/AMEND",
         "address": "194 London Road Cheltenham Gloucestershire GL52 6HJ",
         "description": "Non-material amendment of granted permission 24/00860/FUL; to allow for changes to the landscaping plan and removal of green roofs.",
-        "status": "Pending Consideration",
+        "status": "Allow",
         "received": "2026-09-23",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLTD9OELLYU00&activeTab=summary",
         "lat": 51.892331,
@@ -948,6 +957,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 176,
+    "zone3": 1,
+    "zone2_or_3": 2,
+    "zone3_pct": 0.6,
+    "zone2_or_3_pct": 1.1
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -979,7 +995,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -1038,7 +1054,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 0,
@@ -1096,7 +1112,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -1150,7 +1166,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1204,7 +1220,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1231,8 +1247,94 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Bafford House",
+          "address": "Bafford House, Newcourt Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8DQ",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-11601666215",
+          "lat": 51.880619,
+          "lon": -2.056385,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Lilleybrook Care Home",
+          "address": "Pilley Lane, Cheltenham",
+          "postcode": "GL53 9ER",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-983777097",
+          "lat": 51.877535,
+          "lon": -2.073203,
+          "in_ward": false,
+          "distance_miles": 0.47
+        },
+        {
+          "name": "Gloucestershire House - Care Home with Nursing Physical Disabilities",
+          "address": "Charlton Lane, Leckhampton, Cheltenham",
+          "postcode": "GL53 9HD",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-120087914",
+          "lat": 51.880044,
+          "lon": -2.072263,
+          "in_ward": false,
+          "distance_miles": 0.51
+        },
+        {
+          "name": "Charlton Kings Care Home",
+          "address": "Moorend Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 9AX",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2897246286",
+          "lat": 51.883846,
+          "lon": -2.057217,
+          "in_ward": true,
+          "distance_miles": 0.59
+        },
+        {
+          "name": "The Hamptons",
+          "address": "94 Leckhampton Road, Cheltenham",
+          "postcode": "GL53 0BN",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-108741211",
+          "lat": 51.883699,
+          "lon": -2.078908,
+          "in_ward": false,
+          "distance_miles": 0.89
+        },
+        {
+          "name": "Grevill House",
+          "address": "279 London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6YL",
+          "detail": "Not yet rated",
+          "url": "https://www.cqc.org.uk/location/1-26563133403",
+          "lat": 51.883483,
+          "lon": -2.04494,
+          "in_ward": false,
+          "distance_miles": 0.91
+        },
+        {
+          "name": "Nazareth House - Cheltenham",
+          "address": "London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6YJ",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-403200219",
+          "lat": 51.885091,
+          "lon": -2.047048,
+          "in_ward": false,
+          "distance_miles": 0.91
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1306,6 +1408,75 @@
           "lon": -2.044205,
           "in_ward": false,
           "distance_miles": 0.86
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 1,
+      "items": [
+        {
+          "name": "Paintpot",
+          "address": "Kings Hall, Church Piece, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8JN",
+          "detail": "Out-of-school club",
+          "lat": 51.881853,
+          "lon": -2.051244,
+          "in_ward": false,
+          "distance_miles": 0.63
+        },
+        {
+          "name": "Charlie Bears Childcare Limited",
+          "address": "38 Church street, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AR",
+          "detail": "Nursery (full day care)",
+          "lat": 51.88206,
+          "lon": -2.050721,
+          "in_ward": false,
+          "distance_miles": 0.66
+        },
+        {
+          "name": "Paintpot",
+          "address": "Charlton Kings Baptist Church, 38 Church Street, Charlton Kings Cheltenham",
+          "postcode": "GL53 8AR",
+          "detail": "Out-of-school club",
+          "lat": 51.88206,
+          "lon": -2.050721,
+          "in_ward": false,
+          "distance_miles": 0.66
+        },
+        {
+          "name": "art-K Cheltenham",
+          "address": "10 Church Street, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AR",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.88206,
+          "lon": -2.050721,
+          "in_ward": false,
+          "distance_miles": 0.66
+        },
+        {
+          "name": "Partou Westfields Day Nursery & Pre-School",
+          "address": "121 Leckhampton Road, Cheltenham",
+          "postcode": "GL53 0DQ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.878691,
+          "lon": -2.077665,
+          "in_ward": false,
+          "distance_miles": 0.68
+        },
+        {
+          "name": "4-2-11 Activity Camp",
+          "address": "St. Edwards School, Cirencester Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8EY",
+          "detail": "Out-of-school club",
+          "lat": 51.885742,
+          "lon": -2.060387,
+          "in_ward": true,
+          "distance_miles": 0.69
         }
       ]
     },

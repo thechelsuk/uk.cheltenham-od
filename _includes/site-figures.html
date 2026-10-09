@@ -1,0 +1,11 @@
+{% comment %}
+  Live counts of what the site publishes, shared by the press and about pages:
+  data pages (every menu entry and its sub-pages), posts, data sources and feeds.
+{% endcomment %}
+{% assign data_pages = 0 %}
+{% for item in site.navigation_header %}
+{% assign data_pages = data_pages | plus: 1 %}
+{% if item.children %}{% assign data_pages = data_pages | plus: item.children.size %}{% endif %}
+{% endfor %}
+{% assign findings = site.posts | where_exp: "post", "post.finding" %}
+{% assign data_pages_count = data_pages %}

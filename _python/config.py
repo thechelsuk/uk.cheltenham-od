@@ -30,6 +30,8 @@ POSTCODE_DISTRICTS = ("GL50", "GL51", "GL52", "GL53", "GL54")
 NOMIS_API = "https://www.nomisweb.co.uk/api/v01/dataset"
 ODS_API = "https://directory.spineservices.nhs.uk/ORD/2-0-0"
 POSTCODES_API = "https://api.postcodes.io/postcodes"
+# The receiver Worker (uk.cheltenham-od.receiver) holding Street Manager works.
+STREET_WORKS_URL = "https://cheltenham-od-receiver.cloudflare-10f.workers.dev/works.json"
 
 # Public Overpass (OpenStreetMap) servers, tried in order; the next one is
 # used when a server is down or busy.
@@ -69,5 +71,6 @@ RACING_RADIUS_M = 8000
 RIVER_LEVELS_RADIUS_KM = {"level": 6, "rainfall": 12}
 ROADWORKS_RADIUS_MILES = 10
 SEWAGE_RADIUS_MILES = 4
+STREET_WORKS_RADIUS_MILES = 6
 WATER_QUALITY_RADIUS_KM = 8
 WILDFIRE_RADIUS_KM = 10

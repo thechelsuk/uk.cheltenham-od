@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:49.002826+00:00",
+  "generated_at": "2026-10-09T02:35:41.085357+00:00",
   "name": "Benhall, the Reddings & Fiddler's Green",
   "slug": "benhall-the-reddings-fiddlers-green",
   "code": "E05015706",
@@ -656,8 +656,27 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Shared footpath cycle.path is overgrown with vegetation making it narrow for walkers when bikes come flying past",
+        "group": "Footpaths & pavements",
+        "published": "2026-10-08",
+        "url": "https://www.fixmystreet.com/report/10211865",
+        "lat": 51.895535,
+        "lon": -2.124998
+      }
+    ],
     "planning": [
+      {
+        "ref": "26/01588/FUL",
+        "address": "Cherry Court 2 Leyson Road The Reddings Cheltenham Gloucestershire GL51 6RU",
+        "description": "Erection of a front porch, new front dormer, and single storey rear extension.",
+        "status": "Pending Consideration",
+        "received": "2026-10-07",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMIWPWELM3F00&activeTab=summary",
+        "lat": 51.887247,
+        "lon": -2.131441
+      },
       {
         "ref": "26/01553/FUL",
         "address": "ASDA Stores Limited Hatherley Lane Cheltenham Gloucestershire GL51 6PN",
@@ -814,6 +833,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 170,
+    "zone3": 1,
+    "zone2_or_3": 1,
+    "zone3_pct": 0.6,
+    "zone2_or_3_pct": 0.6
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -841,7 +867,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -900,7 +926,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 1,
@@ -966,7 +992,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -1020,7 +1046,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1074,7 +1100,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1101,8 +1127,94 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Whittington House Nursing Home",
+          "address": "58 Whittington Road, Cheltenham",
+          "postcode": "GL51 6BL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-948485961",
+          "lat": 51.894717,
+          "lon": -2.124734,
+          "in_ward": true,
+          "distance_miles": 0.17
+        },
+        {
+          "name": "Richmond Village Cheltenham",
+          "address": "Care Home, Hatherley Lane, Cheltenham",
+          "postcode": "GL51 6PN",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-8379263850",
+          "lat": 51.890931,
+          "lon": -2.12545,
+          "in_ward": true,
+          "distance_miles": 0.23
+        },
+        {
+          "name": "Monkscroft Care Centre",
+          "address": "Shelley Road, Cheltenham",
+          "postcode": "GL51 7DP",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-451476070",
+          "lat": 51.900426,
+          "lon": -2.116654,
+          "in_ward": false,
+          "distance_miles": 0.69
+        },
+        {
+          "name": "Royal Court",
+          "address": "Fiddlers Green Lane, Cheltenham",
+          "postcode": "GL51 0SF",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2869231168",
+          "lat": 51.904107,
+          "lon": -2.122086,
+          "in_ward": false,
+          "distance_miles": 0.77
+        },
+        {
+          "name": "The Granleys",
+          "address": "21 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-138901716",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.93
+        },
+        {
+          "name": "The Knole",
+          "address": "23 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-442981675",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.93
+        },
+        {
+          "name": "CareTech Community Services Limited - 15 Brooklyn Road",
+          "address": "15 Brooklyn Road, Cheltenham",
+          "postcode": "GL51 8DT",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-133435604",
+          "lat": 51.902977,
+          "lon": -2.110353,
+          "in_ward": false,
+          "distance_miles": 1.0
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1176,6 +1288,65 @@
           "lon": -2.100659,
           "in_ward": false,
           "distance_miles": 1.18
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 5,
+      "items": [
+        {
+          "name": "Your Co-Op Little Pioneers Nursery and Pre-School Cheltenham Park",
+          "address": "Unit 4 Corinthian Park, Corinthian Way, The Reddings, Cheltenham",
+          "postcode": "GL51 6UP",
+          "detail": "Nursery (full day care)",
+          "lat": 51.891604,
+          "lon": -2.135406,
+          "in_ward": true,
+          "distance_miles": 0.33
+        },
+        {
+          "name": "The Reddings Playgroup",
+          "address": "The Reddings Community Centre, North Road West, The Reddings, Cheltenham",
+          "postcode": "GL51 6RF",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.89038,
+          "lon": -2.136391,
+          "in_ward": true,
+          "distance_miles": 0.41
+        },
+        {
+          "name": "Foxcubs Day Nursery",
+          "address": "Chapel House, Old Reddings Road, The Reddings, Cheltenham",
+          "postcode": "GL51 6SA",
+          "detail": "Nursery (full day care)",
+          "lat": 51.887675,
+          "lon": -2.127069,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Move More Camps - St Marks",
+          "address": "St Marks C Of E Junior School, Robert Burns Avenue, Cheltenham",
+          "postcode": "GL51 6NU",
+          "detail": "Out-of-school club",
+          "lat": 51.891964,
+          "lon": -2.118027,
+          "in_ward": true,
+          "distance_miles": 0.46
+        },
+        {
+          "name": "St Marks Out Of School Club",
+          "address": "St Marks C Of E Junior School, Robert Burns Avenue, Cheltenham",
+          "postcode": "GL51 6NU",
+          "detail": "Out-of-school club",
+          "lat": 51.891964,
+          "lon": -2.118027,
+          "in_ward": true,
+          "distance_miles": 0.46
         }
       ]
     },

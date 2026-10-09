@@ -1,5 +1,7 @@
 {% include header.html %}
 {% assign items = site.navigation_header | where: "group", page.group %}
+{% comment %}Pages that belong to this category without a main menu entry set `section` to its name.{% endcomment %}
+{% assign section_pages = site.pages | where: "section", page.group | sort: "title" %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -25,6 +27,9 @@
                 </ul>
                 {% endif %}
             </li>
+            {% endfor %}
+            {% for p in section_pages %}
+            <li><a href="{{ p.url }}">{{ p.title }}</a> &mdash; {{ p.description }}</li>
             {% endfor %}
         </ul>
     </div>

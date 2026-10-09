@@ -43,6 +43,7 @@ Sorting the practical basics early makes a move smoother — registering with a 
 - [Opticians in Cheltenham](/cheltenham-opticians) — opticians on a map, and who can get a free NHS sight test.
 - [Recycling and bin collections](/cheltenham-recycling) — what goes where and when it's collected.
 - [Fuel prices in Cheltenham](/cheltenham-fuel-prices) — local forecourt prices if you'll be driving.
+- [Street works in Cheltenham](/cheltenham-street-works) — works and road closures on local streets, including near your new home.
 
 ## Getting to Know the Town
 

@@ -254,3 +254,19 @@ def test_helper_and_config_import_from_a_subfolder(folder):
     result = subprocess.run([sys.executable, "-c", code], cwd=PYTHON_DIR / folder, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     assert result.stdout.strip() == str(config.CENTRE)
+
+
+SQUARE = [[51.0, -2.0], [51.0, -1.0], [52.0, -1.0], [52.0, -2.0], [51.0, -2.0]]
+
+
+def test_point_in_ring_uses_lat_lon_points():
+    assert helper.point_in_ring(51.5, -1.5, SQUARE)
+    assert not helper.point_in_ring(52.5, -1.5, SQUARE)
+    assert not helper.point_in_ring(51.5, -2.5, SQUARE)
+
+
+def test_ward_for_names_the_ward_containing_a_point():
+    wards = [{"name": "Square", "slug": "square", "boundary": SQUARE},
+             {"name": "Elsewhere", "slug": "elsewhere", "boundary": [[0, 0], [0, 1], [1, 1], [0, 0]]}]
+    assert helper.ward_for(51.5, -1.5, wards) == {"name": "Square", "slug": "square"}
+    assert helper.ward_for(53.0, -1.5, wards) is None

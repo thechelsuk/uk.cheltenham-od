@@ -1,7 +1,7 @@
 ---
 layout: fuel-prices-history
 title: Cheltenham Fuel Price History
-seo_title: "Cheltenham Fuel Price History: Petrol and Diesel Prices by Day"
+seo_title: "Cheltenham Fuel Price History: Petrol & Diesel Prices by Day"
 seo: "How petrol and diesel prices around Cheltenham have changed day by day: the cheapest, average and highest prices, compared with the UK average."
 permalink: /cheltenham-fuel-prices/history
 description: "The cheapest, average and highest petrol and diesel prices within 20 miles of Cheltenham each day, compared with the UK weekly average."

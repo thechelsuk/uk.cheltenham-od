@@ -3,7 +3,7 @@ layout: fix-my-street-history
 title: "Fix My Street Reports for Cheltenham: History"
 seo: "How many street and highways problems have been reported around Cheltenham, Gloucestershire, each month since 21 June 2026, with a breakdown by category."
 description: "Street and highways problems reported around Cheltenham since 21 June 2026, counted by month and by category."
-type: "environment"
+type: "property"
 permalink: /cheltenham-fix-my-street/history
 ---
 

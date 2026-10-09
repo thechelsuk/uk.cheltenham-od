@@ -136,6 +136,22 @@
     "pages": ["/cheltenham-roadworks", "/newsletter"]
   },
   {
+    "id": "taxi-ranks",
+    "source_url": "https://www.google.com/maps/d/viewer?mid=195JFz65LYxzFO0M_iNAOUJawnoTnkB4",
+    "licence": "Cheltenham Borough Council's taxi rank map (Google My Maps, no licence stated) combined with OpenStreetMap (ODbL), plus ranks checked in person by the editor",
+    "licence_type": "Mixed",
+    "data": [{"file": "_data/taxi-ranks.json", "schedule": "monthly"}, {"file": "_data/taxi-ranks-curated.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-taxi-ranks"]
+  },
+  {
+    "id": "dft-street-manager-open-data",
+    "source_url": "https://www.gov.uk/guidance/find-and-use-roadworks-data",
+    "licence": "Open Government Licence v3.0 (Department for Transport, via Find Transport Data). Pushed to the uk.cheltenham-od.receiver Cloudflare Worker, which this site reads",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/street-works.json", "schedule": "every two hours"}],
+    "pages": ["/cheltenham-street-works"]
+  },
+  {
     "id": "national-highways-road-and-lane-closures",
     "source_url": "https://developer.data.nationalhighways.co.uk/",
     "licence": "Open Government Licence v3.0 (stated on the National Highways developer portal; access needs a free subscription key)",
@@ -552,8 +568,8 @@
     "source_url": "https://cheltenham-od.uk",
     "licence": "None — manually curated by site editors",
     "licence_type": "Own data",
-    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}, {"file": "_data/helpful-contacts.json", "schedule": "manual"}, {"file": "_data/local-support.json", "schedule": "manual"}],
-    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support"]
+    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}, {"file": "_data/helpful-contacts.json", "schedule": "manual"}, {"file": "_data/local-support.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/corrections", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support"]
   },
   {
     "id": "nged-live-power-cuts",

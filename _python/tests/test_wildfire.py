@@ -171,3 +171,18 @@ def test_summarise_adds_county_totals_and_flags_years_without_locations():
         {"year": "2025/26", "cheltenham": 0, "surrounding": 0, "total": 0, "county": 397, "located": False},
     ]
     assert summary["county_total"] == 557
+
+
+def test_fires_are_counted_by_ward_with_the_last_five_years():
+    lsoa_ward = {"E01000001": "Leckhampton", "E01000002": "Leckhampton", "E01000003": "Pittville"}
+    fires = [
+        {"lsoa": "E01000001", "financial_year": "2012/13"},
+        {"lsoa": "E01000002", "financial_year": "2022/23"},
+        {"lsoa": "E01000003", "financial_year": "2023/24"},
+        {"lsoa": "E01999999", "financial_year": "2023/24"},   # outside Cheltenham's wards
+    ]
+    years = ["2012/13", "2020/21", "2021/22", "2022/23", "2023/24", "2024/25"]
+    assert incidents.by_ward(fires, lsoa_ward, years) == [
+        {"ward": "Leckhampton", "fires": 2, "recent": 1},
+        {"ward": "Pittville", "fires": 1, "recent": 1},
+    ]

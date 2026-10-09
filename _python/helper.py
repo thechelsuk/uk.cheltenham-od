@@ -233,6 +233,29 @@ def haversine_km(lat1, lon1, lat2, lon2):
     return haversine_miles(lat1, lon1, lat2, lon2) * 1.609344
 
 
+def point_in_ring(lat, lon, ring):
+    """Whether a point lies inside a ring of [lat, lon] points (ray casting)."""
+    inside = False
+    j = len(ring) - 1
+    for i in range(len(ring)):
+        lat_i, lon_i = ring[i]
+        lat_j, lon_j = ring[j]
+        if (lat_i > lat) != (lat_j > lat) and lon < (lon_j - lon_i) * (lat - lat_i) / (lat_j - lat_i) + lon_i:
+            inside = not inside
+        j = i
+    return inside
+
+
+def ward_for(lat, lon, wards):
+    """{name, slug} of the ward whose boundary contains the point, or None.
+    `wards` are the entries of _data/wards/index.json, each with a boundary of
+    [lat, lon] points."""
+    for ward in wards:
+        if point_in_ring(lat, lon, ward["boundary"]):
+            return {"name": ward["name"], "slug": ward["slug"]}
+    return None
+
+
 def miles_from_centre(lat, lon):
     """Distance in miles from Cheltenham town centre (config.CENTRE)."""
     return haversine_miles(*config.CENTRE, lat, lon)

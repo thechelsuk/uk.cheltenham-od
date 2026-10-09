@@ -27,8 +27,8 @@
     map.fitBounds(outline.getBounds(), { padding: [20, 20] });
 
     var colours = {
-        "Health": "#dc2626",
-        "Schools": "#7c3aed",
+        "Health and Care": "#dc2626",
+        "Schools and Childcare": "#7c3aed",
         "Parks and Play": "#16a34a",
         "Everyday Services": "#0891b2",
         "Getting Around": "#ea580c",
@@ -36,7 +36,7 @@
         "Heritage": "#a16207",
     };
     // Health and schools start switched on; the busier layers are opt-in.
-    var startOn = { "Health": true, "Schools": true, "Parks and Play": true };
+    var startOn = { "Health and Care": true, "Schools and Childcare": true, "Parks and Play": true };
 
     var overlays = {};
     (ward.services || []).forEach(function (service) {

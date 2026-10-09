@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:49.289452+00:00",
+  "generated_at": "2026-10-09T02:35:41.362869+00:00",
   "name": "Charlton Kings",
   "slug": "charlton-kings",
   "code": "E05015707",
@@ -740,13 +740,22 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Sunken cover repair never took place",
+        "group": "Drains & flooding",
+        "published": "2026-10-08",
+        "url": "https://www.fixmystreet.com/report/10212397",
+        "lat": 51.880834,
+        "lon": -2.042077
+      }
+    ],
     "planning": [
       {
         "ref": "26/01563/AMEND",
         "address": "193 London Road Charlton Kings Cheltenham Gloucestershire GL52 6HT",
         "description": "Non-material amendment to planning permission 25/01778/FUL, seeking changes to windows.",
-        "status": "Pending Consideration",
+        "status": "Allow",
         "received": "2026-10-01",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM86NHELM1P00&activeTab=summary",
         "lat": 51.889385,
@@ -885,6 +894,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 193,
+    "zone3": 4,
+    "zone2_or_3": 7,
+    "zone3_pct": 2.1,
+    "zone2_or_3_pct": 3.6
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -916,7 +932,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -975,7 +991,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 1,
@@ -1044,7 +1060,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -1098,7 +1114,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1152,7 +1168,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1179,8 +1195,94 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Grevill House",
+          "address": "279 London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6YL",
+          "detail": "Not yet rated",
+          "url": "https://www.cqc.org.uk/location/1-26563133403",
+          "lat": 51.883483,
+          "lon": -2.04494,
+          "in_ward": true,
+          "distance_miles": 0.71
+        },
+        {
+          "name": "Bafford House",
+          "address": "Bafford House, Newcourt Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8DQ",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-11601666215",
+          "lat": 51.880619,
+          "lon": -2.056385,
+          "in_ward": false,
+          "distance_miles": 0.82
+        },
+        {
+          "name": "Nazareth House - Cheltenham",
+          "address": "London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6YJ",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-403200219",
+          "lat": 51.885091,
+          "lon": -2.047048,
+          "in_ward": true,
+          "distance_miles": 0.84
+        },
+        {
+          "name": "Charlton Kings Care Home",
+          "address": "Moorend Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 9AX",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2897246286",
+          "lat": 51.883846,
+          "lon": -2.057217,
+          "in_ward": false,
+          "distance_miles": 0.99
+        },
+        {
+          "name": "Gloucestershire House - Care Home with Nursing Physical Disabilities",
+          "address": "Charlton Lane, Leckhampton, Cheltenham",
+          "postcode": "GL53 9HD",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-120087914",
+          "lat": 51.880044,
+          "lon": -2.072263,
+          "in_ward": false,
+          "distance_miles": 1.4
+        },
+        {
+          "name": "Lilleybrook Care Home",
+          "address": "Pilley Lane, Cheltenham",
+          "postcode": "GL53 9ER",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-983777097",
+          "lat": 51.877535,
+          "lon": -2.073203,
+          "in_ward": false,
+          "distance_miles": 1.4
+        },
+        {
+          "name": "Thirlestaine Park Care Home",
+          "address": "Humphris Place, Off Sandford Road, Cheltenham",
+          "postcode": "GL53 7GA",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-1919525815",
+          "lat": 51.890224,
+          "lon": -2.068065,
+          "in_ward": false,
+          "distance_miles": 1.63
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 3,
@@ -1214,6 +1316,105 @@
           "lon": -2.050686,
           "in_ward": true,
           "distance_miles": 0.78
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 9,
+      "items": [
+        {
+          "name": "Move More Camps",
+          "address": "Balcarras School, East End Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8QF",
+          "detail": "Out-of-school club",
+          "lat": 51.881352,
+          "lon": -2.044197,
+          "in_ward": true,
+          "distance_miles": 0.55
+        },
+        {
+          "name": "Charlie Bears Childcare Limited",
+          "address": "38 Church street, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AR",
+          "detail": "Nursery (full day care)",
+          "lat": 51.88206,
+          "lon": -2.050721,
+          "in_ward": true,
+          "distance_miles": 0.72
+        },
+        {
+          "name": "Paintpot",
+          "address": "Charlton Kings Baptist Church, 38 Church Street, Charlton Kings Cheltenham",
+          "postcode": "GL53 8AR",
+          "detail": "Out-of-school club",
+          "lat": 51.88206,
+          "lon": -2.050721,
+          "in_ward": true,
+          "distance_miles": 0.72
+        },
+        {
+          "name": "Paintpot",
+          "address": "Kings Hall, Church Piece, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8JN",
+          "detail": "Out-of-school club",
+          "lat": 51.881853,
+          "lon": -2.051244,
+          "in_ward": true,
+          "distance_miles": 0.72
+        },
+        {
+          "name": "art-K Cheltenham",
+          "address": "10 Church Street, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AR",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.88206,
+          "lon": -2.050721,
+          "in_ward": true,
+          "distance_miles": 0.72
+        },
+        {
+          "name": "St Mary's Nursery & Preschool – Charlton Kings",
+          "address": "Brotherhood Hall, Lyefield Road East, Charlton KIngs, Cheltenham",
+          "postcode": "GL53 8AU",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.883121,
+          "lon": -2.050243,
+          "in_ward": true,
+          "distance_miles": 0.77
+        },
+        {
+          "name": "The Nursery School",
+          "address": "Church Street, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AP",
+          "detail": "Nursery (full day care)",
+          "lat": 51.88295,
+          "lon": -2.051085,
+          "in_ward": true,
+          "distance_miles": 0.78
+        },
+        {
+          "name": "Move More Early Years Camp",
+          "address": "Charlton Kings Infants School, Lyefield Road East, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AY",
+          "detail": "Out-of-school club",
+          "lat": 51.883705,
+          "lon": -2.051754,
+          "in_ward": true,
+          "distance_miles": 0.84
+        },
+        {
+          "name": "Berkhampstead Day Nursery, Charlton Kings",
+          "address": "Lexham Lodge, Copt Elm Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8AG",
+          "detail": "Nursery (full day care)",
+          "lat": 51.885368,
+          "lon": -2.052686,
+          "in_ward": true,
+          "distance_miles": 0.95
         }
       ]
     },

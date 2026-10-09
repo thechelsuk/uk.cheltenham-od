@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:53.822700+00:00",
+  "generated_at": "2026-10-09T02:35:45.864233+00:00",
   "name": "Warden Hill",
   "slug": "warden-hill",
   "code": "E05015723",
@@ -809,6 +809,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 154,
+    "zone3": 2,
+    "zone2_or_3": 10,
+    "zone3_pct": 1.3,
+    "zone2_or_3_pct": 6.5
+  },
   "venue_types": [
     {
       "type": "Other catering premises",
@@ -832,7 +839,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -891,7 +898,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 0,
@@ -949,7 +956,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 0,
@@ -1003,7 +1010,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1057,7 +1064,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1084,8 +1091,83 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 1,
+      "items": [
+        {
+          "name": "Ambleside",
+          "address": "69 Hatherley Road, Cheltenham",
+          "postcode": "GL51 6EG",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-137768877",
+          "lat": 51.890964,
+          "lon": -2.101357,
+          "in_ward": true,
+          "distance_miles": 0.34
+        },
+        {
+          "name": "Beechcroft - Cheltenham",
+          "address": "295 Gloucester Road, Cheltenham",
+          "postcode": "GL51 7AD",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2847288176",
+          "lat": 51.895871,
+          "lon": -2.103781,
+          "in_ward": false,
+          "distance_miles": 0.69
+        },
+        {
+          "name": "Dalkeith",
+          "address": "285 Gloucester Road, Cheltenham",
+          "postcode": "GL51 7AD",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-840613286",
+          "lat": 51.895871,
+          "lon": -2.103781,
+          "in_ward": false,
+          "distance_miles": 0.69
+        },
+        {
+          "name": "The Granleys",
+          "address": "21 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-138901716",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.7
+        },
+        {
+          "name": "The Knole",
+          "address": "23 Griffiths Avenue, Cheltenham",
+          "postcode": "GL51 7BE",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-442981675",
+          "lat": 51.895562,
+          "lon": -2.10676,
+          "in_ward": false,
+          "distance_miles": 0.7
+        },
+        {
+          "name": "The Vicarage",
+          "address": "59 Andover Road, Tivoli, Cheltenham",
+          "postcode": "GL50 2TS",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-115336828",
+          "lat": 51.892773,
+          "lon": -2.087949,
+          "in_ward": false,
+          "distance_miles": 0.73
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 6,
@@ -1149,6 +1231,65 @@
           "lon": -2.100659,
           "in_ward": true,
           "distance_miles": 0.56
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 5,
+      "items": [
+        {
+          "name": "Winton House Private Day Nursey",
+          "address": "11 Warden Hill Road, Cheltenham",
+          "postcode": "GL51 3AU",
+          "detail": "Nursery (full day care)",
+          "lat": 51.889076,
+          "lon": -2.100423,
+          "in_ward": true,
+          "distance_miles": 0.21
+        },
+        {
+          "name": "Averiss, Sandy",
+          "address": "Unit 1, Katherine Court, Salisbury Avenue, Cheltenham",
+          "postcode": "GL51 3GA",
+          "detail": "Childcare",
+          "lat": 51.88219,
+          "lon": -2.100248,
+          "in_ward": true,
+          "distance_miles": 0.27
+        },
+        {
+          "name": "St Christopher's Playgroup",
+          "address": "1 Lincoln Avenue, Cheltenham",
+          "postcode": "GL51 3DD",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.88173,
+          "lon": -2.1017,
+          "in_ward": true,
+          "distance_miles": 0.3
+        },
+        {
+          "name": "WHPS Sports Camp",
+          "address": "Warden Hill Primary School, Durham Close, Cheltenham",
+          "postcode": "GL51 3DF",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.881839,
+          "lon": -2.099753,
+          "in_ward": true,
+          "distance_miles": 0.3
+        },
+        {
+          "name": "Ultimate Activity Camps At Dean Close School",
+          "address": "Dean Close Preparatory School, Lansdown Road, Cheltenham",
+          "postcode": "GL51 6QS",
+          "detail": "Out-of-school club",
+          "lat": 51.894083,
+          "lon": -2.101888,
+          "in_ward": true,
+          "distance_miles": 0.55
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:51.546075+00:00",
+  "generated_at": "2026-10-09T02:35:43.612101+00:00",
   "name": "Pittville",
   "slug": "pittville",
   "code": "E05015715",
@@ -776,6 +776,16 @@
     "fix_my_street": [],
     "planning": [
       {
+        "ref": "26/01567/CACN",
+        "address": "Grass Highway Verge Outside 14 Pittville Crescent Cheltenham Gloucestershire",
+        "description": "T1 Sycamore. Crown spread reduction of a maximum of 2.5m house side only, leaving a flowing branch line, cutting back to strong suitable secondary growth. Shape and balance. Crown lift up to 5m all around, removing secondary branches only. Remove all dead, dying and diseased wood down to 20mm in diameter. New shape indicated in red on image.",
+        "status": "No objection",
+        "received": "2026-10-02",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TM9NFMELM2100&activeTab=summary",
+        "lat": 51.907174,
+        "lon": -2.064922
+      },
+      {
         "ref": "26/01480/CACN",
         "address": "Wellington Lodge Wellington Square Cheltenham Gloucestershire GL50 4JU",
         "description": "Five day notice to remove a small Wellingtonia in the front garden.",
@@ -992,6 +1002,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 182,
+    "zone3": 2,
+    "zone2_or_3": 6,
+    "zone3_pct": 1.1,
+    "zone2_or_3_pct": 3.3
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -1027,7 +1044,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 2,
@@ -1106,7 +1123,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 3,
@@ -1144,7 +1161,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 3,
@@ -1180,7 +1197,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1234,7 +1251,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1261,8 +1278,94 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 2,
+      "items": [
+        {
+          "name": "Bradbury Gardens",
+          "address": "West Drive, Pittville, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2148821492",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": true,
+          "distance_miles": 0.1
+        },
+        {
+          "name": "Windsor Street Care Centre",
+          "address": "35-37 Windsor Street, Cheltenham",
+          "postcode": "GL52 2DG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-723347537",
+          "lat": 51.907157,
+          "lon": -2.063483,
+          "in_ward": true,
+          "distance_miles": 0.35
+        },
+        {
+          "name": "Oakhaven Residential Care Home",
+          "address": "136-140 Hales Road, Cheltenham",
+          "postcode": "GL52 6TB",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-123788035",
+          "lat": 51.900633,
+          "lon": -2.05532,
+          "in_ward": false,
+          "distance_miles": 0.91
+        },
+        {
+          "name": "Astell House",
+          "address": "Overton Park Road, Cheltenham",
+          "postcode": "GL50 3BT",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-26660132168",
+          "lat": 51.899347,
+          "lon": -2.086232,
+          "in_ward": false,
+          "distance_miles": 0.99
+        },
+        {
+          "name": "Sandfields",
+          "address": "St. Georges Road, Cheltenham",
+          "postcode": "GL50 3EL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-19896801053",
+          "lat": 51.90142,
+          "lon": -2.091265,
+          "in_ward": false,
+          "distance_miles": 1.06
+        },
+        {
+          "name": "St Faith's Nursing Home",
+          "address": "Malvern Road, Cheltenham",
+          "postcode": "GL50 2NR",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490637",
+          "lat": 51.900485,
+          "lon": -2.090856,
+          "in_ward": false,
+          "distance_miles": 1.09
+        },
+        {
+          "name": "Bay Tree Court Care Centre",
+          "address": "High Street, Prestbury, Cheltenham",
+          "postcode": "GL52 3AU",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-14316247051",
+          "lat": 51.913523,
+          "lon": -2.042775,
+          "in_ward": false,
+          "distance_miles": 1.21
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 3,
@@ -1296,6 +1399,45 @@
           "lon": -2.068599,
           "in_ward": true,
           "distance_miles": 0.56
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 3,
+      "items": [
+        {
+          "name": "Atlas Camps Cheltenham - Dunalley",
+          "address": "Dunalley Cp School, West Drive, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Out-of-school club",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": true,
+          "distance_miles": 0.1
+        },
+        {
+          "name": "Kumon Pittville Park",
+          "address": "Old Civil Defence HQ, Central Cross Dr, Cheltenham",
+          "postcode": "GL52 2TW",
+          "detail": "Out-of-school club",
+          "lat": 51.907146,
+          "lon": -2.066856,
+          "in_ward": true,
+          "distance_miles": 0.24
+        },
+        {
+          "name": "Treetops Wellington Road",
+          "address": "2 Wellington Road, Cheltenham",
+          "postcode": "GL52 2DY",
+          "detail": "Nursery (full day care)",
+          "lat": 51.90541,
+          "lon": -2.067638,
+          "in_ward": true,
+          "distance_miles": 0.33
         }
       ]
     },

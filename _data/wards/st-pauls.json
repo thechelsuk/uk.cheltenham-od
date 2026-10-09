@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:52.692787+00:00",
+  "generated_at": "2026-10-09T02:35:44.779917+00:00",
   "name": "St Paul's",
   "slug": "st-pauls",
   "code": "E05015719",
@@ -650,8 +650,27 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Wooden cabinet dumped on pavement on St. Pauls Street South",
+        "group": "Litter, fly-tipping & graffiti",
+        "published": "2026-10-08",
+        "url": "https://www.fixmystreet.com/report/10212243",
+        "lat": 51.904109,
+        "lon": -2.079315
+      }
+    ],
     "planning": [
+      {
+        "ref": "26/01571/ADV",
+        "address": "Taco Bell 211 High Street Cheltenham Gloucestershire GL50 3HH",
+        "description": "New fascia sign, projecting sign and window manifestations",
+        "status": "Pending Consideration",
+        "received": "2026-10-05",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMF7D8ELM2H00&activeTab=summary",
+        "lat": 51.901593,
+        "lon": -2.075393
+      },
       {
         "ref": "26/01505/CACN",
         "address": "11 St Pauls Street South Cheltenham Gloucestershire GL50 4AW",
@@ -769,6 +788,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 175,
+    "zone3": 0,
+    "zone2_or_3": 6,
+    "zone3_pct": 0.0,
+    "zone2_or_3_pct": 3.4
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -800,7 +826,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 4,
@@ -849,7 +875,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 2,
@@ -926,7 +952,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 2,
@@ -998,7 +1024,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1052,7 +1078,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1079,8 +1105,72 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 0,
+      "items": [
+        {
+          "name": "Bradbury Gardens",
+          "address": "West Drive, Pittville, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2148821492",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 0.45
+        },
+        {
+          "name": "Astell House",
+          "address": "Overton Park Road, Cheltenham",
+          "postcode": "GL50 3BT",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-26660132168",
+          "lat": 51.899347,
+          "lon": -2.086232,
+          "in_ward": false,
+          "distance_miles": 0.58
+        },
+        {
+          "name": "Sandfields",
+          "address": "St. Georges Road, Cheltenham",
+          "postcode": "GL50 3EL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-19896801053",
+          "lat": 51.90142,
+          "lon": -2.091265,
+          "in_ward": false,
+          "distance_miles": 0.6
+        },
+        {
+          "name": "St Faith's Nursing Home",
+          "address": "Malvern Road, Cheltenham",
+          "postcode": "GL50 2NR",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490637",
+          "lat": 51.900485,
+          "lon": -2.090856,
+          "in_ward": false,
+          "distance_miles": 0.63
+        },
+        {
+          "name": "Windsor Street Care Centre",
+          "address": "35-37 Windsor Street, Cheltenham",
+          "postcode": "GL52 2DG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-723347537",
+          "lat": 51.907157,
+          "lon": -2.063483,
+          "in_ward": false,
+          "distance_miles": 0.72
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 1,
@@ -1144,6 +1234,65 @@
           "lon": -2.068599,
           "in_ward": false,
           "distance_miles": 0.62
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 0,
+      "items": [
+        {
+          "name": "Elephant Moon Day Nursery Cheltenham",
+          "address": "Ivanhoe House, St. James Square, Cheltenham",
+          "postcode": "GL50 3QG",
+          "detail": "Nursery (full day care)",
+          "lat": 51.901859,
+          "lon": -2.081339,
+          "in_ward": false,
+          "distance_miles": 0.36
+        },
+        {
+          "name": "St Gregorys Child Care Trust",
+          "address": "The Catholic School of St. Gregory the Great, St. James Square, Cheltenham",
+          "postcode": "GL50 3QG",
+          "detail": "Nursery (full day care)",
+          "lat": 51.901859,
+          "lon": -2.081339,
+          "in_ward": false,
+          "distance_miles": 0.36
+        },
+        {
+          "name": "Atlas Camps Cheltenham - Dunalley",
+          "address": "Dunalley Cp School, West Drive, Cheltenham",
+          "postcode": "GL50 4LB",
+          "detail": "Out-of-school club",
+          "lat": 51.90851,
+          "lon": -2.07007,
+          "in_ward": false,
+          "distance_miles": 0.45
+        },
+        {
+          "name": "Little Pips Nursery",
+          "address": "5-7 Arle Avenue, Cheltenham",
+          "postcode": "GL51 8JP",
+          "detail": "Nursery (full day care)",
+          "lat": 51.904737,
+          "lon": -2.091577,
+          "in_ward": false,
+          "distance_miles": 0.5
+        },
+        {
+          "name": "Brightlands Day Nursery",
+          "address": "107 St. Georges Road, Cheltenham",
+          "postcode": "GL50 3ED",
+          "detail": "Nursery (full day care)",
+          "lat": 51.900139,
+          "lon": -2.084693,
+          "in_ward": false,
+          "distance_miles": 0.51
         }
       ]
     },

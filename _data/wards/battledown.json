@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:48.704510+00:00",
+  "generated_at": "2026-10-09T02:35:40.786441+00:00",
   "name": "Battledown",
   "slug": "battledown",
   "code": "E05015705",
@@ -782,6 +782,16 @@
     "fix_my_street": [],
     "planning": [
       {
+        "ref": "26/01584/TPO",
+        "address": "7 Greenway Park Greenway Lane Charlton Kings Cheltenham Gloucestershire GL52 6HQ",
+        "description": "Sycamore removal.",
+        "status": "Permit",
+        "received": "2026-10-06",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMHESVEL08300&activeTab=summary",
+        "lat": 51.896233,
+        "lon": -2.041378
+      },
+      {
         "ref": "26/01512/FUL",
         "address": "Woodbury House Battledown Approach Cheltenham Gloucestershire GL52 6RE",
         "description": "Proposed single-storey rear extension and two-storey front extension and external remodelling to the existing dwelling.",
@@ -876,6 +886,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 179,
+    "zone3": 1,
+    "zone2_or_3": 1,
+    "zone3_pct": 0.6,
+    "zone2_or_3_pct": 0.6
+  },
   "venue_types": [
     {
       "type": "Pub/bar/nightclub",
@@ -899,7 +916,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
@@ -968,7 +985,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 1,
@@ -1037,7 +1054,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 1,
@@ -1100,7 +1117,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1154,7 +1171,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1181,8 +1198,72 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 0,
+      "items": [
+        {
+          "name": "Nazareth House - Cheltenham",
+          "address": "London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6YJ",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-403200219",
+          "lat": 51.885091,
+          "lon": -2.047048,
+          "in_ward": false,
+          "distance_miles": 0.76
+        },
+        {
+          "name": "Grevill House",
+          "address": "279 London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6YL",
+          "detail": "Not yet rated",
+          "url": "https://www.cqc.org.uk/location/1-26563133403",
+          "lat": 51.883483,
+          "lon": -2.04494,
+          "in_ward": false,
+          "distance_miles": 0.78
+        },
+        {
+          "name": "Oakhaven Residential Care Home",
+          "address": "136-140 Hales Road, Cheltenham",
+          "postcode": "GL52 6TB",
+          "detail": "Rated Outstanding",
+          "url": "https://www.cqc.org.uk/location/1-123788035",
+          "lat": 51.900633,
+          "lon": -2.05532,
+          "in_ward": false,
+          "distance_miles": 1.07
+        },
+        {
+          "name": "Charlton Kings Care Home",
+          "address": "Moorend Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 9AX",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-2897246286",
+          "lat": 51.883846,
+          "lon": -2.057217,
+          "in_ward": false,
+          "distance_miles": 1.16
+        },
+        {
+          "name": "Bafford House",
+          "address": "Bafford House, Newcourt Road, Charlton Kings, Cheltenham",
+          "postcode": "GL53 8DQ",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-11601666215",
+          "lat": 51.880619,
+          "lon": -2.056385,
+          "in_ward": false,
+          "distance_miles": 1.27
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 4,
@@ -1226,6 +1307,95 @@
           "lon": -2.055846,
           "in_ward": true,
           "distance_miles": 0.98
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 8,
+      "items": [
+        {
+          "name": "Glenfall Pre-School",
+          "address": "Glenfall CP School, Glenfall Way, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6XZ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.887071,
+          "lon": -2.04243,
+          "in_ward": true,
+          "distance_miles": 0.53
+        },
+        {
+          "name": "Glenfall Primary After School Club",
+          "address": "Glenfall Cp School, Glenfall Way, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6XZ",
+          "detail": "Out-of-school club",
+          "lat": 51.887071,
+          "lon": -2.04243,
+          "in_ward": true,
+          "distance_miles": 0.53
+        },
+        {
+          "name": "The Ark",
+          "address": "3 Sandhurst Villas, Sandhurst Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6LJ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.887464,
+          "lon": -2.049376,
+          "in_ward": true,
+          "distance_miles": 0.75
+        },
+        {
+          "name": "Ashley Manor Nursery",
+          "address": "Ashley Manor Prep School, 252 London Road, Charlton Kings, Cheltenham",
+          "postcode": "GL52 6NR",
+          "detail": "Nursery (full day care)",
+          "lat": 51.891698,
+          "lon": -2.051604,
+          "in_ward": true,
+          "distance_miles": 0.76
+        },
+        {
+          "name": "HAPS Sports Camp",
+          "address": "Holy Apostles C Of E School, Battledown Approach, Cheltenham",
+          "postcode": "GL52 6QZ",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.896622,
+          "lon": -2.058076,
+          "in_ward": true,
+          "distance_miles": 1.07
+        },
+        {
+          "name": "Holy Apostles Pre-School",
+          "address": "Holy Apostles C of E School, Battledown Approach, Cheltenham",
+          "postcode": "GL52 6QZ",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.896622,
+          "lon": -2.058076,
+          "in_ward": true,
+          "distance_miles": 1.07
+        },
+        {
+          "name": "Holy Apostles' After School Club",
+          "address": "The Pavillion, Holy Apostles C of E School, Battledown Approach, Cheltenham",
+          "postcode": "GL52 6QZ",
+          "detail": "Out-of-school club",
+          "lat": 51.896622,
+          "lon": -2.058076,
+          "in_ward": true,
+          "distance_miles": 1.07
+        },
+        {
+          "name": "Blossom Lodge Day Nursery",
+          "address": "Phoenix Nursery Group @ The Lodge Nursery & Pre School, 77 Hales Road, Cheltenham",
+          "postcode": "GL52 6SR",
+          "detail": "Nursery (full day care)",
+          "lat": 51.896153,
+          "lon": -2.059994,
+          "in_ward": true,
+          "distance_miles": 1.14
         }
       ]
     },

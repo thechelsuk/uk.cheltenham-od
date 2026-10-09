@@ -11,6 +11,11 @@
 {% assign latest_vote = pol.elections.first %}
 {% assign dep = site.data.deprivation %}
 {% assign ward_dep = dep.wards[w.code] %}
+{% assign street_works = site.data["street-works"] %}
+{% assign ward_works = street_works.items | where: "ward_slug", w.slug %}
+{% assign fires = site.data["wildfire-incidents"] %}
+{% assign ward_fires = fires.by_ward | where: "ward", w.name | first %}
+{% assign flood = w.flood %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -24,16 +29,16 @@
 
         {% include sponsor.html %}
 
-        <h2>About {{ w.name }} Ward</h2>
+        <h2 id="about">About {{ w.name }} Ward</h2>
         <p>
             {{ w.name }} is one of Cheltenham's {{ ward_count }} electoral wards, {% if w.position == "central" %}in the centre of the town{% else %}on the {{ w.position }} side of the town{% endif %}.
             It covers {{ w.area_km2 }} square kilometres and {{ w.postcode_count }} postcodes, and borders {{ w.neighbours | array_to_sentence_string }}.
         </p>
         <p>
             Whether you are thinking of moving to {{ w.name }}, already live here, or just want to know what is nearby, this page
-            pulls the ward's figures together in one place: how much crime is reported and what kind, what homes sell for, how
-            fast the broadband is, and where to find the nearest GP, dentist, optician, school, park, play area and public
-            toilet. Places inside the ward are marked as such, and where the ward has fewer than three
+            pulls the ward's figures together in one place: street works on its roads, how much crime is reported and what
+            kind, what homes sell for, how much of it is at risk of flooding, how fast the broadband is, and where to find the
+            nearest GP, dentist, care home, school, nursery, park, play area and public toilet. Places inside the ward are marked as such, and where the ward has fewer than three
             of something the nearest ones just over its boundary, within three miles, are listed alongside.
         </p>
         <p>
@@ -45,7 +50,7 @@
 
         {{ content }}
 
-        <h2>{{ w.name }} at a Glance</h2>
+        <h2 id="at-a-glance">{{ w.name }} at a Glance</h2>
         <div class="glance-grid">
             <div class="info-card">
                 <p class="info-card__label">Crimes reported, 12 months to {{ crime.last_month | append: "-01" | date: "%B %Y" }}</p>
@@ -104,11 +109,91 @@
             {% endif %}
         </div>
 
-        <h2>Map of {{ w.name }}</h2>
+        <h2 id="map">Map of {{ w.name }}</h2>
         <p><small>Tick the layers you want to see. The outline is the ward boundary.</small></p>
         <div id="ward-map" class="map-canvas" aria-label="Map of {{ w.name }} ward and the services in and around it"></div>
 
-        <h2>Crime in {{ w.name }}</h2>
+        <nav class="ward-contents" aria-label="On this page">
+            <h2 id="contents">On This Page</h2>
+            <ul>
+                <li><a href="#getting-around">Getting around</a></li>
+                <li><a href="#health-and-care">Health and care</a></li>
+                <li><a href="#schools-and-childcare">Schools and childcare</a></li>
+                <li><a href="#parks-and-play">Parks and play</a></li>
+                <li><a href="#everyday-services">Everyday services</a></li>
+                <li><a href="#food-and-drink">Food and drink</a></li>
+                <li><a href="#heritage">Heritage</a></li>
+                <li><a href="#crime">Crime</a></li>
+                <li><a href="#local-issues">Local issues</a></li>
+                <li><a href="#environment">Flood risk and grass fires</a></li>
+                <li><a href="#house-prices">House prices</a></li>
+                {% if ward_dep %}<li><a href="#deprivation">Deprivation</a></li>{% endif %}
+                <li><a href="#broadband">Broadband</a></li>
+                {% if pol %}<li><a href="#politics">Politics and voting</a></li>{% endif %}
+                <li><a href="#faq">Frequently asked questions</a></li>
+            </ul>
+        </nav>
+
+        <h2 id="getting-around">Getting Around near {{ w.name }}</h2>
+        <h3>Street Works</h3>
+        {% if ward_works.size > 0 %}
+        <p><small>{{ ward_works.size }} current or upcoming street works on {{ w.name }}'s roads. See every works around town on the
+            <a href="/cheltenham-street-works">street works</a> page.</small></p>
+        <div class="table-scroll">
+            <table class="ward-works-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Street</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Traffic Management</th>
+                        <th scope="col" class="date">Starts</th>
+                        <th scope="col" class="date">Ends</th>
+                        <th scope="col">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in ward_works %}
+                    <tr>
+                        <td>{{ s.street }}</td>
+                        <td>{{ s.kind }}</td>
+                        <td>{{ s.status }}</td>
+                        <td>{{ s.traffic_management }}</td>
+                        <td class="date" data-val="{{ s.start }}">{% if s.start.size > 10 %}{{ s.start | date: "%Y-%m-%d %H:%M" }}{% else %}{{ s.start }}{% endif %}</td>
+                        <td class="date" data-val="{{ s.end }}">{{ s.end }}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.street %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>There are no street works listed on {{ w.name }}'s roads at the moment. See every works around town on the
+                <a href="/cheltenham-street-works">street works</a> page.</p>
+        </blockquote>
+        {% endif %}
+        {% include ward-services.html group="Getting Around" %}
+
+        <h2 id="health-and-care">Health and Care near {{ w.name }}</h2>
+        {% include ward-services.html group="Health and Care" %}
+
+        <h2 id="schools-and-childcare">Schools and Childcare near {{ w.name }}</h2>
+        {% include ward-services.html group="Schools and Childcare" %}
+
+        <h2 id="parks-and-play">Parks and Play near {{ w.name }}</h2>
+        {% include ward-services.html group="Parks and Play" %}
+
+        <h2 id="everyday-services">Everyday Services near {{ w.name }}</h2>
+        {% include ward-services.html group="Everyday Services" %}
+
+        <h2 id="food-and-drink">Food and Drink near {{ w.name }}</h2>
+        {% include ward-services.html group="Food and Drink" %}
+
+        <h2 id="heritage">Heritage near {{ w.name }}</h2>
+        {% include ward-services.html group="Heritage" %}
+
+        <h2 id="crime">Crime in {{ w.name }}</h2>
         <p>
             {{ crime.total }} crimes were reported in {{ w.name }} in the 12 months from
             {{ crime.first_month | append: "-01" | date: "%B %Y" }} to {{ crime.last_month | append: "-01" | date: "%B %Y" }},
@@ -168,7 +253,123 @@
             total also includes crimes reported nearby. Crimes are counted by that point falling inside the ward
             boundary, so incidents on a boundary road can land on either side.</small></p>
 
-        <h2>House Prices in {{ w.name }}</h2>
+        <h2 id="local-issues">Local Issues in {{ w.name }}</h2>
+        <h3>Reports on FixMyStreet</h3>
+        {% if issues.fix_my_street.size > 0 %}
+        <div class="table-scroll">
+            <table class="ward-issues-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Report</th>
+                        <th scope="col" class="category">Category</th>
+                        <th scope="col" class="date">Reported</th>
+                        <th scope="col">Map</th>
+                        <th scope="col" class="link">FixMyStreet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in issues.fix_my_street %}
+                    <tr>
+                        <td>{{ r.title }}</td>
+                        <td class="category">{{ r.group }}</td>
+                        <td class="date" data-val="{{ r.published }}">{{ r.published }}</td>
+                        <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
+                        {% assign fms_label = r.title | append: " on FixMyStreet" %}
+                        <td class="link">{% include link-icon.html url=r.url label=fms_label %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>There are no recent FixMyStreet reports in the ward.</p>
+        </blockquote>
+        {% endif %}
+
+        {% if issues.planning.size > 0 %}
+        <h3>Planning Applications</h3>
+        <div class="table-scroll">
+            <table class="ward-issues-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Reference</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="date">Received</th>
+                        <th scope="col" class="link">Council</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in issues.planning %}
+                    <tr>
+                        <td>{{ p.ref }}</td>
+                        <td>{{ p.address }}</td>
+                        <td>{{ p.status }}</td>
+                        <td class="date" data-val="{{ p.received }}">{{ p.received }}</td>
+                        {% assign council_label = "Application " | append: p.ref | append: " on the council's planning site" %}
+                        <td class="link">{% include link-icon.html url=p.url label=council_label %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <h3>Serious and Fatal Road Collisions</h3>
+        <p>
+            {% if issues.serious_collisions.size > 0 %}Police recorded {{ issues.serious_collisions.size }} serious or fatal road collisions in {{ w.name }} between
+            {{ issues.serious_collisions_by_year.first.year }} and {{ issues.serious_collisions_by_year.last.year }}.{% else %}Police recorded no serious or fatal road collisions in {{ w.name }} in the last five years.{% endif %}
+            Slight collisions are not counted here; the <a href="/cheltenham-road-collisions">Cheltenham road collisions</a>
+            page covers the whole town.
+        </p>
+        {% if issues.serious_collisions.size > 0 %}
+        <div class="table-scroll">
+            <table class="ward-issues-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Severity</th>
+                        <th scope="col">Road</th>
+                        <th scope="col">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in issues.serious_collisions %}
+                    <tr>
+                        <td class="date" data-val="{{ c.date }}">{{ c.date }}</td>
+                        <td>{{ c.severity }}</td>
+                        <td>{{ c.road }}</td>
+                        <td class="map">{% include pin.html lat=c.lat lng=c.lon label=c.road %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <h2 id="environment">Flood Risk and Grass Fires in {{ w.name }}</h2>
+        <h3>Flood Risk</h3>
+        {% if flood.postcodes > 0 %}
+        <p>
+            {{ flood.zone3 }} of {{ w.name }}'s {{ flood.postcodes }} postcodes ({{ flood.zone3_pct }}%) are in Flood Zone 3,
+            land with the highest chance of flooding from rivers, and {{ flood.zone2_or_3 }} ({{ flood.zone2_or_3_pct }}%)
+            are in Flood Zone 2 or 3. A postcode counts if its centre falls in the zone, so some homes in it may be outside
+            the zone and some nearby homes inside it. See the <a href="/cheltenham-flood-zones">flood zones map</a> for the
+            exact outlines, and <a href="/cheltenham-flood-warnings">flood warnings</a> for any in force now.
+        </p>
+        {% endif %}
+        <h3>Grass and Woodland Fires</h3>
+        <p>
+            {% if ward_fires %}Fire crews recorded {{ ward_fires.fires }} grassland, woodland and crop fires in {{ w.name }}
+            between {{ fires.first_year }} and {{ fires.last_located_year }}, {{ ward_fires.recent }} of them in the five years
+            from {{ fires.recent_years.first }} to {{ fires.recent_years.last }}.{% else %}No grassland, woodland or crop fires
+            were recorded in {{ w.name }} between {{ fires.first_year }} and {{ fires.last_located_year }}.{% endif %}
+            Years run from April to March. The <a href="/cheltenham-wildfire-risk/history">wildfire history</a> page covers
+            the whole town, and <a href="/cheltenham-wildfire-risk">wildfire risk</a> shows today's fire severity level.
+        </p>
+
+        <h2 id="house-prices">House Prices in {{ w.name }}</h2>
         <p>
             There have been {{ prices.sales_total_display }} recorded home sales in {{ w.name }} since {{ prices.first_year }}.
             Over the latest 12 months to {{ prices.latest_sale }} the median sale price was
@@ -230,7 +431,7 @@
             Price Paid data, matched to the ward by postcode.</small></p>
 
         {% if ward_dep %}
-        <h2>Deprivation in {{ w.name }}</h2>
+        <h2 id="deprivation">Deprivation in {{ w.name }}</h2>
         <p>
             On the English Indices of Deprivation {{ dep.edition }}, {{ w.name }} is the
             {% if ward_dep.rank == 1 %}most deprived{% elsif ward_dep.rank == dep.wards.size %}least deprived{% else %}{{ ward_dep.rank }}{% case ward_dep.rank %}{% when 2 or 22 %}nd{% when 3 or 23 %}rd{% else %}th{% endcase %} most deprived{% endif %}
@@ -278,8 +479,28 @@
             deprived); the other columns are deciles. Data from the {{ dep.source }}, published under the {{ dep.licence }}.</small></p>
         {% endif %}
 
+        <h2 id="broadband">Broadband in {{ w.name }}</h2>
+        <div class="table-scroll">
+            <table class="ward-broadband-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Speed tier</th>
+                        <th scope="col" class="number">Premises covered (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Superfast (30 Mbps+)</td><td class="number">{{ w.broadband.sfbb_pct }}</td></tr>
+                    <tr><td>Ultrafast (100 Mbps+)</td><td class="number">{{ w.broadband.ufbb100_pct }}</td></tr>
+                    <tr><td>Ultrafast (300 Mbps+)</td><td class="number">{{ w.broadband.ufbb300_pct }}</td></tr>
+                    <tr><td>Gigabit (1000 Mbps+)</td><td class="number">{{ w.broadband.gigabit_pct }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>See how {{ w.name }} compares with every other ward on the
+            <a href="/cheltenham-broadband-internet-speeds">Cheltenham broadband</a> page.</p>
+
         {% if pol %}
-        <h2>Politics and Voting in {{ w.name }}</h2>
+        <h2 id="politics">Politics and Voting in {{ w.name }}</h2>
         <p>
             Cheltenham Borough Council is made up of 40 councillors, two for each of the town's {{ ward_count }} wards.
             The councillors for {{ w.name }} are {% for c in pol.councillors %}<a href="{{ c.url }}" rel="noopener">{{ c.name }}</a> ({{ c.party }}){% unless forloop.last %}{% if pol.councillors.size == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}.
@@ -347,173 +568,17 @@
             <a href="/cheltenham-politics/local-elections">results for every ward</a>.</small></p>
         {% endif %}
 
-        {% for group in groups %}
-        <h2>{{ group.name }} near {{ w.name }}</h2>
-        {% for s in group.items %}
-        {% assign outside = s.items.size | minus: s.in_ward %}
-        <h3>{{ s.label }}</h3>
-        {% if s.mode == "in_ward" %}
-        <p><small>{{ s.in_ward }} in {{ w.name }}.</small></p>
-        {% else %}
-        <p><small>{{ s.in_ward }} in {{ w.name }}{% if outside > 0 %}, plus the nearest {{ outside }} beyond its boundary{% endif %}. Distances are in miles from the middle of the ward.</small></p>
-        {% endif %}
-        {% if s.items.size == 0 %}
-        <p>{% if s.mode == "in_ward" %}None in {{ w.name }}.{% else %}Nothing in {{ w.name }} or within three miles of it.{% endif %}</p>
-        {% else %}
-        <div class="table-scroll">
-            <table class="ward-services-table data-table" data-sortable>
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Details</th>
-                        <th scope="col" class="number">Distance (mi)</th>
-                        <th scope="col">Where</th>
-                        <th scope="col">Map</th>
-                        <th scope="col" class="link">Site</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for i in s.items %}
-                    {% if s.id == "school" %}{% assign ofsted = site.data.ofsted.schools | where: "name", i.name | first %}{% else %}{% assign ofsted = nil %}{% endif %}
-                    <tr>
-                        <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ i.name }}</a>{% else %}{{ i.name }}{% endif %}</td>
-                        <td>{% if i.type %}{{ i.type }}{% if i.detail %}, {% endif %}{% endif %}{% if i.detail %}{{ i.detail }}{% if i.address %}. {% endif %}{% endif %}{% if i.address %}{{ i.address }}{% endif %}{% if ofsted.latest_rated %}. Ofsted: {{ ofsted.latest_rated.outcome }} ({{ ofsted.latest_rated.date | date: "%Y-%m-%d" }}){% endif %}</td>
-                        <td class="number">{{ i.distance_miles }}</td>
-                        <td>{% if i.in_ward %}In ward{% else %}Nearby{% endif %}</td>
-                        <td class="map">{% include pin.html lat=i.lat lng=i.lon label=i.name %}</td>
-                        {% assign item_label = i.name | append: " site" %}
-                        <td class="link">{% if i.url and i.url contains "http" and s.id != "toilet" %}{% include link-icon.html url=i.url label=item_label %}{% endif %}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-
-        <h2>Local Issues in {{ w.name }}</h2>
-        <h3>Reports on FixMyStreet</h3>
-        {% if issues.fix_my_street.size > 0 %}
-        <div class="table-scroll">
-            <table class="ward-issues-table data-table" data-sortable>
-                <thead>
-                    <tr>
-                        <th scope="col">Report</th>
-                        <th scope="col" class="category">Category</th>
-                        <th scope="col" class="date">Reported</th>
-                        <th scope="col">Map</th>
-                        <th scope="col" class="link">FixMyStreet</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for r in issues.fix_my_street %}
-                    <tr>
-                        <td>{{ r.title }}</td>
-                        <td class="category">{{ r.group }}</td>
-                        <td class="date" data-val="{{ r.published }}">{{ r.published }}</td>
-                        <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.title %}</td>
-                        {% assign fms_label = r.title | append: " on FixMyStreet" %}
-                        <td class="link">{% include link-icon.html url=r.url label=fms_label %}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        {% else %}
-        <p>There are no recent FixMyStreet reports in the ward.</p>
-        {% endif %}
-
-        {% if issues.planning.size > 0 %}
-        <h3>Planning Applications</h3>
-        <div class="table-scroll">
-            <table class="ward-issues-table data-table" data-sortable>
-                <thead>
-                    <tr>
-                        <th scope="col">Reference</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Status</th>
-                        <th scope="col" class="date">Received</th>
-                        <th scope="col" class="link">Council</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for p in issues.planning %}
-                    <tr>
-                        <td>{{ p.ref }}</td>
-                        <td>{{ p.address }}</td>
-                        <td>{{ p.status }}</td>
-                        <td class="date" data-val="{{ p.received }}">{{ p.received }}</td>
-                        {% assign council_label = "Application " | append: p.ref | append: " on the council's planning site" %}
-                        <td class="link">{% include link-icon.html url=p.url label=council_label %}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        {% endif %}
-
-        <h3>Serious and Fatal Road Collisions</h3>
-        <p>
-            {% if issues.serious_collisions.size > 0 %}Police recorded {{ issues.serious_collisions.size }} serious or fatal road collisions in {{ w.name }} between
-            {{ issues.serious_collisions_by_year.first.year }} and {{ issues.serious_collisions_by_year.last.year }}.{% else %}Police recorded no serious or fatal road collisions in {{ w.name }} in the last five years.{% endif %}
-            Slight collisions are not counted here; the <a href="/cheltenham-road-collisions">Cheltenham road collisions</a>
-            page covers the whole town.
-        </p>
-        {% if issues.serious_collisions.size > 0 %}
-        <div class="table-scroll">
-            <table class="ward-issues-table data-table" data-sortable>
-                <thead>
-                    <tr>
-                        <th scope="col" class="date">Date</th>
-                        <th scope="col">Severity</th>
-                        <th scope="col">Road</th>
-                        <th scope="col">Map</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for c in issues.serious_collisions %}
-                    <tr>
-                        <td class="date" data-val="{{ c.date }}">{{ c.date }}</td>
-                        <td>{{ c.severity }}</td>
-                        <td>{{ c.road }}</td>
-                        <td class="map">{% include pin.html lat=c.lat lng=c.lon label=c.road %}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        {% endif %}
-
-        <h2>Broadband in {{ w.name }}</h2>
-        <div class="table-scroll">
-            <table class="ward-broadband-table data-table">
-                <thead>
-                    <tr>
-                        <th scope="col">Speed tier</th>
-                        <th scope="col" class="number">Premises covered (%)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Superfast (30 Mbps+)</td><td class="number">{{ w.broadband.sfbb_pct }}</td></tr>
-                    <tr><td>Ultrafast (100 Mbps+)</td><td class="number">{{ w.broadband.ufbb100_pct }}</td></tr>
-                    <tr><td>Ultrafast (300 Mbps+)</td><td class="number">{{ w.broadband.ufbb300_pct }}</td></tr>
-                    <tr><td>Gigabit (1000 Mbps+)</td><td class="number">{{ w.broadband.gigabit_pct }}</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <p>See how {{ w.name }} compares with every other ward on the
-            <a href="/cheltenham-broadband-internet-speeds">Cheltenham broadband</a> page.</p>
-
         <p class="ward-attribution"><small>
-            Data from Police.uk (crime), HM Land Registry (house prices) and the Office for National Statistics
-            (ward boundaries), published under the Open Government Licence v3.0, and from Cheltenham Borough Council
-            (election results).
+            Data from Police.uk (crime), HM Land Registry (house prices), the Office for National Statistics
+            (ward boundaries), the Department for Transport's Street Manager (street works), the Environment Agency
+            (flood zones), the Ministry of Housing, Communities and Local Government (fire statistics), Ofsted
+            (childcare) and the Care Quality Commission (care homes), published under the Open Government Licence v3.0,
+            and from Cheltenham Borough Council (election results).
             {% if w.generated_at %}Last updated {{ w.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
         </small></p>
 
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="faq">Frequently Asked Questions</h2>
 
         <h3>Where Does the {{ w.name }} Data Come From?</h3>
         <ul>
@@ -523,7 +588,10 @@
                 Statistics. Everything else comes from the same open datasets behind the rest of this site, such as
                 the NHS, the Food Standards Agency, Historic England and OpenStreetMap, sorted into the ward by location.
                 Each school's latest outcome is from Ofsted, and its name links to the school's full inspection history.
-                Deprivation figures are from the English Indices of Deprivation {{ dep.edition }}.</li>
+                Deprivation figures are from the English Indices of Deprivation {{ dep.edition }}. Street works are from
+                the Department for Transport's Street Manager, flood zones from the Environment Agency, fire records from
+                the national fire statistics, nurseries and childcare from Ofsted, and care homes from the Care Quality
+                Commission.</li>
         </ul>
 
         <h3>How Accurate Is the Ward Boundary?</h3>

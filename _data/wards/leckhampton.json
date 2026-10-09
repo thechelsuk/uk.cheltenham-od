@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:50.712376+00:00",
+  "generated_at": "2026-10-09T02:35:42.775103+00:00",
   "name": "Leckhampton",
   "slug": "leckhampton",
   "code": "E05015712",
@@ -888,6 +888,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 178,
+    "zone3": 0,
+    "zone2_or_3": 5,
+    "zone3_pct": 0.0,
+    "zone2_or_3_pct": 2.8
+  },
   "venue_types": [
     {
       "type": "Pub/bar/nightclub",
@@ -911,7 +918,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
@@ -980,7 +987,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 0,
@@ -1015,6 +1022,15 @@
           "distance_miles": 1.2
         },
         {
+          "name": "Spa Hc Ltd",
+          "address": "12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW",
+          "postcode": "GL50 1SW",
+          "lat": 51.895618,
+          "lon": -2.082781,
+          "in_ward": false,
+          "distance_miles": 1.2
+        },
+        {
           "name": "Spa Pharmacy",
           "address": "12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW",
           "postcode": "GL50 1SW",
@@ -1023,22 +1039,12 @@
           "lon": -2.082781,
           "in_ward": false,
           "distance_miles": 1.2
-        },
-        {
-          "name": "Hawkes Pharmacy",
-          "address": "52 Windermere Road, Cheltenham, GL51 3PH",
-          "postcode": "GL51 3PH",
-          "detail": "01242 523290",
-          "lat": 51.88763,
-          "lon": -2.109371,
-          "in_ward": false,
-          "distance_miles": 1.27
         }
       ]
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 1,
@@ -1101,7 +1107,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1155,7 +1161,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 1,
@@ -1182,8 +1188,50 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 3,
+      "items": [
+        {
+          "name": "The Hamptons",
+          "address": "94 Leckhampton Road, Cheltenham",
+          "postcode": "GL53 0BN",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-108741211",
+          "lat": 51.883699,
+          "lon": -2.078908,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Lilleybrook Care Home",
+          "address": "Pilley Lane, Cheltenham",
+          "postcode": "GL53 9ER",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-983777097",
+          "lat": 51.877535,
+          "lon": -2.073203,
+          "in_ward": true,
+          "distance_miles": 0.45
+        },
+        {
+          "name": "Gloucestershire House - Care Home with Nursing Physical Disabilities",
+          "address": "Charlton Lane, Leckhampton, Cheltenham",
+          "postcode": "GL53 9HD",
+          "detail": "Rated Requires improvement",
+          "url": "https://www.cqc.org.uk/location/1-120087914",
+          "lat": 51.880044,
+          "lon": -2.072263,
+          "in_ward": true,
+          "distance_miles": 0.5
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1257,6 +1305,55 @@
           "lon": -2.100005,
           "in_ward": false,
           "distance_miles": 0.72
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 4,
+      "items": [
+        {
+          "name": "Broadlands Pre-School Centre",
+          "address": "Broadlands Pre-school Centre, Moorend Grove, Cheltenham",
+          "postcode": "GL53 0EY",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.879758,
+          "lon": -2.082722,
+          "in_ward": true,
+          "distance_miles": 0.11
+        },
+        {
+          "name": "Leckhampton After School Club",
+          "address": "Leckhampton Primary School, Hall Road, Cheltenham",
+          "postcode": "GL53 0HP",
+          "detail": "Out-of-school club",
+          "lat": 51.876784,
+          "lon": -2.079971,
+          "in_ward": true,
+          "distance_miles": 0.19
+        },
+        {
+          "name": "Partou Westfields Day Nursery & Pre-School",
+          "address": "121 Leckhampton Road, Cheltenham",
+          "postcode": "GL53 0DQ",
+          "detail": "Nursery (full day care)",
+          "lat": 51.878691,
+          "lon": -2.077665,
+          "in_ward": true,
+          "distance_miles": 0.26
+        },
+        {
+          "name": "Nursery Rhymes",
+          "address": "Peacecroft, Kidnappers Lane, Cheltenham",
+          "postcode": "GL53 0NR",
+          "detail": "Nursery (full day care)",
+          "lat": 51.876642,
+          "lon": -2.0895,
+          "in_ward": true,
+          "distance_miles": 0.27
         }
       ]
     },

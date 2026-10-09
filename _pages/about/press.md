@@ -86,8 +86,14 @@ _(Happy to provide a tailored quote for your story — just [ask](/contact).)_
 
 ## Facts & Figures
 
-- {{ site.pages | size }} pages in total
-- Data updated from hourly to monthly in line with source data changes.
+{% include site-figures.html %}
+
+- {{ data_pages_count }} data pages across six topics, from fuel prices to flood warnings
+- {{ site.posts | size }} news posts, including {{ findings | size }} analyses of local data
+- {{ site.data.sources | size }} data sources, most of them openly licensed
+- {{ site.feeds | size }} free feeds, including an [all-in-one alerts feed](/feeds/alerts.xml)
+- Data updated from every five minutes to once a year, in line with each source
+- The town's headline figures are on [Cheltenham in Numbers](/cheltenham-in-numbers)
 
 ## Follow & Feeds
 

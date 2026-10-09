@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:52.932667+00:00",
+  "generated_at": "2026-10-09T02:35:45.027118+00:00",
   "name": "St Peter's",
   "slug": "st-peters",
   "code": "E05015720",
@@ -747,6 +747,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 166,
+    "zone3": 1,
+    "zone2_or_3": 5,
+    "zone3_pct": 0.6,
+    "zone2_or_3_pct": 3.0
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -778,7 +785,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 1,
@@ -847,7 +854,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 1,
@@ -914,7 +921,7 @@
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 1,
@@ -977,7 +984,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 1,
@@ -1040,7 +1047,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1067,8 +1074,50 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 3,
+      "items": [
+        {
+          "name": "Sandfields",
+          "address": "St. Georges Road, Cheltenham",
+          "postcode": "GL50 3EL",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-19896801053",
+          "lat": 51.90142,
+          "lon": -2.091265,
+          "in_ward": true,
+          "distance_miles": 0.36
+        },
+        {
+          "name": "St Faith's Nursing Home",
+          "address": "Malvern Road, Cheltenham",
+          "postcode": "GL50 2NR",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490637",
+          "lat": 51.900485,
+          "lon": -2.090856,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Crofton Springs",
+          "address": "Crofton Springs, Gloucester Road, Cheltenham",
+          "postcode": "GL51 8NR",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-19886026946",
+          "lat": 51.899348,
+          "lon": -2.096101,
+          "in_ward": true,
+          "distance_miles": 0.45
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1142,6 +1191,45 @@
           "lon": -2.082146,
           "in_ward": false,
           "distance_miles": 0.62
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 3,
+      "items": [
+        {
+          "name": "Little Pips Nursery",
+          "address": "5-7 Arle Avenue, Cheltenham",
+          "postcode": "GL51 8JP",
+          "detail": "Nursery (full day care)",
+          "lat": 51.904737,
+          "lon": -2.091577,
+          "in_ward": true,
+          "distance_miles": 0.19
+        },
+        {
+          "name": "Kidzone @ Christ Church Primary School",
+          "address": "Christ Church Primary School, Malvern Road, Cheltenham",
+          "postcode": "GL50 2NR",
+          "detail": "Out-of-school club",
+          "lat": 51.900485,
+          "lon": -2.090856,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Cherry Blossom Pre School",
+          "address": "St Barnabas Church, Orchard Way, Cheltenham",
+          "postcode": "GL51 7JY",
+          "detail": "Pre-school (sessional care)",
+          "lat": 51.908106,
+          "lon": -2.106193,
+          "in_ward": true,
+          "distance_miles": 0.48
         }
       ]
     },
@@ -1399,18 +1487,8 @@
       "group": "Everyday Services",
       "label": "Parcel Pick-up Points",
       "mode": "nearest",
-      "in_ward": 4,
+      "in_ward": 3,
       "items": [
-        {
-          "name": "Alstone Local Cheltenham",
-          "address": "93 Gloucester Road",
-          "postcode": "GL51 8NG",
-          "detail": "InPost locker",
-          "lat": 51.90164,
-          "lon": -2.09231,
-          "in_ward": true,
-          "distance_miles": 0.33
-        },
         {
           "name": "Tesco Superstore Cheltenham",
           "address": "Colletts Drive, Lansdown",

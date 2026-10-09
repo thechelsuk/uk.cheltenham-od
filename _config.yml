@@ -134,6 +134,10 @@ navigation_header:
       - name: Cheltenham Unplanned Road Closures
         link: /cheltenham-roadworks/unplanned-closures
         description: "A log of unplanned lane and road closures on National Highways roads near Cheltenham."
+  - name: Cheltenham Street Works
+    link: /cheltenham-street-works
+    description: "Street works and road closures on local roads around Cheltenham, including emergency repairs."
+    group: "Getting Around"
   - name: Cheltenham Bus Data
     link: /cheltenham-bus-data
     description: "Bus routes serving Cheltenham and disruption statuses"
@@ -142,59 +146,15 @@ navigation_header:
       - name: Cheltenham Bus Disruptions History
         link: /cheltenham-bus-data/history
         description: "Historical log of bus disruptions recorded as affecting Cheltenham."
-  - name: Cheltenham Cycle Routes
-    link: /cheltenham-cycle-routes
-    description: "Dedicated cycle tracks and on-road lanes near Cheltenham, including the Honeybourne Line and NCN 41."
-    group: "Getting Around"
   - name: Cheltenham Train Times
     link: /cheltenham-train-times
     description: "Next departures and arrivals at Cheltenham Spa station."
     group: "Getting Around"
 
-  # Things to Do
-  - name: Cheltenham Where to Eat
-    link: /cheltenham-where-to-eat
-    description: "Restaurants, cafés, pubs and takeaways in Cheltenham on a map, with official food hygiene ratings."
-    group: "Things to Do"
-  - name: Cheltenham Sports &amp; Clubs
-    link: /cheltenham-sports
-    description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
-    group: "Things to Do"
-    children:
-      - name: Cheltenham Town FC
-        link: /cheltenham-sports/cheltenham-town-fc
-        description: "Cheltenham Town FC fixtures, results and getting to the ground."
-      - name: Gloucestershire Cricket
-        link: /cheltenham-sports/gloucestershire-cricket
-        description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival and a map of their home grounds."
-      - name: Cheltenham Parkrun
-        link: /cheltenham-sports/parkrun
-        description: "Cheltenham parkrun events and results."
-  - name: Cheltenham Points of Interest
-    link: /cheltenham-points-of-interest
-    description: "Local points of interests in and around Cheltenham."
-    group: "Things to Do"
-  - name: Cheltenham Play Parks
-    link: /cheltenham-play-parks
-    description: "Map of children's play parks and playgrounds in and around Cheltenham."
-    group: "Things to Do"
-  - name: Cheltenham Places to Stay
-    link: /staying-in-cheltenham
-    description: "Local hotels and guest houses in Cheltenham."
-    group: "Things to Do"
-  - name: Cheltenham Public Holidays
-    link: /cheltenham-public-holidays
-    description: "Confirmed public holidays."
-    group: "Things to Do"
-  - name: Cheltenham Festivals
-    link: /festivals
-    description: "Cheltenham's year-round festival calendar including Literature, Racing, Jazz, Science, and Music."
-    group: "Things to Do"
-  - name: Cheltenham Public Toilets
-    link: /cheltenham-public-toilets
-    description: "Local public toilet with mapped locations and information."
-    group: "Things to Do"
-
+  - name: Cheltenham Cycle Routes
+    link: /cheltenham-cycle-routes
+    description: "Dedicated cycle tracks and on-road lanes near Cheltenham, including the Honeybourne Line and NCN 41."
+    group: "Getting Around"
   # Home & Property
   - name: Cheltenham House Prices
     link: /cheltenham-house-prices
@@ -222,10 +182,40 @@ navigation_header:
       - name: Cheltenham Council Tax Stock of Properties
         link: /cheltenham-house-prices/council-tax-stock
         description: "Total number of properties in Cheltenham over time."
+  - name: Cheltenham Rent Prices
+    link: /cheltenham-rent-prices
+    description: "Average private rents in Cheltenham by bedrooms and property type, month by month since 2015."
+    group: "Home & Property"
+  - name: Cheltenham Council Tax
+    link: /cheltenham-council-tax
+    description: "Council tax charges by band and by parish for Cheltenham."
+    group: "Home & Property"
+  - name: Cheltenham Schools &amp; Catchment Areas
+    link: /cheltenham-schools
+    description: "Primary, secondary, independent, and special schools in Cheltenham."
+    group: "Home & Property"
+    children:
+      - name: Primary School Catchment Areas
+        link: /cheltenham-schools/catchment-areas/primary
+        description: "Cheltenham primary school catchment areas map."
+      - name: Secondary School Catchment Areas
+        link: /cheltenham-schools/catchment-areas/secondary
+        description: "Cheltenham secondary school catchment areas map."
+      - name: Nurseries &amp; Childcare
+        link: /cheltenham-nurseries-childcare
+        description: "Nurseries, pre-schools and out-of-school clubs in Cheltenham with their latest Ofsted outcome."
   - name: Cheltenham Planning Applications
     link: /cheltenham-planning-applications
     description: "Local planning applications from Cheltenham Borough Council."
     group: "Home & Property"
+  - name: Cheltenham Fix My Street
+    link: /cheltenham-fix-my-street
+    description: "Local street issues and reports."
+    group: "Home & Property"
+    children:
+      - name: Cheltenham Fix My Street History
+        link: /cheltenham-fix-my-street/history
+        description: "Every street problem reported around Cheltenham since 21 June 2026, counted by month and by category."
   - name: Cheltenham Broadband Internet & Mobile Coverage
     link: /cheltenham-broadband-internet-speeds
     description: "Broadband internet and mobile network coverage in Cheltenham"
@@ -234,23 +224,10 @@ navigation_header:
       - name: Cheltenham Mobile Coverage
         link: /cheltenham-mobile-coverage
         description: "Mobile phone network coverage by operator in Cheltenham."
-  - name: Cheltenham Council Tax
-    link: /cheltenham-council-tax
-    description: "Council tax charges by band and by parish for Cheltenham."
-    group: "Home & Property"
   - name: Cheltenham Recycling
     link: /cheltenham-recycling
     description: "Cheltenham recycling guide and bank locations."
     group: "Home & Property"
-  - name: Cheltenham Rent Prices
-    link: /cheltenham-rent-prices
-    description: "Average private rents in Cheltenham by bedrooms and property type, month by month since 2015."
-    group: "Home & Property"
-  - name: Cheltenham Wards
-    link: /cheltenham-wards
-    description: "Cheltenham's 20 electoral wards compared on crime, house prices, broadband, voters and councillors, with a local profile for each."
-    group: "Home & Property"
-
   # Safety & Environment
   - name: Cheltenham Crime Data
     link: /cheltenham-crime-data
@@ -296,30 +273,6 @@ navigation_header:
       - name: The Summer 2007 Floods in Cheltenham
         link: /cheltenham-flood-warnings/2007-floods
         description: "What happened in the June and July 2007 floods, and the record river levels since."
-  - name: Cheltenham Air Quality
-    link: /cheltenham-air-quality
-    description: "Local area air quality readings for Cheltenham."
-    group: "Safety & Environment"
-  - name: Cheltenham Security Alerts
-    link: /cheltenham-security-alerts
-    description: "Local area security alerts and status updates."
-    group: "Safety & Environment"
-  - name: Cheltenham Fix My Street
-    link: /cheltenham-fix-my-street
-    description: "Local street issues and reports."
-    group: "Safety & Environment"
-    children:
-      - name: Cheltenham Fix My Street History
-        link: /cheltenham-fix-my-street/history
-        description: "Every street problem reported around Cheltenham since 21 June 2026, counted by month and by category."
-  - name: Cheltenham Power Cuts
-    link: /cheltenham-power-cuts
-    description: "Live and recent power cuts affecting Cheltenham, from National Grid Electricity Distribution."
-    group: "Safety & Environment"
-    children:
-      - name: Cheltenham Power Cuts History
-        link: /cheltenham-power-cuts/history
-        description: "Historical log of power cuts recorded against Cheltenham postcodes."
   - name: Cheltenham Wildfire Risk
     link: /cheltenham-wildfire-risk
     description: "Today's Met Office fire severity level and five-day forecast for Cheltenham and the land within 10 km."
@@ -329,7 +282,106 @@ navigation_header:
         link: /cheltenham-wildfire-risk/history
         description: "Grassland, woodland and crop fires recorded around Cheltenham since 2010, and days of high fire severity."
 
+  - name: Cheltenham Air Quality
+    link: /cheltenham-air-quality
+    description: "Local area air quality readings for Cheltenham."
+    group: "Safety & Environment"
+  - name: Cheltenham Power Cuts
+    link: /cheltenham-power-cuts
+    description: "Live and recent power cuts affecting Cheltenham, from National Grid Electricity Distribution."
+    group: "Safety & Environment"
+    children:
+      - name: Cheltenham Power Cuts History
+        link: /cheltenham-power-cuts/history
+        description: "Historical log of power cuts recorded against Cheltenham postcodes."
+  - name: Cheltenham Security Alerts
+    link: /cheltenham-security-alerts
+    description: "Local area security alerts and status updates."
+    group: "Safety & Environment"
+  # Things to Do
+  - name: Cheltenham Festivals
+    link: /festivals
+    description: "Cheltenham's year-round festival calendar including Literature, Racing, Jazz, Science, and Music."
+    group: "Things to Do"
+  - name: Cheltenham Where to Eat
+    link: /cheltenham-where-to-eat
+    description: "Restaurants, cafés, pubs and takeaways in Cheltenham on a map, with official food hygiene ratings."
+    group: "Things to Do"
+  - name: Cheltenham Food Hygiene Ratings
+    link: /cheltenham-food-standards
+    description: "Food hygiene ratings for venues in Cheltenham."
+    group: "Things to Do"
+    children:
+      - name: Five-Star Food Hygiene Ratings
+        link: /cheltenham-food-standards/rated-five
+        description: "Cheltenham venues with a five-star food hygiene rating."
+      - name: Food Hygiene Ratings 1 to 4
+        link: /cheltenham-food-standards/rated-one-to-four
+        description: "Cheltenham venues rated 1 to 4 for food hygiene."
+      - name: Exempt Food Businesses
+        link: /cheltenham-food-standards/exempt
+        description: "Cheltenham food businesses exempt from a hygiene rating."
+      - name: Food Businesses Awaiting Inspection
+        link: /cheltenham-food-standards/awaiting-inspection
+        description: "Cheltenham food businesses awaiting a hygiene inspection."
+  - name: Cheltenham Places to Stay
+    link: /staying-in-cheltenham
+    description: "Local hotels and guest houses in Cheltenham."
+    group: "Things to Do"
+  - name: Cheltenham Points of Interest
+    link: /cheltenham-points-of-interest
+    description: "Local points of interests in and around Cheltenham."
+    group: "Things to Do"
+  - name: Cheltenham Sports &amp; Clubs
+    link: /cheltenham-sports
+    description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
+    group: "Things to Do"
+    children:
+      - name: Cheltenham Town FC
+        link: /cheltenham-sports/cheltenham-town-fc
+        description: "Cheltenham Town FC fixtures, results and getting to the ground."
+      - name: Gloucestershire Cricket
+        link: /cheltenham-sports/gloucestershire-cricket
+        description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival and a map of their home grounds."
+      - name: Cheltenham Parkrun
+        link: /cheltenham-sports/parkrun
+        description: "Cheltenham parkrun events and results."
+  - name: Cheltenham Play Parks
+    link: /cheltenham-play-parks
+    description: "Map of children's play parks and playgrounds in and around Cheltenham."
+    group: "Things to Do"
+  - name: Cheltenham Public Toilets
+    link: /cheltenham-public-toilets
+    description: "Local public toilet with mapped locations and information."
+    group: "Things to Do"
+
   # Community & Support
+  - name: Cheltenham GP and Pharmacies
+    link: /cheltenham-gp-pharmacies
+    description: "Find GP practices and pharmacies in Cheltenham"
+    group: "Community & Support"
+  - name: Cheltenham Dentists
+    link: /cheltenham-dentists
+    description: "Dental practices in Cheltenham on a map, with how to find an NHS dentist."
+    group: "Community & Support"
+  - name: Cheltenham Opticians
+    link: /cheltenham-opticians
+    description: "Opticians in Cheltenham on a map, with who can get a free NHS sight test."
+    group: "Community & Support"
+  - name: Cheltenham A&E Waiting Times
+    link: /cheltenham-ae-waiting-times
+    description: "Monthly A&E waiting times for Gloucestershire Hospitals NHS Foundation Trust, with a map of nearby hospitals."
+    group: "Community & Support"
+    # COVID-19 is only listed under A&E to keep it out of the main menu; the two
+    # pages deliberately don't link to each other.
+    children:
+      - name: COVID-19 in Cheltenham
+        link: /cheltenham-covid-19
+        description: "Cases, testing, deaths, hospital admissions and vaccine uptake in Cheltenham from February 2020 to December 2023."
+  - name: Cheltenham Care Homes
+    link: /cheltenham-care-homes
+    description: "Care homes, nursing homes and home care services in Cheltenham with their CQC ratings."
+    group: "Community & Support"
   - name: Cheltenham Food Banks
     link: /cheltenham-foodbank-needed-items
     description: "Local foodbanks, locations, details, and their needed items."
@@ -361,57 +413,36 @@ navigation_header:
       - name: Cheltenham Local Help and Support
         link: /cheltenham-helpful-contacts-reports/local-support
         description: "Community groups, places to meet and ways to save on food."
-  - name: Cheltenham GP and Pharmacies
-    link: /cheltenham-gp-pharmacies
-    description: "Find GP practices and pharmacies in Cheltenham"
-    group: "Community & Support"
-  - name: Cheltenham Dentists
-    link: /cheltenham-dentists
-    description: "Dental practices in Cheltenham on a map, with how to find an NHS dentist."
-    group: "Community & Support"
-  - name: Cheltenham Opticians
-    link: /cheltenham-opticians
-    description: "Opticians in Cheltenham on a map, with who can get a free NHS sight test."
-    group: "Community & Support"
-  - name: Cheltenham A&E Waiting Times
-    link: /cheltenham-ae-waiting-times
-    description: "Monthly A&E waiting times for Gloucestershire Hospitals NHS Foundation Trust, with a map of nearby hospitals."
-    group: "Community & Support"
-  - name: COVID-19 in Cheltenham
-    link: /cheltenham-covid-19
-    description: "Cases, testing, deaths, hospital admissions and vaccine uptake in Cheltenham from February 2020 to December 2023."
-    group: "Community & Support"
-  - name: Cheltenham Food Hygiene Ratings
-    link: /cheltenham-food-standards
-    description: "Food hygiene ratings for venues in Cheltenham."
-    group: "Community & Support"
-    children:
-      - name: Five-Star Food Hygiene Ratings
-        link: /cheltenham-food-standards/rated-five
-        description: "Cheltenham venues with a five-star food hygiene rating."
-      - name: Food Hygiene Ratings 1 to 4
-        link: /cheltenham-food-standards/rated-one-to-four
-        description: "Cheltenham venues rated 1 to 4 for food hygiene."
-      - name: Exempt Food Businesses
-        link: /cheltenham-food-standards/exempt
-        description: "Cheltenham food businesses exempt from a hygiene rating."
-      - name: Food Businesses Awaiting Inspection
-        link: /cheltenham-food-standards/awaiting-inspection
-        description: "Cheltenham food businesses awaiting a hygiene inspection."
-  - name: Cheltenham Third Spaces
-    link: /cheltenham-third-spaces
-    description: "Local third spaces and community hubs in Cheltenham."
-    group: "Community & Support"
-  - name: Cheltenham Care Homes
-    link: /cheltenham-care-homes
-    description: "Care homes, nursing homes and home care services in Cheltenham with their CQC ratings."
-    group: "Community & Support"
   - name: Cheltenham Charities
     link: /cheltenham-charities
     description: "Registered charities based in Cheltenham, with what each does and its income."
     group: "Community & Support"
 
+  - name: Cheltenham Third Spaces
+    link: /cheltenham-third-spaces
+    description: "Local third spaces and community hubs in Cheltenham."
+    group: "Community & Support"
+  - name: Cheltenham Post Offices &amp; Lockers
+    link: /cheltenham-post-office-locations
+    description: "Find Post Offices, InPost lockers and DPD Pickup points in Cheltenham"
+    group: "Community & Support"
+    children:
+      - name: Cheltenham InPost Lockers
+        link: /cheltenham-inpost-lockers
+        description: "Cheltenham InPost self-service parcel locker locations."
+      - name: Cheltenham DPD Pickup Points
+        link: /cheltenham-dpd-pickup-points
+        description: "Cheltenham DPD Pickup points at local shops and petrol stations."
   # About & Info
+  - name: Cheltenham in Numbers
+    link: /cheltenham-in-numbers
+    description: "Cheltenham's key facts and figures at a glance, each linked to its source."
+    group: "About & Info"
+  - name: Cheltenham Wards
+    link: /cheltenham-wards
+    description: "Cheltenham's 20 electoral wards compared on crime, house prices, broadband, voters and councillors, with a local profile for each."
+    group: "About & Info"
+
   - name: All About Cheltenham
     link: /about-cheltenham
     description: "Cheltenham population, growth, employment and Census 2021 statistics"
@@ -446,6 +477,10 @@ navigation_header:
       - name: Cheltenham Local Elections and Councillors
         link: /cheltenham-politics/local-elections
         description: "Every Cheltenham borough councillor and local election results by ward since 2024."
+  - name: University of Gloucestershire
+    link: /university-of-gloucestershire
+    description: "University of Gloucestershire campuses in Cheltenham and Gloucester, what is taught where and how to apply."
+    group: "About & Info"
   - name: Cheltenham Latest News
     link: /cheltenham-news
     description: "Today's Local news aggregation for Cheltenham and Gloucestershire"
@@ -458,35 +493,10 @@ navigation_header:
       - name: Submit a Classified Advert
         link: /submission
         description: "Submit a classified advert for Cheltenham."
-  - name: Cheltenham Schools &amp; Catchment Areas
-    link: /cheltenham-schools
-    description: "Primary, secondary, independent, and special schools in Cheltenham."
+  - name: Cheltenham Public Holidays
+    link: /cheltenham-public-holidays
+    description: "Confirmed public holidays."
     group: "About & Info"
-    children:
-      - name: Primary School Catchment Areas
-        link: /cheltenham-schools/catchment-areas/primary
-        description: "Cheltenham primary school catchment areas map."
-      - name: Secondary School Catchment Areas
-        link: /cheltenham-schools/catchment-areas/secondary
-        description: "Cheltenham secondary school catchment areas map."
-      - name: Nurseries &amp; Childcare
-        link: /cheltenham-nurseries-childcare
-        description: "Nurseries, pre-schools and out-of-school clubs in Cheltenham with their latest Ofsted outcome."
-  - name: University of Gloucestershire
-    link: /university-of-gloucestershire
-    description: "University of Gloucestershire campuses in Cheltenham and Gloucester, what is taught where and how to apply."
-    group: "About & Info"
-  - name: Cheltenham Post Offices &amp; Lockers
-    link: /cheltenham-post-office-locations
-    description: "Find Post Offices, InPost lockers and DPD Pickup points in Cheltenham"
-    group: "About & Info"
-    children:
-      - name: Cheltenham InPost Lockers
-        link: /cheltenham-inpost-lockers
-        description: "Cheltenham InPost self-service parcel locker locations."
-      - name: Cheltenham DPD Pickup Points
-        link: /cheltenham-dpd-pickup-points
-        description: "Cheltenham DPD Pickup points at local shops and petrol stations."
   - name: Cheltenham 10-day Weather Forecast
     link: /cheltenham-10-day-weather-forecast
     description: "Local temperature, rain, wind and humidity forecasts for Cheltenham."
@@ -562,6 +572,8 @@ footer_pages:
       link: /cheltenham-helpful-contacts-reports
     - name: Cheltenham House Prices
       link: /cheltenham-house-prices
+    - name: Cheltenham in Numbers
+      link: /cheltenham-in-numbers
     - name: Cheltenham Home Affordability
       link: /cheltenham-house-prices/affordability
     - name: Cheltenham Housing Supply
@@ -622,6 +634,10 @@ footer_pages:
       link: /cheltenham-sewage-overflows
     - name: Cheltenham Sports
       link: /cheltenham-sports
+    - name: Cheltenham Street Works
+      link: /cheltenham-street-works
+    - name: Cheltenham Taxi Ranks
+      link: /cheltenham-taxi-ranks
     - name: Cheltenham Third Spaces
       link: /cheltenham-third-spaces
     - name: Cheltenham Train Times
@@ -750,14 +766,14 @@ footer_columns:
         link: /terms
       - name: Privacy Policy
         link: /privacy
-      - name: Privacy.txt
-        link: /.well-known/privacy.txt
-      - name: Security.txt
-        link: /.well-known/security.txt
-      - name: Sitemap.xml
-        link: /sitemap.xml
-      - name: LLMs.txt
-        link: /llms.txt
+      - name: Editorial Standards
+        link: /editorial-standards
+      - name: Corrections
+        link: /corrections
+      - name: Accessibility
+        link: /accessibility
+      - name: All Policies &amp; Site Files
+        link: /policies
 
 social:
   linkedin: "https://www.linkedin.com/company/cheltenham-open-data/"

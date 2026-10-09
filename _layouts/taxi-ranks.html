@@ -1,0 +1,84 @@
+{% include header.html %}
+{% assign data = site.data["taxi-ranks"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/getting-around">&lAarr; Back to Getting Around</a></li>
+                <li>{{ data.count }} taxi ranks in Cheltenham</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="map">Map</h2>
+        <div id="taxi-ranks-map" class="map-canvas" aria-label="Map of taxi ranks in Cheltenham"></div>
+
+        <h2 id="ranks">Taxi Ranks</h2>
+        <div class="table-scroll">
+            <table class="taxi-ranks-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Street</th>
+                        <th scope="col" class="number">Spaces</th>
+                        <th scope="col" class="number">Miles from Town Centre</th>
+                        <th scope="col">Listed by</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in data.ranks %}
+                    <tr>
+                        <td>{{ r.name }}</td>
+                        <td>{{ r.street }}</td>
+                        <td class="number" data-val="{{ r.spaces | default: 0 }}">{% if r.spaces %}{{ r.spaces }}{% else %}&ndash;{% endif %}</td>
+                        <td class="number" data-val="{{ r.distance_miles }}">{{ r.distance_miles }}</td>
+                        <td>{{ r.sources | join: ", " }}</td>
+                        <td class="map">{% include pin.html lat=r.lat lng=r.lon label=r.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="taxi-ranks-attribution"><small>
+            Data from <a href="{{ data.council_map }}">Cheltenham Borough Council's taxi rank map</a>, which states no licence,
+            and <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, published under the Open
+            Database Licence (ODbL). Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is the Difference Between a Taxi and a Private Hire Car?</h3>
+        <ul>
+            <li>Taxis, also called hackney carriages, have a white roof light showing the word "TAXI". They can wait at taxi ranks and be flagged down in the street without booking.</li>
+            <li>Private hire cars must be booked in advance, by phone or app, and can't pick up from a rank or be flagged down.</li>
+        </ul>
+
+        <h3>Are These All the Taxi Ranks in Cheltenham?</h3>
+        <ul>
+            <li>These are the ranks on Cheltenham Borough Council's map and in OpenStreetMap, plus any we have checked ourselves. Some smaller ranks, including ranks that only operate at night, may not be listed.</li>
+        </ul>
+
+        <h3>How Do I Get a Taxi During the Cheltenham Festival?</h3>
+        <ul>
+            <li>Taxis are in high demand during race meetings and the big festivals, so book ahead where you can. If you haven't booked, the council advises using an official taxi rank or flagging down a licensed taxi with a white "TAXI" roof light.</li>
+        </ul>
+
+        <h3>How Do I Find a Wheelchair-Accessible Taxi?</h3>
+        <ul>
+            <li>Cheltenham Borough Council lists the <a href="https://www.cheltenham.gov.uk/business-and-licensing/apply-or-renew-licences-and-permits/taxi-and-private-hire-licensing/wheelchair-accessible-taxis/">wheelchair-accessible taxis</a> it licenses.</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="taxi-ranks-data" type="application/json">{{ data.ranks | jsonify }}</script>
+<script src="/assets/scripts/taxi-ranks-map.js"></script>
+{% include footer.html %}

@@ -1,0 +1,54 @@
+{% include header.html %}
+{% assign data = site.data["cheltenham-numbers"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/explore/about-info">&lAarr; Back to About Cheltenham</a></li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% for group in data.groups %}
+        <h2 id="{{ group.name | slugify }}">{{ group.name }}</h2>
+        <div class="glance-grid">
+            {% for f in group.figures %}
+            <div class="info-card">
+                <p class="info-card__label"><a href="{{ f.link }}">{{ f.label }}</a></p>
+                <span class="info-card__title">{{ f.value_display }}</span>
+                <span class="info-card__subtitle">{{ f.detail }}. Source: {{ f.source }}.</span>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <p class="numbers-attribution"><small>
+            Each figure comes from the page it links to, where its source, licence and date are given in full.
+            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Where Do These Figures Come From?</h3>
+        <ul>
+            <li>Each one is the headline figure from one of this site's pages, which in turn come from official and open sources such as the Office for National Statistics, HM Land Registry, Police.uk, the NHS and Ofsted.</li>
+            <li>Select a figure's name to see the full data behind it.</li>
+        </ul>
+
+        <h3>How Up to Date Are They?</h3>
+        <ul>
+            <li>The figures are refreshed every two hours from the latest data on each page. Each source updates on its own schedule, from hourly fuel prices to yearly population estimates.</li>
+        </ul>
+
+        <h3>What Area Do They Cover?</h3>
+        <ul>
+            <li>Most figures cover Cheltenham borough or the GL50 to GL54 postcodes. A few cover a set distance from the town centre, as noted on each figure.</li>
+        </ul>
+    </div>
+</div>
+{% include footer.html %}

@@ -14,7 +14,7 @@ Cheltenham Spa is Cheltenham's main railway station, on the Bristol to Birmingha
 
 This page shows the next departures from and arrivals at the station, with the platform, operator and any delay or cancellation. For departures it also lists the stations each train calls at, so you can check your stop before you set off. Further down, the station usage figures show how many passengers use Cheltenham Spa each year.
 
-Heading to the station by road? Check the [roadworks](/cheltenham-roadworks) page for closures on the way, and [car parks](/cheltenham-car-parks) for somewhere to leave the car. [Cycle routes](/cheltenham-cycle-routes) and [bus data](/cheltenham-bus-data) cover the other ways of getting there.
+Heading to the station by road? Check the [roadworks](/cheltenham-roadworks) and [street works](/cheltenham-street-works) pages for closures on the way, and [car parks](/cheltenham-car-parks) for somewhere to leave the car. [Cycle routes](/cheltenham-cycle-routes) and [bus data](/cheltenham-bus-data) cover the other ways of getting there.
 
 ### Quick Guide
 

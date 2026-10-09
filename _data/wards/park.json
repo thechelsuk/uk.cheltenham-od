@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T21:24:51.250565+00:00",
+  "generated_at": "2026-10-09T02:35:43.322474+00:00",
   "name": "Park",
   "slug": "park",
   "code": "E05015714",
@@ -636,49 +636,28 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Highways defect: Vegetation",
-        "group": "Trees & vegetation",
-        "published": "2026-10-05",
-        "url": "https://www.fixmystreet.com/report/10196353",
-        "lat": 51.885418,
-        "lon": -2.08847769999999
-      },
-      {
-        "title": "Highways defect: Vegetation",
-        "group": "Trees & vegetation",
-        "published": "2026-10-05",
-        "url": "https://www.fixmystreet.com/report/10196354",
-        "lat": 51.8857971896944,
-        "lon": -2.08735137470335
-      },
-      {
-        "title": "Highways defect: Vegetation",
-        "group": "Trees & vegetation",
-        "published": "2026-10-05",
-        "url": "https://www.fixmystreet.com/report/10196352",
-        "lat": 51.8853674335939,
-        "lon": -2.08915395563717
-      },
-      {
-        "title": "Highways defect: Vegetation",
-        "group": "Trees & vegetation",
-        "published": "2026-10-05",
-        "url": "https://www.fixmystreet.com/report/10196355",
-        "lat": 51.8859873,
-        "lon": -2.08696730000002
-      },
-      {
-        "title": "The ivy on the fence has masses of growth and is making it difficult to walk along the footpath, particularly when it is wet and muddy. I reported this problem back in May and now it is worse. It would be great if you could ask the residents of number 2 to cut it back.",
-        "group": "Trees & vegetation",
-        "published": "2026-10-05",
-        "url": "https://www.fixmystreet.com/report/10196250",
-        "lat": 51.889604,
-        "lon": -2.093159
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01599/CACN",
+        "address": "Pegasus Court St Stephens Road Cheltenham Gloucestershire GL51 3GB",
+        "description": "Reduce T1 Rowan by up to 2m. This is to give clearance from the adjacent building and reduce the impact of the roots on the nearby tarmac footpath leading to the building entrance.",
+        "status": "No objection",
+        "received": "2026-10-07",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMJAPWELM3U00&activeTab=summary",
+        "lat": 51.891818,
+        "lon": -2.090969
+      },
+      {
+        "ref": "26/01597/FUL",
+        "address": "Corinth House 117 Bath Road Cheltenham Gloucestershire GL53 7LS",
+        "description": "Installation of 8 no. condenser units, 7 no. acoustic enclosures, an automated security barrier and associated access control infrastructure.",
+        "status": "Pending Consideration",
+        "received": "2026-10-07",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMJAP1ELM3P00&activeTab=summary",
+        "lat": 51.891153,
+        "lon": -2.07789
+      },
       {
         "ref": "26/01551/CACN",
         "address": "37 Tivoli Road Cheltenham Gloucestershire GL50 2TD",
@@ -943,6 +922,13 @@
       }
     ]
   },
+  "flood": {
+    "postcodes": 228,
+    "zone3": 8,
+    "zone2_or_3": 16,
+    "zone3_pct": 3.5,
+    "zone2_or_3_pct": 7.0
+  },
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
@@ -974,7 +960,7 @@
   "services": [
     {
       "id": "gp",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "GP Practices",
       "mode": "nearest",
       "in_ward": 0,
@@ -1033,7 +1019,7 @@
     },
     {
       "id": "pharmacy",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Pharmacies",
       "mode": "nearest",
       "in_ward": 0,
@@ -1050,6 +1036,15 @@
         },
         {
           "name": "Nkd Healthcare Limited",
+          "address": "12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW",
+          "postcode": "GL50 1SW",
+          "lat": 51.895618,
+          "lon": -2.082781,
+          "in_ward": false,
+          "distance_miles": 0.51
+        },
+        {
+          "name": "Spa Hc Ltd",
           "address": "12 Rotunda Terrace, Montpellier Street, Cheltenham, GL50 1SW",
           "postcode": "GL50 1SW",
           "lat": 51.895618,
@@ -1076,22 +1071,12 @@
           "lon": -2.08004,
           "in_ward": false,
           "distance_miles": 0.77
-        },
-        {
-          "name": "Badham Pharmacy (84 St Georges Place)",
-          "address": "84 St Georges Place, Cheltenham, GL50 3QD",
-          "postcode": "GL50 3QD",
-          "detail": "01242 279511",
-          "lat": 51.899414,
-          "lon": -2.080099,
-          "in_ward": false,
-          "distance_miles": 0.8
         }
       ]
     },
     {
       "id": "dentist",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Dentists",
       "mode": "nearest",
       "in_ward": 4,
@@ -1136,7 +1121,7 @@
     },
     {
       "id": "optician",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Opticians",
       "mode": "nearest",
       "in_ward": 0,
@@ -1190,7 +1175,7 @@
     },
     {
       "id": "hospital",
-      "group": "Health",
+      "group": "Health and Care",
       "label": "Hospitals",
       "mode": "nearest",
       "in_ward": 0,
@@ -1217,8 +1202,61 @@
       ]
     },
     {
+      "id": "carehome",
+      "group": "Health and Care",
+      "label": "Care Homes",
+      "mode": "nearest",
+      "in_ward": 4,
+      "items": [
+        {
+          "name": "Alexander House Care Home - Cheltenham",
+          "address": "Alexander House, 16 Tivoli Road, Cheltenham",
+          "postcode": "GL50 2TG",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-112309865",
+          "lat": 51.891345,
+          "lon": -2.085446,
+          "in_ward": true,
+          "distance_miles": 0.2
+        },
+        {
+          "name": "The Vicarage",
+          "address": "59 Andover Road, Tivoli, Cheltenham",
+          "postcode": "GL50 2TS",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-115336828",
+          "lat": 51.892773,
+          "lon": -2.087949,
+          "in_ward": true,
+          "distance_miles": 0.26
+        },
+        {
+          "name": "Ravenswood House",
+          "address": "Lansdown Road, Westall Green, Cheltenham",
+          "postcode": "GL50 2JA",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-414375677",
+          "lat": 51.893483,
+          "lon": -2.08811,
+          "in_ward": true,
+          "distance_miles": 0.31
+        },
+        {
+          "name": "Faithfull House",
+          "address": "Suffolk Square, Cheltenham",
+          "postcode": "GL50 2DT",
+          "detail": "Rated Good",
+          "url": "https://www.cqc.org.uk/location/1-130490622",
+          "lat": 51.89276,
+          "lon": -2.080523,
+          "in_ward": true,
+          "distance_miles": 0.41
+        }
+      ]
+    },
+    {
       "id": "school",
-      "group": "Schools",
+      "group": "Schools and Childcare",
       "label": "Schools",
       "mode": "nearest",
       "in_ward": 2,
@@ -1292,6 +1330,75 @@
           "lon": -2.090887,
           "in_ward": false,
           "distance_miles": 0.63
+        }
+      ]
+    },
+    {
+      "id": "childcare",
+      "group": "Schools and Childcare",
+      "label": "Nurseries and Childcare",
+      "mode": "nearest",
+      "in_ward": 1,
+      "items": [
+        {
+          "name": "St James After School Club",
+          "address": "St James C Of E Primary School, Merestones Road, Cheltenham",
+          "postcode": "GL50 2RS",
+          "detail": "Out-of-school club",
+          "lat": 51.885863,
+          "lon": -2.093878,
+          "in_ward": true,
+          "distance_miles": 0.33
+        },
+        {
+          "name": "Dean Close Little Trees Day Nursery, Lansdown",
+          "address": "1 Queens Road, Cheltenham",
+          "postcode": "GL50 2LR",
+          "detail": "Nursery (full day care)",
+          "lat": 51.894514,
+          "lon": -2.092355,
+          "in_ward": false,
+          "distance_miles": 0.43
+        },
+        {
+          "name": "Cheltenham Activity Camps",
+          "address": "Cheltenham College Sports Centre, Thirlestaine Road, Cheltenham",
+          "postcode": "GL53 7AA",
+          "detail": "Childcare",
+          "lat": 51.890542,
+          "lon": -2.076421,
+          "in_ward": false,
+          "distance_miles": 0.51
+        },
+        {
+          "name": "Winton House Private Day Nursey",
+          "address": "11 Warden Hill Road, Cheltenham",
+          "postcode": "GL51 3AU",
+          "detail": "Nursery (full day care)",
+          "lat": 51.889076,
+          "lon": -2.100423,
+          "in_ward": false,
+          "distance_miles": 0.53
+        },
+        {
+          "name": "Dean Close Little Trees  Christchurch",
+          "address": "Airthrie School, 27-29 Christchurch Road, Cheltenham",
+          "postcode": "GL50 2NY",
+          "detail": "Nursery (full day care)",
+          "lat": 51.897644,
+          "lon": -2.091199,
+          "in_ward": false,
+          "distance_miles": 0.61
+        },
+        {
+          "name": "Christ Church [Cheltenham] Pre-School Playgroup",
+          "address": "Christ Church, Malvern Road, Cheltenham",
+          "postcode": "GL50 2JH",
+          "detail": "Nursery (full day care)",
+          "lat": 51.897862,
+          "lon": -2.087217,
+          "in_ward": false,
+          "distance_miles": 0.62
         }
       ]
     },
