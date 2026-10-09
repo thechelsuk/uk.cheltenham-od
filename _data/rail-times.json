@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T11:25:08+01:00",
+  "generated_at": "2026-10-09T11:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-09T11:23",
-      "expected": "2026-10-09T11:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-09T11:29",
       "expected": "2026-10-09T11:29",
@@ -63,7 +45,7 @@
     },
     {
       "scheduled": "2026-10-09T11:40",
-      "expected": "2026-10-09T11:42",
+      "expected": "2026-10-09T11:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -97,7 +79,7 @@
     },
     {
       "scheduled": "2026-10-09T11:52",
-      "expected": "2026-10-09T11:56",
+      "expected": "2026-10-09T12:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -155,29 +137,61 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T12:12",
+      "expected": "2026-10-09T12:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Inverkeithing",
+        "Kirkcaldy",
+        "Markinch",
+        "Ladybank",
+        "Cupar",
+        "Leuchars",
+        "Dundee",
+        "Aberdeen"
+      ]
+    },
+    {
+      "scheduled": "2026-10-09T12:15",
+      "expected": "2026-10-09T12:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-09T11:21",
-      "expected": "2026-10-09T11:21",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-09T11:26",
-      "expected": "2026-10-09T11:26",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-09T11:27",
       "expected": "2026-10-09T11:27",
@@ -200,7 +214,7 @@
     },
     {
       "scheduled": "2026-10-09T11:38",
-      "expected": "2026-10-09T11:41",
+      "expected": "2026-10-09T11:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -220,7 +234,7 @@
     },
     {
       "scheduled": "2026-10-09T11:51",
-      "expected": "2026-10-09T11:55",
+      "expected": "2026-10-09T11:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -236,6 +250,26 @@
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T12:11",
+      "expected": "2026-10-09T12:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T12:14",
+      "expected": "2026-10-09T12:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
