@@ -5,7 +5,7 @@ seo_title: "Cheltenham Care Homes and Their CQC Ratings on One Map"
 type: cod
 description: Every care home, nursing home and home care service in Cheltenham with its latest CQC rating, plus ratings for GP practices.
 seo: "A new page maps every care home and nursing home in Cheltenham with its latest CQC rating, and GP practices now show their CQC ratings too."
-date: 2026-10-10 16:00
+date: 2026-10-09 13:00
 ---
 
 Cheltenham Open Data has published a new [care homes page](/cheltenham-care-homes), listing every registered care home, nursing home and home care service across GL50–GL54 with its latest rating from the Care Quality Commission.
@@ -25,4 +25,4 @@ Our [GPs and pharmacies](/cheltenham-gp-pharmacies) page now shows each GP pract
 
 ### Where Does the Data Come From?
 
-- From the Care Quality Commission's directory of registered services and its latest ratings, published monthly under the Open Government Licence. The page is refreshed each month.
+- From the Care Quality Commission's directory of registered services and its latest ratings, published monthly under the Open Government Licence. The page is refreshed each weekly.
