@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T19:30:09+01:00",
+  "generated_at": "2026-10-09T19:35:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-09T19:12",
-      "expected": "2026-10-09T19:46",
+      "expected": "2026-10-09T19:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -31,22 +31,9 @@
       ]
     },
     {
-      "scheduled": "2026-10-09T19:15",
-      "expected": "2026-10-09T19:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester"
-      ]
-    },
-    {
       "scheduled": "2026-10-09T19:30",
-      "expected": "2026-10-09T19:30",
-      "status": "On time",
+      "expected": "2026-10-09T19:34",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -169,12 +156,34 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T20:12",
+      "expected": "2026-10-09T20:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "Wakefield Westgate",
+        "Leeds"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-09T19:10",
-      "expected": "2026-10-09T19:45",
+      "expected": "2026-10-09T19:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -183,18 +192,8 @@
       "reason": "This service has been delayed by a fault on a train"
     },
     {
-      "scheduled": "2026-10-09T19:14",
-      "expected": "2026-10-09T19:28",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-09T19:28",
-      "expected": "2026-10-09T19:30",
+      "expected": "2026-10-09T19:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -250,6 +249,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T20:10",
+      "expected": "2026-10-09T20:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
       "reason": ""
     }
   ]
