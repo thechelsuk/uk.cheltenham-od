@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T17:35:08+01:00",
+  "generated_at": "2026-10-09T17:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-09T16:52",
-      "expected": "2026-10-09T17:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a points failure",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-10-09T17:31",
-      "expected": "2026-10-09T17:38",
+      "expected": "2026-10-09T17:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -99,7 +79,7 @@
     },
     {
       "scheduled": "2026-10-09T17:52",
-      "expected": "2026-10-09T17:59",
+      "expected": "2026-10-09T18:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -160,8 +140,8 @@
     },
     {
       "scheduled": "2026-10-09T18:12",
-      "expected": "2026-10-09T18:12",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -182,22 +162,27 @@
         "Durham",
         "Newcastle"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T18:19",
+      "expected": "2026-10-09T18:23",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-09T16:50",
-      "expected": "2026-10-09T17:33",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a points failure"
-    },
-    {
       "scheduled": "2026-10-09T17:29",
-      "expected": "2026-10-09T17:37",
+      "expected": "2026-10-09T17:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,7 +192,7 @@
     },
     {
       "scheduled": "2026-10-09T17:31",
-      "expected": "2026-10-09T17:40",
+      "expected": "2026-10-09T17:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -237,7 +222,7 @@
     },
     {
       "scheduled": "2026-10-09T17:50",
-      "expected": "2026-10-09T17:58",
+      "expected": "2026-10-09T18:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -257,12 +242,22 @@
     },
     {
       "scheduled": "2026-10-09T18:11",
-      "expected": "2026-10-09T18:11",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T18:18",
+      "expected": "2026-10-09T18:22",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
