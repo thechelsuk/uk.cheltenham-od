@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T20:06:08+01:00",
+  "generated_at": "2026-10-09T20:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-09T20:02",
-      "expected": "2026-10-09T20:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-10-09T20:12",
       "expected": "2026-10-09T20:12",
@@ -54,7 +34,7 @@
     },
     {
       "scheduled": "2026-10-09T20:15",
-      "expected": "2026-10-09T20:20",
+      "expected": "2026-10-09T20:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -166,13 +146,27 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T21:12",
+      "expected": "2026-10-09T21:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-09T20:10",
-      "expected": "2026-10-09T20:10",
-      "status": "On time",
+      "expected": "2026-10-09T20:12",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -181,7 +175,7 @@
     },
     {
       "scheduled": "2026-10-09T20:14",
-      "expected": "2026-10-09T20:19",
+      "expected": "2026-10-09T20:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -237,6 +231,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T21:10",
+      "expected": "2026-10-09T21:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
