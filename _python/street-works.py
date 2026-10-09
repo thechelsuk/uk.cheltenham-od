@@ -28,8 +28,10 @@ def uk_time(stamp):
     return utc.astimezone(LONDON).strftime("%Y-%m-%dT%H:%M")
 
 
-def date_only(stamp):
-    return stamp[:10] if stamp else None
+def uk_date(stamp):
+    """The UK date of a Street Manager time. Planned dates are sent as UK
+    midnight in UTC, so 15 October arrives as '2026-10-14T23:00:00.000Z'."""
+    return uk_time(stamp)[:10] if stamp else None
 
 
 def local_items(works, centre, radius_miles, today, wards=()):
@@ -40,9 +42,10 @@ def local_items(works, centre, radius_miles, today, wards=()):
     for w in works:
         if w.get("lat") is None or w.get("lon") is None:
             continue
-        if (w.get("status") or "").lower() == "cancelled" or w.get("actual_end"):
+        status = (w.get("status") or "").lower()
+        if "cancel" in status or "completed" in status or w.get("actual_end"):
             continue
-        if not w.get("actual_start") and date_only(w.get("proposed_end")) and date_only(w["proposed_end"]) < today:
+        if not w.get("actual_start") and w.get("proposed_end") and uk_date(w["proposed_end"]) < today:
             continue
         distance = helper.haversine_miles(centre[0], centre[1], w["lat"], w["lon"])
         if distance > radius_miles:
@@ -60,8 +63,8 @@ def local_items(works, centre, radius_miles, today, wards=()):
             "traffic_management": w.get("traffic_management") or "",
             "road_closure": "road closure" in (w.get("traffic_management") or "").lower(),
             "promoter": w.get("promoter") or "",
-            "start": uk_time(w["actual_start"]) if started else date_only(w.get("proposed_start")),
-            "end": date_only(w.get("proposed_end")),
+            "start": uk_time(w["actual_start"]) if started else uk_date(w.get("proposed_start")),
+            "end": uk_date(w.get("proposed_end")),
             "lat": w["lat"],
             "lon": w["lon"],
             "distance_miles": round(distance, 1),

@@ -84,3 +84,21 @@ def test_summary_counts_unplanned_closures_and_works_in_progress():
         work(id="c", actual_start=None, status=None),
     ], CENTRE, 6, TODAY)
     assert street_works.summarise(items) == {"total": 3, "unplanned": 1, "road_closures": 1, "in_progress": 2}
+
+
+def test_planned_dates_are_shown_as_the_uk_date():
+    # Street Manager sends midnight UK time as UTC, so 15 October arrives as 14 October 23:00
+    [item] = street_works.local_items([work(actual_start=None, status="Works planned",
+                                            proposed_start="2026-10-14T23:00:00.000Z",
+                                            proposed_end="2026-10-18T23:00:00.000Z")], CENTRE, 6, TODAY)
+    assert item["start"] == "2026-10-15"
+    assert item["end"] == "2026-10-19"
+
+
+def test_works_cancelled_and_works_completed_are_dropped():
+    items = street_works.local_items([
+        work(id="cancelled", status="Works cancelled", actual_start=None),
+        work(id="completed", status="Works completed"),
+        work(id="keep"),
+    ], CENTRE, 6, TODAY)
+    assert [i["id"] for i in items] == ["keep"]
