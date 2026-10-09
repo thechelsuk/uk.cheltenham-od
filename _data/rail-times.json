@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T19:10:08+01:00",
+  "generated_at": "2026-10-09T19:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,31 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-09T18:52",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": "This service has been delayed by trespassers on the railway",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central",
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-10-09T19:02",
-      "expected": null,
+      "expected": "2026-10-09T19:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -54,7 +31,7 @@
     },
     {
       "scheduled": "2026-10-09T19:12",
-      "expected": "2026-10-09T19:40",
+      "expected": "2026-10-09T19:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -74,7 +51,7 @@
     },
     {
       "scheduled": "2026-10-09T19:15",
-      "expected": "2026-10-09T19:21",
+      "expected": "2026-10-09T19:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -148,22 +125,29 @@
       "calling_at": [
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-09T19:49",
+      "expected": "2026-10-09T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-09T18:50",
-      "expected": "2026-10-09T19:01",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": "This service has been delayed by trespassers on the railway"
-    },
-    {
       "scheduled": "2026-10-09T19:10",
-      "expected": "2026-10-09T19:39",
+      "expected": "2026-10-09T19:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -173,7 +157,7 @@
     },
     {
       "scheduled": "2026-10-09T19:14",
-      "expected": "2026-10-09T19:20",
+      "expected": "2026-10-09T19:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -229,6 +213,16 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-09T19:47",
+      "expected": "2026-10-09T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
       "reason": ""
     }
   ]
