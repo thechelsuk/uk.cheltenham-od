@@ -1,0 +1,150 @@
+{% include header.html %}
+{% assign data = site.data.epc %}
+{% assign borough = data.borough %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li>{{ borough.homes_display }} homes with a certificate</li>
+                <li>{{ borough.c_or_better_pct }}% rated C or better</li>
+                <li>Average rating {{ borough.average_band }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="ratings">Ratings Across Cheltenham</h2>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Rating</th>
+                        <th scope="col" class="number">Homes</th>
+                        <th scope="col" class="number">Share</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for band in data.bands %}
+                    <tr>
+                        <td>{{ band }}</td>
+                        <td class="number">{{ borough.counts_display[band] }}</td>
+                        <td class="number">{{ borough.shares[band] }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="map">Energy Rating Map</h2>
+        <div class="filter-bar">
+            <label class="filter-label" for="epc-map-level">Show</label>
+            <select id="epc-map-level">
+                <option value="ward">Wards ({{ data.ward.areas.size }})</option>
+                <option value="lsoa">Small areas ({{ data.lsoa.areas.size }})</option>
+            </select>
+            <label class="filter-label" for="epc-map-measure">Shade by</label>
+            <select id="epc-map-measure">
+                <option value="score">Average rating</option>
+                <option value="share">Share rated C or better</option>
+            </select>
+        </div>
+        <p><small id="epc-map-caption">Average rating, counting G as 1 up to A as 7</small></p>
+        <div class="map-legend" id="epc-map-legend"></div>
+        <div id="epc-map" class="map-canvas" aria-label="Map of Cheltenham shaded by the energy ratings of its homes"></div>
+
+        <h2 id="wards">Energy Ratings by Ward</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Homes</th>
+                        <th scope="col" class="number">Average</th>
+                        <th scope="col" class="number">C or Better</th>
+                        <th scope="col" class="number">E to G</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign wards = data.ward.areas | sort: "name" %}
+                    {% for area in wards %}
+                    <tr>
+                        <td><a href="/cheltenham-wards/{{ area.slug }}">{{ area.name }}</a></td>
+                        <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
+                        <td class="number" data-val="{{ area.average_score }}">{{ area.average_band }} ({{ area.average_score }})</td>
+                        <td class="number" data-val="{{ area.c_or_better_pct }}">{{ area.c_or_better_pct }}%</td>
+                        <td class="number" data-val="{{ area.e_to_g_pct }}">{{ area.e_to_g_pct }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="small-areas">Energy Ratings by Small Area</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Homes</th>
+                        <th scope="col" class="number">Average</th>
+                        <th scope="col" class="number">C or Better</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for area in data.lsoa.areas %}
+                    <tr>
+                        <td>{{ area.name }}</td>
+                        <td>{{ area.ward_name }}</td>
+                        <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
+                        <td class="number" data-val="{{ area.average_score }}">{% if area.homes > 0 %}{{ area.average_band }} ({{ area.average_score }}){% endif %}</td>
+                        <td class="number" data-val="{{ area.c_or_better_pct }}">{% if area.homes > 0 %}{{ area.c_or_better_pct }}%{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }},
+            using each home's latest certificate from {{ data.certificates_display }} lodged since {{ data.first_year }}.
+            Homes are placed in areas by their postcode using postcodes.io (ONS Postcode Directory), and area
+            boundaries are from the ONS Open Geography Portal. Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            Contains OS data &copy; Crown copyright and database right.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is an Energy Performance Certificate?</h3>
+        <ul>
+            <li>An Energy Performance Certificate (EPC) rates how energy efficient a home is, from A, the most efficient, to G, the least. A home needs one when it is built, sold or let, and each certificate lasts ten years.</li>
+        </ul>
+
+        <h3>How Is the Average Rating Worked Out?</h3>
+        <ul>
+            <li>Each rating counts as a score, from 1 for G up to 7 for A, and the average of those scores is shown with its nearest letter, so an average of 4.0 is a D and 4.5 or more is a C.</li>
+            <li>Each home counts once, using its latest certificate.</li>
+        </ul>
+
+        <h3>Does This Cover Every Home in Cheltenham?</h3>
+        <ul>
+            <li>No. It covers the {{ borough.homes_display }} homes that have had a certificate, as homes that haven't been sold, let or built since certificates began don't have one.</li>
+            <li>{{ data.older_than_ten_years_pct }}% of these certificates are more than ten years old, so some homes will have been improved since they were rated.</li>
+        </ul>
+
+        <h3>How Can I Find the Rating for a Particular Home?</h3>
+        <ul>
+            <li>Search by postcode on GOV.UK's <a href="https://www.gov.uk/find-energy-certificate">find an energy certificate</a> service.</li>
+        </ul>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script id="epc-map-data" type="application/json">{{ data | jsonify }}</script>
+<script src="/assets/scripts/epc-map.js"></script>
+{% include footer.html %}

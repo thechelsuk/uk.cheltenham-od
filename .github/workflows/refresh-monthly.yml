@@ -36,6 +36,8 @@ jobs:
               run: python -m pip install -r _python/requirements.txt
 
             - name: Fetch crime data
+              env:
+                  EPC_KEY: ${{ secrets.EPC_KEY }}
               run: |
                   python _python/crime.py || echo "::warning::crime.py failed, continuing with other scripts"
                   python _python/small-areas.py || echo "::warning::small-areas.py failed, continuing with other scripts"
@@ -67,6 +69,7 @@ jobs:
                   python _python/childcare.py || echo "::warning::childcare.py failed, continuing with other scripts"
                   python _python/charities.py || echo "::warning::charities.py failed, continuing with other scripts"
                   python _python/taxi-ranks.py || echo "::warning::taxi-ranks.py failed, continuing with other scripts"
+                  python _python/epc.py || echo "::warning::epc.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit
