@@ -12,6 +12,8 @@
 {% assign dep = site.data.deprivation %}
 {% assign ward_dep = dep.wards[w.code] %}
 {% assign child_poverty = w.child_poverty %}
+{% assign epc = site.data.epc %}
+{% assign ward_epc = epc.ward.areas | where: "slug", w.slug | first %}
 {% assign street_works = site.data["street-works"] %}
 {% assign ward_works = street_works.items | where: "ward_slug", w.slug %}
 {% assign fires = site.data["wildfire-incidents"] %}
@@ -131,6 +133,7 @@
                 {% if ward_dep %}<li><a href="#deprivation">Deprivation</a></li>{% endif %}
                 {% if child_poverty %}<li><a href="#children-in-low-income-families">Children in low-income families</a></li>{% endif %}
                 <li><a href="#broadband">Broadband</a></li>
+                {% if ward_epc and ward_epc.homes > 0 %}<li><a href="#energy-ratings">Home energy ratings</a></li>{% endif %}
                 {% if pol %}<li><a href="#politics">Politics and voting</a></li>{% endif %}
                 <li><a href="#faq">Frequently asked questions</a></li>
             </ul>
@@ -534,6 +537,40 @@
         <p>See how {{ w.name }} compares with every other ward on the
             <a href="/cheltenham-broadband-internet-speeds">Cheltenham broadband</a> page.</p>
 
+        {% if ward_epc and ward_epc.homes > 0 %}
+        <h2 id="energy-ratings">Home Energy Ratings in {{ w.name }}</h2>
+        <p>
+            {{ ward_epc.homes_display }} homes in {{ w.name }} have an Energy Performance Certificate. Using each home's
+            latest certificate, {{ ward_epc.c_plus_pct }}% are rated C or better, against
+            {{ epc.borough.c_plus_pct }}% across Cheltenham, and the median rating is {{ ward_epc.median_band }}, against
+            {{ epc.borough.median_band }} for the town.
+        </p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Rating</th>
+                        <th scope="col" class="number">Homes</th>
+                        <th scope="col" class="number">Share</th>
+                        <th scope="col" class="number">Cheltenham</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for band in epc.bands %}
+                    <tr>
+                        <td>{{ band }}</td>
+                        <td class="number">{{ ward_epc.counts_display[band] }}</td>
+                        <td class="number">{{ ward_epc.shares[band] }}%</td>
+                        <td class="number">{{ epc.borough.shares[band] }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p>Compare {{ w.name }} with every other ward on the map of
+            <a href="/cheltenham-energy-ratings">Cheltenham home energy ratings</a>.</p>
+        {% endif %}
+
         {% if pol %}
         <h2 id="politics">Politics and Voting in {{ w.name }}</h2>
         <p>
@@ -606,7 +643,8 @@
         <p class="attribution"><small>
             Data from Police.uk (crime), HM Land Registry (house prices), the Office for National Statistics
             (ward boundaries), the Department for Transport's Street Manager (street works), the Environment Agency
-            (flood zones), the Ministry of Housing, Communities and Local Government (fire statistics), Ofsted
+            (flood zones), the Ministry of Housing, Communities and Local Government (fire statistics and home energy
+            ratings), Ofsted
             (childcare) and the Care Quality Commission (care homes), published under the Open Government Licence v3.0,
             and from Cheltenham Borough Council (election results).
             {% if w.generated_at %}Last updated {{ w.generated_at | date: "%-d %B %Y" }}.{% endif %}
