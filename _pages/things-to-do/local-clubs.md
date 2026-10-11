@@ -18,6 +18,6 @@ From photography and film to chess, brass bands and allotments, Cheltenham's clu
 
 Many are long established. Cheltenham Camera Club was founded in 1865, Cheltenham Film Society in 1945, the Civic Society's constitution dates from 1963 and the Cheltenham Local History Society began in 1982, so you will often be joining a tradition as well as a hobby.
 
-Joining is usually the easiest way to meet people if you have just moved to the town, retired, or want to take up something new. Check each group's website for meeting times and membership details.
+Joining is usually the easiest way to meet people if you have just moved to the town, retired, or want to take up something new. Check each group's site for meeting times and membership details.
 
 If you would rather make something, our [arts and crafts](/cheltenham-arts-and-crafts) page lists classes, studios and galleries, and if you want to get active, browse the [sports clubs to join](/cheltenham-sports-clubs).
