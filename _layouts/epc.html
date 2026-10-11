@@ -50,6 +50,8 @@
             <select id="epc-map-measure">
                 <option value="score">Average rating</option>
                 <option value="share">Share rated C or better</option>
+                {% for band in data.bands %}<option value="{{ band }}">Share rated {{ band }}</option>
+                {% endfor %}
             </select>
         </div>
         <p><small id="epc-map-caption">Average rating, counting G as 1 up to A as 7</small></p>
@@ -57,15 +59,16 @@
         <div id="epc-map" class="map-canvas" aria-label="Map of Cheltenham shaded by the energy ratings of its homes"></div>
 
         <h2 id="wards">Energy Ratings by Ward</h2>
+        <p><small>Share of each ward's homes in each rating, using each home's latest certificate</small></p>
         <div class="table-scroll">
             <table class="data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Ward</th>
                         <th scope="col" class="number">Homes</th>
+                        {% for band in data.bands %}<th scope="col" class="number">{{ band }}</th>
+                        {% endfor %}<th scope="col" class="number">C or Better</th>
                         <th scope="col" class="number">Average</th>
-                        <th scope="col" class="number">C or Better</th>
-                        <th scope="col" class="number">E to G</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,12 +77,21 @@
                     <tr>
                         <td><a href="/cheltenham-wards/{{ area.slug }}">{{ area.name }}</a></td>
                         <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
-                        <td class="number" data-val="{{ area.average_score }}">{{ area.average_band }} ({{ area.average_score }})</td>
-                        <td class="number" data-val="{{ area.c_or_better_pct }}">{{ area.c_or_better_pct }}%</td>
-                        <td class="number" data-val="{{ area.e_to_g_pct }}">{{ area.e_to_g_pct }}%</td>
+                        {% for band in data.bands %}<td class="number" data-val="{{ area.shares[band] }}">{{ area.shares[band] }}%</td>
+                        {% endfor %}<td class="number" data-val="{{ area.c_or_better_pct }}">{{ area.c_or_better_pct }}%</td>
+                        <td class="number" data-val="{{ area.average_score }}">{{ area.average_band }} ({{ area.average_display }})</td>
                     </tr>
                     {% endfor %}
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Cheltenham</th>
+                        <td class="number">{{ borough.homes_display }}</td>
+                        {% for band in data.bands %}<td class="number">{{ borough.shares[band] }}%</td>
+                        {% endfor %}<td class="number">{{ borough.c_or_better_pct }}%</td>
+                        <td class="number">{{ borough.average_band }} ({{ borough.average_display }})</td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
 
@@ -101,7 +113,7 @@
                         <td>{{ area.name }}</td>
                         <td>{{ area.ward_name }}</td>
                         <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
-                        <td class="number" data-val="{{ area.average_score }}">{% if area.homes > 0 %}{{ area.average_band }} ({{ area.average_score }}){% endif %}</td>
+                        <td class="number" data-val="{{ area.average_score }}">{% if area.homes > 0 %}{{ area.average_band }} ({{ area.average_display }}){% endif %}</td>
                         <td class="number" data-val="{{ area.c_or_better_pct }}">{% if area.homes > 0 %}{{ area.c_or_better_pct }}%{% endif %}</td>
                     </tr>
                     {% endfor %}

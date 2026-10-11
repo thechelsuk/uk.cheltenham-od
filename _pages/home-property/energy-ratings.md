@@ -13,4 +13,4 @@ schema: epc
 
 Every home that is built, sold or let needs an Energy Performance Certificate, rating its energy efficiency from A, the most efficient, to G, the least. This page brings together the latest certificate for each of the homes in Cheltenham that have one, to show how the town compares from ward to ward and street to street.
 
-Cheltenham's housing ranges from Regency terraces and Victorian villas to post-war estates and new builds, and the map shows how that mix plays out. Use the map to compare areas by their average rating or by the share of homes rated C or better, and the tables below it for the figures. Each ward's own page also shows its ratings alongside its house prices, crime and broadband.
+Cheltenham's housing ranges from Regency terraces and Victorian villas to post-war estates and new builds, and the map shows how that mix plays out. Use the map to compare areas by their average rating, the share of homes rated C or better, or the share in any one rating from A to G, and the tables below it for the figures. Each ward's own page also shows its ratings alongside its house prices, crime and broadband.

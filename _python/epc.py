@@ -98,6 +98,7 @@ def summarise(bands):
         "e_to_g_pct": round(100 * (counts["E"] + counts["F"] + counts["G"]) / homes, 1) if homes else None,
         "average_score": average,
         "average_band": band_for(average) if average else None,
+        "average_display": f"{average:.2f}" if average else None,
     }
 
 
@@ -116,13 +117,14 @@ def area_for(lat, lon, areas):
 
 def band_edges(values, decimals):
     """Five cut points splitting the values into six equal-sized bands, each
-    larger than the last."""
+    larger than the last and the first above the lowest value, so no band
+    on the legend is empty."""
     ordered = sorted(values)
     step = 10 ** -decimals
     edges = []
     for i in range(1, SHADES):
         edge = round(ordered[min(len(ordered) - 1, round(i * len(ordered) / SHADES))], decimals)
-        edges.append(round(max(edge, edges[-1] + step), decimals) if edges else edge)
+        edges.append(round(max(edge, edges[-1] + step), decimals) if edges else round(max(edge, ordered[0] + step), decimals))
     return edges
 
 
@@ -145,6 +147,7 @@ def build_level(areas, homes_by_area):
     return {
         "score_edges": band_edges([a["average_score"] for a in rated], 2),
         "share_edges": band_edges([a["c_or_better_pct"] for a in rated], 0),
+        "band_edges": {band: band_edges([a["shares"][band] for a in rated], 1) for band in BANDS},
         "areas": out,
     }
 

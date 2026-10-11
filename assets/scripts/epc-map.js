@@ -28,8 +28,9 @@
         return bands.charAt(7 - Math.min(7, Math.max(1, Math.floor(score + 0.5))));
     }
 
-    // Same six blues as the crime, broadband and wards maps; darker is better
-    // on both measures.
+    // Same six blues as the crime, broadband and wards maps. Darker always
+    // means more of what is measured: a better average, more homes rated C or
+    // better, or a higher share of homes in the chosen band.
     var shades = ["#eff3ff", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"];
 
     var measures = {
@@ -46,6 +47,16 @@
             label: function (v) { return v + "%"; },
         },
     };
+
+    // One measure per band: the share of an area's homes rated exactly that.
+    bands.split("").forEach(function (band) {
+        measures[band] = {
+            caption: "Share of homes rated " + band,
+            value: function (area) { return area.homes ? area.shares[band] : null; },
+            edges: function (level) { return data[level].band_edges[band]; },
+            label: function (v) { return v + "%"; },
+        };
+    });
 
     function shadeOf(value, edges) {
         var band = 0;
@@ -76,7 +87,7 @@
             "Rated C or better: " + area.c_or_better_pct + "%<br>";
         for (var i = 0; i < bands.length; i++) {
             var b = bands.charAt(i);
-            html += b + ": " + area.counts_display[b] + (i < bands.length - 1 ? " · " : "");
+            html += "<br>" + b + ": " + area.shares[b] + "% (" + area.counts_display[b] + ")";
         }
         if (level === "ward" && area.slug) {
             html += '<br><a href="/cheltenham-wards/' + encodeURIComponent(area.slug) + '">View ' + escapeHtml(area.name) + " &rarr;</a>";
@@ -107,7 +118,7 @@
 
     function render() {
         var level = levelEl && levelEl.value === "lsoa" ? "lsoa" : "ward";
-        var measure = measures[measureEl && measureEl.value === "share" ? "share" : "score"];
+        var measure = measures[(measureEl && measures[measureEl.value]) ? measureEl.value : "score"];
         var edges = measure.edges(level);
 
         if (current !== level) {
