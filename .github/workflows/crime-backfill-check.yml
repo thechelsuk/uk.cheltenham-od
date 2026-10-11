@@ -1,0 +1,61 @@
+---
+name: Crime Backfill Check
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "29 6 * * *"
+
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
+jobs:
+    check:
+        outputs:
+            changed: ${{ steps.commit.outputs.changed }}
+            ref: ${{ steps.commit.outputs.ref }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out this repo
+              uses: actions/checkout@v7
+
+            - name: Set up Python
+              uses: actions/setup-python@v7
+              with:
+                  python-version: 3.13.2
+
+            - name: Install Python dependencies
+              run: python -m pip install -r _python/requirements.txt
+
+            # Months saved short while Gloucestershire Constabulary's data was
+            # missing from police.uk; lists any that police.uk now has in full.
+            - name: Check for backfilled crime months
+              id: check
+              run: python _python/crime-backfill-check.py
+
+            - name: Re-fetch backfilled months
+              if: steps.check.outputs.months != ''
+              env:
+                  MONTHS: ${{ steps.check.outputs.months }}
+              run: |
+                  for month in $MONTHS; do
+                      python _python/crime.py --date "$month" --overwrite
+                  done
+                  python _python/crime-map.py || echo "::warning::crime-map.py failed"
+                  echo "::notice::Re-fetched $MONTHS. Run _python/local/process-wards.py locally to update the ward pages."
+
+            - name: Commit and push if changed
+              id: commit
+              if: steps.check.outputs.months != ''
+              uses: ./.github/actions/commit-and-push
+              with:
+                  message: "Chore: Backfilled crime data pull for"
+
+    deploy:
+        needs: check
+        if: needs.check.outputs.changed == 'true'
+        uses: ./.github/workflows/deploy-pages.yml
+        with:
+            ref: ${{ needs.check.outputs.ref }}
+        secrets: inherit
