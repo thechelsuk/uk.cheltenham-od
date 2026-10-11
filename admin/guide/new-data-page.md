@@ -30,7 +30,7 @@ The detail for each step is on [Fetching Data](/admin/guide/fetching-data) and [
 ## Checklist
 
 - [ ] `_python/<name>.py` fetches and normalises, writes `_data/<name>.json` with `generated_at`/`source`/`source_url`/`licence`
-- [ ] Added to the right `schedule-*.yml` workflow for how often the source actually changes
+- [ ] Added to the right `refresh-*.yml` workflow for how often the source actually changes
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump — reread every sentence as a visitor would: no implementation/data-decision notes ("hand-curated because OSM coverage is patchy") leaking into published copy
 - [ ] `seo:` is 160 characters or fewer on the page and on any announcement post (the admin page flags any over the limit)
 - [ ] `_layouts/<name>.html` — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page. The attribution goes directly under the last table or map and before the FAQs: `Data from SOURCE, published under the LICENCE.` then `Last updated DATE.` or `Checked REFRESH.`, then any required notices (such as "Contains OS data © Crown copyright") and caveats. Pages with several sources name each one in the same sentence.
