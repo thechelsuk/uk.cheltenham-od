@@ -44,10 +44,22 @@ jobs:
               run: |
                   python -m pip install -r _python/requirements.txt
 
+            # Stand-in for the Raspberry Pi: runs the same _python/pi/ scripts
+            # the Pi's cron does, for when the Pi is down (a power cut, say).
+            # Manual only, so it can be started from a phone and stopped once
+            # the Pi is back; running both at once just makes duplicate commits.
             - name: Processing Python Scripts
+              env:
+                  FUEL_KEY: ${{ secrets.FUEL_KEY }}
+                  FUEL_TOKEN: ${{ secrets.FUEL_TOKEN }}
+                  NAT_HIGH_KEY: ${{ secrets.NAT_HIGH_KEY }}
+                  RDM_LDBWS_KEY: ${{ secrets.RDM_LDBWS_KEY }}
               run: |-
-                  python '_python/bus-disruptions.py' || echo "::warning::bus-disruptions.py failed, continuing"
-                  python '_python/power-cuts.py' || echo "::warning::power-cuts.py failed, continuing with other scripts"
+                  python '_python/pi/buses.py' || echo "::warning::pi/buses.py failed, continuing with other scripts"
+                  python '_python/pi/power.py' || echo "::warning::pi/power.py failed, continuing with other scripts"
+                  python '_python/pi/fuel.py' || echo "::warning::pi/fuel.py failed, continuing with other scripts"
+                  python '_python/pi/rail-times.py' || echo "::warning::pi/rail-times.py failed, continuing with other scripts"
+                  python '_python/pi/unplanned-closures.py' || echo "::warning::pi/unplanned-closures.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit
