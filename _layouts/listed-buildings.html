@@ -14,7 +14,7 @@
         <h2>Summary</h2>
         <ul>
             {% for grade in heritage.grade_counts %}
-            <li>Grade {{ grade[0] }}: {{ grade[1] }} buildings</li>
+            {% assign gk = grade[0] %}<li>Grade {{ gk }}: {{ heritage.grade_counts_display[gk] }} buildings</li>
             {% endfor %}
             <li>Scheduled monuments: {{ heritage.scheduled_monuments.size }}</li>
             <li>Registered parks &amp; gardens: {{ heritage.parks_and_gardens.size }}</li>
@@ -92,6 +92,24 @@
             {% if heritage.generated_at %}Last updated {{ heritage.generated_at | date: "%-d %B %Y" }}.{% endif %}
             {{ heritage.attribution }}
         </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Listed Buildings Are There in Cheltenham?</h3>
+        <ul>
+            <li>{{ heritage.buildings_display }} listed buildings in the area mapped here: {% for g in heritage.grade_counts %}{% assign gk = g[0] %}{{ heritage.grade_counts_display[gk] }} at Grade {{ gk }}{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}, along with {{ heritage.scheduled_monuments.size }} scheduled monuments and {{ heritage.parks_and_gardens.size }} registered parks and gardens.</li>
+        </ul>
+
+        <h3>What Do the Grades Mean?</h3>
+        <ul>
+            <li>Grade I buildings are of exceptional interest, Grade II* are particularly important buildings of more than special interest, and Grade II are of special interest. Most listed buildings are Grade II.</li>
+        </ul>
+
+        <h3>Can I Make Changes to a Listed Building?</h3>
+        <ul>
+            <li>Most work that affects a listed building's character, inside or out, needs listed building consent from Cheltenham Borough Council before it starts. <a href="https://historicengland.org.uk/advice/hpg/consent/lbc/">Historic England's guide to listed building consent</a> explains what needs it.</li>
+        </ul>
+
     </div>
 </div>
 

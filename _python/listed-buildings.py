@@ -122,6 +122,8 @@ def main():
             f"© Crown copyright and database right {datetime.now(timezone.utc).year}. Released under OGL."
         ),
         "grade_counts": grade_counts,
+        "grade_counts_display": {grade: f"{n:,}" for grade, n in grade_counts.items()},
+        "buildings_display": f"{len(buildings):,}",
         "buildings": buildings,
         "scheduled_monuments": scheduled_monuments,
         "parks_and_gardens": parks_and_gardens,

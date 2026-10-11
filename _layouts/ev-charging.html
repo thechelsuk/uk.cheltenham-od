@@ -102,6 +102,24 @@
                 Always check the operator's app for live availability and pricing.
             </small></p>
 
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>How Many Electric Car Chargers Are There in Cheltenham?</h3>
+            <ul>
+                <li>This page lists {{ ev.summary.total_locations }} charging locations within {{ ev.radius_km }} km of the town centre, with {{ ev.summary.total_connectors }} connectors between them, run by {{ ev.summary.operators }} different operators.</li>
+            </ul>
+
+            <h3>Are There Rapid Chargers in Cheltenham?</h3>
+            <ul>
+                <li>Yes. The fastest connector listed here charges at up to {{ ev.summary.max_power_kw }} kW. The table shows the top speed at each location, and anything from 50 kW up is usually counted as rapid.</li>
+            </ul>
+
+            <h3>Are the Listings Up to Date?</h3>
+            <ul>
+                <li>They come from Open Charge Map, which is updated by drivers and operators, so a charger can be out of action or newly opened before the listing changes. Check the operator's app before you travel.</li>
+            </ul>
+
         </div>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

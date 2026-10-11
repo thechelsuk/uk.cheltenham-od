@@ -46,6 +46,25 @@
             Data from <a href="{{ parkrun.source_url }}">{{ parkrun.source }}</a>{% if parkrun.licence %}, published under the {{ parkrun.licence }}{% endif %}.
             {% if parkrun.generated_at %}Last updated {{ parkrun.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
+
+        {% assign near = parkrun.events | where_exp: "e", "e.distance_miles < 2" %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Parkruns Are There near Cheltenham?</h3>
+        <ul>
+            <li>{{ parkrun.events.size }} within {{ parkrun.radius_miles }} miles of the town centre, {{ near.size }} of them in Cheltenham itself, nearest first in the table above.</li>
+        </ul>
+
+        <h3>Is Parkrun Free?</h3>
+        <ul>
+            <li>Yes, always. Register once with parkrun to get a barcode, and bring it, printed or on your phone, to any event to get a time.</li>
+        </ul>
+
+        <h3>What Is a Junior Parkrun?</h3>
+        <ul>
+            <li>A free 2k run for children aged 4 to 14, held on Sunday mornings. The table marks which events are junior runs.</li>
+        </ul>
+
     </div>
 </div>
 

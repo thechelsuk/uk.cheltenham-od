@@ -117,6 +117,25 @@
         <script>var pymParent = new pym.Parent("chart-mortgagecash", "https://www.ons.gov.uk/visualisations/housingpriceslocal/embed/?area=E07000078&chart=chart-mortgagecash", { name: "chart-mortgagecash", title: "Embedded chart" });</script>
 
 
+
+        {% assign hs = site.data["house-summary"] %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is the Average House Price in Cheltenham?</h3>
+        <ul>
+            <li>The median sale price over the latest 12 months is {{ hs.current.median_display }}, from {{ hs.current.count_display }} sales. The median is the middle price, so a few very expensive sales don't pull it up the way they do an average.</li>
+        </ul>
+
+        <h3>Where Do the House Prices Come From?</h3>
+        <ul>
+            <li>HM Land Registry's Price Paid Data, which records the price of every residential sale in England and Wales once it is registered, back to 1995.</li>
+        </ul>
+
+        <h3>Why Do the Latest Months Look Quiet?</h3>
+        <ul>
+            <li>A sale only appears once it has been registered with the Land Registry, which can take weeks or months after completion, so the most recent months keep filling in as late registrations arrive.</li>
+        </ul>
+
     </div>
     {% include chartjs.html %}
     <script id="house-price-data"

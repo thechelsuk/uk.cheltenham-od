@@ -57,6 +57,29 @@
             Some fields (fee, opening hours, capacity) may be incomplete or out of date, so check the
             signage on arrival.
         </small></p>
+
+        {% assign cp_all = data.car_parks %}
+        {% assign cp_pr = cp_all | where: "park_and_ride", true %}
+        {% assign cp_fee = cp_all | where: "fee", true %}
+        {% assign cp_free = cp_all | where: "fee", false %}
+        {% assign local_band = site.data["distance-bands"].bands | where: "id", "local" | first %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Car Parks Are There in and around Cheltenham?</h3>
+        <ul>
+            <li>This page lists {{ cp_all.size }} named car parks within {{ local_band.miles }} miles of the town centre, from the town centre multi-storeys to car parks for the hills and villages around it.</li>
+        </ul>
+
+        <h3>Is There a Park and Ride in Cheltenham?</h3>
+        <ul>
+            <li>Yes: {% for p in cp_pr %}{{ p.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}, marked on the map and in the table.</li>
+        </ul>
+
+        <h3>Do Cheltenham's Car Parks Charge?</h3>
+        <ul>
+            <li>Many do. {{ cp_fee.size }} of the {{ cp_all.size }} car parks here are recorded as charging and {{ cp_free.size }} as free; the rest don't say. Charges and opening hours change, so check the signs at the car park before you leave your car.</li>
+        </ul>
+
     </div>
 </div>
 
