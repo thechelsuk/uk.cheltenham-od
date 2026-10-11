@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Sewage Spill History",
+  "description": "A log of storm overflow spills into the River Chelt and the brooks around Cheltenham, from Severn Trent Water's Event Duration Monitors, with monthly totals and hours discharging by watercourse.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['sewage-overflows-history'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Watercourse", "Spill start", "Spill end", "Hours discharging", "Spills per month"]
+}
+</script>
