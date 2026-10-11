@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham MP and General Election Results",
+  "description": "Cheltenham's current MP and general election results for the Cheltenham constituency, from the UK Parliament Members API.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['politics'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Member of Parliament", "Party", "Election year", "Candidate", "Votes", "Vote share"]
+}
+</script>

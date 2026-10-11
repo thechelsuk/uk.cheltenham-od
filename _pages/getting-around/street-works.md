@@ -6,6 +6,7 @@ seo: "Street works and road closures on local roads in Cheltenham, from planned 
 permalink: /cheltenham-street-works
 description: "Street works on local roads within 6 miles of Cheltenham, from planned utility and council works to emergency repairs, with road closures and dates."
 type: "travel"
+schema: street-works
 ---
 
 ## Street Works on Local Roads Around Cheltenham

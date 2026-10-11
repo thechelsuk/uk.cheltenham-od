@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Taxi Ranks",
+  "description": "Taxi ranks in Cheltenham from the borough council's taxi rank map and OpenStreetMap, with locations and distance from the town centre.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['taxi-ranks'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Rank name", "Location", "Distance from town centre"]
+}
+</script>

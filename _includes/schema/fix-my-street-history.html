@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Fix My Street Report History",
+  "description": "Street and highways problems reported through FixMyStreet within 10 km of Cheltenham town centre, by category and month.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['fix-my-street-history'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Report", "Category", "Date reported", "Month"]
+}
+</script>

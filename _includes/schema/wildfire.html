@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Wildfire Risk",
+  "description": "Daily Met Office Fire Severity Index levels and five-day forecast for the grid squares within 10 km of Cheltenham, published by Natural England.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['wildfire'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Date", "Grid square", "Fire severity level"]
+}
+</script>

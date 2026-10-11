@@ -6,6 +6,7 @@ seo: "Where to find a taxi rank in Cheltenham, from the Promenade and Montpellie
 permalink: /cheltenham-taxi-ranks
 description: "Every taxi rank in Cheltenham on one map, from the Promenade and Montpellier to Cheltenham Spa station, with how to tell a taxi from a private hire car."
 type: "travel"
+schema: taxi-ranks
 section: "Getting Around"
 ---
 
