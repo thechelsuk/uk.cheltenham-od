@@ -1,40 +1,18 @@
 ---
-layout: page
-title: "Cheltenham Festivals"
+layout: festivals
+title: "Cheltenham Festivals Calendar"
 seo_title: "Cheltenham Festivals Calendar: Racing, Jazz, Science, Music"
-seo: "Cheltenham's year-round festival calendar: Literature, Racing, Jazz, Science, Music and Cricket, with dates and links to each festival."
+seo: "Cheltenham's festival calendar with dates: Literature, the Cheltenham Festival of racing, Jazz, Science, Music and Cricket, and what's on next."
 permalink: /festivals
-description: "Cheltenham's year-round festival calendar — Literature, Racing, Jazz, Science and Music, with dates and useful links."
+description: "Dates for every Cheltenham festival through the year, from Literature in October and the races in March to Jazz, Science, Music and Cricket."
 type: "activities"
+schema: festivals
 ---
 
 {% include sponsor.html %}
 
 ## Cheltenham's Festivals
 
-Cheltenham hosts a festival for much of the year — literature, horse racing, jazz, science, music and cricket each draw visitors from across the country. Planning a trip around one? Our [visiting Cheltenham guide](/visiting-cheltenham) covers where to stay, eat and explore, and [places to stay](/staying-in-cheltenham) lists local hotels and guest houses — both worth checking early, especially around the busier dates below.
+Cheltenham hosts a festival for much of the year: literature, horse racing, jazz, science, music and cricket each draw visitors from across the country. The calendar below lists each one with its dates, starting from the next to come.
 
-## Cheltenham Literature Festival
-
-- [Starting 9th October 2026](https://www.cheltenhamfestivals.org/festivals/literature-festival) &rarr;
-
-## Cheltenham Racing Festival
-
-- [Starting 16th March 2027](https://www.thejockeyclub.co.uk/cheltenham-festival/) &rarr;
-- [Where to stay for the Racing Festival, with live availability](/cheltenham-festival-accommodation) &rarr;
-
-## Cheltenham Jazz Festival
-
-- [Starting 28th April 2027](https://www.cheltenhamfestivals.org/festivals/jazz-festival) &rarr;
-
-## Cheltenham Science Festival
-
-- [Starting 8th June 2027](https://www.cheltenhamfestivals.org/festivals/science-festival) &rarr;
-
-## Cheltenham Music Festival
-
-- [Starting 9th July 2027](https://www.cheltenhamfestivals.org/festivals/music-festival) &rarr;
-
-## Cheltenham Cricket Festival
-
-- [Held each summer at Cheltenham College](/cheltenham-sports/gloucestershire-cricket) &rarr;
+The busiest week by far is the Cheltenham Festival of racing in March, when rooms book up months ahead. For the rest, our [visiting Cheltenham guide](/visiting-cheltenham) covers getting here, eating out and what else to see, and [places to stay](/staying-in-cheltenham) lists hotels and guest houses across town.

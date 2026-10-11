@@ -1,0 +1,97 @@
+{% include header.html %}
+{% assign data = site.data.festivals %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign next = nil %}
+{% for f in data.festivals %}{% if next == nil and f.end != "" and f.end >= today %}{% assign next = f %}{% endif %}{% endfor %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                {% if next %}
+                <li>{% if next.start <= today %}On now: <a href="#{{ next.slug }}">{{ next.name }}</a>, until {{ next.end }}{% else %}Next: <a href="#{{ next.slug }}">{{ next.name }}</a>, from {{ next.start }}{% endif %}</li>
+                {% endif %}
+                <li><a href="/cheltenham-festival-accommodation">Where to stay for the Cheltenham Festival &rarr;</a></li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        <h2 id="calendar">Festival Calendar</h2>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Festival</th>
+                        <th scope="col" class="date">Starts</th>
+                        <th scope="col" class="date">Ends</th>
+                        <th scope="col">Organiser</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in data.festivals %}
+                    <tr>
+                        <td><a href="#{{ f.slug }}">{{ f.name }}</a></td>
+                        {% if f.start != "" %}
+                        <td class="date">{{ f.start }}</td>
+                        <td class="date">{{ f.end }}{% if f.start <= today and f.end >= today %} (on now){% endif %}</td>
+                        {% else %}
+                        <td colspan="2">{{ f.season | capitalize }} {{ f.edition }}, dates to be confirmed</td>
+                        {% endif %}
+                        <td>{{ f.organiser }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% for f in data.festivals %}
+        <h2 id="{{ f.slug }}">{{ f.name }}</h2>
+        <p>{{ f.summary }}</p>
+        <ul>
+            {% if f.start == "" %}
+            <li>Next held in {{ f.season }} {{ f.edition }}; dates to be confirmed.</li>
+            {% elsif f.end < today %}
+            <li>The {{ f.edition }} festival ran from {{ f.start }} to {{ f.end }}; next year's dates are still to be announced.</li>
+            {% else %}
+            <li>{{ f.edition }}: {{ f.start }} to {{ f.end }}.</li>
+            {% endif %}
+            <li><a href="{{ f.url }}" target="_blank" rel="noopener">{{ f.name }} official site</a> &rarr;</li>
+            {% if f.guide %}
+            <li><a href="{{ f.guide }}">{{ f.guide_label }}</a> &rarr;</li>
+            {% endif %}
+        </ul>
+        {% endfor %}
+
+        <p class="attribution"><small>
+            Dates from each festival's organiser, compiled by <a href="{{ data.source_url }}">{{ data.source }}</a>.
+            Last updated {{ data.updated_iso | date: "%-d %B %Y" }}. Dates can change, so check the festival's own site before booking.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>When Is the Next Festival in Cheltenham?</h3>
+        <ul>
+            {% if next %}
+            <li>{% if next.start <= today %}The {{ next.name }} is on now, until {{ next.end }}.{% else %}The {{ next.name }}, from {{ next.start }} to {{ next.end }}.{% endif %}</li>
+            {% endif %}
+            <li>The festival calendar above lists every festival in date order.</li>
+        </ul>
+
+        {% assign racing = data.festivals | where: "slug", "racing" | first %}
+        <h3>When Is the Cheltenham Festival {{ racing.edition }}?</h3>
+        <ul>
+            <li>The {{ racing.edition }} Cheltenham Festival of jump racing runs from {{ racing.start }} to {{ racing.end }} at Cheltenham Racecourse, Prestbury Park.</li>
+            <li>Rooms near the racecourse book up months ahead; our <a href="/cheltenham-festival-accommodation">festival accommodation guide</a> shows live availability.</li>
+        </ul>
+
+        <h3>Where Can I Stay During a Festival?</h3>
+        <ul>
+            <li>See <a href="/staying-in-cheltenham">places to stay in Cheltenham</a> for hotels and guest houses across town, and book early for the busiest weeks.</li>
+            <li>Our <a href="/visiting-cheltenham">visiting Cheltenham guide</a> covers getting here, eating out and what else to see.</li>
+        </ul>
+    </div>
+</div>
+
+{% include footer.html %}

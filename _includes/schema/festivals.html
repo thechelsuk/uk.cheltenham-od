@@ -1,0 +1,28 @@
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign dated = "" | split: "" %}
+{% for f in site.data.festivals.festivals %}{% if f.end != "" and f.end >= today %}{% assign dated = dated | push: f %}{% endif %}{% endfor %}
+{% if dated.size > 0 %}
+<script type="application/ld+json">
+[
+{% for f in dated %}
+  {
+    "@context": "https://schema.org",
+    "@type": "Festival",
+    "name": {{ f.name | append: " " | append: f.edition | jsonify }},
+    "description": {{ f.summary | jsonify }},
+    "startDate": "{{ f.start }}",
+    "endDate": "{{ f.end }}",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Cheltenham",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cheltenham", "addressRegion": "Gloucestershire", "addressCountry": "GB" }
+    },
+    "organizer": { "@type": "Organization", "name": {{ f.organiser | jsonify }} },
+    "url": "{{ f.url }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
+</script>
+{% endif %}
