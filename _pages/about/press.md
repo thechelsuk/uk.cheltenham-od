@@ -52,7 +52,7 @@ Live and regularly updated data across:
 - Security alerts
 - Weather (10-day forecast)
 
-Plus classifieds, local events, festivals, points of interest, post offices, public toilets, public holidays, helplines and more.
+Plus classifieds, festivals, points of interest, post offices, public toilets, public holidays, helplines and more.
 
 ## Story Angles
 

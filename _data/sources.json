@@ -252,8 +252,8 @@
     "source_url": "https://www.stwater.co.uk/in-my-area/storm-overflow-map/",
     "licence": "No formal licence stated — published as a free public near-real-time data feed by Severn Trent Water via Water UK's National Storm Overflow Hub",
     "licence_type": "None stated",
-    "data": [{"file": "_data/sewage-overflows.json", "schedule": "daily"}],
-    "pages": ["/cheltenham-sewage-overflows"]
+    "data": [{"file": "_data/sewage-overflows.json", "schedule": "daily"}, {"file": "_data/sewage-overflows-history.json", "schedule": "daily"}],
+    "pages": ["/cheltenham-sewage-overflows", "/cheltenham-sewage-overflows/history"]
   },
   {
     "id": "chrismytton-cheltenham-council-land-and-assets",
@@ -578,8 +578,8 @@
     "source_url": "https://cheltenham-od.uk",
     "licence": "None — manually curated by site editors",
     "licence_type": "Own data",
-    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}, {"file": "_data/clubs.json", "schedule": "manual"}, {"file": "_data/helpful-contacts.json", "schedule": "manual"}, {"file": "_data/local-support.json", "schedule": "manual"}],
-    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/corrections", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-sports-clubs", "/cheltenham-clubs-and-societies", "/cheltenham-arts-and-crafts", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support"]
+    "data": [{"file": "_data/third-spaces.json", "schedule": "manual"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "manual"}, {"file": "_data/clubs.json", "schedule": "manual"}, {"file": "_data/helpful-contacts.json", "schedule": "manual"}, {"file": "_data/local-support.json", "schedule": "manual"}, {"file": "_data/festivals.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/corrections", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-sports-clubs", "/cheltenham-clubs-and-societies", "/cheltenham-arts-and-crafts", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support", "/festivals"]
   },
   {
     "id": "nged-live-power-cuts",
@@ -618,7 +618,7 @@
     "source_url": "https://developers.cloudflare.com/analytics/graphql-api/",
     "licence": "The site's own traffic figures from Cloudflare; no open licence applies",
     "licence_type": "Own data",
-    "data": [{"file": "_data/traffic.json", "schedule": "daily"}],
+    "data": [{"file": "_data/site-traffic.json", "schedule": "daily"}],
     "pages": ["/sponsor/traffic"]
   },
   {

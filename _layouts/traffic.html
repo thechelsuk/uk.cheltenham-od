@@ -1,5 +1,5 @@
 {% include header.html %}
-{% assign traffic = site.data["traffic"] %}
+{% assign traffic = site.data["site-traffic"] %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -40,7 +40,7 @@
             <div class="chart-canvas"><canvas id="traffic-cached" aria-label="Line chart of the percentage of data served from cache per day over the last 30 days"></canvas></div>
         </div>
 
-        <p class="traffic-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ traffic.source_url }}">{{ traffic.source }}</a>{% if traffic.licence %}, published under the {{ traffic.licence }}{% endif %}.
             {% if traffic.generated_at %}Last updated {{ traffic.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Each day is counted from midnight to midnight UTC.

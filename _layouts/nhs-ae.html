@@ -123,7 +123,7 @@
             </table>
         </div>
 
-        <p class="nhs-ae-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ ae.source_url }}">{{ ae.source }}</a> (A&amp;E figures) and the
             <a href="{{ hospitals.source_url }}">{{ hospitals.source }}</a> (hospitals), both published under the {{ ae.licence }}.
             {% if ae.generated_at %}Last updated {{ ae.generated_at | date: "%-d %B %Y" }}.{% endif %}

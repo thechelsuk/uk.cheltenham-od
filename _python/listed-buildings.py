@@ -24,7 +24,7 @@ SOURCE_URL = "https://www.api.gov.uk/he/national-heritage-list-for-england-nhle/
 # Rough bounding box around Cheltenham (British National Grid, EPSG:27700).
 # Slightly wider than the borough boundary; there is no local-authority field
 # in the data so a geographic filter is the only option.
-BBOX = (391000, 218000, 398000, 225000)  # (min E, min N, max E, max N)
+BBOX = config.LISTED_BUILDINGS_BBOX  # (min E, min N, max E, max N)
 
 LAYER_BUILDINGS = 0
 LAYER_SCHEDULED_MONUMENTS = 6

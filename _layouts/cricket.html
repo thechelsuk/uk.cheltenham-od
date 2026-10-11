@@ -6,7 +6,7 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul>
-                <li><a href="/cheltenham-sports">&lAarr; Back to Sports</a></li>
+                <li><a href="/cheltenham-sports">&lAarr; Back to Sport in Cheltenham</a></li>
                 <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official Club Website &rarr;</a>
                 </li>
             </ul>
@@ -52,11 +52,10 @@
             </table>
         </div>
 
-        <p class="cricket-attribution"><small>
+        <p class="attribution"><small>
                 Data from <a href="{{ cricket.source_url }}">{{ cricket.source }}</a>.
                 {% if cricket.updated %}Last updated {{ cricket.updated | date: "%-d %B %Y" }}.{% endif %}
                 Always check the club's website for current fixtures, tickets and travel information.
-                Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
             </small></p>
 
         {% for g in cricket.grounds %}

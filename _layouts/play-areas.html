@@ -47,7 +47,7 @@
             </table>
         </div>
 
-        <p class="play-areas-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
             {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Equipment, age suitability and opening arrangements aren't recorded for most play areas, so
@@ -58,7 +58,7 @@
 
         <h3>How Many Play Parks Are There in Cheltenham?</h3>
         <ul>
-            <li>The table shows every named, publicly accessible play area recorded within 10 miles of the town centre.
+            <li>The table shows every named, publicly accessible play area recorded within {{ data.radius_miles }} miles of the town centre.
                 The count is at the top of the page and changes as new playgrounds are added or removed.</li>
         </ul>
 

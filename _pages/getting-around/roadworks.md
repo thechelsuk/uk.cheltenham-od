@@ -4,7 +4,7 @@ title: "Cheltenham Roadworks"
 seo_title: "Cheltenham Roadworks and Road Closures: M5, A417, A40, A46"
 seo: "Planned roadworks and unplanned closures on the M5, A417, A40 and A46 near Cheltenham, with dates, expected delays and lanes closed at short notice."
 permalink: /cheltenham-roadworks
-description: "Planned roadworks and unplanned closures on the motorways and major A roads within 10 miles of Cheltenham."
+description: "Planned roadworks and unplanned closures on the motorways and major A roads within 12 miles of Cheltenham."
 type: "travel"
 schema: roadworks
 ---
