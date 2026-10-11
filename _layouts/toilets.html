@@ -79,6 +79,24 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script id="toilet-data" type="application/json">{{ site.data.toilets | jsonify }}</script>
         <script src="/assets/scripts/toilet-map.js"></script>
+
+        {% assign t_all = site.data.toilets %}
+        {% assign t_access = t_all | where: "accessible", true %}
+        {% assign t_radar = t_all | where: "radar_key", true %}
+        {% assign t_baby = t_all | where: "baby_change", true %}
+        {% assign t_free = t_all | where: "no_payment", true %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Public Toilets Are There in Cheltenham?</h3>
+        <ul>
+            <li>This page lists {{ t_all.size }}: {{ t_access.size }} with an accessible toilet, {{ t_baby.size }} with baby changing and {{ t_free.size }} recorded as free to use.</li>
+        </ul>
+
+        <h3>What Is a RADAR Key?</h3>
+        <ul>
+            <li>A key that opens accessible toilets in the National Key Scheme, so they stay available for disabled people. {{ t_radar.size }} of the toilets here use one, and keys are sold by Disability Rights UK.</li>
+        </ul>
+
     </div>
 </div>
 

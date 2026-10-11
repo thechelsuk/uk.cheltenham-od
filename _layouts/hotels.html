@@ -59,6 +59,22 @@
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
         </small></p>
 
+
+        {% assign h_all = site.data.hotels %}
+        {% assign h_hotels = h_all | where: "type", "Hotel" %}
+        {% assign h_guest = h_all | where: "type", "Guest house" %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Places to Stay Are There in Cheltenham?</h3>
+        <ul>
+            <li>This page lists {{ h_all.size }}: {{ h_hotels.size }} hotels and {{ h_guest.size }} guest houses, shown on the map and in the table.</li>
+        </ul>
+
+        <h3>Where Should I Stay for the Cheltenham Festival?</h3>
+        <ul>
+            <li>Rooms near the racecourse book up months ahead of race week. See our <a href="/cheltenham-festival-accommodation">festival accommodation guide</a> for places near Prestbury Park with live availability.</li>
+        </ul>
+
     </div>
 </div>
 <script>

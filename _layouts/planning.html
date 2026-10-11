@@ -111,6 +111,19 @@
                     Borough Council's Planning Portal</a>. Provided for general information — always check the portal
                 for the definitive record. Map locations from {{ planning.geocoding_source }}.
                 {{ planning.geocoding_attribution }}</small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Planning Applications Are There in Cheltenham?</h3>
+        <ul>
+            <li>{{ planning.received_count }} applications were received between {{ planning.date_from }} and {{ planning.date_to }}; {{ planning.decided_count }} applications were decided in the same period and {{ planning.pending }} are still awaiting a decision.</li>
+        </ul>
+
+        <h3>How Do I Comment on or Object to an Application?</h3>
+        <ul>
+            <li>Find the application on <a href="{{ planning.source_url }}">Cheltenham Borough Council's planning portal</a> using its reference, and comment there while it is still open for consultation. The council considers comments on planning grounds, such as design, traffic or overlooking.</li>
+        </ul>
+
     </div>
 </div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

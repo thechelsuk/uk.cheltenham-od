@@ -111,6 +111,28 @@
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
         </small></p>
 
+
+        {% unless page.food_rating %}
+        {% assign fs_five = site.data["food-standards"] | where: "rating", "5" %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Do Food Hygiene Ratings Mean?</h3>
+        <ul>
+            <li>Ratings run from 0 to 5: 5 is very good, 4 good, 3 generally satisfactory, 2 improvement necessary, 1 major improvement necessary and 0 urgent improvement necessary.</li>
+            <li>They reflect hygiene on the day of the council's inspection, not the quality of the food.</li>
+        </ul>
+
+        <h3>How Many Cheltenham Food Businesses Are Rated 5?</h3>
+        <ul>
+            <li>{{ fs_five.size }}, about {{ fs_five.size | times: 100 | divided_by: site.data["food-standards"].size }}% of the businesses listed here, which you can browse on the <a href="/cheltenham-food-standards/rated-five">five-star ratings</a> page.</li>
+        </ul>
+
+        <h3>Do Businesses Have to Display Their Rating?</h3>
+        <ul>
+            <li>Not in England, where showing the sticker is voluntary, but every business's rating is public and listed here whether or not it is on the door.</li>
+        </ul>
+        {% endunless %}
+
     </div>
 
     {% include footer.html %}

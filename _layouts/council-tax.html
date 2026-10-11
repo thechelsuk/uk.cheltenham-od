@@ -45,6 +45,27 @@
             {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Charges are for {{ data.tax_year }}.
         </small></p>
+
+        {% assign ct_main = data.areas | where: "is_parish", false | first %}
+        {% assign ct_d = ct_main.bands | where: "band", "D" | first %}
+        {% assign ct_parishes = data.areas | where: "is_parish", true %}
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Much Is Band D Council Tax in Cheltenham?</h3>
+        <ul>
+            <li>£{{ ct_d.amount }} a year in {{ data.tax_year }} for most of Cheltenham, with a little more in the town's parishes. The table above gives every band for each area.</li>
+        </ul>
+
+        <h3>Which Council Tax Band Is My Home In?</h3>
+        <ul>
+            <li>Look up your address on GOV.UK's <a href="{{ data.band_check_url }}">check your council tax band</a> service, which also explains how to challenge a band you think is wrong.</li>
+        </ul>
+
+        <h3>Why Is Council Tax Higher in Some Parts of Cheltenham?</h3>
+        <ul>
+            <li>{{ ct_parishes.size }} areas, {% for p in ct_parishes %}{{ p.area | remove: "Parish of " }}{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}, have a parish council, which adds a small charge of its own for local services on top of the rest of the bill.</li>
+        </ul>
+
     </div>
 </div>
 {% include footer.html %}
