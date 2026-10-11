@@ -28,7 +28,7 @@ def normalize_item(item):
 
 def build_alert_markdown(items):
     if not items:
-        return "> No current flood warnings reports in this area\n"
+        return "> No current flood warnings or alerts for this area.\n"
     output = ""
     for item in items:
         output += f"- {item['severity']}: {item['description']}\n"
