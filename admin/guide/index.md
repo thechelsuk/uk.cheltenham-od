@@ -16,6 +16,7 @@ render_with_liquid: false
 - [Displaying Data](/admin/guide/displaying-data): the page front matter and copy, the layout, tables, dates, maps, charts, structured data and FAQs.
 - [Analysis Posts](/admin/guide/analysis-posts): finding-led posts with a quotable line, chart, CSV, cite box and Dataset schema.
 - [Data Releases and Manual Refreshes](/admin/guide/data-releases): when each source publishes, how it reaches the site, the manual downloads, and the release calendar.
+- [The Raspberry Pi](/admin/guide/raspberry-pi): the home server that runs the most frequent checks, its setup, and the fallback workflow for when it is down.
 
 ## Previewing Locally
 
