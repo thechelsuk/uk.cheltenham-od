@@ -28,23 +28,19 @@ def test_each_home_keeps_only_its_latest_certificate():
     assert sorted((c["band"], c["postcode"]) for c in latest) == [("B", "GL50 1AA"), ("C", "GL50 1AA")]
 
 
-def test_summary_counts_share_and_average():
+def test_summary_counts_shares_and_median():
     summary = epc.summarise(["A", "C", "C", "D", "G"])
     assert summary["homes"] == 5
     assert summary["counts"] == {"A": 1, "B": 0, "C": 2, "D": 1, "E": 0, "F": 0, "G": 1}
-    assert summary["c_or_better_pct"] == 60.0
-    assert summary["e_to_g_pct"] == 20.0
     assert summary["shares"]["C"] == 40.0
-    assert summary["average_score"] == 4.4  # (7 + 5 + 5 + 4 + 1) / 5
-    assert summary["average_band"] == "D"
-    assert summary["average_display"] == "4.40"
+    assert summary["c_plus_pct"] == 60.0
+    assert summary["median_band"] == "C"
 
 
-def test_average_band_rounds_to_the_nearest_letter():
-    assert epc.band_for(4.5) == "C"
-    assert epc.band_for(4.49) == "D"
-    assert epc.band_for(7) == "A"
-    assert epc.band_for(1) == "G"
+def test_median_is_the_middle_home_taking_the_better_of_two_middles():
+    assert epc.median_band(["D", "D", "C", "B"]) == "C"
+    assert epc.median_band(["G", "E", "E"]) == "E"
+    assert epc.median_band([]) is None
 
 
 def test_homes_are_placed_in_the_area_containing_their_postcode():
@@ -68,6 +64,7 @@ def test_each_level_has_map_edges_for_every_band():
     assert sorted(level["band_edges"]) == list("ABCDEFG")
     assert len(level["band_edges"]["A"]) == 5
     assert level["areas"][3]["shares"]["A"] == 30.0
+    assert "c_plus_edges" in level and "score_edges" not in level
 
 
 def test_first_band_edge_sits_above_the_lowest_value():

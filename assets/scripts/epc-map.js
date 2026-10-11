@@ -23,27 +23,15 @@
         return div.innerHTML;
     }
 
-    // An average score as its letter: G is 1 up to A at 7, halves round up.
-    function bandFor(score) {
-        return bands.charAt(7 - Math.min(7, Math.max(1, Math.floor(score + 0.5))));
-    }
-
     // Same six blues as the crime, broadband and wards maps. Darker always
-    // means more of what is measured: a better average, more homes rated C or
-    // better, or a higher share of homes in the chosen band.
+    // means a higher share: of homes rated C+, or of homes in the chosen band.
     var shades = ["#eff3ff", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"];
 
     var measures = {
-        score: {
-            caption: "Average rating, counting G as 1 up to A as 7",
-            value: function (area) { return area.average_score; },
-            edges: function (level) { return data[level].score_edges; },
-            label: function (v) { return bandFor(v) + " (" + v.toFixed(2) + ")"; },
-        },
-        share: {
-            caption: "Share of homes rated C or better",
-            value: function (area) { return area.c_or_better_pct; },
-            edges: function (level) { return data[level].share_edges; },
+        cplus: {
+            caption: "Share of homes rated C+ (C or better)",
+            value: function (area) { return area.c_plus_pct; },
+            edges: function (level) { return data[level].c_plus_edges; },
             label: function (v) { return v + "%"; },
         },
     };
@@ -83,8 +71,8 @@
         if (!area.homes) return html + "No rated homes";
         html +=
             "Homes with a certificate: " + area.homes_display + "<br>" +
-            "Average rating: " + area.average_band + " (" + area.average_score.toFixed(2) + ")<br>" +
-            "Rated C or better: " + area.c_or_better_pct + "%<br>";
+            "Rated C+: " + area.c_plus_pct + "%<br>" +
+            "Median rating: " + area.median_band;
         for (var i = 0; i < bands.length; i++) {
             var b = bands.charAt(i);
             html += "<br>" + b + ": " + area.shares[b] + "% (" + area.counts_display[b] + ")";
@@ -118,7 +106,7 @@
 
     function render() {
         var level = levelEl && levelEl.value === "lsoa" ? "lsoa" : "ward";
-        var measure = measures[(measureEl && measures[measureEl.value]) ? measureEl.value : "score"];
+        var measure = measures[(measureEl && measures[measureEl.value]) ? measureEl.value : "cplus"];
         var edges = measure.edges(level);
 
         if (current !== level) {

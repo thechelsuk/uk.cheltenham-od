@@ -8,8 +8,8 @@
             <p>{{page.description}}</p>
             <ul>
                 <li>{{ borough.homes_display }} homes with a certificate</li>
-                <li>{{ borough.c_or_better_pct }}% rated C or better</li>
-                <li>Average rating {{ borough.average_band }}</li>
+                <li>{{ borough.c_plus_pct }}% rated C+ (C or better)</li>
+                <li>Median rating {{ borough.median_band }}</li>
             </ul>
         </header>
 
@@ -48,13 +48,12 @@
             </select>
             <label class="filter-label" for="epc-map-measure">Shade by</label>
             <select id="epc-map-measure">
-                <option value="score">Average rating</option>
-                <option value="share">Share rated C or better</option>
-                {% for band in data.bands %}<option value="{{ band }}">Share rated {{ band }}</option>
+                <option value="cplus">Rated C+</option>
+                {% for band in data.bands %}<option value="{{ band }}">Rated {{ band }}</option>
                 {% endfor %}
             </select>
         </div>
-        <p><small id="epc-map-caption">Average rating, counting G as 1 up to A as 7</small></p>
+        <p><small id="epc-map-caption">Share of homes rated C+ (C or better)</small></p>
         <div class="map-legend" id="epc-map-legend"></div>
         <div id="epc-map" class="map-canvas" aria-label="Map of Cheltenham shaded by the energy ratings of its homes"></div>
 
@@ -67,8 +66,8 @@
                         <th scope="col">Ward</th>
                         <th scope="col" class="number">Homes</th>
                         {% for band in data.bands %}<th scope="col" class="number">{{ band }}</th>
-                        {% endfor %}<th scope="col" class="number">C or Better</th>
-                        <th scope="col" class="number">Average</th>
+                        {% endfor %}<th scope="col" class="number">C+</th>
+                        <th scope="col" class="number">Median</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,8 +77,8 @@
                         <td><a href="/cheltenham-wards/{{ area.slug }}">{{ area.name }}</a></td>
                         <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
                         {% for band in data.bands %}<td class="number" data-val="{{ area.shares[band] }}">{{ area.shares[band] }}%</td>
-                        {% endfor %}<td class="number" data-val="{{ area.c_or_better_pct }}">{{ area.c_or_better_pct }}%</td>
-                        <td class="number" data-val="{{ area.average_score }}">{{ area.average_band }} ({{ area.average_display }})</td>
+                        {% endfor %}<td class="number" data-val="{{ area.c_plus_pct }}">{{ area.c_plus_pct }}%</td>
+                        <td class="number" data-val="{{ area.median_band }}">{{ area.median_band }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -88,8 +87,8 @@
                         <th scope="row">Cheltenham</th>
                         <td class="number">{{ borough.homes_display }}</td>
                         {% for band in data.bands %}<td class="number">{{ borough.shares[band] }}%</td>
-                        {% endfor %}<td class="number">{{ borough.c_or_better_pct }}%</td>
-                        <td class="number">{{ borough.average_band }} ({{ borough.average_display }})</td>
+                        {% endfor %}<td class="number">{{ borough.c_plus_pct }}%</td>
+                        <td class="number">{{ borough.median_band }}</td>
                     </tr>
                 </tfoot>
             </table>
@@ -103,8 +102,8 @@
                         <th scope="col">Area</th>
                         <th scope="col">Ward</th>
                         <th scope="col" class="number">Homes</th>
-                        <th scope="col" class="number">Average</th>
-                        <th scope="col" class="number">C or Better</th>
+                        <th scope="col" class="number">C+</th>
+                        <th scope="col" class="number">Median</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,8 +112,8 @@
                         <td>{{ area.name }}</td>
                         <td>{{ area.ward_name }}</td>
                         <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
-                        <td class="number" data-val="{{ area.average_score }}">{% if area.homes > 0 %}{{ area.average_band }} ({{ area.average_display }}){% endif %}</td>
-                        <td class="number" data-val="{{ area.c_or_better_pct }}">{% if area.homes > 0 %}{{ area.c_or_better_pct }}%{% endif %}</td>
+                        <td class="number" data-val="{{ area.c_plus_pct }}">{% if area.homes > 0 %}{{ area.c_plus_pct }}%{% endif %}</td>
+                        <td class="number" data-val="{{ area.median_band }}">{{ area.median_band }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -136,9 +135,20 @@
             <li>An Energy Performance Certificate (EPC) rates how energy efficient a home is, from A, the most efficient, to G, the least. A home needs one when it is built, sold or let, and each certificate lasts ten years.</li>
         </ul>
 
-        <h3>How Is the Average Rating Worked Out?</h3>
+        <h3>What Does C+ Mean?</h3>
         <ul>
-            <li>Each rating counts as a score, from 1 for G up to 7 for A, and the average of those scores is shown with its nearest letter, so an average of 4.0 is a D and 4.5 or more is a C.</li>
+            <li>C+ means rated C or better: A, B or C. The C+ column and map show the share of an area's homes with one of those three ratings.</li>
+        </ul>
+
+        <h3>Why Measure Homes Rated C or Better?</h3>
+        <ul>
+            <li>Band C is the government's benchmark for an energy-efficient home. Its Clean Growth Strategy set the aim of as many homes as possible reaching band C by 2035, where practical, cost-effective and affordable.</li>
+            <li>The government has also confirmed that privately rented homes in England and Wales will need to reach band C by 1 October 2030, so the share of homes already at C or better shows how far an area has to go.</li>
+        </ul>
+
+        <h3>What Does the Median Rating Mean?</h3>
+        <ul>
+            <li>Line up an area's homes from A to G and the median is the rating of the home in the middle: half the homes are rated the same or better, and half the same or worse. It is the rating of a typical home in the area.</li>
             <li>Each home counts once, using its latest certificate.</li>
         </ul>
 

@@ -3,7 +3,7 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Cheltenham Home Energy Ratings",
-  "description": "Energy Performance Certificate ratings from A to G for homes in Cheltenham, using each home's latest certificate, summarised by ward and small area (LSOA) with the share rated C or better and an average rating.",
+  "description": "Energy Performance Certificate ratings from A to G for homes in Cheltenham, using each home's latest certificate, summarised by ward and small area (LSOA) with the share rated C or better and the median rating.",
   "url": "{{ page.url | absolute_url }}",
   "dateModified": "{{ site.data.epc.generated_at }}",
   "isAccessibleForFree": true,
@@ -11,6 +11,6 @@
   "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
   "isBasedOn": "{{ site.data.epc.source_url }}",
   "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
-  "variableMeasured": ["Energy efficiency rating", "Homes with a certificate", "Share rated C or better", "Average rating"]
+  "variableMeasured": ["Energy efficiency rating", "Homes with a certificate", "Share rated C or better", "Median rating"]
 }
 </script>

@@ -8,7 +8,7 @@ fetched (about 66,000, in pages of 5,000), and each home keeps only its
 latest certificate, matched on UPRN or, without one, on address and
 postcode. Homes are then placed by their postcode's centre (postcodes.io)
 into the small areas (LSOAs) and wards the crime map uses, and each area
-gets its A to G mix, the share rated C or better and an average rating.
+gets its A to G mix, the share rated C or better (C+) and its median rating.
 
 Postcodes and addresses carry Ordnance Survey and Royal Mail terms, so they
 are only used in memory to place homes; the output holds area totals only.
@@ -31,7 +31,6 @@ COUNCIL = "Cheltenham"
 PAGE_SIZE = 5000
 GEOCODE_BATCH = 100
 BANDS = "ABCDEFG"
-SCORE = {band: 7 - i for i, band in enumerate(BANDS)}  # A = 7 down to G = 1
 SHADES = 6  # colour bands on the map, matching the six blues in themes.css
 
 
@@ -67,7 +66,7 @@ def latest_per_home(certs):
     latest = {}
     for c in certs:
         band = (c.get("currentEnergyEfficiencyBand") or "").upper()
-        if band not in SCORE:
+        if len(band) != 1 or band not in BANDS:
             continue
         if c.get("uprn"):
             key = f"uprn:{c['uprn']}"
@@ -79,26 +78,26 @@ def latest_per_home(certs):
     return list(latest.values())
 
 
-def band_for(score):
-    """The letter for an average score, rounding halves up (4.5 is a C)."""
-    return BANDS[7 - min(7, max(1, int(score + 0.5)))]
+def median_band(bands):
+    """The rating of the middle home with every home lined up from A to G,
+    taking the better of the two middle homes when the count is even."""
+    if not bands:
+        return None
+    ordered = sorted(bands, key=BANDS.index)
+    return ordered[(len(ordered) - 1) // 2]
 
 
 def summarise(bands):
     homes = len(bands)
     counts = {band: bands.count(band) for band in BANDS}
-    average = round(sum(SCORE[b] for b in bands) / homes, 2) if homes else None
     return {
         "homes": homes,
         "homes_display": f"{homes:,}",
         "counts": counts,
         "counts_display": {band: f"{n:,}" for band, n in counts.items()},
         "shares": {band: round(100 * n / homes, 1) for band, n in counts.items()} if homes else {},
-        "c_or_better_pct": round(100 * (counts["A"] + counts["B"] + counts["C"]) / homes, 1) if homes else None,
-        "e_to_g_pct": round(100 * (counts["E"] + counts["F"] + counts["G"]) / homes, 1) if homes else None,
-        "average_score": average,
-        "average_band": band_for(average) if average else None,
-        "average_display": f"{average:.2f}" if average else None,
+        "c_plus_pct": round(100 * (counts["A"] + counts["B"] + counts["C"]) / homes, 1) if homes else None,
+        "median_band": median_band(bands),
     }
 
 
@@ -145,8 +144,7 @@ def build_level(areas, homes_by_area):
         out.append(row)
     rated = [a for a in out if a["homes"]]
     return {
-        "score_edges": band_edges([a["average_score"] for a in rated], 2),
-        "share_edges": band_edges([a["c_or_better_pct"] for a in rated], 0),
+        "c_plus_edges": band_edges([a["c_plus_pct"] for a in rated], 0),
         "band_edges": {band: band_edges([a["shares"][band] for a in rated], 1) for band in BANDS},
         "areas": out,
     }
