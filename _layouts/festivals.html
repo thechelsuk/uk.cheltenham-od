@@ -64,11 +64,6 @@
         </ul>
         {% endfor %}
 
-        <p class="attribution"><small>
-            Dates from each festival's organiser, compiled by <a href="{{ data.source_url }}">{{ data.source }}</a>.
-            Last updated {{ data.updated_iso | date: "%-d %B %Y" }}. Dates can change, so check the festival's own site before booking.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>When Is the Next Festival in Cheltenham?</h3>
@@ -91,6 +86,11 @@
             <li>See <a href="/staying-in-cheltenham">places to stay in Cheltenham</a> for hotels and guest houses across town, and book early for the busiest weeks.</li>
             <li>Our <a href="/visiting-cheltenham">visiting Cheltenham guide</a> covers getting here, eating out and what else to see.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            {% include own-data-credit.html file="_data/festivals.json" note="Dates can change, so check the festival's own site before booking." %}
+        </small></p>
     </div>
 </div>
 

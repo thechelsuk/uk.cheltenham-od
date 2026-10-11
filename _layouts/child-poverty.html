@@ -108,12 +108,6 @@
             <li>{{ note }}</li>
             {% endfor %}
         </ul>
-        <p class="attribution"><small>
-            Data from the <a href="{{ kids.source_url }}">{{ kids.source }}</a>, published under the {{ kids.licence }}.
-            Last updated {{ kids.generated_at | date: "%-d %B %Y" }}.
-            Ward boundaries from the Office for National Statistics; map tiles &copy;
-            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -141,6 +135,15 @@
             <li>Not exactly. The source rounds counts and applies statistical disclosure control to guard against
                 identifying individuals, so ward counts may not sum to a Cheltenham-wide total.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ kids.source_url }}">{{ kids.source }}</a>, published under the {{ kids.licence }}.
+            {% include freshness.html file="_data/low-income-kids.json" %}
+            Ward boundaries from the Office for National Statistics; map tiles &copy;
+            <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.
+        </small></p>
+
     </div>
 </div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

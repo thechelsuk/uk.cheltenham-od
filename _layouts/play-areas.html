@@ -47,13 +47,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Equipment, age suitability and opening arrangements aren't recorded for most play areas, so
-            check on arrival.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Many Play Parks Are There in Cheltenham?</h3>
@@ -80,6 +73,15 @@
             <li>Age suitability and equipment are rarely recorded, so it is worth checking on arrival. A few sites are
                 named separately for younger children, such as toddler areas, so look for those in the table.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/play-areas.json" %}
+            Equipment, age suitability and opening arrangements aren't recorded for most play areas, so
+            check on arrival.
+        </small></p>
+
     </div>
 </div>
 

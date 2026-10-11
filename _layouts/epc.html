@@ -161,16 +161,6 @@
         </div>
         {% endfor %}
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }},
-            using each home's latest certificate from {{ data.certificates_display }} lodged since {{ data.first_year }}.
-            Homes are placed in areas by their postcode using postcodes.io (ONS Postcode Directory), and area
-            boundaries are from the ONS Open Geography Portal. Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-            Energy scores, types of home, tenure and heating are from each home's full certificate, last updated
-            {{ scores.generated_at | date: "%-d %B %Y" }}.
-            Contains OS data &copy; Crown copyright and database right.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is an Energy Performance Certificate?</h3>
@@ -222,6 +212,17 @@
         <ul>
             <li>Search by postcode on GOV.UK's <a href="https://www.gov.uk/find-energy-certificate">find an energy certificate</a> service.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }},
+            using each home's latest certificate from {{ data.certificates_display }} lodged since {{ data.first_year }}.
+            Homes are placed in areas by their postcode using postcodes.io (ONS Postcode Directory), and area
+            boundaries are from the ONS Open Geography Portal. {% include freshness.html file="_data/epc.json" %}
+            Energy scores, types of home, tenure and heating are from each home's full certificate:
+            {% include freshness.html file="_data/epc-scores.json" %}
+            Contains OS data &copy; Crown copyright and database right.
+        </small></p>
     </div>
 </div>
 

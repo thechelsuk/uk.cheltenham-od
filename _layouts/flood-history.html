@@ -48,10 +48,12 @@
         </blockquote>
         {% endif %}
 
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from the <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
-            {% if history.generated_at %}Last updated {{ history.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            {% include freshness.html file="_data/flood-history.json" %}
         </small></p>
+
     </div>
 </div>
 {% include footer.html %}

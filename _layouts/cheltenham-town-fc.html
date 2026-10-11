@@ -76,10 +76,11 @@
         <p>No recent results available — see the club's own results and fixtures page.</p>
         {% endif %}
 
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
                 Data from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>{% if ctfc.licence %}, published under
                 the {{ ctfc.licence }}{% endif %}.
-                {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y" }}.{% endif %}
+                {% include freshness.html file="_data/cheltenham-town-fc.json" %}
                 Check the <a href="{{ ctfc.team.website }}" target="_blank" rel="noopener">club's own site</a> for
                 confirmed dates and kick-off times.
             </small></p>

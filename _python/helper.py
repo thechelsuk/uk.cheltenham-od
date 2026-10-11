@@ -34,10 +34,33 @@ def updated_timestamp():
     return datetime.now().strftime("%-d %B %Y at %H:%M")
 
 
+# Top-level fields that only say when a fetcher ran, not what it found.
+RUN_STAMPS = ("generated_at", "updated", "updated_iso")
+
+
 def write_json(path, payload):
+    """Write payload as JSON, unless the file already holds the same data and
+    only the run time stamps (RUN_STAMPS) would change. Leaving the file alone
+    means a run that finds nothing new makes no commit, and the site's "Last
+    updated" date, taken from the file's last commit, stays the day the data
+    last changed. Returns whether the file was written."""
     path = pathlib.Path(path)
+    if path.exists():
+        try:
+            old = json.loads(path.read_text())
+        except ValueError:
+            old = None
+        if _without_stamps(old) == _without_stamps(payload):
+            return False
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    return True
+
+
+def _without_stamps(data):
+    if isinstance(data, dict):
+        return {k: v for k, v in data.items() if k not in RUN_STAMPS}
+    return data
 
 
 def update_history(history_records, current_items, id_key, now_iso, peak_fields=None, retention_days=730):

@@ -44,11 +44,6 @@
 
         <p>Full data last refreshed {{ employment.updated }}.</p>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ employment.source_url }}">{{ employment.source }}</a>{% if employment.licence %}, published under the {{ employment.licence }}{% endif %}.
-            {% if employment.generated_at %}Last updated {{ employment.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Why Does the Rate Jump Around so Much Year to Year?</h3>
@@ -72,6 +67,13 @@
                 See our <a href="/about-cheltenham">All About Cheltenham</a> page for the current headline figures,
                 population and Census 2021 statistics.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ employment.source_url }}">{{ employment.source }}</a>{% if employment.licence %}, published under the {{ employment.licence }}{% endif %}.
+            {% include freshness.html file="_data/cheltenham-employment.json" %}
+        </small></p>
+
     </div>
 </div>
 

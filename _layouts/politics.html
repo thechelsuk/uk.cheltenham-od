@@ -85,12 +85,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>.
-            Contains Parliamentary information licensed under the {{ data.licence }}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Who Is the MP for Cheltenham?</h3>
@@ -118,6 +112,14 @@
             <li>The UK Parliament Members API, refreshed monthly, under the Open Parliament Licence. The party history
                 page uses House of Commons Library election datasets.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>.
+            Contains Parliamentary information licensed under the {{ data.licence }}.
+            {% include freshness.html file="_data/politics.json" %}
+        </small></p>
+
     </div>
 </div>
 {% include footer.html %}

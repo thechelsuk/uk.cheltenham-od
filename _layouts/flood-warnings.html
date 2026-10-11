@@ -102,11 +102,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
-            Checked {{ rivers.refresh }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Does the Typical Range Mean?</h3>
@@ -133,6 +128,12 @@
             <li>The gauges take a reading every 15 minutes. This page is refreshed every couple of hours, so for a fast-moving
                 situation check the <a href="https://check-for-flooding.service.gov.uk/">Environment Agency's live service</a>.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
+            {% include freshness.html file="_data/river-levels.json" %}
+        </small></p>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

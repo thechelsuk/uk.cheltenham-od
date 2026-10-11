@@ -101,15 +101,6 @@
         </div>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Unplanned closures from the <a href="{{ unplanned.source_url }}">{{ unplanned.source }} Road and Lane Closures service</a>, published under the {{ unplanned.licence }}. Checked {{ unplanned.refresh }}.
-            Markers show the centre point of each works, which may stretch further along the road. Dates
-            and closures can change at short notice, so check signage and live traffic updates before you
-            travel.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Roads Does This Page Cover?</h3>
@@ -146,6 +137,16 @@
             <li>Unplanned closures come from National Highways' Road and Lane Closures service, which reports closures
                 as they are set, including lanes closed using overhead signs.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/roadworks.json" %}
+            Unplanned closures from the <a href="{{ unplanned.source_url }}">{{ unplanned.source }} Road and Lane Closures service</a>, published under the {{ unplanned.licence }}. {% include freshness.html file="_data/unplanned-closures.json" %}
+            Markers show the centre point of each works, which may stretch further along the road. Dates
+            and closures can change at short notice, so check signage and live traffic updates before you
+            travel.
+        </small></p>
     </div>
 </div>
 

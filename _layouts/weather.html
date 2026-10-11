@@ -1,6 +1,5 @@
 {% include header.html %}
 
-
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -515,11 +514,6 @@
             }
         </style>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ wx.source_url }}">{{ wx.source }}</a>{% if wx.licence %}, published under the {{ wx.licence }}{% endif %}.
-            Checked {{ wx.refresh }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Accurate Is a 10-day Forecast?</h3>
@@ -560,6 +554,12 @@
                 high.
                 Consider sun protection from 3 upward.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ wx.source_url }}">{{ wx.source }}</a>{% if wx.licence %}, published under the {{ wx.licence }}{% endif %}.
+            {% include freshness.html file="_data/weather.json" %}
+        </small></p>
 
     </div>
 </div>

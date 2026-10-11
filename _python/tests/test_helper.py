@@ -284,3 +284,12 @@ def test_record_seen_keeps_items_that_have_gone_and_drops_old_ones():
     gone = {"id": "GONE", "first_seen": "2026-09-01", "last_seen": "2026-09-03"}
     records = helper.record_seen([old, gone], [{"id": "NEW"}], [], "2026-10-11", keep_days=365)
     assert [r["id"] for r in records] == ["NEW", "GONE"]
+
+
+def test_write_json_leaves_a_file_alone_when_only_its_timestamp_changes(tmp_path):
+    path = tmp_path / "data.json"
+    assert helper.write_json(path, {"generated_at": "2026-10-11T10:00:00", "items": [1, 2]}) is True
+    assert helper.write_json(path, {"generated_at": "2026-10-12T10:00:00", "items": [1, 2]}) is False
+    assert json.loads(path.read_text())["generated_at"] == "2026-10-11T10:00:00"
+    assert helper.write_json(path, {"generated_at": "2026-10-12T11:00:00", "items": [1, 2, 3]}) is True
+    assert json.loads(path.read_text())["generated_at"] == "2026-10-12T11:00:00"

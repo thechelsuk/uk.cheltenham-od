@@ -16,7 +16,6 @@
 
         {{content}}
 
-
         {% assign disruptions = site.data["bus-disruptions"] %}
         <h2>Latest Disruptions</h2>
         {% if disruptions.disruptions.size > 0 %}
@@ -99,11 +98,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ disruptions.source_url }}">{{ disruptions.source }}</a>{% if disruptions.licence %}, published under the {{ disruptions.licence }}{% endif %}.
-            Checked {{ disruptions.refresh }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Does This Data Come From?</h3>
@@ -154,6 +148,13 @@
             <li>Yes — every disruption recorded as affecting Cheltenham is kept on the <a
                 href="/cheltenham-bus-data/history">disruption history page</a>.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ disruptions.source_url }}">{{ disruptions.source }}</a>{% if disruptions.licence %}, published under the {{ disruptions.licence }}{% endif %}.
+            {% include freshness.html file="_data/bus-disruptions.json" %}
+        </small></p>
+
     </div>
 </div>
 

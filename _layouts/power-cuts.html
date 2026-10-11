@@ -51,10 +51,6 @@
             <p>No current power cuts recorded for Cheltenham.</p>
         </blockquote>
         {% endif %}
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            Checked {{ data.refresh }}.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -95,6 +91,13 @@
                 href="/cheltenham-power-cuts/history">incident history page</a>, including once it's been
                 restored.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/power-cuts.json" %}
+        </small></p>
+
     </div>
 </div>
 

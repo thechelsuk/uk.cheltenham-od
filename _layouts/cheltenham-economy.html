@@ -74,11 +74,6 @@
         <h2>Unemployment Claimants</h2>
         <div class="chart-canvas"><canvas id="economy-claimant-chart" aria-label="Line chart of claimants as a share of residents aged 16 to 64 in Cheltenham and England each month since January 2015"></canvas></div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ economy.source_url }}">{{ economy.source }}</a>{% if economy.licence %}, published under the {{ economy.licence }}{% endif %}.
-            {% if economy.generated_at %}Last updated {{ economy.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Counts as an Employee Job?</h3>
@@ -113,6 +108,13 @@
             <li>The Office for National Statistics, through Nomis. Jobs and businesses are published once a year and the
                 claimant count monthly, and this page is refreshed monthly.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ economy.source_url }}">{{ economy.source }}</a>{% if economy.licence %}, published under the {{ economy.licence }}{% endif %}.
+            {% include freshness.html file="_data/cheltenham-economy.json" %}
+        </small></p>
+
     </div>
 </div>
 

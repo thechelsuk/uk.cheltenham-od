@@ -42,11 +42,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ parkrun.source_url }}">{{ parkrun.source }}</a>{% if parkrun.licence %}, published under the {{ parkrun.licence }}{% endif %}.
-            {% if parkrun.generated_at %}Last updated {{ parkrun.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         {% assign near = parkrun.events | where_exp: "e", "e.distance_miles < 2" %}
         <h2>Frequently Asked Questions</h2>
 
@@ -64,6 +59,12 @@
         <ul>
             <li>A free 2k run for children aged 4 to 14, held on Sunday mornings. The table marks which events are junior runs.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ parkrun.source_url }}">{{ parkrun.source }}</a>{% if parkrun.licence %}, published under the {{ parkrun.licence }}{% endif %}.
+            {% include freshness.html file="_data/parkrun.json" %}
+        </small></p>
 
     </div>
 </div>

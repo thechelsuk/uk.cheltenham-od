@@ -43,10 +43,13 @@
                 </tbody>
             </table>
         </div>
+
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
-            Checked {{ rivers.refresh }}.
+            {% include freshness.html file="_data/river-levels.json" %}
         </small></p>
+
     </div>
 </div>
 {% include footer.html %}

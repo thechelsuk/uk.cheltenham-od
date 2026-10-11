@@ -46,12 +46,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.council_map }}">Cheltenham Borough Council's taxi rank map</a>, which states no licence,
-            and <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, published under the Open
-            Database Licence (ODbL). Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is the Difference Between a Taxi and a Private Hire Car?</h3>
@@ -74,6 +68,14 @@
         <ul>
             <li>Cheltenham Borough Council lists the <a href="https://www.cheltenham.gov.uk/business-and-licensing/apply-or-renew-licences-and-permits/taxi-and-private-hire-licensing/wheelchair-accessible-taxis/">wheelchair-accessible taxis</a> it licenses.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.council_map }}">Cheltenham Borough Council's taxi rank map</a>, which states no licence,
+            and <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, published under the Open
+            Database Licence (ODbL). {% include freshness.html file="_data/taxi-ranks.json" %}
+        </small></p>
+
     </div>
 </div>
 

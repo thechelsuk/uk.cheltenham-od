@@ -258,12 +258,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            It covers collisions in the Cheltenham district reported to the police.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Counts as a Road Collision Here?</h3>
@@ -313,6 +307,14 @@
                 published under the Open Government Licence v3.0. This page is refreshed by hand when a new release is
                 published, which is once a year.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/road-collisions.json" %}
+            It covers collisions in the Cheltenham district reported to the police.
+        </small></p>
+
     </div>
 </div>
 

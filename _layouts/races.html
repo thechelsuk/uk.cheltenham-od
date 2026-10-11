@@ -19,7 +19,6 @@
             src="https://www.stay22.com/embed/gm?aid=cheltenhamod&lat=51.9251&lng=-2.0587&checkin={{ page.festival_checkin }}&checkout={{ page.festival_checkout }}&campaign=festival" class="map-canvas" loading="lazy"
             title="Hotels near Cheltenham Racecourse for the 2027 Festival"></iframe>
 
-
         <h2>Getting to the Racecourse</h2>
 
         <p>Cheltenham Racecourse is at Prestbury Park, about two miles north of the town centre. During the Festival
@@ -76,8 +75,10 @@
             </table>
         </div>
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
+
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/races.json" %}
         </small></p>
 
     </div>

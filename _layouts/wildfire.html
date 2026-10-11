@@ -76,11 +76,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>.
-            {% if data.issued_iso %}Last updated {{ data.issued_iso | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is the Fire Severity Index?</h3>
@@ -113,6 +108,13 @@
             <li>Subscribe to the <a href="{{ page.feed_url }}">wildfire risk feed</a> in any RSS or feed reader. It lists every day forecast at high (3) or above.</li>
             <li>When the level reaches very high (4) or exceptional (5) today or tomorrow, an alert also shows on the Cheltenham Open Data homepage.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>.
+            {% include freshness.html file="_data/wildfire.json" %}
+        </small></p>
+
     </div>
 </div>
 

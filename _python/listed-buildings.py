@@ -3,7 +3,6 @@
 buildings, scheduled monuments and registered parks & gardens for Cheltenham,
 writing _data/listed-buildings.json. Refreshed monthly since designations
 rarely change."""
-import json
 import os
 from datetime import datetime, timezone
 
@@ -130,8 +129,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(
         f"Wrote {len(buildings)} listed buildings, {len(scheduled_monuments)} scheduled monuments "

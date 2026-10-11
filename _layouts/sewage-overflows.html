@@ -47,12 +47,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ sewage.source_url }}">{{ sewage.source }}</a>{% if sewage.licence %}, published under the {{ sewage.licence }}{% endif %}.
-            {% if sewage.generated_at %}Last updated {{ sewage.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
-
         {% assign spilling = sewage.overflows | where: "discharging", true %}
         <h2>Frequently Asked Questions</h2>
 
@@ -70,6 +64,12 @@
         <ul>
             <li>Yes. The <a href="/cheltenham-sewage-overflows/history">sewage spill history</a> logs every spill since logging began, with monthly totals for each river and brook.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ sewage.source_url }}">{{ sewage.source }}</a>{% if sewage.licence %}, published under the {{ sewage.licence }}{% endif %}.
+            {% include freshness.html file="_data/sewage-overflows.json" %}
+        </small></p>
 
     </div>
 </div>

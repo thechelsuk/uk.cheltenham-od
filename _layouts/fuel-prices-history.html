@@ -93,11 +93,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ history.source_url }}">{{ history.source }}</a> and the <a href="{{ uk.source_url }}">{{ uk.source }}</a> weekly road fuel prices, both published under the {{ history.licence }}.
-            Checked {{ history.refresh }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Are the Daily Prices Worked Out?</h3>
@@ -126,6 +121,13 @@
         <ul>
             <li>To {{ history.first_date }}, when this site started recording local fuel prices. A few days early on have no record. A new day is added every day from now on.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ history.source_url }}">{{ history.source }}</a> and the <a href="{{ uk.source_url }}">{{ uk.source }}</a> weekly road fuel prices, both published under the {{ history.licence }}.
+            {% include freshness.html file="_data/fuel-prices-history.json" %}
+        </small></p>
+
     </div>
 </div>
 

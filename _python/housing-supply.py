@@ -23,6 +23,7 @@ import pandas as pd
 import requests
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "housing-supply.json")
@@ -155,8 +156,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote housing supply data ({len(net_additional['years'])} dwelling years, "
           f"{len(communal['entries'])} communal accommodation entries, "

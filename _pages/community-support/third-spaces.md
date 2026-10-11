@@ -80,7 +80,3 @@ Providing 1400-sq-ft of workspace and kitchen and toilet facilities. Cheltenham 
 - [Site &rarr;](https://www.cheltenhamhackspace.org/)
 
 Whether you're visiting for a few days or settling in as a student, our [visiting Cheltenham](/visiting-cheltenham) and [student guide](/student-guide-to-cheltenham) both link to this page as somewhere to work, study or just sit down.
-
-## Notes
-
-If you run a local third space in Cheltenham and would like to be included in this list, please [contact us](/contact) with your details or consider [sponsoring this page](/sponsor).

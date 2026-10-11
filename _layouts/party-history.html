@@ -45,14 +45,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the House of Commons Library: <a href="{{ data.source_url }}">general election results
-            from 1918 to 2019</a> and <a href="{{ data.source_url_2024 }}">general election 2024 results</a>.
-            Contains Parliamentary information licensed under the {{ data.licence }}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            A dash means the party did not stand.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Why Do Party Names Change over Time?</h3>
@@ -105,6 +97,16 @@
                 For the current MP and the most recent elections, see <a href="/cheltenham-politics">Cheltenham
                 politics</a>.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the House of Commons Library: <a href="{{ data.source_url }}">general election results
+            from 1918 to 2019</a> and <a href="{{ data.source_url_2024 }}">general election 2024 results</a>.
+            Contains Parliamentary information licensed under the {{ data.licence }}.
+            {% include freshness.html file="_data/election-results.json" %}
+            A dash means the party did not stand.
+        </small></p>
+
     </div>
 </div>
 {% include footer.html %}

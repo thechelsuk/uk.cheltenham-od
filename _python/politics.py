@@ -10,7 +10,6 @@ add the new constituency ID to CONSTITUENCY_IDS.
 
 MPs only change at elections and by-elections, so a monthly refresh is plenty.
 """
-import json
 import os
 import re
 from datetime import datetime, timezone
@@ -18,6 +17,7 @@ from datetime import datetime, timezone
 import requests
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "politics.json")
@@ -117,8 +117,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote current MP {member['nameDisplayAs']} and {len(elections)} elections to {OUT}")
 

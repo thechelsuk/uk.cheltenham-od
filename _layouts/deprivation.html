@@ -127,13 +127,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ dep.source_url }}">{{ dep.source }}</a>, published under the {{ dep.licence }}.
-            Last updated {{ dep.generated_at | date: "%-d %B %Y" }}.
-            Neighbourhood boundaries from the Office for National Statistics; contains OS data &copy; Crown copyright and
-            database right.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Are the Indices of Deprivation?</h3>
@@ -179,6 +172,15 @@
             <li>Every four to six years. The {{ dep.edition }} edition was published in October 2025; the previous one was
                 published in 2019.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ dep.source_url }}">{{ dep.source }}</a>, published under the {{ dep.licence }}.
+            {% include freshness.html file="_data/deprivation.json" %}
+            Neighbourhood boundaries from the Office for National Statistics; contains OS data &copy; Crown copyright and
+            database right.
+        </small></p>
+
     </div>
     {% include footer.html %}
 </div>

@@ -15,9 +15,7 @@
 
         {% include sponsor.html %}
 
-
         {{ content }}
-
 
         <div class="land-registry-widget scroll">
 
@@ -92,11 +90,6 @@
         {% assign prices = site.data["cheltenham-house-prices"] %}
         {% assign prices = site.data["cheltenham-house-prices"] %}
         {% assign prices = site.data["cheltenham-house-prices"] %}
-        <p class="attribution"><small>
-            Data from <a href="{{ prices.source_url }}">{{ prices.source }}</a>{% if prices.licence %}, published under the {{ prices.licence }}{% endif %}.
-            Checked {{ prices.refresh }}.
-            Contains HM Land Registry data &copy; Crown copyright and database right.
-        </small></p>
 
         <h2>Annual House Price Changes in Cheltenham</h2>
 
@@ -116,8 +109,6 @@
         <script src="https://cdn.ons.gov.uk/vendor/pym/1.3.2/pym.min.js"></script>
         <script>var pymParent = new pym.Parent("chart-mortgagecash", "https://www.ons.gov.uk/visualisations/housingpriceslocal/embed/?area=E07000078&chart=chart-mortgagecash", { name: "chart-mortgagecash", title: "Embedded chart" });</script>
 
-
-
         {% assign hs = site.data["house-summary"] %}
         <h2>Frequently Asked Questions</h2>
 
@@ -135,6 +126,13 @@
         <ul>
             <li>A sale only appears once it has been registered with the Land Registry, which can take weeks or months after completion, so the most recent months keep filling in as late registrations arrive.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ prices.source_url }}">{{ prices.source }}</a>{% if prices.licence %}, published under the {{ prices.licence }}{% endif %}.
+            {% include freshness.html file="_data/cheltenham-house-prices.json" %}
+            Contains HM Land Registry data &copy; Crown copyright and database right.
+        </small></p>
 
     </div>
     {% include chartjs.html %}

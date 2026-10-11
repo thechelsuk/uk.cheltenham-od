@@ -90,7 +90,6 @@
             </table>
         </div>
 
-
         <h2>Hospitals near Cheltenham</h2>
         <p>These are the hospitals run by {{ hospitals.trust.name }} within {{ hospitals.radius_miles }} miles of
             Cheltenham town centre.</p>
@@ -122,15 +121,6 @@
                 </tbody>
             </table>
         </div>
-
-        <p class="attribution"><small>
-            Data from <a href="{{ ae.source_url }}">{{ ae.source }}</a> (A&amp;E figures) and the
-            <a href="{{ hospitals.source_url }}">{{ hospitals.source }}</a> (hospitals), both published under the {{ ae.licence }}.
-            {% if ae.generated_at %}Last updated {{ ae.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            The figures cover the whole trust, not individual hospitals. Hospital locations come from their postcodes.
-            {{ hospitals.geocoding_attribution }} "A&amp;E listed" means the NHS directory records an A&amp;E at the site;
-            it does not show opening hours.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -170,6 +160,17 @@
                 and the hospitals from the NHS Organisation Data Service. Both are published under the Open Government
                 Licence.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ ae.source_url }}">{{ ae.source }}</a> (A&amp;E figures) and the
+            <a href="{{ hospitals.source_url }}">{{ hospitals.source }}</a> (hospitals), both published under the {{ ae.licence }}.
+            {% include freshness.html file="_data/nhs-ae.json" %}
+            The figures cover the whole trust, not individual hospitals. Hospital locations come from their postcodes.
+            {{ hospitals.geocoding_attribution }} "A&amp;E listed" means the NHS directory records an A&amp;E at the site;
+            it does not show opening hours.
+        </small></p>
+
     </div>
 </div>
 

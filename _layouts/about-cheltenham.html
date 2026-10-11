@@ -64,11 +64,6 @@
 
         <p>Full data last refreshed {{ stats.updated }}.</p>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ stats.source_url }}">{{ stats.source }}</a>{% if stats.licence %}, published under the {{ stats.licence }}{% endif %}.
-            {% if stats.generated_at %}Last updated {{ stats.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Does This Data Come From?</h3>
@@ -91,6 +86,13 @@
             <li>Population estimates and employment rates are refreshed by the ONS periodically throughout the year;
                 this page re-fetches the latest published figures from Nomis monthly.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ stats.source_url }}">{{ stats.source }}</a>{% if stats.licence %}, published under the {{ stats.licence }}{% endif %}.
+            {% include freshness.html file="_data/cheltenham-stats.json" %}
+        </small></p>
+
     </div>
 </div>
 

@@ -87,11 +87,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ earnings.source_url }}">{{ earnings.source }}</a>{% if earnings.licence %}, published under the {{ earnings.licence }}{% endif %}.
-            {% if earnings.generated_at %}Last updated {{ earnings.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Does Median Pay Mean?</h3>
@@ -132,6 +127,13 @@
                 after it is released. See <a href="/cheltenham-employment-history">employment rates</a> for the labour
                 market alongside pay.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ earnings.source_url }}">{{ earnings.source }}</a>{% if earnings.licence %}, published under the {{ earnings.licence }}{% endif %}.
+            {% include freshness.html file="_data/cheltenham-earnings.json" %}
+        </small></p>
+
     </div>
 </div>
 

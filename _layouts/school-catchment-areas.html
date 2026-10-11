@@ -21,11 +21,6 @@
         <p id="catchment-legend" class="map-legend"></p>
 
         {% assign src = site.data.sources | where: "id", "dfe-gias-schools" | first %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ site.data.ofsted.source_url }}">{{ site.data.ofsted.source }}</a>, published under the {{ src.licence_name }}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-            Ofsted outcomes last updated {{ site.data.ofsted.generated_at | date: "%-d %B %Y" }}.
-            Catchments here are the nearest school by straight-line distance, not official admissions areas.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -59,6 +54,14 @@
                 href="https://www.nationalarchives.gov.uk/doc/open-government-licence/">Open Government Licence
                 v3.0 &rarr;</a></li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ site.data.ofsted.source_url }}">{{ site.data.ofsted.source }}</a>, published under the {{ src.licence_name }}. {% include freshness.html file="_data/schools.json" %}
+            Ofsted outcomes: {% include freshness.html file="_data/ofsted.json" %}
+            Catchments here are the nearest school by straight-line distance, not official admissions areas.
+        </small></p>
+
     </div>
 </div>
 

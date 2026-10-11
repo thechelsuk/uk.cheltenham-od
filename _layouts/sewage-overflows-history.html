@@ -95,12 +95,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>.
-            Last updated {{ history.generated_at | date: "%-d %B %Y" }}.
-            Times are as reported by each overflow's Event Duration Monitor.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Counts as a Spill?</h3>
@@ -124,6 +118,14 @@
             <li>Every Severn Trent storm overflow within {{ history.radius_miles }} miles of Cheltenham town centre,
                 on the River Chelt and the brooks that feed it.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>.
+            {% include freshness.html file="_data/sewage-overflows-history.json" %}
+            Times are as reported by each overflow's Event Duration Monitor.
+        </small></p>
+
     </div>
 </div>
 {% include footer.html %}

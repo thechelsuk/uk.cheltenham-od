@@ -105,13 +105,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>'s register of charities, published under the
-            {{ data.licence }}. Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-            Lists main registered charities whose contact postcode is in GL50–GL54; linked subsidiary charities are not
-            listed separately.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Charities Are Included?</h3>
@@ -149,6 +142,15 @@
             <li>The Charity Commission's full register download, which it updates daily, published under the Open
                 Government Licence. This page is refreshed monthly.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>'s register of charities, published under the
+            {{ data.licence }}. {% include freshness.html file="_data/charities.json" %}
+            Lists main registered charities whose contact postcode is in GL50–GL54; linked subsidiary charities are not
+            listed separately.
+        </small></p>
+
     </div>
     {% include footer.html %}
 </div>

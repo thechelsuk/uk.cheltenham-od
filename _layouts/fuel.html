@@ -77,12 +77,6 @@
                 </tbody>
             </table>
         </div>
-        <p class="attribution"><small>
-            Data from the <a href="{{ fuel.source_url }}">{{ fuel.source }}</a>{% if fuel.licence %}, published under the {{ fuel.licence }}{% endif %}.
-            Checked {{ fuel.refresh }}.
-            Prices can change at any time, so treat them as a guide and check the forecourt's
-            own display before filling up.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -127,6 +121,14 @@
                 simple, comparable reference point. Most people don't fill from empty, so treat it as an upper bound: if
                 you're topping up 30 litres instead of 55, the saving is roughly 30/55 of what's shown.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ fuel.source_url }}">{{ fuel.source }}</a>{% if fuel.licence %}, published under the {{ fuel.licence }}{% endif %}.
+            {% include freshness.html file="_data/fuel-prices.json" %}
+            Prices can change at any time, so treat them as a guide and check the forecourt's
+            own display before filling up.
+        </small></p>
 
     </div>
 </div>

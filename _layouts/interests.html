@@ -46,7 +46,6 @@
             </table>
         </div>
 
-
         {% assign pois = site.data.points_of_interest %}
         <h2>All Points of Interest ({{ pois.size }})</h2>
         <div class="table-scroll">
@@ -82,9 +81,6 @@
         </div>
 
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-        </small></p>
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is Cheltenham Known For?</h3>
@@ -116,6 +112,11 @@
         <ul>
             <li>The points of interest are sourced from <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, a free, community-maintained map of the world, and distances are calculated from Cheltenham's town centre. Because it's community data, coverage grows over time — if something's missing, it can be added to OpenStreetMap and will appear here on the next update.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/points_of_interest.json" %}
+        </small></p>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

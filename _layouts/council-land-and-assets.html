@@ -45,14 +45,16 @@
             </table>
         </div>
 
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            {% include freshness.html file="_data/council-land-and-assets.json" %}
             The list was originally published by Cheltenham Borough Council under the
             <a href="https://www.gov.uk/government/publications/local-government-transparency-code-2015">Local Government
             Transparency Code</a>; the council's own open data page is no longer online, so it comes from a mirror of the
             original CSV export.
         </small></p>
+
     </div>
 </div>
 

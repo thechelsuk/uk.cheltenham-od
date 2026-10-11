@@ -38,10 +38,6 @@
             </table>
         </div>
         {% assign src = site.data.sources | where: "id", "gov-uk-bank-holidays" | first %}
-        <p class="attribution"><small>
-                Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
-                the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-            </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -66,6 +62,12 @@
                 government data the way bank holidays like Christmas Day do.
             </li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+                Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
+                the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/holidays.json" %}
+            </small></p>
 
     </div>
 

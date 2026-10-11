@@ -34,7 +34,10 @@
         {% endfor %}
         {% endfor %}
 
-        <blockquote>{{ set.note | markdownify }}</blockquote>
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            {% include own-data-credit.html file="_data/clubs.json" %}
+        </small></p>
     </div>
 </div>
 

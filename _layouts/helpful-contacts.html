@@ -64,13 +64,6 @@
         </div>
         {% endfor %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ contacts.source_url }}">{{ contacts.source }}</a>, with every number checked against the
-            provider's own site.
-            {% if contacts.last_checked %}Last checked {{ contacts.last_checked | date: "%-d %B %Y" }}.{% endif %}
-            Services can change their numbers and hours, so check the provider's site if a call doesn't connect.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Number Do I Call in an Emergency?</h3>
@@ -123,6 +116,11 @@
             <li>Every number is checked against the provider's own site, and the date of the latest check is shown
                 above. If you find one that's changed, please <a href="/contact">let us know</a>.</li>
         </ul>
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            {% include own-data-credit.html file="_data/helpful-contacts.json" note="Services can change their numbers and hours, so check the provider's site if a call doesn't connect." %}
+        </small></p>
+
         {% endif %}
 
         {% if page.listing == "support" %}
@@ -152,9 +150,9 @@
         </div>
         {% endfor %}
 
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ support.source_url }}">{{ support.source }}</a>.
-            {% if support.last_checked %}Last checked {{ support.last_checked | date: "%-d %B %Y" }}.{% endif %}
+            {% include own-data-credit.html file="_data/local-support.json" %}
         </small></p>
         {% endif %}
     </div>

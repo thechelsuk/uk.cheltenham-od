@@ -44,6 +44,8 @@ jobs:
 
           - [ ] **Home energy scores** — no file to download: with `EPC_KEY` in `.env`, run `_python/local/epc-scores.py`. It reads the EPC register's search for Cheltenham, fetches full details only for homes with a new certificate since last month (stored in `_data-sources/epc-homes.json`), and rewrites `_data/epc-scores.json`. Commit that file. The ratings themselves (`_data/epc.json`) refresh automatically in the monthly workflow.
 
+          - [ ] **Curated lists** — no download: check each list against the groups' and organisers' own sites, and update its JSON for anything added, closed or changed: `_data/clubs.json` (sports clubs, clubs and societies, arts and crafts), `_data/third-spaces.json`, `_data/helpful-contacts.json`, `_data/local-support.json`, `_data/festivals.json` (add the next dates once two sources confirm them), `_data/gloucestershire-cricket.json` and `_data/cycle-venues.json`. Their pages say "checked monthly". Also act on any additions or corrections sent through the contact form.
+
           Close this issue once done — a new one opens automatically next month.
           EOF
 

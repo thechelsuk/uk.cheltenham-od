@@ -8,7 +8,6 @@
 
         {{ content }}
 
-
         <h2>Public Toilet Location Map</h2>
         <div id="toilet-map" class="map-canvas" aria-label="Map of public toilet locations in Cheltenham"></div>
 
@@ -56,12 +55,6 @@
             </table>
         </div>
         {% assign src = site.data.sources | where: "id", "great-british-toilet-map" | first %}
-        <p class="attribution"><small>
-                Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
-                the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-                Listings are based on user submissions and may contain errors or omissions, so confirm
-                before travelling.
-            </small></p>
 
         <h2>Good to Know</h2>
 
@@ -97,9 +90,15 @@
             <li>A key that opens accessible toilets in the National Key Scheme, so they stay available for disabled people. {{ t_radar.size }} of the toilets here use one, and keys are sold by Disability Rights UK.</li>
         </ul>
 
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+                Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
+                the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/toilets.json" %}
+                Listings are based on user submissions and may contain errors or omissions, so confirm
+                before travelling.
+            </small></p>
+
     </div>
 </div>
-
-
 
 {% include footer.html %}

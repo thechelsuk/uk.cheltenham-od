@@ -164,15 +164,6 @@
         </div>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            Checked {{ data.refresh }}.
-            {% if usage %}Passenger figures from the <a href="{{ usage.source_url }}">{{ usage.source }}</a>{% if usage.generated_at %},
-            last updated {{ usage.generated_at | date: "%-d %B %Y" }}{% endif %}.{% endif %}
-            Cheltenham Open Data is independent and is not endorsed by National Rail or the Rail Delivery Group.
-            Times can change at short notice, so check the station screens when you arrive.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Trains Does This Page Show?</h3>
@@ -206,6 +197,16 @@
             <li>Train times come from National Rail Enquiries' live departure boards. Passenger figures are estimates
                 from the Office of Rail and Road.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/rail-times.json" %}
+            {% if usage %}Passenger figures from the <a href="{{ usage.source_url }}">{{ usage.source }}</a>.
+            {% include freshness.html file="_data/station-usage.json" %}{% endif %}
+            Cheltenham Open Data is independent and is not endorsed by National Rail or the Rail Delivery Group.
+            Times can change at short notice, so check the station screens when you arrive.
+        </small></p>
     </div>
 </div>
 
