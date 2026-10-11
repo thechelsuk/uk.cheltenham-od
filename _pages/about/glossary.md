@@ -20,40 +20,27 @@ Every "miles from the town centre" figure, and every search around Cheltenham, i
 
 ## Distance Bands
 
-Pages that list places around Cheltenham use one of four distances, so that "nearby" means the same thing from page to page:
+Pages that list places around Cheltenham use one of four distances, so that "nearby" means the same thing from page to page.
 
-<div class="table-scroll">
-<table class="data-table">
-<thead>
-<tr><th scope="col">Band</th><th scope="col" class="number">Miles</th><th scope="col">What It Covers</th><th scope="col">Used For</th></tr>
-</thead>
-<tbody>
 {% for band in bands.bands %}
-<tr>
-<td>{{ band.label }}</td>
-<td class="number">{{ band.miles }}</td>
-<td>{{ band.meaning }}</td>
-<td>{% for p in band.pages %}<a href="{{ p.url }}">{{ p.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
-</tr>
+
+### {{ band.label }}: {{ band.miles }} Miles
+
+{{ band.meaning }}
+
+- **Used for:** {% for p in band.pages %}[{{ p.name }}]({{ p.url }}){% unless forloop.last %}, {% endunless %}{% endfor %}
+
 {% endfor %}
-</tbody>
-</table>
-</div>
 
-Some pages follow an official boundary or a fixed rule instead:
+### Pages That Follow a Boundary or Fixed Rule
 
-<div class="table-scroll">
-<table class="data-table">
-<thead>
-<tr><th scope="col">Data</th><th scope="col">Covers</th><th scope="col">Why</th></tr>
-</thead>
-<tbody>
+Some pages don't use a distance band:
+
 {% for e in bands.exceptions %}
-<tr><td>{{ e.name }}</td><td>{{ e.rule }}</td><td>{{ e.why }}</td></tr>
+
+- **{{ e.name }}:** {{ e.rule }}. {{ e.why }}
+
 {% endfor %}
-</tbody>
-</table>
-</div>
 
 ## Borough
 
