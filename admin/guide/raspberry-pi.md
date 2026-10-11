@@ -40,11 +40,17 @@ For each call it:
 
 ## Schedule
 
-The commit history shows the four fast feeds committing every 30 minutes (at about :10 and :40 past the hour) and fuel on its own, less often. The exact cron lines are below.
+The Pi's crontab (`crontab -e` as the Pi's user) runs two jobs:
 
 ```text
-(crontab to be added)
+*/5 * * * *  /usr/bin/flock -n /tmp/chelt-od.lock $HOME/uk.cheltenham-od/_python/run.sh _python/pi/buses.py _python/pi/power.py _python/pi/rail-times.py _python/pi/unplanned-closures.py >> $HOME/uk.cheltenham-od/run.log 2>&1
+3 * * * *    /usr/bin/flock -w 300 /tmp/chelt-od.lock $HOME/uk.cheltenham-od/_python/run.sh _python/pi/fuel.py >> $HOME/uk.cheltenham-od/run.log 2>&1
 ```
+
+- The four fast feeds run every 5 minutes. They only commit when something has changed, so the history shows a commit every half hour or so rather than every 5 minutes.
+- Fuel prices run once an hour, at 3 minutes past.
+- Both jobs share one lockfile through `flock`, so two runs never pull, commit or push at the same time. A 5-minute run skips if the lock is busy (`-n`); the hourly fuel run waits up to 5 minutes for it (`-w 300`).
+- Output from both is appended to `run.log` in the repository folder, which is gitignored.
 
 ## Setup
 
