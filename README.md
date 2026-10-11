@@ -79,4 +79,8 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Visiting Cheltenham](https://cheltenham-od.uk/visiting-cheltenham)
 - [Cheltenham racing festival](https://cheltenham-od.uk/cheltenham-festival-accommodation) - races guide and accomodation
 
+## How the Data Is Refreshed
+
+Most fetchers run on GitHub Actions schedules (`.github/workflows/refresh-*.yml`). The fastest-changing feeds (bus disruptions, power cuts, train times, unplanned road closures and fuel prices) run on a Raspberry Pi instead, with a manual GitHub workflow as a fallback for when it is down. See [the Raspberry Pi guide](admin/guide/raspberry-pi.md) for how it is set up.
+
 ## [Cheltenham Open Data, local data for local people](https://cheltenham-od.uk)
