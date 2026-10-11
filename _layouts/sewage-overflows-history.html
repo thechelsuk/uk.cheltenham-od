@@ -1,0 +1,129 @@
+{% include header.html %}
+{% assign history = site.data["sewage-overflows-history"] %}
+{% assign since_month = history.tracking_since | slice: 0, 7 %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="/cheltenham-sewage-overflows">&lAarr; Back to Cheltenham Sewage Overflow Status</a></li>
+                <li>Spills logged since {{ history.tracking_since }}</li>
+            </ul>
+        </header>
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="by-month">Spills by Month</h2>
+        {% assign months = "" | split: "" %}
+        {% for m in history.by_month %}{% if m.month >= since_month %}{% assign months = months | push: m %}{% endif %}{% endfor %}
+        {% if months.size > 0 %}
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Month</th>
+                        <th scope="col" class="number">Spills</th>
+                        <th scope="col" class="number">Hours Discharging</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in months %}
+                    <tr>
+                        <td class="date">{{ m.month }}</td>
+                        <td class="number">{{ m.spills }}</td>
+                        <td class="number">{{ m.hours }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No spills have ended since {{ history.tracking_since }}. Monthly totals start from that date.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2 id="by-watercourse">Spills by Watercourse</h2>
+        <p>Every logged spill, including the last one at each overflow before logging began on {{ history.tracking_since }}.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Watercourse</th>
+                        <th scope="col" class="number">Spills</th>
+                        <th scope="col" class="number">Hours Discharging</th>
+                        <th scope="col" class="number">Longest Spill (Hours)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in history.by_watercourse %}
+                    <tr>
+                        <td data-val="{{ w.watercourse | downcase }}">{{ w.watercourse }}</td>
+                        <td class="number" data-val="{{ w.spills }}">{{ w.spills }}</td>
+                        <td class="number" data-val="{{ w.hours }}">{{ w.hours }}</td>
+                        <td class="number" data-val="{{ w.longest_hours }}">{{ w.longest_hours }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="spills">Every Logged Spill</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Watercourse</th>
+                        <th scope="col" class="date">Started</th>
+                        <th scope="col" class="date">Ended</th>
+                        <th scope="col" class="number">Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in history.spills %}
+                    <tr>
+                        <td data-val="{{ s.watercourse | downcase }}">{{ s.watercourse }}{% if s.start < history.tracking_since %} (before logging began){% endif %}</td>
+                        <td class="date" data-val="{{ s.start }}">{{ s.start }}</td>
+                        <td class="date" data-val="{{ s.end }}">{{ s.end }}</td>
+                        <td class="number" data-val="{{ s.hours }}">{{ s.hours }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <p class="attribution"><small>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>.
+            Last updated {{ history.generated_at | date: "%-d %B %Y" }}.
+            Times are as reported by each overflow's Event Duration Monitor.
+        </small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Counts as a Spill?</h3>
+        <ul>
+            <li>A spill is one period when a storm overflow's Event Duration Monitor recorded it discharging into a
+                watercourse, from when it started to when it stopped.</li>
+            <li>Each spill is logged here once it has ended, so one that is still running appears on the
+                <a href="/cheltenham-sewage-overflows">live overflow status</a> page first.</li>
+        </ul>
+
+        <h3>Does a Spill Mean the River Is Polluted?</h3>
+        <ul>
+            <li>A spill releases untreated wastewater, diluted by rainwater, so the sewers don't back up during heavy
+                rain. It is a permitted part of how the network copes with storms, and the log records when it
+                happened, not what it did to the water.</li>
+            <li>For measured water quality, see our <a href="/cheltenham-water-quality">river water quality</a> page.</li>
+        </ul>
+
+        <h3>Which Overflows Are Included?</h3>
+        <ul>
+            <li>Every Severn Trent storm overflow within {{ history.radius_miles }} miles of Cheltenham town centre,
+                on the River Chelt and the brooks that feed it.</li>
+        </ul>
+    </div>
+</div>
+{% include footer.html %}
