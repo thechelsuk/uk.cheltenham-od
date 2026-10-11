@@ -26,7 +26,7 @@ HEADERS = {
 }
 
 CHELTENHAM_LAT, CHELTENHAM_LON = config.CENTRE
-RADIUS_KM = config.WATER_QUALITY_RADIUS_KM  # ~5 miles, matches the sewage overflow catchment
+RADIUS_KM = config.WATER_QUALITY_RADIUS_KM  # the local band: the Chelt, its brooks and the nearby rivers
 LOOKBACK_DAYS   = 150          # comfortably covers at least one monthly visit
 
 WKT_POINT = re.compile(r"POINT\(([-\d.]+) ([-\d.]+)\)")

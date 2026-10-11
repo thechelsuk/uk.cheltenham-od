@@ -13,16 +13,17 @@
         {{ content }}
 
         <h2>Parkrun Map</h2>
-        <div id="parkrun-map" class="map-canvas" aria-label="Map of parkrun events in Cheltenham"></div>
+        <div id="parkrun-map" class="map-canvas" aria-label="Map of parkrun events in and around Cheltenham"></div>
 
-        <h2>Cheltenham Parkrun Events</h2>
+        <h2>Parkrun Events Within {{ parkrun.radius_miles }} Miles</h2>
         <div class="table-scroll">
             <table class="parkrun-table data-table" data-sortable>
                 <thead>
                     <tr>
                         <th scope="col">Event</th>
                         <th scope="col">Location</th>
-                        <th scope="col">Distance</th>
+                        <th scope="col">Run</th>
+                        <th scope="col" class="number">Miles from Centre</th>
                         <th scope="col" class="link">parkrun</th>
                     </tr>
                 </thead>
@@ -32,6 +33,7 @@
                         <td>{{ e.name }}</td>
                         <td>{{ e.location }}</td>
                         <td>{{ e.distance }}</td>
+                        <td class="number" data-val="{{ e.distance_miles }}">{{ e.distance_miles }}</td>
                         {% assign event_label = e.name | append: " on parkrun" %}
                         <td class="link">{% include link-icon.html url=e.event_page label=event_label %}</td>
                     </tr>

@@ -3,7 +3,7 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Cheltenham Roadworks",
-  "description": "Planned roadworks and closures on the motorways and major A roads within 10 miles of Cheltenham, with dates, expected delay and location, from National Highways.",
+  "description": "Planned roadworks and closures on the motorways and major A roads within {{ site.data.roadworks.radius_miles }} miles of Cheltenham, with dates, expected delay and location, from National Highways.",
   "url": "{{ page.url | absolute_url }}",
   "dateModified": "{{ site.data['roadworks'].generated_at }}",
   "isAccessibleForFree": true,

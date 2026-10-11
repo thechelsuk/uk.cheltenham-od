@@ -42,7 +42,7 @@ Most of the data comes from public sources, such as the ONS, the Environment Age
 
 Not everything comes from an official source, though. Some lists are researched and put together by hand, and kept up to date as things change.
 
-Each page says where its data comes from, under what licence and when it was last updated, and the [Terms of Use](/terms) list every licence.
+Each page says where its data comes from, under what licence and when it was last updated, and the [Terms of Use](/terms) list every licence. Our [glossary](/glossary) explains the terms we use, including how far around Cheltenham each page looks.
 
 ## How It's Funded
 
