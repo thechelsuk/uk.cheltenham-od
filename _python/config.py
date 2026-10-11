@@ -4,6 +4,8 @@ searches. Change a value here and every script that uses it follows.
 
 Functions that use these live in helper.py.
 """
+import json
+import pathlib
 
 # --- Identity ---------------------------------------------------------------
 
@@ -42,35 +44,60 @@ OVERPASS_ENDPOINTS = (
 )
 
 # --- How far each dataset searches from CENTRE (or RACECOURSE) ---------------
-# Units differ by source, as each API takes them; the suffix says which.
-# Overpass only takes metres.
+# Every distance-based page uses one of four bands, defined once in
+# _data/distance-bands.json so the site glossary (/glossary) shows the same
+# figures: town (walkable), local (the villages and hills around town),
+# area (where people travel in from) and drive (worth a drive, like fuel).
+# Each dataset below takes its band's miles, converted to the unit its API
+# wants (the suffix says which; Overpass only takes metres).
+# Exceptions keep their own figure and are listed in the same file.
 
-# Measures
-# ---------
-# The Environment Agency APIs (river levels, water quality) take kilometres.
-# Open Charge Map (EV) takes km or miles.
-# InPost takes metres.
-# The others (DEFRA, sewage, foodbank, hospitals, roadworks) search wider
-# and filter by distance in our own code, so any unit works.
+_BANDS = {
+    band["id"]: band["miles"]
+    for band in json.loads((pathlib.Path(__file__).resolve().parents[1] / "_data" / "distance-bands.json")
+                           .read_text(encoding="utf-8"))["bands"]
+}
+TOWN_MILES = _BANDS["town"]
+LOCAL_MILES = _BANDS["local"]
+AREA_MILES = _BANDS["area"]
+DRIVE_MILES = _BANDS["drive"]
 
+METRES_PER_MILE = 1609.344
+KM_PER_MILE = METRES_PER_MILE / 1000
 
-AIR_QUALITY_RADIUS_KM = 20
-CAR_PARKS_RADIUS_M = 6000
-CYCLE_ROUTES_RADIUS_M = 8000
-EV_CHARGING_RADIUS_KM = 6.0
-FOODBANK_RADIUS_MILES = 10
-HOSPITALS_RADIUS_MILES = 10
-HOTELS_RADIUS_M = 6000
-INPOST_MAX_DISTANCE_M = 15000
-INTERESTS_RADIUS_M = 26000
-PARKRUN_MAX_MILES = 4
-PERMIT_ZONES_RADIUS_M = 5000
-PLAY_AREAS_RADIUS_MILES = 10
-POST_OFFICES_RADIUS_M = 5000
-RACING_RADIUS_M = 8000
+# Town
+EV_CHARGING_RADIUS_KM = round(TOWN_MILES * KM_PER_MILE, 1)
+HOTELS_RADIUS_M = round(TOWN_MILES * METRES_PER_MILE)
+PERMIT_ZONES_RADIUS_M = round(TOWN_MILES * METRES_PER_MILE)
+POST_OFFICES_RADIUS_M = round(TOWN_MILES * METRES_PER_MILE)
+SEWAGE_RADIUS_MILES = TOWN_MILES
+TAXI_RANKS_RADIUS_M = round(TOWN_MILES * METRES_PER_MILE)
+
+# Local
+CAR_PARKS_RADIUS_M = round(LOCAL_MILES * METRES_PER_MILE)
+CYCLE_ROUTES_RADIUS_M = round(LOCAL_MILES * METRES_PER_MILE)
+INPOST_MAX_DISTANCE_M = round(LOCAL_MILES * METRES_PER_MILE)
+PLAY_AREAS_RADIUS_MILES = LOCAL_MILES
+RACING_RADIUS_M = round(LOCAL_MILES * METRES_PER_MILE)  # from RACECOURSE
+STREET_WORKS_RADIUS_MILES = LOCAL_MILES
+WATER_QUALITY_RADIUS_KM = round(LOCAL_MILES * KM_PER_MILE, 1)
+
+# Area
+AIR_QUALITY_RADIUS_KM = round(AREA_MILES * KM_PER_MILE, 1)
+FOODBANK_RADIUS_MILES = AREA_MILES
+HOSPITALS_RADIUS_MILES = AREA_MILES
+INTERESTS_RADIUS_M = round(AREA_MILES * METRES_PER_MILE)
+ROADWORKS_RADIUS_MILES = AREA_MILES
+
+# Drive
+FUEL_RADIUS_MILES = DRIVE_MILES
+PARKRUN_MAX_MILES = DRIVE_MILES
+
+# Exceptions (see "exceptions" in _data/distance-bands.json)
+# River gauges on Cheltenham's own rivers, rain gauges on the nearby hills.
 RIVER_LEVELS_RADIUS_KM = {"level": 6, "rainfall": 12}
-ROADWORKS_RADIUS_MILES = 10
-SEWAGE_RADIUS_MILES = 4
-STREET_WORKS_RADIUS_MILES = 6
-WATER_QUALITY_RADIUS_KM = 8
+# Fire incident records back to 2010 were counted at 10 km.
 WILDFIRE_RADIUS_KM = 10
+# Historic England's listed buildings are searched by area, in British
+# National Grid metres: (min easting, min northing, max easting, max northing).
+LISTED_BUILDINGS_BBOX = (391000, 218000, 398000, 225000)

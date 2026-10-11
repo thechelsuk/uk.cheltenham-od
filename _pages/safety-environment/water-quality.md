@@ -15,7 +15,7 @@ chemical determinands — pH, temperature, nutrients like nitrate and
 ammoniacal nitrogen, and others — testing each sampling point roughly once a
 month. This page shows every determinand from the most recent visit to each
 open river sampling point within {{ site.data['water-quality'].radius_miles }}
-miles of Cheltenham, covering the River Chelt and the brooks that feed it.
+miles of Cheltenham, covering the River Chelt and the brooks that feed it, and the nearby Swilgate, Isbourne and Leigh Brook.
 
 This is chemical water quality, not sewage discharge activity — see our
 [sewage overflow status](/cheltenham-sewage-overflows) page for that — and

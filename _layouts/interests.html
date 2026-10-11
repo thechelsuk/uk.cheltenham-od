@@ -1,4 +1,5 @@
 {% include header.html %}
+{% assign area_band = site.data["distance-bands"].bands | where: "id", "area" | first %}
 
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
@@ -93,7 +94,7 @@
 
         <h3>How Many Points of Interest Are There near Cheltenham?</h3>
         <ul>
-            <li>This page lists {{ site.data.points_of_interest.size }} points of interest within roughly 16 miles of the town centre, spanning museums, historic sites, stadiums, hills and plaques. The list reaches into the surrounding Cotswold villages, so some entries sit a little way outside Cheltenham itself.</li>
+            <li>This page lists {{ site.data.points_of_interest.size }} points of interest within {{ area_band.miles }} miles of the town centre, spanning museums, historic sites, stadiums, hills and plaques. The list reaches into the surrounding Cotswold villages, so some entries sit a little way outside Cheltenham itself.</li>
         </ul>
 
         <h3>Are There Blue Plaques in Cheltenham?</h3>

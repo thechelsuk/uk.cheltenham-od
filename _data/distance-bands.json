@@ -1,0 +1,66 @@
+{
+  "centre": "Cheltenham town centre (51.8994, -2.0783), on the Promenade",
+  "bands": [
+    {
+      "id": "town",
+      "label": "Town",
+      "miles": 4,
+      "meaning": "Places you would walk, cycle or make a short trip to, across Cheltenham and its edges.",
+      "pages": [
+        {"name": "Post offices", "url": "/cheltenham-post-office-locations"},
+        {"name": "Permit parking zones", "url": "/cheltenham-permit-parking-zones"},
+        {"name": "EV charging", "url": "/cheltenham-ev-charging"},
+        {"name": "Places to stay", "url": "/staying-in-cheltenham"},
+        {"name": "Taxi ranks", "url": "/cheltenham-taxi-ranks"},
+        {"name": "Sewage overflows", "url": "/cheltenham-sewage-overflows"}
+      ]
+    },
+    {
+      "id": "local",
+      "label": "Local",
+      "miles": 6,
+      "meaning": "Cheltenham and the villages and hills around it, such as Bishop's Cleeve, Shurdington, Leckhampton Hill and Cleeve Hill, stopping short of Gloucester.",
+      "pages": [
+        {"name": "Car parks", "url": "/cheltenham-car-parks"},
+        {"name": "Cycle routes", "url": "/cheltenham-cycle-routes"},
+        {"name": "Play parks", "url": "/cheltenham-play-parks"},
+        {"name": "Street works", "url": "/cheltenham-street-works"},
+        {"name": "River water quality", "url": "/cheltenham-water-quality"},
+        {"name": "InPost lockers", "url": "/cheltenham-inpost-lockers"},
+        {"name": "Festival accommodation (from the racecourse)", "url": "/cheltenham-festival-accommodation"}
+      ]
+    },
+    {
+      "id": "area",
+      "label": "Area",
+      "miles": 12,
+      "meaning": "The wider area people travel in from, including Gloucester, Tewkesbury and the nearby Cotswolds.",
+      "pages": [
+        {"name": "Points of interest", "url": "/cheltenham-points-of-interest"},
+        {"name": "Food banks", "url": "/cheltenham-foodbank-needed-items"},
+        {"name": "Hospitals and A&E", "url": "/cheltenham-ae-waiting-times"},
+        {"name": "Roadworks and unplanned closures", "url": "/cheltenham-roadworks"},
+        {"name": "Air quality", "url": "/cheltenham-air-quality"}
+      ]
+    },
+    {
+      "id": "drive",
+      "label": "Drive",
+      "miles": 20,
+      "meaning": "Worth a drive: places people will travel further for, such as cheaper fuel or a different parkrun.",
+      "pages": [
+        {"name": "Fuel prices", "url": "/cheltenham-fuel-prices"},
+        {"name": "Parkrun", "url": "/cheltenham-sports/parkrun"}
+      ]
+    }
+  ],
+  "exceptions": [
+    {"name": "Crime, wards, deprivation, elections and council data", "rule": "the borough of Cheltenham or its wards and neighbourhoods", "why": "These are published for official areas rather than by distance."},
+    {"name": "Schools, childcare, GPs and pharmacies, dentists, opticians, care homes and charities", "rule": "Cheltenham's postcode districts, GL50 to GL54 (GL50 to GL53 for GPs and pharmacies)", "why": "These registers are searched by postcode, which covers the town and its villages."},
+    {"name": "River levels and rainfall", "rule": "river gauges within 6 km and rain gauges within 12 km", "why": "Only the gauges on Cheltenham's own rivers and nearby hills say anything useful about flooding here."},
+    {"name": "Fix My Street", "rule": "10 km", "why": "FixMyStreet's own feed sets this."},
+    {"name": "Wildfire risk and history", "rule": "10 km", "why": "Fire incident records back to 2010 are counted at this distance."},
+    {"name": "Listed buildings", "rule": "a fixed area covering the town", "why": "Historic England's data is searched by map area rather than distance."},
+    {"name": "Politics", "rule": "the Cheltenham parliamentary constituency", "why": "MPs and general election results are published for the constituency, whose boundary is set separately from the borough's."}
+  ]
+}
