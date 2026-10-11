@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Flood Warnings, River Levels and Rainfall",
+  "description": "Current Environment Agency flood warnings and alerts for Cheltenham, with live river levels and rainfall from nearby gauges.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['river-levels'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Flood warning", "Severity", "River level", "Rainfall", "Gauge station"]
+}
+</script>

@@ -6,6 +6,7 @@ seo: "Every storm overflow spill into the River Chelt and Cheltenham's brooks si
 description: "A log of storm overflow spills into the River Chelt and its brooks, with monthly totals and the hours each watercourse received discharges."
 permalink: /cheltenham-sewage-overflows/history
 type: "environment"
+schema: sewage-overflows-history
 section: "Safety & Environment"
 ---
 

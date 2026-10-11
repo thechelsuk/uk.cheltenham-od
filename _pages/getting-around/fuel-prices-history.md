@@ -6,6 +6,7 @@ seo: "How petrol and diesel prices around Cheltenham have changed day by day: th
 permalink: /cheltenham-fuel-prices/history
 description: "The cheapest, average and highest petrol and diesel prices within 20 miles of Cheltenham each day, compared with the UK weekly average."
 type: travel
+schema: fuel-prices-history
 ---
 
 ## How Fuel Prices Have Changed Around Cheltenham

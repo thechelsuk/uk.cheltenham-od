@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Power Cut History",
+  "description": "A log of power cuts recorded against Cheltenham postcodes from National Grid Electricity Distribution, including when each was restored.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "license": "https://connecteddata.nationalgrid.co.uk/pages/licence",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Postcode", "Category", "Status", "Properties affected", "First seen", "Restored"]
+}
+</script>

@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Fuel Price History",
+  "description": "The cheapest, average and highest petrol and diesel prices at forecourts within 20 miles of Cheltenham each day, from the GOV.UK fuel price scheme, compared with the UK weekly average.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Date", "Fuel type", "Cheapest price", "Average price", "Highest price"]
+}
+</script>

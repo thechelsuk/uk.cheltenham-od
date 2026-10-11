@@ -5,6 +5,7 @@ seo_title: "Cheltenham Wildfire Risk and Fire Severity Forecast"
 seo: "Today's wildfire risk around Cheltenham and the Cotswold edge, with the Met Office fire severity forecast for the next five days by 10 km grid square."
 description: "Today's Met Office fire severity level and five-day forecast for Cheltenham and the land within 10 km, from Cleeve Hill to the Severn Vale."
 type: "environment"
+schema: wildfire
 feed_url: "/feeds/wildfire.xml"
 permalink: /cheltenham-wildfire-risk
 ---
