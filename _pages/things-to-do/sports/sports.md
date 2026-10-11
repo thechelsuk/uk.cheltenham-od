@@ -2,10 +2,11 @@
 layout: page
 title: "Sport in Cheltenham"
 seo_title: "Sport in Cheltenham: Clubs, Teams and Parkrun"
-seo: "Sport in Cheltenham: Cheltenham Town FC and Women, Gloucestershire Cricket, Gloucester Rugby, parkrun and local running, cycling and climbing clubs."
+seo: "Sport in Cheltenham: Cheltenham Town FC and Women, Gloucestershire Cricket, Gloucester Rugby and parkrun, plus a directory of local sports clubs."
 permalink: /cheltenham-sports
-description: "A guide to sport in Cheltenham: the professional clubs, parkrun, and local running, cycling, hiking and climbing groups."
+description: "A guide to sport in Cheltenham: the professional clubs, parkrun and a directory of local sports clubs."
 type: "activities"
+group: "Things to Do"
 ---
 
 {% include sponsor.html %}
@@ -40,38 +41,10 @@ Gloucester Rugby play in the Gallagher Premiership — England's top flight of r
 
 - [Gloucester Rugby: fixtures and tickets](https://www.gloucesterrugby.co.uk/) &rarr;
 
-## Parkrun and Grassroots Running
+## Parkrun
 
 Cheltenham has four parkrun events — free, weekly, timed runs open to everyone. See our [Cheltenham parkrun page](/cheltenham-sports/parkrun) for locations and a map.
 
-Beyond parkrun, Cheltenham has several running clubs for regular training and racing:
+## Local Sports Clubs
 
-- [Cheltenham & County Harriers](https://www.cheltenhamharriers.co.uk/) &rarr; the town's long-established athletics and running club, training from Prince of Wales Stadium.
-- [Cheltenham Running and Walking Club](https://cheltenhamrunningclub.co.uk/) &rarr; an inclusive running and walking club for all abilities, from Couch to 5k up to sub-18-minute 5k runners.
-- [CLC Striders](https://clcstriders-runningclub.co.uk/) &rarr; an inclusive and competitive running club training from the CLC Health & Fitness Centre.
-- [Almost Athletes](https://almostathletes.co.uk/) &rarr; Cheltenham's largest running club, for runners of all abilities.
-
-## Cycling
-
-- [Cheltenham & County Cycling Club](https://www.cheltenhamandcounty.cc/) &rarr; a road, mountain bike and gravel club with around 300 members, running its own road race, time trial series, hill climb series and cyclocross races.
-- [Cheltenham Cycling Touring Club (CTC)](https://cheltenhamctc.org/) &rarr; a friendly, relaxed club affiliated to Cycling UK, with group rides across the week for all riders.
-- [Woodmancote Wheelers](https://www.woodmancotewheelers.org/) &rarr; a social road cycling club based just north of Cheltenham, with Classic and faster-paced Velo group rides.
-
-## Climbing
-
-- [Boulders Cheltenham](https://cheltenham.bouldersuk.com/) &rarr; an indoor bouldering centre in Cheltenham itself, for first-timers through to experienced climbers.
-- [British Mountaineering Council: club finder](https://www.thebmc.co.uk/en/clubs) &rarr; for outdoor climbing and mountaineering clubs across Gloucestershire and the wider region.
-
-## Cheerleading
-
-- [All Star Passion](https://www.allstarpassion.co.uk/) &rarr; is a offering competitive cheerleading in Cheltenham with beginner, competition and after-school clubs available.
-
-## Hiking and Walking
-
-- [Cheltenham Rambling Club](https://www.cheltenhamramblingclub.org.uk/) &rarr; an independent local walking club with walks of 4 to 14 miles.
-- [Cheltenham Spa Walkers](https://gloucestershireramblers.org.uk/csw/) &rarr; Cheltenham's local group of the Ramblers, Britain's walking charity.
-- [Cotswold Voluntary Wardens: guided walks](https://www.cotswolds-nl.org.uk/visiting-and-exploring/guided-walks/) &rarr; free, volunteer-led guided walks across the Cotswolds National Landscape on Cheltenham's doorstep.
-
-## Notes
-
-This is a curated list rather than an official register — if you run a local sports club in Cheltenham and would like to be added, please [contact us](/contact) with your details.
+Beyond the professional sides, Cheltenham has clubs for running and athletics, cricket and rugby, cycling, climbing, cheerleading, hiking and walking, boxing, archery, croquet and triathlon. Browse them all in our [Cheltenham sports clubs](/cheltenham-sports-clubs) directory, or the wider list of [clubs and societies](/cheltenham-clubs-and-societies).

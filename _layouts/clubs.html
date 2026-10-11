@@ -1,0 +1,41 @@
+{% include header.html %}
+{% assign set = site.data.clubs.sets[page.clubs] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul>
+                <li><a href="{{ set.back_link }}">&larr; Back to {{ set.back_label }}</a></li>
+                <li>List checked {{ site.data.clubs.updated_iso }}</li>
+            </ul>
+        </header>
+
+        {{ content }}
+
+        {% for group in set.groups %}
+        <h2>{{ group.name }}</h2>
+        {% for club in group.clubs %}
+        <h3>{{ club.name | escape }}</h3>
+        {% if club.description != "" %}
+        <p>{{ club.description | escape }}</p>
+        {% endif %}
+        <ul>
+            {% if club.address != "" %}
+            <li>{{ club.address | escape }}</li>
+            {% endif %}
+            {% if club.url != "" %}
+            <li><a href="{{ club.url }}" target="_blank" rel="noopener">{{ club.url | remove: "https://" | remove: "http://" | remove: "www." | split: "/" | first }}</a> &rarr;</li>
+            {% endif %}
+            {% for extra in club.also %}
+            <li><a href="{{ extra }}" target="_blank" rel="noopener">{{ extra | remove: "https://" | remove: "www." | split: "/" | first }}</a> &rarr;</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+        {% endfor %}
+
+        <blockquote>{{ set.note | markdownify }}</blockquote>
+    </div>
+</div>
+
+{% include footer.html %}

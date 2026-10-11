@@ -2,7 +2,7 @@
 layout: explore-category
 title: "About Cheltenham & Info"
 seo_title: "About Cheltenham: Employment, Politics, Schools and News"
-seo: "About Cheltenham: key facts, wards, population, employment, earnings, deprivation, child poverty by ward, listed buildings, politics, the university, holidays and local news."
+seo: "About Cheltenham: key facts, population, employment, earnings, deprivation, child poverty, listed buildings, politics, the uni, holidays & local news."
 permalink: /explore/about-info
 description: "Key facts at a glance, a profile of every ward, population and history, employment, earnings, the economy, deprivation and child poverty, listed buildings, council land, politics, the university, classifieds, local news, public holidays and the weather forecast for Cheltenham."
 type: "about"
