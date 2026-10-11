@@ -123,7 +123,7 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 | Two Cheltenhams (draft, 2026-10-13) | Indices of Deprivation, Land Registry | None |
 | Road casualties (draft, 2026-10-20) | DfT STATS19 | None |
 | Turnout (draft, 2026-10-27) | Council election results, Indices of Deprivation | None |
-| Care homes (draft, 2026-11-03) | CQC | None |
+| Care homes (published 2026-10-12) | CQC | None. Ratings change weekly, so the live page will move away from the post's 2026-10-09 snapshot |
 | A&E busiest September (published 2026-10-09) | NHS England A&E | None. October's figures (2026-11-12) could follow it up |
 | Housing squeeze (draft, provisionally 2026-11-26) | Net additional dwellings, ONS rents, ASHE | **Yes, on release day.** Publish the day the new housing figures come out (expected late November; re-date the draft once GOV.UK confirms it), with 2026 pay (22 October) added beforehand |
 
