@@ -42,6 +42,7 @@ These update themselves. The "Feeds" column lists the analysis posts that would 
 | HM Land Registry Price Paid Data | `land_registry.py`, every two hours | Monthly. Recent months keep growing as late sales are registered | No fixed date | House price pages, `/cheltenham-house-prices/affordability`; affordability analysis |
 | Care Quality Commission ratings | `cqc.py`, weekly | Updated continuously as inspections are published | No fixed date | `/cheltenham-care-homes`; care homes analysis |
 | Food Standards Agency hygiene ratings | `food-standards.py`, every two hours | Updated continuously as councils publish inspections | No fixed date | `/cheltenham-food-standards`; food hygiene analysis |
+| Energy Performance of Buildings Register (ratings) | `epc.py`, monthly | Updated daily as certificates are lodged | No fixed date | `/cheltenham-energy-ratings`, ward pages |
 | English Indices of Deprivation | `deprivation.py`, by hand | Every four to six years. The 2025 edition is current | Next edition not announced | `/cheltenham-deprivation`, `/cheltenham-wards`; deprivation and turnout analyses |
 
 Because the monthly workflow runs on the 2nd, a release later in the month waits up to a few weeks. Run the monthly workflow by hand after a release that an upcoming post depends on. The housing figures due in November are an example: the workflow would not fetch them until 2 December, after the housing squeeze post.
@@ -113,6 +114,14 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 - **Run:** `process-wildfire-incidents.py` (about a minute), then commit `_data/wildfire-incidents.json`.
 - **When it publishes:** once a year in late July (22 July in 2026), covering fires to the end of the previous March. The newest year can arrive with no LSOA for Gloucestershire; the page then shows the county total for that year only, and the next release usually fills it in.
 - **Feeds:** `/cheltenham-wildfire-risk/history`. The live fire severity level comes from `wildfire.py` in the daily workflow and needs no manual step.
+
+### Home Energy Scores (Energy Performance of Buildings Register)
+
+- **Download:** nothing. The script calls the register's API with `EPC_KEY` from `.env`.
+- **Run:** `epc-scores.py`, then commit `_data/epc-scores.json`. It lists every Cheltenham certificate (14 calls), keeps each home's latest, and fetches full details only for homes whose latest certificate is new since the last run, keeping them in `_data-sources/epc-homes.json`. The first run fetched all 43,600 homes (about 50 minutes); a monthly run fetches a few hundred.
+- **What it adds:** the numeric energy efficiency score behind each rating, the score each home could reach, and home type, age, tenure and heating, which the ratings in `_data/epc.json` (refreshed automatically by `epc.py`) don't include.
+- **Keep private:** `epc-homes.json` holds no addresses or postcodes (homes without a UPRN are keyed by a hash), and only area totals go into `_data/`. Postcodes are used in memory to place homes in areas, as the register's licence restricts address data.
+- **Feeds:** `/cheltenham-energy-ratings` and the ward pages.
 
 ## Analysis Posts and Their Sources
 

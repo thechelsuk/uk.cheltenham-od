@@ -42,6 +42,8 @@ jobs:
 
           - [ ] **Wildfire history** — check the [fire statistics incident level datasets](https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets) for a newer release (it is published once a year, in late July). Download every "Outdoor fires dataset" `.ods` file into `_data-sources/outdoor-fires/`, replacing the old ones, run `_python/local/process-wildfire-incidents.py`, and commit the updated `_data/wildfire-incidents.json`.
 
+          - [ ] **Home energy scores** — no file to download: with `EPC_KEY` in `.env`, run `_python/local/epc-scores.py`. It reads the EPC register's search for Cheltenham, fetches full details only for homes with a new certificate since last month (stored in `_data-sources/epc-homes.json`), and rewrites `_data/epc-scores.json`. Commit that file. The ratings themselves (`_data/epc.json`) refresh automatically in the monthly workflow.
+
           Close this issue once done — a new one opens automatically next month.
           EOF
 

@@ -37,13 +37,11 @@
                 </tbody>
             </table>
         </div>
-        <p>Data taken directly from <a href="https://www.gov.uk/bank-holidays.json">gov.uk</a></p>
-
-
         {% assign src = site.data.sources | where: "id", "gov-uk-bank-holidays" | first %}
         <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-        </small></p>
+                Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
+                the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
+            </small></p>
 
         <h2>Frequently Asked Questions</h2>
 

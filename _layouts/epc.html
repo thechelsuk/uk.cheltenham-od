@@ -1,6 +1,7 @@
 {% include header.html %}
 {% assign data = site.data.epc %}
 {% assign borough = data.borough %}
+{% assign scores = site.data["epc-scores"] %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -9,7 +10,7 @@
             <ul>
                 <li>{{ borough.homes_display }} homes with a certificate</li>
                 <li>{{ borough.c_plus_pct }}% rated C+ (C or better)</li>
-                <li>Median rating {{ borough.median_band }}</li>
+                <li>Median rating {{ borough.median_band }}, energy score {{ scores.borough.median_score }}</li>
             </ul>
         </header>
 
@@ -38,6 +39,12 @@
                 </tbody>
             </table>
         </div>
+        <p>
+            Behind each letter is an energy score, usually from 1 to 100. The median home in Cheltenham scores
+            {{ scores.borough.median_score }}, just short of the 69 a home needs for a C, and
+            {{ scores.borough.potential_c_plus_pct }}% of homes could reach C or better if the improvements recommended on
+            their certificates were made.
+        </p>
 
         <h2 id="map">Energy Rating Map</h2>
         <div class="filter-bar">
@@ -68,6 +75,7 @@
                         {% for band in data.bands %}<th scope="col" class="number">{{ band }}</th>
                         {% endfor %}<th scope="col" class="number">C+</th>
                         <th scope="col" class="number">Median</th>
+                        <th scope="col" class="number">Score</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,6 +87,7 @@
                         {% for band in data.bands %}<td class="number" data-val="{{ area.shares[band] }}">{{ area.shares[band] }}%</td>
                         {% endfor %}<td class="number" data-val="{{ area.c_plus_pct }}">{{ area.c_plus_pct }}%</td>
                         <td class="number" data-val="{{ area.median_band }}">{{ area.median_band }}</td>
+                        {% assign ws = scores.ward[area.code] %}<td class="number" data-val="{{ ws.median_score }}">{{ ws.median_score }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -95,6 +104,7 @@
                         <th scope="col" class="number">Homes</th>
                         <th scope="col" class="number">C+</th>
                         <th scope="col" class="number">Median</th>
+                        <th scope="col" class="number">Score</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -105,17 +115,59 @@
                         <td class="number" data-val="{{ area.homes }}">{{ area.homes_display }}</td>
                         <td class="number" data-val="{{ area.c_plus_pct }}">{% if area.homes > 0 %}{{ area.c_plus_pct }}%{% endif %}</td>
                         <td class="number" data-val="{{ area.median_band }}">{{ area.median_band }}</td>
+                        {% assign ls = scores.lsoa[area.code] %}<td class="number" data-val="{{ ls.median_score }}">{{ ls.median_score }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
 
+        {% assign breakdowns = "by_home_type|Energy Ratings by Type of Home|Type of home,by_tenure|Energy Ratings by Tenure|Tenure,by_heating|Energy Ratings by Main Heating|Main heating" | split: "," %}
+        {% for b in breakdowns %}
+        {% assign parts = b | split: "|" %}
+        {% assign key = parts[0] %}
+        {% assign rows = scores[key] %}
+        <h2 id="{{ parts[0] | replace: '_', '-' }}">{{ parts[1] }}</h2>
+        {% if parts[0] == "by_tenure" %}
+        <p><small>Tenure as recorded on each home's latest certificate. A home let using the certificate from its last sale
+            counts as owner-occupied, and {{ scores.tenure_unknown_display }} certificates don't record tenure, so these
+            are minimum counts.</small></p>
+        {% endif %}
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">{{ parts[2] }}</th>
+                        <th scope="col" class="number">Homes</th>
+                        <th scope="col" class="number">Score</th>
+                        <th scope="col" class="number">C+</th>
+                        <th scope="col" class="number">Below C</th>
+                        <th scope="col" class="number">Could Reach C+</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in rows %}
+                    <tr>
+                        <td>{{ r.name }}</td>
+                        <td class="number" data-val="{{ r.homes }}">{{ r.homes_display }}</td>
+                        <td class="number" data-val="{{ r.median_score }}">{{ r.median_score }}</td>
+                        <td class="number" data-val="{{ r.c_plus_pct }}">{{ r.c_plus_pct }}%</td>
+                        <td class="number" data-val="{{ r.below_c }}">{{ r.below_c_display }}</td>
+                        <td class="number" data-val="{{ r.potential_c_plus_pct }}">{{ r.potential_c_plus_pct }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+
         <p class="attribution"><small>
             Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }},
             using each home's latest certificate from {{ data.certificates_display }} lodged since {{ data.first_year }}.
             Homes are placed in areas by their postcode using postcodes.io (ONS Postcode Directory), and area
             boundaries are from the ONS Open Geography Portal. Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
+            Energy scores, types of home, tenure and heating are from each home's full certificate, last updated
+            {{ scores.generated_at | date: "%-d %B %Y" }}.
             Contains OS data &copy; Crown copyright and database right.
         </small></p>
 
@@ -141,6 +193,23 @@
         <ul>
             <li>Line up an area's homes from A to G and the median is the rating of the home in the middle: half the homes are rated the same or better, and half the same or worse. It is the rating of a typical home in the area.</li>
             <li>Each home counts once, using its latest certificate.</li>
+        </ul>
+
+        <h3>What Is the Energy Score?</h3>
+        <ul>
+            <li>The number behind each letter, worked out from how a home is built, heated and insulated. Most homes score between 1 and 100: A is 92 or more, B is 81 to 91, C is 69 to 80, D is 55 to 68, E is 39 to 54, F is 21 to 38 and G is 20 or less.</li>
+            <li>The score columns show the median: the score of the middle home when an area's homes are lined up from best to worst.</li>
+        </ul>
+
+        <h3>What Does "Could Reach C+" Mean?</h3>
+        <ul>
+            <li>Every certificate gives the rating a home could reach if the improvements it recommends were made, such as insulation, new windows or a more efficient boiler. "Could reach C+" is the share of homes whose potential rating is C or better.</li>
+        </ul>
+
+        <h3>How Often Is This Page Updated?</h3>
+        <ul>
+            <li>The ratings are refreshed from the register every month.</li>
+            <li>The energy scores and the breakdowns by type of home, tenure and heating come from each home's full certificate. That is a very large amount of data, so we update it by hand once a month.</li>
         </ul>
 
         <h3>Does This Cover Every Home in Cheltenham?</h3>

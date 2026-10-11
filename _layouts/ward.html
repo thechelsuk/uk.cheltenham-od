@@ -544,6 +544,10 @@
             latest certificate, {{ ward_epc.c_plus_pct }}% are rated C or better, against
             {{ epc.borough.c_plus_pct }}% across Cheltenham, and the median rating is {{ ward_epc.median_band }}, against
             {{ epc.borough.median_band }} for the town.
+            {% assign ward_scores = site.data["epc-scores"].ward[w.code] %}{% if ward_scores %}Its median energy score is
+            {{ ward_scores.median_score }}, against {{ site.data["epc-scores"].borough.median_score }} for Cheltenham, and
+            {{ ward_scores.potential_c_plus_pct }}% of its homes could reach C or better with the improvements their
+            certificates recommend.{% endif %}
         </p>
         <div class="table-scroll">
             <table class="data-table">
