@@ -1,11 +1,11 @@
 ---
 layout: clubs
 clubs: sports
-title: "Cheltenham Sports Clubs"
-seo_title: "Cheltenham Sports Clubs: Running, Rugby & Cricket"
+title: "Cheltenham Sports Clubs to Join"
+seo_title: "Cheltenham Sports Clubs to Join: Running, Rugby & More"
 seo: "Cheltenham sports clubs: running, cricket, rugby, cycling, climbing, walking, boxing, archery, croquet and triathlon, with websites to join."
 permalink: /cheltenham-sports-clubs
-description: "Cheltenham's grassroots sports clubs for running, cricket, rugby, cycling, climbing, walking, boxing, archery and triathlon, and how to join."
+description: "Grassroots sports clubs to join in Cheltenham, for running, cricket, rugby, cycling, climbing, walking, boxing, archery and triathlon, with how to get involved."
 type: "activities"
 group: "Things to Do"
 ---

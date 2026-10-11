@@ -41,7 +41,6 @@ exclude:
 include:
   - ".well-known"
   - "_pages"
-  - ads.txt
 
 # --- Classifieds / adverts section. ---
 collections:
@@ -332,22 +331,22 @@ navigation_header:
     link: /cheltenham-points-of-interest
     description: "Local points of interests in and around Cheltenham."
     group: "Things to Do"
-  - name: Cheltenham Arts &amp; Crafts
-    link: /cheltenham-arts-and-crafts
-    description: "Art and pottery classes, Open Studios, galleries and museums in Cheltenham."
-    group: "Things to Do"
   - name: Cheltenham Clubs &amp; Societies
     link: /cheltenham-clubs-and-societies
-    description: "Cheltenham's clubs and societies for hobbies, history and good company."
-    group: "Things to Do"
-  - name: Cheltenham Sports &amp; Clubs
-    link: /cheltenham-sports
-    description: "Cheltenham Town FC, Gloucester Rugby, parkrun and local sports clubs."
+    description: "Clubs and societies to join for hobbies, history and good company."
     group: "Things to Do"
     children:
-      - name: Cheltenham Sports Clubs
+      - name: Cheltenham Arts &amp; Crafts
+        link: /cheltenham-arts-and-crafts
+        description: "Art and pottery classes, Open Studios, galleries and museums to visit."
+  - name: Sport in Cheltenham
+    link: /cheltenham-sports
+    description: "Teams to watch, from Cheltenham Town FC to Gloucester Rugby, plus parkrun."
+    group: "Things to Do"
+    children:
+      - name: Cheltenham Sports Clubs to Join
         link: /cheltenham-sports-clubs
-        description: "Cheltenham's running, cricket, rugby, boxing, archery and other sports clubs."
+        description: "Running, cricket, rugby, boxing, archery and other sports clubs to join."
       - name: Cheltenham Town FC
         link: /cheltenham-sports/cheltenham-town-fc
         description: "Cheltenham Town FC fixtures, results and getting to the ground."

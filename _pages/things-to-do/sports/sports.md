@@ -1,10 +1,10 @@
 ---
 layout: page
-title: "Sport in Cheltenham"
-seo_title: "Sport in Cheltenham: Clubs, Teams and Parkrun"
-seo: "Sport in Cheltenham: Cheltenham Town FC and Women, Gloucestershire Cricket, Gloucester Rugby and parkrun, plus a directory of local sports clubs."
+title: "Sport in Cheltenham: Teams to Watch"
+seo_title: "Sport in Cheltenham: Teams to Watch, Parkrun & Clubs"
+seo: "Where to watch sport in Cheltenham: Cheltenham Town FC, the Cricket Festival and Gloucester Rugby, plus free weekly parkrun and local clubs to join."
 permalink: /cheltenham-sports
-description: "A guide to sport in Cheltenham: the professional clubs, parkrun and a directory of local sports clubs."
+description: "Where to watch sport in and around Cheltenham, from the Robins and the Cricket Festival to Premiership rugby, plus parkrun and local sports clubs to join."
 type: "activities"
 group: "Things to Do"
 ---
@@ -15,7 +15,7 @@ group: "Things to Do"
 
 Cheltenham has one professional club of its own, a Premiership rugby side on its doorstep, and a strong grassroots scene — from parkrun's free weekly 5ks to running, cycling, hiking and climbing clubs for every level.
 
-## Professional and Semi-Professional Clubs
+## Teams to Watch
 
 ### Cheltenham Town FC
 
@@ -45,6 +45,6 @@ Gloucester Rugby play in the Gallagher Premiership — England's top flight of r
 
 Cheltenham has four parkrun events — free, weekly, timed runs open to everyone. See our [Cheltenham parkrun page](/cheltenham-sports/parkrun) for locations and a map.
 
-## Local Sports Clubs
+## Sports Clubs to Join
 
-Beyond the professional sides, Cheltenham has clubs for running and athletics, cricket and rugby, cycling, climbing, cheerleading, hiking and walking, boxing, archery, croquet and triathlon. Browse them all in our [Cheltenham sports clubs](/cheltenham-sports-clubs) directory, or the wider list of [clubs and societies](/cheltenham-clubs-and-societies).
+Beyond the professional sides, Cheltenham has clubs for running and athletics, cricket and rugby, cycling, climbing, cheerleading, hiking and walking, boxing, archery, croquet and triathlon. Browse them all in our [sports clubs to join](/cheltenham-sports-clubs) directory, or the wider list of [clubs and societies](/cheltenham-clubs-and-societies).
