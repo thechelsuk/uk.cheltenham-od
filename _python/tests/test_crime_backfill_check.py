@@ -11,6 +11,7 @@ import pathlib
 SPEC = importlib.util.spec_from_file_location(
     "crime_backfill_check", pathlib.Path(__file__).resolve().parents[1] / "crime-backfill-check.py"
 )
+assert SPEC is not None and SPEC.loader is not None
 check = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(check)
 
