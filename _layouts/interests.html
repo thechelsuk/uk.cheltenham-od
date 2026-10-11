@@ -1,4 +1,5 @@
 {% include header.html %}
+{% assign area_band = site.data["distance-bands"].bands | where: "id", "area" | first %}
 
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
@@ -81,7 +82,7 @@
         </div>
 
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
-        <p class="interests-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
         </small></p>
         <h2>Frequently Asked Questions</h2>
@@ -93,7 +94,7 @@
 
         <h3>How Many Points of Interest Are There near Cheltenham?</h3>
         <ul>
-            <li>This page lists {{ site.data.points_of_interest.size }} points of interest within roughly 16 miles of the town centre, spanning museums, historic sites, stadiums, hills and plaques. The list reaches into the surrounding Cotswold villages, so some entries sit a little way outside Cheltenham itself.</li>
+            <li>This page lists {{ site.data.points_of_interest.size }} points of interest within {{ area_band.miles }} miles of the town centre, spanning museums, historic sites, stadiums, hills and plaques. The list reaches into the surrounding Cotswold villages, so some entries sit a little way outside Cheltenham itself.</li>
         </ul>
 
         <h3>Are There Blue Plaques in Cheltenham?</h3>

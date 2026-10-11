@@ -64,7 +64,7 @@
 
         <p>Full data last refreshed {{ stats.updated }}.</p>
 
-        <p class="about-cheltenham-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ stats.source_url }}">{{ stats.source }}</a>{% if stats.licence %}, published under the {{ stats.licence }}{% endif %}.
             {% if stats.generated_at %}Last updated {{ stats.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>

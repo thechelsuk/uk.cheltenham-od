@@ -56,7 +56,7 @@
             </table>
         </div>
         {% assign src = site.data.sources | where: "id", "great-british-toilet-map" | first %}
-        <p class="toilet-attribution"><small>
+        <p class="attribution"><small>
                 Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
                 the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
                 Listings are based on user submissions and may contain errors or omissions, so confirm

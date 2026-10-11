@@ -23,7 +23,7 @@ COUNCIL_PAGE = "https://www.cheltenham.gov.uk/parking-travel-and-visitors/public
 NOMINATIM = "https://nominatim.openstreetmap.org/reverse"
 KML = "{http://www.opengis.net/kml/2.2}"
 MATCH_METRES = 30
-SEARCH_METRES = 8000
+SEARCH_METRES = config.TAXI_RANKS_RADIUS_M
 
 COUNCIL = "Cheltenham Borough Council"
 OSM = "OpenStreetMap"

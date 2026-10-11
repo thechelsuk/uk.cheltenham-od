@@ -3,13 +3,13 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Cheltenham Parkrun Events",
-  "description": "A map of parkrun events in Cheltenham — free, weekly, timed 5k runs and junior 2k runs — sourced from parkrun's own public events feed.",
+  "description": "A map of parkrun events in and within {{ site.data['parkrun'].radius_miles }} miles of Cheltenham — free, weekly, timed 5k runs and junior 2k runs — sourced from parkrun's own public events feed.",
   "url": "{{ page.url | absolute_url }}",
   "dateModified": "{{ site.data['parkrun'].generated_at }}",
   "isAccessibleForFree": true,
   "isBasedOn": "https://www.parkrun.org.uk/",
   "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
   "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
-  "variableMeasured": ["Event name", "Location", "Distance"]
+  "variableMeasured": ["Event name", "Location", "Run", "Miles from town centre"]
 }
 </script>

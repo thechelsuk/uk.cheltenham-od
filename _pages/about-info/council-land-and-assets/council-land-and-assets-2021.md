@@ -5,6 +5,7 @@ seo: "Every property and land holding owned by Cheltenham Borough Council, mappe
 permalink: /cheltenham-council-land-and-assets/2021
 description: "Land and property owned by Cheltenham Borough Council, from its 2021 land and assets open data return."
 type: "about"
+section: "About & Info"
 year: 2021
 other_year_label: "2023"
 other_year_link: /cheltenham-council-land-and-assets

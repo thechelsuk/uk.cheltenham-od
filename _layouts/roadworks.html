@@ -101,7 +101,7 @@
         </div>
         {% endif %}
 
-        <p class="roadworks-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
             {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Unplanned closures from the <a href="{{ unplanned.source_url }}">{{ unplanned.source }} Road and Lane Closures service</a>, published under the {{ unplanned.licence }}. Checked {{ unplanned.refresh }}.

@@ -7,6 +7,7 @@ import sys
 import requests
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
+import config  # noqa: E402
 import helper
 import fuel_history
 
@@ -28,7 +29,7 @@ PRICES_PATH      = "/api/v1/pfs/fuel-prices"
 
 CHELTENHAM_LAT  = 51.899
 CHELTENHAM_LON  = -2.078
-RADIUS_MILES    = 20
+RADIUS_MILES    = config.FUEL_RADIUS_MILES
 EARTH_RADIUS_MI = 3958.8
 BATCH_DELAY_SECS     = 1.5   # pause between paginated requests to avoid hammering the API
 PRICE_LOOKBACK_DAYS  = 25    # how far back the daily price fetch looks

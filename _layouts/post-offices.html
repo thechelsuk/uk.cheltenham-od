@@ -65,7 +65,7 @@
 
 
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
-        <p class="post-office-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
             Opening hours and services can change, so confirm with the branch before travelling.
         </small></p>

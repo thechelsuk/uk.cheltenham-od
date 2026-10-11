@@ -3,7 +3,7 @@
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Cheltenham Play Parks",
-  "description": "Children's play parks and playgrounds within 10 miles of Cheltenham town centre, with distance from the centre, sourced from OpenStreetMap.",
+  "description": "Children's play parks and playgrounds within {{ site.data['play-areas'].radius_miles }} miles of Cheltenham town centre, with distance from the centre, sourced from OpenStreetMap.",
   "url": "{{ page.url | absolute_url }}",
   "dateModified": "{{ site.data['play-areas'].generated_at }}",
   "isAccessibleForFree": true,

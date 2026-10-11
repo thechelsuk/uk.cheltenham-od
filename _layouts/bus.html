@@ -28,7 +28,9 @@
             {% endfor %}
         </ul>
         {% else %}
-        <p>No current bus disruptions reported for Cheltenham.</p>
+        <blockquote>
+            <p>No current bus disruptions reported for Cheltenham.</p>
+        </blockquote>
         {% endif %}
         <p><small>Also published as an <a href="{{ page.feed_url }}">Atom feed</a>. The underlying BODS disruptions data
                 updates roughly every minute; this page and feed are checked every 3 minutes.</small></p>
@@ -97,7 +99,7 @@
             </table>
         </div>
 
-        <p class="bus-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ disruptions.source_url }}">{{ disruptions.source }}</a>{% if disruptions.licence %}, published under the {{ disruptions.licence }}{% endif %}.
             Checked {{ disruptions.refresh }}.
         </small></p>

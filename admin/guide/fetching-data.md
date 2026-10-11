@@ -76,3 +76,18 @@ Notes:
 ## When to Curate Instead of Fetch
 
 Some things don't have a machine-readable source at all (club directories, third spaces). In that case, hand-write the `_data/<name>.json` directly, in the same shape a fetcher would produce (`generated_at`, `source`, locations with real lat/lon you've looked up yourself), and say so in the page copy — see `_pages/third-spaces.md`'s "Notes" section and `_data/third-spaces.json`. Don't fake a `_python/*.py` script for something that isn't actually fetched.
+
+## How Far a Dataset Looks
+
+A dataset that searches around Cheltenham uses one of four distance bands, so "nearby" means the same on every page. The bands are defined once in `_data/distance-bands.json`, which both `_python/config.py` and the public [glossary](/glossary) read:
+
+| Band | Miles | Use it for |
+| --- | --- | --- |
+| Town | 4 | Places people walk or make a short trip to: post offices, EV chargers, hotels, taxi ranks |
+| Local | 6 | Cheltenham plus the villages and hills around it: car parks, play parks, street works, river sampling points |
+| Area | 12 | Where people travel in from, including Gloucester and Tewkesbury: points of interest, hospitals, food banks |
+| Drive | 20 | Worth a drive: fuel prices, parkrun |
+
+To add a dataset, give it a constant in `config.py` built from its band (`round(LOCAL_MILES * METRES_PER_MILE)` for an Overpass radius in metres) and add the page to that band's `pages` in `distance-bands.json`, so the glossary lists it. Copy that states the distance should read it from the data file (`{{ data.radius_miles }}`) rather than hardcoding a number.
+
+A dataset that follows an official boundary (wards, the borough, the constituency, postcode districts) or a figure fixed by its source keeps that rule instead. Add it to `exceptions` in the same file with a one-line reason, so the glossary explains it too. `_python/tests/test_site_config.py` checks the bands stay in order and that every page they list exists.

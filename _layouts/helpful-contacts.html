@@ -64,7 +64,7 @@
         </div>
         {% endfor %}
 
-        <p class="helpful-contacts-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ contacts.source_url }}">{{ contacts.source }}</a>, with every number checked against the
             provider's own site.
             {% if contacts.last_checked %}Last checked {{ contacts.last_checked | date: "%-d %B %Y" }}.{% endif %}
@@ -152,7 +152,7 @@
         </div>
         {% endfor %}
 
-        <p class="local-support-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ support.source_url }}">{{ support.source }}</a>.
             {% if support.last_checked %}Last checked {{ support.last_checked | date: "%-d %B %Y" }}.{% endif %}
         </small></p>

@@ -1,11 +1,11 @@
 ---
 layout: clubs
 clubs: arts
-title: "Cheltenham Arts and Crafts"
-seo_title: "Cheltenham Arts & Crafts: Studios, Galleries, Classes"
+title: "Cheltenham Arts and Crafts: Classes, Studios and Galleries"
+seo_title: "Cheltenham Arts & Crafts: Classes, Studios & Galleries"
 seo: "Cheltenham arts and crafts: art and pottery classes, Open Studios, galleries and museums to visit, with addresses and websites."
 permalink: /cheltenham-arts-and-crafts
-description: "Art and pottery classes, the Open Studios artist community and galleries and museums in and around Cheltenham."
+description: "Arts and crafts to take part in around Cheltenham: art and pottery classes, the Open Studios artist community, and galleries and museums to visit."
 type: "activities"
 group: "Things to Do"
 ---

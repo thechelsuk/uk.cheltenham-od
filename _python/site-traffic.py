@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fetch the site's own traffic for the last 30 complete days from Cloudflare's
-GraphQL Analytics API and write _data/traffic.json.
+GraphQL Analytics API and write _data/site-traffic.json.
 
 Refreshed daily so the page is always a rolling 30 days. Cloudflare reports each
 day as a whole, so today is left out until it has finished.
@@ -37,7 +37,7 @@ if _env_file.exists():
             os.environ.setdefault(_k.strip(), _v.strip().strip("\"'"))
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "..", "_data", "traffic.json")
+OUT = os.path.join(HERE, "..", "_data", "site-traffic.json")
 
 SOURCE_URL = "https://developers.cloudflare.com/analytics/graphql-api/"
 ENDPOINT = "https://api.cloudflare.com/client/v4/graphql"

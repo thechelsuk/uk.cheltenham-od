@@ -33,7 +33,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Third spaces and community hubs](https://cheltenham-od.uk/cheltenham-third-spaces)
 - [Places to stay](https://cheltenham-od.uk/staying-in-cheltenham), including a dedicated [Cheltenham Festival accommodation guide](https://cheltenham-od.uk/cheltenham-festival-accommodation)
 - [Local classified adverts, jobs board and community notices](https://cheltenham-od.uk/cheltenham-classifieds)
-- [Local events and festivals](https://cheltenham-od.uk/cheltenham-events)
+- [Cheltenham's festivals](https://cheltenham-od.uk/festivals): literature, jazz, science, music, cricket and the races
 
 ### Civic & environmental data
 
@@ -70,7 +70,7 @@ A site dedicated to the collection and dissemination of local open data in the C
 ### News
 
 - [Local news](https://cheltenham-od.uk/cheltenham-news) aggregated and updated hourly
-- [Local events](https://cheltenham-od.uk/cheltenham-events) - what's on next week.
+- [The Cheltenham Week Ahead](https://cheltenham-od.uk/newsletter), a free weekly newsletter with the week's weather, roadworks, what's on and top stories
 
 ### Local guides
 
@@ -78,5 +78,9 @@ A site dedicated to the collection and dissemination of local open data in the C
 - [Student guide to Cheltenham](https://cheltenham-od.uk/student-guide-to-cheltenham)
 - [Visiting Cheltenham](https://cheltenham-od.uk/visiting-cheltenham)
 - [Cheltenham racing festival](https://cheltenham-od.uk/cheltenham-festival-accommodation) - races guide and accomodation
+
+## How the Data Is Refreshed
+
+Most fetchers run on GitHub Actions schedules (`.github/workflows/refresh-*.yml`). The fastest-changing feeds (bus disruptions, power cuts, train times, unplanned road closures and fuel prices) run on a Raspberry Pi instead, with a manual GitHub workflow as a fallback for when it is down. See [the Raspberry Pi guide](admin/guide/raspberry-pi.md) for how it is set up.
 
 ## [Cheltenham Open Data, local data for local people](https://cheltenham-od.uk)
