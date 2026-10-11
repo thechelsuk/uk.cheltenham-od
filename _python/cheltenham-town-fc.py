@@ -11,6 +11,7 @@ the full list."""
 import json
 import os
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -21,6 +22,7 @@ OUT  = os.path.join(HERE, "..", "_data", "cheltenham-town-fc.json")
 
 API = "https://www.thesportsdb.com/api/v1/json/3"
 TEAM_ID = "134362"
+UK = ZoneInfo("Europe/London")
 
 
 def get(path, **params):
@@ -29,12 +31,26 @@ def get(path, **params):
     return resp.json()
 
 
+def kickoff(event):
+    """UK local kick-off as an ISO timestamp, or "" when the time isn't known.
+    The free API leaves strTimeLocal empty and gives strTimestamp/strTime in
+    UTC, so a 3pm Saturday kick-off in summer arrives as 14:00."""
+    stamp = event.get("strTimestamp") or ""
+    if not stamp and event.get("dateEvent") and event.get("strTime"):
+        stamp = f"{event['dateEvent']}T{event['strTime']}"
+    if not stamp:
+        return ""
+    utc = datetime.fromisoformat(stamp).replace(tzinfo=timezone.utc)
+    return utc.astimezone(UK).isoformat()
+
+
 def fixture(event):
     home, away = event.get("strHomeTeam", ""), event.get("strAwayTeam", "")
     is_home = home == "Cheltenham Town"
+    start = kickoff(event)
     return {
-        "date":        event.get("dateEvent", ""),
-        "time":        event.get("strTimeLocal") or event.get("strTime") or "",
+        "date":        start[:10] or event.get("dateEvent", ""),
+        "kickoff":     start,
         "opponent":    away if is_home else home,
         "venue_type":  "Home" if is_home else "Away",
         "venue":       event.get("strVenue", ""),
