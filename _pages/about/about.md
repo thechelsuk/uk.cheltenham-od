@@ -31,7 +31,7 @@ Cheltenham Open Data is built and run by Mat Benfield ([thechels.uk](https://the
 - **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks, roadworks, street works, buses, trains and cycle routes.
 - **[Home & Property](/explore/home-property)**: house prices, rents, council tax, planning, broadband and a profile of every ward.
 - **[Community & Support](/explore/community-support)**: food banks, helplines, GPs, pharmacies and dentists, A&E waiting times, care homes, charities and the COVID-19 pandemic.
-- **[Things to Do](/explore/things-to-do)**: events, festivals, sport, where to eat, play parks and places to stay.
+- **[Things to Do](/explore/things-to-do)**: festivals, sport, where to eat, play parks and places to stay.
 - **[About Cheltenham](/explore/about-info)**: the town [in numbers](/cheltenham-in-numbers), population, the economy, politics, schools and childcare, local news and the weather.
 
 There's also a free [weekly newsletter](/newsletter), local [classifieds](/cheltenham-classifieds) and [Fix My Street](/cheltenham-fix-my-street).
