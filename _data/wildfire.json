@@ -1,40 +1,32 @@
 {
-  "generated_at": "2026-10-10T18:02:19.317597+00:00",
-  "issued_iso": "2026-10-10T06:23",
+  "generated_at": "2026-10-11T10:19:50.817982+00:00",
+  "issued_iso": "2026-10-11T07:04",
   "source": "Met Office Fire Severity Index, published by Natural England",
   "source_url": "https://openaccess.naturalengland.org.uk/",
   "radius_km": 10,
   "today": {
-    "date": "2026-10-10",
+    "date": "2026-10-11",
     "offset": 0,
     "rating": 2,
     "label": "Moderate",
     "squares_at_max": [
       "SO81",
-      "SO82",
-      "SO83",
-      "SO92",
-      "SO93",
-      "SP01"
+      "SO82"
     ]
   },
   "days": [
     {
-      "date": "2026-10-10",
+      "date": "2026-10-11",
       "offset": 0,
       "rating": 2,
       "label": "Moderate",
       "squares_at_max": [
         "SO81",
-        "SO82",
-        "SO83",
-        "SO92",
-        "SO93",
-        "SP01"
+        "SO82"
       ]
     },
     {
-      "date": "2026-10-11",
+      "date": "2026-10-12",
       "offset": 1,
       "rating": 1,
       "label": "Low",
@@ -51,58 +43,39 @@
       ]
     },
     {
-      "date": "2026-10-12",
-      "offset": 2,
-      "rating": 1,
-      "label": "Low",
-      "squares_at_max": [
-        "SO81",
-        "SO82",
-        "SO83",
-        "SO91",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP02",
-        "SP03"
-      ]
-    },
-    {
       "date": "2026-10-13",
-      "offset": 3,
-      "rating": 1,
-      "label": "Low",
+      "offset": 2,
+      "rating": 2,
+      "label": "Moderate",
       "squares_at_max": [
-        "SO81",
         "SO82",
         "SO83",
-        "SO91",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP02",
-        "SP03"
+        "SO93"
       ]
     },
     {
       "date": "2026-10-14",
-      "offset": 4,
-      "rating": 1,
-      "label": "Low",
+      "offset": 3,
+      "rating": 2,
+      "label": "Moderate",
       "squares_at_max": [
-        "SO81",
         "SO82",
         "SO83",
-        "SO91",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP02",
-        "SP03"
+        "SO93"
       ]
     },
     {
       "date": "2026-10-15",
+      "offset": 4,
+      "rating": 2,
+      "label": "Moderate",
+      "squares_at_max": [
+        "SO82",
+        "SO93"
+      ]
+    },
+    {
+      "date": "2026-10-16",
       "offset": 5,
       "rating": 1,
       "label": "Low",
@@ -124,14 +97,9 @@
       "ref": "SO81",
       "days": [
         {
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "rating": 2,
           "label": "Moderate"
-        },
-        {
-          "date": "2026-10-11",
-          "rating": 1,
-          "label": "Low"
         },
         {
           "date": "2026-10-12",
@@ -150,6 +118,11 @@
         },
         {
           "date": "2026-10-15",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
           "rating": 1,
           "label": "Low"
         }
@@ -185,14 +158,9 @@
       "ref": "SO82",
       "days": [
         {
-          "date": "2026-10-10",
+          "date": "2026-10-11",
           "rating": 2,
           "label": "Moderate"
-        },
-        {
-          "date": "2026-10-11",
-          "rating": 1,
-          "label": "Low"
         },
         {
           "date": "2026-10-12",
@@ -201,16 +169,21 @@
         },
         {
           "date": "2026-10-13",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-10-14",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-10-15",
+          "rating": 2,
+          "label": "Moderate"
+        },
+        {
+          "date": "2026-10-16",
           "rating": 1,
           "label": "Low"
         }
@@ -246,11 +219,6 @@
       "ref": "SO83",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 2,
-          "label": "Moderate"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -262,22 +230,27 @@
         },
         {
           "date": "2026-10-13",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-10-14",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-10-15",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 2,
-      "label": "Moderate",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -307,11 +280,6 @@
       "ref": "SO91",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -333,6 +301,11 @@
         },
         {
           "date": "2026-10-15",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
           "rating": 1,
           "label": "Low"
         }
@@ -368,11 +341,6 @@
       "ref": "SO92",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 2,
-          "label": "Moderate"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -396,10 +364,15 @@
           "date": "2026-10-15",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 2,
-      "label": "Moderate",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -429,11 +402,6 @@
       "ref": "SO93",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 2,
-          "label": "Moderate"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -445,22 +413,27 @@
         },
         {
           "date": "2026-10-13",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-10-14",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-10-15",
+          "rating": 2,
+          "label": "Moderate"
+        },
+        {
+          "date": "2026-10-16",
           "rating": 1,
           "label": "Low"
         }
       ],
-      "rating": 2,
-      "label": "Moderate",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -490,11 +463,6 @@
       "ref": "SP01",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 2,
-          "label": "Moderate"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -518,10 +486,15 @@
           "date": "2026-10-15",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 2,
-      "label": "Moderate",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -551,11 +524,6 @@
       "ref": "SP02",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -577,6 +545,11 @@
         },
         {
           "date": "2026-10-15",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
           "rating": 1,
           "label": "Low"
         }
@@ -612,11 +585,6 @@
       "ref": "SP03",
       "days": [
         {
-          "date": "2026-10-10",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-11",
           "rating": 1,
           "label": "Low"
@@ -638,6 +606,11 @@
         },
         {
           "date": "2026-10-15",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-10-16",
           "rating": 1,
           "label": "Low"
         }
