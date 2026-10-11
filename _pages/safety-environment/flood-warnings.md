@@ -54,6 +54,6 @@ and the Environment Agency.
 ## Latest Flood Alerts
 
 <!-- flood_marker starts -->
-> No current flood warnings reports in this area
+> No current flood warnings or alerts for this area.
 
 <!-- flood_marker ends -->
