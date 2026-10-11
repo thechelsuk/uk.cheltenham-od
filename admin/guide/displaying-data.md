@@ -72,7 +72,7 @@ Standard skeleton:
             </table>
         </div>
 
-        <p class="example-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
             {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
@@ -87,6 +87,7 @@ Standard skeleton:
 ```
 
 - Give every map container `class="map-canvas"` (600px, rounded corners) rather than an inline height, and a swatch legend above it `class="map-legend"` with one `<span>` per item. Don't use `class="map"`: it belongs to the pin-link table cells.
+- The attribution paragraph is always `<p class="attribution"><small>`: one shared class, never a per-page `<name>-attribution`.
 - `data-sortable` on a `<table>` is picked up generically by `assets/scripts/table-sort.js` — no per-page JS needed for sorting.
 - Any numeric column — counts, prices, distances, years-as-quantities — gets `class="number"` on both the `<th>` and every `<td>` in that column, so it right-aligns instead of sitting left like text (see `assets/style.css`'s `.data-table .number` rule). Applies even to a single-number-column table like a simple `Year` / `Total` pair. Print the fetcher's pre-formatted `*_display` value (`2,418,292`, `£344,350`) in the cell and put the raw number in `data-val` so sorting is numeric.
 - A postcode column gets `class="postcode"` on both `<th>` and `<td>` so it doesn't wrap mid-postcode (`.data-table .postcode` is one of a few columns — `.date`, `.type`, `.category`, `.rating-date`, `.listing` — the site already sets to `white-space: nowrap`).

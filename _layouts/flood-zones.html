@@ -17,7 +17,7 @@
         <div id="flood-zones-map" class="map-canvas" aria-label="Map of Flood Zone 2 and Flood Zone 3 land around Cheltenham"></div>
         <p><small>Darker blue is Flood Zone 3 and lighter blue is Flood Zone 2. Select a shaded area to see what its zone means.</small></p>
 
-        <p class="flood-zones-attribution"><small>
+        <p class="attribution"><small>
             Data from the <a href="{{ zones.source_url }}">{{ zones.source }}</a>{% if zones.licence %}, published under the {{ zones.licence }}{% endif %}.
             {% if zones.generated_at %}Last updated {{ zones.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Contains Environment Agency information &copy; Environment Agency and database right. Outlines are

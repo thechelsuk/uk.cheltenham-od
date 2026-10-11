@@ -46,7 +46,7 @@
             </table>
         </div>
 
-        <p class="sewage-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ sewage.source_url }}">{{ sewage.source }}</a>{% if sewage.licence %}, published under the {{ sewage.licence }}{% endif %}.
             {% if sewage.generated_at %}Last updated {{ sewage.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
