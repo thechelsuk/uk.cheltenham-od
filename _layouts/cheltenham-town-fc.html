@@ -22,8 +22,7 @@
             <table class="ctfc-table data-table">
                 <thead>
                     <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Kick-off</th>
+                        <th scope="col" class="date">Kick-off</th>
                         <th scope="col">Fixture</th>
                         <th scope="col">Venue</th>
                         <th scope="col">Competition</th>
@@ -32,8 +31,7 @@
                 <tbody>
                     {% for f in ctfc.next_fixtures %}
                     <tr>
-                        <td>{{ f.date | date: "%-d %b %Y" }}</td>
-                        <td>{{ f.time | slice: 0, 5 }}</td>
+                        <td class="date" data-val="{{ f.kickoff | default: f.date }}">{% if f.kickoff != "" %}{{ f.kickoff | date: "%Y-%m-%d %H:%M" }}{% else %}{{ f.date | date: "%Y-%m-%d" }}{% endif %}</td>
                         <td>{% if f.venue_type == "Home" %}Cheltenham Town vs {{ f.opponent }}{% else %}{{ f.opponent
                             }} vs Cheltenham Town{% endif %}</td>
                         <td>{{ f.venue }}</td>
@@ -54,7 +52,7 @@
             <table class="ctfc-table data-table">
                 <thead>
                     <tr>
-                        <th scope="col">Date</th>
+                        <th scope="col" class="date">Date</th>
                         <th scope="col">Fixture</th>
                         <th scope="col">Score</th>
                         <th scope="col">Competition</th>
@@ -63,7 +61,7 @@
                 <tbody>
                     {% for r in ctfc.last_results %}
                     <tr>
-                        <td>{{ r.date | date: "%-d %b %Y" }}</td>
+                        <td class="date" data-val="{{ r.date }}">{{ r.date | date: "%Y-%m-%d" }}</td>
                         <td>{% if r.venue_type == "Home" %}Cheltenham Town vs {{ r.opponent }}{% else %}{{ r.opponent
                             }} vs Cheltenham Town{% endif %}</td>
                         <td>{% if r.venue_type == "Home" %}{{ r.home_score }}&ndash;{{ r.away_score }}{% else %}{{
