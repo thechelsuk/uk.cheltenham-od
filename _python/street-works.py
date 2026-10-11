@@ -20,6 +20,8 @@ import helper
 SOURCE = "Department for Transport Street Manager"
 SOURCE_URL = "https://www.gov.uk/guidance/find-and-use-roadworks-data"
 LONDON = ZoneInfo("Europe/London")
+HISTORY_FIELDS = ["street", "ward_slug", "kind", "category", "traffic_management", "road_closure",
+                  "promoter", "start", "end"]
 
 
 def uk_time(stamp):
@@ -102,7 +104,19 @@ def main():
         "summary": summarise(items),
         "items": items,
     })
-    print(f"Wrote {len(items)} street works within {config.STREET_WORKS_RADIUS_MILES} miles of Cheltenham")
+    history_path = helper.repo_root() / "_data" / "street-works-history.json"
+    history = json.loads(history_path.read_text()) if history_path.exists() else {"tracking_since": today, "records": []}
+    records = helper.record_seen(history["records"], items, HISTORY_FIELDS, today)
+    helper.write_json(history_path, {
+        "source": SOURCE,
+        "source_url": SOURCE_URL,
+        "licence": "Open Government Licence v3.0",
+        "radius_miles": config.STREET_WORKS_RADIUS_MILES,
+        "tracking_since": history["tracking_since"],
+        "records": records,
+    })
+    print(f"Wrote {len(items)} street works within {config.STREET_WORKS_RADIUS_MILES} miles of Cheltenham"
+          f" ({len(records)} in the history)")
 
 
 if __name__ == "__main__":

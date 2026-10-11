@@ -132,7 +132,7 @@
     "source_url": "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/roadworks.json", "schedule": "daily"}],
+    "data": [{"file": "_data/roadworks.json", "schedule": "daily"}, {"file": "_data/roadworks-history.json", "schedule": "daily"}],
     "pages": ["/cheltenham-roadworks", "/newsletter"]
   },
   {
@@ -148,7 +148,7 @@
     "source_url": "https://www.gov.uk/guidance/find-and-use-roadworks-data",
     "licence": "Open Government Licence v3.0 (Department for Transport, via Find Transport Data). Pushed to the uk.cheltenham-od.receiver Cloudflare Worker, which this site reads",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/street-works.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/street-works.json", "schedule": "every two hours"}, {"file": "_data/street-works-history.json", "schedule": "daily"}],
     "pages": ["/cheltenham-street-works"]
   },
   {

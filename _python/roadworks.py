@@ -17,6 +17,7 @@ completed works between the weekly files.
 This only covers National Highways roads (here: M5, A417, A40, A46). Works on
 local streets are held in Street Manager, which is push-only and not covered.
 """
+import json
 import math
 import os
 import re
@@ -32,6 +33,8 @@ import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "roadworks.json")
+HISTORY_OUT = os.path.join(HERE, "..", "_data", "roadworks-history.json")
+HISTORY_FIELDS = ["roads", "description", "closure_type", "expected_delay", "start", "end"]
 
 FILE_BASE = "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/"
 DATASET_URL = "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks"
@@ -138,7 +141,24 @@ def main():
 
     helper.write_json(OUT, output)
 
-    print(f"Wrote {len(items)} roadworks (file published {published}) to {OUT}")
+    today = now.date().isoformat()
+    try:
+        with open(HISTORY_OUT, encoding="utf-8") as f:
+            history = json.load(f)
+    except FileNotFoundError:
+        history = {"tracking_since": today, "records": []}
+    records = helper.record_seen(history["records"], items, HISTORY_FIELDS, today)
+    helper.write_json(HISTORY_OUT, {
+        "source":         output["source"],
+        "source_url":     DATASET_URL,
+        "licence":        output["licence"],
+        "radius_miles":   RADIUS_MILES,
+        "tracking_since": history["tracking_since"],
+        "records":        records,
+    })
+
+    print(f"Wrote {len(items)} roadworks (file published {published}) to {OUT}"
+          f" ({len(records)} in the history)")
 
 
 if __name__ == "__main__":
