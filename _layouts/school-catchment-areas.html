@@ -21,7 +21,7 @@
         <p id="catchment-legend" class="map-legend"></p>
 
         {% assign src = site.data.sources | where: "id", "dfe-gias-schools" | first %}
-        <p class="school-catchment-areas-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ site.data.ofsted.source_url }}">{{ site.data.ofsted.source }}</a>, published under the {{ src.licence_name }}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
             Ofsted outcomes last updated {{ site.data.ofsted.generated_at | date: "%-d %B %Y" }}.
             Catchments here are the nearest school by straight-line distance, not official admissions areas.

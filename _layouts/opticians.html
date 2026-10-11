@@ -41,7 +41,7 @@
             </table>
         </div>
 
-        <p class="opticians-attribution"><small>
+        <p class="attribution"><small>
             Data from the <a href="{{ opticians.source_url }}">{{ opticians.source }}</a>{% if opticians.licence %}, published under the {{ opticians.licence }}{% endif %}.
             {% if opticians.generated_at %}Last updated {{ opticians.generated_at | date: "%-d %B %Y" }}.{% endif %}
             Locations from {{ opticians.geocoding_source }}. {{ opticians.geocoding_attribution }}

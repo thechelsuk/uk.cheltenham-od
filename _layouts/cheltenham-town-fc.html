@@ -76,7 +76,7 @@
         <p>No recent results available — see the club's own results and fixtures page.</p>
         {% endif %}
 
-        <p class="cheltenham-town-fc-attribution"><small>
+        <p class="attribution"><small>
                 Data from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>{% if ctfc.licence %}, published under
                 the {{ ctfc.licence }}{% endif %}.
                 {% if ctfc.generated_at %}Last updated {{ ctfc.generated_at | date: "%-d %B %Y" }}.{% endif %}

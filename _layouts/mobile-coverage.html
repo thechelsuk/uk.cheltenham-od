@@ -80,7 +80,7 @@
             {{ mobile.reference_date | date: "%-d %B %Y" }}, covering the {{ mobile.geography_name }}
             {{ mobile.geography }}.</p>
 
-        <p class="mobile-coverage-attribution"><small>
+        <p class="attribution"><small>
             Data from <a href="{{ mobile.source_url }}">{{ mobile.source }}</a>{% if mobile.licence %}, published under the {{ mobile.licence }}{% endif %}.
             {% if mobile.generated_at %}Last updated {{ mobile.generated_at | date: "%-d %B %Y" }}.{% endif %}
         </small></p>
