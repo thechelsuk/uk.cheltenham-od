@@ -69,12 +69,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Pump track and bike park locations curated by <a href="{{ venues.source_url }}">{{ venues.source }}</a>.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Named Cycle Routes Pass Through Cheltenham?</h3>
@@ -87,6 +81,13 @@
         <ul>
             <li>Every dedicated cycle track and every road with a marked cycle lane recorded in OpenStreetMap around Cheltenham. Roads with no cycling provision aren't shown, even where cycling is allowed.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/cycle-routes.json" %}
+            Pump track and bike park locations curated by <a href="{{ venues.source_url }}">{{ venues.source }}</a>.
+        </small></p>
 
     </div>
 </div>

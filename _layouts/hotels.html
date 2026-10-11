@@ -16,7 +16,6 @@
         <h2>Hotel Map</h2>
         <iframe src="https://www.stay22.com/embed/gm?{{aid}}=YOUR_AID&address=Cheltenham,+Gloucestershire,+UK" class="map-canvas" loading="lazy"></iframe>
 
-
         <h2>Hotels in Cheltenham ({{ site.data.hotels.size }})</h2>
 
         <div class="table-scroll">
@@ -55,10 +54,6 @@
             </table>
         </div>
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-        </small></p>
-
 
         {% assign h_all = site.data.hotels %}
         {% assign h_hotels = h_all | where: "type", "Hotel" %}
@@ -74,6 +69,11 @@
         <ul>
             <li>Rooms near the racecourse book up months ahead of race week. See our <a href="/cheltenham-festival-accommodation">festival accommodation guide</a> for places near Prestbury Park with live availability.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/hotels.json" %}
+        </small></p>
 
     </div>
 </div>

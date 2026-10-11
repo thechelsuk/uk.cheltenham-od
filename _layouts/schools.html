@@ -83,12 +83,6 @@
 
         {% assign src = site.data.sources | where: "id", "dfe-gias-schools" | first %}
         {% assign ofsted = site.data.ofsted %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ ofsted.source_url }}">{{ ofsted.source }}</a>, published under the {{ src.licence_name }}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-            Ofsted outcomes last updated {{ ofsted.generated_at | date: "%-d %B %Y" }}.
-            Independent schools inspected by the Independent Schools Inspectorate have no Ofsted outcome.
-            Proposed, closed, nursery-only, higher-education and alternative-provision establishments are excluded.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -171,6 +165,15 @@
                 <a href="https://www.gloucestershire.gov.uk/education-and-learning/find-a-school" rel="noopener">Find a School</a>
                 tool.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a> and <a href="{{ ofsted.source_url }}">{{ ofsted.source }}</a>, published under the {{ src.licence_name }}. {% include freshness.html file="_data/schools.json" %}
+            Ofsted outcomes: {% include freshness.html file="_data/ofsted.json" %}
+            Independent schools inspected by the Independent Schools Inspectorate have no Ofsted outcome.
+            Proposed, closed, nursery-only, higher-education and alternative-provision establishments are excluded.
+        </small></p>
+
     </div>
     {% include footer.html %}
 </div>

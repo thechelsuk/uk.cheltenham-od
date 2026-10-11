@@ -74,13 +74,6 @@
                     Council</a>; see <a href="/cheltenham-politics/local-elections">local elections and councillors</a>
                 for every ward's result.</small></p>
 
-        <p class="attribution"><small>
-            Data from Police.uk (crime), HM Land Registry (house prices) and the Office for National Statistics
-            (ward boundaries), published under the Open Government Licence v3.0, and from Cheltenham Borough Council
-            (election results).
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is a Ward?</h3>
@@ -110,6 +103,14 @@
                 Standards
                 Agency and OpenStreetMap.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from Police.uk (crime), HM Land Registry (house prices) and the Office for National Statistics
+            (ward boundaries), published under the Open Government Licence v3.0, and from Cheltenham Borough Council
+            (election results).
+            {% include freshness.html file="_data/wards/index.json" %}
+        </small></p>
 
     </div>
 </div>

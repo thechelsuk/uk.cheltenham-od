@@ -61,13 +61,6 @@
         <p>Food bank details are not available right now. Please check back shortly.</p>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the
-            <a href="{{ data.licence_url }}">{{ data.licence }}</a>.
-            Checked {{ data.refresh }}.
-            Lists of needed items are a guide, so check a food bank's own shopping list before you donate.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Do I Donate to a Food Bank in Cheltenham?</h3>
@@ -106,6 +99,15 @@
             <li>The table shows every food bank within {{ data.radius_miles }} miles of the town centre, so nearby
                 places such as Gloucester and Tewkesbury are included.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the
+            <a href="{{ data.licence_url }}">{{ data.licence }}</a>.
+            {% include freshness.html file="_data/foodbank.json" %}
+            Lists of needed items are a guide, so check a food bank's own shopping list before you donate.
+        </small></p>
+
     </div>
 </div>
 

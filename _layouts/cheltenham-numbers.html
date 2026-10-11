@@ -27,11 +27,6 @@
         </div>
         {% endfor %}
 
-        <p class="attribution"><small>
-            Each figure comes from the page it links to, where its source, licence and date are given in full.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Do These Figures Come From?</h3>
@@ -49,6 +44,13 @@
         <ul>
             <li>Most figures cover Cheltenham borough or the GL50 to GL54 postcodes. A few cover a set distance from the town centre, as noted on each figure.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Each figure comes from the page it links to, where its source, licence and date are given in full.
+            {% include freshness.html file="_data/cheltenham-numbers.json" %}
+        </small></p>
+
     </div>
 </div>
 {% include footer.html %}

@@ -69,11 +69,14 @@
         {% else %}
         <p>No reports have been recorded yet.</p>
         {% endif %}
+
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
-            Checked {{ history.refresh }}.
+            {% include freshness.html file="_data/fix-my-street-history.json" %}
             Reports within 10km of Cheltenham town centre, written by members of the public.
         </small></p>
+
     </div>
 </div>
 {% include chartjs.html %}

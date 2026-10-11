@@ -87,12 +87,6 @@
         <h2>About This Data</h2>
         <p>Listings are drawn from Historic England's National Heritage List for England, the official register of all nationally protected historic buildings and sites in England. A building's grade reflects its level of special architectural or historic interest, not its condition — Grade I is exceptional national importance, Grade II* is particularly important, and Grade II is special interest. Listing does not by itself grant public access to a building; most entries on this page are private property.</p>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ heritage.source_url }}">{{ heritage.source }}</a>{% if heritage.licence %}, published under the {{ heritage.licence }}{% endif %}.
-            {% if heritage.generated_at %}Last updated {{ heritage.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            {{ heritage.attribution }}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Many Listed Buildings Are There in Cheltenham?</h3>
@@ -109,6 +103,13 @@
         <ul>
             <li>Most work that affects a listed building's character, inside or out, needs listed building consent from Cheltenham Borough Council before it starts. <a href="https://historicengland.org.uk/advice/hpg/consent/lbc/">Historic England's guide to listed building consent</a> explains what needs it.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ heritage.source_url }}">{{ heritage.source }}</a>{% if heritage.licence %}, published under the {{ heritage.licence }}{% endif %}.
+            {% include freshness.html file="_data/listed-buildings.json" %}
+            {{ heritage.attribution }}
+        </small></p>
 
     </div>
 </div>

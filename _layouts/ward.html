@@ -644,16 +644,6 @@
             <a href="/cheltenham-politics/local-elections">results for every ward</a>.</small></p>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from Police.uk (crime), HM Land Registry (house prices), the Office for National Statistics
-            (ward boundaries), the Department for Transport's Street Manager (street works), the Environment Agency
-            (flood zones), the Ministry of Housing, Communities and Local Government (fire statistics and home energy
-            ratings), Ofsted
-            (childcare) and the Care Quality Commission (care homes), published under the Open Government Licence v3.0,
-            and from Cheltenham Borough Council (election results).
-            {% if w.generated_at %}Last updated {{ w.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2 id="faq">Frequently Asked Questions</h2>
 
         <h3>Where Does the {{ w.name }} Data Come From?</h3>
@@ -684,6 +674,17 @@
                 point rather than the exact location. Use them to compare one year with another and one type of crime
                 with another.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from Police.uk (crime), HM Land Registry (house prices), the Office for National Statistics
+            (ward boundaries), the Department for Transport's Street Manager (street works), the Environment Agency
+            (flood zones), the Ministry of Housing, Communities and Local Government (fire statistics and home energy
+            ratings), Ofsted
+            (childcare) and the Care Quality Commission (care homes), published under the Open Government Licence v3.0,
+            and from Cheltenham Borough Council (election results).
+            {% include freshness.html file="_data/wards/index.json" %}
+        </small></p>
 
     </div>
 </div>

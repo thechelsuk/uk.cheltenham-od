@@ -57,14 +57,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">HM Land Registry Price Paid Data</a> (sales) and the ONS
-            Annual Survey of Hours and Earnings via <a href="{{ data.earnings_source_url }}">Nomis</a> (pay),
-            both published under the {{ data.licence }}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Sales exclude the Land Registry's "other" property type.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>How Is "Affordable" Worked Out?</h3>
@@ -107,6 +99,16 @@
                 price to earnings ratio</a> for every local authority, which is a single number for the whole market.
                 This page shows the same picture as a share of the homes actually sold.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">HM Land Registry Price Paid Data</a> (sales) and the ONS
+            Annual Survey of Hours and Earnings via <a href="{{ data.earnings_source_url }}">Nomis</a> (pay),
+            both published under the {{ data.licence }}.
+            {% include freshness.html file="_data/cheltenham-affordability.json" %}
+            Sales exclude the Land Registry's "other" property type.
+        </small></p>
+
     </div>
 </div>
 {% include chartjs.html %}

@@ -35,6 +35,12 @@
         {% endfor %}
 
         <blockquote>{{ set.note | markdownify }}</blockquote>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Compiled by <a href="{{ site.data.clubs.source_url }}">{{ site.data.clubs.source }}</a> from each group's own site.
+            {% include freshness.html file="_data/clubs.json" %}
+        </small></p>
     </div>
 </div>
 

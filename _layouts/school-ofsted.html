@@ -167,12 +167,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ s.ofsted_url }}" rel="noopener">{{ data.source }}</a> and its
-            <a href="{{ data.mi_url }}" rel="noopener">monthly management information</a>, published under the {{ data.licence }}.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is {{ s.name }}'s Ofsted Rating?</h3>
@@ -225,6 +219,13 @@
             <li>Links between a school and the school it replaced come from the Department for Education's Get Information
                 about Schools register.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ s.ofsted_url }}" rel="noopener">{{ data.source }}</a> and its
+            <a href="{{ data.mi_url }}" rel="noopener">monthly management information</a>, published under the {{ data.licence }}.
+            {% include freshness.html file="_data/ofsted.json" %}
+        </small></p>
     </div>
     {% include footer.html %}
 </div>

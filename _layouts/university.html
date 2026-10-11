@@ -75,11 +75,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ uni.source_url }}">{{ uni.source }}</a>{% if uni.licence %}, published under the {{ uni.licence }}{% endif %}.
-            {% if uni.generated_at %}Last updated {{ uni.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Campus Will My Course Be Taught At?</h3>
@@ -132,6 +127,13 @@
                 hand rather than fetched automatically. Confirm anything time-sensitive, such as open day dates or where a
                 course is based, with the university.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ uni.source_url }}">{{ uni.source }}</a>{% if uni.licence %}, published under the {{ uni.licence }}{% endif %}.
+            {% include freshness.html file="_data/university.json" %}
+        </small></p>
+
     </div>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

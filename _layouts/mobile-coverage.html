@@ -80,11 +80,6 @@
             {{ mobile.reference_date | date: "%-d %B %Y" }}, covering the {{ mobile.geography_name }}
             {{ mobile.geography }}.</p>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ mobile.source_url }}">{{ mobile.source }}</a>{% if mobile.licence %}, published under the {{ mobile.licence }}{% endif %}.
-            {% if mobile.generated_at %}Last updated {{ mobile.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Do "Indoor", "Outdoor" and "Local Area" Mean?</h3>
@@ -131,6 +126,13 @@
             <li>Ofcom publishes this data roughly twice a year as part of its Connected Nations programme, with occasional
                 interim updates. This page is refreshed whenever a new release is available.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ mobile.source_url }}">{{ mobile.source }}</a>{% if mobile.licence %}, published under the {{ mobile.licence }}{% endif %}.
+            {% include freshness.html file="_data/mobile-coverage.json" %}
+        </small></p>
+
     </div>
 </div>
 {% include footer.html %}

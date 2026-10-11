@@ -20,7 +20,6 @@ and fails loudly if a page's tables change shape. Requests are spaced out to be
 kind to the council's server. Councillors change rarely and elections happen
 in May, so a monthly refresh is plenty.
 """
-import json
 import os
 import re
 import time
@@ -31,6 +30,7 @@ import requests
 from bs4 import BeautifulSoup
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "ward-politics.json")
@@ -255,9 +255,7 @@ def main():
         "wards": wards,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    helper.write_json(OUT, output)
     missing = [s for s, w in wards.items() if not w["councillors"]]
     print(f"Wrote {len(wards)} wards to {OUT}" + (f"; no councillors matched for {missing}" if missing else ""))
     print("Parties:", ", ".join(parties))

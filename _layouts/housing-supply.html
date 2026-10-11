@@ -37,7 +37,6 @@
             </table>
         </div>
 
-
         <h2>Student &amp; Other Communal Accommodation</h2>
 
         <p>Net change in communal accommodation (student halls and other shared housing), split by whether it's
@@ -71,12 +70,14 @@
             </table>
         </div>
 
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from the Ministry of Housing, Communities &amp; Local Government's live tables on housing supply
             (<a href="{{ data.net_additional_dwellings.source_url }}">Table 122</a> and
             <a href="{{ data.communal_accommodation.source_url }}">Table 124</a>), published under the {{ data.licence }}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            {% include freshness.html file="_data/housing-supply.json" %}
         </small></p>
+
     </div>
 </div>
 

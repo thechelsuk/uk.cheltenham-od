@@ -52,11 +52,6 @@
         </blockquote>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ history.source_url }}">{{ history.source }} Road and Lane Closures service</a>, published under the {{ history.licence }}.
-            Checked {{ history.refresh }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Counts as an Unplanned Closure?</h3>
@@ -79,6 +74,13 @@
         <ul>
             <li>Yes. Subscribe to the <a href="{{ page.feed_url }}">unplanned closures feed</a> in any RSS or feed reader to see each new closure, and when it ends.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ history.source_url }}">{{ history.source }} Road and Lane Closures service</a>, published under the {{ history.licence }}.
+            {% include freshness.html file="_data/unplanned-closures-history.json" %}
+        </small></p>
+
     </div>
 </div>
 {% include footer.html %}

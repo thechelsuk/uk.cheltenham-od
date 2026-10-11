@@ -29,15 +29,23 @@ jobs:
             PAGES_REPO_NWO: thechelsuk/uk.thechels.cod
 
         steps:
+            # Full history (without file contents until needed) so
+            # _plugins/data_freshness.rb can date each data file by its last
+            # commit; a shallow checkout would give every file the same date.
             - name: Checkout requested ref
               if: inputs.ref != ''
               uses: actions/checkout@v7
               with:
                   ref: ${{ inputs.ref }}
+                  fetch-depth: 0
+                  filter: blob:none
 
             - name: Checkout current ref
               if: inputs.ref == ''
               uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+                  filter: blob:none
 
             - name: Setup Pages
               id: pages

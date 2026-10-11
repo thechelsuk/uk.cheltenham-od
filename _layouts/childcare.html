@@ -71,13 +71,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-            Locations from {{ data.geocoding_source }}. {{ data.geocoding_attribution }}
-            Childminders and home childcarers are not listed, as Ofsted doesn't publish their names or addresses.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Do the Ofsted Outcomes Mean?</h3>
@@ -120,6 +113,15 @@
                 months. The list is checked monthly. Each provider is placed at the centre of its postcode, so a pin is
                 close to the setting rather than exactly on it.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            {% include freshness.html file="_data/childcare.json" %}
+            Locations from {{ data.geocoding_source }}. {{ data.geocoding_attribution }}
+            Childminders and home childcarers are not listed, as Ofsted doesn't publish their names or addresses.
+        </small></p>
+
     </div>
     {% include footer.html %}
 </div>

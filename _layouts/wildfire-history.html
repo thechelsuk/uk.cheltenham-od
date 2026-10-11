@@ -184,11 +184,6 @@
         </blockquote>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }} fire statistics</a>, published under the {{ data.licence }}, and from the <a href="{{ fsi.source_url }}">{{ fsi.source }}</a>.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}. Fire severity checked daily.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Fires Are Counted?</h3>
@@ -226,6 +221,12 @@
             <li>Low and moderate days, which make up most of the year, are not listed.</li>
             <li>The current forecast for the next five days is on the <a href="/cheltenham-wildfire-risk">wildfire risk page</a>.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }} fire statistics</a>, published under the {{ data.licence }}, and from the <a href="{{ fsi.source_url }}">{{ fsi.source }}</a>.
+            {% include freshness.html file="_data/wildfire-incidents.json" %} The fire severity log is {% include freshness.html file="_data/wildfire-history.json" %}
+        </small></p>
     </div>
 </div>
 

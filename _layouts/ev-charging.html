@@ -88,20 +88,11 @@
                             <td class="postcode">{{ s.postcode }}</td>
                             <td class="map">{% include pin.html lat=s.latitude lng=s.longitude label=s.name %}</td>
 
-
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
-
-
-            <p class="attribution"><small>
-                Data from <a href="{{ ev.source_url }}">{{ ev.source }}</a>{% if ev.licence %}, published under the {{ ev.licence }}{% endif %}.
-                {% if ev.generated_at %}Last updated {{ ev.generated_at | date: "%-d %B %Y" }}.{% endif %}
-                Always check the operator's app for live availability and pricing.
-            </small></p>
-
 
             <h2>Frequently Asked Questions</h2>
 
@@ -119,6 +110,13 @@
             <ul>
                 <li>They come from Open Charge Map, which is updated by drivers and operators, so a charger can be out of action or newly opened before the listing changes. Check the operator's app before you travel.</li>
             </ul>
+
+            <h2 id="about-this-data">About This Data</h2>
+            <p class="attribution"><small>
+                Data from <a href="{{ ev.source_url }}">{{ ev.source }}</a>{% if ev.licence %}, published under the {{ ev.licence }}{% endif %}.
+                {% include freshness.html file="_data/ev-charging.json" %}
+                Always check the operator's app for live availability and pricing.
+            </small></p>
 
         </div>
 

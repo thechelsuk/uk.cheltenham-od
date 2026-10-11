@@ -13,7 +13,6 @@
 
         {{ content }}
 
-
         <h2>Post Office Location Map</h2>
         <div id="po-map" class="map-canvas" aria-label="Map of Post Office locations in Cheltenham"></div>
         <h2>Post Office Branches</h2>
@@ -63,12 +62,7 @@
             pay in cash and cheques, and check their balance at any Post Office counter — useful across Cheltenham as
             high-street bank branches have closed.</p>
 
-
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-            Opening hours and services can change, so confirm with the branch before travelling.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -82,13 +76,17 @@
             <li>Yes — see our <a href="/cheltenham-dpd-pickup-points">Cheltenham DPD Pickup points</a> page for a full list of local shops, newsagents and petrol station kiosks that accept DPD drop-offs and collections, many with longer opening hours than a typical Post Office branch.</li>
         </ul>
 
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/post-offices.json" %}
+            Opening hours and services can change, so confirm with the branch before travelling.
+        </small></p>
+
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script id="po-data" type="application/json">{{ site.data.post-offices | jsonify }}</script>
         <script src="/assets/scripts/po-map.js"></script>
     </div>
 </div>
-
-
 
 {% include footer.html %}

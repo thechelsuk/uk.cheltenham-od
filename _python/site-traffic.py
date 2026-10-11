@@ -15,7 +15,6 @@ gitignored .env file when running locally):
   CLOUDFLARE_API_TOKEN  a token with the Zone > Analytics > Read permission
   CLOUDFLARE_ZONE_ID    the zone ID shown on the site's Cloudflare overview page
 """
-import json
 import os
 import sys
 from datetime import datetime, timedelta, timezone
@@ -131,8 +130,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(days)} days ({start} to {end}) to {OUT}")
 

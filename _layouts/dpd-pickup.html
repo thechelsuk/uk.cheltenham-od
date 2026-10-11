@@ -45,12 +45,6 @@
                 </tbody>
             </table>
         </div>
-        <p>Last updated {{ dpd.updated }}</p>
-
-        <p class="attribution"><small>
-            Data from <a href="{{ dpd.source_url }}">{{ dpd.source }}</a>{% if dpd.licence %}, published under the {{ dpd.licence }}{% endif %}.
-            Checked {{ dpd.refresh }}.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -79,6 +73,13 @@
             <li>See our <a href="/cheltenham-post-office-locations">Cheltenham Post Office locations</a> page, or our
                 <a href="/cheltenham-inpost-lockers">InPost locker locations</a> page for 24/7 self-service lockers.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ dpd.source_url }}">{{ dpd.source }}</a>{% if dpd.licence %}, published under the {{ dpd.licence }}{% endif %}.
+            {% include freshness.html file="_data/dpd-pickup-points.json" %}
+        </small></p>
+
     </div>
 </div>
 

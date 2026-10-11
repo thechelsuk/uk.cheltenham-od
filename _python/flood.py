@@ -69,8 +69,7 @@ if __name__ == "__main__":
     flood_json = data_dir / "flood.json"
 
     data = helper.fetch_flood_data()
-    with open(flood_json, "w") as f:
-        json.dump(data, f, indent=4)
+    helper.write_json(flood_json, data)
     print(f"Data saved to {flood_json}")
 
     current_items = [normalize_item(i) for i in data.get("items", [])]

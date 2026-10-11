@@ -106,12 +106,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-            Locations from {{ data.geocoding_source }}. {{ data.geocoding_attribution }}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Do CQC Ratings Mean?</h3>
@@ -146,6 +140,14 @@
             <li>The Care Quality Commission's directory of registered services and its latest ratings, both published
                 under the Open Government Licence. Each home is placed at the centre of its postcode on the map.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            {% include freshness.html file="_data/cqc.json" %}
+            Locations from {{ data.geocoding_source }}. {{ data.geocoding_attribution }}
+        </small></p>
+
     </div>
     {% include footer.html %}
 </div>

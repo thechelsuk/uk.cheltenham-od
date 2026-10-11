@@ -65,14 +65,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Changes before 19 September 2026 were compiled from
-            <a href="{{ history.backfill_source.url }}">{{ history.backfill_source.name }}</a>
-            (<a href="{{ history.backfill_source.licence_url }}">{{ history.backfill_source.licence }}</a>).
-        </small></p>
-
         <h2>Emergency Preparation</h2>
 
         <p><a href="https://prepare.campaign.gov.uk/get-prepared-for-emergencies/">Get Prepared for Emergencies (Gov UK)</a></p>
@@ -113,6 +105,15 @@
         <ul>
             <li>The threat level is checked once a day. It changes rarely, so the date of the last change is shown above.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/terrorism.json" %}
+            Changes before 19 September 2026 were compiled from
+            <a href="{{ history.backfill_source.url }}">{{ history.backfill_source.name }}</a>
+            (<a href="{{ history.backfill_source.licence_url }}">{{ history.backfill_source.licence }}</a>).
+        </small></p>
 
     </div>
 </div>

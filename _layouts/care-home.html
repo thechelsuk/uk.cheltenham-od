@@ -92,11 +92,6 @@
             {% if c.previous_registration %}<li><a href="{{ c.previous_url }}" rel="noopener">CQC report under its previous registration</a></li>{% endif %}
         </ul>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is {{ c.name }}'s CQC Rating?</h3>
@@ -122,6 +117,12 @@
                 homes also have qualified nurses on duty around the clock for people with more complex medical needs.</li>
         </ul>
         {% endif %}
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            {% include freshness.html file="_data/cqc.json" %}
+        </small></p>
     </div>
     {% include footer.html %}
 </div>

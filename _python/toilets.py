@@ -6,7 +6,6 @@ filter to Cheltenham, named toilets only, and write to Jekyll's _data dir.
 Source: https://www.toiletmap.org.uk/dataset
 """
 
-import json
 import re
 import sys
 from pathlib import Path
@@ -272,8 +271,7 @@ def filter_records(records: list[dict], area_name: str) -> tuple[list[dict], int
 
 def write_output(records: list[dict], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(records, f, indent=2, ensure_ascii=False)
+    helper.write_json(path, records)
 
 
 def main() -> None:

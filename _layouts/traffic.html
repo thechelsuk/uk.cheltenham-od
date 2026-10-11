@@ -40,11 +40,6 @@
             <div class="chart-canvas"><canvas id="traffic-cached" aria-label="Line chart of the percentage of data served from cache per day over the last 30 days"></canvas></div>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ traffic.source_url }}">{{ traffic.source }}</a>{% if traffic.licence %}, published under the {{ traffic.licence }}{% endif %}.
-            {% if traffic.generated_at %}Last updated {{ traffic.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Each day is counted from midnight to midnight UTC.
-        </small></p>
         {% else %}
         <p>The traffic figures are being refreshed and will be back shortly.</p>
         {% endif %}
@@ -100,6 +95,14 @@
                 questions, <a href="/contact">get in touch</a> or read more about <a href="/sponsor">sponsoring a
                 category</a>.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ traffic.source_url }}">{{ traffic.source }}</a>{% if traffic.licence %}, published under the {{ traffic.licence }}{% endif %}.
+            {% include freshness.html file="_data/site-traffic.json" %}
+            Each day is counted from midnight to midnight UTC.
+        </small></p>
+
     </div>
 </div>
 {% if traffic.days.size > 0 %}

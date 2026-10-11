@@ -92,12 +92,6 @@
         </div>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ planning.source_url }}">{{ planning.source }}</a>{% if planning.licence %}, published under the {{ planning.licence }}{% endif %}.
-            Checked {{ planning.refresh }}.
-        </small></p>
-
-
         <h2>Understanding the References</h2>
 
         <p>An application reference beginning with a two-digit year (for example 26/00415/FUL) shows the year it was
@@ -123,6 +117,12 @@
         <ul>
             <li>Find the application on <a href="{{ planning.source_url }}">Cheltenham Borough Council's planning portal</a> using its reference, and comment there while it is still open for consultation. The council considers comments on planning grounds, such as design, traffic or overlooking.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ planning.source_url }}">{{ planning.source }}</a>{% if planning.licence %}, published under the {{ planning.licence }}{% endif %}.
+            {% include freshness.html file="_data/planning-applications.json" %}
+        </small></p>
 
     </div>
 </div>

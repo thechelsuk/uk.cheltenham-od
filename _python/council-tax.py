@@ -13,7 +13,6 @@ Leckhampton with Warden Hill, Prestbury, Swindon Village, Up Hatherley) —
 council tax elsewhere in the borough, including most of Cheltenham's
 ordinary electoral wards, is the "All other parts of Cheltenham" rate.
 """
-import json
 import os
 import re
 from datetime import datetime, timezone
@@ -22,6 +21,7 @@ import requests
 from bs4 import BeautifulSoup
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "council-tax.json")
@@ -86,8 +86,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(areas)} areas for {best_year_label} to {OUT}")
 

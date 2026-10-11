@@ -19,7 +19,6 @@
         </header>
         {% include sponsor.html %}
 
-
         {{ content }}
 
         {% if year_months and year_months.size > 0 %}
@@ -98,11 +97,6 @@
         <p>Crime data is not available yet.</p>
         {% endif %}
 
-        <p class="attribution"><small>
-            Data from <a href="{{ crime_data.source_url }}">{{ crime_data.source }}</a>{% if crime_data.licence %}, published under the {{ crime_data.licence }}{% endif %}.
-            {% if crime_data.generated_at %}Last updated {{ crime_data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Does the Crime Data Come From?</h3>
@@ -146,6 +140,12 @@
                 compares every part of Cheltenham by crimes per 1,000 residents over 12 months, which makes areas
                 of different sizes easier to compare.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ crime_data.source_url }}">{{ crime_data.source }}</a>{% if crime_data.licence %}, published under the {{ crime_data.licence }}{% endif %}.
+            {% include freshness.html file="_data/crime/index.json" %}
+        </small></p>
 
     </div>
 

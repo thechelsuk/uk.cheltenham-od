@@ -107,10 +107,6 @@
         {% endif %}
 
         {% assign src = site.data.sources | where: "id", "fsa-food-hygiene-ratings" | first %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-        </small></p>
-
 
         {% unless page.food_rating %}
         {% assign fs_five = site.data["food-standards"] | where: "rating", "5" %}
@@ -133,6 +129,11 @@
         </ul>
         {% endunless %}
 
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.
+            {% include freshness.html file="_data/food-standards.json" %}
+        </small></p>
     </div>
 
     {% include footer.html %}

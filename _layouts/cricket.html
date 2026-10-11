@@ -52,12 +52,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-                Data from <a href="{{ cricket.source_url }}">{{ cricket.source }}</a>.
-                {% if cricket.updated %}Last updated {{ cricket.updated | date: "%-d %B %Y" }}.{% endif %}
-                Always check the club's website for current fixtures, tickets and travel information.
-            </small></p>
-
         {% for g in cricket.grounds %}
         <h3>Getting to the {{ g.short_name }}</h3>
         <p>{{ g.role }}.
@@ -71,7 +65,6 @@
             {% endfor %}
         </ul>
         {% endfor %}
-
 
         <h2>Frequently Asked Questions</h2>
 
@@ -115,6 +108,14 @@
                 <a href="/cheltenham-car-parks">car parks</a> pages.
             </li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+                Data from <a href="{{ cricket.source_url }}">{{ cricket.source }}</a>.
+                {% include freshness.html file="_data/gloucestershire-cricket.json" %}
+                Always check the club's website for current fixtures, tickets and travel information.
+            </small></p>
+
     </div>
 </div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

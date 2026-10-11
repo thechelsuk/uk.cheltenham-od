@@ -8,7 +8,6 @@ eventslast.php at one fixture/result each, regardless of how many exist —
 there's no paid key configured, so we store whatever it returns rather than
 assuming a fixed count. The page links to the club's own fixtures page for
 the full list."""
-import json
 import os
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
@@ -16,6 +15,7 @@ from zoneinfo import ZoneInfo
 import requests
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT  = os.path.join(HERE, "..", "_data", "cheltenham-town-fc.json")
@@ -85,8 +85,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(output['next_fixtures'])} next fixture(s) and "
           f"{len(output['last_results'])} recent result(s) to {OUT}")

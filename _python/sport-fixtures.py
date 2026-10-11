@@ -18,7 +18,6 @@ bookkeeping to preserve across runs.
 """
 from __future__ import annotations
 
-import json
 import os
 import time
 from datetime import date, datetime, timedelta, timezone
@@ -26,6 +25,7 @@ from datetime import date, datetime, timedelta, timezone
 import requests
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "sport-fixtures.json")
@@ -221,8 +221,7 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
 
     print(f"Wrote {len(fixtures)} fixture(s) ({len(football)} football, "
           f"{len(rugby)} rugby, {len(cricket)} cricket) to {OUT}")

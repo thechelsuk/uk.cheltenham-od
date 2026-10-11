@@ -1,0 +1,17 @@
+{%- comment -%}
+"Last updated 12 October 2026, checked daily." for one _data file.
+  file: the data file's path, e.g. "_data/car-parks.json"
+The date is when the file last changed (_plugins/data_freshness.rb); how
+often it is checked is its schedule in _data/sources.json. Sources updated
+by hand have no "checked" part.
+{%- endcomment -%}
+{%- assign fresh_date = site.data.freshness[include.file] -%}
+{%- assign fresh_schedule = nil -%}
+{%- for source in site.data.sources -%}{%- for item in source.data -%}{%- if item.file == include.file -%}{%- assign fresh_schedule = item.schedule -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
+{%- case fresh_schedule -%}
+{%- when "every 5 minutes", "hourly", "every two hours", "daily", "weekly", "monthly" -%}{%- assign fresh_checked = fresh_schedule -%}
+{%- else -%}{%- assign fresh_checked = nil -%}
+{%- endcase -%}
+{%- if fresh_date -%}Last updated {{ fresh_date | date: "%-d %B %Y" }}{% if fresh_checked %}, checked {{ fresh_checked }}{% endif %}.
+{%- elsif fresh_checked -%}Checked {{ fresh_checked }}.
+{%- endif -%}

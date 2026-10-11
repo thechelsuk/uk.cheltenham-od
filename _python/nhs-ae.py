@@ -28,6 +28,7 @@ from urllib.parse import urljoin
 import requests
 
 import config
+import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "_data", "nhs-ae.json")
@@ -169,8 +170,7 @@ def main():
         "months": kept,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, output)
     print(f"Wrote {len(kept)} months ({kept[-1]['period']} to {kept[0]['period']}) to {OUT}")
 
 

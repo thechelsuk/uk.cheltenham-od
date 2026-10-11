@@ -43,12 +43,6 @@
                 </tbody>
             </table>
         </div>
-        <p>Last updated {{ inpost.updated }}</p>
-
-        <p class="attribution"><small>
-            Data from <a href="{{ inpost.source_url }}">{{ inpost.source }}</a>{% if inpost.licence %}, published under the {{ inpost.licence }}{% endif %}.
-            Checked {{ inpost.refresh }}.
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -80,6 +74,13 @@
                 <a href="/cheltenham-dpd-pickup-points">DPD Pickup points</a> page for local shops that accept DPD
                 drop-offs and collections.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ inpost.source_url }}">{{ inpost.source }}</a>{% if inpost.licence %}, published under the {{ inpost.licence }}{% endif %}.
+            {% include freshness.html file="_data/inpost-lockers.json" %}
+        </small></p>
+
     </div>
 </div>
 

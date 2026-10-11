@@ -41,12 +41,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ dentists.source_url }}">{{ dentists.source }}</a>{% if dentists.licence %}, published under the {{ dentists.licence }}{% endif %}.
-            {% if dentists.generated_at %}Last updated {{ dentists.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Locations from {{ dentists.geocoding_source }}. {{ dentists.geocoding_attribution }}
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Are These NHS Dentists?</h3>
@@ -95,6 +89,14 @@
                 is missing or wrong, the directory may be out of date; <a href="/contact">tell us</a> and we'll look into
                 it.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ dentists.source_url }}">{{ dentists.source }}</a>{% if dentists.licence %}, published under the {{ dentists.licence }}{% endif %}.
+            {% include freshness.html file="_data/dentists.json" %}
+            Locations from {{ dentists.geocoding_source }}. {{ dentists.geocoding_attribution }}
+        </small></p>
+
     </div>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

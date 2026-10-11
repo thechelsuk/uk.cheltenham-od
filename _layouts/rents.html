@@ -88,13 +88,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            This edition was released {{ data.edition | date: "%-d %B %Y" }}. Rents are not seasonally
-            adjusted and are rounded to the nearest pound.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Where Does the Rent Data Come From?</h3>
@@ -130,6 +123,15 @@
                 are, and the <a href="/cheltenham-house-prices/housing-supply">housing supply</a> page shows how much student
                 accommodation has been added or lost.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/rents.json" %}
+            This edition was released {{ data.edition | date: "%-d %B %Y" }}. Rents are not seasonally
+            adjusted and are rounded to the nearest pound.
+        </small></p>
+
     </div>
 </div>
 

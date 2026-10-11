@@ -51,13 +51,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
-            Some fields (fee, opening hours, capacity) may be incomplete or out of date, so check the
-            signage on arrival.
-        </small></p>
-
         {% assign cp_all = data.car_parks %}
         {% assign cp_pr = cp_all | where: "park_and_ride", true %}
         {% assign cp_fee = cp_all | where: "fee", true %}
@@ -79,6 +72,14 @@
         <ul>
             <li>Many do. {{ cp_fee.size }} of the {{ cp_all.size }} car parks here are recorded as charging and {{ cp_free.size }} as free; the rest don't say. Charges and opening hours change, so check the signs at the car park before you leave your car.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/car-parks.json" %}
+            Some fields (fee, opening hours, capacity) may be incomplete or out of date, so check the
+            signage on arrival.
+        </small></p>
 
     </div>
 </div>

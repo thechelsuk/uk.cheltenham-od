@@ -71,12 +71,6 @@
             </table>
         </div>
 
-        <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a> (zone streets, checked {{ data.checked | date: "%-d %B %Y" }}) and <a href="{{ data.geometry_source_url }}">{{ data.geometry_source }}</a> (street lines), published under the {{ data.geometry_licence }}.
-            Last updated {{ data.generated_at | date: "%-d %B %Y" }}.
-            The council's zone maps and the signs on the street are the authority on where a zone starts and ends.
-        </small></p>
-
         <h2>Frequently Asked Questions</h2>
 
         <h3>Which Permit Zone Is My Street In?</h3>
@@ -103,6 +97,14 @@
             <li>Zone 15 was introduced under an experimental traffic order, which lets the council test a scheme and review it before deciding whether to keep it.</li>
             <li>The council's <a href="https://www.gloucestershire.gov.uk/zone-15/">Zone 15 page</a> has the latest on the review.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a> (zone streets, checked {{ data.checked | date: "%-d %B %Y" }}) and <a href="{{ data.geometry_source_url }}">{{ data.geometry_source }}</a> (street lines), published under the {{ data.geometry_licence }}.
+            {% include freshness.html file="_data/permit-zones.json" %}
+            The council's zone maps and the signs on the street are the authority on where a zone starts and ends.
+        </small></p>
+
     </div>
 </div>
 

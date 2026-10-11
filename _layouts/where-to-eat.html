@@ -72,9 +72,6 @@
         </div>
 
         {% assign src = site.data.sources | where: "id", "fsa-food-hygiene-ratings" | first %}
-        <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}.{% if src.refresh %} Checked {{ src.refresh }}.{% endif %}
-        </small></p>
 
         <h2>Frequently Asked Questions</h2>
 
@@ -123,6 +120,12 @@
             <li>The ratings are refreshed every couple of hours from the Food Standards Agency, so a new rating appears soon
                 after the council publishes it.</li>
         </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/food-standards.json" %}
+        </small></p>
+
     </div>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

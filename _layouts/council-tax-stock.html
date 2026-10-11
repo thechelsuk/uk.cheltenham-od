@@ -37,13 +37,15 @@
             </table>
         </div>
 
+        <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from the Valuation Office Agency's <a href="{{ data.council_tax_stock.source_url }}">Council
             Tax: stock of properties</a> (Table CTSOP1.1), with the 1993-2024 series from the
             <a href="{{ data.council_tax_stock.history_source_url }}">2024 release</a>, published under the
             {{ data.licence }}.
-            {% if data.generated_at %}Last updated {{ data.generated_at | date: "%-d %B %Y" }}.{% endif %}
+            {% include freshness.html file="_data/housing-supply.json" %}
         </small></p>
+
     </div>
 </div>
 

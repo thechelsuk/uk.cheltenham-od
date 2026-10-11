@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Fetch a 10-day daily forecast from OpenWeather One Call 4.0 (1-day timeline),
 write normalized JSON to _data/weather.json."""
-import json
 import os
 import sys
 from datetime import datetime, time, timezone
@@ -115,8 +114,7 @@ def main():
     records, offset = fetch_timeline(DAYS)
     data = normalize(records, offset)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    helper.write_json(OUT, data)
     print(f"Wrote {len(data['days'])} days to {OUT}")
 
 
