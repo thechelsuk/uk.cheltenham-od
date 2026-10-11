@@ -1,0 +1,10 @@
+{%- comment -%}
+The credit for a list Cheltenham Open Data compiles itself, inside the
+About This Data paragraph:
+"Data © Cheltenham Open Data. Last updated 11 October 2026, checked monthly.
+Send us additions or corrections."
+  file: the data file's path, e.g. "_data/clubs.json"
+  note: optional caveat to follow it
+{%- endcomment -%}
+Data &copy; Cheltenham Open Data. {% include freshness.html file=include.file %}
+<a href="/contact">Send us additions or corrections</a>.{% if include.note %} {{ include.note }}{% endif %}

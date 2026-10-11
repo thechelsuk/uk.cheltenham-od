@@ -89,8 +89,7 @@
 
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Dates from each festival's organiser, compiled by <a href="{{ data.source_url }}">{{ data.source }}</a>.
-            {% include freshness.html file="_data/festivals.json" %} Dates can change, so check the festival's own site before booking.
+            {% include own-data-credit.html file="_data/festivals.json" note="Dates can change, so check the festival's own site before booking." %}
         </small></p>
     </div>
 </div>

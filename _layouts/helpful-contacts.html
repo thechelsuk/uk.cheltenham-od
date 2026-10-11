@@ -118,10 +118,7 @@
         </ul>
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ contacts.source_url }}">{{ contacts.source }}</a>, with every number checked against the
-            provider's own site.
-            {% include freshness.html file="_data/helpful-contacts.json" %}
-            Services can change their numbers and hours, so check the provider's site if a call doesn't connect.
+            {% include own-data-credit.html file="_data/helpful-contacts.json" note="Services can change their numbers and hours, so check the provider's site if a call doesn't connect." %}
         </small></p>
 
         {% endif %}
@@ -155,8 +152,7 @@
 
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ support.source_url }}">{{ support.source }}</a>.
-            {% include freshness.html file="_data/local-support.json" %}
+            {% include own-data-credit.html file="_data/local-support.json" %}
         </small></p>
         {% endif %}
     </div>
