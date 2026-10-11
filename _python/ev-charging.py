@@ -4,7 +4,7 @@ Fetch public EV charging locations around Cheltenham from Open Charge Map
 and write them to _data/ev-charging.json (sibling of the _python folder).
 
 Run locally:      OCM_API_KEY=your_key python _python/ev-charging.py
-GitHub Actions:   schedule-daily.yml passes the OCM_API_KEY repo secret to this step.
+GitHub Actions:   refresh-4-times-daily.yml passes the OCM_API_KEY repo secret to this step.
 
 Data © Open Charge Map contributors, licensed CC-BY-SA 4.0.
 """

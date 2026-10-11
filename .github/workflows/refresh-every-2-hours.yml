@@ -1,5 +1,5 @@
 ---
-name: Scheduled Hourly
+name: Refresh Every 2 Hours
 on:
     workflow_dispatch:
     schedule:
@@ -57,11 +57,7 @@ jobs:
                   python -m pip install -r _python/requirements.txt
 
             - name: Processing Python Scripts
-              env:
-                  OPEN_WEATHER_KEY: ${{ secrets.OPEN_WEATHER_KEY }}
               run: |-
-                  python '_python/forecast.py' || echo "::warning::forecast.py failed, continuing with other scripts"
-                  python '_python/weather.py' || echo "::warning::weather.py failed, continuing with other scripts"
                   python '_python/news.py' || echo "::warning::news.py failed, continuing with other scripts"
                   python '_python/land_registry.py' || echo "::warning::land_registry.py failed, continuing with other scripts"
                   python '_python/house_summary.py' || echo "::warning::house_summary.py failed, continuing with other scripts"

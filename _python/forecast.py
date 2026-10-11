@@ -104,7 +104,7 @@ def normalize(records, offset):
         "updated":  datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source":   "OpenWeather",
         "source_url": "https://openweathermap.org/",
-        "refresh":  "every two hours",
+        "refresh":  "four times a day",
         "days":     days,
     }
 
