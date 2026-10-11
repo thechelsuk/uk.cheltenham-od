@@ -46,6 +46,8 @@ Anyone submitting a classified advert is responsible for the accuracy and legali
 
 Some links on the site are affiliate links, which may earn us a small commission if you make a purchase, at no extra cost to you. This never affects our editorial content or the data we publish. See the [Privacy Policy](/privacy) for how the referral tags work.
 
+The UK's Competition and Markets Authority (CMA) and the Advertising Standards Authority (ASA) require websites to be open about commercial relationships. That's why you'll see `affiliate link` disclosures clearly marked.
+
 ### 7. Sponsorship
 
 Sponsored placements are clearly labelled and never influence the data or editorial content of the site. Sponsorship is governed by separate [Sponsorship Terms](/sponsor/terms).
