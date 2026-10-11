@@ -236,9 +236,12 @@ def summarise(homes):
     scores = [h["score"] for h in homes if h.get("score") is not None]
     potential = [h for h in homes if h.get("potential_band")]
     below_c = sum(1 for h in homes if h.get("band") in "DEFG")
+    below_c_rated = [h for h in homes if h.get("band") in "DEFG" and h.get("potential_band")]
+    below_c_could = sum(1 for h in below_c_rated if h["potential_band"] in "ABC")
     return {
         "homes": len(homes),
         "homes_display": f"{len(homes):,}",
+        "counts": {band: sum(1 for h in homes if h.get("band") == band) for band in epc.BANDS},
         "median_score": round(statistics.median(scores)) if scores else None,
         "mean_score": round(statistics.mean(scores), 1) if scores else None,
         "c_plus_pct": round(100 * (len(homes) - below_c) / len(homes), 1) if homes else None,
@@ -246,6 +249,9 @@ def summarise(homes):
         "below_c_display": f"{below_c:,}",
         "potential_c_plus_pct": round(100 * sum(h["potential_band"] in "ABC" for h in potential) / len(potential), 1)
         if potential else None,
+        "below_c_could_reach_c": below_c_could,
+        "below_c_could_reach_c_display": f"{below_c_could:,}",
+        "below_c_could_reach_c_pct": round(100 * below_c_could / len(below_c_rated), 1) if below_c_rated else None,
     }
 
 
@@ -310,6 +316,7 @@ def main():
         "lsoa": by_area(with_details, "lsoa"),
         "by_home_type": group(with_details, lambda h: home_type(h, labels)),
         "by_tenure": group(with_details, lambda h: tenure(h, labels)),
+        "private_rented_by_ward": by_area([h for h in with_details if tenure(h, labels) == "Private rented"], "ward"),
         "tenure_unknown_display": f"{sum(1 for h in with_details if not tenure(h, labels)):,}",
         "by_heating": group(with_details, heating),
     })

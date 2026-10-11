@@ -64,3 +64,5 @@ def test_summary_of_a_group_of_homes():
     assert summary["homes"] == 4 and summary["median_score"] == 66
     assert summary["c_plus_pct"] == 50.0 and summary["below_c"] == 2
     assert summary["potential_c_plus_pct"] == 75.0
+    assert summary["counts"]["C"] == 1 and summary["counts"]["G"] == 0
+    assert summary["below_c_could_reach_c"] == 1 and summary["below_c_could_reach_c_pct"] == 50.0

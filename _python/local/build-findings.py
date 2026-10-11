@@ -643,6 +643,43 @@ def food_hygiene() -> None:
     )
 
 
+def private_rented_epc() -> None:
+    """Privately rented homes below EPC C, by ward."""
+    scores = load("epc-scores.json")
+    names = {w["code"]: w["name"] for w in load("wards/index.json")["wards"]}
+    wards = sorted(
+        scores["private_rented_by_ward"].items(),
+        key=lambda item: -item[1]["below_c"],
+    )
+    rows = [
+        {
+            "ward": names[code],
+            "private_rented_homes": w["homes"],
+            "below_c": w["below_c"],
+            "below_c_pct": round(100 * w["below_c"] / w["homes"], 1),
+            "below_c_could_reach_c": w["below_c_could_reach_c"],
+        }
+        for code, w in wards
+    ]
+    write_csv("cheltenham-private-rented-epc", rows)
+    top = {r["ward"] for r in rows[:5]}
+    marks, height = hbars(
+        [(r["ward"], float(r["below_c"]), "s1" if r["ward"] in top else "mute") for r in rows],
+        lambda v: f"{v:,.0f}",
+        label_w=290,
+    )
+    frame(
+        "cheltenham-private-rented-epc",
+        height,
+        (
+            "Privately rented homes rated below EPC C, by ward",
+            "Homes whose latest certificate records them as privately rented, rated D to G",
+            "Source: Energy Performance of Buildings Register, MHCLG (OGL v3.0)",
+        ),
+        marks,
+    )
+
+
 # One entry per chart, keyed by the slug its files are written under. A new
 # analysis post adds a builder above and one line here.
 BUILDERS: dict[str, Callable[[], None]] = {
@@ -655,6 +692,7 @@ BUILDERS: dict[str, Callable[[], None]] = {
     "gloucestershire-ae-12-hour-waits": ae_waits,
     "cheltenham-housing-supply-slowdown": housing_supply,
     "cheltenham-rent-share-of-pay": rents_vs_pay,
+    "cheltenham-private-rented-epc": private_rented_epc,
 }
 
 
