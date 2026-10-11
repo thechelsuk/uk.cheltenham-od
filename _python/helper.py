@@ -104,6 +104,24 @@ def update_history(history_records, current_items, id_key, now_iso, peak_fields=
     return kept
 
 
+def record_seen(records, items, fields, today, keep_days=365):
+    """A lighter history log than update_history, for feeds that list many
+    long-running items (street works, roadworks). Each item, keyed by its
+    "id", keeps only `fields` plus the dates it was first and last seen
+    (YYYY-MM-DD `today`), so the file changes at most once a day rather than
+    on every run. Items no longer in the feed stay until `keep_days` after
+    they were last seen. Returns newest first."""
+    by_id = {r["id"]: r for r in records}
+    for item in items:
+        record = by_id.setdefault(item["id"], {"id": item["id"], "first_seen": today})
+        first_seen = record["first_seen"]
+        record.update({f: item.get(f) for f in fields})
+        record["first_seen"], record["last_seen"] = first_seen, today
+    cutoff = (datetime.fromisoformat(today) - timedelta(days=keep_days)).date().isoformat()
+    kept = [r for r in by_id.values() if r["last_seen"] >= cutoff]
+    return sorted(kept, key=lambda r: (r["first_seen"], r["id"]), reverse=True)
+
+
 DEFAULT_ACRONYMS = {"UK"}
 
 

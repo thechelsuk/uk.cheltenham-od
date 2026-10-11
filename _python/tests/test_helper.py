@@ -270,3 +270,17 @@ def test_ward_for_names_the_ward_containing_a_point():
              {"name": "Elsewhere", "slug": "elsewhere", "boundary": [[0, 0], [0, 1], [1, 1], [0, 0]]}]
     assert helper.ward_for(51.5, -1.5, wards) == {"name": "Square", "slug": "square"}
     assert helper.ward_for(53.0, -1.5, wards) is None
+
+
+def test_record_seen_keeps_first_and_last_seen_dates():
+    records = helper.record_seen([], [{"id": "A", "street": "High St", "lat": 51.9}], ["street"], "2026-10-11")
+    assert records == [{"id": "A", "street": "High St", "first_seen": "2026-10-11", "last_seen": "2026-10-11"}]
+    records = helper.record_seen(records, [{"id": "A", "street": "High Street"}], ["street"], "2026-10-12")
+    assert records == [{"id": "A", "street": "High Street", "first_seen": "2026-10-11", "last_seen": "2026-10-12"}]
+
+
+def test_record_seen_keeps_items_that_have_gone_and_drops_old_ones():
+    old = {"id": "OLD", "first_seen": "2025-01-01", "last_seen": "2025-01-05"}
+    gone = {"id": "GONE", "first_seen": "2026-09-01", "last_seen": "2026-09-03"}
+    records = helper.record_seen([old, gone], [{"id": "NEW"}], [], "2026-10-11", keep_days=365)
+    assert [r["id"] for r in records] == ["NEW", "GONE"]
