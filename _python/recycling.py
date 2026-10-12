@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Scrapes the Cheltenham Borough Council recycling banks page and rewrites
-the content between the recycling_banks placeholder markers in
-_pages/home-property/recycling.md.
+Scrapes the Cheltenham Borough Council recycling banks page and writes the
+banks and the materials each takes to _data/recycling.json, rendered by
+_layouts/home-property/recycling.html.
 
 Run from the repo root:
     python _python/recycling.py
@@ -11,6 +11,8 @@ Requires: requests, beautifulsoup4
 """
 import re
 import sys
+from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
@@ -20,10 +22,10 @@ import config
 import helper
 
 URL = "https://www.cheltenham.gov.uk/recyclingbanks"
-OUTPUT_PATH = Path("_pages/home-property/recycling.md")
-MARKER = "recycling_banks"
-
-
+OUTPUT_PATH = Path(__file__).resolve().parent.parent / "_data" / "recycling.json"
+SOURCE_NAME = "Cheltenham Borough Council"
+# The council's page states no licence, so the JSON carries none; see
+# _data/sources.json for the note.
 
 def fetch_page(url: str) -> str:
     response = requests.get(url, headers=config.HEADERS, timeout=30)
@@ -86,6 +88,7 @@ def parse_banks(html: str) -> list[dict]:
 
     return banks
 
+
 def title_case_address(text):
     return " ".join(
         word if re.match(r'^[A-Z0-9]+$', word) else word.capitalize()
@@ -119,14 +122,26 @@ def smart_title(text: str) -> str:
     return " ".join(out)
 
 
-def to_markdown(banks: list[dict]) -> str:
-    lines = []
-    for bank in banks:
-        lines.append(f"### {smart_title(bank['name'])}")
-        lines.append("")
-        lines.append(f"- {', '.join(bank['materials'])}")
-        lines.append("")
-    return "\n".join(lines).rstrip() + "\n"
+def postcode_in(text: str) -> str:
+    m = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?)\s*(\d[A-Z]{2})\b", text.upper())
+    return f"{m.group(1)} {m.group(2)}" if m else ""
+
+
+def build_payload(banks: list[dict], generated_at: str) -> dict:
+    """The banks in the council's order, each with its postcode, plus how
+    many sites take each material (most widely accepted first)."""
+    counts = Counter(m for bank in banks for m in bank["materials"])
+    return {
+        "generated_at": generated_at,
+        "source": SOURCE_NAME,
+        "source_url": URL,
+        "bank_count": len(banks),
+        "materials": [{"material": m, "sites": n} for m, n in counts.most_common()],
+        "banks": [
+            {"name": smart_title(bank["name"]), "postcode": postcode_in(bank["name"]), "materials": bank["materials"]}
+            for bank in banks
+        ],
+    }
 
 
 def main() -> int:
@@ -137,17 +152,10 @@ def main() -> int:
         print(f"Failed to fetch or parse recycling banks: {exc}", file=sys.stderr)
         return 1
 
-    markdown = to_markdown(banks)
+    payload = build_payload(banks, datetime.now(timezone.utc).isoformat())
+    helper.write_json(OUTPUT_PATH, payload)
 
-    if not OUTPUT_PATH.exists():
-        print(f"Output file not found: {OUTPUT_PATH}", file=sys.stderr)
-        return 1
-
-    content = OUTPUT_PATH.read_text(encoding="utf-8")
-    updated = helper.replace_chunk(content, MARKER, markdown)
-    OUTPUT_PATH.write_text(updated, encoding="utf-8")
-
-    print(f"Updated {OUTPUT_PATH} with {len(banks)} recycling bank locations")
+    print(f"Wrote {len(banks)} recycling bank locations to {OUTPUT_PATH}")
     return 0
 
 
