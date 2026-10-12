@@ -6,6 +6,11 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_live = 0 %}{% assign h_off = 0 %}{% for i in data.incidents %}{% if i.status != "Restored" %}{% assign h_n = i.confirmed_off | plus: i.predicted_off %}{% if h_n > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus: h_n %}{% endif %}{% endif %}{% endfor %}
+            <ul class="header-facts">
+                <li><strong>{{ h_live }}</strong> power cut{% if h_live != 1 %}s{% endif %} now</li>
+                <li><strong>{{ h_off }}</strong> propert{% if h_off == 1 %}y{% else %}ies{% endif %} without power</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
             </ul>

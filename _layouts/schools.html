@@ -6,6 +6,14 @@
             {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
+            {% assign h_s = site.data.schools %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_s | size }}</strong> schools</li>
+                <li><strong>{{ h_s | where: "phase", "Primary" | size }}</strong> primary</li>
+                <li><strong>{{ h_s | where: "phase", "Secondary" | size }}</strong> secondary</li>
+                <li><strong>{{ h_s | where: "phase", "Not applicable" | size }}</strong> special, independent and other</li>
+            </ul>
         </header>
         {% include section-links.html %}
         {% include sponsor.html %}

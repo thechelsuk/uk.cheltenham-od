@@ -7,6 +7,8 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
+                {% assign h_area = data.areas | where: "is_parish", false | first %}{% assign h_d = h_area.bands | where: "band", "D" | first %}
+                <li><strong>£{% assign h_total = h_d.amount | round %}{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> Band D outside the parishes</li>
                 <li><strong>{{ data.tax_year }}</strong> tax year</li>
             </ul>
             <ul class="header-links">

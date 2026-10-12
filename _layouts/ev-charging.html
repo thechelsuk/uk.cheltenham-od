@@ -6,6 +6,14 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_ev = site.data["ev-charging"].summary %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_ev.total_locations }}</strong> charging locations</li>
+                <li><strong>{{ h_ev.total_connectors }}</strong> connectors</li>
+                <li><strong>{{ h_ev.operators }}</strong> operators</li>
+                <li><strong>{{ h_ev.max_power_kw }} kW</strong> fastest charger</li>
+            </ul>
             <ul class="header-links">
                 {% if page.feed_url %}
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>

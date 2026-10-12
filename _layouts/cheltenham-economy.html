@@ -7,9 +7,9 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
-                <li><strong>{{ economy.jobs.year }}</strong> jobs figures</li>
-                <li><strong>{{ economy.businesses.year }}</strong> business figures</li>
-                <li><strong>{{ economy.claimants.period_name }}</strong> claimant figures</li>
+                <li><strong>{{ economy.jobs.total_display }}</strong> jobs in {{ economy.jobs.year }}</li>
+                <li><strong>{{ economy.businesses.total_display }}</strong> businesses</li>
+                <li><strong>{{ economy.claimants.rate_display }}</strong> claimant rate (England {{ economy.claimants.england_rate_display }})</li>
             </ul>
         </header>
         {% include section-links.html %}

@@ -7,17 +7,13 @@ permalink: /sitemap.xml
   <url>
     <loc>{{ site.url }}</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
   </url>
-  <!-- pages-->
+  <!-- pages: lastmod is when the page or the data it shows last changed (_plugins/data_freshness.rb) -->
   {% for page in site.html_pages %}
   {% unless page.url == "/" or page.robots contains "noindex" %}
   <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <loc>{{ site.url }}{{ page.url }}</loc>{% if page.sitemap_lastmod %}
+    <lastmod>{{ page.sitemap_lastmod | date_to_xmlschema }}</lastmod>{% endif %}
   </url>
   {% endunless %}
   {% endfor %}
@@ -26,9 +22,7 @@ permalink: /sitemap.xml
   {% for post in posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
   </url>
   {% endfor %}
      <!-- posts-->
@@ -36,9 +30,7 @@ permalink: /sitemap.xml
   {% for post in posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
   </url>
   {% endfor %}
      <!-- newsletters-->

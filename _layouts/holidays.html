@@ -6,6 +6,11 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_today = "now" | date: "%s" %}{% assign h_next = nil %}{% for e in site.data.holidays["england-and-wales"].events %}{% assign h_d = e.date | date: "%s" %}{% if h_next == nil and h_d >= h_today %}{% assign h_next = e %}{% endif %}{% endfor %}
+
+            <ul class="header-facts">
+                {% if h_next %}<li><strong>{{ h_next.title }}</strong> next public holiday, {{ h_next.date | date: "%Y-%m-%d" }}</li>{% endif %}
+            </ul>
             <ul class="header-links">
                 {% if page.feed_url %}
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>

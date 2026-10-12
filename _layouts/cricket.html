@@ -6,6 +6,9 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ cricket.grounds | size }}</strong> home grounds</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official Club Website &rarr;</a></li>
             </ul>

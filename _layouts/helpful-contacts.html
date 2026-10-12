@@ -11,6 +11,12 @@
             {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
+            {% assign h_n = 0 %}{% if page.listing == "contacts" %}{% assign h_src = site.data["helpful-contacts"] %}{% for c in h_src.categories %}{% assign h_n = h_n | plus: c.contacts.size %}{% endfor %}{% else %}{% assign h_src = site.data["local-support"] %}{% for c in h_src.categories %}{% assign h_n = h_n | plus: c.items.size %}{% endfor %}{% endif %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_n }}</strong> {% if page.listing == "contacts" %}helplines and contacts{% else %}local organisations{% endif %}</li>
+                <li><strong>{{ h_src.categories | size }}</strong> categories</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

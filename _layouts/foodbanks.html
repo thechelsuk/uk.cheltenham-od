@@ -6,6 +6,11 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.summary.foodbank_count }}</strong> food banks within {{ data.radius_miles }} miles</li>
+                <li><strong>{{ data.summary.donation_point_count }}</strong> donation points</li>
+                <li><strong>{{ data.summary.latest_change.found_iso | date: "%Y-%m-%d" }}</strong> latest list change</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

@@ -6,10 +6,15 @@
             {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-
             {% assign crime_data = site.data.crime.index %}
             {% assign crime_year = page.crime_year | default: crime_data.years.first %}
             {% assign year_months = crime_data.months | where_exp: "month", "month.month contains crime_year" %}
+            {% if page.crime_year %}{% assign h_total = 0 %}{% for m in year_months %}{% for n in m.neighbourhoods %}{% assign h_total = h_total | plus: n.crime_count %}{% endfor %}{% endfor %}{% else %}{% assign h_window = site.data["crime-map"].windows | sort: "last_month" | last %}{% assign h_month = crime_data.months | where: "month", h_window.last_month | first %}{% unless h_month %}{% assign h_month = crime_data.months | sort: "month" | last %}{% endunless %}{% assign h_total = 0 %}{% for n in h_month.neighbourhoods %}{% assign h_total = h_total | plus: n.crime_count %}{% endfor %}{% endif %}
+
+            <ul class="header-facts">
+                {% if page.crime_year %}<li><strong>{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> crimes recorded in {{ crime_year }}</li><li><strong>{{ year_months | size }}</strong> months of figures</li>{% else %}<li><strong>{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> crimes in {{ h_month.month | append: "-01" | date: "%B %Y" }}</li><li><strong>{{ h_month.neighbourhoods | size }}</strong> neighbourhoods</li>{% endif %}
+            </ul>
+
         </header>
         {% include section-links.html %}
         {% include sponsor.html %}

@@ -8,7 +8,10 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
-                <li><strong>{{ history.tracking_since }}</strong> spills logged since</li>
+                {% assign h_hours = 0 %}{% for s in history.spills %}{% assign h_hours = h_hours | plus: s.hours %}{% endfor %}
+                <li><strong>{{ history.spills | size }}</strong> spills logged</li>
+                <li><strong>{{ h_hours | round }}</strong> hours discharging</li>
+                <li><strong>{{ history.by_watercourse | size }}</strong> watercourses</li>
             </ul>
         </header>
         {% include section-links.html %}

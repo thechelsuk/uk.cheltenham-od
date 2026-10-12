@@ -6,6 +6,14 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_l = site.data["listed-buildings"] %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_l.buildings_display }}</strong> listed buildings</li>
+                <li><strong>{{ h_l.grade_counts_display.I }}</strong> Grade I</li>
+                <li><strong>{{ h_l.scheduled_monuments | size }}</strong> scheduled monuments</li>
+                <li><strong>{{ h_l.parks_and_gardens | size }}</strong> registered parks and gardens</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

@@ -6,6 +6,10 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ opticians.opticians | size }}</strong> opticians</li>
+                <li><strong>{{ opticians.districts | size }}</strong> postcode districts</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="https://www.nhs.uk/service-search/find-an-NHS-sight-test/location">NHS Find an NHS sight test &rarr;</a></li>
             </ul>

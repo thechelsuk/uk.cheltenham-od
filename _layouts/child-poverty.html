@@ -7,8 +7,10 @@
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
             <ul class="header-facts">
-                <li><strong>{{ kids.age_range }}</strong> children's ages covered</li>
-                <li><strong>{{ kids.geography }}</strong> area</li>
+                {% assign h_s = kids.series | where: "key", "relative_ahc" | first %}
+                <li><strong>{{ h_s.summary.highest.percentage_display }}</strong> of children in low-income families in {{ h_s.summary.highest.ward }}, the highest</li>
+                <li><strong>{{ h_s.summary.lowest.percentage_display }}</strong> in {{ h_s.summary.lowest.ward }}, the lowest</li>
+                <li><strong>{{ h_s.latest_year }}</strong> latest figures, after housing costs</li>
             </ul>
         </header>
         {% include section-links.html %}

@@ -7,6 +7,10 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ venues | size }}</strong> places on the map</li>
+                <li><strong>{{ venues | where: "rating", "5" | size }}</strong> rated five stars</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

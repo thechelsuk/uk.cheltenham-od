@@ -7,6 +7,9 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
+                {% assign h_u = fuel.headline | where: "label", "Unleaded" | first %}{% assign h_dsl = fuel.headline | where: "label", "Diesel" | first %}
+                <li><strong>{{ h_u.price }}p</strong> cheapest unleaded</li>
+                <li><strong>{{ h_dsl.price }}p</strong> cheapest diesel</li>
                 <li><strong>{{ fuel.stations | size }}</strong> forecourts within {{ fuel.radius_miles }} miles</li>
             </ul>
         </header>

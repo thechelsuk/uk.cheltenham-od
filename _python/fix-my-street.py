@@ -156,6 +156,7 @@ if __name__ == "__main__":
     }))
     helper.write_json(history_path, payload(now, {
         "count": len(records),
+        "count_display": f"{len(records):,}",
         "groups": group_counts(records),
         "by_month": month_counts(records),
         "records": records,

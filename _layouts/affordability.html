@@ -6,6 +6,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_a = site.data["cheltenham-affordability"].years | last %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_a.share_display }}</strong> of {{ h_a.year }} sales affordable on a typical wage</li>
+                <li><strong>{{ h_a.pay_display }}</strong> typical full-time pay</li>
+                <li><strong>{{ h_a.median_price_display }}</strong> median price</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

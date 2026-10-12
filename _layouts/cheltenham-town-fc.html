@@ -6,6 +6,12 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_next = ctfc.next_fixtures.first %}{% assign h_last = ctfc.last_results.first %}
+
+            <ul class="header-facts">
+                {% if h_next %}<li><strong>{{ h_next.date | date: "%Y-%m-%d" }}</strong> next: {{ h_next.opponent }} ({{ h_next.venue_type | slice: 0 }})</li>{% endif %}
+                {% if h_last %}<li><strong>{{ h_last.home_score }}–{{ h_last.away_score }}</strong> last: {% if h_last.venue_type == "Home" %}v{% else %}at{% endif %} {{ h_last.opponent }}</li>{% endif %}
+            </ul>
             <ul class="header-links">
                 {% if ctfc.team.website %}
                 <li><a href="{{ ctfc.team.website }}" target="_blank" rel="noopener">Official Club Website &rarr;</a></li>

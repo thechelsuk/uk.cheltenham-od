@@ -8,6 +8,14 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_w = site.data["ward-politics"] %}{% assign h_e = h_w.election_summaries | sort: "date" | last %}{% assign h_p = h_w.council.parties | sort: "seats" | last %}{% assign h_v = h_e.parties | where: "party", h_p.party | first %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_w.council.total }}</strong> councillors</li>
+                <li><strong>{{ h_p.seats }}</strong> {{ h_p.party }} seats on the council</li>
+                <li><strong>{{ h_v.share }}%</strong> {{ h_p.party }} vote share in {{ h_e.date | slice: 0, 4 }}</li>
+                <li><strong>{{ h_e.turnout_pct }}%</strong> turnout</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

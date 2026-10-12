@@ -6,6 +6,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_latest = history.records | sort: "date_of_reported_fault" | last %}{% assign h_biggest = 0 %}{% for r in history.records %}{% assign h_n = r.confirmed_off %}{% if h_n > h_biggest %}{% assign h_biggest = h_n %}{% endif %}{% endfor %}
+
+            <ul class="header-facts">
+                <li><strong>{{ history.count }}</strong> power cuts logged</li>
+                <li><strong>{% if h_latest %}{{ h_latest.date_of_reported_fault | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
+                <li><strong>{{ h_biggest }}</strong> properties off at the peak of the largest</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
             </ul>

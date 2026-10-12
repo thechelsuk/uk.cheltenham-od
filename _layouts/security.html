@@ -9,6 +9,11 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.level_title }}</strong> UK threat level</li>
+                <li><strong>{{ data.published_iso | date: "%Y-%m-%d" }}</strong> level set</li>
+                <li><strong>{{ history.count }}</strong> changes logged</li>
+            </ul>
             <ul class="header-links">
                 {% if page.feed_url %}
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>

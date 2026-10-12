@@ -6,6 +6,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_d = site.data.weather.days.first %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_d.max | round }}°C / {{ h_d.min | round }}°C</strong> today's high and low</li>
+                <li><strong>{{ h_d.pop | times: 100 | round }}%</strong> chance of rain</li>
+                <li><strong>{{ h_d.daylight_str }}</strong> daylight</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

@@ -82,17 +82,23 @@ def build_incident(row):
 
 
 def build_alert_html(incidents):
-    active = [i for i in incidents if i["status"] not in ("Restored",) and i["restored"] == 0]
+    # A cut is live while any properties are still off, even if others on
+    # the same fault have already been restored.
+    active = [
+        i for i in incidents
+        if i["status"] != "Restored" and (i["confirmed_off"] or i["predicted_off"])
+    ]
     if not active:
         return ""
 
-    now_str = datetime.datetime.now().strftime("%H:%M")
     items = ""
     for incident in active[:5]:
         area = incident["postcodes"][0] if incident["postcodes"] else "Cheltenham"
+        reported = incident["date_of_reported_fault"].replace("T", " ")[:16]
+        when = f", reported {reported}" if reported else ""
         items += (
             f'  <li><a href="/cheltenham-power-cuts">'
-            f'Power cut reported near {area} at {now_str}</a></li>\n'
+            f'Power cut near {area}{when}</a></li>\n'
         )
     return (
         "<h2>Power Cut Alert</h2>\n"

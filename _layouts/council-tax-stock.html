@@ -6,6 +6,11 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_c = site.data["housing-supply"].council_tax_stock.years | last %}{% assign h_total = h_c.all_properties %}
+
+            <ul class="header-facts">
+                <li><strong>{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> homes on the council tax list in {{ h_c.year }}</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

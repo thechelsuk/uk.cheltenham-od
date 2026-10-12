@@ -6,6 +6,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_now = sewage.overflows | where: "discharging", true %}{% assign h_latest = sewage.overflows | sort: "latest_event_start" | last %}
+
+            <ul class="header-facts">
+                <li><strong>{{ sewage.overflows | size }}</strong> overflows within {{ sewage.radius_miles }} miles</li>
+                <li><strong>{{ h_now | size }}</strong> spilling now</li>
+                <li><strong>{% if h_latest.latest_event_start %}{{ h_latest.latest_event_start | slice: 0, 10 }}{% else %}None yet{% endif %}</strong> most recent spill</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

@@ -5,6 +5,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_stations = site.data["river-levels"].stations %}
+
+            <ul class="header-facts">
+                <li><strong>{{ site.data.flood.items | size }}</strong> flood warnings in force</li>
+                <li><strong>{{ h_stations | where: "kind", "level" | size }}</strong> river level gauges</li>
+                <li><strong>{{ h_stations | where: "kind", "rainfall" | size }}</strong> rain gauges</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="/feeds/flood.xml">Flood Alert Feed &rarr;</a></li>
             </ul>

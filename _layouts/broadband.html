@@ -8,7 +8,7 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
-                <li><strong>{{ summary.unit_total }}</strong> postcodes</li>
+                <li><strong>{% assign h_total = summary.unit_total %}{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> postcodes</li>
                 <li><strong>{{ summary.outcodes | size }}</strong> postcode districts</li>
                 <li><strong>{{ summary.ward_total }}</strong> wards mapped</li>
             </ul>

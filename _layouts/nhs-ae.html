@@ -9,7 +9,9 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
-                <li><strong>{{ ae.months | size }}</strong> months of figures</li>
+                <li><strong>{{ latest.within_4hrs_display }}</strong> seen within four hours in {{ latest.period | append: "-01" | date: "%B %Y" }}</li>
+                <li><strong>{{ latest.attendances_display }}</strong> A&amp;E attendances</li>
+                <li><strong>{{ latest.dta_12hrs_display }}</strong> waited 12 hours or more for a bed</li>
             </ul>
         </header>
         {% include section-links.html %}

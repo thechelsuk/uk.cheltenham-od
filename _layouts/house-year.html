@@ -6,6 +6,11 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_y = site.data["house-summary"].by_year | where: "year", page.pyear | first %}
+
+            <ul class="header-facts">
+                {% if h_y %}<li><strong>{{ h_y.count_display }}</strong> sales in {{ h_y.period_label }}</li><li><strong>{{ h_y.median_display }}</strong> median price</li><li><strong>{{ h_y.mean_display }}</strong> average price</li>{% endif %}
+            </ul>
         </header>
         {% include section-links.html %}
 

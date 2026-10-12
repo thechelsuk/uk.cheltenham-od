@@ -7,8 +7,9 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
+                <li><strong>{{ earnings.latest.resident_display }}</strong> median full-time pay in {{ earnings.latest.year }}</li>
+                <li><strong>{{ earnings.latest.rows.first.vs_england_display }}</strong> on England</li>
                 <li><strong>{{ earnings.series | size }}</strong> years of data</li>
-                <li><strong>{{ earnings.first_year }} to {{ earnings.latest_year }}</strong> years covered</li>
             </ul>
         </header>
         {% include section-links.html %}

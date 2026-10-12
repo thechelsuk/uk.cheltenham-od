@@ -7,6 +7,9 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
+                {% assign h_e = employment.series | sort: "year" | last %}
+                <li><strong>{{ h_e.employment_rate }}%</strong> employment rate in {{ h_e.year }}</li>
+                <li><strong>{{ h_e.economic_activity_rate }}%</strong> economically active</li>
                 <li><strong>{{ employment.series | size }}</strong> years of data</li>
             </ul>
         </header>

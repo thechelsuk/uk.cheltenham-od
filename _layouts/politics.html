@@ -8,6 +8,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_mp = site.data.politics.current_mp %}{% assign h_e = site.data.politics.elections | sort: "date" | last %}
+
+            <ul class="header-facts">
+                <li><strong>{{ h_mp.name }}</strong> MP, {{ h_mp.party }}</li>
+                <li><strong>{{ h_e.majority_display }}</strong> majority in {{ h_e.date | slice: 0, 4 }}</li>
+                <li><strong>{{ h_e.turnout_display }}</strong> turnout</li>
+            </ul>
         </header>
         {% include section-links.html %}
 

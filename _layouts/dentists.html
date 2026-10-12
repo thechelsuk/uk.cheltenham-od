@@ -6,6 +6,10 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ dentists.practices | size }}</strong> dental practices</li>
+                <li><strong>{{ dentists.districts | size }}</strong> postcode districts</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="https://www.nhs.uk/service-search/find-a-dentist">NHS Find a dentist &rarr;</a></li>
             </ul>

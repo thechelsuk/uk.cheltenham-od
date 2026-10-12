@@ -6,6 +6,11 @@
             {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
+            {% assign h_all = site.data["food-standards"] %}{% if page.food_rating == "rated-one-to-four" %}{% assign h_list = h_all | where_exp: "v", "v.rating != '5' and v.rating != 'Exempt' and v.rating != 'AwaitingInspection'" %}{% elsif page.food_rating %}{% assign h_list = h_all | where: "rating", page.food_rating %}{% endif %}{% assign h_total = h_all | size %}{% assign h_five = h_all | where: "rating", "5" | size %}
+
+            <ul class="header-facts">
+                {% if h_list %}<li><strong>{{ h_list | size }}</strong> businesses in this list</li><li><strong>{{ h_list | size | times: 100.0 | divided_by: h_total | round }}%</strong> of all rated businesses</li>{% else %}<li><strong>{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> food businesses</li><li><strong>{{ h_five }}</strong> five-star businesses</li><li><strong>{{ h_five | times: 100.0 | divided_by: h_total | round }}%</strong> rated five stars</li>{% endif %}
+            </ul>
         </header>
         {% include section-links.html %}
         {% include sponsor.html %}

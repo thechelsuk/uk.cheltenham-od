@@ -6,6 +6,12 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign h_latest = history.records | sort: "first_seen_iso" | last %}
+
+            <ul class="header-facts">
+                <li><strong>{{ history.count }}</strong> flood warnings logged</li>
+                <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
+            </ul>
             <ul class="header-links">
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
             </ul>
