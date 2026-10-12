@@ -56,7 +56,7 @@ Spotted an error, or want to suggest a dataset? [Get in touch](/contact) — loc
 
 The site is built as static HTML, CSS, and a little JavaScript, so it's lightning quick on the client end. Python and GitHub Actions handle most of the compute, with a little run on the developer's local machine; pages are built and deployed to GitHub Pages, and DNS and forms are managed by Cloudflare and Cloudflare Workers.
 
-> Only 0.05g of CO₂ is produced every time someone visits this website. This website appears to be running on sustainable energy - [Source](https://www.websitecarbon.com/website/cheltenham-od-uk/)
+> Only 0.05g of CO₂ is produced every time someone visits this website. This site appears to be running on sustainable energy - [Source](https://www.websitecarbon.com/website/cheltenham-od-uk/)
 
 [![Green Web Foundation badge](https://app.greenweb.org/api/v3/greencheckimage/cheltenham-od.uk?nocache=true)](https://www.thegreenwebfoundation.org/green-web-check/?url=cheltenham-od.uk)
 

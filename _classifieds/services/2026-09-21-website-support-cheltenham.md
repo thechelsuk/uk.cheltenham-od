@@ -1,7 +1,7 @@
 ---
 layout: about-info/advert
 type: about
-title: "Friendly Website Support for Cheltenham Small Businesses and Clubs"
+title: "Friendly site Support for Cheltenham Small Businesses and Clubs"
 category: services
 company: "Cheltenham Open Data"
 location: "Cheltenham and surrounding area"
@@ -12,7 +12,7 @@ expires: 2026-12-21
 apply_url: "/contact"
 apply_text: "Get in touch"
 robots: noindex
-seo: "Website support in Cheltenham: help with HTML, CSS, WordPress, bug fixing, accessibility and design advice for small businesses, clubs and community groups."
+seo: "site support in Cheltenham: help with HTML, CSS, WordPress, bug fixing, accessibility and design advice for small businesses, clubs and community groups."
 ---
 
 Is your site not working quite as it should? Need a hand with something small

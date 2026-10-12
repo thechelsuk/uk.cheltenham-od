@@ -3,7 +3,7 @@ layout: posts/posts
 title: Why Cheltenham Open Data Exists, and How to Keep It Free
 type: cod
 description: A free, independent site that puts Cheltenham's public data in one place, with no tracking cookies. Here's why it was built and how local businesses can support it.
-seo: "Cheltenham Open Data is a free, independent website bringing together local public data, from fuel prices to planning, funded by local business sponsors."
+seo: "Cheltenham Open Data is a free, independent site bringing together local public data, from fuel prices to planning, funded by local business sponsors."
 date: 2026-10-07 09:00
 ---
 

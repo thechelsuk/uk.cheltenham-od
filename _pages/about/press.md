@@ -17,11 +17,11 @@ Cheltenham Open Data is a free, independent hub that pulls public data about Che
 
 ### Short (≈25 Words)
 
-> Cheltenham Open Data is a free, independent website bringing together public data for Cheltenham and Gloucestershire — from fuel prices and crime figures to flood alerts, food banks and local news.
+> Cheltenham Open Data is a free, independent site bringing together public data for Cheltenham and Gloucestershire — from fuel prices and crime figures to flood alerts, food banks and local news.
 
 ### Medium (≈60 Words)
 
-> Cheltenham Open Data is a free, independent website that collects public and open data about Cheltenham and Gloucestershire and presents it in one clear, accessible place. It covers fuel prices, crime figures, flood warnings, food bank needs, GP and pharmacy details, planning applications, recycling, schools, local news and a 10-day weather forecast — all sourced from official providers and updated regularly.
+> Cheltenham Open Data is a free, independent site that collects public and open data about Cheltenham and Gloucestershire and presents it in one clear, accessible place. It covers fuel prices, crime figures, flood warnings, food bank needs, GP and pharmacy details, planning applications, recycling, schools, local news and a 10-day weather forecast — all sourced from official providers and updated regularly.
 
 ## Key Facts
 

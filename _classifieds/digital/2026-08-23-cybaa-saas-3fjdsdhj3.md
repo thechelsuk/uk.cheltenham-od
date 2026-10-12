@@ -1,7 +1,7 @@
 ---
 layout: about-info/advert
 type: about
-title: "Cybaa - DNS, Domain and Website Security Made Simple"
+title: "Cybaa - DNS, Domain and site Security Made Simple"
 category: digital
 company: "Cybaa"
 location: "Cheltenham"
@@ -12,11 +12,11 @@ expires: 2027-02-23
 apply_url: https://cybaa.io
 apply_text: "Visit Cybaa"
 robots: noindex
-seo: "Cybaa - DNS, Domain and Website Security Made Simple"
+seo: "Cybaa - DNS, Domain and site Security Made Simple"
 ---
 
 Cybaa helps small and medium sized businesses monitor the security
-fundamentals of their domains, DNS, and websites — without needing a
+fundamentals of their domains, DNS, and sites — without needing a
 dedicated security team. It covers domain, DNS, certificate, email, and malicious-content signals in one place, with targeted checks for SPF, DMARC, MTA-STS, headers, WHOIS, and domain posture.
 
 ## What It Does
@@ -41,5 +41,4 @@ dedicated security team. It covers domain, DNS, certificate, email, and maliciou
 - Developers wanting to bring domain and security monitoring into their own tools via API
 - Businesses wanting early warning of DNS tampering, expiring certificates, or domain hijacking risks
 
-Try Cybaa free for 30 days and get on top of your domain and website
-security fundamentals.
+Try Cybaa free for 30 days and get on top of your domain and site security fundamentals.
