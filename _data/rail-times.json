@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T21:50:37+01:00",
+  "generated_at": "2026-10-12T21:55:32+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-12T21:52",
-      "expected": "2026-10-12T21:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-10-12T21:53",
-      "expected": "2026-10-12T21:59",
+      "expected": "2026-10-12T22:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -61,7 +46,7 @@
     },
     {
       "scheduled": "2026-10-12T22:03",
-      "expected": "2026-10-12T22:06",
+      "expected": "2026-10-12T22:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -116,22 +101,25 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T22:57",
+      "expected": "2026-10-12T22:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "St Erth",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-12T21:50",
-      "expected": "2026-10-12T21:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-12T21:51",
-      "expected": "2026-10-12T21:58",
+      "expected": "2026-10-12T21:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -151,7 +139,7 @@
     },
     {
       "scheduled": "2026-10-12T22:01",
-      "expected": "2026-10-12T22:05",
+      "expected": "2026-10-12T22:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -201,12 +189,22 @@
     },
     {
       "scheduled": "2026-10-12T22:50",
-      "expected": "2026-10-12T22:50",
-      "status": "On time",
+      "expected": "2026-10-12T22:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T22:55",
+      "expected": "2026-10-12T22:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "St Erth",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
