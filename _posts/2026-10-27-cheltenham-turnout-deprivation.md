@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: Turnout in Cheltenham's Most Deprived Wards Was 20 Points Lower Than in Its Least Deprived
 seo_title: "Cheltenham Turnout 20 Points Lower in Most Deprived Wards"
 type: cod

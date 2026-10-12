@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: Six of the 11 Cheltenham Care Homes Rated in 2026 Were Told to Improve
 seo_title: "6 of 11 Cheltenham Care Homes Rated in 2026 Must Improve"
 type: cod

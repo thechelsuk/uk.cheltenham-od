@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Friendly Website Support for Cheltenham Small Businesses and Clubs"
 category: services

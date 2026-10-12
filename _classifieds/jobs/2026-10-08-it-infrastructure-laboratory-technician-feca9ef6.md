@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "IT Infrastructure Laboratory Technician"
 category: "jobs"

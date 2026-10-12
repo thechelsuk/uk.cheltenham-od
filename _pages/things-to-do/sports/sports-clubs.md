@@ -1,5 +1,5 @@
 ---
-layout: clubs
+layout: things-to-do/clubs
 clubs: sports
 title: "Cheltenham Sports Clubs to Join"
 seo_title: "Cheltenham Sports Clubs to Join: Running, Rugby & More"

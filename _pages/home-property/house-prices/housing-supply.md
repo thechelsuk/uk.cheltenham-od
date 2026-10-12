@@ -1,5 +1,5 @@
 ---
-layout: housing-supply
+layout: home-property/housing-supply
 title: "Cheltenham Housing Supply & Student Accommodation"
 seo: "How many new homes has Cheltenham built each year, and how has student accommodation changed? Net additional dwellings and communal accommodation figures."
 permalink: /cheltenham-house-prices/housing-supply

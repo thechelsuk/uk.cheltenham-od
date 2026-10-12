@@ -1,5 +1,5 @@
 ---
-layout: deprivation
+layout: about-info/deprivation
 title: "Deprivation in Cheltenham: Indices of Deprivation 2025"
 seo_title: "Cheltenham Deprivation: Indices of Deprivation 2025"
 seo: "How deprived is your part of Cheltenham? A map of the English Indices of Deprivation 2025 for every neighbourhood and ward, on income, health, crime and more."

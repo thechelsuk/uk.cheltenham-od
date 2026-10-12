@@ -1,5 +1,5 @@
 ---
-layout: council-tax-stock
+layout: home-property/council-tax-stock
 title: "Cheltenham Total Number of Properties over Time"
 seo: "How many domestic properties are there in Cheltenham, and how has the total changed since 1993? Year-by-year council tax list figures."
 permalink: /cheltenham-house-prices/council-tax-stock

@@ -112,7 +112,7 @@ def write_paginated_page(path, page_num):
     every page's front matter (and news.md, page 1, needs none of this at
     all: page_num defaults to 1 in the layout)."""
     front_matter = {
-        "layout": "news-aggregation",
+        "layout": "about-info/news-aggregation",
         "title": f"Cheltenham News Archive — Page {page_num}",
         "seo": f"Older Cheltenham local news headlines, page {page_num} of our aggregation archive.",
         "description": "Older headlines from our Cheltenham news aggregation archive.",

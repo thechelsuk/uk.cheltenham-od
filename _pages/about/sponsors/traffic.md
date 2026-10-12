@@ -1,5 +1,5 @@
 ---
-layout: traffic
+layout: site/traffic
 title: "Cheltenham Open Data Traffic: The Last 30 Days"
 seo: "How many people use Cheltenham Open Data: unique visitors, total requests and the share served from cache over the last 30 days, updated daily."
 permalink: /sponsor/traffic

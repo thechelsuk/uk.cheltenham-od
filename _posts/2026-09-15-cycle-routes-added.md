@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Cycle Routes
 seo_title: "Cheltenham Cycle Routes Page Added: Tracks and Lanes"
 type: cod

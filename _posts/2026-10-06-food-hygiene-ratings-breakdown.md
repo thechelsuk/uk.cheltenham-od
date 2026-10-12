@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: Nine in Ten Cheltenham Food Businesses Have a Five-Star Hygiene Rating
 seo_title: "Nine in Ten Cheltenham Food Businesses Rated Five Stars"
 type: cod

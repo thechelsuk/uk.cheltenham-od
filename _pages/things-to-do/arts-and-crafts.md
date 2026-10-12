@@ -1,5 +1,5 @@
 ---
-layout: clubs
+layout: things-to-do/clubs
 clubs: arts
 title: "Cheltenham Arts and Crafts: Classes, Studios and Galleries"
 seo_title: "Cheltenham Arts & Crafts: Classes, Studios & Galleries"

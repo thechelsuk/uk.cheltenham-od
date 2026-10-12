@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Healthcare Assistant / Support Worker - Ward (bank)"
 category: "jobs"

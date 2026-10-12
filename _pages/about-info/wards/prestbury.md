@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: prestbury
 title: "Prestbury Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Prestbury Ward, Cheltenham: Crime & Prices"

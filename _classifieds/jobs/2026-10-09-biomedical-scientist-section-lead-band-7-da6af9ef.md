@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Biomedical Scientist - Section Lead, Band 7"
 category: "jobs"

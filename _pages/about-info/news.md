@@ -1,5 +1,5 @@
 ---
-layout: news-aggregation
+layout: about-info/news-aggregation
 title: Latest Cheltenham News Aggregation
 seo: "Cheltenham local news in one place, updated hourly from Gov.uk, Gloucestershire Police, the council, BBC, Cheltenham Post and more, without the clutter."
 description: "Local news from more than a dozen sources, from the council and police to the BBC, in one list refreshed every couple of hours."

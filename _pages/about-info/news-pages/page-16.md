@@ -1,5 +1,5 @@
 ---
-layout: news-aggregation
+layout: about-info/news-aggregation
 title: Cheltenham News Archive — Page 16
 seo: Older Cheltenham local news headlines, page 16 of our aggregation archive.
 description: Older headlines from our Cheltenham news aggregation archive.

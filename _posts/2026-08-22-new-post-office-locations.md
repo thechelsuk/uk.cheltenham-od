@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Post Office Locations to Site
 type: cod
 description: Quickly find every Post Office branch in Cheltenham with addresses and map links.

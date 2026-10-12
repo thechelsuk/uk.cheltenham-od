@@ -1,5 +1,5 @@
 ---
-layout: food-standards
+layout: things-to-do/food-standards
 title: "Exempt Food Businesses in Cheltenham"
 seo: "Food businesses in Cheltenham marked exempt from a food hygiene rating in the Food Standards Agency's data, with their addresses."
 permalink: /cheltenham-food-standards/exempt

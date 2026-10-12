@@ -1,5 +1,5 @@
 ---
-layout: festivals
+layout: things-to-do/festivals
 title: "Cheltenham Festivals Calendar"
 seo_title: "Cheltenham Festivals Calendar: Racing, Jazz, Science, Music"
 seo: "Cheltenham's festival calendar with dates: Literature, the Cheltenham Festival of racing, Jazz, Science, Music and Cricket, and what's on next."

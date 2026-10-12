@@ -15,7 +15,7 @@ Front matter shape:
 
 ```yaml
 ---
-layout: example              # matches _layouts/example.html
+layout: getting-around/example   # matches _layouts/getting-around/example.html
 title: "Example Page Title"
 seo: "Keyword-rich meta description for search snippets, 160 characters or fewer."
 permalink: /cheltenham-example
@@ -38,7 +38,7 @@ For a genuine sub-page of an existing dataset (a filtered view, not a different 
 
 If two sibling pages differ only by a filter (primary vs secondary, a food hygiene rating band), share one layout and drive the difference from front matter variables (`phase:`, `max_miles:`, `other_phase_link:` in the schools example) rather than forking the layout.
 
-## The Layout (`_layouts/<name>.html`)
+## The Layout (`_layouts/<category>/<name>.html`)
 
 The header holds the breadcrumb (built from the menu, so no "Back to" links), the title, the description and up to five live facts as tiles: `<li><strong>figure</strong> label</li>` inside `<ul class="header-facts">`. Tiles are figures from the data, never the "last updated" date (that lives under About This Data), and they sit in one row on wide screens. Links that aren't facts, such as a feed or an official site, go in a second `<ul class="header-links">`. The "In this section" row after the header lists the parent page and its sub-pages by itself.
 

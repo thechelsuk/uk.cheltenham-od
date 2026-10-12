@@ -1,5 +1,5 @@
 ---
-layout: epc
+layout: home-property/epc
 title: "Cheltenham Home Energy Ratings (EPC)"
 seo_title: "Cheltenham EPC Ratings: Home Energy Map by Ward"
 seo: "How energy efficient are Cheltenham's homes? EPC ratings A to G for every ward and neighbourhood, with a map, the share rated C or better and the median."

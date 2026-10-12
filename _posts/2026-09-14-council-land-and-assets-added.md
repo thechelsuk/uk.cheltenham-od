@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Maps Council Land & Assets
 type: cod
 description: Every property and land holding owned by Cheltenham Borough Council, mapped.

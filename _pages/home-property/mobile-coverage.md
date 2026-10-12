@@ -1,5 +1,5 @@
 ---
-layout: mobile-coverage
+layout: home-property/mobile-coverage
 title: "Cheltenham Mobile Phone Coverage"
 seo: "Cheltenham mobile phone coverage — 4G, 5G and voice call availability by network, from Ofcom's Connected Nations data."
 permalink: /cheltenham-mobile-coverage

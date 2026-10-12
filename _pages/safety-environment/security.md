@@ -1,5 +1,5 @@
 ---
-layout: security
+layout: safety-environment/security
 title: "Government Security Alerts"
 seo_title: "UK Terrorism Threat Level: Current Level and History"
 seo: "The current UK terrorism threat level, days since it last changed & every change since 2006, with what each level means. Tracked for Cheltenham, checked daily."

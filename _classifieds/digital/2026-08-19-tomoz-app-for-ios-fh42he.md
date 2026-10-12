@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Tomoz - Tomorrow's Calendar Today"
 category: digital

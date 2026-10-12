@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Mapping Every Listed Building in the Town
 type: cod
 description: Every listed building, scheduled monument and registered park & garden in Cheltenham, graded and mapped, from Historic England's National Heritage List.

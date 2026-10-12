@@ -4,7 +4,7 @@
 #
 # The monthly fetcher (_python/cqc.py) gives every care home and home care
 # service a slug; each gets a page at /cheltenham-care-homes/<slug>, rendered
-# by _layouts/care-home.html. A newly registered service gets its page on the
+# by _layouts/community-support/care-home.html. A newly registered service gets its page on the
 # next build without anyone writing a front-matter file for it.
 
 module CareHomePages
@@ -66,7 +66,7 @@ module CareHomePages
 
         page = Jekyll::PageWithoutAFile.new(site, site.source, "cheltenham-care-homes", "#{location['slug']}.html")
         page.data.merge!(
-          "layout" => "care-home",
+          "layout" => "community-support/care-home",
           "cqc_id" => location["id"],
           "title" => "#{location['name']}: CQC Rating and Care",
           "seo_title" => CareHomePages.seo_title(location),

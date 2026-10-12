@@ -149,7 +149,7 @@ def write_advert(job, details, today):
         expires = details["closes"]
     job_type = ", ".join(t for t in (details["hours"], details["job_type"]) if t)
     front = {
-        "layout": "advert",
+        "layout": "about-info/advert",
         "type": "about",
         "title": job["title"],
         "category": "jobs",

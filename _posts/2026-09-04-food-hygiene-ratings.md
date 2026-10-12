@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Food Hygiene Ratings
 seo_title: "Food Hygiene Ratings Added for Cheltenham Venues"
 type: cod

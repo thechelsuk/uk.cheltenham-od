@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Points of Interest to the Site
 type: cod
 description: Museums, historic sites, stadiums, hills and commemorative plaques in and around Cheltenham, each with a map link.

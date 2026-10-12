@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: all-saints
 title: "All Saints Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "All Saints Ward, Cheltenham: Crime & Prices"

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding an "All About Cheltenham" Page
 type: cod
 description: Cheltenham's population, growth, employment rate and Census 2021 statistics, sourced directly from the ONS's Nomis service.

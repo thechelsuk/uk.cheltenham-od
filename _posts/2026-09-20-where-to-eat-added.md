@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Where to Eat in Cheltenham
 type: cod
 description: A map and list of Cheltenham's restaurants, cafés, pubs, bars and takeaways, each with its official food hygiene rating.

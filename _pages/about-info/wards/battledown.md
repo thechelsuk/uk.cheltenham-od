@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: battledown
 title: "Battledown Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Battledown Ward, Cheltenham: Crime & Prices"

@@ -1,5 +1,5 @@
 ---
-layout: sewage-overflows-history
+layout: safety-environment/sewage-overflows-history
 title: "Cheltenham Sewage Spill History"
 seo_title: "Cheltenham Sewage Spills: History by River & Month"
 seo: "Every storm overflow spill into the River Chelt and Cheltenham's brooks since logging began, with monthly totals and hours discharging by watercourse."

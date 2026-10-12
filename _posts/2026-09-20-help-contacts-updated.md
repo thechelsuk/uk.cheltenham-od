@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: More Phone Numbers on the Help and Support Page
 type: cod
 description: The Cheltenham help and support page now lists power cut, flooding, water emergency, mental health, domestic abuse and local advice numbers.

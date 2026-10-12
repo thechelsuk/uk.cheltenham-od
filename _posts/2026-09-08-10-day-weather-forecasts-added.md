@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding 10-day Weather Forecasts
 type: cod
 description: A daily 10-day forecast for Cheltenham with highs, lows, rain chance, wind, UV and daylight, plus trend charts for the week and a half ahead.

@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: charlton-kings
 title: "Charlton Kings Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Charlton Kings Ward, Cheltenham: Crime & Prices"

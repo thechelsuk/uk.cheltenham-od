@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Opticians in Cheltenham
 type: cod
 description: A map and list of opticians in Cheltenham from the NHS directory, with who can get a free NHS sight test, how NHS glasses vouchers work and what to do in an eye emergency.

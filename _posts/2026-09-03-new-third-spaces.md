@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Curated List of Third Spaces
 type: cod
 description: A curated list of third spaces in Cheltenham, from community cafés and council hubs to co-working spaces.

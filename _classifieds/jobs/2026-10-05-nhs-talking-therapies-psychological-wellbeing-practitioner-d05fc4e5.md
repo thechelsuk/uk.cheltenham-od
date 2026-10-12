@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "NHS Talking Therapies Psychological Wellbeing Practitioner"
 category: "jobs"

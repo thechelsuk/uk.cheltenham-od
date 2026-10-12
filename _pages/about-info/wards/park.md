@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: park
 title: "Park Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Park Ward, Cheltenham: Crime & Prices"

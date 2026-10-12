@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Play Parks and Children's Playgrounds
 type: cod
 description: A map of children's play parks and playgrounds within 10 miles of Cheltenham town centre, sourced from OpenStreetMap.

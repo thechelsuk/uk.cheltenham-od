@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Cybaa - DNS, Domain and Website Security Made Simple"
 category: digital

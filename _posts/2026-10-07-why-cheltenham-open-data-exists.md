@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Why Cheltenham Open Data Exists, and How to Keep It Free
 type: cod
 description: A free, independent site that puts Cheltenham's public data in one place, with no tracking cookies. Here's why it was built and how local businesses can support it.

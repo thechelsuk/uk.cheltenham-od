@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Team Leader – Children’s Residential Care"
 category: "jobs"

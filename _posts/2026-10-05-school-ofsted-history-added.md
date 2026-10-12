@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Ofsted Ratings and Inspection History for Every Cheltenham School
 seo_title: "Ofsted Ratings and Inspection History for Cheltenham Schools"
 type: cod

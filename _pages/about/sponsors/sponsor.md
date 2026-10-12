@@ -1,5 +1,5 @@
 ---
-layout: sponsor
+layout: site/sponsor
 title: Sponsor Cheltenham Open Data
 seo_title: "Sponsor Cheltenham Open Data: Reach Local Residents"
 seo: Sponsorship opportunities for Cheltenham Open Data - support location community resource, local marketing opportunities

@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: One in Nine Cheltenham Homes Sold in 2025 Was Within Reach of a Typical Earner
 seo_title: "One in Nine Cheltenham Homes Is Affordable on Median Pay"
 type: cod

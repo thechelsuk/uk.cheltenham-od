@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: New Cheltenham Job Vacancies Every Day in Our Classifieds
 type: cod
 description: New job vacancies within five miles of Cheltenham, added to the classifieds every day from GOV.UK's job search.

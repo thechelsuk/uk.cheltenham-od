@@ -541,7 +541,7 @@ def create_front_matter(post_date: date, events: list[Event]) -> str:
 
     lines = [
         "---",
-        "layout: posts",
+        "layout: posts/posts",
         f"title: \"{title}\"",
         f"date: {post_date.isoformat()}",
         "type: news",

@@ -1,5 +1,5 @@
 ---
-layout: helpful-contacts
+layout: community-support/helpful-contacts
 listing: support
 title: "Cheltenham Local Help and Support"
 seo: "Local help and support in Cheltenham: online community groups, places to meet people, food banks, and apps for free or cheap food like Olio and Too Good To Go."

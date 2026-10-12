@@ -1,5 +1,5 @@
 ---
-layout: cheltenham-numbers
+layout: about-info/cheltenham-numbers
 title: Cheltenham in Numbers
 seo_title: "Cheltenham in Numbers: Key Facts and Figures at a Glance"
 seo: "Cheltenham's key facts at a glance: population, house prices, rents, crime, schools, care homes, flood risk, fuel prices, charities and listed buildings."

@@ -1,5 +1,5 @@
 ---
-layout: wards
+layout: about-info/wards
 title: "Cheltenham Wards: Crime, House Prices and Broadband by Ward"
 seo: "Cheltenham's 20 wards on one map and table. Compare crime, house prices, broadband, voters and councillors, then open a full profile for any ward."
 permalink: /cheltenham-wards

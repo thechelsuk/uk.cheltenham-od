@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: Gloucestershire A&E Has Its Busiest September in at Least Five Years as 12-Hour Waits Rise 62%
 seo_title: "Gloucestershire A&E: Busiest September in 5 Years"
 type: cod

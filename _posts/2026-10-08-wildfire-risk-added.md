@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Adds Daily Wildfire Risk and 15 Years of Grass Fires
 seo_title: "Cheltenham Wildfire Risk & 15 Years of Grass Fires"
 type: cod

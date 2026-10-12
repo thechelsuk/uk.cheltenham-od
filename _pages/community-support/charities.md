@@ -1,5 +1,5 @@
 ---
-layout: charities
+layout: community-support/charities
 title: "Charities in Cheltenham"
 seo_title: "Charities in Cheltenham: Every Registered Local Charity"
 seo: "Every registered charity based in Cheltenham: what each one does, its income and its cause, from the Charity Commission register. Find one to support."

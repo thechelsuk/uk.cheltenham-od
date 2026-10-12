@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Public Toilets Map to the Site
 type: cod
 description: Find public toilets across Cheltenham, with accessibility details, opening hours and map links.

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Improving the House Price Comparisons
 type: cod
 description: House price comparisons now use complete months and like-for-like periods, so a part-finished year is no longer compared with a whole one.

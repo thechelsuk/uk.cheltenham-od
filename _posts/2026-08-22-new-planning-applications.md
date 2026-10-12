@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Planning Applications to Site
 type: cod
 description: Quickly view recent planning applications submitted to Cheltenham Borough Council.

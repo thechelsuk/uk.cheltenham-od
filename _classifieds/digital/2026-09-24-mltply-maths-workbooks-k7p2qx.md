@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Mltply Printable Maths Workbooks for Years 1 to 7"
 category: digital

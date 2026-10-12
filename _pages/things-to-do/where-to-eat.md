@@ -1,5 +1,5 @@
 ---
-layout: where-to-eat
+layout: things-to-do/where-to-eat
 title: "Where to Eat in Cheltenham: Restaurants, Pubs and Takeaways"
 seo: "Where to eat in Cheltenham: a map and list of restaurants, cafés, pubs, bars and takeaways, each with its official Food Standards Agency hygiene rating."
 permalink: /cheltenham-where-to-eat

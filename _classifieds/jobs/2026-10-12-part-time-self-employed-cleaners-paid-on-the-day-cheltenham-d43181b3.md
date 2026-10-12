@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Part-Time Self-Employed Cleaners - Paid on the Day - Cheltenham, Gloucestershire"
 category: "jobs"

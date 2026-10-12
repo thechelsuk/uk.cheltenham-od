@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: college
 title: "College Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "College Ward, Cheltenham: Crime & Prices"

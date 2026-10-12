@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: hesters-way
 title: "Hesters Way Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Hesters Way Ward, Cheltenham: Crime & Prices"

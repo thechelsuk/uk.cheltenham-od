@@ -1,5 +1,5 @@
 ---
-layout: food-standards
+layout: things-to-do/food-standards
 title: "Five-Star Food Hygiene Ratings in Cheltenham"
 seo: "Every Cheltenham food business with a five-star food hygiene rating from the Food Standards Agency, with its address and last inspection date."
 permalink: /cheltenham-food-standards/rated-five

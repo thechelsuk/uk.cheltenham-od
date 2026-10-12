@@ -1,5 +1,5 @@
 ---
-layout: foodbank
+layout: community-support/foodbank
 title: "Cheltenham Foodbank: Needed Items and Donation Points"
 seo: "What Cheltenham Foodbank needs right now, what it has plenty of, where to drop donations off and how to contact it."
 description: "Needed items, donation points and contact details for Cheltenham Foodbank."

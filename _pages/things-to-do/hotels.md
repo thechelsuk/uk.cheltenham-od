@@ -1,5 +1,5 @@
 ---
-layout: hotels
+layout: things-to-do/hotels
 title: Places to Stay in Cheltenham
 seo_title: "Places to Stay in Cheltenham: Hotels and Live Prices"
 seo: "Places to stay in Cheltenham - hotels & accommodation near the racecourse, the Cheltenham Festival and the Cotswolds, with live availability & prices."

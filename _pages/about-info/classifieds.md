@@ -1,5 +1,5 @@
 ---
-layout: classifieds
+layout: about-info/classifieds
 title: Cheltenham Classifieds
 seo_title: "Cheltenham Classifieds: Local Jobs, Services and Items"
 permalink: /cheltenham-classifieds

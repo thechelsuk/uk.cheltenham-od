@@ -1,5 +1,5 @@
 ---
-layout: parkrun
+layout: things-to-do/parkrun
 title: "Cheltenham Parkrun Events"
 seo_title: "Parkrun near Cheltenham: Events, Locations & Map"
 seo: "Parkrun in and around Cheltenham: Cheltenham parkrun, King George V Playing Field, junior parkruns and every event within 20 miles, with a map."

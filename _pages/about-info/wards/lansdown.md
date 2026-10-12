@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: lansdown
 title: "Lansdown Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Lansdown Ward, Cheltenham: Crime & Prices"

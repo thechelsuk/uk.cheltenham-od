@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Adds Ward Profiles and Local Election Results
 seo_title: Cheltenham by Wards and Lasted Local Election Results
 type: cod

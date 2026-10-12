@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Mobile Phone Coverage
 seo_title: "Cheltenham Mobile Phone Coverage Added: 4G, 5G and Voice"
 type: cod

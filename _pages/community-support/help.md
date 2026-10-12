@@ -1,5 +1,5 @@
 ---
-layout: helpful-contacts
+layout: community-support/helpful-contacts
 listing: contacts
 title: "Cheltenham Helplines and Contacts"
 seo: "Helpline and emergency numbers for Cheltenham: NHS, police, power cuts, flooding, mental health crisis lines, abuse, children, older people and the council."

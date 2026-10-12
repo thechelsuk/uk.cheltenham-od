@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: oakley
 title: "Oakley Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Oakley Ward, Cheltenham: Crime & Prices"

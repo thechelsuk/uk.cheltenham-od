@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: swindon-village
 title: "Swindon Village Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Swindon Village Ward, Cheltenham: Crime & Prices"

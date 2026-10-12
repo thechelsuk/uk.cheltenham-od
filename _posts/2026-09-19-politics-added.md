@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Political History and MP Records
 type: cod
 description: Cheltenham's current MP, the results of every general election since 2010, and a party history back to 1918, from UK Parliament and House of Commons Library data.

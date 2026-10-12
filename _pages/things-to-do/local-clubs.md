@@ -1,5 +1,5 @@
 ---
-layout: clubs
+layout: things-to-do/clubs
 clubs: community
 title: "Cheltenham Clubs and Societies to Join"
 seo_title: "Cheltenham Clubs & Societies to Join: Hobbies & History"

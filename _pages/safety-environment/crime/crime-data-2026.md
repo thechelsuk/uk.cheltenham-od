@@ -1,5 +1,5 @@
 ---
-layout: crime-data
+layout: safety-environment/crime-data
 title: "Cheltenham Crime Data 2026"
 seo_title: "Cheltenham Crime Data 2026: Monthly Street-Level Figures"
 seo: "Monthly street-level crime figures for Cheltenham in 2026, by month and by neighbourhood, from the Police.uk API, with crime report totals."

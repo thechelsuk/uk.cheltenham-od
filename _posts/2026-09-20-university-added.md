@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding the University of Gloucestershire Campuses Page
 type: cod
 description: A map and guide to the University of Gloucestershire's campuses in Cheltenham and Gloucester, with addresses, what is taught at each and how to apply.

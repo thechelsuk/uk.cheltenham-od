@@ -1,5 +1,5 @@
 ---
-layout: cheltenham-economy
+layout: about-info/cheltenham-economy
 title: "Cheltenham Economy: Jobs, Businesses and Claimants"
 seo: "Cheltenham's economy in numbers: jobs by industry, business counts and unemployment claimants, compared with England, from the ONS."
 permalink: /cheltenham-economy

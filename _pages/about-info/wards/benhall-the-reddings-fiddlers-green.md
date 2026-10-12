@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: benhall-the-reddings-fiddlers-green
 title: "Benhall, the Reddings & Fiddler's Green Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Benhall, the Reddings & Fiddler's Green, Cheltenham"

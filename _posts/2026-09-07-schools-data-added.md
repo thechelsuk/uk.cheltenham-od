@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Schools Directory to the Site
 type: cod
 description: A complete, sortable list of schools across Cheltenham, broken down by phase and type.

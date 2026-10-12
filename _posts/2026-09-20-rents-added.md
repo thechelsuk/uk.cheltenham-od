@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Cheltenham Average Rents
 type: cod
 description: Average private rents in Cheltenham by month since 2015, by number of bedrooms and property type, compared with the South West and England, from the ONS Price Index of Private Rents.

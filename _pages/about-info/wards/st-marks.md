@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: st-marks
 title: "St Mark's Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "St Mark's Ward, Cheltenham: Crime & Prices"

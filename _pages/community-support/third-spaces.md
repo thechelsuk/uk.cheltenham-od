@@ -1,5 +1,5 @@
 ---
-layout: thirds
+layout: community-support/thirds
 title: "Cheltenham Third Spaces"
 seo_title: "Cheltenham Third Spaces: Places to Go Beyond Home and Work"
 seo: "A curated list of Cheltenham third spaces: places to meet, work or relax that are neither home nor the office, on a map with addresses."

@@ -1,5 +1,5 @@
 ---
-layout: house-year
+layout: home-property/house-year
 title: "Cheltenham House Price Data 2025"
 seo: "Cheltenham house price sales data for 2025: average and median prices and number of sales by property type, from Land Registry price paid data."
 permalink: /cheltenham-house-prices-2025

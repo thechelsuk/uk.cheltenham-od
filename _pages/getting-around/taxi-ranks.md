@@ -1,5 +1,5 @@
 ---
-layout: taxi-ranks
+layout: getting-around/taxi-ranks
 title: Cheltenham Taxi Ranks
 seo_title: "Cheltenham Taxi Ranks: Where to Find a Taxi in Town"
 seo: "Where to find a taxi rank in Cheltenham, from the Promenade and Montpellier to the railway station, mapped, with tips on booking for the Festival."

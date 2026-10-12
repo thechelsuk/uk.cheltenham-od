@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding River Levels, Rainfall and the 2007 Flood History
 type: cod
 description: Live river levels and rainfall from the Environment Agency's gauges around Cheltenham, plus a new page on the summer 2007 floods.

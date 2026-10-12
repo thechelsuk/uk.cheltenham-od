@@ -1,5 +1,5 @@
 ---
-layout: interests
+layout: things-to-do/interests
 title: "Cheltenham Museums, Historic Sites & Plaques"
 seo: "Explore points of interest in and around Cheltenham, Gloucestershire — museums, historic sites, stadiums and blue plaques, each with distance and a map link."
 description: "Explore points of interest in and around Cheltenham - museums, historic sites, stadiums and blue plaques, each with distance and a map link."

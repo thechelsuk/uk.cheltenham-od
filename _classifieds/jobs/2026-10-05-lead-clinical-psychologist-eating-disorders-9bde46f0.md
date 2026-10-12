@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Lead Clinical Psychologist (Eating Disorders)"
 category: "jobs"

@@ -1,5 +1,5 @@
 ---
-layout: dentists
+layout: community-support/dentists
 title: "Dentists in Cheltenham: NHS Dental Practices near You"
 seo: "Find a dentist in Cheltenham: a map and list of NHS-listed dental practices in GL50 to GL54, plus how to find out if one is taking new NHS patients."
 permalink: /cheltenham-dentists

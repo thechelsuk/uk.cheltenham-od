@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Updating Fix My Street with a Map and Report History
 type: cod
 description: Cheltenham Fix My Street reports now come with a map and a running history.

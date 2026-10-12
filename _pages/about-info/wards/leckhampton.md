@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: leckhampton
 title: "Leckhampton Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Leckhampton Ward, Cheltenham: Crime & Prices"

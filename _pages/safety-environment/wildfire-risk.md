@@ -1,5 +1,5 @@
 ---
-layout: wildfire
+layout: safety-environment/wildfire
 title: Cheltenham Wildfire Risk
 seo_title: "Cheltenham Wildfire Risk and Fire Severity Forecast"
 seo: "Today's wildfire risk around Cheltenham and the Cotswold edge, with the Met Office fire severity forecast for the next five days by 10 km grid square."

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Live Power Cuts Tracking
 type: cod
 description: Live power cuts affecting Cheltenham, with a map, history and Atom feed.

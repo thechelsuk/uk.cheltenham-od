@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: springbank
 title: "Springbank Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Springbank Ward, Cheltenham: Crime & Prices"

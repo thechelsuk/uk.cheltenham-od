@@ -1,5 +1,5 @@
 ---
-layout: nhs-ae
+layout: community-support/nhs-ae
 title: "Cheltenham A&E Waiting Times"
 seo_title: "Cheltenham A&E Waiting Times: Four-Hour and 12-Hour Waits"
 seo: "Cheltenham A&E waiting times: monthly four-hour performance, attendances and 12-hour waits for Cheltenham General Hospital, with a map of nearby hospitals."

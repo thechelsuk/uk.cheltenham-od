@@ -1,5 +1,5 @@
 ---
-layout: bus-disruptions-history
+layout: getting-around/bus-disruptions-history
 title: Cheltenham Bus Disruptions — History
 seo: "A historical log of bus service disruptions recorded as affecting Cheltenham, from the DfT's Bus Open Data Service."
 description: "Every bus disruption recorded as affecting Cheltenham since this page started tracking them, most recent first."

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Maps the Town's Taxi Ranks
 type: cod
 description: Every taxi rank in Cheltenham on one map, from the Promenade to the railway station.

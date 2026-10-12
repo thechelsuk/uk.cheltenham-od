@@ -1,5 +1,5 @@
 ---
-layout: cheltenham-town-fc
+layout: things-to-do/cheltenham-town-fc
 title: "Cheltenham Town Fixtures, Results & Getting to the Ground"
 seo: "Cheltenham Town FC's next fixture, recent results and how to get to Whaddon Road by train, car or Park & Ride, updated daily."
 permalink: /cheltenham-sports/cheltenham-town-fc

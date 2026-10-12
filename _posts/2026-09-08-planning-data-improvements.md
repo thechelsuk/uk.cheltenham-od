@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Expanding the Planning Applications Page
 type: cod
 description: Recent planning applications for Cheltenham, now with a second table tracking recently decided applications alongside new submissions.

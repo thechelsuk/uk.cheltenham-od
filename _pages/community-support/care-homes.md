@@ -1,5 +1,5 @@
 ---
-layout: care-homes
+layout: community-support/care-homes
 title: "Care Homes in Cheltenham: CQC Ratings"
 seo: "Care homes and nursing homes in Cheltenham with their latest CQC ratings, plus home care services, on a map with the care each one specialises in."
 permalink: /cheltenham-care-homes

@@ -1,5 +1,5 @@
 ---
-layout: childcare
+layout: home-property/childcare
 title: "Nurseries and Childcare in Cheltenham"
 seo: "Nurseries, pre-schools and out-of-school clubs in Cheltenham on a map, with places and each provider's latest Ofsted rating, from Ofsted's register."
 permalink: /cheltenham-nurseries-childcare

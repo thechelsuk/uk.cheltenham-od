@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: warden-hill
 title: "Warden Hill Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Warden Hill Ward, Cheltenham: Crime & Prices"

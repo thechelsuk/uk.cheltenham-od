@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Maps Broadband Speeds by Ward
 type: cod
 description: Cheltenham broadband coverage and speeds, mapped ward by ward.

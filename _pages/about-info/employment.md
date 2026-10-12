@@ -1,5 +1,5 @@
 ---
-layout: cheltenham-employment
+layout: about-info/cheltenham-employment
 title: "Cheltenham Employment Rate History"
 seo: "Cheltenham employment rate, economic activity rate and unemployment rate by year since 2004, sourced from the ONS's Nomis service."
 permalink: /cheltenham-employment-history

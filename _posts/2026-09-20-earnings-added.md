@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Cheltenham Median Earnings History
 type: cod
 description: Median full-time pay in Cheltenham year by year since 2008, for people who live and work in the town, compared with Gloucestershire, the South West and England, from the ONS.

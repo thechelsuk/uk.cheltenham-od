@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Deliver with Deliveroo – Flexible Food Delivery Driver Jobs"
 category: "jobs"

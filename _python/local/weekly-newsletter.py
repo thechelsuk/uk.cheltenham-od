@@ -327,7 +327,7 @@ def build(today, since_date, event_days_ahead):
     # publish it — so it needs to be the complete, valid file, front matter included.
     full_file = "\n".join([
         "---",
-        "layout: newsletter-issue",
+        "layout: site/newsletter-issue",
         f'title: "{title}"',
         f'seo: "{seo[:160]}"',
         f'description: "This week in Cheltenham ({date_range}): weather, roadworks, events, what\'s new on the site and the top local stories."',

@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: "Two Cheltenhams: Neighbourhoods Half a Mile Apart Sit at Opposite Ends of England's Deprivation Rankings"
 seo_title: "Two Cheltenhams: Deprivation Extremes Half a Mile Apart"
 type: cod

@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: charlton-park
 title: "Charlton Park Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Charlton Park Ward, Cheltenham: Crime & Prices"

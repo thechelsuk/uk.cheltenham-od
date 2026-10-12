@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Planned Roadworks and Road Closures
 type: cod
 description: Planned roadworks and closures on the M5, A417, A40 and A46 within 10 miles of Cheltenham, from National Highways open data.

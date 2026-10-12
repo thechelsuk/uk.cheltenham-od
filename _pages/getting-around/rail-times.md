@@ -1,5 +1,5 @@
 ---
-layout: rail-times
+layout: getting-around/rail-times
 title: "Cheltenham Train Times"
 seo_title: "Cheltenham Spa Train Times: Live Departures and Arrivals"
 seo: "Cheltenham Spa station train times: the next departures and arrivals with platforms, delays and cancellations, plus annual passenger numbers."

@@ -1,5 +1,5 @@
 ---
-layout: weather
+layout: about-info/weather
 title: "Cheltenham 10-Day Weather Forecast"
 seo_title: "Cheltenham 10-Day Weather Forecast | Highs, Lows & Rain"
 seo: "10-day weather forecast for Cheltenham, Gloucestershire — daily highs, lows, chance of rain and wind, updated daily."

@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "School Hours Only Part-Time Self-Employed - Uckington, Gloucestershire"
 category: "jobs"

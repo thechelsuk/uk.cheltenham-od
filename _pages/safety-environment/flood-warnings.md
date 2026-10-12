@@ -1,6 +1,6 @@
 ---
 
-layout: flood-warnings
+layout: safety-environment/flood-warnings
 title: Cheltenham Flood Warnings
 seo_title: "Cheltenham Flood Warnings, River Levels and Rainfall"
 seo: Flood warnings, live river levels and rainfall for Cheltenham and Gloucestershire, sourced from the Environment Agency.

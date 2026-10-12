@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Theatre Scrub Practitioner, Band 5"
 category: "jobs"

@@ -63,14 +63,14 @@ defaults:
       path: ""
       type: classifieds
     values:
-      layout: advert
+      layout: about-info/advert
       robots: "noindex"
       parent: /cheltenham-classifieds
   - scope:
       path: ""
       type: newsletters
     values:
-      layout: newsletter-issue
+      layout: site/newsletter-issue
       type: "cod"
       parent: /newsletter
   - scope:

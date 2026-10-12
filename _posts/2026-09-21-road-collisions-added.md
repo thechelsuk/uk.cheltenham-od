@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Cheltenham Road Collisions
 type: cod
 description: "A new page counts every police-recorded injury collision in Cheltenham from 2021 to 2025 by severity, road user and road, with a map of the fatal and serious ones."

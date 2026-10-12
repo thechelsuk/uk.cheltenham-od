@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Updating Food Banks with a Map and Six Nearby Food Banks
 type: cod
 description: The food banks page now covers six food banks and 37 donation points, with a map and a page for each.

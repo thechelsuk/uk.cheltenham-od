@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Cheltenham Junior parkruns: Free Weekly 2k Every Sunday"
 category: community

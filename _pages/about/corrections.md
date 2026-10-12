@@ -1,5 +1,5 @@
 ---
-layout: corrections
+layout: site/corrections
 title: Corrections
 seo_title: "Cheltenham Open Data Corrections Log"
 permalink: /corrections

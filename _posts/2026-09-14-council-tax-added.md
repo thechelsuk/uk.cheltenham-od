@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Council Tax Charges Page
 type: cod
 description: Council tax charges by band A-H and by parish for Cheltenham, plus a link to check your property's official band.

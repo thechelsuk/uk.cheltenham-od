@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Expands Post Office Page
 type: cod
 description: Cheltenham's post office locations with map and address.

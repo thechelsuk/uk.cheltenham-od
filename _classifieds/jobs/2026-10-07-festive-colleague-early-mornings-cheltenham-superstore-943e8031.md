@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Festive Colleague - Early Mornings - Cheltenham Superstore"
 category: "jobs"

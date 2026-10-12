@@ -1,5 +1,5 @@
 ---
-layout: flood-history
+layout: safety-environment/flood-history
 title: Cheltenham Flood Warnings — History
 seo: "A historical log of flood warnings recorded for Gloucestershire, from the Environment Agency, including once each one has been lifted."
 description: "Every flood warning recorded for Gloucestershire since this page started tracking them, most recent first."

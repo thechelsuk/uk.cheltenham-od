@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Every Registered Charity in Cheltenham, in One List
 type: cod
 description: The 587 registered charities based in Cheltenham, with what each one does and its income.

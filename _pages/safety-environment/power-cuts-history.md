@@ -1,5 +1,5 @@
 ---
-layout: power-cuts-history
+layout: safety-environment/power-cuts-history
 title: Cheltenham Power Cuts — Incident History
 seo: "A log of restored power cuts in Cheltenham postcodes from National Grid Electricity Distribution, with how many properties each one affected."
 description: "Every restored power cut recorded against a Cheltenham postcode since this page started tracking them, most recent first."

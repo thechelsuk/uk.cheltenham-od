@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding an EV Charging Map to the Site
 type: cod
 description: A live map and sortable list of public electric vehicle charging points across Cheltenham, with connectors, speeds and directions.

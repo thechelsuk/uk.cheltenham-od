@@ -1,5 +1,5 @@
 ---
-layout: permit-parking-zones
+layout: getting-around/permit-parking-zones
 title: "Cheltenham Permit Parking Zones"
 seo_title: "Cheltenham Permit Parking Zones: Map and Street Finder"
 seo: "Map of Cheltenham's residents' permit parking zones, from Pittville to Lansdown and Prestbury. Find which zone your street is in and link to the council map."

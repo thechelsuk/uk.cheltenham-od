@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Professional and Amateur Sports Page
 type: cod
 description: Cheltenham Town FC fixtures and results, parkrun locations, and local running, hiking and climbing clubs, all in one place.

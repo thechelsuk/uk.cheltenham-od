@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "ShortKeys - Multi-line Text Expansion/Replacement"
 category: digital

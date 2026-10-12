@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Car Parks Page
 seo_title: "Cheltenham Car Parks Page Added: Fees and Charging Hours"
 type: cod

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Map to Cheltenham Planning Applications
 type: cod
 description: Recent planning applications in Cheltenham are now on a map, with a pin link for each application in the tables, so you can see what is being planned near you.

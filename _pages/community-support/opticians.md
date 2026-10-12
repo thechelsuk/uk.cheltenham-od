@@ -1,5 +1,5 @@
 ---
-layout: opticians
+layout: community-support/opticians
 title: "Opticians in Cheltenham: Eye Tests and Glasses near You"
 seo: "Find an optician in Cheltenham: a map and list of NHS-listed opticians in GL50 to GL54, plus who gets a free NHS sight test and how glasses vouchers work."
 permalink: /cheltenham-opticians

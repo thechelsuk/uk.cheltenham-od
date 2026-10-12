@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: At Least 4,500 Privately Rented Homes in Cheltenham Fall Short of the 2030 Energy Standard
 seo_title: "4,500 Cheltenham Rented Homes Below the 2030 EPC Standard"
 type: cod

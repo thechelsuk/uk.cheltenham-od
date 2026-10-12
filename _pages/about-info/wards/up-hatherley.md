@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: up-hatherley
 title: "Up Hatherley Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Up Hatherley Ward, Cheltenham: Crime & Prices"

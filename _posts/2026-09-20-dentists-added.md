@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Dentists in Cheltenham
 seo_title: "Dentists in Cheltenham Added: NHS-Listed Practices Map"
 type: cod

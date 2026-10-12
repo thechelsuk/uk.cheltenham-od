@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Hiyd - the Jekyll Companion App"
 category: digital

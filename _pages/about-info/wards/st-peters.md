@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: st-peters
 title: "St Peter's Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "St Peter's Ward, Cheltenham: Crime & Prices"

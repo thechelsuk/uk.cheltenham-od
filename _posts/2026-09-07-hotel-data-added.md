@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Places to Stay Guide to the Site
 type: cod
 description: A guide to hotels and accommodation in Cheltenham, with a live availability map.

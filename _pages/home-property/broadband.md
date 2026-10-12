@@ -1,5 +1,5 @@
 ---
-layout: broadband
+layout: home-property/broadband
 title: "Cheltenham Broadband Internet Speeds by Ward"
 seo_title: "Cheltenham Broadband Speeds & Coverage Map by Ward"
 seo: "Cheltenham broadband speeds and coverage by ward: gigabit, full-fibre, ultrafast and superfast availability across GL50 to GL54, from Ofcom data."

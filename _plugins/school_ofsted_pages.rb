@@ -4,7 +4,7 @@
 #
 # The monthly fetcher (_python/ofsted.py) decides which schools have Ofsted
 # reports; every school in its output gets a page at
-# /cheltenham-schools/<slug>, rendered by _layouts/school-ofsted.html. A new
+# /cheltenham-schools/<slug>, rendered by _layouts/home-property/school-ofsted.html. A new
 # school, or one Ofsted inspects for the first time, gets its page on the next
 # build without anyone writing a front-matter file for it.
 
@@ -58,7 +58,7 @@ module SchoolOfstedPages
       schools.each do |urn, school|
         page = Jekyll::PageWithoutAFile.new(site, site.source, "cheltenham-schools", "#{school['slug']}.html")
         page.data.merge!(
-          "layout" => "school-ofsted",
+          "layout" => "home-property/school-ofsted",
           "urn" => urn,
           "title" => "#{school['name']} Ofsted Rating and Inspection History",
           "seo_title" => SchoolOfstedPages.seo_title(school),

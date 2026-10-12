@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Maps Street Works and Emergency Repairs on Local Roads
 seo_title: "Cheltenham Street Works & Emergency Repairs Now Mapped"
 type: cod

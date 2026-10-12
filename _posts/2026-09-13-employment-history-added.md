@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Full Employment Rate History
 type: cod
 description: Cheltenham's economic activity, employment and unemployment rates year by year since 2004, sourced from the ONS's Nomis service.

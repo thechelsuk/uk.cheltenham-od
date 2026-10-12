@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Fill Up in Town, Not on the M5 - Cheltenham Fuel Prices Compared
 seo_title: "Fill Up in Town, Not on the M5: Cheltenham Fuel Prices"
 type: cod

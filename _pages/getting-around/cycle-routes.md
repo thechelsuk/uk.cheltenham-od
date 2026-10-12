@@ -1,5 +1,5 @@
 ---
-layout: cycle-routes
+layout: getting-around/cycle-routes
 title: Cheltenham Cycle Routes
 seo_title: "Cheltenham Cycle Routes: Tracks, Lanes and Pump Tracks"
 seo: "Cheltenham cycle routes - dedicated tracks, on-road lanes, the Honeybourne Line, NCN 41, plus local pump tracks and bike parks, all mapped out"

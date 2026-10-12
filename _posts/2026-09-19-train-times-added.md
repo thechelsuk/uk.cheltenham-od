@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Train Times
 seo_title: "Cheltenham Train Times Added: Live Departures and Arrivals"
 type: cod

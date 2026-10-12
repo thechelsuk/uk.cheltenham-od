@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Child Poverty Varies Widely Across Cheltenham's Wards
 type: cod
 description: New ward-by-ward figures show how many Cheltenham children live in low-income families, before and after housing costs.

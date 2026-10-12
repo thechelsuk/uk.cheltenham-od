@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Maps Crime Rates Across Every Part of Town
 seo_title: Cheltenham Crime Rates Hotspots Mapped
 type: cod

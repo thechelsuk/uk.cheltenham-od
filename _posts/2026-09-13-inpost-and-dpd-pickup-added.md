@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding InPost Locker and DPD Pickup Point Pages
 type: cod
 description: Every InPost self-service parcel locker and DPD Pickup point in Cheltenham, with maps and opening hours.

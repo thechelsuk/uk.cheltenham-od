@@ -1,5 +1,5 @@
 ---
-layout: foodbank
+layout: community-support/foodbank
 title: "Springbank Community Group: Food Bank Details"
 seo: "Contact details and location for Springbank Community Group, an independent food bank at the Ron Smith Pavilion on Springbank Way, Cheltenham."
 description: "Contact details and location for Springbank Community Group's food bank."

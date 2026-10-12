@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 type: cod
 title: Adding a Festival & Races Accommodation Guide
 seo: "Where to stay in Cheltenham for the Festival and Races 2027 (16–19 March) hotels near Cheltenham Racecourse, sorted by distance, with live availability"

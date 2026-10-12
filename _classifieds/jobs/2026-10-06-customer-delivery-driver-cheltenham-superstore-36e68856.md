@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Customer Delivery Driver - Cheltenham Superstore"
 category: "jobs"

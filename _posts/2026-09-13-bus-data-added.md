@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding a Bus Routes and Service Data Page
 type: cod
 description: Every registered bus route serving Cheltenham, and whether its timetable data is properly published, sourced from the DfT's Bus Open Data Service.

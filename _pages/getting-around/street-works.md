@@ -1,5 +1,5 @@
 ---
-layout: street-works
+layout: getting-around/street-works
 title: Cheltenham Street Works
 seo_title: "Cheltenham Street Works: Road Closures & Emergency Repairs"
 seo: "Street works and road closures on local roads in Cheltenham, from planned utility works to emergency repairs, mapped and updated through the day."

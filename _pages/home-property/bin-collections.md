@@ -1,5 +1,5 @@
 ---
-layout: bin-collections
+layout: home-property/bin-collections
 title: "Cheltenham Bin Collections"
 seo_title: "Cheltenham Bin Collections: Week 1 or Week 2?"
 seo: "Is it Week 1 or Week 2 for Cheltenham bin collections? This week's collection week, bank holiday and Christmas changes, what goes in each bin and garden waste."

@@ -1,5 +1,5 @@
 ---
-layout: house
+layout: home-property/house
 title: "Cheltenham House Price Data"
 seo_title: "Cheltenham House Prices: Average Prices and Sales Data"
 seo: "Cheltenham house prices: average and median sale prices, number of sales and price changes by property type, from Land Registry and ONS data."

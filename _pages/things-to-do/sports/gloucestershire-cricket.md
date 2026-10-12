@@ -1,5 +1,5 @@
 ---
-layout: cricket
+layout: things-to-do/cricket
 title: "Gloucestershire Cricket in Cheltenham: Festival, Fixtures and Getting to the Ground"
 seo_title: "Gloucestershire Cricket: Cheltenham Festival and Fixtures"
 seo: "Gloucestershire cricket in Cheltenham: the men's and women's teams, the Cheltenham Cricket Festival, a map and directions to home grounds, and fixtures."

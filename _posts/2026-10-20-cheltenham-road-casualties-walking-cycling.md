@@ -1,5 +1,5 @@
 ---
-layout: analysis
+layout: posts/analysis
 title: People Walking and Cycling Are More Than Half of Those Killed or Seriously Injured on Cheltenham's Roads
 seo_title: "Walkers and Cyclists Are 56% of Cheltenham Road KSIs"
 type: cod

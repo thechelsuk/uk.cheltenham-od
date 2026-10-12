@@ -1,5 +1,5 @@
 ---
-layout: advert
+layout: about-info/advert
 type: about
 title: "Cheltenham parkruns: Free Weekly 5k Every Saturday"
 category: community

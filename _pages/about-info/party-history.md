@@ -1,5 +1,5 @@
 ---
-layout: party-history
+layout: about-info/party-history
 title: "Cheltenham Party History"
 seo_title: "Cheltenham General Election Results by Party Since 1918"
 seo: "Every general election in Cheltenham since 1918: the winning party, turnout and votes for the Conservatives, Liberals and Liberal Democrats, Labour and others."

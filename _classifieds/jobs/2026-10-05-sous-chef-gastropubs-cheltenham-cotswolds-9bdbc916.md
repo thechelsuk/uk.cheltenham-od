@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Sous Chef - Gastropubs - Cheltenham & Cotswolds"
 category: "jobs"

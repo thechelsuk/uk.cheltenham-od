@@ -1,5 +1,5 @@
 ---
-layout: foodbank
+layout: community-support/foodbank
 title: "Cheltenham Open Door: Needed Items and Donation Points"
 seo: "What Cheltenham Open Door needs right now, where to drop donations off and how to contact this independent charity supporting rough sleepers and the vulnerable."
 description: "Needed items, donation points and contact details for Cheltenham Open Door."

@@ -1,5 +1,5 @@
 ---
-layout: child-poverty
+layout: about-info/child-poverty
 title: "Children in Low-Income Families by Cheltenham Ward"
 seo_title: "Child Poverty by Ward in Cheltenham"
 seo: "Compare DWP estimates of children in low-income families across Cheltenham's 20 wards, before and after housing costs, from 2022 to 2025."

@@ -1,5 +1,5 @@
 ---
-layout: council-land-and-assets
+layout: about-info/council-land-and-assets
 title: "Cheltenham Council Land & Assets Map (2021)"
 seo: "Every property and land holding owned by Cheltenham Borough Council, mapped and tabulated from the council's 2021 land and assets return."
 permalink: /cheltenham-council-land-and-assets/2021

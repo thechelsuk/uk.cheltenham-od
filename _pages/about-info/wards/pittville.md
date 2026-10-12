@@ -1,5 +1,5 @@
 ---
-layout: ward
+layout: about-info/ward
 ward: pittville
 title: "Pittville Ward, Cheltenham: Crime, House Prices and Local Services"
 seo_title: "Pittville Ward, Cheltenham: Crime & Prices"

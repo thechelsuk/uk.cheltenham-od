@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Care Homes in Cheltenham and Their CQC Ratings, Now on One Map
 seo_title: "Cheltenham Care Homes and Their CQC Ratings on One Map"
 type: cod

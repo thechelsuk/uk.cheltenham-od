@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Residential Support Worker – Children’s Residential Care"
 category: "jobs"

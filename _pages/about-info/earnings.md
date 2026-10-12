@@ -1,5 +1,5 @@
 ---
-layout: cheltenham-earnings
+layout: about-info/cheltenham-earnings
 title: "Cheltenham Median Earnings History"
 seo: "Cheltenham median full-time earnings since 2008: annual, weekly and hourly pay for residents and workers, compared with the South West and England."
 permalink: /cheltenham-earnings-history

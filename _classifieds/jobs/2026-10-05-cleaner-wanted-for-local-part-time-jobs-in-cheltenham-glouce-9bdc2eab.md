@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Cleaner wanted for local part-time jobs in Cheltenham, Gloucestershire"
 category: "jobs"

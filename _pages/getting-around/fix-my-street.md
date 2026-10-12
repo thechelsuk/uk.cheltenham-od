@@ -1,5 +1,5 @@
 ---
-layout: fix-my-street
+layout: getting-around/fix-my-street
 title: "Fix My Street Reports for Cheltenham"
 seo: "Latest Fix My Street reports in Cheltenham, Gloucestershire: potholes, fly-tipping, broken signs, fallen trees and more, on a map and table, updated hourly."
 description: "The latest street and highways problems reported in Cheltenham and the surrounding area."

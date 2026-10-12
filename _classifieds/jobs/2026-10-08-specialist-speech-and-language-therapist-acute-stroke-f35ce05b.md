@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Specialist Speech and Language Therapist - Acute Stroke"
 category: "jobs"

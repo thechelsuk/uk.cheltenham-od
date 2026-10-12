@@ -1,5 +1,5 @@
 ---
-layout: crime-map
+layout: safety-environment/crime-map
 title: "Cheltenham Crime Map"
 seo_title: "Cheltenham Crime Map: Crime Rates by Area and Ward"
 seo: "Map of Cheltenham crime rates per 1,000 residents over the last 12 months, for 77 small areas and 20 wards, with a slider to see how each area has changed."

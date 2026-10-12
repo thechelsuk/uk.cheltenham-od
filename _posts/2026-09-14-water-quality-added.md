@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding River Water Quality Readings
 type: cod
 description: Chemical water quality readings for the River Chelt and nearby brooks, from the Environment Agency's Water Quality Archive.

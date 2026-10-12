@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Housing Supply & Property Stock
 type: cod
 description: How many homes Cheltenham builds each year, and how its total property stock has grown since 1993.

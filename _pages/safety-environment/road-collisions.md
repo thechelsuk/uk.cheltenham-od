@@ -1,5 +1,5 @@
 ---
-layout: road-collisions
+layout: safety-environment/road-collisions
 title: "Cheltenham Road Collisions and Casualties"
 seo: "Road collisions in Cheltenham, 2021 to 2025: injuries by severity, road user and road, a map of every fatal and serious collision, and when they happen."
 permalink: /cheltenham-road-collisions

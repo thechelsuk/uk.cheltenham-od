@@ -1,5 +1,5 @@
 ---
-layout: contact
+layout: site/contact
 title: "General Enquiries Contact Form"
 seo: "General Enquiries Contact Form for Cheltenham Open Data"
 permalink: /contact

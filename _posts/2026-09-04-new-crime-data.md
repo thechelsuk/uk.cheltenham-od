@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Crime Data by Neighbourhoods to the Site
 type: cod
 description: Find monthly neighbourhood-level crime figures for Cheltenham, broken down by month and neighbourhood.

@@ -1,5 +1,5 @@
 ---
-layout: food-standards
+layout: things-to-do/food-standards
 title: "Cheltenham Food Hygiene Ratings"
 seo: "Food hygiene ratings for every food business in Cheltenham from the Food Standards Agency, from 5 (very good) down to 0, with inspection dates and addresses."
 permalink: /cheltenham-food-standards

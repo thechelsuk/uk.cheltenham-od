@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Senior Administrator - Children’s Community Nursing & Complex Care"
 category: "jobs"

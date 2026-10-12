@@ -1,5 +1,5 @@
 ---
-layout: "advert"
+layout: "about-info/advert"
 type: "about"
 title: "Tesco Colleague - Bishops Cleeve Superstore"
 category: "jobs"

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Cheltenham Open Data Maps Home Energy Ratings by Ward
 type: cod
 description: How energy efficient Cheltenham's homes are, ward by ward, from their Energy Performance Certificates.

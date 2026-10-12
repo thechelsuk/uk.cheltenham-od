@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Secondary and Primary School Catchment Areas Map
 type: cod
 description: Which secondary or primary school is nearest to each part of Cheltenham, by straight-line distance — not an official catchment map.

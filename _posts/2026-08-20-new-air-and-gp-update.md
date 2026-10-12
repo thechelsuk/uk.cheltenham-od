@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: Adding Air Quality, GPs, and Pharmacies to Site
 type: cod
 description: Find GP practices and pharmacies in Cheltenham and DEFRA air quality reports.

@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: posts/posts
 title: How Deprived Is Your Part of Cheltenham? Indices of Deprivation 2025 Mapped
 seo_title: "Cheltenham Deprivation: Indices of Deprivation 2025 Mapped"
 type: cod

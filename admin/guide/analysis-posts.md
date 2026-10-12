@@ -59,7 +59,7 @@ Create the draft as `_drafts/YYYY-MM-DD-<slug>.md`. `_drafts/` is not committed,
 
 ```markdown
 ---
-layout: analysis
+layout: posts/analysis
 title: Headline Stating the Finding, in AP Title Case
 seo_title: "Shorter Title for Search Results, About 55 Characters"
 type: cod
