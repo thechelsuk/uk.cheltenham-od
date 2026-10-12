@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T08:25:09+01:00",
+  "generated_at": "2026-10-12T08:30:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,33 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-12T08:12",
-      "expected": "2026-10-12T08:23",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ]
-    },
     {
       "scheduled": "2026-10-12T08:29",
       "expected": "2026-10-12T08:29",
@@ -164,29 +137,52 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-12T08:10",
-      "expected": "2026-10-12T08:22",
-      "status": "Delayed",
+      "scheduled": "2026-10-12T09:12",
+      "expected": "2026-10-12T09:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "This service has been delayed by a late running train being in front of this one"
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
     },
     {
-      "scheduled": "2026-10-12T08:27",
-      "expected": "2026-10-12T08:27",
+      "scheduled": "2026-10-12T09:15",
+      "expected": "2026-10-12T09:15",
       "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-12T08:27",
       "expected": "2026-10-12T08:27",
@@ -199,13 +195,13 @@
     },
     {
       "scheduled": "2026-10-12T08:32",
-      "expected": "2026-10-12T08:32",
-      "status": "On time",
+      "expected": "2026-10-12T08:36",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by a points failure"
     },
     {
       "scheduled": "2026-10-12T08:39",
@@ -245,6 +241,26 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T09:10",
+      "expected": "2026-10-12T09:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T09:14",
+      "expected": "2026-10-12T09:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
