@@ -1,0 +1,14 @@
+{%- comment -%}
+The "In this section" row under a page's header: the parent page and its
+sub-pages, with the current one marked. From page.family (_plugins/navigation.rb).
+{%- endcomment -%}
+{%- if page.family.size > 1 -%}
+<nav class="section-links" aria-label="In this section">
+    <span class="section-links-label">In this section</span>
+    <ul>
+        {%- for link in page.family %}
+        <li>{% if link.current %}<a href="{{ link.url }}" aria-current="page">{{ link.name }}</a>{% else %}<a href="{{ link.url }}">{{ link.name }}</a>{% endif %}</li>
+        {%- endfor %}
+    </ul>
+</nav>
+{%- endif -%}

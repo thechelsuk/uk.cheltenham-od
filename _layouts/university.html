@@ -3,13 +3,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/explore/about-info">&lAarr; Back to About &amp; Info</a></li>
+            <ul class="header-links">
                 <li><a href="https://www.glos.ac.uk/">University of Gloucestershire website &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

@@ -40,6 +40,8 @@ If two sibling pages differ only by a filter (primary vs secondary, a food hygie
 
 ## The Layout (`_layouts/<name>.html`)
 
+The header holds the breadcrumb (built from the menu, so no "Back to" links), the title, the description and up to five live facts as tiles: `<li><strong>figure</strong> label</li>` inside `<ul class="header-facts">`. Tiles are figures from the data, never the "last updated" date (that lives under About This Data), and they sit in one row on wide screens. Links that aren't facts, such as a feed or an official site, go in a second `<ul class="header-links">`. The "In this section" row after the header lists the parent page and its sub-pages by itself.
+
 Standard skeleton:
 
 ```liquid
@@ -48,12 +50,14 @@ Standard skeleton:
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/parent-page">&lAarr; Back to Parent</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ data.items | size }}</strong> examples in Cheltenham</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

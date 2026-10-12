@@ -22,13 +22,16 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-wards">&larr; Back to Cheltenham Wards</a></li>
-                <li>Ward code {{ w.code }}, {{ w.postcode_count }} postcodes, {{ w.area_km2 }} km&sup2;</li>
+            <ul class="header-facts">
+                <li><strong>{{ w.postcode_count }}</strong> postcodes</li>
+                <li><strong>{{ w.area_km2 }} km&sup2;</strong> area</li>
+                <li><strong>{{ w.code }}</strong> ward code</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 
@@ -641,7 +644,7 @@
         <p><small>Election results and councillors from <a href="{{ e.source_url | default: "https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx" }}" rel="noopener">Cheltenham Borough Council</a>.
             Each voter has as many votes as there are seats, so in a two-seat contest the votes can add up to more than the
             ballot papers issued, and turnout is ballot papers issued as a share of registered voters. See the
-            <a href="/cheltenham-politics/local-elections">results for every ward</a>.</small></p>
+            <a href="/cheltenham-local-elections">results for every ward</a>.</small></p>
         {% endif %}
 
         <h2 id="faq">Frequently Asked Questions</h2>

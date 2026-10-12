@@ -4,13 +4,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-sewage-overflows">&lAarr; Back to Cheltenham Sewage Overflow Status</a></li>
-                <li>Spills logged since {{ history.tracking_since }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ history.tracking_since }}</strong> spills logged since</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%- comment -%}
+A page that has moved: its old address sends people and search engines to
+the new one. Make one with a page whose front matter sets `layout: redirect`,
+the old `permalink`, `redirect_to` (the new address) and `robots: noindex`,
+which also keeps it out of the sitemap.
+{%- endcomment %}
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <link rel="canonical" href="{{ page.redirect_to | absolute_url }}">
+        <meta http-equiv="refresh" content="0; url={{ page.redirect_to }}">
+        <meta name="robots" content="noindex">
+    </head>
+    <body>
+        <p>This page has moved to <a href="{{ page.redirect_to }}">{{ page.redirect_to | absolute_url }}</a>.</p>
+    </body>
+</html>

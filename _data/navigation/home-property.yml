@@ -1,0 +1,77 @@
+# Home & Property: the menu column and category page, in display order.
+# Fields are documented in _plugins/navigation.rb.
+group: "Home & Property"
+position: 2
+subgroups:
+  - name: "Buying & Renting"
+    items:
+      - name: "Cheltenham House Prices"
+        link: /cheltenham-house-prices
+        description: "Local house prices data from Land Registry and ONS."
+        children:
+          - name: "Cheltenham House Prices 2026"
+            link: /cheltenham-house-prices-2026
+            description: "House price sales data for Cheltenham in 2026."
+          - name: "Cheltenham House Prices 2025"
+            link: /cheltenham-house-prices-2025
+            description: "House price sales data for Cheltenham in 2025."
+          - name: "Cheltenham House Prices 2024"
+            link: /cheltenham-house-prices-2024
+            description: "House price sales data for Cheltenham in 2024."
+          - name: "Cheltenham House Prices 2023"
+            link: /cheltenham-house-prices-2023
+            description: "House price sales data for Cheltenham in 2023."
+          - name: "Cheltenham Home Affordability"
+            link: /cheltenham-house-prices/affordability
+            description: "How many homes sold in Cheltenham each year a typical full-time earner could afford, since 2008."
+            a_z: true
+          - name: "Cheltenham Housing Supply"
+            link: /cheltenham-house-prices/housing-supply
+            description: "Net additional dwellings and student accommodation supply in Cheltenham."
+            a_z: true
+          - name: "Cheltenham Council Tax Stock of Properties"
+            short: "Council Tax Stock"
+            link: /cheltenham-house-prices/council-tax-stock
+            description: "Total number of properties in Cheltenham over time."
+            a_z: true
+      - name: "Cheltenham Rent Prices"
+        link: /cheltenham-rent-prices
+        description: "Average private rents in Cheltenham by bedrooms and property type, month by month since 2015."
+      - name: "Cheltenham Council Tax"
+        link: /cheltenham-council-tax
+        description: "Council tax charges by band and by parish for Cheltenham."
+      - name: "Cheltenham Home Energy Ratings"
+        link: /cheltenham-energy-ratings
+        description: "EPC ratings for Cheltenham's homes by ward and small area, with a map."
+  - name: "Education & Childcare"
+    items:
+      - name: "Cheltenham Schools &amp; Catchment Areas"
+        link: /cheltenham-schools
+        description: "Primary, secondary, independent, and special schools in Cheltenham."
+        children:
+          - name: "Primary School Catchment Areas"
+            link: /cheltenham-schools/catchment-areas/primary
+            description: "Cheltenham primary school catchment areas map."
+          - name: "Secondary School Catchment Areas"
+            link: /cheltenham-schools/catchment-areas/secondary
+            description: "Cheltenham secondary school catchment areas map."
+      - name: "Cheltenham Nurseries &amp; Childcare"
+        link: /cheltenham-nurseries-childcare
+        description: "Registered nurseries, pre-schools and out-of-school clubs, with places and Ofsted outcomes."
+      - name: "University of Gloucestershire"
+        link: /university-of-gloucestershire
+        description: "University of Gloucestershire campuses in Cheltenham and Gloucester, what is taught where and how to apply."
+  - name: "Around Your Home"
+    items:
+      - name: "Cheltenham Planning Applications"
+        link: /cheltenham-planning-applications
+        description: "Local planning applications from Cheltenham Borough Council."
+      - name: "Cheltenham Broadband Internet"
+        link: /cheltenham-broadband-internet-speeds
+        description: "Broadband speeds and gigabit, full-fibre and superfast coverage across Cheltenham, by ward."
+      - name: "Cheltenham Mobile Coverage"
+        link: /cheltenham-mobile-coverage
+        description: "Mobile phone network coverage by operator in Cheltenham."
+      - name: "Cheltenham Recycling"
+        link: /cheltenham-recycling
+        description: "Cheltenham recycling guide and bank locations."

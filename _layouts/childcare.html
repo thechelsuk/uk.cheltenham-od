@@ -4,36 +4,20 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/cheltenham-schools">&larr; Back to Cheltenham Schools</a></li>
-                <li>Ofsted register as at {{ data.as_at | date: "%Y-%m-%d" }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ data.summary.providers }}</strong> registered providers</li>
+                <li><strong>{{ data.summary.places_display }}</strong> childcare places</li>
+                <li><strong>{{ data.summary.good_or_better }} of {{ data.summary.graded }}</strong> rated good or outstanding</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 
         {{ content }}
-
-        <h2>Childcare at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Registered providers</p>
-                <span class="info-card__title">{{ data.summary.providers }}</span>
-                <span class="info-card__subtitle">nurseries, pre-schools and clubs</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Childcare places</p>
-                <span class="info-card__title">{{ data.summary.places_display }}</span>
-                <span class="info-card__subtitle">across all providers</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Rated good or outstanding</p>
-                <span class="info-card__title">{{ data.summary.good_or_better }}</span>
-                <span class="info-card__subtitle">of {{ data.summary.graded }} with an Ofsted grade or report card</span>
-            </div>
-        </div>
 
         <h2>Map of Nurseries and Childcare</h2>
         <div id="childcare-map" class="map-canvas" aria-label="Map of nurseries and childcare providers in Cheltenham"></div>

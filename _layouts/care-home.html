@@ -5,13 +5,16 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/cheltenham-care-homes">&larr; Back to Cheltenham Care Homes</a></li>
-                {% if c.published %}<li>CQC report {{ c.published | date: "%Y-%m-%d" }}</li>{% endif %}
+            <ul class="header-facts">
+                <li><strong>{{ c.overall | default: "Not yet rated" }}</strong> CQC rating{% if c.published %}, {{ c.published | date: "%Y-%m-%d" }}{% endif %}</li>
+                <li><strong>{{ kind | capitalize }}</strong> type of care</li>
+                <li><strong>{{ c.postcode }}</strong> {% if c.distance_miles %}{{ c.distance_miles }} miles from the centre{% else %}postcode{% endif %}</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 
@@ -29,25 +32,6 @@
             Compare it with the other care homes and home care services in town on our
             <a href="/cheltenham-care-homes">Cheltenham care homes</a> page.
         </p>
-
-        <h2>{{ c.name }} at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Overall CQC rating</p>
-                <span class="info-card__title">{{ c.overall | default: "Not yet rated" }}</span>
-                {% if c.published %}<span class="info-card__subtitle">report {{ c.published | date: "%Y-%m-%d" }}</span>{% endif %}
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Type of care</p>
-                <span class="info-card__title">{{ kind | capitalize }}</span>
-                {% if c.service_types.size > 1 %}<span class="info-card__subtitle">{{ c.service_types | join: ", " }}</span>{% endif %}
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Location</p>
-                <span class="info-card__title">{{ c.postcode }}</span>
-                {% if c.distance_miles %}<span class="info-card__subtitle">{{ c.distance_miles }} miles from the town centre</span>{% endif %}
-            </div>
-        </div>
 
         {% if c.overall %}
         <h2>CQC Ratings</h2>

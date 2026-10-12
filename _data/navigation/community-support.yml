@@ -1,0 +1,73 @@
+# Community & Support: the menu column and category page, in display order.
+# Fields are documented in _plugins/navigation.rb.
+group: "Community & Support"
+position: 5
+subgroups:
+  - name: "Health & Care"
+    items:
+      - name: "Cheltenham GP and Pharmacies"
+        link: /cheltenham-gp-pharmacies
+        description: "Find GP practices and pharmacies in Cheltenham"
+      - name: "Cheltenham Dentists"
+        link: /cheltenham-dentists
+        description: "Dental practices in Cheltenham on a map, with how to find an NHS dentist."
+      - name: "Cheltenham Opticians"
+        link: /cheltenham-opticians
+        description: "Opticians in Cheltenham on a map, with who can get a free NHS sight test."
+      - name: "Cheltenham A&E Waiting Times"
+        link: /cheltenham-ae-waiting-times
+        description: "Monthly A&E waiting times for Gloucestershire Hospitals NHS Foundation Trust, with a map of nearby hospitals."
+      - name: "Cheltenham Care Homes"
+        link: /cheltenham-care-homes
+        description: "Care homes, nursing homes and home care services in Cheltenham with their CQC ratings."
+  - name: "Help & Support"
+    items:
+      - name: "Cheltenham Food Banks"
+        link: /cheltenham-foodbank-needed-items
+        description: "Local foodbanks, locations, details, and their needed items."
+        children:
+          - name: "Cheltenham Foodbank"
+            link: /cheltenham-foodbank-needed-items/cheltenham-foodbank
+            description: "Needed items, donation points and contact details for Cheltenham Foodbank."
+          - name: "Cheltenham Open Door"
+            link: /cheltenham-foodbank-needed-items/cheltenham-open-door
+            description: "Needed items, donation points and contact details for Cheltenham Open Door."
+          - name: "Springbank Community Group"
+            link: /cheltenham-foodbank-needed-items/springbank-community-group
+            description: "Contact details and location for Springbank Community Group's food bank."
+          - name: "Gloucester Foodbank"
+            link: /cheltenham-foodbank-needed-items/gloucester-foodbank
+            description: "Needed items, donation points and contact details for Gloucester Foodbank."
+          - name: "Tewkesbury Foodbank"
+            link: /cheltenham-foodbank-needed-items/tewkesbury-foodbank
+            description: "Needed items, donation points and contact details for Tewkesbury Foodbank."
+          - name: "North Cotswold Foodbank"
+            link: /cheltenham-foodbank-needed-items/north-cotswold-foodbank
+            description: "Needed items, donation points and contact details for North Cotswold Foodbank."
+      - name: "Cheltenham Helplines and Contacts"
+        link: /cheltenham-helpful-contacts-reports
+        description: "Tap-to-call helpline and emergency numbers."
+        children:
+          - name: "Cheltenham Local Help and Support"
+            link: /cheltenham-helpful-contacts-reports/local-support
+            description: "Community groups, places to meet and ways to save on food."
+      - name: "Cheltenham Charities"
+        link: /cheltenham-charities
+        description: "Registered charities based in Cheltenham, with what each does and its income."
+  - name: "Local Services"
+    items:
+      - name: "Cheltenham Third Spaces"
+        link: /cheltenham-third-spaces
+        description: "Local third spaces and community hubs in Cheltenham."
+      - name: "Cheltenham Post Offices &amp; Lockers"
+        link: /cheltenham-post-office-locations
+        description: "Find Post Offices, InPost lockers and DPD Pickup points in Cheltenham"
+        children:
+          - name: "Cheltenham InPost Lockers"
+            link: /cheltenham-inpost-lockers
+            description: "Cheltenham InPost self-service parcel locker locations."
+            a_z: true
+          - name: "Cheltenham DPD Pickup Points"
+            link: /cheltenham-dpd-pickup-points
+            description: "Cheltenham DPD Pickup points at local shops and petrol stations."
+            a_z: true

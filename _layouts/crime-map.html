@@ -4,14 +4,16 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>Latest 12 months: {{ latest.first_month }} to {{ latest.last_month }}</li>
-                <li>{{ data.lsoa.areas.size }} small areas and {{ data.ward.areas.size }} wards</li>
-                <li><a href="/cheltenham-crime-data">&larr; Back to Crime Data</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ latest.first_month }} to {{ latest.last_month }}</strong> latest 12 months</li>
+                <li><strong>{{ data.lsoa.areas.size }}</strong> small areas</li>
+                <li><strong>{{ data.ward.areas.size }}</strong> wards</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

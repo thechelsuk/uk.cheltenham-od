@@ -25,14 +25,19 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><b>{{ news.count }}</b> stories from <b>{{ news.sources | size }}</b> sources · updated {{ news.updated }}</li>
-                <li><a href="/feeds/news-breaking.xml">Breaking news feed (every headline) →</a></li>
-                <li><a href="/feeds/news-summary.xml">Daily digest feed (once a day) →</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ news.count }}</strong> stories</li>
+                <li><strong>{{ news.sources | size }}</strong> sources</li>
+            </ul>
+            <ul class="header-links">
+                <li><a href="/feeds/news-breaking.xml">Breaking news feed (every headline) &rarr;</a></li>
+                <li><a href="/feeds/news-summary.xml">Daily digest feed (once a day) &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

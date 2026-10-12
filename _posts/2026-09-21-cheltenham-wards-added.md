@@ -8,11 +8,11 @@ seo: "New Cheltenham ward pages compare crime, house prices, broadband and counc
 date: 2026-09-21 21:30
 ---
 
-Cheltenham Open Data has published a [profile for every ward in Cheltenham](/cheltenham-wards), and a new guide to [local elections and councillors](/cheltenham-politics/local-elections).
+Cheltenham Open Data has published a [profile for every ward in Cheltenham](/cheltenham-wards), and a new guide to [local elections and councillors](/cheltenham-local-elections).
 
 The [wards page](/cheltenham-wards) maps all 20 wards, shaded by house prices, and compares them on crime, house prices, broadband, registered voters, turnout and councillors. Each ward then has its own page with crime broken down by type, house prices back to 1995, its councillors and election results, and the nearest GPs, dentists, opticians, schools, parks, play areas and public toilets.
 
-The [local elections page](/cheltenham-politics/local-elections) lists all 40 borough councillors, shows which party holds each ward on a map, and sets out every borough election result since 2024, ward by ward.
+The [local elections page](/cheltenham-local-elections) lists all 40 borough councillors, shows which party holds each ward on a map, and sets out every borough election result since 2024, ward by ward.
 
 ## The Wards
 

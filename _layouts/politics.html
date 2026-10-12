@@ -5,14 +5,11 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/about-cheltenham">&larr; Back to All About Cheltenham</a></li>
-                <li><a href="/cheltenham-politics/party-history">Election history since 1918 &rarr;</a></li>
-                <li><a href="/cheltenham-politics/local-elections">Local Elections &rarr;</a></li>
-            </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

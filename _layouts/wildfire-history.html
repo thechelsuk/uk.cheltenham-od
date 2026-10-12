@@ -6,14 +6,18 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-wildfire-risk">&lAarr; Back to Cheltenham Wildfire Risk</a></li>
-                <li>{{ totals.all_display }} grassland, woodland and crop fires, {{ data.first_year }} to {{ data.last_located_year }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ totals.all_display }}</strong> grassland, woodland and crop fires</li>
+                <li><strong>{{ data.first_year }} to {{ data.last_located_year }}</strong> years covered</li>
+            </ul>
+            <ul class="header-links">
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

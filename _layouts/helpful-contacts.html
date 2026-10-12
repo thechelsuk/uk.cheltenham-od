@@ -8,16 +8,11 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                {% if page.listing == "contacts" %}
-                <li><a href="/cheltenham-helpful-contacts-reports/local-support">Local Help and Support &rarr;</a></li>
-                {% else %}
-                <li><a href="/cheltenham-helpful-contacts-reports">&larr; Back to Helplines and Contacts</a></li>
-                {% endif %}
-            </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

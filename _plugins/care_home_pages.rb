@@ -73,6 +73,7 @@ module CareHomePages
           "seo" => CareHomePages.seo(location),
           "description" => "The latest Care Quality Commission rating and the care offered by #{CareHomePages.place(location)}, " \
                            "a #{CareHomePages::KINDS[location['kind']]} in Cheltenham.",
+          "parent" => "/cheltenham-care-homes",
           "permalink" => "/cheltenham-care-homes/#{location['slug']}",
           "type" => "community",
           "schema" => "care-home"

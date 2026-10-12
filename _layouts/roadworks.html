@@ -6,14 +6,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>{% if count == 1 %}1 planned works{% else %}{{ count }} planned works{% endif %} within {{ data.radius_miles }} miles of Cheltenham</li>
-                <li>{% if unplanned_active == 1 %}1 unplanned closure{% else %}{{ unplanned_active }} unplanned closures{% endif %} now</li>
-                <li><a href="/cheltenham-roadworks/unplanned-closures">Unplanned closures history &rarr;</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ count }}</strong> planned works within {{ data.radius_miles }} miles</li>
+                <li><strong>{{ unplanned_active }}</strong> unplanned closures now</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

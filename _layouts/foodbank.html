@@ -4,12 +4,11 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-foodbank-needed-items">&lAarr; Back to Cheltenham Food Banks</a></li>
-            </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

@@ -3,14 +3,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-sports">&lAarr; Back to Sport in Cheltenham</a></li>
-                <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official Club Website &rarr;</a>
-                </li>
+            <ul class="header-links">
+                <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official Club Website &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

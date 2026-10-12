@@ -107,6 +107,7 @@ def main():
         print(f"ERROR: no row found for '{CONSTITUENCY_NAME}' in {SOURCE_CSV}", file=sys.stderr)
         sys.exit(1)
 
+    premises = int(to_float(row.get("prem_count")))
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "Ofcom Connected Nations",
@@ -115,7 +116,8 @@ def main():
         "reference_date": REFERENCE_DATE,
         "geography": "Westminster parliamentary constituency",
         "geography_name": CONSTITUENCY_NAME,
-        "premises_count": int(to_float(row.get("prem_count"))),
+        "premises_count": premises,
+        "premises_count_display": f"{premises:,}",
         "services": build_services(row),
     }
 

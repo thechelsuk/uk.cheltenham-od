@@ -2,7 +2,7 @@
 layout: local-elections
 title: "Cheltenham Local Elections and Councillors: Results by Ward"
 seo: "Cheltenham's 40 borough councillors, seats by party and every local election result since 2024, ward by ward, with turnout, votes and winning margins."
-permalink: /cheltenham-politics/local-elections
+permalink: /cheltenham-local-elections
 description: "Every Cheltenham Borough councillor, the council's seats by party and borough election results since 2024 for all 20 wards, with turnout and margins."
 type: "about"
 schema: local-elections

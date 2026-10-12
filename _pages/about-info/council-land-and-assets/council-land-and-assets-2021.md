@@ -12,6 +12,9 @@ other_year_link: /cheltenham-council-land-and-assets
 filters:
   - table: 1
     column: "Tenure Type"
+subgroup: "Politics & Economy"
+nav_title: "Council Land & Assets 2021"
+parent: /cheltenham-council-land-and-assets
 ---
 
 ## Cheltenham Council Land & Assets (2021)

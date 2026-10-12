@@ -12,6 +12,9 @@ schema: council-land-and-assets
 filters:
   - table: 1
     column: "Tenure Type"
+section: "About & Info"
+subgroup: "Politics & Economy"
+nav_title: "Cheltenham Council Land & Assets"
 ---
 
 ## Cheltenham Council Land & Assets

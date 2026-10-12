@@ -3,13 +3,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/cheltenham-wards">&larr; Back to Cheltenham wards</a></li>
-                <li>{{ kids.geography }} — children aged {{ kids.age_range }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ kids.age_range }}</strong> children's ages covered</li>
+                <li><strong>{{ kids.geography }}</strong> area</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

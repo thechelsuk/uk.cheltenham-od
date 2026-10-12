@@ -5,6 +5,7 @@ seo: "Thinking of moving to Cheltenham? A local guide to areas, house prices, sc
 description: "A practical guide to moving to Cheltenham, Gloucestershire. House prices, schools, neighbourhoods, safety and local services, all backed by open data."
 type: "landing"
 permalink: /moving-to-cheltenham
+parent: /guides
 ---
 
 ## Moving to Cheltenham

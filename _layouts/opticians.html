@@ -3,13 +3,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/explore/community-support">&lAarr; Back to Community &amp; Support</a></li>
+            <ul class="header-links">
                 <li><a href="https://www.nhs.uk/service-search/find-an-NHS-sight-test/location">NHS Find an NHS sight test &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

@@ -3,14 +3,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>{{ bus.total_routes }} routes from {{ bus.operator_count }} operators serving Cheltenham</li>
-                <li>Last updated {{ bus.updated }}</li>
-                <li><a href="/cheltenham-bus-data/history">Incident History &rarr;</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ bus.total_routes }}</strong> bus routes serving Cheltenham</li>
+                <li><strong>{{ bus.operator_count }}</strong> operators</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

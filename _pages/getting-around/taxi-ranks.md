@@ -8,6 +8,8 @@ description: "Every taxi rank in Cheltenham on one map, from the Promenade and M
 type: "travel"
 schema: taxi-ranks
 section: "Getting Around"
+subgroup: "Driving & Parking"
+nav_title: "Cheltenham Taxi Ranks"
 ---
 
 ## Taxi Ranks in Cheltenham

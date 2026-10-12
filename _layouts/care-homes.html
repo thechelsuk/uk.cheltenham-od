@@ -7,34 +7,18 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/explore/community-support">&larr; Back to Community &amp; Support</a></li>
-                <li>CQC data checked {{ data.generated_at | date: "%Y-%m-%d" }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ data.summary.care_homes }}</strong> care homes, {{ data.summary.nursing_homes }} with nursing</li>
+                <li><strong>{{ data.summary.care_homes_good_or_better }} of {{ data.summary.care_homes_rated }}</strong> rated good or outstanding</li>
+                <li><strong>{{ data.summary.home_care }}</strong> home care services</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
-
-        <h2>Care Homes at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Care homes</p>
-                <span class="info-card__title">{{ data.summary.care_homes }}</span>
-                <span class="info-card__subtitle">{{ data.summary.nursing_homes }} with nursing care</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Rated good or outstanding</p>
-                <span class="info-card__title">{{ data.summary.care_homes_good_or_better }}</span>
-                <span class="info-card__subtitle">of {{ data.summary.care_homes_rated }} care homes with a rating</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Home care services</p>
-                <span class="info-card__title">{{ data.summary.home_care }}</span>
-                <span class="info-card__subtitle">carers who visit people at home</span>
-            </div>
-        </div>
 
         <h2>Map of Care Homes</h2>
         <div id="care-homes-map" class="map-canvas" aria-label="Map of care homes in Cheltenham"></div>

@@ -1,0 +1,26 @@
+{%- comment -%}
+The trail above a page's title, from page.breadcrumbs (_plugins/navigation.rb):
+"Home › Getting Around › Car Parks" on wide screens, "← Car Parks" on phones.
+Also gives search engines the trail as BreadcrumbList structured data.
+{%- endcomment -%}
+{%- if page.breadcrumbs -%}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+        {%- for crumb in page.breadcrumbs %}
+        <li{% if forloop.last %} class="breadcrumbs-parent"{% endif %}><a href="{{ crumb.url }}">{{ crumb.name }}</a></li>
+        {%- endfor %}
+    </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {%- for crumb in page.breadcrumbs %}
+    {"@type": "ListItem", "position": {{ forloop.index }}, "name": {{ crumb.name | strip_html | replace: "&amp;", "&" | jsonify }}, "item": "{{ crumb.url | absolute_url }}"},
+    {%- endfor %}
+    {"@type": "ListItem", "position": {{ page.breadcrumbs.size | plus: 1 }}, "name": {{ page.title | strip_html | replace: "&amp;", "&" | jsonify }}}
+  ]
+}
+</script>
+{%- endif -%}

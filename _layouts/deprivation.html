@@ -4,34 +4,18 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/about-cheltenham">&larr; Back to All About Cheltenham</a></li>
-                <li>{{ dep.summary.rank_of_average_score }}th of {{ dep.summary.district_count }} districts (1 = most deprived)</li>
+            <ul class="header-facts">
+                <li><strong>{{ dep.summary.rank_of_average_score }} of {{ dep.summary.district_count }}</strong> districts in England (1 = most deprived)</li>
+                <li><strong>{{ dep.summary.most_deprived_20 }} of {{ dep.summary.lsoa_count }}</strong> neighbourhoods in the most deprived 20%</li>
+                <li><strong>{{ dep.summary.least_deprived_20 }} of {{ dep.summary.lsoa_count }}</strong> neighbourhoods in the least deprived 20%</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
-
-        <h2>Cheltenham at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Rank among districts in England</p>
-                <span class="info-card__title">{{ dep.summary.rank_of_average_score }} of {{ dep.summary.district_count }}</span>
-                <span class="info-card__subtitle">1 is the most deprived</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Neighbourhoods in most deprived 20%</p>
-                <span class="info-card__title">{{ dep.summary.most_deprived_20 }} of {{ dep.summary.lsoa_count }}</span>
-                <span class="info-card__subtitle">{{ dep.summary.deciles["1"] }} in the most deprived 10%</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Neighbourhoods in least deprived 20%</p>
-                <span class="info-card__title">{{ dep.summary.least_deprived_20 }} of {{ dep.summary.lsoa_count }}</span>
-                <span class="info-card__subtitle">{{ dep.summary.deciles["10"] }} in the least deprived 10%</span>
-            </div>
-        </div>
 
         <h2>Map of Deprivation in Cheltenham</h2>
         <div class="filter-bar">

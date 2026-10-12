@@ -7,7 +7,6 @@ description: "A log of storm overflow spills into the River Chelt and its brooks
 permalink: /cheltenham-sewage-overflows/history
 type: "environment"
 schema: sewage-overflows-history
-section: "Safety & Environment"
 ---
 
 ## Sewage Spill History

@@ -3,13 +3,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/about-cheltenham">&lAarr; Back to All About Cheltenham</a></li>
-                <li>{{ employment.series | size }} years of data</li>
+            <ul class="header-facts">
+                <li><strong>{{ employment.series | size }}</strong> years of data</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

@@ -1,0 +1,69 @@
+# About & Info: the menu column and category page, in display order.
+# Fields are documented in _plugins/navigation.rb.
+group: "About & Info"
+position: 6
+subgroups:
+  - name: "Cheltenham at a Glance"
+    items:
+      - name: "Cheltenham in Numbers"
+        short: "Cheltenham in Numbers"
+        link: /cheltenham-in-numbers
+        description: "Cheltenham's key facts and figures at a glance, each linked to its source."
+      - name: "All About Cheltenham"
+        link: /about-cheltenham
+        description: "Cheltenham's history, population, growth and Census 2021 headline figures."
+      - name: "Cheltenham Wards"
+        link: /cheltenham-wards
+        description: "Cheltenham's 20 electoral wards compared on crime, house prices, broadband, voters and councillors, with a local profile for each."
+      - name: "Cheltenham 10-day Weather Forecast"
+        link: /cheltenham-10-day-weather-forecast
+        description: "Local temperature, rain, wind and humidity forecasts for Cheltenham."
+      - name: "Cheltenham Public Holidays"
+        link: /cheltenham-public-holidays
+        description: "Confirmed public holidays."
+  - name: "Politics & Economy"
+    items:
+      - name: "Cheltenham Politics"
+        link: /cheltenham-politics
+        description: "Cheltenham's current MP and the result of every general election since 2010."
+        children:
+          - name: "Cheltenham Party History"
+            link: /cheltenham-politics/party-history
+            description: "Cheltenham's general election results by party since 1918."
+            a_z: true
+      - name: "Local Elections &amp; Councillors"
+        link: /cheltenham-local-elections
+        description: "Every Cheltenham borough councillor and local election results by ward since 2024."
+      - name: "Cheltenham Economy"
+        link: /cheltenham-economy
+        description: "Cheltenham jobs by industry, the number of businesses and unemployment claimants, compared with England."
+        children:
+          - name: "Cheltenham Employment History"
+            link: /cheltenham-employment-history
+            description: "Full year-by-year employment rate history for Cheltenham."
+            a_z: true
+          - name: "Cheltenham Earnings History"
+            link: /cheltenham-earnings-history
+            description: "Median full-time earnings in Cheltenham year by year since 2008, compared with the South West and England."
+            a_z: true
+      - name: "Cheltenham Deprivation"
+        link: /cheltenham-deprivation
+        description: "How deprived each part of Cheltenham is, from the English Indices of Deprivation 2025."
+        children:
+          - name: "Children in Low-Income Families by Ward"
+            short: "Child Poverty"
+            link: /cheltenham-child-poverty
+            description: "Department for Work and Pensions estimates of children in low-income families across Cheltenham's 20 wards."
+            a_z: true
+  - name: "News & Notices"
+    items:
+      - name: "Cheltenham Latest News"
+        link: /cheltenham-news
+        description: "Today's Local news aggregation for Cheltenham and Gloucestershire"
+      - name: "Cheltenham Classifieds"
+        link: /cheltenham-classifieds
+        description: "Local jobs, services, items for sale, and community notices."
+        children:
+          - name: "Submit a Classified Advert"
+            link: /submission
+            description: "Submit a classified advert for Cheltenham."

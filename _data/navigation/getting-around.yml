@@ -1,0 +1,59 @@
+# Getting Around: the menu column and category page, in display order.
+# Fields are documented in _plugins/navigation.rb.
+group: "Getting Around"
+position: 1
+subgroups:
+  - name: "Driving & Parking"
+    items:
+      - name: "Cheltenham Fuel Prices"
+        link: /cheltenham-fuel-prices
+        description: "Local and cheapest fuel pricing data from 116 forecourts"
+        children:
+          - name: "Cheltenham Fuel Price History"
+            link: /cheltenham-fuel-prices/history
+            description: "The cheapest, average and highest petrol and diesel prices around Cheltenham each day, against the UK average."
+      - name: "Cheltenham EV Charging"
+        link: /cheltenham-ev-charging
+        description: "Local electric vehicle charging locations in Cheltenham"
+      - name: "Cheltenham Car Parks"
+        link: /cheltenham-car-parks
+        description: "Public car parks near Cheltenham, with fees, hours and max stay."
+        children:
+          - name: "Cheltenham Permit Parking Zones"
+            link: /cheltenham-permit-parking-zones
+            description: "Cheltenham's permit parking zones, with a map and details of the restrictions."
+            a_z: true
+  - name: "Roads"
+    items:
+      - name: "Cheltenham Roadworks"
+        link: /cheltenham-roadworks
+        description: "Planned roadworks and unplanned closures on the M5, A417, A40 and A46 near Cheltenham."
+        children:
+          - name: "Cheltenham Unplanned Road Closures"
+            link: /cheltenham-roadworks/unplanned-closures
+            description: "A log of unplanned lane and road closures on National Highways roads near Cheltenham."
+      - name: "Cheltenham Street Works"
+        link: /cheltenham-street-works
+        description: "Street works and road closures on local roads around Cheltenham, including emergency repairs."
+      - name: "Cheltenham Fix My Street"
+        link: /cheltenham-fix-my-street
+        description: "Local street issues and reports."
+        children:
+          - name: "Cheltenham Fix My Street History"
+            link: /cheltenham-fix-my-street/history
+            description: "Every street problem reported around Cheltenham since 21 June 2026, counted by month and by category."
+  - name: "Public Transport & Cycling"
+    items:
+      - name: "Cheltenham Bus Data"
+        link: /cheltenham-bus-data
+        description: "Bus routes serving Cheltenham and disruption statuses"
+        children:
+          - name: "Cheltenham Bus Disruptions History"
+            link: /cheltenham-bus-data/history
+            description: "Historical log of bus disruptions recorded as affecting Cheltenham."
+      - name: "Cheltenham Train Times"
+        link: /cheltenham-train-times
+        description: "Next departures and arrivals at Cheltenham Spa station."
+      - name: "Cheltenham Cycle Routes"
+        link: /cheltenham-cycle-routes
+        description: "Dedicated cycle tracks and on-road lanes near Cheltenham, including the Honeybourne Line and NCN 41."

@@ -3,13 +3,17 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>Tax year {{ data.tax_year }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ data.tax_year }}</strong> tax year</li>
+            </ul>
+            <ul class="header-links">
                 <li><a href="{{ data.band_check_url }}">Check your property's council tax band &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

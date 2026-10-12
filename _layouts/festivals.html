@@ -6,15 +6,16 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                {% if next %}
-                <li>{% if next.start <= today %}On now: <a href="#{{ next.slug }}">{{ next.name }}</a>, until {{ next.end }}{% else %}Next: <a href="#{{ next.slug }}">{{ next.name }}</a>, from {{ next.start }}{% endif %}</li>
-                {% endif %}
-                <li><a href="/cheltenham-festival-accommodation">Where to stay for the Cheltenham Festival &rarr;</a></li>
+            {% if next %}
+            <ul class="header-facts">
+                <li>{% if next.start <= today %}<strong><a href="#{{ next.slug }}">{{ next.name }}</a></strong> on now, until {{ next.end }}{% else %}<strong><a href="#{{ next.slug }}">{{ next.name }}</a></strong> next, from {{ next.start }}{% endif %}</li>
             </ul>
+            {% endif %}
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

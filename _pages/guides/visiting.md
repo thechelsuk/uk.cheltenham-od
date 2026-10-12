@@ -5,6 +5,7 @@ seo: "Planning a visit to Cheltenham? A local guide to where to stay, what to se
 description: "A practical guide to visiting Cheltenham, Gloucestershire. Where to stay, things to do, eating out and getting around, all backed by open data."
 type: "landing"
 permalink: /visiting-cheltenham
+parent: /guides
 ---
 
 ## Visiting Cheltenham

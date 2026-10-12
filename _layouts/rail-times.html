@@ -8,15 +8,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>Station code: {{ data.station.crs | default: "CNM" }}</li>
-                {% if data %}
-                <li>Times last updated: {{ data.generated_at | date: "%Y-%m-%d %H:%M" }}.</li>
-                {% endif %}
+            <ul class="header-facts">
+                <li><strong>{{ data.station.crs | default: "CNM" }}</strong> station code</li>
+                {% if data %}<li><strong>{{ data.generated_at | date: "%H:%M" }}</strong> times last updated</li>{% endif %}
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

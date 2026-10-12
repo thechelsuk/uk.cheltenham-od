@@ -1,0 +1,76 @@
+# Things to Do: the menu column and category page, in display order.
+# Fields are documented in _plugins/navigation.rb.
+group: "Things to Do"
+position: 4
+subgroups:
+  - name: "Out & About"
+    items:
+      - name: "Cheltenham Festivals"
+        link: /festivals
+        description: "Dates for every Cheltenham festival: Literature, Racing, Jazz, Science, Music and Cricket."
+        children:
+          - name: "Cheltenham Festival Accommodation"
+            link: /cheltenham-festival-accommodation
+            description: "Where to stay for the Cheltenham Festival of racing, with live availability."
+      - name: "Cheltenham Points of Interest"
+        link: /cheltenham-points-of-interest
+        description: "Local points of interests in and around Cheltenham."
+      - name: "Cheltenham Play Parks"
+        link: /cheltenham-play-parks
+        description: "Map of children's play parks and playgrounds in and around Cheltenham."
+      - name: "Cheltenham Public Toilets"
+        link: /cheltenham-public-toilets
+        description: "Local public toilet with mapped locations and information."
+  - name: "Eating & Staying"
+    items:
+      - name: "Cheltenham Where to Eat"
+        link: /cheltenham-where-to-eat
+        description: "Restaurants, cafés, pubs and takeaways in Cheltenham on a map, with official food hygiene ratings."
+      - name: "Cheltenham Food Hygiene Ratings"
+        link: /cheltenham-food-standards
+        description: "Food hygiene ratings for venues in Cheltenham."
+        children:
+          - name: "Five-Star Food Hygiene Ratings"
+            link: /cheltenham-food-standards/rated-five
+            description: "Cheltenham venues with a five-star food hygiene rating."
+          - name: "Food Hygiene Ratings 1 to 4"
+            link: /cheltenham-food-standards/rated-one-to-four
+            description: "Cheltenham venues rated 1 to 4 for food hygiene."
+          - name: "Exempt Food Businesses"
+            link: /cheltenham-food-standards/exempt
+            description: "Cheltenham food businesses exempt from a hygiene rating."
+          - name: "Food Businesses Awaiting Inspection"
+            link: /cheltenham-food-standards/awaiting-inspection
+            description: "Cheltenham food businesses awaiting a hygiene inspection."
+      - name: "Cheltenham Places to Stay"
+        link: /staying-in-cheltenham
+        description: "Local hotels and guest houses in Cheltenham."
+  - name: "Sport & Hobbies"
+    items:
+      - name: "Sport in Cheltenham"
+        link: /cheltenham-sports
+        description: "Teams to watch, from Cheltenham Town FC to Gloucester Rugby, plus parkrun."
+        children:
+          - name: "Cheltenham Sports Clubs to Join"
+            link: /cheltenham-sports-clubs
+            description: "Running, cricket, rugby, boxing, archery and other sports clubs to join."
+            a_z: true
+          - name: "Cheltenham Town FC"
+            short: "Cheltenham Town"
+            link: /cheltenham-sports/cheltenham-town-fc
+            description: "Cheltenham Town FC fixtures, results and getting to the ground."
+            a_z: true
+          - name: "Gloucestershire Cricket"
+            link: /cheltenham-sports/gloucestershire-cricket
+            description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival and a map of their home grounds."
+            a_z: true
+          - name: "Cheltenham Parkrun"
+            link: /cheltenham-sports/parkrun
+            description: "Cheltenham parkrun events and results."
+            a_z: true
+      - name: "Cheltenham Clubs &amp; Societies"
+        link: /cheltenham-clubs-and-societies
+        description: "Clubs and societies to join for hobbies, history and good company."
+      - name: "Cheltenham Arts &amp; Crafts"
+        link: /cheltenham-arts-and-crafts
+        description: "Art and pottery classes, Open Studios, galleries and museums to visit."

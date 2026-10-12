@@ -3,14 +3,16 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
+            <ul class="header-links">
                 {% if page.feed_url %}
-                <li><a href="{{ page.feed_url}}">Subscribe via our feed/rss →</a></li>
+                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
                 {% endif %}
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
 

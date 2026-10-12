@@ -4,41 +4,21 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/explore/getting-around">&lAarr; Back to Getting Around</a></li>
-                <li>{% if s.total == 1 %}1 street works{% else %}{{ s.total }} street works{% endif %} within {{ data.radius_miles }} miles of Cheltenham</li>
+            <ul class="header-facts">
+                <li><strong>{{ s.total }}</strong> works within {{ data.radius_miles }} miles</li>
+                <li><strong>{{ s.in_progress }}</strong> in progress</li>
+                <li><strong>{{ s.unplanned }}</strong> unplanned repairs</li>
+                <li><strong>{{ s.road_closures }}</strong> road closures</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 
         {{ content }}
-
-        <h2 id="at-a-glance">Street Works at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Works in progress</p>
-                <span class="info-card__title">{{ s.in_progress }}</span>
-                <span class="info-card__subtitle">started and not yet finished</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Unplanned works</p>
-                <span class="info-card__title">{{ s.unplanned }}</span>
-                <span class="info-card__subtitle">urgent and emergency repairs</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Road closures</p>
-                <span class="info-card__title">{{ s.road_closures }}</span>
-                <span class="info-card__subtitle">roads shut while works take place</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">All works listed</p>
-                <span class="info-card__title">{{ s.total }}</span>
-                <span class="info-card__subtitle">current and coming up</span>
-            </div>
-        </div>
 
         <h2 id="map">Map</h2>
         <div id="street-works-map" class="map-canvas" aria-label="Map of street works on local roads around Cheltenham"></div>

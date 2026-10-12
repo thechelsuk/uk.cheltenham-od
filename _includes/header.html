@@ -213,24 +213,26 @@
 
                     <div class="nav-panel" id="nav-panel" hidden>
                         <div class="nav-panel-inner">
-                            {% assign nav_groups = site.navigation_header | group_by: "group" %}
-                            {% for group in nav_groups %}
+                            {% comment %}Titles only, under the category page's subgroup headings; each description shows on hover and on the category page.{% endcomment %}
+                            {% for group in site.navigation_groups %}
                             <div class="nav-panel-col">
-                                {% assign category_page = site.pages | where: "group", group.name | first %}
                                 <h2 class="nav-panel-group-title">
-                                    {% if category_page %}
-                                    <a href="{{ category_page.url }}">{{ group.name }}</a>
-                                    <span class="nav-category-swatch theme-{{ category_page.type }}"
-                                        aria-hidden="true"></span>
+                                    {% if group.url %}
+                                    <a href="{{ group.url }}">{{ group.name }}</a>
+                                    <span class="nav-category-swatch theme-{{ group.type }}" aria-hidden="true"></span>
                                     {% else %}
                                     {{ group.name }}
                                     {% endif %}
                                 </h2>
-                                {% for item in group.items %}
-                                <div class="nav-panel-item">
-                                    <a class="nav-panel-item-title" href="{{ item.link }}">{{ item.name }}</a>
-                                    <span class="nav-panel-item-desc">{{ item.description }}</span>
-                                </div>
+                                {% for subgroup in group.subgroups %}
+                                {% if subgroup.items.size > 0 %}
+                                <h3 class="nav-panel-subgroup">{{ subgroup.name }}</h3>
+                                <ul class="nav-panel-list">
+                                    {% for item in subgroup.items %}
+                                    <li><a class="nav-panel-item-title" href="{{ item.link }}" title="{{ item.description | escape }}">{{ item.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
                                 {% endfor %}
                             </div>
                             {% endfor %}

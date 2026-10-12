@@ -8,14 +8,17 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/cheltenham-schools">&larr; Back to Cheltenham Schools</a></li>
-                <li>Latest inspection {{ s.inspections.first.date | date: "%Y-%m-%d" }}</li>
-                <li>URN {{ s.urn }}</li>
+            <ul class="header-facts">
+                {% if latest %}<li><strong>{{ latest.outcome }}</strong> latest outcome, {{ latest.date | date: "%Y-%m-%d" }}</li>{% else %}<li><strong>Not graded</strong> latest outcome</li>{% endif %}
+                <li><strong>{{ s.inspections.size }}</strong> reports since {{ s.first_year }}</li>
+                {% if rc %}<li><strong>{{ rc.safeguarding }}</strong> safeguarding</li>{% elsif graded %}{% assign qoe = graded.areas | where: "area", "Quality of education" | first %}<li><strong>{{ qoe.grade | default: "Not graded" }}</strong> quality of education</li>{% else %}<li><strong>{{ s.phase }}</strong> school type</li>{% endif %}
+                <li><strong>{{ s.urn }}</strong> URN</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 
@@ -40,40 +43,6 @@
         </p>
 
         {{ content }}
-
-        <h2>{{ s.name }} at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Latest outcome</p>
-                <span class="info-card__title">{% if latest %}{{ latest.outcome }}{% else %}Not graded{% endif %}</span>
-                {% if latest %}<span class="info-card__subtitle">{{ latest.type }}, {{ latest.date | date: "%Y-%m-%d" }}</span>{% endif %}
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Reports on record</p>
-                <span class="info-card__title">{{ s.inspections.size }}</span>
-                <span class="info-card__subtitle">since {{ s.first_year }}, {{ s.rated_count }} with an outcome</span>
-            </div>
-            {% if rc %}
-            <div class="info-card">
-                <p class="info-card__label">Safeguarding</p>
-                <span class="info-card__title">{{ rc.safeguarding }}</span>
-                <span class="info-card__subtitle">report card, {{ rc.date | date: "%Y-%m-%d" }}</span>
-            </div>
-            {% elsif graded %}
-            <div class="info-card">
-                <p class="info-card__label">Quality of education</p>
-                {% assign qoe = graded.areas | where: "area", "Quality of education" | first %}
-                <span class="info-card__title">{{ qoe.grade | default: "Not graded" }}</span>
-                <span class="info-card__subtitle">graded inspection, {{ graded.date | date: "%Y-%m-%d" }}</span>
-            </div>
-            {% else %}
-            <div class="info-card">
-                <p class="info-card__label">School type</p>
-                <span class="info-card__title">{{ s.phase }}</span>
-                <span class="info-card__subtitle">{{ s.type }}</span>
-            </div>
-            {% endif %}
-        </div>
 
         {% if rc %}
         <h2>Latest Report Card</h2>

@@ -5,41 +5,21 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/explore/community-support">&lAarr; Back to Community &amp; Support</a></li>
-                <li>{{ data.first_date }} to {{ data.last_date }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ totals.cases_display }}</strong> confirmed cases</li>
+                <li><strong>{{ totals.deaths_display }}</strong> deaths involving COVID-19</li>
+                <li><strong>{{ totals.admissions_display }}</strong> hospital admissions in Gloucestershire</li>
+                <li><strong>{{ totals.tests_display }}</strong> PCR tests</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 
         {{ content }}
-
-        <h2 id="at-a-glance">COVID-19 in Cheltenham at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Confirmed cases in Cheltenham</p>
-                <span class="info-card__title">{{ totals.cases_display }}</span>
-                <span class="info-card__subtitle">busiest week: {{ data.peaks.cases.value_display }}</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Deaths in Cheltenham involving COVID-19</p>
-                <span class="info-card__title">{{ totals.deaths_display }}</span>
-                <span class="info-card__subtitle">busiest week: {{ data.peaks.deaths.value_display }}</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Patients admitted to Gloucestershire hospitals</p>
-                <span class="info-card__title">{{ totals.admissions_display }}</span>
-                <span class="info-card__subtitle">busiest week: {{ data.peaks.admissions.value_display }}</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">PCR tests of Cheltenham residents</p>
-                <span class="info-card__title">{{ totals.tests_display }}</span>
-                <span class="info-card__subtitle">busiest week: {{ data.peaks.tests.value_display }}</span>
-            </div>
-        </div>
 
         <h2 id="busiest-weeks">Busiest Weeks</h2>
         <div class="table-scroll">

@@ -1,37 +1,70 @@
 {% include header.html %}
 {% assign items = site.navigation_header | where: "group", page.group %}
-{% comment %}Pages that belong to this category without a main menu entry set `section` to its name.{% endcomment %}
+{% comment %}Pages that belong to this category without a main menu entry set `section` to its name and `subgroup` to their heading.{% endcomment %}
 {% assign section_pages = site.pages | where: "section", page.group | sort: "title" %}
+{% assign nav_group = site.navigation_groups | where: "name", page.group | first %}
+{% assign sub_pages = 0 %}
+{% for item in items %}{% if item.children %}{% assign sub_pages = sub_pages | plus: item.children.size %}{% endif %}{% endfor %}
+{% assign topics = items.size %}
+{% for p in section_pages %}{% assign parent_page = section_pages | where: "url", p.parent | first %}{% if parent_page %}{% assign sub_pages = sub_pages | plus: 1 %}{% else %}{% assign topics = topics | plus: 1 %}{% endif %}{% endfor %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/">&lAarr; Back to Home</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ topics }}</strong> topics</li>
+                <li><strong>{{ sub_pages }}</strong> more detailed pages</li>
             </ul>
         </header>
+        <nav class="section-links" aria-label="Jump to">
+            <span class="section-links-label">Jump to</span>
+            <ul>
+                {% for subgroup in nav_group.subgroups %}
+                <li><a href="#{{ subgroup.name | slugify }}">{{ subgroup.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
 
         {% include sponsor.html %}
 
         {{ content }}
 
-        <ul>
-            {% for item in items %}
+        {% for subgroup in nav_group.subgroups %}
+        {% assign sub_items = subgroup.items %}
+        {% assign sub_sections = section_pages | where: "subgroup", subgroup.name %}
+        <h2 id="{{ subgroup.name | slugify }}" class="category-subgroup">{{ subgroup.name }}</h2>
+        <ul class="category-list plain-list">
+            {% for item in sub_items %}
             <li><a href="{{ item.link }}">{{ item.name }}</a> &mdash; {{ item.description }}
                 {% if item.children %}
-                <ul>
+                <ul class="category-children">
                     {% for child in item.children %}
-                    <li><a href="{{ child.link }}">{{ child.name }}</a> &mdash; {{ child.description }}</li>
+                    <li><a href="{{ child.link }}">{% if child.short %}{{ child.short }}{% else %}{{ child.name | remove_first: "Cheltenham " }}{% endif %}</a></li>
                     {% endfor %}
                 </ul>
                 {% endif %}
             </li>
             {% endfor %}
-            {% for p in section_pages %}
-            <li><a href="{{ p.url }}">{{ p.title }}</a> &mdash; {{ p.description }}</li>
+            {% for p in sub_sections %}
+            {% comment %}A section page whose parent is another section page is listed under it instead.{% endcomment %}
+            {% assign parent_page = section_pages | where: "url", p.parent | first %}
+            {% unless parent_page %}
+            {% assign kids = section_pages | where: "parent", p.url %}
+            <li><a href="{{ p.url }}">{{ p.nav_title | default: p.title }}</a> &mdash; {{ p.description }}
+                {% if kids.size > 0 %}
+                <ul class="category-children">
+                    {% for kid in kids %}
+                    <li><a href="{{ kid.url }}">{{ kid.nav_title | default: kid.title | remove_first: "Cheltenham " }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endunless %}
             {% endfor %}
         </ul>
+        {% endfor %}
     </div>
 </div>
 {% include footer.html %}

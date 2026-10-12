@@ -3,13 +3,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-car-parks">&lAarr; Back to Car Parks</a></li>
-                <li>{{ data.zones | size }} zones, {{ data.streets | size }} streets</li>
+            <ul class="header-facts">
+                <li><strong>{{ data.zones | size }}</strong> permit zones</li>
+                <li><strong>{{ data.streets | size }}</strong> streets</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

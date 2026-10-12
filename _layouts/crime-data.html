@@ -3,20 +3,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
 
             {% assign crime_data = site.data.crime.index %}
             {% assign crime_year = page.crime_year | default: crime_data.years.first %}
             {% assign year_months = crime_data.months | where_exp: "month", "month.month contains crime_year" %}
-            <ul>
-                {% if crime_data.years and crime_data.years.size > 0 %}
-                {% for year in crime_data.years %}
-                <li><a href="/cheltenham-crime-data/{{ year }}">{{ year }} &rarr;</a></li>
-                {% endfor %}
-                {% endif %}
-            </ul>
         </header>
+        {% include section-links.html %}
         {% include sponsor.html %}
 
         {{ content }}

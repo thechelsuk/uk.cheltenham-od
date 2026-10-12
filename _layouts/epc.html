@@ -5,14 +5,17 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>{{ borough.homes_display }} homes with a certificate</li>
-                <li>{{ borough.c_plus_pct }}% rated C+ (C or better)</li>
-                <li>Median rating {{ borough.median_band }}, energy score {{ scores.borough.median_score }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ borough.homes_display }}</strong> homes with a certificate</li>
+                <li><strong>{{ borough.c_plus_pct }}%</strong> rated C or better</li>
+                <li><strong>{{ borough.median_band }}</strong> median rating</li>
+                <li><strong>{{ scores.borough.median_score }}</strong> median energy score</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

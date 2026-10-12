@@ -3,13 +3,11 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-house-prices">&lAarr; Back to House Prices</a></li>
-                <li><a href="/cheltenham-earnings-history">Earnings History &rarr;</a></li>
-            </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

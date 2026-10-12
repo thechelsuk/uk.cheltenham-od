@@ -3,34 +3,18 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/explore/community-support">&larr; Back to Community &amp; Support</a></li>
-                <li>Register checked {{ data.generated_at | date: "%Y-%m-%d" }}</li>
+            <ul class="header-facts">
+                <li><strong>{{ data.summary.count }}</strong> registered charities in GL50–GL54</li>
+                <li><strong>{{ data.summary.total_income_display }}</strong> combined income</li>
+                <li><strong>{{ data.summary.over_million }}</strong> with £1 million or more a year</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {{ content }}
-
-        <h2>Charities at a Glance</h2>
-        <div class="glance-grid">
-            <div class="info-card">
-                <p class="info-card__label">Registered charities</p>
-                <span class="info-card__title">{{ data.summary.count }}</span>
-                <span class="info-card__subtitle">based in GL50–GL54</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Combined income</p>
-                <span class="info-card__title">{{ data.summary.total_income_display }}</span>
-                <span class="info-card__subtitle">in their latest accounts</span>
-            </div>
-            <div class="info-card">
-                <p class="info-card__label">Income of £1 million or more</p>
-                <span class="info-card__title">{{ data.summary.over_million }}</span>
-                <span class="info-card__subtitle">charities</span>
-            </div>
-        </div>
 
         <h2>Charities by Size</h2>
         <div class="table-scroll">

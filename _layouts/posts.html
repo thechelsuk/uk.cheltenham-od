@@ -3,13 +3,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/news">&larr; Back to News</a></li>
-                <li><a href="/feeds/main.xml">Subscribe via our feed/rss →</a></li>
+            <ul class="header-links">
+                <li><a href="/feeds/main.xml">Subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
+        {% include section-links.html %}
         {% if page.author %}
         <p class="footnote">By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %} · Published {{ page.date | date: "%Y-%m-%d" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%Y-%m-%d" }}{% endif %}</p>
         {% endif %}

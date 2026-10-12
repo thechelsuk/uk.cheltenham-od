@@ -7,6 +7,9 @@ permalink: /cheltenham-covid-19
 description: "How the COVID-19 pandemic unfolded in Cheltenham from February 2020 to December 2023: cases, testing, deaths, hospital admissions and vaccine uptake."
 type: "community"
 schema: covid
+section: "Community & Support"
+subgroup: "Health & Care"
+nav_title: "COVID-19 in Cheltenham"
 ---
 
 ## The COVID-19 Pandemic in Cheltenham

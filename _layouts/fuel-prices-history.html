@@ -6,14 +6,15 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li><a href="/cheltenham-fuel-prices">&lAarr; Back to Cheltenham Fuel Prices</a></li>
-                <li>{{ history.count }} days since {{ history.first_date }}</li>
-                <li>Forecourts within {{ fuel.radius_miles }} miles</li>
+            <ul class="header-facts">
+                <li><strong>{{ history.count }}</strong> days of prices since {{ history.first_date }}</li>
+                <li><strong>{{ fuel.radius_miles }} miles</strong> around Cheltenham</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

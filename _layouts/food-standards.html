@@ -3,16 +3,11 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{ page.title }}</h1>
             <p>{{ page.description }}</p>
-            <ul>
-                <li><a href="/cheltenham-food-standards">Summary &rarr;</a></li>
-                <li><a href="/cheltenham-food-standards/rated-one-to-four">Venues Rated 1-4 &rarr;</a></li>
-                <li><a href="/cheltenham-food-standards/rated-five">Venues Rated 5 &rarr;</a></li>
-                <li><a href="/cheltenham-food-standards/exempt">Exemptions &rarr;</a></li>
-                <li><a href="/cheltenham-food-standards/awaiting-inspection">Awaiting inspection &rarr;</a></li>
-            </ul>
         </header>
+        {% include section-links.html %}
         {% include sponsor.html %}
 
         {{ content }}

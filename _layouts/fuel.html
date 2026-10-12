@@ -3,14 +3,14 @@
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            <ul>
-                <li>{{ fuel.stations | size }} forecourts within {{ fuel.radius_miles }} miles</li>
-                <li>Prices checked hourly</li>
-                <li><a href="/cheltenham-fuel-prices/history">Fuel price history &rarr;</a></li>
+            <ul class="header-facts">
+                <li><strong>{{ fuel.stations | size }}</strong> forecourts within {{ fuel.radius_miles }} miles</li>
             </ul>
         </header>
+        {% include section-links.html %}
 
         {% include sponsor.html %}
 

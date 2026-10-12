@@ -9,6 +9,9 @@ schema: listed-buildings
 filters:
   - table: 1
     column: "Grade"
+section: "About & Info"
+subgroup: "Cheltenham at a Glance"
+nav_title: "Cheltenham Listed Buildings"
 ---
 
 {% assign heritage = site.data["listed-buildings"] %}

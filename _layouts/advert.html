@@ -8,6 +8,7 @@
         {% else %}
 
         <header class="classifieds header">
+            {% include breadcrumbs.html %}
 
             <h1 class="classifieds-title">{{ page.title }}</h1>
 
@@ -37,6 +38,7 @@
             </ul>
             {%- endif -%}
         </header>
+        {% include section-links.html %}
 
         {%- if page.image -%}
         <figure class="classifieds-image">
