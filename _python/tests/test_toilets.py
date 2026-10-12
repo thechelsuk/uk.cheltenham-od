@@ -115,11 +115,11 @@ class FakeResponse:
 def test_find_json_download_url_picks_the_json_export(monkeypatch):
     page = ("<a href='https://x.blob.vercel-storage.com/exports/toilets-1.csv?download=1'>CSV</a>"
             '<a href="https://x.blob.vercel-storage.com/exports/toilets-1.json?download=1&amp;v=2">JSON</a>')
-    monkeypatch.setattr(toilets.requests, "get", lambda url, headers, timeout: FakeResponse(page))
+    monkeypatch.setattr(helper, "get", lambda url, timeout: FakeResponse(page))
     assert toilets.find_json_download_url() == \
         "https://x.blob.vercel-storage.com/exports/toilets-1.json?download=1&v=2"
 
-    monkeypatch.setattr(toilets.requests, "get", lambda url, headers, timeout: FakeResponse("<p>new layout</p>"))
+    monkeypatch.setattr(helper, "get", lambda url, timeout: FakeResponse("<p>new layout</p>"))
     with pytest.raises(ValueError, match="markup may have changed"):
         toilets.find_json_download_url()
 
@@ -151,5 +151,5 @@ def test_main_exits_when_nothing_matches(monkeypatch):
 
 
 def test_fetch_data_returns_the_json(monkeypatch):
-    monkeypatch.setattr(toilets.requests, "get", lambda url, timeout: FakeResponse(body=[1]))
+    monkeypatch.setattr(helper, "get", lambda url, timeout: FakeResponse(body=[1]))
     assert toilets.fetch_data("https://example.org/x.json") == [1]

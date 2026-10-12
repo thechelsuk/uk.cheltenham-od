@@ -116,7 +116,7 @@ class FakeResponse:
 
 def test_fetch_asks_for_a_single_day(monkeypatch):
     seen = {}
-    monkeypatch.setattr(sport.requests, "get",
+    monkeypatch.setattr(helper, "get",
                         lambda url, params, headers, timeout: seen.update(params) or FakeResponse())
     sport.fetch("urn:x", date(2026, 10, 13), date(2026, 10, 12))
     assert seen == {"selectedStartDate": "2026-10-13", "selectedEndDate": "2026-10-13",

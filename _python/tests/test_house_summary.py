@@ -1,16 +1,23 @@
-"""Offline tests for the house price summary builder (house_summary.py): the
+"""Offline tests for the house price summary builder (house-summary.py): the
 statistics, change strings, rolling and calendar-year periods, and the
 history-file comparisons. Files are written to a temporary folder.
 
 Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
+import importlib.util
 import json
+import pathlib
 from datetime import date
 
 import pytest
 
-import house_summary as hs
+SPEC = importlib.util.spec_from_file_location(
+    "house_summary", pathlib.Path(__file__).resolve().parents[1] / "house-summary.py"
+)
+assert SPEC is not None and SPEC.loader is not None
+hs = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(hs)
 
 
 def sale(day, amount, new_build=False, ptype="Detached"):
