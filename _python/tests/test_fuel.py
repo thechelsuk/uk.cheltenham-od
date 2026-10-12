@@ -216,6 +216,59 @@ def price(fuel_type, value, changed):
     return {"fuel_type": fuel_type, "price": value, "price_change_effective_timestamp": f"{changed}T08:00:00Z"}
 
 
+# -- Building the page data ---------------------------------------------------------
+
+
+def test_station_as_of_is_the_latest_price_change_or_the_fetch_date():
+    station = {"fuel_prices": [price("E10", 1, "2026-10-01"), price("E5", 1, "2026-10-05"), {"fuel_type": "B7"}],
+               "prices_updated": "2026-10-09"}
+    assert fuel.station_as_of(station) == "2026-10-05"
+    assert fuel.station_as_of({"fuel_prices": [{"fuel_type": "E10"}], "prices_updated": "2026-10-09"}) == "2026-10-09"
+    assert fuel.station_as_of({}) == ""
+
+
+def test_dedupe_keeps_the_freshest_of_the_same_forecourt():
+    priced = {
+        "old": {"trading_name": "Tesco ", "postcode": "GL50 1AA", "fuel_prices": [price("E10", 1, "2026-10-01")]},
+        "new": {"trading_name": "TESCO", "postcode": "gl501aa", "fuel_prices": [price("E10", 1, "2026-10-05")]},
+        "other": {"trading_name": "Tesco", "postcode": "GL52 2BB", "fuel_prices": [price("E10", 1, "2026-10-01")]},
+    }
+    assert fuel.dedupe_stations(priced) == {"new", "other"}
+
+
+def test_fuel_columns_put_the_usual_fuels_first():
+    cache = {"A": {"fuel_prices": [{"fuel_type": "HVO"}, {"fuel_type": "B7_STANDARD"}, {"fuel_type": "E10"}, {}]}}
+    assert fuel.fuel_columns(cache, {"A"}) == ["E10", "B7_STANDARD", "HVO"]
+
+
+def test_median():
+    assert fuel.median([3, 1, 2]) == 2
+    assert fuel.median([4, 1, 3, 2]) == 2.5
+    assert fuel.median([]) is None
+
+
+def test_the_daily_merge_dates_an_undated_record_today_but_the_seed_does_not():
+    def cache():
+        return {"A": {"fuel_prices": [price("E10", 130, "2026-10-01")], "prices_updated": "2026-10-01"}}
+
+    undated = [{"node_id": "A", "fuel_prices": [price("E10", 125, "2026-10-12")]}]
+    daily = cache()
+    assert fuel.merge_prices(daily, undated, "2026-10-12") == 1
+    assert daily["A"]["prices_updated"] == "2026-10-12"
+    seeded = cache()
+    assert fuel.seed_prices(seeded, undated, "2026-09-17") == 0
+    assert seeded["A"]["prices_updated"] == "2026-10-01"
+    assert fuel.seed_prices({"A": {}}, undated, "2026-09-17") == 0     # a station with no record at all is skipped
+
+
+def test_headline_entry_names_a_brand_only_when_it_differs_and_shows_any_saving():
+    station = {"trading_name": "TESCO CHELTENHAM", "brand_name": "TESCO"}
+    entry = fuel.headline_entry("E10", station, 130.9, 133.4)
+    assert entry["name"] == "Tesco Cheltenham" and entry["brand"] == "Tesco" and entry["pct_cheaper"] == "1.9"
+    same = fuel.headline_entry("E5", {"trading_name": "Shell", "brand_name": "SHELL"}, 150.9, 150.9)
+    assert same == {"label": "Prem Unleaded", "price": "150.9", "name": "Shell", "brand": ""}
+
+
 @pytest.fixture
 def site(tmp_path, monkeypatch, no_sleep):
     """A temporary repo root with _data/, the API keys set and auth faked."""
