@@ -19,7 +19,7 @@ Five of Cheltenham's parishes — Charlton Kings, Leckhampton with Warden Hill, 
 
 ### Where Does the Data Come From?
 
-- Cheltenham Borough Council's own published charges. There's no CSV or open data file for this — it's scraped from the council's website, since that's the only source that exists.
+- Cheltenham Borough Council's own published charges. There's no CSV or open data file for this — it's scraped from the council's site, since that's the only source that exists.
 
 ### How Do I Find My Property's Band?
 

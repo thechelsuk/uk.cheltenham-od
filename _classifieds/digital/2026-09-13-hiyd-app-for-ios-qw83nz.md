@@ -25,7 +25,7 @@ touching a terminal.
 - Publishes directly to GitHub using a personal access token — no Git client
   needed
 - Syncs files via iCloud and exports to apps like Working Copy
-- Configure your own custom front matter key/value pairs
+- Configure your own custom front matter key-value pairs
 - Full-text search across your whole archive, with live Markdown preview
 - Shortcuts and App Intents support for automating your writing workflow
 

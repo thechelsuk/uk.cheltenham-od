@@ -1,6 +1,6 @@
 # The seven rules of a great Git commit message
 
-1. Separate subject from body with a blank line
+1. Separate subject from body with an empty line
 2. Limit the subject line to 50 characters
 3. Capitalize the subject line
 4. Do not end the subject line with a period

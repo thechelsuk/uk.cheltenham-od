@@ -6,7 +6,7 @@ Thank you for using Cheltenham Open Data! If you need help or have questions, he
 
 ### Documentation
 
-* Check the [README](../README.md) for general information about the project
+* Check the [Readme](../README.md) for general information about the project
 * Review the [CONTRIBUTING](CONTRIBUTING.md) guide if you want to contribute
 
 ### Issue Tracker
@@ -14,6 +14,7 @@ Thank you for using Cheltenham Open Data! If you need help or have questions, he
 If you've found a bug or have a feature request, please check if it's already been reported in our [issue tracker](https://github.com/mat-0/cheltenham-open-data/issues).
 
 If your issue is new:
+
 1. Use the GitHub issue search to check for similar issues
 2. Create a new issue using the appropriate template
 3. Provide as much detail as possible to help us understand your problem

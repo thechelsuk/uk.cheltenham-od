@@ -1,8 +1,12 @@
 {% include header.html %}
 {% assign data = site.data.festivals %}
 {% assign today = site.time | date: "%Y-%m-%d" %}
-{% assign next = nil %}
-{% for f in data.festivals %}{% if next == nil and f.end != "" and f.end >= today %}{% assign next = f %}{% endif %}{% endfor %}
+{% comment %}Upcoming festivals by start date, then those with dates to be confirmed, then any that have finished.{% endcomment %}
+{% assign upcoming = data.festivals | where_exp: "f", "f.end != '' and f.end >= today" | sort: "start" %}
+{% assign undated = data.festivals | where: "start", "" %}
+{% assign finished = data.festivals | where_exp: "f", "f.end != '' and f.end < today" | sort: "start" %}
+{% assign festivals = upcoming | concat: undated | concat: finished %}
+{% assign next = upcoming.first %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -31,7 +35,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for f in data.festivals %}
+                    {% for f in festivals %}
                     <tr>
                         <td><a href="#{{ f.slug }}">{{ f.name }}</a></td>
                         {% if f.start != "" %}
@@ -47,7 +51,7 @@
             </table>
         </div>
 
-        {% for f in data.festivals %}
+        {% for f in festivals %}
         <h2 id="{{ f.slug }}">{{ f.name }}</h2>
         <p>{{ f.summary }}</p>
         <ul>

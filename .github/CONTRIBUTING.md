@@ -16,11 +16,11 @@ Please go ahead and add your info as outlined below.
 
 ## Using the issue tracker
 
-The issue tracker is the preferred channel for bug reports and features requests. You can also reach out via twitter see [README for links](https://github.com/MatBenfield)
+The issue tracker is the preferred channel for bug reports and features requests. You can also reach out via twitter see [Readme for links](https://github.com/MatBenfield)
 
 ## Bug reports
 
-A bug is a _demonstrable problem_ that is caused by the code on any of our websites.
+A bug is a _demonstrable problem_ that is caused by the code on any of our sites.
 Good bug reports are extremely helpful - thank you!
 
 Guidelines for bug reports:
@@ -28,7 +28,7 @@ Guidelines for bug reports:
 1. **Use the GitHub issue search** &mdash; check if the issue has already been
    reported.
 
-2. **Check if the issue has been fixed/closed** &mdash; but you can still reproduce it - raise a new issue include the url to the old issue. re-opened issues will not be accepted.
+2. **Check if the issue has been fixed/closed** &mdash; but you can still reproduce it - raise a new issue include the URL to the old issue. re-opened issues will not be accepted.
 
 3. **Isolate the problem** &mdash; create a [reduced test
    case](http://css-tricks.com/reduced-test-cases/) and a live example.
@@ -60,7 +60,7 @@ Example:
 ## Feature requests
 
 Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to *you* to make a strong
+fits with the scope and aims of the project. It's up to _you_ to make a strong
 case to convince the project's developers of the merits of this feature. Please
 provide as much detail and context as possible.
 
@@ -68,7 +68,7 @@ provide as much detail and context as possible.
 
 ### Typos
 
-Please raise an issue for any typos on the site with a link to the offending page. start the first line of an issue with '(sp)' and include a url to the page in question. Language differences (e.g defense vs defence) won't be accepted.
+Please raise an issue for any typos on the site with a link to the offending page. start the first line of an issue with '(sp)' and include a URL to the page in question. Language differences (e.g defense vs defence) won't be accepted.
 
 ### Documentation
 
