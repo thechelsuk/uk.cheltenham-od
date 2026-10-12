@@ -1,12 +1,31 @@
 {
-  "generated_at": "2026-10-11T18:29:34.489024+00:00",
+  "generated_at": "2026-10-12T11:23:04.226872+00:00",
   "source": "National Highways planned roadworks",
   "source_url": "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks",
   "licence": "Open Government Licence v3.0",
-  "file_url": "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/nh_roadworks_2026_5_10.xml",
-  "published": "2026-10-05",
-  "radius_miles": 10,
+  "file_url": "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/nh_roadworks_2026_12_10.xml",
+  "published": "2026-10-12",
+  "radius_miles": 12,
   "items": [
+    {
+      "id": "00479203-011",
+      "roads": [
+        "A40",
+        "A449",
+        "A46",
+        "M5",
+        "M50"
+      ],
+      "description": "M5 both directions Jct 7 to Jct 9. Carriageway closure for maintenance works. Diversion via National Highways network.",
+      "closure_type": "Area Schemes",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-04-07T21:00",
+      "end": "2027-02-12T06:00",
+      "in_progress": true,
+      "distance_miles": 11.1,
+      "lat": 52.051133,
+      "lon": -2.16051
+    },
     {
       "id": "00502996-003",
       "roads": [
@@ -114,37 +133,6 @@
       "lon": -2.281737
     },
     {
-      "id": "00524800-001",
-      "roads": [
-        "A417",
-        "A419"
-      ],
-      "description": "A417 northbound from Burford Road to Air Balloon Roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A429, A40 and A436.",
-      "closure_type": "Major Schemes",
-      "expected_delay": "Moderate (10 - 30 mins)",
-      "start": "2026-10-09T21:00",
-      "end": "2026-10-12T06:00",
-      "in_progress": true,
-      "distance_miles": 8.7,
-      "lat": 51.778864,
-      "lon": -2.018448
-    },
-    {
-      "id": "00524823-001",
-      "roads": [
-        "A417"
-      ],
-      "description": "A417 southbound from Air Balloon Roundabout to Elkstone. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A436, A40 and A429.",
-      "closure_type": "Major Schemes",
-      "expected_delay": "Moderate (10 - 30 mins)",
-      "start": "2026-10-09T23:00",
-      "end": "2026-10-12T06:00",
-      "in_progress": true,
-      "distance_miles": 5.5,
-      "lat": 51.820145,
-      "lon": -2.076802
-    },
-    {
       "id": "00513940-001",
       "roads": [
         "A40",
@@ -156,10 +144,25 @@
       "expected_delay": "Moderate (10 - 30 mins)",
       "start": "2026-10-11T23:59",
       "end": "2026-10-24T06:00",
-      "in_progress": false,
+      "in_progress": true,
       "distance_miles": 4.6,
       "lat": 51.871881,
       "lon": -2.175106
+    },
+    {
+      "id": "00524036-001",
+      "roads": [
+        "A46"
+      ],
+      "description": "A46 northbound Beckford close to Beckford Inn. Two Way traffic lights on behalf of BT.",
+      "closure_type": "Ad-hoc Street/Road Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-10-12T20:00",
+      "end": "2026-10-17T06:00",
+      "in_progress": false,
+      "distance_miles": 8.3,
+      "lat": 52.016031,
+      "lon": -2.029679
     },
     {
       "id": "00524832-001",
@@ -223,6 +226,21 @@
       "lon": -2.11977
     },
     {
+      "id": "00525972-001",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 Southbound Jct 11A to 12 lane closure for drainage works.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-10-14T21:00",
+      "end": "2026-10-16T05:00",
+      "in_progress": false,
+      "distance_miles": 7.1,
+      "lat": 51.832182,
+      "lon": -2.205296
+    },
+    {
       "id": "00516395-002",
       "roads": [
         "A40",
@@ -271,6 +289,66 @@
       "distance_miles": 6.8,
       "lat": 51.994269,
       "lon": -2.121609
+    },
+    {
+      "id": "00526654-001",
+      "roads": [
+        "A417"
+      ],
+      "description": "A417 northbound Daglingworth Quarry exit and entry slip roads closed for electrical works. Exit diversion via Highwayman Junction and return. Entry diversion via Burford Road Junction and return.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-10-20T21:00",
+      "end": "2026-10-21T05:00",
+      "in_progress": false,
+      "distance_miles": 10.2,
+      "lat": 51.760029,
+      "lon": -1.999228
+    },
+    {
+      "id": "00521949-001",
+      "roads": [
+        "A46"
+      ],
+      "description": "A46 both directions Ashchurch. Traffic signals for maintenance works.",
+      "closure_type": "Area Schemes",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-10-20T21:00",
+      "end": "2026-10-21T06:00",
+      "in_progress": false,
+      "distance_miles": 6.9,
+      "lat": 51.998245,
+      "lon": -2.099247
+    },
+    {
+      "id": "00521562-001",
+      "roads": [
+        "A46"
+      ],
+      "description": "A46 both directions Ashchurch. Traffic signals for maintenance works.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-10-21T21:00",
+      "end": "2026-10-22T06:00",
+      "in_progress": false,
+      "distance_miles": 6.9,
+      "lat": 51.998912,
+      "lon": -2.097821
+    },
+    {
+      "id": "00518054-001",
+      "roads": [
+        "A417"
+      ],
+      "description": "A417 eastbound Zoons Court Rbt to Business Park Rbt - lane closure for drainage works.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-10-23T21:00",
+      "end": "2026-10-24T05:00",
+      "in_progress": false,
+      "distance_miles": 5.0,
+      "lat": 51.858161,
+      "lon": -2.17543
     }
   ]
 }
