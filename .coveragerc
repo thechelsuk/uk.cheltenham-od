@@ -1,0 +1,15 @@
+# Coverage for the _python fetchers. Regenerate with:
+#   .venv/bin/python -m pytest -q _python/tests --cov --cov-report=term --cov-report=html
+# then open htmlcov/index.html.
+[run]
+# source_dirs (not source), listing _python/pi and _python/local too: they have no
+# __init__.py, so they would otherwise be missing until a test imports them.
+source_dirs =
+    _python
+    _python/pi
+    _python/local
+omit =
+    _python/tests/*
+
+[report]
+skip_empty = true
