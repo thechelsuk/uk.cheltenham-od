@@ -10,7 +10,8 @@
             <ul class="header-facts">
                 <li><strong>{% assign h_total = summary.unit_total %}{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %}</strong> postcodes</li>
                 <li><strong>{{ summary.outcodes | size }}</strong> postcode districts</li>
-                <li><strong>{{ summary.ward_total }}</strong> wards mapped</li>
+                {% assign h_borough = site.data.wards.index.wards | map: "name" %}{% assign h_in = 0 %}{% for w in summary.ward_summary %}{% if h_borough contains w.name %}{% assign h_in = h_in | plus: 1 %}{% endif %}{% endfor %}
+                <li><strong>{{ summary.ward_total }}</strong> wards across GL50–GL54, {{ h_in }} in Cheltenham borough</li>
             </ul>
         </header>
         {% include section-links.html %}
