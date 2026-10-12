@@ -1,31 +1,23 @@
 #!/usr/bin/env python3
 """
-fetch_air_quality.py
-
 Pulls live air-quality readings from DEFRA's UK-AIR Sensor Observation Service
-(52°North Timeseries REST API) for stations around Cheltenham, and writes a
-Jekyll-ready markdown page (air-quality.md).
+(52°North Timeseries REST API) for stations around Cheltenham, and writes them
+to _data/air-quality.json for _layouts/safety-environment/air-quality.html.
 
 API docs: https://uk-air.defra.gov.uk/sos-ukair/static/doc/api-doc/
 Base URL: https://uk-air.defra.gov.uk/sos-ukair/api/v1
 
-NOTE: This script could not be executed against the live API from the
-sandbox this was written in (uk-air.defra.gov.uk is not on the allowed
-network list here), so it has NOT been run end-to-end. Please run it
-yourself and report back any errors / unexpected JSON shapes so it can
-be corrected — the DEFRA JSON API is not consistently documented and
-field names/behaviour have been known to drift.
+The DEFRA JSON API is not consistently documented and field names/behaviour
+have been known to drift; run with --debug to see raw responses.
 
 Usage:
-    python3 fetch_air_quality.py
-
-Requires:
-    pip install requests
+    python3 _python/air-quality.py [--debug]
 """
 import re
 import sys
 import argparse
 import datetime
+import pathlib
 
 import requests
 
@@ -50,7 +42,11 @@ RADIUS_KM = config.AIR_QUALITY_RADIUS_KM
 # station list (the DEFRA SOS instance's server-side bbox/near params
 # returned 400/500 errors in testing).
 
-OUTPUT_FILE = "_pages/safety-environment/air-quality.md"
+OUTPUT_FILE = pathlib.Path(__file__).resolve().parent.parent / "_data" / "air-quality.json"
+
+SOURCE_NAME = "DEFRA UK-AIR"
+SOURCE_URL = "https://uk-air.defra.gov.uk/"
+LICENCE = "Open Government Licence v3.0"
 DEBUG = False
 
 
@@ -137,6 +133,17 @@ def daqi_band(pollutant_key: str, value: float):
         if value <= threshold:
             return name
     return "Very High"
+
+
+def site_name(station_label: str) -> str:
+    """Strip the pollutant description this SOS instance appends to each
+    station label, e.g. 'Cheltenham A40 Gloucester Road-Particulate matter
+    less than 2.5 micro m (aerosol)' -> 'Cheltenham A40 Gloucester Road'."""
+    for suffix in ["-Particulate", "-Nitrogen", "-Ozone", "-Sulphur", "-Sulfur"]:
+        idx = station_label.find(suffix)
+        if idx != -1:
+            return station_label[:idx]
+    return station_label
 
 
 def get_all_stations():
@@ -258,12 +265,7 @@ def collect_readings():
         # site name (e.g. "Cheltenham A40 Gloucester Road-Particulate
         # matter less than 2.5 micro m (aerosol)"). Strip that suffix so
         # readings for the same physical site group together in the output.
-        site_name = station_label
-        for marker in ["-Particulate", "-Nitrogen", "-Ozone", "-Sulphur", "-Sulfur"]:
-            idx = site_name.find(marker)
-            if idx != -1:
-                site_name = site_name[:idx]
-                break
+        name = site_name(station_label)
 
         for ts_id, ts_meta in timeseries_map.items():
             phenomenon_label = ts_meta.get("phenomenon", {}).get("label", "")
@@ -296,7 +298,7 @@ def collect_readings():
                 )
 
             readings.append({
-                "station": site_name,
+                "station": name,
                 "distance_km": station_distance,
                 "pollutant_key": pollutant_key,
                 "pollutant_label": POLLUTANTS_OF_INTEREST[pollutant_key],
@@ -310,8 +312,11 @@ def collect_readings():
 
 
 # ---------------------------------------------------------------------------
-# Rendering
+# Output
 # ---------------------------------------------------------------------------
+BAND_ORDER = ["Low", "Moderate", "High", "Very High"]
+
+
 def smart_title(text: str) -> str:
     """Title-case a name, handling messy source data sensibly.
 
@@ -338,95 +343,58 @@ def smart_title(text: str) -> str:
     return " ".join(out)
 
 
-def render_markdown(readings):
-    generated = datetime.datetime.now(datetime.timezone.utc).strftime(
-        "%Y-%m-%d %H:%M UTC"
-    )
+def shape_reading(r):
+    """One reading as stored in the JSON: the raw value for sorting, a
+    display string with thousands separators, and the time as ISO (UTC)."""
+    value = r["value"]
+    return {
+        "pollutant_key": r["pollutant_key"],
+        "pollutant": r["pollutant_label"],
+        "value": value,
+        "uom": r["uom"],
+        "reading_display": f"{value:,} {r['uom']}".strip() if value is not None else "n/a",
+        "band": r["band"],
+        "measured": r["timestamp"].strftime("%Y-%m-%dT%H:%M") if r["timestamp"] else None,
+    }
 
-    lines = []
-    lines.append(
-        "Air quality in Cheltenham changes hour to hour depending on traffic, "
-        "weather and wider weather patterns. The readings below come directly "
-        "from [DEFRA's UK-AIR monitoring network](https://uk-air.defra.gov.uk/), "
-        "the UK government's official air pollution data source, and are pulled "
-        "from the nearest monitoring stations to Cheltenham.\n"
-    )
-    lines.append(
-        "\nThe main pollutants tracked here are fine particulates (PM2.5 and "
-        "PM10, from vehicle exhaust, brake dust and burning), nitrogen dioxide "
-        "(NO2, mostly from traffic), ozone (O3, which builds up in sunny "
-        "weather) and sulphur dioxide (SO2, from industrial and fuel burning "
-        "sources). Each reading is given a rough band — Low, Moderate, High or "
-        "Very High — based on DEFRA's Daily Air Quality Index thresholds, "
-        "so you can see at a glance whether levels are a concern. This is a "
-        "simplified, single-reading guide rather than the official rolling-"
-        "average DAQI figure, so treat it as indicative rather than exact.\n"
-    )
-    lines.append(
-        "\nIf you have asthma, another lung condition, or a heart condition, "
-        "the NHS and DEFRA recommend reducing strenuous activity outdoors "
-        "when readings are in the High or Very High bands. See "
-        "[DEFRA's air quality advice](https://uk-air.defra.gov.uk/air-pollution/daqi) "
-        "for more detail on what each band means for your health.\n"
-    )
 
-    if not readings:
-        lines.append(
-            "\n> No data was available from DEFRA at the time this page was "
-            "last generated. This will update automatically on the next "
-            "scheduled run.\n"
-        )
-        return "".join(lines)
-
-    # Group by station
-    stations = {}
+def build_stations(readings):
+    """Group readings by monitoring site, sorted by site name, each site's
+    readings sorted by pollutant."""
+    grouped = {}
     for r in readings:
-        stations.setdefault(r["station"], []).append(r)
+        grouped.setdefault(r["station"], []).append(r)
 
-    for station_name, station_readings in sorted(stations.items()):
-        distance = station_readings[0].get("distance_km")
-        distance_str = f" ({distance}km from Cheltenham Centre)" if distance is not None else ""
-        lines.append(f"\n## {smart_title(station_name)}{distance_str}\n")
-        lines.append("\n| Pollutant | Reading | Band | Measured (UTC) |\n")
-        lines.append("| --- | --- | --- | --- |\n")
-        for r in sorted(station_readings, key=lambda x: x["pollutant_label"]):
-            value_str = f"{r['value']} {r['uom']}".strip() if r["value"] is not None else "n/a"
-            when_str = r["timestamp"].strftime("%Y-%m-%d %H:%M") if r["timestamp"] else "n/a"
-            lines.append(
-                f"| {r['pollutant_label']} | {value_str} | {r['band']} | {when_str} |\n"
-            )
-
-    lines.append(
-        f"\n*Source: [DEFRA UK-AIR](https://uk-air.defra.gov.uk/). "
-        f"Data last refreshed {generated}.*\n"
-    )
-
-    return "".join(lines)
+    stations = []
+    for name, station_readings in sorted(grouped.items()):
+        stations.append({
+            "name": smart_title(name),
+            "distance_km": station_readings[0].get("distance_km"),
+            "readings": [shape_reading(r) for r in sorted(station_readings, key=lambda x: x["pollutant_label"])],
+        })
+    return stations
 
 
-def update_target_file(body_markdown: str):
-    """Replace the air-quality section in OUTPUT_FILE using the project's
-    existing helper.replace_chunk(). That function matches markers of the
-    form:"""
+def highest_band(readings):
+    """The worst DAQI band across all readings, or None if none has a band."""
+    ranks = [BAND_ORDER.index(r["band"]) for r in readings if r.get("band") in BAND_ORDER]
+    return BAND_ORDER[max(ranks)] if ranks else None
 
-    try:
-        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-            existing = f.read()
-    except FileNotFoundError:
-        print(f"ERROR: {OUTPUT_FILE} does not exist. Create it first with "
-              f"front matter and the air_quality starts/ends markers in "
-              f"place, then re-run this script.", file=sys.stderr)
-        sys.exit(1)
 
-    new_content = helper.replace_chunk(existing, "air_quality", body_markdown)
-
-    if new_content == existing:
-        print("WARNING: file content unchanged — the 'air_quality starts'/"
-              "'air_quality ends' markers may not be present in "
-              f"{OUTPUT_FILE}. Check spelling exactly matches.", file=sys.stderr)
-
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(new_content)
+def build_payload(readings, generated_at):
+    stations = build_stations(readings)
+    distances = [s["distance_km"] for s in stations if s["distance_km"] is not None]
+    return {
+        "generated_at": generated_at,
+        "source": SOURCE_NAME,
+        "source_url": SOURCE_URL,
+        "licence": LICENCE,
+        "radius_km": RADIUS_KM,
+        "reading_count": len(readings),
+        "highest_band": highest_band(readings),
+        "nearest_km": min(distances) if distances else None,
+        "stations": stations,
+    }
 
 
 def main():
@@ -438,13 +406,13 @@ def main():
     DEBUG = args.debug
 
     readings = collect_readings()
-    markdown = render_markdown(readings)
-    update_target_file(markdown)
+    generated_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    helper.write_json(OUTPUT_FILE, build_payload(readings, generated_at))
 
-    print(f"Updated {OUTPUT_FILE} with {len(readings)} readings")
+    print(f"Wrote {len(readings)} readings to {OUTPUT_FILE}")
     if not readings:
         print("No readings found — re-run with --debug for diagnostics, "
-              "e.g.: python3 fetch_air_quality.py --debug", file=sys.stderr)
+              "e.g.: python3 _python/air-quality.py --debug", file=sys.stderr)
 
 
 if __name__ == "__main__":

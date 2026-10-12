@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Air Quality Readings",
+  "description": "The latest particulate, nitrogen dioxide, ozone and sulphur dioxide readings from DEFRA UK-AIR monitoring stations near Cheltenham.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['air-quality'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["PM2.5", "PM10", "Nitrogen dioxide", "Ozone", "Sulphur dioxide"]
+}
+</script>

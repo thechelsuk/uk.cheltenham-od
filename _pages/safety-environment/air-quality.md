@@ -1,11 +1,12 @@
 ---
-layout: page
+layout: safety-environment/air-quality
 title: Cheltenham Air Quality
 seo_title: "Cheltenham Air Quality: Live PM2.5, PM10, NO2 and Ozone"
 permalink: /cheltenham-air-quality
 date: 2026-08-20 20:55 UTC
 description: "Live air quality readings for Cheltenham, updated regularly from official DEFRA monitoring stations, covering particulates, nitrogen dioxide, ozone and sulphur dioxide."
 type: "environment"
+schema: air-quality
 seo: "Check current Cheltenham air quality levels — live PM2.5, PM10, NO2 and ozone readings from DEFRA's official monitoring network"
 ---
 
@@ -13,26 +14,8 @@ seo: "Check current Cheltenham air quality levels — live PM2.5, PM10, NO2 and 
 
 ## Cheltenham Air Quality Reports
 
-<!-- air_quality starts -->
 Air quality in Cheltenham changes hour to hour depending on traffic, weather and wider weather patterns. The readings below come directly from [DEFRA's UK-AIR monitoring network](https://uk-air.defra.gov.uk/), the UK government's official air pollution data source, and are pulled from the nearest monitoring stations to Cheltenham.
 
 The main pollutants tracked here are fine particulates (PM2.5 and PM10, from vehicle exhaust, brake dust and burning), nitrogen dioxide (NO2, mostly from traffic), ozone (O3, which builds up in sunny weather) and sulphur dioxide (SO2, from industrial and fuel burning sources). Each reading is given a rough band — Low, Moderate, High or Very High — based on DEFRA's Daily Air Quality Index thresholds, so you can see at a glance whether levels are a concern. This is a simplified, single-reading guide rather than the official rolling-average DAQI figure, so treat it as indicative rather than exact.
 
 If you have asthma, another lung condition, or a heart condition, the NHS and DEFRA recommend reducing strenuous activity outdoors when readings are in the High or Very High bands. See [DEFRA's air quality advice](https://uk-air.defra.gov.uk/air-pollution/daqi) for more detail on what each band means for your health.
-
-## Cheltenham A40 Gloucester Road (2.5km from Cheltenham Centre)
-
-| Pollutant | Reading | Band | Measured (UTC) |
-| --- | --- | --- | --- |
-| PM2.5 (fine particulates) | 0.9 ug.m-3 | Low | 2026-10-12 04:00 |
-
-## Gloucester Tredworth (12.1km from Cheltenham Centre)
-
-| Pollutant | Reading | Band | Measured (UTC) |
-| --- | --- | --- | --- |
-| PM10 (particulates) | 6.0 ug.m-3 | Low | 2026-10-12 04:00 |
-| PM2.5 (fine particulates) | 3.019 ug.m-3 | Low | 2026-10-12 04:00 |
-
-*Source: [DEFRA UK-AIR](https://uk-air.defra.gov.uk/). Data last refreshed 2026-10-12 06:27 UTC.*
-
-<!-- air_quality ends -->
