@@ -21,9 +21,7 @@ sponsor:
 
 Cheltenham's public charging network has grown quickly, with points now spread across town-centre car parks, supermarkets, hotels, retail parks and on-street bays. Whether you're a resident without a driveway, a commuter topping up during the day, or visiting for the races or a festival, the map and tables below show where to plug in, what connectors each site offers, and how fast you can expect to charge. Need somewhere to park while you charge? Our [car parks](/cheltenham-car-parks) page lists fees, hours and maximum stays.
 
-<!-- ev_charging starts -->
 This page lists every public charging location we hold for the Cheltenham area, refreshed daily from open data. Use the map to find the nearest point, or sort the table by distance, power or connector type to match your car and how long you're staying.
-<!-- ev_charging ends -->
 
 ## How to Use This Page
 

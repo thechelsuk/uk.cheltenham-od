@@ -14,11 +14,11 @@
                 <li><strong>{{ h_ev.operators }}</strong> operators</li>
                 <li><strong>{{ h_ev.max_power_kw }} kW</strong> fastest charger</li>
             </ul>
+            {% if page.feed_url %}
             <ul class="header-links">
-                {% if page.feed_url %}
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
-                {% endif %}
             </ul>
+            {% endif %}
         </header>
         {% include section-links.html %}
 
