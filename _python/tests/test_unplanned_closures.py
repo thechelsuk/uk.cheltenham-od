@@ -6,11 +6,19 @@ Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
 import importlib.util
+import json
 import pathlib
+from datetime import datetime, timedelta
+
+import pytest
+
+import alerts_feed
+import helper
 
 SPEC = importlib.util.spec_from_file_location(
     "unplanned_closures", pathlib.Path(__file__).resolve().parents[1] / "pi" / "unplanned-closures.py"
 )
+assert SPEC is not None and SPEC.loader is not None
 unplanned = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(unplanned)
 
@@ -103,3 +111,68 @@ def test_atom_items_describe_each_closure_and_link_to_its_row():
     assert items[0]["published_iso"] == "2026-10-09T07:20:00Z"
     assert items[1]["title"] == "Ended: Road closed: A417 both directions near Birdlip"
     assert items[1]["summary"] == "Started 2026-10-08 22:00. Ended 2026-10-08 23:40."
+
+
+def test_a_record_without_coordinates_is_left_out():
+    records = unplanned.parse(payload(record("a", "active", "")))
+    assert records[0]["points"] == []
+    assert unplanned.local_items(records, centre=(51.8994, -2.0783), radius_miles=10) == []
+
+
+def test_load_env_reads_the_repo_env_file_without_overriding(tmp_path, monkeypatch):
+    (tmp_path / ".env").write_text("# comment\nNAT_HIGH_KEY='from-file'\nOTHER_TEST_KEY=x\nnot a pair\n")
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
+    monkeypatch.delenv("NAT_HIGH_KEY", raising=False)
+    monkeypatch.setenv("OTHER_TEST_KEY", "already set")
+    unplanned.load_env()
+    assert unplanned.os.environ["NAT_HIGH_KEY"] == "from-file"
+    assert unplanned.os.environ["OTHER_TEST_KEY"] == "already set"
+    monkeypatch.delenv("NAT_HIGH_KEY")
+
+
+def test_main_needs_the_key(tmp_path, monkeypatch):
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
+    monkeypatch.delenv("NAT_HIGH_KEY", raising=False)
+    with pytest.raises(SystemExit, match="NAT_HIGH_KEY"):
+        unplanned.main()
+
+
+class FakeResponse:
+    def __init__(self, body):
+        self._body = body
+
+    def json(self):
+        return self._body
+
+
+def test_main_writes_closures_history_and_feed_then_ends_a_closure_that_drops_out(tmp_path, monkeypatch):
+    for folder in ("_data", "feeds"):
+        (tmp_path / folder).mkdir()
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
+    monkeypatch.setattr(helper, "site_url", lambda: "https://example.org")
+    monkeypatch.setenv("NAT_HIGH_KEY", "test-key")
+    rebuilt = []
+    monkeypatch.setattr(alerts_feed, "rebuild", lambda: rebuilt.append(True))
+    asked = []
+    answer = payload(record("near", "active", "51.95 -2.13"), record("far", "active", "53.27 -2.39"))
+    monkeypatch.setattr(helper, "get", lambda url, headers, params: asked.append((headers, params))
+                        or FakeResponse(answer))
+
+    unplanned.main()
+
+    headers, params = asked[0]
+    assert headers["Ocp-Apim-Subscription-Key"] == "test-key" and params["closureType"] == "unplanned"
+    window = datetime.fromisoformat(params["endDateTime"]) - datetime.fromisoformat(params["startDateTime"])
+    assert window == timedelta(hours=unplanned.LOOKBACK_HOURS)
+    data = json.loads((tmp_path / "_data" / "unplanned-closures.json").read_text())
+    assert [(i["id"], i["status"]) for i in data["items"]] == [("near", "Active")]
+    feed = (tmp_path / "feeds" / "unplanned-closures.xml").read_text()
+    assert "https://example.org/cheltenham-roadworks/unplanned-closures#near" in feed
+    assert rebuilt == [True]
+
+    # Gone from the 24-hour window while still active: the history marks it ended.
+    answer = payload()
+    unplanned.main()
+    (closure,) = json.loads((tmp_path / "_data" / "unplanned-closures-history.json").read_text())["records"]
+    assert closure["status"] == "Ended" and closure["resolved_iso"]
+    assert closure["end"] == unplanned.local_iso(closure["resolved_iso"])
