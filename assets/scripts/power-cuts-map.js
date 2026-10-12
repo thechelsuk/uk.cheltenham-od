@@ -24,9 +24,11 @@
     incidents.forEach(function (incident) {
         if (incident.lat == null || incident.lon == null) return;
         var html =
-            "<strong>" + (incident.category || "Power cut") + "</strong>" +
+            "<strong>" + (incident.category || "Power cut") + (incident.planned ? " (Planned)" : "") + "</strong>" +
             "<br>" + (incident.status || "") +
-            "<br>" + (incident.confirmed_off || 0) + " properties off, " + (incident.restored || 0) + " restored" +
+            (incident.planned
+                ? "<br>" + (incident.planned_off || incident.confirmed_off || 0) + " properties, " + (incident.planned_start || "").replace("T", " ").slice(0, 16) + " to " + (incident.planned_end || "").replace("T", " ").slice(0, 16)
+                : "<br>" + (incident.confirmed_off || 0) + " properties off, " + (incident.restored || 0) + " restored") +
             (incident.postcodes && incident.postcodes.length ? "<br>" + incident.postcodes.join(", ") : "");
         L.marker([incident.lat, incident.lon]).addTo(map).bindPopup(html);
         bounds.push([incident.lat, incident.lon]);

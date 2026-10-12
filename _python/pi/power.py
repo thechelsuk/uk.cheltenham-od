@@ -79,6 +79,10 @@ def build_incident(row):
         "last_updated": row.get("last_updated") or "",
         "date_of_restoration": row.get("date_of_restoration") or "",
         "etr": row.get("etr") or "",
+        # For planned work: when it starts and ends, and how many properties it takes off.
+        "planned_start": row.get("planned_outage_start_date") or "",
+        "planned_end": row.get("planned_outage_end_date") or "",
+        "planned_off": to_int(row.get("planned_outage_off")),
         "lat": to_float(row.get("location_latitude")),
         "lon": to_float(row.get("location_longitude")),
         "postcodes": row_postcodes(row),

@@ -6,12 +6,13 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            {% assign h_live = 0 %}{% assign h_off = 0 %}{% assign h_back = 0 %}{% assign h_postcodes = "" | split: "" %}{% for i in data.incidents %}{% if i.status != "Restored" and i.confirmed_off > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus: i.confirmed_off %}{% assign h_back = h_back | plus: i.restored %}{% assign h_postcodes = h_postcodes | concat: i.postcodes %}{% endif %}{% endfor %}{% assign h_postcodes = h_postcodes | uniq %}
+            {% assign h_live = 0 %}{% assign h_off = 0 %}{% assign h_back = 0 %}{% assign h_postcodes = "" | split: "" %}{% for i in data.incidents %}{% if i.planned != true and i.status != "Restored" and i.confirmed_off > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus: i.confirmed_off %}{% assign h_back = h_back | plus: i.restored %}{% assign h_postcodes = h_postcodes | concat: i.postcodes %}{% endif %}{% endfor %}{% assign h_postcodes = h_postcodes | uniq %}{% assign h_planned = data.incidents | where: "planned", true | sort: "planned_start" %}{% assign h_faults = data.incidents | where: "planned", false %}
             <ul class="header-facts">
                 <li><strong>{{ h_live }}</strong> power cut{% if h_live != 1 %}s{% endif %} now</li>
                 <li><strong>{{ h_postcodes | size }}</strong> postcode{% if h_postcodes.size != 1 %}s{% endif %} affected</li>
                 <li><strong>{{ h_off }}</strong> propert{% if h_off == 1 %}y{% else %}ies{% endif %} without power</li>
                 <li><strong>{{ h_back }}</strong> propert{% if h_back == 1 %}y{% else %}ies{% endif %} already restored</li>
+                <li><strong>{{ h_planned | size }}</strong> planned power cut{% if h_planned.size != 1 %}s{% endif %}</li>
             </ul>
             <ul class="header-links">
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
@@ -27,7 +28,7 @@
         <div id="power-cuts-map" class="map-canvas" aria-label="Map of current power cuts affecting Cheltenham"></div>
 
         <h2>Current Power Cuts</h2>
-        {% if data.incidents.size > 0 %}
+        {% if h_faults.size > 0 %}
         <div class="table-scroll">
             <table class="power-cuts-table data-table" data-sortable>
                 <thead>
@@ -42,10 +43,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in data.incidents %}
+                    {% for i in h_faults %}
                     <tr>
                         <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
-                        <td>{{ i.category }}{% if i.planned %} (Planned){% endif %}</td>
+                        <td>{{ i.category }}</td>
                         <td>{{ i.status }}</td>
                         <td class="number">{{ i.confirmed_off }}</td>
                         <td class="number">{{ i.restored }}</td>
@@ -59,6 +60,39 @@
         {% else %}
         <blockquote>
             <p>No current power cuts recorded for Cheltenham.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2 id="planned">Planned Power Cuts</h2>
+        <p>Maintenance and repair work booked by National Grid Electricity Distribution, which switches the power off for a set time.</p>
+        {% if h_planned.size > 0 %}
+        <div class="table-scroll">
+            <table class="power-cuts-planned-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Postcodes</th>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="number">Properties</th>
+                        <th scope="col" class="date">Starts</th>
+                        <th scope="col" class="date">Ends</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in h_planned %}
+                    <tr>
+                        <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
+                        <td>{{ i.status }}</td>
+                        <td class="number">{% if i.planned_off > 0 %}{{ i.planned_off }}{% else %}{{ i.confirmed_off }}{% endif %}</td>
+                        <td class="date">{% if i.planned_start.size > 0 %}{{ i.planned_start | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
+                        <td class="date">{% if i.planned_end.size > 0 %}{{ i.planned_end | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No planned power cuts listed for Cheltenham.</p>
         </blockquote>
         {% endif %}
 
@@ -86,20 +120,20 @@
 
         <h3>Does This Cover Planned Outages Too?</h3>
         <ul>
-            <li>Yes. Planned maintenance outages are included and marked "(Planned)", alongside unplanned faults.</li>
+            <li>Yes. Planned maintenance work has its own <a href="#planned">planned power cuts</a> table, with the start and end times, and appears on the map alongside unplanned faults.</li>
         </ul>
 
         <h3>How Often Does This Update?</h3>
         <ul>
-            <li>The underlying NGED feed updates near real-time; this page and its feed are checked every 3
+            <li>The underlying NGED feed updates near real-time; this page and its feed are checked every 5
                 minutes.</li>
         </ul>
 
         <h3>Can I See Past Power Cuts?</h3>
         <ul>
-            <li>Yes — every power cut recorded against a Cheltenham postcode is kept on the <a
-                href="/cheltenham-power-cuts/history">incident history page</a>, including once it's been
-                restored.</li>
+            <li>Yes. Once a power cut against a Cheltenham postcode has been restored, it moves to the <a
+                href="/cheltenham-power-cuts/history">power cuts history page</a>, with how many properties it
+                affected.</li>
         </ul>
 
         <h2 id="about-this-data">About This Data</h2>

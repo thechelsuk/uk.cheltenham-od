@@ -69,3 +69,20 @@ def test_older_history_records_get_properties_affected_filled_in():
     power.fill_affected(records)
     assert records[0]["affected"] == 39
     assert records[1]["affected"] == 7
+
+
+def test_planned_cut_keeps_its_start_end_and_properties():
+    row = {"fault_id": "INCD-2", "status": "Awaiting", "planned": "true", "postcode": "GL51 0JU",
+           "planned_outage_start_date": "2026-10-14T09:00:00", "planned_outage_end_date": "2026-10-14T15:30:00",
+           "planned_outage_off": "12"}
+    incident = power.build_incident(row)
+    assert incident["planned"] is True
+    assert incident["planned_start"] == "2026-10-14T09:00:00"
+    assert incident["planned_end"] == "2026-10-14T15:30:00"
+    assert incident["planned_off"] == 12
+
+
+def test_unplanned_cut_has_no_planned_times():
+    incident = power.build_incident({"fault_id": "INCD-3", "planned": "false", "postcode": "GL50 1AA"})
+    assert incident["planned_start"] == ""
+    assert incident["planned_off"] == 0
