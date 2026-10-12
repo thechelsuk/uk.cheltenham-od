@@ -18,7 +18,7 @@ This page publishes live flood warnings and flood alerts for Cheltenham and the
 wider Gloucestershire area, sourced from the [Environment Agency](https://www.gov.uk/check-flood-risk) flood warning service and republished here as an [RSS feed]({{ page.feed_url }}).
 
 When the Environment Agency has issued a warning that affects Gloucestershire,
-it appears in the list above. When the list is empty, there are no active flood
+it appears in the list below. When the list is empty, there are no active flood
 warnings or alerts in force for the area — which is common during drier periods
 and through the summer months.
 
@@ -51,10 +51,3 @@ upstairs or to a safe height, prepare a bag with essential documents and
 medication, and avoid walking or driving through flood water — just 30 cm of
 moving water can move a vehicle. Follow instructions from emergency services
 and the Environment Agency.
-
-## Latest Flood Alerts
-
-<!-- flood_marker starts -->
-> No current flood warnings or alerts for this area.
-
-<!-- flood_marker ends -->

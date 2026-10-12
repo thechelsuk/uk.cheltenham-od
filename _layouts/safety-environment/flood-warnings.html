@@ -1,4 +1,5 @@
 {% include header.html %}
+{% assign flood = site.data["flood"] %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -8,7 +9,7 @@
             {% assign h_stations = site.data["river-levels"].stations %}
 
             <ul class="header-facts">
-                <li><strong>{{ site.data.flood.items | size }}</strong> flood warnings in force</li>
+                <li><strong>{{ flood.count }}</strong> flood warnings in force</li>
                 <li><strong>{{ h_stations | where: "kind", "level" | size }}</strong> river level gauges</li>
                 <li><strong>{{ h_stations | where: "kind", "rainfall" | size }}</strong> rain gauges</li>
             </ul>
@@ -21,6 +22,20 @@
         {% include sponsor.html %}
 
         {{ content }}
+
+        <h2>Latest Flood Alerts</h2>
+        {% if flood.items.size > 0 %}
+        <ul>
+            {% for item in flood.items %}
+            <li>{{ item.severity }}: {{ item.description }}</li>
+            {% if item.message != "" %}<li>{{ item.message }}</li>{% endif %}
+            {% endfor %}
+        </ul>
+        {% else %}
+        <blockquote>
+            <p>No current flood warnings or alerts for this area.</p>
+        </blockquote>
+        {% endif %}
 
         {% assign rivers = site.data["river-levels"] %}
         {% if rivers.stations.size > 0 %}
@@ -135,12 +150,6 @@
                 situation check the <a href="https://check-for-flooding.service.gov.uk/">Environment Agency's live service</a>.</li>
         </ul>
 
-        <h2 id="about-this-data">About This Data</h2>
-        <p class="attribution"><small>
-            Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
-            {% include freshness.html file="_data/river-levels.json" %}
-        </small></p>
-
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         {% include chartjs.html %}
@@ -149,6 +158,12 @@
         <script src="/assets/scripts/river-levels.js"></script>
         {% endif %}
 
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ flood.source_url }}">{{ flood.source }}</a>{% if flood.licence %}, published under the {{ flood.licence }}{% endif %}.
+            {% include freshness.html file="_data/river-levels.json" %}
+            Flood warnings: {% include freshness.html file="_data/flood.json" %}
+        </small></p>
     </div>
 </div>
 {% include footer.html %}
