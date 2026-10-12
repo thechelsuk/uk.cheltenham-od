@@ -21,10 +21,7 @@
     };
 
     var map = L.map(el).setView([51.899, -2.078], 13);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    CODMap.tiles(map);
 
     // Zone 2 first so the darker Zone 3 is drawn on top of it.
     ["FZ2", "FZ3"].forEach(function (zone) {

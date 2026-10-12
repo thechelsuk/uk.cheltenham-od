@@ -118,8 +118,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="foodbank-data" type="application/json">
 [{% for fb in data.foodbanks %}{% assign own = site.pages | where: "foodbank", fb.slug | first %}{"name": {{ fb.display_name | jsonify | replace: "</", "<\/" }}, "lat": {{ fb.lat }}, "lon": {{ fb.lon }}, "kind": "foodbank", "label": {{ fb.network | append: ", " | append: fb.distance_mi | append: " miles" | jsonify | replace: "</", "<\/" }}, "href": {{ own.url | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
 </script>

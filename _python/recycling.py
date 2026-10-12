@@ -15,10 +15,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
 from bs4 import BeautifulSoup
 
-import config
 import helper
 
 URL = "https://www.cheltenham.gov.uk/recyclingbanks"
@@ -28,7 +26,7 @@ SOURCE_NAME = "Cheltenham Borough Council"
 # _data/sources.json for the note.
 
 def fetch_page(url: str) -> str:
-    response = requests.get(url, headers=config.HEADERS, timeout=30)
+    response = helper.get(url, timeout=30)
     response.raise_for_status()
     return response.text
 

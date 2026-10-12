@@ -321,8 +321,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 {% include chartjs.html %}
 <script id="road-collisions-years-data" type="application/json">{{ data.by_year | jsonify }}</script>
 <script id="road-collisions-hours-data" type="application/json">{{ data.by_hour | jsonify }}</script>

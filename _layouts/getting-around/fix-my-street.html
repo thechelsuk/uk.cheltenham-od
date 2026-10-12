@@ -100,8 +100,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="fms-data" type="application/json">{{ data.items | jsonify }}</script>
 <script src="/assets/scripts/fix-my-street.js"></script>
 {% include footer.html %}

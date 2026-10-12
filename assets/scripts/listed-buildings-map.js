@@ -23,11 +23,7 @@
     if (!buildings.length && !areas.length) return;
 
     var map = L.map(el);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    CODMap.tiles(map);
 
     var gradeColours = { I: "#b30000", "II*": "#e07b00", II: "#3366cc" };
 

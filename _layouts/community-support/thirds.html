@@ -76,8 +76,7 @@
 
     </div>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    {% include leaflet.html %}
     <script id="third-spaces-data" type="application/json">{{ spaces.locations | jsonify }}</script>
     <script id="third-spaces-centre" type="application/json">{{ spaces.centre | jsonify }}</script>
     <script src="/assets/scripts/third-spaces-map.js"></script>

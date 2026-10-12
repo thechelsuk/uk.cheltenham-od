@@ -104,8 +104,7 @@
 
     </div>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    {% include leaflet.html %}
     <script id="dentists-data" type="application/json">{{ dentists.practices | jsonify }}</script>
     <script src="/assets/scripts/dentists-map.js"></script>
 </div>

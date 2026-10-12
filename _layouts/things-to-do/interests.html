@@ -123,8 +123,7 @@
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/points_of_interest.json" %}
         </small></p>
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        {% include leaflet.html %}
         <script src="/assets/scripts/poi-map.js"></script>
     </div>
 </div>

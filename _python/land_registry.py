@@ -17,6 +17,8 @@ from pathlib import Path
 
 import requests
 
+import helper
+
 # ---------------------------------------------------------------------------
 MONTHS = 48
 DRY_RUN = False
@@ -85,7 +87,7 @@ OFFSET {offset}
 
 
 def _run_query(query: str) -> dict:
-    resp = requests.get(
+    resp = helper.get(
         ENDPOINT,
         params={"query": query, "output": "json"},
         headers={"Accept": "application/sparql-results+json"},

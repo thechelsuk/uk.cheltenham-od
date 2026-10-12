@@ -130,8 +130,7 @@
 
     </div>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    {% include leaflet.html %}
     <script id="where-to-eat-data" type="application/json">{{ venues | jsonify }}</script>
     <script id="where-to-eat-types" type="application/json">{{ page.venue_types | jsonify }}</script>
     <script src="/assets/scripts/where-to-eat-map.js"></script>

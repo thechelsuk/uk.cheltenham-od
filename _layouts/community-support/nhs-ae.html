@@ -177,8 +177,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 {% include chartjs.html %}
 <script id="nhs-ae-data" type="application/json">{{ ae.months | jsonify }}</script>
 <script id="nhs-hospitals-data" type="application/json">{{ hospitals.hospitals | jsonify }}</script>

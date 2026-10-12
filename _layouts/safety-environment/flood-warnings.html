@@ -150,8 +150,7 @@
                 situation check the <a href="https://check-for-flooding.service.gov.uk/">Environment Agency's live service</a>.</li>
         </ul>
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        {% include leaflet.html %}
         {% include chartjs.html %}
         <script id="river-levels-data" type="application/json">{{ rivers.stations | jsonify }}</script>
         <script id="river-levels-history-data" type="application/json">{{ site.data["river-levels-history"].days | jsonify }}</script>

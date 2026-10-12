@@ -71,8 +71,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="parkrun-data" type="application/json">{{ parkrun.events | jsonify }}</script>
 <script src="/assets/scripts/parkrun-map.js"></script>
 {% include footer.html %}

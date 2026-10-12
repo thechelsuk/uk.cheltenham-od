@@ -66,8 +66,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script src="https://unpkg.com/d3-delaunay@6/dist/d3-delaunay.min.js"></script>
 <script id="catchment-data" type="application/json">{{ phase_schools | jsonify }}</script>
 <script id="catchment-ofsted" type="application/json">{ {% for p in phase_schools %}{% assign o = site.data.ofsted.schools | where: "name", p.name | first %}{{ p.name | jsonify }}: {% if o %}{ "url": "/cheltenham-schools/{{ o.slug }}", "outcome": {{ o.latest_rated.outcome | jsonify }}, "date": {{ o.latest_rated.date | jsonify }} }{% else %}null{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %} }</script>

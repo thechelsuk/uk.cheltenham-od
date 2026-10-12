@@ -14,9 +14,7 @@ import os
 import re
 from datetime import datetime, timezone
 
-import requests
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -32,7 +30,7 @@ PERIOD_PATTERN = re.compile(r"annual data, (.+)$")
 
 
 def find_csv_url():
-    resp = requests.get(PAGE_URL, headers=config.HEADERS, timeout=30)
+    resp = helper.get(PAGE_URL, timeout=30)
     resp.raise_for_status()
     match = LINK_PATTERN.search(resp.text)
     if not match:
@@ -70,7 +68,7 @@ def parse_row(rows, crs):
 
 def main():
     csv_url = find_csv_url()
-    resp = requests.get(csv_url, headers=config.HEADERS, timeout=60)
+    resp = helper.get(csv_url, timeout=60)
     resp.raise_for_status()
     rows = list(csv.reader(io.StringIO(resp.content.decode("utf-8-sig"))))
     period, record = parse_row(rows, CRS)

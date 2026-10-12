@@ -106,8 +106,7 @@
 
     </div>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    {% include leaflet.html %}
     <script id="opticians-data" type="application/json">{{ opticians.opticians | jsonify }}</script>
     <script src="/assets/scripts/opticians-map.js"></script>
 </div>

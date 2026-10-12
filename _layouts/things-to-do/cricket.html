@@ -119,8 +119,7 @@
 
     </div>
 </div>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="cricket-data" type="application/json">{{ cricket.grounds | jsonify }}</script>
 <script src="/assets/scripts/cricket-map.js"></script>
 {% include footer.html %}

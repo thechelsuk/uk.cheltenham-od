@@ -110,7 +110,6 @@
     {% include footer.html %}
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="childcare-data" type="application/json">{{ providers | jsonify }}</script>
 <script src="/assets/scripts/childcare-map.js"></script>

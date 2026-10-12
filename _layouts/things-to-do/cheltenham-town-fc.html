@@ -89,9 +89,28 @@
             <li>Cheltenham Town play in EFL League Two, the fourth tier of English football.</li>
         </ul>
 
+        {% assign home_record = ctfc.next_fixtures | where: "venue_type", "Home" | first %}
+        {% if home_record == nil %}{% assign home_record = ctfc.last_results | where: "venue_type", "Home" | first %}{% endif %}
         <h3>Where Do Cheltenham Town Play?</h3>
         <ul>
-            <li>At Whaddon Road, their home ground since 1932.</li>
+            <li>At Whaddon Road, Whaddon, Cheltenham, GL52 5NA, their home ground since 1932{% if home_record.venue %},
+                currently known by its sponsor's name, "{{ home_record.venue }}"{% endif %}.</li>
+        </ul>
+
+        <h3>How Do I Get to Whaddon Road by Train?</h3>
+        <ul>
+            <li>Cheltenham Spa station is around 2 miles from the ground, roughly a 40-minute walk. A taxi from the
+                station takes about 10 minutes, or local buses run into the town centre, from where it's a shorter walk
+                up Prestbury Road. Our <a href="/cheltenham-train-times">train times</a> page shows the next arrivals
+                and <a href="/cheltenham-taxi-ranks">taxi ranks</a> shows where to find a taxi.</li>
+        </ul>
+
+        <h3>Where Can I Park for a Match?</h3>
+        <ul>
+            <li>Parking at Whaddon Road is very limited on match days. Our <a href="/cheltenham-car-parks">car
+                parks</a> page lists the town's car parks with fees and opening hours, and nearby residential streets
+                have parking restrictions, so check the <a href="/cheltenham-permit-parking-zones">permit parking
+                zones</a> map before parking near the ground.</li>
         </ul>
 
         <h3>Where Can I Buy Tickets?</h3>
@@ -107,28 +126,6 @@
                 Check the <a href="{{ ctfc.team.website }}" target="_blank" rel="noopener">club's own site</a> for
                 confirmed dates and kick-off times.
             </small></p>
-
-        <h2>Getting to Whaddon Road</h2>
-
-        {% assign home_record = ctfc.next_fixtures | where: "venue_type", "Home" | first %}
-        {% if home_record == nil %}{% assign home_record = ctfc.last_results | where: "venue_type", "Home" | first %}{%
-        endif %}
-        <p>Cheltenham Town play at Whaddon Road, Whaddon, Cheltenham, GL52 5NA{% if home_record.venue %} — currently
-            known by its sponsor's name, "{{ home_record.venue }}"{% endif %}.</p>
-
-        <h3>By Train</h3>
-        <p>Cheltenham Spa station is around 2 miles from the ground, roughly a 40-minute walk. From the station,
-            local buses run into the town centre, from where it's a shorter walk or short taxi ride up Prestbury
-            Road to Whaddon Road. A taxi direct from the station takes about 10 minutes.</p>
-
-        <h3>By Car and Park &amp; Ride</h3>
-        <p>Whaddon Road itself has very limited parking on match days, and nearby residential streets operate
-            parking restrictions. Cheltenham's two Park &amp; Ride sites — <a
-                href="https://www.gloucestershire.gov.uk/major-projects-list/m5-junction-10/arle-court-transport-hub/"
-                target="_blank" rel="noopener">Arle Court Transport Hub</a> (GL51 6SY, near M5 Junction 11) and
-            Cheltenham Racecourse (GL50 4SH, seasonal) — run regular buses into the town centre, leaving a walk or
-            short taxi on to the ground; neither runs a direct matchday shuttle to Whaddon Road, so allow extra time
-            on top of the bus journey.</p>
 
     </div>
 </div>

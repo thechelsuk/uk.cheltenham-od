@@ -64,7 +64,7 @@ def daterange(start, end):
 def fetch(urn, day, today):
     params = {"selectedStartDate": day.isoformat(), "selectedEndDate": day.isoformat(),
               "todayDate": today.isoformat(), "urn": urn}
-    r = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=20)
+    r = helper.get(BASE_URL, params=params, headers=HEADERS, timeout=20)
     r.raise_for_status()
     return r.json()
 

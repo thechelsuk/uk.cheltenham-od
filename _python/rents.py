@@ -17,9 +17,7 @@ import re
 from datetime import datetime, timezone
 
 import openpyxl
-import requests
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -38,7 +36,7 @@ TYPES = [("Detached", "detached"), ("Semi-detached", "semidetached"), ("Terraced
 
 
 def latest_edition_url():
-    resp = requests.get(DATASET_URL, headers=config.HEADERS, timeout=30)
+    resp = helper.get(DATASET_URL, timeout=30)
     resp.raise_for_status()
     editions = []
     for href, day, month, year in FILE_PATTERN.findall(resp.text):
@@ -101,7 +99,7 @@ def point(row, suffix=""):
 def main():
     released, url = latest_edition_url()
     print(f"Latest ONS edition: {released} — {url}")
-    resp = requests.get(url, headers=config.HEADERS, timeout=180)
+    resp = helper.get(url, timeout=180)
     resp.raise_for_status()
     rows = read_rows(resp.content)
 

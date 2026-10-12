@@ -19,7 +19,6 @@ import os
 import sys
 from datetime import datetime, timedelta, timezone
 
-import requests
 
 import config
 
@@ -94,7 +93,7 @@ def main():
     end = datetime.now(timezone.utc).date() - timedelta(days=1)
     start = end - timedelta(days=DAYS - 1)
 
-    resp = requests.post(
+    resp = helper.post(
         ENDPOINT,
         headers={**config.HEADERS, "Authorization": f"Bearer {token}"},
         json={"query": QUERY, "variables": {"zone": zone, "start": start.isoformat(), "end": end.isoformat()}},

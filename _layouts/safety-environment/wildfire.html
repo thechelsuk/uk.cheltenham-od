@@ -120,8 +120,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="wildfire-data" type="application/json">{{ data.squares | jsonify }}</script>
 <script src="/assets/scripts/wildfire-map.js"></script>
 {% include footer.html %}

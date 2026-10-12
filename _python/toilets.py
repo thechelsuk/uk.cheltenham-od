@@ -10,9 +10,7 @@ import re
 import sys
 from pathlib import Path
 
-import requests
 
-import config
 import helper
 
 try:
@@ -168,9 +166,8 @@ def find_json_download_url(page_url: str = DATASET_PAGE_URL) -> str:
     hosted on the same vercel-storage.com/exports/ path — we grab hrefs
     ending in .json (ignoring the .csv one) and pick the first match.
     """
-    resp = requests.get(
+    resp = helper.get(
         page_url,
-        headers=config.HEADERS,
         timeout=20,
     )
     resp.raise_for_status()
@@ -200,7 +197,7 @@ IGNORE_IDS = {
 
 
 def fetch_data(url: str) -> list[dict]:
-    resp = requests.get(url, timeout=60)
+    resp = helper.get(url, timeout=60)
     resp.raise_for_status()
     return resp.json()
 

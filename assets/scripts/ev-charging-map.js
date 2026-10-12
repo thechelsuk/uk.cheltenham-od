@@ -6,10 +6,7 @@
     var stations = JSON.parse(el.textContent);
     var map = L.map("ev-map");
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: "© OpenStreetMap contributors",
-    }).addTo(map);
+    CODMap.tiles(map);
 
     var markers = [];
     stations.forEach(function (s) {

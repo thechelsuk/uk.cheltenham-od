@@ -77,8 +77,7 @@
             <a href="https://www.toiletmap.org.uk/" target="_blank" rel="noopener">Great British Toilet Map</a>,
             which keeps this data up to date through user submissions.
         </p>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        {% include leaflet.html %}
         <script id="toilet-data" type="application/json">{{ site.data.toilets | jsonify }}</script>
         <script src="/assets/scripts/toilet-map.js"></script>
 

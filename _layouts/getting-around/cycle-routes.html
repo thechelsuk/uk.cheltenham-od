@@ -94,8 +94,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="cycle-routes-data" type="application/json">{{ data.segments | jsonify }}</script>
 <script id="cycle-routes-poi-data" type="application/json">{{ venues.venues | jsonify }}</script>
 <script src="/assets/scripts/cycle-routes-map.js"></script>

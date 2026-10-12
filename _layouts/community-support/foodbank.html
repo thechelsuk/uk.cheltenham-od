@@ -131,8 +131,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="foodbank-data" type="application/json">
 [{"name": {{ fb.display_name | jsonify | replace: "</", "<\/" }}, "lat": {{ fb.lat }}, "lon": {{ fb.lon }}, "kind": "foodbank", "label": "Food bank"}{% for p in fb.locations %},{"name": {{ p.name | jsonify | replace: "</", "<\/" }}, "lat": {{ p.lat }}, "lon": {{ p.lon }}, "kind": "location", "label": {{ p.address | jsonify | replace: "</", "<\/" }}}{% endfor %}{% for p in fb.donation_points %},{"name": {{ p.name | jsonify | replace: "</", "<\/" }}, "lat": {{ p.lat }}, "lon": {{ p.lon }}, "kind": "donation", "label": {{ p.address | jsonify | replace: "</", "<\/" }}}{% endfor %}]
 </script>

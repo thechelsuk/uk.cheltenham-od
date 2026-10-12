@@ -6,7 +6,6 @@ rarely change."""
 import os
 from datetime import datetime, timezone
 
-import requests
 
 import config
 import helper
@@ -46,7 +45,7 @@ def query_layer(layer, out_fields):
         "outSR": 4326,
         "f": "geojson",
     }
-    resp = requests.get(f"{SERVICE}/{layer}/query", params=params, headers=config.HEADERS, timeout=30)
+    resp = helper.get(f"{SERVICE}/{layer}/query", params=params, timeout=30)
     resp.raise_for_status()
     data = resp.json()
     if "error" in data:

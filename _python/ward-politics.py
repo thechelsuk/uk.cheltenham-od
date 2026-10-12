@@ -26,10 +26,8 @@ import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
-import requests
 from bs4 import BeautifulSoup
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -73,7 +71,7 @@ def slugify(name):
 
 def get(url):
     time.sleep(PAUSE_SECONDS)
-    resp = requests.get(url, headers=config.HEADERS, timeout=60)
+    resp = helper.get(url, timeout=60)
     resp.raise_for_status()
     return resp
 

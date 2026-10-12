@@ -12,9 +12,7 @@ import os
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
-import requests
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -26,7 +24,7 @@ UK = ZoneInfo("Europe/London")
 
 
 def get(path, **params):
-    resp = requests.get(f"{API}/{path}", params=params, headers=config.HEADERS, timeout=30)
+    resp = helper.get(f"{API}/{path}", params=params, timeout=30)
     resp.raise_for_status()
     return resp.json()
 

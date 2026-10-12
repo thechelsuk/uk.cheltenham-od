@@ -20,9 +20,7 @@ import zipfile
 from datetime import datetime, timezone
 
 import pandas as pd
-import requests
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -35,7 +33,7 @@ DCLG_CODE, FORMER_ONS_CODE, ECODE = "B1605", "23UB", "E07000078"
 
 
 def find_link(page_url, pattern):
-    resp = requests.get(page_url, headers=config.HEADERS, timeout=30)
+    resp = helper.get(page_url, timeout=30)
     resp.raise_for_status()
     match = re.search(rf'href="({re.escape("https://assets.publishing.service.gov.uk/media/")}[^"]*{pattern}[^"]*)"', resp.text)
     if not match:
@@ -44,7 +42,7 @@ def find_link(page_url, pattern):
 
 
 def download(url, timeout=60):
-    resp = requests.get(url, headers=config.HEADERS, timeout=timeout)
+    resp = helper.get(url, timeout=timeout)
     resp.raise_for_status()
     return resp.content
 
@@ -99,7 +97,7 @@ def fetch_communal_accommodation():
 
 
 def find_latest_ctsop_page():
-    resp = requests.get(CTSOP_COLLECTION_URL, headers=config.HEADERS, timeout=30)
+    resp = helper.get(CTSOP_COLLECTION_URL, timeout=30)
     resp.raise_for_status()
     years = [int(y) for y in re.findall(r"council-tax-stock-of-properties-(\d{4})", resp.text)]
     if not years:

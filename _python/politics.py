@@ -14,9 +14,7 @@ import os
 import re
 from datetime import datetime, timezone
 
-import requests
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -29,7 +27,7 @@ PROFILE_URL = "https://members.parliament.uk/member/{id}/contact"
 
 
 def get(path):
-    resp = requests.get(f"{API}/{path}", headers=config.HEADERS, timeout=30)
+    resp = helper.get(f"{API}/{path}", timeout=30)
     resp.raise_for_status()
     return resp.json()["value"]
 

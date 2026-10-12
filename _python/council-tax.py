@@ -17,10 +17,8 @@ import os
 import re
 from datetime import datetime, timezone
 
-import requests
 from bs4 import BeautifulSoup
 
-import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -32,7 +30,7 @@ BAND_ORDER = ["A", "B", "C", "D", "E", "F", "G", "H"]
 
 
 def main():
-    resp = requests.get(SOURCE_URL, headers=config.HEADERS, timeout=30)
+    resp = helper.get(SOURCE_URL, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "html.parser")
 

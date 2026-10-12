@@ -83,8 +83,7 @@
             Opening hours and services can change, so confirm with the branch before travelling.
         </small></p>
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        {% include leaflet.html %}
         <script id="po-data" type="application/json">{{ site.data.post-offices | jsonify }}</script>
         <script src="/assets/scripts/po-map.js"></script>
     </div>

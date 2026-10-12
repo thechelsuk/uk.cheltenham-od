@@ -1,5 +1,6 @@
 import datetime
 import json
+import re
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
@@ -70,17 +71,28 @@ def build_disruption(r):
     return d
 
 
+def alert_time(value):
+    """A disruption's start as YYYY-MM-DD HH:MM when it's in an ISO form, or
+    the feed's own text when it isn't."""
+    value = (value or "").strip()
+    match = re.match(r"^(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}))?", value)
+    if match:
+        return " ".join(part for part in match.groups() if part)
+    return value
+
+
 def build_alert_html(disruptions):
     if not disruptions:
         return ""
 
-    now_str = datetime.datetime.now().strftime("%H:%M")
     items = ""
     for d in disruptions[:5]:
         label = d["operators_affected"] or d["organisation"]
+        start = alert_time(d.get("validity_start"))
+        when = f" from {start}" if start else ""
         items += (
             f'  <li><a href="/cheltenham-bus-data">'
-            f'Disruption to {label} bus services reported at {now_str}</a></li>\n'
+            f'Disruption to {label} bus services{when}</a></li>\n'
         )
     return (
         "<h2>Bus Disruption Alert</h2>\n"

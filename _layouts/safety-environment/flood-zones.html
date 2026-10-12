@@ -68,8 +68,7 @@
 
     </div>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    {% include leaflet.html %}
     <script id="flood-zones-data" type="application/json">{{ zones.features | jsonify }}</script>
     <script src="/assets/scripts/flood-zones-map.js"></script>
 </div>

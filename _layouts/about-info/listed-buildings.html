@@ -124,8 +124,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="listed-buildings-data" type="application/json">{{ heritage.buildings | jsonify }}</script>
 <script id="listed-buildings-areas-data" type="application/json">{{ heritage.scheduled_monuments | concat: heritage.parks_and_gardens | jsonify }}</script>
 <script src="/assets/scripts/listed-buildings-map.js"></script>

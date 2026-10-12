@@ -90,8 +90,7 @@ Standard skeleton:
     </div>
 </div>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% include leaflet.html %}
 <script id="example-data" type="application/json">{{ data.items | jsonify }}</script>
 <script src="/assets/scripts/example-map.js"></script>
 {% include footer.html %}
@@ -108,6 +107,8 @@ Standard skeleton:
 - Pull page-specific values through front matter (`page.phase`, `page.max_miles`) rather than hardcoding them in the layout, if the same layout serves more than one page.
 
 ## The Map Script (`assets/scripts/<name>-map.js`)
+
+Load Leaflet with `{% include leaflet.html %}` in the layout, which also loads `assets/scripts/map-defaults.js`. Add the base map with `CODMap.tiles(map)`, so every map uses the same OpenStreetMap tiles and attribution.
 
 Every map on the site follows the same IIFE shape — read the JSON out of a `<script type="application/json">` tag, guard against missing elements/empty data, build a Leaflet map, fit bounds to the markers:
 
@@ -126,10 +127,7 @@ Every map on the site follows the same IIFE shape — read the JSON out of a `<s
     if (!items.length) return;
 
     var map = L.map(el);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    CODMap.tiles(map);
 
     var bounds = [];
     items.forEach(function (item) {
