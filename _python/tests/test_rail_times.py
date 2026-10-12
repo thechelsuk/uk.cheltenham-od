@@ -1,12 +1,17 @@
-"""Offline tests for the Pi's train times fetcher (pi/rail-times.py).
+"""Offline tests for the Pi's train times fetcher (pi/rail-times.py). The
+board request is faked and the data file goes to a temporary folder.
 
 Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
-from datetime import datetime
-
 import importlib.util
+import json
 import pathlib
+from datetime import datetime, timedelta
+
+import pytest
+
+import helper
 
 
 def _load(name, relative):
@@ -50,3 +55,114 @@ def test_a_service_without_a_scheduled_time_is_skipped():
 def test_station_messages_are_plain_text_without_repeats():
     board = {"nrccMessages": [{"value": "<p>Lifts &amp; escalators closed</p>"}, {"value": "Lifts & escalators closed"}]}
     assert rail.station_messages(board) == ["Lifts & escalators closed"]
+
+
+def test_board_time_reads_the_seven_digit_timestamp_or_falls_back_to_now():
+    board = {"generatedAt": "2026-10-12T23:50:01.1234567+01:00"}
+    assert rail.board_time(board) == datetime(2026, 10, 12, 23, 50, 1, 123456, tzinfo=rail.LONDON)
+    assert abs(rail.board_time({}) - datetime.now(rail.LONDON)) < timedelta(minutes=1)
+
+
+@pytest.mark.parametrize("estimate, status, expected", [
+    ("23:55", "On time", "2026-10-12T23:55"),
+    ("Delayed", "Delayed", None),
+    ("", "No report", None),
+    ("Starts here", "No report", None),
+])
+def test_other_estimates(estimate, status, expected):
+    item = rail.parse_service({"std": "23:55", "etd": estimate}, "departure", GENERATED)
+    assert (item["status"], item["expected"]) == (status, expected)
+
+
+def test_a_cancelled_flag_wins_over_the_estimate():
+    item = rail.parse_service({"sta": "23:55", "eta": "On time", "isCancelled": True,
+                               "delayReason": "Signalling"}, "arrival", GENERATED)
+    assert item["status"] == "Cancelled" and item["reason"] == "Signalling"
+    assert "calling_at" not in item
+
+
+def test_place_names_and_calling_points():
+    assert rail.place_names([{"locationName": "Bristol Temple Meads"},
+                             {"locationName": "Cardiff Central", "via": "via Newport"}, {}]) == \
+        "Bristol Temple Meads and Cardiff Central via Newport"
+    assert rail.place_names(None) == ""
+    service = {"subsequentCallingPoints": [
+        {"callingPoint": [{"locationName": "Gloucester"}, {"locationName": "Bristol Parkway"}]},
+        {"callingPoint": [{"locationName": "Gloucester"}, {"locationName": "Cardiff Central"}, {}]},
+    ]}
+    assert rail.calling_at(service) == ["Gloucester", "Bristol Parkway", "Cardiff Central"]
+
+
+BOARD = {
+    "generatedAt": "2026-10-12T23:50:00+01:00",
+    "trainServices": [
+        {"std": "00:15", "etd": "On time"},                    # after midnight, so last
+        {"sta": "23:52", "eta": "On time", "std": "23:54", "etd": "On time"},
+        {"sta": "23:58", "eta": "On time"},                    # terminates here
+    ],
+    "nrccMessages": [{"value": "Ticket office closed"}],
+}
+
+
+def test_parse_board_splits_departures_from_arrivals_in_time_order(monkeypatch):
+    assert [s["scheduled"] for s in rail.parse_board(BOARD, "departure")] == ["2026-10-12T23:54", "2026-10-13T00:15"]
+    assert [s["scheduled"] for s in rail.parse_board(BOARD, "arrival")] == ["2026-10-12T23:52", "2026-10-12T23:58"]
+    monkeypatch.setattr(rail, "MAX_SERVICES", 1)
+    assert len(rail.parse_board(BOARD, "departure")) == 1
+    assert rail.parse_board({}, "arrival") == []
+
+
+def test_unchanged_only_within_the_heartbeat(tmp_path, monkeypatch):
+    out = tmp_path / "rail-times.json"
+    monkeypatch.setattr(rail, "OUT", out)
+    now = datetime(2026, 10, 12, 12, 0, tzinfo=rail.LONDON)
+    new = {"messages": [], "departures": [{"a": 1}], "arrivals": []}
+    assert not rail.unchanged(new, now)
+    out.write_text(json.dumps({**new, "generated_at": (now - timedelta(minutes=10)).isoformat()}))
+    assert rail.unchanged(new, now)
+    assert not rail.unchanged({**new, "arrivals": [{"b": 2}]}, now)
+    assert not rail.unchanged(new, now + timedelta(minutes=25))
+    out.write_text("{}")
+    assert not rail.unchanged(new, now)
+
+
+class FakeResponse:
+    def raise_for_status(self):
+        pass
+
+    def json(self):
+        return BOARD
+
+
+def test_fetch_board_sends_the_key(monkeypatch):
+    seen = {}
+    monkeypatch.setattr(rail.requests, "get",
+                        lambda url, params, headers, timeout: seen.update(url=url, params=params, headers=headers)
+                        or FakeResponse())
+    assert rail.fetch_board("test-key") == BOARD
+    assert seen["url"].endswith("/GetArrDepBoardWithDetails/CNM")
+    assert seen["params"] == {"numRows": rail.NUM_ROWS} and seen["headers"]["x-apikey"] == "test-key"
+
+
+def test_main_needs_the_key(monkeypatch):
+    monkeypatch.delenv("RDM_LDBWS_KEY", raising=False)
+    with pytest.raises(SystemExit, match="RDM_LDBWS_KEY"):
+        rail.main()
+
+
+def test_main_writes_the_board_then_leaves_an_unchanged_one_alone(tmp_path, monkeypatch):
+    out = tmp_path / "rail-times.json"
+    monkeypatch.setattr(rail, "OUT", out)
+    monkeypatch.setenv("RDM_LDBWS_KEY", "test-key")
+    monkeypatch.setattr(rail, "fetch_board", lambda key: BOARD)
+
+    rail.main()
+    data = json.loads(out.read_text())
+    assert data["station"] == {"name": "Cheltenham Spa", "crs": "CNM"}
+    assert data["messages"] == ["Ticket office closed"]
+    assert (len(data["departures"]), len(data["arrivals"])) == (2, 2)
+
+    written = []
+    monkeypatch.setattr(helper, "write_json", lambda path, payload: written.append(payload))
+    rail.main()
+    assert written == []
