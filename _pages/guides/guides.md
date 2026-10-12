@@ -6,6 +6,7 @@ seo: "Cheltenham guides for moving, studying, visiting and race week: house pric
 description: "Local guides to Cheltenham, backed by open data: moving here, student life, visiting, and where to stay for the Cheltenham Festival."
 type: "landing"
 permalink: /guides
+nav_title: "Guides"
 ---
 
 ## Local Cheltenham Guides

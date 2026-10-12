@@ -5,6 +5,7 @@ seo: "The Cheltenham Week Ahead is a free weekly email: the week's weather, road
 permalink: /newsletter
 description: "A free weekly Cheltenham email every Monday morning, with the week's weather, roadworks, events and top local stories, from Cheltenham Open Data."
 type: "cod"
+nav_title: "Newsletter"
 ---
 
 ## {{ site.newsletter.name }}

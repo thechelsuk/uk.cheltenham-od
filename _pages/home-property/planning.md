@@ -21,4 +21,4 @@ This page tracks the {{ planning.received_count }} applications Cheltenham Borou
 
 Data is refreshed daily from the council's PublicAccess portal. The map shows where each application is, and the tables have a pin link for each one. A pin sits at the centre of the application's postcode, so it shows the area rather than the exact site, and applications with no postcode in their address can't be placed. Where several applications share a postcode, they share a pin. Select a pin to read them. Sort the table by any column, or open an application's status to read the full case file.
 
-If you're weighing up an area to move to, our [moving to Cheltenham guide](/moving-to-cheltenham) covers what's being built nearby alongside house prices, schools and safety.
+Many of the town's buildings are protected: our [listed buildings](/cheltenham-listed-buildings) map shows every listed building and scheduled monument. If you're weighing up an area to move to, our [moving to Cheltenham guide](/moving-to-cheltenham) covers what's being built nearby alongside house prices, schools and safety.

@@ -6,6 +6,7 @@ permalink: /corrections
 description: "Significant corrections to data and pages on Cheltenham Open Data, with when each was made and what changed."
 seo: "Corrections to Cheltenham Open Data's pages and figures, listed with the date and what changed, as set out in our editorial standards."
 type: "cod"
+parent: /policies
 ---
 
 ## Corrections to Our Pages

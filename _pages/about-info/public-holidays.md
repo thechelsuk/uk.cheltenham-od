@@ -14,7 +14,7 @@ schema: holidays
 
 Cheltenham and the rest of Gloucestershire follow the public holidays set for England and Wales. These dates affect Post Office and bank opening hours, council bin collections, school term dates, and trading hours for many local shops.
 
-The table below shows the next confirmed public holidays, taken directly from the official government schedule, so you always know what's coming up. Timing a trip around one? Our [visiting Cheltenham guide](/visiting-cheltenham) covers what to expect from opening hours and getting around.
+The table below shows the next confirmed public holidays, taken directly from the official government schedule, so you always know what's coming up. Timing a trip around one? Our [visiting Cheltenham guide](/visiting-cheltenham) covers what to expect from opening hours and getting around, and the [10-day forecast](/cheltenham-10-day-weather-forecast) shows the weather ahead.
 
 ### A Note on Christmas and New Year
 

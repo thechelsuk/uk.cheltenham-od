@@ -15,4 +15,4 @@ Cheltenham General Hospital is part of Gloucestershire Hospitals NHS Foundation 
 
 **In an emergency, call 999.** For urgent medical help that isn't an emergency, use [NHS 111](https://111.nhs.uk/). The figures here cover a whole month and are published after it has ended, so they can't tell you how busy A&E is right now.
 
-Looking for a GP or pharmacy instead? See [GPs and pharmacies](/cheltenham-gp-pharmacies).
+Looking for a GP or pharmacy instead? See [GPs and pharmacies](/cheltenham-gp-pharmacies). For how the county's hospitals coped during the pandemic, see [COVID-19 in Cheltenham](/cheltenham-covid-19).

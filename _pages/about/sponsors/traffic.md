@@ -6,6 +6,7 @@ permalink: /sponsor/traffic
 description: "Unique visitors, total requests and the share served from cache for Cheltenham Open Data over the last 30 days, updated every day."
 type: "cod"
 schema: traffic
+parent: /sponsor
 ---
 
 ## How Busy Is Cheltenham Open Data?

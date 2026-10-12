@@ -147,7 +147,7 @@ module Navigation
     category_pages = site.pages.select { |p| p.data["group"] && p.data["layout"] == "explore-category" }
     categories = category_pages.to_h { |p| [p.data["group"], norm(p.url)] }
     site.config["navigation_groups"] = menu(site, items, category_pages)
-    pages = site.pages + site.collections.reject { |name, _| name == "posts" }.values.flat_map(&:docs)
+    pages = site.pages + site.collections.values.flat_map(&:docs)
     pages.each do |p|
       url = norm(p.url)
       if p.data["layout"] == "explore-category"
@@ -157,8 +157,19 @@ module Navigation
         p.data["family"] = family(url, map)
       elsif p.data["parent"]
         p.data["breadcrumbs"] = parent_crumbs(norm(p.data["parent"]), map, categories, pages)
+      elsif standalone?(p, url)
+        p.data["breadcrumbs"] = [{ "name" => "Home", "url" => "/" }]
       end
     end
+  end
+
+  # Any other page that opens with the usual header (About, Policies, Feeds...)
+  # gets just "Home", so every page but the home page starts the same way.
+  def standalone?(page, url)
+    layout = page.data["layout"].to_s
+    return false if layout.empty? || %w[redirect empty].include?(layout)
+
+    !(url == "/" || url == "/404" || url.start_with?("/admin", "/form"))
   end
 
   # The menu, worked out once per build rather than on every page: each

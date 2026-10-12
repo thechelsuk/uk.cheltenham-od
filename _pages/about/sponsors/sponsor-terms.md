@@ -6,6 +6,7 @@ permalink: /sponsor/terms
 seo: "Plain-English terms for sponsoring a category on Cheltenham Open Data: what sponsors get, the founding rate, the minimum term and how to cancel."
 description: The simple terms for sponsoring a page on Cheltenham Open Data.
 type: "cod"
+parent: /sponsor
 ---
 
 Plain-English terms for sponsoring Cheltenham Open Data. If anything's unclear,

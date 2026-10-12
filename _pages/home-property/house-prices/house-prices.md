@@ -28,6 +28,8 @@ No new build sales were recorded in Cheltenham in the {{ site.data.house-summary
 Excluding properties classed as "Other" in Land Registry data, {{ site.data.house-summary.current.domestic_count_display }} domestic sales were recorded in the {{ site.data.house-summary.current.period_label | default: "past year" }}{% if site.data.house-summary.current.domestic_count_change %}, {{ site.data.house-summary.current.domestic_count_change }}{% endif %}, with an average (mean) price of {{ site.data.house-summary.current.domestic_mean_display }}{% if site.data.house-summary.current.domestic_mean_change %}, {{ site.data.house-summary.current.domestic_mean_change }}{% endif %}. {% if site.data.house-summary.current.other_note %}{{ site.data.house-summary.current.other_note }}{% endif %}
 {% endif %}
 
+Buying? Our [home energy ratings](/cheltenham-energy-ratings) page shows how energy efficient Cheltenham's homes are, ward by ward, and [rents](/cheltenham-rent-prices) tracks what tenants pay.
+
 ### Overall Since 1995
 
 {% assign history = site.data["cheltenham-house-price-history"] %}

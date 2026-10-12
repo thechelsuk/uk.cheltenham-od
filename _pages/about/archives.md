@@ -6,4 +6,5 @@ description: "Latest site news and announcements from Cheltenham Open Data."
 type: "cod"
 permalink: /news
 
+nav_title: "News"
 ---

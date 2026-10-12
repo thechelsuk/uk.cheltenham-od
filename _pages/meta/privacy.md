@@ -5,6 +5,7 @@ permalink: /privacy
 description: "How Cheltenham Open Data collects, uses, and protects your information. Cookie-free, GDPR-compliant analytics with transparent affiliate and classifieds disclosure."
 seo: "Privacy Policy for Cheltenham Open Data. Privacy-first, cookie-free analytics, GDPR compliant, and clear disclosure of affiliate links."
 type: "cod"
+parent: /policies
 ---
 
 ## Privacy Policy

@@ -6,6 +6,7 @@ permalink: /accessibility
 description: "How Cheltenham Open Data is built and tested to be usable by everyone, what we know could be better, and how to tell us about a problem."
 seo: "Cheltenham Open Data's accessibility statement: how the site is built and tested, known limits such as maps, and how to report a problem."
 type: "cod"
+parent: /policies
 ---
 
 ## Accessibility

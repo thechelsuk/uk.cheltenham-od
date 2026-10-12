@@ -5,6 +5,7 @@ permalink: /editorial-standards
 description: "How Cheltenham Open Data chooses, checks and publishes local data, how it stays independent, and how to report a mistake."
 seo: "How Cheltenham Open Data sources and checks its data, stays independent of sponsors, uses automation, and corrects mistakes when they happen."
 type: "cod"
+parent: /policies
 ---
 
 ## Our Editorial Standards

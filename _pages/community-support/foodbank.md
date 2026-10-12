@@ -14,7 +14,9 @@ This page lists the food banks within ten miles of Cheltenham town centre, with
 a map and a table showing how far each one is, how many items it is asking for
 and when that list last changed. If you'd like to help people facing hardship in
 Cheltenham, open a food bank's page to see exactly what it needs right now, what
-it already has plenty of, and where to drop donations off.
+it already has plenty of, and where to drop donations off. To support other
+local causes, our [charities](/cheltenham-charities) page lists the registered
+charities based in Cheltenham.
 
 Three food banks serve Cheltenham itself:
 

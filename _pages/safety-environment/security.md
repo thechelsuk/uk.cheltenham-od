@@ -23,7 +23,8 @@ employs thousands of people in and around the town.
 
 The national threat level is set for the whole UK, so it doesn't measure a
 threat to Cheltenham specifically. We track it here because of that local
-connection, and to show how it has changed over time.
+connection, and to show how it has changed over time. For crime on Cheltenham's
+own streets, see our [crime data](/cheltenham-crime-data).
 
 ### {{ data.level_title | escape }}
 

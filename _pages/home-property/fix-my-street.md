@@ -14,7 +14,8 @@ This page shows the most recent street and highways problems reported in
 Cheltenham and the surrounding Gloucestershire area through
 [FixMyStreet](https://www.fixmystreet.com), the independent service run by
 mySociety. Each report links directly to the original on FixMyStreet, where you
-can see photos, current status and any response from the council.
+can see photos, current status and any response from the council. For planned
+works and closures on the same roads, see [street works](/cheltenham-street-works).
 
 Reports are grouped into categories such as potholes, trees and vegetation,
 footpaths and fly-tipping, and plotted on the map so you can see what is being

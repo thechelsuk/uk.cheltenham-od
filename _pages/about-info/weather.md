@@ -14,4 +14,4 @@ Each day's card shows the expected high and low, the chance of rain, wind speed 
 
 Treat the first three or four days as the reliable window for planning; beyond that, forecasts are best read as a trend rather than a promise. Check back tomorrow for the latest update.
 
-Packing for a trip? Our [visiting Cheltenham guide](/visiting-cheltenham) covers what else to plan around, from opening hours to getting into town.
+Packing for a trip? Our [visiting Cheltenham guide](/visiting-cheltenham) covers what else to plan around, from opening hours to getting into town, and [public holidays](/cheltenham-public-holidays) lists the next bank holidays.

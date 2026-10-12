@@ -6,6 +6,7 @@ permalink: /policies
 description: "Every policy and technical file for Cheltenham Open Data in one place: terms, privacy, editorial standards, corrections, accessibility and more."
 seo: "Cheltenham Open Data's policies in one place: terms, privacy, editorial standards, corrections, accessibility, plus the site's security and sitemap files."
 type: "cod"
+nav_title: "Policies"
 ---
 
 ## Our Policies

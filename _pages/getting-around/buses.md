@@ -15,4 +15,4 @@ This page lists every bus route registered with the Office of the Traffic Commis
 
 Alongside each route we show whether the operator's published data is actually up to date. Local authorities and the DVSA use this same signal to check operators are meeting their publishing obligations, so it also doubles as a rough guide to how reliable a route's live timetable data is likely to be if you look it up elsewhere.
 
-Disruption reports for local operators are pulled from the same catalogue and shown further down the page, refreshed every ten minutes throughout the day.
+Disruption reports for local operators are pulled from the same catalogue and shown further down the page, refreshed every ten minutes throughout the day. Travelling further afield? Our [train times](/cheltenham-train-times) page shows the next departures from Cheltenham Spa.

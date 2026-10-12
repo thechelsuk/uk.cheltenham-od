@@ -19,7 +19,8 @@ special schools.
 
 Whether you're weighing up primary catchments, comparing secondaries, or looking at
 Cheltenham's independent sector, the aim is a complete, up-to-date reference drawn
-straight from the official register.
+straight from the official register. For higher education, see the
+[University of Gloucestershire](/university-of-gloucestershire), which has campuses in Cheltenham.
 
 ## More Information
 

@@ -17,7 +17,7 @@ Cheltenham offers an excellent mix of vibrant "third spaces", which are places t
 
 Do check the council and other local community sites for up to date information on opening times and events, as these can change.
 
-Looking for something to *do* rather than somewhere to sit? Our [sport in Cheltenham](/cheltenham-sports) page covers parkrun, running, hiking and climbing clubs, plus Cheltenham Town FC and the town's other professional and semi-professional sides.
+Looking for something to *do* rather than somewhere to sit? Our [sports clubs to join](/cheltenham-sports-clubs) page lists running, cycling, climbing, hiking and team sports clubs, and [parkrun](/cheltenham-sports/parkrun) maps the free weekly runs nearby. For hobbies there are [clubs and societies](/cheltenham-clubs-and-societies) and [arts and crafts](/cheltenham-arts-and-crafts) classes and studios, and [sport in Cheltenham](/cheltenham-sports) covers Cheltenham Town and the town's other teams to watch.
 
 The [Glos Libraries](https://gloslibraries.uk/your-libraries) provide a useful list of all the libraries across the county.
 
@@ -28,14 +28,14 @@ Open 10-5 Tuesday to Saturday, 11-5 Sunday. Closed Mondays (last admission 30 mi
 The Gallery staff and volunteers are very friendly and people are welcome to set up shop or work. The museum is fully accessible with lifts to all floors and accessible toilets.
 
 - [51 Clarence St, Cheltenham GL50 3JT](https://maps.app.goo.gl/6RhQGM9KcNCpZkDw9)
-- [Site &rarr;](https://wilsonmuseum.org.uk/)
+- [wilsonmuseum.org.uk](https://wilsonmuseum.org.uk/) &rarr;
 
 ## School House Cafe, Cheltenham
 
 The School House Café is a community café in St. Paul's, providing a space for everyone. Our large community space is used for regular and one-off community events and the playroom is always open for families to have a place for children to play.
 
 - [St. Pauls Road, Cheltenham, Gloucestershire, GL50 4EZ](https://maps.app.goo.gl/xD2nNuapUCAZYDXs8)
-- [Site &rarr;](https://www.schoolhousecafe.co.uk/whats-on/)
+- [schoolhousecafe.co.uk](https://www.schoolhousecafe.co.uk/whats-on/) &rarr;
 
 ## Cheltenham Borough Council Hubs
 
@@ -46,17 +46,17 @@ Offering a range of fun and social activities for all ages, including after scho
 A weekly drop-in an informal setting. Activities include crafts, colouring, jigsaws, games and an opportunity to chill and chat. Open to anyone of any ability living in Cheltenham. This club also provides a source of information, signposting and advice, and training for disabled and non-disabled residents.
 
 - [Cassin Drive, Cheltenham, GL51 7SY](https://maps.app.goo.gl/fzvy8ih7yRMwdW2y8)
-- [Site &rarr;](https://www.cheltenham.gov.uk/info/20005/)
+- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/info/20005/) &rarr;
 
 ### St Paul's Hub, Cheltenham
 
 - [St Paul’s Walk, Cheltenham, GL50 4GG](https://maps.app.goo.gl/UQtXHvd5rHtQ5UCE9)
-- [Site &rarr;](https://www.cheltenham.gov.uk/info/20005/)
+- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/info/20005/) &rarr;
 
 ### Oakley Resource Hub, Cheltenham
 
 - [Clyde Crescent, Cheltenham, GL52 5QL](https://maps.app.goo.gl/CxqweBrvV6NSejzJA)
-- [Site &rarr;](https://www.cheltenham.gov.uk/info/20005/)
+- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/info/20005/) &rarr;
 
 ## Hub8, Cheltenham
 
@@ -65,18 +65,18 @@ Hosting over 3000 events and offering a day pass for £20 + VAT for a desk with 
 ### Hub8 MX
 
 - [Chester Walk, Cheltenham, GL50 3JZ](https://maps.app.goo.gl/BtWJ6aRM2Xij99UX9)
-- [Site &rarr;](https://hub8and.co/office-space-cheltenham-town-centre/)
+- [hub8and.co](https://hub8and.co/office-space-cheltenham-town-centre/) &rarr;
 
 ### Hub8 GC
 
 - [Gloucestershire College, Cheltenham Campus, PE Way, Cheltenham GL51 7SJ](https://maps.app.goo.gl/zGPq9ssXdu2eNxLG6)
-- [Site &rarr;](https://hub8and.co/office-space-cheltenham-town-centre)
+- [hub8and.co](https://hub8and.co/office-space-cheltenham-town-centre) &rarr;
 
 ## Cheltenham Hackspace
 
 Providing 1400-sq-ft of workspace and kitchen and toilet facilities. Cheltenham Hackspace is ideal for makers and crafters with an interest in electronics, textiles, computing, 3D printers, workbenches, and metalwork to name a few. Membership starts at £17.50 a month and there are open evenings every Thursday between 19:00 and 20:00.
 
 - [1 The Runnings, Cheltenham, England, GL51 9NJ](https://maps.app.goo.gl/FG9r2swdMpcp7Vgb6)
-- [Site &rarr;](https://www.cheltenhamhackspace.org/)
+- [cheltenhamhackspace.org](https://www.cheltenhamhackspace.org/) &rarr;
 
 Whether you're visiting for a few days or settling in as a student, our [visiting Cheltenham](/visiting-cheltenham) and [student guide](/student-guide-to-cheltenham) both link to this page as somewhere to work, study or just sit down.

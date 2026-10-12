@@ -13,6 +13,7 @@ sponsor_tdo: "https://buy.stripe.com/00wdR99on9uz4Cj8pE0Ny07"
 sponsor_cas: "https://buy.stripe.com/14A6oH443gX1d8P0Xc0Ny08"
 sponsor_aai: "https://buy.stripe.com/4gMaEX7gffSX5Gn6hw0Ny09"
 sponsor_principal: "https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03"
+nav_title: "Sponsorship"
 ---
 
 ## Reach Local People for Your Local Business
