@@ -1,12 +1,20 @@
-"""Offline tests for the power cuts fetcher's Cheltenham postcode filter.
+"""Offline tests for the power cuts fetcher (pi/power.py): the Cheltenham
+postcode filter, incidents, the homepage alert, feed entries, and the main
+run against a temporary folder with the NGED download faked.
 
 Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
 import importlib.util
+import json
 import pathlib
+import runpy
 
 import pytest
+import requests
+
+import alerts_feed
+import helper
 
 SPEC = importlib.util.spec_from_file_location(
     "power", pathlib.Path(__file__).resolve().parents[1] / "pi" / "power.py"
@@ -86,3 +94,73 @@ def test_unplanned_cut_has_no_planned_times():
     incident = power.build_incident({"fault_id": "INCD-3", "planned": "false", "postcode": "GL50 1AA"})
     assert incident["planned_start"] == ""
     assert incident["planned_off"] == 0
+
+
+def test_coordinates_are_numbers_or_none():
+    incident = power.build_incident({"postcode": "GL50 1AA", "location_latitude": "51.9",
+                                     "location_longitude": "bad", "confirmed_off": "x"})
+    assert incident["lat"] == 51.9 and incident["lon"] is None and incident["confirmed_off"] == 0
+
+
+def test_feed_entries_link_by_fault_and_carry_status_and_restoration():
+    records = [
+        {"fault_id": "INCD-1", "postcodes": ["GL50 4DB"], "status": "Restored", "category": "Low Voltage",
+         "confirmed_off": 4, "affected": 43, "date_of_restoration": "2026-10-11T23:00:00",
+         "first_seen_iso": "2026-10-11T20:45:00Z", "last_seen_iso": "2026-10-11T23:05:00Z"},
+        {"fault_id": "INCD-2", "postcodes": [], "first_seen_iso": "2026-10-12T08:00:00Z"},
+    ]
+    first, second = power.build_atom_items(records, "https://example.org/history")
+    assert first == {"title": "Power cut near GL50 4DB — Restored", "link": "https://example.org/history#INCD-1",
+                     "summary": "Low Voltage · 43 properties affected · Restored: 2026-10-11T23:00:00",
+                     "published_iso": "2026-10-11T23:05:00Z", "source": "National Grid Electricity Distribution"}
+    assert second["title"] == "Power cut near Cheltenham" and second["summary"] == ""
+    assert second["published_iso"] == "2026-10-12T08:00:00Z"
+    assert len(power.build_atom_items(records * 30, "x")) == 50
+
+
+CSV_HEADER = ("fault_id,status,planned,category,confirmed_off,predicted_off,restored,"
+              "date_of_reported_fault,postcode,location_latitude,location_longitude")
+EMPTY_ALERT = "<!-- power_cuts_alert_marker starts -->\n\n<!-- power_cuts_alert_marker ends -->"
+
+
+class FakeResponse:
+    def __init__(self, text):
+        self.text = text
+
+    def raise_for_status(self):
+        pass
+
+
+def test_main_run_writes_data_history_feed_and_alert_then_marks_the_cut_restored(tmp_path, monkeypatch):
+    for folder in ("_data", "feeds", "_includes"):
+        (tmp_path / folder).mkdir()
+    alert = tmp_path / "_includes" / "power-cuts-alert.html"
+    alert.write_text(EMPTY_ALERT)
+    csv_text = (CSV_HEADER + "\n"
+                'INCD-1,In Progress,false,LOW VOLTAGE,4,0,39,2026-10-11T20:40:00,"GL50 4DB, GL50 4DD",51.9,-2.08\n'
+                "INCD-9,In Progress,false,HIGH VOLTAGE,100,0,0,2026-10-11T20:00:00,GL5 1HH,51.7,-2.2\n")
+    monkeypatch.setattr(requests, "get", lambda url, headers, timeout: FakeResponse(csv_text))
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
+    monkeypatch.setattr(helper, "site_url", lambda: "https://example.org")
+    rebuilt = []
+    monkeypatch.setattr(alerts_feed, "rebuild", lambda: rebuilt.append(True))
+    script = str(pathlib.Path(__file__).resolve().parents[1] / "pi" / "power.py")
+
+    runpy.run_path(script, run_name="__main__")
+
+    data = json.loads((tmp_path / "_data" / "power-cuts.json").read_text())
+    assert [i["fault_id"] for i in data["incidents"]] == ["INCD-1"]
+    assert data["incidents"][0]["category"] == "Low Voltage"
+    history = json.loads((tmp_path / "_data" / "power-cuts-history.json").read_text())
+    assert [(r["fault_id"], r["affected"]) for r in history["records"]] == [("INCD-1", 43)]
+    feed = (tmp_path / "feeds" / "power-cuts.xml").read_text()
+    assert "https://example.org/cheltenham-power-cuts/history#INCD-1" in feed
+    assert "Power cut near GL50 4DB, reported 2026-10-11 20:40" in alert.read_text()
+    assert rebuilt == [True]
+
+    # The cut drops out of the live feed: the alert clears and the history records it as restored.
+    monkeypatch.setattr(requests, "get", lambda url, headers, timeout: FakeResponse(CSV_HEADER + "\n"))
+    runpy.run_path(script, run_name="__main__")
+    assert alert.read_text() == EMPTY_ALERT
+    (record,) = json.loads((tmp_path / "_data" / "power-cuts-history.json").read_text())["records"]
+    assert record["status"] == "Restored" and record["date_of_restoration"] == record["resolved_iso"]
