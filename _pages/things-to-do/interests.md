@@ -14,7 +14,7 @@ filters:
 
 ## Cheltenham Sits on the Western Edge of the Cotswolds in Gloucestershire
 
-A Regency spa town known for its horse-racing Festival, its literature, music, jazz and science festivals, and its elegant crescents and gardens. This page maps {{ site.data.points_of_interest.size }} points of interest in and around the town — museums, historic sites, sports grounds, hilltops and commemorative plaques — each with its distance from the town centre and a link straight to Google Maps.
+A Regency spa town known for its horse-racing Festival, its literature, music, jazz and science festivals, and its elegant crescents and gardens. This page maps {{ site.data["points-of-interest"].size }} points of interest in and around the town — museums, historic sites, sports grounds, hilltops and commemorative plaques — each with its distance from the town centre and a link straight to Google Maps.
 
 ## Using the Data
 

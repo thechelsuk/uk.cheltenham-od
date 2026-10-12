@@ -6,7 +6,7 @@ A sale counts as affordable when its price is no more than 4.5 times the median 
 full-time pay of people who live in Cheltenham that year (ONS Annual Survey of Hours and Earnings,
 from _data/cheltenham-earnings.json). 4.5 times pay is roughly the most a lender will usually
 offer one borrower. Sales are every Land Registry price-paid record in Cheltenham, both categories,
-excluding the "other" property type, the same as house_summary.py.
+excluding the "other" property type, the same as house-summary.py.
 
 Two scripts add to the one file, and neither removes the other's years:
   - _python/local/process-land-registry-history.py writes 2008 to 2022, from the full Land Registry

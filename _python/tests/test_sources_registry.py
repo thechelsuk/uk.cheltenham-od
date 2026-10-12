@@ -17,7 +17,7 @@ SCHEDULES = {"every 5 minutes", "hourly", "every two hours", "daily", "weekly", 
 # _data files that are site plumbing rather than data from a source.
 NOT_SOURCE_DATA = {
     "sources.json", "sponsors.json", "social-posted.json", "newsletter-draft.json", "distance-bands.json",
-    "news_digests.json", "fix-my-street-categories.json", "general-election-dates.json",
+    "news-digests.json", "fix-my-street-categories.json", "general-election-dates.json",
     "ignore-stations.json", "fuel-stations.json", "weather-today.json", "wards/index.json",
     "newsletter-venues.json",
     # Built only from other _data files, each registered under its own source.

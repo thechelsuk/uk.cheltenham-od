@@ -4,7 +4,7 @@ _data/cheltenham-house-price-history.json.
 
 Run manually — not part of any scheduled workflow, since the gitignored
 input file only exists locally. The 1995-2022 figures never change, so run
-this once; the scheduled land_registry.py fetcher covers 2022 onwards.
+this once; the scheduled land-registry.py fetcher covers 2022 onwards.
 
   python _python/local/process-land-registry-history.py --download
       Streams HM Land Registry's yearly Price Paid Data files (1995-2022,
@@ -15,7 +15,7 @@ this once; the scheduled land_registry.py fetcher covers 2022 onwards.
   python _python/local/process-land-registry-history.py
       Summarises that file into _data/cheltenham-house-price-history.json.
 
-The area matches land_registry.py exactly: Town/City of CHELTENHAM with a
+The area matches land-registry.py exactly: Town/City of CHELTENHAM with a
 GL50-GL54 postcode, every PPD category (A and B).
 
   Downloads:  https://www.gov.uk/government/statistical-data-sets/price-paid-data-downloads
@@ -111,7 +111,7 @@ def summarise():
             name: block([p for p, t, _ in rows if t == name]) if any(t == name for _, t, _ in rows) else None
             for name in TYPES.values()
         }
-        # The splits house_summary.py compares year on year: new builds, and domestic sales (everything not "Other").
+        # The splits house-summary.py compares year on year: new builds, and domestic sales (everything not "Other").
         new_builds = [p for p, _, new in rows if new]
         domestic = [p for p, t, _ in rows if t != "other"]
         entry["new_build"] = block(new_builds) if new_builds else None

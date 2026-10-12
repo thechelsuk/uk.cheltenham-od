@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_house_summary.py
+house-summary.py
 
 Single responsibility: read _data/cheltenham-house-prices.json (written by
 extract_house_prices.py) and compute every number the site's markdown pages

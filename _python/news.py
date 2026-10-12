@@ -108,7 +108,7 @@ def load_archive(archive_path):
 def write_paginated_page(path, page_num):
     """Generated pages only need a permalink and which page they are —
     page_size/total_pages/offset/prev_url/next_url are all derived in the
-    layout from site.data.news_archive, so they don't need to be baked into
+    layout from site.data["news-archive"], so they don't need to be baked into
     every page's front matter (and news.md, page 1, needs none of this at
     all: page_num defaults to 1 in the layout)."""
     front_matter = {
@@ -141,7 +141,7 @@ if __name__ == "__main__":
         else:
             fetched_items.extend(fetch_rss_items(source))
 
-    archive_path = root / "_data/news_archive.json"
+    archive_path = root / "_data/news-archive.json"
     merged = load_archive(archive_path)
     for item in fetched_items:
         if item["link"]:
@@ -185,8 +185,8 @@ if __name__ == "__main__":
     pages_dir.mkdir(exist_ok=True)
 
     for stale in pages_dir.glob("page-*.md"):
-        stale_num = int(re.search(r"page-(\d+)\.md", stale.name).group(1))
-        if stale_num > total_pages:
+        match = re.search(r"page-(\d+)\.md", stale.name)
+        if match and int(match.group(1)) > total_pages:
             stale.unlink()
 
     for page_num in range(2, total_pages + 1):

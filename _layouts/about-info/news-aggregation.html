@@ -1,5 +1,5 @@
 {% include header.html %}
-{% assign news = site.data.news_archive %}
+{% assign news = site.data["news-archive"] %}
 {% assign page_size = news.page_size | default: 25 %}
 {% assign page_num = page.page_num | default: 1 %}
 {% assign offset = page_num | minus: 1 | times: page_size %}

@@ -253,7 +253,7 @@ def new_on_site_section(since, min_items=3):
 
 
 def top_stories_section():
-    archive = load("news_archive.json")
+    archive = load("news-archive.json")
     if not archive:
         return None
     items = [i for i in archive["items"] if i.get("source") != SELF_SOURCE][:TOP_STORIES]

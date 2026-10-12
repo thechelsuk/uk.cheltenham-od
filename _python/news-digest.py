@@ -23,13 +23,13 @@ def load_digests(path):
 if __name__ == "__main__":
     root = helper.repo_root()
 
-    archive_path = root / "_data/news_archive.json"
+    archive_path = root / "_data/news-archive.json"
     if not archive_path.exists():
-        raise SystemExit("_data/news_archive.json not found — run news.py first")
+        raise SystemExit("_data/news-archive.json not found — run news.py first")
     archive = json.loads(archive_path.read_text())
     all_items = archive.get("items", [])
 
-    digests_path = root / "_data/news_digests.json"
+    digests_path = root / "_data/news-digests.json"
     digests = load_digests(digests_path)
 
     today = datetime.now().date().isoformat()

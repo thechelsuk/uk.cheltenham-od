@@ -59,8 +59,8 @@ jobs:
             - name: Processing Python Scripts
               run: |-
                   python '_python/news.py' || echo "::warning::news.py failed, continuing with other scripts"
-                  python '_python/land_registry.py' || echo "::warning::land_registry.py failed, continuing with other scripts"
-                  python '_python/house_summary.py' || echo "::warning::house_summary.py failed, continuing with other scripts"
+                  python '_python/land-registry.py' || echo "::warning::land-registry.py failed, continuing with other scripts"
+                  python '_python/house-summary.py' || echo "::warning::house-summary.py failed, continuing with other scripts"
                   python '_python/planning.py' || echo "::warning::planning.py failed, continuing with other scripts"
                   python '_python/recycling.py' || echo "::warning::recycling.py failed, continuing with other scripts"
                   python '_python/fix-my-street.py' || echo "::warning::fix-my-street.py failed, continuing with other scripts"

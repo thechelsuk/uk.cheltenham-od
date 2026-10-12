@@ -313,7 +313,7 @@ def src_third_spaces():
 
 
 def src_sights():
-    for p in load_json(DATA / "points_of_interest.json"):
+    for p in load_json(DATA / "points-of-interest.json"):
         if p["category"] in ("Hill", "Plaque"):
             continue
         yield {"name": p["name"], "lat": p["lat"], "lon": p["lng"], "detail": p["category"]}

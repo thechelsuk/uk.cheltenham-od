@@ -1,4 +1,4 @@
-<!-- land_registry starts -->
+<!-- land-registry starts -->
 {% assign yr = site.data.house-summary.by_year | where: "year", page.pyear | first %}
 In Cheltenham, **{{ yr.count_display }}** properties changed hands in {{ yr.period_label | default: page.pyear }}{% if yr.count_change %},
 {{ yr.count_change }}{% endif %}. The typical sale (median) went for **{{ yr.median_display }}**{% if yr.median_change
@@ -20,4 +20,4 @@ recorded in {{ yr.period_label | default: page.pyear }}{% if yr.domestic_count_c
 average (mean) price of **{{ yr.domestic_mean_display }}**{% if yr.domestic_mean_change %},
 {{ yr.domestic_mean_change }}{% endif %}. {% if yr.other_note %}{{ yr.other_note }}{% endif %}
 {% endif %}
-<!-- land_registry ends -->
+<!-- land-registry ends -->

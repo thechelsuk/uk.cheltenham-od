@@ -8,7 +8,7 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             <ul class="header-facts">
-                <li><strong>{{ site.data.points_of_interest | size }}</strong> places of interest within {{ area_band.miles }} miles</li>
+                <li><strong>{{ site.data["points-of-interest"] | size }}</strong> places of interest within {{ area_band.miles }} miles</li>
             </ul>
             <ul class="header-links">
                 {% if page.feed_url %}
@@ -22,7 +22,7 @@
 
         {{ content }}
 
-        {% assign pois = site.data.points_of_interest %}
+        {% assign pois = site.data["points-of-interest"] %}
 
         <h2>Points of Interest Map</h2>
         <div id="poi-map" class="map-canvas" aria-label="Map of points of interest"></div>
@@ -51,7 +51,7 @@
             </table>
         </div>
 
-        {% assign pois = site.data.points_of_interest %}
+        {% assign pois = site.data["points-of-interest"] %}
         <h2>All Points of Interest ({{ pois.size }})</h2>
         <div class="table-scroll">
             <table class="poi-table data-table" data-sortable>
@@ -95,7 +95,7 @@
 
         <h3>How Many Points of Interest Are There near Cheltenham?</h3>
         <ul>
-            <li>This page lists {{ site.data.points_of_interest.size }} points of interest within {{ area_band.miles }} miles of the town centre, spanning museums, historic sites, stadiums, hills and plaques. The list reaches into the surrounding Cotswold villages, so some entries sit a little way outside Cheltenham itself.</li>
+            <li>This page lists {{ site.data["points-of-interest"].size }} points of interest within {{ area_band.miles }} miles of the town centre, spanning museums, historic sites, stadiums, hills and plaques. The list reaches into the surrounding Cotswold villages, so some entries sit a little way outside Cheltenham itself.</li>
         </ul>
 
         <h3>Are There Blue Plaques in Cheltenham?</h3>
@@ -120,7 +120,7 @@
 
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/points_of_interest.json" %}
+            Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/points-of-interest.json" %}
         </small></p>
 
         {% include leaflet.html %}

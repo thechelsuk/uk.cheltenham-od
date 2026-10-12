@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Fetch OSM points of interest (incl. plaques) near Cheltenham via Overpass,
-write _data/points_of_interest.json as a distance-sorted array."""
+write _data/points-of-interest.json as a distance-sorted array."""
 import re
 import os
 
@@ -8,7 +8,7 @@ import config
 import helper
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT  = os.path.join(HERE, "..", "_data", "points_of_interest.json")
+OUT  = os.path.join(HERE, "..", "_data", "points-of-interest.json")
 
 LAT, LNG = config.CENTRE
 RADIUS_M = config.INTERESTS_RADIUS_M

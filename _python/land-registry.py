@@ -6,7 +6,7 @@ Single responsibility: pull Cheltenham transactions from the HM Land
 Registry SPARQL endpoint and write them to _data/ as raw JSON.
 
 Does NOT compute stats, does NOT touch markdown, does NOT format anything
-for display. That's build_house_summary.py's job, which reads the file
+for display. That's house-summary.py's job, which reads the file
 this script writes.
 """
 
@@ -195,5 +195,5 @@ if __name__ == "__main__":
         # failure rather than a build error: log it clearly and leave
         # JSON_DATA_PATH untouched so the site keeps serving the last
         # good fetch until the next scheduled run succeeds.
-        print(f"::warning::land_registry.py: SPARQL request failed ({exc}); "
+        print(f"::warning::land-registry.py: SPARQL request failed ({exc}); "
               f"leaving {JSON_DATA_PATH} unchanged", file=sys.stderr)
