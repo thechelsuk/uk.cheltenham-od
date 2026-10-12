@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T20:31:07+01:00",
+  "generated_at": "2026-10-12T20:35:37+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-12T20:15",
-      "expected": "2026-10-12T20:31",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-12T20:41",
       "expected": "2026-10-12T20:41",
@@ -123,8 +108,8 @@
     },
     {
       "scheduled": "2026-10-12T21:15",
-      "expected": "2026-10-12T21:15",
-      "status": "On time",
+      "expected": "2026-10-12T21:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -168,22 +153,28 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T21:53",
+      "expected": "2026-10-12T21:53",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-12T20:14",
-      "expected": "2026-10-12T20:30",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-12T20:33",
-      "expected": "2026-10-12T20:39",
+      "expected": "2026-10-12T20:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -223,8 +214,8 @@
     },
     {
       "scheduled": "2026-10-12T21:14",
-      "expected": "2026-10-12T21:14",
-      "status": "On time",
+      "expected": "2026-10-12T21:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -249,6 +240,16 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T21:51",
+      "expected": "2026-10-12T21:51",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
       "reason": ""
     }
   ]
