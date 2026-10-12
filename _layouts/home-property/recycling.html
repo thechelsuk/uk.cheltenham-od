@@ -1,0 +1,90 @@
+{% include header.html %}
+{% assign data = site.data["recycling"] %}
+{% assign glass = data.materials | where: "material", "Glass" | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.bank_count }}</strong> recycling bank sites</li>
+                <li><strong>{{ data.materials | size }}</strong> materials collected at banks</li>
+                {% if glass %}
+                <li><strong>{{ glass.sites }}</strong> sites with glass banks</li>
+                {% endif %}
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>Recycling Banks in Cheltenham</h2>
+        {% if data.banks.size > 0 %}
+        {% for bank in data.banks %}
+        <h3>{{ bank.name | smartify }}</h3>
+        <ul>
+            <li>{{ bank.materials | join: ", " }}</li>
+        </ul>
+        {% endfor %}
+        {% else %}
+        <blockquote>
+            <p>The council's list of recycling banks isn't available right now. Check the <a href="{{ data.source_url }}">council's recycling banks page</a> for current locations.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Can I Recycle Batteries?</h3>
+        <ul>
+            <li>Yes, many supermarkets and shops selling batteries have bins for recycling including Lidl on Tewkesbury Road, and Asda in Hatherley.</li>
+        </ul>
+
+        <h3>Can I Recycle Coffee Pods?</h3>
+        <ul>
+            <li>Yes, these can be put in specific Podback bags and collected kerbside.</li>
+        </ul>
+
+        <h3>Can I Recycle a Tetra Pak Carton?</h3>
+        <ul>
+            <li>Yes, as of 2026, you can place Tetra Pak cartons in with your plastics and can recycling box.</li>
+        </ul>
+
+        <h3>Can I Recycle Packs for Contact Lenses?</h3>
+        <ul>
+            <li>Yes, these can be recycled at Boots Opticians in the town centre.</li>
+        </ul>
+
+        <h3>Can I Recycle Empty Beauty Products?</h3>
+        <ul>
+            <li>Yes, if you use the Boots Advantage Card you can take a photo in the app and collect points for each item recycled using their scan2recycle scheme.</li>
+        </ul>
+
+        <h3>Can I Recycle Medication Blister Packs?</h3>
+        <ul>
+            <li>Yes, you can recycle these at both Boots and Superdrug, if you use the Boots Advantage Card you can take a photo in the app and collect points for each pack recycled.</li>
+        </ul>
+
+        <h3>Can I Recycle Thin Plastics?</h3>
+        <ul>
+            <li>Yes, thin/film plastics often found on ready meals and crisp packets can be bagged up and recycled at some major supermarkets such as Tesco on Colletts Drive and Asda in Hatherley.</li>
+        </ul>
+
+        <h3>Can I Recycle VHS Tapes?</h3>
+        <ul>
+            <li>Yes, these can be taken to The Butterfly Garden, Bamfurlong Lane, Cheltenham, Gloucestershire, GL51 6SL to be recycled. The Butterfly Garden is a charity helping people of all ages with disabilities.</li>
+        </ul>
+
+        <h3>What Do I Do If a Recycling Bank Is Full?</h3>
+        <ul>
+            <li>If a bank is full and needs emptying please let Cheltenham Borough Council know on 01242 262626.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/recycling.json" %}
+        </small></p>
+    </div>
+</div>
+{% include footer.html %}
