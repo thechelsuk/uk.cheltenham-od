@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:15:36+01:00",
+  "generated_at": "2026-10-12T14:20:38+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-12T13:46",
-      "expected": "2026-10-12T14:17",
+      "expected": "2026-10-12T14:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -26,37 +26,8 @@
       ]
     },
     {
-      "scheduled": "2026-10-12T14:12",
-      "expected": "2026-10-12T14:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Glasgow Central via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Motherwell",
-        "Glasgow Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-12T14:15",
-      "expected": "2026-10-12T14:19",
+      "expected": "2026-10-12T14:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -72,8 +43,8 @@
     },
     {
       "scheduled": "2026-10-12T14:24",
-      "expected": "2026-10-12T14:24",
-      "status": "On time",
+      "expected": "2026-10-12T14:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -154,12 +125,32 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T14:52",
+      "expected": "2026-10-12T14:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-12T13:44",
-      "expected": "2026-10-12T14:16",
+      "expected": "2026-10-12T14:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -168,18 +159,8 @@
       "reason": "This service has been delayed by congestion"
     },
     {
-      "scheduled": "2026-10-12T14:10",
-      "expected": "2026-10-12T14:12",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Glasgow Central via Leeds",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-12T14:14",
-      "expected": "2026-10-12T14:18",
+      "expected": "2026-10-12T14:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -189,8 +170,8 @@
     },
     {
       "scheduled": "2026-10-12T14:22",
-      "expected": "2026-10-12T14:22",
-      "status": "On time",
+      "expected": "2026-10-12T14:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -245,6 +226,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T14:50",
+      "expected": "2026-10-12T14:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
