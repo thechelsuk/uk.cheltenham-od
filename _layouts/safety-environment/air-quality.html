@@ -1,0 +1,86 @@
+{% include header.html %}
+{% assign data = site.data["air-quality"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.stations | size }}</strong> monitoring stations</li>
+                <li><strong>{{ data.reading_count }}</strong> latest readings</li>
+                {% if data.highest_band %}
+                <li><strong>{{ data.highest_band }}</strong> highest band</li>
+                {% endif %}
+                {% if data.nearest_km %}
+                <li><strong>{{ data.nearest_km }} km</strong> to the nearest station</li>
+                {% endif %}
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        {% if data.stations.size > 0 %}
+        {% for station in data.stations %}
+        <h2>{{ station.name }}{% if station.distance_km %} ({{ station.distance_km }}km from Cheltenham Centre){% endif %}</h2>
+        <div class="table-scroll">
+            <table class="air-quality-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Pollutant</th>
+                        <th scope="col" class="number">Reading</th>
+                        <th scope="col">Band</th>
+                        <th scope="col" class="date">Measured (UTC)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in station.readings %}
+                    <tr>
+                        <td>{{ r.pollutant }}</td>
+                        <td class="number" data-val="{{ r.value }}">{{ r.reading_display }}</td>
+                        <td>{{ r.band }}</td>
+                        <td class="date" data-val="{{ r.measured }}">{% if r.measured %}{{ r.measured | replace: "T", " " }}{% else %}n/a{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+        {% else %}
+        <blockquote>
+            <p>No readings were available from DEFRA's monitoring stations at the last check. This page updates automatically every two hours.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Where Is Air Quality Measured Near Cheltenham?</h3>
+        <ul>
+            {% if data.stations.size > 0 %}
+            <li>{{ data.stations | size }} DEFRA monitoring {% if data.stations.size == 1 %}station{% else %}stations{% endif %} within {{ data.radius_km }} km of the town centre reported readings at the last check: {% for station in data.stations %}{{ station.name }} ({{ station.distance_km }}km){% unless forloop.last %}, {% endunless %}{% endfor %}.</li>
+            {% else %}
+            <li>None of DEFRA's monitoring stations within {{ data.radius_km }} km of the town centre reported readings at the last check.</li>
+            {% endif %}
+        </ul>
+
+        <h3>What Do the Low, Moderate, High and Very High Bands Mean?</h3>
+        <ul>
+            <li>They follow DEFRA's Daily Air Quality Index thresholds for each pollutant.</li>
+            <li>Each band is worked out from a single reading rather than the official rolling average, so treat it as a guide.</li>
+            <li>When readings are High or Very High, people with asthma, lung or heart conditions are advised to cut down on strenuous outdoor activity.</li>
+        </ul>
+
+        <h3>How Often Are the Readings Updated?</h3>
+        <ul>
+            <li>This page checks DEFRA's network every two hours and shows the latest reading from each station, with the time it was measured.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
+            {% include freshness.html file="_data/air-quality.json" %}
+        </small></p>
+    </div>
+</div>
+{% include footer.html %}
