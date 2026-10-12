@@ -6,11 +6,12 @@ description: "A practical guide to moving to Cheltenham, Gloucestershire. House 
 type: "landing"
 permalink: /moving-to-cheltenham
 parent: /guides
+reviewed: 2026-10-12
 ---
 
 ## Moving to Cheltenham
 
-Cheltenham is a Regency spa town of around 116,000 people on the western edge of the Cotswolds in Gloucestershire, known for its architecture, its festivals, the racecourse, and a growing economy spanning education, tourism, cyber and tech, and the public sector. If you're thinking of moving here, this guide pulls together the local data you'll want — house prices, schools, neighbourhood safety, healthcare and day-to-day services — in one place.
+Cheltenham is a Regency spa town of {% assign pop = site.data["cheltenham-stats"].population_latest %}around {{ pop.population_formatted }} people (ONS mid-{{ pop.year }} estimate) on the western edge of the Cotswolds in Gloucestershire, known for its architecture, its festivals, the racecourse, and a growing economy spanning education, tourism, cyber and tech, and the public sector. If you're thinking of moving here, this guide pulls together the local data you'll want — house prices, schools, neighbourhood safety, healthcare and day-to-day services — in one place.
 
 ## Finding Somewhere to Live
 
@@ -42,7 +43,8 @@ Sorting the practical basics early makes a move smoother — registering with a 
 - [GPs and pharmacies in Cheltenham](/cheltenham-gp-pharmacies) — where to register and find local healthcare.
 - [Dentists in Cheltenham](/cheltenham-dentists) — dental practices on a map, and how to find an NHS dentist.
 - [Opticians in Cheltenham](/cheltenham-opticians) — opticians on a map, and who can get a free NHS sight test.
-- [Recycling and bin collections](/cheltenham-recycling) — what goes where and when it's collected.
+- [Bin collections](/cheltenham-bin-collections) — whether it's a Week 1 or Week 2 collection, and changes over bank holidays.
+- [Recycling in Cheltenham](/cheltenham-recycling) — what goes where, plus recycling banks and centres.
 - [Fuel prices in Cheltenham](/cheltenham-fuel-prices) — local forecourt prices if you'll be driving.
 - [Street works in Cheltenham](/cheltenham-street-works) — works and road closures on local streets, including near your new home.
 
@@ -50,7 +52,7 @@ Sorting the practical basics early makes a move smoother — registering with a 
 
 Once you've arrived, the fun part — finding your way around and settling in.
 
-- [Points of interest in and around Cheltenham](/cheltenham-points-of-interest) — museums, historic sites, parks and more, with map links.
+- [Points of interest in and around Cheltenham](/cheltenham-points-of-interest) — museums, historic sites, hills and more, with map links.
 - [The Cheltenham Week Ahead](/newsletter) — a free weekly newsletter covering local events and what's on.
 - [Food hygiene ratings](/cheltenham-food-standards) — official ratings for local restaurants, cafés and takeaways.
 
@@ -59,4 +61,4 @@ Once you've arrived, the fun part — finding your way around and settling in.
 - [Report a local issue (Fix My Street)](/cheltenham-fix-my-street) — potholes, street lighting, fly-tipping and other council issues.
 - [Helpful contacts and reporting](/cheltenham-helpful-contacts-reports) — key local numbers and services.
 
-Cheltenham sits about 6.8 miles from Gloucester, with fast rail links from Cheltenham Spa and easy access to the M5, making it a practical base for the wider Cotswolds and the South West. Whether you're relocating for work, schools or the setting, the data linked above should help you choose an area and settle in with confidence.
+Cheltenham sits about 7.5 miles from Gloucester (around 9 miles by road), with fast rail links from Cheltenham Spa and easy access to the M5, making it a practical base for the wider Cotswolds and the South West. Whether you're relocating for work, schools or the setting, the data linked above should help you choose an area and settle in with confidence.

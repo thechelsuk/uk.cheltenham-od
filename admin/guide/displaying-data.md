@@ -237,6 +237,18 @@ In a Markdown page:
 
 Don't write an `FAQPage` block by hand; the plugin skips any page that already has one and logs a warning. Don't force a `Dataset` schema onto something too thin or short-lived to be worth indexing as one (a live fixtures page with one upcoming match, say) — `/cheltenham-sports/cheltenham-town-fc` deliberately has none.
 
+## Hand-Written Pages (`reviewed:` Front Matter)
+
+A page written by hand, such as a guide, has no data file to date it, so it carries the date someone last checked its facts:
+
+```yaml
+reviewed: 2026-10-12
+```
+
+The `page` layout then ends with an "About This Page" line: "Last reviewed 12 October 2026. Spotted something out of date? Let us know." A layout with its own "About This Data" section adds the same sentence there instead (see `_layouts/safety-environment/flood-2007.html`).
+
+Set the date only after checking the page's facts against two sources, never for a typo fix or a link change. The monthly reminder issue lists every page whose date is more than six months old. Policy pages keep their own "last updated" or "effective date" lines and don't use `reviewed:`.
+
 ## Map Pins in Table Cells
 
 Examples:

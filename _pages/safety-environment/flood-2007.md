@@ -5,6 +5,7 @@ seo: "What happened in Cheltenham's June and July 2007 floods: how many properti
 permalink: /cheltenham-flood-warnings/2007-floods
 description: "The June and July 2007 floods in Cheltenham: what happened, where, and the record river levels still held by the gauges around the town."
 type: "environment"
+reviewed: 2026-10-12
 ---
 
 ## What Happened in 2007

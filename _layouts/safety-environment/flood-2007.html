@@ -46,6 +46,8 @@
         <p class="attribution"><small>
             Data from the <a href="{{ rivers.source_url }}">{{ rivers.source }}</a>{% if rivers.licence %}, published under the {{ rivers.licence }}{% endif %}.
             {% include freshness.html file="_data/river-levels.json" %}
+            {% if page.reviewed %}Page last reviewed {{ page.reviewed | date: "%-d %B %Y" }}. Spotted something out of
+            date? <a href="/contact">Let us know</a>.{% endif %}
         </small></p>
 
     </div>

@@ -4,8 +4,9 @@ title: "Sport in Cheltenham: Teams to Watch"
 seo_title: "Sport in Cheltenham: Teams to Watch, Parkrun & Clubs"
 seo: "Where to watch sport in Cheltenham: Cheltenham Town FC, the Cricket Festival and Gloucester Rugby, plus free weekly parkrun and local clubs to join."
 permalink: /cheltenham-sports
-description: "Where to watch sport in and around Cheltenham, from the Robins and the Cricket Festival to Premiership rugby, plus parkrun and local sports clubs to join."
+description: "Where to watch sport in and around Cheltenham, from the Robins and the Cricket Festival to top-flight rugby, plus parkrun and local sports clubs to join."
 type: "activities"
+reviewed: 2026-10-12
 group: "Things to Do"
 ---
 
@@ -13,7 +14,7 @@ group: "Things to Do"
 
 ## Sport in Cheltenham
 
-Cheltenham has one professional club of its own, a Premiership rugby side on its doorstep, and a strong grassroots scene — from parkrun's free weekly 5ks to running, cycling, hiking and climbing clubs for every level.
+Cheltenham has one professional club of its own, a top-flight rugby side on its doorstep, and a strong grassroots scene — from parkrun's free weekly runs to running, cycling, hiking and climbing clubs for every level.
 
 ## Teams to Watch
 
@@ -31,19 +32,19 @@ Cheltenham Town Women play in the FA Women's National League Southern Premier Di
 
 ### Gloucestershire Cricket
 
-Gloucestershire County Cricket Club's men's and women's teams play most home matches in Bristol, but come to Cheltenham College each summer for the Cheltenham Cricket Festival, the longest-running cricket festival on an outfield in the world. See our [Gloucestershire cricket page](/cheltenham-sports/gloucestershire-cricket) for the teams, a map and directions to the grounds, and links to official fixtures and tickets.
+Gloucestershire County Cricket Club's men's and women's teams play most home matches in Bristol, but come to Cheltenham College each summer for the Cheltenham Cricket Festival, the world's longest-running cricket festival at an out-ground, held at the College since 1872. See our [Gloucestershire cricket page](/cheltenham-sports/gloucestershire-cricket) for the teams, a map and directions to the grounds, and links to official fixtures and tickets.
 
 - [Gloucestershire cricket page](/cheltenham-sports/gloucestershire-cricket) &rarr;
 
 ### Gloucester Rugby
 
-Gloucester Rugby play in the Gallagher Premiership — England's top flight of rugby union — at Kingsholm Stadium, a few miles up the road in Gloucester rather than Cheltenham itself, but close enough to be the local top-flight side for most of the county.
+Gloucester Rugby play in the Gallagher PREM — England's top flight of rugby union — at Kingsholm Stadium, a few miles up the road in Gloucester rather than Cheltenham itself, but close enough to be the local top-flight side for most of the county.
 
 - [Gloucester Rugby: fixtures and tickets](https://www.gloucesterrugby.co.uk/) &rarr;
 
-## Parkrun
+## parkrun
 
-Cheltenham has four parkrun events — free, weekly, timed runs open to everyone. See our [Cheltenham parkrun page](/cheltenham-sports/parkrun) for locations and a map.
+Cheltenham has four parkrun events, all free: two 5k runs on Saturday mornings, and two 2k junior parkruns for 4 to 14 year olds on Sunday mornings. See our [Cheltenham parkrun page](/cheltenham-sports/parkrun) for locations and a map.
 
 ## Sports Clubs to Join
 

@@ -7,6 +7,7 @@ description: "Local guides to Cheltenham, backed by open data: moving here, stud
 type: "landing"
 permalink: /guides
 nav_title: "Guides"
+reviewed: 2026-10-12
 ---
 
 ## Local Cheltenham Guides

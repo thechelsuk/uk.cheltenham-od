@@ -6,6 +6,7 @@ description: "A practical guide to visiting Cheltenham, Gloucestershire. Where t
 type: "landing"
 permalink: /visiting-cheltenham
 parent: /guides
+reviewed: 2026-10-12
 ---
 
 ## Visiting Cheltenham
@@ -17,13 +18,13 @@ Cheltenham is a Regency spa town on the western edge of the Cotswolds, known for
 From Regency townhouse hotels to budget stays near the centre, there's a room for most plans and budgets — book ahead around festival dates.
 
 - [Places to stay in Cheltenham](/staying-in-cheltenham) — compare hotels and accommodation across the town.
-- [Cheltenham Festival & Races: where to stay](/cheltenham-festival-accommodation) — hotels and guest houses with live availability for race week.
+- [Cheltenham Festival & Races: where to stay](/cheltenham-festival-accommodation) — hotels and guest houses near the racecourse, with a live availability map for race week.
 
 ## What to See and Do
 
 Pack the day with the things Cheltenham does best — history, green space and a full events calendar.
 
-- [Points of interest](/cheltenham-points-of-interest) — museums, historic sites, parks and blue plaques, each with a map link.
+- [Points of interest](/cheltenham-points-of-interest) — museums, historic sites, hills and blue plaques, each with a map link.
 - [Listed buildings](/cheltenham-listed-buildings) — every listed building, scheduled monument and registered park & garden in Cheltenham, graded and mapped.
 - [The Cheltenham Week Ahead](/newsletter) — a free weekly newsletter covering events and what's on.
 
@@ -40,6 +41,8 @@ The town is well served for food, from café culture to fine dining.
 A little planning makes a visit smoother, especially on busy weekends.
 
 - [Cheltenham weather forecast](/cheltenham-10-day-weather-forecast) — the 10-day outlook so you pack right.
+- [Cheltenham train times](/cheltenham-train-times) — live departures and arrivals at Cheltenham Spa if you're coming by rail.
+- [Taxi ranks in Cheltenham](/cheltenham-taxi-ranks) — where to find a taxi from the station and around town.
 - [Car parks in Cheltenham](/cheltenham-car-parks) — locations, fees, charging hours and max stay times if you're driving in.
 - [Street works in Cheltenham](/cheltenham-street-works) — road closures and works on the town's streets before you set off.
 - [Public toilets in Cheltenham](/cheltenham-public-toilets) — where to find facilities around town.
@@ -47,4 +50,4 @@ A little planning makes a visit smoother, especially on busy weekends.
 - [Post Office locations](/cheltenham-post-office-locations) — for stamps, cash and parcels.
 - [Public holidays](/cheltenham-public-holidays) — check dates that affect opening hours and transport.
 
-Cheltenham sits about 6.8 miles from Gloucester, with fast rail links from Cheltenham Spa and easy access to the M5, making it a natural base for exploring the wider Cotswolds. Time your visit around a festival and you'll see the town at its liveliest.
+Cheltenham sits about 7.5 miles from Gloucester (around 9 miles by road), with fast rail links from Cheltenham Spa and easy access to the M5, making it a natural base for exploring the wider Cotswolds. Time your visit around a festival and you'll see the town at its liveliest.

@@ -16,6 +16,14 @@
 
         {{ content }}
 
+        {% if page.reviewed %}
+        <h2 id="about-this-page">About This Page</h2>
+        <p class="attribution"><small>
+            Last reviewed {{ page.reviewed | date: "%-d %B %Y" }}. Spotted something out of date?
+            <a href="/contact">Let us know</a>.
+        </small></p>
+        {% endif %}
+
     </div>
 </div>
 

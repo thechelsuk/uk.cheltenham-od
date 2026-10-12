@@ -6,17 +6,18 @@ description: "A practical guide for students moving to Cheltenham, Gloucestershi
 type: "landing"
 permalink: /student-guide-to-cheltenham
 parent: /guides
+reviewed: 2026-10-12
 ---
 
 ## A Student's Guide to Cheltenham
 
-Cheltenham is home to the University of Gloucestershire and thousands of students each year, spread across campuses in and around the town. It's a compact, walkable Regency town with a big festival calendar, plenty of green space and an easy pace once you know your way around. If you're starting a course here, this guide pulls together the local data you'll actually use in your first few weeks.
+Cheltenham is home to the University of Gloucestershire and thousands of students each year, spread across campuses in Cheltenham and Gloucester. It's a compact, walkable Regency town with a big festival calendar, plenty of green space and an easy pace once you know your way around. If you're starting a course here, this guide pulls together the local data you'll actually use in your first few weeks.
 
 ## Finding Somewhere to Live
 
 Most students rent, whether that's halls in the first year or a shared house after. Knowing the local market helps you spot a fair price and avoid the worst of the rush.
 
-- [Cheltenham classifieds](/cheltenham-classifieds) — rooms, house shares, second-hand furniture and bikes from local people.
+- [Cheltenham classifieds](/cheltenham-classifieds) — post a free advert for a room, house share or things for sale, and browse local jobs and notices.
 - [Average rent in Cheltenham](/cheltenham-rent-prices) — what tenants pay on average by number of bedrooms and property type, so you can spot a fair price.
 - [Cheltenham house prices](/cheltenham-house-prices) — recent sold prices to get a feel for which areas are pricier and why.
 - [Housing supply & student accommodation](/cheltenham-house-prices/housing-supply) — how much student accommodation has actually been added or lost year to year, alongside general house building.
@@ -31,7 +32,8 @@ Sort the boring-but-important admin early and the rest of term runs more smoothl
 - [GPs and pharmacies](/cheltenham-gp-pharmacies) — register with a local practice as soon as you arrive, not when you're already ill.
 - [Dentists](/cheltenham-dentists) — dental practices near you, and how to find out whether one is taking new NHS patients.
 - [Opticians](/cheltenham-opticians) — where to get an eye test, and who can get a free NHS sight test.
-- [Recycling and bin collections](/cheltenham-recycling) — what goes in which bin and when it's collected, so your house avoids missed pickups.
+- [Bin collections](/cheltenham-bin-collections) — whether it's a Week 1 or Week 2 collection, so your house avoids missed pickups.
+- [Recycling in Cheltenham](/cheltenham-recycling) — what goes in which bin, plus recycling banks and centres.
 - [Post Office locations](/cheltenham-post-office-locations) — for parcels, ID documents and sending things home.
 
 ## Eating, Drinking and Going Out
@@ -42,7 +44,7 @@ Cheltenham punches above its weight for food and nightlife, and a lot of it is s
 - [Five-star food hygiene ratings](/cheltenham-food-standards/rated-five) — the cafés, takeaways and restaurants with top ratings.
 - [Third spaces in Cheltenham](/cheltenham-third-spaces) — places to work, study or hang out that aren't home or a lecture hall.
 - [The Cheltenham Week Ahead](/newsletter) — a free weekly newsletter covering gigs, markets and what's on.
-- [Points of interest](/cheltenham-points-of-interest) — museums, parks and historic spots for when family visit.
+- [Points of interest](/cheltenham-points-of-interest) — museums, hills and historic spots for when family visit.
 
 ## On a Budget
 

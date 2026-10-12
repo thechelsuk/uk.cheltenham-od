@@ -22,6 +22,10 @@ jobs:
           count=$(gh issue list --repo "${{ github.repository }}" --label data-refresh --state open --json number --jq 'length')
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
+      - name: Checkout
+        if: steps.existing.outputs.count == '0'
+        uses: actions/checkout@v7
+
       - name: Write reminder body
         if: steps.existing.outputs.count == '0'
         run: |
@@ -50,6 +54,26 @@ jobs:
 
           Close this issue once done — a new one opens automatically next month.
           EOF
+
+      # Hand-written pages carry a "reviewed:" date in their front matter.
+      # Any not reviewed for six months are added to the list above.
+      - name: Add hand-written pages due a review
+        if: steps.existing.outputs.count == '0'
+        run: |
+          cutoff=$(date -d '6 months ago' +%F)
+          : > due.md
+          while IFS= read -r file; do
+            reviewed=$(awk '/^---/{n++; next} n==1 && /^reviewed:/{print $2; exit}' "$file")
+            [ -n "$reviewed" ] || continue
+            if [[ "$reviewed" < "$cutoff" ]]; then
+              url=$(awk '/^---/{n++; next} n==1 && /^permalink:/{print $2; exit}' "$file")
+              echo "- [ ] **Review [${url}](https://cheltenham-od.uk${url})** — last reviewed ${reviewed}. Check its facts against two sources, fix anything out of date, then set \`reviewed:\` to today in \`${file}\`." >> due.md
+            fi
+          done < <(find _pages -name '*.md' | sort)
+          if [ -s due.md ]; then
+            awk 'FNR==NR {due = due $0 "\n"; next} /^Close this issue/ {printf "%s\n", due} {print}' due.md reminder.md > reminder.tmp
+            mv reminder.tmp reminder.md
+          fi
 
       - name: Create reminder issue
         if: steps.existing.outputs.count == '0'
