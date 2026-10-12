@@ -1,3 +1,6 @@
+"""Current Environment Agency flood warnings for Gloucestershire, written to
+_data/flood.json for _layouts/safety-environment/flood-warnings.html, plus
+the rolling _data/flood-history.json log and the feeds/flood.xml Atom feed."""
 import datetime
 import json
 
@@ -5,6 +8,10 @@ import helper
 
 # History entries are kept for two years, generous for a Gloucestershire-only feed.
 HISTORY_RETENTION_DAYS = 730
+
+SOURCE_NAME = "Environment Agency flood monitoring API"
+SOURCE_URL = "https://environment.data.gov.uk/flood-monitoring/doc/reference"
+LICENCE = "Open Government Licence v3.0"
 
 
 def normalize_item(item):
@@ -26,15 +33,20 @@ def normalize_item(item):
     }
 
 
-def build_alert_markdown(items):
-    if not items:
-        return "> No current flood warnings or alerts for this area.\n"
-    output = ""
-    for item in items:
-        output += f"- {item['severity']}: {item['description']}\n"
-        if item["message"]:
-            output += f"- {item['message']}\n"
-    return output
+def build_payload(data, generated_at):
+    """The current warnings from an EA /id/floods response, flattened and
+    ordered most severe first (severity level 1 is a severe flood warning,
+    4 a warning no longer in force)."""
+    items = [normalize_item(i) for i in data.get("items", [])]
+    items.sort(key=lambda i: i["severity_level"] if i["severity_level"] is not None else 99)
+    return {
+        "generated_at": generated_at,
+        "source": SOURCE_NAME,
+        "source_url": SOURCE_URL,
+        "licence": LICENCE,
+        "count": len(items),
+        "items": items,
+    }
 
 
 def build_atom_items(history_records, history_url):
@@ -67,16 +79,13 @@ if __name__ == "__main__":
     feeds_dir.mkdir(parents=True, exist_ok=True)
 
     flood_json = data_dir / "flood.json"
-
-    data = helper.fetch_flood_data()
-    helper.write_json(flood_json, data)
-    print(f"Data saved to {flood_json}")
-
-    current_items = [normalize_item(i) for i in data.get("items", [])]
-    print(f"  {len(current_items)} current flood warnings for Gloucestershire")
-
     now = datetime.datetime.now(datetime.timezone.utc)
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    current = build_payload(helper.fetch_flood_data(), now.isoformat())
+    current_items = current["items"]
+    helper.write_json(flood_json, current)
+    print(f"  {len(current_items)} current flood warnings for Gloucestershire, saved to {flood_json}")
 
     history_path = data_dir / "flood-history.json"
     if history_path.exists():
@@ -93,9 +102,9 @@ if __name__ == "__main__":
         "generated_at": now.isoformat(),
         "note": "Rolling log of flood warnings recorded for Gloucestershire, built up incrementally each "
                 "run — not a full historical archive from before this page existed.",
-        "source": "Environment Agency flood monitoring API",
-        "source_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
-        "licence": "Open Government Licence v3.0",
+        "source": SOURCE_NAME,
+        "source_url": SOURCE_URL,
+        "licence": LICENCE,
         "count": len(history_records),
         "records": history_records,
     }
@@ -116,8 +125,3 @@ if __name__ == "__main__":
         alternate_url=history_url,
     )
     print(f"Atom feed saved to {flood_atom}")
-
-    md = root / "_pages/safety-environment/flood-warnings.md"
-    md_contents = md.open().read()
-    md_contents = helper.replace_chunk(md_contents, "flood_marker", build_alert_markdown(current_items))
-    md.open("w").write(md_contents)
