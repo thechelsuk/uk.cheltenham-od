@@ -23,7 +23,7 @@ The detail for each step is on [Fetching Data](/admin/guide/fetching-data) and [
 
 ## URLs and Where a Page Lives
 
-- **A published URL never moves.** The site has no redirects, and links from search results, social posts and other sites would break. Rename the title, move the page in the nav or change its folder as often as you like, but keep its `permalink`.
+- **A published URL rarely moves.** Links from search results, social posts and other sites point at it. Rename the title, move the page in the nav or change its folder as often as you like, but keep its `permalink`. If a page really must move, agree it first, then leave a page at the old address with `layout: redirect`, the old `permalink`, `redirect_to:` the new one and `robots: noindex` (as `_pages/about-info/local-elections-moved.md` does), and update every internal link.
 - **A new sub-page nests under its parent's URL:** `/cheltenham-power-cuts/history`, `/cheltenham-crime-data/map`. A year archive is `/<parent>/<year>`, such as `/cheltenham-crime-data/2026`. Some older pages don't follow this (`/cheltenham-house-prices-2025`, or `/cheltenham-sewage-overflows` sitting under flood warnings in the nav); leave them where they are.
 - **The page file goes in the `_pages/` folder of its nav group** (`getting-around`, `home-property`, `safety-environment`, `things-to-do`, `community-support`, `about-info`), and its `type` matches that group. A page with no menu entry of its own, such as an older year, sets `section:` to its group's name so it is still listed on the category page.
 

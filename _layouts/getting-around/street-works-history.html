@@ -1,0 +1,177 @@
+{% include header.html %}
+{% assign history = site.data["street-works-history"] %}
+{% assign summary = history.summary %}
+{% assign records = history.records | sort: "first_seen" | reverse %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ records.size }}</strong> street works logged</li>
+                <li><strong>{{ history.tracking_since | date: "%-d %b %Y" }}</strong> logging began</li>
+                {% if summary %}
+                <li><strong>{{ summary.road_closures }}</strong> with a road closure</li>
+                {% if summary.by_street.size > 0 %}<li><strong>{{ summary.by_street.first.street }}</strong> busiest street</li>{% endif %}
+                {% endif %}
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if records.size == 0 %}
+        <blockquote>
+            <p>No street works have been logged yet.</p>
+        </blockquote>
+        {% else %}
+        {% if summary %}
+        <h2 id="busiest-streets">Busiest Streets</h2>
+        <p>The streets with the most works logged since {{ history.tracking_since | date: "%-d %B %Y" }}.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Street</th>
+                        <th scope="col" class="number">Works</th>
+                        <th scope="col" class="number">Road Closures</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in summary.by_street %}
+                    <tr>
+                        <td>{{ s.street }}</td>
+                        <td class="number">{{ s.works }}</td>
+                        <td class="number">{{ s.road_closures }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="by-company">Works by Company</h2>
+        <p>Who carried out the works, from utility companies to the county council.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Company</th>
+                        <th scope="col" class="number">Works</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in summary.by_promoter %}
+                    <tr>
+                        <td>{{ p.name }}</td>
+                        <td class="number">{{ p.works }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="by-month">Works by Month</h2>
+        <p>{{ summary.unplanned }} of the {{ summary.count }} works were unplanned repairs, such as a burst water main.</p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Month</th>
+                        <th scope="col" class="number">Works First Logged</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign months = summary.by_month | reverse %}
+                    {% for m in months %}
+                    <tr>
+                        <td class="date" data-val="{{ m.month }}">{{ m.month }}</td>
+                        <td class="number">{{ m.works }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% endif %}
+
+        <h2 id="log">Every Street Works Logged</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">First Logged</th>
+                        <th scope="col">Street</th>
+                        <th scope="col">Company</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Traffic Management</th>
+                        <th scope="col" class="date">Start</th>
+                        <th scope="col" class="date">End</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in records %}
+                    <tr>
+                        <td class="date" data-val="{{ r.first_seen }}">{{ r.first_seen }}</td>
+                        <td title="Permit {{ r.id | remove_first: "PERMIT:" }}">{{ r.street }}</td>
+                        <td>{{ r.promoter }}</td>
+                        <td>{{ r.kind }}</td>
+                        <td>{{ r.traffic_management }}</td>
+                        {% assign start_day = r.start | slice: 0, 10 %}<td class="date" data-val="{{ start_day }}">{{ start_day }}</td>
+                        <td class="date" data-val="{{ r.end }}">{{ r.end }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Does This History Include?</h3>
+        <ul>
+            <li>Every street works on local roads within {{ history.radius_miles }} miles of Cheltenham town centre that has
+                appeared on our <a href="/cheltenham-street-works">street works</a> page since
+                {{ history.tracking_since | date: "%-d %B %Y" }}, whether planned or an emergency repair.</li>
+        </ul>
+
+        <h3>Why Does the History Start in {{ history.tracking_since | date: "%B %Y" }}?</h3>
+        <ul>
+            <li>It starts when this site began logging street works. It isn't a full archive of works before then.</li>
+        </ul>
+
+        <h3>Why Do Some Works Appear Twice?</h3>
+        <ul>
+            <li>Rows that look the same are usually separate permits for different parts of the same road. A long job is
+                often split into sections, each with its own permit, and long roads such as Gloucester Road can have
+                unrelated works at each end. Hover over a street name to see its permit number.</li>
+        </ul>
+
+        <h3>What Do the Traffic Management Types Mean?</h3>
+        <ul>
+            <li><strong>No carriageway incursion:</strong> the works stay off the road itself, for example on the pavement or verge.</li>
+            <li><strong>Some carriageway incursion:</strong> the works take up part of the road, but traffic can still get past.</li>
+            <li><strong>Give and take:</strong> there are no lights or stop/go boards. Drivers from each direction take turns to pass the works, giving way to each other. It's only allowed on short works on roads with a speed limit of 30 mph or less and light traffic.</li>
+            <li><strong>Two-way and multi-way signals:</strong> temporary traffic lights, controlling one lane past the works or several approaches at a junction.</li>
+            <li><strong>Stop/go boards:</strong> staff on site hold up boards to let each direction through in turn.</li>
+            <li><strong>Lane closure and road closure:</strong> a lane, or the whole road, is closed while the works take place.</li>
+        </ul>
+
+        <h3>What About the M5, A40 and A417?</h3>
+        <ul>
+            <li>Motorways and major A roads are run by National Highways, not the county council. Their planned roadworks
+                are on the <a href="/cheltenham-roadworks">roadworks page</a>, with a log of
+                <a href="/cheltenham-roadworks/unplanned-closures">unplanned closures</a>.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>, published under the {{ history.licence }}.
+            {% include freshness.html file="_data/street-works-history.json" %}
+        </small></p>
+    </div>
+</div>
+
+{% include footer.html %}

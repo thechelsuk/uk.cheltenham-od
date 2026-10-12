@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Street Works History",
+  "description": "Street works on local roads within {{ site.data['street-works-history'].radius_miles }} miles of Cheltenham town centre, logged from Street Manager, with the street, company, type of traffic management and dates of each works.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data.freshness['_data/street-works-history.json'] }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Street works", "Street", "Company", "Traffic management", "Road closure", "Start date", "End date"]
+}
+</script>

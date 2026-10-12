@@ -148,8 +148,8 @@
     "source_url": "https://www.gov.uk/guidance/find-and-use-roadworks-data",
     "licence": "Open Government Licence v3.0 (Department for Transport, via Find Transport Data). Pushed to the uk.cheltenham-od.receiver Cloudflare Worker, which this site reads",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/street-works.json", "schedule": "every two hours"}, {"file": "_data/street-works-history.json", "schedule": "daily"}],
-    "pages": ["/cheltenham-street-works"]
+    "data": [{"file": "_data/street-works.json", "schedule": "every two hours"}, {"file": "_data/street-works-history.json", "schedule": "every two hours"}],
+    "pages": ["/cheltenham-street-works", "/cheltenham-street-works/history"]
   },
   {
     "id": "national-highways-road-and-lane-closures",

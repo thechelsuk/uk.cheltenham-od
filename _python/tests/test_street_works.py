@@ -10,6 +10,7 @@ import pathlib
 SPEC = importlib.util.spec_from_file_location(
     "street_works", pathlib.Path(__file__).resolve().parents[1] / "street-works.py"
 )
+assert SPEC is not None and SPEC.loader is not None
 street_works = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(street_works)
 
@@ -102,3 +103,34 @@ def test_works_cancelled_and_works_completed_are_dropped():
         work(id="keep"),
     ], CENTRE, 6, TODAY)
     assert [i["id"] for i in items] == ["keep"]
+
+
+def logged(street, promoter, kind="Planned", closure=False, first_seen="2026-10-11"):
+    return {"street": street, "promoter": promoter, "kind": kind, "road_closure": closure, "first_seen": first_seen}
+
+
+def test_history_summary_ranks_streets_and_companies():
+    records = [
+        logged("Badgeworth Road", "SEVERN TRENT WATER", closure=True),
+        logged("Badgeworth Road", "BT"),
+        logged("Church Road", "SEVERN TRENT WATER", kind="Unplanned", first_seen="2026-11-02"),
+    ]
+    summary = street_works.history_summary(records)
+    assert summary["count"] == 3
+    assert summary["road_closures"] == 1
+    assert summary["unplanned"] == 1
+    assert summary["by_street"][0] == {"street": "Badgeworth Road", "works": 2, "road_closures": 1}
+    assert summary["by_promoter"][0] == {"name": "Severn Trent Water", "works": 2}
+    assert {"name": "BT", "works": 1} in summary["by_promoter"]
+    assert summary["by_month"] == [{"month": "2026-10", "works": 2}, {"month": "2026-11", "works": 1}]
+
+
+def test_history_summary_of_nothing_is_empty():
+    summary = street_works.history_summary([])
+    assert summary["count"] == 0 and summary["by_street"] == [] and summary["by_promoter"] == []
+
+
+def test_company_names_are_tidied_but_acronyms_kept():
+    assert street_works.promoter_name("SEVERN TRENT WATER") == "Severn Trent Water"
+    assert street_works.promoter_name("BT") == "BT"
+    assert street_works.promoter_name("") == ""

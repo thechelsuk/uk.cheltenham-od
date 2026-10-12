@@ -24,6 +24,16 @@ HISTORY_FIELDS = ["street", "ward_slug", "kind", "category", "traffic_management
                   "promoter", "start", "end"]
 
 
+# Utility and council names arrive in mixed case; these stay upper case.
+PROMOTER_ACRONYMS = {"BT", "UK", "SSE", "CCTV"}
+BUSIEST_STREETS = 10
+
+
+def promoter_name(raw):
+    """'SEVERN TRENT WATER' -> 'Severn Trent Water', keeping 'BT' as it is."""
+    return helper.clean_name(raw or "", PROMOTER_ACRONYMS)
+
+
 def uk_time(stamp):
     """'2026-10-09T07:45:00.000Z' as UK local time, 'YYYY-MM-DDTHH:MM'."""
     utc = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
@@ -64,7 +74,7 @@ def local_items(works, centre, radius_miles, today, wards=()):
             "in_progress": started,
             "traffic_management": w.get("traffic_management") or "",
             "road_closure": "road closure" in (w.get("traffic_management") or "").lower(),
-            "promoter": w.get("promoter") or "",
+            "promoter": promoter_name(w.get("promoter")),
             "start": uk_time(w["actual_start"]) if started else uk_date(w.get("proposed_start")),
             "end": uk_date(w.get("proposed_end")),
             "lat": w["lat"],
@@ -83,6 +93,32 @@ def summarise(items):
         "unplanned": sum(i["kind"] == "Unplanned" for i in items),
         "road_closures": sum(i["road_closure"] for i in items),
         "in_progress": sum(i["in_progress"] for i in items),
+    }
+
+
+
+
+def history_summary(records):
+    """Totals for the history page: busiest streets, works by company and
+    works first logged each month, all counted from the history records."""
+    streets, promoters, months = {}, {}, {}
+    for r in records:
+        street = streets.setdefault(r.get("street") or "Unknown street", {"works": 0, "road_closures": 0})
+        street["works"] += 1
+        street["road_closures"] += 1 if r.get("road_closure") else 0
+        name = promoter_name(r.get("promoter")) or "Unknown"
+        promoters[name] = promoters.get(name, 0) + 1
+        month = (r.get("first_seen") or "")[:7]
+        if month:
+            months[month] = months.get(month, 0) + 1
+    by_street = sorted(streets.items(), key=lambda kv: (-kv[1]["works"], kv[0]))[:BUSIEST_STREETS]
+    return {
+        "count": len(records),
+        "unplanned": sum(r.get("kind") == "Unplanned" for r in records),
+        "road_closures": sum(bool(r.get("road_closure")) for r in records),
+        "by_street": [{"street": name, **counts} for name, counts in by_street],
+        "by_promoter": [{"name": name, "works": n} for name, n in sorted(promoters.items(), key=lambda kv: (-kv[1], kv[0]))],
+        "by_month": [{"month": m, "works": months[m]} for m in sorted(months)],
     }
 
 
@@ -107,12 +143,15 @@ def main():
     history_path = helper.repo_root() / "_data" / "street-works-history.json"
     history = json.loads(history_path.read_text()) if history_path.exists() else {"tracking_since": today, "records": []}
     records = helper.record_seen(history["records"], items, HISTORY_FIELDS, today)
+    for record in records:
+        record["promoter"] = promoter_name(record.get("promoter"))
     helper.write_json(history_path, {
         "source": SOURCE,
         "source_url": SOURCE_URL,
         "licence": "Open Government Licence v3.0",
         "radius_miles": config.STREET_WORKS_RADIUS_MILES,
         "tracking_since": history["tracking_since"],
+        "summary": history_summary(records),
         "records": records,
     })
     print(f"Wrote {len(items)} street works within {config.STREET_WORKS_RADIUS_MILES} miles of Cheltenham"
