@@ -2,10 +2,11 @@
 layout: page
 title: "Glossary: Terms and Areas Used on This Site"
 seo_title: "Cheltenham Open Data Glossary: Terms & Areas"
-seo: "What we mean by the town centre, distance bands, wards, the borough, the constituency, postcode districts, 'Last updated' and the open licences we use."
+seo: "What we mean by the town centre, distance bands, wards, the borough, the constituency, postcode districts and what 'Last updated' means."
 permalink: /glossary
-description: "What the terms on Cheltenham Open Data mean, from how far around Cheltenham each page looks to wards, licences and how fresh the data is."
+description: "What the terms on Cheltenham Open Data mean, from how far around Cheltenham each page looks to wards and how fresh the data is."
 type: "cod"
+parent: /policies
 ---
 
 ## Glossary
@@ -60,13 +61,4 @@ The first half of a postcode. Cheltenham and its nearby villages are covered by 
 
 ## Last Updated and Checked
 
-Data that changes slowly says **Last updated** with the date it was fetched. Data checked every few hours or more often says **Checked** with how often, such as "Checked every two hours", because the date would be out of step by the next check.
-
-## Open Licences
-
-Most of the data here is published under an open licence that lets anyone reuse it with credit:
-
-- **Open Government Licence (OGL)**: used by most UK government and public bodies, from the ONS to the Environment Agency.
-- **Open Database Licence (ODbL)**: used by OpenStreetMap, the source of maps and many lists of local places.
-
-Each page names its source and licence under its data, and the [terms of use](/terms) list them all.
+Every data page ends with **About This Data**, which names the source and its licence and says when the data last changed and how often we check it, such as "Last updated 9 September 2026, checked daily." The date moves only when the data itself changes, not each time we check and find nothing new. Lists we put together ourselves are checked monthly.

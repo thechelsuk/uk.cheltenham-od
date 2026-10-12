@@ -19,7 +19,7 @@ New to feeds? Start with the [all-in-one alerts feed](/feeds/alerts.xml) for any
 
 {% for feed in group.items %}
 
-- **[{{ feed.name }}]({{ feed.link }})**: {{ feed.description }}
+- [{{ feed.name }}]({{ feed.link }}): {{ feed.description }}
 
 {% endfor %}
 {% endfor %}

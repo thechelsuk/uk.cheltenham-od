@@ -27,14 +27,14 @@ Cheltenham Open Data is built and run by Mat Benfield ([thechels.uk](https://the
 {% include site-figures.html %}
 {{ data_pages_count }} data pages in six topics, drawn from {{ site.data.sources | size }} data sources:
 
-- **[Safety & Environment](/explore/safety-environment)**: crime figures, road collisions, flood warnings and river levels, air and water quality, power cuts, wildfire risk and street reports.
-- **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks, roadworks, street works, buses, trains and cycle routes.
-- **[Home & Property](/explore/home-property)**: house prices, rents, council tax, planning, broadband and a profile of every ward.
-- **[Community & Support](/explore/community-support)**: food banks, helplines, GPs, pharmacies and dentists, A&E waiting times, care homes, charities and the COVID-19 pandemic.
-- **[Things to Do](/explore/things-to-do)**: festivals, sport, where to eat, play parks and places to stay.
-- **[About Cheltenham](/explore/about-info)**: the town [in numbers](/cheltenham-in-numbers), population, the economy, politics, schools and childcare, local news and the weather.
+- **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks and permit zones, roadworks, street works, reported street problems, buses, trains, taxi ranks and cycle routes.
+- **[Home & Property](/explore/home-property)**: house prices, rents, council tax, home energy ratings, schools, nurseries and the university, planning applications, broadband, mobile coverage and recycling.
+- **[Safety & Environment](/explore/safety-environment)**: crime figures, road collisions, security alerts, flood warnings and river levels, river water quality, sewage overflows, air quality, wildfire risk and power cuts.
+- **[Things to Do](/explore/things-to-do)**: festivals, points of interest, play parks, public toilets, where to eat, food hygiene ratings, places to stay, sport, clubs and societies, and arts and crafts.
+- **[Community & Support](/explore/community-support)**: GPs and pharmacies, dentists, opticians, A&E waiting times, care homes, the COVID-19 pandemic, food banks, helplines, charities, third spaces, and post offices and parcel lockers.
+- **[About & Info](/explore/about-info)**: the town [in numbers](/cheltenham-in-numbers), its history and population, a profile of every ward, the weather, public holidays, politics and local elections, the economy, deprivation, listed buildings, council land, local news and classifieds.
 
-There's also a free [weekly newsletter](/newsletter), local [classifieds](/cheltenham-classifieds) and [Fix My Street](/cheltenham-fix-my-street).
+There's also a free [weekly newsletter](/newsletter) and a set of [guides](/guides) for moving to, studying in and visiting Cheltenham.
 
 ## How the Data Is Made
 
@@ -42,7 +42,7 @@ Most of the data comes from public sources, such as the ONS, the Environment Age
 
 Not everything comes from an official source, though. Some lists are researched and put together by hand, and kept up to date as things change.
 
-Each page says where its data comes from, under what licence and when it was last updated, and the [Terms of Use](/terms) list every licence. Our [glossary](/glossary) explains the terms we use, including how far around Cheltenham each page looks.
+Each page says where its data comes from, under what licence and when it was last updated, and the [Terms of Use](/terms) explain the licences we use. Our [glossary](/glossary) explains the terms we use, including how far around Cheltenham each page looks.
 
 ## How It's Funded
 

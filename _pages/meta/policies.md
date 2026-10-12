@@ -16,6 +16,7 @@ nav_title: "Policies"
 - [Editorial standards](/editorial-standards): how we choose and check data, stay independent of sponsors and correct mistakes.
 - [Corrections](/corrections): significant corrections to our pages, with dates.
 - [Accessibility statement](/accessibility): how the site is built and tested, and how to report a problem.
+- [Glossary](/glossary): what the terms on our pages mean, from distance bands to wards.
 - [Sponsorship terms](/sponsor/terms): how sponsorship works.
 
 ## Site Files

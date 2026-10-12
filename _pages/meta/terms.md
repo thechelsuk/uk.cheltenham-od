@@ -30,12 +30,17 @@ You may use the site for personal, non-commercial purposes. You agree not to mis
 
 The site itself — its design, code, text, and the compilation of data — is © Cheltenham Open Data, all rights reserved.
 
-The underlying data belongs to its respective providers and is used under licence. The licence for each dataset is also shown on the relevant page:
+The underlying data belongs to its respective providers and is used under their terms. Every data page names its source and licence under **About This Data**. Between them, the sources we use come under:
 
-- Government data from the Police, ONS, NHS, DEFRA, and Land Registry is © Crown copyright and database right 2026, licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
-- School data comes from the Department for Education's Get Information about Schools (GIAS) register, licensed under the Open Government Licence v3.0.
-- Public Toilets (Toilet Maps) data is © Creative Commons Attribution 4.0 International.
-- Points of interest and hotel data is sourced from OpenStreetMap and licensed under the Open Data Commons Open Database Licence (ODbL).
+- **Open Government Licence v3.0**: most UK government and public bodies, including the ONS, NHS, Environment Agency, Police, Land Registry, Department for Education, Ofsted and the CQC. This data is © Crown copyright and database right, licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+- **Open Parliament Licence v3.0**: UK Parliament data on MPs and general election results.
+- **Open Database Licence (ODbL)**: OpenStreetMap, the source of many maps and lists of local places. Data © OpenStreetMap contributors.
+- **Creative Commons Attribution 4.0 (CC BY 4.0)**: Give Food's food bank data and The Toilet Map.
+- **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)**: Open Charge Map's EV charging data.
+- **Publishers' own data licences or service terms**: power cuts from National Grid Electricity Distribution, train times from the Rail Data Marketplace, and services such as OpenWeather, parkrun, InPost, DPD and TheSportsDB.
+- **No stated licence**: some figures come from public pages that state no reuse terms, such as council registers and reports and Water UK's storm overflow data. We summarise them and link to the original.
+- **Crown copyright**: the national terrorism threat level, from MI5.
+- **Our own data**: lists we research and keep ourselves, such as clubs, festivals, third spaces and helpful contacts, are © Cheltenham Open Data.
 
 If you reuse any dataset, you must comply with that dataset's licence, including its attribution requirements. Our own compilation and presentation of the data are not covered by those open licences.
 
@@ -47,7 +52,7 @@ Anyone submitting a classified advert is responsible for the accuracy and legali
 
 Some links on the site are affiliate links, which may earn us a small commission if you make a purchase, at no extra cost to you. This never affects our editorial content or the data we publish. See the [Privacy Policy](/privacy) for how the referral tags work.
 
-The UK's Competition and Markets Authority (CMA) and the Advertising Standards Authority (ASA) require websites to be open about commercial relationships. That's why you'll see `affiliate link` disclosures clearly marked.
+The UK's Competition and Markets Authority (CMA) and the Advertising Standards Authority (ASA) require sites to be open about commercial relationships. That's why you'll see `affiliate link` disclosures clearly marked.
 
 ### 7. Sponsorship
 
@@ -55,7 +60,7 @@ Sponsored placements are clearly labelled and never influence the data or editor
 
 ### 8. Third-party Links
 
-The site links to external websites we don't control. We're not responsible for their content, accuracy, or privacy practices, and a link is not an endorsement.
+The site links to external sites we don't control. We're not responsible for their content, accuracy, or privacy practices, and a link is not an endorsement.
 
 ### 9. Availability
 
