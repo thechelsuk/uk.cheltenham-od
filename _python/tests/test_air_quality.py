@@ -1,6 +1,7 @@
 """Offline tests for the air quality fetcher (air-quality.py): matching
 DEFRA UK-AIR series to pollutants, banding readings and shaping
-_data/air-quality.json.
+_data/air-quality.json. requests.get is replaced with a fake for the
+station list and time series.
 
 Run from the repository root:
     .venv/bin/python -m pytest _python/tests
@@ -8,6 +9,12 @@ Run from the repository root:
 import datetime
 import importlib.util
 import pathlib
+import sys
+
+import pytest
+import requests
+
+import helper
 
 SPEC = importlib.util.spec_from_file_location(
     "air_quality", pathlib.Path(__file__).resolve().parents[1] / "air-quality.py"
@@ -107,3 +114,115 @@ def test_an_empty_run_still_writes_a_payload():
     assert payload["stations"] == []
     assert payload["reading_count"] == 0
     assert payload["nearest_km"] is None
+
+
+PM25 = "http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001"
+BENZENE = "http://dd.eionet.europa.eu/vocabulary/aq/pollutant/20"
+
+
+def site(label, lat, lon, timeseries=None):
+    """A station as the SOS API lists it: coordinates are [lat, lon, elevation]."""
+    return {"properties": {"label": label, "timeseries": timeseries or {}},
+            "geometry": {"coordinates": [lat, lon, "NaN"]}}
+
+
+class FakeResponse:
+    def __init__(self, body, status=200):
+        self._body, self.status_code, self.text = body, status, str(body)
+
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise requests.HTTPError(str(self.status_code))
+
+    def json(self):
+        return self._body
+
+
+def test_smart_title_keeps_codes_and_short_acronyms():
+    assert aq.smart_title("cheltenham A40 GL51 road") == "Cheltenham A40 GL51 Road"
+    assert aq.smart_title("CHELTENHAM BATH ROAD HQ") == "Cheltenham Bath Road Hq"
+    assert aq.smart_title("council HQ site") == "Council HQ Site"
+
+
+def test_get_all_stations_pages_through_the_whole_list(monkeypatch):
+    pages = [[{"n": i} for i in range(200)], [{"n": "last"}]]
+    offsets = []
+
+    def fake_get(url, params, headers, timeout):
+        offsets.append(params["offset"])
+        return FakeResponse(pages.pop(0))
+
+    monkeypatch.setattr(aq.requests, "get", fake_get)
+    assert len(aq.get_all_stations()) == 201
+    assert offsets == [0, 200]
+
+
+def test_get_all_stations_stops_on_an_unexpected_reply(monkeypatch):
+    monkeypatch.setattr(aq.requests, "get", lambda url, params, headers, timeout: FakeResponse({"error": "x"}))
+    assert aq.get_all_stations() == []
+
+
+def test_filter_stations_by_distance_reads_lat_then_lon(monkeypatch):
+    monkeypatch.setattr(aq, "DEBUG", True)
+    near = site("Cheltenham A40 Gloucester Road-Ozone", 51.896592, -2.113747)
+    swapped = site("Cheltenham swapped", -2.113747, 51.896592)
+    far = site("Bristol", 51.45, -2.58)
+    kept = aq.filter_stations_by_distance([near, swapped, far, {"properties": {}, "geometry": {}}])
+    assert kept == [near] and near["_distance_km"] == pytest.approx(2.5, abs=0.1)
+    assert aq.filter_stations_by_distance([]) == []
+
+
+def test_collect_readings_walks_stations_to_their_latest_values(monkeypatch):
+    stations = [
+        site("Cheltenham A40 Gloucester Road-Particulate matter less than 2.5 micro m (aerosol)", 51.8966, -2.1137,
+             {"ts1": {"phenomenon": {"label": PM25}}}),
+        site("Cheltenham A40 Gloucester Road-Ozone", 51.8966, -2.1137,
+             {"ts2": {"phenomenon": {"label": "http://x/pollutant/7"}},
+              "ts3": {"phenomenon": {"label": "http://x/pollutant/7"}},
+              "ts4": {"phenomenon": {"label": "http://x/pollutant/7"}}}),
+        site("Benzene site", 51.9, -2.08, {"ts5": {"phenomenon": {"label": BENZENE}}}),
+        site("Bristol-Ozone", 51.45, -2.58, {"ts6": {"phenomenon": {"label": PM25}}}),
+    ]
+    series = {
+        "ts1": FakeResponse({"uom": "ug.m-3", "lastValue": {"value": 14.0, "timestamp": 1791777600000}}),
+        "ts2": FakeResponse({"uom": "ug.m-3", "lastValue": {"value": 30.0, "timestamp": None}}),
+        "ts3": FakeResponse({"uom": "ug.m-3", "lastValue": None}),
+        "ts4": FakeResponse({}, status=500),
+    }
+
+    def fake_get(url, headers, timeout, params=None):
+        if url.endswith("/stations"):
+            return FakeResponse(stations if params["offset"] == 0 else [])
+        return series[url.rsplit("/", 1)[1]]
+
+    monkeypatch.setattr(aq.requests, "get", fake_get)
+    readings = aq.collect_readings()
+    assert [(r["station"], r["pollutant_key"], r["band"]) for r in readings] == [
+        ("Cheltenham A40 Gloucester Road", "pm2.5", "Moderate"),
+        ("Cheltenham A40 Gloucester Road", "o3", "Low"),
+    ]
+    assert readings[0]["timestamp"] == datetime.datetime.fromtimestamp(1791777600, tz=datetime.timezone.utc)
+    assert readings[1]["timestamp"] is None
+
+
+def test_collect_readings_returns_nothing_when_the_list_fails_or_nothing_is_near(monkeypatch):
+    def down(url, params, headers, timeout):
+        raise requests.ConnectionError("down")
+
+    monkeypatch.setattr(aq.requests, "get", down)
+    assert aq.collect_readings() == []
+    monkeypatch.setattr(aq.requests, "get", lambda url, params, headers, timeout: FakeResponse([site("Bristol", 51.45, -2.58)]))
+    assert aq.collect_readings() == []
+
+
+def test_main_writes_the_payload(monkeypatch):
+    monkeypatch.setattr(sys, "argv", ["air-quality.py"])
+    monkeypatch.setattr(aq, "collect_readings", lambda: [reading("Cheltenham", "no2", 20.0)])
+    written = {}
+    monkeypatch.setattr(helper, "write_json", lambda path, payload: written.update(path=path, payload=payload))
+    aq.main()
+    assert written["path"] == aq.OUTPUT_FILE
+    assert written["payload"]["reading_count"] == 1 and written["payload"]["highest_band"] == "Low"
+    monkeypatch.setattr(aq, "collect_readings", lambda: [])
+    aq.main()
+    assert written["payload"]["reading_count"] == 0
