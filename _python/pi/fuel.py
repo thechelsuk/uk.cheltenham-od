@@ -282,7 +282,7 @@ def bootstrap(station_cache, ignore_set, access_token, lookback_date, cache_path
     try:
         local_ids       = set(station_cache.keys())
         historic_prices = fetch_local_prices(local_ids, access_token, lookback_date, label="seed-prices ")
-        seeded = seed_prices(station_cache, historic_prices, lookback_date)
+        seeded = merge_prices(station_cache, historic_prices, lookback_date)
         save_station_cache(cache_path, station_cache)
         print(f"  Price history seeded for {seeded} local stations")
     except Exception as e:
@@ -291,10 +291,13 @@ def bootstrap(station_cache, ignore_set, access_token, lookback_date, cache_path
     return ignore_set
 
 
-def seed_prices(station_cache, records, lookback_date):
-    """Bootstrap's price merge: a record with no timestamp only lands on a
-    station that has no prices yet, and is dated `lookback_date`."""
-    seeded = 0
+def merge_prices(station_cache, records, lookback_date):
+    """Merge price records into the station cache, for both the daily run and
+    bootstrap. A record replaces a station's prices unless the station already
+    has newer ones. A record with no timestamp is of unknown age, so it only
+    fills a station that has no prices yet, dated `lookback_date` (the feed is
+    only asked for prices from then on). Returns how many stations were updated."""
+    updated = 0
     for record in records:
         nid    = record.get("node_id")
         cached = station_cache.get(nid)
@@ -306,28 +309,8 @@ def seed_prices(station_cache, records, lookback_date):
                 if record_date >= existing_date:
                     cached["fuel_prices"]    = new_prices
                     cached["prices_updated"] = record_date or lookback_date
-                    seeded += 1
-    return seeded
-
-
-def merge_prices(station_cache, records, today_str):
-    """The daily price merge: a record replaces a station's prices unless the
-    station already has newer ones. A record with no timestamp counts as
-    today's. Returns how many stations were updated."""
-    price_updates = 0
-    for record in records:
-        nid    = record.get("node_id")
-        cached = station_cache.get(nid)
-        if cached:
-            new_prices  = record.get("fuel_prices") or []
-            record_date = (record.get("effective_start_timestamp") or "")[:10] or today_str
-            if new_prices:
-                existing_date = cached.get("prices_updated") or ""
-                if record_date >= existing_date:
-                    cached["fuel_prices"]    = new_prices
-                    cached["prices_updated"] = record_date
-                    price_updates += 1
-    return price_updates
+                    updated += 1
+    return updated
 
 
 # -- Building the page data ----------------------------------------------------------
@@ -551,7 +534,7 @@ def main():
 
     # 4. Merge fresh prices into the station cache.
     today = datetime.date.today()
-    price_updates = merge_prices(station_cache, all_prices, today.strftime("%Y-%m-%d"))
+    price_updates = merge_prices(station_cache, all_prices, lookback_date)
     if price_updates:
         save_station_cache(cache_path, station_cache)
     print(f"Local stations with fresh prices: {price_updates}")

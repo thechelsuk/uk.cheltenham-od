@@ -247,18 +247,26 @@ def test_median():
     assert fuel.median([]) is None
 
 
-def test_the_daily_merge_dates_an_undated_record_today_but_the_seed_does_not():
-    def cache():
-        return {"A": {"fuel_prices": [price("E10", 130, "2026-10-01")], "prices_updated": "2026-10-01"}}
+def test_merge_prices_takes_newer_records_and_leaves_newer_cached_prices():
+    cache = {"A": {"fuel_prices": [price("E10", 130, "2026-10-01")], "prices_updated": "2026-10-05"}}
+    older = [{"node_id": "A", "effective_start_timestamp": "2026-10-03T09:00:00Z", "fuel_prices": [price("E10", 1, "2026-10-03")]}]
+    assert fuel.merge_prices(cache, older, "2026-09-17") == 0
+    newer = [{"node_id": "A", "effective_start_timestamp": "2026-10-12T09:00:00Z", "fuel_prices": [price("E10", 125, "2026-10-12")]},
+             {"node_id": "A", "effective_start_timestamp": "2026-10-12T10:00:00Z", "fuel_prices": []},
+             {"node_id": "FAR", "fuel_prices": [price("E10", 99, "2026-10-12")]}]
+    assert fuel.merge_prices(cache, newer, "2026-09-17") == 1
+    assert cache["A"]["prices_updated"] == "2026-10-12" and cache["A"]["fuel_prices"][0]["price"] == 125
+    assert "FAR" not in cache
 
+
+def test_an_undated_record_only_fills_a_station_with_no_prices():
     undated = [{"node_id": "A", "fuel_prices": [price("E10", 125, "2026-10-12")]}]
-    daily = cache()
-    assert fuel.merge_prices(daily, undated, "2026-10-12") == 1
-    assert daily["A"]["prices_updated"] == "2026-10-12"
-    seeded = cache()
-    assert fuel.seed_prices(seeded, undated, "2026-09-17") == 0
-    assert seeded["A"]["prices_updated"] == "2026-10-01"
-    assert fuel.seed_prices({"A": {}}, undated, "2026-09-17") == 0     # a station with no record at all is skipped
+    priced = {"A": {"fuel_prices": [price("E10", 130, "2026-10-01")], "prices_updated": "2026-10-01"}}
+    assert fuel.merge_prices(priced, undated, "2026-09-17") == 0
+    assert priced["A"]["prices_updated"] == "2026-10-01"
+    empty = {"A": {"trading_name": "New Garage"}}
+    assert fuel.merge_prices(empty, undated, "2026-09-17") == 1
+    assert empty["A"]["prices_updated"] == "2026-09-17"
 
 
 def test_headline_entry_names_a_brand_only_when_it_differs_and_shows_any_saving():
