@@ -338,8 +338,8 @@ def src_food_venues():
 # (id, group, label, source, mode, limit). mode "nearest" shows everything in the
 # ward plus the nearest few outside; "in_ward" shows only what is inside.
 SERVICES = [
-    ("gp", "Health and Care", "GP Practices", None, "nearest"),      # parsed from the GP page
-    ("pharmacy", "Health and Care", "Pharmacies", None, "nearest"),  # parsed from the GP page
+    ("gp", "Health and Care", "GP Practices", None, "nearest"),      # from _data/gp-pharmacy.json
+    ("pharmacy", "Health and Care", "Pharmacies", None, "nearest"),  # from _data/gp-pharmacy.json
     ("dentist", "Health and Care", "Dentists", src_dentists, "nearest"),
     ("optician", "Health and Care", "Opticians", src_opticians, "nearest"),
     ("hospital", "Health and Care", "Hospitals", src_hospitals, "nearest"),
@@ -364,37 +364,20 @@ SERVICES = [
 
 
 def parse_gp_page(postcodes):
-    """GPs and pharmacies only exist as Markdown on the GP page, so read them back
-    from it and place each one by postcode."""
-    text = (ROOT / "_pages/community-support/gp-pharmacy.md").read_text(encoding="utf-8")
-    sections = {"GP Practices": [], "Pharmacies": []}
-    section = None
-    entry = {}  # the practice being read; empty until its "###" heading
-    for line in text.splitlines():
-        if line.startswith("## "):
-            section = line[3:].strip()
-            entry = {}
-        elif line.startswith("### ") and section in sections:
-            entry = {"name": line[4:].strip()}
-            sections[section].append(entry)
-        elif entry and line.startswith("- Address:"):
-            m = re.match(r"- Address: \[(.*?)\]\(", line)
-            if m:
-                entry["address"] = m.group(1)
-                entry["postcode"] = postcode_in(m.group(1))
-        elif entry and line.startswith("- Phone:"):
-            m = re.match(r"- Phone: \[(.*?)\]\(", line)
-            if m:
-                entry["detail"] = m.group(1)
+    """GPs and pharmacies from the GP page's data file, each placed by postcode."""
+    data = json.loads((ROOT / "_data/gp-pharmacy.json").read_text(encoding="utf-8"))
     result = {}
-    for key, name in (("gp", "GP Practices"), ("pharmacy", "Pharmacies")):
+    for key, field in (("gp", "gp_practices"), ("pharmacy", "pharmacies")):
         items = []
-        for e in sections[name]:
-            pc = e.get("postcode", "")
+        for e in data.get(field, []):
+            pc = postcode_in(e["address"])
             if pc not in postcodes:
                 continue
-            e["lat"], e["lon"] = postcodes[pc]
-            items.append(e)
+            item = {"name": e["heading"], "address": e["address"], "postcode": pc}
+            if e.get("phone"):
+                item["detail"] = e["phone"]
+            item["lat"], item["lon"] = postcodes[pc]
+            items.append(item)
         result[key] = items
     return result
 

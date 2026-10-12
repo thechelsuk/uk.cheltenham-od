@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham GP Practices and Pharmacies",
+  "description": "Active GP practices and pharmacies in Cheltenham's GL50 to GL53 postcode districts from NHS England's Organisation Data Service, with each practice's latest CQC rating.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['gp-pharmacy'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Address", "Phone", "CQC rating"]
+}
+</script>

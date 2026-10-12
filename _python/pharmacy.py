@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """
-fetch_gp_pharmacy.py
-
 Pulls GP practice and pharmacy listings for Cheltenham from NHS England's
-ODS ORD API (open-access, no API key) and updates a Jekyll page in place
-using the project's helper.replace_chunk() function.
+ODS ORD API (open-access, no API key), adds each GP practice's CQC rating
+from _data/cqc.json, and writes them to _data/gp-pharmacy.json for
+_layouts/community-support/gp-pharmacy.html.
 
 Base URL: https://directory.spineservices.nhs.uk/ORD/2-0-0
 GP practices: NonPrimaryRoleId=RO76 (confirmed)
@@ -12,7 +11,7 @@ Pharmacies: role ID looked up dynamically via /roles (not hardcoded —
 see find_pharmacy_role_ids())
 
 Usage:
-    python3 fetch_gp_pharmacy.py [--debug]
+    python3 _python/pharmacy.py [--debug]
 """
 
 import sys
@@ -20,8 +19,12 @@ import argparse
 import datetime
 import json
 import os
-import requests
+import re
 from collections import Counter
+
+import requests
+
+import helper
 
 BASE_URL = "https://directory.spineservices.nhs.uk/ORD/2-0-0"
 TIMEOUT = 20
@@ -33,10 +36,12 @@ CHELTENHAM_POSTCODES = ["GL50", "GL51", "GL52", "GL53"]
 
 GP_NON_PRIMARY_ROLE_ID = "RO76"  # confirmed: "GP Practice Prescribing Cost Centre"
 
-OUTPUT_FILE = "_pages/community-support/gp-pharmacy.md"
+OUTPUT_FILE = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_data", "gp-pharmacy.json"))
+SOURCE_NAME = "NHS Organisation Data Service"
+SOURCE_URL = "https://digital.nhs.uk/services/organisation-data-service"
+LICENCE = "Open Government Licence v3.0"
 # GP ratings come from the CQC data written by cqc.py, matched on ODS code.
 CQC_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_data", "cqc.json")
-MARKER_NAME = "gp_pharmacy_finder"  # CHECK: matches your template's marker name?
 
 DEBUG = False
 
@@ -141,8 +146,6 @@ def to_title_case(text: str):
       (ST. CATHERINE'S -> St. Catherine'S) — this keeps it lowercase.
     - UK postcodes (e.g. GL52 3EY) must stay upper case, not become
       Gl52 3ey."""
-    import re
-
     if not text:
         return text
 
@@ -256,8 +259,6 @@ def dedupe_entries(entries):
     literal duplicate OrgIds, not this case — so dedupe again here by
     (name, postcode), keeping the more complete record (prefer one
     with a phone number, then the longer/more detailed address)."""
-    import re
-
     def postcode_of(address):
         m = re.search(r"[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$", address.upper())
         return m.group(0).replace(" ", "") if m else address
@@ -279,110 +280,54 @@ def dedupe_entries(entries):
     return list(best.values())
 
 
-def render_entry_list(entries):
-    """Render a list of {name, address, phone} dicts as markdown,
-    disambiguating headings when the same business name appears more
-    than once (e.g. multiple branches) — avoids duplicate ### headings,
-    which break heading-anchor uniqueness."""
-    name_counts = Counter(e["name"] for e in entries)
-    lines = []
+def postcode_in(address):
+    m = re.search(r"\b([A-Z]{1,2}\d[A-Z\d]?)\s*(\d[A-Z]{2})\b", address.upper())
+    return f"{m.group(1)} {m.group(2)}" if m else ""
 
+
+def build_entries(entries):
+    """Deduplicate and sort {name, address, phone, cqc} records, adding a
+    heading (with the street when the same business name appears more than
+    once, e.g. several branches, so headings stay unique), the postcode, a
+    Google Maps link and a dialable phone number."""
+    entries = dedupe_entries(entries)
+    name_counts = Counter(e["name"] for e in entries)
+    out = []
     for e in sorted(entries, key=lambda x: (x["name"], x["address"])):
         heading = e["name"].rstrip(" .,;:!?")  # a trailing comma in an ODS name breaks the heading lint
         if name_counts[e["name"]] > 1:
             street = e["address"].split(",")[0].strip()
             if street:
                 heading = f"{e['name']} ({street})"
-
-        lines.append(f"\n### {heading}\n")
-        lines.append(f"\n- Address: [{e['address']}]({maps_link(e['address'])})")
-        if e["phone"]:
-            lines.append(f"\n- Phone: [{e['phone']}](tel:{e['phone'].replace(' ', '')})")
-        if e.get("cqc"):
-            published = f" ({e['cqc']['published']})" if e["cqc"].get("published") else ""
-            lines.append(f"\n- CQC rating: [{e['cqc']['overall']}]({e['cqc']['url']}){published}")
-        lines.append("\n")
-
-    return lines
-
-
-def render_markdown(gps, pharmacies):
-    generated = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-
-    lines = []
-    lines.append(
-        "Finding a GP practice or pharmacy in Cheltenham shouldn't mean "
-        "digging through the NHS site. The listings below are pulled "
-        "directly from [NHS England's Organisation Data Service]"
-        "(https://digital.nhs.uk/services/organisation-data-service), the "
-        "official register of NHS organisations, so names, addresses and "
-        "phone numbers stay current automatically.\n"
-    )
-    lines.append(
-        "\nIf you need to register with a new GP, you can do this "
-        "directly with any practice that covers your address — you don't "
-        "need a referral or your old practice's permission. For repeat "
-        "prescriptions, most pharmacies listed below offer a free "
-        "collection or delivery service; ask in branch or check the "
-        "[NHS App](https://www.nhs.uk/nhs-app/) to nominate a regular "
-        "pharmacy.\n")
-
-    lines.append(
-        "\nEach GP practice shows its latest rating from the [Care Quality Commission]"
-        "(https://www.cqc.org.uk/), the independent regulator of health and social care in "
-        "England, with the date the report was published. The rating links to the full report.\n"
-    )
-
-    lines.append(
-        "\nAddresses link to googlemaps and phone numbers use the `tel:` protocol and should prompt to call on your device.\n"
-    )
-
-    gps = dedupe_entries(gps)
-    pharmacies = dedupe_entries(pharmacies)
-
-    lines.append("\n## GP Practices\n")
-    if gps:
-        lines.extend(render_entry_list(gps))
-    else:
-        lines.append("\n> No GP practices were returned at generation time.\n")
-
-    lines.append("\n## Pharmacies\n")
-    if pharmacies:
-        lines.extend(render_entry_list(pharmacies))
-    else:
-        lines.append("\n> No pharmacies were returned at generation time.\n")
-
-    lines.append(
-        f"\n*Source: [NHS Organisation Data Service](https://digital.nhs.uk/services/organisation-data-service). "
-        f"Data last refreshed {generated}.*\n"
-    )
-
-    return "".join(lines)
+        out.append({
+            "name": e["name"],
+            "heading": heading,
+            "address": e["address"],
+            "postcode": postcode_in(e["address"]),
+            "maps_url": maps_link(e["address"]),
+            "phone": e["phone"],
+            "tel": e["phone"].replace(" ", ""),
+            "cqc": e.get("cqc"),
+        })
+    return out
 
 
-def update_target_file(body_markdown: str):
-    """Uses the project's existing helper.replace_chunk(content, marker,
-    chunk) function. ADAPT: fix the import path for your `helper` module."""
-    import helper  # adjust import path to match your project structure
-
-    try:
-        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-            existing = f.read()
-    except FileNotFoundError:
-        print(f"ERROR: {OUTPUT_FILE} does not exist. Create it first with "
-              f"front matter and the {MARKER_NAME} starts/ends markers in "
-              f"place, then re-run this script.", file=sys.stderr)
-        sys.exit(1)
-
-    new_content = helper.replace_chunk(existing, MARKER_NAME, body_markdown)
-
-    if new_content == existing:
-        print(f"WARNING: file content unchanged — the '{MARKER_NAME} starts'/"
-              f"'{MARKER_NAME} ends' markers may not be present in "
-              f"{OUTPUT_FILE}.", file=sys.stderr)
-
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(new_content)
+def build_payload(gps, pharmacies, generated_at):
+    gp_practices = build_entries(gps)
+    pharmacy_list = build_entries(pharmacies)
+    good_or_better = sum(1 for g in gp_practices if (g["cqc"] or {}).get("overall") in ("Good", "Outstanding"))
+    return {
+        "generated_at": generated_at,
+        "source": SOURCE_NAME,
+        "source_url": SOURCE_URL,
+        "licence": LICENCE,
+        "postcode_districts": CHELTENHAM_POSTCODES,
+        "gp_count": len(gp_practices),
+        "pharmacy_count": len(pharmacy_list),
+        "gps_good_or_better": good_or_better,
+        "gp_practices": gp_practices,
+        "pharmacies": pharmacy_list,
+    }
 
 
 def main():
@@ -404,10 +349,11 @@ def main():
         print(f"ERROR: could not fetch pharmacies: {exc}", file=sys.stderr)
         pharmacies = []
 
-    markdown = render_markdown(gps, pharmacies)
-    update_target_file(markdown)
+    generated_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    payload = build_payload(gps, pharmacies, generated_at)
+    helper.write_json(OUTPUT_FILE, payload)
 
-    print(f"Updated {OUTPUT_FILE} with {len(gps)} GP practices and {len(pharmacies)} pharmacies")
+    print(f"Wrote {payload['gp_count']} GP practices and {payload['pharmacy_count']} pharmacies to {OUTPUT_FILE}")
     if not gps or not pharmacies:
         print("One or both lists came back empty — re-run with --debug "
               "to see raw API responses.", file=sys.stderr)
