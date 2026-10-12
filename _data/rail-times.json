@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T10:35:36+01:00",
+  "generated_at": "2026-10-12T10:40:35+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-12T10:12",
-      "expected": "2026-10-12T10:36",
+      "expected": "2026-10-12T10:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -35,29 +35,6 @@
         "Morpeth",
         "Berwick-upon-Tweed",
         "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-10-12T10:29",
-      "expected": "2026-10-12T10:35",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Weston-super-Mare",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
       ]
     },
     {
@@ -209,12 +186,28 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T11:15",
+      "expected": "2026-10-12T11:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-12T10:11",
-      "expected": "2026-10-12T10:35",
+      "expected": "2026-10-12T10:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -223,18 +216,8 @@
       "reason": "This service has been delayed by a points failure at Newton Abbot"
     },
     {
-      "scheduled": "2026-10-12T10:28",
-      "expected": "2026-10-12T10:33",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-12T10:31",
-      "expected": "2026-10-12T10:41",
+      "expected": "2026-10-12T10:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -244,8 +227,8 @@
     },
     {
       "scheduled": "2026-10-12T10:38",
-      "expected": "2026-10-12T10:38",
-      "status": "On time",
+      "expected": "2026-10-12T10:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -290,6 +273,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T11:14",
+      "expected": "2026-10-12T11:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
