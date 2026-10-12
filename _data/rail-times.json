@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T08:15:07+01:00",
+  "generated_at": "2026-10-12T08:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-12T08:12",
-      "expected": "2026-10-12T08:22",
+      "expected": "2026-10-12T08:23",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -35,22 +35,6 @@
         "Morpeth",
         "Berwick-upon-Tweed",
         "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-10-12T08:15",
-      "expected": "2026-10-12T08:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -150,6 +134,26 @@
       "scheduled": "2026-10-12T09:03",
       "expected": "2026-10-12T09:03",
       "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-10-12T09:03",
+      "expected": "2026-10-12T09:03",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
@@ -165,23 +169,13 @@
   "arrivals": [
     {
       "scheduled": "2026-10-12T08:10",
-      "expected": "2026-10-12T08:21",
+      "expected": "2026-10-12T08:22",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by a late running train being in front of this one"
-    },
-    {
-      "scheduled": "2026-10-12T08:14",
-      "expected": "2026-10-12T08:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
     },
     {
       "scheduled": "2026-10-12T08:27",
@@ -205,13 +199,13 @@
     },
     {
       "scheduled": "2026-10-12T08:32",
-      "expected": "2026-10-12T08:32",
-      "status": "On time",
+      "expected": "2026-10-12T08:35",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by a points failure"
     },
     {
       "scheduled": "2026-10-12T08:39",
