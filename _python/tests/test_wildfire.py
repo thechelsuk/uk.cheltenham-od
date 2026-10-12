@@ -5,14 +5,19 @@ Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
 import importlib.util
+import json
 import pathlib
 
+import pytest
+
+import helper
 import wildfire
 
 SPEC = importlib.util.spec_from_file_location(
     "process_wildfire_incidents",
     pathlib.Path(__file__).resolve().parents[1] / "local" / "process-wildfire-incidents.py",
 )
+assert SPEC is not None and SPEC.loader is not None
 incidents = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(incidents)
 
@@ -186,3 +191,98 @@ def test_fires_are_counted_by_ward_with_the_last_five_years():
         {"ward": "Leckhampton", "fires": 2, "recent": 1},
         {"ward": "Pittville", "fires": 1, "recent": 1},
     ]
+
+
+# --- wildfire.py: fetching and the main run -------------------------------------
+
+
+class FakeResponse:
+    def __init__(self, body):
+        self._body = body
+
+    def json(self):
+        return self._body
+
+
+def feature(ref, offset, date, rating, x=-2.1):
+    return {"attributes": square(ref, offset, date, rating),
+            "geometry": {"rings": [[[x, 51.8], [x + 0.1, 51.8], [x + 0.1, 51.9]]]}}
+
+
+def fake_fsi(features, issued=None):
+    """helper.get for the FSI service: layer 0 is the squares, layer 1 the issue time."""
+    def get(url, params):
+        if url.endswith("/0/query"):
+            return FakeResponse(features if isinstance(features, dict) else {"features": features})
+        return FakeResponse({"features": issued or []})
+    return get
+
+
+def test_fetch_squares_raises_on_a_service_error(monkeypatch):
+    monkeypatch.setattr(helper, "get", fake_fsi({"error": {"code": 400}}))
+    with pytest.raises(RuntimeError, match="FSI query failed"):
+        wildfire.fetch_squares()
+
+
+def test_fetch_issued_iso_reads_the_issue_date_and_time(monkeypatch):
+    monkeypatch.setattr(helper, "get", fake_fsi([], [{"attributes": {"received_date": 1784505600000,
+                                                                      "time_received": "06:30"}}]))
+    assert wildfire.fetch_issued_iso() == "2026-07-20T06:30"
+    monkeypatch.setattr(helper, "get", fake_fsi([], [{"attributes": {"received_date": 1784505600000}}]))
+    assert wildfire.fetch_issued_iso() == "2026-07-20T00:00"
+    monkeypatch.setattr(helper, "get", fake_fsi([]))
+    assert wildfire.fetch_issued_iso() is None
+
+
+EMPTY_ALERT = "<!-- wildfire_alert_marker starts -->\n\n<!-- wildfire_alert_marker ends -->"
+
+
+@pytest.fixture
+def site(tmp_path, monkeypatch):
+    for folder in ("_data", "feeds", "_includes"):
+        (tmp_path / folder).mkdir()
+    (tmp_path / "_includes" / "wildfire-alert.html").write_text(EMPTY_ALERT)
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
+    monkeypatch.setattr(helper, "site_url", lambda: "https://example.org")
+    return tmp_path
+
+
+def test_main_writes_squares_history_feed_and_alert(site, monkeypatch):
+    features = [feature("SO92", 0, "2026-07-20", 4), feature("SO91", 0, "2026-07-20", 2, x=-2.2),
+                feature("SO92", 1, "2026-07-21", 3), feature("SO91", 1, "2026-07-21", 1, x=-2.2)]
+    issued = [{"attributes": {"received_date": 1784505600000, "time_received": "06:30"}}]
+    monkeypatch.setattr(helper, "get", fake_fsi(features, issued))
+    (site / "_data" / "wildfire-history.json").write_text(json.dumps(
+        {"tracking_since": "2026-06-01", "records": [{"date": "2026-07-19", "rating": 3}]}))
+
+    wildfire.main()
+
+    data = json.loads((site / "_data" / "wildfire.json").read_text())
+    assert data["issued_iso"] == "2026-07-20T06:30"
+    assert data["today"]["rating"] == 4 and [d["date"] for d in data["days"]] == ["2026-07-20", "2026-07-21"]
+    so91, so92 = data["squares"]
+    assert so92["ref"] == "SO92" and so92["label"] == "Very high"
+    assert so92["rings"] == [[[51.8, -2.1], [51.8, -2.0], [51.9, -2.0]]]
+    assert [d["rating"] for d in so92["days"]] == [4, 3]
+    history = json.loads((site / "_data" / "wildfire-history.json").read_text())
+    assert history["tracking_since"] == "2026-06-01"
+    assert [(r["date"], r.get("squares")) for r in history["records"]] == [
+        ("2026-07-20", {"SO91": 2, "SO92": 4}), ("2026-07-19", None)]
+    assert "https://example.org/cheltenham-wildfire-risk#2026-07-20" in (site / "feeds" / "wildfire.xml").read_text()
+    assert "Very high (4 of 5) fire severity forecast around Cheltenham on 2026-07-20" in \
+        (site / "_includes" / "wildfire-alert.html").read_text()
+
+
+def test_main_on_a_low_day_logs_nothing_and_clears_the_alert(site, monkeypatch):
+    monkeypatch.setattr(helper, "get", fake_fsi([feature("SO92", 0, "2026-10-12", 1)]))
+    wildfire.main()
+    history = json.loads((site / "_data" / "wildfire-history.json").read_text())
+    assert history["records"] == [] and history["tracking_since"] == "2026-10-12"
+    assert (site / "_includes" / "wildfire-alert.html").read_text() == EMPTY_ALERT
+
+
+def test_main_stops_when_the_service_returns_no_squares(site, monkeypatch):
+    monkeypatch.setattr(helper, "get", fake_fsi([]))
+    with pytest.raises(RuntimeError, match="no squares"):
+        wildfire.main()
+    assert not (site / "_data" / "wildfire.json").exists()
