@@ -3,7 +3,7 @@ layout: safety-environment/wildfire-history
 title: Cheltenham Wildfire History
 seo_title: "Cheltenham Wildfire History: Grass & Woodland Fires"
 seo: "Every grassland, woodland and crop fire recorded around Cheltenham since 2010, by year, month and area, with the busiest days and the largest fires."
-description: "Grassland, woodland and crop fires recorded in Cheltenham and within 10 km of the town since April 2010, with every day of high fire severity."
+description: "Grassland, woodland and crop fires recorded in Cheltenham and within 6 miles of the town since April 2010, with every day of high fire severity."
 type: "environment"
 feed_url: "/feeds/wildfire.xml"
 schema: wildfire-history

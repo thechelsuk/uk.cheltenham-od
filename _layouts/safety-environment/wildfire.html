@@ -30,7 +30,7 @@
             <div class="info-card">
                 <p class="info-card__label">Fire severity on {{ today.date }}</p>
                 <span class="info-card__title">{{ today.label }}</span>
-                <span class="info-card__subtitle">{{ today.rating }} of 5, the highest of {{ data.squares.size }} grid squares within {{ data.radius_km }} km</span>
+                <span class="info-card__subtitle">{{ today.rating }} of 5, the highest of {{ data.squares.size }} grid squares within {% if data.radius_miles %}{{ data.radius_miles }} miles{% else %}{{ data.radius_km }} km{% endif %}</span>
             </div>
             <div class="info-card">
                 <p class="info-card__label">Highest in the {{ data.days.size }}-day forecast</p>
@@ -95,7 +95,7 @@
 
         <h3>Which Area Does This Page Cover?</h3>
         <ul>
-            <li>Every 10 km grid square that comes within {{ data.radius_km }} km of Cheltenham town centre: {% for sq in data.squares %}{{ sq.ref }}{% unless forloop.last %}, {% endunless %}{% endfor %}.</li>
+            <li>Every 10 km grid square that comes within {% if data.radius_miles %}{{ data.radius_miles }} miles{% else %}{{ data.radius_km }} km{% endif %} of Cheltenham town centre: {% for sq in data.squares %}{{ sq.ref }}{% unless forloop.last %}, {% endunless %}{% endfor %}.</li>
             <li>That takes in the Cotswold escarpment from Cleeve Hill to Crickley Hill, the Severn Vale towards Gloucester and Tewkesbury, and the land beyond, as smoke from a fire nearby can drift over the town.</li>
         </ul>
 

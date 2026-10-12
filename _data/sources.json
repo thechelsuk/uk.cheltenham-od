@@ -252,7 +252,7 @@
     "source_url": "https://www.stwater.co.uk/in-my-area/storm-overflow-map/",
     "licence": "No formal licence stated — published as a free public near-real-time data feed by Severn Trent Water via Water UK's National Storm Overflow Hub",
     "licence_type": "None stated",
-    "data": [{"file": "_data/sewage-overflows.json", "schedule": "daily"}, {"file": "_data/sewage-overflows-history.json", "schedule": "daily"}],
+    "data": [{"file": "_data/sewage-overflows.json", "schedule": "every two hours"}, {"file": "_data/sewage-overflows-history.json", "schedule": "every two hours"}],
     "pages": ["/cheltenham-sewage-overflows", "/cheltenham-sewage-overflows/history"]
   },
   {
@@ -586,6 +586,14 @@
     "source_url": "https://github.com/thechelsuk/uk.cheltenham-od/blob/main/_data/event-sources.yml",
     "licence": "Aggregates RSS feeds from multiple independent publishers (Cheltenham Festivals, Visit Cheltenham, Cheltenham Town Hall, Wilson Art Gallery and Museum, Pittville Pump Rooms) — each publisher retains its own copyright/terms; no single formal licence covers the aggregate, used under standard RSS syndication with attribution links back to the source",
     "licence_type": "Mixed",
+    "data": [{"file": "_data/event-sources.yml", "schedule": "manual"}],
+    "pages": ["/newsletter"]
+  },
+  {
+    "id": "bbc-sport-fixtures",
+    "source_url": "https://www.bbc.co.uk/sport",
+    "licence": "BBC Sport's public scores and fixtures feed, read by _python/sport-fixtures.py; no open licence stated, so only fixture facts (teams, date, time, venue) are used, in the newsletter's events roundup alongside the local events feeds",
+    "licence_type": "API terms",
     "data": [{"file": "_data/sport-fixtures.json", "schedule": "daily"}],
     "pages": ["/newsletter"]
   },

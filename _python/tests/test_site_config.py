@@ -72,3 +72,10 @@ def test_config_radii_follow_their_band():
     assert config.CAR_PARKS_RADIUS_M == round(config.LOCAL_MILES * config.METRES_PER_MILE)
     assert config.PARKRUN_MAX_MILES == config.FUEL_RADIUS_MILES == config.DRIVE_MILES
     assert config.SEWAGE_RADIUS_MILES == config.TOWN_MILES
+
+
+def test_wildfire_follows_the_local_band():
+    assert config.WILDFIRE_RADIUS_MILES == config.LOCAL_MILES
+    assert config.WILDFIRE_RADIUS_KM == round(config.LOCAL_MILES * config.KM_PER_MILE, 1)
+    bands = json.loads((ROOT / "_data" / "distance-bands.json").read_text())
+    assert not [e for e in bands["exceptions"] if "Wildfire" in e["name"]]

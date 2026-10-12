@@ -81,6 +81,8 @@ PLAY_AREAS_RADIUS_MILES = LOCAL_MILES
 RACING_RADIUS_M = round(LOCAL_MILES * METRES_PER_MILE)  # from RACECOURSE
 STREET_WORKS_RADIUS_MILES = LOCAL_MILES
 WATER_QUALITY_RADIUS_KM = round(LOCAL_MILES * KM_PER_MILE, 1)
+WILDFIRE_RADIUS_MILES = LOCAL_MILES
+WILDFIRE_RADIUS_KM = round(LOCAL_MILES * KM_PER_MILE, 1)  # for the map and census-area searches
 
 # Area
 AIR_QUALITY_RADIUS_KM = round(AREA_MILES * KM_PER_MILE, 1)
@@ -96,8 +98,6 @@ PARKRUN_MAX_MILES = DRIVE_MILES
 # Exceptions (see "exceptions" in _data/distance-bands.json)
 # River gauges on Cheltenham's own rivers, rain gauges on the nearby hills.
 RIVER_LEVELS_RADIUS_KM = {"level": 6, "rainfall": 12}
-# Fire incident records back to 2010 were counted at 10 km.
-WILDFIRE_RADIUS_KM = 10
 # Historic England's listed buildings are searched by area, in British
 # National Grid metres: (min easting, min northing, max easting, max northing).
 LISTED_BUILDINGS_BBOX = (391000, 218000, 398000, 225000)

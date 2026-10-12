@@ -90,7 +90,7 @@ def build_atom_items(history, days, page_url, issued_iso, threshold=FEED_LEVEL):
                 "title": f"Forecast: {day['label']} fire severity around Cheltenham on {day['date']}",
                 "link": f"{page_url}#{day['date']}",
                 "summary": f"Fire Severity Index {day['rating']} of 5 ({day['label']}) forecast for "
-                           f"{day['date']} within {config.WILDFIRE_RADIUS_KM} km of Cheltenham.",
+                           f"{day['date']} within {config.WILDFIRE_RADIUS_MILES} miles of Cheltenham.",
                 "published_iso": issued_iso,
                 "source": "Met Office",
             })
@@ -102,7 +102,7 @@ def build_atom_items(history, days, page_url, issued_iso, threshold=FEED_LEVEL):
             "title": f"{label} fire severity around Cheltenham on {record['date']}",
             "link": f"{page_url}/history#{record['date']}",
             "summary": f"Fire Severity Index {record['rating']} of 5 ({label}) on {record['date']} "
-                       f"within {config.WILDFIRE_RADIUS_KM} km of Cheltenham.",
+                       f"within {config.WILDFIRE_RADIUS_MILES} miles of Cheltenham.",
             "published_iso": record.get("recorded_iso") or f"{record['date']}T00:00:00Z",
             "source": "Met Office",
         })
@@ -182,6 +182,7 @@ def main():
         "source": SOURCE,
         "source_url": SOURCE_URL,
         "radius_km": config.WILDFIRE_RADIUS_KM,
+        "radius_miles": config.WILDFIRE_RADIUS_MILES,
         "today": today,
         "days": days,
         "squares": square_list,
@@ -204,6 +205,7 @@ def main():
         "source": SOURCE,
         "source_url": SOURCE_URL,
         "radius_km": config.WILDFIRE_RADIUS_KM,
+        "radius_miles": config.WILDFIRE_RADIUS_MILES,
         "level": HISTORY_LEVEL,
         "tracking_since": history.get("tracking_since") or today["date"],
         "count": len(records),

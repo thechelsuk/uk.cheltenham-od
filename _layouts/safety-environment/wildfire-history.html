@@ -160,7 +160,7 @@
         </div>
 
         <h2 id="fire-severity">High Fire Severity Days</h2>
-        <p>Every day since {{ fsi.tracking_since }} when the Met Office rated fire severity high ({{ fsi.level }} of 5) or above in any of the {{ fsi.radius_km }} km grid squares around Cheltenham.</p>
+        <p>Every day since {{ fsi.tracking_since }} when the Met Office rated fire severity high ({{ fsi.level }} of 5) or above in any of the 10 km grid squares within {% if fsi.radius_miles %}{{ fsi.radius_miles }} miles{% else %}{{ fsi.radius_km }} km{% endif %} of Cheltenham.</p>
         {% if fsi.records.size > 0 %}
         <div class="table-scroll">
             <table class="wildfire-history-table data-table" data-sortable>
@@ -200,7 +200,7 @@
         <h3>What Counts as Cheltenham and the Surrounding Area?</h3>
         <ul>
             <li>Cheltenham is every small census area in the GL50 to GL54 postcodes, which takes in Bishop's Cleeve, Winchcombe and the villages of the north Cotswolds as well as the town.</li>
-            <li>The surrounding area is every other small census area whose centre is within {{ data.radius_km }} km of Cheltenham town centre, such as Churchdown, Brockworth, Badgeworth and the east of Gloucester.</li>
+            <li>The surrounding area is every other small census area whose centre is within {{ data.radius_miles }} miles of Cheltenham town centre, such as Churchdown, Brockworth and Badgeworth.</li>
         </ul>
 
         {% if data.last_located_year != data.last_year %}

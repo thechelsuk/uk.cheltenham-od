@@ -15,8 +15,7 @@ overflow, recording when it starts and stops discharging untreated wastewater
 into a watercourse during heavy rainfall — this is a normal, permitted part of
 how the sewer network avoids backing up, not necessarily a sign of a fault.
 The table below shows near-real-time EDM status for the overflows on the
-River Chelt and the brooks that feed it, updated automatically several times
-a day.
+River Chelt and the brooks that feed it, checked every two hours.
 
 This tracks discharge *activity*, not chemical water quality (nitrates,
 bacteria levels and so on) — see our [river water quality](/cheltenham-water-quality)

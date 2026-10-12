@@ -295,6 +295,7 @@ def main():
         "source_url": SOURCE_URL,
         "licence": LICENCE,
         "radius_km": config.WILDFIRE_RADIUS_KM,
+        "radius_miles": config.WILDFIRE_RADIUS_MILES,
         "first_date": fires[0]["date"] if fires else None,
         "last_date": fires[-1]["date"] if fires else None,
         "first_year": years[0],
