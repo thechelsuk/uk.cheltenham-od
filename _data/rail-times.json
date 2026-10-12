@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T20:15:36+01:00",
+  "generated_at": "2026-10-12T20:20:37+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-12T19:52",
-      "expected": "2026-10-12T20:13",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-10-12T20:15",
       "expected": "2026-10-12T20:25",
@@ -84,7 +64,7 @@
     },
     {
       "scheduled": "2026-10-12T20:52",
-      "expected": "2026-10-12T20:55",
+      "expected": "2026-10-12T20:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -158,19 +138,28 @@
         "Worcestershire Parkway",
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T21:15",
+      "expected": "2026-10-12T21:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-12T19:51",
-      "expected": "2026-10-12T20:12",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a late running train being in front of this one"
-    },
     {
       "scheduled": "2026-10-12T20:14",
       "expected": "2026-10-12T20:24",
@@ -203,8 +192,8 @@
     },
     {
       "scheduled": "2026-10-12T20:33",
-      "expected": "2026-10-12T20:33",
-      "status": "On time",
+      "expected": "2026-10-12T20:35",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -213,7 +202,7 @@
     },
     {
       "scheduled": "2026-10-12T20:50",
-      "expected": "2026-10-12T20:54",
+      "expected": "2026-10-12T20:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -239,6 +228,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T21:14",
+      "expected": "2026-10-12T21:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
