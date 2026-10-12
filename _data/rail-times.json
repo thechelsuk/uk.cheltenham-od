@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:25:40+01:00",
+  "generated_at": "2026-10-12T14:30:37+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,24 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-12T14:15",
-      "expected": "2026-10-12T14:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-12T14:24",
-      "expected": "2026-10-12T14:30",
+      "expected": "2026-10-12T14:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -60,8 +44,8 @@
     },
     {
       "scheduled": "2026-10-12T14:37",
-      "expected": "2026-10-12T14:37",
-      "status": "On time",
+      "expected": "2026-10-12T14:39",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -113,8 +97,8 @@
     },
     {
       "scheduled": "2026-10-12T14:52",
-      "expected": "2026-10-12T14:52",
-      "status": "On time",
+      "expected": "2026-10-12T14:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
@@ -151,22 +135,62 @@
         "Beeston",
         "Nottingham"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T15:03",
+      "expected": "2026-10-12T15:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ]
+    },
+    {
+      "scheduled": "2026-10-12T15:12",
+      "expected": "2026-10-12T15:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Glasgow Central via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Motherwell",
+        "Glasgow Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-12T14:14",
-      "expected": "2026-10-12T14:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-12T14:22",
-      "expected": "2026-10-12T14:29",
+      "expected": "2026-10-12T14:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -175,19 +199,9 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-10-12T14:27",
-      "expected": "2026-10-12T14:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-12T14:28",
-      "expected": "2026-10-12T14:28",
-      "status": "On time",
+      "expected": "2026-10-12T14:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -206,8 +220,8 @@
     },
     {
       "scheduled": "2026-10-12T14:38",
-      "expected": "2026-10-12T14:40",
-      "status": "Delayed",
+      "expected": "2026-10-12T14:38",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -226,8 +240,8 @@
     },
     {
       "scheduled": "2026-10-12T14:50",
-      "expected": "2026-10-12T14:50",
-      "status": "On time",
+      "expected": "2026-10-12T14:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
@@ -242,6 +256,16 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T15:10",
+      "expected": "2026-10-12T15:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Glasgow Central via Leeds",
       "reason": ""
     }
   ]
