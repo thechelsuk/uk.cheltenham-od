@@ -70,7 +70,7 @@ class FakeResponse:
 
 def test_get_calls_the_sportsdb_api(monkeypatch):
     seen = {}
-    monkeypatch.setattr(fc.requests, "get", lambda url, params, headers, timeout: seen.update(url=url, params=params)
+    monkeypatch.setattr(helper, "get", lambda url, params, timeout: seen.update(url=url, params=params)
                         or FakeResponse())
     assert fc.get("eventsnext.php", id="1") == {"ok": True}
     assert seen == {"url": f"{fc.API}/eventsnext.php", "params": {"id": "1"}}

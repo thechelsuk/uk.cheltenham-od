@@ -1,16 +1,25 @@
-"""Offline tests for the Land Registry fetcher (land_registry.py): the SPARQL
+"""Offline tests for the Land Registry fetcher (land-registry.py): the SPARQL
 queries, row conversion, paging and the written payload. The SPARQL endpoint
 is replaced with a fake.
 
 Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
+import importlib.util
 import json
+import pathlib
 
 import pytest
 import requests
 
-import land_registry as lr
+import helper
+
+SPEC = importlib.util.spec_from_file_location(
+    "land_registry", pathlib.Path(__file__).resolve().parents[1] / "land-registry.py"
+)
+assert SPEC is not None and SPEC.loader is not None
+lr = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(lr)
 
 
 def binding(amount="325000", date="2026-08-01", ptype="Detached", new_build="false", **extra):
@@ -89,11 +98,11 @@ def test_run_query_asks_for_json_and_raises_http_errors(monkeypatch):
         seen.update(url=url, params=params)
         return FakeResponse(body={"ok": True})
 
-    monkeypatch.setattr(lr.requests, "get", fake_get)
+    monkeypatch.setattr(helper, "get", fake_get)
     assert lr._run_query("SELECT 1") == {"ok": True}
     assert seen == {"url": lr.ENDPOINT, "params": {"query": "SELECT 1", "output": "json"}}
 
-    monkeypatch.setattr(lr.requests, "get", lambda *a, **k: FakeResponse(status=403))
+    monkeypatch.setattr(helper, "get", lambda *a, **k: FakeResponse(status=403))
     with pytest.raises(requests.HTTPError):
         lr._run_query("SELECT 1")
 
