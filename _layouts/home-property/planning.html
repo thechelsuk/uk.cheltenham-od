@@ -124,6 +124,7 @@
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from <a href="{{ planning.source_url }}">{{ planning.source }}</a>{% if planning.licence %}, published under the {{ planning.licence }}{% endif %}.
+            Locations from {{ planning.geocoding_source }}. {{ planning.geocoding_attribution }}
             {% include freshness.html file="_data/planning-applications.json" %}
         </small></p>
 

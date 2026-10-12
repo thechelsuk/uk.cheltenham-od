@@ -8,6 +8,13 @@ permalink: /cheltenham-clubs-and-societies
 description: "Clubs and societies to join in Cheltenham for hobbies, history and good company, with meeting places and websites, plus arts and crafts groups."
 type: "activities"
 group: "Things to Do"
+faqs:
+  - q: "How Do I Join a Club or Society in Cheltenham?"
+    a: "Open the group's site from the list above. Each one sets its own meeting times, membership and fees, and many societies' talks and visits are open to guests, so you can try one before joining."
+  - q: "What's the Difference Between a Club and a Society?"
+    a: "On this page, clubs bring people together around a shared hobby, such as photography, film, chess or brass bands. Societies focus on local history, civic life and service to the community."
+  - q: "How Do I Add or Correct a Group?"
+    a: "Send it through our <a href=\"/contact\">contact form</a>. We check the list every month."
 ---
 
 {% include sponsor.html %}

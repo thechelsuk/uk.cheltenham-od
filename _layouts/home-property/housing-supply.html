@@ -73,6 +73,23 @@
             </table>
         </div>
 
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Are Net Additional Dwellings?</h3>
+        <ul>
+            <li>The number of homes Cheltenham gained in a year: new builds, conversions and changes of use, minus any homes lost through demolition or conversion to other uses.</li>
+        </ul>
+
+        <h3>How Many Homes Did Cheltenham Add Last Year?</h3>
+        <ul>
+            <li>{% assign h_n2 = data.net_additional_dwellings.years | last %}{{ h_n2.net_additional_dwellings }} net additional homes in {{ h_n2.year }}.</li>
+        </ul>
+
+        <h3>Is Student Accommodation Included?</h3>
+        <ul>
+            <li>No. Communal accommodation, such as halls of residence, is counted separately on this page and split between student and other use.</li>
+        </ul>
+
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from the Ministry of Housing, Communities &amp; Local Government's live tables on housing supply

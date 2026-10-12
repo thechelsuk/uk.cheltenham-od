@@ -40,6 +40,23 @@
             </table>
         </div>
 
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many Homes Are There in Cheltenham?</h3>
+        <ul>
+            <li>{% assign h_c2 = data.council_tax_stock.years | last %}{% assign h_total = h_c2.all_properties %}{% if h_total >= 1000 %}{{ h_total | divided_by: 1000 }},{{ h_total | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ h_total }}{% endif %} homes were on the council tax list in {{ h_c2.year }}.</li>
+        </ul>
+
+        <h3>What Is the Council Tax Stock?</h3>
+        <ul>
+            <li>A yearly count of every home on the council tax valuation list. It counts homes, not sales or prices.</li>
+        </ul>
+
+        <h3>Why Doesn't It Match Housing Supply?</h3>
+        <ul>
+            <li>They are different measures from different sources. The stock is a total headcount at one date each year, while <a href="/cheltenham-house-prices/housing-supply">housing supply</a> counts the change over a financial year, so the two rarely line up exactly.</li>
+        </ul>
+
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from the Valuation Office Agency's <a href="{{ data.council_tax_stock.source_url }}">Council

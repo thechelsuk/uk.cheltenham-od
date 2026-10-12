@@ -8,6 +8,13 @@ permalink: /cheltenham-sports-clubs
 description: "Grassroots sports clubs to join in Cheltenham, for running, cricket, rugby, cycling, climbing, walking, boxing, archery and triathlon, with how to get involved."
 type: "activities"
 group: "Things to Do"
+faqs:
+  - q: "Can Beginners Join a Sports Club in Cheltenham?"
+    a: "Yes. Most clubs listed here welcome beginners and have junior sections, and many offer a free taster session before you commit to membership."
+  - q: "Is There a Free Way to Run With Others?"
+    a: "Yes. <a href=\"/cheltenham-sports/parkrun\">parkrun</a> holds free, timed weekly runs in and around Cheltenham, open to runners and walkers of any pace."
+  - q: "How Do I Add or Correct a Club?"
+    a: "Send it through our <a href=\"/contact\">contact form</a>. We check the list every month."
 ---
 
 {% include sponsor.html %}

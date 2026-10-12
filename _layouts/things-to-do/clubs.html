@@ -38,6 +38,16 @@
         {% endfor %}
         {% endfor %}
 
+        {% if page.faqs %}
+        <h2>Frequently Asked Questions</h2>
+        {% for faq in page.faqs %}
+        <h3>{{ faq.q }}</h3>
+        <ul>
+            <li>{{ faq.a }}</li>
+        </ul>
+        {% endfor %}
+        {% endif %}
+
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             {% include own-data-credit.html file="_data/clubs.json" %}

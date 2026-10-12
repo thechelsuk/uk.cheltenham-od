@@ -8,6 +8,13 @@ permalink: /cheltenham-arts-and-crafts
 description: "Arts and crafts to take part in around Cheltenham: art and pottery classes, the Open Studios artist community, and galleries and museums to visit."
 type: "activities"
 group: "Things to Do"
+faqs:
+  - q: "Where Can I Learn a Craft in Cheltenham?"
+    a: "The workshops and studios above run hands-on art and pottery classes. Follow each one's link for course dates and prices."
+  - q: "Where Are Cheltenham's Art Galleries?"
+    a: "Nature in Art and The Wilson are public museums, and the Montpellier quarter has a cluster of independent galleries within a few minutes' walk of each other."
+  - q: "How Do I Add or Correct a Studio, Class or Gallery?"
+    a: "Send it through our <a href=\"/contact\">contact form</a>. We check the list every month."
 ---
 
 {% include sponsor.html %}

@@ -196,7 +196,7 @@ Not every page needs this. Add it when there's a real dataset and it's worth a s
 </script>
 ```
 
-**FAQs don't need a schema block.** Write them in the standard shape and `_plugins/faq_schema.rb` generates the `FAQPage` JSON-LD from them at build time: an `<h2>` reading exactly "Frequently Asked Questions", then each question as an `<h3>`, with its answer as a `<ul>` (one `<li>` per point, so a longer answer is several bullets). Because the structured data is read from the visible text, the two can't drift apart, and FAQs that use Liquid values (like the ward pages) work too. Put the FAQs at the bottom of the page, after the data: in the page's own layout when it has one, and in the Markdown only for pages on the shared `page` layout (such as recycling and the newsletter). In a layout:
+**FAQs don't need a schema block.** Write them in the standard shape and `_plugins/faq_schema.rb` generates the `FAQPage` JSON-LD from them at build time: an `<h2>` reading exactly "Frequently Asked Questions", then each question as an `<h3>`, with its answer as a `<ul>` (one `<li>` per point, so a longer answer is several bullets). Because the structured data is read from the visible text, the two can't drift apart, and FAQs that use Liquid values (like the ward pages) work too. Put the FAQs at the bottom of the page, after the data: in the page's own layout when it has one, and in the Markdown only for pages on the shared `page` layout (such as recycling and the newsletter). When one layout serves several pages that need different questions (such as the three clubs pages on `things-to-do/clubs`), put each page's questions in its own front matter as `faqs:` and have the layout print them after the data. Don't put page copy in a `_data` file. In a layout:
 
 ```html
 <h2>Frequently Asked Questions</h2>
@@ -205,6 +205,26 @@ Not every page needs this. Add it when there's a real dataset and it's worth a s
 <ul>
     <li>…</li>
 </ul>
+```
+
+In a shared layout, reading each page's own questions:
+
+```yaml
+faqs:
+  - q: "How Do I Join a Club or Society in Cheltenham?"
+    a: "Open the group's site from the list above."
+```
+
+```liquid
+{% if page.faqs %}
+<h2>Frequently Asked Questions</h2>
+{% for faq in page.faqs %}
+<h3>{{ faq.q }}</h3>
+<ul>
+    <li>{{ faq.a }}</li>
+</ul>
+{% endfor %}
+{% endif %}
 ```
 
 In a Markdown page:

@@ -77,6 +77,23 @@
         </div>
         {% assign src = site.data.sources | where: "id", "openstreetmap-overpass" | first %}
 
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>When Is the Cheltenham Festival in 2027?</h3>
+        <ul>
+            <li>{% assign h_race = site.data.festivals.festivals | where: "slug", "racing" | first %}From {{ h_race.start | date: "%A %-d %B" }} to {{ h_race.end | date: "%A %-d %B %Y" }}, at Cheltenham Racecourse, Prestbury Park.</li>
+        </ul>
+
+        <h3>How Far Ahead Should I Book?</h3>
+        <ul>
+            <li>As early as you can. It's the busiest week of the year in Cheltenham, and rooms near the racecourse book up months ahead.</li>
+        </ul>
+
+        <h3>Do You Earn Money From These Links?</h3>
+        <ul>
+            <li>Yes. Booking links on this page are affiliate links, so we may earn a commission if you book through them, at no extra cost to you.</li>
+        </ul>
+
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
             Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/races.json" %}
