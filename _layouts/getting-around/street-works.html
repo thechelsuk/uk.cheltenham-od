@@ -41,7 +41,6 @@
                         <th scope="col">Carried Out By</th>
                         <th scope="col" class="date">Starts</th>
                         <th scope="col" class="date">Ends</th>
-                        <th scope="col" class="number">Miles from Town Centre</th>
                         <th scope="col" class="map">Map</th>
                     </tr>
                 </thead>
@@ -54,9 +53,8 @@
                         <td>{{ w.status }}</td>
                         <td>{{ w.traffic_management }}</td>
                         <td>{{ w.promoter }}</td>
-                        <td class="date" data-val="{{ w.start }}">{% if w.start.size > 10 %}{{ w.start | date: "%Y-%m-%d %H:%M" }}{% else %}{{ w.start }}{% endif %}</td>
+                        {% assign start_day = w.start | slice: 0, 10 %}<td class="date" data-val="{{ start_day }}">{{ start_day }}</td>
                         <td class="date" data-val="{{ w.end }}">{{ w.end }}</td>
-                        <td class="number" data-val="{{ w.distance_miles }}">{{ w.distance_miles }}</td>
                         <td class="map">{% include pin.html lat=w.lat lng=w.lon label=w.street %}</td>
                     </tr>
                     {% endfor %}
