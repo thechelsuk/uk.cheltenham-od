@@ -17,7 +17,7 @@ Cheltenham Open Data publishes public data about Cheltenham and Gloucestershire 
 - We use the original publisher wherever we can: government departments, the Office for National Statistics, the NHS, the police, the Environment Agency, the borough and county councils, and regulators such as Ofsted and the Care Quality Commission. We avoid second-hand copies of official data.
 - Every data page names its source and its licence, and says when it was last updated or how often it is checked.
 - Where a source has no open licence, or its terms are unclear, we say so rather than assume.
-- Where we write facts ourselves, such as the dates on a timeline, we only publish a fact that we can confirm from two independent sources.
+- Where we write facts ourselves, we take them from the official source where there is one, such as a festival's dates from the festival itself. Supporting facts with no single official source, such as the events on a timeline, are only published once we can confirm them from two independent sources.
 - Where we combine or calculate figures, we explain how on the page, for example how a ward's flood risk is counted, or why a year's figures are missing.
 
 ## How Pages Are Updated

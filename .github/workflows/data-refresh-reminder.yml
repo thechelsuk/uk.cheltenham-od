@@ -50,7 +50,7 @@ jobs:
 
           - [ ] **Bin collections** — no download: check the council's [bank holiday collections page](https://www.cheltenham.gov.uk/bins-and-recycling/check-your-collection-day/bank-holiday-waste-and-recycling-collection/) for new or changed dates and its [what to put in your bin](https://www.cheltenham.gov.uk/bins-and-recycling/what-to-put-in-your-bin/) and garden waste pages for changes to containers, prices or the winter break, then update `_data/bin-collections.json`. The Week 1/Week 2 weeks refresh themselves weekly.
 
-          - [ ] **Curated lists** — no download: check each list against the groups' and organisers' own sites, and update its JSON for anything added, closed or changed: `_data/clubs.json` (sports clubs, clubs and societies, arts and crafts), `_data/third-spaces.json`, `_data/helpful-contacts.json`, `_data/local-support.json`, `_data/festivals.json` (add the next dates once two sources confirm them), `_data/gloucestershire-cricket.json` and `_data/cycle-venues.json`. Their pages say "checked monthly". Also act on any additions or corrections sent through the contact form.
+          - [ ] **Curated lists** — no download: check each list against the groups' and organisers' own sites, and update its JSON for anything added, closed or changed: `_data/clubs.json` (sports clubs, clubs and societies, arts and crafts), `_data/third-spaces.json`, `_data/helpful-contacts.json`, `_data/local-support.json`, `_data/festivals.json` (add the next dates once each festival's own site announces them), `_data/gloucestershire-cricket.json` and `_data/cycle-venues.json`. Their pages say "checked monthly". Also act on any additions or corrections sent through the contact form.
 
           Close this issue once done — a new one opens automatically next month.
           EOF
@@ -67,7 +67,7 @@ jobs:
             [ -n "$reviewed" ] || continue
             if [[ "$reviewed" < "$cutoff" ]]; then
               url=$(awk '/^---/{n++; next} n==1 && /^permalink:/{print $2; exit}' "$file")
-              echo "- [ ] **Review [${url}](https://cheltenham-od.uk${url})** — last reviewed ${reviewed}. Check its facts against two sources, fix anything out of date, then set \`reviewed:\` to today in \`${file}\`." >> due.md
+              echo "- [ ] **Review [${url}](https://cheltenham-od.uk${url})** — last reviewed ${reviewed}. Check its facts (official source for dates and figures, two sources for supporting facts), fix anything out of date, then set \`reviewed:\` to today in \`${file}\`." >> due.md
             fi
           done < <(find _pages -name '*.md' | sort)
           if [ -s due.md ]; then

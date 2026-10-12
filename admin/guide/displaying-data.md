@@ -247,7 +247,12 @@ reviewed: 2026-10-12
 
 The `page` layout then ends with an "About This Page" line: "Last reviewed 12 October 2026. Spotted something out of date? Let us know." A layout with its own "About This Data" section adds the same sentence there instead (see `_layouts/safety-environment/flood-2007.html`).
 
-Set the date only after checking the page's facts against two sources, never for a typo fix or a link change. The monthly reminder issue lists every page whose date is more than six months old. Policy pages keep their own "last updated" or "effective date" lines and don't use `reviewed:`.
+Set the date only after checking the page's facts, never for a typo fix or a link change. How many sources a fact needs depends on where it comes from:
+
+- **From the official source, one is enough.** A festival's dates from the festival's own site, a club's league from the club or the league, a figure from the publisher's own dataset (ONS, Ofsted, OpenStreetMap, the site's fetched data).
+- **Supporting facts need two independent sources.** Background claims we write ourselves, such as a distance between towns, a "longest-running" or "first" claim, a timeline event or a figure quoted from a report. If only one source backs it, leave it out rather than hedge it.
+
+The monthly reminder issue lists every page whose date is more than six months old. Policy pages keep their own "last updated" or "effective date" lines and don't use `reviewed:`.
 
 ## Map Pins in Table Cells
 
