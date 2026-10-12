@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T11:55:35+01:00",
+  "generated_at": "2026-10-12T12:00:37+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-12T11:48",
-      "expected": "2026-10-12T11:55",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
     {
       "scheduled": "2026-10-12T11:52",
       "expected": "2026-10-12T12:08",
@@ -115,7 +100,7 @@
     },
     {
       "scheduled": "2026-10-12T12:15",
-      "expected": "2026-10-12T12:20",
+      "expected": "2026-10-12T12:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -160,19 +145,28 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-12T12:40",
+      "expected": "2026-10-12T12:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-12T11:46",
-      "expected": "2026-10-12T11:54",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by congestion"
-    },
     {
       "scheduled": "2026-10-12T11:51",
       "expected": "2026-10-12T12:07",
@@ -205,7 +199,7 @@
     },
     {
       "scheduled": "2026-10-12T12:14",
-      "expected": "2026-10-12T12:19",
+      "expected": "2026-10-12T12:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +245,16 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-12T12:38",
+      "expected": "2026-10-12T12:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
