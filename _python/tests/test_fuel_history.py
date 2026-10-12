@@ -6,13 +6,18 @@ Run from the repository root:
     .venv/bin/python -m pytest _python/tests
 """
 import importlib.util
+import json
 import pathlib
 
+import pytest
+
 import fuel_history
+import helper
 
 SPEC = importlib.util.spec_from_file_location(
     "fuel_uk_weekly", pathlib.Path(__file__).resolve().parents[1] / "fuel-uk-weekly.py"
 )
+assert SPEC is not None and SPEC.loader is not None
 uk_weekly = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(uk_weekly)
 
@@ -80,3 +85,41 @@ def test_weekly_csv_parses_iso_dates_and_keeps_weeks_covering_local_data():
         {"week": "2026-08-31", "unleaded": 171.0, "diesel": 194.0},
         {"week": "2026-09-07", "unleaded": 171.5, "diesel": 194.6},
     ]
+
+
+class FakeResponse:
+    def __init__(self, body=None, text=""):
+        self._body, self.text = body, text
+
+    def json(self):
+        return self._body
+
+
+def attachments(*titles):
+    return FakeResponse({"details": {"attachments": [{"title": t, "url": f"https://example.org/{i}.csv"}
+                                                     for i, t in enumerate(titles)]}})
+
+
+def test_csv_url_picks_the_2018_onwards_csv(monkeypatch):
+    monkeypatch.setattr(helper, "get", lambda url: attachments("Weekly prices 2003 to 2017 CSV",
+                                                               "Weekly road fuel prices (2018 to 2026) CSV"))
+    assert uk_weekly.csv_url() == "https://example.org/1.csv"
+    monkeypatch.setattr(helper, "get", lambda url: attachments("Weekly prices ODS"))
+    with pytest.raises(RuntimeError, match="No 2018-onwards CSV"):
+        uk_weekly.csv_url()
+
+
+def test_main_keeps_weeks_from_the_local_history_start(tmp_path, monkeypatch):
+    data = tmp_path / "_data"
+    data.mkdir()
+    (data / "fuel-prices-history.json").write_text(json.dumps({"first_date": "2026-09-07"}))
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
+    monkeypatch.setattr(uk_weekly, "csv_url", lambda: "https://example.org/prices.csv")
+    monkeypatch.setattr(helper, "get", lambda url: FakeResponse(text=CSV))
+    written = {}
+    monkeypatch.setattr(helper, "write_json", lambda path, payload: written.update(path=path, payload=payload))
+
+    uk_weekly.main()
+
+    assert written["path"] == data / "fuel-uk-weekly.json"
+    assert [w["week"] for w in written["payload"]["weeks"]] == ["2026-08-31", "2026-09-07"]
