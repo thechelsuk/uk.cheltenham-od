@@ -26,7 +26,7 @@
         var html =
             "<strong>" + (incident.category || "Power cut") + "</strong>" +
             "<br>" + (incident.status || "") +
-            (incident.confirmed_off ? "<br>" + incident.confirmed_off + " properties affected" : "") +
+            "<br>" + (incident.confirmed_off || 0) + " properties off, " + (incident.restored || 0) + " restored" +
             (incident.postcodes && incident.postcodes.length ? "<br>" + incident.postcodes.join(", ") : "");
         L.marker([incident.lat, incident.lon]).addTo(map).bindPopup(html);
         bounds.push([incident.lat, incident.lon]);

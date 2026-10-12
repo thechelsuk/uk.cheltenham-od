@@ -56,3 +56,16 @@ def test_alert_leaves_out_a_restored_cut():
 def test_alert_gives_the_time_the_cut_was_reported():
     html = power.build_alert_html([_incident()])
     assert "reported 2026-10-11 20:40" in html
+
+
+def test_incident_counts_properties_affected_as_off_plus_restored():
+    row = {"fault_id": "INCD-1", "status": "In Progress", "confirmed_off": "4", "restored": "39",
+           "postcode": "GL50 4DB"}
+    assert power.build_incident(row)["affected"] == 43
+
+
+def test_older_history_records_get_properties_affected_filled_in():
+    records = [{"fault_id": "A", "confirmed_off": 25, "restored": 39}, {"fault_id": "B", "affected": 7}]
+    power.fill_affected(records)
+    assert records[0]["affected"] == 39
+    assert records[1]["affected"] == 7

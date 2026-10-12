@@ -62,14 +62,18 @@ def to_int(value):
 
 
 def build_incident(row):
+    confirmed_off = to_int(row.get("confirmed_off"))
+    restored = to_int(row.get("restored"))
     return {
         "fault_id": row.get("fault_id") or "",
         "status": row.get("status") or "",
         "planned": (row.get("planned") or "").lower() == "true",
         "category": helper.clean_name(row.get("category") or ""),
-        "confirmed_off": to_int(row.get("confirmed_off")),
+        "confirmed_off": confirmed_off,
         "predicted_off": to_int(row.get("predicted_off")),
-        "restored": to_int(row.get("restored")),
+        "restored": restored,
+        # Every property this cut has taken off, whether still off or back on.
+        "affected": confirmed_off + restored,
         "voltage": row.get("voltage") or "",
         "date_of_reported_fault": row.get("date_of_reported_fault") or "",
         "last_updated": row.get("last_updated") or "",
@@ -79,6 +83,15 @@ def build_incident(row):
         "lon": to_float(row.get("location_longitude")),
         "postcodes": row_postcodes(row),
     }
+
+
+def fill_affected(records):
+    """History records from before `affected` was kept: their peak
+    properties off or the properties restored, whichever is larger, is the
+    nearest figure to the total the cut affected."""
+    for record in records:
+        if "affected" not in record:
+            record["affected"] = max(record.get("confirmed_off") or 0, record.get("restored") or 0)
 
 
 def build_alert_html(incidents):
@@ -121,7 +134,7 @@ def build_atom_items(history_records, page_url):
         title = f"Power cut near {area} — {status}" if status else f"Power cut near {area}"
         summary_parts = [record.get("category") or ""]
         if record.get("confirmed_off"):
-            summary_parts.append(f"{record['confirmed_off']} properties affected (peak)")
+            summary_parts.append(f"{record.get('affected') or record['confirmed_off']} properties affected")
         if record.get("date_of_restoration"):
             summary_parts.append(f"Restored: {record['date_of_restoration']}")
         items.append({
@@ -180,8 +193,9 @@ if __name__ == "__main__":
 
     history_records = helper.update_history(
         history_records, incidents, id_key="fault_id", now_iso=now_iso,
-        peak_fields=["confirmed_off"], retention_days=HISTORY_RETENTION_DAYS,
+        peak_fields=["confirmed_off", "affected"], retention_days=HISTORY_RETENTION_DAYS,
     )
+    fill_affected(history_records)
     for record in history_records:
         if record.get("resolved_iso") and not record.get("date_of_restoration"):
             record["date_of_restoration"] = record["resolved_iso"]
