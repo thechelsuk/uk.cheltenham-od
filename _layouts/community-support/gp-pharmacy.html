@@ -1,0 +1,75 @@
+{% include header.html %}
+{% assign data = site.data["gp-pharmacy"] %}
+{% assign cqc = site.data["cqc"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.gp_count }}</strong> GP practices</li>
+                <li><strong>{{ data.pharmacy_count }}</strong> pharmacies</li>
+                <li><strong>{{ data.gps_good_or_better }}</strong> practices rated good or outstanding</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>GP Practices</h2>
+        {% if data.gp_practices.size > 0 %}
+        {% for e in data.gp_practices %}
+        <h3>{{ e.heading | smartify }}</h3>
+        <ul>
+            <li>Address: <a href="{{ e.maps_url }}">{{ e.address }}</a></li>
+            {% if e.phone != "" %}<li>Phone: <a href="tel:{{ e.tel }}">{{ e.phone }}</a></li>{% endif %}
+            {% if e.cqc %}<li>CQC rating: <a href="{{ e.cqc.url }}">{{ e.cqc.overall }}</a>{% if e.cqc.published %} ({{ e.cqc.published }}){% endif %}</li>{% endif %}
+        </ul>
+        {% endfor %}
+        {% else %}
+        <blockquote>
+            <p>No GP practices could be found on the NHS register at the last check.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2>Pharmacies</h2>
+        {% if data.pharmacies.size > 0 %}
+        {% for e in data.pharmacies %}
+        <h3>{{ e.heading | smartify }}</h3>
+        <ul>
+            <li>Address: <a href="{{ e.maps_url }}">{{ e.address }}</a></li>
+            {% if e.phone != "" %}<li>Phone: <a href="tel:{{ e.tel }}">{{ e.phone }}</a></li>{% endif %}
+        </ul>
+        {% endfor %}
+        {% else %}
+        <blockquote>
+            <p>No pharmacies could be found on the NHS register at the last check.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Many GP Practices and Pharmacies Are There in Cheltenham?</h3>
+        <ul>
+            <li>This page lists {{ data.gp_count }} GP practices and {{ data.pharmacy_count }} pharmacies in the {% for d in data.postcode_districts %}{% if forloop.last and forloop.length > 1 %} and {% elsif forloop.index > 1 %}, {% endif %}{{ d }}{% endfor %} postcode districts.</li>
+        </ul>
+
+        <h3>How Do I Register With a GP in Cheltenham?</h3>
+        <ul>
+            <li>Contact any practice that covers your address. You don't need a referral or your old practice's permission.</li>
+        </ul>
+
+        <h3>Where Do the GP Ratings Come From?</h3>
+        <ul>
+            <li>Each rating is the practice's latest overall rating from the Care Quality Commission, with the date its report was published.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}, and GP ratings from the <a href="{{ cqc.source_url }}">{{ cqc.source }}</a>{% if cqc.licence %}, published under the {{ cqc.licence }}{% endif %}.
+            {% include freshness.html file="_data/gp-pharmacy.json" %}
+        </small></p>
+    </div>
+</div>
+{% include footer.html %}
