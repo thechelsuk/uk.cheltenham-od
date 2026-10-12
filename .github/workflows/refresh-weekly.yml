@@ -33,6 +33,7 @@ jobs:
                   CQC_KEY: ${{ secrets.CQC_KEY }}
               run: |
                   python _python/cqc.py || echo "::warning::cqc.py failed, continuing with other scripts"
+                  python _python/bin-weeks.py || echo "::warning::bin-weeks.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit

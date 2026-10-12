@@ -2,21 +2,21 @@
 layout: explore-category
 title: "Home & Property in Cheltenham"
 seo_title: "Home and Property in Cheltenham: Prices, Rents and More"
-seo: "Cheltenham house prices, rents, council tax, schools, nurseries, the university, planning applications, broadband, mobile coverage and recycling."
+seo: "Cheltenham house prices, rents, council tax, schools, nurseries, the university, planning applications, broadband, mobile coverage, recycling and bins."
 permalink: /explore/home-property
-description: "House prices, rents, housing supply, council tax, schools and catchment areas, nurseries, the university, planning, broadband, mobile coverage and recycling — local data for homeowners and renters."
+description: "House prices, rents, housing supply, council tax, schools and catchment areas, nurseries, the university, planning, broadband, mobile coverage, recycling and bin collections — local data for homeowners and renters."
 type: "property"
 group: "Home & Property"
 ---
 
 ## Home & Property
 
-Buying, renting or just curious about the area — house prices, rents, council tax, schools, planning applications, home energy ratings, connectivity and recycling all in one place.
+Buying, renting or just curious about the area — house prices, rents, council tax, schools, planning applications, home energy ratings, connectivity, recycling and bin collections all in one place.
 
 Our [house prices](/cheltenham-house-prices) page tracks sales from Land Registry Price Paid Data, with a full year-by-year archive going back to 2023, while [rents](/cheltenham-rent-prices) shows the average private rent by bedrooms and property type, month by month since 2015. Our [home affordability](/cheltenham-house-prices/affordability) page then asks how many of those homes a typical full-time earner could actually afford. Alongside them, [housing supply](/cheltenham-house-prices/housing-supply) shows net new homes and student accommodation, and the [total number of properties](/cheltenham-house-prices/council-tax-stock) on the council tax list shows how the town's housing stock has grown over time. Our [council tax](/cheltenham-council-tax) page shows charges by band for the borough and the five parishes that set their own precept, and [home energy ratings](/cheltenham-energy-ratings) maps how energy efficient the town's homes are, ward by ward. Thinking about an extension or new development nearby? [Planning applications](/cheltenham-planning-applications) are pulled directly from Cheltenham Borough Council's register, and shown on a map.
 
 Moving with children? [Schools & catchment areas](/cheltenham-schools) covers primary, secondary, independent and special schools, with each school's Ofsted rating and full inspection history, and separate [primary](/cheltenham-schools/catchment-areas/primary) and [secondary](/cheltenham-schools/catchment-areas/secondary) catchment maps, and [nurseries and childcare](/cheltenham-nurseries-childcare) lists every registered nursery, pre-school and out-of-school club with its latest Ofsted outcome. Studying here? The [University of Gloucestershire](/university-of-gloucestershire) page maps its campuses in Cheltenham and Gloucester and shows what is taught at each.
 
-Checking whether an address is well connected? [Broadband coverage](/cheltenham-broadband-internet-speeds) is broken down by ward, and [mobile coverage](/cheltenham-mobile-coverage) covers 2G to 5G across all four networks. [Recycling](/cheltenham-recycling) covers your nearest recycling centres and bring banks, what can be recycled, and refill and plastic-free shopping. Together these give a fuller picture of an area than any single source on its own.
+Checking whether an address is well connected? [Broadband coverage](/cheltenham-broadband-internet-speeds) is broken down by ward, and [mobile coverage](/cheltenham-mobile-coverage) covers 2G to 5G across all four networks. [Recycling](/cheltenham-recycling) covers your nearest recycling centres and bring banks, what can be recycled, and refill and plastic-free shopping, and [bin collections](/cheltenham-bin-collections) shows whether it's Week 1 or Week 2 and what goes in each bin. Together these give a fuller picture of an area than any single source on its own.
 
 Choosing between neighbourhoods? Our [Cheltenham wards](/cheltenham-wards) page maps all 20 electoral wards and compares them on crime, house prices, broadband and elections, and each ward has its own profile with its councillors and the nearest GPs, dentists, schools, parks and other local services.

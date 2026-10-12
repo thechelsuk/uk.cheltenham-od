@@ -28,7 +28,7 @@ Cheltenham Open Data is built and run by Mat Benfield ([thechels.uk](https://the
 {{ data_pages_count }} data pages in six topics, drawn from {{ site.data.sources | size }} data sources:
 
 - **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks and permit zones, roadworks, street works, reported street problems, buses, trains, taxi ranks and cycle routes.
-- **[Home & Property](/explore/home-property)**: house prices, rents, council tax, home energy ratings, schools, nurseries and the university, planning applications, broadband, mobile coverage and recycling.
+- **[Home & Property](/explore/home-property)**: house prices, rents, council tax, home energy ratings, schools, nurseries and the university, planning applications, broadband, mobile coverage, recycling and bin collections.
 - **[Safety & Environment](/explore/safety-environment)**: crime figures, road collisions, security alerts, flood warnings and river levels, river water quality, sewage overflows, air quality, wildfire risk and power cuts.
 - **[Things to Do](/explore/things-to-do)**: festivals, points of interest, play parks, public toilets, where to eat, food hygiene ratings, places to stay, sport, clubs and societies, and arts and crafts.
 - **[Community & Support](/explore/community-support)**: GPs and pharmacies, dentists, opticians, A&E waiting times, care homes, the COVID-19 pandemic, food banks, helplines, charities, third spaces, and post offices and parcel lockers.

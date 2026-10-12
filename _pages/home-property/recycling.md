@@ -18,6 +18,8 @@ Please follow the Reduce, Reuse, Recycle philosophy where possible
 - **Reusing** - is better - do you need to throw it away, or can it be used for something else? Check local community services like Olio, Freecycle or [classified adverts](/cheltenham-classifieds) for options to give unwanted items to a new home.
 - **Recycling** - your waste is good - if you need to bin it, can it be recycled either kerbside, at a designated centre or bank?
 
+For your kerbside boxes and bins, our [bin collections](/cheltenham-bin-collections) page shows whether it's Week 1 or Week 2, what goes in each bin and any bank holiday changes.
+
 ## Recycling Centres in Cheltenham
 
 The main recycling centre for Cheltenham is located at Wingmoor Farm, half mile west of Bishop's Cleeve, on the road to Stoke Orchard.

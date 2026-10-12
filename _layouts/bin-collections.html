@@ -1,0 +1,147 @@
+{% include header.html %}
+{% assign weeks = site.data["bin-weeks"].weeks %}
+{% assign bins = site.data["bin-collections"] %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign upcoming = weeks | where_exp: "w", "w.end >= today" %}
+{% assign this_week = upcoming.first %}
+{% assign next_week = upcoming[1] %}
+{% assign next_change = upcoming | where_exp: "w", "w.bank_holidays.size > 0" | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>Week {{ this_week.week }}</strong> {{ this_week.start | date: "%-d %b" }} to {{ this_week.end | date: "%-d %b" }}</li>
+                <li><strong>Week {{ next_week.week }}</strong> next week</li>
+                {% if next_change %}<li><strong>{{ next_change.start | date: "%-d %b" }}</strong> next bank holiday week</li>{% endif %}
+                <li><strong>{{ bins.garden_waste.price }}</strong> garden waste a year</li>
+            </ul>
+            <ul class="header-links">
+                <li><a href="{{ bins.checker_url }}">Find your collection day &rarr;</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="weeks">Week 1 and Week 2</h2>
+        <p>The next eight collection weeks. Your collection day stays the same every week; whether your
+            recycling or your green bin goes out depends on whether it's Week 1 or Week 2.</p>
+        <div class="table-scroll">
+            <table class="bin-weeks-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Week Starting</th>
+                        <th scope="col">Week</th>
+                        <th scope="col">Bank Holiday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in upcoming limit: 8 %}
+                    <tr>
+                        <td class="date" data-val="{{ w.start }}">{{ w.start }}</td>
+                        <td>Week {{ w.week }}</td>
+                        <td>{% if w.bank_holidays.size > 0 %}{% for h in w.bank_holidays %}{{ h.title }} ({{ h.date | date: "%A" }}){% unless forloop.last %}, {% endunless %}{% endfor %}: collections change{% else %}None{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="what-goes-where">What Goes in Each Bin</h2>
+        {% for c in bins.containers %}
+        <h3>{{ c.name }}</h3>
+        <ul>
+            <li><strong>Collected:</strong> {{ c.frequency }}.</li>
+            <li><strong>Yes:</strong> {{ c.takes }}.</li>
+            <li><strong>No:</strong> {{ c.not }}.</li>
+            <li><a href="{{ c.url }}">Full list on the council's site</a> &rarr;</li>
+        </ul>
+        {% endfor %}
+
+        <h2 id="changes">Bank Holiday and Christmas Changes</h2>
+        <p>In a week with a bank holiday, collections move to a different day, sometimes earlier and sometimes
+            to a Saturday. The council publishes the new days on its
+            <a href="{{ bins.changes_url }}">bank holiday collections page</a>.</p>
+        {% assign upcoming_changes = bins.changes | where_exp: "c", "c.usual >= today" %}
+        {% if upcoming_changes.size > 0 %}
+        <div class="table-scroll">
+            <table class="bin-changes-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Usual Collection</th>
+                        <th scope="col" class="date">Moves To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in upcoming_changes %}
+                    <tr>
+                        <td class="date" data-val="{{ c.usual }}">{{ c.usual }} ({{ c.usual | date: "%A" }})</td>
+                        <td class="date" data-val="{{ c.revised }}">{{ c.revised }} ({{ c.revised | date: "%A" }})</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No changes published yet for the coming bank holidays. Check the council's page nearer the time.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2 id="garden-waste">Garden Waste</h2>
+        <p>The brown garden waste bin is a paid service: {{ bins.garden_waste.price }} a bin for
+            {{ bins.garden_waste.term }}, plus {{ bins.garden_waste.delivery }} delivery for each bin. Over
+            Christmas and New Year there are no garden waste collections from
+            {{ bins.garden_waste.break_from | date: "%-d %B %Y" }} until {{ bins.garden_waste.restart | date: "%-d %B %Y" }}.
+            <a href="{{ bins.garden_waste.url }}">Sign up or renew on the council's site</a> &rarr;</p>
+
+        <h2 id="other-services">Other Bin Services</h2>
+        <ul>
+            {% for l in bins.links %}
+            <li><a href="{{ l.url }}">{{ l.name }}</a> &rarr;</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Do I Know if I'm Week 1 or Week 2?</h3>
+        <ul>
+            <li>Enter your postcode in the council's <a href="{{ bins.checker_url }}">collection day checker</a>.
+                It lists the dates for your recycling, green bin, food caddy and garden waste. Once you know
+                whether your recycling falls in Week 1 or Week 2, this page shows which week it is.</li>
+        </ul>
+
+        <h3>What Time Should I Put My Bins Out?</h3>
+        <ul>
+            <li>By 7am on your collection day. In weeks with a bank holiday, some areas are collected from 6am.</li>
+        </ul>
+
+        <h3>Where Can I Take Extra Rubbish or Recycling?</h3>
+        <ul>
+            <li>Extra bags beside your bin aren't collected. Our <a href="/cheltenham-recycling">recycling</a> page
+                maps the town's recycling banks and household recycling centres, and the council collects large items
+                for a fee.</li>
+        </ul>
+
+        <h3>Why Doesn't This Page Show My Street's Day?</h3>
+        <ul>
+            <li>The council only publishes collection days through its postcode checker, one address at a time,
+                so we link to it rather than copy it.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ bins.source_url }}">{{ bins.source }}</a>'s bins and recycling pages and its
+            <a href="{{ site.data["bin-weeks"].calendar_url }}">Week 1/Week 2 collection calendar</a>, which state
+            no licence. Bank holiday dates from GOV.UK. Weeks: {% include freshness.html file="_data/bin-weeks.json" %}
+            Bins, changes and garden waste: {% include freshness.html file="_data/bin-collections.json" %}
+        </small></p>
+    </div>
+</div>
+
+{% include footer.html %}

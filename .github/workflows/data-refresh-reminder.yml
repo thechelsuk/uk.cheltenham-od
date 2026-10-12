@@ -44,6 +44,8 @@ jobs:
 
           - [ ] **Home energy scores** — no file to download: with `EPC_KEY` in `.env`, run `_python/local/epc-scores.py`. It reads the EPC register's search for Cheltenham, fetches full details only for homes with a new certificate since last month (stored in `_data-sources/epc-homes.json`), and rewrites `_data/epc-scores.json`. Commit that file. The ratings themselves (`_data/epc.json`) refresh automatically in the monthly workflow.
 
+          - [ ] **Bin collections** — no download: check the council's [bank holiday collections page](https://www.cheltenham.gov.uk/bins-and-recycling/check-your-collection-day/bank-holiday-waste-and-recycling-collection/) for new or changed dates and its [what to put in your bin](https://www.cheltenham.gov.uk/bins-and-recycling/what-to-put-in-your-bin/) and garden waste pages for changes to containers, prices or the winter break, then update `_data/bin-collections.json`. The Week 1/Week 2 weeks refresh themselves weekly.
+
           - [ ] **Curated lists** — no download: check each list against the groups' and organisers' own sites, and update its JSON for anything added, closed or changed: `_data/clubs.json` (sports clubs, clubs and societies, arts and crafts), `_data/third-spaces.json`, `_data/helpful-contacts.json`, `_data/local-support.json`, `_data/festivals.json` (add the next dates once two sources confirm them), `_data/gloucestershire-cricket.json` and `_data/cycle-venues.json`. Their pages say "checked monthly". Also act on any additions or corrections sent through the contact form.
 
           Close this issue once done — a new one opens automatically next month.
