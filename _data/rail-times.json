@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T08:00:31+01:00",
+  "generated_at": "2026-10-13T08:05:35+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-13T07:43",
-      "expected": null,
+      "expected": "2026-10-13T08:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -30,29 +30,9 @@
       ]
     },
     {
-      "scheduled": "2026-10-13T08:01",
-      "expected": "2026-10-13T08:01",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-10-13T08:12",
-      "expected": "2026-10-13T08:14",
-      "status": "Delayed",
+      "expected": "2026-10-13T08:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -78,8 +58,8 @@
     },
     {
       "scheduled": "2026-10-13T08:15",
-      "expected": "2026-10-13T08:15",
-      "status": "On time",
+      "expected": "2026-10-13T08:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -163,22 +143,33 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-10-13T08:59",
+      "expected": "2026-10-13T08:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-13T07:59",
-      "expected": "2026-10-13T07:59",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-13T08:10",
-      "expected": "2026-10-13T08:13",
+      "expected": "2026-10-13T08:12",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -188,8 +179,8 @@
     },
     {
       "scheduled": "2026-10-13T08:14",
-      "expected": "2026-10-13T08:14",
-      "status": "On time",
+      "expected": "2026-10-13T08:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -244,6 +235,16 @@
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T08:57",
+      "expected": "2026-10-13T08:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
