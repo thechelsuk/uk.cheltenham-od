@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T07:55:32+01:00",
+  "generated_at": "2026-10-13T08:00:31+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-13T07:43",
-      "expected": "2026-10-13T07:55",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -27,48 +27,6 @@
         "Severn Tunnel Junction",
         "Newport (South Wales)",
         "Cardiff Central"
-      ]
-    },
-    {
-      "scheduled": "2026-10-13T07:55",
-      "expected": "2026-10-13T07:55",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
-      "scheduled": "2026-10-13T07:55",
-      "expected": "2026-10-13T07:55",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Gloucester",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
       ]
     },
     {
@@ -93,8 +51,8 @@
     },
     {
       "scheduled": "2026-10-13T08:12",
-      "expected": "2026-10-13T08:12",
-      "status": "On time",
+      "expected": "2026-10-13T08:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -166,29 +124,48 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-10-13T08:43",
+      "expected": "2026-10-13T08:43",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-10-13T08:52",
+      "expected": "2026-10-13T08:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-13T07:50",
-      "expected": "2026-10-13T07:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "London Paddington",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-13T07:54",
-      "expected": "2026-10-13T07:54",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Gloucester",
-      "destination": "Nottingham",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-13T07:59",
       "expected": "2026-10-13T07:59",
@@ -201,8 +178,8 @@
     },
     {
       "scheduled": "2026-10-13T08:10",
-      "expected": "2026-10-13T08:10",
-      "status": "On time",
+      "expected": "2026-10-13T08:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -257,6 +234,16 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T08:50",
+      "expected": "2026-10-13T08:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
