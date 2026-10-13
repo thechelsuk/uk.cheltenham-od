@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T16:50:08+01:00",
+  "generated_at": "2026-10-13T16:55:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-13T16:50",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-10-13T16:52",
       "expected": null,
@@ -114,7 +100,7 @@
     },
     {
       "scheduled": "2026-10-13T17:19",
-      "expected": "2026-10-13T17:24",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -160,19 +146,28 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-13T17:40",
+      "expected": "2026-10-13T17:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-13T16:47",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been cancelled because of a fault on this train"
-    },
     {
       "scheduled": "2026-10-13T16:50",
       "expected": null,
@@ -205,7 +200,7 @@
     },
     {
       "scheduled": "2026-10-13T17:18",
-      "expected": "2026-10-13T17:23",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +246,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T17:38",
+      "expected": "2026-10-13T17:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
