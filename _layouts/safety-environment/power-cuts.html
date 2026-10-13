@@ -6,13 +6,22 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            {% assign h_live = 0 %}{% assign h_off = 0 %}{% assign h_back = 0 %}{% assign h_postcodes = "" | split: "" %}{% for i in data.incidents %}{% if i.status != "Restored" and i.confirmed_off > 0 or i.status != "Restored" and i.predicted_off > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus: i.confirmed_off %}{% assign h_back = h_back | plus: i.restored %}{% assign h_postcodes = h_postcodes | concat: i.postcodes %}{% endif %}{% endfor %}{% assign h_postcodes = h_postcodes | uniq %}{% assign h_planned = data.incidents | where: "planned", true | sort: "planned_start" %}{% assign h_faults = data.incidents | where: "planned", false %}
+            {% assign h_live = 0 %}{% assign h_off = 0 %}{% assign h_back = 0 %}{% assign h_postcodes = "" | split: ""
+            %}{% for i in data.incidents %}{% if i.status != "Restored" and i.confirmed_off > 0 or i.status !=
+            "Restored" and i.predicted_off > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus:
+            i.confirmed_off %}{% assign h_back = h_back | plus: i.restored %}{% assign h_postcodes = h_postcodes |
+            concat: i.postcodes %}{% endif %}{% endfor %}{% assign h_postcodes = h_postcodes | uniq %}{% assign
+            h_planned = data.incidents | where: "planned", true | sort: "planned_start" %}{% assign h_faults =
+            data.incidents | where: "planned", false %}
             <ul class="header-facts">
                 <li><strong>{{ h_live }}</strong> power cut{% if h_live != 1 %}s{% endif %} now</li>
-                <li><strong>{{ h_postcodes | size }}</strong> postcode{% if h_postcodes.size != 1 %}s{% endif %} affected</li>
+                <li><strong>{{ h_postcodes | size }}</strong> postcode{% if h_postcodes.size != 1 %}s{% endif %}
+                    affected</li>
                 <li><strong>{{ h_off }}</strong> propert{% if h_off == 1 %}y{% else %}ies{% endif %} without power</li>
-                <li><strong>{{ h_back }}</strong> propert{% if h_back == 1 %}y{% else %}ies{% endif %} already restored</li>
-                <li><strong>{{ h_planned | size }}</strong> planned power cut{% if h_planned.size != 1 %}s{% endif %}</li>
+                <li><strong>{{ h_back }}</strong> propert{% if h_back == 1 %}y{% else %}ies{% endif %} already restored
+                </li>
+                <li><strong>{{ h_planned | size }}</strong> planned power cut{% if h_planned.size != 1 %}s{% endif %}
+                </li>
             </ul>
             <ul class="header-links">
                 <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
@@ -48,14 +57,19 @@
                 <tbody>
                     {% for i in h_faults %}
                     <tr>
-                        <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
+                        <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {%
+                            endunless %}{% endfor %}</td>
                         <td>{{ i.category }}</td>
                         <td>{{ i.status }}</td>
                         <td class="number">{{ i.confirmed_off }}</td>
                         <td class="number">{{ i.restored }}</td>
-                        <td class="date">{% if i.date_of_reported_fault.size > 0 %}{{ i.date_of_reported_fault | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
-                        <td class="date">{% if i.etr.size > 0 %}{{ i.etr | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
-                        <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}power cut near {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat lng=i.lon label=pin_label map_target=i.fault_id %}{% endif %}</td>
+                        <td class="date">{% if i.date_of_reported_fault.size > 0 %}{{ i.date_of_reported_fault | date:
+                            "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
+                        <td class="date">{% if i.etr.size > 0 %}{{ i.etr | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet
+                            known{% endif %}</td>
+                        <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}power cut near
+                            {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat
+                            lng=i.lon label=pin_label map_target=i.fault_id %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -63,12 +77,13 @@
         </div>
         {% else %}
         <blockquote>
-            <p>No unplanned power cuts recorded for Cheltenham.{% if h_live > 0 %} Planned work is switching the power off right now: see <a href="#planned">planned power cuts</a> below.{% endif %}</p>
+            <p>No unplanned power cuts recorded for Cheltenham.</p>
         </blockquote>
         {% endif %}
 
         <h2 id="planned">Planned Power Cuts</h2>
-        <p>Maintenance and repair work booked by National Grid Electricity Distribution, which switches the power off for a set time.</p>
+        <p>Maintenance and repair work booked by National Grid Electricity Distribution, which switches the power off
+            for a set time.</p>
         {% if h_planned.size > 0 %}
         <div class="table-scroll">
             <table class="power-cuts-planned-table data-table" data-sortable>
@@ -85,12 +100,18 @@
                 <tbody>
                     {% for i in h_planned %}
                     <tr>
-                        <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}</td>
+                        <td>{% for p in i.postcodes %}<span class="postcode">{{ p }}</span>{% unless forloop.last %}, {%
+                            endunless %}{% endfor %}</td>
                         <td>{{ i.status }}</td>
-                        <td class="number">{% if i.planned_off > 0 %}{{ i.planned_off }}{% else %}{{ i.confirmed_off }}{% endif %}</td>
-                        <td class="date">{% if i.planned_start.size > 0 %}{{ i.planned_start | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
-                        <td class="date">{% if i.planned_end.size > 0 %}{{ i.planned_end | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
-                        <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}planned power cut near {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat lng=i.lon label=pin_label flagged=true map_target=i.fault_id %}{% endif %}</td>
+                        <td class="number">{% if i.planned_off > 0 %}{{ i.planned_off }}{% else %}{{ i.confirmed_off
+                            }}{% endif %}</td>
+                        <td class="date">{% if i.planned_start.size > 0 %}{{ i.planned_start | date: "%Y-%m-%d %H:%M"
+                            }}{% else %}Not yet known{% endif %}</td>
+                        <td class="date">{% if i.planned_end.size > 0 %}{{ i.planned_end | date: "%Y-%m-%d %H:%M" }}{%
+                            else %}Not yet known{% endif %}</td>
+                        <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}planned power cut near
+                            {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat
+                            lng=i.lon label=pin_label flagged=true map_target=i.fault_id %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -98,7 +119,7 @@
         </div>
         {% else %}
         <blockquote>
-            <p>No planned power cuts listed for Cheltenham.</p>
+            <p>No planned power cuts recorded for Cheltenham.</p>
         </blockquote>
         {% endif %}
 
@@ -107,7 +128,7 @@
         <h3>Where Does This Data Come From?</h3>
         <ul>
             <li><a href="https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts">National Grid Electricity
-                Distribution's Live Power Cuts dataset</a> — the electricity distribution network operator for
+                    Distribution's Live Power Cuts dataset</a> — the electricity distribution network operator for
                 Gloucestershire, formerly Western Power Distribution.</li>
         </ul>
 
@@ -126,7 +147,8 @@
 
         <h3>Does This Cover Planned Outages Too?</h3>
         <ul>
-            <li>Yes. Planned maintenance work has its own <a href="#planned">planned power cuts</a> table, with the start and end times, and appears on the map alongside unplanned faults.</li>
+            <li>Yes. Planned maintenance work has its own <a href="#planned">planned power cuts</a> table, with the
+                start and end times, and appears on the map alongside unplanned faults.</li>
         </ul>
 
         <h3>How Often Does This Update?</h3>
@@ -138,15 +160,16 @@
         <h3>Can I See Past Power Cuts?</h3>
         <ul>
             <li>Yes. Once a power cut against a Cheltenham postcode has been restored, it moves to the <a
-                href="/cheltenham-power-cuts/history">power cuts history page</a>, with how many properties it
+                    href="/cheltenham-power-cuts/history">power cuts history page</a>, with how many properties it
                 affected.</li>
         </ul>
 
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under the {{ data.licence }}{% endif %}.
-            {% include freshness.html file="_data/power-cuts.json" %}
-        </small></p>
+                Data from <a href="{{ data.source_url }}">{{ data.source }}</a>{% if data.licence %}, published under
+                the {{ data.licence }}{% endif %}.
+                {% include freshness.html file="_data/power-cuts.json" %}
+            </small></p>
 
     </div>
 </div>
