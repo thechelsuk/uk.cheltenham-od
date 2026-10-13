@@ -4,8 +4,32 @@
   "source_url": "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts",
   "licence": "WPD Open Data Licence",
   "refresh": "every 5 minutes",
-  "count": 1,
+  "count": 3,
   "incidents": [
+    {
+      "fault_id": "INCD-21440-l",
+      "status": "In Progress",
+      "planned": true,
+      "category": "Hv Planned",
+      "confirmed_off": 8,
+      "predicted_off": 0,
+      "restored": 0,
+      "affected": 8,
+      "voltage": "HV",
+      "date_of_reported_fault": "2026-10-13T09:00:00",
+      "last_updated": "2026-10-13T09:33:00",
+      "date_of_restoration": "",
+      "etr": "",
+      "planned_start": "2026-10-13T09:00:00",
+      "planned_end": "2026-10-13T14:00:00",
+      "planned_off": 8,
+      "lat": 51.92851,
+      "lon": -2.027934,
+      "postcodes": [
+        "GL52 3PZ",
+        "GL52 3QH"
+      ]
+    },
     {
       "fault_id": "INCD-21423-l",
       "status": "In Progress",
@@ -40,6 +64,29 @@
         "GL51 6TH",
         "GL51 6RF",
         "GL51 6SU"
+      ]
+    },
+    {
+      "fault_id": "INCD-21422-l",
+      "status": "In Progress",
+      "planned": true,
+      "category": "Hv Planned",
+      "confirmed_off": 3,
+      "predicted_off": 0,
+      "restored": 0,
+      "affected": 3,
+      "voltage": "HV",
+      "date_of_reported_fault": "2026-10-13T09:00:00",
+      "last_updated": "2026-10-13T09:35:00",
+      "date_of_restoration": "",
+      "etr": "",
+      "planned_start": "2026-10-13T09:00:00",
+      "planned_end": "2026-10-13T16:00:00",
+      "planned_off": 3,
+      "lat": 51.88245,
+      "lon": -2.034239,
+      "postcodes": [
+        "GL52 6UT"
       ]
     }
   ]

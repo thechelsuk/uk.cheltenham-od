@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T09:40:08+01:00",
+  "generated_at": "2026-10-13T09:45:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-13T09:32",
-      "expected": "2026-10-13T09:43",
+      "expected": "2026-10-13T09:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -22,25 +22,6 @@
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-10-13T09:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central",
-      "reason": "This service has been cancelled because of a fault with the signalling system",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -64,8 +45,8 @@
     },
     {
       "scheduled": "2026-10-13T09:47",
-      "expected": "2026-10-13T09:47",
-      "status": "On time",
+      "expected": "2026-10-13T09:49",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -223,8 +204,8 @@
     },
     {
       "scheduled": "2026-10-13T09:45",
-      "expected": "2026-10-13T09:45",
-      "status": "On time",
+      "expected": "2026-10-13T09:48",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -280,6 +261,16 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T10:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of congestion"
     }
   ]
 }
