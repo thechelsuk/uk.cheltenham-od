@@ -111,11 +111,19 @@ def build_alert_html(incidents):
     items = ""
     for incident in active[:5]:
         area = incident["postcodes"][0] if incident["postcodes"] else "Cheltenham"
-        reported = incident["date_of_reported_fault"].replace("T", " ")[:16]
-        when = f", reported {reported}" if reported else ""
+        # Planned work in progress still leaves homes without power, so it
+        # stays in the alert, but says when it ends rather than when reported.
+        if incident.get("planned"):
+            label = "Planned power cut"
+            ends = (incident.get("planned_end") or "").replace("T", " ")[:16]
+            when = f" until {ends}" if ends else ""
+        else:
+            label = "Power cut"
+            reported = incident["date_of_reported_fault"].replace("T", " ")[:16]
+            when = f", reported {reported}" if reported else ""
         items += (
             f'  <li><a href="/cheltenham-power-cuts">'
-            f'Power cut near {area}{when}</a></li>\n'
+            f'{label} near {area}{when}</a></li>\n'
         )
     return (
         "<h2>Power Cut Alert</h2>\n"

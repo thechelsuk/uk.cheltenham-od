@@ -6,7 +6,7 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
-            {% assign h_live = 0 %}{% assign h_off = 0 %}{% assign h_back = 0 %}{% assign h_postcodes = "" | split: "" %}{% for i in data.incidents %}{% if i.planned != true and i.status != "Restored" and i.confirmed_off > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus: i.confirmed_off %}{% assign h_back = h_back | plus: i.restored %}{% assign h_postcodes = h_postcodes | concat: i.postcodes %}{% endif %}{% endfor %}{% assign h_postcodes = h_postcodes | uniq %}{% assign h_planned = data.incidents | where: "planned", true | sort: "planned_start" %}{% assign h_faults = data.incidents | where: "planned", false %}
+            {% assign h_live = 0 %}{% assign h_off = 0 %}{% assign h_back = 0 %}{% assign h_postcodes = "" | split: "" %}{% for i in data.incidents %}{% if i.status != "Restored" and i.confirmed_off > 0 or i.status != "Restored" and i.predicted_off > 0 %}{% assign h_live = h_live | plus: 1 %}{% assign h_off = h_off | plus: i.confirmed_off %}{% assign h_back = h_back | plus: i.restored %}{% assign h_postcodes = h_postcodes | concat: i.postcodes %}{% endif %}{% endfor %}{% assign h_postcodes = h_postcodes | uniq %}{% assign h_planned = data.incidents | where: "planned", true | sort: "planned_start" %}{% assign h_faults = data.incidents | where: "planned", false %}
             <ul class="header-facts">
                 <li><strong>{{ h_live }}</strong> power cut{% if h_live != 1 %}s{% endif %} now</li>
                 <li><strong>{{ h_postcodes | size }}</strong> postcode{% if h_postcodes.size != 1 %}s{% endif %} affected</li>
@@ -59,7 +59,7 @@
         </div>
         {% else %}
         <blockquote>
-            <p>No current power cuts recorded for Cheltenham.</p>
+            <p>No unplanned power cuts recorded for Cheltenham.{% if h_live > 0 %} Planned work is switching the power off right now: see <a href="#planned">planned power cuts</a> below.{% endif %}</p>
         </blockquote>
         {% endif %}
 

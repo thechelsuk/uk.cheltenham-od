@@ -66,6 +66,20 @@ def test_alert_gives_the_time_the_cut_was_reported():
     assert "reported 2026-10-11 20:40" in html
 
 
+def test_alert_labels_planned_work_with_its_end_time():
+    html = power.build_alert_html([_incident(
+        planned=True, planned_start="2026-10-13T08:30:00", planned_end="2026-10-13T14:00:00",
+        date_of_reported_fault="2026-10-13T08:30:00",
+    )])
+    assert "Planned power cut near GL50 4DB until 2026-10-13 14:00" in html
+    assert "reported" not in html
+
+
+def test_alert_labels_planned_work_without_an_end_time():
+    html = power.build_alert_html([_incident(planned=True, planned_end="")])
+    assert "Planned power cut near GL50 4DB<" in html
+
+
 def test_incident_counts_properties_affected_as_off_plus_restored():
     row = {"fault_id": "INCD-1", "status": "In Progress", "confirmed_off": "4", "restored": "39",
            "postcode": "GL50 4DB"}
