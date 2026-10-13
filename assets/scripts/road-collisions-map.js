@@ -27,10 +27,13 @@
             escapeHtml(c.date) + " " + escapeHtml(c.time) + "<br>" +
             escapeHtml(c.road) + (c.speed_limit ? ", " + c.speed_limit + " mph" : "") + "<br>" +
             "Casualties: " + escapeHtml(c.casualties_summary) + "<br>" +
-            "Vehicles: " + escapeHtml(c.vehicles);
+            "Vehicles: " + escapeHtml(c.vehicles) +
+            CODMap.directions(c.lat, c.lon);
         L.marker([c.lat, c.lon]).addTo(map).bindPopup(html);
         bounds.push([c.lat, c.lon]);
     });
 
     map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

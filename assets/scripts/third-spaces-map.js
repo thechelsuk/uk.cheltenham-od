@@ -21,9 +21,12 @@
         if (loc.address) html += "<br>" + loc.address;
         if (loc.website)
             html += '<br><a href="' + loc.website + '">Website</a>';
+        html += CODMap.directions(loc.latitude, loc.longitude);
         marker.bindPopup(html);
         bounds.push([loc.latitude, loc.longitude]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, document.getElementById("third-spaces-map"));
 })();

@@ -37,6 +37,7 @@
             if (b.hyperlink) {
                 html += '<br><a href="' + b.hyperlink + '" target="_blank" rel="noopener">View listing &#8599;</a>';
             }
+            html += CODMap.directions(b.lat, b.lon);
             var marker = L.circleMarker([b.lat, b.lon], {
                 radius: 5,
                 color: gradeColours[b.grade] || "#3366cc",
@@ -78,4 +79,6 @@
     } else {
         map.setView([51.9, -2.08], 13);
     }
+
+    CODMap.linkPins(map, el);
 })();

@@ -22,9 +22,12 @@
         html += h.address + ", " + h.postcode + "<br>";
         html += 'CQC: <a href="' + h.url + '" target="_blank" rel="noopener">' + (h.overall || "Not yet rated") + "</a>";
         if (h.published) html += " (" + h.published + ")";
+        html += CODMap.directions(h.lat, h.lon);
         L.marker([h.lat, h.lon]).addTo(map).bindPopup(html);
         bounds.push([h.lat, h.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

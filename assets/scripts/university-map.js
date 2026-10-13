@@ -24,9 +24,12 @@
         if (loc.description) html += "<br>" + loc.description;
         html += '<br><a href="' + loc.website + '">Campus information</a>';
         html += ' &middot; <a href="' + loc.campus_map + '">Interactive map</a>';
+        html += CODMap.directions(loc.latitude, loc.longitude);
         L.marker([loc.latitude, loc.longitude]).addTo(map).bindPopup(html);
         bounds.push([loc.latitude, loc.longitude]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

@@ -62,4 +62,6 @@
     if (legendEl) legendEl.innerHTML = legendHtml;
 
     if (group.length) map.fitBounds(L.featureGroup(group).getBounds().pad(0.05));
+
+    CODMap.linkPins(map, el);
 })();

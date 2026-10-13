@@ -27,10 +27,7 @@
         var addr = [s.address, s.postcode].filter(Boolean).join(", ");
         if (addr) html += "<br>" + addr;
         if (conns) html += "<br>" + conns;
-        html +=
-            '<br><a href="' +
-            s.google_maps_url +
-            '" target="_blank" rel="noopener">Directions ↗</a>';
+        html += CODMap.directions(s.latitude, s.longitude);
 
         var m = L.marker([s.latitude, s.longitude]).bindPopup(html);
         m.addTo(map);
@@ -42,4 +39,6 @@
     } else {
         map.setView([51.9, -2.08], 13);
     }
+
+    CODMap.linkPins(map, el);
 })();

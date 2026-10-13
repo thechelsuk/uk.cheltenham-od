@@ -26,6 +26,7 @@
                         <th scope="col">Location</th>
                         <th scope="col">Run</th>
                         <th scope="col" class="number">Miles from Centre</th>
+                        <th scope="col" class="map">Map</th>
                         <th scope="col" class="link">parkrun</th>
                     </tr>
                 </thead>
@@ -36,6 +37,7 @@
                         <td>{{ e.location }}</td>
                         <td>{{ e.distance }}</td>
                         <td class="number" data-val="{{ e.distance_miles }}">{{ e.distance_miles }}</td>
+                        <td class="map">{% if e.lat and e.lon %}{% include pin.html lat=e.lat lng=e.lon label=e.name %}{% endif %}</td>
                         {% assign event_label = e.name | append: " on parkrun" %}
                         <td class="link">{% include link-icon.html url=e.event_page label=event_label %}</td>
                     </tr>

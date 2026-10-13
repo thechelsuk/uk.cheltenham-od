@@ -34,7 +34,6 @@
     });
 
     var bounds = [];
-    var markers = {};
     incidents.forEach(function (incident) {
         if (incident.lat == null || incident.lon == null) return;
         var html =
@@ -43,11 +42,12 @@
             (incident.planned
                 ? "<br>" + (incident.planned_off || incident.confirmed_off || 0) + " properties, " + (incident.planned_start || "").replace("T", " ").slice(0, 16) + " to " + (incident.planned_end || "").replace("T", " ").slice(0, 16)
                 : "<br>" + (incident.confirmed_off || 0) + " properties off, " + (incident.restored || 0) + " restored") +
-            (incident.postcodes && incident.postcodes.length ? "<br>" + incident.postcodes.join(", ") : "");
+            (incident.postcodes && incident.postcodes.length ? "<br>" + incident.postcodes.join(", ") : "") +
+            CODMap.directions(incident.lat, incident.lon);
         var marker = incident.planned
             ? L.marker([incident.lat, incident.lon], { icon: plannedIcon, zIndexOffset: 500 })
             : L.marker([incident.lat, incident.lon]);
-        markers[incident.fault_id] = marker.addTo(map).bindPopup(html);
+        marker.addTo(map).bindPopup(html);
         bounds.push([incident.lat, incident.lon]);
     });
 
@@ -57,20 +57,5 @@
         map.setView(CHELTENHAM, 13);
     }
 
-    // Table pins show their cut on this map instead of opening Google Maps.
-    document.querySelectorAll("[data-map-target]").forEach(function (link) {
-        var marker = markers[link.getAttribute("data-map-target")];
-        if (!marker) return;
-        var label = link.getAttribute("aria-label").replace("on Google Maps", "on the map");
-        link.setAttribute("aria-label", label);
-        link.setAttribute("title", label);
-        link.removeAttribute("target");
-        link.addEventListener("click", function (event) {
-            event.preventDefault();
-            var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-            el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
-            map.setView(marker.getLatLng(), 16);
-            marker.openPopup();
-        });
-    });
+    CODMap.linkPins(map, el);
 })();

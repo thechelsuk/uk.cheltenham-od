@@ -26,9 +26,12 @@
                 e.event_page +
                 '" target="_blank" rel="noopener">Event page ↗</a>';
         }
+        html += CODMap.directions(e.lat, e.lon);
         L.marker([e.lat, e.lon]).addTo(map).bindPopup(html);
         bounds.push([e.lat, e.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

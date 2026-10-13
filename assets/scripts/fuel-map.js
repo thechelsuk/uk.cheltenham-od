@@ -35,8 +35,10 @@
         var marker = p.cheapest
             ? L.marker([p.lat, p.lon], { icon: cheapestIcon, zIndexOffset: 1000 })
             : L.marker([p.lat, p.lon]);
-        return marker.bindPopup(p.popup);
+        return marker.bindPopup(p.popup + CODMap.directions(p.lat, p.lon));
     });
     var group = L.featureGroup(markers).addTo(map);
     map.fitBounds(group.getBounds().pad(0.15));
+
+    CODMap.linkPins(map, el);
 })();

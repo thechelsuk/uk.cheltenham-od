@@ -19,18 +19,9 @@
             return p.lat != null && p.lon != null;
         })
         .map(function (p) {
-            var directionsUrl =
-                "https://www.google.com/maps/search/?api=1&query=" +
-                p.lat +
-                "," +
-                p.lon;
-
             var html = "<strong>" + (p.name || "Post Office") + "</strong>";
             if (p.address) html += "<br>" + p.address;
-            html +=
-                '<br><a href="' +
-                directionsUrl +
-                '" target="_blank" rel="noopener">Directions ↗</a>';
+            html += CODMap.directions(p.lat, p.lon);
 
             return L.marker([p.lat, p.lon]).bindPopup(html);
         });
@@ -39,4 +30,6 @@
 
     var group = L.featureGroup(markers).addTo(map);
     map.fitBounds(group.getBounds().pad(0.15));
+
+    CODMap.linkPins(map, el);
 })();

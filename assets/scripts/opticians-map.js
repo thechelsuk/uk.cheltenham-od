@@ -18,9 +18,12 @@
     sites.forEach(function (p) {
         if (p.lat == null || p.lon == null) return;
         var html = "<strong>" + p.name + "</strong><br>" + p.address + (p.postcode ? ", " + p.postcode : "");
+        html += CODMap.directions(p.lat, p.lon);
         L.marker([p.lat, p.lon]).addTo(map).bindPopup(html);
         bounds.push([p.lat, p.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

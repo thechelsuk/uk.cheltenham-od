@@ -49,9 +49,12 @@
         if (spot.lat == null || spot.lon == null) return;
         var html = "<strong>" + spot.name + "</strong><br>" + spot.kind;
         if (spot.address) html += "<br>" + spot.address;
+        html += CODMap.directions(spot.lat, spot.lon);
         L.marker([spot.lat, spot.lon]).addTo(map).bindPopup(html);
         bounds.push([spot.lat, spot.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

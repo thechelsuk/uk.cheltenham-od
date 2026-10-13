@@ -30,6 +30,7 @@
                         <th scope="col">Determinand</th>
                         <th scope="col" class="number">Value</th>
                         <th scope="col">Unit</th>
+                        <th scope="col" class="map">Map</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,7 @@
                         <td>{{ r.determinand }}</td>
                         <td class="number">{{ r.value }}</td>
                         <td>{{ r.unit }}</td>
+                        <td class="map">{% if p.lat and p.lon %}{% include pin.html lat=p.lat lng=p.lon label=p.name %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                     {% endfor %}

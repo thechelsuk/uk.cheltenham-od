@@ -36,6 +36,7 @@
     var startOn = { "Health and Care": true, "Schools and Childcare": true, "Parks and Play": true };
 
     var overlays = {};
+    var groups = [];
     (ward.services || []).forEach(function (service) {
         if (!service.items || !service.items.length) return;
         var colour = colours[service.group] || "#475569";
@@ -49,6 +50,7 @@
                 (item.address ? "<br>" + escapeHtml(item.address) : "") +
                 "<br>" + item.distance_miles + " mi from the middle of the ward" +
                 (item.in_ward ? "" : " (outside the ward)");
+            html += CODMap.directions(item.lat, item.lon);
             L.circleMarker([item.lat, item.lon], {
                 radius: item.in_ward ? 8 : 6,
                 color: colour,
@@ -61,7 +63,9 @@
         });
         overlays['<span style="color:' + colour + '">&#9679;</span> ' + escapeHtml(service.label)] = layer;
         if (startOn[service.group]) layer.addTo(map);
+        groups.push(layer);
     });
 
     L.control.layers(null, overlays, { collapsed: true }).addTo(map);
+    CODMap.linkPins(map, el, groups);
 })();

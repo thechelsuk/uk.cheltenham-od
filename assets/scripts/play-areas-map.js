@@ -27,15 +27,12 @@
         if (p.operator) html += "<br>Run by " + esc(p.operator);
         if (p.theme) html += "<br>" + esc(p.theme) + " play";
         if (p.surface) html += "<br>" + esc(p.surface) + " surface";
-        html +=
-            '<br><a href="https://www.google.com/maps/search/?api=1&query=' +
-            p.lat +
-            "," +
-            p.lon +
-            '" target="_blank" rel="noopener">Directions ↗</a>';
+        html += CODMap.directions(p.lat, p.lon);
         L.marker([p.lat, p.lon]).addTo(map).bindPopup(html);
         bounds.push([p.lat, p.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

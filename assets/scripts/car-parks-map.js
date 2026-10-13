@@ -24,9 +24,12 @@
             (c.fee === true ? "Fee charged" : c.fee === false ? "Free" : "Fee unknown");
         if (c.capacity) html += "<br>" + c.capacity + " spaces";
         if (c.maxstay) html += "<br>Max stay: " + c.maxstay;
+        html += CODMap.directions(c.lat, c.lon);
         L.marker([c.lat, c.lon]).addTo(map).bindPopup(html);
         bounds.push([c.lat, c.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

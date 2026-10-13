@@ -26,9 +26,12 @@
         var html = "<strong>" + esc(r.name) + " taxi rank</strong>";
         if (r.street && r.street !== r.name) html += "<br>" + esc(r.street);
         if (r.spaces) html += "<br>" + r.spaces + " spaces";
+        html += CODMap.directions(r.lat, r.lon);
         L.marker([r.lat, r.lon]).addTo(map).bindPopup(html);
         bounds.push([r.lat, r.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

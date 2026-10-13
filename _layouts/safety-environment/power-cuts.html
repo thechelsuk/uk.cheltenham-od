@@ -69,7 +69,7 @@
                             known{% endif %}</td>
                         <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}power cut near
                             {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat
-                            lng=i.lon label=pin_label map_target=i.fault_id %}{% endif %}</td>
+                            lng=i.lon label=pin_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -111,7 +111,7 @@
                             else %}Not yet known{% endif %}</td>
                         <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}planned power cut near
                             {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat
-                            lng=i.lon label=pin_label flagged=true map_target=i.fault_id %}{% endif %}</td>
+                            lng=i.lon label=pin_label flagged=true %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -24,7 +24,8 @@
             (o.discharging ? "Discharging now" : "Not discharging") +
             (o.latest_event_start
                 ? "<br>Last discharge: " + o.latest_event_start
-                : "");
+                : "") +
+            CODMap.directions(o.lat, o.lon);
         L.circleMarker([o.lat, o.lon], {
             radius: 8,
             color: o.discharging ? "#c0392b" : "#2e8b57",
@@ -38,4 +39,6 @@
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

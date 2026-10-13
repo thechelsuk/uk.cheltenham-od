@@ -19,12 +19,6 @@
             return p.lat != null && p.lng != null;
         })
         .map(function (p) {
-            var directionsUrl =
-                "https://www.google.com/maps/search/?api=1&query=" +
-                p.lat +
-                "," +
-                p.lng;
-
             var nameLink = p.wikipedia || p.website;
             var nameHtml = nameLink
                 ? '<a href="' +
@@ -37,10 +31,7 @@
             var html = "<strong>" + nameHtml + "</strong>";
             if (p.category) html += "<br>" + p.category;
             if (p.postcode) html += "<br>" + p.postcode;
-            html +=
-                '<br><a href="' +
-                directionsUrl +
-                '" target="_blank" rel="noopener">Directions ↗</a>';
+            html += CODMap.directions(p.lat, p.lng);
 
             return L.marker([p.lat, p.lng]).bindPopup(html);
         });
@@ -49,4 +40,6 @@
 
     var group = L.featureGroup(markers).addTo(map);
     map.fitBounds(group.getBounds().pad(0.15));
+
+    CODMap.linkPins(map, el);
 })();

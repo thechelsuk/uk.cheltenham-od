@@ -19,13 +19,6 @@
             return p.latitude != null && p.longitude != null;
         })
         .map(function (p) {
-            var directionsUrl =
-                p.maps_url ||
-                "https://www.google.com/maps/search/?api=1&query=" +
-                    p.latitude +
-                    "," +
-                    p.longitude;
-
             var features = [];
             if (p.accessible) features.push("Wheelchair accessible");
             if (p.all_gender) features.push("All gender");
@@ -43,10 +36,7 @@
             if (features.length) html += "<br>" + features.join("<br>");
             if (p.opening_hours_summary)
                 html += "<br>" + p.opening_hours_summary;
-            html +=
-                '<br><a href="' +
-                directionsUrl +
-                '" target="_blank" rel="noopener">Directions ↗</a>';
+            html += CODMap.directions(p.latitude, p.longitude);
 
             return L.marker([p.latitude, p.longitude]).bindPopup(html);
         });
@@ -55,4 +45,6 @@
 
     var group = L.featureGroup(markers).addTo(map);
     map.fitBounds(group.getBounds().pad(0.15));
+
+    CODMap.linkPins(map, el);
 })();
