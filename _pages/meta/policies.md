@@ -21,10 +21,11 @@ nav_title: "Policies"
 
 ## Site Files
 
-These are for search engines, AI tools and security researchers.
+These are for search engines, AI tools, security researchers and other sites.
 
 - [privacy.txt](/.well-known/privacy.txt): our privacy contact details in a standard format.
 - [security.txt](/.well-known/security.txt): how to report a security problem.
 - [sitemap.xml](/sitemap.xml): every page on the site.
 - [llms.txt](/llms.txt): a guide to the site for AI tools.
 - [Feeds](/feeds): every RSS and Atom feed we publish.
+- [Widgets](/widgets): free, self-updating Cheltenham data boxes to embed on your own site.

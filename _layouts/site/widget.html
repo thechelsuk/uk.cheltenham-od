@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <script>
+        (function () {
+            // A partner site can force a theme with ?theme=light or ?theme=dark to match its own design;
+            // otherwise follow the visitor's choice on this site, then their system setting.
+            var t = new URLSearchParams(window.location.search).get('theme');
+            if (t !== 'light' && t !== 'dark') {
+                try { t = localStorage.getItem('theme'); } catch (e) { t = null; }
+            }
+            if (t !== 'light' && t !== 'dark') {
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <meta name="robots" content="noindex,follow">
+    <link rel="canonical" href="{{ page.full_page | absolute_url }}">
+    <base target="_blank">
+    <link rel="stylesheet" href="/assets/themes.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body class="widget-frame">
+    <div class="info-card">
+        {{ content }}
+        <p class="info-card__label widget-credit">
+            {{ page.credit }}
+            &middot; <a href="{{ page.full_page | absolute_url }}" rel="noopener">More on Cheltenham Open Data &rarr;</a>
+        </p>
+    </div>
+</body>
+
+</html>

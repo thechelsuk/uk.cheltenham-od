@@ -1,0 +1,16 @@
+---
+layout: site/widget
+---
+{%- assign r = site.data.rents -%}
+<p class="info-card__label">Cheltenham average rent &middot; {{ r.latest.month_name }} {{ r.latest.year }}</p>
+<div class="info-card__header">
+    <div>
+        <span class="info-card__title">{{ r.latest.price_display }} a month</span>
+        <span class="info-card__subtitle">{{ r.latest.annual_change_display }} on a year earlier</span>
+    </div>
+</div>
+<ul class="info-card__stats">
+    {%- for b in r.by_bedrooms %}
+    <li><span>{{ b.label }}</span><strong>{{ b.price_display }}</strong></li>
+    {%- endfor %}
+</ul>
