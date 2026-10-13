@@ -1,0 +1,80 @@
+{% include header.html %}
+{% assign widgets = site.pages | where_exp: "p", "p.widget_order" | sort: "widget_order" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        {% for w in widgets %}
+        <h2 id="{{ w.url | split: '/' | last }}">{{ w.title }}</h2>
+        <p>{{ w.description }} See the full figures on our
+            <a href="{{ w.full_page }}">{{ w.full_page_name }} page</a>.</p>
+        {% capture embed %}<div class="cheltenham-data-widget">
+  <iframe src="{{ w.url | absolute_url }}" title="{{ w.title }}" width="100%" height="{{ w.widget_height }}" style="border:0;" loading="lazy"></iframe>
+  <p style="font-size:11px;text-align:center;">Data provided by <a href="{{ w.full_page | absolute_url }}">Cheltenham Open Data</a></p>
+</div>{% endcapture %}
+        {{ embed }}
+        <pre><code>{{ embed | escape }}</code></pre>
+        {% endfor %}
+
+        <h2>Matching Your Site's Colours</h2>
+        <p>Widgets follow each visitor's light or dark mode setting. To always show one theme, add
+            <code>?theme=light</code> or <code>?theme=dark</code> to the end of the widget's address, for example
+            <code>{{ "/widgets/house-prices?theme=light" | absolute_url }}</code>.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Do the Widgets Cost Anything?</h3>
+        <ul>
+            <li>No. They are free for any site, personal or commercial, with no sign-up.</li>
+        </ul>
+
+        <h3>How Often Do the Figures Update?</h3>
+        <ul>
+            <li>Fuel prices update every hour. House prices and rents update each month when HM Land Registry and the
+                Office for National Statistics publish new figures, and affordability updates each year when new earnings
+                figures come out. Your page picks up each change by itself.</li>
+        </ul>
+
+        <h3>Can I Change How a Widget Looks?</h3>
+        <ul>
+            <li>You can change its height in the code and choose a light or dark theme. Please keep the source credit and
+                the link back to Cheltenham Open Data, which the data licences require.</li>
+        </ul>
+
+        <h3>Do the Widgets Track My Visitors?</h3>
+        <ul>
+            <li>No. They set no cookies and collect nothing about the people who view them. See our
+                <a href="/privacy">privacy policy</a>.</li>
+        </ul>
+
+        <h3>Can I Suggest Another Widget?</h3>
+        <ul>
+            <li>Yes. <a href="/contact">Tell us</a> what local data you would like to show on your site.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            House prices: data from HM Land Registry Price Paid Data, published under the Open Government Licence v3.0.
+            {% include freshness.html file="_data/house-summary.json" %}
+            Contains HM Land Registry data &copy; Crown copyright and database right.
+            Rents: data from the Office for National Statistics Price Index of Private Rents, published under the Open
+            Government Licence v3.0.
+            {% include freshness.html file="_data/rents.json" %}
+            Affordability: data from HM Land Registry and the ONS Annual Survey of Hours and Earnings, published under
+            the Open Government Licence v3.0.
+            {% include freshness.html file="_data/cheltenham-affordability.json" %}
+            Fuel prices: data from the GOV.UK fuel price scheme, published under the Open Government Licence v3.0.
+            {% include freshness.html file="_data/fuel-prices.json" %}
+        </small></p>
+
+    </div>
+</div>
+
+{% include footer.html %}

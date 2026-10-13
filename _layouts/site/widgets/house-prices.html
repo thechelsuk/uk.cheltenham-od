@@ -1,0 +1,17 @@
+---
+layout: site/widget
+---
+{%- assign h = site.data["house-summary"].current -%}
+<p class="info-card__label">Cheltenham house prices &middot; {{ h.period_label }}</p>
+<div class="info-card__header">
+    <div>
+        <span class="info-card__title">{{ h.median_display }}</span>
+        <span class="info-card__subtitle">Median price, {{ h.median_change }}</span>
+    </div>
+</div>
+<ul class="info-card__stats">
+    <li><span>Homes sold</span><strong>{{ h.count_display }}</strong></li>
+    <li><span>Average price</span><strong>{{ h.mean_display }}</strong></li>
+    <li><span>New builds sold</span><strong>{{ h.new_build_count_display }}</strong></li>
+    <li><span>New-build median</span><strong>{{ h.new_build_median_display }}</strong></li>
+</ul>

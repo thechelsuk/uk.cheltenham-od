@@ -1842,6 +1842,11 @@ button:disabled,
     }
 }
 
+/* Embeddable widgets (/widgets/<name>): let the host page show through any spare frame height. */
+body.widget-frame {
+    background: transparent;
+}
+
 .info-card {
     border: 1px solid var(--border);
     border-radius: 8px;

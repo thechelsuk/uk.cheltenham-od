@@ -1,0 +1,18 @@
+---
+layout: site/widget
+---
+{%- assign a = site.data["cheltenham-affordability"] -%}
+{%- assign y = a.years | last -%}
+<p class="info-card__label">Cheltenham home affordability &middot; {{ y.year }}</p>
+<div class="info-card__header">
+    <div>
+        <span class="info-card__title">1 in {{ y.one_in }} homes</span>
+        <span class="info-card__subtitle">sold for {{ a.multiple }}&times; typical pay or less</span>
+    </div>
+</div>
+<ul class="info-card__stats">
+    <li><span>Typical full-time pay</span><strong>{{ y.pay_display }}</strong></li>
+    <li><span>{{ a.multiple }}&times; pay</span><strong>{{ y.cap_display }}</strong></li>
+    <li><span>Median sale price</span><strong>{{ y.median_price_display }}</strong></li>
+    <li><span>Sales within reach</span><strong>{{ y.within }} of {{ y.sales_display }}</strong></li>
+</ul>

@@ -1,0 +1,17 @@
+---
+layout: site/widget
+---
+{%- assign f = site.data["fuel-prices"] -%}
+{%- assign lead = f.headline | first -%}
+<p class="info-card__label">Cheapest fuel within {{ f.radius_miles }} miles of Cheltenham &middot; {{ f.updated_iso }}</p>
+<div class="info-card__header">
+    <div>
+        <span class="info-card__title">{{ lead.price }}p</span>
+        <span class="info-card__subtitle">{{ lead.label }} at {{ lead.name }}{% if lead.pct_cheaper %}, {{ lead.pct_cheaper }}% below typical{% endif %}</span>
+    </div>
+</div>
+<ul class="info-card__stats">
+    {%- for fuel in f.headline offset: 1 limit: 4 %}
+    <li><span>{{ fuel.label }}</span><strong>{{ fuel.price }}p</strong> <small>{{ fuel.name }}</small></li>
+    {%- endfor %}
+</ul>
