@@ -5,8 +5,8 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 96,
-    "unplanned": 18,
+    "count": 98,
+    "unplanned": 19,
     "road_closures": 16,
     "by_street": [
       {
@@ -45,6 +45,11 @@
         "road_closures": 0
       },
       {
+        "street": "Cheltenham Road East",
+        "works": 2,
+        "road_closures": 0
+      },
+      {
         "street": "Evesham Road",
         "works": 2,
         "road_closures": 0
@@ -53,17 +58,12 @@
         "street": "High Street",
         "works": 2,
         "road_closures": 0
-      },
-      {
-        "street": "Oriel Road",
-        "works": 2,
-        "road_closures": 0
       }
     ],
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 36
+        "works": 37
       },
       {
         "name": "Gloucestershire County Council",
@@ -94,6 +94,10 @@
         "works": 2
       },
       {
+        "name": "Cornerstone Telecommunications Infrastructure Limited",
+        "works": 1
+      },
+      {
         "name": "National Highways",
         "works": 1
       }
@@ -101,11 +105,39 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 96
+        "works": 98
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:P600712834223-88253-WK43",
+      "first_seen": "2026-10-13",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Cornerstone Telecommunications Infrastructure Limited",
+      "start": "2026-10-23",
+      "end": "2026-10-26",
+      "last_seen": "2026-10-13"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060785536",
+      "first_seen": "2026-10-13",
+      "street": "Wards Road",
+      "ward_slug": "up-hatherley",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-13T07:46",
+      "end": "2026-10-14",
+      "last_seen": "2026-10-13"
+    },
     {
       "id": "PERMIT:HM7578062201",
       "first_seen": "2026-10-13",
