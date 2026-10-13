@@ -22,6 +22,8 @@
 
         <h2>Map</h2>
         <div id="sewage-map" class="map-canvas" aria-label="Map of sewage overflow points near Cheltenham"></div>
+        <p class="fuel-map-legend"><span class="fuel-map-legend-swatch">&#9679;</span> Overflows discharging now are
+            highlighted on the map; the rest use the standard pin.</p>
 
         <h2>Overflow Status</h2>
         <div class="table-scroll">
@@ -46,7 +48,7 @@
                         <td>{{ o.latest_event_start }}</td>
                         <td>{{ o.latest_event_end }}</td>
                         <td class="number" data-val="{{ o.latest_event_hours }}">{% if o.latest_event_hours %}{{ o.latest_event_hours }}h{% endif %}</td>
-                        <td class="map">{% if o.lat and o.lon %}{% capture pin_label %}sewage overflow on {{ o.watercourse }}{% endcapture %}{% include pin.html lat=o.lat lng=o.lon label=pin_label %}{% endif %}</td>
+                        <td class="map">{% if o.lat and o.lon %}{% capture pin_label %}sewage overflow on {{ o.watercourse }}{% endcapture %}{% include pin.html lat=o.lat lng=o.lon label=pin_label flagged=o.discharging %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -13,13 +13,6 @@
     }
     if (!stations.length) return;
 
-    var STATUS_COLOURS = {
-        "Above typical range": ["#c0392b", "#e74c3c"],
-        "Below typical range": ["#2471a3", "#5dade2"],
-        "Within typical range": ["#2e8b57", "#3cb371"],
-    };
-    var NO_RANGE = ["#666666", "#999999"];
-
     var mapEl = document.getElementById("river-levels-map");
     if (mapEl && typeof L !== "undefined") {
         var map = L.map(mapEl);
@@ -27,7 +20,6 @@
         var bounds = [];
         stations.forEach(function (s) {
             if (s.lat == null || s.lon == null) return;
-            var colours = s.kind === "level" ? (STATUS_COLOURS[s.status] || NO_RANGE) : ["#8e44ad", "#af7ac5"];
             var html = "<strong>" + s.label + "</strong>";
             if (s.river) html += "<br>" + s.river;
             if (s.kind === "level") {
@@ -37,8 +29,11 @@
             }
             html += "<br>Reading: " + s.latest_time.replace("T", " ") + " UTC";
             html += CODMap.directions(s.lat, s.lon);
-            L.circleMarker([s.lat, s.lon], { radius: 8, color: colours[0], fillColor: colours[1], fillOpacity: 0.85, weight: 2 })
-                .addTo(map).bindPopup(html);
+            // Level gauges above their typical range get the accent pin.
+            var marker = s.kind === "level" && s.status === "Above typical range"
+                ? L.marker([s.lat, s.lon], { icon: CODMap.accentIcon(), zIndexOffset: 500 })
+                : L.marker([s.lat, s.lon]);
+            marker.addTo(map).bindPopup(html);
             bounds.push([s.lat, s.lon]);
         });
         if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });

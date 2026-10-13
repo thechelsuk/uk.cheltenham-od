@@ -51,6 +51,8 @@
             are shown in UTC.</p>
 
         <div id="river-levels-map" class="map-canvas" aria-label="Map of river level and rainfall gauges around Cheltenham"></div>
+        <p class="fuel-map-legend"><span class="fuel-map-legend-swatch">&#9679;</span> River level gauges above their
+            typical range are highlighted on the map; other river level and rainfall gauges use the standard pin.</p>
 
         <h3>River Level Gauges</h3>
         <div class="table-scroll">
@@ -79,7 +81,7 @@
                         <td class="number" data-val="{{ s.record }}">{{ s.record_display | default: "—" }}</td>
                         <td class="date" data-val="{{ s.record_date }}">{{ s.record_date | default: "—" }}</td>
                         <td class="date" data-val="{{ s.latest_time }}">{{ s.latest_time | replace: "T", " " }}</td>
-                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.label %}</td>
+                        <td class="map">{% if s.status == "Above typical range" %}{% assign gauge_flagged = true %}{% else %}{% assign gauge_flagged = false %}{% endif %}{% include pin.html lat=s.lat lng=s.lon label=s.label flagged=gauge_flagged %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
