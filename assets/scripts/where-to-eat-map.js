@@ -40,12 +40,15 @@
             "<br>" + ratingText(v) +
             (v.rating_date ? "<br>Inspected " + v.rating_date : "") +
             "<br>" + escapeHtml(v.address) + (v.postcode ? ", " + escapeHtml(v.postcode) : "") +
-            '<br><a href="https://ratings.food.gov.uk/business/' + v.id + '">Official rating record</a>';
+            '<br><a href="https://ratings.food.gov.uk/business/' + v.id + '">Official rating record</a>' +
+            CODMap.directions(v.latitude, v.longitude);
         markers[v.id] = L.marker([v.latitude, v.longitude]).addTo(map).bindPopup(html);
         bounds.push([v.latitude, v.longitude]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 
     // Lets the "pick a place" section show a venue on this map.
     window.whereToEatMap = {

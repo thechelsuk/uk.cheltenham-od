@@ -56,10 +56,12 @@
                     escapeHtml(shorten(a.description, 140)) + received + "<br>" + status
                 );
             })
-            .join("<hr>");
+            .join("<hr>") + CODMap.directions(group[0].lat, group[0].lon);
         return L.marker([group[0].lat, group[0].lon]).bindPopup(html, { maxHeight: 260 });
     });
 
     var layer = L.featureGroup(markers).addTo(map);
     map.fitBounds(layer.getBounds().pad(0.15));
+
+    CODMap.linkPins(map, el);
 })();

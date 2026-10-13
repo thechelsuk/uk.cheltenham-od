@@ -39,9 +39,12 @@
         if (w.traffic_management) html += "<br>" + esc(w.traffic_management);
         if (w.start) html += "<br>" + formatDate(w.start) + (w.end ? " to " + formatDate(w.end) : "");
         if (w.promoter) html += "<br>" + esc(w.promoter);
+        html += CODMap.directions(w.lat, w.lon);
         L.marker([w.lat, w.lon]).addTo(map).bindPopup(html);
         bounds.push([w.lat, w.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
+
+    CODMap.linkPins(map, el);
 })();

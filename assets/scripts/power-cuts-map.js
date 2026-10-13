@@ -34,7 +34,6 @@
     });
 
     var bounds = [];
-    var markers = {};
     incidents.forEach(function (incident) {
         if (incident.lat == null || incident.lon == null) return;
         var html =
@@ -48,7 +47,7 @@
         var marker = incident.planned
             ? L.marker([incident.lat, incident.lon], { icon: plannedIcon, zIndexOffset: 500 })
             : L.marker([incident.lat, incident.lon]);
-        markers[incident.fault_id] = marker.addTo(map).bindPopup(html);
+        marker.addTo(map).bindPopup(html);
         bounds.push([incident.lat, incident.lon]);
     });
 
@@ -58,6 +57,5 @@
         map.setView(CHELTENHAM, 13);
     }
 
-    // Table pins show their cut on this map instead of opening Google Maps.
-    CODMap.linkPins(map, el, markers);
+    CODMap.linkPins(map, el);
 })();

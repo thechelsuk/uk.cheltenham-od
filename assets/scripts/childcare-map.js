@@ -22,9 +22,12 @@
         html += "<br>" + p.address + ", " + p.postcode;
         html += '<br>Ofsted: <a href="' + p.ofsted_url + '" target="_blank" rel="noopener">' + p.latest.outcome + "</a>";
         if (p.latest.date) html += " (" + p.latest.date + ")";
+        html += CODMap.directions(p.lat, p.lon);
         L.marker([p.lat, p.lon]).addTo(map).bindPopup(html);
         bounds.push([p.lat, p.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+
+    CODMap.linkPins(map, el);
 })();

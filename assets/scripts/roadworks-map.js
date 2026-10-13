@@ -43,9 +43,12 @@
             " to " +
             formatDate(w.end);
         if (w.expected_delay) html += "<br>Expected delay: " + esc(w.expected_delay);
+        html += CODMap.directions(w.lat, w.lon);
         L.marker([w.lat, w.lon]).addTo(map).bindPopup(html);
         bounds.push([w.lat, w.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 13 });
+
+    CODMap.linkPins(map, el);
 })();

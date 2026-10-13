@@ -44,6 +44,8 @@
         if (p.label) html += "<br>" + escapeHtml(p.label);
         if (p.href) html += '<br><a href="' + escapeHtml(p.href) + '">View details</a>';
 
+        html += CODMap.directions(p.lat, p.lon);
+
         var marker = p.kind === "donation"
             ? L.marker([p.lat, p.lon], { icon: donationIcon, zIndexOffset: 500 })
             : L.marker([p.lat, p.lon]);
@@ -53,4 +55,6 @@
 
     if (bounds.length === 1) map.setView(bounds[0], 15);
     else map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
+
+    CODMap.linkPins(map, el);
 })();

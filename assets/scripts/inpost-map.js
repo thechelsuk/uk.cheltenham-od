@@ -19,17 +19,11 @@
             return l.lat != null && l.lon != null;
         })
         .map(function (l) {
-            var directionsUrl =
-                "https://www.google.com/maps/search/?api=1&query=" + l.lat + "," + l.lon;
-
             var html = "<strong>" + (l.name || "InPost Locker") + "</strong>";
             if (l.street) html += "<br>" + l.street;
             if (l.postcode) html += " " + l.postcode;
             if (l.is_247) html += "<br>Open 24/7";
-            html +=
-                '<br><a href="' +
-                directionsUrl +
-                '" target="_blank" rel="noopener">Directions ↗</a>';
+            html += CODMap.directions(l.lat, l.lon);
 
             return L.marker([l.lat, l.lon]).bindPopup(html);
         });
@@ -38,4 +32,6 @@
 
     var group = L.featureGroup(markers).addTo(map);
     map.fitBounds(group.getBounds().pad(0.15));
+
+    CODMap.linkPins(map, el);
 })();
