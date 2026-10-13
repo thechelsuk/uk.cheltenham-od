@@ -44,6 +44,53 @@
                 </tbody>
             </table>
         </div>
+
+        <h2 id="awareness-days">Upcoming Awareness Days, Weeks and Months</h2>
+        <p>
+            Alongside the bank holidays, the year is marked by national awareness campaigns. Schools, charities,
+            workplaces and community groups across Cheltenham run events and fundraisers around them, from
+            Children's Mental Health Week to Macmillan Coffee Mornings, and dates like Halloween and Bonfire Night
+            are worth knowing for planning at home. Each name links to the organiser's own page.
+        </p>
+        <p>
+            Dates marked provisional haven't been announced by the organiser yet and follow the pattern of
+            previous years, so check them before planning around them.
+        </p>
+        {% assign a_today = "now" | date: "%Y-%m-%d" %}{% assign a_count = 0 %}
+        {% for a in site.data.awareness-dates.observances %}{% if a.end >= a_today %}{% assign a_count = a_count | plus: 1 %}{% endif %}{% endfor %}
+        {% if a_count > 0 %}
+        <div class="table-scroll">
+            <table id="awareness-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th data-sort="date">Starts</th>
+                        <th data-sort="date">Ends</th>
+                        <th data-sort="title">Name</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in site.data.awareness-dates.observances %}
+                    {% if a.end >= a_today %}
+                    <tr>
+                        <td>{{ a.start }}</td>
+                        <td>{{ a.end }}</td>
+                        <td>{% if a.source_url %}<a href="{{ a.source_url }}">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% if a.status == "provisional" %} (provisional){% endif %}</td>
+                        <td>{{ a.scope_type | capitalize }}</td>
+                        <td>{{ a.category }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No upcoming awareness dates are listed yet. Check back soon.</p>
+        </blockquote>
+        {% endif %}
+
         {% assign src = site.data.sources | where: "id", "gov-uk-bank-holidays" | first %}
 
         <h2>Frequently Asked Questions</h2>
@@ -70,10 +117,21 @@
             </li>
         </ul>
 
+        <h3>Are Awareness Days Public Holidays?</h3>
+        <ul>
+            <li>No. Awareness days, weeks and months are campaigns run by charities, health bodies and other
+                organisations to draw attention to a cause. Shops, schools and offices stay open as normal.
+            </li>
+        </ul>
+
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
                 Data from <a href="{{ src.source_url }}">{{ src.name }}</a>{% if src.licence_name %}, published under
                 the {{ src.licence_name }}{% endif %}. {% include freshness.html file="_data/holidays.json" %}
+            </small></p>
+        <p class="attribution"><small>
+                Awareness dates compiled by Cheltenham OD from each organiser's own website, linked from the table
+                above. {% include freshness.html file="_data/awareness-dates.json" %}
             </small></p>
 
     </div>

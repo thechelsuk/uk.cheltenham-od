@@ -75,6 +75,29 @@ jobs:
             mv reminder.tmp reminder.md
           fi
 
+      # Awareness dates marked provisional and starting in the next three
+      # months, plus a nudge from September if next year has no rows yet.
+      - name: Add awareness dates to confirm
+        if: steps.existing.outputs.count == '0'
+        run: |
+          python3 - <<'PY' > due.md
+          import datetime, json
+          today = datetime.date.today()
+          horizon = (today + datetime.timedelta(days=92)).isoformat()
+          rows = json.load(open("_data/awareness-dates.json"))["observances"]
+          for r in rows:
+              if r["status"] == "provisional" and today.isoformat() <= r["start"] <= horizon:
+                  link = f"[{r['name']}]({r['source_url']})" if r["source_url"] else r["name"]
+                  print(f"- [ ] **Confirm {link}** — provisional {r['start']} to {r['end']}. Once the organiser announces the dates, update them in `_data/awareness-dates.json` and set `status` to `confirmed`.")
+          next_year = str(today.year + 1)
+          if today.month >= 9 and not any(r["start"].startswith(next_year) for r in rows):
+              print(f"- [ ] **Add {next_year} awareness dates** — copy each observance into `_data/awareness-dates.json` for {next_year}, using the organiser's announced dates where published and `provisional` estimates otherwise.")
+          PY
+          if [ -s due.md ]; then
+            awk 'FNR==NR {due = due $0 "\n"; next} /^Close this issue/ {printf "%s\n", due} {print}' due.md reminder.md > reminder.tmp
+            mv reminder.tmp reminder.md
+          fi
+
       - name: Create reminder issue
         if: steps.existing.outputs.count == '0'
         uses: peter-evans/create-issue-from-file@v6
