@@ -26,6 +26,8 @@
 
         <h2>Map</h2>
         <div id="power-cuts-map" class="map-canvas" aria-label="Map of current power cuts affecting Cheltenham"></div>
+        <p class="fuel-map-legend"><span class="fuel-map-legend-swatch">&#9679;</span> Planned power cuts are
+            highlighted on the map; unplanned faults use the standard pin.</p>
 
         <h2>Unplanned Power Cuts</h2>
         {% if h_faults.size > 0 %}
@@ -40,6 +42,7 @@
                         <th scope="col" class="number">Properties Restored</th>
                         <th scope="col" class="date">Reported</th>
                         <th scope="col" class="date">Estimated Restoration</th>
+                        <th scope="col" class="map">Map</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +55,7 @@
                         <td class="number">{{ i.restored }}</td>
                         <td class="date">{% if i.date_of_reported_fault.size > 0 %}{{ i.date_of_reported_fault | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
                         <td class="date">{% if i.etr.size > 0 %}{{ i.etr | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
+                        <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}power cut near {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat lng=i.lon label=pin_label map_target=i.fault_id %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -75,6 +79,7 @@
                         <th scope="col" class="number">Properties</th>
                         <th scope="col" class="date">Starts</th>
                         <th scope="col" class="date">Ends</th>
+                        <th scope="col" class="map">Map</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,6 +90,7 @@
                         <td class="number">{% if i.planned_off > 0 %}{{ i.planned_off }}{% else %}{{ i.confirmed_off }}{% endif %}</td>
                         <td class="date">{% if i.planned_start.size > 0 %}{{ i.planned_start | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
                         <td class="date">{% if i.planned_end.size > 0 %}{{ i.planned_end | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
+                        <td class="map">{% if i.lat and i.lon %}{% capture pin_label %}planned power cut near {{ i.postcodes.first | default: "Cheltenham" }}{% endcapture %}{% include pin.html lat=i.lat lng=i.lon label=pin_label flagged=true map_target=i.fault_id %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

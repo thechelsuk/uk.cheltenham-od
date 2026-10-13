@@ -17,7 +17,24 @@
     var map = L.map(el);
     CODMap.tiles(map);
 
+    // Unplanned faults get the standard pin; planned work gets a pin in the
+    // page's accent colour (as on the fuel prices map).
+    var accent = getComputedStyle(document.body).getPropertyValue("--accent").trim() || "#ca3393";
+    var plannedIcon = L.divIcon({
+        className: "power-cuts-map-pin",
+        html:
+            '<svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">' +
+            '<path fill="' + accent + '" stroke="#000" stroke-opacity="0.3" ' +
+            'd="M12.5 0C5.6 0 0 5.6 0 12.5c0 9.4 12.5 28.5 12.5 28.5S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0z"/>' +
+            '<circle cx="12.5" cy="12.5" r="5.5" fill="#fff"/>' +
+            "</svg>",
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+    });
+
     var bounds = [];
+    var markers = {};
     incidents.forEach(function (incident) {
         if (incident.lat == null || incident.lon == null) return;
         var html =
@@ -27,7 +44,10 @@
                 ? "<br>" + (incident.planned_off || incident.confirmed_off || 0) + " properties, " + (incident.planned_start || "").replace("T", " ").slice(0, 16) + " to " + (incident.planned_end || "").replace("T", " ").slice(0, 16)
                 : "<br>" + (incident.confirmed_off || 0) + " properties off, " + (incident.restored || 0) + " restored") +
             (incident.postcodes && incident.postcodes.length ? "<br>" + incident.postcodes.join(", ") : "");
-        L.marker([incident.lat, incident.lon]).addTo(map).bindPopup(html);
+        var marker = incident.planned
+            ? L.marker([incident.lat, incident.lon], { icon: plannedIcon, zIndexOffset: 500 })
+            : L.marker([incident.lat, incident.lon]);
+        markers[incident.fault_id] = marker.addTo(map).bindPopup(html);
         bounds.push([incident.lat, incident.lon]);
     });
 
@@ -36,4 +56,21 @@
     } else {
         map.setView(CHELTENHAM, 13);
     }
+
+    // Table pins show their cut on this map instead of opening Google Maps.
+    document.querySelectorAll("[data-map-target]").forEach(function (link) {
+        var marker = markers[link.getAttribute("data-map-target")];
+        if (!marker) return;
+        var label = link.getAttribute("aria-label").replace("on Google Maps", "on the map");
+        link.setAttribute("aria-label", label);
+        link.setAttribute("title", label);
+        link.removeAttribute("target");
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+            map.setView(marker.getLatLng(), 16);
+            marker.openPopup();
+        });
+    });
 })();

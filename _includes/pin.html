@@ -1,6 +1,7 @@
 <a href="https://www.google.com/maps/search/?api=1&query={{ include.lat }},{{ include.lng }}"
     title="View {{ include.label | default: 'location' }} on Google Maps"
-    aria-label="View {{ include.label | default: 'location' }} on Google Maps" rel="noopener" target="_blank">
+    aria-label="View {{ include.label | default: 'location' }} on Google Maps" rel="noopener" target="_blank"{% if include.map_target %}
+    data-map-target="{{ include.map_target }}"{% endif %}>
     <svg class="pin{% if include.flagged %} pin-flagged{% endif %}" viewBox="0 0 24 24" width="18" height="18"
         aria-hidden="true" focusable="false">
         <path fill="currentColor"
