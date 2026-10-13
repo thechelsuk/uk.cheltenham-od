@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T13:35:08+01:00",
+  "generated_at": "2026-10-13T13:40:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,26 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-13T13:23",
-      "expected": "2026-10-13T13:33",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by trespassers on the railway",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-10-13T13:29",
-      "expected": "2026-10-13T13:35",
+      "expected": "2026-10-13T13:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -63,8 +45,8 @@
     },
     {
       "scheduled": "2026-10-13T13:40",
-      "expected": "2026-10-13T13:40",
-      "status": "On time",
+      "expected": "2026-10-13T13:44",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -97,7 +79,7 @@
     },
     {
       "scheduled": "2026-10-13T13:52",
-      "expected": "2026-10-13T14:00",
+      "expected": "2026-10-13T14:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -117,7 +99,7 @@
     },
     {
       "scheduled": "2026-10-13T13:59",
-      "expected": "2026-10-13T14:03",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -184,22 +166,28 @@
         "Motherwell",
         "Glasgow Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-13T14:15",
+      "expected": "2026-10-13T14:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-13T13:22",
-      "expected": "2026-10-13T13:32",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by trespassers on the railway"
-    },
-    {
       "scheduled": "2026-10-13T13:27",
-      "expected": "2026-10-13T13:34",
+      "expected": "2026-10-13T13:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -219,7 +207,7 @@
     },
     {
       "scheduled": "2026-10-13T13:38",
-      "expected": "2026-10-13T13:40",
+      "expected": "2026-10-13T13:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -239,7 +227,7 @@
     },
     {
       "scheduled": "2026-10-13T13:50",
-      "expected": "2026-10-13T13:59",
+      "expected": "2026-10-13T14:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -249,7 +237,7 @@
     },
     {
       "scheduled": "2026-10-13T13:58",
-      "expected": "2026-10-13T14:02",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -265,6 +253,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T14:14",
+      "expected": "2026-10-13T14:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
