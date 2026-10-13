@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T07:50:33+01:00",
+  "generated_at": "2026-10-13T07:55:32+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,19 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-13T07:35",
-      "expected": "2026-10-13T07:48",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by this train being late from the depot",
-      "calling_at": [
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-10-13T07:43",
       "expected": "2026-10-13T07:55",
@@ -160,19 +147,28 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-13T08:40",
+      "expected": "2026-10-13T08:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-13T07:33",
-      "expected": "2026-10-13T07:47",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by this train being late from the depot"
-    },
     {
       "scheduled": "2026-10-13T07:50",
       "expected": "2026-10-13T07:50",
@@ -251,6 +247,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T08:39",
+      "expected": "2026-10-13T08:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
