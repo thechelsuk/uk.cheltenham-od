@@ -50,7 +50,7 @@
             Alongside the bank holidays, the year is marked by national awareness campaigns. Schools, charities,
             workplaces and community groups across Cheltenham run events and fundraisers around them, from
             Children's Mental Health Week to Macmillan Coffee Mornings, and dates like Halloween and Bonfire Night
-            are worth knowing for planning at home. Each name links to the organiser's own page.
+            are worth knowing for planning at home. The last column links to each organiser's own page.
         </p>
         <p>
             Dates marked provisional haven't been announced by the organiser yet and follow the pattern of
@@ -68,6 +68,7 @@
                         <th data-sort="title">Name</th>
                         <th>Type</th>
                         <th>Category</th>
+                        <th class="link">Organiser</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,9 +77,10 @@
                     <tr>
                         <td>{{ a.start }}</td>
                         <td>{{ a.end }}</td>
-                        <td>{% if a.source_url %}<a href="{{ a.source_url }}">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% if a.status == "provisional" %} (provisional){% endif %}</td>
+                        <td>{{ a.name }}{% if a.status == "provisional" %} (provisional){% endif %}</td>
                         <td>{{ a.scope_type | capitalize }}</td>
                         <td>{{ a.category }}</td>
+                        <td class="link">{% if a.source_url %}{% capture organiser_label %}{{ a.name }} on the organiser's website{% endcapture %}{% include link-icon.html url=a.source_url label=organiser_label %}{% endif %}</td>
                     </tr>
                     {% endif %}
                     {% endfor %}
