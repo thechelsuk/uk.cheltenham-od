@@ -26,15 +26,11 @@
                 ? "<br>Last discharge: " + o.latest_event_start
                 : "") +
             CODMap.directions(o.lat, o.lon);
-        L.circleMarker([o.lat, o.lon], {
-            radius: 8,
-            color: o.discharging ? "#c0392b" : "#2e8b57",
-            fillColor: o.discharging ? "#e74c3c" : "#3cb371",
-            fillOpacity: 0.85,
-            weight: 2,
-        })
-            .addTo(map)
-            .bindPopup(html);
+        // Discharging overflows get the accent pin.
+        var marker = o.discharging
+            ? L.marker([o.lat, o.lon], { icon: CODMap.accentIcon(), zIndexOffset: 500 })
+            : L.marker([o.lat, o.lon]);
+        marker.addTo(map).bindPopup(html);
         bounds.push([o.lat, o.lon]);
     });
 
