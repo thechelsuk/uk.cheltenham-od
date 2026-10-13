@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T17:45:07+01:00",
+  "generated_at": "2026-10-13T17:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-13T17:19",
-      "expected": "2026-10-13T17:54",
+      "expected": "2026-10-13T17:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -42,44 +42,6 @@
       ]
     },
     {
-      "scheduled": "2026-10-13T17:40",
-      "expected": "2026-10-13T17:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ]
-    },
-    {
-      "scheduled": "2026-10-13T17:45",
-      "expected": "2026-10-13T17:45",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-13T17:50",
       "expected": "2026-10-13T17:50",
       "status": "On time",
@@ -96,7 +58,7 @@
     },
     {
       "scheduled": "2026-10-13T17:52",
-      "expected": "2026-10-13T18:05",
+      "expected": "2026-10-13T18:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -182,7 +144,7 @@
     },
     {
       "scheduled": "2026-10-13T18:19",
-      "expected": "2026-10-13T18:24",
+      "expected": "2026-10-13T18:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -194,12 +156,30 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-13T18:25",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-13T17:18",
-      "expected": "2026-10-13T17:53",
+      "expected": "2026-10-13T17:52",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -218,16 +198,6 @@
       "reason": "This service has been delayed by a fault on a train in front of this one"
     },
     {
-      "scheduled": "2026-10-13T17:38",
-      "expected": "2026-10-13T17:43",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-13T17:47",
       "expected": "2026-10-13T17:47",
       "status": "On time",
@@ -239,7 +209,7 @@
     },
     {
       "scheduled": "2026-10-13T17:50",
-      "expected": "2026-10-13T18:04",
+      "expected": "2026-10-13T18:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -269,12 +239,32 @@
     },
     {
       "scheduled": "2026-10-13T18:18",
-      "expected": "2026-10-13T18:23",
+      "expected": "2026-10-13T18:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-13T18:24",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been cancelled because of a fault on this train"
+    },
+    {
+      "scheduled": "2026-10-13T18:27",
+      "expected": "2026-10-13T18:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": ""
     }
   ]
