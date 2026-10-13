@@ -36,11 +36,13 @@
                 html += "<br>Rainfall: " + s.rain_24h_display + " in 24 hours, " + s.rain_48h_display + " in 48 hours";
             }
             html += "<br>Reading: " + s.latest_time.replace("T", " ") + " UTC";
+            html += CODMap.directions(s.lat, s.lon);
             L.circleMarker([s.lat, s.lon], { radius: 8, color: colours[0], fillColor: colours[1], fillOpacity: 0.85, weight: 2 })
                 .addTo(map).bindPopup(html);
             bounds.push([s.lat, s.lon]);
         });
         if (bounds.length) map.fitBounds(bounds, { padding: [30, 30] });
+        CODMap.linkPins(map, mapEl);
     }
 
     if (typeof Chart === "undefined") return;

@@ -28,11 +28,14 @@
         var html =
             "<strong>" + escapeHtml(item.title) + "</strong><br>" +
             escapeHtml(item.group) + "<br>" +
-            '<a href="' + escapeHtml(item.url) + '" rel="noopener">View on FixMyStreet</a>';
+            '<a href="' + escapeHtml(item.url) + '" rel="noopener">View on FixMyStreet</a>' +
+            CODMap.directions(item.lat, item.lon);
         L.marker([item.lat, item.lon]).addTo(map).bindPopup(html);
         bounds.push([item.lat, item.lon]);
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
     else map.setView(CHELTENHAM, 12);
+
+    CODMap.linkPins(map, mapEl);
 })();
