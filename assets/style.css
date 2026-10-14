@@ -1748,6 +1748,15 @@ button:disabled,
         margin-top: 1.5em;
     }
 
+    /* nine icons overflow one row on a phone, so wrap them 5 + 4 with equal
+       spacing between icons and between the rows */
+    .social-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        max-width: calc(5 * 2.75rem + 4 * 1rem);
+    }
+
     .social-row svg {
         width: 2.75rem;
         height: 2.75rem;
