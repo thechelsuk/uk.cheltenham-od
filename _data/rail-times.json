@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T19:10:07+01:00",
+  "generated_at": "2026-10-14T19:15:14+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,29 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-14T19:12",
-      "expected": "2026-10-14T19:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
-    {
       "scheduled": "2026-10-14T19:15",
-      "expected": "2026-10-14T19:17",
-      "status": "Delayed",
+      "expected": "2026-10-14T19:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -123,23 +103,33 @@
         "Malvern Link",
         "Great Malvern"
       ]
+    },
+    {
+      "scheduled": "2026-10-14T19:52",
+      "expected": "2026-10-14T19:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-14T19:10",
-      "expected": "2026-10-14T19:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-14T19:14",
-      "expected": "2026-10-14T19:16",
-      "status": "Delayed",
+      "expected": "2026-10-14T19:14",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -178,7 +168,7 @@
     },
     {
       "scheduled": "2026-10-14T19:34",
-      "expected": "2026-10-14T19:43",
+      "expected": "2026-10-14T19:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -214,6 +204,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Great Malvern",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-14T19:51",
+      "expected": "2026-10-14T19:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
