@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T09:20:07+01:00",
+  "generated_at": "2026-10-14T09:25:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,41 +11,14 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-14T09:12",
-      "expected": "2026-10-14T09:19",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ]
-    },
-    {
       "scheduled": "2026-10-14T09:15",
-      "expected": "2026-10-14T09:27",
+      "expected": "2026-10-14T09:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Gloucester",
         "Chepstow",
@@ -157,28 +130,39 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-10-14T09:59",
+      "expected": "2026-10-14T09:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-14T09:10",
-      "expected": "2026-10-14T09:17",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-14T09:14",
-      "expected": "2026-10-14T09:26",
+      "expected": "2026-10-14T09:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": ""
+      "reason": "This service has been delayed by a late running train being in front of this one"
     },
     {
       "scheduled": "2026-10-14T09:26",
@@ -192,8 +176,8 @@
     },
     {
       "scheduled": "2026-10-14T09:26",
-      "expected": "2026-10-14T09:26",
-      "status": "On time",
+      "expected": "2026-10-14T09:29",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
@@ -202,13 +186,13 @@
     },
     {
       "scheduled": "2026-10-14T09:30",
-      "expected": "2026-10-14T09:30",
-      "status": "On time",
+      "expected": "2026-10-14T09:32",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by congestion"
     },
     {
       "scheduled": "2026-10-14T09:31",
@@ -248,6 +232,16 @@
       "operator": "CrossCountry",
       "origin": "York",
       "destination": "Plymouth",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-14T09:58",
+      "expected": "2026-10-14T09:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
