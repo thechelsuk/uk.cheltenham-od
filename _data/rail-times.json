@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:35:08+01:00",
+  "generated_at": "2026-10-14T21:40:10+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-14T21:33",
-      "expected": "2026-10-14T21:33",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ]
-    },
     {
       "scheduled": "2026-10-14T21:52",
       "expected": null,
@@ -57,7 +43,7 @@
     },
     {
       "scheduled": "2026-10-14T22:00",
-      "expected": "2026-10-14T22:03",
+      "expected": "2026-10-14T22:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -106,8 +92,8 @@
     },
     {
       "scheduled": "2026-10-14T22:21",
-      "expected": "2026-10-14T22:21",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -116,19 +102,23 @@
       "calling_at": [
         "Gloucester"
       ]
+    },
+    {
+      "scheduled": "2026-10-14T22:52",
+      "expected": "2026-10-14T23:02",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-14T21:33",
-      "expected": "2026-10-14T21:33",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-14T21:50",
       "expected": null,
@@ -151,7 +141,7 @@
     },
     {
       "scheduled": "2026-10-14T21:59",
-      "expected": "2026-10-14T22:02",
+      "expected": "2026-10-14T22:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -181,8 +171,8 @@
     },
     {
       "scheduled": "2026-10-14T22:20",
-      "expected": "2026-10-14T22:20",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -207,6 +197,16 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-14T22:50",
+      "expected": "2026-10-14T23:01",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
       "reason": ""
     }
   ]
