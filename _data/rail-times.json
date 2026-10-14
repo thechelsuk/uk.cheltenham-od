@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T08:00:09+01:00",
+  "generated_at": "2026-10-14T08:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-14T07:55",
-      "expected": "2026-10-14T08:01",
+      "expected": "2026-10-14T08:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -31,29 +31,9 @@
       ]
     },
     {
-      "scheduled": "2026-10-14T08:01",
-      "expected": "2026-10-14T08:01",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
-    {
       "scheduled": "2026-10-14T08:12",
-      "expected": "2026-10-14T08:14",
-      "status": "Delayed",
+      "expected": "2026-10-14T08:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -147,7 +127,7 @@
     },
     {
       "scheduled": "2026-10-14T08:52",
-      "expected": "2026-10-14T08:55",
+      "expected": "2026-10-14T08:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -164,12 +144,33 @@
         "Totnes",
         "Plymouth"
       ]
+    },
+    {
+      "scheduled": "2026-10-14T08:59",
+      "expected": "2026-10-14T08:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-14T07:50",
-      "expected": "2026-10-14T08:00",
+      "expected": "2026-10-14T08:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -178,18 +179,8 @@
       "reason": "This service has been delayed by a points failure"
     },
     {
-      "scheduled": "2026-10-14T07:59",
-      "expected": "2026-10-14T07:53",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-14T08:10",
-      "expected": "2026-10-14T08:13",
+      "expected": "2026-10-14T08:12",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -249,13 +240,23 @@
     },
     {
       "scheduled": "2026-10-14T08:50",
-      "expected": "2026-10-14T08:54",
+      "expected": "2026-10-14T08:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a late running train being in front of this one"
+    },
+    {
+      "scheduled": "2026-10-14T08:57",
+      "expected": "2026-10-14T08:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": ""
     }
   ]
 }
