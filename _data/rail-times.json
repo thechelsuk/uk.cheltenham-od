@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T19:05:07+01:00",
+  "generated_at": "2026-10-14T19:10:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-14T19:02",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been cancelled because of an obstruction on the track earlier today",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ]
-    },
     {
       "scheduled": "2026-10-14T19:12",
       "expected": "2026-10-14T19:12",
@@ -125,6 +106,23 @@
       "calling_at": [
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-14T19:49",
+      "expected": "2026-10-14T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ]
     }
   ],
   "arrivals": [
@@ -207,6 +205,16 @@
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time"
+    },
+    {
+      "scheduled": "2026-10-14T19:47",
+      "expected": "2026-10-14T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": ""
     }
   ]
 }
