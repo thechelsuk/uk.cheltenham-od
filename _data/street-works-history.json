@@ -5,10 +5,15 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 143,
-    "unplanned": 24,
+    "count": 155,
+    "unplanned": 27,
     "road_closures": 19,
     "by_street": [
+      {
+        "street": "Cheltenham Road East",
+        "works": 6,
+        "road_closures": 0
+      },
       {
         "street": "Tewkesbury Road",
         "works": 6,
@@ -16,11 +21,6 @@
       },
       {
         "street": "Badgeworth Road",
-        "works": 5,
-        "road_closures": 0
-      },
-      {
-        "street": "Cheltenham Road East",
         "works": 5,
         "road_closures": 0
       },
@@ -63,15 +63,15 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 57
+        "works": 62
       },
       {
         "name": "Gloucestershire County Council",
-        "works": 28
+        "works": 32
       },
       {
         "name": "BT",
-        "works": 21
+        "works": 24
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
@@ -109,11 +109,81 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 143
+        "works": 155
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:LB9011303-000060786323",
+      "first_seen": "2026-10-14",
+      "street": "Quinton Close",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-14T08:14",
+      "end": "2026-10-16",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060786310",
+      "first_seen": "2026-10-14",
+      "street": "Golden Vale",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-14T08:49",
+      "end": "2026-10-16",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060785085",
+      "first_seen": "2026-10-14",
+      "street": "Colesbourne Road",
+      "ward_slug": "benhall-the-reddings-fiddlers-green",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-14T08:42",
+      "end": "2026-10-16",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014421493",
+      "first_seen": "2026-10-14",
+      "street": "Gloucester Street",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-21",
+      "end": "2026-10-26",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014420549",
+      "first_seen": "2026-10-14",
+      "street": "Windermere Road",
+      "ward_slug": "up-hatherley",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-21",
+      "end": "2026-10-23",
+      "last_seen": "2026-10-14"
+    },
     {
       "id": "PERMIT:LB9011303-000014400879A",
       "first_seen": "2026-10-14",
@@ -126,6 +196,104 @@
       "promoter": "Severn Trent Water",
       "start": "2026-10-19",
       "end": "2026-10-20",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:EY20457232699",
+      "first_seen": "2026-10-14",
+      "street": "Arle Road",
+      "ward_slug": "st-peters",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-10-14T07:55",
+      "end": "2026-10-14",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:EY20440732540",
+      "first_seen": "2026-10-14",
+      "street": "Kipling Road",
+      "ward_slug": "st-marks",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-10-14T07:55",
+      "end": "2026-10-14",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:EY20417836015",
+      "first_seen": "2026-10-14",
+      "street": "Milton Road",
+      "ward_slug": "st-marks",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-10-14T07:55",
+      "end": "2026-10-14",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:EY006S171-036",
+      "first_seen": "2026-10-14",
+      "street": "Richards Road",
+      "ward_slug": "swindon-village",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-10-19",
+      "end": "2026-10-21",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:BC518MACKFWH8F7T7K",
+      "first_seen": "2026-10-14",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - emergency",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-14T08:14",
+      "end": "2026-10-14",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:BC341RW-WH6CH11C",
+      "first_seen": "2026-10-14",
+      "street": "Swallow Crescent",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-15",
+      "end": "2026-10-19",
+      "last_seen": "2026-10-14"
+    },
+    {
+      "id": "PERMIT:BC004WH7WGR0B",
+      "first_seen": "2026-10-14",
+      "street": "Footway Adjoining Westside Of 17 To 23 Little Acorns",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-15",
+      "end": "2026-10-19",
       "last_seen": "2026-10-14"
     },
     {
@@ -1006,7 +1174,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-14",
+      "start": "2026-10-14T08:26",
       "end": "2026-10-15",
       "last_seen": "2026-10-14"
     },
@@ -2112,7 +2280,7 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-10-14",
+      "start": "2026-10-14T08:00",
       "end": "2026-10-16",
       "last_seen": "2026-10-14"
     }
