@@ -11,9 +11,7 @@
             <ul class="header-facts">
                 <li><strong>{{ history.count }}</strong> disruptions logged</li>
                 <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
-            </ul>
-            <ul class="header-links">
-                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
         {% include section-links.html %}

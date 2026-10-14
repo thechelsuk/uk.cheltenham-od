@@ -22,9 +22,7 @@
                 </li>
                 <li><strong>{{ h_planned | size }}</strong> planned power cut{% if h_planned.size != 1 %}s{% endif %}
                 </li>
-            </ul>
-            <ul class="header-links">
-                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
         {% include section-links.html %}

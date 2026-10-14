@@ -1,10 +1,14 @@
 {% include header.html %}
 {%- assign now = site.time | date: "%s" | plus: 0 -%}
 {%- assign expiry = page.expires | date: "%s" | plus: 0 -%}
+{%- assign cat = site.classified_categories | where: "value", page.category | first -%}
 <article class="classifieds herobar">
-    {% if page.expires and expiry < now %} <p class="classifieds-expired">
-        This classified advert has expired and is no longer available.
-        </p>
+    {% if page.expires and expiry < now %}
+        <blockquote class="classifieds-expired">
+            <p>This classified advert has expired and is no longer available.
+                {%- if cat %} <a href="{{ page.parent }}#{{ cat.value }}">See the live adverts in {{ cat.label }}
+                    &rarr;</a>{% else %} <a href="{{ page.parent }}">See the live classifieds &rarr;</a>{% endif %}</p>
+        </blockquote>
         {% else %}
 
         <header class="classifieds header">
@@ -12,33 +16,21 @@
 
             <h1 class="classifieds-title">{{ page.title }}</h1>
 
-            <ul class="classifieds meta">
-                {%- if page.company -%}<li><strong>Advertiser:</strong> {{ page.company }}</li>{%- endif -%}
-                {%- if page.location -%}<li><strong>Location:</strong> {{ page.location }}</li>{%- endif -%}
-                {%- if page.salary -%}<li><strong>Salary / Price:</strong> {{ page.salary }}</li>{%- endif -%}
-                {%- if page.job_type -%}<li><strong>Type:</strong> {{ page.job_type }}</li>{%- endif -%}
+            <ul class="header-facts advert-facts">
+                {%- if page.company -%}<li><strong>Advertiser</strong> {{ page.company }}</li>{%- endif -%}
+                {%- if page.location -%}<li><strong>Location</strong> {{ page.location }}</li>{%- endif -%}
+                {%- if page.salary -%}<li><strong>{% if page.category == "jobs" %}Salary{% else %}Price{% endif %}</strong>
+                    {{ page.salary }}</li>{%- endif -%}
+                {%- if page.job_type -%}<li><strong>Type</strong> {{ page.job_type }}</li>{%- endif -%}
+                {%- if page.closes -%}<li><strong>Applications Close</strong> {{ page.closes | date: "%-d %B %Y"
+                    }}</li>{%- endif -%}
+                <li><strong>Free Advert</strong> <a href="/submission" rel="nofollow noopener">post your own
+                        classified &rarr;</a></li>
             </ul>
-            <ul>
-                {%- if page.date -%}<li><strong>Posted:</strong> {{ page.date | date: "%-d %B %Y" }}</li>{%- endif -%}
-                {%- if page.expires -%}<li><strong>Closes:</strong> {{ page.expires | date: "%-d %B %Y" }}</li>{%- endif
-                -%}
-            </ul>
-            {%- if page.category -%}
-            <ul>
-                {%- assign cat = site.classified_categories | where: "value", page.category | first -%}
-                <li class="classifieds-category">
-                    {%- if cat -%}
-                    <a href="{{ '/cheltenham-classifieds' | relative_url }}#{{ cat.value }}">&larr; Back to
-                        {{ cat.label }}</a>
-                    {%- else -%}
-                    <a href="/cheltenham-classifieds">&larr; Back to Classifieds</a>
-                    {%- endif -%}
-                </li>
-                <li><a href="/submission" rel="nofollow noopener">Post your own classified →</a></li>
-            </ul>
-            {%- endif -%}
         </header>
         {% include section-links.html %}
+
+        <h2>{{ page.title }}</h2>
 
         {%- if page.image -%}
         <figure class="classifieds-image">
@@ -61,11 +53,35 @@
             <p><strong>Tel:</strong> {{ page.contact_phone }}</p>
             {%- endif -%}
 
-            <p class="classifieds-disclaimer">
-                This classified advert is submitted by a third party. Cheltenham Open Data does not endorse
-                or verify each advert and accepts no liability. Please take normal precautions and be scam aware.
-            </p>
         </footer>
+
+        {%- assign more = "" | split: "" -%}
+        {%- assign in_cat = site.classifieds | where: "category", page.category | sort: "date" | reverse -%}
+        {%- for ad in in_cat -%}
+        {%- assign ad_exp = ad.expires | date: "%s" | plus: 0 -%}
+        {%- if ad.url != page.url and ad_exp > now -%}{%- assign more = more | push: ad -%}{%- endif -%}
+        {%- endfor -%}
+        {%- if cat and more.size > 0 %}
+        <h2>More in {{ cat.label }}</h2>
+        <ul>
+            {%- for ad in more limit: 3 %}
+            <li><a href="{{ ad.url }}">{{ ad.title }}</a>{% if ad.company %}, {{ ad.company }}{% endif %}</li>
+            {%- endfor %}
+        </ul>
+        <p class="action-row"><a href="{{ page.parent }}#{{ cat.value }}" class="pill-link">See all {{ cat.label
+                }} adverts &rarr;</a></p>
+        {%- endif %}
+
+        <h2>About This Classified</h2>
+        <ul>
+            {%- if page.date -%}<li>Posted on {{ page.date | date: "%-d %B %Y" }}{% if page.expires %}, listed here
+                until {{ page.expires | date: "%-d %B %Y" }}{% endif %}.</li>{%- endif -%}
+            <li>This classified advert is submitted by a third party. Cheltenham
+                Open Data does not endorse or verify each advert and accepts no liability. Please take normal
+                precautions and be scam aware.</li>
+            <li>Spotted a scam or a problem with this advert? <a href="/contact">Tell us through our contact
+                    form</a>, mentioning the advert's title.</li>
+        </ul>
         {%- endif -%}
 </article>
 

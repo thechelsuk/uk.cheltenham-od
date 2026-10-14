@@ -157,10 +157,22 @@ module Navigation
         p.data["family"] = family(url, map)
       elsif p.data["parent"]
         p.data["breadcrumbs"] = parent_crumbs(norm(p.data["parent"]), map, categories, pages)
+        add_classified_category(site, p)
       elsif standalone?(p, url)
         p.data["breadcrumbs"] = [{ "name" => "Home", "url" => "/" }]
       end
     end
+  end
+
+  # An advert's trail ends at its category on the classifieds page
+  # ("Home › Classifieds › Digital"), standing in for a back link.
+  def add_classified_category(site, page)
+    return unless page.respond_to?(:collection) && page.collection&.label == "classifieds" && page.data["breadcrumbs"]
+
+    cat = (site.config["classified_categories"] || []).find { |c| c["value"] == page.data["category"] }
+    return unless cat
+
+    page.data["breadcrumbs"] += [{ "name" => cat["label"], "url" => "#{page.data['parent']}##{cat['value']}" }]
   end
 
   # Any other page that opens with the usual header (About, Policies, Feeds...)

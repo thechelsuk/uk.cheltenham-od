@@ -1,7 +1,7 @@
 ---
 layout: about-info/advert
 type: about
-title: "Cybaa - DNS, Domain and site Security Made Simple"
+title: "Cybaa - Spot security problems across your domains, sites and email"
 category: digital
 company: "Cybaa"
 location: "Cheltenham"
@@ -12,7 +12,7 @@ expires: 2027-02-23
 apply_url: https://cybaa.io
 apply_text: "Visit Cybaa"
 robots: noindex
-seo: "Cybaa - DNS, Domain and site Security Made Simple"
+seo: "Cybaa - Spot security problems across your domains, sites and email"
 ---
 
 Cybaa helps small and medium sized businesses monitor the security

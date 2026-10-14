@@ -159,6 +159,8 @@ def write_advert(job, details, today):
         "job_type": job_type or None,
         "date": today.isoformat(),
         "expires": expires.isoformat(),
+        # The employer's closing date; can be after our listing ends.
+        "closes": details["closes"].isoformat() if details["closes"] else None,
         "apply_url": f"{BASE_URL}/jobs/{job['id']}",
         "apply_text": "Apply on GOV.UK",
         "source": "GOV.UK Work Hub",
@@ -169,7 +171,7 @@ def write_advert(job, details, today):
     for key, value in front.items():
         if value:
             # JSON strings are valid YAML double-quoted strings.
-            lines.append(f"{key}: {json.dumps(value, ensure_ascii=False) if isinstance(value, str) and key not in ('date', 'expires') else value}")
+            lines.append(f"{key}: {json.dumps(value, ensure_ascii=False) if isinstance(value, str) and key not in ('date', 'expires', 'closes') else value}")
     lines.append("---")
     body = [job["summary"], ""] if job["summary"] else []
     body.append(f"Posted on GOV.UK on {posted.isoformat()}"

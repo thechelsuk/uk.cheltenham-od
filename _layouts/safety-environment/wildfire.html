@@ -11,9 +11,7 @@
             <p>{{page.description}}</p>
             <ul class="header-facts">
                 <li><strong>{{ today.label }}</strong> fire severity today ({{ today.rating }} of 5)</li>
-            </ul>
-            <ul class="header-links">
-                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
         {% include section-links.html %}

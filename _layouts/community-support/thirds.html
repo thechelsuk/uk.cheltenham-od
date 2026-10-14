@@ -8,10 +8,8 @@
             <p>{{page.description}}</p>
             <ul class="header-facts">
                 <li><strong>{{ site.data["third-spaces"].locations | size }}</strong> third spaces</li>
-            </ul>
-            <ul class="header-links">
                 {% if page.feed_url %}
-                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
                 {% endif %}
             </ul>
         </header>

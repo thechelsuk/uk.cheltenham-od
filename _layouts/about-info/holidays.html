@@ -10,10 +10,8 @@
 
             <ul class="header-facts">
                 {% if h_next %}<li><strong>{{ h_next.title }}</strong> next public holiday, {{ h_next.date | date: "%Y-%m-%d" }}</li>{% endif %}
-            </ul>
-            <ul class="header-links">
                 {% if page.feed_url %}
-                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
                 {% endif %}
             </ul>
         </header>

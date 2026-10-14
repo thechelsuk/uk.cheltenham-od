@@ -6,6 +6,31 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% assign now = site.time | date: "%s" | plus: 0 %}
+            {% assign classifieds_count = 0 %}
+            {% assign live_classifieds = "" | split: "" %}
+            {% for item in site.classifieds %}
+            {% assign exp = item.expires | date: "%s" | plus: 0 %}
+            {% if exp > now %}
+            {% assign classifieds_count = classifieds_count | plus: 1 %}
+            {% assign live_classifieds = live_classifieds | push: item %}
+            {% endif %}
+            {% endfor %}
+            {% assign rail = site.data["rail-times"] %}
+            {% assign p1 = rail.departures | where: "platform", "1" | first %}
+            {% assign p2 = rail.departures | where: "platform", "2" | first %}
+            <ul class="header-facts">
+                <li><strong>{{ site.posts | size }}</strong> <a href="/news">news posts</a></li>
+                <li><strong>{{ classifieds_count }}</strong> <a href="/cheltenham-classifieds">live classified{% if
+                        classifieds_count != 1 %}s{% endif %}</a></li>
+                <li><strong>{% if p1 %}{{ p1.expected | default: p1.scheduled | slice: 11, 5 }}{% else %}&ndash;{% endif
+                        %}</strong> <a href="/cheltenham-train-times">next train, platform 1</a>{% if p1 %} &rarr;<br>
+                    {{ p1.destination }}{% endif %}</li>
+                <li><strong>{% if p2 %}{{ p2.expected | default: p2.scheduled | slice: 11, 5 }}{% else %}&ndash;{% endif
+                        %}</strong> <a href="/cheltenham-train-times">next train, platform 2</a>{% if p2 %} &rarr;<br>
+                    {{ p2.destination }}{% endif %}</li>
+                <li><strong>Newsletter</strong> <a href="/newsletter">free Monday briefing &rarr;</a></li>
+            </ul>
         </header>
         {% include section-links.html %}
 
@@ -83,17 +108,21 @@
         <div class="home-hero-grid">
             <div>
                 <h2>Local Classifieds in Cheltenham</h2>
-                {% assign now = site.time | date: "%s" | plus: 0 %}
-                {% assign classifieds_count = 0 %}
-                {% for item in site.classifieds %}
-                {% assign exp = item.expires | date: "%s" | plus: 0 %}
-                {% if exp > now %}
-                {% assign classifieds_count = classifieds_count | plus: 1 %}
-                {% endif %}
-                {% endfor %}
-                <p><a href="/cheltenham-classifieds">Currently there are {{ classifieds_count }} live
-                        classifieds</a></p>
+                <p>Currently there are {{ classifieds_count }} live classifieds. The latest:</p>
+                <ul class="latest-list plain-list">
+                    {% assign latest_ads = live_classifieds | sort: "date" | reverse %}
+                    {% for ad in latest_ads limit: 3 %}
+                    {% assign ad_cat = site.classified_categories | where: "value", ad.category | first %}
+                    <li class="latest-item">
+                        <a href="/cheltenham-classifieds#{{ ad.category }}" class="latest-pill latest-pill-announcements">{{ ad_cat.label |
+                            default: "Classifieds" }}</a>
+                        <a href="{{ ad.url }}" class="latest-title">{{ ad.title }}</a>
+                        <span class="latest-date">{{ ad.date | date: "%-d %B %Y" }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
                 <p class="action-row">
+                    <a href="/cheltenham-classifieds" class="pill-link">View the classifieds &rarr;</a>
                     <a href="/submission" class="pill-link">Add your classified &rarr;</a>
                 </p>
             </div>

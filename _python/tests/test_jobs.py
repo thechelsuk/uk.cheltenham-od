@@ -116,7 +116,7 @@ def test_write_advert_lists_for_a_week_or_until_closing(classifieds):
     text = path.read_text(encoding="utf-8")
     assert 'title: "Care Worker"' in text
     assert 'job_type: "Full time, Permanent"' in text
-    assert "date: 2026-10-12\nexpires: 2026-10-15\n" in text
+    assert "date: 2026-10-12\nexpires: 2026-10-15\ncloses: 2026-10-15\n" in text
     assert "salary" not in text
     assert 'Help people "live" well.' in text
     assert "Posted on GOV.UK on 2026-10-11, applications close 2026-10-15." in text
@@ -128,7 +128,7 @@ def test_write_advert_without_dates_uses_today_and_a_week(classifieds):
     job = {"id": "abc", "title": "Cook", "company": None, "location": None, "salary": None, "summary": ""}
     jobs.write_advert(job, {"hours": None, "job_type": None, "posted": None, "closes": None}, today)
     text = (classifieds / "2026-10-12-cook-abc.md").read_text(encoding="utf-8")
-    assert "expires: 2026-10-19" in text and "job_type" not in text
+    assert "expires: 2026-10-19" in text and "job_type" not in text and "closes" not in text
     assert "Posted on GOV.UK on 2026-10-12." in text
 
 

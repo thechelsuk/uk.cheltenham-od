@@ -2,16 +2,18 @@
 {%- assign now = site.time | date: "%s" | plus: 0 -%}
 {%- assign live_ads = "" | split: "" -%}
 {%- for ad in site.classifieds -%}
-{%- if ad.expires -%}
 {%- assign expiry = ad.expires | date: "%s" | plus: 0 -%}
-{%- if expiry >= now -%}
-{%- assign live_ads = live_ads | push: ad -%}
-{%- endif -%}
-{%- else -%}
+{%- if expiry > now -%}
 {%- assign live_ads = live_ads | push: ad -%}
 {%- endif -%}
 {%- endfor -%}
 {%- assign live_ads = live_ads | sort_natural: "date" | reverse -%}
+{%- assign week_ago = now | minus: 604800 -%}
+{%- assign new_this_week = 0 -%}
+{%- for ad in live_ads -%}
+{%- assign posted = ad.date | date: "%s" | plus: 0 -%}
+{%- if posted >= week_ago -%}{%- assign new_this_week = new_this_week | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
 
 
 <div class="{{page.type}} herobar">
@@ -19,9 +21,13 @@
         {% include breadcrumbs.html %}
         <h1>{{page.title}}</h1>
         <p>{{page.description}}</p>
-        <ul>
-            <li><a href="/submission" rel="nofollow noopener">Post your free advert &rarr;</a></li>
-            <li><a href="{{ '/feeds/classifieds.xml' | relative_url }}">Subscribe to via our feed/rss &rarr;</a></li>
+        <ul class="header-facts">
+            <li><strong>{{ live_ads.size }}</strong> live advert{% if live_ads.size != 1 %}s{% endif %}</li>
+            <li><strong>{{ new_this_week }}</strong> added in the last 7 days</li>
+            <li><strong>Free Advert</strong> <a href="/submission" rel="nofollow noopener">post your free advert
+                    &rarr;</a></li>
+            <li><strong>RSS Feed</strong> <a href="{{ '/feeds/classifieds.xml' | relative_url }}">subscribe via our
+                    feed/rss &rarr;</a></li>
         </ul>
     </header>
     {% include section-links.html %}

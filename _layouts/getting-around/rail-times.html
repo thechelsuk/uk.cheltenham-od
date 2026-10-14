@@ -13,7 +13,15 @@
             <p>{{page.description}}</p>
             <ul class="header-facts">
                 <li><strong>{{ data.station.crs | default: "CNM" }}</strong> station code</li>
-                {% if data %}<li><strong>{{ data.generated_at | date: "%H:%M" }}</strong> times last updated</li>{% endif %}
+                {% if data %}<li><strong>{{ data.generated_at | date: "%H:%M" }}</strong> board updated</li>{% endif %}
+                {% assign p1 = data.departures | where: "platform", "1" | first %}
+                {% assign p2 = data.departures | where: "platform", "2" | first %}
+                <li><strong>{% if p1 %}{{ p1.expected | default: p1.scheduled | slice: 11, 5 }}{% else %}&ndash;{% endif
+                        %}</strong> next train, platform 1{% if p1 %} &rarr;<br>
+                    {{ p1.destination }}{% endif %}</li>
+                <li><strong>{% if p2 %}{{ p2.expected | default: p2.scheduled | slice: 11, 5 }}{% else %}&ndash;{% endif
+                        %}</strong> next train, platform 2{% if p2 %} &rarr;<br>
+                    {{ p2.destination }}{% endif %}</li>
             </ul>
         </header>
         {% include section-links.html %}

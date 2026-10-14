@@ -9,10 +9,8 @@
             <p>{{page.description}}</p>
             <ul class="header-facts">
                 <li><strong>{{ site.data["points-of-interest"] | size }}</strong> places of interest within {{ area_band.miles }} miles</li>
-            </ul>
-            <ul class="header-links">
                 {% if page.feed_url %}
-                <li><a href="{{ page.feed_url }}">Subscribe via our feed/rss &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
                 {% endif %}
             </ul>
         </header>
