@@ -6,6 +6,7 @@ description: "How Cheltenham Open Data collects, uses, and protects your informa
 seo: "Privacy Policy for Cheltenham Open Data. Privacy-first, cookie-free analytics, GDPR compliant, and clear disclosure of affiliate links."
 type: "cod"
 parent: /policies
+nav_title: "Privacy"
 ---
 
 ## Privacy Policy

@@ -6,6 +6,7 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            {% if page.sponsor_facts %}{% include sponsor-facts.html %}{% endif %}
             {% if page.feed_url %}
             <ul class="header-facts">
                 <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
