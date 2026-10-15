@@ -148,6 +148,7 @@ module Navigation
     categories = category_pages.to_h { |p| [p.data["group"], norm(p.url)] }
     site.config["navigation_groups"] = menu(site, items, category_pages)
     pages = site.pages + site.collections.values.flat_map(&:docs)
+    parent_families = outside_families(site, map)
     pages.each do |p|
       url = norm(p.url)
       if p.data["layout"] == "explore-category"
@@ -158,8 +159,26 @@ module Navigation
       elsif p.data["parent"]
         p.data["breadcrumbs"] = parent_crumbs(norm(p.data["parent"]), map, categories, pages)
         add_classified_category(site, p)
+        p.data["family"] = parent_families[norm(p.data["parent"])]&.map { |l| l.merge("current" => l["url"] == url) }
       elsif standalone?(p, url)
         p.data["breadcrumbs"] = [{ "name" => "Home", "url" => "/" }]
+      end
+      if parent_families[url]
+        p.data["family"] = parent_families[url].map { |l| l.merge("current" => l["url"] == url) }
+      end
+    end
+  end
+
+  # The "In this section" row for a page outside the structure that other
+  # pages name as `parent:` (Sponsorship and its Traffic and Terms pages).
+  def outside_families(site, map)
+    kids = site.pages.select { |p| p.data["parent"] && !map[norm(p.data["parent"])] }
+    kids.group_by { |p| norm(p.data["parent"]) }.each_with_object({}) do |(parent, children), out|
+      head = site.pages.find { |p| norm(p.url) == parent }
+      next unless head
+
+      out[parent] = ([head] + children).map do |p|
+        { "name" => short(p.data["nav_title"] || p.data["title"]), "url" => norm(p.url) }
       end
     end
   end

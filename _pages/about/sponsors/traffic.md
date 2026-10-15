@@ -7,6 +7,7 @@ description: "Unique visitors, total requests and the share served from cache fo
 type: "cod"
 schema: traffic
 parent: /sponsor
+nav_title: "Traffic"
 ---
 
 ## How Busy Is Cheltenham Open Data?
