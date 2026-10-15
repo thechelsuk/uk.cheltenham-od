@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T12:50:08+01:00",
+  "generated_at": "2026-10-15T12:55:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,52 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-15T12:45",
-      "expected": "2026-10-15T12:51",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
-    {
-      "scheduled": "2026-10-15T12:52",
-      "expected": "2026-10-15T12:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "Lostwithiel",
-        "Par",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "Camborne",
-        "Hayle",
-        "St Erth",
-        "Penzance"
-      ]
-    },
     {
       "scheduled": "2026-10-15T12:55",
       "expected": "2026-10-15T12:55",
@@ -173,29 +127,47 @@
         "Bristol Parkway",
         "Bristol Temple Meads"
       ]
+    },
+    {
+      "scheduled": "2026-10-15T13:40",
+      "expected": "2026-10-15T13:40",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
+    },
+    {
+      "scheduled": "2026-10-15T13:40",
+      "expected": "2026-10-15T13:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-15T12:43",
-      "expected": "2026-10-15T12:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by congestion"
-    },
-    {
-      "scheduled": "2026-10-15T12:50",
-      "expected": "2026-10-15T12:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-15T12:54",
       "expected": "2026-10-15T12:54",
@@ -258,12 +230,22 @@
     },
     {
       "scheduled": "2026-10-15T13:31",
-      "expected": "2026-10-15T13:31",
-      "status": "On time",
+      "expected": "2026-10-15T13:33",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by a safety inspection of the track"
+    },
+    {
+      "scheduled": "2026-10-15T13:38",
+      "expected": "2026-10-15T13:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": ""
     }
   ]
