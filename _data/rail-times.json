@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T06:16:08+01:00",
+  "generated_at": "2026-10-15T06:20:38+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,27 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-15T06:14",
-      "expected": "2026-10-15T06:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
-    {
       "scheduled": "2026-10-15T06:15",
-      "expected": "2026-10-15T06:15",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Gloucester",
@@ -173,7 +155,7 @@
     },
     {
       "scheduled": "2026-10-15T07:35",
-      "expected": "2026-10-15T07:55",
+      "expected": "2026-10-15T07:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -182,6 +164,24 @@
       "reason": "",
       "calling_at": [
         "Worcester Shrub Hill"
+      ]
+    },
+    {
+      "scheduled": "2026-10-15T07:36",
+      "expected": "2026-10-15T07:36",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
       ]
     }
   ],
@@ -258,12 +258,22 @@
     },
     {
       "scheduled": "2026-10-15T07:33",
-      "expected": "2026-10-15T07:54",
+      "expected": "2026-10-15T07:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Worcester Shrub Hill",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T07:36",
+      "expected": "2026-10-15T07:36",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": ""
     }
   ]
