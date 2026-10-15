@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T07:30:08+01:00",
+  "generated_at": "2026-10-15T07:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,8 +12,8 @@
   "departures": [
     {
       "scheduled": "2026-10-15T07:29",
-      "expected": "2026-10-15T07:29",
-      "status": "On time",
+      "expected": "2026-10-15T07:34",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -32,7 +32,7 @@
     },
     {
       "scheduled": "2026-10-15T07:35",
-      "expected": "2026-10-15T07:47",
+      "expected": "2026-10-15T07:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -187,6 +187,22 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-10-15T08:15",
+      "expected": "2026-10-15T08:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
@@ -201,18 +217,8 @@
       "reason": ""
     },
     {
-      "scheduled": "2026-10-15T07:29",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of a problem in the depot"
-    },
-    {
       "scheduled": "2026-10-15T07:33",
-      "expected": "2026-10-15T07:46",
+      "expected": "2026-10-15T07:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -278,6 +284,16 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T08:14",
+      "expected": "2026-10-15T08:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     }
   ]
