@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T21:15:07+01:00",
+  "generated_at": "2026-10-15T21:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-15T20:52",
-      "expected": "2026-10-15T21:18",
+      "expected": "2026-10-15T21:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -32,7 +32,7 @@
     },
     {
       "scheduled": "2026-10-15T21:07",
-      "expected": "2026-10-15T21:20",
+      "expected": "2026-10-15T21:21",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -54,25 +54,6 @@
       ]
     },
     {
-      "scheduled": "2026-10-15T21:15",
-      "expected": "2026-10-15T21:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-15T21:33",
       "expected": "2026-10-15T21:33",
       "status": "On time",
@@ -88,7 +69,7 @@
     },
     {
       "scheduled": "2026-10-15T21:52",
-      "expected": "2026-10-15T21:57",
+      "expected": "2026-10-15T21:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -103,7 +84,7 @@
     },
     {
       "scheduled": "2026-10-15T21:53",
-      "expected": "2026-10-15T21:57",
+      "expected": "2026-10-15T21:58",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -165,12 +146,25 @@
         "Kemble",
         "Swindon"
       ]
+    },
+    {
+      "scheduled": "2026-10-15T22:21",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-15T20:50",
-      "expected": "2026-10-15T21:17",
+      "expected": "2026-10-15T21:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -180,22 +174,12 @@
     },
     {
       "scheduled": "2026-10-15T21:05",
-      "expected": "2026-10-15T21:19",
+      "expected": "2026-10-15T21:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-15T21:14",
-      "expected": "2026-10-15T21:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
       "reason": ""
     },
     {
@@ -210,7 +194,7 @@
     },
     {
       "scheduled": "2026-10-15T21:50",
-      "expected": "2026-10-15T21:56",
+      "expected": "2026-10-15T21:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -220,7 +204,7 @@
     },
     {
       "scheduled": "2026-10-15T21:51",
-      "expected": "2026-10-15T21:56",
+      "expected": "2026-10-15T21:57",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -256,6 +240,16 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T22:20",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
       "reason": ""
     }
   ]
