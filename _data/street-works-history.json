@@ -5,23 +5,23 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 227,
-    "unplanned": 41,
-    "road_closures": 27,
+    "count": 253,
+    "unplanned": 42,
+    "road_closures": 28,
     "by_street": [
       {
         "street": "Cheltenham Road East",
-        "works": 9,
+        "works": 14,
+        "road_closures": 0
+      },
+      {
+        "street": "Gloucester Road",
+        "works": 12,
         "road_closures": 0
       },
       {
         "street": "Tewkesbury Road",
         "works": 9,
-        "road_closures": 0
-      },
-      {
-        "street": "Gloucester Road",
-        "works": 6,
         "road_closures": 0
       },
       {
@@ -63,27 +63,27 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 87
+        "works": 90
       },
       {
         "name": "Gloucestershire County Council",
-        "works": 45
+        "works": 55
       },
       {
         "name": "BT",
-        "works": 36
+        "works": 45
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
-        "works": 27
+        "works": 28
       },
       {
         "name": "Virgin Media",
-        "works": 11
+        "works": 12
       },
       {
         "name": "Gigaclear Limited",
-        "works": 6
+        "works": 7
       },
       {
         "name": "Unknown",
@@ -102,6 +102,10 @@
         "works": 1
       },
       {
+        "name": "Gas Transportation Co Ltd",
+        "works": 1
+      },
+      {
         "name": "National Highways",
         "works": 1
       },
@@ -117,11 +121,25 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 227
+        "works": 253
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:ZP001N0010192-1-KI",
+      "first_seen": "2026-10-15",
+      "street": "Mill Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gas Transportation Co Ltd",
+      "start": "2026-11-02",
+      "end": "2026-11-06",
+      "last_seen": "2026-10-15"
+    },
     {
       "id": "PERMIT:ZH00145665542",
       "first_seen": "2026-10-15",
@@ -165,6 +183,20 @@
       "last_seen": "2026-10-15"
     },
     {
+      "id": "PERMIT:NK110ANSL305990",
+      "first_seen": "2026-10-15",
+      "street": "Jupiter Way",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Virgin Media",
+      "start": "2026-10-22",
+      "end": "2026-10-26",
+      "last_seen": "2026-10-15"
+    },
+    {
       "id": "PERMIT:NK110ANSL304824",
       "first_seen": "2026-10-15",
       "street": "Cheltenham Road East",
@@ -176,6 +208,34 @@
       "promoter": "Virgin Media",
       "start": "2026-11-30",
       "end": "2026-12-04",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:LB9011303-000077162087",
+      "first_seen": "2026-10-15",
+      "street": "Leckhampton Hill",
+      "ward_slug": "charlton-park",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-19",
+      "end": "2026-10-21",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:LB9011303-000077065452A",
+      "first_seen": "2026-10-15",
+      "street": "Peter Pennell Close",
+      "ward_slug": "springbank",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-21",
+      "end": "2026-10-22",
       "last_seen": "2026-10-15"
     },
     {
@@ -249,6 +309,20 @@
       "last_seen": "2026-10-15"
     },
     {
+      "id": "PERMIT:LB9011303-000014371927B",
+      "first_seen": "2026-10-15",
+      "street": "Queens Road",
+      "ward_slug": "lansdown",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-19",
+      "end": "2026-10-22",
+      "last_seen": "2026-10-15"
+    },
+    {
       "id": "PERMIT:LB7012302-000014399565",
       "first_seen": "2026-10-15",
       "street": "Lansdown Road",
@@ -274,6 +348,20 @@
       "promoter": "Gigaclear Limited",
       "start": "2026-10-20",
       "end": "2026-10-21",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:KA520SAS00165469WHISPERS",
+      "first_seen": "2026-10-15",
+      "street": "Bushcombe Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Temp obstruction 15 minute delay",
+      "road_closure": false,
+      "promoter": "Gigaclear Limited",
+      "start": "2026-10-15T14:30",
+      "end": "2026-10-19",
       "last_seen": "2026-10-15"
     },
     {
@@ -347,6 +435,76 @@
       "last_seen": "2026-10-15"
     },
     {
+      "id": "PERMIT:HM75214401490H",
+      "first_seen": "2026-10-15",
+      "street": "Innsworth Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2026-10-19",
+      "end": "2026-10-30",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40088299207",
+      "first_seen": "2026-10-15",
+      "street": "Gloucester Road",
+      "ward_slug": "benhall-the-reddings-fiddlers-green",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-21",
+      "end": "2027-01-21",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40082917840",
+      "first_seen": "2026-10-15",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-14",
+      "end": "2027-01-14",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40075472588",
+      "first_seen": "2026-10-15",
+      "street": "Gloucester Road",
+      "ward_slug": "benhall-the-reddings-fiddlers-green",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-27",
+      "end": "2027-01-27",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40072981482",
+      "first_seen": "2026-10-15",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-07",
+      "end": "2027-01-07",
+      "last_seen": "2026-10-15"
+    },
+    {
       "id": "PERMIT:EY40066332072",
       "first_seen": "2026-10-15",
       "street": "Lansdown Road",
@@ -358,6 +516,76 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-04",
       "end": "2027-02-04",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40054286036",
+      "first_seen": "2026-10-15",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-06",
+      "end": "2027-01-06",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40039880448",
+      "first_seen": "2026-10-15",
+      "street": "Gloucester Road",
+      "ward_slug": "hesters-way",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-28",
+      "end": "2027-01-28",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40033807543",
+      "first_seen": "2026-10-15",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-13",
+      "end": "2027-01-13",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40022394219",
+      "first_seen": "2026-10-15",
+      "street": "Gloucester Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-01-20",
+      "end": "2027-01-20",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:EY40019641887",
+      "first_seen": "2026-10-15",
+      "street": "Gloucester Road",
+      "ward_slug": "st-marks",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2027-02-03",
+      "end": "2027-02-03",
       "last_seen": "2026-10-15"
     },
     {
@@ -431,6 +659,20 @@
       "last_seen": "2026-10-15"
     },
     {
+      "id": "PERMIT:EY020GB-BELL2511",
+      "first_seen": "2026-10-15",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-11-25",
+      "end": "2026-11-27",
+      "last_seen": "2026-10-15"
+    },
+    {
       "id": "PERMIT:BC341RW-WH5VNC7K-04",
       "first_seen": "2026-10-15",
       "street": "Blackbird Avenue",
@@ -442,6 +684,132 @@
       "promoter": "BT",
       "start": "2026-10-20",
       "end": "2026-10-22",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC008WH1R1M5HL2CSB",
+      "first_seen": "2026-10-15",
+      "street": "Windyridge Gardens",
+      "ward_slug": "swindon-village",
+      "kind": "Planned",
+      "category": "Major",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "BT",
+      "start": "2026-11-09",
+      "end": "2026-11-11",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC008WGQM9W8YL2CSB",
+      "first_seen": "2026-10-15",
+      "street": "Gloucester Road",
+      "ward_slug": "benhall-the-reddings-fiddlers-green",
+      "kind": "Planned",
+      "category": "Major",
+      "traffic_management": "Lane closure",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-09",
+      "end": "2026-11-09",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC00815OCTSS1RDH44",
+      "first_seen": "2026-10-15",
+      "street": "Oakleaze",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-15T16:00",
+      "end": "2026-10-19",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC004WH8K584G",
+      "first_seen": "2026-10-15",
+      "street": "Morlands Drive",
+      "ward_slug": "charlton-kings",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-23",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC004WH8CF77K",
+      "first_seen": "2026-10-15",
+      "street": "Ashley Close",
+      "ward_slug": "battledown",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-20",
+      "end": "2026-10-22",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC004WH8C5T9M",
+      "first_seen": "2026-10-15",
+      "street": "Beeches Road",
+      "ward_slug": "charlton-kings",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-20",
+      "end": "2026-10-22",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC004WH7TVW5V",
+      "first_seen": "2026-10-15",
+      "street": "Harris Close",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-20",
+      "end": "2026-10-22",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC004WH7P747X",
+      "first_seen": "2026-10-15",
+      "street": "Snowdon Gardens",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-20",
+      "end": "2026-10-22",
+      "last_seen": "2026-10-15"
+    },
+    {
+      "id": "PERMIT:BC004WH7MN05V",
+      "first_seen": "2026-10-15",
+      "street": "Oakfield Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-16",
+      "end": "2026-10-20",
       "last_seen": "2026-10-15"
     },
     {
@@ -707,7 +1075,7 @@
       "road_closure": false,
       "promoter": "Severn Trent Water",
       "start": "2026-10-12T18:00",
-      "end": "2026-10-15",
+      "end": "2026-10-19",
       "last_seen": "2026-10-15"
     },
     {
@@ -2736,8 +3104,8 @@
       "traffic_management": "Temp obstruction 15 minute delay",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-10-15",
-      "end": "2026-10-15",
+      "start": "2026-10-20",
+      "end": "2026-10-20",
       "last_seen": "2026-10-15"
     },
     {
@@ -3268,8 +3636,8 @@
       "traffic_management": "Temp obstruction 15 minute delay",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-10-15",
-      "end": "2026-10-15",
+      "start": "2026-10-20",
+      "end": "2026-10-20",
       "last_seen": "2026-10-15"
     },
     {
