@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T19:15:08+01:00",
+  "generated_at": "2026-10-15T19:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-15T18:52",
-      "expected": "2026-10-15T19:31",
+      "expected": "2026-10-15T19:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -31,52 +31,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ]
-    },
-    {
-      "scheduled": "2026-10-15T19:12",
-      "expected": "2026-10-15T19:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ]
-    },
-    {
-      "scheduled": "2026-10-15T19:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
-      "calling_at": [
-        "Gloucester"
-      ]
-    },
-    {
-      "scheduled": "2026-10-15T19:15",
-      "expected": "2026-10-15T19:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester"
       ]
     },
     {
@@ -113,7 +67,7 @@
     },
     {
       "scheduled": "2026-10-15T19:40",
-      "expected": "2026-10-15T19:56",
+      "expected": "2026-10-15T19:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -142,48 +96,79 @@
       "calling_at": [
         "Birmingham New Street"
       ]
+    },
+    {
+      "scheduled": "2026-10-15T19:49",
+      "expected": "2026-10-15T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ]
+    },
+    {
+      "scheduled": "2026-10-15T19:52",
+      "expected": "2026-10-15T20:19",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by the emergency services dealing with an incident",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
+    },
+    {
+      "scheduled": "2026-10-15T19:59",
+      "expected": "2026-10-15T19:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Willington",
+        "Derby",
+        "Spondon",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-15T18:50",
-      "expected": "2026-10-15T19:30",
+      "expected": "2026-10-15T19:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
       "reason": "This service has been delayed by the emergency services dealing with an incident"
-    },
-    {
-      "scheduled": "2026-10-15T19:10",
-      "expected": "2026-10-15T19:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-15T19:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "This service has been cancelled because of the emergency services dealing with an incident"
-    },
-    {
-      "scheduled": "2026-10-15T19:14",
-      "expected": "2026-10-15T19:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Gloucester",
-      "reason": ""
     },
     {
       "scheduled": "2026-10-15T19:21",
@@ -197,7 +182,7 @@
     },
     {
       "scheduled": "2026-10-15T19:27",
-      "expected": "2026-10-15T19:45",
+      "expected": "2026-10-15T19:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -233,6 +218,36 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T19:47",
+      "expected": "2026-10-15T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T19:51",
+      "expected": "2026-10-15T20:18",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by the emergency services dealing with an incident"
+    },
+    {
+      "scheduled": "2026-10-15T19:58",
+      "expected": "2026-10-15T19:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": ""
     }
   ]
