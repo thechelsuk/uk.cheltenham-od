@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T22:05:08+01:00",
+  "generated_at": "2026-10-15T22:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-15T21:52",
-      "expected": "2026-10-15T22:08",
+      "expected": "2026-10-15T22:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -23,20 +23,6 @@
         "Gloucester",
         "Bristol Parkway",
         "Bristol Temple Meads"
-      ]
-    },
-    {
-      "scheduled": "2026-10-15T22:03",
-      "expected": "2026-10-15T22:05",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
       ]
     },
     {
@@ -71,7 +57,7 @@
     },
     {
       "scheduled": "2026-10-15T22:52",
-      "expected": "2026-10-15T23:00",
+      "expected": "2026-10-15T23:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -114,12 +100,25 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-15T23:02",
+      "expected": "2026-10-15T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-15T21:50",
-      "expected": "2026-10-15T22:07",
+      "expected": "2026-10-15T22:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -128,19 +127,9 @@
       "reason": "This service has been delayed by the emergency services dealing with an incident"
     },
     {
-      "scheduled": "2026-10-15T22:01",
-      "expected": "2026-10-15T22:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": ""
-    },
-    {
       "scheduled": "2026-10-15T22:06",
-      "expected": "2026-10-15T22:06",
-      "status": "On time",
+      "expected": "2026-10-15T22:09",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
@@ -179,7 +168,7 @@
     },
     {
       "scheduled": "2026-10-15T22:50",
-      "expected": "2026-10-15T22:59",
+      "expected": "2026-10-15T23:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -194,6 +183,16 @@
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T23:00",
+      "expected": "2026-10-15T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
       "destination": "Birmingham New Street",
       "reason": ""
     }
