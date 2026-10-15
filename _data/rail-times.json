@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T06:00:38+01:00",
+  "generated_at": "2026-10-15T06:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-15T06:08",
-      "expected": "2026-10-15T06:08",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
     {
       "scheduled": "2026-10-15T06:14",
       "expected": "2026-10-15T06:14",
@@ -64,8 +45,8 @@
     },
     {
       "scheduled": "2026-10-15T06:41",
-      "expected": "2026-10-15T06:41",
-      "status": "On time",
+      "expected": "2026-10-15T06:44",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -189,19 +170,22 @@
         "Torquay",
         "Paignton"
       ]
+    },
+    {
+      "scheduled": "2026-10-15T07:35",
+      "expected": "2026-10-15T07:51",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Worcester Shrub Hill"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-15T06:06",
-      "expected": "2026-10-15T06:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-15T06:13",
       "expected": "2026-10-15T06:13",
@@ -214,8 +198,8 @@
     },
     {
       "scheduled": "2026-10-15T06:40",
-      "expected": "2026-10-15T06:40",
-      "status": "On time",
+      "expected": "2026-10-15T06:43",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -270,6 +254,16 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-15T07:33",
+      "expected": "2026-10-15T07:50",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
       "reason": ""
     }
   ]
