@@ -7,6 +7,7 @@ permalink: /glossary
 description: "What the terms on Cheltenham Open Data mean, from how far around Cheltenham each page looks to wards and how fresh the data is."
 type: "cod"
 parent: /policies
+nav_title: "Glossary"
 ---
 
 ## Glossary

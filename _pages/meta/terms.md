@@ -6,6 +6,7 @@ description: "The terms of use for Cheltenham Open Data: how you may use the sit
 type: "cod"
 seo: "Terms of Use for Cheltenham Open Data — site and data licensing, classifieds and advertising rules, a data-accuracy disclaimer, and governing law."
 parent: /policies
+nav_title: "Terms"
 ---
 
 ## Terms of Use
