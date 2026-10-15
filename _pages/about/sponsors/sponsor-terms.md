@@ -7,6 +7,7 @@ seo: "Plain-English terms for sponsoring a category on Cheltenham Open Data: wha
 description: The simple terms for sponsoring a page on Cheltenham Open Data.
 type: "cod"
 parent: /sponsor
+nav_title: "Terms"
 ---
 
 Plain-English terms for sponsoring Cheltenham Open Data. If anything's unclear,

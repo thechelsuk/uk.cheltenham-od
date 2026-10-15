@@ -1,4 +1,42 @@
 {% include header.html %}
+{% assign gta_items = site.navigation_header | where: "group", "Getting Around" %}
+{% assign gta_section = site.pages | where: "section", "Getting Around" %}
+{% assign gta_count = gta_items.size | plus: 1 | plus: gta_section.size %}
+{% for item in gta_items %}{% if item.children %}{% assign gta_count = gta_count | plus: item.children.size %}{%
+endif %}{% endfor %}
+
+{% assign hap_items = site.navigation_header | where: "group", "Home & Property" %}
+{% assign hap_section = site.pages | where: "section", "Home & Property" %}
+{% assign hap_count = hap_items.size | plus: 1 | plus: hap_section.size %}
+{% for item in hap_items %}{% if item.children %}{% assign hap_count = hap_count | plus: item.children.size %}{%
+endif %}{% endfor %}
+
+{% assign sae_items = site.navigation_header | where: "group", "Safety & Environment" %}
+{% assign sae_section = site.pages | where: "section", "Safety & Environment" %}
+{% assign sae_count = sae_items.size | plus: 1 | plus: sae_section.size %}
+{% for item in sae_items %}{% if item.children %}{% assign sae_count = sae_count | plus: item.children.size %}{%
+endif %}{% endfor %}
+
+{% assign tdo_items = site.navigation_header | where: "group", "Things to Do" %}
+{% assign tdo_section = site.pages | where: "section", "Things to Do" %}
+{% assign tdo_count = tdo_items.size | plus: 1 | plus: tdo_section.size %}
+{% for item in tdo_items %}{% if item.children %}{% assign tdo_count = tdo_count | plus: item.children.size %}{%
+endif %}{% endfor %}
+
+{% assign cas_items = site.navigation_header | where: "group", "Community & Support" %}
+{% assign cas_section = site.pages | where: "section", "Community & Support" %}
+{% assign cas_count = cas_items.size | plus: 1 | plus: cas_section.size %}
+{% for item in cas_items %}{% if item.children %}{% assign cas_count = cas_count | plus: item.children.size %}{%
+endif %}{% endfor %}
+
+{% assign aai_items = site.navigation_header | where: "group", "About & Info" %}
+{% assign aai_section = site.pages | where: "section", "About & Info" %}
+{% assign aai_count = aai_items.size | plus: 1 | plus: aai_section.size %}
+{% for item in aai_items %}{% if item.children %}{% for child in item.children %}{% unless child.link ==
+"/submission" %}{% assign aai_count = aai_count | plus: 1 %}{% endunless %}{% endfor %}{% endif %}{% endfor %}
+{% assign sponsor_pages = gta_count | plus: hap_count | plus: sae_count | plus: tdo_count | plus: cas_count | plus:
+aai_count | plus: 1 %}
+{% assign traffic = site.data["site-traffic"] %}
 
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
@@ -6,6 +44,10 @@
             {% include breadcrumbs.html %}
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ traffic.totals.display_uniques }}</strong> unique visitors in the last 30 days</li>
+                <li><strong>{{ sponsor_pages }}</strong> pages you can sponsor</li>
+            </ul>
         </header>
         {% include section-links.html %}
 
@@ -15,42 +57,6 @@
         <p>Each category is £100/month at the founding rate, with editorial included. One sponsor per category.
             The Pages column shows how many pages sit under each category, and the pages are listed, so you can see how many
             pages one sponsorship covers.</p>
-
-        {% assign gta_items = site.navigation_header | where: "group", "Getting Around" %}
-        {% assign gta_section = site.pages | where: "section", "Getting Around" %}
-        {% assign gta_count = gta_items.size | plus: 1 | plus: gta_section.size %}
-        {% for item in gta_items %}{% if item.children %}{% assign gta_count = gta_count | plus: item.children.size %}{%
-        endif %}{% endfor %}
-
-        {% assign hap_items = site.navigation_header | where: "group", "Home & Property" %}
-        {% assign hap_section = site.pages | where: "section", "Home & Property" %}
-        {% assign hap_count = hap_items.size | plus: 1 | plus: hap_section.size %}
-        {% for item in hap_items %}{% if item.children %}{% assign hap_count = hap_count | plus: item.children.size %}{%
-        endif %}{% endfor %}
-
-        {% assign sae_items = site.navigation_header | where: "group", "Safety & Environment" %}
-        {% assign sae_section = site.pages | where: "section", "Safety & Environment" %}
-        {% assign sae_count = sae_items.size | plus: 1 | plus: sae_section.size %}
-        {% for item in sae_items %}{% if item.children %}{% assign sae_count = sae_count | plus: item.children.size %}{%
-        endif %}{% endfor %}
-
-        {% assign tdo_items = site.navigation_header | where: "group", "Things to Do" %}
-        {% assign tdo_section = site.pages | where: "section", "Things to Do" %}
-        {% assign tdo_count = tdo_items.size | plus: 1 | plus: tdo_section.size %}
-        {% for item in tdo_items %}{% if item.children %}{% assign tdo_count = tdo_count | plus: item.children.size %}{%
-        endif %}{% endfor %}
-
-        {% assign cas_items = site.navigation_header | where: "group", "Community & Support" %}
-        {% assign cas_section = site.pages | where: "section", "Community & Support" %}
-        {% assign cas_count = cas_items.size | plus: 1 | plus: cas_section.size %}
-        {% for item in cas_items %}{% if item.children %}{% assign cas_count = cas_count | plus: item.children.size %}{%
-        endif %}{% endfor %}
-
-        {% assign aai_items = site.navigation_header | where: "group", "About & Info" %}
-        {% assign aai_section = site.pages | where: "section", "About & Info" %}
-        {% assign aai_count = aai_items.size | plus: 1 | plus: aai_section.size %}
-        {% for item in aai_items %}{% if item.children %}{% for child in item.children %}{% unless child.link ==
-        "/submission" %}{% assign aai_count = aai_count | plus: 1 %}{% endunless %}{% endfor %}{% endif %}{% endfor %}
 
         <div class="table-scroll">
             <table class="sponsor-categories-table data-table">
