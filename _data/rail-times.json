@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T17:10:08+01:00",
+  "generated_at": "2026-10-16T17:15:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-16T16:52",
-      "expected": "2026-10-16T17:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ]
-    },
     {
       "scheduled": "2026-10-16T17:12",
       "expected": "2026-10-16T17:12",
@@ -158,19 +138,29 @@
         "Worcester Shrub Hill",
         "Worcester Foregate Street"
       ]
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-16T16:50",
-      "expected": "2026-10-16T17:08",
+      "scheduled": "2026-10-16T17:52",
+      "expected": "2026-10-16T18:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": ""
-    },
+      "reason": "This service has been delayed by a member of on train staff being taken ill",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-16T17:10",
       "expected": "2026-10-16T17:10",
@@ -250,6 +240,16 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-16T17:50",
+      "expected": "2026-10-16T18:01",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a member of on train staff being taken ill"
     }
   ]
 }
