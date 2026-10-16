@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T12:15:08+01:00",
+  "generated_at": "2026-10-16T12:20:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-16T11:52",
-      "expected": "2026-10-16T12:26",
+      "expected": "2026-10-16T12:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,49 +28,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ]
-    },
-    {
-      "scheduled": "2026-10-16T12:12",
-      "expected": "2026-10-16T12:16",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ]
-    },
-    {
-      "scheduled": "2026-10-16T12:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ]
     },
     {
@@ -142,7 +99,7 @@
     },
     {
       "scheduled": "2026-10-16T12:40",
-      "expected": "2026-10-16T13:01",
+      "expected": "2026-10-16T13:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -158,38 +115,64 @@
         "Stockport",
         "Manchester Piccadilly"
       ]
+    },
+    {
+      "scheduled": "2026-10-16T12:45",
+      "expected": "2026-10-16T12:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ]
+    },
+    {
+      "scheduled": "2026-10-16T12:52",
+      "expected": "2026-10-16T12:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth",
+        "Liskeard",
+        "Bodmin Parkway",
+        "Lostwithiel",
+        "Par",
+        "St Austell",
+        "Truro",
+        "Redruth",
+        "Camborne",
+        "Hayle",
+        "St Erth",
+        "Penzance"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-16T11:51",
-      "expected": "2026-10-16T12:25",
+      "expected": "2026-10-16T12:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
       "reason": "This service has been delayed by the emergency services dealing with an incident"
-    },
-    {
-      "scheduled": "2026-10-16T12:11",
-      "expected": "2026-10-16T12:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": ""
-    },
-    {
-      "scheduled": "2026-10-16T12:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of the emergency services dealing with an incident"
     },
     {
       "scheduled": "2026-10-16T12:14",
@@ -243,13 +226,33 @@
     },
     {
       "scheduled": "2026-10-16T12:38",
-      "expected": "2026-10-16T13:00",
+      "expected": "2026-10-16T12:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "This service has been delayed by a problem currently under investigation"
+    },
+    {
+      "scheduled": "2026-10-16T12:43",
+      "expected": "2026-10-16T12:43",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-16T12:50",
+      "expected": "2026-10-16T12:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
+      "reason": ""
     }
   ]
 }
