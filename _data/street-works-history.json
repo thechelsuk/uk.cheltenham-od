@@ -5,13 +5,13 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 264,
+    "count": 272,
     "unplanned": 42,
-    "road_closures": 28,
+    "road_closures": 29,
     "by_street": [
       {
         "street": "Cheltenham Road East",
-        "works": 14,
+        "works": 15,
         "road_closures": 0
       },
       {
@@ -21,7 +21,7 @@
       },
       {
         "street": "Tewkesbury Road",
-        "works": 9,
+        "works": 10,
         "road_closures": 0
       },
       {
@@ -41,7 +41,7 @@
       },
       {
         "street": "High Street",
-        "works": 3,
+        "works": 4,
         "road_closures": 0
       },
       {
@@ -71,11 +71,11 @@
       },
       {
         "name": "BT",
-        "works": 48
+        "works": 51
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
-        "works": 29
+        "works": 31
       },
       {
         "name": "Virgin Media",
@@ -87,11 +87,11 @@
       },
       {
         "name": "Unknown",
-        "works": 6
+        "works": 7
       },
       {
         "name": "Wales And West Utilities Ltd",
-        "works": 4
+        "works": 6
       },
       {
         "name": "Vodafone Group",
@@ -121,11 +121,39 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 264
+        "works": 272
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:XY245004000199774",
+      "first_seen": "2026-10-16",
+      "street": "Spring Lane",
+      "ward_slug": "prestbury",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Wales And West Utilities Ltd",
+      "start": "2026-12-14",
+      "end": "2026-12-17",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "id": "PERMIT:XY002WWU00843",
+      "first_seen": "2026-10-16",
+      "street": "Rutherford Way",
+      "ward_slug": "swindon-village",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Wales And West Utilities Ltd",
+      "start": "2026-11-17",
+      "end": "2026-11-17",
+      "last_seen": "2026-10-16"
+    },
     {
       "id": "PERMIT:NK110ANSL305168",
       "first_seen": "2026-10-16",
@@ -183,6 +211,34 @@
       "last_seen": "2026-10-16"
     },
     {
+      "id": "PERMIT:HM7570064508",
+      "first_seen": "2026-10-16",
+      "street": "Gardners Lane",
+      "ward_slug": "swindon-village",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2026-10-22",
+      "end": "2026-10-26",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "id": "PERMIT:HM7532591916",
+      "first_seen": "2026-10-16",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2026-10-26",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-16"
+    },
+    {
       "id": "PERMIT:EY20427300684",
       "first_seen": "2026-10-16",
       "street": "Footway Adjoining 76 To 102 Evens Mandarin Way And Including Length To Pendil Close",
@@ -208,6 +264,48 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-10-16T00:09",
       "end": "2026-10-16",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "id": "PERMIT:BC518MACKFFBR51148",
+      "first_seen": "2026-10-16",
+      "street": "Tewkesbury Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-19",
+      "end": "2026-10-23",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "id": "PERMIT:BC004WH8KRN4T",
+      "first_seen": "2026-10-16",
+      "street": "Montpellier Spa Road",
+      "ward_slug": "lansdown",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-21",
+      "end": "2026-10-23",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "id": "PERMIT:BC004WH8KHM6W",
+      "first_seen": "2026-10-16",
+      "street": "Hales Close",
+      "ward_slug": "battledown",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-21",
+      "end": "2026-10-23",
       "last_seen": "2026-10-16"
     },
     {
@@ -278,6 +376,20 @@
       "promoter": "",
       "start": "2026-10-20",
       "end": "2026-11-17",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "id": "ACTIVITY:ARN-1600-19756969",
+      "first_seen": "2026-10-16",
+      "street": "High Street",
+      "ward_slug": "college",
+      "kind": "Planned",
+      "category": "hoarding",
+      "traffic_management": "no_carriageway_incursion",
+      "road_closure": false,
+      "promoter": "",
+      "start": "2026-11-02",
+      "end": "2026-11-30",
       "last_seen": "2026-10-16"
     },
     {
@@ -962,8 +1074,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-10-16",
-      "end": "2026-10-20",
+      "start": "2026-10-26",
+      "end": "2026-10-28",
       "last_seen": "2026-10-16"
     },
     {
@@ -2922,7 +3034,7 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "Gigaclear Limited",
-      "start": "2026-10-16",
+      "start": "2026-10-16T14:10",
       "end": "2026-10-20",
       "last_seen": "2026-10-16"
     },
