@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Post new blog posts to Bluesky and Mastodon.
+"""Post new blog posts to Bluesky, Mastodon and dev-null.sh.
 
 Reads the live news feed, so a post only goes out once its page is live (Jekyll hides
 posts dated in the future until the first build after their time). Each post is
-title, a short description, the link and the hashtags in _data/social.yml.
+title, a short description, the link and the hashtags in _data/social.yml; on dev-null.sh
+it is just the title and the link.
 
 What has already been posted, per network, is kept in _data/social-posted.json so a post
 is never sent twice, and a failure on one network doesn't repeat the other.
@@ -16,12 +17,15 @@ Needs, as environment variables (repository secrets in GitHub Actions, or the
 gitignored .env file when running locally). A network without its credentials is skipped:
   BLUESKY_HANDLE, BLUESKY_APP_TOKEN   an app password, not the account password
   MASTODON_TOKEN                          an access token with the write:statuses scope
+  DEVNULL_SSH_KEY                         a private Ed25519 key that is a signing key on GitHub
 """
 import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
+import tempfile
 from datetime import datetime, timedelta, timezone
 
 import feedparser
@@ -52,6 +56,8 @@ BLUESKY_HOST = "https://bsky.social"
 BLUESKY_LIMIT = 300
 MASTODON_HOST = "https://mastodon.social"
 MASTODON_LIMIT = 500
+DEVNULL_URL = "https://dev-null.sh"
+DEVNULL_LIMIT = 280
 
 
 def hashtags():
@@ -174,9 +180,48 @@ def post_mastodon(entry, text):
     return resp.json()["url"]
 
 
+# ---- dev-null.sh ----
+
+def compose_devnull(title, link, limit):
+    room = limit - len(link) - 2
+    if len(title) > room:
+        title = title[: room - 1].rsplit(" ", 1)[0] + "…"
+    return f"{title}\n\n{link}"
+
+
+def post_devnull(entry, text):
+    """Commit with dev-null.sh's own terminal script, signed with DEVNULL_SSH_KEY.
+
+    The key goes in a throwaway HOME, so it is the only one the script can find.
+    """
+    with tempfile.TemporaryDirectory() as home:
+        ssh = os.path.join(home, ".ssh")
+        os.mkdir(ssh, 0o700)
+        key = os.path.join(ssh, "devnull")
+        with open(os.open(key, os.O_WRONLY | os.O_CREAT, 0o600), "w") as f:
+            f.write(os.environ["DEVNULL_SSH_KEY"].strip() + "\n")
+        public = subprocess.run(["ssh-keygen", "-y", "-f", key], capture_output=True, text=True, check=True).stdout
+        with open(key + ".pub", "w") as f:
+            f.write(public)
+
+        script = requests.get(f"{DEVNULL_URL}/commit", timeout=30)
+        script.raise_for_status()
+        env = {k: v for k, v in os.environ.items() if k not in ("SSH_AUTH_SOCK", "DEVNULL_SSH_KEY")}
+        env["HOME"] = home
+        result = subprocess.run(["bash", "-s", "--", text], input=script.text, env=env,
+                                capture_output=True, text=True, timeout=60)
+    output = (result.stdout + result.stderr).strip()
+    if result.returncode != 0:
+        raise ValueError(output)
+    match = re.search(r"https://\S+", output)
+    return match.group(0) if match else output
+
+
 NETWORKS = {
     "bluesky": {"needs": ("BLUESKY_HANDLE", "BLUESKY_APP_TOKEN"), "limit": BLUESKY_LIMIT, "post": post_bluesky},
     "mastodon": {"needs": ("MASTODON_TOKEN",), "limit": MASTODON_LIMIT, "post": post_mastodon},
+    "devnull": {"needs": ("DEVNULL_SSH_KEY",), "limit": DEVNULL_LIMIT, "post": post_devnull,
+                "compose": lambda e, limit: compose_devnull(e["title"], e["link"], limit)},
 }
 
 
@@ -209,13 +254,17 @@ def main():
             print(f"Waiting for {e['link']} to go live")
             continue
         for name in todo:
-            text = compose(e["title"], e["description"], e["link"], hashtags(), NETWORKS[name]["limit"])
+            network = NETWORKS[name]
+            if "compose" in network:
+                text = network["compose"](e, network["limit"])
+            else:
+                text = compose(e["title"], e["description"], e["link"], hashtags(), network["limit"])
             if dry_run:
                 print(f"--- {name} ({len(text)} characters) ---\n{text}\n")
                 continue
             try:
                 result = NETWORKS[name]["post"](e, text)
-            except (requests.RequestException, KeyError, ValueError) as err:
+            except (requests.RequestException, KeyError, ValueError, OSError, subprocess.SubprocessError) as err:
                 print(f"Could not post {e['link']} to {name}: {err}")
                 failed = True
                 continue

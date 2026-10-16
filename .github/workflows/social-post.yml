@@ -38,6 +38,7 @@ jobs:
                   BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
                   BLUESKY_APP_TOKEN: ${{ secrets.BLUESKY_APP_TOKEN }}
                   MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+                  DEVNULL_SSH_KEY: ${{ secrets.DEVNULL_SSH_KEY }}
               run: python '_python/social.py'
 
             - name: Commit and push if changed
