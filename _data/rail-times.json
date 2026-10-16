@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T19:00:07+01:00",
+  "generated_at": "2026-10-16T19:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,27 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-16T19:02",
-      "expected": "2026-10-16T19:02",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ]
-    },
-    {
       "scheduled": "2026-10-16T19:12",
-      "expected": "2026-10-16T19:19",
+      "expected": "2026-10-16T19:21",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -51,8 +32,8 @@
     },
     {
       "scheduled": "2026-10-16T19:15",
-      "expected": "2026-10-16T19:15",
-      "status": "On time",
+      "expected": "2026-10-16T19:18",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -82,7 +63,7 @@
     },
     {
       "scheduled": "2026-10-16T19:30",
-      "expected": "2026-10-16T19:49",
+      "expected": "2026-10-16T19:50",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -142,12 +123,32 @@
         "Malvern Link",
         "Great Malvern"
       ]
+    },
+    {
+      "scheduled": "2026-10-16T19:52",
+      "expected": "2026-10-16T19:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-16T19:10",
-      "expected": "2026-10-16T19:18",
+      "expected": "2026-10-16T19:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -157,8 +158,8 @@
     },
     {
       "scheduled": "2026-10-16T19:14",
-      "expected": "2026-10-16T19:14",
-      "status": "On time",
+      "expected": "2026-10-16T19:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -187,7 +188,7 @@
     },
     {
       "scheduled": "2026-10-16T19:28",
-      "expected": "2026-10-16T19:48",
+      "expected": "2026-10-16T19:49",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -197,13 +198,13 @@
     },
     {
       "scheduled": "2026-10-16T19:34",
-      "expected": "2026-10-16T19:34",
-      "status": "On time",
+      "expected": "2026-10-16T19:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by congestion"
     },
     {
       "scheduled": "2026-10-16T19:42",
@@ -223,6 +224,16 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Great Malvern",
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-16T19:51",
+      "expected": "2026-10-16T19:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": ""
     }
   ]
