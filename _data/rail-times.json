@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T10:25:08+01:00",
+  "generated_at": "2026-10-16T10:30:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-16T10:15",
-      "expected": "2026-10-16T10:32",
+      "expected": "2026-10-16T10:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -70,8 +70,8 @@
     },
     {
       "scheduled": "2026-10-16T10:40",
-      "expected": "2026-10-16T10:40",
-      "status": "On time",
+      "expected": "2026-10-16T10:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -170,28 +170,46 @@
         "Reading",
         "London Paddington"
       ]
+    },
+    {
+      "scheduled": "2026-10-16T11:12",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ]
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-16T10:14",
-      "expected": "2026-10-16T10:31",
+      "expected": "2026-10-16T10:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been delayed by the emergency services dealing with an incident"
-    },
-    {
-      "scheduled": "2026-10-16T10:27",
-      "expected": "2026-10-16T10:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": ""
     },
     {
       "scheduled": "2026-10-16T10:28",
@@ -205,18 +223,18 @@
     },
     {
       "scheduled": "2026-10-16T10:31",
-      "expected": "2026-10-16T10:31",
-      "status": "On time",
+      "expected": "2026-10-16T10:33",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": ""
+      "reason": "This service has been delayed by a speed restriction"
     },
     {
       "scheduled": "2026-10-16T10:38",
-      "expected": "2026-10-16T10:38",
-      "status": "On time",
+      "expected": "2026-10-16T10:41",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -252,6 +270,16 @@
       "origin": "Cardiff Central",
       "destination": "Edinburgh via Leeds",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-16T11:10",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
