@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T14:05:07+01:00",
+  "generated_at": "2026-10-16T14:10:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-16T13:46",
-      "expected": "2026-10-16T14:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a points failure",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ]
-    },
-    {
       "scheduled": "2026-10-16T13:59",
-      "expected": "2026-10-16T14:14",
+      "expected": "2026-10-16T14:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -48,7 +33,7 @@
     },
     {
       "scheduled": "2026-10-16T14:03",
-      "expected": "2026-10-16T14:06",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -97,7 +82,7 @@
     },
     {
       "scheduled": "2026-10-16T14:15",
-      "expected": "2026-10-16T14:20",
+      "expected": "2026-10-16T14:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -113,8 +98,8 @@
     },
     {
       "scheduled": "2026-10-16T14:24",
-      "expected": "2026-10-16T14:24",
-      "status": "On time",
+      "expected": "2026-10-16T14:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -161,22 +146,31 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-16T14:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-16T13:44",
-      "expected": "2026-10-16T14:00",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a points failure"
-    },
-    {
       "scheduled": "2026-10-16T13:58",
-      "expected": "2026-10-16T14:13",
+      "expected": "2026-10-16T14:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -196,7 +190,7 @@
     },
     {
       "scheduled": "2026-10-16T14:14",
-      "expected": "2026-10-16T14:19",
+      "expected": "2026-10-16T14:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -206,8 +200,8 @@
     },
     {
       "scheduled": "2026-10-16T14:22",
-      "expected": "2026-10-16T14:22",
-      "status": "On time",
+      "expected": "2026-10-16T14:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -243,6 +237,16 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": ""
+    },
+    {
+      "scheduled": "2026-10-16T14:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a shortage of train drivers"
     }
   ]
 }
