@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T10:30:07+01:00",
+  "generated_at": "2026-10-16T10:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,24 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-16T10:15",
-      "expected": "2026-10-16T10:31",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by the emergency services dealing with an incident",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ]
-    },
-    {
       "scheduled": "2026-10-16T10:29",
-      "expected": "2026-10-16T10:37",
+      "expected": "2026-10-16T10:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -76,8 +60,9 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
+      "reason": "This service has been delayed by the emergency services dealing with an incident",
       "calling_at": [
+        "Worcestershire Parkway",
         "Birmingham New Street",
         "Wolverhampton",
         "Stafford",
@@ -179,7 +164,7 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "reason": "",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -198,22 +183,28 @@
         "Berwick-upon-Tweed",
         "Edinburgh"
       ]
+    },
+    {
+      "scheduled": "2026-10-16T11:15",
+      "expected": "2026-10-16T11:18",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by the emergency services dealing with an incident",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ]
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-16T10:14",
-      "expected": "2026-10-16T10:30",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by the emergency services dealing with an incident"
-    },
-    {
       "scheduled": "2026-10-16T10:28",
-      "expected": "2026-10-16T10:36",
+      "expected": "2026-10-16T10:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -223,7 +214,7 @@
     },
     {
       "scheduled": "2026-10-16T10:31",
-      "expected": "2026-10-16T10:33",
+      "expected": "2026-10-16T10:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -239,7 +230,7 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": ""
+      "reason": "This service has been delayed by the emergency services dealing with an incident"
     },
     {
       "scheduled": "2026-10-16T10:44",
@@ -279,7 +270,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "This service has been cancelled because of a shortage of train drivers"
+      "reason": ""
+    },
+    {
+      "scheduled": "2026-10-16T11:14",
+      "expected": "2026-10-16T11:17",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by the emergency services dealing with an incident"
     }
   ]
 }
