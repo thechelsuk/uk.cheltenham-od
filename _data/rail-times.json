@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T22:00:08+01:00",
+  "generated_at": "2026-10-16T22:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-16T22:00",
-      "expected": "2026-10-16T22:00",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ]
-    },
     {
       "scheduled": "2026-10-16T22:03",
       "expected": "2026-10-16T22:03",
@@ -88,13 +70,13 @@
     },
     {
       "scheduled": "2026-10-16T22:57",
-      "expected": "2026-10-16T22:57",
-      "status": "On time",
+      "expected": "2026-10-16T23:00",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Birmingham New Street",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Birmingham New Street"
       ]
@@ -117,19 +99,22 @@
         "Newport (South Wales)",
         "Cardiff Central"
       ]
+    },
+    {
+      "scheduled": "2026-10-16T23:02",
+      "expected": "2026-10-16T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ]
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-16T21:59",
-      "expected": "2026-10-16T21:59",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": ""
-    },
     {
       "scheduled": "2026-10-16T22:01",
       "expected": "2026-10-16T22:01",
@@ -182,8 +167,8 @@
     },
     {
       "scheduled": "2026-10-16T22:50",
-      "expected": "2026-10-16T22:50",
-      "status": "On time",
+      "expected": "2026-10-16T22:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -192,11 +177,21 @@
     },
     {
       "scheduled": "2026-10-16T22:55",
-      "expected": "2026-10-16T22:57",
+      "expected": "2026-10-16T22:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by a fault with the signalling system"
+    },
+    {
+      "scheduled": "2026-10-16T23:00",
+      "expected": "2026-10-16T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
       "destination": "Birmingham New Street",
       "reason": ""
     }
