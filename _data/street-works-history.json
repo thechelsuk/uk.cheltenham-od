@@ -5,9 +5,9 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 273,
-    "unplanned": 43,
-    "road_closures": 29,
+    "count": 283,
+    "unplanned": 47,
+    "road_closures": 32,
     "by_street": [
       {
         "street": "Cheltenham Road East",
@@ -45,33 +45,33 @@
         "road_closures": 0
       },
       {
+        "street": "Stockwell Lane",
+        "works": 4,
+        "road_closures": 2
+      },
+      {
         "street": "Lansdown Road",
         "works": 3,
         "road_closures": 0
       },
       {
-        "street": "Station Road",
+        "street": "Shurdington Road",
         "works": 3,
         "road_closures": 0
-      },
-      {
-        "street": "Stockwell Lane",
-        "works": 3,
-        "road_closures": 1
       }
     ],
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 92
+        "works": 100
       },
       {
         "name": "Gloucestershire County Council",
-        "works": 57
+        "works": 58
       },
       {
         "name": "BT",
-        "works": 51
+        "works": 52
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
@@ -121,11 +121,151 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 273
+        "works": 283
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:LB9011303-000060787366",
+      "first_seen": "2026-10-17",
+      "street": "Culross Close",
+      "ward_slug": "pittville",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-17T08:37",
+      "end": "2026-10-21",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060783428",
+      "first_seen": "2026-10-17",
+      "street": "Winchcombe Street",
+      "ward_slug": "pittville",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-17T08:38",
+      "end": "2026-10-20",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060783279",
+      "first_seen": "2026-10-17",
+      "street": "Alstone Lane",
+      "ward_slug": "st-peters",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-17T08:19",
+      "end": "2026-10-18",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014420613",
+      "first_seen": "2026-10-17",
+      "street": "Mottershead Drive",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-17T12:37",
+      "end": "2026-10-20",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014416781",
+      "first_seen": "2026-10-17",
+      "street": "401135 Lane To Down Nurseries Little Shu",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-17T08:56",
+      "end": "2026-10-18",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB7012302-000014399144",
+      "first_seen": "2026-10-17",
+      "street": "Moorend Park Road",
+      "ward_slug": "leckhampton",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2027-01-20",
+      "end": "2027-01-21",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB7012302-000014384329",
+      "first_seen": "2026-10-17",
+      "street": "Stockwell Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2027-01-21",
+      "end": "2027-01-21",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:LB7012302-000014363227",
+      "first_seen": "2026-10-17",
+      "street": "Orchard Avenue",
+      "ward_slug": "hesters-way",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2027-01-20",
+      "end": "2027-01-20",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:EY40043403898",
+      "first_seen": "2026-10-17",
+      "street": "Shurdington Road",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-10-18T07:00",
+      "end": "2026-10-18",
+      "last_seen": "2026-10-17"
+    },
+    {
+      "id": "PERMIT:BC518MACKGWH1C5K6W",
+      "first_seen": "2026-10-17",
+      "street": "Kaybourne Crescent",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-23",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-17"
+    },
     {
       "id": "PERMIT:XY245004000199774",
       "first_seen": "2026-10-16",
