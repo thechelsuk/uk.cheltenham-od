@@ -166,9 +166,21 @@ def test_main_needs_the_key(monkeypatch):
         rail.main()
 
 
-def test_main_writes_the_board_then_leaves_an_unchanged_one_alone(tmp_path, monkeypatch):
-    out = tmp_path / "rail-times.json"
-    monkeypatch.setattr(rail, "OUT", out)
+@pytest.fixture
+def paths(tmp_path, monkeypatch):
+    """Point every file main() writes at a temporary folder."""
+    include = tmp_path / "rail-alert.html"
+    include.write_text("<!-- rail_alert_marker starts -->\n\n<!-- rail_alert_marker ends -->")
+    monkeypatch.setattr(rail, "OUT", tmp_path / "rail-times.json")
+    monkeypatch.setattr(rail, "HISTORY", tmp_path / "rail-disruptions-history.json")
+    monkeypatch.setattr(rail, "FEED", tmp_path / "rail-disruptions.xml")
+    monkeypatch.setattr(rail, "ALERT_INCLUDE", include)
+    monkeypatch.setattr(rail.alerts_feed, "rebuild", lambda: None)
+    return tmp_path
+
+
+def test_main_writes_the_board_then_leaves_an_unchanged_one_alone(paths, monkeypatch):
+    out = paths / "rail-times.json"
     monkeypatch.setenv("RDM_LDBWS_KEY", "test-key")
     monkeypatch.setattr(rail, "fetch_board", lambda key: BOARD)
 
@@ -179,6 +191,75 @@ def test_main_writes_the_board_then_leaves_an_unchanged_one_alone(tmp_path, monk
     assert (len(data["departures"]), len(data["arrivals"])) == (2, 2)
 
     written = []
-    monkeypatch.setattr(helper, "write_json", lambda path, payload: written.append(payload))
+    monkeypatch.setattr(helper, "write_json", lambda path, payload: written.append(path))
     rail.main()
-    assert written == []
+    assert rail.OUT not in written
+
+
+BUSES_ONLY = {
+    "generatedAt": "2026-10-17T12:20:00+01:00",
+    "busServices": [{"std": "12:30", "etd": "On time", "platform": "BUS",
+                     "destination": [{"locationName": "Worcester Foregate Street"}]}],
+    "nrccMessages": [{"Value": "Lifts closed"},
+                     {"Value": "There are no train services at this station today because of engineering work."}],
+}
+
+
+def test_only_a_board_with_buses_and_no_trains_counts_as_replacement_buses_only():
+    assert rail.replacement_buses_only(BUSES_ONLY)
+    assert not rail.replacement_buses_only({**BUSES_ONLY, "trainServices": [{"std": "12:40"}]})
+    assert not rail.replacement_buses_only({})
+
+
+def test_the_disruption_message_is_the_one_about_trains_or_a_standard_line():
+    messages = rail.station_messages(BUSES_ONLY)
+    assert rail.disruption_message(messages).startswith("There are no train services")
+    assert rail.disruption_message(["Lifts closed"]) == rail.DEFAULT_DISRUPTION_MESSAGE
+
+
+def test_a_disruption_keeps_its_id_while_it_lasts_and_a_new_one_gets_todays_date():
+    assert rail.current_disruptions({}, [], [], "2026-10-17T11:20:00Z") == []
+    first = rail.current_disruptions(BUSES_ONLY, ["Engineering work"], [], "2026-10-17T11:20:00Z")
+    assert first == [{"disruption_id": "rail-replacement-2026-10-17", "message": "Engineering work"}]
+    ongoing = [{"disruption_id": "rail-replacement-2026-10-16"}]
+    assert rail.current_disruptions(BUSES_ONLY, [], ongoing, "2026-10-17T11:20:00Z")[0]["disruption_id"] == \
+        "rail-replacement-2026-10-16"
+    ended = [{"disruption_id": "rail-replacement-2026-10-10", "resolved_iso": "2026-10-11T22:00:00Z"}]
+    assert rail.current_disruptions(BUSES_ONLY, [], ended, "2026-10-17T11:20:00Z")[0]["disruption_id"] == \
+        "rail-replacement-2026-10-17"
+
+
+def test_the_homepage_alert_only_shows_while_a_disruption_is_live():
+    assert rail.build_alert_html([]) == ""
+    html = rail.build_alert_html([{"disruption_id": "x", "message": "m"}])
+    assert "<h2>Rail Disruption Alert</h2>" in html and 'href="/cheltenham-train-times"' in html
+
+
+def test_feed_entries_are_dated_by_start_then_by_end():
+    history = [
+        {"disruption_id": "rail-replacement-2026-10-17", "message": "No trains", "first_seen_iso": "2026-10-17T06:00:00Z"},
+        {"disruption_id": "rail-replacement-2026-10-10", "message": "No trains", "first_seen_iso": "2026-10-10T06:00:00Z",
+         "resolved_iso": "2026-10-11T22:00:00Z"},
+    ]
+    live, ended = rail.build_atom_items(history, "https://example.org/cheltenham-train-times")
+    assert live["published_iso"] == "2026-10-17T06:00:00Z" and live["summary"] == "No trains"
+    assert live["link"] == "https://example.org/cheltenham-train-times#rail-replacement-2026-10-17"
+    assert ended["title"].endswith("ended") and ended["published_iso"] == "2026-10-11T22:00:00Z"
+
+
+def test_main_records_a_replacement_bus_day_in_the_alert_feed_and_data(paths, monkeypatch):
+    monkeypatch.setenv("RDM_LDBWS_KEY", "test-key")
+    monkeypatch.setattr(rail, "fetch_board", lambda key: BUSES_ONLY)
+    rail.main()
+    data = json.loads((paths / "rail-times.json").read_text())
+    assert data["replacement_buses_only"] is True
+    assert data["departures"][0]["mode"] == "bus"
+    history = json.loads((paths / "rail-disruptions-history.json").read_text())["records"]
+    assert [r["message"] for r in history] == [rail.disruption_message(data["messages"])]
+    assert "Rail Disruption Alert" in (paths / "rail-alert.html").read_text()
+    assert "Rail replacement buses" in (paths / "rail-disruptions.xml").read_text()
+
+    monkeypatch.setattr(rail, "fetch_board", lambda key: BOARD)
+    rail.main()
+    assert "Rail Disruption Alert" not in (paths / "rail-alert.html").read_text()
+    assert json.loads((paths / "rail-times.json").read_text())["replacement_buses_only"] is False

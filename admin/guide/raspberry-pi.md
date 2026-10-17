@@ -19,7 +19,7 @@ The scripts live in `_python/pi/`. Each writes its `_data` file (and Atom feed, 
 | --- | --- | --- |
 | `buses.py` | `_data/bus-disruptions.json`, `_data/bus-disruptions-history.json`, `_data/bus-routes.json`, `feeds/bus-disruptions.xml` | Bus Open Data Service |
 | `power.py` | `_data/power-cuts.json`, `_data/power-cuts-history.json`, `feeds/power-cuts.xml` | National Grid Electricity Distribution |
-| `rail-times.py` | `_data/rail-times.json` | National Rail Live Departure Board (Rail Data Marketplace) |
+| `rail-times.py` | `_data/rail-times.json`, `_data/rail-disruptions-history.json`, `feeds/rail-disruptions.xml` | National Rail Live Departure Board (Rail Data Marketplace) |
 | `unplanned-closures.py` | `_data/unplanned-closures.json`, `_data/unplanned-closures-history.json`, `feeds/unplanned-closures.xml` | National Highways Road and Lane Closures |
 | `fuel.py` | `_data/fuel-prices.json`, `_data/fuel-prices-history.json`, `_data/fuel-stations.json` | GOV.UK fuel price scheme |
 

@@ -155,7 +155,7 @@ feeds:
     link: /feeds/alerts.xml
     group: Alerts
     key: true
-    description: "Flood warnings, power cuts, bus disruptions, wildfire risk, road closures and threat level changes in one feed."
+    description: "Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures and threat level changes in one feed."
   - name: Flood Warnings
     link: /feeds/flood.xml
     group: Alerts
@@ -168,6 +168,10 @@ feeds:
     link: /feeds/bus-disruptions.xml
     group: Alerts
     description: "Current and recent bus service disruptions affecting Cheltenham."
+  - name: Rail Disruptions
+    link: /feeds/rail-disruptions.xml
+    group: Alerts
+    description: "Days when rail replacement buses run instead of trains at Cheltenham Spa."
   - name: Wildfire Risk
     link: /feeds/wildfire.xml
     group: Alerts

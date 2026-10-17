@@ -23,12 +23,21 @@
                 <li><strong>{{ site.posts | size }}</strong> <a href="/news">news posts</a></li>
                 <li><strong>{{ classifieds_count }}</strong> <a href="/cheltenham-classifieds">live classified{% if
                         classifieds_count != 1 %}s{% endif %}</a></li>
+                {% if rail.replacement_buses_only %}
+                {% assign bus = rail.departures | first %}
+                <li><strong>{% if bus %}{{ bus.expected | default: bus.scheduled | slice: 11, 5 }}{% else %}&ndash;{%
+                        endif %}</strong> <a href="/cheltenham-train-times">next replacement bus</a>{% if bus %}
+                    &rarr;<br>
+                    {{ bus.destination }}{% endif %}</li>
+                <li><strong>No trains</strong> <a href="/cheltenham-train-times">replacement buses running</a></li>
+                {% else %}
                 <li><strong>{% if p1 %}{{ p1.expected | default: p1.scheduled | slice: 11, 5 }}{% else %}&ndash;{% endif
                         %}</strong> <a href="/cheltenham-train-times">next train, platform 1</a>{% if p1 %} &rarr;<br>
                     {{ p1.destination }}{% endif %}</li>
                 <li><strong>{% if p2 %}{{ p2.expected | default: p2.scheduled | slice: 11, 5 }}{% else %}&ndash;{% endif
                         %}</strong> <a href="/cheltenham-train-times">next train, platform 2</a>{% if p2 %} &rarr;<br>
                     {{ p2.destination }}{% endif %}</li>
+                {% endif %}
                 <li><strong>Newsletter</strong> <a href="/newsletter">free Monday briefing &rarr;</a></li>
             </ul>
         </header>
@@ -38,6 +47,7 @@
         {% include sponsor.html sponsor=page.sponsor %}
 
         {% include bus-alert.html %}
+        {% include rail-alert.html %}
         {% include power-cuts-alert.html %}
         {% include wildfire-alert.html %}
 

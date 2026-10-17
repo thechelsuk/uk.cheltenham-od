@@ -30,7 +30,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 import requests
@@ -38,6 +38,7 @@ import requests
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 
 # Load .env file for local development / the Pi if present
+import alerts_feed
 import config
 import helper
 
@@ -51,6 +52,9 @@ if _env_file.exists():
             os.environ.setdefault(_k.strip(), _v.strip())
 
 OUT = helper.repo_root() / "_data" / "rail-times.json"
+HISTORY = helper.repo_root() / "_data" / "rail-disruptions-history.json"
+FEED = helper.repo_root() / "feeds" / "rail-disruptions.xml"
+ALERT_INCLUDE = helper.repo_root() / "_includes" / "rail-alert.html"
 
 BASE_URL = "https://api1.raildata.org.uk/1010-live-arrival-and-departure-boards-arr-and-dep1_1/LDBWS/api/20220120"
 BOARD_METHOD = "GetArrDepBoardWithDetails"
@@ -60,6 +64,11 @@ CRS = "CNM"
 NUM_ROWS = 10           # rows requested from the API
 MAX_SERVICES = 10       # rows kept per board
 HEARTBEAT_MINUTES = 30  # see module docstring
+
+HISTORY_RETENTION_DAYS = 365
+PAGE_PATH = "/cheltenham-train-times"
+DEFAULT_DISRUPTION_MESSAGE = "Rail replacement buses are running instead of trains at Cheltenham Spa."
+DISRUPTION_WORDS = re.compile(r"train services|engineering|replacement", re.IGNORECASE)
 
 LONDON = ZoneInfo("Europe/London")
 TIME_PATTERN = re.compile(r"^\d{1,2}:\d{2}$")
@@ -198,9 +207,97 @@ def unchanged(new, now):
         age = now - datetime.fromisoformat(old["generated_at"])
     except (OSError, ValueError, KeyError):
         return False
-    if any(old.get(k) != new[k] for k in ("messages", "departures", "arrivals")):
+    if any(old.get(k) != new.get(k) for k in ("messages", "departures", "arrivals", "replacement_buses_only")):
         return False
     return age < timedelta(minutes=HEARTBEAT_MINUTES)
+
+
+def replacement_buses_only(board):
+    """True when rail replacement buses are running and no trains are, which
+    is how the board shows the line closed for engineering work. A late night
+    with neither isn't a closure."""
+    return bool(board.get("busServices")) and not board.get("trainServices")
+
+
+def disruption_message(messages):
+    """The station message about the closure, or a standard line if there
+    isn't one. Messages carry no category, so this goes by their wording."""
+    return next((m for m in messages if DISRUPTION_WORDS.search(m)), DEFAULT_DISRUPTION_MESSAGE)
+
+
+def current_disruptions(board, messages, history, now_iso):
+    """The live disruption as a one-item list for helper.update_history, or
+    an empty list. It keeps the id of a disruption that hasn't ended yet, so a
+    closure stays one feed entry however many runs it spans."""
+    if not replacement_buses_only(board):
+        return []
+    ongoing = next((r for r in history if not r.get("resolved_iso")), None)
+    disruption_id = ongoing["disruption_id"] if ongoing else f"rail-replacement-{now_iso[:10]}"
+    return [{"disruption_id": disruption_id, "message": disruption_message(messages)}]
+
+
+def build_alert_html(active):
+    if not active:
+        return ""
+    return (
+        "<h2>Rail Disruption Alert</h2>\n"
+        "<ul>\n"
+        f'  <li><a href="{PAGE_PATH}">No trains at Cheltenham Spa: rail replacement buses are running</a></li>\n'
+        "</ul>"
+    )
+
+
+def build_atom_items(history, page_url):
+    """One entry per disruption, dated when it started and again when it
+    ended, so a feed reader sees each change once rather than every run."""
+    items = []
+    for record in history[:50]:
+        ended = record.get("resolved_iso")
+        title = "Rail replacement buses at Cheltenham Spa"
+        items.append({
+            "title": f"{title}, now ended" if ended else title,
+            "link": f"{page_url}#{record['disruption_id']}",
+            "summary": record.get("message") or DEFAULT_DISRUPTION_MESSAGE,
+            "published_iso": ended or record.get("first_seen_iso"),
+            "source": "National Rail Enquiries",
+        })
+    return items
+
+
+def record_disruptions(board, messages):
+    """Update the disruption history, its Atom feed, the homepage alert and
+    the combined alerts feed."""
+    try:
+        history = json.loads(HISTORY.read_text()).get("records", [])
+    except (OSError, ValueError):
+        history = []
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    active = current_disruptions(board, messages, history, now_iso)
+    history = helper.update_history(history, active, id_key="disruption_id", now_iso=now_iso,
+                                    retention_days=HISTORY_RETENTION_DAYS)
+    helper.write_json(HISTORY, {
+        "note": "Days when only rail replacement buses served Cheltenham Spa, recorded as they happen.",
+        "source": "National Rail Enquiries, via the Rail Data Marketplace",
+        "source_url": "https://raildata.org.uk/",
+        "refresh": "every 5 minutes",
+        "count": len(history),
+        "records": history,
+    })
+
+    site = helper.site_url()
+    helper.write_items_atom(
+        items=build_atom_items(history, f"{site}{PAGE_PATH}"),
+        filename=FEED,
+        permalink_path="/feeds/rail-disruptions.xml",
+        feed_title="Cheltenham Rail Disruptions",
+        feed_subtitle="Days when rail replacement buses run instead of trains at Cheltenham Spa",
+        self_url=f"{site}/feeds/rail-disruptions.xml",
+        alternate_url=f"{site}{PAGE_PATH}",
+    )
+
+    include = ALERT_INCLUDE.read_text()
+    ALERT_INCLUDE.write_text(helper.replace_chunk(include, "rail_alert_marker", build_alert_html(active)))
+    alerts_feed.rebuild()
 
 
 def main():
@@ -221,7 +318,10 @@ def main():
         "messages":     station_messages(board),
         "departures":   parse_board(board, "departure"),
         "arrivals":     parse_board(board, "arrival"),
+        "replacement_buses_only": replacement_buses_only(board),
     }
+
+    record_disruptions(board, output["messages"])
 
     if unchanged(output, now):
         print("No change since the last run; leaving _data/rail-times.json alone")
