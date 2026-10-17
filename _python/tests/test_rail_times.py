@@ -57,6 +57,11 @@ def test_station_messages_are_plain_text_without_repeats():
     assert rail.station_messages(board) == ["Lifts & escalators closed"]
 
 
+def test_station_messages_read_the_capitalised_value_key_the_api_sends():
+    board = {"nrccMessages": [{"Value": "No trains this weekend because of engineering work."}]}
+    assert rail.station_messages(board) == ["No trains this weekend because of engineering work."]
+
+
 def test_board_time_reads_the_seven_digit_timestamp_or_falls_back_to_now():
     board = {"generatedAt": "2026-10-12T23:50:01.1234567+01:00"}
     assert rail.board_time(board) == datetime(2026, 10, 12, 23, 50, 1, 123456, tzinfo=rail.LONDON)
@@ -110,6 +115,17 @@ def test_parse_board_splits_departures_from_arrivals_in_time_order(monkeypatch):
     monkeypatch.setattr(rail, "MAX_SERVICES", 1)
     assert len(rail.parse_board(BOARD, "departure")) == 1
     assert rail.parse_board({}, "arrival") == []
+
+
+def test_rail_replacement_buses_join_the_board_marked_as_buses():
+    board = {
+        "generatedAt": "2026-10-12T23:50:00+01:00",
+        "trainServices": [{"std": "23:58", "etd": "On time", "platform": "1"}],
+        "busServices": [{"std": "23:55", "etd": "On time", "platform": "BUS"}],
+    }
+    departures = rail.parse_board(board, "departure")
+    assert [(s["scheduled"], s["mode"]) for s in departures] == [("2026-10-12T23:55", "bus"), ("2026-10-12T23:58", "train")]
+    assert rail.parse_board({"busServices": [{"sta": "23:55", "eta": "On time"}]}, "arrival")[0]["mode"] == "bus"
 
 
 def test_unchanged_only_within_the_heartbeat(tmp_path, monkeypatch):

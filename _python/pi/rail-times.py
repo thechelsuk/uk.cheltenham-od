@@ -167,16 +167,24 @@ def parse_service(service, kind, generated):
 
 
 def parse_board(board, kind):
+    """Trains and rail replacement buses together in time order, each marked
+    with its `mode` so the page can label the buses."""
     generated = board_time(board)
-    services = [parse_service(s, kind, generated) for s in board.get("trainServices") or []]
-    services = sorted((s for s in services if s), key=lambda s: s["scheduled"])
+    services = []
+    for mode, key in (("train", "trainServices"), ("bus", "busServices")):
+        for service in board.get(key) or []:
+            item = parse_service(service, kind, generated)
+            if item:
+                services.append({**item, "mode": mode})
+    services.sort(key=lambda s: s["scheduled"])
     return services[:MAX_SERVICES]
 
 
 def station_messages(board):
     messages = []
     for message in board.get("nrccMessages") or []:
-        text = clean_text(message.get("value"))
+        # The API capitalises the key as "Value"; accept either spelling.
+        text = clean_text(message.get("Value") or message.get("value"))
         if text and text not in messages:
             messages.append(text)
     return messages

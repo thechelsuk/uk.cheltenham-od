@@ -75,9 +75,9 @@
                             </td>
                             <td class="date" data-val="{{ s.expected }}">{% if s.expected %}{{ s.expected | date:
                                 "%Y-%m-%d %H:%M" }}{% else %}&ndash;{% endif %}</td>
-                            <td>{{ s.destination }}</td>
+                            <td>{{ s.destination }}{% if s.mode == "bus" %}<br><small>Rail replacement bus</small>{% endif %}</td>
                             <td>{{ s.calling_at | join: ", " }}</td>
-                            <td>{{ s.platform | default: "TBC" }}</td>
+                            <td>{% if s.mode == "bus" %}Bus{% else %}{{ s.platform | default: "TBC" }}{% endif %}</td>
                             <td>{{ s.operator }}</td>
                             <td>{{ s.status }}{% if s.reason != blank %}<br><small>{{ s.reason }}</small>{% endif %}
                             </td>
@@ -115,8 +115,8 @@
                             </td>
                             <td class="date" data-val="{{ s.expected }}">{% if s.expected %}{{ s.expected | date:
                                 "%Y-%m-%d %H:%M" }}{% else %}&ndash;{% endif %}</td>
-                            <td>{{ s.origin }}</td>
-                            <td>{{ s.platform | default: "TBC" }}</td>
+                            <td>{{ s.origin }}{% if s.mode == "bus" %}<br><small>Rail replacement bus</small>{% endif %}</td>
+                            <td>{% if s.mode == "bus" %}Bus{% else %}{{ s.platform | default: "TBC" }}{% endif %}</td>
                             <td>{{ s.operator }}</td>
                             <td>{{ s.status }}{% if s.reason != blank %}<br><small>{{ s.reason }}</small>{% endif %}
                             </td>
@@ -178,6 +178,8 @@
         <ul>
             <li>The next departures and arrivals at Cheltenham Spa station, up to 10 of each. Trains that have already
                 left or arrived aren't shown.</li>
+            <li>When engineering work closes the line, rail replacement buses are listed alongside any trains and
+                marked "Rail replacement bus", with "Bus" in place of a platform number.</li>
         </ul>
 
         <h3>How Often Are the Train Times Updated?</h3>
