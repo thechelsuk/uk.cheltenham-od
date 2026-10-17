@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T20:55:08+01:00",
+  "generated_at": "2026-10-17T21:00:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -83,20 +83,25 @@
         "Gloucester"
       ],
       "mode": "bus"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-17T20:58",
-      "expected": "2026-10-17T20:58",
+      "scheduled": "2026-10-17T22:15",
+      "expected": "2026-10-17T22:15",
       "status": "On time",
       "platform": "BUS",
       "operator": "Great Western Railway",
       "origin": "Gloucester",
-      "destination": "Cheltenham Spa",
+      "destination": "Worcester Foregate Street",
       "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
       "mode": "bus"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-17T21:00",
       "expected": "2026-10-17T21:00",
@@ -160,6 +165,17 @@
       "operator": "Great Western Railway",
       "origin": "Gloucester",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "bus"
+    },
+    {
+      "scheduled": "2026-10-17T22:15",
+      "expected": "2026-10-17T22:15",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "Great Western Railway",
+      "origin": "Gloucester",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "bus"
     }
