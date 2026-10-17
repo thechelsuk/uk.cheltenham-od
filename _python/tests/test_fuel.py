@@ -290,7 +290,9 @@ def site(tmp_path, monkeypatch, no_sleep):
     return tmp_path / "_data"
 
 
-def test_main_run_needs_the_api_keys(monkeypatch):
+def test_main_run_needs_the_api_keys(tmp_path, monkeypatch):
+    # A repo root without a .env, so a local one can't supply the keys.
+    monkeypatch.setattr(helper, "repo_root", lambda: tmp_path)
     monkeypatch.delenv("FUEL_KEY", raising=False)
     with pytest.raises(SystemExit):
         runpy.run_path(SCRIPT, run_name="__main__")

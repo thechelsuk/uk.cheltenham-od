@@ -283,5 +283,5 @@ def test_dry_run_posts_nothing_and_changes_nothing(run, monkeypatch, state_file,
 
 def test_seed_marks_everything_in_the_feed_as_posted(run, state_file):
     assert run([item("/a"), item("/b")], "--seed") == []
-    assert json.loads(state_file.read_text())["posted"] == {
-        "/a": {"bluesky": "seeded", "mastodon": "seeded"}, "/b": {"bluesky": "seeded", "mastodon": "seeded"}}
+    seeded = {name: "seeded" for name in ("bluesky", "mastodon", "devnull")}
+    assert json.loads(state_file.read_text())["posted"] == {"/a": seeded, "/b": seeded}
