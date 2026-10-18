@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T00:25:08+01:00",
+  "generated_at": "2026-10-18T06:40:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,7 +9,22 @@
     "crs": "CNM"
   },
   "messages": [],
-  "departures": [],
+  "departures": [
+    {
+      "scheduled": "2026-10-18T08:35",
+      "expected": "2026-10-18T08:35",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "bus"
+    }
+  ],
   "arrivals": [],
-  "replacement_buses_only": false
+  "replacement_buses_only": true
 }
