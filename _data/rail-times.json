@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T16:00:08+01:00",
+  "generated_at": "2026-10-19T16:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,51 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-19T15:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-19T16:03",
-      "expected": "2026-10-19T16:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-19T16:12",
-      "expected": "2026-10-19T16:15",
+      "expected": "2026-10-19T16:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -181,23 +138,48 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T16:50",
+      "expected": "2026-10-19T16:50",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T16:52",
+      "expected": "2026-10-19T16:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-19T15:58",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-19T16:10",
-      "expected": "2026-10-19T16:14",
+      "expected": "2026-10-19T16:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -269,6 +251,28 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T16:47",
+      "expected": "2026-10-19T16:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T16:50",
+      "expected": "2026-10-19T16:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
