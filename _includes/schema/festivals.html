@@ -19,7 +19,7 @@
       "name": "Cheltenham",
       "address": { "@type": "PostalAddress", "addressLocality": "Cheltenham", "addressRegion": "Gloucestershire", "addressCountry": "GB" }
     },
-    "organizer": { "@type": "Organization", "name": {{ f.organiser | jsonify }} },
+    "organizer": { "@type": "Organization", "name": {{ f.organiser | jsonify }}, "url": {{ f.organiser_url | jsonify }} },
     "url": "{{ f.url }}"
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
