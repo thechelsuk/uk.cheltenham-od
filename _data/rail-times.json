@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T19:15:07+01:00",
+  "generated_at": "2026-10-19T19:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-19T19:15",
-      "expected": "2026-10-19T19:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-19T19:23",
       "expected": "2026-10-19T19:23",
@@ -155,20 +141,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T20:02",
+      "expected": "2026-10-19T20:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-19T19:14",
-      "expected": "2026-10-19T19:16",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-19T19:21",
       "expected": "2026-10-19T19:21",
