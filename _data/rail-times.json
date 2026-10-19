@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T12:40:21+01:00",
+  "generated_at": "2026-10-19T12:45:22+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-19T11:52",
-      "expected": "2026-10-19T12:40",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -33,8 +33,8 @@
     },
     {
       "scheduled": "2026-10-19T12:40",
-      "expected": "2026-10-19T12:40",
-      "status": "On time",
+      "expected": "2026-10-19T12:44",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -52,29 +52,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-19T12:40",
-      "expected": "2026-10-19T12:40",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-19T12:45",
-      "expected": "2026-10-19T12:45",
-      "status": "On time",
+      "expected": "2026-10-19T12:47",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -94,8 +74,8 @@
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a fault on this train",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -208,6 +188,25 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T13:23",
+      "expected": "2026-10-19T13:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -224,7 +223,7 @@
     },
     {
       "scheduled": "2026-10-19T12:32",
-      "expected": "2026-10-19T12:47",
+      "expected": "2026-10-19T12:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -234,19 +233,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-19T12:38",
-      "expected": "2026-10-19T12:38",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-19T12:43",
-      "expected": "2026-10-19T12:45",
+      "expected": "2026-10-19T12:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -262,8 +250,8 @@
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a fault on this train",
       "mode": "train"
     },
     {
@@ -296,6 +284,17 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T13:22",
+      "expected": "2026-10-19T13:22",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
     }
