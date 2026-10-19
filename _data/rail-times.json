@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T10:15:08+01:00",
+  "generated_at": "2026-10-19T10:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,51 +12,6 @@
     "Trains operating between Glasgow Central and Newton / Motherwell stations may be cancelled, delayed by up to 30 minutes or revised. More details can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-19T10:12",
-      "expected": "2026-10-19T10:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-19T10:15",
-      "expected": "2026-10-19T10:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-19T10:23",
       "expected": "2026-10-19T10:23",
@@ -158,8 +113,8 @@
     },
     {
       "scheduled": "2026-10-19T10:52",
-      "expected": "2026-10-19T10:52",
-      "status": "On time",
+      "expected": "2026-10-19T10:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
@@ -176,31 +131,60 @@
         "Plymouth"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-19T10:11",
-      "expected": "2026-10-19T10:11",
+      "scheduled": "2026-10-19T10:59",
+      "expected": "2026-10-19T10:59",
       "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Plymouth",
+      "origin": "Cardiff Central",
       "destination": "Edinburgh via Leeds",
       "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-19T10:14",
-      "expected": "2026-10-19T10:14",
+      "scheduled": "2026-10-19T11:03",
+      "expected": "2026-10-19T11:03",
       "status": "On time",
       "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-19T10:22",
       "expected": "2026-10-19T10:22",
@@ -269,12 +253,23 @@
     },
     {
       "scheduled": "2026-10-19T10:50",
-      "expected": "2026-10-19T10:50",
-      "status": "On time",
+      "expected": "2026-10-19T10:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Plymouth",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T10:57",
+      "expected": "2026-10-19T10:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Edinburgh via Leeds",
       "reason": "",
       "mode": "train"
     }
