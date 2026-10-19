@@ -1,44 +1,31 @@
 {
-  "generated_at": "2026-10-18T08:21:53.462807+00:00",
-  "issued_iso": "2026-10-18T06:34",
+  "generated_at": "2026-10-19T09:20:17.164637+00:00",
+  "issued_iso": "2026-10-19T06:31",
   "source": "Met Office Fire Severity Index, published by Natural England",
   "source_url": "https://openaccess.naturalengland.org.uk/",
   "radius_km": 9.7,
   "radius_miles": 6,
   "today": {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "offset": 0,
-    "rating": 3,
-    "label": "High",
+    "rating": 1,
+    "label": "Low",
     "squares_at_max": [
       "SO81",
       "SO82",
       "SO83",
+      "SO91",
       "SO92",
       "SO93",
       "SP01",
+      "SP02",
       "SP03"
     ]
   },
   "days": [
     {
-      "date": "2026-10-18",
-      "offset": 0,
-      "rating": 3,
-      "label": "High",
-      "squares_at_max": [
-        "SO81",
-        "SO82",
-        "SO83",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP03"
-      ]
-    },
-    {
       "date": "2026-10-19",
-      "offset": 1,
+      "offset": 0,
       "rating": 1,
       "label": "Low",
       "squares_at_max": [
@@ -55,7 +42,7 @@
     },
     {
       "date": "2026-10-20",
-      "offset": 2,
+      "offset": 1,
       "rating": 1,
       "label": "Low",
       "squares_at_max": [
@@ -72,7 +59,7 @@
     },
     {
       "date": "2026-10-21",
-      "offset": 3,
+      "offset": 2,
       "rating": 1,
       "label": "Low",
       "squares_at_max": [
@@ -89,7 +76,7 @@
     },
     {
       "date": "2026-10-22",
-      "offset": 4,
+      "offset": 3,
       "rating": 1,
       "label": "Low",
       "squares_at_max": [
@@ -106,6 +93,23 @@
     },
     {
       "date": "2026-10-23",
+      "offset": 4,
+      "rating": 1,
+      "label": "Low",
+      "squares_at_max": [
+        "SO81",
+        "SO82",
+        "SO83",
+        "SO91",
+        "SO92",
+        "SO93",
+        "SP01",
+        "SP02",
+        "SP03"
+      ]
+    },
+    {
+      "date": "2026-10-24",
       "offset": 5,
       "rating": 1,
       "label": "Low",
@@ -126,11 +130,6 @@
     {
       "ref": "SO81",
       "days": [
-        {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
         {
           "date": "2026-10-19",
           "rating": 1,
@@ -155,10 +154,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -188,11 +192,6 @@
       "ref": "SO82",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -216,10 +215,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -249,11 +253,6 @@
       "ref": "SO83",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -277,10 +276,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -310,11 +314,6 @@
       "ref": "SO91",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 2,
-          "label": "Moderate"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -338,10 +337,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 2,
-      "label": "Moderate",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -371,11 +375,6 @@
       "ref": "SO92",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -399,10 +398,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -432,11 +436,6 @@
       "ref": "SO93",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -460,10 +459,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -493,11 +497,6 @@
       "ref": "SP01",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -521,10 +520,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -554,11 +558,6 @@
       "ref": "SP02",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 2,
-          "label": "Moderate"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -582,10 +581,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 2,
-      "label": "Moderate",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
@@ -615,11 +619,6 @@
       "ref": "SP03",
       "days": [
         {
-          "date": "2026-10-18",
-          "rating": 3,
-          "label": "High"
-        },
-        {
           "date": "2026-10-19",
           "rating": 1,
           "label": "Low"
@@ -643,10 +642,15 @@
           "date": "2026-10-23",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-10-24",
+          "rating": 1,
+          "label": "Low"
         }
       ],
-      "rating": 3,
-      "label": "High",
+      "rating": 1,
+      "label": "Low",
       "rings": [
         [
           [
