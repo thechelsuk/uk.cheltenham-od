@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T21:10:07+01:00",
+  "generated_at": "2026-10-19T21:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,13 +12,13 @@
   "departures": [
     {
       "scheduled": "2026-10-19T20:52",
-      "expected": null,
+      "expected": "2026-10-19T21:13",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on a train in front of this one",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -33,7 +33,7 @@
     },
     {
       "scheduled": "2026-10-19T21:02",
-      "expected": null,
+      "expected": "2026-10-19T21:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -53,23 +53,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-19T21:12",
-      "expected": "2026-10-19T21:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-19T21:15",
-      "expected": "2026-10-19T21:18",
+      "expected": "2026-10-19T21:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -89,7 +74,7 @@
     },
     {
       "scheduled": "2026-10-19T21:33",
-      "expected": "2026-10-19T21:40",
+      "expected": "2026-10-19T21:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -168,34 +153,41 @@
         "Worcester Shrub Hill"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T22:16",
+      "expected": "2026-10-19T22:16",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-19T20:50",
-      "expected": null,
+      "expected": "2026-10-19T21:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-19T21:10",
-      "expected": "2026-10-19T21:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on a train in front of this one",
       "mode": "train"
     },
     {
       "scheduled": "2026-10-19T21:14",
-      "expected": "2026-10-19T21:17",
+      "expected": "2026-10-19T21:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -206,7 +198,7 @@
     },
     {
       "scheduled": "2026-10-19T21:33",
-      "expected": "2026-10-19T21:39",
+      "expected": "2026-10-19T21:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
