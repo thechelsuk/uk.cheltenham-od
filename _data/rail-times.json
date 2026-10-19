@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T13:15:07+01:00",
+  "generated_at": "2026-10-19T13:20:37+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-19T12:52",
-      "expected": "2026-10-19T13:45",
+      "expected": "2026-10-19T13:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -44,7 +44,7 @@
     },
     {
       "scheduled": "2026-10-19T13:12",
-      "expected": "2026-10-19T13:18",
+      "expected": "2026-10-19T13:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -68,23 +68,6 @@
         "Berwick-upon-Tweed",
         "Dunbar",
         "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-19T13:15",
-      "expected": "2026-10-19T13:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -177,12 +160,33 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T13:52",
+      "expected": "2026-10-19T13:57",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a points failure",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-19T12:50",
-      "expected": "2026-10-19T13:44",
+      "expected": "2026-10-19T13:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -199,17 +203,6 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-19T13:14",
-      "expected": "2026-10-19T13:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
       "reason": "",
       "mode": "train"
     },
@@ -277,6 +270,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T13:50",
+      "expected": "2026-10-19T13:56",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a points failure",
       "mode": "train"
     }
   ],
