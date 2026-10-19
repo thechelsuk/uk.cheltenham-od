@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T17:25:07+01:00",
+  "generated_at": "2026-10-19T17:30:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-19T17:25",
-      "expected": "2026-10-19T17:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-19T17:31",
       "expected": "2026-10-19T17:31",
@@ -102,7 +83,7 @@
     },
     {
       "scheduled": "2026-10-19T17:52",
-      "expected": "2026-10-19T17:59",
+      "expected": "2026-10-19T18:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -163,23 +144,38 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T18:12",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-19T17:24",
-      "expected": "2026-10-19T17:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-19T17:27",
-      "expected": "2026-10-19T17:30",
+      "expected": "2026-10-19T17:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -201,13 +197,13 @@
     },
     {
       "scheduled": "2026-10-19T17:31",
-      "expected": "2026-10-19T17:31",
-      "status": "On time",
+      "expected": "2026-10-19T17:36",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -234,7 +230,7 @@
     },
     {
       "scheduled": "2026-10-19T17:50",
-      "expected": "2026-10-19T17:58",
+      "expected": "2026-10-19T18:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -252,6 +248,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-19T18:11",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     }
   ],
