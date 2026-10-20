@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T08:11:13+01:00",
+  "generated_at": "2026-10-20T08:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,32 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-20T07:55",
-      "expected": "2026-10-20T08:10",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T08:12",
-      "expected": "2026-10-20T08:12",
-      "status": "On time",
+      "expected": "2026-10-20T08:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -65,12 +42,12 @@
     },
     {
       "scheduled": "2026-10-20T08:15",
-      "expected": "2026-10-20T08:18",
+      "expected": "2026-10-20T08:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
+      "destination": "Gloucester",
       "reason": "",
       "calling_at": [
         "Gloucester",
@@ -177,23 +154,28 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T09:03",
+      "expected": "2026-10-20T09:03",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-20T07:54",
-      "expected": "2026-10-20T08:09",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T08:10",
-      "expected": "2026-10-20T08:12",
+      "expected": "2026-10-20T08:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -204,12 +186,12 @@
     },
     {
       "scheduled": "2026-10-20T08:14",
-      "expected": "2026-10-20T08:17",
+      "expected": "2026-10-20T08:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
+      "destination": "Gloucester",
       "reason": "",
       "mode": "train"
     },
@@ -277,6 +259,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been delayed by a road vehicle colliding with a bridge",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T09:02",
+      "expected": "2026-10-20T09:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
       "mode": "train"
     }
   ],
