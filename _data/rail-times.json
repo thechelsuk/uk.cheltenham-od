@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T12:15:08+01:00",
+  "generated_at": "2026-10-20T12:20:15+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,51 +13,6 @@
     "Trains running between London Paddington and Heathrow Airport / Reading may be cancelled, delayed by up to 30 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-20T12:12",
-      "expected": "2026-10-20T12:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T12:15",
-      "expected": "2026-10-20T12:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-20T12:29",
       "expected": "2026-10-20T12:29",
@@ -179,31 +134,53 @@
         "Penzance"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T12:55",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T13:03",
+      "expected": "2026-10-20T13:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-20T12:11",
-      "expected": "2026-10-20T12:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T12:14",
-      "expected": "2026-10-20T12:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-20T12:27",
       "expected": null,
@@ -228,7 +205,7 @@
     },
     {
       "scheduled": "2026-10-20T12:32",
-      "expected": "2026-10-20T12:54",
+      "expected": "2026-10-20T12:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -272,13 +249,24 @@
     },
     {
       "scheduled": "2026-10-20T12:50",
-      "expected": "2026-10-20T12:50",
-      "status": "On time",
+      "expected": "2026-10-20T12:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Penzance",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T12:54",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
       "mode": "train"
     }
   ],
