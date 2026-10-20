@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T10:20:08+01:00",
+  "generated_at": "2026-10-20T10:25:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,50 +14,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-20T08:43",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by a bus colliding with a bridge",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T10:03",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by a fault on a train in front of this one",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T10:23",
-      "expected": "2026-10-20T10:23",
-      "status": "On time",
+      "expected": "2026-10-20T10:25",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -119,8 +78,8 @@
     },
     {
       "scheduled": "2026-10-20T10:40",
-      "expected": "2026-10-20T10:40",
-      "status": "On time",
+      "expected": "2026-10-20T10:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -173,13 +132,64 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:59",
+      "expected": "2026-10-20T10:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T11:03",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-20T10:22",
-      "expected": "2026-10-20T10:22",
-      "status": "On time",
+      "expected": "2026-10-20T10:24",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -222,7 +232,7 @@
     },
     {
       "scheduled": "2026-10-20T10:38",
-      "expected": "2026-10-20T10:40",
+      "expected": "2026-10-20T10:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -250,6 +260,17 @@
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Plymouth",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:57",
+      "expected": "2026-10-20T10:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Edinburgh via Leeds",
       "reason": "",
       "mode": "train"
     }
