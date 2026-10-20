@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T07:30:07+01:00",
+  "generated_at": "2026-10-20T07:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-20T07:24",
-      "expected": "2026-10-20T07:29",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T07:29",
-      "expected": "2026-10-20T07:38",
+      "expected": "2026-10-20T07:37",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -48,7 +33,7 @@
     },
     {
       "scheduled": "2026-10-20T07:35",
-      "expected": "2026-10-20T07:38",
+      "expected": "2026-10-20T07:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -81,7 +66,7 @@
     },
     {
       "scheduled": "2026-10-20T07:40",
-      "expected": "2026-10-20T07:46",
+      "expected": "2026-10-20T07:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -101,7 +86,7 @@
     },
     {
       "scheduled": "2026-10-20T07:43",
-      "expected": "2026-10-20T07:48",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -142,7 +127,7 @@
     },
     {
       "scheduled": "2026-10-20T07:55",
-      "expected": "2026-10-20T08:04",
+      "expected": "2026-10-20T08:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -183,23 +168,40 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T08:12",
+      "expected": "2026-10-20T08:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-20T07:22",
-      "expected": "2026-10-20T07:28",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T07:27",
-      "expected": "2026-10-20T07:37",
+      "expected": "2026-10-20T07:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -210,7 +212,7 @@
     },
     {
       "scheduled": "2026-10-20T07:29",
-      "expected": "2026-10-20T07:38",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -221,7 +223,7 @@
     },
     {
       "scheduled": "2026-10-20T07:33",
-      "expected": "2026-10-20T07:37",
+      "expected": "2026-10-20T07:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -243,7 +245,7 @@
     },
     {
       "scheduled": "2026-10-20T07:38",
-      "expected": "2026-10-20T07:45",
+      "expected": "2026-10-20T07:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -265,7 +267,7 @@
     },
     {
       "scheduled": "2026-10-20T07:54",
-      "expected": "2026-10-20T08:03",
+      "expected": "2026-10-20T08:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -282,6 +284,17 @@
       "operator": "CrossCountry",
       "origin": "Derby",
       "destination": "Plymouth",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T08:10",
+      "expected": "2026-10-20T08:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
       "reason": "",
       "mode": "train"
     }
