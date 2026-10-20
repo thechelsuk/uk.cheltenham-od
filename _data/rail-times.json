@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T10:15:08+01:00",
+  "generated_at": "2026-10-20T10:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -51,51 +51,6 @@
         "Didcot Parkway",
         "Reading",
         "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T10:12",
-      "expected": "2026-10-20T10:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T10:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -181,31 +136,46 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:45",
+      "expected": "2026-10-20T10:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:52",
+      "expected": "2026-10-20T10:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-20T10:11",
-      "expected": "2026-10-20T10:11",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T10:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-20T10:22",
       "expected": "2026-10-20T10:22",
@@ -252,12 +222,34 @@
     },
     {
       "scheduled": "2026-10-20T10:38",
-      "expected": "2026-10-20T10:38",
-      "status": "On time",
+      "expected": "2026-10-20T10:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:44",
+      "expected": "2026-10-20T10:44",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:50",
+      "expected": "2026-10-20T10:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
