@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T09:25:07+01:00",
+  "generated_at": "2026-10-20T09:30:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,26 +14,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-20T09:15",
-      "expected": "2026-10-20T09:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T09:26",
-      "expected": "2026-10-20T09:26",
-      "status": "On time",
+      "expected": "2026-10-20T09:29",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
@@ -86,8 +69,8 @@
     },
     {
       "scheduled": "2026-10-20T09:40",
-      "expected": "2026-10-20T09:40",
-      "status": "On time",
+      "expected": "2026-10-20T09:43",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -106,7 +89,7 @@
     },
     {
       "scheduled": "2026-10-20T09:47",
-      "expected": "2026-10-20T09:51",
+      "expected": "2026-10-20T09:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -162,24 +145,35 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T09:59",
+      "expected": "2026-10-20T09:59",
+      "status": "On time",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-20T09:14",
-      "expected": "2026-10-20T09:22",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T09:26",
-      "expected": "2026-10-20T09:26",
-      "status": "On time",
+      "expected": "2026-10-20T09:28",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
@@ -222,8 +216,8 @@
     },
     {
       "scheduled": "2026-10-20T09:39",
-      "expected": "2026-10-20T09:39",
-      "status": "On time",
+      "expected": "2026-10-20T09:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -233,7 +227,7 @@
     },
     {
       "scheduled": "2026-10-20T09:45",
-      "expected": "2026-10-20T09:50",
+      "expected": "2026-10-20T09:51",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -262,6 +256,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T09:58",
+      "expected": "2026-10-20T09:58",
+      "status": "On time",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
+      "reason": "",
       "mode": "train"
     }
   ],
