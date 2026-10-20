@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T21:50:08+01:00",
+  "generated_at": "2026-10-20T21:55:10+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,22 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-20T21:52",
-      "expected": "2026-10-20T21:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-20T21:53",
       "expected": "2026-10-20T21:53",
@@ -111,7 +95,7 @@
     },
     {
       "scheduled": "2026-10-20T22:52",
-      "expected": "2026-10-20T23:03",
+      "expected": "2026-10-20T23:06",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -123,20 +107,23 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T22:57",
+      "expected": "2026-10-20T22:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-20T21:50",
-      "expected": "2026-10-20T21:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-20T21:51",
       "expected": "2026-10-20T21:51",
@@ -216,13 +203,24 @@
     },
     {
       "scheduled": "2026-10-20T22:50",
-      "expected": "2026-10-20T23:02",
+      "expected": "2026-10-20T23:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by a fault with the signalling system",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T22:55",
+      "expected": "2026-10-20T22:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "",
       "mode": "train"
     }
   ],
