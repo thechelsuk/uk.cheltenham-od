@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T10:00:08+01:00",
+  "generated_at": "2026-10-20T10:05:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -34,50 +34,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-20T09:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T09:59",
-      "expected": "2026-10-20T09:59",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Gloucester",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T10:03",
       "expected": "2026-10-20T10:03",
       "status": "On time",
@@ -100,8 +56,8 @@
     },
     {
       "scheduled": "2026-10-20T10:12",
-      "expected": "2026-10-20T10:14",
-      "status": "Delayed",
+      "expected": "2026-10-20T10:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -185,12 +141,32 @@
         "Paignton"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:40",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a bus colliding with a bridge",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-20T09:30",
-      "expected": "2026-10-20T10:01",
+      "expected": "2026-10-20T10:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -200,31 +176,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-20T09:58",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-20T09:58",
-      "expected": "2026-10-20T09:58",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Gloucester",
-      "destination": "Nottingham",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T10:11",
-      "expected": "2026-10-20T10:13",
-      "status": "Delayed",
+      "expected": "2026-10-20T10:11",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -274,6 +228,17 @@
       "origin": "Manchester Piccadilly",
       "destination": "Paignton",
       "reason": "This service has been delayed by trespassers on the railway",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T10:31",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of a road vehicle colliding with a bridge",
       "mode": "train"
     }
   ],
