@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T19:25:07+01:00",
+  "generated_at": "2026-10-20T19:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-20T19:23",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-20T19:30",
       "expected": "2026-10-20T19:30",
@@ -46,7 +27,7 @@
     },
     {
       "scheduled": "2026-10-20T19:40",
-      "expected": "2026-10-20T19:42",
+      "expected": "2026-10-20T19:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -162,23 +143,35 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T20:12",
+      "expected": "2026-10-20T20:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-20T19:21",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-20T19:27",
-      "expected": "2026-10-20T19:31",
+      "expected": "2026-10-20T19:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -250,6 +243,17 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-20T20:10",
+      "expected": "2026-10-20T20:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
       "reason": "",
       "mode": "train"
     }
