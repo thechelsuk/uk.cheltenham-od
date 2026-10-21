@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T07:30:07+01:00",
+  "generated_at": "2026-10-21T07:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-21T07:29",
-      "expected": "2026-10-21T07:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-21T07:35",
       "expected": "2026-10-21T07:35",
@@ -66,7 +45,7 @@
     },
     {
       "scheduled": "2026-10-21T07:40",
-      "expected": "2026-10-21T07:45",
+      "expected": "2026-10-21T07:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -196,31 +175,26 @@
         "Edinburgh"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-21T07:27",
-      "expected": "2026-10-21T07:27",
+      "scheduled": "2026-10-21T08:15",
+      "expected": "2026-10-21T08:15",
       "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-21T07:29",
-      "expected": "2026-10-21T07:31",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-21T07:33",
       "expected": "2026-10-21T07:33",
@@ -245,7 +219,7 @@
     },
     {
       "scheduled": "2026-10-21T07:38",
-      "expected": "2026-10-21T07:44",
+      "expected": "2026-10-21T07:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -295,6 +269,28 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T08:14",
+      "expected": "2026-10-21T08:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T08:27",
+      "expected": "2026-10-21T08:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
