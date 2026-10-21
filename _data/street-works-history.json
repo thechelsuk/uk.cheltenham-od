@@ -5,9 +5,9 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 382,
-    "unplanned": 62,
-    "road_closures": 40,
+    "count": 391,
+    "unplanned": 64,
+    "road_closures": 42,
     "by_street": [
       {
         "street": "Cheltenham Road East",
@@ -23,6 +23,11 @@
         "street": "Tewkesbury Road",
         "works": 12,
         "road_closures": 0
+      },
+      {
+        "street": "Church Road",
+        "works": 6,
+        "road_closures": 3
       },
       {
         "street": "High Street",
@@ -45,11 +50,6 @@
         "road_closures": 0
       },
       {
-        "street": "Church Road",
-        "works": 5,
-        "road_closures": 2
-      },
-      {
         "street": "Old Tewkesbury Road",
         "works": 5,
         "road_closures": 0
@@ -63,7 +63,7 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 131
+        "works": 140
       },
       {
         "name": "Gloucestershire County Council",
@@ -129,11 +129,137 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 382
+        "works": 391
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:LB9060000-000042276405",
+      "first_seen": "2026-10-21",
+      "street": "Theyer Close",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-22",
+      "end": "2026-10-26",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042234686",
+      "first_seen": "2026-10-21",
+      "street": "Lilliesfield Avenue",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-23",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9060000-000041965511",
+      "first_seen": "2026-10-21",
+      "street": "Footway From Barnes Wallis Way To Lysander Court Including Two Lengths To Sunderland Court",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-23",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9060000-000041819240",
+      "first_seen": "2026-10-21",
+      "street": "Down Hatherley Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-23",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9060000-000041798955",
+      "first_seen": "2026-10-21",
+      "street": "Shurdington Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-22",
+      "end": "2026-10-23",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9060000-000041788672",
+      "first_seen": "2026-10-21",
+      "street": "Ermin Street",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-22",
+      "end": "2026-10-26",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060783575",
+      "first_seen": "2026-10-21",
+      "street": "Castle Hill Drive",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-21T08:04",
+      "end": "2026-10-22",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014419634",
+      "first_seen": "2026-10-21",
+      "street": "Royal Well Lane",
+      "ward_slug": "lansdown",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-21T08:17",
+      "end": "2026-10-23",
+      "last_seen": "2026-10-21"
+    },
+    {
+      "id": "PERMIT:LB7012302-000014327200",
+      "first_seen": "2026-10-21",
+      "street": "Church Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2026-12-23",
+      "end": "2026-12-24",
+      "last_seen": "2026-10-21"
+    },
     {
       "id": "PERMIT:ZH00146445122",
       "first_seen": "2026-10-20",
@@ -2932,7 +3058,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-10-21",
       "end": "2026-10-26",
-      "last_seen": "2026-10-17"
+      "last_seen": "2026-10-21"
     },
     {
       "id": "PERMIT:LB9011303-000014420549",
@@ -3198,7 +3324,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-02",
       "end": "2026-11-05",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-10-21"
     },
     {
       "id": "PERMIT:EY10319253404",
@@ -3212,7 +3338,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-16",
       "end": "2026-12-05",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-10-21"
     },
     {
       "id": "PERMIT:EY10316321049",
@@ -3240,7 +3366,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-02",
       "end": "2026-11-07",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-10-21"
     },
     {
       "id": "PERMIT:EY102GH1902000047320",
@@ -4106,9 +4232,9 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-10-20",
-      "end": "2026-10-22",
-      "last_seen": "2026-10-19"
+      "start": "2026-10-21T08:59",
+      "end": "2026-10-23",
+      "last_seen": "2026-10-21"
     },
     {
       "id": "PERMIT:BC004WH6LH43F",
