@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T20:15:08+01:00",
+  "generated_at": "2026-10-21T20:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,45 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-21T20:12",
-      "expected": "2026-10-21T20:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-21T20:15",
-      "expected": "2026-10-21T20:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-21T20:23",
       "expected": "2026-10-21T20:23",
@@ -90,13 +51,13 @@
     },
     {
       "scheduled": "2026-10-21T20:52",
-      "expected": "2026-10-21T21:02",
+      "expected": "2026-10-21T21:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "This service has been delayed by a points failure near Wakefield Kirkgate",
+      "reason": "This service has been delayed by the train making extra stops because of service disruption",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -168,31 +129,48 @@
         "Birmingham New Street"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
-    {
-      "scheduled": "2026-10-21T20:10",
-      "expected": "2026-10-21T20:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "mode": "train"
     },
     {
-      "scheduled": "2026-10-21T20:14",
-      "expected": "2026-10-21T20:16",
-      "status": "Delayed",
+      "scheduled": "2026-10-21T21:15",
+      "expected": null,
+      "status": "Cancelled",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
     },
+    {
+      "scheduled": "2026-10-21T21:15",
+      "expected": "2026-10-21T21:15",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Cheltenham Spa",
+      "destination": "Newport (South Wales)",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)"
+      ],
+      "mode": "bus"
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-21T20:21",
       "expected": "2026-10-21T20:23",
@@ -228,13 +206,13 @@
     },
     {
       "scheduled": "2026-10-21T20:50",
-      "expected": "2026-10-21T21:01",
+      "expected": "2026-10-21T21:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "This service has been delayed by a points failure near Wakefield Kirkgate",
+      "reason": "This service has been delayed by the train making extra stops because of service disruption",
       "mode": "train"
     },
     {
@@ -257,6 +235,17 @@
       "origin": "Plymouth",
       "destination": "Birmingham New Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T21:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
