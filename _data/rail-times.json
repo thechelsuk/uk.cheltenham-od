@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T20:00:08+01:00",
+  "generated_at": "2026-10-21T20:05:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,52 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-21T19:59",
-      "expected": "2026-10-21T19:59",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Wilnecote",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Willington",
-        "Derby",
-        "Spondon",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-21T20:02",
-      "expected": "2026-10-21T20:02",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-21T20:12",
       "expected": "2026-10-21T20:12",
@@ -81,7 +35,7 @@
     },
     {
       "scheduled": "2026-10-21T20:15",
-      "expected": "2026-10-21T20:17",
+      "expected": "2026-10-21T20:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -136,7 +90,7 @@
     },
     {
       "scheduled": "2026-10-21T20:52",
-      "expected": "2026-10-21T21:01",
+      "expected": "2026-10-21T21:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -175,20 +129,48 @@
         "London Paddington"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-21T19:58",
-      "expected": "2026-10-21T19:58",
+      "scheduled": "2026-10-21T21:07",
+      "expected": "2026-10-21T21:07",
       "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Spondon",
+        "Long Eaton",
+        "Attenborough",
+        "Beeston",
+        "Nottingham"
+      ],
       "mode": "train"
     },
+    {
+      "scheduled": "2026-10-21T21:12",
+      "expected": "2026-10-21T21:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-21T20:10",
       "expected": "2026-10-21T20:10",
@@ -202,7 +184,7 @@
     },
     {
       "scheduled": "2026-10-21T20:14",
-      "expected": "2026-10-21T20:16",
+      "expected": "2026-10-21T20:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,8 +195,8 @@
     },
     {
       "scheduled": "2026-10-21T20:21",
-      "expected": "2026-10-21T20:21",
-      "status": "On time",
+      "expected": "2026-10-21T20:23",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -246,13 +228,35 @@
     },
     {
       "scheduled": "2026-10-21T20:50",
-      "expected": "2026-10-21T21:00",
+      "expected": "2026-10-21T21:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a points failure near Wakefield Kirkgate",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T21:05",
+      "expected": "2026-10-21T21:05",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T21:10",
+      "expected": "2026-10-21T21:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
       "mode": "train"
     }
   ],
