@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T14:45:08+01:00",
+  "generated_at": "2026-10-21T14:50:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,33 +10,13 @@
   },
   "messages": [
     "Trains to / from and through Newcastle may be cancelled, delayed by up to 30 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website .",
-    "Trains between Newport (South Wales) and Gloucester may be cancelled or delayed. Latest information can be found in the Disruptions area of the National Rail website ."
+    "Trains between Newport (South Wales) and Gloucester may be cancelled, delayed by up to 45 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
     {
-      "scheduled": "2026-10-21T14:40",
-      "expected": "2026-10-21T14:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-21T14:47",
-      "expected": "2026-10-21T14:47",
-      "status": "On time",
+      "expected": "2026-10-21T14:49",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -51,7 +31,7 @@
     },
     {
       "scheduled": "2026-10-21T14:52",
-      "expected": "2026-10-21T15:21",
+      "expected": "2026-10-21T15:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -137,8 +117,8 @@
     },
     {
       "scheduled": "2026-10-21T15:12",
-      "expected": "2026-10-21T15:12",
-      "status": "On time",
+      "expected": "2026-10-21T15:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -168,7 +148,7 @@
     },
     {
       "scheduled": "2026-10-21T15:15",
-      "expected": null,
+      "expected": "2026-10-21T15:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -201,24 +181,28 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T15:29",
+      "expected": "2026-10-21T15:32",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-21T14:38",
-      "expected": "2026-10-21T14:43",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-21T14:45",
-      "expected": "2026-10-21T14:45",
-      "status": "On time",
+      "expected": "2026-10-21T14:48",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -228,7 +212,7 @@
     },
     {
       "scheduled": "2026-10-21T14:50",
-      "expected": "2026-10-21T15:20",
+      "expected": "2026-10-21T15:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -250,8 +234,8 @@
     },
     {
       "scheduled": "2026-10-21T15:10",
-      "expected": "2026-10-21T15:10",
-      "status": "On time",
+      "expected": "2026-10-21T15:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -261,7 +245,7 @@
     },
     {
       "scheduled": "2026-10-21T15:14",
-      "expected": null,
+      "expected": "2026-10-21T15:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -290,6 +274,17 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been cancelled because of a tree blocking the railway",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T15:28",
+      "expected": "2026-10-21T15:31",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
       "mode": "train"
     }
   ],
