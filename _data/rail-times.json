@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T20:30:08+01:00",
+  "generated_at": "2026-10-21T20:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -32,7 +32,7 @@
     },
     {
       "scheduled": "2026-10-21T20:52",
-      "expected": "2026-10-21T21:06",
+      "expected": "2026-10-21T21:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -164,20 +164,25 @@
         "Worcester Shrub Hill"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T21:52",
+      "expected": "2026-10-21T21:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-21T20:27",
-      "expected": "2026-10-21T20:31",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a tree blocking the railway earlier today",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-21T20:33",
       "expected": "2026-10-21T20:33",
@@ -191,7 +196,7 @@
     },
     {
       "scheduled": "2026-10-21T20:50",
-      "expected": "2026-10-21T21:05",
+      "expected": "2026-10-21T21:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -242,6 +247,17 @@
       "origin": "London Paddington",
       "destination": "Worcester Shrub Hill",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T21:50",
+      "expected": "2026-10-21T21:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
