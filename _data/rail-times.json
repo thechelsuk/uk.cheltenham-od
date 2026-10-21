@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T13:00:10+01:00",
+  "generated_at": "2026-10-21T13:05:12+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains to / from and through Newcastle may be cancelled, delayed by up to 45 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-21T13:03",
-      "expected": "2026-10-21T13:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-21T13:12",
       "expected": "2026-10-21T13:12",
@@ -64,8 +43,8 @@
     },
     {
       "scheduled": "2026-10-21T13:15",
-      "expected": "2026-10-21T13:15",
-      "status": "On time",
+      "expected": "2026-10-21T13:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -168,13 +147,34 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T13:52",
+      "expected": "2026-10-21T14:08",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by emergency services dealing with an incident near the railway",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-21T13:10",
-      "expected": "2026-10-21T13:12",
-      "status": "Delayed",
+      "expected": "2026-10-21T13:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -184,8 +184,8 @@
     },
     {
       "scheduled": "2026-10-21T13:14",
-      "expected": "2026-10-21T13:14",
-      "status": "On time",
+      "expected": "2026-10-21T13:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -257,6 +257,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-21T13:50",
+      "expected": "2026-10-21T14:07",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by emergency services dealing with an incident near the railway",
       "mode": "train"
     }
   ],
