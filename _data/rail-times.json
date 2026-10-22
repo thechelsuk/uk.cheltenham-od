@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T16:35:08+01:00",
+  "generated_at": "2026-10-22T16:40:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-10-22T16:40",
-      "expected": "2026-10-22T16:47",
+      "expected": "2026-10-22T16:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -177,6 +177,25 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T17:25",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -189,17 +208,6 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T16:31",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
       "mode": "train"
     },
     {
@@ -266,6 +274,17 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T17:24",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
       "mode": "train"
     }
   ],
