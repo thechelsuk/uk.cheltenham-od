@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T10:15:08+01:00",
+  "generated_at": "2026-10-22T10:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,23 +12,6 @@
     "Trains between Wakefield Westgate and Leeds may be cancelled or delayed by up to 45 minutes. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-22T10:15",
-      "expected": "2026-10-22T10:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T10:23",
       "expected": "2026-10-22T10:23",
@@ -178,20 +161,30 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T11:03",
+      "expected": "2026-10-22T11:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-22T10:14",
-      "expected": "2026-10-22T10:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T10:22",
       "expected": "2026-10-22T10:22",
@@ -227,13 +220,13 @@
     },
     {
       "scheduled": "2026-10-22T10:31",
-      "expected": "2026-10-22T10:31",
-      "status": "On time",
+      "expected": "2026-10-22T10:34",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "mode": "train"
     },
     {
