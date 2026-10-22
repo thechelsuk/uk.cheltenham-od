@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:40:08+01:00",
+  "generated_at": "2026-10-22T18:45:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,23 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-22T18:31",
-      "expected": "2026-10-22T18:39",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-22T18:40",
-      "expected": "2026-10-22T18:43",
+      "expected": "2026-10-22T18:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -44,7 +29,7 @@
     },
     {
       "scheduled": "2026-10-22T18:40",
-      "expected": "2026-10-22T18:42",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -161,7 +146,7 @@
     },
     {
       "scheduled": "2026-10-22T19:12",
-      "expected": "2026-10-22T19:30",
+      "expected": "2026-10-22T19:23",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -179,23 +164,26 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:15",
+      "expected": "2026-10-22T19:18",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-22T18:29",
-      "expected": "2026-10-22T18:37",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-22T18:31",
-      "expected": "2026-10-22T18:48",
+      "expected": "2026-10-22T18:51",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -261,13 +249,24 @@
     },
     {
       "scheduled": "2026-10-22T19:10",
-      "expected": "2026-10-22T19:29",
+      "expected": "2026-10-22T19:22",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Leeds",
       "reason": "This service has been delayed by a fault on a train",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:14",
+      "expected": "2026-10-22T19:17",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
