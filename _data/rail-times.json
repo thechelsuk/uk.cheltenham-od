@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T11:30:07+01:00",
+  "generated_at": "2026-10-22T11:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-22T11:29",
-      "expected": "2026-10-22T11:31",
+      "expected": "2026-10-22T11:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -172,23 +172,29 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T12:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-22T11:26",
-      "expected": "2026-10-22T11:29",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-22T11:27",
-      "expected": "2026-10-22T11:30",
+      "expected": "2026-10-22T11:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -210,8 +216,8 @@
     },
     {
       "scheduled": "2026-10-22T11:38",
-      "expected": "2026-10-22T11:38",
-      "status": "On time",
+      "expected": "2026-10-22T11:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -261,6 +267,17 @@
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T12:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
