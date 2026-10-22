@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T06:05:08+01:00",
+  "generated_at": "2026-10-22T06:15:11+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-22T06:08",
-      "expected": "2026-10-22T06:08",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T06:14",
       "expected": "2026-10-22T06:14",
@@ -172,7 +152,7 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by this train being late from the depot",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
@@ -199,20 +179,23 @@
         "Paignton"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T07:35",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by this train being late from the depot",
+      "calling_at": [
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-22T06:06",
-      "expected": "2026-10-22T06:08",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T06:13",
       "expected": "2026-10-22T06:13",
@@ -265,7 +248,7 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by this train being late from the depot",
       "mode": "train"
     },
     {
@@ -288,6 +271,17 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T07:33",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by this train being late from the depot",
       "mode": "train"
     }
   ],
