@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T21:10:08+01:00",
+  "generated_at": "2026-10-22T21:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,51 +12,6 @@
     "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-22T20:52",
-      "expected": "2026-10-22T21:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T21:07",
-      "expected": "2026-10-22T21:09",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Spondon",
-        "Long Eaton",
-        "Attenborough",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T21:12",
       "expected": "2026-10-22T21:22",
@@ -173,31 +128,41 @@
         "Worcester Shrub Hill"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T22:16",
+      "expected": "2026-10-22T22:16",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T22:21",
+      "expected": "2026-10-22T22:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-22T20:50",
-      "expected": "2026-10-22T21:06",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T21:05",
-      "expected": "2026-10-22T21:08",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T21:10",
       "expected": "2026-10-22T21:21",
@@ -283,6 +248,17 @@
       "operator": "Great Western Railway",
       "origin": "Westbury",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T22:20",
+      "expected": "2026-10-22T22:20",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
       "reason": "",
       "mode": "train"
     }
