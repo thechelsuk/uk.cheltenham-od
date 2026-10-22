@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T14:15:07+01:00",
+  "generated_at": "2026-10-22T14:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,23 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-22T14:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T14:24",
       "expected": "2026-10-22T14:24",
@@ -119,8 +102,8 @@
     },
     {
       "scheduled": "2026-10-22T14:52",
-      "expected": "2026-10-22T14:52",
-      "status": "On time",
+      "expected": "2026-10-22T14:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
@@ -159,24 +142,34 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T15:03",
+      "expected": "2026-10-22T15:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-22T14:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-22T14:22",
-      "expected": "2026-10-22T14:22",
-      "status": "On time",
+      "expected": "2026-10-22T14:19",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -197,8 +190,8 @@
     },
     {
       "scheduled": "2026-10-22T14:28",
-      "expected": "2026-10-22T14:28",
-      "status": "On time",
+      "expected": "2026-10-22T14:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -241,8 +234,8 @@
     },
     {
       "scheduled": "2026-10-22T14:50",
-      "expected": "2026-10-22T14:50",
-      "status": "On time",
+      "expected": "2026-10-22T14:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
