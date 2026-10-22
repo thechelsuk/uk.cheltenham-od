@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T17:40:08+01:00",
+  "generated_at": "2026-10-22T17:45:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,21 +13,6 @@
     "Trains are unable to run between Swindon and Gloucester. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-22T17:31",
-      "expected": "2026-10-22T17:39",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T17:40",
       "expected": "2026-10-22T17:44",
@@ -86,7 +71,7 @@
     },
     {
       "scheduled": "2026-10-22T17:52",
-      "expected": "2026-10-22T18:06",
+      "expected": "2026-10-22T18:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -129,7 +114,7 @@
     },
     {
       "scheduled": "2026-10-22T18:03",
-      "expected": null,
+      "expected": "2026-10-22T18:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -176,7 +161,7 @@
     },
     {
       "scheduled": "2026-10-22T18:19",
-      "expected": "2026-10-22T18:25",
+      "expected": "2026-10-22T18:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -189,23 +174,31 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T18:25",
+      "expected": "2026-10-22T18:25",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-22T17:29",
-      "expected": "2026-10-22T17:36",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-22T17:31",
-      "expected": "2026-10-22T17:54",
+      "expected": "2026-10-22T17:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -227,7 +220,7 @@
     },
     {
       "scheduled": "2026-10-22T17:47",
-      "expected": "2026-10-22T17:49",
+      "expected": "2026-10-22T17:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -238,7 +231,7 @@
     },
     {
       "scheduled": "2026-10-22T17:50",
-      "expected": "2026-10-22T18:05",
+      "expected": "2026-10-22T18:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -271,12 +264,23 @@
     },
     {
       "scheduled": "2026-10-22T18:18",
-      "expected": "2026-10-22T18:24",
+      "expected": "2026-10-22T18:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T18:24",
+      "expected": "2026-10-22T18:24",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
     }
