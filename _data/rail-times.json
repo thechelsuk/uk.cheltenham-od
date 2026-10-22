@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:30:10+01:00",
+  "generated_at": "2026-10-22T18:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-10-22T18:19",
-      "expected": "2026-10-22T18:32",
+      "expected": "2026-10-22T18:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -31,7 +31,7 @@
     },
     {
       "scheduled": "2026-10-22T18:31",
-      "expected": "2026-10-22T18:35",
+      "expected": "2026-10-22T18:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -46,8 +46,8 @@
     },
     {
       "scheduled": "2026-10-22T18:40",
-      "expected": "2026-10-22T18:40",
-      "status": "On time",
+      "expected": "2026-10-22T18:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -60,8 +60,8 @@
     },
     {
       "scheduled": "2026-10-22T18:40",
-      "expected": "2026-10-22T18:40",
-      "status": "On time",
+      "expected": "2026-10-22T18:42",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -96,7 +96,7 @@
     },
     {
       "scheduled": "2026-10-22T18:52",
-      "expected": "2026-10-22T18:55",
+      "expected": "2026-10-22T18:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -153,6 +153,27 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:12",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -168,19 +189,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-22T18:27",
-      "expected": "2026-10-22T18:31",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-22T18:29",
-      "expected": "2026-10-22T18:34",
+      "expected": "2026-10-22T18:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -202,7 +212,7 @@
     },
     {
       "scheduled": "2026-10-22T18:38",
-      "expected": "2026-10-22T18:40",
+      "expected": "2026-10-22T18:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -224,7 +234,7 @@
     },
     {
       "scheduled": "2026-10-22T18:50",
-      "expected": "2026-10-22T18:54",
+      "expected": "2026-10-22T18:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -242,6 +252,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:10",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     }
   ],
