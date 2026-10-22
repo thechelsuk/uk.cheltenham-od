@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T19:10:07+01:00",
+  "generated_at": "2026-10-22T19:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,26 +13,6 @@
     "Trains are unable to run between Swindon and Gloucester. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-22T19:02",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by the emergency services dealing with an incident",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T19:12",
       "expected": null,
@@ -56,7 +36,7 @@
     },
     {
       "scheduled": "2026-10-22T19:12",
-      "expected": "2026-10-22T19:28",
+      "expected": "2026-10-22T19:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -91,7 +71,7 @@
     },
     {
       "scheduled": "2026-10-22T19:23",
-      "expected": null,
+      "expected": "2026-10-22T19:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -156,6 +136,24 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:49",
+      "expected": "2026-10-22T20:11",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "This service has been delayed by train crew being delayed",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -172,7 +170,7 @@
     },
     {
       "scheduled": "2026-10-22T19:10",
-      "expected": "2026-10-22T19:27",
+      "expected": "2026-10-22T19:29",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -194,7 +192,7 @@
     },
     {
       "scheduled": "2026-10-22T19:21",
-      "expected": null,
+      "expected": "2026-10-22T19:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -245,6 +243,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:47",
+      "expected": "2026-10-22T20:10",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "This service has been delayed by train crew being delayed",
       "mode": "train"
     }
   ],
