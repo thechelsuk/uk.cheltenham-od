@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T18:15:08+01:00",
+  "generated_at": "2026-10-22T18:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,53 +13,6 @@
     "Trains are unable to run between Swindon and Gloucester. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-22T18:03",
-      "expected": "2026-10-22T18:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by the emergency services dealing with an incident",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T18:12",
-      "expected": "2026-10-22T18:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Newcastle via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-22T18:19",
       "expected": "2026-10-22T18:31",
@@ -97,8 +50,8 @@
     },
     {
       "scheduled": "2026-10-22T18:31",
-      "expected": "2026-10-22T18:31",
-      "status": "On time",
+      "expected": "2026-10-22T18:33",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -112,8 +65,8 @@
     },
     {
       "scheduled": "2026-10-22T18:40",
-      "expected": "2026-10-22T18:40",
-      "status": "On time",
+      "expected": "2026-10-22T18:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -159,20 +112,49 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-22T18:11",
-      "expected": "2026-10-22T18:11",
+      "scheduled": "2026-10-22T18:52",
+      "expected": "2026-10-22T18:54",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T18:55",
+      "expected": "2026-10-22T18:55",
       "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Newcastle via Leeds",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-22T18:18",
       "expected": "2026-10-22T18:30",
@@ -208,7 +190,7 @@
     },
     {
       "scheduled": "2026-10-22T18:29",
-      "expected": "2026-10-22T18:31",
+      "expected": "2026-10-22T18:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -219,7 +201,7 @@
     },
     {
       "scheduled": "2026-10-22T18:31",
-      "expected": "2026-10-22T18:42",
+      "expected": "2026-10-22T18:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -230,7 +212,7 @@
     },
     {
       "scheduled": "2026-10-22T18:38",
-      "expected": "2026-10-22T18:40",
+      "expected": "2026-10-22T18:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -247,6 +229,28 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T18:50",
+      "expected": "2026-10-22T18:53",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T18:54",
+      "expected": "2026-10-22T18:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
