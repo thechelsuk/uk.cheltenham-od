@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T13:15:09+01:00",
+  "generated_at": "2026-10-22T13:20:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-22T13:12",
-      "expected": "2026-10-22T13:28",
+      "expected": "2026-10-22T13:29",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -36,23 +36,6 @@
         "Berwick-upon-Tweed",
         "Dunbar",
         "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T13:15",
-      "expected": "2026-10-22T13:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -148,7 +131,7 @@
     },
     {
       "scheduled": "2026-10-22T13:52",
-      "expected": "2026-10-22T13:55",
+      "expected": "2026-10-22T13:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -166,29 +149,40 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T13:59",
+      "expected": "2026-10-22T13:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-22T13:10",
-      "expected": "2026-10-22T13:27",
+      "expected": "2026-10-22T13:28",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T13:14",
-      "expected": "2026-10-22T13:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -204,8 +198,8 @@
     },
     {
       "scheduled": "2026-10-22T13:27",
-      "expected": "2026-10-22T13:27",
-      "status": "On time",
+      "expected": "2026-10-22T13:29",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
@@ -226,13 +220,13 @@
     },
     {
       "scheduled": "2026-10-22T13:31",
-      "expected": "2026-10-22T13:31",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "mode": "train"
     },
     {
@@ -259,13 +253,24 @@
     },
     {
       "scheduled": "2026-10-22T13:50",
-      "expected": "2026-10-22T13:54",
+      "expected": "2026-10-22T13:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
       "destination": "Plymouth",
       "reason": "This service has been delayed by congestion",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T13:58",
+      "expected": "2026-10-22T13:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
       "mode": "train"
     }
   ],
