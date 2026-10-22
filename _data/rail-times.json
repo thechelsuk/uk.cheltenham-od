@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T19:15:08+01:00",
+  "generated_at": "2026-10-22T19:20:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,34 +9,12 @@
     "crs": "CNM"
   },
   "messages": [
-    "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website .",
-    "Trains are unable to run between Swindon and Gloucester. Latest information can be found in the Disruptions area of the National Rail website ."
+    "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website ."
   ],
   "departures": [
     {
       "scheduled": "2026-10-22T19:12",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T19:12",
-      "expected": "2026-10-22T19:30",
+      "expected": "2026-10-22T19:28",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -57,7 +35,7 @@
     },
     {
       "scheduled": "2026-10-22T19:15",
-      "expected": "2026-10-22T19:22",
+      "expected": "2026-10-22T19:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -71,7 +49,7 @@
     },
     {
       "scheduled": "2026-10-22T19:23",
-      "expected": "2026-10-22T19:27",
+      "expected": "2026-10-22T19:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -139,7 +117,7 @@
     },
     {
       "scheduled": "2026-10-22T19:49",
-      "expected": "2026-10-22T20:11",
+      "expected": "2026-10-22T20:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -154,23 +132,33 @@
         "Great Malvern"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:52",
+      "expected": "2026-10-22T19:57",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-22T19:10",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-22T19:10",
-      "expected": "2026-10-22T19:29",
+      "expected": "2026-10-22T19:27",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -181,7 +169,7 @@
     },
     {
       "scheduled": "2026-10-22T19:14",
-      "expected": "2026-10-22T19:21",
+      "expected": "2026-10-22T19:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -192,7 +180,7 @@
     },
     {
       "scheduled": "2026-10-22T19:21",
-      "expected": "2026-10-22T19:26",
+      "expected": "2026-10-22T19:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -225,7 +213,7 @@
     },
     {
       "scheduled": "2026-10-22T19:34",
-      "expected": "2026-10-22T19:48",
+      "expected": "2026-10-22T19:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -247,13 +235,24 @@
     },
     {
       "scheduled": "2026-10-22T19:47",
-      "expected": "2026-10-22T20:10",
+      "expected": "2026-10-22T20:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Great Malvern",
       "reason": "This service has been delayed by train crew being delayed",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-22T19:51",
+      "expected": "2026-10-22T19:56",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
       "mode": "train"
     }
   ],
