@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T08:55:07+01:00",
+  "generated_at": "2026-10-23T09:00:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T08:52",
-      "expected": "2026-10-23T08:54",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T08:59",
       "expected": "2026-10-23T08:59",
@@ -122,7 +101,7 @@
     },
     {
       "scheduled": "2026-10-23T09:15",
-      "expected": "2026-10-23T09:17",
+      "expected": "2026-10-23T09:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -158,7 +137,7 @@
     },
     {
       "scheduled": "2026-10-23T09:32",
-      "expected": "2026-10-23T09:38",
+      "expected": "2026-10-23T09:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -170,20 +149,29 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T09:40",
+      "expected": "2026-10-23T09:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-23T08:50",
-      "expected": "2026-10-23T08:53",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T09:02",
       "expected": "2026-10-23T09:02",
@@ -208,7 +196,7 @@
     },
     {
       "scheduled": "2026-10-23T09:14",
-      "expected": "2026-10-23T09:16",
+      "expected": "2026-10-23T09:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -230,8 +218,8 @@
     },
     {
       "scheduled": "2026-10-23T09:26",
-      "expected": "2026-10-23T09:26",
-      "status": "On time",
+      "expected": "2026-10-23T09:28",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
@@ -252,13 +240,24 @@
     },
     {
       "scheduled": "2026-10-23T09:31",
-      "expected": "2026-10-23T09:37",
+      "expected": "2026-10-23T09:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by a late running train being in front of this one",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T09:39",
+      "expected": "2026-10-23T09:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
       "mode": "train"
     }
   ],
