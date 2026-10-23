@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T16:25:08+01:00",
+  "generated_at": "2026-10-23T16:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -36,7 +36,7 @@
     },
     {
       "scheduled": "2026-10-23T16:12",
-      "expected": "2026-10-23T16:30",
+      "expected": "2026-10-23T16:29",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -64,27 +64,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-23T16:23",
-      "expected": "2026-10-23T16:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T16:31",
-      "expected": "2026-10-23T16:41",
+      "expected": "2026-10-23T16:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -127,8 +108,8 @@
     },
     {
       "scheduled": "2026-10-23T16:40",
-      "expected": "2026-10-23T16:40",
-      "status": "On time",
+      "expected": "2026-10-23T16:43",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -180,29 +161,41 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T16:55",
+      "expected": "2026-10-23T16:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-23T16:10",
-      "expected": "2026-10-23T16:29",
+      "expected": "2026-10-23T16:28",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-23T16:21",
-      "expected": "2026-10-23T16:21",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -218,7 +211,7 @@
     },
     {
       "scheduled": "2026-10-23T16:30",
-      "expected": "2026-10-23T16:40",
+      "expected": "2026-10-23T16:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -229,8 +222,8 @@
     },
     {
       "scheduled": "2026-10-23T16:31",
-      "expected": "2026-10-23T16:31",
-      "status": "On time",
+      "expected": "2026-10-23T16:35",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -240,7 +233,7 @@
     },
     {
       "scheduled": "2026-10-23T16:38",
-      "expected": "2026-10-23T16:40",
+      "expected": "2026-10-23T16:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -251,8 +244,8 @@
     },
     {
       "scheduled": "2026-10-23T16:47",
-      "expected": "2026-10-23T16:49",
-      "status": "Delayed",
+      "expected": "2026-10-23T16:47",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -268,6 +261,17 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T16:54",
+      "expected": "2026-10-23T16:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
