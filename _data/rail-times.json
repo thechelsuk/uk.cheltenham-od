@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:15:08+01:00",
+  "generated_at": "2026-10-23T09:20:39+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,34 +12,6 @@
     "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T09:12",
-      "expected": "2026-10-23T09:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T09:15",
       "expected": "2026-10-23T09:22",
@@ -167,20 +139,31 @@
         "Plymouth"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-23T09:10",
-      "expected": "2026-10-23T09:10",
+      "scheduled": "2026-10-23T09:59",
+      "expected": "2026-10-23T09:59",
       "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Edinburgh via Leeds",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-23T09:14",
       "expected": "2026-10-23T09:21",
@@ -205,8 +188,8 @@
     },
     {
       "scheduled": "2026-10-23T09:26",
-      "expected": "2026-10-23T09:26",
-      "status": "On time",
+      "expected": "2026-10-23T09:28",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
@@ -266,6 +249,17 @@
       "operator": "CrossCountry",
       "origin": "York",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T09:58",
+      "expected": "2026-10-23T09:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
