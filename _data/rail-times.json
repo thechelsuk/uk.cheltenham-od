@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T15:30:08+01:00",
+  "generated_at": "2026-10-23T15:35:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,21 +14,6 @@
     "The ticket office is currently closed at this station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T15:29",
-      "expected": "2026-10-23T15:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T15:40",
       "expected": null,
@@ -51,7 +36,7 @@
     },
     {
       "scheduled": "2026-10-23T15:40",
-      "expected": "2026-10-23T15:48",
+      "expected": "2026-10-23T15:51",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -87,7 +72,7 @@
     },
     {
       "scheduled": "2026-10-23T15:52",
-      "expected": "2026-10-23T16:03",
+      "expected": "2026-10-23T16:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -177,6 +162,24 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T16:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a tree blocking the railway",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -192,19 +195,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-23T15:28",
-      "expected": "2026-10-23T15:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T15:31",
-      "expected": "2026-10-23T15:36",
+      "expected": "2026-10-23T15:37",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -215,7 +207,7 @@
     },
     {
       "scheduled": "2026-10-23T15:38",
-      "expected": "2026-10-23T15:47",
+      "expected": "2026-10-23T15:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -237,7 +229,7 @@
     },
     {
       "scheduled": "2026-10-23T15:50",
-      "expected": "2026-10-23T16:02",
+      "expected": "2026-10-23T16:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -255,6 +247,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by train crew being delayed by service disruption",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T16:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a tree blocking the railway",
       "mode": "train"
     }
   ],
