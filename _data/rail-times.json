@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:25:08+01:00",
+  "generated_at": "2026-10-23T21:30:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,8 +10,7 @@
   },
   "messages": [
     "Trains between Birmingham New Street and Bromsgrove via University may be cancelled or delayed by up to 30 minutes. Latest information can be found in the Disruptions area of the National Rail website .",
-    "Alterations to Great Western Railway service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website .",
-    "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website .",
+    "Severe weather associated with Storm Austen and Storm Boelo may disrupt your journey. Check before you travel. More details and the impact on your journey can be found in the Disruptions area of the National Rail website .",
     "The ticket office is currently closed at this station."
   ],
   "departures": [
@@ -38,7 +37,7 @@
     },
     {
       "scheduled": "2026-10-23T21:12",
-      "expected": "2026-10-23T21:37",
+      "expected": "2026-10-23T21:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -48,26 +47,6 @@
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-23T21:15",
-      "expected": "2026-10-23T21:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -88,7 +67,7 @@
     },
     {
       "scheduled": "2026-10-23T21:52",
-      "expected": "2026-10-23T22:10",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -167,6 +146,20 @@
         "Swindon"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T22:21",
+      "expected": "2026-10-23T22:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -183,23 +176,12 @@
     },
     {
       "scheduled": "2026-10-23T21:10",
-      "expected": "2026-10-23T21:36",
+      "expected": "2026-10-23T21:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-23T21:14",
-      "expected": "2026-10-23T21:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     },
@@ -216,7 +198,7 @@
     },
     {
       "scheduled": "2026-10-23T21:50",
-      "expected": "2026-10-23T22:09",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -266,6 +248,17 @@
       "operator": "Great Western Railway",
       "origin": "Westbury",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T22:20",
+      "expected": "2026-10-23T22:20",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
       "reason": "",
       "mode": "train"
     }
