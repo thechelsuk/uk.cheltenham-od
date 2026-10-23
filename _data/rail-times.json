@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T08:30:07+01:00",
+  "generated_at": "2026-10-23T08:35:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,21 +12,6 @@
     "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T08:29",
-      "expected": "2026-10-23T08:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T08:40",
       "expected": "2026-10-23T08:40",
@@ -69,8 +54,8 @@
     },
     {
       "scheduled": "2026-10-23T08:52",
-      "expected": "2026-10-23T08:52",
-      "status": "On time",
+      "expected": "2026-10-23T08:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -174,6 +159,23 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T09:15",
+      "expected": "2026-10-23T09:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -186,17 +188,6 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by the train departing late to maintain customer connections",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-23T08:27",
-      "expected": "2026-10-23T08:27",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -223,8 +214,8 @@
     },
     {
       "scheduled": "2026-10-23T08:50",
-      "expected": "2026-10-23T08:50",
-      "status": "On time",
+      "expected": "2026-10-23T08:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -251,6 +242,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T09:14",
+      "expected": "2026-10-23T09:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
