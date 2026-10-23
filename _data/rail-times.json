@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T17:00:07+01:00",
+  "generated_at": "2026-10-23T17:05:09+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,36 +9,16 @@
     "crs": "CNM"
   },
   "messages": [
+    "Trains between Birmingham New Street and Bromsgrove via University may be cancelled or delayed by up to 30 minutes. Latest information can be found in the Disruptions area of the National Rail website .",
     "Alterations to Great Western Railway service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website .",
     "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website .",
     "The ticket office is currently closed at this station."
   ],
   "departures": [
     {
-      "scheduled": "2026-10-23T16:52",
-      "expected": "2026-10-23T17:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T17:03",
-      "expected": "2026-10-23T17:03",
-      "status": "On time",
+      "expected": "2026-10-23T17:05",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -85,7 +65,7 @@
     },
     {
       "scheduled": "2026-10-23T17:19",
-      "expected": "2026-10-23T17:37",
+      "expected": "2026-10-23T17:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -103,7 +83,7 @@
     },
     {
       "scheduled": "2026-10-23T17:25",
-      "expected": "2026-10-23T17:27",
+      "expected": "2026-10-23T17:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -174,20 +154,25 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T17:50",
+      "expected": "2026-10-23T17:50",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-23T16:50",
-      "expected": "2026-10-23T16:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T17:10",
       "expected": "2026-10-23T17:10",
@@ -201,7 +186,7 @@
     },
     {
       "scheduled": "2026-10-23T17:18",
-      "expected": "2026-10-23T17:36",
+      "expected": "2026-10-23T17:37",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -212,7 +197,7 @@
     },
     {
       "scheduled": "2026-10-23T17:24",
-      "expected": "2026-10-23T17:26",
+      "expected": "2026-10-23T17:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -262,6 +247,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T17:47",
+      "expected": "2026-10-23T17:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
