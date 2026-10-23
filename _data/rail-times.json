@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T16:40:07+01:00",
+  "generated_at": "2026-10-23T16:45:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -16,7 +16,7 @@
   "departures": [
     {
       "scheduled": "2026-10-23T16:31",
-      "expected": "2026-10-23T16:43",
+      "expected": "2026-10-23T16:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -39,27 +39,7 @@
     },
     {
       "scheduled": "2026-10-23T16:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a tree blocking the railway",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-23T16:40",
-      "expected": "2026-10-23T16:43",
+      "expected": "2026-10-23T16:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -186,13 +166,13 @@
     },
     {
       "scheduled": "2026-10-23T17:19",
-      "expected": "2026-10-23T17:25",
+      "expected": "2026-10-23T17:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by forecasted severe weather",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -236,7 +216,7 @@
     },
     {
       "scheduled": "2026-10-23T16:38",
-      "expected": "2026-10-23T16:42",
+      "expected": "2026-10-23T16:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -291,13 +271,13 @@
     },
     {
       "scheduled": "2026-10-23T17:18",
-      "expected": "2026-10-23T17:24",
+      "expected": "2026-10-23T17:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by forecasted severe weather",
       "mode": "train"
     },
     {
@@ -309,6 +289,17 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T17:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of a tree blocking the railway",
       "mode": "train"
     }
   ],
