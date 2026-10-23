@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T18:05:07+01:00",
+  "generated_at": "2026-10-23T18:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -17,7 +17,7 @@
   "departures": [
     {
       "scheduled": "2026-10-23T17:52",
-      "expected": "2026-10-23T18:26",
+      "expected": "2026-10-23T18:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -59,27 +59,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-23T18:03",
-      "expected": "2026-10-23T18:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T18:12",
       "expected": "2026-10-23T18:12",
       "status": "On time",
@@ -107,7 +86,7 @@
     },
     {
       "scheduled": "2026-10-23T18:19",
-      "expected": "2026-10-23T18:38",
+      "expected": "2026-10-23T18:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -159,6 +138,20 @@
       "scheduled": "2026-10-23T18:40",
       "expected": "2026-10-23T18:40",
       "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T18:40",
+      "expected": "2026-10-23T18:40",
+      "status": "On time",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -179,7 +172,7 @@
   "arrivals": [
     {
       "scheduled": "2026-10-23T17:50",
-      "expected": "2026-10-23T18:25",
+      "expected": "2026-10-23T18:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -212,7 +205,7 @@
     },
     {
       "scheduled": "2026-10-23T18:18",
-      "expected": "2026-10-23T18:37",
+      "expected": "2026-10-23T18:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -234,8 +227,8 @@
     },
     {
       "scheduled": "2026-10-23T18:27",
-      "expected": "2026-10-23T18:27",
-      "status": "On time",
+      "expected": "2026-10-23T18:29",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
@@ -256,13 +249,24 @@
     },
     {
       "scheduled": "2026-10-23T18:31",
-      "expected": "2026-10-23T18:37",
+      "expected": "2026-10-23T18:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by severe weather",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T18:38",
+      "expected": "2026-10-23T18:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
       "mode": "train"
     }
   ],
