@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T14:10:08+01:00",
+  "generated_at": "2026-10-23T14:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,6 @@
     "Alterations to CrossCountry service across south west England. More details and the impact on your journey can be found in Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T13:52",
-      "expected": "2026-10-23T14:10",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T13:59",
       "expected": null,
@@ -58,7 +37,7 @@
     },
     {
       "scheduled": "2026-10-23T14:12",
-      "expected": "2026-10-23T14:18",
+      "expected": "2026-10-23T14:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -88,7 +67,7 @@
     },
     {
       "scheduled": "2026-10-23T14:15",
-      "expected": "2026-10-23T14:27",
+      "expected": "2026-10-23T14:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -124,7 +103,7 @@
     },
     {
       "scheduled": "2026-10-23T14:30",
-      "expected": "2026-10-23T14:35",
+      "expected": "2026-10-23T14:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -176,20 +155,25 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T14:47",
+      "expected": "2026-10-23T14:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-23T13:50",
-      "expected": "2026-10-23T14:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T13:58",
       "expected": null,
@@ -203,7 +187,7 @@
     },
     {
       "scheduled": "2026-10-23T14:10",
-      "expected": "2026-10-23T14:17",
+      "expected": "2026-10-23T14:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -214,7 +198,7 @@
     },
     {
       "scheduled": "2026-10-23T14:14",
-      "expected": "2026-10-23T14:26",
+      "expected": "2026-10-23T14:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -247,7 +231,7 @@
     },
     {
       "scheduled": "2026-10-23T14:28",
-      "expected": "2026-10-23T14:34",
+      "expected": "2026-10-23T14:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -275,6 +259,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T14:45",
+      "expected": "2026-10-23T14:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
