@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T21:00:08+01:00",
+  "generated_at": "2026-10-23T21:05:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -16,24 +16,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-23T20:15",
-      "expected": "2026-10-23T20:58",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T20:52",
-      "expected": "2026-10-23T21:29",
+      "expected": "2026-10-23T21:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -54,8 +38,8 @@
     },
     {
       "scheduled": "2026-10-23T21:02",
-      "expected": "2026-10-23T21:02",
-      "status": "On time",
+      "expected": "2026-10-23T21:04",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -99,7 +83,7 @@
     },
     {
       "scheduled": "2026-10-23T21:12",
-      "expected": "2026-10-23T21:34",
+      "expected": "2026-10-23T21:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -114,7 +98,7 @@
     },
     {
       "scheduled": "2026-10-23T21:15",
-      "expected": "2026-10-23T21:27",
+      "expected": "2026-10-23T21:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -134,7 +118,7 @@
     },
     {
       "scheduled": "2026-10-23T21:33",
-      "expected": "2026-10-23T21:45",
+      "expected": "2026-10-23T21:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -198,23 +182,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T22:03",
+      "expected": "2026-10-23T22:03",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-23T20:14",
-      "expected": "2026-10-23T20:57",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T20:50",
-      "expected": "2026-10-23T21:28",
+      "expected": "2026-10-23T21:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -236,7 +224,7 @@
     },
     {
       "scheduled": "2026-10-23T21:10",
-      "expected": "2026-10-23T21:33",
+      "expected": "2026-10-23T21:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -247,7 +235,7 @@
     },
     {
       "scheduled": "2026-10-23T21:14",
-      "expected": "2026-10-23T21:26",
+      "expected": "2026-10-23T21:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -258,7 +246,7 @@
     },
     {
       "scheduled": "2026-10-23T21:33",
-      "expected": "2026-10-23T21:44",
+      "expected": "2026-10-23T21:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -297,6 +285,17 @@
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T22:01",
+      "expected": "2026-10-23T22:01",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
