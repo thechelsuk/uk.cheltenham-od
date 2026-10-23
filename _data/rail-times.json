@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T20:20:08+01:00",
+  "generated_at": "2026-10-23T20:25:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,24 +15,6 @@
     "The ticket office is currently closed at this station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T19:49",
-      "expected": "2026-10-23T20:22",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Great Malvern",
-      "reason": "This service has been delayed by severe weather",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street",
-        "Malvern Link",
-        "Great Malvern"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T19:52",
       "expected": "2026-10-23T20:34",
@@ -56,7 +38,7 @@
     },
     {
       "scheduled": "2026-10-23T20:15",
-      "expected": "2026-10-23T20:46",
+      "expected": "2026-10-23T20:52",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -111,7 +93,7 @@
     },
     {
       "scheduled": "2026-10-23T20:52",
-      "expected": "2026-10-23T21:22",
+      "expected": "2026-10-23T21:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -174,20 +156,24 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T21:12",
+      "expected": "2026-10-23T21:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-23T19:47",
-      "expected": "2026-10-23T20:21",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Great Malvern",
-      "reason": "This service has been delayed by severe weather",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T19:51",
       "expected": "2026-10-23T20:33",
@@ -201,7 +187,7 @@
     },
     {
       "scheduled": "2026-10-23T20:14",
-      "expected": "2026-10-23T20:45",
+      "expected": "2026-10-23T20:51",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -245,7 +231,7 @@
     },
     {
       "scheduled": "2026-10-23T20:50",
-      "expected": "2026-10-23T21:21",
+      "expected": "2026-10-23T21:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -262,6 +248,17 @@
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T21:10",
+      "expected": "2026-10-23T21:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
     }
