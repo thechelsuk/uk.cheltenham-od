@@ -5,22 +5,22 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 476,
-    "unplanned": 75,
-    "road_closures": 59,
+    "count": 494,
+    "unplanned": 77,
+    "road_closures": 62,
     "by_street": [
       {
         "street": "Cheltenham Road East",
-        "works": 17,
-        "road_closures": 0
-      },
-      {
-        "street": "Gloucester Road",
-        "works": 14,
+        "works": 18,
         "road_closures": 0
       },
       {
         "street": "Tewkesbury Road",
+        "works": 15,
+        "road_closures": 0
+      },
+      {
+        "street": "Gloucester Road",
         "works": 14,
         "road_closures": 0
       },
@@ -30,18 +30,23 @@
         "road_closures": 5
       },
       {
+        "street": "Badgeworth Road",
+        "works": 6,
+        "road_closures": 0
+      },
+      {
         "street": "High Street",
         "works": 6,
         "road_closures": 0
       },
       {
-        "street": "Swindon Road",
+        "street": "Shurdington Road",
         "works": 6,
-        "road_closures": 0
+        "road_closures": 1
       },
       {
-        "street": "Badgeworth Road",
-        "works": 5,
+        "street": "Swindon Road",
+        "works": 6,
         "road_closures": 0
       },
       {
@@ -53,25 +58,20 @@
         "street": "Hucclecote Road",
         "works": 5,
         "road_closures": 0
-      },
-      {
-        "street": "Old Tewkesbury Road",
-        "works": 5,
-        "road_closures": 0
       }
     ],
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 178
+        "works": 182
       },
       {
         "name": "BT",
-        "works": 88
+        "works": 92
       },
       {
         "name": "Gloucestershire County Council",
-        "works": 85
+        "works": 89
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
@@ -83,7 +83,7 @@
       },
       {
         "name": "Unknown",
-        "works": 11
+        "works": 12
       },
       {
         "name": "Wales And West Utilities Ltd",
@@ -91,11 +91,15 @@
       },
       {
         "name": "Gigaclear Limited",
-        "works": 8
+        "works": 9
       },
       {
         "name": "National Highways",
-        "works": 5
+        "works": 6
+      },
+      {
+        "name": "Vodafone Group",
+        "works": 4
       },
       {
         "name": "Cornerstone Telecommunications Infrastructure Limited",
@@ -106,19 +110,15 @@
         "works": 3
       },
       {
+        "name": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
+        "works": 3
+      },
+      {
         "name": "UK Power Distribution Ltd",
         "works": 3
       },
       {
-        "name": "Vodafone Group",
-        "works": 3
-      },
-      {
         "name": "Network Rail",
-        "works": 2
-      },
-      {
-        "name": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
         "works": 2
       },
       {
@@ -130,6 +130,10 @@
         "works": 1
       },
       {
+        "name": "South Gloucestershire Council",
+        "works": 1
+      },
+      {
         "name": "Thames Water",
         "works": 1
       }
@@ -137,11 +141,53 @@
     "by_month": [
       {
         "month": "2026-10",
-        "works": 476
+        "works": 494
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:ZH00134499011",
+      "first_seen": "2026-10-23",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
+      "start": "2026-11-05",
+      "end": "2026-11-06",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:RZ99811451558",
+      "first_seen": "2026-10-23",
+      "street": "Shurdington Road",
+      "ward_slug": "warden-hill",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "South Gloucestershire Council",
+      "start": "2026-11-16",
+      "end": "2026-11-16",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:NX511BRM4448-MERG-CAB-1",
+      "first_seen": "2026-10-23",
+      "street": "Badgeworth Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Vodafone Group",
+      "start": "2026-10-29",
+      "end": "2026-10-30",
+      "last_seen": "2026-10-23"
+    },
     {
       "id": "PERMIT:LB9011303-000060788336",
       "first_seen": "2026-10-23",
@@ -154,6 +200,216 @@
       "promoter": "Severn Trent Water",
       "start": "2026-10-23T08:05",
       "end": "2026-10-26",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060607404",
+      "first_seen": "2026-10-23",
+      "street": "Hatherley Road",
+      "ward_slug": "up-hatherley",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-12",
+      "end": "2026-11-13",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014436214",
+      "first_seen": "2026-10-23",
+      "street": "New Barn Lane",
+      "ward_slug": "prestbury",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-23T10:48",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014429581",
+      "first_seen": "2026-10-23",
+      "street": "Oakwood Drive",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-30",
+      "end": "2026-10-31",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014412168",
+      "first_seen": "2026-10-23",
+      "street": "St Pauls Road",
+      "ward_slug": "st-pauls",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2026-10-23T10:09",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:KA550S420832-CASS",
+      "first_seen": "2026-10-23",
+      "street": "Court Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Gigaclear Limited",
+      "start": "2026-10-29",
+      "end": "2026-10-30",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:FN40213559769",
+      "first_seen": "2026-10-23",
+      "street": "B4070 From Stroud Road To A417",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "National Highways",
+      "start": "2026-11-13",
+      "end": "2026-11-16",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:EY40049960240",
+      "first_seen": "2026-10-23",
+      "street": "Cold Pool Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-11-05",
+      "end": "2026-11-05",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:EY10307683827",
+      "first_seen": "2026-10-23",
+      "street": "Tewkesbury Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Lane closure",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-10-19T09:30",
+      "end": "2026-10-30",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:EY102GH1902000046958",
+      "first_seen": "2026-10-23",
+      "street": "Hall Road",
+      "ward_slug": "leckhampton",
+      "kind": "Planned",
+      "category": "Major",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-11-03",
+      "end": "2026-11-03",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:EY006VDK70022928",
+      "first_seen": "2026-10-23",
+      "street": "Caernarvon Road",
+      "ward_slug": "up-hatherley",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-12-13",
+      "end": "2026-12-20",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:BC518MAPKFWH3NGM3F",
+      "first_seen": "2026-10-23",
+      "street": "Oakbrook Drive",
+      "ward_slug": "benhall-the-reddings-fiddlers-green",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Temp obstruction 15 minute delay",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-28",
+      "end": "2026-10-28",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:BC341RW-WH5M7K9Z",
+      "first_seen": "2026-10-23",
+      "street": "Mottershead Drive",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-10-28",
+      "end": "2026-10-30",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:BC008WH8J4V6WETHSB",
+      "first_seen": "2026-10-23",
+      "street": "London Road",
+      "ward_slug": "charlton-kings",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-09",
+      "end": "2026-11-13",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "PERMIT:BC004WH7T0R9Z",
+      "first_seen": "2026-10-23",
+      "street": "Vervain Close",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-02",
+      "end": "2026-11-04",
+      "last_seen": "2026-10-23"
+    },
+    {
+      "id": "ACTIVITY:ARN-1600-54925381",
+      "first_seen": "2026-10-23",
+      "street": "Burton Street",
+      "ward_slug": "lansdown",
+      "kind": "Planned",
+      "category": "scaffolding",
+      "traffic_management": "no_carriageway_incursion",
+      "road_closure": false,
+      "promoter": "",
+      "start": "2026-10-28",
+      "end": "2026-11-25",
       "last_seen": "2026-10-23"
     },
     {
@@ -208,8 +464,8 @@
       "traffic_management": "Multi-way signals",
       "road_closure": false,
       "promoter": "UK Power Distribution Ltd",
-      "start": "2027-02-08",
-      "end": "2027-03-12",
+      "start": "2027-03-08",
+      "end": "2027-04-13",
       "last_seen": "2026-10-23"
     },
     {
@@ -223,7 +479,7 @@
       "road_closure": false,
       "promoter": "UK Power Distribution Ltd",
       "start": "2027-01-11",
-      "end": "2027-02-05",
+      "end": "2027-03-06",
       "last_seen": "2026-10-23"
     },
     {
@@ -502,8 +758,8 @@
       "traffic_management": "Two-way signals",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-18",
-      "end": "2026-11-18",
+      "start": "2026-11-22",
+      "end": "2026-11-22",
       "last_seen": "2026-10-23"
     },
     {
@@ -964,8 +1220,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-22",
-      "end": "2026-10-26",
+      "start": "2026-10-23T11:06",
+      "end": "2026-10-27",
       "last_seen": "2026-10-23"
     },
     {
@@ -1048,8 +1304,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-22",
-      "end": "2026-10-26",
+      "start": "2026-10-23T11:09",
+      "end": "2026-10-27",
       "last_seen": "2026-10-23"
     },
     {
@@ -1076,7 +1332,7 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-23",
+      "start": "2026-10-23T12:05",
       "end": "2026-10-27",
       "last_seen": "2026-10-23"
     },
@@ -1160,7 +1416,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-23",
+      "start": "2026-10-23T10:00",
       "end": "2026-10-27",
       "last_seen": "2026-10-23"
     },
@@ -3092,8 +3348,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "National Grid Electricity Distribution (West Midlands)",
-      "start": "2026-10-22",
-      "end": "2026-10-26",
+      "start": "2026-10-23T08:29",
+      "end": "2026-10-27",
       "last_seen": "2026-10-23"
     },
     {
@@ -3456,9 +3712,9 @@
       "traffic_management": "Multi-way signals",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-19",
-      "end": "2026-10-22",
-      "last_seen": "2026-10-20"
+      "start": "2026-11-02",
+      "end": "2026-11-05",
+      "last_seen": "2026-10-23"
     },
     {
       "id": "PERMIT:LB7012302-000014399565",
@@ -3788,13 +4044,13 @@
       "street": "Compton Road",
       "ward_slug": "swindon-village",
       "kind": "Planned",
-      "category": "Major (PAA)",
+      "category": "Major",
       "traffic_management": "Road closure",
       "road_closure": true,
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-10",
       "end": "2026-11-10",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "id": "PERMIT:EY020GB-BELL2511",
@@ -3876,9 +4132,9 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-10-23",
+      "start": "2026-10-23T12:26",
       "end": "2026-10-27",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-10-23"
     },
     {
       "id": "PERMIT:BC004WH8CF77K",
@@ -3960,9 +4216,9 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Virgin Media",
-      "start": "2026-10-21",
+      "start": "2026-10-22T16:31",
       "end": "2026-10-23",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-23"
     },
     {
       "id": "PERMIT:NK102VM_CIP_502609",
@@ -4982,7 +5238,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-01",
+      "start": "2026-10-31",
       "end": "2026-11-03",
       "last_seen": "2026-10-23"
     },
@@ -5515,7 +5771,7 @@
       "road_closure": true,
       "promoter": "Wales And West Utilities Ltd",
       "start": "2026-10-07T11:57",
-      "end": "2026-10-23",
+      "end": "2026-10-26",
       "last_seen": "2026-10-23"
     },
     {
@@ -5570,9 +5826,9 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-10-14",
-      "end": "2026-10-14",
-      "last_seen": "2026-10-14"
+      "start": "2026-10-27",
+      "end": "2026-10-27",
+      "last_seen": "2026-10-23"
     },
     {
       "id": "PERMIT:LB9060000-000042539734",
