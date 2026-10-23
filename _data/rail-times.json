@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T19:40:08+01:00",
+  "generated_at": "2026-10-23T19:45:11+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -17,7 +17,7 @@
   "departures": [
     {
       "scheduled": "2026-10-23T18:31",
-      "expected": "2026-10-23T19:48",
+      "expected": "2026-10-23T19:47",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -32,7 +32,7 @@
     },
     {
       "scheduled": "2026-10-23T19:30",
-      "expected": "2026-10-23T19:57",
+      "expected": "2026-10-23T19:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -42,26 +42,6 @@
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-23T19:40",
-      "expected": "2026-10-23T19:42",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -81,7 +61,7 @@
     },
     {
       "scheduled": "2026-10-23T19:49",
-      "expected": "2026-10-23T20:15",
+      "expected": "2026-10-23T20:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -99,7 +79,7 @@
     },
     {
       "scheduled": "2026-10-23T19:52",
-      "expected": "2026-10-23T20:16",
+      "expected": "2026-10-23T20:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -186,12 +166,28 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T20:15",
+      "expected": "2026-10-23T20:32",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by train crew being delayed by service disruption",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-23T18:29",
-      "expected": "2026-10-23T19:47",
+      "expected": "2026-10-23T19:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -202,7 +198,7 @@
     },
     {
       "scheduled": "2026-10-23T19:28",
-      "expected": "2026-10-23T19:56",
+      "expected": "2026-10-23T19:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,7 +209,7 @@
     },
     {
       "scheduled": "2026-10-23T19:34",
-      "expected": "2026-10-23T19:47",
+      "expected": "2026-10-23T19:51",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -235,7 +231,7 @@
     },
     {
       "scheduled": "2026-10-23T19:47",
-      "expected": "2026-10-23T20:14",
+      "expected": "2026-10-23T20:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -246,7 +242,7 @@
     },
     {
       "scheduled": "2026-10-23T19:51",
-      "expected": "2026-10-23T20:15",
+      "expected": "2026-10-23T20:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -275,6 +271,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T20:14",
+      "expected": "2026-10-23T20:31",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by train crew being delayed by service disruption",
       "mode": "train"
     }
   ],
