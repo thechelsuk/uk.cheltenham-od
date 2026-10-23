@@ -1,0 +1,92 @@
+{% include header.html %}
+{% assign data = site.data["school-closures"] %}
+{% assign history = site.data["school-closures-history"] %}
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign h_today = data.closures | where: "date", today %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ h_today | size }}</strong> school{% if h_today.size != 1 %}s{% endif %} closed today</li>
+                <li><strong>{{ data.closures | size }}</strong> closure{% if data.closures.size != 1 %}s{% endif %} announced, today and later</li>
+                <li><strong>{{ history.count | default: 0 }}</strong> closure{% if history.count != 1 %}s{% endif %} recorded since {{ history.tracking_since | date: "%-d %B %Y" }}</li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="closures">Current School Closures</h2>
+        {% if data.closures.size > 0 %}
+        <div class="table-scroll">
+            <table class="school-closures-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">School</th>
+                        <th scope="col">Phase</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Details</th>
+                        <th scope="col" class="date">Posted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.closures %}
+                    {% assign ofsted = site.data.ofsted.schools[c.urn] %}
+                    <tr id="{{ c.id }}">
+                        <td class="date" data-val="{{ c.date }}">{{ c.date }}</td>
+                        <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ c.school }}</a>{% else %}{{ c.school }}{% endif %}</td>
+                        <td>{{ c.phase }}</td>
+                        <td>{{ c.status }}</td>
+                        <td>{{ c.reason }}</td>
+                        <td class="date" data-val="{{ c.posted_iso }}">{{ c.posted_iso | date: "%Y-%m-%d %H:%M" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>No Cheltenham schools have announced an emergency closure for today or the days ahead.</blockquote>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Is My Child's School Closed Today?</h3>
+        <ul>
+            <li>If the school is not in the table above, it has not posted an emergency closure on Gloucestershire County Council's closures page.</li>
+            <li>We check the council's page four times a day, so a closure posted in the last few hours may not show here yet. The <a href="{{ data.source_url }}">council's closures page</a> always has the latest, and your school's own website, app or text messages come first.</li>
+        </ul>
+
+        <h3>Why Do Schools Close in an Emergency?</h3>
+        <ul>
+            <li>Common reasons are snow and ice, a burst pipe or loss of heating or hot water, a power cut, or not having enough staff to open safely.</li>
+            <li>Each school's head teacher decides whether to close and posts the closure with the council.</li>
+        </ul>
+
+        <h3>Does This Include Half Term and Inset Days?</h3>
+        <ul>
+            <li>No. Only unplanned closures appear here. For planned holidays, see the <a href="https://www.gloucestershire.gov.uk/education-and-learning/term-dates/">council's term dates</a>.</li>
+        </ul>
+
+        <h3>Can I Get an Alert When a School Closes?</h3>
+        <ul>
+            <li>Yes. Subscribe to our <a href="{{ page.feed_url }}">school closures feed</a> in any feed reader, or the <a href="/feeds/alerts.xml">all-in-one alerts feed</a> for every local alert. Closures also show at the top of our home page while they are in force.</li>
+            <li>The council also sends <a href="https://pages.comms.gloucestershire.gov.uk/p/closures">email alerts for closures</a> across Gloucestershire.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}'s school closures page</a>, matched to our <a href="/cheltenham-schools">list of Cheltenham schools</a>.
+            {% include freshness.html file="_data/school-closures.json" %}
+            Closures for schools elsewhere in Gloucestershire, and for libraries, are not shown.
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

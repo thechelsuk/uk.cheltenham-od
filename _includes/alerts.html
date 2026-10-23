@@ -1,0 +1,19 @@
+{%- comment -%}
+Every live homepage alert under one "Alerts" heading. Each *-alert.html
+include holds that type's rows (written by its fetcher with
+helper.alert_rows()), or nothing; the heading only shows when at least one
+type has a row.
+{%- endcomment -%}
+{%- capture alert_rows -%}
+{% include bus-alert.html %}
+{% include rail-alert.html %}
+{% include power-cuts-alert.html %}
+{% include wildfire-alert.html %}
+{% include school-closures-alert.html %}
+{%- endcapture -%}
+{%- if alert_rows contains "<li" %}
+<h2>Alerts</h2>
+<ul class="latest-list plain-list">
+{{ alert_rows }}
+</ul>
+{%- endif -%}

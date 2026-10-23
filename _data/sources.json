@@ -76,7 +76,7 @@
     "source_url": "https://raildata.org.uk/",
     "licence": "Rail Data Marketplace 'Live Arrival and Departure Boards' data product licence. RDM data products use an OGL3-based licence with a per-product Schedule 1 set by the publisher (permitted purposes, term, attribution text, data retention) — not yet confirmed against the account's actual agreement",
     "licence_type": "Rail Data Marketplace",
-    "data": [{"file": "_data/rail-times.json", "schedule": "every 5 minutes"}],
+    "data": [{"file": "_data/rail-times.json", "schedule": "every 5 minutes"}, {"file": "_data/rail-disruptions-history.json", "schedule": "every 5 minutes"}],
     "pages": ["/cheltenham-train-times"]
   },
   {
@@ -628,6 +628,19 @@
     "licence_type": "None stated",
     "data": [{"file": "_data/wildfire.json", "schedule": "daily"}, {"file": "_data/wildfire-history.json", "schedule": "daily"}],
     "pages": ["/cheltenham-wildfire-risk", "/cheltenham-wildfire-risk/history"]
+  },
+  {
+    "id": "gcc-school-closures",
+    "name": "Gloucestershire school closures (Gloucestershire County Council)",
+    "source_url": "https://www.gloucestershire.gov.uk/closures/",
+    "licence": "No licence stated. Schools post their own closures on Gloucestershire County Council's closures page, which also publishes them as an RSS feed; the council states no reuse terms for it",
+    "licence_type": "None stated",
+    "data": [
+      {"file": "_data/school-closures.json", "schedule": "daily"},
+      {"file": "_data/school-closures-history.json", "schedule": "daily"},
+      {"file": "_data/school-closure-aliases.json", "schedule": "manual"}
+    ],
+    "pages": ["/cheltenham-schools/closures", "/cheltenham-schools/closures/history"]
   },
   {
     "id": "mhclg-outdoor-fires",

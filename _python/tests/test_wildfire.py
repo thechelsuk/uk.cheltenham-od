@@ -83,11 +83,11 @@ def test_alert_names_today_or_tomorrow_at_very_high_or_above():
         {"date": "2026-07-22", "rating": 5, "label": "Exceptional"},
     ]
     html = wildfire.build_alert_html(days)
-    assert "<h2>Wildfire Risk Alert</h2>" in html
-    assert "2026-07-21" in html
+    assert 'latest-pill-announcements">Wildfire</span>' in html
+    assert "on Tuesday 21 July 2026" in html
     assert "Exceptional (5 of 5)" in html
     # only today and tomorrow make the homepage, not the days after
-    assert "2026-07-22" not in html
+    assert "22 July" not in html
 
 
 def test_atom_items_only_cover_high_days_keyed_by_date():
@@ -269,7 +269,7 @@ def test_main_writes_squares_history_feed_and_alert(site, monkeypatch):
     assert [(r["date"], r.get("squares")) for r in history["records"]] == [
         ("2026-07-20", {"SO91": 2, "SO92": 4}), ("2026-07-19", None)]
     assert "https://example.org/cheltenham-wildfire-risk#2026-07-20" in (site / "feeds" / "wildfire.xml").read_text()
-    assert "Very high (4 of 5) fire severity forecast around Cheltenham on 2026-07-20" in \
+    assert "Very high (4 of 5) fire severity forecast around Cheltenham on Monday 20 July 2026" in \
         (site / "_includes" / "wildfire-alert.html").read_text()
 
 

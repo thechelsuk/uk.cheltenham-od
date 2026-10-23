@@ -155,7 +155,7 @@ feeds:
     link: /feeds/alerts.xml
     group: Alerts
     key: true
-    description: "Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures and threat level changes in one feed."
+    description: "Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures, school closures and threat level changes in one feed."
   - name: Flood Warnings
     link: /feeds/flood.xml
     group: Alerts
@@ -180,6 +180,10 @@ feeds:
     link: /feeds/unplanned-closures.xml
     group: Alerts
     description: "Unplanned lane and road closures on the M5, A417, A40 and A46 near Cheltenham."
+  - name: School Closures
+    link: /feeds/school-closures.xml
+    group: Alerts
+    description: "Emergency closures of Cheltenham schools, such as for snow or a burst pipe."
   - name: UK Threat Level
     link: /feeds/security.xml
     group: Alerts

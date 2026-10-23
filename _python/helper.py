@@ -8,7 +8,7 @@ import json
 import requests
 import time
 import html
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
@@ -187,6 +187,29 @@ def fetch_bods_csv(csv_filename, catalogue_url="https://data.bus-data.dft.gov.uk
         with zf.open(name) as f:
             text = io.TextIOWrapper(f, encoding="utf-8-sig")
             return list(csv.DictReader(text))
+
+
+def alert_date(value):
+    """An ISO date or date-time in alert text: "Friday 23 October 2026", with
+    "(08:30)" after it when there is a time. The time is read as written (the
+    sources give UK local time). Anything not in an ISO form is kept as it is."""
+    value = (value or "").strip()
+    match = re.match(r"^(\d{4}-\d{2}-\d{2})(?:[T ](\d{2}:\d{2}))?", value)
+    if not match:
+        return value
+    day = date.fromisoformat(match[1]).strftime("%A %-d %B %Y")
+    return f"{day} ({match[2]})" if match[2] else day
+
+
+def alert_rows(label, rows):
+    """Homepage alert rows for one alert type: each (url, text) as a list
+    item with a pill naming the type. _includes/alerts.html puts every type's
+    rows under one "Alerts" heading, and leaves it out when there are none."""
+    return "\n".join(
+        f'  <li class="latest-item"><span class="latest-pill latest-pill-announcements">{label}</span>'
+        f'<span class="latest-title"><a href="{url}">{text}</a></span></li>'
+        for url, text in rows
+    )
 
 
 def replace_chunk(content, marker, chunk):

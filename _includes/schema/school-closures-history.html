@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham School Closures History",
+  "description": "A log of emergency closures of Cheltenham schools posted on Gloucestershire County Council's closures page, with the date, school, status and reason given.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "{{ site.data['school-closures-history'].tracking_since }}/..",
+  "variableMeasured": ["Date", "School", "Phase", "Status", "Reason", "Posted"]
+}
+</script>

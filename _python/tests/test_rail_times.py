@@ -232,7 +232,7 @@ def test_a_disruption_keeps_its_id_while_it_lasts_and_a_new_one_gets_todays_date
 def test_the_homepage_alert_only_shows_while_a_disruption_is_live():
     assert rail.build_alert_html([]) == ""
     html = rail.build_alert_html([{"disruption_id": "x", "message": "m"}])
-    assert "<h2>Rail Disruption Alert</h2>" in html and 'href="/cheltenham-train-times"' in html
+    assert 'latest-pill-announcements">Rail</span>' in html and 'href="/cheltenham-train-times"' in html
 
 
 def test_feed_entries_are_dated_by_start_then_by_end():
@@ -256,10 +256,10 @@ def test_main_records_a_replacement_bus_day_in_the_alert_feed_and_data(paths, mo
     assert data["departures"][0]["mode"] == "bus"
     history = json.loads((paths / "rail-disruptions-history.json").read_text())["records"]
     assert [r["message"] for r in history] == [rail.disruption_message(data["messages"])]
-    assert "Rail Disruption Alert" in (paths / "rail-alert.html").read_text()
+    assert "No trains at Cheltenham Spa" in (paths / "rail-alert.html").read_text()
     assert "Rail replacement buses" in (paths / "rail-disruptions.xml").read_text()
 
     monkeypatch.setattr(rail, "fetch_board", lambda key: BOARD)
     rail.main()
-    assert "Rail Disruption Alert" not in (paths / "rail-alert.html").read_text()
+    assert "No trains at Cheltenham Spa" not in (paths / "rail-alert.html").read_text()
     assert json.loads((paths / "rail-times.json").read_text())["replacement_buses_only"] is False

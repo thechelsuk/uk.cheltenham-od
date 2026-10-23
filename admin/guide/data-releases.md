@@ -36,16 +36,16 @@ These update themselves. The "Feeds" column lists the analysis posts that would 
 | Source | Script and workflow | When it publishes | Next known release | Feeds |
 | --- | --- | --- | --- | --- |
 | NHS England A&E attendances | `nhs-ae.py`, daily | Monthly, usually the second Thursday at 09:30, for the month before | 2026-11-12 (confirmed) | `/cheltenham-ae-waiting-times`; A&E analysis |
-| ONS Price Index of Private Rents | `rents.py`, monthly | Monthly, usually the third Wednesday at 09:30 | 2026-10-21 and 2026-11-18 (confirmed) | `/cheltenham-rent-prices`; housing squeeze analysis |
-| ONS Annual Survey of Hours and Earnings | `earnings.py` and `affordability.py`, monthly | Once a year, in October or November | 2026-10-22 at 09:30 (confirmed) | `/cheltenham-earnings-history`, `/cheltenham-house-prices/affordability`; affordability and housing squeeze analyses |
-| MHCLG net additional dwellings | `housing-supply.py`, monthly | Once a year, in November | November 2026 (expected, day not yet announced) | `/cheltenham-house-prices/housing-supply`; housing squeeze analysis |
+| ONS Price Index of Private Rents | `rents.py`, monthly | Monthly, usually the third Wednesday at 09:30 | 2026-10-21 and 2026-11-18 (confirmed) | `/cheltenham-rent-prices` |
+| ONS Annual Survey of Hours and Earnings | `earnings.py` and `affordability.py`, monthly | Once a year, in October or November | 2026-10-22 at 09:30 (confirmed) | `/cheltenham-earnings-history`, `/cheltenham-house-prices/affordability`; affordability analysis |
+| MHCLG net additional dwellings | `housing-supply.py`, monthly | Once a year, in November | November 2026 (expected, day not yet announced) | `/cheltenham-house-prices/housing-supply` |
 | HM Land Registry Price Paid Data | `land-registry.py`, every two hours | Monthly. Recent months keep growing as late sales are registered | No fixed date | House price pages, `/cheltenham-house-prices/affordability`; affordability analysis |
 | Care Quality Commission ratings | `cqc.py`, weekly | Updated continuously as inspections are published | No fixed date | `/cheltenham-care-homes`; care homes analysis |
 | Food Standards Agency hygiene ratings | `food-standards.py`, every two hours | Updated continuously as councils publish inspections | No fixed date | `/cheltenham-food-standards`; food hygiene analysis |
 | Energy Performance of Buildings Register (ratings) | `epc.py`, monthly | Updated daily as certificates are lodged | No fixed date | `/cheltenham-energy-ratings`, ward pages |
 | English Indices of Deprivation | `deprivation.py`, by hand | Every four to six years. The 2025 edition is current | Next edition not announced | `/cheltenham-deprivation`, `/cheltenham-wards`; deprivation and turnout analyses |
 
-Because the monthly workflow runs on the 2nd, a release later in the month waits up to a few weeks. Run the monthly workflow by hand after a release that an upcoming post depends on. The housing figures due in November are an example: the workflow would not fetch them until 2 December, after the housing squeeze post.
+Because the monthly workflow runs on the 2nd, a release later in the month waits up to a few weeks. Run the monthly workflow by hand after a release that an upcoming post depends on. The housing figures due in November are an example: the workflow would not fetch them until 2 December.
 
 ## Manual Sources
 
@@ -134,7 +134,6 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 | Turnout (draft, 2026-10-27) | Council election results, Indices of Deprivation | None |
 | Care homes (published 2026-10-12) | CQC | None. Ratings change weekly, so the live page will move away from the post's 2026-10-09 snapshot |
 | A&E busiest September (published 2026-10-09) | NHS England A&E | None. October's figures (2026-11-12) could follow it up |
-| Housing squeeze (draft, provisionally 2026-11-26) | Net additional dwellings, ONS rents, ASHE | **Yes, on release day.** Publish the day the new housing figures come out (expected late November; re-date the draft once GOV.UK confirms it), with 2026 pay (22 October) added beforehand |
 
 ## The Release Calendar
 

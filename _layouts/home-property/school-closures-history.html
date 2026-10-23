@@ -1,0 +1,81 @@
+{% include header.html %}
+{% assign history = site.data["school-closures-history"] %}
+{% assign h_schools = history.records | map: "school" | uniq %}
+{% assign h_latest = history.records | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ history.count | default: 0 }}</strong> closure{% if history.count != 1 %}s{% endif %} recorded</li>
+                <li><strong>{{ h_schools | size }}</strong> school{% if h_schools.size != 1 %}s{% endif %} affected</li>
+                <li><strong>{% if h_latest %}{{ h_latest.date }}{% else %}None yet{% endif %}</strong> most recent</li>
+                <li><strong>{{ history.tracking_since | date: "%-d %B %Y" }}</strong> recorded since</li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="history">Past and Current School Closures</h2>
+        {% if history.records.size > 0 %}
+        <div class="table-scroll">
+            <table class="school-closures-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">School</th>
+                        <th scope="col">Phase</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Details</th>
+                        <th scope="col" class="date">Posted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in history.records %}
+                    {% assign ofsted = site.data.ofsted.schools[r.urn] %}
+                    {% assign posted = r.posted_iso | default: r.first_seen_iso %}
+                    <tr id="{{ r.id }}">
+                        <td class="date" data-val="{{ r.date }}">{{ r.date }}</td>
+                        <td>{% if ofsted %}<a href="/cheltenham-schools/{{ ofsted.slug }}">{{ r.school }}</a>{% else %}{{ r.school }}{% endif %}</td>
+                        <td>{{ r.phase }}</td>
+                        <td>{{ r.status }}</td>
+                        <td>{{ r.reason }}</td>
+                        <td class="date" data-val="{{ posted }}">{{ posted | date: "%Y-%m-%d %H:%M" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>No emergency closures of Cheltenham schools have been recorded yet.</blockquote>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Far Back Does This History Go?</h3>
+        <ul>
+            <li>Gloucestershire County Council removes each closure from its page once the day has passed and keeps no archive, so this history starts on {{ history.tracking_since | date: "%-d %B %Y" }}, when we began recording them.</li>
+            <li>Closures are kept here for two years.</li>
+        </ul>
+
+        <h3>Why Might a Closure Be Missing?</h3>
+        <ul>
+            <li>We check the council's page four times a day. A closure posted and removed between two checks, such as one taken down after a school reopened, would not be recorded.</li>
+            <li>Only closures posted on the council's page are included. A school that told parents directly but didn't post with the council won't appear.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}'s school closures page</a>, matched to our <a href="/cheltenham-schools">list of Cheltenham schools</a>.
+            {% include freshness.html file="_data/school-closures-history.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

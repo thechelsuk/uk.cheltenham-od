@@ -51,6 +51,7 @@ def _incident(**overrides):
 def test_alert_includes_a_partly_restored_cut_with_homes_still_off():
     html = power.build_alert_html([_incident()])
     assert "GL50 4DB" in html
+    assert 'latest-pill-announcements">Power cut</span>' in html
 
 
 def test_alert_leaves_out_a_cut_with_no_homes_off():
@@ -63,7 +64,7 @@ def test_alert_leaves_out_a_restored_cut():
 
 def test_alert_gives_the_time_the_cut_was_reported():
     html = power.build_alert_html([_incident()])
-    assert "reported 2026-10-11 20:40" in html
+    assert "reported Sunday 11 October 2026 (20:40)" in html
 
 
 def test_alert_labels_planned_work_with_its_end_time():
@@ -71,7 +72,7 @@ def test_alert_labels_planned_work_with_its_end_time():
         planned=True, planned_start="2026-10-13T08:30:00", planned_end="2026-10-13T14:00:00",
         date_of_reported_fault="2026-10-13T08:30:00",
     )])
-    assert "Planned power cut near GL50 4DB until 2026-10-13 14:00" in html
+    assert "Planned power cut near GL50 4DB until Tuesday 13 October 2026 (14:00)" in html
     assert "reported" not in html
 
 
@@ -169,7 +170,7 @@ def test_main_run_writes_data_history_feed_and_alert_then_marks_the_cut_restored
     assert [(r["fault_id"], r["affected"]) for r in history["records"]] == [("INCD-1", 43)]
     feed = (tmp_path / "feeds" / "power-cuts.xml").read_text()
     assert "https://example.org/cheltenham-power-cuts/history#INCD-1" in feed
-    assert "Power cut near GL50 4DB, reported 2026-10-11 20:40" in alert.read_text()
+    assert "Power cut near GL50 4DB, reported Sunday 11 October 2026 (20:40)" in alert.read_text()
     assert rebuilt == [True]
 
     # The cut drops out of the live feed: the alert clears and the history records it as restored.

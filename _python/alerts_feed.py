@@ -1,11 +1,11 @@
 """The combined alerts feed, feeds/alerts.xml: the newest entries from the
 site's alert feeds (flood warnings, power cuts, bus disruptions, rail
-replacement buses, wildfire risk, unplanned road closures and security
-alerts) in one place.
+replacement buses, wildfire risk, unplanned road closures, school closures
+and security alerts) in one place.
 
 Only the Pi scripts (pi/power.py, pi/buses.py, pi/rail-times.py and
-pi/unplanned-closures.py) call rebuild(), every five minutes. The daily GitHub workflow writes the flood,
-wildfire and security feeds but never this file, so the two can't make
+pi/unplanned-closures.py) call rebuild(), every five minutes. The GitHub workflows write the flood,
+wildfire, school closures and security feeds but never this file, so the two can't make
 conflicting changes to it; their entries join it on the Pi's next run. Entries keep the id, link and
 wording of their own feed, with a label in front of the title (unless the title
 already starts with it) and an Atom category, so a feed reader can tell them
@@ -26,6 +26,7 @@ SOURCES = [
     ("rail-disruptions.xml", "Rail disruption"),
     ("wildfire.xml", "Wildfire risk"),
     ("unplanned-closures.xml", "Road closure"),
+    ("school-closures.xml", "School closure"),
     ("security.xml", "Security"),
 ]
 
@@ -74,7 +75,7 @@ def rebuild():
         filename=feeds / "alerts.xml",
         permalink_path="/feeds/alerts.xml",
         feed_title="Cheltenham Alerts",
-        feed_subtitle="Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures and security alerts for Cheltenham",
+        feed_subtitle="Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures, school closures and security alerts for Cheltenham",
         self_url=f"{site}/feeds/alerts.xml",
         alternate_url=f"{site}/",
         feed_id=f"{site}/feeds/alerts.xml",

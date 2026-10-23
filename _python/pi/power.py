@@ -105,32 +105,21 @@ def build_alert_html(incidents):
         i for i in incidents
         if i["status"] != "Restored" and (i["confirmed_off"] or i["predicted_off"])
     ]
-    if not active:
-        return ""
-
-    items = ""
+    rows = []
     for incident in active[:5]:
         area = incident["postcodes"][0] if incident["postcodes"] else "Cheltenham"
         # Planned work in progress still leaves homes without power, so it
         # stays in the alert, but says when it ends rather than when reported.
         if incident.get("planned"):
             label = "Planned power cut"
-            ends = (incident.get("planned_end") or "").replace("T", " ")[:16]
+            ends = helper.alert_date(incident.get("planned_end"))
             when = f" until {ends}" if ends else ""
         else:
             label = "Power cut"
-            reported = incident["date_of_reported_fault"].replace("T", " ")[:16]
+            reported = helper.alert_date(incident["date_of_reported_fault"])
             when = f", reported {reported}" if reported else ""
-        items += (
-            f'  <li><a href="/cheltenham-power-cuts">'
-            f'{label} near {area}{when}</a></li>\n'
-        )
-    return (
-        "<h2>Power Cut Alert</h2>\n"
-        "<ul>\n"
-        f"{items}"
-        "</ul>"
-    )
+        rows.append(("/cheltenham-power-cuts", f"{label} near {area}{when}"))
+    return helper.alert_rows("Power cut", rows)
 
 
 def build_atom_items(history_records, page_url):

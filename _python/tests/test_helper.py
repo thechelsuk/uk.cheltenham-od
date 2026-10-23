@@ -293,3 +293,15 @@ def test_write_json_leaves_a_file_alone_when_only_its_timestamp_changes(tmp_path
     assert json.loads(path.read_text())["generated_at"] == "2026-10-11T10:00:00"
     assert helper.write_json(path, {"generated_at": "2026-10-12T11:00:00", "items": [1, 2, 3]}) is True
     assert json.loads(path.read_text())["generated_at"] == "2026-10-12T11:00:00"
+
+
+def test_alert_rows_are_list_items_with_a_type_pill():
+    html = helper.alert_rows("Bus", [("/buses", "Disruption to Stagecoach West bus services")])
+    assert html == (
+        '  <li class="latest-item"><span class="latest-pill latest-pill-announcements">Bus</span>'
+        '<span class="latest-title"><a href="/buses">Disruption to Stagecoach West bus services</a></span></li>'
+    )
+
+
+def test_alert_rows_are_empty_with_nothing_to_show():
+    assert helper.alert_rows("Bus", []) == ""

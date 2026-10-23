@@ -60,7 +60,7 @@ def test_no_disruptions_means_no_alert():
 def test_alert_gives_when_the_disruption_starts_not_when_the_script_ran():
     html = buses.build_alert_html([{"operators_affected": "Stagecoach West", "organisation": "",
                                     "validity_start": "2026-10-12T08:30:00+01:00"}])
-    assert "Stagecoach West bus services from 2026-10-12 08:30" in html
+    assert "Stagecoach West bus services from Monday 12 October 2026 (08:30)" in html
 
 
 def test_alert_without_a_start_time_just_names_the_operator():
@@ -95,17 +95,19 @@ def test_disruption_columns_are_read_under_either_spelling():
     assert disruption["reason"] == "Unknown" and disruption["modes_affected"] == "Bus"
 
 
-def test_alert_time_shortens_iso_times_and_keeps_other_text():
-    assert buses.alert_time("2026-10-12") == "2026-10-12"
-    assert buses.alert_time(" next Monday ") == "next Monday"
-    assert buses.alert_time(None) == ""
+def test_alert_date_writes_out_iso_dates_and_keeps_other_text():
+    assert helper.alert_date("2026-10-12") == "Monday 12 October 2026"
+    assert helper.alert_date("2026-10-12T08:30:00+01:00") == "Monday 12 October 2026 (08:30)"
+    assert helper.alert_date("2026-10-12 08:30") == "Monday 12 October 2026 (08:30)"
+    assert helper.alert_date(" next Monday ") == "next Monday"
+    assert helper.alert_date(None) == ""
 
 
 def test_the_alert_lists_at_most_five_disruptions():
     disruptions = [buses.build_disruption(row(**{"Situation Number": f"S{i}"})) for i in range(7)]
     html = buses.build_alert_html(disruptions)
-    assert html.startswith("<h2>Bus Disruption Alert</h2>\n<ul>\n") and html.endswith("</ul>")
-    assert html.count("<li>") == 5
+    assert html.count('<li class="latest-item"><span class="latest-pill latest-pill-announcements">Bus</span>') == 5
+    assert "<h2>" not in html
 
 
 def test_feed_entries_link_by_id_and_are_dated_by_when_last_seen():
@@ -148,7 +150,7 @@ def test_main_run_writes_data_history_feed_and_alert(tmp_path, monkeypatch):
     history = json.loads((tmp_path / "_data" / "bus-disruptions-history.json").read_text())
     assert [r["disruption_id"] for r in history["records"]] == ["S1"]
     assert "https://example.org/cheltenham-bus-data/history#S1" in (tmp_path / "feeds" / "bus-disruptions.xml").read_text()
-    assert "Disruption to Stagecoach West bus services from 2026-10-12 08:00" in alert.read_text()
+    assert "Disruption to Stagecoach West bus services from Monday 12 October 2026 (08:00)" in alert.read_text()
     assert rebuilt == [True]
 
     # Once the disruption has gone the alert clears, but the history keeps it.

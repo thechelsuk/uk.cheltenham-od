@@ -15,14 +15,14 @@
       "title": "ONS employee earnings (ASHE 2026)",
       "status": "confirmed",
       "url": "https://www.gov.uk/government/statistics/announcements/employee-earnings-in-the-uk-2026",
-      "notes": "Feeds /cheltenham-earnings-history and /cheltenham-house-prices/affordability through earnings.py and affordability.py in the monthly workflow. Run the monthly workflow by hand afterwards so the housing squeeze draft can add 2026 pay to its rent share chart (rebuild cheltenham-rent-share-of-pay with --force)."
+      "notes": "Feeds /cheltenham-earnings-history and /cheltenham-house-prices/affordability through earnings.py and affordability.py in the monthly workflow. Nomis loads the new year a week or two after the ONS release, so the monthly workflow only picks it up once Nomis has it."
     },
     {
       "date": "2026-11-02",
       "title": "Check: housing supply net additional dwellings 2025-26 date",
       "status": "expected",
       "url": "https://www.gov.uk/government/statistics/announcements/housing-supply-net-additional-dwellings-england-2025-to-2026",
-      "notes": "Expected November 2026 (provisional). Look for the confirmed day on the GOV.UK release calendar, then re-date the housing squeeze draft (filename and date) and move its release-day event in admin/data-releases.json to match."
+      "notes": "Expected November 2026 (provisional). Look for the confirmed day on the GOV.UK release calendar, then move the release-day event in admin/data-releases.json to match."
     },
     {
       "date": "2026-11-12",
@@ -50,10 +50,10 @@
     {
       "id": "20261126-refresh-the-housing-squeeze-draft",
       "date": "2026-11-26",
-      "title": "Housing supply figures and housing squeeze post",
+      "title": "MHCLG housing supply (net additional dwellings 2025-26)",
       "status": "expected",
       "url": "https://www.gov.uk/government/statistics/announcements/housing-supply-net-additional-dwellings-england-2025-to-2026",
-      "notes": "Provisional release day (late-November Thursday; confirm on GOV.UK). The housing squeeze draft publishes today at 11:30. After the release: run housing-supply.py (or the monthly workflow by hand), then build-findings.py cheltenham-housing-supply-slowdown --force and update the averages. If not done since 22 October, also rebuild cheltenham-rent-share-of-pay with --force for 2026 pay. Then move the draft from _drafts to _posts and commit.",
+      "notes": "Provisional release day (late-November Thursday; confirm on GOV.UK). Feeds /cheltenham-house-prices/housing-supply through housing-supply.py in the monthly workflow, which next runs on 2 December. Run the monthly workflow by hand to show it sooner.",
       "time": "09:30"
     },
     {
