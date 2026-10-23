@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T17:05:09+01:00",
+  "generated_at": "2026-10-23T17:10:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,27 +15,6 @@
     "The ticket office is currently closed at this station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-23T17:03",
-      "expected": "2026-10-23T17:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-23T17:12",
       "expected": "2026-10-23T17:12",
@@ -65,7 +44,7 @@
     },
     {
       "scheduled": "2026-10-23T17:19",
-      "expected": "2026-10-23T17:38",
+      "expected": "2026-10-23T17:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -83,7 +62,7 @@
     },
     {
       "scheduled": "2026-10-23T17:25",
-      "expected": "2026-10-23T17:29",
+      "expected": "2026-10-23T17:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -102,7 +81,7 @@
     },
     {
       "scheduled": "2026-10-23T17:31",
-      "expected": "2026-10-23T17:37",
+      "expected": "2026-10-23T17:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -117,8 +96,8 @@
     },
     {
       "scheduled": "2026-10-23T17:40",
-      "expected": "2026-10-23T17:40",
-      "status": "On time",
+      "expected": "2026-10-23T17:43",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -137,13 +116,13 @@
     },
     {
       "scheduled": "2026-10-23T17:45",
-      "expected": null,
-      "status": "Cancelled",
+      "expected": "2026-10-23T17:45",
+      "status": "On time",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a tree blocking the railway",
+      "reason": "",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -170,6 +149,27 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T17:52",
+      "expected": "2026-10-23T17:58",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a safety inspection of the track",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -186,7 +186,7 @@
     },
     {
       "scheduled": "2026-10-23T17:18",
-      "expected": "2026-10-23T17:37",
+      "expected": "2026-10-23T17:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -197,7 +197,7 @@
     },
     {
       "scheduled": "2026-10-23T17:24",
-      "expected": "2026-10-23T17:28",
+      "expected": "2026-10-23T17:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -208,18 +208,18 @@
     },
     {
       "scheduled": "2026-10-23T17:27",
-      "expected": null,
-      "status": "Cancelled",
+      "expected": "2026-10-23T17:36",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of a tree blocking the railway",
+      "reason": "This service has been delayed by a tree blocking the railway",
       "mode": "train"
     },
     {
       "scheduled": "2026-10-23T17:29",
-      "expected": "2026-10-23T17:36",
+      "expected": "2026-10-23T17:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -241,8 +241,8 @@
     },
     {
       "scheduled": "2026-10-23T17:38",
-      "expected": "2026-10-23T17:38",
-      "status": "On time",
+      "expected": "2026-10-23T17:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -259,6 +259,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T17:50",
+      "expected": "2026-10-23T17:57",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a safety inspection of the track",
       "mode": "train"
     }
   ],
