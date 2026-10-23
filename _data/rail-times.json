@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T22:10:08+01:00",
+  "generated_at": "2026-10-23T22:15:08+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,23 +15,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-23T21:33",
-      "expected": "2026-10-23T22:10",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by severe weather",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T21:52",
-      "expected": "2026-10-23T22:29",
+      "expected": "2026-10-23T22:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -47,7 +32,7 @@
     },
     {
       "scheduled": "2026-10-23T22:00",
-      "expected": "2026-10-23T22:13",
+      "expected": "2026-10-23T22:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -141,23 +126,26 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T23:02",
+      "expected": "2026-10-23T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-23T21:33",
-      "expected": "2026-10-23T22:10",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by severe weather",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-23T21:50",
-      "expected": "2026-10-23T22:28",
+      "expected": "2026-10-23T22:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -201,7 +189,7 @@
     },
     {
       "scheduled": "2026-10-23T22:34",
-      "expected": "2026-10-23T22:43",
+      "expected": "2026-10-23T22:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -228,6 +216,17 @@
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-23T23:00",
+      "expected": "2026-10-23T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
       "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
