@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T01:30:07+01:00",
+  "generated_at": "2026-10-24T03:35:07+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,7 +11,38 @@
   "messages": [
     "Severe weather associated with Storm Boelo may disrupt your journey. Check before you travel. More details and the impact on your journey can be found in the Disruptions area of the National Rail website ."
   ],
-  "departures": [],
-  "arrivals": [],
+  "departures": [
+    {
+      "scheduled": "2026-10-24T05:30",
+      "expected": "2026-10-24T05:30",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Gloucester",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ],
+      "mode": "train"
+    }
+  ],
+  "arrivals": [
+    {
+      "scheduled": "2026-10-24T05:28",
+      "expected": "2026-10-24T05:28",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Gloucester",
+      "destination": "Great Malvern",
+      "reason": "",
+      "mode": "train"
+    }
+  ],
   "replacement_buses_only": false
 }
