@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T14:55:17+01:00",
+  "generated_at": "2026-10-24T15:00:17+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,34 +15,13 @@
   "departures": [
     {
       "scheduled": "2026-10-24T14:52",
-      "expected": "2026-10-24T15:20",
+      "expected": "2026-10-24T15:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
       "destination": "Bristol Temple Meads",
       "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-24T14:52",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "This service has been cancelled because of forecasted severe weather",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -97,7 +76,7 @@
     },
     {
       "scheduled": "2026-10-24T15:12",
-      "expected": "2026-10-24T15:21",
+      "expected": "2026-10-24T15:22",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -151,12 +130,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T15:29",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-24T13:47",
-      "expected": null,
+      "expected": "2026-10-24T15:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -166,36 +160,14 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-24T14:31",
-      "expected": "2026-10-24T14:55",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-24T14:50",
-      "expected": "2026-10-24T15:19",
+      "expected": "2026-10-24T15:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
       "destination": "Bristol Temple Meads",
       "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-24T14:50",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "This service has been cancelled because of forecasted severe weather",
       "mode": "train"
     },
     {
@@ -211,7 +183,7 @@
     },
     {
       "scheduled": "2026-10-24T15:10",
-      "expected": "2026-10-24T15:20",
+      "expected": "2026-10-24T15:21",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -238,6 +210,28 @@
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T15:27",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T15:31",
+      "expected": "2026-10-24T15:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
