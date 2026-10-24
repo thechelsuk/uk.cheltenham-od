@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T20:40:15+01:00",
+  "generated_at": "2026-10-24T20:45:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-10-24T20:12",
-      "expected": "2026-10-24T20:43",
+      "expected": "2026-10-24T20:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -38,13 +38,13 @@
     },
     {
       "scheduled": "2026-10-24T20:41",
-      "expected": null,
+      "expected": "2026-10-24T20:52",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by severe weather",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -58,7 +58,7 @@
     },
     {
       "scheduled": "2026-10-24T20:52",
-      "expected": "2026-10-24T21:03",
+      "expected": "2026-10-24T21:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -158,12 +158,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T21:32",
+      "expected": "2026-10-24T21:32",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-24T20:11",
-      "expected": "2026-10-24T20:42",
+      "expected": "2026-10-24T20:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -173,19 +191,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-24T20:25",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by severe weather",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-24T20:42",
-      "expected": "2026-10-24T21:01",
+      "expected": "2026-10-24T21:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -196,7 +203,7 @@
     },
     {
       "scheduled": "2026-10-24T20:50",
-      "expected": "2026-10-24T21:02",
+      "expected": "2026-10-24T21:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -240,13 +247,13 @@
     },
     {
       "scheduled": "2026-10-24T21:31",
-      "expected": "2026-10-24T21:31",
-      "status": "On time",
+      "expected": "2026-10-24T21:34",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by train crew being delayed by service disruption",
       "mode": "train"
     }
   ],
