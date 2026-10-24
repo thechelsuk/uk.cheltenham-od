@@ -40,7 +40,7 @@ If two sibling pages differ only by a filter (primary vs secondary, a food hygie
 
 ## The Layout (`_layouts/<category>/<name>.html`)
 
-The header holds the breadcrumb (built from the menu, so no "Back to" links), the title, the description and up to five live facts as tiles: `<li><strong>figure</strong> label</li>` inside `<ul class="header-facts">`. Tiles are figures from the data, never the "last updated" date (that lives under About This Data), and they sit in one row on wide screens. Links that aren't facts, such as a feed or an official site, go in a second `<ul class="header-links">`. The "In this section" row after the header lists the parent page and its sub-pages by itself.
+The header holds the breadcrumb (built from the menu, so no "Back to" links), the title, the description and up to five live facts as tiles: `<li><strong>figure</strong> label</li>` inside `<ul class="header-facts">`. Tiles are figures from the data, never the "last updated" date (that lives under About This Data), and they sit in one row on wide screens. Links that aren't facts, such as one of our feeds go in a tile too, but an official site, go in a second `<ul class="header-links">`. The "In this section" row after the header lists the parent page and its sub-pages by itself.
 
 Standard skeleton:
 

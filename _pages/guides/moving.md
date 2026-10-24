@@ -60,5 +60,6 @@ Once you've arrived, the fun part — finding your way around and settling in.
 
 - [Report a local issue (Fix My Street)](/cheltenham-fix-my-street) — potholes, street lighting, fly-tipping and other council issues.
 - [Helpful contacts and reporting](/cheltenham-helpful-contacts-reports) — key local numbers and services.
+- [Cheltenham at risk](/cheltenham-at-risk) — the emergencies most likely to affect the area, from flooding to power cuts, and how to prepare.
 
 Cheltenham sits about 7.5 miles from Gloucester (around 9 miles by road), with fast rail links from Cheltenham Spa and easy access to the M5, making it a practical base for the wider Cotswolds and the South West. Whether you're relocating for work, schools or the setting, the data linked above should help you choose an area and settle in with confidence.

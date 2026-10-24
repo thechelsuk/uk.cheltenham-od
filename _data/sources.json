@@ -690,5 +690,23 @@
     "licence_type": "OGL v3.0",
     "data": [{"file": "_data/epc.json", "schedule": "monthly"}, {"file": "_data/epc-scores.json", "schedule": "manual"}],
     "pages": ["/cheltenham-energy-ratings"]
+  },
+  {
+    "id": "gloucestershire-lrf-community-risk-register",
+    "name": "Gloucestershire Community Risk Register (Gloucestershire Local Resilience Forum)",
+    "source_url": "https://www.glosprepared.co.uk/gloucestershire-community-risk-register/",
+    "licence": "None stated — risk scores and advice summarised by hand from the 2024 register PDF on Gloucestershire Prepared; check for a new edition yearly",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/community-risk-register.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-at-risk", "/cheltenham-cyber-security"]
+  },
+  {
+    "id": "dsit-cyber-security-breaches-survey",
+    "name": "Cyber Security Breaches Survey (DSIT and Home Office)",
+    "source_url": "https://www.gov.uk/government/collections/cyber-security-breaches-survey",
+    "licence": "Open Government Licence v3.0 — headline figures copied by hand from the annual official statistics release (published each spring)",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/cyber-breaches-survey.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-cyber-security"]
   }
 ]

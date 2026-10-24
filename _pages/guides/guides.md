@@ -12,7 +12,7 @@ reviewed: 2026-10-12
 
 ## Local Cheltenham Guides
 
-Whatever's brought you to Cheltenham — moving here, studying here, visiting for a festival or just a weekend away — these guides pull together the open data you'll actually need, from house prices and schools to where to eat and how to get around.
+Whatever's brought you to Cheltenham — moving here, studying here, visiting for a festival or just a weekend away — these guides pull together the open data you'll actually need, from house prices and schools to where to eat and how to get around. There's also a guide to staying safe online, wherever you live.
 
 ### Moving to Cheltenham
 
@@ -45,3 +45,11 @@ Planning a day out, a weekend or a festival trip? This guide covers where to sta
 - [Read the visiting Cheltenham guide](/visiting-cheltenham)
 - [Points of interest in and around Cheltenham](/cheltenham-points-of-interest)
 - [What's on in Cheltenham](/newsletter) — sign up for the weekly newsletter
+
+### Staying Safe Online
+
+Simple steps to protect your accounts, devices and money: a password manager, two-step verification and passkeys, alerts when your details turn up in a data breach, and the warning signs of a scam.
+
+- [Read the staying safe online guide](/staying-safe-online)
+- [Cyber security in Cheltenham](/cheltenham-cyber-security) — how to report scams, fraud and cyber crime
+- [Cheltenham at risk](/cheltenham-at-risk) — the emergencies most likely to affect the town

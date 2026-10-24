@@ -1,0 +1,176 @@
+{% include header.html %}
+{% assign survey = site.data["cyber-breaches-survey"] %}
+{% assign crr = site.data["community-risk-register"] %}
+{% assign cyber = crr.risks | where: "id", "cyber-attack" | first %}
+{% assign breached = survey.headlines | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ cyber.likelihood }} out of 5</strong> likelihood in Gloucestershire's risk register</li>
+                <li><strong>{{ breached.businesses }}%</strong> of UK businesses breached or attacked in a year</li>
+                <li><strong>{{ survey.headlines[1].businesses }}%</strong> of UK businesses hit by phishing</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="how-to-report">How to Report Fraud, Scams and Cyber Crime</h2>
+
+        <div class="table-scroll">
+            <table class="cyber-report-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">What Happened</th>
+                        <th scope="col">What to Do</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Someone is in danger, or a crime is happening now</td>
+                        <td>Call <a href="tel:999">999</a></td>
+                    </tr>
+                    <tr>
+                        <td>You've lost money or been hacked, scammed or defrauded</td>
+                        <td>Call your bank straight away if money has gone, then report it to Action Fraud on <a href="tel:03001232040">0300 123 2040</a> (Monday to Friday, 8am to 8pm) or <a href="https://www.actionfraud.police.uk/">online at any time</a></td>
+                    </tr>
+                    <tr>
+                        <td>Your business, charity or organisation is under a live cyber attack</td>
+                        <td>Call Action Fraud on <a href="tel:03001232040">0300 123 2040</a>, which takes these calls 24 hours a day</td>
+                    </tr>
+                    <tr>
+                        <td>A suspicious text message</td>
+                        <td>Forward it to <a href="sms:7726">7726</a>, free on most UK networks, then delete it (<a href="https://www.ncsc.gov.uk/collection/phishing-scams/report-scam-text-message">NCSC guide</a>)</td>
+                    </tr>
+                    <tr>
+                        <td>A suspicious email</td>
+                        <td>Forward it to <a href="mailto:report@phishing.gov.uk">report@phishing.gov.uk</a> (<a href="https://www.ncsc.gov.uk/collection/phishing-scams/report-scam-email">NCSC guide</a>)</td>
+                    </tr>
+                    <tr>
+                        <td>A scam website or advert</td>
+                        <td>Report it to the <a href="https://www.ncsc.gov.uk/collection/phishing-scams/report-scam-website">National Cyber Security Centre</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>Action Fraud is the national reporting centre for fraud and cyber crime in England, Wales and Northern Ireland. You can also <a href="https://www.actionfraud.police.uk/sign-up-for-action-fraud-alert">sign up for Action Fraud Alert</a> to get free warnings about scams in your area. More numbers are on our <a href="/cheltenham-helpful-contacts-reports">helplines and contacts</a> page.</p>
+
+        <h2 id="how-common">How Common Are Cyber Attacks?</h2>
+
+        <p>There are no published figures for cyber crime in Cheltenham or Gloucestershire, so the best guide is the government's annual Cyber Security Breaches Survey. In the {{ survey.edition }} survey, {{ breached.businesses }}% of UK businesses (around {{ survey.businesses_breached_number_display }}) and {{ breached.charities }}% of charities (around {{ survey.charities_breached_number_display }}) said they had a cyber security breach or attack in the previous 12 months.</p>
+
+        <div class="table-scroll">
+            <table class="cyber-survey-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Measure</th>
+                        <th scope="col" class="number">Businesses</th>
+                        <th scope="col" class="number">Charities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for h in survey.headlines %}
+                    <tr>
+                        <td>{{ h.measure }}</td>
+                        <td class="number" data-val="{{ h.businesses }}">{{ h.businesses }}%</td>
+                        <td class="number" data-val="{{ h.charities | default: -1 }}">{% if h.charities == nil %}&mdash;{% else %}{{ h.charities }}%{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Breaches by Business Size</h3>
+
+        <p>Medium and large businesses were much more likely than micro and small ones to report a breach or attack.</p>
+
+        <div class="table-scroll">
+            <table class="cyber-size-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Business Size</th>
+                        <th scope="col" class="number">Breached or Attacked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in survey.businesses_breached_by_size %}
+                    <tr>
+                        <td>{{ s.size }}</td>
+                        <td class="number">{{ s.percent }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Change Over Time</h3>
+
+        <div class="table-scroll">
+            <table class="cyber-trend-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Survey</th>
+                        <th scope="col" class="number">Businesses Breached or Attacked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for y in survey.businesses_breached_by_year %}
+                    <tr>
+                        <td>{{ y.edition }}</td>
+                        <td class="number">{{ y.percent }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="protect-yourself">Protect Yourself</h2>
+
+        <p>Phishing, a convincing email, text or call that tricks you into handing over details or money, is by far the most common attack in the survey. A few habits protect against most of it: a password manager, two-step verification or passkeys on important accounts, updates switched on, and a second check before acting on any message that asks for money or details. Our <a href="/staying-safe-online">guide to staying safe online</a> covers each step in plain English, and the National Cyber Security Centre has <a href="https://www.ncsc.gov.uk/section/information-for/individuals-families">advice for individuals and families</a> and <a href="https://www.ncsc.gov.uk/collection/small-business-guide">small businesses</a>.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Likely Is a Cyber Attack in Gloucestershire?</h3>
+        <ul>
+            <li>The <a href="/cheltenham-at-risk">Gloucestershire Community Risk Register</a> gives a cyber attack the top likelihood score of {{ cyber.likelihood }} out of 5, the highest of any risk in the county, and an impact score of {{ cyber.impact }}. It is the only one of the seven top risks rated that likely.</li>
+        </ul>
+
+        <h3>Is There Cyber Crime Data for Cheltenham?</h3>
+        <ul>
+            <li>No. Fraud and cyber crime are reported nationally to Action Fraud rather than recorded by local police forces, so they aren't included in the street-level figures on our <a href="/cheltenham-crime-data">crime data</a> page, and official statistics don't break them down below national level.</li>
+        </ul>
+
+        <h3>What Is the Connection Between Cheltenham and Cyber Security?</h3>
+        <ul>
+            <li>Cheltenham is home to GCHQ, one of the UK's three intelligence and security agencies. The National Cyber Security Centre, which gives the public and organisations advice on staying safe online, is part of GCHQ.</li>
+        </ul>
+
+        <h3>I've Been Scammed. What Should I Do First?</h3>
+        <ul>
+            <li>If you've lost money or shared bank details, call your bank straight away on the number on the back of your card, or call <a href="https://stopscamsuk.org.uk/159">159</a>, which puts you through to almost any UK bank. Then change any passwords you gave away, and report it to Action Fraud on 0300 123 2040 or online.</li>
+        </ul>
+
+        <h3>How Often Is the Survey Published?</h3>
+        <ul>
+            <li>Once a year. The {{ survey.edition }} edition was published on {{ survey.published | date: "%-d %B %Y" }}, from interviews carried out between {{ survey.fieldwork }}. It only counts breaches that organisations noticed and were willing to report, so the real figures are likely to be higher.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Survey figures from the <a href="{{ survey.source_url }}">{{ survey.document_title }}</a> by the {{ survey.source }}, published under the <a href="{{ survey.licence_url }}">{{ survey.licence }}</a>.
+            {% include freshness.html file="_data/cyber-breaches-survey.json" %}
+            Risk scores from the <a href="{{ crr.document_url }}">{{ crr.document_title }}</a> by the {{ crr.source }}.
+            Reporting advice from <a href="https://www.actionfraud.police.uk/">Action Fraud</a> and the <a href="https://www.ncsc.gov.uk/">National Cyber Security Centre</a>.
+        </small></p>
+
+    </div>
+</div>
+
+{% include footer.html %}

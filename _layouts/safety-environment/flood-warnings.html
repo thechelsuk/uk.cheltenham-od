@@ -12,9 +12,7 @@
                 <li><strong>{{ flood.count }}</strong> flood warnings in force</li>
                 <li><strong>{{ h_stations | where: "kind", "level" | size }}</strong> river level gauges</li>
                 <li><strong>{{ h_stations | where: "kind", "rainfall" | size }}</strong> rain gauges</li>
-            </ul>
-            <ul class="header-links">
-                <li><a href="/feeds/flood.xml">Flood Alert Feed &rarr;</a></li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
         {% include section-links.html %}

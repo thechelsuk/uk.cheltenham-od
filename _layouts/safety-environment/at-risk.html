@@ -1,0 +1,139 @@
+{% include header.html %}
+{% assign crr = site.data["community-risk-register"] %}
+{% comment %}Risks are listed in the data file by impact, then likelihood, highest first.{% endcomment %}
+{% assign by_score = crr.risks %}
+{% assign likeliest = crr.risks | sort: "likelihood" | last %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ crr.risks.size }}</strong> top risks for Gloucestershire</li>
+                <li><strong>{{ crr.edition }}</strong> register, the latest edition</li>
+                <li><strong>{{ likeliest.name }}</strong> most likely</li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="risk-matrix">Gloucestershire's Risk Matrix</h2>
+
+        <p>Each risk is scored from 1 to 5 for how likely it is to happen and how much harm it would do to people's health, daily lives, the local economy and the environment. The higher and further right a risk sits, the more serious it is.</p>
+
+        <div class="table-scroll">
+            <table class="risk-matrix-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="number">Impact</th>
+                        {% for l in (1..5) %}<th scope="col">Likelihood {{ l }}</th>{% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in (1..5) reversed %}
+                    <tr>
+                        <td class="number">{{ i }}</td>
+                        {% for l in (1..5) %}
+                        <td>{% for r in crr.risks %}{% if r.impact == i and r.likelihood == l %}<a href="#{{ r.id }}">{{ r.name }}</a><br>{% endif %}{% endfor %}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="risks-and-our-pages">The Seven Risks and Where to Follow Them</h2>
+
+        <div class="table-scroll">
+            <table class="risk-list-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Risk</th>
+                        <th scope="col" class="number">Likelihood</th>
+                        <th scope="col" class="number">Impact</th>
+                        <th scope="col">Our Pages</th>
+                        <th scope="col">Feed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in by_score %}
+                    <tr>
+                        <td><a href="#{{ r.id }}">{{ r.name }}</a></td>
+                        <td class="number" data-val="{{ r.likelihood }}">{{ r.likelihood }}</td>
+                        <td class="number" data-val="{{ r.impact }}">{{ r.impact }}</td>
+                        <td>{% for p in r.pages %}<a href="{{ p.url }}">{{ p.label }}</a>{% unless forloop.last %}<br>{% endunless %}{% endfor %}</td>
+                        <td>{% if r.feed %}<a href="{{ r.feed.url }}">{{ r.feed.label }}</a>{% else %}&mdash;{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% for r in by_score %}
+        <h3 id="{{ r.id }}">{{ r.name }}</h3>
+        {{ r.summary | markdownify }}
+        <ul>
+            {% for p in r.pages %}<li><a href="{{ p.url }}">{{ p.label }}</a></li>
+            {% endfor %}{% for x in r.links %}<li><a href="{{ x.url }}">{{ x.label }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+
+        <h2 id="be-prepared">How to Be Prepared</h2>
+
+        <p>If you or someone else is in danger, call 999 and follow the advice of the emergency services. If an emergency affects you only indirectly, the advice is usually to <strong>go in, stay in, tune in</strong>: go inside a safe building, stay there until told otherwise, and follow local radio, TV and trusted social media for updates.</p>
+
+        <ul>
+            <li>Check your home and contents insurance covers the risks most likely to affect you.</li>
+            <li>Pack a grab bag with medicines, copies of important documents, a torch, a phone charger and some cash.</li>
+            <li>Decide where you would stay, and how you would get there, if you had to leave home.</li>
+            <li>Agree a simple emergency plan with your household, family and neighbours.</li>
+            <li>Keep the numbers you might need to hand: our <a href="/cheltenham-helpful-contacts-reports">helplines and contacts</a> page lists power, gas, water, flooding, police and NHS lines.</li>
+            <li>Follow the <a href="/feeds/alerts.xml">combined alerts feed</a> for flood warnings, power cuts, wildfire risk, road closures, school closures and threat level changes in one place.</li>
+        </ul>
+
+        <p>Gloucestershire Prepared has guidance for <a href="https://www.glosprepared.co.uk/preparing-your-family/">families</a>, <a href="https://www.glosprepared.co.uk/preparing-your-business/">businesses</a> and <a href="https://www.glosprepared.co.uk/preparing-your-community/">community groups writing an emergency plan</a>, and the government's <a href="https://prepare.campaign.gov.uk/">Prepare</a> site covers the same ground nationally. To report a problem such as a blocked drain or fallen tree, use <a href="/cheltenham-fix-my-street">Fix My Street</a>.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is the Community Risk Register?</h3>
+        <ul>
+            <li>It is a public summary of the emergencies most likely to affect Gloucestershire, or that would cause the most harm if they happened. It is written by the Gloucestershire Local Resilience Forum, which brings together the emergency services, councils, the NHS, the Environment Agency, businesses and voluntary groups to prepare for, respond to and recover from emergencies.</li>
+        </ul>
+
+        <h3>Does the Register Cover Cheltenham Specifically?</h3>
+        <ul>
+            <li>It covers the whole county, Cheltenham included. The scores aren't broken down by town, so our pages add the local detail, such as live flood warnings on the River Chelt and power cuts on Cheltenham postcodes.</li>
+        </ul>
+
+        <h3>How Are the Risks Scored?</h3>
+        <ul>
+            <li>Each risk gets a score from 1 to 5 for likelihood and 1 to 5 for impact. The forum starts from the government's <a href="{{ crr.national_register_url }}">National Risk Register</a> and adjusts it with local knowledge from its member organisations.</li>
+        </ul>
+
+        <h3>Which Risk Is Most Likely?</h3>
+        <ul>
+            <li>A cyber attack, the only risk with the top likelihood score of 5, though its impact is scored 3. Terrorism and infectious disease have the highest impact score, 5.</li>
+        </ul>
+
+        <h3>Why Aren't Other Risks Listed?</h3>
+        <ul>
+            <li>The register doesn't try to list every possible emergency. It names only the risks that are most likely to happen or would have the most impact.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Risk scores and advice from the <a href="{{ crr.document_url }}">{{ crr.document_title }}</a> (PDF), published by the {{ crr.source }} on <a href="{{ crr.source_url }}">Gloucestershire Prepared</a>.
+            {% include freshness.html file="_data/community-risk-register.json" %}
+            This page is updated when a new edition of the register is published.
+        </small></p>
+
+    </div>
+</div>
+
+{% include footer.html %}
