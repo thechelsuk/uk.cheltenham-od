@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T16:35:16+01:00",
+  "generated_at": "2026-10-24T16:40:14+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,29 +12,6 @@
     "Severe weather associated with Storm Boelo may disrupt your journey. Check before you travel. More details and the impact on your journey can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-24T16:29",
-      "expected": "2026-10-24T16:35",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-24T16:40",
       "expected": "2026-10-24T16:40",
@@ -93,7 +70,7 @@
     },
     {
       "scheduled": "2026-10-24T16:52",
-      "expected": "2026-10-24T16:57",
+      "expected": "2026-10-24T16:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -179,13 +156,13 @@
     },
     {
       "scheduled": "2026-10-24T17:15",
-      "expected": "2026-10-24T17:15",
-      "status": "On time",
+      "expected": "2026-10-24T17:22",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a safety inspection of the track",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -194,23 +171,31 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T17:23",
+      "expected": "2026-10-24T17:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-24T16:27",
-      "expected": "2026-10-24T16:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-24T16:31",
-      "expected": "2026-10-24T16:42",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -243,7 +228,7 @@
     },
     {
       "scheduled": "2026-10-24T16:50",
-      "expected": "2026-10-24T16:56",
+      "expected": "2026-10-24T16:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -276,12 +261,23 @@
     },
     {
       "scheduled": "2026-10-24T17:14",
-      "expected": "2026-10-24T17:14",
-      "status": "On time",
+      "expected": "2026-10-24T17:21",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a safety inspection of the track",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T17:22",
+      "expected": "2026-10-24T17:22",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
     }
