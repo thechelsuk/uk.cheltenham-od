@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T16:05:14+01:00",
+  "generated_at": "2026-10-24T16:10:14+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-10-24T15:52",
-      "expected": "2026-10-24T16:14",
+      "expected": "2026-10-24T16:13",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -31,27 +31,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-24T16:03",
-      "expected": "2026-10-24T16:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
       ],
       "mode": "train"
     },
@@ -78,7 +57,7 @@
     },
     {
       "scheduled": "2026-10-24T16:15",
-      "expected": "2026-10-24T16:20",
+      "expected": "2026-10-24T16:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -96,13 +75,13 @@
     },
     {
       "scheduled": "2026-10-24T16:23",
-      "expected": "2026-10-24T16:23",
-      "status": "On time",
+      "expected": "2026-10-24T16:28",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -115,7 +94,7 @@
     },
     {
       "scheduled": "2026-10-24T16:29",
-      "expected": "2026-10-24T16:33",
+      "expected": "2026-10-24T16:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -175,12 +154,28 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T16:48",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-24T15:50",
-      "expected": "2026-10-24T16:13",
+      "expected": "2026-10-24T16:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -202,7 +197,7 @@
     },
     {
       "scheduled": "2026-10-24T16:14",
-      "expected": "2026-10-24T16:19",
+      "expected": "2026-10-24T16:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,13 +208,13 @@
     },
     {
       "scheduled": "2026-10-24T16:22",
-      "expected": "2026-10-24T16:22",
-      "status": "On time",
+      "expected": "2026-10-24T16:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -235,7 +230,7 @@
     },
     {
       "scheduled": "2026-10-24T16:27",
-      "expected": "2026-10-24T16:32",
+      "expected": "2026-10-24T16:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -263,6 +258,17 @@
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T16:47",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
       "mode": "train"
     }
