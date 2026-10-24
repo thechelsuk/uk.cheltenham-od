@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T18:30:15+01:00",
+  "generated_at": "2026-10-24T18:35:14+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-10-24T18:29",
-      "expected": "2026-10-24T18:32",
+      "expected": "2026-10-24T18:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -30,7 +30,7 @@
     },
     {
       "scheduled": "2026-10-24T18:40",
-      "expected": "2026-10-24T18:45",
+      "expected": "2026-10-24T18:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -64,7 +64,7 @@
     },
     {
       "scheduled": "2026-10-24T18:48",
-      "expected": "2026-10-24T18:54",
+      "expected": "2026-10-24T18:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -80,8 +80,8 @@
     },
     {
       "scheduled": "2026-10-24T18:52",
-      "expected": "2026-10-24T18:52",
-      "status": "On time",
+      "expected": "2026-10-24T18:56",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -164,20 +164,25 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T19:15",
+      "expected": "2026-10-24T19:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-24T18:25",
-      "expected": "2026-10-24T18:29",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-24T18:28",
       "expected": "2026-10-24T18:31",
@@ -191,7 +196,7 @@
     },
     {
       "scheduled": "2026-10-24T18:31",
-      "expected": "2026-10-24T18:40",
+      "expected": "2026-10-24T18:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -202,7 +207,7 @@
     },
     {
       "scheduled": "2026-10-24T18:38",
-      "expected": "2026-10-24T18:44",
+      "expected": "2026-10-24T18:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -213,7 +218,7 @@
     },
     {
       "scheduled": "2026-10-24T18:47",
-      "expected": "2026-10-24T18:53",
+      "expected": "2026-10-24T18:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -224,7 +229,7 @@
     },
     {
       "scheduled": "2026-10-24T18:50",
-      "expected": "2026-10-24T18:52",
+      "expected": "2026-10-24T18:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -252,6 +257,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T19:14",
+      "expected": "2026-10-24T19:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
