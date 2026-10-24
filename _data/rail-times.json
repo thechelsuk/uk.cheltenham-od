@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T12:40:15+01:00",
+  "generated_at": "2026-10-24T12:45:16+01:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -35,26 +35,6 @@
     },
     {
       "scheduled": "2026-10-24T12:40",
-      "expected": "2026-10-24T12:42",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-24T12:40",
       "expected": null,
       "status": "Delayed",
       "platform": "2",
@@ -75,8 +55,8 @@
     },
     {
       "scheduled": "2026-10-24T12:49",
-      "expected": "2026-10-24T12:49",
-      "status": "On time",
+      "expected": "2026-10-24T12:54",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Gloucester",
@@ -201,6 +181,25 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T13:23",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been delayed by a broken down train",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -217,7 +216,7 @@
     },
     {
       "scheduled": "2026-10-24T12:31",
-      "expected": null,
+      "expected": "2026-10-24T12:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -239,8 +238,8 @@
     },
     {
       "scheduled": "2026-10-24T12:47",
-      "expected": "2026-10-24T12:47",
-      "status": "On time",
+      "expected": "2026-10-24T12:53",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Gloucester",
@@ -290,6 +289,17 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-24T13:22",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been delayed by a broken down train",
       "mode": "train"
     }
   ],
