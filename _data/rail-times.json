@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T16:55:08+00:00",
+  "generated_at": "2026-10-25T17:00:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Severe weather associated with Storm Boelo may disrupt your journey. Check before you travel. More details and the impact on your journey can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-25T16:52",
-      "expected": "2026-10-25T16:56",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T16:59",
       "expected": "2026-10-25T16:59",
@@ -73,7 +52,7 @@
     },
     {
       "scheduled": "2026-10-25T17:11",
-      "expected": "2026-10-25T17:40",
+      "expected": "2026-10-25T17:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -93,7 +72,7 @@
     },
     {
       "scheduled": "2026-10-25T17:26",
-      "expected": "2026-10-25T17:35",
+      "expected": "2026-10-25T17:37",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -164,20 +143,25 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T18:15",
+      "expected": "2026-10-25T18:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-25T16:50",
-      "expected": "2026-10-25T16:55",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T16:58",
       "expected": "2026-10-25T16:58",
@@ -191,7 +175,7 @@
     },
     {
       "scheduled": "2026-10-25T17:08",
-      "expected": "2026-10-25T17:39",
+      "expected": "2026-10-25T17:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -202,7 +186,7 @@
     },
     {
       "scheduled": "2026-10-25T17:21",
-      "expected": "2026-10-25T17:34",
+      "expected": "2026-10-25T17:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -253,6 +237,17 @@
       "origin": "Plymouth",
       "destination": "Leeds",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T18:14",
+      "expected": "2026-10-25T18:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
