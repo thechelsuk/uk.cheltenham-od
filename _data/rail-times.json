@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T10:30:07+00:00",
+  "generated_at": "2026-10-25T10:40:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,26 +12,6 @@
     "Severe weather associated with Storm Boelo may disrupt your journey. Check before you travel. More details and the impact on your journey can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-25T10:38",
-      "expected": "2026-10-25T10:38",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T10:43",
       "expected": "2026-10-25T10:43",
@@ -129,7 +109,7 @@
     },
     {
       "scheduled": "2026-10-25T12:00",
-      "expected": null,
+      "expected": "2026-10-25T12:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -163,6 +143,26 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T12:11",
+      "expected": "2026-10-25T12:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -190,8 +190,8 @@
     },
     {
       "scheduled": "2026-10-25T11:08",
-      "expected": "2026-10-25T11:08",
-      "status": "On time",
+      "expected": "2026-10-25T11:11",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -223,7 +223,7 @@
     },
     {
       "scheduled": "2026-10-25T11:59",
-      "expected": null,
+      "expected": "2026-10-25T12:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -240,6 +240,17 @@
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T12:09",
+      "expected": "2026-10-25T12:09",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
       "reason": "",
       "mode": "train"
     }
