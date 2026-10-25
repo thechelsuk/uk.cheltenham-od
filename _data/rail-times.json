@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T15:40:07+00:00",
+  "generated_at": "2026-10-25T15:45:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,28 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-25T15:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-25T15:52",
-      "expected": "2026-10-25T15:59",
+      "expected": "2026-10-25T16:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -100,7 +80,7 @@
     },
     {
       "scheduled": "2026-10-25T16:11",
-      "expected": "2026-10-25T16:14",
+      "expected": "2026-10-25T16:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -152,20 +132,24 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T16:29",
+      "expected": "2026-10-25T16:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-25T15:38",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T15:44",
       "expected": "2026-10-25T15:51",
@@ -179,7 +163,7 @@
     },
     {
       "scheduled": "2026-10-25T15:50",
-      "expected": "2026-10-25T15:58",
+      "expected": "2026-10-25T15:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -201,7 +185,7 @@
     },
     {
       "scheduled": "2026-10-25T16:08",
-      "expected": "2026-10-25T16:13",
+      "expected": "2026-10-25T16:12",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -229,6 +213,17 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T16:27",
+      "expected": "2026-10-25T16:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     },
