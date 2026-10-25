@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T16:00:07+00:00",
+  "generated_at": "2026-10-25T16:05:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,37 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-25T15:52",
-      "expected": "2026-10-25T15:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Penzance",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "St Erth",
-        "Penzance"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-25T16:01",
-      "expected": "2026-10-25T16:01",
-      "status": "On time",
+      "expected": "2026-10-25T16:04",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -80,7 +52,7 @@
     },
     {
       "scheduled": "2026-10-25T16:11",
-      "expected": "2026-10-25T16:17",
+      "expected": "2026-10-25T16:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -135,7 +107,7 @@
     },
     {
       "scheduled": "2026-10-25T16:29",
-      "expected": "2026-10-25T16:33",
+      "expected": "2026-10-25T16:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -170,8 +142,8 @@
     },
     {
       "scheduled": "2026-10-25T16:45",
-      "expected": "2026-10-25T16:47",
-      "status": "Delayed",
+      "expected": "2026-10-25T16:45",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -183,23 +155,33 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T16:52",
+      "expected": "2026-10-25T16:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-25T15:50",
-      "expected": "2026-10-25T15:58",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Penzance",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-25T16:08",
-      "expected": "2026-10-25T16:16",
+      "expected": "2026-10-25T16:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -232,7 +214,7 @@
     },
     {
       "scheduled": "2026-10-25T16:27",
-      "expected": "2026-10-25T16:32",
+      "expected": "2026-10-25T16:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -265,12 +247,23 @@
     },
     {
       "scheduled": "2026-10-25T16:43",
-      "expected": "2026-10-25T16:46",
+      "expected": "2026-10-25T16:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T16:50",
+      "expected": "2026-10-25T16:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
