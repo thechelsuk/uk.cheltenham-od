@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T11:25:07+00:00",
+  "generated_at": "2026-10-25T11:30:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -32,13 +32,13 @@
     },
     {
       "scheduled": "2026-10-25T12:00",
-      "expected": "2026-10-25T12:20",
+      "expected": "2026-10-25T12:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Gloucester",
         "Newport (South Wales)",
@@ -69,7 +69,7 @@
     },
     {
       "scheduled": "2026-10-25T12:11",
-      "expected": "2026-10-25T12:17",
+      "expected": "2026-10-25T12:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -141,20 +141,30 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T12:52",
+      "expected": "2026-10-25T12:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-25T11:16",
-      "expected": "2026-10-25T11:23",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T11:46",
       "expected": "2026-10-25T11:48",
@@ -168,13 +178,13 @@
     },
     {
       "scheduled": "2026-10-25T11:59",
-      "expected": "2026-10-25T12:19",
+      "expected": "2026-10-25T12:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -190,7 +200,7 @@
     },
     {
       "scheduled": "2026-10-25T12:09",
-      "expected": "2026-10-25T12:16",
+      "expected": "2026-10-25T12:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -229,6 +239,17 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T12:50",
+      "expected": "2026-10-25T12:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
