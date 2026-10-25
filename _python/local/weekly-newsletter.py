@@ -2,11 +2,11 @@
 """Interactively build a draft issue of The Cheltenham Week Ahead newsletter.
 
 You run this yourself, whenever you want to prepare an issue — there's no
-schedule. The issue covers a rolling 7-day window starting the day you run
-it (today to today + 6), not the calendar Monday-to-Sunday week — otherwise
-running it mid-week produces an issue dated for a week that hasn't started
-yet while every section's actual content (weather, roadworks) is anchored to
-today. Most sections read data the site's own fetchers already
+schedule. You usually run it the day before the issue goes out (a Sunday for
+a Monday issue), so the issue covers a rolling 7-day window starting
+tomorrow (tomorrow to tomorrow + 6), and is dated to publish tomorrow at
+08:45. Every section (weather, roadworks, title, front matter) is anchored to
+that one issue date. Most sections read data the site's own fetchers already
 maintain (weather, roadworks, the news archive) plus the hand-picked venue
 shortlist in newsletter-venues.json. "What's On" reuses
 _python/local/event-roundup.py's own fetch/dedupe/review pipeline (loaded
@@ -25,8 +25,8 @@ as _newsletters/<issue-date>.md, then commit and push — there's no
 auto-publish step, on purpose, so nothing reaches the public /newsletter
 archive without you having looked at it first.
 
-    python3 _python/weekly-newsletter.py                        # draft today's 7-day window
-    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft a specific 7-day window
+    python3 _python/weekly-newsletter.py                        # draft tomorrow's issue
+    python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft the issue for a specific date
     python3 _python/weekly-newsletter.py --days 45              # widen the events search window
 """
 import argparse
@@ -36,7 +36,7 @@ import random
 import re
 import os
 import sys
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 import helper
 
@@ -51,6 +51,7 @@ MAX_ROADWORKS = 5
 EVENT_DAYS_AHEAD = 28                    # a weekly issue doesn't need event-roundup's own 60-day default
 SELF_SOURCE = "Cheltenham OD News"       # our own posts, already covered by "New on the site"
 VENUE_REPEAT_GAP = 8                     # issues to avoid repeating a venue within
+PUBLISH_TIME = time(8, 45)               # issues go out at 08:45 on their issue date
 
 
 def load_event_roundup():
@@ -230,18 +231,33 @@ def pick_events(days_ahead):
     return "\n".join(lines)
 
 
-def new_on_site_section(since, min_items=3):
-    """Everything posted since the last issue — but if a quiet week leaves fewer than
-    min_items, keep going back further rather than publish a thin (or empty) section."""
+def post_datetime(path, text):
+    """The post's `date:` front matter (e.g. 2026-10-27 08:30), falling back to midnight on
+    the filename date — so scheduled posts can be compared to the issue's send time."""
+    m = re.search(r"^date:\s*\"?(\d{4}-\d{2}-\d{2})(?:[ T](\d{2}):(\d{2}))?", text, re.M)
+    if m:
+        hour, minute = (int(m.group(2)), int(m.group(3))) if m.group(2) else (0, 0)
+        return datetime.combine(date.fromisoformat(m.group(1)), time(hour, minute))
+    return datetime.combine(date.fromisoformat(path.name[:10]), time())
+
+
+def new_on_site_section(since, until, min_items=3):
+    """Everything posted after the last issue went out (`since`) and live by the time this
+    one does (`until`) — scheduled posts that aren't published yet are left out. If a quiet
+    week leaves fewer than min_items, keep going back further rather than publish a thin
+    (or empty) section."""
     posts_dir = ROOT / "_posts"
     all_posts = []
     for path in sorted(posts_dir.glob("*.md")):
         m = re.match(r"(\d{4}-\d{2}-\d{2})-(.+)\.md$", path.name)
         if not m:
             continue
-        post_date = date.fromisoformat(m.group(1))
-        title = re.search(r'^title:\s*"?(.*?)"?\s*$', path.read_text(encoding="utf-8"), re.M)
-        all_posts.append((post_date, title.group(1) if title else m.group(2), f"{SITE_URL}/news/{m.group(2)}"))
+        text = path.read_text(encoding="utf-8")
+        posted = post_datetime(path, text)
+        if posted > until:
+            continue
+        title = re.search(r'^title:\s*"?(.*?)"?\s*$', text, re.M)
+        all_posts.append((posted, title.group(1) if title else m.group(2), f"{SITE_URL}/news/{m.group(2)}"))
     if not all_posts:
         return None
     all_posts.sort(reverse=True)
@@ -295,10 +311,12 @@ def venue_section(recent_venues):
 # --------------------------------------------------------------------------
 
 def build(today, since_date, event_days_ahead):
-    """`today` is the first day of the issue's rolling 7-day window — every section (weather,
-    roadworks, title, front matter) is anchored to this one date, so they can never drift apart
-    the way they did when the title used a different date than the content."""
+    """`today` is the issue date: the day it goes out and the first day of its rolling 7-day
+    window — every section (weather, roadworks, title, front matter) is anchored to this one
+    date, so they can never drift apart the way they did when the title used a different date
+    than the content."""
     week_end = today + timedelta(days=6)
+    publish_at = datetime.combine(today, PUBLISH_TIME)
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
 
@@ -315,7 +333,7 @@ def build(today, since_date, event_days_ahead):
         section("Weather for the Next 7 Days", weather_section(today)),
         section("Roadworks", roadworks_section(today, week_end)),
         section("What's On", whats_on),
-        section("New on Cheltenham Open Data", new_on_site_section(since_date)),
+        section("New on Cheltenham Open Data", new_on_site_section(datetime.combine(since_date, PUBLISH_TIME), publish_at)),
         section("This Week's Top Stories", top_stories_section()),
         section("Somewhere to Eat", venue_body),
         f"---\n\nThat's the week ahead. Missed an issue? The [newsletter archive]({SITE_URL}/newsletter) has "
@@ -331,11 +349,8 @@ def build(today, since_date, event_days_ahead):
         f'title: "{title}"',
         f'seo: "{seo[:160]}"',
         f'description: "This week in Cheltenham ({date_range}): weather, roadworks, events, what\'s new on the site and the top local stories."',
-        # An explicit UTC offset, not a bare local timestamp: `future: false` in _config.yml
-        # applies to every collection with a date, and an offset-less timestamp parsed against
-        # the site's Europe/London timezone can register as a little in the future and get
-        # silently skipped, right when this is generated and built in the same few minutes.
-        f"date: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S %z')}",
+        # `future: false` in _config.yml keeps the issue off the site until this time.
+        f"date: {publish_at.strftime('%Y-%m-%d %H:%M')}",
         f"issue_date: {today.isoformat()}",
         f"week_start: {today.isoformat()}",
         f"week_end: {week_end.isoformat()}",
@@ -364,15 +379,16 @@ def build(today, since_date, event_days_ahead):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--for-date", help="draft a specific 7-day window starting on this date (YYYY-MM-DD) "
-                                            "instead of the rolling window starting today")
+    parser.add_argument("--for-date", help="draft the issue going out on this date (YYYY-MM-DD) "
+                                            "instead of tomorrow's")
     parser.add_argument("--days", type=int, default=EVENT_DAYS_AHEAD,
                          help=f"how many days ahead to search for events (default {EVENT_DAYS_AHEAD})")
     args = parser.parse_args()
 
-    today = date.fromisoformat(args.for_date) if args.for_date else date.today()
+    today = date.fromisoformat(args.for_date) if args.for_date else date.today() + timedelta(days=1)
 
-    issues = existing_issues()
+    # An issue already saved for this date isn't "the last issue" — it's the one being redrafted.
+    issues = [i for i in existing_issues() if i["issue_date"] != today.isoformat()]
     since_date = date.fromisoformat(issues[-1]["issue_date"]) if issues else today - timedelta(days=7)
 
     build(today, since_date, args.days)

@@ -26,7 +26,7 @@ permalink: /sitemap.xml
   </url>
   {% endfor %}
      <!-- posts-->
-  {% assign posts = site.newsletters %}
+  {% assign posts = site.newsletters | where_exp: "issue", "issue.date <= site.time" %}
   {% for post in posts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>

@@ -31,7 +31,8 @@ It is free, it goes out once a week, and you can unsubscribe with one click from
 
 ## Past Issues
 
-{% assign issues = site.newsletters %}
+{% comment %}future: false stops a scheduled issue being built, but not being listed{% endcomment %}
+{% assign issues = site.newsletters | where_exp: "issue", "issue.date <= site.time" %}
 {% if issues %}
 {% assign issues = issues | sort: "issue_date" | reverse %}
 {% endif %}
