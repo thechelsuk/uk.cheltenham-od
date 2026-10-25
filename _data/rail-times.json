@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T19:15:08+00:00",
+  "generated_at": "2026-10-25T19:20:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Severe weather associated with Storm Boelo may disrupt your journey. Check before you travel. More details and the impact on your journey can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-25T18:52",
-      "expected": "2026-10-25T19:15",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T19:11",
       "expected": "2026-10-25T19:31",
@@ -55,7 +34,7 @@
     },
     {
       "scheduled": "2026-10-25T19:26",
-      "expected": "2026-10-25T19:40",
+      "expected": "2026-10-25T19:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -84,8 +63,8 @@
     },
     {
       "scheduled": "2026-10-25T19:54",
-      "expected": "2026-10-25T19:54",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -144,7 +123,7 @@
     },
     {
       "scheduled": "2026-10-25T20:11",
-      "expected": "2026-10-25T20:15",
+      "expected": "2026-10-25T20:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -162,20 +141,25 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T20:15",
+      "expected": "2026-10-25T20:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-25T18:50",
-      "expected": "2026-10-25T19:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-25T19:08",
       "expected": "2026-10-25T19:30",
@@ -189,7 +173,7 @@
     },
     {
       "scheduled": "2026-10-25T19:21",
-      "expected": "2026-10-25T19:39",
+      "expected": "2026-10-25T19:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -233,8 +217,8 @@
     },
     {
       "scheduled": "2026-10-25T19:52",
-      "expected": "2026-10-25T19:52",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -244,12 +228,23 @@
     },
     {
       "scheduled": "2026-10-25T20:08",
-      "expected": "2026-10-25T20:14",
+      "expected": "2026-10-25T20:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T20:14",
+      "expected": "2026-10-25T20:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
