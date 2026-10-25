@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T14:30:08+00:00",
+  "generated_at": "2026-10-25T14:35:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,7 +14,7 @@
   "departures": [
     {
       "scheduled": "2026-10-25T13:52",
-      "expected": "2026-10-25T14:40",
+      "expected": "2026-10-25T14:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -30,21 +30,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-25T14:29",
-      "expected": "2026-10-25T14:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
       ],
       "mode": "train"
     },
@@ -185,40 +170,38 @@
         "Paignton"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T15:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-25T13:50",
-      "expected": "2026-10-25T14:39",
+      "expected": "2026-10-25T14:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a tree blocking the railway",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-25T14:27",
-      "expected": "2026-10-25T14:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-25T14:31",
-      "expected": "2026-10-25T14:31",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -284,6 +267,28 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Paignton",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T15:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-25T15:44",
+      "expected": "2026-10-25T15:44",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
