@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T21:05:08+00:00",
+  "generated_at": "2026-10-26T21:10:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -29,27 +29,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-26T21:02",
-      "expected": "2026-10-26T21:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T21:07",
       "expected": null,
       "status": "Cancelled",
@@ -75,7 +54,7 @@
     },
     {
       "scheduled": "2026-10-26T21:12",
-      "expected": "2026-10-26T21:40",
+      "expected": "2026-10-26T21:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -193,6 +172,21 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T22:03",
+      "expected": "2026-10-26T22:03",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -220,7 +214,7 @@
     },
     {
       "scheduled": "2026-10-26T21:10",
-      "expected": "2026-10-26T21:39",
+      "expected": "2026-10-26T21:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -282,6 +276,17 @@
       "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been cancelled because of a shortage of train crew",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T22:01",
+      "expected": "2026-10-26T22:01",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
       "mode": "train"
     }
   ],
