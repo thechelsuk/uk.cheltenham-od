@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T07:45:08+00:00",
+  "generated_at": "2026-10-26T07:50:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-26T07:43",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central",
-      "reason": "This service has been cancelled because of slippery rails",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T07:55",
-      "expected": "2026-10-26T08:03",
+      "expected": "2026-10-26T08:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -124,7 +104,7 @@
     },
     {
       "scheduled": "2026-10-26T08:15",
-      "expected": "2026-10-26T08:18",
+      "expected": "2026-10-26T08:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -173,12 +153,32 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T08:43",
+      "expected": "2026-10-26T08:43",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-26T07:50",
-      "expected": "2026-10-26T08:02",
+      "expected": "2026-10-26T08:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -200,8 +200,8 @@
     },
     {
       "scheduled": "2026-10-26T07:59",
-      "expected": "2026-10-26T07:59",
-      "status": "On time",
+      "expected": "2026-10-26T07:49",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -222,7 +222,7 @@
     },
     {
       "scheduled": "2026-10-26T08:14",
-      "expected": "2026-10-26T08:17",
+      "expected": "2026-10-26T08:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
