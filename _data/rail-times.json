@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T21:45:08+00:00",
+  "generated_at": "2026-10-26T21:51:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,23 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-26T21:12",
-      "expected": "2026-10-26T21:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T21:52",
-      "expected": "2026-10-26T22:11",
+      "expected": "2026-10-26T22:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -123,23 +108,27 @@
         "Gloucester"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T22:52",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a shortage of train managers",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-26T21:10",
-      "expected": "2026-10-26T21:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T21:50",
-      "expected": "2026-10-26T22:10",
+      "expected": "2026-10-26T22:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -172,8 +161,8 @@
     },
     {
       "scheduled": "2026-10-26T22:01",
-      "expected": "2026-10-26T22:01",
-      "status": "On time",
+      "expected": "2026-10-26T22:03",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -223,6 +212,17 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T22:50",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a shortage of train managers",
       "mode": "train"
     }
   ],
