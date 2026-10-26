@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T22:05:08+00:00",
+  "generated_at": "2026-10-26T22:10:38+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-26T21:52",
-      "expected": "2026-10-26T22:15",
+      "expected": "2026-10-26T22:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,7 +28,7 @@
     },
     {
       "scheduled": "2026-10-26T22:03",
-      "expected": "2026-10-26T22:08",
+      "expected": "2026-10-26T22:10",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -121,12 +121,28 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T23:02",
+      "expected": "2026-10-26T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-26T21:50",
-      "expected": "2026-10-26T22:14",
+      "expected": "2026-10-26T22:13",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -137,23 +153,12 @@
     },
     {
       "scheduled": "2026-10-26T22:01",
-      "expected": "2026-10-26T22:07",
+      "expected": "2026-10-26T22:09",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-26T22:06",
-      "expected": "2026-10-26T22:06",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     },
@@ -181,13 +186,13 @@
     },
     {
       "scheduled": "2026-10-26T22:34",
-      "expected": "2026-10-26T22:34",
-      "status": "On time",
+      "expected": "2026-10-26T22:36",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by more trains than usual needing repairs at the same time",
       "mode": "train"
     },
     {
@@ -208,6 +213,17 @@
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T23:00",
+      "expected": "2026-10-26T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
       "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
