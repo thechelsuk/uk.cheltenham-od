@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T19:15:07+00:00",
+  "generated_at": "2026-10-26T19:20:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains running between Derby and Birmingham New Street may be delayed, cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-26T16:52",
-      "expected": "2026-10-26T19:16",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a broken down train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-26T18:19",
       "expected": null,
@@ -51,7 +30,7 @@
     },
     {
       "scheduled": "2026-10-26T18:52",
-      "expected": "2026-10-26T19:52",
+      "expected": "2026-10-26T19:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -67,7 +46,7 @@
     },
     {
       "scheduled": "2026-10-26T19:12",
-      "expected": "2026-10-26T19:18",
+      "expected": "2026-10-26T19:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -83,20 +62,6 @@
         "Sheffield",
         "Wakefield Westgate",
         "Leeds"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-26T19:15",
-      "expected": "2026-10-26T20:20",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester"
       ],
       "mode": "train"
     },
@@ -121,7 +86,7 @@
     },
     {
       "scheduled": "2026-10-26T19:30",
-      "expected": "2026-10-26T19:46",
+      "expected": "2026-10-26T19:47",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -153,20 +118,38 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T19:43",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T19:49",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been cancelled because of a shortage of train crew",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-26T16:50",
-      "expected": "2026-10-26T19:15",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a broken down train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-26T18:18",
       "expected": null,
@@ -180,7 +163,7 @@
     },
     {
       "scheduled": "2026-10-26T18:50",
-      "expected": "2026-10-26T19:51",
+      "expected": "2026-10-26T19:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -201,20 +184,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-26T19:14",
-      "expected": "2026-10-26T20:19",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T19:21",
-      "expected": "2026-10-26T19:21",
-      "status": "On time",
+      "expected": "2026-10-26T19:23",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
@@ -235,7 +207,7 @@
     },
     {
       "scheduled": "2026-10-26T19:28",
-      "expected": "2026-10-26T19:45",
+      "expected": "2026-10-26T19:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -246,13 +218,35 @@
     },
     {
       "scheduled": "2026-10-26T19:34",
-      "expected": "2026-10-26T19:42",
+      "expected": "2026-10-26T19:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a late running train being in front of this one",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T19:42",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T19:47",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been cancelled because of a shortage of train crew",
       "mode": "train"
     }
   ],
