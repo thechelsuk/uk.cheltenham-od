@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T11:35:08+00:00",
+  "generated_at": "2026-10-26T11:40:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,13 +12,13 @@
   "departures": [
     {
       "scheduled": "2026-10-26T11:12",
-      "expected": "2026-10-26T11:39",
+      "expected": "2026-10-26T11:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -40,7 +40,7 @@
     },
     {
       "scheduled": "2026-10-26T11:29",
-      "expected": "2026-10-26T11:38",
+      "expected": "2026-10-26T11:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -55,7 +55,7 @@
     },
     {
       "scheduled": "2026-10-26T11:40",
-      "expected": "2026-10-26T11:47",
+      "expected": "2026-10-26T11:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -75,8 +75,8 @@
     },
     {
       "scheduled": "2026-10-26T11:40",
-      "expected": "2026-10-26T11:40",
-      "status": "On time",
+      "expected": "2026-10-26T11:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -110,7 +110,7 @@
     },
     {
       "scheduled": "2026-10-26T11:52",
-      "expected": "2026-10-26T11:56",
+      "expected": "2026-10-26T11:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,34 +207,40 @@
         "Aberdeen"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T12:15",
+      "expected": "2026-10-26T12:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-26T11:11",
-      "expected": "2026-10-26T11:38",
+      "expected": "2026-10-26T11:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-26T11:26",
-      "expected": "2026-10-26T11:36",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by forecasted slippery rails",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
       "scheduled": "2026-10-26T11:27",
-      "expected": "2026-10-26T11:37",
+      "expected": "2026-10-26T11:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -245,7 +251,7 @@
     },
     {
       "scheduled": "2026-10-26T11:38",
-      "expected": "2026-10-26T11:40",
+      "expected": "2026-10-26T11:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -267,7 +273,7 @@
     },
     {
       "scheduled": "2026-10-26T11:51",
-      "expected": "2026-10-26T11:55",
+      "expected": "2026-10-26T11:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -295,6 +301,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T12:14",
+      "expected": "2026-10-26T12:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
