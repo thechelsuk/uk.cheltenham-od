@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T19:30:08+00:00",
+  "generated_at": "2026-10-26T19:35:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -32,7 +32,7 @@
       "scheduled": "2026-10-26T18:55",
       "expected": null,
       "status": "Delayed",
-      "platform": "",
+      "platform": "1",
       "operator": "CrossCountry",
       "origin": "Cheltenham Spa",
       "destination": "Plymouth via Gloucester",
@@ -134,6 +134,31 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T19:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Willington",
+        "Derby",
+        "Spondon",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -150,24 +175,13 @@
     },
     {
       "scheduled": "2026-10-26T18:50",
-      "expected": "2026-10-26T19:57",
+      "expected": "2026-10-26T20:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-26T19:27",
-      "expected": "2026-10-26T19:29",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by severe weather",
       "mode": "train"
     },
     {
@@ -183,7 +197,7 @@
     },
     {
       "scheduled": "2026-10-26T19:34",
-      "expected": "2026-10-26T19:46",
+      "expected": "2026-10-26T19:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -223,6 +237,17 @@
       "origin": "Edinburgh",
       "destination": "Plymouth",
       "reason": "This service has been delayed by train crew being delayed by service disruption",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T19:58",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
       "mode": "train"
     }
   ],
