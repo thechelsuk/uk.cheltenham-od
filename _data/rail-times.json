@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T12:35:10+00:00",
+  "generated_at": "2026-10-26T12:40:11+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,26 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-26T12:15",
-      "expected": "2026-10-26T12:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T12:35",
-      "expected": "2026-10-26T12:35",
-      "status": "On time",
+      "expected": "2026-10-26T12:39",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Stoke-on-Trent",
@@ -131,7 +114,7 @@
     },
     {
       "scheduled": "2026-10-26T12:52",
-      "expected": "2026-10-26T13:13",
+      "expected": "2026-10-26T13:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,8 +190,8 @@
     },
     {
       "scheduled": "2026-10-26T13:12",
-      "expected": "2026-10-26T13:12",
-      "status": "On time",
+      "expected": "2026-10-26T13:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -232,24 +215,30 @@
         "Edinburgh"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-26T12:14",
-      "expected": "2026-10-26T12:31",
-      "status": "Delayed",
+      "scheduled": "2026-10-26T13:15",
+      "expected": "2026-10-26T13:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-26T12:33",
-      "expected": "2026-10-26T12:33",
-      "status": "On time",
+      "expected": "2026-10-26T12:38",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Stoke-on-Trent",
@@ -292,7 +281,7 @@
     },
     {
       "scheduled": "2026-10-26T12:50",
-      "expected": "2026-10-26T13:12",
+      "expected": "2026-10-26T13:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -314,12 +303,23 @@
     },
     {
       "scheduled": "2026-10-26T13:10",
-      "expected": "2026-10-26T13:10",
-      "status": "On time",
+      "expected": "2026-10-26T13:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T13:14",
+      "expected": "2026-10-26T13:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
