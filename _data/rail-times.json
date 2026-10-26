@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T09:05:07+00:00",
+  "generated_at": "2026-10-26T09:10:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,29 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-26T08:52",
-      "expected": "2026-10-26T09:04",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by issues with communication systems",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-26T09:03",
-      "expected": "2026-10-26T09:05",
+      "expected": "2026-10-26T09:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -54,7 +33,7 @@
     },
     {
       "scheduled": "2026-10-26T09:03",
-      "expected": "2026-10-26T09:08",
+      "expected": "2026-10-26T09:09",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -147,6 +126,26 @@
     },
     {
       "scheduled": "2026-10-26T09:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a fault on a train earlier",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-26T09:40",
       "expected": "2026-10-26T09:40",
       "status": "On time",
       "platform": "2",
@@ -167,17 +166,6 @@
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-26T08:50",
-      "expected": "2026-10-26T09:01",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by issues with communication systems",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-26T09:02",
       "expected": "2026-10-26T09:07",
