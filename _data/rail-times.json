@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T17:05:07+00:00",
+  "generated_at": "2026-10-27T17:10:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-27T16:52",
-      "expected": "2026-10-27T17:26",
+      "expected": "2026-10-27T17:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,27 +28,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-27T17:03",
-      "expected": "2026-10-27T17:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
       ],
       "mode": "train"
     },
@@ -80,7 +59,7 @@
     },
     {
       "scheduled": "2026-10-27T17:19",
-      "expected": "2026-10-27T17:25",
+      "expected": "2026-10-27T17:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -98,8 +77,8 @@
     },
     {
       "scheduled": "2026-10-27T17:25",
-      "expected": "2026-10-27T17:25",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -169,12 +148,27 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T17:50",
+      "expected": "2026-10-27T17:50",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-27T16:50",
-      "expected": "2026-10-27T17:25",
+      "expected": "2026-10-27T17:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -185,8 +179,8 @@
     },
     {
       "scheduled": "2026-10-27T17:10",
-      "expected": "2026-10-27T17:10",
-      "status": "On time",
+      "expected": "2026-10-27T17:12",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -196,7 +190,7 @@
     },
     {
       "scheduled": "2026-10-27T17:18",
-      "expected": "2026-10-27T17:24",
+      "expected": "2026-10-27T17:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,8 +201,8 @@
     },
     {
       "scheduled": "2026-10-27T17:24",
-      "expected": "2026-10-27T17:24",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -257,6 +251,17 @@
       "operator": "CrossCountry",
       "origin": "Paignton",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T17:47",
+      "expected": "2026-10-27T17:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
