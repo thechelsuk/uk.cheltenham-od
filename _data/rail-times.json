@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T09:15:07+00:00",
+  "generated_at": "2026-10-27T09:20:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains between London Paddington and Heathrow Terminals / Reading may be cancelled, delayed or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-27T09:03",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by the emergency services dealing with an incident",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-27T09:12",
       "expected": "2026-10-27T09:21",
@@ -62,7 +41,7 @@
     },
     {
       "scheduled": "2026-10-27T09:15",
-      "expected": "2026-10-27T09:20",
+      "expected": "2026-10-27T09:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -150,6 +129,21 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T09:47",
+      "expected": "2026-10-27T09:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -177,7 +171,7 @@
     },
     {
       "scheduled": "2026-10-27T09:14",
-      "expected": "2026-10-27T09:19",
+      "expected": "2026-10-27T09:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -212,7 +206,7 @@
       "scheduled": "2026-10-27T09:30",
       "expected": null,
       "status": "Delayed",
-      "platform": "2",
+      "platform": "",
       "operator": "Great Western Railway",
       "origin": "Reading",
       "destination": "Cheltenham Spa",
@@ -238,6 +232,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T09:45",
+      "expected": "2026-10-27T09:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
