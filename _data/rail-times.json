@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T19:05:08+00:00",
+  "generated_at": "2026-10-27T19:10:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -37,28 +37,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-27T19:02",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been cancelled because of trespassers on the railway",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-27T19:12",
-      "expected": "2026-10-27T19:14",
+      "expected": "2026-10-27T19:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -158,12 +138,27 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T19:49",
+      "expected": "2026-10-27T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-27T18:50",
-      "expected": "2026-10-27T19:11",
+      "expected": "2026-10-27T19:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -174,7 +169,7 @@
     },
     {
       "scheduled": "2026-10-27T19:10",
-      "expected": "2026-10-27T19:13",
+      "expected": "2026-10-27T19:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -246,6 +241,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T19:47",
+      "expected": "2026-10-27T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
