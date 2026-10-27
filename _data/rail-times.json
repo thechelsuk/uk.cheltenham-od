@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T20:15:07+00:00",
+  "generated_at": "2026-10-27T20:20:13+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,25 +9,10 @@
     "crs": "CNM"
   },
   "messages": [
+    "Trains between Crewe and Wilmslow and therefore may be cancelled or delayed. More details can be found in the Disruptions area of the National Rail website .",
     "Trains between London Paddington and Heathrow Airport / Reading may be cancelled, delayed by up to 50 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-27T20:15",
-      "expected": "2026-10-27T20:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-27T20:23",
       "expected": "2026-10-27T20:23",
@@ -167,20 +152,24 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T21:33",
+      "expected": "2026-10-27T21:46",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by trespassers on the railway",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-27T20:14",
-      "expected": "2026-10-27T20:16",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-27T20:21",
       "expected": "2026-10-27T20:23",
@@ -256,6 +245,17 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T21:33",
+      "expected": "2026-10-27T21:45",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by trespassers on the railway",
       "mode": "train"
     }
   ],
