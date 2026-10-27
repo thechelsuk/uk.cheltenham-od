@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T12:55:10+00:00",
+  "generated_at": "2026-10-27T13:00:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,61 +12,6 @@
     "Trains between London Paddington and Heathrow Terminals / Reading may be cancelled, delayed or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-27T12:52",
-      "expected": "2026-10-27T12:56",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "Lostwithiel",
-        "Par",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "Camborne",
-        "Hayle",
-        "St Erth",
-        "Penzance"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-27T12:55",
-      "expected": "2026-10-27T12:55",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-27T13:03",
       "expected": "2026-10-27T13:03",
@@ -118,7 +63,7 @@
     },
     {
       "scheduled": "2026-10-27T13:15",
-      "expected": "2026-10-27T13:19",
+      "expected": "2026-10-27T13:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,6 +114,26 @@
     },
     {
       "scheduled": "2026-10-27T13:40",
+      "expected": "2026-10-27T13:44",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T13:40",
       "expected": "2026-10-27T13:40",
       "status": "On time",
       "platform": "2",
@@ -186,31 +151,30 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T13:52",
+      "expected": "2026-10-27T13:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-27T12:50",
-      "expected": "2026-10-27T12:55",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-27T12:54",
-      "expected": "2026-10-27T12:54",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-27T13:10",
       "expected": "2026-10-27T13:10",
@@ -224,7 +188,7 @@
     },
     {
       "scheduled": "2026-10-27T13:14",
-      "expected": "2026-10-27T13:18",
+      "expected": "2026-10-27T13:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -246,7 +210,7 @@
     },
     {
       "scheduled": "2026-10-27T13:27",
-      "expected": "2026-10-27T13:32",
+      "expected": "2026-10-27T13:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -285,6 +249,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-27T13:50",
+      "expected": "2026-10-27T13:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
