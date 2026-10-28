@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T08:05:07+00:00",
+  "generated_at": "2026-10-28T08:10:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-28T07:55",
-      "expected": "2026-10-28T08:04",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by a broken down train",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T08:12",
       "expected": "2026-10-28T08:12",
@@ -112,7 +91,7 @@
     },
     {
       "scheduled": "2026-10-28T08:43",
-      "expected": "2026-10-28T08:45",
+      "expected": "2026-10-28T08:49",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -172,20 +151,24 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T09:03",
+      "expected": "2026-10-28T09:03",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-28T07:50",
-      "expected": "2026-10-28T08:03",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by a broken down train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T08:10",
       "expected": "2026-10-28T08:10",
@@ -210,7 +193,7 @@
     },
     {
       "scheduled": "2026-10-28T08:27",
-      "expected": "2026-10-28T08:34",
+      "expected": "2026-10-28T08:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -272,6 +255,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T09:02",
+      "expected": "2026-10-28T09:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
       "mode": "train"
     }
   ],
