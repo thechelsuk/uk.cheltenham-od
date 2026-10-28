@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T07:30:07+00:00",
+  "generated_at": "2026-10-28T07:35:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,35 +11,14 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-28T07:29",
-      "expected": "2026-10-28T07:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T07:35",
-      "expected": "2026-10-28T07:35",
-      "status": "On time",
+      "expected": "2026-10-28T07:37",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by the train departing late to maintain customer connections",
       "calling_at": [
         "Worcester Shrub Hill"
       ],
@@ -47,7 +26,7 @@
     },
     {
       "scheduled": "2026-10-28T07:36",
-      "expected": "2026-10-28T07:38",
+      "expected": "2026-10-28T07:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -195,20 +174,26 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T08:15",
+      "expected": "2026-10-28T08:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-28T07:27",
-      "expected": "2026-10-28T07:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T07:29",
       "expected": "2026-10-28T07:33",
@@ -222,13 +207,13 @@
     },
     {
       "scheduled": "2026-10-28T07:33",
-      "expected": "2026-10-28T07:33",
-      "status": "On time",
+      "expected": "2026-10-28T07:36",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by the train departing late to maintain customer connections",
       "mode": "train"
     },
     {
@@ -294,6 +279,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T08:14",
+      "expected": "2026-10-28T08:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
