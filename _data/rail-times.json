@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T20:30:08+00:00",
+  "generated_at": "2026-10-28T20:35:09+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,8 +12,8 @@
   "departures": [
     {
       "scheduled": "2026-10-28T20:41",
-      "expected": "2026-10-28T20:41",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -133,7 +133,7 @@
     },
     {
       "scheduled": "2026-10-28T21:33",
-      "expected": "2026-10-28T22:04",
+      "expected": "2026-10-28T22:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -161,20 +161,26 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T21:53",
+      "expected": "2026-10-28T21:53",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-28T20:27",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of a fault on a train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T20:33",
       "expected": "2026-10-28T20:33",
@@ -232,7 +238,7 @@
     },
     {
       "scheduled": "2026-10-28T21:33",
-      "expected": "2026-10-28T22:04",
+      "expected": "2026-10-28T22:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -249,6 +255,17 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T21:51",
+      "expected": "2026-10-28T21:51",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
     }
