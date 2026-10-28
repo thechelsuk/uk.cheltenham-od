@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T11:30:08+00:00",
+  "generated_at": "2026-10-28T11:35:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-28T11:12",
-      "expected": null,
+      "expected": "2026-10-28T11:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -39,25 +39,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-28T11:15",
-      "expected": "2026-10-28T11:28",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T11:29",
-      "expected": "2026-10-28T11:33",
+      "expected": "2026-10-28T11:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -92,7 +75,7 @@
     },
     {
       "scheduled": "2026-10-28T11:40",
-      "expected": "2026-10-28T11:43",
+      "expected": "2026-10-28T11:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -188,12 +171,48 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T12:12",
+      "expected": "2026-10-28T12:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Doncaster",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Inverkeithing",
+        "Kirkcaldy",
+        "Markinch",
+        "Ladybank",
+        "Cupar",
+        "Leuchars",
+        "Dundee",
+        "Aberdeen"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-28T11:11",
-      "expected": null,
+      "expected": "2026-10-28T11:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -203,19 +222,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-28T11:14",
-      "expected": "2026-10-28T11:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T11:27",
-      "expected": "2026-10-28T11:32",
+      "expected": "2026-10-28T11:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -226,7 +234,7 @@
     },
     {
       "scheduled": "2026-10-28T11:31",
-      "expected": "2026-10-28T11:37",
+      "expected": "2026-10-28T11:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -237,7 +245,7 @@
     },
     {
       "scheduled": "2026-10-28T11:38",
-      "expected": "2026-10-28T11:42",
+      "expected": "2026-10-28T11:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -276,6 +284,17 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T12:11",
+      "expected": "2026-10-28T12:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Doncaster",
       "reason": "",
       "mode": "train"
     }
