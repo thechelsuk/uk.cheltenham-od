@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T12:30:08+00:00",
+  "generated_at": "2026-10-28T12:35:10+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,61 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-28T12:12",
-      "expected": "2026-10-28T12:31",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Aberdeen via Doncaster",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Inverkeithing",
-        "Kirkcaldy",
-        "Markinch",
-        "Ladybank",
-        "Cupar",
-        "Leuchars",
-        "Dundee",
-        "Aberdeen"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-28T12:29",
-      "expected": "2026-10-28T12:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T12:35",
       "expected": "2026-10-28T12:43",
@@ -102,7 +47,7 @@
     },
     {
       "scheduled": "2026-10-28T12:40",
-      "expected": "2026-10-28T12:44",
+      "expected": "2026-10-28T12:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -210,35 +155,58 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T13:12",
+      "expected": "2026-10-28T13:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Dunbar",
+        "Edinburgh"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T13:15",
+      "expected": "2026-10-28T13:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-28T12:11",
-      "expected": "2026-10-28T12:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Aberdeen via Doncaster",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-28T12:28",
-      "expected": "2026-10-28T12:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T12:32",
-      "expected": "2026-10-28T12:32",
-      "status": "On time",
+      "expected": "2026-10-28T12:34",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -259,7 +227,7 @@
     },
     {
       "scheduled": "2026-10-28T12:38",
-      "expected": "2026-10-28T12:43",
+      "expected": "2026-10-28T12:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -298,6 +266,28 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T13:10",
+      "expected": "2026-10-28T13:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T13:14",
+      "expected": "2026-10-28T13:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
