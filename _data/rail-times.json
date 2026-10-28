@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T07:20:08+00:00",
+  "generated_at": "2026-10-28T07:25:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,36 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-28T07:18",
-      "expected": "2026-10-28T07:18",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Coleshill Parkway",
-        "Nuneaton",
-        "Leicester",
-        "Melton Mowbray",
-        "Oakham",
-        "Stamford",
-        "Peterborough",
-        "March",
-        "Manea",
-        "Ely",
-        "Cambridge",
-        "Cambridge South",
-        "Stansted Airport"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T07:24",
       "expected": "2026-10-28T07:24",
@@ -57,7 +27,7 @@
     },
     {
       "scheduled": "2026-10-28T07:29",
-      "expected": "2026-10-28T07:32",
+      "expected": "2026-10-28T07:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -192,20 +162,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T08:01",
+      "expected": "2026-10-28T08:01",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-28T07:17",
-      "expected": "2026-10-28T07:17",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T07:22",
       "expected": "2026-10-28T07:22",
@@ -219,7 +199,7 @@
     },
     {
       "scheduled": "2026-10-28T07:27",
-      "expected": "2026-10-28T07:31",
+      "expected": "2026-10-28T07:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -230,7 +210,7 @@
     },
     {
       "scheduled": "2026-10-28T07:29",
-      "expected": "2026-10-28T07:31",
+      "expected": "2026-10-28T07:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -292,6 +272,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train conductors",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T07:59",
+      "expected": "2026-10-28T07:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "",
       "mode": "train"
     }
   ],
