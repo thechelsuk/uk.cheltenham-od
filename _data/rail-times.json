@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T16:00:07+00:00",
+  "generated_at": "2026-10-28T16:05:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,28 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-28T15:59",
-      "expected": "2026-10-28T15:59",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Newport (South Wales)",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T16:03",
       "expected": "2026-10-28T16:03",
@@ -55,8 +33,8 @@
     },
     {
       "scheduled": "2026-10-28T16:12",
-      "expected": "2026-10-28T16:15",
-      "status": "Delayed",
+      "expected": "2026-10-28T16:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
@@ -180,23 +158,27 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T16:50",
+      "expected": "2026-10-28T16:50",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-28T15:58",
-      "expected": "2026-10-28T15:58",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Newport (South Wales)",
-      "destination": "Nottingham",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T16:10",
-      "expected": "2026-10-28T16:14",
+      "expected": "2026-10-28T16:12",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -229,7 +211,7 @@
     },
     {
       "scheduled": "2026-10-28T16:27",
-      "expected": "2026-10-28T16:30",
+      "expected": "2026-10-28T16:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -268,6 +250,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T16:47",
+      "expected": "2026-10-28T16:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
