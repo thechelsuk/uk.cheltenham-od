@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T10:25:08+00:00",
+  "generated_at": "2026-10-28T10:30:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,26 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-28T10:15",
-      "expected": "2026-10-28T10:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T10:29",
-      "expected": "2026-10-28T10:29",
-      "status": "On time",
+      "expected": "2026-10-28T10:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -53,7 +36,7 @@
     },
     {
       "scheduled": "2026-10-28T10:40",
-      "expected": "2026-10-28T10:42",
+      "expected": "2026-10-28T10:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -108,7 +91,7 @@
     },
     {
       "scheduled": "2026-10-28T10:52",
-      "expected": "2026-10-28T10:57",
+      "expected": "2026-10-28T11:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -176,23 +159,40 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T11:12",
+      "expected": "2026-10-28T11:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-28T10:14",
-      "expected": "2026-10-28T10:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-28T10:27",
-      "expected": "2026-10-28T10:32",
+      "expected": "2026-10-28T10:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -203,8 +203,8 @@
     },
     {
       "scheduled": "2026-10-28T10:28",
-      "expected": "2026-10-28T10:28",
-      "status": "On time",
+      "expected": "2026-10-28T10:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -225,8 +225,8 @@
     },
     {
       "scheduled": "2026-10-28T10:38",
-      "expected": "2026-10-28T10:38",
-      "status": "On time",
+      "expected": "2026-10-28T10:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -247,7 +247,7 @@
     },
     {
       "scheduled": "2026-10-28T10:50",
-      "expected": "2026-10-28T10:56",
+      "expected": "2026-10-28T10:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -263,6 +263,17 @@
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T11:11",
+      "expected": "2026-10-28T11:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
       "reason": "",
       "mode": "train"
