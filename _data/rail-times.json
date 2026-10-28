@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T18:30:38+00:00",
+  "generated_at": "2026-10-28T18:35:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -76,7 +76,7 @@
     },
     {
       "scheduled": "2026-10-28T18:52",
-      "expected": "2026-10-28T18:55",
+      "expected": "2026-10-28T18:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -162,20 +162,23 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T19:15",
+      "expected": "2026-10-28T19:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-28T18:27",
-      "expected": "2026-10-28T18:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-28T18:29",
       "expected": "2026-10-28T18:33",
@@ -189,8 +192,8 @@
     },
     {
       "scheduled": "2026-10-28T18:31",
-      "expected": "2026-10-28T18:31",
-      "status": "On time",
+      "expected": "2026-10-28T18:35",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -222,7 +225,7 @@
     },
     {
       "scheduled": "2026-10-28T18:50",
-      "expected": "2026-10-28T18:54",
+      "expected": "2026-10-28T18:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -244,12 +247,23 @@
     },
     {
       "scheduled": "2026-10-28T19:10",
-      "expected": "2026-10-28T19:12",
-      "status": "Delayed",
+      "expected": "2026-10-28T19:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-28T19:14",
+      "expected": "2026-10-28T19:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
       "reason": "",
       "mode": "train"
     }
