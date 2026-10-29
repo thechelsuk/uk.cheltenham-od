@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T10:15:08+00:00",
+  "generated_at": "2026-10-29T10:20:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,23 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-29T10:15",
-      "expected": "2026-10-29T10:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-29T10:23",
       "expected": "2026-10-29T10:23",
@@ -92,7 +75,7 @@
     },
     {
       "scheduled": "2026-10-29T10:40",
-      "expected": "2026-10-29T10:43",
+      "expected": "2026-10-29T10:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -174,20 +157,30 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-29T11:03",
+      "expected": "2026-10-29T11:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-29T10:14",
-      "expected": "2026-10-29T10:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-29T10:22",
       "expected": "2026-10-29T10:22",
@@ -223,18 +216,18 @@
     },
     {
       "scheduled": "2026-10-29T10:31",
-      "expected": "2026-10-29T10:31",
-      "status": "On time",
+      "expected": "2026-10-29T10:34",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
       "scheduled": "2026-10-29T10:38",
-      "expected": "2026-10-29T10:42",
+      "expected": "2026-10-29T10:43",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
