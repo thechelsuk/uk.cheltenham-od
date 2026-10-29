@@ -11,7 +11,7 @@ permalink: /cheltenham-news
 
 ## How This Cheltenham News Aggregator Works
 
-This page pulls headlines from Cheltenham Borough Council, Gloucestershire County Council, Gloucestershire Police, GOV.UK alerts, the BBC's local Gloucestershire feed, Cheltenham BID, Cheltenham Post, Gloucester News Centre and Golden Valley — plus our own Cheltenham Open Data announcements and events roundups — into one chronological list, refreshed automatically every couple of hours. Nothing is edited or summarised: each headline links straight back to the original publisher, with a short excerpt so you can tell at a glance whether it's worth a click.
+This page pulls headlines from Cheltenham Borough Council, Gloucestershire County Council, Gloucestershire Police, GOV.UK alerts, the BBC's local Gloucestershire feed, Cheltenham BID, Cheltenham Post, Gloucester News Centre, the Shire News, and Golden Valley — plus our own Cheltenham Open Data site announcements and analysis — into one chronological list, refreshed automatically every couple of hours. Nothing is edited or summarised: each headline links straight back to the original publisher, with a short excerpt so you can tell at a glance whether it's worth a click.
 
 Every headline we've ever pulled stays in the archive below rather than dropping off after a few days, so this doubles as a searchable-by-browser record of local news back to whenever we started tracking a given source. Older pages are paginated.
 
