@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T11:25:38+00:00",
+  "generated_at": "2026-10-29T11:30:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,13 +12,13 @@
   "departures": [
     {
       "scheduled": "2026-10-29T11:12",
-      "expected": "2026-10-29T11:31",
+      "expected": "2026-10-29T11:33",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -39,25 +39,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-10-29T11:23",
-      "expected": "2026-10-29T11:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-29T11:29",
       "expected": "2026-10-29T11:29",
       "status": "On time",
@@ -74,7 +55,7 @@
     },
     {
       "scheduled": "2026-10-29T11:40",
-      "expected": "2026-10-29T11:43",
+      "expected": "2026-10-29T11:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -169,34 +150,44 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-29T12:03",
+      "expected": "2026-10-29T12:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-29T11:10",
-      "expected": "2026-10-29T11:30",
+      "expected": "2026-10-29T11:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-29T11:21",
-      "expected": "2026-10-29T11:23",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
       "scheduled": "2026-10-29T11:26",
-      "expected": "2026-10-29T11:32",
+      "expected": "2026-10-29T11:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -229,8 +220,8 @@
     },
     {
       "scheduled": "2026-10-29T11:38",
-      "expected": "2026-10-29T11:40",
-      "status": "Delayed",
+      "expected": "2026-10-29T11:38",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
