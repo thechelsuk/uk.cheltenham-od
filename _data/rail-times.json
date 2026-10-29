@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T08:20:11+00:00",
+  "generated_at": "2026-10-29T08:25:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,33 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-29T08:12",
-      "expected": "2026-10-29T08:18",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Doncaster",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-29T08:29",
       "expected": "2026-10-29T08:29",
@@ -54,8 +27,8 @@
     },
     {
       "scheduled": "2026-10-29T08:40",
-      "expected": "2026-10-29T08:40",
-      "status": "On time",
+      "expected": "2026-10-29T08:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -170,20 +143,36 @@
         "Worcester Shrub Hill"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-10-29T08:10",
-      "expected": "2026-10-29T08:17",
-      "status": "Delayed",
+      "scheduled": "2026-10-29T09:12",
+      "expected": "2026-10-29T09:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
       "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-10-29T08:27",
       "expected": "2026-10-29T08:27",
@@ -219,8 +208,8 @@
     },
     {
       "scheduled": "2026-10-29T08:39",
-      "expected": "2026-10-29T08:39",
-      "status": "On time",
+      "expected": "2026-10-29T08:41",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -258,6 +247,17 @@
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-29T09:10",
+      "expected": "2026-10-29T09:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Doncaster",
       "reason": "",
       "mode": "train"
     }
