@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T07:40:14+00:00",
+  "generated_at": "2026-10-30T07:45:15+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,30 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-30T07:29",
-      "expected": "2026-10-30T07:40",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T07:40",
-      "expected": "2026-10-30T07:40",
-      "status": "On time",
+      "expected": "2026-10-30T07:44",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -55,13 +34,13 @@
     },
     {
       "scheduled": "2026-10-30T07:43",
-      "expected": "2026-10-30T07:47",
+      "expected": "2026-10-30T07:49",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by more trains than usual needing repairs at the same time",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -200,19 +179,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-30T07:27",
-      "expected": "2026-10-30T07:39",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Paignton",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T07:38",
-      "expected": "2026-10-30T07:40",
+      "expected": "2026-10-30T07:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -296,6 +264,17 @@
       "origin": "Birmingham New Street",
       "destination": "Bristol Temple Meads",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T08:32",
+      "expected": "2026-10-30T08:36",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "mode": "train"
     }
   ],
