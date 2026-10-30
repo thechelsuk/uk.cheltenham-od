@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T09:05:15+00:00",
+  "generated_at": "2026-10-30T09:10:14+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,44 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-30T09:03",
-      "expected": "2026-10-30T09:05",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-10-30T09:03",
-      "expected": "2026-10-30T09:05",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T09:12",
-      "expected": "2026-10-30T09:23",
+      "expected": "2026-10-30T09:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -165,23 +129,48 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T09:47",
+      "expected": "2026-10-30T09:50",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by a points failure",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T09:52",
+      "expected": "2026-10-30T09:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-30T09:02",
-      "expected": "2026-10-30T09:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Salisbury",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T09:10",
-      "expected": "2026-10-30T09:22",
+      "expected": "2026-10-30T09:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -225,7 +214,7 @@
     },
     {
       "scheduled": "2026-10-30T09:30",
-      "expected": "2026-10-30T09:34",
+      "expected": "2026-10-30T09:37",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -253,6 +242,28 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T09:45",
+      "expected": "2026-10-30T09:49",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by a points failure",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T09:50",
+      "expected": "2026-10-30T09:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leeds",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
