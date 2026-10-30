@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:10:14+00:00",
+  "generated_at": "2026-10-30T13:15:15+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-30T13:03",
-      "expected": "2026-10-30T13:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-30T13:12",
       "expected": "2026-10-30T13:18",
@@ -61,7 +40,7 @@
     },
     {
       "scheduled": "2026-10-30T13:15",
-      "expected": "2026-10-30T13:23",
+      "expected": "2026-10-30T13:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -97,8 +76,8 @@
     },
     {
       "scheduled": "2026-10-30T13:29",
-      "expected": "2026-10-30T13:29",
-      "status": "On time",
+      "expected": "2026-10-30T13:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -132,8 +111,8 @@
     },
     {
       "scheduled": "2026-10-30T13:40",
-      "expected": "2026-10-30T13:40",
-      "status": "On time",
+      "expected": "2026-10-30T13:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -170,6 +149,28 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T13:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -186,7 +187,7 @@
     },
     {
       "scheduled": "2026-10-30T13:14",
-      "expected": "2026-10-30T13:22",
+      "expected": "2026-10-30T13:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -219,7 +220,7 @@
     },
     {
       "scheduled": "2026-10-30T13:27",
-      "expected": "2026-10-30T13:29",
+      "expected": "2026-10-30T13:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -241,7 +242,7 @@
     },
     {
       "scheduled": "2026-10-30T13:38",
-      "expected": "2026-10-30T13:40",
+      "expected": "2026-10-30T13:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -259,6 +260,17 @@
       "origin": "Glasgow Central",
       "destination": "Plymouth",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T13:58",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
