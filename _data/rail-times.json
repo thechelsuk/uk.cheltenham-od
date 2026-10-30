@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T07:00:15+00:00",
+  "generated_at": "2026-10-30T07:05:14+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,29 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-30T06:48",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by train crew being delayed",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T07:14",
-      "expected": "2026-10-30T07:16",
-      "status": "Delayed",
+      "expected": "2026-10-30T07:14",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -106,7 +86,7 @@
     },
     {
       "scheduled": "2026-10-30T07:29",
-      "expected": "2026-10-30T07:32",
+      "expected": "2026-10-30T07:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -197,13 +177,36 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T07:55",
+      "expected": "2026-10-30T07:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-10-30T07:12",
-      "expected": "2026-10-30T07:15",
-      "status": "Delayed",
+      "expected": "2026-10-30T07:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -235,7 +238,7 @@
     },
     {
       "scheduled": "2026-10-30T07:27",
-      "expected": "2026-10-30T07:31",
+      "expected": "2026-10-30T07:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -285,6 +288,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T07:54",
+      "expected": "2026-10-30T07:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
