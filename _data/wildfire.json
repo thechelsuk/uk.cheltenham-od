@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-29T10:27:28.979275+00:00",
-  "issued_iso": "2026-10-29T05:33",
+  "generated_at": "2026-10-30T10:29:21.333939+00:00",
+  "issued_iso": "2026-10-30T05:40",
   "source": "Met Office Fire Severity Index, published by Natural England",
   "source_url": "https://openaccess.naturalengland.org.uk/",
   "radius_km": 9.7,
   "radius_miles": 6,
   "today": {
-    "date": "2026-10-29",
+    "date": "2026-10-30",
     "offset": 0,
     "rating": 1,
     "label": "Low",
@@ -24,7 +24,7 @@
   },
   "days": [
     {
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "offset": 0,
       "rating": 1,
       "label": "Low",
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "date": "2026-10-30",
+      "date": "2026-10-31",
       "offset": 1,
       "rating": 1,
       "label": "Low",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "date": "2026-10-31",
+      "date": "2026-11-01",
       "offset": 2,
       "rating": 1,
       "label": "Low",
@@ -75,53 +75,30 @@
       ]
     },
     {
-      "date": "2026-11-01",
-      "offset": 3,
-      "rating": 1,
-      "label": "Low",
-      "squares_at_max": [
-        "SO81",
-        "SO82",
-        "SO83",
-        "SO91",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP02",
-        "SP03"
-      ]
-    },
-    {
       "date": "2026-11-02",
-      "offset": 4,
-      "rating": 1,
-      "label": "Low",
+      "offset": 3,
+      "rating": 2,
+      "label": "Moderate",
       "squares_at_max": [
-        "SO81",
         "SO82",
-        "SO83",
-        "SO91",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP02",
-        "SP03"
+        "SO83"
       ]
     },
     {
       "date": "2026-11-03",
-      "offset": 5,
-      "rating": 1,
-      "label": "Low",
+      "offset": 4,
+      "rating": 2,
+      "label": "Moderate",
       "squares_at_max": [
-        "SO81",
-        "SO82",
-        "SO83",
-        "SO91",
-        "SO92",
-        "SO93",
-        "SP01",
-        "SP02",
+        "SO82"
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "offset": 5,
+      "rating": 2,
+      "label": "Moderate",
+      "squares_at_max": [
         "SP03"
       ]
     }
@@ -130,11 +107,6 @@
     {
       "ref": "SO81",
       "days": [
-        {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
         {
           "date": "2026-10-30",
           "rating": 1,
@@ -157,6 +129,11 @@
         },
         {
           "date": "2026-11-03",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -192,11 +169,6 @@
       "ref": "SO82",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -213,11 +185,16 @@
         },
         {
           "date": "2026-11-02",
-          "rating": 1,
-          "label": "Low"
+          "rating": 2,
+          "label": "Moderate"
         },
         {
           "date": "2026-11-03",
+          "rating": 2,
+          "label": "Moderate"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -253,11 +230,6 @@
       "ref": "SO83",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -274,11 +246,16 @@
         },
         {
           "date": "2026-11-02",
+          "rating": 2,
+          "label": "Moderate"
+        },
+        {
+          "date": "2026-11-03",
           "rating": 1,
           "label": "Low"
         },
         {
-          "date": "2026-11-03",
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -314,11 +291,6 @@
       "ref": "SO91",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -340,6 +312,11 @@
         },
         {
           "date": "2026-11-03",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -375,11 +352,6 @@
       "ref": "SO92",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -401,6 +373,11 @@
         },
         {
           "date": "2026-11-03",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -436,11 +413,6 @@
       "ref": "SO93",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -462,6 +434,11 @@
         },
         {
           "date": "2026-11-03",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -497,11 +474,6 @@
       "ref": "SP01",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -523,6 +495,11 @@
         },
         {
           "date": "2026-11-03",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -558,11 +535,6 @@
       "ref": "SP02",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -584,6 +556,11 @@
         },
         {
           "date": "2026-11-03",
+          "rating": 1,
+          "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
           "rating": 1,
           "label": "Low"
         }
@@ -619,11 +596,6 @@
       "ref": "SP03",
       "days": [
         {
-          "date": "2026-10-29",
-          "rating": 1,
-          "label": "Low"
-        },
-        {
           "date": "2026-10-30",
           "rating": 1,
           "label": "Low"
@@ -647,6 +619,11 @@
           "date": "2026-11-03",
           "rating": 1,
           "label": "Low"
+        },
+        {
+          "date": "2026-11-04",
+          "rating": 2,
+          "label": "Moderate"
         }
       ],
       "rating": 1,
