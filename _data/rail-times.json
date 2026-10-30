@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:20:14+00:00",
+  "generated_at": "2026-10-30T18:25:15+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,22 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-10-30T18:19",
-      "expected": "2026-10-30T18:19",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-30T18:25",
       "expected": "2026-10-30T18:25",
@@ -47,7 +31,7 @@
     },
     {
       "scheduled": "2026-10-30T18:31",
-      "expected": "2026-10-30T18:54",
+      "expected": "2026-10-30T18:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -62,8 +46,8 @@
     },
     {
       "scheduled": "2026-10-30T18:40",
-      "expected": "2026-10-30T18:40",
-      "status": "On time",
+      "expected": "2026-10-30T18:43",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -76,8 +60,8 @@
     },
     {
       "scheduled": "2026-10-30T18:40",
-      "expected": "2026-10-30T18:40",
-      "status": "On time",
+      "expected": "2026-10-30T18:42",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -111,7 +95,7 @@
     },
     {
       "scheduled": "2026-10-30T18:52",
-      "expected": "2026-10-30T19:04",
+      "expected": "2026-10-30T19:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -135,7 +119,7 @@
     },
     {
       "scheduled": "2026-10-30T18:55",
-      "expected": "2026-10-30T19:02",
+      "expected": "2026-10-30T19:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -156,20 +140,29 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T19:02",
+      "expected": "2026-10-30T19:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-30T18:18",
-      "expected": "2026-10-30T18:18",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-30T18:24",
       "expected": "2026-10-30T18:24",
@@ -183,7 +176,7 @@
     },
     {
       "scheduled": "2026-10-30T18:27",
-      "expected": "2026-10-30T18:29",
+      "expected": "2026-10-30T18:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -194,7 +187,7 @@
     },
     {
       "scheduled": "2026-10-30T18:29",
-      "expected": "2026-10-30T18:53",
+      "expected": "2026-10-30T18:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -216,7 +209,7 @@
     },
     {
       "scheduled": "2026-10-30T18:38",
-      "expected": "2026-10-30T18:40",
+      "expected": "2026-10-30T18:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -238,7 +231,7 @@
     },
     {
       "scheduled": "2026-10-30T18:50",
-      "expected": "2026-10-30T19:03",
+      "expected": "2026-10-30T19:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -249,7 +242,7 @@
     },
     {
       "scheduled": "2026-10-30T18:54",
-      "expected": "2026-10-30T19:01",
+      "expected": "2026-10-30T19:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
