@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T07:20:14+00:00",
+  "generated_at": "2026-10-30T07:25:14+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,36 +12,6 @@
     "Trains running between London Paddington and Heathrow Terminals / Reading may be cancelled out in full or revised. Latest information can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-10-30T07:18",
-      "expected": "2026-10-30T07:21",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Coleshill Parkway",
-        "Nuneaton",
-        "Leicester",
-        "Melton Mowbray",
-        "Oakham",
-        "Stamford",
-        "Peterborough",
-        "March",
-        "Manea",
-        "Ely",
-        "Cambridge",
-        "Cambridge South",
-        "Stansted Airport"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-30T07:24",
       "expected": "2026-10-30T07:24",
@@ -59,7 +29,7 @@
     },
     {
       "scheduled": "2026-10-30T07:29",
-      "expected": "2026-10-30T07:34",
+      "expected": "2026-10-30T07:37",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -194,24 +164,34 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T08:01",
+      "expected": "2026-10-30T08:01",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-30T07:17",
-      "expected": "2026-10-30T07:20",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T07:22",
-      "expected": "2026-10-30T07:22",
-      "status": "On time",
+      "expected": "2026-10-30T07:24",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -221,7 +201,7 @@
     },
     {
       "scheduled": "2026-10-30T07:27",
-      "expected": "2026-10-30T07:33",
+      "expected": "2026-10-30T07:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -232,13 +212,13 @@
     },
     {
       "scheduled": "2026-10-30T07:29",
-      "expected": "2026-10-30T07:29",
-      "status": "On time",
+      "expected": "2026-10-30T07:33",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a speed restriction",
       "mode": "train"
     },
     {
@@ -293,6 +273,17 @@
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T07:59",
+      "expected": "2026-10-30T07:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
