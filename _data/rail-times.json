@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T12:35:16+00:00",
+  "generated_at": "2026-10-30T12:40:16+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-10-30T12:35",
-      "expected": "2026-10-30T12:43",
+      "expected": "2026-10-30T12:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -27,7 +27,7 @@
     },
     {
       "scheduled": "2026-10-30T12:40",
-      "expected": "2026-10-30T12:42",
+      "expected": "2026-10-30T12:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -47,7 +47,7 @@
     },
     {
       "scheduled": "2026-10-30T12:40",
-      "expected": "2026-10-30T12:44",
+      "expected": "2026-10-30T12:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -82,7 +82,7 @@
     },
     {
       "scheduled": "2026-10-30T12:52",
-      "expected": "2026-10-30T13:00",
+      "expected": "2026-10-30T13:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -158,8 +158,8 @@
     },
     {
       "scheduled": "2026-10-30T13:12",
-      "expected": "2026-10-30T13:12",
-      "status": "On time",
+      "expected": "2026-10-30T13:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -183,23 +183,29 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T13:15",
+      "expected": "2026-10-30T13:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-30T12:27",
-      "expected": "2026-10-30T12:33",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by more trains than usual needing repairs at the same time",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T12:32",
-      "expected": "2026-10-30T12:36",
+      "expected": "2026-10-30T12:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -210,7 +216,7 @@
     },
     {
       "scheduled": "2026-10-30T12:33",
-      "expected": "2026-10-30T12:42",
+      "expected": "2026-10-30T12:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -221,7 +227,7 @@
     },
     {
       "scheduled": "2026-10-30T12:38",
-      "expected": "2026-10-30T12:43",
+      "expected": "2026-10-30T12:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -243,7 +249,7 @@
     },
     {
       "scheduled": "2026-10-30T12:50",
-      "expected": "2026-10-30T12:59",
+      "expected": "2026-10-30T13:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -265,12 +271,23 @@
     },
     {
       "scheduled": "2026-10-30T13:10",
-      "expected": "2026-10-30T13:10",
-      "status": "On time",
+      "expected": "2026-10-30T13:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T13:14",
+      "expected": "2026-10-30T13:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
