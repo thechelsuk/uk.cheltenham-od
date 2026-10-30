@@ -21,6 +21,8 @@
 #               description: "..."
 #               short: "..."         optional, as above
 #               a_z: true            also list it in the footer's Pages (A-Z)
+#           profile: "care home"     optional: the pages made under it (one per care home)
+#                                    are counted as "N care home profiles" on press and sponsor
 #
 # A page can belong to a category without a menu entry by setting, in its
 # front matter, `section:` (the category), `subgroup:` (its heading there)
@@ -77,7 +79,8 @@ module Navigation
     map = {}
     items.each do |item|
       map[norm(item["link"])] = {
-        "name" => item["name"], "short" => item["short"], "parent" => nil, "group" => item["group"]
+        "name" => item["name"], "short" => item["short"], "parent" => nil, "group" => item["group"],
+        "profile" => item["profile"]
       }
       (item["children"] || []).each do |child|
         map[norm(child["link"])] = {
@@ -167,6 +170,55 @@ module Navigation
         p.data["family"] = parent_families[url].map { |l| l.merge("current" => l["url"] == url) }
       end
     end
+    count_pages(site, pages, map)
+  end
+
+  # Pages that carry no sponsor card although they sit in a category.
+  NO_SPONSOR = ["/submission"].freeze
+
+  # How many built pages sit in each category, so the sponsor table and press
+  # pack quote real numbers. "count" is the category page and every page in the
+  # structure; record pages made under a parent (each care home, school, ward)
+  # vary with the data, so they are counted apart in "profiles".
+  # Each menu group gains "count" and "profiles" => [{"parent", "count"}], where
+  # "parent" is the item's `profile:` label in _data/navigation ("care home").
+  def count_pages(site, pages, map)
+    site.config["navigation_groups"].each do |g|
+      g["count"] = 0
+      g["profiles"] = Hash.new(0)
+    end
+    groups = site.config["navigation_groups"].to_h { |g| [g["name"], g] }
+    pages.each do |p|
+      url = norm(p.url)
+      next if NO_SPONSOR.include?(url) || !sitemap?(p)
+
+      if p.data["layout"] == "explore-category"
+        group = groups[p.data["group"]]
+      elsif map[url]
+        group = groups[map[url]["group"]]
+      elsif p.data["parent"] && (parent = map[norm(p.data["parent"])])
+        group = groups[parent["group"]]
+        if group && parent["profile"]
+          group["profiles"][parent["profile"]] += 1
+          next
+        end
+      end
+      group["count"] += 1 if group
+    end
+    site.config["navigation_groups"].each do |g|
+      g["profiles"] = g["profiles"].map { |name, n| { "parent" => name, "count" => n } }
+    end
+    site.config["sitemap_pages"] = pages.count { |p| sitemap?(p) }
+  end
+
+  # The pages _pages/meta/sitemap.xml lists: HTML pages that aren't noindex,
+  # posts, and newsletters already out.
+  def sitemap?(page)
+    if page.respond_to?(:collection) && page.collection
+      label = page.collection.label
+      return label == "posts" || (label == "newsletters" && page.date <= Time.now)
+    end
+    page.html? && !page.data["robots"].to_s.include?("noindex")
   end
 
   # The "In this section" row for a page outside the structure that other
@@ -213,8 +265,31 @@ module Navigation
         { "name" => sg["name"], "items" => sg_items }
       end
       url = page && norm(page.url)
-      { "name" => g["group"], "url" => url, "type" => page&.data&.dig("type"), "subgroups" => subgroups }
+      { "name" => g["group"], "url" => url, "type" => page&.data&.dig("type"), "subgroups" => subgroups,
+        "pages" => summary(site, g["group"], items) }
     end
+  end
+
+  # Every page in a category as short names, each main page with its
+  # sub-pages, for the sponsor table and press pack:
+  # [{"name" => "Fuel Prices", "url" => "/...", "sub" => ["Fuel Price History"]}, ...]
+  def summary(site, group, items)
+    rows = items.select { |i| i["group"] == group }.map do |i|
+      name = short(i["name"], nil, i["short"])
+      { "name" => name, "url" => norm(i["link"]),
+        "sub" => (i["children"] || []).map { |c| short(c["name"], name, c["short"]) } }
+    end
+    extra = section_pages(site).select { |p| p.data["section"] == group }
+    extra.reject { |p| p.data["parent"] }.each do |p|
+      rows << { "name" => short(p.data["nav_title"] || p.data["title"]), "url" => norm(p.url), "sub" => [] }
+    end
+    extra.select { |p| p.data["parent"] }.each do |p|
+      row = rows.find { |r| r["url"] == norm(p.data["parent"]) }
+      next unless row
+
+      row["sub"] << short(p.data["nav_title"] || p.data["title"], row["name"])
+    end
+    rows
   end
 
   # For a page outside the structure: the trail to its parent, or Home and

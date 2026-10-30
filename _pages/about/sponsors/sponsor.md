@@ -6,14 +6,27 @@ seo: Sponsorship opportunities for Cheltenham Open Data - support location commu
 type: "cod"
 permalink: /sponsor
 description: Reach local people right where they're already looking — tasteful, page-specific sponsorship on Cheltenham Open Data.
-sponsor_gta: "https://buy.stripe.com/dRm3cvfML5ej7OvdJY0Ny04"
-sponsor_hap: "https://buy.stripe.com/8x29ATeIHcGLgl149o0Ny05"
-sponsor_sae: "https://buy.stripe.com/00waEXfML7mr6Kr0Xc0Ny06"
-sponsor_tdo: "https://buy.stripe.com/00wdR99on9uz4Cj8pE0Ny07"
-sponsor_cas: "https://buy.stripe.com/14A6oH443gX1d8P0Xc0Ny08"
-sponsor_aai: "https://buy.stripe.com/4gMaEX7gffSX5Gn6hw0Ny09"
 sponsor_principal: "https://buy.stripe.com/5kQeVdasr0Y37OvaxM0Ny03"
 nav_title: "Sponsorship"
+sponsor_categories:
+  "Getting Around":
+    buy: "https://buy.stripe.com/dRm3cvfML5ej7OvdJY0Ny04"
+    ideal: "Garages, MOT & servicing, tyre fitters, EV installers, driving schools, taxi firms, bike shops & repairs"
+  "Home & Property":
+    buy: "https://buy.stripe.com/8x29ATeIHcGLgl149o0Ny05"
+    ideal: "Estate & letting agents, mortgage brokers, conveyancers, builders & extension firms, removals & storage, broadband providers, nurseries, tutors & school uniform shops, student lettings"
+  "Safety & Environment":
+    buy: "https://buy.stripe.com/00waEXfML7mr6Kr0Xc0Ny06"
+    ideal: "Alarm & camera installers, locksmiths, insurance brokers, damp, drainage & flood specialists, electricians, tree surgeons"
+  "Things to Do":
+    buy: "https://buy.stripe.com/00wdR99on9uz4Cj8pE0Ny07"
+    ideal: "Restaurants, cafés & pubs, hotels & guest houses, venues & attractions, event organisers, sports clubs & gyms"
+  "Community & Support":
+    buy: "https://buy.stripe.com/14A6oH443gX1d8P0Xc0Ny08"
+    ideal: "Private dentists & opticians, pharmacies, care & home care providers, health & wellbeing services, parcel, print & courier shops, community businesses"
+  "About & Info":
+    buy: "https://buy.stripe.com/4gMaEX7gffSX5Gn6hw0Ny09"
+    ideal: "Recruitment agencies, accountants & solicitors, local marketing & print services, business services"
 ---
 
 ## Reach Local People for Your Local Business

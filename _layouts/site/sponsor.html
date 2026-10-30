@@ -16,6 +16,8 @@
         <p>Each category is £100/month at the founding rate, with editorial included. One sponsor per category.
             The Pages column shows how many pages sit under each category, and the pages are listed, so you can see how many
             pages one sponsorship covers.</p>
+        <p>Your card also appears on each category's record pages, such as the page for an individual school, care home or
+            ward. These aren't in the count, as the number of records rises and falls with the data.</p>
 
         <div class="table-scroll">
             <table class="sponsor-categories-table data-table">
@@ -29,79 +31,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for g in site.navigation_groups %}
+                    {% assign cat = page.sponsor_categories[g.name] %}
                     <tr>
-                        <td><a href="/explore/getting-around">Getting Around</a></td>
-                        <td>Category overview, Fuel Prices (incl. history), EV Charging, Car Parks (incl. permit parking zones), Roadworks (incl. unplanned closures),
-                            Street Works (incl. history), Fix My Street (incl. history), Bus Data (incl. disruption history), Train Times, Cycle Routes, Taxi Ranks</td>
-                        <td class="number">{{ gta_count }}</td>
-                        <td>Garages, MOT &amp; servicing, tyre fitters, EV installers, driving schools, taxi firms, bike shops
-                            &amp; repairs</td>
-                        <td class="action"><a class="pill-link" href="{{ page.sponsor_gta }}"
+                        <td><a href="{{ g.url }}">{{ g.name | escape }}</a></td>
+                        <td>Category overview{% for p in g.pages %}, {{ p.name }}{% if p.sub.size > 0 %} (incl. {{ p.sub | join: ", " }}){% endif %}{% endfor %}{% for pr in g.profiles %}, plus a page for every {{ pr.parent }}{% endfor %}</td>
+                        <td class="number">{{ g.count }}</td>
+                        <td>{{ cat.ideal | escape }}</td>
+                        <td class="action"><a class="pill-link" href="{{ cat.buy }}"
                                 rel="sponsored noopener">Sponsor &rarr;</a></td>
                     </tr>
-                    <tr>
-                        <td><a href="/explore/home-property">Home &amp; Property</a></td>
-                        <td>Category overview, House Prices (incl. yearly archives, affordability, housing supply &amp; property
-                            stock), Rent Prices, Council Tax, Schools &amp; Catchment Areas, Nurseries &amp; Childcare, University of Gloucestershire,
-                            Planning Applications, Broadband &amp; Mobile Coverage, Home Energy Ratings, Recycling, Bin Collections</td>
-                        <td class="number">{{ hap_count }}</td>
-                        <td>Estate &amp; letting agents, mortgage brokers, conveyancers, builders &amp; extension firms, removals
-                            &amp; storage, broadband providers, nurseries, tutors &amp; school uniform shops, student lettings</td>
-                        <td class="action"><a class="pill-link" href="{{ page.sponsor_hap }}"
-                                rel="sponsored noopener">Sponsor &rarr;</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/explore/safety-environment">Safety &amp; Environment</a></td>
-                        <td>Category overview, Cheltenham at Risk, Crime Data (incl. crime map &amp; yearly archives), Road Collisions, Security Alerts,
-                            Cyber Security, Flood Warnings (incl. river levels, flood zones &amp; flood history), River Water Quality, Sewage Overflows
-                            (incl. spill history), Wildfire Risk (incl. history), Air Quality, Power Cuts (incl. history)</td>
-                        <td class="number">{{ sae_count }}</td>
-                        <td>Alarm &amp; camera installers, locksmiths, insurance brokers, damp, drainage &amp; flood specialists,
-                            electricians, tree surgeons</td>
-                        <td class="action"><a class="pill-link" href="{{ page.sponsor_sae }}"
-                                rel="sponsored noopener">Sponsor &rarr;</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/explore/things-to-do">Things to Do</a></td>
-                        <td>Category overview, Festivals (incl. festival accommodation), Where to Eat, Food Hygiene Ratings (incl. rating bands),
-                            Places to Stay, Points of Interest, Sport in Cheltenham (incl. Cheltenham Town FC, Gloucestershire Cricket, parkrun &amp; sports clubs to join),
-                            Clubs &amp; Societies, Arts &amp; Crafts, Play Parks, Public Toilets</td>
-                        <td class="number">{{ tdo_count }}</td>
-                        <td>Restaurants, cafés &amp; pubs, hotels &amp; guest houses, venues &amp; attractions, event organisers,
-                            sports clubs &amp; gyms</td>
-                        <td class="action"><a class="pill-link" href="{{ page.sponsor_tdo }}"
-                                rel="sponsored noopener">Sponsor &rarr;</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/explore/community-support">Community &amp; Support</a></td>
-                        <td>Category overview, GP &amp; Pharmacies, Dentists, Opticians, A&amp;E Waiting Times, Care Homes,
-                            Food Banks (incl. each food bank), Helplines &amp; Contacts (incl. local support), Charities, Third Spaces,
-                            Post Offices &amp; Lockers (incl. InPost &amp; DPD pickup points), COVID-19
-                        </td>
-                        <td class="number">{{ cas_count }}</td>
-                        <td>Private dentists &amp; opticians, pharmacies, care &amp; home care providers, health &amp; wellbeing
-                            services, parcel, print &amp; courier shops, community businesses</td>
-                        <td class="action"><a class="pill-link" href="{{ page.sponsor_cas }}"
-                                rel="sponsored noopener">Sponsor &rarr;</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="/explore/about-info">About &amp; Info</a></td>
-                        <td>Category overview, Cheltenham in Numbers, All About Cheltenham, Wards, Listed Buildings, Weather,
-                            Public Holidays, Politics (incl. party history), Local Elections, Economy (incl. employment &amp; earnings),
-                            Deprivation (incl. child poverty), Council Land &amp; Assets, Latest News, Classifieds</td>
-                        <td class="number">{{ aai_count }}</td>
-                        <td>Recruitment agencies, accountants &amp; solicitors, local marketing &amp; print services,
-                            business services</td>
-                        <td class="action"><a class="pill-link" href="{{ page.sponsor_aai }}"
-                                rel="sponsored noopener">Sponsor &rarr;</a></td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
 
         <h2>Principal Sponsor — Home Page</h2>
-        <p><strong>£250/month.</strong> Front and centre on the site's busiest page — the homepage — plus an editorial
-            feature each month. One slot only.</p>
+        <p><strong>£250/month.</strong> Front and centre on the site's busiest page — the homepage — with the same optional editorial post as category sponsors. One slot only.</p>
         <p><a class="pill-link" href="{{ page.sponsor_principal }}" rel="sponsored noopener">Buy Today
                 &rarr;</a></p>
 

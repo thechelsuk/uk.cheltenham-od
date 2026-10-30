@@ -34,25 +34,16 @@ Cheltenham Open Data is a free, independent hub that pulls public data about Che
 
 ## What We Cover
 
-Live and regularly updated data across:
+{% include site-figures.html %}
+Live and regularly updated data in six topics:
 
-- Air quality
-- Crime data
-- EV charging
-- Flood warnings
-- Food banks (needed items)
-- Food hygiene ratings
-- Fuel prices
-- GPs and pharmacies
-- House prices
-- Local news and daily summaries
-- Planning applications
-- Recycling
-- Schools
-- Security alerts
-- Weather (10-day forecast)
+{% for g in site.navigation_groups %}
 
-Plus classifieds, festivals, points of interest, post offices, public toilets, public holidays, helplines and more.
+- **[{{ g.name }}]({{ g.url }})**: {% for p in g.pages %}{{ p.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+
+{% endfor %}
+
+Plus [guides](/guides), a weekly [newsletter](/newsletter), [feeds](/feeds) and our own [analysis](/news) of the data.
 
 ## Story Angles
 
@@ -86,13 +77,11 @@ _(Happy to provide a tailored quote for your story — just [ask](/contact).)_
 
 ## Facts & Figures
 
-{% include site-figures.html %}
-
-- {{ data_pages_count }} data pages across six topics, from fuel prices to flood warnings
+- Over {{ pages_over }} pages, made up of key data pages and individual record pages
 - {{ site.posts | size }} news posts, including {{ findings | size }} analyses of local data
 - {{ site.data.sources | size }} data sources, most of them openly licensed
 - {{ site.feeds | size }} free feeds, including an [all-in-one alerts feed](/feeds/alerts.xml)
-- Data updated from every five minutes to once a year, in line with each source
+- Data updated from every five minutes to once a month, in line with each source
 - The town's headline figures are on [Cheltenham in Numbers](/cheltenham-in-numbers)
 
 ## Follow & Feeds

@@ -10,7 +10,7 @@ seo: "About Cheltenham Open Data: what the site offers, how the data is gathered
 
 ## What Cheltenham Open Data Is
 
-Cheltenham Open Data puts the town's public information in one place. Fuel prices, flood warnings, house prices, planning applications, school ratings, bus routes, care homes and more come from more than 60 official sources and are kept up to date automatically, some every few minutes and others as new figures are published.
+Cheltenham Open Data puts the town's public information in one place. Fuel prices, flood warnings, house prices, planning applications, school ratings, bus routes, care homes and more come from {{ site.data.sources | size }} sources, most of them official, and are kept up to date automatically, some every few minutes and others as new figures are published.
 
 It's free, fast and independent: no pop-ups, no tracking cookies and no clickbait, just the information people in Cheltenham look for, laid out to read quickly on a phone.
 
@@ -25,14 +25,13 @@ Cheltenham Open Data is built and run by Mat Benfield ([thechels.uk](https://the
 ## What You'll Find Here
 
 {% include site-figures.html %}
-{{ data_pages_count }} data pages in six topics, drawn from {{ site.data.sources | size }} data sources:
+Over {{ pages_over }} pages, made up of key data pages and individual record pages, drawn from {{ site.data.sources | size }} data sources:
 
-- **[Getting Around](/explore/getting-around)**: fuel prices, EV charging, car parks and permit zones, roadworks, street works, reported street problems, buses, trains, taxi ranks and cycle routes.
-- **[Home & Property](/explore/home-property)**: house prices, rents, council tax, home energy ratings, schools, nurseries and the university, planning applications, broadband, mobile coverage, recycling and bin collections.
-- **[Safety & Environment](/explore/safety-environment)**: crime figures, road collisions, security alerts, flood warnings and river levels, river water quality, sewage overflows, air quality, wildfire risk and power cuts.
-- **[Things to Do](/explore/things-to-do)**: festivals, points of interest, play parks, public toilets, where to eat, food hygiene ratings, places to stay, sport, clubs and societies, and arts and crafts.
-- **[Community & Support](/explore/community-support)**: GPs and pharmacies, dentists, opticians, A&E waiting times, care homes, the COVID-19 pandemic, food banks, helplines, charities, third spaces, and post offices and parcel lockers.
-- **[About & Info](/explore/about-info)**: the town [in numbers](/cheltenham-in-numbers), its history and population, a profile of every ward, the weather, public holidays, politics and local elections, the economy, deprivation, listed buildings, council land, local news and classifieds.
+{% for g in site.navigation_groups %}
+
+- **[{{ g.name }}]({{ g.url }})**: {% for p in g.pages %}{{ p.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+
+{% endfor %}
 
 There's also a free [weekly newsletter](/newsletter) and a set of [guides](/guides) for moving to, studying in and visiting Cheltenham.
 

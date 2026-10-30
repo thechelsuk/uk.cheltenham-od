@@ -1,6 +1,7 @@
 {% comment %}
   Live counts of what the site publishes, shared by the press and about pages:
-  data pages (every menu entry, its sub-pages and section pages), posts, data sources and feeds.
+  data pages (every menu entry, its sub-pages and section pages), every page
+  in the sitemap (as a rounded "over N"), posts, sources and feeds.
 {% endcomment %}
 {% assign data_pages = 0 %}
 {% for item in site.navigation_header %}
@@ -11,3 +12,6 @@
 {% assign data_pages = data_pages | plus: section_pages.size %}
 {% assign findings = site.posts | where_exp: "post", "post.finding" %}
 {% assign data_pages_count = data_pages %}
+{% assign sitemap_count = site.sitemap_pages %}
+{% comment %} Rounded down to the nearest 25, so "over N" stays true as record pages come and go. {% endcomment %}
+{% assign pages_over = sitemap_count | minus: 1 | divided_by: 25 | times: 25 %}
