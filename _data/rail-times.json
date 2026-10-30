@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T16:45:15+00:00",
+  "generated_at": "2026-10-30T16:50:16+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,31 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-10-30T16:31",
-      "expected": "2026-10-30T16:44",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T16:40",
-      "expected": "2026-10-30T16:44",
+      "expected": "2026-10-30T16:49",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -55,7 +32,7 @@
     },
     {
       "scheduled": "2026-10-30T16:40",
-      "expected": "2026-10-30T16:45",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -75,7 +52,7 @@
     },
     {
       "scheduled": "2026-10-30T16:50",
-      "expected": "2026-10-30T17:07",
+      "expected": "2026-10-30T17:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -90,7 +67,7 @@
     },
     {
       "scheduled": "2026-10-30T16:52",
-      "expected": "2026-10-30T17:11",
+      "expected": "2026-10-30T17:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -155,8 +132,8 @@
     },
     {
       "scheduled": "2026-10-30T17:12",
-      "expected": "2026-10-30T17:12",
-      "status": "On time",
+      "expected": "2026-10-30T17:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -181,7 +158,7 @@
     },
     {
       "scheduled": "2026-10-30T17:19",
-      "expected": "2026-10-30T17:26",
+      "expected": "2026-10-30T17:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -219,19 +196,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-30T16:30",
-      "expected": "2026-10-30T16:43",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Paignton",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-30T16:38",
-      "expected": "2026-10-30T16:44",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -242,7 +208,7 @@
     },
     {
       "scheduled": "2026-10-30T16:47",
-      "expected": "2026-10-30T17:06",
+      "expected": "2026-10-30T17:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -253,7 +219,7 @@
     },
     {
       "scheduled": "2026-10-30T16:50",
-      "expected": "2026-10-30T17:10",
+      "expected": "2026-10-30T17:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -275,8 +241,8 @@
     },
     {
       "scheduled": "2026-10-30T17:10",
-      "expected": "2026-10-30T17:10",
-      "status": "On time",
+      "expected": "2026-10-30T17:13",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -286,7 +252,7 @@
     },
     {
       "scheduled": "2026-10-30T17:18",
-      "expected": "2026-10-30T17:25",
+      "expected": "2026-10-30T17:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -304,6 +270,17 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-30T17:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
       "mode": "train"
     }
   ],
