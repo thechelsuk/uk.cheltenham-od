@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T06:50:07+00:00",
+  "generated_at": "2026-10-31T06:55:09+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,29 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-10-31T06:44",
-      "expected": "2026-10-31T06:49",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-31T06:58",
-      "expected": "2026-10-31T07:00",
-      "status": "Delayed",
+      "expected": "2026-10-31T06:58",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Gloucester",
@@ -185,24 +165,30 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-31T08:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-10-31T06:43",
-      "expected": "2026-10-31T06:48",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-10-31T06:57",
-      "expected": "2026-10-31T06:59",
-      "status": "Delayed",
+      "expected": "2026-10-31T06:57",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Gloucester",
@@ -285,6 +271,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-31T08:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
