@@ -9,8 +9,6 @@ import importlib.util
 import json
 import pathlib
 import runpy
-from datetime import date
-
 import pytest
 
 import helper
@@ -52,7 +50,7 @@ def test_main_adds_todays_digest_of_the_top_ten_newest_first(site):
     run_main()
 
     digests = json.loads((site / "_data" / "news-digests.json").read_text())["digests"]
-    today = date.today().isoformat()
+    today = helper.uk_today().isoformat()
     assert [d["date"] for d in digests] == [today, "2026-10-01"]
     assert len(digests[0]["items"]) == digest.DIGEST_SIZE
     assert digests[0]["items"][0] == {"title": "Story 0", "link": "/news/0", "source": "Echo"}
@@ -76,3 +74,15 @@ def test_main_needs_the_archive(site):
     (site / "_data" / "news-archive.json").unlink()
     with pytest.raises(SystemExit, match="run news.py first"):
         run_main()
+
+
+def test_digest_feed_gives_uk_created_times_in_utc(tmp_path):
+    digests = [
+        {"date": "2026-07-02", "created_iso": "2026-07-02T08:46:00+01:00", "items": []},
+        {"date": "2026-07-01", "created_iso": "2026-07-01T07:46:00", "items": []},
+    ]
+    out = tmp_path / "feed.xml"
+    helper.write_digest_atom(digests, out, "/feed.xml", "t", "s", "https://x/feed.xml", "https://x/")
+    feed = out.read_text()
+    assert "<updated>2026-07-02T07:46:00Z</updated>" in feed
+    assert "<updated>2026-07-01T07:46:00Z</updated>" in feed

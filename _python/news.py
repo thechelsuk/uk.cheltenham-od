@@ -17,7 +17,8 @@ SITE_URL = "https://cheltenham-od.uk"
 
 
 def time_ago(dt):
-    now = datetime.now()
+    """dt is a naive UK time, like the published_iso values."""
+    now = datetime.now(SITE_TIMEZONE).replace(tzinfo=None)
     diff = now - dt
     if diff.days > 0:
         return f"{diff.days} day{'s' if diff.days != 1 else ''} ago"

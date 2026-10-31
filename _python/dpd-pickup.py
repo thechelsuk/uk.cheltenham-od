@@ -6,7 +6,6 @@ JSON to Jekyll's _data dir.
 Source: https://apis.pickup.dpd.co.uk/v1/pickuplocation
 """
 
-import datetime
 
 import helper
 
@@ -116,7 +115,7 @@ if __name__ == "__main__":
 
     payload = {
         "updated":     helper.updated_timestamp(),
-        "updated_iso": datetime.date.today().isoformat(),
+        "updated_iso": helper.uk_today().isoformat(),
         "source":      "DPD",
         "source_url":  "https://pickup.dpd.co.uk/",
         "refresh":     "every two hours",

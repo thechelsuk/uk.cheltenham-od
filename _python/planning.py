@@ -29,6 +29,7 @@ import argparse
 from pathlib import Path
 from datetime import datetime, timedelta
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -77,7 +78,8 @@ DECISION_TERMS = (
     "withdraw", "dismiss", "decid", "split",
 )
 
-TODAY = datetime.now().strftime("%Y-%m-%d")
+LONDON = ZoneInfo("Europe/London")
+TODAY = datetime.now(LONDON).strftime("%Y-%m-%d")
 
 DEBUG = False
 
@@ -415,7 +417,7 @@ def best_date(r):
 
 
 def apply_retention(records_by_ref):
-    cutoff = (datetime.now() - timedelta(days=RETENTION_DAYS)).strftime("%Y-%m-%d")
+    cutoff = (datetime.now(LONDON) - timedelta(days=RETENTION_DAYS)).strftime("%Y-%m-%d")
     kept = {}
     for ref, r in records_by_ref.items():
         rec_ok = (r.get("received_date") or "") >= cutoff
@@ -429,7 +431,7 @@ def apply_retention(records_by_ref):
 
 
 def build_payload(records_by_ref):
-    cutoff = (datetime.now() - timedelta(days=RETENTION_DAYS)).strftime("%Y-%m-%d")
+    cutoff = (datetime.now(LONDON) - timedelta(days=RETENTION_DAYS)).strftime("%Y-%m-%d")
     records = list(records_by_ref.values())
 
     applications = sorted(
@@ -441,7 +443,7 @@ def build_payload(records_by_ref):
         key=best_date, reverse=True)
 
     rec_dates = [r["received_date"] for r in applications if r.get("received_date")]
-    now = datetime.now()
+    now = datetime.now(LONDON)
     pending = sum(1 for r in applications if not is_decision(r.get("status")))
 
 

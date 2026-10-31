@@ -5,7 +5,6 @@ key required), and write normalised JSON to Jekyll's _data dir.
 Source: https://api-uk-global-points.easypack24.net
 """
 
-import datetime
 import re
 
 import config
@@ -79,7 +78,7 @@ if __name__ == "__main__":
 
     payload = {
         "updated":     helper.updated_timestamp(),
-        "updated_iso": datetime.date.today().isoformat(),
+        "updated_iso": helper.uk_today().isoformat(),
         "source":      "InPost",
         "source_url":  "https://www.inpost.co.uk/",
         "refresh":     "every two hours",

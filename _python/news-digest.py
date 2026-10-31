@@ -3,7 +3,6 @@
 # news.py: it needs to fire once at a fixed time of day, not every time the
 # (much more frequent) headline fetch runs.
 import json
-from datetime import datetime
 
 import helper
 
@@ -32,7 +31,7 @@ if __name__ == "__main__":
     digests_path = root / "_data/news-digests.json"
     digests = load_digests(digests_path)
 
-    today = datetime.now().date().isoformat()
+    today = helper.uk_today().isoformat()
     already_done = any(d["date"] == today for d in digests)
 
     if already_done:
@@ -41,7 +40,7 @@ if __name__ == "__main__":
         snapshot = all_items[:DIGEST_SIZE]
         digests.append({
             "date": today,
-            "created_iso": datetime.now().isoformat(),
+            "created_iso": helper.uk_now().isoformat(timespec="seconds"),
             "items": [
                 {"title": item["title"], "link": item["link"], "source": item["source"]}
                 for item in snapshot

@@ -1,4 +1,3 @@
-import datetime
 
 import helper
 
@@ -107,7 +106,7 @@ if __name__ == "__main__":
 
     payload = {
         "updated":            helper.updated_timestamp(),
-        "updated_iso":        datetime.date.today().isoformat(),
+        "updated_iso":        helper.uk_today().isoformat(),
         "source":             "Bus Open Data Service (Department for Transport)",
         "source_url":         SOURCE_PAGE,
         "licence":            "Open Government Licence v3.0",

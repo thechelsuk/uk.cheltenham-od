@@ -129,7 +129,7 @@ if __name__ == "__main__":
 
     payload = {
         "updated":            helper.updated_timestamp(),
-        "updated_iso":        datetime.date.today().isoformat(),
+        "updated_iso":        helper.uk_today().isoformat(),
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "source":             "Office for National Statistics via Nomis",
         "source_url": "https://www.nomisweb.co.uk/",
@@ -150,7 +150,7 @@ if __name__ == "__main__":
 
     employment_payload = {
         "updated":     helper.updated_timestamp(),
-        "updated_iso": datetime.date.today().isoformat(),
+        "updated_iso": helper.uk_today().isoformat(),
         "generated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "source":      "Office for National Statistics via Nomis",
         "source_url": "https://www.nomisweb.co.uk/",

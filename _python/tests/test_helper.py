@@ -9,6 +9,7 @@ import json
 import pathlib
 import subprocess
 import sys
+from datetime import date, datetime, timezone
 
 import pytest
 import requests
@@ -208,6 +209,35 @@ def test_geocode_postcodes_skips_unknown_postcodes(calls):
     ]})]
     assert helper.geocode_postcodes({"GL50 1AA", "ZZ1 1ZZ"}) == {"GL50 1AA": (51.9, -2.07)}
     assert calls[0]["json"] == {"postcodes": ["GL50 1AA", "ZZ1 1ZZ"]}
+
+
+# --- UK time ------------------------------------------------------------------
+
+def fixed_clock(instant):
+    """A datetime class whose now() is pinned to a UTC instant, with a naive
+    now() reading UTC like a GitHub Actions runner's clock."""
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return instant.astimezone(tz) if tz else instant.replace(tzinfo=None)
+    return Clock
+
+
+def test_updated_timestamp_shows_uk_summer_time_on_a_utc_runner(monkeypatch):
+    monkeypatch.setattr(helper, "datetime", fixed_clock(datetime(2026, 7, 1, 12, 5, tzinfo=timezone.utc)))
+    assert helper.updated_timestamp() == "1 July 2026 at 13:05"
+
+
+def test_updated_timestamp_matches_utc_in_winter(monkeypatch):
+    monkeypatch.setattr(helper, "datetime", fixed_clock(datetime(2026, 12, 1, 12, 5, tzinfo=timezone.utc)))
+    assert helper.updated_timestamp() == "1 December 2026 at 12:05"
+
+
+def test_uk_today_rolls_over_at_uk_midnight_not_utc(monkeypatch):
+    monkeypatch.setattr(helper, "datetime", fixed_clock(datetime(2026, 7, 1, 23, 36, tzinfo=timezone.utc)))
+    assert helper.uk_today() == date(2026, 7, 2)
+    assert helper.uk_now().strftime("%Y-%m-%d %H:%M") == "2026-07-02 00:36"
+    assert helper.updated_timestamp() == "2 July 2026 at 00:36"
 
 
 # --- writing ------------------------------------------------------------------

@@ -3,7 +3,6 @@
 (written by forecast.py) and write it to _data/weather-today.json for
 the homepage to render."""
 import json
-import datetime
 import helper
 
 if __name__ == "__main__":
@@ -13,11 +12,12 @@ if __name__ == "__main__":
     data = json.loads(weather_file.read_text())
 
     # pick today's record (match by date, fall back to first entry)
-    today_str = datetime.date.today().strftime("%Y-%m-%d")
+    uk_today = helper.uk_today()
+    today_str = uk_today.strftime("%Y-%m-%d")
     today = next((d for d in data["days"] if d["date"] == today_str), data["days"][0])
 
     output = {
-        "date": datetime.date.today().strftime("%A, %d %B %Y"),
+        "date": uk_today.strftime("%A, %d %B %Y"),
         "temp": today["day"],
         "feels_like": today["feels_like"],
         "desc": today["desc"],

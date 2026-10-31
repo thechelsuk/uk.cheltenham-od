@@ -11,6 +11,7 @@ import html
 from datetime import date, datetime, timedelta, timezone
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
+from zoneinfo import ZoneInfo
 
 import config
 
@@ -29,9 +30,25 @@ def site_url():
     return config["url"].rstrip("/")
 
 
+UK = ZoneInfo("Europe/London")
+
+
+def uk_now():
+    """The time now in the UK, whatever clock the script runs on (GitHub
+    Actions runners are on UTC, so a bare datetime.now() is an hour behind
+    in British Summer Time)."""
+    return datetime.now(UK)
+
+
+def uk_today():
+    """Today's date in the UK, which starts an hour before UTC's in summer."""
+    return uk_now().date()
+
+
 def updated_timestamp():
-    """The "updated" string used across _data/*.json payloads, e.g. '12 September 2026 at 20:53'."""
-    return datetime.now().strftime("%-d %B %Y at %H:%M")
+    """The "updated" string used across _data/*.json payloads, in UK time,
+    e.g. '12 September 2026 at 20:53'."""
+    return uk_now().strftime("%-d %B %Y at %H:%M")
 
 
 # Top-level fields that only say when a fetcher ran, not what it found.
@@ -555,7 +572,11 @@ def write_digest_atom(digests, filename, permalink_path, feed_title, feed_subtit
         created_iso = digest.get("created_iso")
         if created_iso:
             try:
-                updated_text = datetime.fromisoformat(created_iso).strftime("%Y-%m-%dT%H:%M:%SZ")
+                created = datetime.fromisoformat(created_iso)
+                # Older entries carry no offset; they were written on a UTC runner.
+                if created.tzinfo is None:
+                    created = created.replace(tzinfo=timezone.utc)
+                updated_text = created.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             except ValueError:
                 pass
         ET.SubElement(entry, "updated").text = updated_text
