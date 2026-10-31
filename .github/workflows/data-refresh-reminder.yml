@@ -2,9 +2,8 @@ name: "Data Refresh Reminder"
 
 on:
   workflow_dispatch:
-  schedule:
-    # 10:00 on the 2nd of every month.
-    - cron: '0 10 2 * *'
+  # Started at 0 10 2 * * UK time by the Pi (_python/pi/crontab.txt), with the
+  # Cloudflare watchdog as backup. No GitHub schedule: it ran hours late.
 
 permissions:
   contents: read

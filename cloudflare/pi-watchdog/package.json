@@ -1,0 +1,10 @@
+{
+    "name": "pi-watchdog",
+    "private": true,
+    "type": "module",
+    "description": "Starts cheltenham-od.uk GitHub workflows on schedule, and the Pi fallback when the Raspberry Pi goes quiet",
+    "scripts": {
+        "test": "node --test test/*.test.js",
+        "deploy": "npx wrangler deploy"
+    }
+}

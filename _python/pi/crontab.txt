@@ -1,0 +1,29 @@
+# The Pi's crontab. Install or update it with:
+#
+#   crontab ~/uk.cheltenham-od/_python/pi/crontab.txt
+#
+# Times are UK time: the Pi's clock is on Europe/London, and the watchdog
+# reads its copy of these schedules the same way. The dispatch lines start the site's
+# scheduled GitHub workflows; they must match
+# cloudflare/pi-watchdog/src/schedules.js (a test checks), which the Cloudflare
+# watchdog uses to start any that fall due while the Pi is down.
+
+LOG=/home/mat/uk.cheltenham-od/run.log
+PI=/home/mat/uk.cheltenham-od/_python
+
+# Data scripts: the lists in every-5-minutes.txt and hourly.txt. They share a
+# lock so two runs never pull, commit or push at once.
+*/5 * * * *  /usr/bin/flock -n /tmp/chelt-od.lock $PI/run.sh every-5-minutes >> $LOG 2>&1
+3 * * * *    /usr/bin/flock -w 300 /tmp/chelt-od.lock $PI/run.sh hourly >> $LOG 2>&1
+
+# Scheduled GitHub workflows.
+17,47 * * * *       $PI/pi/dispatch.sh social-post.yml >> $LOG 2>&1
+36 */2 * * *        $PI/pi/dispatch.sh refresh-every-2-hours.yml >> $LOG 2>&1
+47 3,7,13,16 * * *  $PI/pi/dispatch.sh refresh-4-times-daily.yml >> $LOG 2>&1
+29 6 * * *          $PI/pi/dispatch.sh crime-backfill-check.yml >> $LOG 2>&1
+46 8 * * *          $PI/pi/dispatch.sh news-digest-daily.yml >> $LOG 2>&1
+23 4 * * MON        $PI/pi/dispatch.sh refresh-weekly.yml >> $LOG 2>&1
+23 19 * * FRI       $PI/pi/dispatch.sh codeql.yml >> $LOG 2>&1
+13 20 * * FRI       $PI/pi/dispatch.sh link-checker.yml >> $LOG 2>&1
+17 0 2 * *          $PI/pi/dispatch.sh refresh-monthly.yml >> $LOG 2>&1
+0 10 2 * *          $PI/pi/dispatch.sh data-refresh-reminder.yml >> $LOG 2>&1

@@ -2,8 +2,8 @@
 name: Refresh Weekly
 on:
     workflow_dispatch:
-    schedule:
-        - cron: "23 4 * * 1"
+    # Started at 23 4 * * MON UK time by the Pi (_python/pi/crontab.txt), with the
+    # Cloudflare watchdog as backup. No GitHub schedule: it ran hours late.
 
 permissions:
     contents: write

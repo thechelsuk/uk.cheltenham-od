@@ -1,0 +1,35 @@
+name = "pi-watchdog"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+
+# The 5-minute check (UTC), two minutes after each Pi run. Must match
+# WATCHDOG_CRON in src/schedules.js.
+[triggers]
+crons = ["2-59/5 * * * *"]
+
+[vars]
+GITHUB_REPO = "thechelsuk/uk.cheltenham-od"
+FALLBACK_WORKFLOW = "refresh-every-5-minutes.yml"
+GITHUB_REF = "main"
+# Two missed Pi runs before Cloudflare takes over.
+STALE_MINUTES = "12"
+
+# No ID: Wrangler (4.45 or later) creates this KV namespace on the first
+# deploy and keeps it linked after that.
+[[kv_namespaces]]
+binding = "STATE"
+
+# Email and Hue alerts, through the cf-worker-notifier Worker.
+[[services]]
+binding = "NOTIFIER"
+service = "cf-worker-notifier"
+
+# Secrets, set by the deploy workflow from GitHub secrets (never in this file):
+#   GITHUB_TOKEN     fine-grained token, this repository only, Actions: read and write
+#   HEARTBEAT_TOKEN  shared with the Pi's .env as WATCHDOG_TOKEN
+#   ADMIN_TOKEN      for POST /mode from your phone
+#   NOTIFY_TOKEN     the same value as cf-worker-notifier's NOTIFY_TOKEN

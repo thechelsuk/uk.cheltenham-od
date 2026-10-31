@@ -53,17 +53,20 @@ Nothing on the Pi needs changing: the next run pulls the new list.
 
 ## Schedule
 
-The Pi's crontab (`crontab -e` as the Pi's user) runs two jobs:
+The Pi's crontab is kept in the repository as `_python/pi/crontab.txt`. Install it, or update it after a change, with:
 
-```text
-*/5 * * * *  /usr/bin/flock -n /tmp/chelt-od.lock $HOME/uk.cheltenham-od/_python/run.sh every-5-minutes >> $HOME/uk.cheltenham-od/run.log 2>&1
-3 * * * *    /usr/bin/flock -w 300 /tmp/chelt-od.lock $HOME/uk.cheltenham-od/_python/run.sh hourly >> $HOME/uk.cheltenham-od/run.log 2>&1
+```bash
+crontab ~/uk.cheltenham-od/_python/pi/crontab.txt
 ```
 
-- The scripts in `every-5-minutes.txt` run every 5 minutes. They only commit when something has changed, so the history shows a commit every half hour or so rather than every 5 minutes.
-- The scripts in `hourly.txt` (fuel prices) run once an hour, at 3 minutes past.
-- Both jobs share one lockfile through `flock`, so two runs never pull, commit or push at the same time. A 5-minute run skips if the lock is busy (`-n`); the hourly run waits up to 5 minutes for it (`-w 300`).
-- Output from both is appended to `run.log` in the repository folder, which is gitignored.
+It does two things:
+
+- **Data scripts.** The scripts in `every-5-minutes.txt` run every 5 minutes, and those in `hourly.txt` (fuel prices) at 3 minutes past each hour. They only commit when something has changed. Both share one lockfile through `flock`, so two runs never pull, commit or push at the same time: a 5-minute run skips if the lock is busy (`-n`), and the hourly run waits up to 5 minutes for it (`-w 300`).
+- **Scheduled workflows.** GitHub's own `schedule:` trigger was running hours late, so the site's scheduled workflows have none. The Pi starts each one at its set time with `_python/pi/dispatch.sh <workflow>`, which calls GitHub's `workflow_dispatch`.
+
+All times are UK time. The Pi's clock is on `Europe/London`, and the watchdog reads its copy of the schedules in UK time too, so a workflow set for 08:46 runs at 08:46 UK time all year. Output goes to `run.log` in the repository folder, which is gitignored.
+
+To change a schedule, edit `crontab.txt` and the matching line in `cloudflare/pi-watchdog/src/schedules.js` (the watchdog's test fails if they differ), push, and reinstall the crontab on the Pi.
 
 ## Setup
 
@@ -75,34 +78,43 @@ The Pi needs:
   - `FUEL_KEY` and `FUEL_TOKEN` for `fuel.py`
   - `NAT_HIGH_KEY` for `unplanned-closures.py`
   - `RDM_LDBWS_KEY` for `rail-times.py`
+  - `GITHUB_DISPATCH_TOKEN`: a fine-grained GitHub token for this repository only, with **Actions: Read and write**, for `dispatch.sh`.
+  - `WATCHDOG_URL` and `WATCHDOG_TOKEN`: see Cloudflare Watchdog below.
 
-## Cloudflare Watchdog and Scheduler
+## Cloudflare Watchdog
 
-A Cloudflare Worker (`cloudflare/pi-watchdog/`) does two jobs:
+A Cloudflare Worker (`cloudflare/pi-watchdog/`) takes over when the Pi goes quiet, from a power cut or a Wi-Fi drop, say.
 
-- **Pi watchdog.** After each run where at least one script worked, `run.sh` posts to the Worker's `/heartbeat`. Every 5 minutes (at 2 minutes past each Pi run) the Worker checks the last heartbeat. If it is more than 12 minutes old, it starts **Refresh Every 5 Minutes (Pi Fallback)** through `workflow_dispatch`, and keeps doing so every 5 minutes. The first heartbeat after that stops it. It never starts the fallback before the Pi has sent its first heartbeat.
-- **Scheduler.** GitHub's `schedule:` trigger was running hours late, so the site's scheduled workflows have no schedule of their own. The Worker starts each one at its set time (UTC). The times are in `src/schedules.js` and `wrangler.toml`, which must match; a test checks. Write days of the week as names (`MON`, `FRI`): Cloudflare counts 1 = Sunday, not 0.
+After each run where at least one script worked, `run.sh` posts to the Worker's `/heartbeat`. Every 5 minutes, at 2 minutes past each Pi run, the Worker checks the last check-in. If it is more than 12 minutes old (two missed runs), Cloudflare takes over:
 
-The fuel prices API refuses GitHub's servers, so fuel prices don't update while the fallback is running. The other scripts do.
+- It starts **Refresh Every 5 Minutes (Pi Fallback)** every 5 minutes.
+- It starts any scheduled workflow that fell due since the Pi went quiet (looking back up to 30 minutes), unless GitHub shows it already ran. So a workflow due just before the takeover runs late rather than being missed, and none runs twice.
+- It emails `mat@thechels.uk` from `alerts@cheltenham-od.uk` and turns the Hue light full-brightness orange, through the separate **cf-worker-notifier** Worker.
+
+The first check-in after that hands back to the Pi: Cloudflare stops, the light goes back to how it was, and a "the Pi is back" email follows. The Worker never takes over before the Pi has checked in once.
+
+The fuel prices API refuses GitHub's servers, so fuel prices don't update while Cloudflare is in charge. Everything else does.
 
 ### Status and Switching
 
-`https://pi-watchdog.<your-subdomain>.workers.dev/status` shows the mode, when the Pi last checked in, whether the fallback is on, and when each scheduled workflow last started.
+`https://pi-watchdog.<your-subdomain>.workers.dev/status` shows the mode, when the Pi last checked in, whether Cloudflare is in charge, and what it last started.
 
-The mode is `auto` (the default: follow the heartbeat), `pi` (never start the fallback) or `cloud` (always start it). To change it, from a phone (an iOS Shortcut works) or a terminal:
+The mode is `auto` (the default: follow the check-ins), `pi` (never take over) or `cloud` (always take over). To change it, from a phone (an iOS Shortcut works) or a terminal:
 
 ```bash
 curl -X POST -H "Authorization: Bearer $ADMIN_TOKEN" "https://pi-watchdog.<your-subdomain>.workers.dev/mode?mode=cloud"
 ```
 
-You can also edit the `mode` key in the Worker's KV namespace in the Cloudflare dashboard. The fallback workflow can still be started by hand from the Actions tab if the Worker is ever down.
+You can also edit the `mode` key in the Worker's KV namespace in the Cloudflare dashboard. Any workflow can still be started by hand from the Actions tab.
 
 ### Watchdog Setup
 
-1. Create a fine-grained GitHub token: only `thechelsuk/uk.cheltenham-od`, Repository permissions **Actions: Read and write**.
-2. In `cloudflare/pi-watchdog/`: `npx wrangler login`, then `npx wrangler kv namespace create PI_WATCHDOG` and paste the ID into `wrangler.toml`.
-3. Add the secrets: `npx wrangler secret put GITHUB_TOKEN`, `npx wrangler secret put HEARTBEAT_TOKEN` and `npx wrangler secret put ADMIN_TOKEN` (make each of the last two with `openssl rand -hex 32`).
-4. `npx wrangler deploy`.
-5. On the Pi, add `WATCHDOG_URL=https://pi-watchdog.<your-subdomain>.workers.dev` and `WATCHDOG_TOKEN=<the HEARTBEAT_TOKEN value>` to `.env`.
-
-Deploy the Worker before the workflow changes reach `main`, or the scheduled workflows stop running. To change a schedule, edit both files, run `npm test`, and redeploy.
+1. Deploy **cf-worker-notifier** first (its readme has the steps), since the watchdog binds to it.
+2. Add these repository secrets (Settings → Secrets and variables → Actions):
+   - `CLOUDFLARE_WORKERS_TOKEN`: a Cloudflare API token with Workers Scripts: Edit and Workers KV Storage: Edit
+   - `CLOUDFLARE_ACCOUNT_ID`
+   - `WATCHDOG_GITHUB_TOKEN`: a fine-grained GitHub token for this repository only, with **Actions: Read and write**
+   - `WATCHDOG_HEARTBEAT_TOKEN` and `WATCHDOG_ADMIN_TOKEN`: each from `openssl rand -hex 32`
+   - `NOTIFY_TOKEN`: the same value as cf-worker-notifier's `NOTIFY_TOKEN`
+3. Push to `main`. **Deploy Pi Watchdog** runs the tests and deploys (the first deploy creates the Worker's KV namespace) whenever `cloudflare/pi-watchdog/` or `crontab.txt` changes, or run it by hand from the Actions tab.
+4. On the Pi, add `WATCHDOG_URL=https://pi-watchdog.<your-subdomain>.workers.dev` and `WATCHDOG_TOKEN=<the WATCHDOG_HEARTBEAT_TOKEN value>` to `.env`.

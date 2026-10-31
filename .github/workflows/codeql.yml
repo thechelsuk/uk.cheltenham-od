@@ -1,8 +1,8 @@
 name: "CodeQL Advanced"
 
 on:
-  schedule:
-    - cron: '23 19 * * 5'
+  # Started at 23 19 * * FRI UK time by the Pi (_python/pi/crontab.txt), with the
+  # Cloudflare watchdog as backup. No GitHub schedule: it ran hours late.
   workflow_dispatch:
 
 permissions:
