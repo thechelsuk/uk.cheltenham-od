@@ -648,6 +648,14 @@
     "pages": ["/cheltenham-wildfire-risk", "/cheltenham-wildfire-risk/history"]
   },
   {
+    "id": "met-office-weather-warnings",
+    "source_url": "https://www.metoffice.gov.uk/weather/warnings-and-advice/uk-warnings",
+    "licence": "Met Office RSS feed terms: free for any purpose, with attribution to the Met Office, its wording and links used unchanged, and a direct link to its warnings page",
+    "licence_type": "Met Office RSS terms",
+    "data": [{"file": "_data/weather-warnings.json", "schedule": "every 5 minutes"}, {"file": "_data/weather-warnings-history.json", "schedule": "every 5 minutes"}],
+    "pages": ["/cheltenham-10-day-weather-forecast", "/cheltenham-10-day-weather-forecast/weather-warnings"]
+  },
+  {
     "id": "gcc-school-closures",
     "name": "Gloucestershire school closures (Gloucestershire County Council)",
     "source_url": "https://www.gloucestershire.gov.uk/closures/",

@@ -1,0 +1,8 @@
+# Scripts the Pi runs every 5 minutes, in this order. run.sh reads this list
+# after each git pull, so a script added here starts on the next run.
+# The GitHub fallback workflow reads it too. One path per line; # for comments.
+_python/pi/buses.py
+_python/pi/power.py
+_python/pi/rail-times.py
+_python/pi/unplanned-closures.py
+_python/pi/weather-warnings.py

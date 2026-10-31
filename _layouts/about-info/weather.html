@@ -7,11 +7,13 @@
             <h1>{{page.title}}</h1>
             <p>{{page.description}}</p>
             {% assign h_d = site.data.weather.days.first %}
+            {% assign warn = site.data["weather-warnings"] %}
 
             <ul class="header-facts">
                 <li><strong>{{ h_d.max | round }}°C / {{ h_d.min | round }}°C</strong> today's high and low</li>
                 <li><strong>{{ h_d.pop | times: 100 | round }}%</strong> chance of rain</li>
                 <li><strong>{{ h_d.daylight_str }}</strong> daylight</li>
+                <li><strong>{{ warn.count | default: 0 }}</strong> Met Office weather warning{% if warn.count != 1 %}s{% endif %} for Gloucestershire</li>
             </ul>
         </header>
         {% include section-links.html %}
@@ -29,6 +31,20 @@
 
         <article class="wx">
             {{ content }}
+
+            <h2 id="weather-warnings">Met Office Weather Warnings</h2>
+            {% if warn.warnings.size > 0 %}
+            <ul class="latest-list plain-list">
+                {% for w in warn.warnings %}
+                <li class="latest-item"><span class="latest-pill latest-pill-announcements">{{ w.level | default: "Warning" }}</span><span class="latest-title"><a href="{{ w.link | default: warn.source_url }}">{{ w.title }}</a>{% if w.starts %}, from {{ w.starts | date: "%-d %B %Y %H:%M" }} to {{ w.ends | date: "%-d %B %Y %H:%M" }}{% endif %}</span></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <blockquote>
+                <p>There are no Met Office weather warnings for Gloucestershire right now.</p>
+            </blockquote>
+            {% endif %}
+            <p>Earlier warnings are on the <a href="/cheltenham-10-day-weather-forecast/weather-warnings">weather warnings history</a> page, and you can follow new ones through the <a href="/feeds/weather-warnings.xml">weather warnings feed</a>.</p>
 
             <h2>10-day Forecasts</h2>
             <p class="wx-updated">Updated {{ wx.updated | date: "%A %-d %B %Y at %H:%M" }} · {{ wx.location }}</p>
@@ -539,7 +555,20 @@
 
         <h3>Where Does the Data Come From?</h3>
         <ul>
-            <li>All values are pulled from the OpenWeather API for Cheltenham, Gloucestershire.</li>
+            <li>The forecast comes from the OpenWeather API for Cheltenham, Gloucestershire.</li>
+            <li>Weather warnings come from the Met Office and are checked every five minutes.</li>
+        </ul>
+
+        <h3>Which Weather Warnings Are Shown?</h3>
+        <ul>
+            <li>Every Met Office warning that lists Gloucestershire among the areas it covers.</li>
+            <li>A warning for Gloucestershire may cover only part of the county, such as the Forest of Dean or the Cotswolds. Open the warning on the Met Office site to see its map and whether Cheltenham is inside the area.</li>
+        </ul>
+
+        <h3>What Do Yellow, Amber and Red Warnings Mean?</h3>
+        <ul>
+            <li>The colour combines how likely the weather is with how much disruption or danger it could bring.</li>
+            <li>Yellow means be aware, amber means be prepared for disruption, and red means dangerous weather is expected and you should act to keep yourself and others safe.</li>
         </ul>
 
         <h3>What Does "Chance of Rain" Mean?</h3>
@@ -566,8 +595,10 @@
 
         <h2 id="about-this-data">About This Data</h2>
         <p class="attribution"><small>
-            Data from <a href="{{ wx.source_url }}">{{ wx.source }}</a>{% if wx.licence %}, published under the {{ wx.licence }}{% endif %}.
-            {% include freshness.html file="_data/weather.json" %}
+            Data from <a href="{{ wx.source_url }}">{{ wx.source }}</a> (forecast){% if wx.licence %}, published under the {{ wx.licence }}{% endif %},
+            and the <a href="{{ warn.source_url }}">Met Office</a> (weather warnings), used under its RSS feed terms.
+            Forecast: {% include freshness.html file="_data/weather.json" %}
+            Warnings: {% include freshness.html file="_data/weather-warnings.json" %}
         </small></p>
 
     </div>

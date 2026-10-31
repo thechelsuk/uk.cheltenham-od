@@ -2,13 +2,13 @@
 layout: about-info/weather
 title: "Cheltenham 10-Day Weather Forecast"
 seo_title: "Cheltenham 10-Day Weather Forecast | Highs, Lows & Rain"
-seo: "10-day weather forecast for Cheltenham, Gloucestershire — daily highs, lows, chance of rain and wind, updated daily."
+seo: "10-day weather forecast for Cheltenham, Gloucestershire: daily highs, lows, chance of rain and wind, plus any Met Office weather warnings in force."
 description: "Cheltenham 10-day weather forecast. - daily high and low temperatures, rain probability, daylight, humidity, and wind."
 type: "about"
 permalink: /cheltenham-10-day-weather-forecast
 ---
 
-The 10-day weather forecast for Cheltenham, Gloucestershire, refreshed daily from OpenWeather. Every temperature is in degrees Celsius.
+The 10-day weather forecast for Cheltenham, Gloucestershire, refreshed daily from OpenWeather. Every temperature is in degrees Celsius. Any Met Office weather warnings for Gloucestershire are listed first, checked every five minutes.
 
 Each day's card shows the expected high and low, the chance of rain, wind speed and the UV index, plus sunrise and sunset. Below the cards you'll find charts tracking how temperature, rainfall probability, wind, daylight and humidity shift across the coming week and a half.
 

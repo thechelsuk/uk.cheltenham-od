@@ -38,6 +38,14 @@ def test_label_is_added_unless_the_title_already_starts_with_it(tmp_path):
     assert alerts_feed.read_entries(path, "Flood")[0]["title"] == "Flood Alert: River Chelt"
 
 
+def test_weather_warnings_keep_the_met_office_title(tmp_path):
+    path = feed_file(tmp_path, "weather-warnings",
+                     [("Yellow warning of rain affecting South West England", "", "2026-10-08T16:35:07+00:00")])
+    (entry,) = alerts_feed.read_entries(path, "Weather warning")
+    assert entry["title"] == "Yellow warning of rain affecting South West England"
+    assert entry["category"] == "Weather warning"
+
+
 def test_read_entries_skips_a_feed_that_does_not_exist(tmp_path):
     assert alerts_feed.read_entries(tmp_path / "missing.xml", "Flood") == []
 

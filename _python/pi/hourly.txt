@@ -1,0 +1,4 @@
+# Scripts the Pi runs once an hour, at 3 minutes past. run.sh reads this list
+# after each git pull, so a script added here starts on the next run.
+# The GitHub fallback workflow reads it too. One path per line; # for comments.
+_python/pi/fuel.py

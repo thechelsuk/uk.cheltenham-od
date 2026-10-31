@@ -1,15 +1,16 @@
 """The combined alerts feed, feeds/alerts.xml: the newest entries from the
-site's alert feeds (flood warnings, power cuts, bus disruptions, rail
-replacement buses, wildfire risk, unplanned road closures, school closures
-and security alerts) in one place.
+site's alert feeds (flood warnings, weather warnings, power cuts, bus
+disruptions, rail replacement buses, wildfire risk, unplanned road closures,
+school closures and security alerts) in one place.
 
-Only the Pi scripts (pi/power.py, pi/buses.py, pi/rail-times.py and
-pi/unplanned-closures.py) call rebuild(), every five minutes. The GitHub workflows write the flood,
+Only the Pi scripts (pi/power.py, pi/buses.py, pi/rail-times.py,
+pi/unplanned-closures.py and pi/weather-warnings.py) call rebuild(), every five minutes. The GitHub workflows write the flood,
 wildfire, school closures and security feeds but never this file, so the two can't make
 conflicting changes to it; their entries join it on the Pi's next run. Entries keep the id, link and
 wording of their own feed, with a label in front of the title (unless the title
 already starts with it) and an Atom category, so a feed reader can tell them
-apart or filter them."""
+apart or filter them. Weather warnings keep the Met Office's own title, as its
+RSS terms ask for its wording to be used unchanged."""
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
@@ -21,6 +22,7 @@ LIMIT = 100
 # (feed file under feeds/, label for its entries)
 SOURCES = [
     ("flood.xml", "Flood"),
+    ("weather-warnings.xml", "Weather warning"),
     ("power-cuts.xml", "Power cut"),
     ("bus-disruptions.xml", "Bus disruption"),
     ("rail-disruptions.xml", "Rail disruption"),
@@ -29,6 +31,9 @@ SOURCES = [
     ("school-closures.xml", "School closure"),
     ("security.xml", "Security"),
 ]
+
+# Labels whose entries keep their title exactly as their source wrote it.
+KEEP_TITLE = {"Weather warning"}
 
 
 def iso(stamp):
@@ -47,7 +52,7 @@ def read_entries(path, label):
     for entry in root.findall(f"{ATOM}entry"):
         link = entry.find(f"{ATOM}link")
         title = entry.findtext(f"{ATOM}title") or ""
-        if not title.lower().startswith(label.lower()):
+        if label not in KEEP_TITLE and not title.lower().startswith(label.lower()):
             title = f"{label}: {title}"
         entries.append({
             "title": title,
@@ -75,7 +80,7 @@ def rebuild():
         filename=feeds / "alerts.xml",
         permalink_path="/feeds/alerts.xml",
         feed_title="Cheltenham Alerts",
-        feed_subtitle="Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures, school closures and security alerts for Cheltenham",
+        feed_subtitle="Flood warnings, weather warnings, power cuts, bus and rail disruptions, wildfire risk, road closures, school closures and security alerts for Cheltenham",
         self_url=f"{site}/feeds/alerts.xml",
         alternate_url=f"{site}/",
         feed_id=f"{site}/feeds/alerts.xml",

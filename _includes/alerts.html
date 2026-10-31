@@ -5,6 +5,7 @@ helper.alert_rows()), or nothing; the heading only shows when at least one
 type has a row.
 {%- endcomment -%}
 {%- capture alert_rows -%}
+{% include weather-warnings-alert.html %}
 {% include bus-alert.html %}
 {% include rail-alert.html %}
 {% include power-cuts-alert.html %}

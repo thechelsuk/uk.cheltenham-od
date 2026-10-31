@@ -18,7 +18,13 @@ subgroups:
         description: "Cheltenham's 20 electoral wards compared on crime, house prices, broadband, voters and councillors, with a local profile for each."
       - name: "Cheltenham 10-day Weather Forecast"
         link: /cheltenham-10-day-weather-forecast
-        description: "Local temperature, rain, wind and humidity forecasts for Cheltenham."
+        description: "Local temperature, rain, wind and humidity forecasts for Cheltenham, with Met Office weather warnings."
+        children:
+          - name: "Cheltenham Weather Warnings History"
+            short: "Warnings History"
+            link: /cheltenham-10-day-weather-forecast/weather-warnings
+            description: "Every Met Office weather warning for Gloucestershire since this page started logging them."
+            a_z: true
       - name: "Cheltenham Public Holidays"
         link: /cheltenham-public-holidays
         description: "Confirmed public holidays."

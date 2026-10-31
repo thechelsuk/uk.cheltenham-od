@@ -1,0 +1,76 @@
+{% include header.html %}
+{% assign history = site.data["weather-warnings-history"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            {% assign h_live = history.records | where_exp: "r", "r.resolved_iso == nil" %}{% assign h_latest = history.records | first %}
+
+            <ul class="header-facts">
+                <li><strong>{{ history.records | size }}</strong> warning{% if history.records.size != 1 %}s{% endif %} logged</li>
+                <li><strong>{{ h_live | size }}</strong> in force or coming up now</li>
+                <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if history.records.size > 0 %}
+        <div class="table-scroll">
+            <table class="weather-warnings-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Warning</th>
+                        <th scope="col">Level</th>
+                        <th scope="col" class="date">Valid From</th>
+                        <th scope="col" class="date">Valid To</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in history.records %}
+                    <tr>
+                        <td><a href="{{ r.link | default: history.source_url }}">{{ r.title }}</a></td>
+                        <td>{{ r.level | default: "Not stated" }}</td>
+                        <td class="date" data-val="{{ r.starts }}">{% if r.starts %}{{ r.starts | date: "%Y-%m-%d %H:%M" }}{% endif %}</td>
+                        <td class="date" data-val="{{ r.ends }}">{% if r.ends %}{{ r.ends | date: "%Y-%m-%d %H:%M" }}{% endif %}</td>
+                        <td>{% if r.resolved_iso %}Ended{% else %}In force or coming up{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No Met Office weather warnings for Gloucestershire have been logged since this page started.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Which Warnings Are Listed?</h3>
+        <ul>
+            <li>Every Met Office warning that lists Gloucestershire among the areas it covers.</li>
+            <li>A warning for Gloucestershire may cover only part of the county, so open it on the Met Office site to see its map.</li>
+        </ul>
+
+        <h3>Why Aren't Older Warnings Listed?</h3>
+        <ul>
+            <li>The Met Office feed only shows warnings that are in force or coming up, so this log is built from what it shows each time it is checked. Warnings from before this page started aren't included.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ history.source_url }}">{{ history.source }}</a>, used under its RSS feed terms.
+            {% include freshness.html file="_data/weather-warnings-history.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

@@ -155,11 +155,15 @@ feeds:
     link: /feeds/alerts.xml
     group: Alerts
     key: true
-    description: "Flood warnings, power cuts, bus and rail disruptions, wildfire risk, road closures, school closures and threat level changes in one feed."
+    description: "Flood warnings, weather warnings, power cuts, bus and rail disruptions, wildfire risk, road closures, school closures and threat level changes in one feed."
   - name: Flood Warnings
     link: /feeds/flood.xml
     group: Alerts
     description: "Current and recent Environment Agency flood warnings for Gloucestershire."
+  - name: Weather Warnings
+    link: /feeds/weather-warnings.xml
+    group: Alerts
+    description: "Current and recent Met Office weather warnings covering Gloucestershire."
   - name: Power Cuts
     link: /feeds/power-cuts.xml
     group: Alerts

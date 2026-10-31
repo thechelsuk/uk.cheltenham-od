@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Weather Warnings History",
+  "description": "A log of Met Office weather warnings covering Gloucestershire, with each warning's level, weather type and the times it was valid.",
+  "url": "{{ page.url | absolute_url }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.metoffice.gov.uk/policies/tandc",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Gloucestershire, UK" },
+  "variableMeasured": ["Warning", "Level", "Weather type", "Valid from", "Valid to", "Status"]
+}
+</script>
