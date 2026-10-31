@@ -9,11 +9,16 @@ render_with_liquid: false
 
 [&larr; Site guide contents](/admin/guide)
 
-The feeds that go stale within minutes (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices) are fetched by a Raspberry Pi at home rather than by GitHub Actions. Scheduled Actions can run late by up to an hour and use up the free minutes, while the Pi runs on time for the cost of its electricity. This is a stop-gap until the site earns enough to move these checks to Cloudflare Workers.
+A Raspberry Pi at home does two jobs:
+
+- It fetches the feeds that go stale within minutes (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices), rather than GitHub Actions.
+- It starts the site's scheduled GitHub workflows at their set times. GitHub's own `schedule:` trigger ran hours late, so no workflow has one.
+
+The Pi runs on time for the cost of its electricity. When it goes quiet, from a power cut or a Wi-Fi drop, a Cloudflare Worker takes over both jobs until it is back (see [Cloudflare Watchdog](#cloudflare-watchdog)).
 
 ## What It Runs
 
-The scripts live in `_python/pi/`. Each writes its `_data` file (and Atom feed, where it has one) exactly as the GitHub-run fetchers do:
+The data scripts live in `_python/pi/`. Each writes its `_data` file (and Atom feed, where it has one) exactly as the GitHub-run fetchers do:
 
 | Script | Writes | Source |
 | --- | --- | --- |
@@ -50,6 +55,12 @@ The manifest is read after the pull, so a script added to it runs from the next 
 3. If it needs a new API key, add it to the Pi's `.env` and as a repository secret, and pass it to the fallback workflow's `env:`.
 
 Nothing on the Pi needs changing: the next run pulls the new list.
+
+## Adding or Changing a Scheduled Workflow
+
+1. Give the workflow a `workflow_dispatch:` trigger and no `schedule:`. The watchdog's tests fail if any workflow still has a GitHub schedule.
+2. Add a line to `_python/pi/crontab.txt` that runs `$PI/pi/dispatch.sh <workflow>.yml` at its UK time, and the same schedule to `cloudflare/pi-watchdog/src/schedules.js`, so the watchdog can start it if the Pi is down. A test fails if the two lists differ.
+3. Push, then reinstall the crontab on the Pi with `crontab ~/uk.cheltenham-od/_python/pi/crontab.txt`. Unlike the script lists, the crontab isn't read on each pull.
 
 ## Schedule
 

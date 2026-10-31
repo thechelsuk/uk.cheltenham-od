@@ -53,7 +53,7 @@ Spotted an error, or want to suggest a dataset? [Get in touch](/contact) — loc
 
 ## Technology & Sustainability
 
-The site is built as static HTML, CSS, and a little JavaScript, so it's lightning quick on the client end. Python and GitHub Actions handle most of the compute, with a little run on the developer's local machine; pages are built and deployed to GitHub Pages, and DNS and forms are managed by Cloudflare and Cloudflare Workers.
+The site is built as static HTML, CSS, and a little JavaScript, so it's lightning quick on the client end. Python handles the compute, run by GitHub Actions and a Raspberry Pi at home, with a Cloudflare Worker standing in if the Pi goes offline and a little run on the developer's local machine; pages are built and deployed to GitHub Pages, and DNS and forms are managed by Cloudflare and Cloudflare Workers.
 
 > Only 0.05g of CO₂ is produced every time someone visits this website. This site appears to be running on sustainable energy - [Source](https://www.websitecarbon.com/website/cheltenham-od-uk/)
 

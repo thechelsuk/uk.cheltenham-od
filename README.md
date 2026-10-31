@@ -194,6 +194,10 @@ Every page, grouped as in the site menu.
 
 ## How the Data Is Refreshed
 
-Most fetchers run on GitHub Actions schedules (`.github/workflows/refresh-*.yml`). The fastest-changing feeds (bus disruptions, power cuts, train times, unplanned road closures and fuel prices) run on a Raspberry Pi instead, with a manual GitHub workflow as a fallback for when it is down. See [the Raspberry Pi guide](admin/guide/raspberry-pi.md) for how it is set up.
+Most fetchers run in GitHub Actions workflows (`.github/workflows/refresh-*.yml`). GitHub's own `schedule:` trigger ran hours late, so none of the workflows has one: a Raspberry Pi at home starts each scheduled workflow at its set UK time, from its crontab (`_python/pi/crontab.txt`).
+
+The fastest-changing feeds (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices) run on the Pi itself, from the script lists in `_python/pi/every-5-minutes.txt` and `hourly.txt`.
+
+If the Pi goes quiet, a Cloudflare Worker (`cloudflare/pi-watchdog/`) takes over: it runs the 5-minute fallback workflow, starts any scheduled workflow that falls due, and sends an alert, then hands back when the Pi checks in again. See [the Raspberry Pi guide](admin/guide/raspberry-pi.md) for how it all fits together.
 
 ## [Cheltenham Open Data, local data for local people](https://cheltenham-od.uk)
