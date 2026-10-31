@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T08:25:07+00:00",
+  "generated_at": "2026-10-31T08:30:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -50,8 +50,8 @@
     },
     {
       "scheduled": "2026-10-31T08:54",
-      "expected": "2026-10-31T08:54",
-      "status": "On time",
+      "expected": "2026-10-31T08:56",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -164,20 +164,25 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-31T09:48",
+      "expected": "2026-10-31T09:48",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Gloucester",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-10-31T08:26",
-      "expected": "2026-10-31T08:26",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-10-31T08:47",
       "expected": "2026-10-31T08:47",
@@ -191,8 +196,8 @@
     },
     {
       "scheduled": "2026-10-31T08:53",
-      "expected": "2026-10-31T08:53",
-      "status": "On time",
+      "expected": "2026-10-31T08:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -252,6 +257,17 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-10-31T09:47",
+      "expected": "2026-10-31T09:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Gloucester",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
