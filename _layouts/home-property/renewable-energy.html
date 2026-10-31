@@ -1,0 +1,248 @@
+{% include header.html %}
+{% assign data = site.data["renewable-energy"] %}
+{% assign borough = data.borough %}
+{% assign repd = data.repd %}
+{% assign use = site.data["energy-use"] %}
+{% assign share = borough.generation_mwh | times: 0.1 | divided_by: use.borough.electricity_gwh | round: 1 %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ borough.sites_display }}</strong> renewable installations at the end of {{ data.year }}</li>
+                <li><strong>{{ borough.capacity_mw }} MW</strong> of capacity</li>
+                <li><strong>{{ borough.generation_display }} MWh</strong> generated in {{ data.year }}</li>
+                <li><strong>{{ repd.counts["Operational"] }}</strong> larger sites running within {{ repd.radius_miles }} miles</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="installations">Renewable Installations in Cheltenham</h2>
+        <p>
+            At the end of {{ data.year }} Cheltenham had {{ borough.sites_display }} renewable electricity installations,
+            {{ borough.solar_sites_display }} of them solar panels: about {{ borough.per_1000_households }} for every
+            1,000 homes. Together they can produce {{ borough.capacity_mw }} megawatts (MW) at full output,
+            {{ borough.capacity_growth }} times the {{ borough.first_capacity_mw }} MW of {{ data.first_year }}. In
+            {{ data.year }} they generated {{ borough.generation_display }} megawatt hours (MWh), equal to about
+            {{ share }}% of all the electricity used in Cheltenham in {{ use.year }}.
+        </p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Technology</th>
+                        <th scope="col" class="number">Installations</th>
+                        <th scope="col" class="number">Capacity (MW)</th>
+                        <th scope="col" class="number">Generated (MWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in data.by_technology %}
+                    <tr>
+                        <td>{{ t.name }}</td>
+                        <td class="number">{{ t.sites_display }}</td>
+                        <td class="number">{{ t.capacity_mw }}</td>
+                        <td class="number">{{ t.generation_display | default: "Not published" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="growth">Renewable Capacity by Year</h2>
+        <p><small>Installed capacity (MW) at the end of each year</small></p>
+        <div class="chart-canvas"><canvas id="renewable-energy-chart"></canvas></div>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Installations</th>
+                        <th scope="col" class="number">Capacity (MW)</th>
+                        <th scope="col" class="number">Generated (MWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign years = data.years | reverse %}
+                    {% for y in years %}
+                    <tr>
+                        <td>{{ y.year }}</td>
+                        <td class="number" data-val="{{ y.sites }}">{{ y.sites_display }}</td>
+                        <td class="number">{{ y.capacity_mw }}</td>
+                        <td class="number" data-val="{{ y.generation_mwh }}">{{ y.generation_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="gloucestershire">How Cheltenham Compares With Gloucestershire</h2>
+        <p>
+            With {{ borough.per_1000_households }} installations for every 1,000 homes, Cheltenham ranks
+            {{ borough.gloucestershire_rank }} of Gloucestershire's {{ borough.gloucestershire_districts }} districts.
+            Figures are at the end of {{ data.year }}.
+        </p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">District</th>
+                        <th scope="col" class="number">Homes</th>
+                        <th scope="col" class="number">Installations</th>
+                        <th scope="col" class="number">Per 1,000 Homes</th>
+                        <th scope="col" class="number">Capacity (MW)</th>
+                        <th scope="col" class="number">Solar (MW)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.compare %}
+                    <tr>
+                        <td>{% if c.code == "E07000078" %}<strong>{{ c.name }}</strong>{% else %}{{ c.name }}{% endif %}</td>
+                        <td class="number" data-val="{{ c.households }}">{{ c.households_display }}</td>
+                        <td class="number" data-val="{{ c.sites }}">{{ c.sites_display }}</td>
+                        <td class="number">{{ c.per_1000_households }}</td>
+                        <td class="number">{{ c.capacity_mw }}</td>
+                        <td class="number">{{ c.solar_capacity_mw }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="map">Solar Farms and Other Projects Near Cheltenham</h2>
+        <p>
+            Renewable electricity and battery storage projects of 150 kilowatts or more within {{ repd.radius_miles }}
+            miles of the town centre, from the {{ repd.edition }} planning database. {{ repd.in_cheltenham }} are in
+            Cheltenham itself; the rest are in the neighbouring districts, mostly Tewkesbury borough.
+        </p>
+        <div class="filter-bar">
+            <label class="filter-label" for="renewable-map-status">Show</label>
+            <select id="renewable-map-status">
+                <option value="">All projects ({{ repd.sites.size }})</option>
+                {% for s in repd.statuses %}<option value="{{ s }}">{{ s }} ({{ repd.counts[s] }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="renewable-map" class="map-canvas" aria-label="Map of renewable energy projects near Cheltenham"></div>
+
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Status</th>
+                        <th scope="col" class="number">Projects</th>
+                        <th scope="col" class="number">Capacity (MW)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in repd.statuses %}
+                    <tr>
+                        <td>{{ s }}</td>
+                        <td class="number">{{ repd.counts[s] }}</td>
+                        <td class="number">{{ repd.capacity_mw[s] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="projects">All Projects Within {{ repd.radius_miles }} Miles</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Project</th>
+                        <th scope="col">Technology</th>
+                        <th scope="col" class="number">Capacity (MW)</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Council</th>
+                        <th scope="col" class="number">Miles</th>
+                        <th scope="col" class="date">Updated</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in repd.sites %}
+                    <tr>
+                        <td>{{ s.name }}</td>
+                        <td>{{ s.technology }}</td>
+                        <td class="number" data-val="{{ s.capacity_mw }}">{{ s.capacity_mw }}</td>
+                        <td>{{ s.status }}</td>
+                        <td>{{ s.council }}</td>
+                        <td class="number">{{ s.miles }}</td>
+                        <td class="date" data-val="{{ s.updated }}">{{ s.updated }}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lng label=s.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is a Megawatt?</h3>
+        <ul>
+            <li>A megawatt (MW) is 1,000 kilowatts (kW), and measures how much power an installation can produce at full output. The average installation in Cheltenham is {{ borough.average_kw }} kW.</li>
+            <li>A megawatt hour (MWh) is the energy produced by running at 1 MW for an hour. The average Cheltenham home used {{ use.borough.electricity_mean_kwh_display }} kWh of electricity in {{ use.year }}, about {{ use.borough.electricity_mean_kwh | divided_by: 1000.0 | round: 1 }} MWh.</li>
+        </ul>
+
+        <h3>Why Is Almost All of Cheltenham's Renewable Energy Solar?</h3>
+        <ul>
+            <li>Rooftop solar panels fit on homes and businesses in a built-up town. Wind turbines, solar farms and biomass plants need open land, which a built-up town mostly doesn't have.</li>
+        </ul>
+
+        <h3>Does This Include Solar Panels on Homes?</h3>
+        <ul>
+            <li>Yes. The installation and capacity figures count every registered installation, including panels on house roofs. The project map only includes larger projects, of 150 kW or more, that have been through the planning system.</li>
+        </ul>
+
+        <h3>What Do the Project Statuses Mean?</h3>
+        <ul>
+            <li><strong>Operational</strong>: built and generating or storing power.</li>
+            <li><strong>Under construction</strong>: being built.</li>
+            <li><strong>Approved</strong>: has planning permission but hasn't been built yet. Some approved projects are never built.</li>
+            <li><strong>In planning</strong>: an application or appeal is waiting for a decision.</li>
+            <li><strong>Refused, withdrawn or ended</strong>: refused, withdrawn, abandoned, or with permission that has run out, or a plant that has since closed.</li>
+        </ul>
+
+        <h3>Why Are Batteries Included?</h3>
+        <ul>
+            <li>Battery storage sites don't generate electricity, but they store it when there's plenty, such as on a sunny afternoon, and release it when it's needed, which lets the grid use more solar and wind power. The planning database records them alongside renewable projects.</li>
+        </ul>
+
+        <h3>How Can I Find Out About a Planning Application in Cheltenham?</h3>
+        <ul>
+            <li>Our <a href="/cheltenham-planning-applications">Cheltenham planning applications</a> page lists recent applications to Cheltenham Borough Council, with a map.</li>
+        </ul>
+
+        <h3>How Often Is This Page Updated?</h3>
+        <ul>
+            <li>We check for new figures every month. Installation and capacity figures are published once a year, in September, and the planning database every three months.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the Department for Energy Security and Net Zero's <a href="{{ data.source_url }}">Regional
+            Renewable Statistics</a> and <a href="{{ data.repd_source_url }}">Renewable Energy Planning Database</a>
+            ({{ repd.edition }}), published under the {{ data.licence }}. Electricity use is from its
+            <a href="{{ use.source_url }}">subnational electricity consumption statistics</a>.
+            {% include freshness.html file="_data/renewable-energy.json" %}
+            Distances are measured from the Promenade in the town centre. Generation figures that would reveal the
+            output of a single site are not published.
+        </small></p>
+    </div>
+</div>
+
+{% include chartjs.html %}
+{% include leaflet.html %}
+<script id="renewable-energy-data" type="application/json">{{ data.years | jsonify }}</script>
+<script id="renewable-map-data" type="application/json">{{ repd.sites | jsonify }}</script>
+<script src="/assets/scripts/renewable-energy-chart.js"></script>
+<script src="/assets/scripts/renewable-energy-map.js"></script>
+{% include footer.html %}

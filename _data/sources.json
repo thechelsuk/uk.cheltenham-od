@@ -340,6 +340,16 @@
     ]
   },
   {
+    "id": "os-open-greenspace",
+    "name": "Ordnance Survey",
+    "licence_name": "Open Government Licence v3.0",
+    "source_url": "https://www.ordnancesurvey.co.uk/products/os-open-greenspace",
+    "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/green-spaces.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-green-spaces"]
+  },
+  {
     "id": "gcc-permit-zone-maps",
     "name": "Gloucestershire County Council",
     "source_url": "https://www.gloucestershire.gov.uk/parking/permit-information/permit-zone-maps",
@@ -622,6 +632,14 @@
     "pages": ["/cheltenham-covid-19"]
   },
   {
+    "id": "ohid-fingertips-public-health-profiles",
+    "source_url": "https://fingertips.phe.org.uk/",
+    "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/public-health.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-public-health"]
+  },
+  {
     "id": "met-office-fire-severity-index",
     "source_url": "https://openaccess.naturalengland.org.uk/",
     "licence": "No licence stated. The Met Office produces the Fire Severity Index and Natural England publishes it on its Open Access site through a public ArcGIS feature service; neither states reuse terms for it. Confirm terms with the Met Office before any commercial use, such as a paid alert service",
@@ -708,5 +726,23 @@
     "licence_type": "OGL v3.0",
     "data": [{"file": "_data/cyber-breaches-survey.json", "schedule": "manual"}],
     "pages": ["/cheltenham-cyber-security"]
+  },
+  {
+    "id": "desnz-renewable-energy",
+    "name": "Regional Renewable Statistics and Renewable Energy Planning Database (DESNZ)",
+    "source_url": "https://www.gov.uk/government/statistics/regional-renewable-statistics",
+    "licence": "Open Government Licence v3.0 — council installations, capacity and generation published each September; the planning database (REPD) quarterly",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/renewable-energy.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-renewable-energy"]
+  },
+  {
+    "id": "desnz-subnational-energy-consumption",
+    "name": "Subnational electricity and gas consumption statistics (DESNZ)",
+    "source_url": "https://www.gov.uk/government/collections/sub-national-electricity-consumption-data",
+    "licence": "Open Government Licence v3.0 — council and small area (LSOA) figures published each December for the year before",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/energy-use.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-renewable-energy/energy-use", "/cheltenham-renewable-energy"]
   }
 ]

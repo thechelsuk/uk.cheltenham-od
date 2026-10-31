@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:42.140905+00:00",
+  "generated_at": "2026-10-31T19:22:40.445076+00:00",
   "name": "All Saints",
   "slug": "all-saints",
   "code": "E05015704",
@@ -390,13 +390,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-08-10",
+    "latest_sale": "2026-09-18",
     "first_year": "1995",
-    "sales_total": 5500,
-    "sales_total_display": "5,500",
-    "last12_sales": 130,
-    "last12_median": 310050,
-    "last12_median_display": "£310,050",
+    "sales_total": 5514,
+    "sales_total_display": "5,514",
+    "last12_sales": 121,
+    "last12_median": 297000,
+    "last12_median_display": "£297,000",
     "by_year": [
       {
         "year": "1995",
@@ -580,63 +580,82 @@
       },
       {
         "year": "2025",
-        "sales": 160,
-        "median": 281250,
-        "median_display": "£281,250"
+        "sales": 162,
+        "median": 280000,
+        "median_display": "£280,000"
       },
       {
         "year": "2026",
-        "sales": 63,
-        "median": 310100,
-        "median_display": "£310,100"
+        "sales": 75,
+        "median": 305000,
+        "median_display": "£305,000"
       }
     ],
     "by_type": [
       {
         "type": "Terraced",
-        "sales": 52,
-        "median": 357500,
-        "median_display": "£357,500",
+        "sales": 49,
+        "median": 350000,
+        "median_display": "£350,000",
         "min_display": "£124,000",
         "max_display": "£890,000"
       },
       {
         "type": "Flat or maisonette",
         "sales": 42,
-        "median": 166250,
-        "median_display": "£166,250",
+        "median": 156750,
+        "median_display": "£156,750",
         "min_display": "£67,000",
         "max_display": "£400,000"
       },
       {
         "type": "Semi-detached",
-        "sales": 21,
-        "median": 599950,
-        "median_display": "£599,950",
-        "min_display": "£204,000",
-        "max_display": "£1,060,000"
+        "sales": 14,
+        "median": 492500,
+        "median_display": "£492,500",
+        "min_display": "£137,500",
+        "max_display": "£930,800"
       },
       {
         "type": "Other",
         "sales": 8,
-        "median": 213500,
-        "median_display": "£213,500",
+        "median": 288750,
+        "median_display": "£288,750",
         "min_display": "£19,100",
         "max_display": "£2,200,000"
       },
       {
         "type": "Detached",
-        "sales": 7,
-        "median": 830000,
-        "median_display": "£830,000",
-        "min_display": "£355,000",
+        "sales": 8,
+        "median": 767743,
+        "median_display": "£767,744",
+        "min_display": "£267,500",
         "max_display": "£1,106,000"
       }
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Roundabout collapsed",
+        "group": "Potholes & road surface",
+        "published": "2026-10-30",
+        "url": "https://www.fixmystreet.com/report/10309118",
+        "lat": 51.900777,
+        "lon": -2.054508
+      }
+    ],
     "planning": [
+      {
+        "ref": "26/01625/CACN",
+        "address": "10 Ariel Lodge Road Cheltenham Gloucestershire GL52 2TA",
+        "description": "Larch: remove",
+        "status": "Pending Consideration",
+        "received": "2026-10-09",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMMZYXELM5L00&activeTab=summary",
+        "lat": 51.901898,
+        "lon": -2.061136
+      },
       {
         "ref": "26/01614/CACN",
         "address": "141 Hewlett Road Cheltenham Gloucestershire GL52 6TS",
@@ -726,16 +745,6 @@
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TL324DELLU400&activeTab=summary",
         "lat": 51.899161,
         "lon": -2.068006
-      },
-      {
-        "ref": "26/01129/LBC",
-        "address": "3 Hewlett Place Cheltenham Gloucestershire GL52 6DQ",
-        "description": "Replace two completely rotted sash windows at first floor. Front and rear of property. (Retrospective).",
-        "status": "Pending Consideration",
-        "received": "2026-07-14",
-        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TI5I5DELL9P00&activeTab=summary",
-        "lat": 51.896985,
-        "lon": -2.067843
       }
     ],
     "serious_collisions": [
@@ -881,7 +890,7 @@
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
-      "count": 31
+      "count": 30
     },
     {
       "type": "Takeaway/sandwich shop",
@@ -1089,8 +1098,8 @@
           "distance_miles": 0.42
         },
         {
-          "name": "Ellis & Killpartrick (Cheltenham)",
-          "address": "K11, Regent Arcade, Regent Street, Cheltenham",
+          "name": "Envy Eyewear",
+          "address": "26 Ground Floor, Regent Arcade, Regent Street, Cheltenham",
           "postcode": "GL50 1JZ",
           "lat": 51.899292,
           "lon": -2.074721,
@@ -1363,63 +1372,39 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 2,
+      "in_ward": 4,
       "items": [
         {
-          "name": "Berkeley Place Garden London Road",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.896896,
-          "lon": -2.069144,
+          "name": "Victoria Ground",
+          "detail": "Playing field, 2.94 ha",
+          "lat": 51.89886,
+          "lon": -2.0609,
+          "in_ward": true,
+          "distance_miles": 0.17
+        },
+        {
+          "name": "All Saint's Church",
+          "detail": "Religious grounds, 0.29 ha",
+          "lat": 51.90221,
+          "lon": -2.06396,
+          "in_ward": true,
+          "distance_miles": 0.2
+        },
+        {
+          "name": "Allotments or community growing space, All Saints",
+          "detail": "Allotments or community growing space, 0.1 ha",
+          "lat": 51.90217,
+          "lon": -2.06333,
+          "in_ward": true,
+          "distance_miles": 0.21
+        },
+        {
+          "name": "Public park or garden, All Saints",
+          "detail": "Public park or garden, 0.1 ha",
+          "lat": 51.89688,
+          "lon": -2.06912,
           "in_ward": true,
           "distance_miles": 0.25
-        },
-        {
-          "name": "Oxford Parade Ornamental Gardens London Road",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.895872,
-          "lon": -2.067311,
-          "in_ward": true,
-          "distance_miles": 0.26
-        },
-        {
-          "name": "Brick Water Feature Sandford Park College Road",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.897111,
-          "lon": -2.070888,
-          "in_ward": false,
-          "distance_miles": 0.3
-        },
-        {
-          "name": "Playground Sherborne Street",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.903271,
-          "lon": -2.067831,
-          "in_ward": false,
-          "distance_miles": 0.3
-        },
-        {
-          "name": "Unwins Fountain Sandford Park College Road",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.896212,
-          "lon": -2.070683,
-          "in_ward": false,
-          "distance_miles": 0.33
-        },
-        {
-          "name": "Western Half Of Pittville Circus",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.904234,
-          "lon": -2.066248,
-          "in_ward": false,
-          "distance_miles": 0.34
-        },
-        {
-          "name": "10 Sandford Park Place",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.894756,
-          "lon": -2.068821,
-          "in_ward": false,
-          "distance_miles": 0.36
         }
       ]
     },
@@ -1644,8 +1629,18 @@
       "group": "Everyday Services",
       "label": "Parcel Pick-up Points",
       "mode": "nearest",
-      "in_ward": 0,
+      "in_ward": 1,
       "items": [
+        {
+          "name": "Tesco Express",
+          "address": "111 High Street",
+          "postcode": "GL50 1DW",
+          "detail": "InPost locker",
+          "lat": 51.89938,
+          "lon": -2.07235,
+          "in_ward": true,
+          "distance_miles": 0.32
+        },
         {
           "name": "Cheltenham High Street Post Office",
           "address": "192-194 High Street",
@@ -1994,7 +1989,7 @@
       "group": "Food and Drink",
       "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
-      "in_ward": 54,
+      "in_ward": 53,
       "items": [
         {
           "name": "Nasprias",
@@ -2022,7 +2017,7 @@
           "name": "Rainbowls",
           "address": "64 Hewlett Road, Cheltenham, Gloucestershire",
           "postcode": "GL52 6AR",
-          "detail": "Rating 4",
+          "detail": "Rating 5",
           "type": "Restaurant/Cafe/Canteen",
           "lat": 51.899667,
           "lon": -2.065596,
@@ -2107,10 +2102,10 @@
           "distance_miles": 0.21
         },
         {
-          "name": "Himal Food Ltd",
+          "name": "Ghurka Kitchen",
           "address": "44 St James Street, Cheltenham, Gloucestershire",
           "postcode": "GL52 2SH",
-          "detail": "AwaitingInspection",
+          "detail": "Rating 5",
           "type": "Other catering premises",
           "lat": 51.898719,
           "lon": -2.069825,
@@ -2272,21 +2267,10 @@
           "distance_miles": 0.31
         },
         {
-          "name": "John Lewis",
-          "address": "John Lewis Department Store, 123 High Street, Cheltenham, Gloucestershire",
-          "postcode": "GL50 1DQ",
-          "detail": "Rating 5",
-          "type": "Restaurant/Cafe/Canteen",
-          "lat": 51.899979,
-          "lon": -2.07201,
-          "in_ward": true,
-          "distance_miles": 0.31
-        },
-        {
           "name": "Platter (by Benugo At John Lewis)",
           "address": "John Lewis Department Store, 123 High Street, Cheltenham, Gloucestershire",
           "postcode": "GL50 1DQ",
-          "detail": "AwaitingInspection",
+          "detail": "Rating 5",
           "type": "Restaurant/Cafe/Canteen",
           "lat": 51.899979,
           "lon": -2.07201,
@@ -2384,7 +2368,7 @@
           "name": "Rogan Josh",
           "address": "26 Winchcombe Street, Cheltenham, Gloucestershire",
           "postcode": "GL52 2LX",
-          "detail": "Rating 4",
+          "detail": "Rating 3",
           "type": "Takeaway/sandwich shop",
           "lat": 51.90076,
           "lon": -2.072796,

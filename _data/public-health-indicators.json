@@ -1,0 +1,52 @@
+{
+  "about": "The OHID Fingertips indicators shown on /cheltenham-public-health, read by _python/public-health.py. Each indicator: Fingertips id, the label shown on the page, unit (years, %, per 100,000), sexes to show (default Persons) and, where Fingertips publishes both single-year and multi-year figures, the range to use.",
+  "groups": [
+    {
+      "name": "Life Expectancy",
+      "indicators": [
+        { "id": 90366, "label": "Life expectancy at birth", "unit": "years", "sexes": ["Male", "Female"], "range": "1y" },
+        { "id": 94359, "label": "Healthy life expectancy at birth", "unit": "years", "sexes": ["Male", "Female"] },
+        { "id": 91102, "label": "Life expectancy at 65", "unit": "years", "sexes": ["Male", "Female"], "range": "1y" },
+        { "id": 92901, "label": "Gap in life expectancy between the most and least deprived areas", "unit": "years", "sexes": ["Male", "Female"] }
+      ]
+    },
+    {
+      "name": "Deaths",
+      "indicators": [
+        { "id": 108, "label": "Deaths under 75, all causes", "unit": "per 100,000", "range": "1y" },
+        { "id": 93721, "label": "Deaths under 75 from preventable causes", "unit": "per 100,000", "range": "1y" },
+        { "id": 41001, "label": "Suicide rate", "unit": "per 100,000" }
+      ]
+    },
+    {
+      "name": "Lifestyle",
+      "indicators": [
+        { "id": 92443, "label": "Adults who smoke", "unit": "%" },
+        { "id": 93014, "label": "Adults who are physically active", "unit": "%" },
+        { "id": 93088, "label": "Adults who are overweight or obese", "unit": "%" },
+        { "id": 93881, "label": "Adults who are obese", "unit": "%" },
+        { "id": 92906, "label": "Hospital admissions caused by alcohol", "unit": "per 100,000" }
+      ]
+    },
+    {
+      "name": "Children",
+      "indicators": [
+        { "id": 20601, "label": "Reception children overweight or obese", "unit": "%" },
+        { "id": 20602, "label": "Year 6 children overweight or obese", "unit": "%" }
+      ]
+    },
+    {
+      "name": "Wellbeing and Prevention",
+      "indicators": [
+        { "id": 22303, "label": "Adults with low happiness", "unit": "%" },
+        { "id": 22304, "label": "Adults with high anxiety", "unit": "%" },
+        { "id": 22001, "label": "Women screened for breast cancer", "unit": "%", "sexes": ["Female"] },
+        { "id": 91720, "label": "Adults screened for bowel cancer", "unit": "%" },
+        { "id": 93759, "label": "Households in fuel poverty", "unit": "%", "sexes": ["Not applicable"] },
+        { "id": 93861, "label": "Deaths linked to air pollution", "unit": "%" }
+      ]
+    }
+  ],
+  "life_expectancy_chart": 90366,
+  "ward_indicator": { "id": 93108, "label": "Year 6 children overweight or obese, three years combined" }
+}

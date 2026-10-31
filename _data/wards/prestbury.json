@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:45.832176+00:00",
+  "generated_at": "2026-10-31T19:22:44.357556+00:00",
   "name": "Prestbury",
   "slug": "prestbury",
   "code": "E05015716",
@@ -605,11 +605,11 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-08-14",
+    "latest_sale": "2026-09-14",
     "first_year": "1995",
-    "sales_total": 3535,
-    "sales_total_display": "3,535",
-    "last12_sales": 97,
+    "sales_total": 3546,
+    "sales_total_display": "3,546",
+    "last12_sales": 93,
     "last12_median": 425000,
     "last12_median_display": "£425,000",
     "by_year": [
@@ -801,41 +801,41 @@
       },
       {
         "year": "2026",
-        "sales": 46,
-        "median": 414500,
-        "median_display": "£414,500"
+        "sales": 57,
+        "median": 425000,
+        "median_display": "£425,000"
       }
     ],
     "by_type": [
       {
+        "type": "Detached",
+        "sales": 34,
+        "median": 595000,
+        "median_display": "£595,000",
+        "min_display": "£345,000",
+        "max_display": "£2,100,000"
+      },
+      {
         "type": "Semi-detached",
-        "sales": 38,
-        "median": 414500,
-        "median_display": "£414,500",
+        "sales": 33,
+        "median": 410000,
+        "median_display": "£410,000",
         "min_display": "£235,000",
         "max_display": "£890,000"
       },
       {
-        "type": "Detached",
-        "sales": 33,
-        "median": 610000,
-        "median_display": "£610,000",
-        "min_display": "£345,000",
-        "max_display": "£2,600,000"
-      },
-      {
         "type": "Flat or maisonette",
-        "sales": 15,
+        "sales": 14,
         "median": 205000,
         "median_display": "£205,000",
         "min_display": "£150,000",
-        "max_display": "£340,000"
+        "max_display": "£240,000"
       },
       {
         "type": "Terraced",
-        "sales": 10,
-        "median": 340000,
-        "median_display": "£340,000",
+        "sales": 11,
+        "median": 280000,
+        "median_display": "£280,000",
         "min_display": "£112,000",
         "max_display": "£550,000"
       },
@@ -852,12 +852,12 @@
   "local_issues": {
     "fix_my_street": [
       {
-        "title": "Overhanging trees and dangerous wall",
-        "group": "Trees & vegetation",
-        "published": "2026-10-11",
-        "url": "https://www.fixmystreet.com/report/10223461",
-        "lat": 51.913749,
-        "lon": -2.042655
+        "title": "Wooden Bus Stop",
+        "group": "Bus stops, parking & vehicles",
+        "published": "2026-10-31",
+        "url": "https://www.fixmystreet.com/report/10311293",
+        "lat": 51.911104,
+        "lon": -2.049084
       }
     ],
     "planning": [
@@ -1520,31 +1520,87 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 3,
+      "in_ward": 10,
       "items": [
         {
-          "name": "Open Space At Rear Of Apple Orchard Prestbury",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.917006,
-          "lon": -2.057165,
+          "name": "Public park or garden, Prestbury",
+          "detail": "Public park or garden, 0.29 ha",
+          "lat": 51.91345,
+          "lon": -2.05896,
           "in_ward": true,
-          "distance_miles": 0.09
+          "distance_miles": 0.34
         },
         {
-          "name": "Open Space Land On The East Side Of Bouncers Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.90776,
-          "lon": -2.045568,
+          "name": "Public park or garden, Prestbury",
+          "detail": "Public park or garden, 0.53 ha",
+          "lat": 51.91251,
+          "lon": -2.05724,
           "in_ward": true,
-          "distance_miles": 0.83
+          "distance_miles": 0.38
         },
         {
-          "name": "Seven Parcels Of Land At Gallops Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.910352,
-          "lon": -2.037415,
+          "name": "Tennis court, Prestbury",
+          "detail": "Tennis court, 0.11 ha",
+          "lat": 51.91296,
+          "lon": -2.05108,
           "in_ward": true,
-          "distance_miles": 0.95
+          "distance_miles": 0.4
+        },
+        {
+          "name": "Prestbury Playing Field",
+          "detail": "Playing field, 3.83 ha",
+          "lat": 51.91223,
+          "lon": -2.05226,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Sports facility, Prestbury",
+          "detail": "Sports facility, 0.01 ha",
+          "lat": 51.91261,
+          "lon": -2.05096,
+          "in_ward": true,
+          "distance_miles": 0.42
+        },
+        {
+          "name": "Tennis court, Prestbury",
+          "detail": "Tennis court, 0.07 ha",
+          "lat": 51.91235,
+          "lon": -2.0512,
+          "in_ward": true,
+          "distance_miles": 0.43
+        },
+        {
+          "name": "Sports facility, Prestbury",
+          "detail": "Sports facility, 0.01 ha",
+          "lat": 51.91229,
+          "lon": -2.0508,
+          "in_ward": true,
+          "distance_miles": 0.45
+        },
+        {
+          "name": "St Mary's Church",
+          "detail": "Religious grounds, 0.69 ha",
+          "lat": 51.91427,
+          "lon": -2.04483,
+          "in_ward": true,
+          "distance_miles": 0.53
+        },
+        {
+          "name": "Allotments or community growing space, Prestbury",
+          "detail": "Allotments or community growing space, 3.88 ha",
+          "lat": 51.91124,
+          "lon": -2.04417,
+          "in_ward": true,
+          "distance_miles": 0.68
+        },
+        {
+          "name": "St Nicolas' Church",
+          "detail": "Religious grounds, 0.34 ha",
+          "lat": 51.91654,
+          "lon": -2.07948,
+          "in_ward": true,
+          "distance_miles": 1.01
         }
       ]
     },

@@ -71,6 +71,15 @@ subgroups:
         description: "University of Gloucestershire campuses in Cheltenham and Gloucester, what is taught where and how to apply."
   - name: "Around Your Home"
     items:
+      - name: "Cheltenham Renewable Energy"
+        link: /cheltenham-renewable-energy
+        description: "Solar panels and other renewable electricity in Cheltenham, and solar farms and battery sites planned nearby."
+        children:
+          - name: "Cheltenham Gas &amp; Electricity Use"
+            short: "Energy Use"
+            link: /cheltenham-renewable-energy/energy-use
+            description: "How much gas and electricity Cheltenham's homes use, by ward and small area, compared with the South West and England."
+            a_z: true
       - name: "Cheltenham Planning Applications"
         link: /cheltenham-planning-applications
         description: "Local planning applications from Cheltenham Borough Council."

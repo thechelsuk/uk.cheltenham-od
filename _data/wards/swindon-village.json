@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:47.305660+00:00",
+  "generated_at": "2026-10-31T19:22:45.760392+00:00",
   "name": "Swindon Village",
   "slug": "swindon-village",
   "code": "E05015721",
@@ -580,13 +580,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-08-05",
+    "latest_sale": "2026-09-03",
     "first_year": "1995",
-    "sales_total": 2554,
-    "sales_total_display": "2,554",
-    "last12_sales": 73,
-    "last12_median": 290000,
-    "last12_median_display": "£290,000",
+    "sales_total": 2562,
+    "sales_total_display": "2,562",
+    "last12_sales": 70,
+    "last12_median": 288750,
+    "last12_median_display": "£288,750",
     "by_year": [
       {
         "year": "1995",
@@ -770,13 +770,13 @@
       },
       {
         "year": "2025",
-        "sales": 104,
+        "sales": 106,
         "median": 290000,
         "median_display": "£290,000"
       },
       {
         "year": "2026",
-        "sales": 36,
+        "sales": 42,
         "median": 287000,
         "median_display": "£287,000"
       }
@@ -784,17 +784,17 @@
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 36,
-        "median": 292500,
-        "median_display": "£292,500",
+        "sales": 33,
+        "median": 290000,
+        "median_display": "£290,000",
         "min_display": "£200,000",
         "max_display": "£575,000"
       },
       {
         "type": "Terraced",
-        "sales": 14,
-        "median": 236500,
-        "median_display": "£236,500",
+        "sales": 15,
+        "median": 250000,
+        "median_display": "£250,000",
         "min_display": "£200,000",
         "max_display": "£325,000"
       },
@@ -808,11 +808,11 @@
       },
       {
         "type": "Other",
-        "sales": 7,
-        "median": 395000,
-        "median_display": "£395,000",
+        "sales": 6,
+        "median": 338486,
+        "median_display": "£338,486",
         "min_display": "£39,999",
-        "max_display": "£1,281,588"
+        "max_display": "£1,260,000"
       },
       {
         "type": "Flat or maisonette",
@@ -827,12 +827,20 @@
   "local_issues": {
     "fix_my_street": [
       {
-        "title": "30 and national speed limit sign facing same way",
+        "title": "Pallet in Brook",
+        "group": "Trees & vegetation",
+        "published": "2026-10-31",
+        "url": "https://www.fixmystreet.com/report/10311137",
+        "lat": 51.917045,
+        "lon": -2.08679
+      },
+      {
+        "title": "Broken sign",
         "group": "Signs, markings & barriers",
-        "published": "2026-10-10",
-        "url": "https://www.fixmystreet.com/report/10220835",
-        "lat": 51.929919,
-        "lon": -2.090703
+        "published": "2026-10-31",
+        "url": "https://www.fixmystreet.com/report/10311149",
+        "lat": 51.918416,
+        "lon": -2.085058
       }
     ],
     "planning": [
@@ -1085,7 +1093,7 @@
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
-      "count": 17
+      "count": 16
     },
     {
       "type": "Takeaway/sandwich shop",
@@ -1093,11 +1101,11 @@
     },
     {
       "type": "Other catering premises",
-      "count": 3
+      "count": 4
     },
     {
       "type": "Pub/bar/nightclub",
-      "count": 2
+      "count": 1
     }
   ],
   "listed_grades": [
@@ -1600,47 +1608,79 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 5,
+      "in_ward": 9,
       "items": [
         {
-          "name": "Playing Field Wymans Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.921596,
-          "lon": -2.092011,
+          "name": "Sports facility, Swindon Village",
+          "detail": "Sports facility, 8.85 ha",
+          "lat": 51.92599,
+          "lon": -2.09089,
+          "in_ward": true,
+          "distance_miles": 0.14
+        },
+        {
+          "name": "Swindon Playing Field",
+          "detail": "Playing field, 8.32 ha",
+          "lat": 51.92166,
+          "lon": -2.09216,
           "in_ward": true,
           "distance_miles": 0.18
         },
         {
-          "name": "Mary Godwin Pavillions Wymans Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.920778,
-          "lon": -2.091675,
+          "name": "St Lawrence's Church",
+          "detail": "Religious grounds, 0.25 ha",
+          "lat": 51.92253,
+          "lon": -2.09651,
           "in_ward": true,
-          "distance_miles": 0.23
+          "distance_miles": 0.28
         },
         {
-          "name": "Land At Wymans Brook Estate Gardners Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.913939,
-          "lon": -2.087822,
+          "name": "Allotments or community growing space, Swindon Village",
+          "detail": "Allotments or community growing space, 1.07 ha",
+          "lat": 51.9251,
+          "lon": -2.09955,
           "in_ward": true,
-          "distance_miles": 0.71
+          "distance_miles": 0.4
         },
         {
-          "name": "Land At St Peters Estate Bridge Street",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.910743,
-          "lon": -2.093064,
+          "name": "Sports facility, Swindon Village",
+          "detail": "Sports facility, 0.68 ha",
+          "lat": 51.91813,
+          "lon": -2.09318,
           "in_ward": true,
-          "distance_miles": 0.92
+          "distance_miles": 0.42
         },
         {
-          "name": "Land To The West Side Of Waterloo Street",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.909577,
-          "lon": -2.0903,
+          "name": "Sports facility, Swindon Village",
+          "detail": "Sports facility, 0.08 ha",
+          "lat": 51.91424,
+          "lon": -2.09656,
           "in_ward": true,
-          "distance_miles": 1.0
+          "distance_miles": 0.72
+        },
+        {
+          "name": "University of Gloucestershire the Folley",
+          "detail": "Sports facility, 6.2 ha",
+          "lat": 51.91231,
+          "lon": -2.08912,
+          "in_ward": true,
+          "distance_miles": 0.81
+        },
+        {
+          "name": "Cemetery, Swindon Village",
+          "detail": "Cemetery, 0.07 ha",
+          "lat": 51.91024,
+          "lon": -2.09129,
+          "in_ward": true,
+          "distance_miles": 0.95
+        },
+        {
+          "name": "St Peter's Rest Garden",
+          "detail": "Public park or garden, 0.09 ha",
+          "lat": 51.91028,
+          "lon": -2.09291,
+          "in_ward": true,
+          "distance_miles": 0.96
         }
       ]
     },
@@ -2208,8 +2248,19 @@
       "group": "Food and Drink",
       "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
-      "in_ward": 29,
+      "in_ward": 28,
       "items": [
+        {
+          "name": "IGLU Bars",
+          "address": "Seasons Business Complex, Cheltenham Town Football Club Training Ground, Quat Goose Lane, Cheltenham",
+          "postcode": "GL51 9RX",
+          "detail": "Rating 5",
+          "type": "Other catering premises",
+          "lat": 51.925407,
+          "lon": -2.092506,
+          "in_ward": true,
+          "distance_miles": 0.13
+        },
         {
           "name": "Picknix",
           "address": "The Flat, Seasons Business Complex, Quat Goose Lane, Cheltenham",
@@ -2340,28 +2391,6 @@
           "lon": -2.086851,
           "in_ward": true,
           "distance_miles": 0.56
-        },
-        {
-          "name": "The Ridge",
-          "address": "Windyridge Road, Cheltenham, Gloucestershire",
-          "postcode": "GL50 4RA",
-          "detail": "Rating 5",
-          "type": "Pub/bar/nightclub",
-          "lat": 51.916277,
-          "lon": -2.086851,
-          "in_ward": true,
-          "distance_miles": 0.56
-        },
-        {
-          "name": "Enigma Studios",
-          "address": "Unit 5, Wymans Brook Shopping Centre, Windyridge Road, Cheltenham",
-          "postcode": "GL50 4RA",
-          "detail": "Rating 4",
-          "type": "Restaurant/Cafe/Canteen",
-          "lat": 51.916079,
-          "lon": -2.086788,
-          "in_ward": true,
-          "distance_miles": 0.57
         },
         {
           "name": "Wymans Fish Bar",

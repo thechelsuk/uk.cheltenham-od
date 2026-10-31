@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Public Health Statistics",
+  "description": "Public health indicators for Cheltenham compared with England, including life expectancy, healthy life expectancy, deaths under 75, smoking, physical activity, adult and child weight, wellbeing and cancer screening, with Year 6 child weight by ward, from the Office for Health Improvement and Disparities' Fingertips public health profiles.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['public-health'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Life expectancy at birth", "Healthy life expectancy", "Deaths under 75", "Smoking prevalence", "Physical activity", "Adult obesity", "Child weight", "Cancer screening coverage"]
+}
+</script>

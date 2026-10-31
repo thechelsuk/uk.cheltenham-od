@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:44.106543+00:00",
+  "generated_at": "2026-10-31T19:22:42.504791+00:00",
   "name": "Hesters Way",
   "slug": "hesters-way",
   "code": "E05015710",
@@ -463,13 +463,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-08-05",
+    "latest_sale": "2026-09-24",
     "first_year": "1995",
-    "sales_total": 2780,
-    "sales_total_display": "2,780",
-    "last12_sales": 62,
-    "last12_median": 229500,
-    "last12_median_display": "£229,500",
+    "sales_total": 2789,
+    "sales_total_display": "2,789",
+    "last12_sales": 59,
+    "last12_median": 245000,
+    "last12_median_display": "£245,000",
     "by_year": [
       {
         "year": "1995",
@@ -659,35 +659,35 @@
       },
       {
         "year": "2026",
-        "sales": 29,
-        "median": 249999,
-        "median_display": "£249,999"
+        "sales": 38,
+        "median": 250000,
+        "median_display": "£250,000"
       }
     ],
     "by_type": [
       {
-        "type": "Flat or maisonette",
-        "sales": 21,
-        "median": 141500,
-        "median_display": "£141,500",
-        "min_display": "£100,800",
-        "max_display": "£173,000"
-      },
-      {
         "type": "Terraced",
-        "sales": 20,
-        "median": 247500,
-        "median_display": "£247,500",
-        "min_display": "£200,000",
+        "sales": 24,
+        "median": 261000,
+        "median_display": "£261,000",
+        "min_display": "£221,000",
         "max_display": "£325,000"
       },
       {
         "type": "Semi-detached",
-        "sales": 19,
-        "median": 250000,
-        "median_display": "£250,000",
+        "sales": 18,
+        "median": 259750,
+        "median_display": "£259,750",
         "min_display": "£139,500",
         "max_display": "£330,000"
+      },
+      {
+        "type": "Flat or maisonette",
+        "sales": 15,
+        "median": 141500,
+        "median_display": "£141,500",
+        "min_display": "£100,800",
+        "max_display": "£171,250"
       },
       {
         "type": "Detached",
@@ -700,25 +700,18 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Tree outside 30 and 32 Ashlands Road",
-        "group": "Trees & vegetation",
-        "published": "2026-10-11",
-        "url": "https://www.fixmystreet.com/report/10223103",
-        "lat": 51.908636,
-        "lon": -2.116648
-      },
-      {
-        "title": "Yellow lines need repainting",
-        "group": "Signs, markings & barriers",
-        "published": "2026-10-10",
-        "url": "https://www.fixmystreet.com/report/10220874",
-        "lat": 51.899047,
-        "lon": -2.120373
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01623/CLPUD",
+        "address": "GCHQ Hubble Road Cheltenham Gloucestershire GL51 0EX",
+        "description": "New prefabricated building with all associated works.",
+        "status": "Pending Consideration",
+        "received": "2026-10-09",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMMZY8ELM5H00&activeTab=summary",
+        "lat": 51.899367,
+        "lon": -2.123555
+      },
       {
         "ref": "26/01396/CACN",
         "address": "1 Acacia Court Cheltenham Gloucestershire GL51 0XG",
@@ -1265,63 +1258,31 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 2,
+      "in_ward": 3,
       "items": [
         {
-          "name": "Hesters Way Park Princess Elizabeth Way",
-          "detail": "Parks, Gardens and open space",
-          "lat": 51.900775,
-          "lon": -2.11996,
+          "name": "Hesters Way Park",
+          "detail": "Public park or garden, 3.96 ha",
+          "lat": 51.90093,
+          "lon": -2.12025,
           "in_ward": true,
-          "distance_miles": 0.29
+          "distance_miles": 0.28
         },
         {
-          "name": "Land At Arle Springbank Road",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.904421,
-          "lon": -2.123938,
+          "name": "Playing field, Hesters Way",
+          "detail": "Playing field, 1.22 ha",
+          "lat": 51.90432,
+          "lon": -2.12382,
           "in_ward": true,
-          "distance_miles": 0.29
+          "distance_miles": 0.28
         },
         {
-          "name": "Land At Triscombe Way",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.908011,
-          "lon": -2.121215,
-          "in_ward": false,
-          "distance_miles": 0.3
-        },
-        {
-          "name": "Allotments Henley Road",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.906359,
-          "lon": -2.127854,
-          "in_ward": false,
-          "distance_miles": 0.47
-        },
-        {
-          "name": "King George V Playing Field Brooklyn Road",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.903837,
-          "lon": -2.10587,
-          "in_ward": false,
-          "distance_miles": 0.48
-        },
-        {
-          "name": "Land At Springbank Way",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.912555,
-          "lon": -2.117637,
-          "in_ward": false,
-          "distance_miles": 0.55
-        },
-        {
-          "name": "Open Land Wharfdale Square Alstone Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.906184,
-          "lon": -2.104582,
-          "in_ward": false,
-          "distance_miles": 0.55
+          "name": "Sports facility, Hesters Way",
+          "detail": "Sports facility, 0.01 ha",
+          "lat": 51.90431,
+          "lon": -2.1238,
+          "in_ward": true,
+          "distance_miles": 0.28
         }
       ]
     },
@@ -1539,16 +1500,6 @@
       "in_ward": 2,
       "items": [
         {
-          "name": "YEEP! Premier Springbank Store",
-          "address": "124 Springbank Road",
-          "postcode": "GL51 0PG",
-          "detail": "DPD Pickup",
-          "lat": 51.905334,
-          "lon": -2.125066,
-          "in_ward": false,
-          "distance_miles": 0.34
-        },
-        {
           "name": "Nisa Beaumont Road",
           "address": "4 Beaumont Road",
           "postcode": "GL51 0LA",
@@ -1607,6 +1558,16 @@
           "lon": -2.118253,
           "in_ward": false,
           "distance_miles": 0.69
+        },
+        {
+          "name": "Shell Arle Service Station",
+          "address": "24 Princess Elizabeth Way, Arle",
+          "postcode": "GL51 7PA",
+          "detail": "InPost locker",
+          "lat": 51.91234,
+          "lon": -2.1003,
+          "in_ward": false,
+          "distance_miles": 0.9
         }
       ]
     },

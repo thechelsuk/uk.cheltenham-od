@@ -20,6 +20,8 @@ NOT_SOURCE_DATA = {
     "news-digests.json", "fix-my-street-categories.json", "general-election-dates.json",
     "ignore-stations.json", "fuel-stations.json", "weather-today.json", "wards/index.json",
     "newsletter-venues.json",
+    # Fetcher settings: the indicators public-health.py fetches.
+    "public-health-indicators.json",
     # Built only from other _data files, each registered under its own source.
     "cheltenham-numbers.json",
 }

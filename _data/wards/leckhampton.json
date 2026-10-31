@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:44.644161+00:00",
+  "generated_at": "2026-10-31T19:22:43.122705+00:00",
   "name": "Leckhampton",
   "slug": "leckhampton",
   "code": "E05015712",
@@ -484,13 +484,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-08-21",
+    "latest_sale": "2026-09-01",
     "first_year": "1995",
-    "sales_total": 3401,
-    "sales_total_display": "3,401",
-    "last12_sales": 86,
-    "last12_median": 517250,
-    "last12_median_display": "£517,250",
+    "sales_total": 3421,
+    "sales_total_display": "3,421",
+    "last12_sales": 102,
+    "last12_median": 547500,
+    "last12_median_display": "£547,500",
     "by_year": [
       {
         "year": "1995",
@@ -674,39 +674,39 @@
       },
       {
         "year": "2025",
-        "sales": 88,
-        "median": 485750,
-        "median_display": "£485,750"
+        "sales": 99,
+        "median": 525000,
+        "median_display": "£525,000"
       },
       {
         "year": "2026",
-        "sales": 50,
-        "median": 517250,
-        "median_display": "£517,250"
+        "sales": 59,
+        "median": 550000,
+        "median_display": "£550,000"
       }
     ],
     "by_type": [
       {
-        "type": "Semi-detached",
-        "sales": 32,
-        "median": 562750,
-        "median_display": "£562,750",
-        "min_display": "£250,000",
-        "max_display": "£1,225,000"
-      },
-      {
         "type": "Detached",
-        "sales": 26,
+        "sales": 36,
         "median": 718000,
         "median_display": "£718,000",
         "min_display": "£211,950",
-        "max_display": "£1,225,000"
+        "max_display": "£1,350,000"
+      },
+      {
+        "type": "Semi-detached",
+        "sales": 35,
+        "median": 560000,
+        "median_display": "£560,000",
+        "min_display": "£250,000",
+        "max_display": "£1,425,000"
       },
       {
         "type": "Terraced",
-        "sales": 17,
-        "median": 460000,
-        "median_display": "£460,000",
+        "sales": 20,
+        "median": 452250,
+        "median_display": "£452,250",
         "min_display": "£314,000",
         "max_display": "£725,000"
       },
@@ -729,24 +729,7 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "A large pothole at the entrance of Highwood Avenue",
-        "group": "Potholes & road surface",
-        "published": "2026-10-11",
-        "url": "https://www.fixmystreet.com/report/10221447",
-        "lat": 51.883553,
-        "lon": -2.088188
-      },
-      {
-        "title": "4 medium sized potholes outside of number 6",
-        "group": "Potholes & road surface",
-        "published": "2026-10-11",
-        "url": "https://www.fixmystreet.com/report/10221363",
-        "lat": 51.883177,
-        "lon": -2.087728
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
       {
         "ref": "26/01523/CONDIT",
@@ -1387,31 +1370,63 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 3,
+      "in_ward": 7,
       "items": [
         {
-          "name": "Burrows Sports Field Merlin Way",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.879354,
-          "lon": -2.084283,
+          "name": "Burrow's Sports Field",
+          "detail": "Playing field, 6.21 ha",
+          "lat": 51.87884,
+          "lon": -2.08389,
+          "in_ward": true,
+          "distance_miles": 0.04
+        },
+        {
+          "name": "Burrow's Pump Track",
+          "detail": "Sports facility, 0.13 ha",
+          "lat": 51.87758,
+          "lon": -2.08325,
+          "in_ward": true,
+          "distance_miles": 0.05
+        },
+        {
+          "name": "Tennis court, Leckhampton",
+          "detail": "Tennis court, 0.2 ha",
+          "lat": 51.87837,
+          "lon": -2.08173,
           "in_ward": true,
           "distance_miles": 0.08
         },
         {
-          "name": "Land At Rear Of 36 To 46 (even) Mead Road",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.881744,
-          "lon": -2.073362,
+          "name": "Hall Road Allotments",
+          "detail": "Allotments or community growing space, 2.29 ha",
+          "lat": 51.87765,
+          "lon": -2.08161,
           "in_ward": true,
-          "distance_miles": 0.5
+          "distance_miles": 0.1
         },
         {
-          "name": "Public Open Space At The Lanes",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.876449,
-          "lon": -2.096625,
+          "name": "Allotments or community growing space, Leckhampton",
+          "detail": "Allotments or community growing space, 0.44 ha",
+          "lat": 51.87624,
+          "lon": -2.08241,
           "in_ward": true,
-          "distance_miles": 0.57
+          "distance_miles": 0.15
+        },
+        {
+          "name": "St Peter's Church",
+          "detail": "Religious grounds, 1.35 ha",
+          "lat": 51.87299,
+          "lon": -2.0845,
+          "in_ward": true,
+          "distance_miles": 0.37
+        },
+        {
+          "name": "Public park or garden, Leckhampton",
+          "detail": "Public park or garden, 0.58 ha",
+          "lat": 51.87635,
+          "lon": -2.09644,
+          "in_ward": true,
+          "distance_miles": 0.56
         }
       ]
     },
@@ -1632,6 +1647,16 @@
           "distance_miles": 0.77
         },
         {
+          "name": "Midcounties Co Op",
+          "address": "Salisbury Avenue",
+          "postcode": "GL51 3BY",
+          "detail": "InPost locker",
+          "lat": 51.88275,
+          "lon": -2.10043,
+          "in_ward": false,
+          "distance_miles": 0.78
+        },
+        {
           "name": "YEEP! Cheltenham",
           "address": "Salisbury Avenue",
           "postcode": "GL51 3BY",
@@ -1650,16 +1675,6 @@
           "lon": -2.07865,
           "in_ward": false,
           "distance_miles": 0.81
-        },
-        {
-          "name": "YEEP! MFG Morrisons Caenarvon Road",
-          "address": "Caernarvon Road",
-          "postcode": "GL51 3BW",
-          "detail": "DPD Pickup",
-          "lat": 51.88097,
-          "lon": -2.106591,
-          "in_ward": false,
-          "distance_miles": 1.0
         }
       ]
     },

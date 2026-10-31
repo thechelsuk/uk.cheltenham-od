@@ -1,0 +1,139 @@
+{% include header.html %}
+{% assign data = site.data["green-spaces"] %}
+{% assign parks = data.groups | where: "id", "parks" | first %}
+{% assign allotments = data.groups | where: "id", "allotments" | first %}
+{% assign greenest = data.wards | sort: "pct_of_ward" | last %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.totals.sites }}</strong> green spaces</li>
+                <li><strong>{{ data.totals.hectares | round }}</strong> hectares</li>
+                <li><strong>{{ data.totals.pct_of_borough }}%</strong> of the borough</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="map">Map of Green Spaces</h2>
+        <p><small>Click a site for its size and how many ways in it has. Use the layers button to hide a group.</small></p>
+        <div class="map-legend" id="green-spaces-legend"></div>
+        <div id="green-spaces-map" class="map-canvas" aria-label="Map of parks, playing fields, allotments and other green spaces in Cheltenham"></div>
+
+        <h2 id="by-ward">Green Space by Ward</h2>
+        <p>How much of each ward is publicly mapped green space. Each site counts towards the ward that holds its centre.</p>
+        <div class="table-scroll">
+            <table class="green-spaces-wards-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Sites</th>
+                        <th scope="col" class="number">Hectares</th>
+                        <th scope="col" class="number">% of Ward</th>
+                        <th scope="col">Largest Named Site</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in data.wards %}
+                    <tr>
+                        <td data-val="{{ w.name | downcase }}"><a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }}</a></td>
+                        <td class="number">{{ w.sites }}</td>
+                        <td class="number">{{ w.hectares }}</td>
+                        <td class="number">{{ w.pct_of_ward }}</td>
+                        <td>{{ w.largest }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="sites">Every Green Space</h2>
+        <p>Largest first. Sort by any column, or filter by type.</p>
+        <div class="table-scroll">
+            <table class="green-spaces-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Hectares</th>
+                        <th scope="col" class="number">Ways In</th>
+                        <th scope="col" class="map">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in data.sites %}
+                    <tr>
+                        <td data-val="{{ s.name | downcase }}">{{ s.name }}</td>
+                        <td>{{ s.type }}</td>
+                        <td>{{ s.ward }}</td>
+                        <td class="number">{{ s.hectares }}</td>
+                        <td class="number">{{ s.access_points }}</td>
+                        <td class="map">{% include pin.html lat=s.lat lng=s.lon label=s.name %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Much Green Space Is There in Cheltenham?</h3>
+        <ul>
+            <li>Ordnance Survey maps {{ data.totals.sites }} publicly accessible or recreational green spaces in the borough,
+                covering {{ data.totals.hectares | round }} hectares, or {{ data.totals.pct_of_borough }}% of its land.
+                {{ parks.sites }} of them are public parks and gardens, together {{ parks.hectares | round }} hectares.</li>
+        </ul>
+
+        <h3>Which Ward Has the Most Green Space?</h3>
+        <ul>
+            <li>{{ greenest.name }}, where green space covers {{ greenest.pct_of_ward }}% of the ward ({{ greenest.hectares }}
+                hectares){% if greenest.largest != "" %}, the largest named site being {{ greenest.largest }}{% endif %}.
+                The table above compares all {{ data.wards.size }} wards.</li>
+        </ul>
+
+        <h3>Where Are the Allotments in Cheltenham?</h3>
+        <ul>
+            <li>There are {{ allotments.sites }} allotment and community growing sites, covering {{ allotments.hectares }}
+                hectares. Filter the table by type to list them, or hide the other groups on the map.
+                <a href="https://www.cheltenhamallotments.org/">Cheltenham &amp; District Allotment Holders' Association</a>
+                represents local plot holders and offers advice, and our <a href="/cheltenham-clubs-and-societies">clubs and
+                societies</a> page lists it among other groups to join.</li>
+        </ul>
+
+        <h3>Why Isn't the Countryside Around Cheltenham Included?</h3>
+        <ul>
+            <li>The map covers sites set aside for recreation, such as parks, sports grounds, allotments and churchyards,
+                inside Cheltenham borough. Open countryside, commons, woodland and footpaths aren't part of this dataset,
+                and nor are green spaces just over the borough boundary.</li>
+        </ul>
+
+        <h3>Why Are Some Sites Unnamed?</h3>
+        <ul>
+            <li>Ordnance Survey only names a site when it has a recognised name, so many playing fields, play spaces and
+                churchyards are listed by their type and ward instead. Click the map pin to see exactly where one is.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ data.source_url }}">{{ data.source }}</a> (release {{ data.os_version }}), published under the {{ data.licence }}.
+            {% include freshness.html file="_data/green-spaces.json" %}
+            Contains OS data &copy; Crown copyright and database right {{ data.generated_at | date: "%Y" }}.
+            Ordnance Survey updates this dataset twice a year. Sites are placed in the ward that holds their centre, and
+            areas are measured from the mapped outlines. Golf courses, school and club sports grounds are included but
+            may not be open to the public.
+        </small></p>
+
+    </div>
+</div>
+
+{% include leaflet.html %}
+<script id="green-spaces-data" type="application/json">{"groups": {{ data.groups | jsonify }}, "sites": {{ data.sites | jsonify }}}</script>
+<script src="/assets/scripts/green-spaces-map.js"></script>
+{% include footer.html %}

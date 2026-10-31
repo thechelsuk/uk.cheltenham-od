@@ -19,6 +19,7 @@
 {% assign fires = site.data["wildfire-incidents"] %}
 {% assign ward_fires = fires.by_ward | where: "ward", w.name | first %}
 {% assign flood = w.flood %}
+{% assign green = site.data["green-spaces"].wards | where: "slug", w.slug | first %}
 <div class="{{page.type}} herobar">
     <div class="{{page.type}}">
         <header class="{{page.type}} header">
@@ -87,6 +88,13 @@
                 <span class="info-card__title">{{ listed.in_ward }}</span>
                 <span class="info-card__subtitle">{% for g in w.listed_grades %}{{ g.count }} {{ g.grade }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
             </div>
+            {% if green %}
+            <div class="info-card">
+                <p class="info-card__label">Green space in the ward</p>
+                <span class="info-card__title">{{ green.pct_of_ward }}%</span>
+                <span class="info-card__subtitle">{{ green.hectares }} hectares across {{ green.sites }} sites</span>
+            </div>
+            {% endif %}
             {% if pol %}
             <div class="info-card">
                 <p class="info-card__label">Councillors</p>
@@ -185,11 +193,20 @@
 
         <h2 id="health-and-care">Health and Care near {{ w.name }}</h2>
         {% include ward-services.html group="Health and Care" %}
+        {% assign health_wards = site.data["public-health"].wards %}
+        {% assign child_weight = health_wards.rows | where: "code", w.code | first %}
+        {% if child_weight %}
+        <p>Across {{ health_wards.period_display }}, {{ child_weight.value_display }} of Year 6 children in {{ w.name }}
+            were overweight or obese, against {{ health_wards.cheltenham_display }} across Cheltenham and
+            {{ health_wards.england_display }} across England. See every ward and more measures on the
+            <a href="/cheltenham-public-health#wards">Cheltenham public health page</a>.</p>
+        {% endif %}
 
         <h2 id="schools-and-childcare">Schools and Childcare near {{ w.name }}</h2>
         {% include ward-services.html group="Schools and Childcare" %}
 
         <h2 id="parks-and-play">Parks and Play near {{ w.name }}</h2>
+        <p>Every park, playing field and allotment in Cheltenham is on our <a href="/cheltenham-green-spaces">parks and green spaces</a> map.</p>
         {% include ward-services.html group="Parks and Play" %}
 
         <h2 id="everyday-services">Everyday Services near {{ w.name }}</h2>
@@ -682,11 +699,13 @@
         <p class="attribution"><small>
             Data from Police.uk (crime), HM Land Registry (house prices), the Office for National Statistics
             (ward boundaries), the Department for Transport's Street Manager (street works), the Environment Agency
-            (flood zones), the Ministry of Housing, Communities and Local Government (fire statistics and home energy
+            (flood zones), Ordnance Survey (parks and green spaces), the Ministry of Housing, Communities and Local Government (fire statistics and home energy
             ratings), Ofsted
-            (childcare) and the Care Quality Commission (care homes), published under the Open Government Licence v3.0,
+            (childcare), the Care Quality Commission (care homes) and the Office for Health Improvement and
+            Disparities (child weight), published under the Open Government Licence v3.0,
             and from Cheltenham Borough Council (election results).
             {% include freshness.html file="_data/wards/index.json" %}
+            Contains OS data &copy; Crown copyright and database right {{ site.data["green-spaces"].generated_at | date: "%Y" }}.
         </small></p>
 
     </div>

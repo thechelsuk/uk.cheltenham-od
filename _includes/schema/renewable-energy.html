@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Renewable Energy",
+  "description": "Renewable electricity installations, installed capacity and generation in Cheltenham each year since 2014, compared with Gloucestershire's districts, and renewable and battery storage projects of 150 kW or more within 12 miles of the town centre with their planning status.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['renewable-energy'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "isBasedOn": ["{{ site.data['renewable-energy'].source_url }}", "{{ site.data['renewable-energy'].repd_source_url }}"],
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Renewable installations", "Installed capacity (MW)", "Generation (MWh)", "Installations per 1,000 homes", "Planning status", "Technology"]
+}
+</script>

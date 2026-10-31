@@ -48,8 +48,10 @@ jobs:
                   python _python/permit-zones.py || echo "::warning::permit-zones.py failed, continuing with other scripts"
                   python _python/cycle-routes.py || echo "::warning::cycle-routes.py failed, continuing with other scripts"
                   python _python/play-areas.py || echo "::warning::play-areas.py failed, continuing with other scripts"
+                  python _python/green-spaces.py || echo "::warning::green-spaces.py failed, continuing with other scripts"
                   python _python/cheltenham-stats.py || echo "::warning::cheltenham-stats.py failed, continuing with other scripts"
                   python _python/earnings.py || echo "::warning::earnings.py failed, continuing with other scripts"
+                  python _python/public-health.py || echo "::warning::public-health.py failed, continuing with other scripts"
                   python _python/economy.py || echo "::warning::economy.py failed, continuing with other scripts"
                   python _python/parkrun.py || echo "::warning::parkrun.py failed, continuing with other scripts"
                   python _python/listed-buildings.py || echo "::warning::listed-buildings.py failed, continuing with other scripts"
@@ -70,6 +72,8 @@ jobs:
                   python _python/charities.py || echo "::warning::charities.py failed, continuing with other scripts"
                   python _python/taxi-ranks.py || echo "::warning::taxi-ranks.py failed, continuing with other scripts"
                   python _python/epc.py || echo "::warning::epc.py failed, continuing with other scripts"
+                  python _python/renewable-energy.py || echo "::warning::renewable-energy.py failed, continuing with other scripts"
+                  python _python/energy-use.py || echo "::warning::energy-use.py failed, continuing with other scripts"
 
             - name: Commit and push if changed
               id: commit

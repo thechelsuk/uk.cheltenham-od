@@ -232,20 +232,13 @@ def src_play_areas():
 
 
 def src_parks():
-    seen = set()
-    kinds = {"Parks, Gardens and open space", "Open Space Land and Allottments"}
-    skip = re.compile(r"pavili?on|depot|entrance", re.I)
-    for a in load_json(DATA / "council-land-and-assets.json")["items"]:
-        if a["holding_type"] not in kinds or a.get("lat") is None:
+    # Parks, playing fields, allotments and other green spaces from OS Open
+    # Greenspace. Play spaces are left out: the "Play Areas" list covers them.
+    for s in load_json(DATA / "green-spaces.json")["sites"]:
+        if s["group"] == "play":
             continue
-        # The register gives an address, not a name: drop the town, county and postcode.
-        name = re.sub(r",?\s*Cheltenham(,?\s*Gloucestershire)?(,?\s*[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2})?\s*$", "",
-                      a["address"].split(",")[0].strip() if "," in a["address"] else a["address"]).strip()
-        if skip.search(name) or name in seen:
-            continue
-        seen.add(name)
-        yield {"name": name, "lat": a["lat"], "lon": a["lon"],
-               "detail": a["holding_type"].replace("Allottments", "Allotments")}
+        yield {"name": s["name"], "lat": s["lat"], "lon": s["lon"],
+               "detail": f"{s['type']}, {s['hectares']} ha"}
 
 
 def src_parkrun():

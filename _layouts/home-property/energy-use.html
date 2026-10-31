@@ -1,0 +1,228 @@
+{% include header.html %}
+{% assign data = site.data["energy-use"] %}
+{% assign borough = data.borough %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ borough.electricity_gwh }} GWh</strong> of electricity used in {{ data.year }}</li>
+                <li><strong>{{ borough.gas_gwh }} GWh</strong> of gas used in {{ data.year }}</li>
+                <li><strong>{{ borough.electricity_mean_kwh_display }} kWh</strong> of electricity per home</li>
+                <li><strong>{{ borough.gas_mean_kwh_display }} kWh</strong> of gas per home</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2 id="totals">Gas and Electricity Use in Cheltenham</h2>
+        <p>
+            In {{ data.year }} Cheltenham used {{ borough.electricity_gwh }} gigawatt hours (GWh) of electricity and
+            {{ borough.gas_gwh }} GWh of gas. Homes used {{ borough.electricity_domestic_gwh }} GWh of the electricity
+            and {{ borough.gas_domestic_gwh }} GWh of the gas; the rest went to businesses, public buildings and other
+            non-domestic meters.
+        </p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Fuel</th>
+                        <th scope="col" class="number">Homes (GWh)</th>
+                        <th scope="col" class="number">Non-Domestic (GWh)</th>
+                        <th scope="col" class="number">Total (GWh)</th>
+                        <th scope="col" class="number">Home Meters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Electricity</td>
+                        <td class="number">{{ borough.electricity_domestic_gwh }}</td>
+                        <td class="number">{{ borough.electricity_non_domestic_gwh }}</td>
+                        <td class="number">{{ borough.electricity_gwh }}</td>
+                        <td class="number">{{ borough.electricity_domestic_meters_display }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gas</td>
+                        <td class="number">{{ borough.gas_domestic_gwh }}</td>
+                        <td class="number">{{ borough.gas_non_domestic_gwh }}</td>
+                        <td class="number">{{ borough.gas_gwh }}</td>
+                        <td class="number">{{ borough.gas_domestic_meters_display }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="per-home">How Much Does a Typical Home Use?</h2>
+        <p>
+            The average Cheltenham home used {{ borough.electricity_mean_kwh_display }} kilowatt hours (kWh) of
+            electricity and {{ borough.gas_mean_kwh_display }} kWh of gas in {{ data.year }}. Electricity use per home
+            is {{ borough.electricity_mean_change_pct | abs }}% {% if borough.electricity_mean_change_pct < 0 %}lower{% else %}higher{% endif %}
+            than in {{ borough.first_year }}, and gas use {{ borough.gas_mean_change_pct | abs }}%
+            {% if borough.gas_mean_change_pct < 0 %}lower{% else %}higher{% endif %}.
+        </p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col" class="number">Electricity Average (kWh)</th>
+                        <th scope="col" class="number">Electricity Median (kWh)</th>
+                        <th scope="col" class="number">Gas Average (kWh)</th>
+                        <th scope="col" class="number">Gas Median (kWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in data.compare %}
+                    <tr>
+                        <td>{% if c.name == "Cheltenham" %}<strong>{{ c.name }}</strong>{% else %}{{ c.name }}{% endif %}</td>
+                        <td class="number">{{ c.electricity_mean_kwh_display }}</td>
+                        <td class="number">{{ c.electricity_median_kwh_display }}</td>
+                        <td class="number">{{ c.gas_mean_kwh_display }}</td>
+                        <td class="number">{{ c.gas_median_kwh_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Electricity per Home Since {{ borough.first_year }}</h3>
+        <p><small>Average kWh per home electricity meter each year</small></p>
+        <div class="chart-canvas"><canvas id="energy-use-electricity-chart"></canvas></div>
+
+        <h3>Gas per Home Since {{ borough.first_year }}</h3>
+        <p><small>Average kWh per home gas meter each year, weather-corrected</small></p>
+        <div class="chart-canvas"><canvas id="energy-use-gas-chart"></canvas></div>
+
+        <h2 id="map">Energy Use Map</h2>
+        <div class="filter-bar">
+            <label class="filter-label" for="energy-map-level">Show</label>
+            <select id="energy-map-level">
+                <option value="ward">Wards ({{ data.ward.areas.size }})</option>
+                <option value="lsoa">Small areas ({{ data.lsoa.areas.size }})</option>
+            </select>
+            <label class="filter-label" for="energy-map-measure">Shade by</label>
+            <select id="energy-map-measure">
+                <option value="electricity">Electricity per home</option>
+                <option value="gas">Gas per home</option>
+            </select>
+        </div>
+        <p><small id="energy-map-caption">Average electricity use per home, {{ data.small_area_year }}</small></p>
+        <div class="map-legend" id="energy-map-legend"></div>
+        <div id="energy-map" class="map-canvas" aria-label="Map of Cheltenham shaded by how much energy its homes use"></div>
+
+        <h2 id="wards">Energy Use by Ward</h2>
+        <p><small>Average use per home meter in {{ data.small_area_year }}, adding up the small areas in each ward</small></p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Electricity Meters</th>
+                        <th scope="col" class="number">Electricity (kWh)</th>
+                        <th scope="col" class="number">Gas Meters</th>
+                        <th scope="col" class="number">Gas (kWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign wards = data.ward.areas | sort: "name" %}
+                    {% for area in wards %}
+                    <tr>
+                        <td><a href="/cheltenham-wards/{{ area.slug }}">{{ area.name }}</a></td>
+                        <td class="number" data-val="{{ area.electricity_meters }}">{{ area.electricity_meters_display }}</td>
+                        <td class="number" data-val="{{ area.electricity_mean_kwh }}">{{ area.electricity_mean_kwh_display }}</td>
+                        <td class="number" data-val="{{ area.gas_meters }}">{{ area.gas_meters_display }}</td>
+                        <td class="number" data-val="{{ area.gas_mean_kwh }}">{{ area.gas_mean_kwh_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="small-areas">Energy Use by Small Area</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Electricity Average (kWh)</th>
+                        <th scope="col" class="number">Electricity Median (kWh)</th>
+                        <th scope="col" class="number">Gas Average (kWh)</th>
+                        <th scope="col" class="number">Gas Median (kWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for area in data.lsoa.areas %}
+                    <tr>
+                        <td>{{ area.name }}</td>
+                        <td>{{ area.ward_name }}</td>
+                        <td class="number" data-val="{{ area.electricity_mean_kwh }}">{{ area.electricity_mean_kwh_display }}</td>
+                        <td class="number">{{ area.electricity_median_kwh_display }}</td>
+                        <td class="number" data-val="{{ area.gas_mean_kwh }}">{{ area.gas_mean_kwh_display }}</td>
+                        <td class="number">{{ area.gas_median_kwh_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is a Kilowatt Hour?</h3>
+        <ul>
+            <li>A kilowatt hour (kWh) is the unit on an energy bill: the energy used running something rated at 1 kilowatt for an hour. A gigawatt hour (GWh) is a million kWh.</li>
+        </ul>
+
+        <h3>What Is the Difference Between the Average and the Median?</h3>
+        <ul>
+            <li>The average (mean) adds up all the energy used and divides it by the number of meters. The median is the use of the home in the middle when every home is lined up from lowest to highest.</li>
+            <li>A few homes that use a lot, such as large houses or homes heated by electricity, pull the average up, so the median is usually lower and closer to what a typical home uses.</li>
+        </ul>
+
+        <h3>What Does Weather-Corrected Mean?</h3>
+        <ul>
+            <li>Homes use more gas in a cold year. The government adjusts gas figures to what would have been used in a year of typical weather, so years can be compared fairly. Electricity figures are not adjusted.</li>
+        </ul>
+
+        <h3>Why Do Some Areas Use More Energy Than Others?</h3>
+        <ul>
+            <li>Bigger homes, older homes that are harder to insulate and homes with more people tend to use more. Homes heated by electricity, such as many flats and homes with heat pumps, use more electricity and little or no gas.</li>
+            <li>Our <a href="/cheltenham-energy-ratings">Cheltenham home energy ratings</a> page maps how energy efficient homes are across the same wards and small areas.</li>
+        </ul>
+
+        <h3>What Is a Small Area?</h3>
+        <ul>
+            <li>Small areas are the neighbourhoods the Office for National Statistics uses for its statistics (lower layer super output areas), each with around 1,500 people. Cheltenham has {{ data.lsoa.areas.size }}.</li>
+            <li>Ward figures add up the small areas within each ward. Where a small area crosses a ward boundary, it counts in the ward that holds most of it.</li>
+        </ul>
+
+        <h3>How Often Is This Page Updated?</h3>
+        <ul>
+            <li>The figures are published once a year, in December, for the year before. We check for new figures every month.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the Department for Energy Security and Net Zero's subnational
+            <a href="{{ data.source_url }}">electricity</a> and <a href="{{ data.gas_source_url }}">gas</a>
+            consumption statistics, published under the {{ data.licence }}. Small area and ward boundaries are from the
+            ONS Open Geography Portal. {% include freshness.html file="_data/energy-use.json" %}
+            Council figures run from {{ borough.first_year }} to {{ data.year }}; small area figures are for
+            {{ data.small_area_year }} and cover homes only. Gas figures are weather-corrected.
+            Contains OS data &copy; Crown copyright and database right.
+        </small></p>
+    </div>
+</div>
+
+{% include chartjs.html %}
+{% include leaflet.html %}
+<script id="energy-use-data" type="application/json">{{ data.years | jsonify }}</script>
+<script id="energy-map-data" type="application/json">{{ data | jsonify }}</script>
+<script src="/assets/scripts/energy-use-chart.js"></script>
+<script src="/assets/scripts/energy-use-map.js"></script>
+{% include footer.html %}

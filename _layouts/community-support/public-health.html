@@ -1,0 +1,145 @@
+{% include header.html %}
+{% assign health = site.data["public-health"] %}
+{% assign life = health.life_expectancy.latest %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ life.male }} years</strong> life expectancy for men born in {{ life.year }}</li>
+                <li><strong>{{ life.female }} years</strong> for women</li>
+                <li><strong>{{ health.better_count }} of {{ health.indicator_count }}</strong> measures better than England</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Life Expectancy Since {{ health.life_expectancy.first_year }}</h2>
+        <div class="chart-canvas"><canvas id="life-expectancy-chart" aria-label="Line chart of life expectancy at birth for men and women in Cheltenham and England each year since {{ health.life_expectancy.first_year }}"></canvas></div>
+        <p>Each year's figure is worked out from the deaths registered that year, so it can rise and fall from one
+            year to the next. The dip in 2020 reflects deaths during the COVID-19 pandemic.</p>
+
+        {% for group in health.groups %}
+        <h2>{{ group.name }}</h2>
+        <div class="table-scroll">
+            <table class="public-health-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Measure</th>
+                        <th scope="col">Period</th>
+                        <th scope="col" class="number">Cheltenham</th>
+                        <th scope="col" class="number">England</th>
+                        <th scope="col">Compared With England</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in group.indicators %}
+                    <tr>
+                        <td data-val="{{ forloop.index }}">{{ i.label_display }}</td>
+                        <td>{{ i.period_display }}</td>
+                        <td class="number" data-val="{{ i.value }}">{{ i.value_display }}</td>
+                        <td class="number" data-val="{{ i.england }}">{{ i.england_display | default: "—" }}</td>
+                        <td>{{ i.compared_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+        <p>"Better" or "Worse" means the difference from England is statistically significant. "Similar" means
+            Cheltenham's figure is within the range expected by chance. Rates per 100,000 are adjusted for the age of
+            the population, so a town with more older people can be compared fairly with England.</p>
+
+        {% if health.wards %}
+        <h2 id="wards">Child Weight by Ward</h2>
+        <p>Across {{ health.wards.period_display }}, {{ health.wards.cheltenham_display }} of Year 6 children in
+            Cheltenham were overweight or obese, against {{ health.wards.england_display }} across England. The figure
+            varies widely between wards. Three school years are combined so that each ward has enough children
+            measured.</p>
+        <div class="table-scroll">
+            <table class="public-health-wards-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Ward</th>
+                        <th scope="col" class="number">Overweight or Obese</th>
+                        <th scope="col" class="number">Children</th>
+                        <th scope="col">Compared With England</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for w in health.wards.rows %}
+                    <tr>
+                        <td data-val="{{ w.name }}">{% if w.slug %}<a href="/cheltenham-wards/{{ w.slug }}">{{ w.name }}</a>{% else %}{{ w.name }}{% endif %}</td>
+                        <td class="number" data-val="{{ w.value }}">{{ w.value_display }}</td>
+                        <td class="number" data-val="{{ w.count }}">{{ w.count | default: "—" }}</td>
+                        <td>{{ w.compared_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p>The Children column counts Year 6 children who were overweight or obese over the three years, rounded to
+            the nearest 5. In wards with few children, a handful either way changes the percentage a lot.</p>
+        {% endif %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is the Life Expectancy in Cheltenham?</h3>
+        <ul>
+            <li>Based on deaths in {{ life.year }}, a boy born in Cheltenham can expect to live to {{ life.male }} and a
+                girl to {{ life.female }}, against {{ life.england_male }} and {{ life.england_female }} across
+                England. These are averages for the whole town; the figures in the Life Expectancy table show how
+                much they differ between its richest and poorest areas.</li>
+        </ul>
+
+        <h3>What Is Healthy Life Expectancy?</h3>
+        <ul>
+            <li>It is the number of years a person can expect to live in good health, based on how people rate their
+                own health in the census. The gap between healthy life expectancy and life expectancy is roughly the
+                number of years spent in poor health.</li>
+        </ul>
+
+        <h3>What Does "Better," "Similar" or "Worse" Mean?</h3>
+        <ul>
+            <li>It is the Office for Health Improvement and Disparities' own test of whether Cheltenham's figure is
+                significantly different from England's, allowing for the margin of error in a town-sized sample. A
+                small difference is often marked "Similar." Some measures have no better or worse direction and are
+                not compared.</li>
+        </ul>
+
+        <h3>Why Are Some Figures Several Years Old?</h3>
+        <ul>
+            <li>Each measure comes from a different survey or register, with its own publishing timetable. Some, such
+                as healthy life expectancy and wellbeing, combine several years of data to give a reliable figure for a
+                town. The Period column shows the years each figure covers.</li>
+        </ul>
+
+        <h3>Where Can I Find a GP or Get Health Advice?</h3>
+        <ul>
+            <li>See <a href="/cheltenham-gp-pharmacies">GPs and pharmacies</a> to find a practice near you. For urgent
+                medical help that isn't an emergency, use <a href="https://111.nhs.uk/">NHS 111</a>, and in an
+                emergency call 999.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ health.source_url }}">{{ health.source }}</a>, published under the {{ health.licence }}.
+            {% include freshness.html file="_data/public-health.json" %}
+            Smoking figures come from the Annual Population Survey, physical activity and adult weight from Sport
+            England's Active Lives Survey, child weight from the National Child Measurement Programme, and life
+            expectancy, deaths and wellbeing from the Office for National Statistics. Life expectancy for the latest
+            year is based on provisional death registrations.
+        </small></p>
+
+    </div>
+</div>
+
+{% include chartjs.html %}
+<script id="life-expectancy-data" type="application/json">{{ health.life_expectancy.series | jsonify }}</script>
+<script src="/assets/scripts/public-health-chart.js"></script>
+{% include footer.html %}

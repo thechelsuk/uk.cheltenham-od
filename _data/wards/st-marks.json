@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:46.494272+00:00",
+  "generated_at": "2026-10-31T19:22:44.966151+00:00",
   "name": "St Mark's",
   "slug": "st-marks",
   "code": "E05015718",
@@ -384,13 +384,13 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-07-31",
+    "latest_sale": "2026-09-11",
     "first_year": "1995",
-    "sales_total": 2928,
-    "sales_total_display": "2,928",
-    "last12_sales": 67,
-    "last12_median": 300000,
-    "last12_median_display": "£300,000",
+    "sales_total": 2933,
+    "sales_total_display": "2,933",
+    "last12_sales": 65,
+    "last12_median": 305000,
+    "last12_median_display": "£305,000",
     "by_year": [
       {
         "year": "1995",
@@ -580,31 +580,31 @@
       },
       {
         "year": "2026",
-        "sales": 30,
-        "median": 296000,
-        "median_display": "£296,000"
+        "sales": 35,
+        "median": 323000,
+        "median_display": "£323,000"
       }
     ],
     "by_type": [
       {
         "type": "Semi-detached",
-        "sales": 33,
-        "median": 300000,
-        "median_display": "£300,000",
+        "sales": 31,
+        "median": 305000,
+        "median_display": "£305,000",
         "min_display": "£158,500",
         "max_display": "£825,000"
       },
       {
         "type": "Terraced",
-        "sales": 21,
-        "median": 305000,
-        "median_display": "£305,000",
+        "sales": 23,
+        "median": 323000,
+        "median_display": "£323,000",
         "min_display": "£200,000",
         "max_display": "£457,500"
       },
       {
         "type": "Flat or maisonette",
-        "sales": 9,
+        "sales": 7,
         "median": 145000,
         "median_display": "£145,000",
         "min_display": "£87,000",
@@ -621,17 +621,19 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
+    "fix_my_street": [],
+    "planning": [
       {
-        "title": "Perspex broken",
-        "group": "Bus stops, parking & vehicles",
-        "published": "2026-10-10",
-        "url": "https://www.fixmystreet.com/report/10220908",
-        "lat": 51.897419,
-        "lon": -2.098902
+        "ref": "26/01630/CACN",
+        "address": "55 Byron Road Cheltenham Gloucestershire GL51 7EY",
+        "description": "T1- Goat Willow, Remove to ground level and grind out stump.",
+        "status": "No objection",
+        "received": "2026-10-12",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMS65RELM6400&activeTab=summary",
+        "lat": 51.898085,
+        "lon": -2.110733
       }
     ],
-    "planning": [],
     "serious_collisions": [
       {
         "date": "2025-12-01",
@@ -1296,31 +1298,39 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 3,
+      "in_ward": 4,
       "items": [
         {
-          "name": "The Holte Griffiths Avenue",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.898326,
-          "lon": -2.104636,
+          "name": "Sports facility, St Mark's",
+          "detail": "Sports facility, 0.01 ha",
+          "lat": 51.9019,
+          "lon": -2.10833,
           "in_ward": true,
-          "distance_miles": 0.17
+          "distance_miles": 0.12
         },
         {
-          "name": "King George V Playing Field Brooklyn Road",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.903837,
-          "lon": -2.10587,
+          "name": "King George V Playing Field",
+          "detail": "Playing field, 11.74 ha",
+          "lat": 51.903,
+          "lon": -2.10724,
+          "in_ward": true,
+          "distance_miles": 0.18
+        },
+        {
+          "name": "Sports facility, St Mark's",
+          "detail": "Sports facility, 0.02 ha",
+          "lat": 51.9037,
+          "lon": -2.10556,
           "in_ward": true,
           "distance_miles": 0.24
         },
         {
-          "name": "Open Land Wharfdale Square Alstone Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.906184,
-          "lon": -2.104582,
+          "name": "St Mark's Church",
+          "detail": "Religious grounds, 0.26 ha",
+          "lat": 51.89652,
+          "lon": -2.10548,
           "in_ward": true,
-          "distance_miles": 0.41
+          "distance_miles": 0.28
         }
       ]
     },
@@ -1567,6 +1577,16 @@
           "distance_miles": 0.25
         },
         {
+          "name": "Tesco Express Queens Road Cheltenham",
+          "address": "Queens Road",
+          "postcode": "GL50 2NH",
+          "detail": "InPost locker",
+          "lat": 51.89749,
+          "lon": -2.09842,
+          "in_ward": false,
+          "distance_miles": 0.42
+        },
+        {
           "name": "YEEP! The Umbrella",
           "address": "Orchard Way",
           "postcode": "GL51 7LD",
@@ -1575,16 +1595,6 @@
           "lon": -2.107552,
           "in_ward": false,
           "distance_miles": 0.56
-        },
-        {
-          "name": "Alstone Local Cheltenham",
-          "address": "93 Gloucester Road",
-          "postcode": "GL51 8NG",
-          "detail": "InPost locker",
-          "lat": 51.90164,
-          "lon": -2.09231,
-          "in_ward": false,
-          "distance_miles": 0.63
         },
         {
           "name": "Best One",

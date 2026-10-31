@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Gas and Electricity Use",
+  "description": "Gas and electricity used by homes and non-domestic meters in Cheltenham each year since 2005, average and median use per home compared with the South West and England, and home use by ward and small area (LSOA).",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['energy-use'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "isBasedOn": ["{{ site.data['energy-use'].source_url }}", "{{ site.data['energy-use'].gas_source_url }}"],
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Electricity use (GWh)", "Gas use (GWh)", "Average electricity per home (kWh)", "Average gas per home (kWh)", "Median use per home (kWh)"]
+}
+</script>

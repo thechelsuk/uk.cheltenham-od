@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T14:41:46.766583+00:00",
+  "generated_at": "2026-10-31T19:22:45.219763+00:00",
   "name": "St Paul's",
   "slug": "st-pauls",
   "code": "E05015719",
@@ -421,11 +421,11 @@
     ]
   },
   "house_prices": {
-    "latest_sale": "2026-08-21",
+    "latest_sale": "2026-09-21",
     "first_year": "1995",
-    "sales_total": 3842,
-    "sales_total_display": "3,842",
-    "last12_sales": 100,
+    "sales_total": 3850,
+    "sales_total_display": "3,850",
+    "last12_sales": 98,
     "last12_median": 260000,
     "last12_median_display": "£260,000",
     "by_year": [
@@ -605,27 +605,27 @@
       },
       {
         "year": "2024",
-        "sales": 126,
+        "sales": 127,
         "median": 225000,
         "median_display": "£225,000"
       },
       {
         "year": "2025",
-        "sales": 119,
+        "sales": 121,
         "median": 232500,
         "median_display": "£232,500"
       },
       {
         "year": "2026",
-        "sales": 64,
-        "median": 277500,
-        "median_display": "£277,500"
+        "sales": 69,
+        "median": 275000,
+        "median_display": "£275,000"
       }
     ],
     "by_type": [
       {
         "type": "Terraced",
-        "sales": 57,
+        "sales": 59,
         "median": 255000,
         "median_display": "£255,000",
         "min_display": "£170,000",
@@ -633,32 +633,49 @@
       },
       {
         "type": "Flat or maisonette",
-        "sales": 22,
-        "median": 207500,
-        "median_display": "£207,500",
+        "sales": 20,
+        "median": 215000,
+        "median_display": "£215,000",
         "min_display": "£114,000",
         "max_display": "£1,265,000"
       },
       {
         "type": "Semi-detached",
-        "sales": 18,
-        "median": 281500,
-        "median_display": "£281,500",
+        "sales": 15,
+        "median": 280000,
+        "median_display": "£280,000",
         "min_display": "£195,000",
-        "max_display": "£625,000"
+        "max_display": "£385,000"
       },
       {
         "type": "Other",
-        "sales": 3,
-        "median": 175000,
-        "median_display": "£175,000",
+        "sales": 4,
+        "median": 212500,
+        "median_display": "£212,500",
         "min_display": "£145,000",
         "max_display": "£1,015,000"
       }
     ]
   },
   "local_issues": {
-    "fix_my_street": [],
+    "fix_my_street": [
+      {
+        "title": "Broken glass",
+        "group": "Litter, fly-tipping & graffiti",
+        "published": "2026-10-31",
+        "url": "https://www.fixmystreet.com/report/10311125",
+        "lat": 51.907233,
+        "lon": -2.077328
+      },
+      {
+        "title": "Flytipping in bushes st pauls",
+        "group": "Litter, fly-tipping & graffiti",
+        "published": "2026-10-31",
+        "url": "https://www.fixmystreet.com/report/10310841",
+        "lat": 51.906532,
+        "lon": -2.07745
+      }
+    ],
     "planning": [
       {
         "ref": "26/01571/ADV",
@@ -1300,47 +1317,63 @@
       "group": "Parks and Play",
       "label": "Parks and Open Spaces",
       "mode": "nearest",
-      "in_ward": 5,
+      "in_ward": 2,
       "items": [
         {
-          "name": "4 Folly Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.908055,
-          "lon": -2.081415,
+          "name": "St Paul's Church",
+          "detail": "Religious grounds, 0.24 ha",
+          "lat": 51.90688,
+          "lon": -2.07729,
           "in_ward": true,
-          "distance_miles": 0.09
+          "distance_miles": 0.13
         },
         {
-          "name": "1 Phoenix Cottage High Street",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.904656,
-          "lon": -2.082107,
-          "in_ward": true,
-          "distance_miles": 0.18
+          "name": "Sports facility, Pittville",
+          "detail": "Sports facility, 1.87 ha",
+          "lat": 51.91032,
+          "lon": -2.07859,
+          "in_ward": false,
+          "distance_miles": 0.24
         },
         {
-          "name": "Elmfield Estate Elmfield Avenue",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.91145,
-          "lon": -2.085681,
+          "name": "Sports facility, Pittville",
+          "detail": "Sports facility, 0.03 ha",
+          "lat": 51.90996,
+          "lon": -2.07703,
+          "in_ward": false,
+          "distance_miles": 0.25
+        },
+        {
+          "name": "Winston Churchill Memorial Garden",
+          "detail": "Public park or garden, 1.05 ha",
+          "lat": 51.90403,
+          "lon": -2.08455,
+          "in_ward": false,
+          "distance_miles": 0.27
+        },
+        {
+          "name": "Prince of Wales Stadium",
+          "detail": "Sports facility, 4.84 ha",
+          "lat": 51.91102,
+          "lon": -2.08075,
+          "in_ward": false,
+          "distance_miles": 0.28
+        },
+        {
+          "name": "Agg Gardner Recreation Ground",
+          "detail": "Playing field, 4.77 ha",
+          "lat": 51.90873,
+          "lon": -2.07417,
+          "in_ward": false,
+          "distance_miles": 0.29
+        },
+        {
+          "name": "Playing field, St Paul's",
+          "detail": "Playing field, 2.17 ha",
+          "lat": 51.91136,
+          "lon": -2.08564,
           "in_ward": true,
           "distance_miles": 0.38
-        },
-        {
-          "name": "Playing Field Elmfield Road",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.911693,
-          "lon": -2.086234,
-          "in_ward": true,
-          "distance_miles": 0.41
-        },
-        {
-          "name": "Playground Gardners Lane",
-          "detail": "Open Space Land and Allotments",
-          "lat": 51.912186,
-          "lon": -2.087179,
-          "in_ward": true,
-          "distance_miles": 0.46
         }
       ]
     },
@@ -2221,17 +2254,6 @@
           "distance_miles": 0.29
         },
         {
-          "name": "Brewhouse And Kitchen",
-          "address": "Unit 7, The Brewery Quarter, Henrietta Street, Cheltenham",
-          "postcode": "GL50 4FA",
-          "detail": "Rating 5",
-          "type": "Restaurant/Cafe/Canteen",
-          "lat": 51.903319,
-          "lon": -2.076428,
-          "in_ward": true,
-          "distance_miles": 0.3
-        },
-        {
           "name": "Five Guys",
           "address": "Unit 12A, The Brewery Quarter, Henrietta Street, Cheltenham",
           "postcode": "GL50 4FA",
@@ -2334,7 +2356,7 @@
           "name": "Siren Cheltenham Bar",
           "address": "Unit 3, The Brewery Quarter, Henrietta Street, Cheltenham",
           "postcode": "GL50 4FA",
-          "detail": "AwaitingInspection",
+          "detail": "Rating 5",
           "type": "Restaurant/Cafe/Canteen",
           "lat": 51.903319,
           "lon": -2.076428,
@@ -2366,6 +2388,17 @@
         {
           "name": "The Botanist",
           "address": "Unit 6, The Brewery Quarter, Henrietta Street, Cheltenham",
+          "postcode": "GL50 4FA",
+          "detail": "Rating 5",
+          "type": "Restaurant/Cafe/Canteen",
+          "lat": 51.903319,
+          "lon": -2.076428,
+          "in_ward": true,
+          "distance_miles": 0.3
+        },
+        {
+          "name": "The Landed Eagle",
+          "address": "Brewhouse And Kitchen, Unit 7, The Brewery Quarter, Henrietta Street",
           "postcode": "GL50 4FA",
           "detail": "Rating 5",
           "type": "Restaurant/Cafe/Canteen",

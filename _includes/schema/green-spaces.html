@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Parks & Green Spaces",
+  "description": "{{ site.data['green-spaces'].totals.sites }} parks, gardens, playing fields, allotments, cemeteries and other green spaces in Cheltenham borough, with their type, ward, area and number of access points, from Ordnance Survey's OS Open Greenspace.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['green-spaces'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "isBasedOn": "https://www.ordnancesurvey.co.uk/products/os-open-greenspace",
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Name", "Type", "Ward", "Area in hectares", "Access points", "Location"]
+}
+</script>
