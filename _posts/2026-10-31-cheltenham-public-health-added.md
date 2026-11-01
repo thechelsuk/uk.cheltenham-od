@@ -1,6 +1,7 @@
 ---
 layout: posts/posts
 title: Cheltenham Open Data Adds Public Health Statistics, From Life Expectancy to Child Weight
+seo_title: "Cheltenham Public Health: Life Expectancy to Child Weight"
 type: cod
 description: Life expectancy, early deaths, smoking, activity, weight and screening in Cheltenham, compared with England.
 seo: "A new page compares Cheltenham with England on life expectancy, early deaths, smoking, activity, weight and screening, with child weight for every ward."

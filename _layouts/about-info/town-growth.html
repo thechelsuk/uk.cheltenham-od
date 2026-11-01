@@ -1,0 +1,103 @@
+{% include header.html %}
+{% assign data = site.data["town-growth"] %}
+{% assign last = data.years.size | minus: 1 %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ data.years.first }} to {{ data.years.last }}</strong> in five-year steps</li>
+                <li><strong>{{ data.total.hectares_display.last }} hectares</strong> built up in {{ data.years.last }}</li>
+                <li><strong>{{ data.districts.size }}</strong> postcode districts</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Built-Up Area Map</h2>
+        <div class="filter-bar">
+            <label class="filter-label" for="town-growth-year">Built up by</label>
+            <input type="range" id="town-growth-year" min="0" max="{{ last }}" value="{{ last }}" step="1"
+                aria-describedby="town-growth-year-label">
+            <output id="town-growth-year-label" for="town-growth-year">{{ data.years.last }}</output>
+        </div>
+        <p><small>Shaded by when each area was first built up; the newest five years are outlined</small></p>
+        <div class="map-legend" id="town-growth-legend"></div>
+        <div id="town-growth-map" class="map-canvas" aria-label="Map of Cheltenham, Gloucester and nearby villages shaded by when each area was first built up"></div>
+
+        <h2>Built-Up Area by Postcode District</h2>
+        <p>Across the nine postcode districts, {{ data.total.hectares_display.first }} hectares were
+            built up in {{ data.years.first }} and {{ data.total.hectares_display.last }} by {{ data.years.last }},
+            {{ data.total.added_display }} hectares more.</p>
+        <p><small>Hectares counted as built up, {{ data.years.first }} to {{ data.years.last }}</small></p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">District</th>
+                        <th scope="col" class="number">{{ data.years[0] }}</th>
+                        <th scope="col" class="number">{{ data.years[4] }}</th>
+                        <th scope="col" class="number">{{ data.years.last }}</th>
+                        <th scope="col" class="number">Added since {{ data.years.first }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in data.districts %}
+                    <tr>
+                        <td>{{ d.name }}</td>
+                        <td class="number" data-val="{{ d.hectares[0] }}">{{ d.hectares_display[0] }}</td>
+                        <td class="number" data-val="{{ d.hectares[4] }}">{{ d.hectares_display[4] }}</td>
+                        <td class="number" data-val="{{ d.hectares.last }}">{{ d.hectares_display.last }}</td>
+                        <td class="number" data-val="{{ d.added }}">{{ d.added_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Counts as Built Up?</h3>
+        <ul>
+            <li>The map divides the area into squares 100 metres across. A square counts as built up once buildings cover at least {{ data.threshold_percent }}% of it, roughly a scattering of houses with gardens, and stays built up from then on. Single squares or pairs on their own, such as an isolated barn, are left out so the map shows settlements rather than every building.</li>
+        </ul>
+
+        <h3>Which Areas Does the Map Cover?</h3>
+        <ul>
+            <li>Nine postcode districts: GL1 to GL4 cover Gloucester, GL50 to GL53 cover Cheltenham and nearby villages such as Bishop's Cleeve, and GL54 covers the Cotswold villages east of Cheltenham. Each hectare is one 100-metre square.</li>
+        </ul>
+
+        <h3>Why Does the Map Stop at {{ data.years.last }}?</h3>
+        <ul>
+            <li>The figures come from satellite images, and {{ data.years.last }} is the latest year measured so far. Later years will be added when a new edition of the data is published, so homes finished in the last few years are not shown yet.</li>
+        </ul>
+
+        <h3>Why Might the Earliest Years Look Smaller Than They Were?</h3>
+        <ul>
+            <li>The figures for the 1970s and 1980s come from older satellite images that show less detail, so some buildings from those years are missed. That makes the town look a little smaller than it was early on and growth look slightly larger, so treat the earliest figures as an estimate.</li>
+        </ul>
+
+        <h3>Why Are the Edges Rounded?</h3>
+        <ul>
+            <li>The data is measured in 100-metre squares, so the edges are smoothed to make the map easier to read. An outline can be up to about 50 metres out, so use the map to see how areas have grown rather than to check a single street.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ data.source_url }}">{{ data.source }}</a>, published under the {{ data.licence }}.
+            Cite as: {{ data.citation }}, <a href="{{ data.citation_url }}">{{ data.citation_url | remove: "https://" }}</a>.
+            {% include freshness.html file="_data/town-growth.json" %}
+        </small></p>
+
+    </div>
+</div>
+
+{% include leaflet.html %}
+<script id="town-growth-data" type="application/json">{{ data | jsonify }}</script>
+<script src="/assets/scripts/town-growth-map.js"></script>
+{% include footer.html %}

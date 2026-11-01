@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham and Gloucester Built-Up Area Since 1975",
+  "description": "{{ page.description }}",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['town-growth'].generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham and Gloucester, Gloucestershire, UK" },
+  "temporalCoverage": "{{ site.data['town-growth'].years.first }}/{{ site.data['town-growth'].years.last }}",
+  "variableMeasured": ["Built-up area (hectares)", "Year first built up", "Postcode district"]
+}
+</script>

@@ -1,6 +1,7 @@
 ---
 layout: posts/posts
 title: Cheltenham at Risk, Cyber Security and a Guide to Staying Safe Online
+seo_title: "Cheltenham at Risk, Cyber Security & Staying Safe Online"
 type: cod
 description: The emergencies most likely to affect Cheltenham, how to report scams and cyber crime, and simple steps to protect yourself online.
 seo: "The seven emergencies Gloucestershire rates most likely or harmful, with live alerts for each, plus how to report scams and a guide to staying safe online."

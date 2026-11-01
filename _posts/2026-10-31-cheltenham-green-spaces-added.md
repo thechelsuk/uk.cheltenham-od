@@ -1,6 +1,7 @@
 ---
 layout: posts/posts
 title: Every Park, Playing Field and Allotment in Cheltenham, Now on One Map
+seo_title: "Every Cheltenham Park, Playing Field & Allotment on One Map"
 type: cod
 description: A new map of Cheltenham's 214 parks, gardens, playing fields, allotments and churchyards, and how much green space each ward has.
 seo: "A new map shows all 214 of Cheltenham's parks, playing fields, allotments and churchyards, with each site's size and ward, and each ward's share of green space."

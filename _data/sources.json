@@ -752,5 +752,14 @@
     "licence_type": "OGL v3.0",
     "data": [{"file": "_data/energy-use.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-renewable-energy/energy-use", "/cheltenham-renewable-energy"]
+  },
+  {
+    "id": "jrc-ghsl-built-up-surface",
+    "name": "Global Human Settlement Layer: GHS-BUILT-S R2023A (European Commission Joint Research Centre)",
+    "source_url": "https://human-settlement.emergency.copernicus.eu/ghs_buS2023.php",
+    "licence": "Creative Commons Attribution 4.0 (CC BY 4.0), commercial reuse allowed with credit; cite Pesaresi et al. (2024), International Journal of Digital Earth 17(1). A fixed release, so _python/local/process-town-growth.py is re-run by hand when a new edition is published",
+    "licence_type": "CC BY 4.0",
+    "data": [{"file": "_data/town-growth.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-growth"]
   }
 ]

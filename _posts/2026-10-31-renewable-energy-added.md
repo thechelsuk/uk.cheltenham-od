@@ -1,6 +1,7 @@
 ---
 layout: posts/posts
 title: Cheltenham Open Data Adds Renewable Energy and Gas and Electricity Use
+seo_title: "Renewable Energy & Gas and Electricity Use in Cheltenham"
 type: cod
 description: How much solar power Cheltenham has, the solar farms planned nearby, and how much energy the town's homes use.
 seo: "New pages show Cheltenham's solar panels and renewable capacity since 2014, solar farms planned nearby, and gas and electricity use by ward."
