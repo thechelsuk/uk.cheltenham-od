@@ -92,6 +92,26 @@ The Pi needs:
   - `GITHUB_DISPATCH_TOKEN`: a fine-grained GitHub token for this repository only, with **Actions: Read and write**, for `dispatch.sh`.
   - `WATCHDOG_URL` and `WATCHDOG_TOKEN`: see Cloudflare Watchdog below.
 
+### Keeping the Wi-Fi Up
+
+The Pi can only reach the router over Wi-Fi, and a dropped connection may not come back by itself until the Pi restarts. Two settings guard against that.
+
+Wi-Fi power saving should be off. Check with:
+
+```bash
+iw wlan0 get power_save
+```
+
+If it says `on`, find the connection's name with `nmcli -t -f NAME,TYPE connection show --active`, then turn it off with `sudo nmcli connection modify "<name>" 802-11-wireless.powersave 2`. It takes effect when the Wi-Fi next reconnects.
+
+Root's crontab restarts the Wi-Fi whenever the Pi can't reach the internet. It runs every 5 minutes, so a dropped connection is back within about 5 minutes. Install it (this replaces root's crontab, which is otherwise empty) with:
+
+```bash
+echo '*/5 * * * *  ping -c 3 -W 5 1.1.1.1 > /dev/null 2>&1 || { logger "wifi-recover: restarting Wi-Fi"; nmcli radio wifi off; sleep 5; nmcli radio wifi on; }' | sudo crontab -
+```
+
+Check it with `sudo crontab -l`. Each restart is noted in the system log, which `journalctl -t wifi-recover` lists. During a broadband outage it restarts the Wi-Fi every 5 minutes, which does no harm.
+
 ## Cloudflare Watchdog
 
 A Cloudflare Worker (`cloudflare/pi-watchdog/`) takes over when the Pi goes quiet, from a power cut or a Wi-Fi drop, say.
