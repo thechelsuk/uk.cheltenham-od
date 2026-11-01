@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T10:50:08+00:00",
+  "generated_at": "2026-11-01T10:55:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-11-01T11:10",
-      "expected": "2026-11-01T11:17",
+      "expected": "2026-11-01T11:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -156,23 +156,26 @@
         "Gloucester"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T12:23",
+      "expected": "2026-11-01T12:23",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "bus"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-01T10:48",
-      "expected": "2026-11-01T10:48",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Gloucester",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-01T11:08",
-      "expected": "2026-11-01T11:16",
+      "expected": "2026-11-01T11:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -257,6 +260,17 @@
       "destination": "Gloucester",
       "reason": "",
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T12:23",
+      "expected": "2026-11-01T12:23",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "bus"
     }
   ],
   "replacement_buses_only": false
