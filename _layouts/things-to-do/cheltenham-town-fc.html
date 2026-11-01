@@ -32,24 +32,28 @@
                         <th scope="col">Fixture</th>
                         <th scope="col">Venue</th>
                         <th scope="col">Competition</th>
+                        <th scope="col" class="action">Head-to-head</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for f in ctfc.next_fixtures %}
                     <tr>
                         <td class="date" data-val="{{ f.kickoff | default: f.date }}">{% if f.kickoff != "" %}{{ f.kickoff | date: "%Y-%m-%d %H:%M" }}{% else %}{{ f.date | date: "%Y-%m-%d" }}{% endif %}</td>
+                        {% assign vs_slug = f.opponent | slugify %}
                         <td>{% if f.venue_type == "Home" %}Cheltenham Town vs {{ f.opponent }}{% else %}{{ f.opponent
                             }} vs Cheltenham Town{% endif %}</td>
-                        <td>{{ f.venue }}</td>
+                        <td>{% if f.venue != "" %}{{ f.venue }}{% else %}{{ f.venue_type }}{% endif %}</td>
                         <td>{{ f.competition }}</td>
+                        <td class="action">{% if site.data["ctfc-opponents"][vs_slug] %}<a
+                                href="/cheltenham-sports/cheltenham-town-fc/vs/{{ vs_slug }}">Record &rarr;</a>{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
         {% else %}
-        <p>No fixture currently scheduled — check the <a href="{{ ctfc.team.website }}" target="_blank"
-                rel="noopener">official club website</a> for the latest.</p>
+        <blockquote>No fixture listed yet. Check the <a href="{{ ctfc.team.website }}" target="_blank"
+                rel="noopener">club's fixtures</a> for the latest.</blockquote>
         {% endif %}
 
         <h2>Recent Results</h2>
@@ -60,7 +64,9 @@
                     <tr>
                         <th scope="col" class="date">Date</th>
                         <th scope="col">Fixture</th>
-                        <th scope="col">Score</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col">FT</th>
                         <th scope="col">Competition</th>
                     </tr>
                 </thead>
@@ -70,23 +76,80 @@
                         <td class="date" data-val="{{ r.date }}">{{ r.date | date: "%Y-%m-%d" }}</td>
                         <td>{% if r.venue_type == "Home" %}Cheltenham Town vs {{ r.opponent }}{% else %}{{ r.opponent
                             }} vs Cheltenham Town{% endif %}</td>
-                        <td>{% if r.venue_type == "Home" %}{{ r.home_score }}&ndash;{{ r.away_score }}{% else %}{{
-                            r.away_score }}&ndash;{{ r.home_score }}{% endif %}</td>
+                        {% if r.venue_type == "Home" %}{% assign gf = r.home_score | plus: 0 %}{% assign ga = r.away_score | plus: 0 %}{% else %}{% assign gf = r.away_score | plus: 0 %}{% assign ga = r.home_score | plus: 0 %}{% endif %}
+                        <td class="number">{{ gf }}</td>
+                        <td class="number">{{ ga }}</td>
+                        <td>{% if gf > ga %}W{% elsif gf == ga %}D{% else %}L{% endif %}</td>
                         <td>{{ r.competition }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>F</strong> and <strong>A</strong> goals for Cheltenham Town
+            and their opponents. <strong>FT</strong> full-time result: <strong>W</strong> won, <strong>D</strong> drawn,
+            <strong>L</strong> lost.</small></li></ul>
         {% else %}
-        <p>No recent results available — see the club's own results and fixtures page.</p>
+        <blockquote>No results yet this season. See the club's own results and fixtures page.</blockquote>
+        {% endif %}
+
+        {% assign league = site.data["ctfc-summary"] %}
+        {% if league %}
+        {% assign now = league.current %}
+        <h2>League Record {{ now.season_display }}</h2>
+        <p>Cheltenham Town are {{ now.position }}{% case now.position %}{% when 1, 21 %}st{% when 2, 22 %}nd{% when 3, 23 %}rd{% else %}th{% endcase %}
+            in {{ now.division }}{% unless now.complete %} after {{ now.played }} league games{% endunless %},
+            with {{ now.points }} points from {{ now.won }} wins, {{ now.drawn }} draws and {{ now.lost }} defeats:
+            {{ now.ppg_display }} points per game, {{ now.home.ppg_display }} at home and {{ now.away.ppg_display }} away.</p>
+        <div class="table-scroll">
+            <table class="ctfc-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Venue</th>
+                        <th scope="col" class="number">Pld</th>
+                        <th scope="col" class="number">W</th>
+                        <th scope="col" class="number">D</th>
+                        <th scope="col" class="number">L</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col" class="number">Pts</th>
+                        <th scope="col" class="number">PPG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign venues = "Home,Away,All" | split: "," %}
+                    {% for v in venues %}
+                    {% if v == "Home" %}{% assign r = now.home %}{% elsif v == "Away" %}{% assign r = now.away %}{% else %}{% assign r = now %}{% endif %}
+                    <tr>
+                        <td>{{ v }}</td>
+                        <td class="number">{{ r.played }}</td>
+                        <td class="number">{{ r.won }}</td>
+                        <td class="number">{{ r.drawn }}</td>
+                        <td class="number">{{ r.lost }}</td>
+                        <td class="number">{{ r.gf }}</td>
+                        <td class="number">{{ r.ga }}</td>
+                        <td class="number">{{ r.points }}</td>
+                        <td class="number">{{ r.ppg_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>Pld</strong> played, <strong>W</strong> won, <strong>D</strong> drawn,
+            <strong>L</strong> lost, <strong>F</strong> goals for, <strong>A</strong> goals against, <strong>Pts</strong> points,
+            <strong>PPG</strong> points per game. League matches only.</small></li></ul>
+        <p>See the <a href="/cheltenham-sports/cheltenham-town-fc/record/{{ now.season }}">full {{ now.division }} table</a>,
+            Cheltenham's <a href="/cheltenham-sports/cheltenham-town-fc/record">league record in every season since {{ league.seasons.last.season_display }}</a>,
+            their <a href="/cheltenham-sports/cheltenham-town-fc/vs">record against every opponent</a> and their
+            <a href="/cheltenham-sports/cheltenham-town-fc/referees">record under each referee</a>.</p>
         {% endif %}
 
         <h2>Frequently Asked Questions</h2>
 
         <h3>What League Do Cheltenham Town Play In?</h3>
         <ul>
-            <li>Cheltenham Town play in EFL League Two, the fourth tier of English football.</li>
+            {% assign league_now = site.data["ctfc-summary"].current %}
+            <li>Cheltenham Town play in {% if league_now.division == "National League" %}the {% else %}EFL {% endif %}{{ league_now.division }}, the {{ league_now.tier }} tier of English football, in {{ league_now.season_display }}.</li>
         </ul>
 
         {% assign home_record = ctfc.next_fixtures | where: "venue_type", "Home" | first %}

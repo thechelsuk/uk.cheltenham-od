@@ -922,6 +922,11 @@ table[data-sortable] th.sort-desc::after {
     text-align: right;
 }
 
+/* The key under a data table, explaining its column headings: a list item with an accent bullet. */
+.table-key li::marker {
+    color: var(--accent);
+}
+
 .data-table .postcode,
 .data-table .date,
 .data-table .type,

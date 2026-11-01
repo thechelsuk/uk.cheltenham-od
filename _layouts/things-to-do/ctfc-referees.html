@@ -1,0 +1,96 @@
+{% include header.html %}
+{% assign ctfc = site.data["ctfc-summary"] %}
+{% assign refs = site.data["ctfc-referees"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ refs.table.size }}</strong> referees</li>
+                <li><strong>{{ ctfc.since_record.played_display }}</strong> league matches since {{ refs.stats_from_display }}</li>
+                <li><strong>{{ ctfc.since_record.ppg_display }}</strong> points per game overall</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>Record Under Every Referee Since {{ refs.stats_from_display }}</h2>
+        <p><small>League matches only. Select a referee for every match they took charge of.</small></p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Referee</th>
+                        <th scope="col" class="date">Last match</th>
+                        <th scope="col" class="number">Pld</th>
+                        <th scope="col" class="number">W</th>
+                        <th scope="col" class="number">D</th>
+                        <th scope="col" class="number">L</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col" class="number">Pts</th>
+                        <th scope="col" class="number">PPG</th>
+                        <th scope="col" class="number">F YC</th>
+                        <th scope="col" class="number">A YC</th>
+                        <th scope="col" class="number">F RC</th>
+                        <th scope="col" class="number">A RC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for x in refs.table %}{% assign r = x.record %}
+                    <tr>
+                        <td data-val="{{ x.sort_name }}"><a href="/cheltenham-sports/cheltenham-town-fc/referees/{{ x.slug }}">{{ x.sort_name }}</a></td>
+                        <td class="date" data-val="{{ x.last }}">{{ x.last }}</td>
+                        <td class="number">{{ r.played }}</td>
+                        <td class="number">{{ r.won }}</td>
+                        <td class="number">{{ r.drawn }}</td>
+                        <td class="number">{{ r.lost }}</td>
+                        <td class="number">{{ r.gf }}</td>
+                        <td class="number">{{ r.ga }}</td>
+                        <td class="number">{{ r.points }}</td>
+                        <td class="number" data-val="{{ r.ppg }}">{{ r.ppg_display }}</td>
+                        <td class="number">{{ x.cards.yellow_cards.for }}</td>
+                        <td class="number">{{ x.cards.yellow_cards.against }}</td>
+                        <td class="number">{{ x.cards.red_cards.for }}</td>
+                        <td class="number">{{ x.cards.red_cards.against }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>Last match</strong> the referee's most recent Cheltenham Town league
+            match. <strong>Pld</strong> played, <strong>W</strong> won, <strong>D</strong> drawn, <strong>L</strong> lost,
+            <strong>F</strong> goals for Cheltenham Town, <strong>A</strong> goals against, <strong>Pts</strong> points,
+            <strong>PPG</strong> points per game. <strong>F YC</strong> and <strong>A YC</strong> yellow cards,
+            <strong>F RC</strong> and <strong>A RC</strong> red cards, for Cheltenham Town and their opponents.</small></li></ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Are Yellow Cards Counted?</h3>
+        <ul>
+            <li>A player sent off for two bookings counts as one red card, not as a yellow card as well, which is how English league statistics record it.</li>
+        </ul>
+
+        <h3>Is a Referee With a Low Points per Game Biased?</h3>
+        <ul>
+            <li>Not necessarily. Most referees took charge of only a handful of Cheltenham matches, and results depend far more on the opponent and where the game was played. Treat a referee's record as a curiosity unless it covers many matches.</li>
+        </ul>
+
+        <h3>Why Is a Referee Listed by Initial?</h3>
+        <ul>
+            <li>The results give some referees' full names and others only an initial and surname. Where only one full first name appears for an initial and surname, every match is put under that name. Some names were also checked against match reports, so two referees who share an initial, such as Mark Haywood and Mark Heywood, are kept apart.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Results, referees and match statistics from <a href="{{ refs.source_url }}">{{ refs.source }}</a>.
+            Referee details are missing for some matches, including the 2012–13 season.
+            {% include freshness.html file="_data/ctfc-summary.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

@@ -1,0 +1,147 @@
+{% include header.html %}
+{% assign o = site.data["ctfc-opponents"][page.opponent] %}
+{% assign summary = site.data["ctfc-summary"] %}
+{% assign labels = summary.stat_labels %}
+{% assign abbr = summary.stat_abbr %}
+{% assign rec = o.record %}
+{% assign last = o.meetings.first %}
+{% assign shown = "" %}{% for pair in labels %}{% assign k = pair[0] %}{% if rec.stats[k] %}{% assign shown = shown | append: k | append: "," %}{% endif %}{% endfor %}
+{% assign shown = shown | split: "," %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ rec.all.played }}</strong> league meeting{% if rec.all.played != 1 %}s{% endif %}</li>
+                <li><strong>{{ rec.all.won }}–{{ rec.all.drawn }}–{{ rec.all.lost }}</strong> won, drawn, lost</li>
+                <li><strong>{{ rec.all.ppg_display }}</strong> points per game</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        <h2>Cheltenham Town's Record Against {{ o.club }}</h2>
+        <p>Cheltenham Town have played {{ o.club }} {{ rec.all.played }} time{% if rec.all.played != 1 %}s{% endif %} in the league since
+            {{ summary.stats_from_display }}, winning {{ rec.all.won }}, drawing {{ rec.all.drawn }} and losing {{ rec.all.lost }},
+            with {{ rec.all.gf }} goals scored and {{ rec.all.ga }} conceded. The last meeting was on {{ last.date | date: "%-d %B %Y" }}, a
+            {{ last.gf }}–{{ last.ga }} {% case last.result %}{% when "W" %}win{% when "D" %}draw{% else %}defeat{% endcase %}
+            {% if last.venue == "H" %}at home{% else %}away{% endif %}.{% if o.biggest_win %} Cheltenham's biggest win in that time was
+            {{ o.biggest_win.gf }}–{{ o.biggest_win.ga }} on {{ o.biggest_win.date | date: "%-d %B %Y" }}{% if o.biggest_defeat %}, and their heaviest defeat
+            {{ o.biggest_defeat.gf }}–{{ o.biggest_defeat.ga }} on {{ o.biggest_defeat.date | date: "%-d %B %Y" }}{% endif %}.{% elsif o.biggest_defeat %}
+            Their heaviest defeat in that time was {{ o.biggest_defeat.gf }}–{{ o.biggest_defeat.ga }} on {{ o.biggest_defeat.date | date: "%-d %B %Y" }}.{% endif %}</p>
+
+        {% include ctfc-conditions.html overall=rec.all home=rec.home away=rec.away rows=rec.conditions %}
+
+        {% if rec.halves.games > 0 %}
+        <h2>Goals by Half</h2>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Half</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>First half</td><td class="number">{{ rec.halves.first_gf }}</td><td class="number">{{ rec.halves.first_ga }}</td></tr>
+                    <tr><td>Second half</td><td class="number">{{ rec.halves.second_gf }}</td><td class="number">{{ rec.halves.second_ga }}</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>F</strong> goals scored by Cheltenham Town, <strong>A</strong> goals
+            conceded, in the {{ rec.halves.games }} meeting{% if rec.halves.games != 1 %}s{% endif %} with a half-time score.</small></li></ul>
+        {% endif %}
+
+        {% if shown.size > 0 %}
+        <h2>Match Stats</h2>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Stat</th>
+                        <th scope="col" class="number">Pld</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col" class="number">F per game</th>
+                        <th scope="col" class="number">A per game</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for k in shown %}{% assign st = rec.stats[k] %}
+                    <tr>
+                        <td>{{ labels[k] }}</td>
+                        <td class="number">{{ st.games }}</td>
+                        <td class="number">{{ st.for }}</td>
+                        <td class="number">{{ st.against }}</td>
+                        <td class="number">{{ st.for_avg }}</td>
+                        <td class="number">{{ st.against_avg }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>F</strong> Cheltenham Town, <strong>A</strong> {{ o.club }}, totals
+            and averages per game. <strong>Pld</strong> the number of meetings with that stat recorded.</small></li></ul>
+        {% endif %}
+
+        <h2>Every League Meeting</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Season</th>
+                        <th scope="col">V</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col">FT</th>
+                        <th scope="col">Referee</th>
+                        <th scope="col" class="number">F HT</th>
+                        <th scope="col" class="number">A HT</th>
+                        {% for k in shown %}
+                        <th scope="col" class="number">F {{ abbr[k] }}</th>
+                        <th scope="col" class="number">A {{ abbr[k] }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in o.meetings %}
+                    <tr>
+                        <td class="date" data-val="{{ m.date }}">{{ m.date }}</td>
+                        <td data-val="{{ m.season }}"><a href="/cheltenham-sports/cheltenham-town-fc/record/{{ m.season }}">{{ m.season_display }}</a></td>
+                        <td>{{ m.venue }}</td>
+                        <td class="number">{{ m.gf }}</td>
+                        <td class="number">{{ m.ga }}</td>
+                        <td>{{ m.result }}</td>
+                        <td>{% if m.referee %}<a href="/cheltenham-sports/cheltenham-town-fc/referees/{{ m.referee_slug }}">{{ m.referee_sort }}</a>{% endif %}</td>
+                        <td class="number">{{ m.ht_gf }}</td>
+                        <td class="number">{{ m.ht_ga }}</td>
+                        {% for k in shown %}
+                        <td class="number">{{ m.stats[k][0] }}</td>
+                        <td class="number">{{ m.stats[k][1] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>V</strong> venue: <strong>H</strong> home, <strong>A</strong> away.
+            <strong>F</strong> and <strong>A</strong> goals for Cheltenham Town and for {{ o.club }} at full time.
+            <strong>FT</strong> full-time result: <strong>W</strong> won, <strong>D</strong> drawn, <strong>L</strong> lost.
+            <strong>F HT</strong> and <strong>A HT</strong> goals at half-time.{% if shown.size > 0 %} For Cheltenham Town (F) and
+            {{ o.club }} (A):{% for k in shown %} <strong>{{ abbr[k] }}</strong> {{ labels[k] | downcase }}{% unless forloop.last %},{% else %}.{% endunless %}{% endfor %}{% endif %}</small></li></ul>
+
+        <p>See Cheltenham Town's <a href="/cheltenham-sports/cheltenham-town-fc/vs">record against every opponent</a>.</p>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Results and match statistics from <a href="{{ o.source_url }}">{{ o.source }}</a>, league matches only, since
+            {{ summary.stats_from_display }}.
+            {% include freshness.html file="_data/ctfc-summary.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

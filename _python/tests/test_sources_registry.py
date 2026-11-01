@@ -22,6 +22,8 @@ NOT_SOURCE_DATA = {
     "newsletter-venues.json",
     # Fetcher settings: the indicators public-health.py fetches.
     "public-health-indicators.json",
+    # Fetcher settings for ctfc-results.py: club names, referee name fixes and table corrections.
+    "ctfc-clubs.json", "ctfc-referee-names.json", "ctfc-corrections.json",
     # Built only from other _data files, each registered under its own source.
     "cheltenham-numbers.json",
 }

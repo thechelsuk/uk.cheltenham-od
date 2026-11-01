@@ -1,0 +1,136 @@
+{% include header.html %}
+{% assign s = site.data["ctfc-seasons"][page.season] %}
+{% assign summary = site.data["ctfc-summary"] %}
+{% assign labels = summary.stat_labels %}
+{% assign abbr = summary.stat_abbr %}
+{% assign me = s.table | where: "is_cheltenham", true | first %}
+{% assign rec = s.record %}
+{% assign shown = "" %}{% for pair in labels %}{% assign k = pair[0] %}{% if rec.stats[k] %}{% assign shown = shown | append: k | append: "," %}{% endif %}{% endfor %}
+{% assign shown = shown | split: "," %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ me.position }}{% case me.position %}{% when 1, 21 %}st{% when 2, 22 %}nd{% when 3, 23 %}rd{% else %}th{% endcase %}</strong> Cheltenham Town{% unless s.complete %}, so far{% endunless %}</li>
+                <li><strong>{{ me.points }}</strong> points from {{ me.played }} games</li>
+                <li><strong>{{ me.ppg_display }}</strong> points per game</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        <h2>{{ s.division }} Table {{ s.season_display }}</h2>
+        {% if s.note %}<blockquote>{{ s.note }}</blockquote>{% endif %}
+        <p><small>{% if s.complete %}Final table{% else %}Table so far{% endif %}, sorted by {{ s.sorted_by }}{% if s.sorted_by == "points" %}, goal difference, then goals scored{% endif %}.{% if s.deductions.size > 0 %} Points deductions are already taken off.{% endif %}</small></p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="number">Pos</th>
+                        <th scope="col">Club</th>
+                        <th scope="col" class="number">Pld</th>
+                        <th scope="col" class="number">W</th>
+                        <th scope="col" class="number">D</th>
+                        <th scope="col" class="number">L</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col" class="number">GD</th>
+                        {% if s.deductions.size > 0 %}<th scope="col" class="number">Ded</th>{% endif %}
+                        <th scope="col" class="number">Pts</th>
+                        <th scope="col" class="number">PPG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in s.table %}
+                    <tr>
+                        <td class="number">{{ t.position }}</td>
+                        <td>{% if t.is_cheltenham %}<strong>{{ t.club }}</strong>{% elsif site.data["ctfc-opponents"][t.slug] %}<a href="/cheltenham-sports/cheltenham-town-fc/vs/{{ t.slug }}">{{ t.club }}</a>{% else %}{{ t.club }}{% endif %}</td>
+                        <td class="number">{{ t.played }}</td>
+                        <td class="number">{{ t.won }}</td>
+                        <td class="number">{{ t.drawn }}</td>
+                        <td class="number">{{ t.lost }}</td>
+                        <td class="number">{{ t.gf }}</td>
+                        <td class="number">{{ t.ga }}</td>
+                        <td class="number" data-val="{{ t.gd }}">{% if t.gd > 0 %}+{% endif %}{{ t.gd }}</td>
+                        {% if s.deductions.size > 0 %}<td class="number" data-val="{{ t.deducted }}">{% if t.deducted > 0 %}&minus;{{ t.deducted }}{% endif %}</td>{% endif %}
+                        <td class="number">{{ t.points }}</td>
+                        <td class="number" data-val="{{ t.ppg }}">{{ t.ppg_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>Pos</strong> position, <strong>Pld</strong> played, <strong>W</strong> won,
+            <strong>D</strong> drawn, <strong>L</strong> lost, <strong>F</strong> goals for, <strong>A</strong> goals against,
+            <strong>GD</strong> goal difference,{% if s.deductions.size > 0 %} <strong>Ded</strong> points deducted,{% endif %}
+            <strong>Pts</strong> points, <strong>PPG</strong> points per game.</small></li></ul>
+        {% if s.deductions.size > 0 %}
+        <ul>
+            {% for d in s.deductions %}<li>{{ d.club }}: {{ d.points }} point{% if d.points != 1 %}s{% endif %} deducted for {{ d.reason }}.</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        <h2>Cheltenham Town's Season Summary</h2>
+        {% include ctfc-conditions.html overall=rec.all home=rec.home away=rec.away rows=rec.conditions %}
+
+        <h2>Cheltenham Town's League Matches {{ s.season_display }}</h2>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Opponent</th>
+                        <th scope="col">V</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col">FT</th>
+                        <th scope="col">Referee</th>
+                        <th scope="col" class="number">F HT</th>
+                        <th scope="col" class="number">A HT</th>
+                        {% for k in shown %}
+                        <th scope="col" class="number">F {{ abbr[k] }}</th>
+                        <th scope="col" class="number">A {{ abbr[k] }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in s.matches %}
+                    <tr>
+                        <td class="date" data-val="{{ m.date }}">{{ m.date }}</td>
+                        <td><a href="/cheltenham-sports/cheltenham-town-fc/vs/{{ m.opponent_slug }}">{{ m.opponent }}</a></td>
+                        <td>{{ m.venue }}</td>
+                        <td class="number">{{ m.gf }}</td>
+                        <td class="number">{{ m.ga }}</td>
+                        <td>{{ m.result }}</td>
+                        <td>{% if m.referee %}<a href="/cheltenham-sports/cheltenham-town-fc/referees/{{ m.referee_slug }}">{{ m.referee_sort }}</a>{% endif %}</td>
+                        <td class="number">{{ m.ht_gf }}</td>
+                        <td class="number">{{ m.ht_ga }}</td>
+                        {% for k in shown %}
+                        <td class="number">{{ m.stats[k][0] }}</td>
+                        <td class="number">{{ m.stats[k][1] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>V</strong> venue: <strong>H</strong> home, <strong>A</strong> away.
+            <strong>F</strong> and <strong>A</strong> goals for Cheltenham Town and their opponents at full time.
+            <strong>FT</strong> full-time result: <strong>W</strong> won, <strong>D</strong> drawn, <strong>L</strong> lost.
+            <strong>F HT</strong> and <strong>A HT</strong> goals at half-time.{% if shown.size > 0 %} For Cheltenham Town (F) and
+            their opponents (A):{% for k in shown %} <strong>{{ abbr[k] }}</strong> {{ labels[k] | downcase }}{% unless forloop.last %},{% else %}.{% endunless %}{% endfor %}{% endif %}</small></li></ul>
+
+        <p>See Cheltenham Town's <a href="/cheltenham-sports/cheltenham-town-fc/record">league record in every season</a>.</p>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Results from <a href="{{ s.source_url }}">{{ s.source }}</a>. The table is worked out from every result
+            in the division, with points deductions applied.
+            {% include freshness.html file="_data/ctfc-summary.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

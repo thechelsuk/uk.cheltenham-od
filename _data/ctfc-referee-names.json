@@ -1,0 +1,14 @@
+{
+  "about": "Referee name fixes for _python/ctfc-results.py. Spellings are grouped automatically by first initial and surname; each entry below sends one spelling, as football-data.co.uk gives it, to a referee's full name. Checked against match reports in November 2026. Bates: one referee, Anthony 'Tony' Bates (Wikipedia: Anthony Bates; 11v11 match pages name Tony Bates for 2002-03-30, 2003-08-16 and 2010-02-20). Jordan: one referee, William Michael 'Bill' Jordan (worldfootball.net referee profile). Haywood and Heywood are two different referees, Mark Haywood (West Yorkshire, West Riding FA) and Mark Heywood (Cheshire, EFL referee since 2011, per Plymouth Argyle and club match reports); the data spells each correctly apart from a disputed 2014-09-06 Morecambe match, left as given. Butler: 11v11 names Alan Butler for 2004-01-13 and worldfootball.net has an Alan Butler referee profile; no referee called Andrew Butler was found, so every Butler spelling goes to Alan Butler.",
+  "overrides": {
+    "A Bates": "Tony Bates",
+    "Bates, A.": "Tony Bates",
+    "W. M. Jordan": "Bill Jordan",
+    "Jordan, W. M.": "Bill Jordan",
+    "M Haywood": "Mark Haywood",
+    "M Heywood": "Mark Heywood",
+    "A Butler": "Alan Butler",
+    "Butler, A. N.": "Alan Butler",
+    "Andrew Butler": "Alan Butler"
+  }
+}

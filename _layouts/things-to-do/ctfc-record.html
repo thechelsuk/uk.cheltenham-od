@@ -1,0 +1,107 @@
+{% include header.html %}
+{% assign ctfc = site.data["ctfc-summary"] %}
+{% assign now = ctfc.current %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ ctfc.seasons.size }}</strong> league seasons</li>
+                <li><strong>{{ now.position }}{% case now.position %}{% when 1, 21 %}st{% when 2, 22 %}nd{% when 3, 23 %}rd{% else %}th{% endcase %}</strong> in {{ now.division }} {{ now.season_display }}{% unless now.complete %}, so far{% endunless %}</li>
+                <li><strong>{{ ctfc.since_record.ppg_display }}</strong> points per game since {{ ctfc.stats_from_display }}</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>League Record by Season</h2>
+        <p><small>Final league position and record each season, newest first. Select a season for its full league table.</small></p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Season</th>
+                        <th scope="col">Division</th>
+                        <th scope="col" class="number">Pos</th>
+                        <th scope="col" class="number">Pld</th>
+                        <th scope="col" class="number">W</th>
+                        <th scope="col" class="number">D</th>
+                        <th scope="col" class="number">L</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col" class="number">GD</th>
+                        <th scope="col" class="number">Pts</th>
+                        <th scope="col" class="number">PPG</th>
+                        <th scope="col" class="number">Home PPG</th>
+                        <th scope="col" class="number">Away PPG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in ctfc.seasons %}
+                    <tr>
+                        <td data-val="{{ s.season }}">{% if s.has_table %}<a href="/cheltenham-sports/cheltenham-town-fc/record/{{ s.season }}">{{ s.season_display }}</a>{% else %}{{ s.season_display }}{% endif %}{% unless s.complete %} (so far){% endunless %}{% if s.sorted_by == "points per game" %} (by PPG){% endif %}</td>
+                        <td>{{ s.division }}</td>
+                        <td class="number" data-val="{{ s.position }}">{{ s.position }}</td>
+                        <td class="number">{{ s.played }}</td>
+                        <td class="number">{{ s.won }}</td>
+                        <td class="number">{{ s.drawn }}</td>
+                        <td class="number">{{ s.lost }}</td>
+                        <td class="number">{{ s.gf }}</td>
+                        <td class="number">{{ s.ga }}</td>
+                        <td class="number" data-val="{{ s.gd }}">{% if s.gd > 0 %}+{% endif %}{{ s.gd }}</td>
+                        <td class="number">{{ s.points }}</td>
+                        <td class="number" data-val="{{ s.ppg }}">{{ s.ppg_display }}</td>
+                        <td class="number" data-val="{{ s.home.ppg }}">{{ s.home.ppg_display }}</td>
+                        <td class="number" data-val="{{ s.away.ppg }}">{{ s.away.ppg_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>Pos</strong> final league position, <strong>Pld</strong> played,
+            <strong>W</strong> won, <strong>D</strong> drawn, <strong>L</strong> lost, <strong>F</strong> goals for,
+            <strong>A</strong> goals against, <strong>GD</strong> goal difference, <strong>Pts</strong> points,
+            <strong>PPG</strong> points per game, and <strong>Home PPG</strong> and <strong>Away PPG</strong> the same at home
+            and away. <strong>So far</strong> marks the season in progress, and <strong>by PPG</strong> a season decided on
+            points per game.</small></li></ul>
+
+        <h2>When Do Cheltenham Town Win?</h2>
+        <p>Cheltenham Town's league record since {{ ctfc.stats_from_display }}, split by the score at half-time and by whether
+            they had more, the same or fewer shots, corners, fouls and cards than their opponents.</p>
+        {% include ctfc-conditions.html overall=ctfc.since_record home=ctfc.since_home away=ctfc.since_away rows=ctfc.since_conditions %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Which Matches Are Included?</h3>
+        <ul>
+            <li>League matches only, from the 1999–2000 season onwards. Play-offs, the FA Cup, the EFL Cup and the EFL Trophy are not included.</li>
+        </ul>
+
+        <h3>What Does PPG Mean?</h3>
+        <ul>
+            <li>Points per game: league points divided by matches played. It lets seasons of different lengths be compared, and home and away form be set side by side.</li>
+        </ul>
+
+        <h3>Why Was 2019–20 Decided on Points per Game?</h3>
+        <ul>
+            <li>The season was stopped in March 2020 because of COVID-19, with clubs having played 36 or 37 matches. The final table was decided on points per game, which is why Cheltenham Town finished fourth with fewer points than Exeter City below them.</li>
+        </ul>
+
+        <h3>Do the Tables Include Points Deductions?</h3>
+        <ul>
+            <li>Yes. Each season's table takes off any points deducted from a club that season, and the deduction is shown in the table.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Results from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>, with tables worked out from every
+            result in the division and points deductions applied.
+            {% include freshness.html file="_data/ctfc-summary.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

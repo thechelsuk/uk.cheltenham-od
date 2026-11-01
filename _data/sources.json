@@ -176,14 +176,6 @@
     "pages": ["/about-cheltenham", "/cheltenham-employment-history"]
   },
   {
-    "id": "thesportsdb",
-    "source_url": "https://www.thesportsdb.com/",
-    "licence": "TheSportsDB free API terms (no formal open licence)",
-    "licence_type": "API terms",
-    "data": [{"file": "_data/cheltenham-town-fc.json", "schedule": "daily"}],
-    "pages": ["/cheltenham-sports/cheltenham-town-fc"]
-  },
-  {
     "id": "police-uk-street-level-crime",
     "source_url": "https://data.police.uk/",
     "licence": "Open Government Licence v3.0",
@@ -761,5 +753,23 @@
     "licence_type": "CC BY 4.0",
     "data": [{"file": "_data/town-growth.json", "schedule": "manual"}],
     "pages": ["/cheltenham-growth"]
+  },
+  {
+    "id": "football-data-co-uk",
+    "name": "Football-Data.co.uk English league results",
+    "source_url": "https://football-data.co.uk/englandm.php",
+    "licence": "None stated — free season results files with no stated licence or terms of reuse; credited and linked on each page. League tables are worked out from the results, with points deductions from _data/ctfc-corrections.json, and checked against the published final tables",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/ctfc-summary.json", "schedule": "daily"}, {"file": "_data/ctfc-referees.json", "schedule": "daily"}],
+    "pages": ["/cheltenham-sports/cheltenham-town-fc", "/cheltenham-sports/cheltenham-town-fc/record", "/cheltenham-sports/cheltenham-town-fc/vs", "/cheltenham-sports/cheltenham-town-fc/referees"]
+  },
+  {
+    "id": "fotmob-team-calendar",
+    "name": "FotMob Cheltenham Town calendar",
+    "source_url": "https://www.fotmob.com/teams/8680/overview/cheltenham-town",
+    "licence": "None stated — FotMob's free public team calendar (iCalendar feed); only the next three fixtures and last three results are shown, credited and linked on the page. Falls back to Football-Data.co.uk league matches if the calendar can't be read",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/cheltenham-town-fc.json", "schedule": "daily"}],
+    "pages": ["/cheltenham-sports/cheltenham-town-fc"]
   }
 ]

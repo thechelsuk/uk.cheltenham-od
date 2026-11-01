@@ -1,0 +1,15 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Town League Record by Season",
+  "description": "{{ page.description }}",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['ctfc-summary'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "{{ site.data['ctfc-summary'].seasons.last.season | slice: 0, 4 }}/{{ site.data['ctfc-summary'].seasons.first.season | slice: 0, 4 | plus: 1 }}",
+  "variableMeasured": ["League position", "Wins", "Draws", "Defeats", "Goals for", "Goals against", "Points", "Points per game"]
+}
+</script>

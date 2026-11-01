@@ -1,0 +1,87 @@
+{% include header.html %}
+{% assign ctfc = site.data["ctfc-summary"] %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ ctfc.opponents.size }}</strong> opponents</li>
+                <li><strong>{{ ctfc.since_record.played_display }}</strong> league matches since {{ ctfc.stats_from_display }}</li>
+                <li><strong>{{ ctfc.since_record.ppg_display }}</strong> points per game</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>Record Against Every Opponent Since {{ ctfc.stats_from_display }}</h2>
+        <p><small>League matches only. Select a club for every meeting, half-time scores and match stats.</small></p>
+        <div class="table-scroll">
+            <table class="data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Opponent</th>
+                        <th scope="col" class="date">Last met</th>
+                        <th scope="col" class="number">Pld</th>
+                        <th scope="col" class="number">W</th>
+                        <th scope="col" class="number">D</th>
+                        <th scope="col" class="number">L</th>
+                        <th scope="col" class="number">F</th>
+                        <th scope="col" class="number">A</th>
+                        <th scope="col" class="number">GD</th>
+                        <th scope="col" class="number">Pts</th>
+                        <th scope="col" class="number">PPG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for o in ctfc.opponents %}{% assign r = o.record %}
+                    <tr>
+                        <td><a href="/cheltenham-sports/cheltenham-town-fc/vs/{{ o.slug }}">{{ o.club }}</a></td>
+                        <td class="date" data-val="{{ o.last }}">{{ o.last }}</td>
+                        <td class="number">{{ r.played }}</td>
+                        <td class="number">{{ r.won }}</td>
+                        <td class="number">{{ r.drawn }}</td>
+                        <td class="number">{{ r.lost }}</td>
+                        <td class="number">{{ r.gf }}</td>
+                        <td class="number">{{ r.ga }}</td>
+                        <td class="number" data-val="{{ r.gd }}">{% if r.gd > 0 %}+{% endif %}{{ r.gd }}</td>
+                        <td class="number">{{ r.points }}</td>
+                        <td class="number" data-val="{{ r.ppg }}">{{ r.ppg_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <ul class="table-key"><li><small><strong>Key:</strong> <strong>Last met</strong> the most recent league meeting. <strong>Pld</strong>
+            played, <strong>W</strong> won, <strong>D</strong> drawn, <strong>L</strong> lost, <strong>F</strong> goals for
+            Cheltenham Town, <strong>A</strong> goals against, <strong>GD</strong> goal difference, <strong>Pts</strong> points,
+            <strong>PPG</strong> points per game.</small></li></ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Why Do the Records Start in {{ ctfc.stats_from_display }}?</h3>
+        <ul>
+            <li>That is the first season with half-time scores, referees and match statistics for every game, so every record on these pages covers the same matches. Cheltenham Town's season-by-season <a href="/cheltenham-sports/cheltenham-town-fc/record">league record</a> goes back to 1999–2000.</li>
+        </ul>
+
+        <h3>Which Matches Are Included?</h3>
+        <ul>
+            <li>League matches only. Play-offs, the FA Cup, the EFL Cup and the EFL Trophy are not included.</li>
+        </ul>
+
+        <h3>Why Do Chester and Halifax Appear Twice?</h3>
+        <ul>
+            <li>Cheltenham Town played Chester City and Halifax Town in the Football League, and Chester and FC Halifax Town in the 2015–16 National League. They are different clubs, so each has its own record.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Results from <a href="{{ ctfc.source_url }}">{{ ctfc.source }}</a>.
+            {% include freshness.html file="_data/ctfc-summary.json" %}
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

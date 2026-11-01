@@ -1,0 +1,51 @@
+{
+  "about": "Points deductions and how each season's table was decided, for the divisions Cheltenham Town played in. Read by _python/ctfc-results.py and applied to tables built from football-data.co.uk results. Club names are football-data's short names. Each season was checked against its final table on Wikipedia (which cites the EFL, BBC Sport and RSSSF). A season not listed had no deductions and was decided on points, goal difference, then goals scored.",
+  "seasons": {
+    "2000-01": {
+      "deductions": [{"club": "Chesterfield", "points": 9, "reason": "financial irregularities", "source": "https://en.wikipedia.org/wiki/2000%E2%80%9301_Football_League"}]
+    },
+    "2004-05": {
+      "deductions": [{"club": "Cambridge", "points": 10, "reason": "entering administration", "source": "https://en.wikipedia.org/wiki/2004%E2%80%9305_Football_League_Two"}]
+    },
+    "2005-06": {
+      "deductions": [{"club": "Bury", "points": 1, "reason": "fielding an ineligible player", "source": "https://en.wikipedia.org/wiki/2005%E2%80%9306_Football_League"}]
+    },
+    "2006-07": {
+      "deductions": [{"club": "Rotherham", "points": 10, "reason": "entering administration", "source": "https://en.wikipedia.org/wiki/2006%E2%80%9307_Football_League"}]
+    },
+    "2007-08": {
+      "deductions": [
+        {"club": "Leeds", "points": 15, "reason": "breaking insolvency rules", "source": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Football_League_One"},
+        {"club": "Bournemouth", "points": 10, "reason": "entering administration", "source": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Football_League_One"},
+        {"club": "Luton", "points": 10, "reason": "entering administration", "source": "https://en.wikipedia.org/wiki/2007%E2%80%9308_Football_League_One"}
+      ]
+    },
+    "2008-09": {
+      "deductions": [{"club": "Stockport", "points": 10, "reason": "entering administration", "source": "https://en.wikipedia.org/wiki/2008%E2%80%9309_Football_League_One"}]
+    },
+    "2010-11": {
+      "deductions": [
+        {"club": "Torquay", "points": 1, "reason": "fielding an unregistered player", "source": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Football_League_Two"},
+        {"club": "Hereford", "points": 3, "reason": "fielding an unregistered player", "source": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Football_League_Two"}
+      ]
+    },
+    "2011-12": {
+      "deductions": [{"club": "Port Vale", "points": 10, "reason": "entering administration", "source": "https://en.wikipedia.org/wiki/2011%E2%80%9312_Football_League_Two"}]
+    },
+    "2013-14": {
+      "deductions": [{"club": "AFC Wimbledon", "points": 3, "reason": "fielding an ineligible player", "source": "https://en.wikipedia.org/wiki/2013%E2%80%9314_Football_League_Two"}]
+    },
+    "2019-20": {
+      "sort": "ppg",
+      "complete": true,
+      "note": "The season was stopped in March 2020 because of COVID-19, with clubs on 36 or 37 games. Final positions were decided on points per game.",
+      "deductions": [{"club": "Macclesfield", "points": 17, "reason": "unpaid wages and unfulfilled fixtures", "source": "https://en.wikipedia.org/wiki/2019%E2%80%9320_EFL_League_Two"}]
+    },
+    "2023-24": {
+      "deductions": [
+        {"club": "Wigan", "points": 8, "reason": "late wage payments", "source": "https://en.wikipedia.org/wiki/2023%E2%80%9324_EFL_League_One"},
+        {"club": "Reading", "points": 6, "reason": "late wage and tax payments", "source": "https://en.wikipedia.org/wiki/2023%E2%80%9324_EFL_League_One"}
+      ]
+    }
+  }
+}

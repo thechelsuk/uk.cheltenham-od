@@ -162,7 +162,8 @@ module Navigation
       elsif p.data["parent"]
         p.data["breadcrumbs"] = parent_crumbs(norm(p.data["parent"]), map, categories, pages)
         add_classified_category(site, p)
-        p.data["family"] = parent_families[norm(p.data["parent"])]&.map { |l| l.merge("current" => l["url"] == url) }
+        # Keep a family another generator set (the Cheltenham Town history pages) when the parent has none.
+        p.data["family"] = parent_families[norm(p.data["parent"])]&.map { |l| l.merge("current" => l["url"] == url) } || p.data["family"]
       elsif standalone?(p, url)
         p.data["breadcrumbs"] = [{ "name" => "Home", "url" => "/" }]
       end

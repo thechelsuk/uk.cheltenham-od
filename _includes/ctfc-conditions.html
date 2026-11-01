@@ -1,0 +1,68 @@
+{%- comment -%}
+Cheltenham Town's record split by match conditions: overall, home, away, by the half-time score,
+and by whether they had more, the same or fewer shots, corners, cards and so on than the opponent.
+  overall, home, away: record rows (played, won, drawn, lost, *_pct_display, gf, ga, points, ppg_display)
+  rows: the conditions list from _python/ctfc-results.py's record()
+{%- endcomment -%}
+<div class="table-scroll">
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th scope="col">Record</th>
+                <th scope="col" class="number">Pld</th>
+                <th scope="col" class="number">W</th>
+                <th scope="col" class="number">D</th>
+                <th scope="col" class="number">L</th>
+                <th scope="col" class="number">W%</th>
+                <th scope="col" class="number">D%</th>
+                <th scope="col" class="number">L%</th>
+                <th scope="col" class="number">F</th>
+                <th scope="col" class="number">A</th>
+                <th scope="col" class="number">Pts</th>
+                <th scope="col" class="number">PPG</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%- assign base = "" | split: "" | push: include.overall | push: include.home | push: include.away -%}
+            {%- assign names = "Overall,Home,Away" | split: "," -%}
+            {%- for r in base %}
+            <tr>
+                <td>{% if forloop.first %}<strong>{{ names[forloop.index0] }}</strong>{% else %}{{ names[forloop.index0] }}{% endif %}</td>
+                <td class="number">{{ r.played }}</td>
+                <td class="number">{{ r.won }}</td>
+                <td class="number">{{ r.drawn }}</td>
+                <td class="number">{{ r.lost }}</td>
+                <td class="number">{{ r.win_pct_display }}</td>
+                <td class="number">{{ r.draw_pct_display }}</td>
+                <td class="number">{{ r.loss_pct_display }}</td>
+                <td class="number">{{ r.gf }}</td>
+                <td class="number">{{ r.ga }}</td>
+                <td class="number">{{ r.points }}</td>
+                <td class="number">{{ r.ppg_display }}</td>
+            </tr>
+            {%- endfor %}
+            {%- for r in include.rows %}{% if r.played > 0 %}
+            <tr>
+                <td>{{ r.label }}</td>
+                <td class="number">{{ r.played }}</td>
+                <td class="number">{{ r.won }}</td>
+                <td class="number">{{ r.drawn }}</td>
+                <td class="number">{{ r.lost }}</td>
+                <td class="number">{{ r.win_pct_display }}</td>
+                <td class="number">{{ r.draw_pct_display }}</td>
+                <td class="number">{{ r.loss_pct_display }}</td>
+                <td class="number">{{ r.gf }}</td>
+                <td class="number">{{ r.ga }}</td>
+                <td class="number">{{ r.points }}</td>
+                <td class="number">{{ r.ppg_display }}</td>
+            </tr>
+            {%- endif %}{% endfor %}
+        </tbody>
+    </table>
+</div>
+<ul class="table-key"><li><small><strong>Key:</strong> <strong>HT</strong> half-time: matches Cheltenham Town led, drew or trailed
+    at the break. <strong>More</strong>, <strong>Same</strong> and <strong>Fewer</strong> compare Cheltenham Town's shots,
+    corners, fouls or cards in a match with the opponent's. <strong>Pld</strong> played, <strong>W</strong> won,
+    <strong>D</strong> drawn, <strong>L</strong> lost, <strong>W%</strong>, <strong>D%</strong> and <strong>L%</strong> the
+    share of those matches won, drawn and lost, <strong>F</strong> goals for, <strong>A</strong> goals against,
+    <strong>Pts</strong> points, <strong>PPG</strong> points per game.</small></li></ul>
