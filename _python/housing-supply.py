@@ -30,6 +30,8 @@ HISTORY_PATH = os.path.join(HERE, "..", "_data", "council-tax-stock-history.json
 LIVE_TABLES_PAGE_URL = "https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing"
 CTSOP_COLLECTION_URL = "https://www.gov.uk/government/collections/valuation-office-agency-council-tax-statistics"
 DCLG_CODE, FORMER_ONS_CODE, ECODE = "B1605", "23UB", "E07000078"
+# VOA named the zip CTSOP1.1.zip in earlier years and CTSOP_1_1.zip from 2026.
+CTSOP_ZIP_PATTERN = r"CTSOP_?1[._]1\.zip"
 
 
 def find_link(page_url, pattern):
@@ -107,7 +109,7 @@ def find_latest_ctsop_page():
 
 def fetch_latest_council_tax_stock():
     page_url, year = find_latest_ctsop_page()
-    zip_url = find_link(page_url, r"CTSOP1\.1\.zip")
+    zip_url = find_link(page_url, CTSOP_ZIP_PATTERN)
     raw = download(zip_url)
 
     with zipfile.ZipFile(io.BytesIO(raw)) as zf:

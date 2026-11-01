@@ -14,7 +14,7 @@ from datetime import datetime, timedelta
 import requests
 
 SPEC = importlib.util.spec_from_file_location(
-    "planning", pathlib.Path(__file__).resolve().parents[1] / "planning.py"
+    "planning", pathlib.Path(__file__).resolve().parents[1] / "pi" / "planning.py"
 )
 assert SPEC is not None and SPEC.loader is not None
 planning = importlib.util.module_from_spec(SPEC)

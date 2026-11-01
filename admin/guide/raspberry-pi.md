@@ -28,6 +28,7 @@ The data scripts live in `_python/pi/`. Each writes its `_data` file (and Atom f
 | `unplanned-closures.py` | `_data/unplanned-closures.json`, `_data/unplanned-closures-history.json`, `feeds/unplanned-closures.xml` | National Highways Road and Lane Closures |
 | `weather-warnings.py` | `_data/weather-warnings.json`, `_data/weather-warnings-history.json`, `feeds/weather-warnings.xml` | Met Office warnings RSS feed (South West England) |
 | `fuel.py` | `_data/fuel-prices.json`, `_data/fuel-prices-history.json`, `_data/fuel-stations.json` | GOV.UK fuel price scheme |
+| `planning.py` | `_data/planning-applications.json` | Cheltenham Borough Council planning portal (blocks GitHub's runners, so it runs here) |
 
 ## How It Runs
 
@@ -43,7 +44,7 @@ For each call it:
 
 1. changes to the repository folder and activates its `.venv`
 2. runs `git pull --rebase` so it starts from the latest `main`
-3. reads the manifest and runs each script, logging a warning and carrying on if one fails
+3. reads the manifest and runs each script through `_python/fetch_status.py pi`, which records whether it worked in `_data/fetch-status/pi.json`, logging a warning and carrying on if one fails
 4. commits any changes, including new files, as `Automated data update <UTC time> [<scripts>]` and pushes to `main`, which triggers the Pages deploy
 
 The manifest is read after the pull, so a script added to it runs from the next run. `run.sh` is safe to change too: its body sits in one function called on its last line, so Bash has read the whole file before the pull can replace it.
@@ -72,7 +73,7 @@ crontab ~/uk.cheltenham-od/_python/pi/crontab.txt
 
 It does two things:
 
-- **Data scripts.** The scripts in `every-5-minutes.txt` run every 5 minutes, and those in `hourly.txt` (fuel prices) at 3 minutes past each hour. They only commit when something has changed. Both share one lockfile through `flock`, so two runs never pull, commit or push at the same time: a 5-minute run skips if the lock is busy (`-n`), and the hourly run waits up to 5 minutes for it (`-w 300`).
+- **Data scripts.** The scripts in `every-5-minutes.txt` run every 5 minutes, and those in `hourly.txt` (fuel prices and planning applications) at 3 minutes past each hour. They only commit when something has changed. Both share one lockfile through `flock`, so two runs never pull, commit or push at the same time: a 5-minute run skips if the lock is busy (`-n`), and the hourly run waits up to 5 minutes for it (`-w 300`).
 - **Scheduled workflows.** GitHub's own `schedule:` trigger was running hours late, so the site's scheduled workflows have none. The Pi starts each one at its set time with `_python/pi/dispatch.sh <workflow>`, which calls GitHub's `workflow_dispatch`.
 
 All times are UK time. The Pi's clock is on `Europe/London`, and the watchdog reads its copy of the schedules in UK time too, so a workflow set for 08:46 runs at 08:46 UK time all year. Output goes to `run.log` in the repository folder, which is gitignored.
@@ -124,7 +125,11 @@ After each run where at least one script worked, `run.sh` posts to the Worker's 
 
 The first check-in after that hands back to the Pi: Cloudflare stops, the light goes back to how it was, and a "the Pi is back" email follows. The Worker never takes over before the Pi has checked in once.
 
-The fuel prices API refuses GitHub's servers, so fuel prices don't update while Cloudflare is in charge. Everything else does.
+The fuel prices API and the council's planning portal refuse GitHub's servers, so fuel prices and planning applications don't update while Cloudflare is in charge. Everything else does.
+
+### Failing Fetchers
+
+Once an hour the Worker also reads every runner's `_data/fetch-status/<runner>.json` from GitHub (written by `_python/fetch_status.py`). If any script has been failing for over 24 hours, it sends one email listing each one, since when, and its last error. It emails once per failure, so a script that recovers and later fails again gets a new email. The list of runners in `src/fetch-status.js` must match `RUNNERS` in `_python/fetch_status.py`, and a test checks this.
 
 ### Status and Switching
 

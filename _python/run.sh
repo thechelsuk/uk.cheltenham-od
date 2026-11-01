@@ -74,7 +74,7 @@ main() {
 
     local ok=0
     for script in "${scripts[@]}"; do
-        if python "$script"; then
+        if python _python/fetch_status.py pi "$script"; then
             ok=$((ok + 1))
         else
             echo "WARN: $script failed"

@@ -196,7 +196,7 @@ Every page, grouped as in the site menu.
 
 Most fetchers run in GitHub Actions workflows (`.github/workflows/refresh-*.yml`). GitHub's own `schedule:` trigger ran hours late, so none of the workflows has one: a Raspberry Pi at home starts each scheduled workflow at its set UK time, from its crontab (`_python/pi/crontab.txt`).
 
-The fastest-changing feeds (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices) run on the Pi itself, from the script lists in `_python/pi/every-5-minutes.txt` and `hourly.txt`.
+The fastest-changing feeds (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices) run on the Pi itself, from the script lists in `_python/pi/every-5-minutes.txt` and `hourly.txt`. So do planning applications, because the council's planning portal blocks GitHub's servers.
 
 If the Pi goes quiet, a Cloudflare Worker (`cloudflare/pi-watchdog/`) takes over: it runs the 5-minute fallback workflow, starts any scheduled workflow that falls due, and sends an alert, then hands back when the Pi checks in again. See [the Raspberry Pi guide](admin/guide/raspberry-pi.md) for how it all fits together.
 

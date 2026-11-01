@@ -4,7 +4,7 @@
     "source_url": "https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/housing-supply.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/housing-supply.json", "schedule": "monthly", "script": "_python/housing-supply.py"}],
     "pages": ["/cheltenham-house-prices/housing-supply"]
   },
   {
@@ -12,7 +12,7 @@
     "source_url": "https://www.gov.uk/government/collections/valuation-office-agency-council-tax-statistics",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/council-tax-stock-history.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/council-tax-stock-history.json", "schedule": "manual"}],
     "pages": ["/cheltenham-house-prices/council-tax-stock"]
   },
   {
@@ -28,7 +28,7 @@
     "source_url": "https://www.nomisweb.co.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/cheltenham-earnings.json", "schedule": "monthly"}, {"file": "_data/cheltenham-affordability.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/cheltenham-earnings.json", "schedule": "monthly", "script": "_python/earnings.py"}, {"file": "_data/cheltenham-affordability.json", "schedule": "monthly", "script": "_python/affordability.py"}],
     "pages": ["/cheltenham-earnings-history", "/cheltenham-house-prices/affordability"]
   },
   {
@@ -36,7 +36,7 @@
     "source_url": "https://www.nomisweb.co.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/cheltenham-economy.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/cheltenham-economy.json", "schedule": "monthly", "script": "_python/economy.py"}],
     "pages": ["/cheltenham-economy"]
   },
   {
@@ -52,7 +52,7 @@
     "source_url": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/rents.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/rents.json", "schedule": "monthly", "script": "_python/rents.py"}],
     "pages": ["/cheltenham-rent-prices"]
   },
   {
@@ -68,7 +68,7 @@
     "source_url": "https://www.api.gov.uk/he/national-heritage-list-for-england-nhle/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/listed-buildings.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/listed-buildings.json", "schedule": "monthly", "script": "_python/listed-buildings.py"}],
     "pages": ["/cheltenham-listed-buildings"]
   },
   {
@@ -76,7 +76,7 @@
     "source_url": "https://raildata.org.uk/",
     "licence": "Rail Data Marketplace 'Live Arrival and Departure Boards' data product licence. RDM data products use an OGL3-based licence with a per-product Schedule 1 set by the publisher (permitted purposes, term, attribution text, data retention) — not yet confirmed against the account's actual agreement",
     "licence_type": "Rail Data Marketplace",
-    "data": [{"file": "_data/rail-times.json", "schedule": "every 5 minutes"}, {"file": "_data/rail-disruptions-history.json", "schedule": "every 5 minutes"}],
+    "data": [{"file": "_data/rail-times.json", "schedule": "every 5 minutes", "script": "_python/pi/rail-times.py"}, {"file": "_data/rail-disruptions-history.json", "schedule": "every 5 minutes", "script": "_python/pi/rail-times.py"}],
     "pages": ["/cheltenham-train-times"]
   },
   {
@@ -84,7 +84,7 @@
     "source_url": "https://dataportal.orr.gov.uk/statistics/usage/estimates-of-station-usage",
     "licence": "Licence not stated on the ORR data portal page and not independently confirmed here — check the ORR Data Portal terms before reuse",
     "licence_type": "None stated",
-    "data": [{"file": "_data/station-usage.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/station-usage.json", "schedule": "monthly", "script": "_python/station-usage.py"}],
     "pages": ["/cheltenham-train-times"]
   },
   {
@@ -92,7 +92,7 @@
     "source_url": "https://members-api.parliament.uk/",
     "licence": "Open Parliament Licence v3.0",
     "licence_type": "OPL v3.0",
-    "data": [{"file": "_data/politics.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/politics.json", "schedule": "monthly", "script": "_python/politics.py"}],
     "pages": ["/cheltenham-politics"]
   },
   {
@@ -108,7 +108,7 @@
     "source_url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/nhs-ae.json", "schedule": "daily"}],
+    "data": [{"file": "_data/nhs-ae.json", "schedule": "daily", "script": "_python/nhs-ae.py"}],
     "pages": ["/cheltenham-ae-waiting-times"]
   },
   {
@@ -116,7 +116,7 @@
     "source_url": "https://digital.nhs.uk/services/organisation-data-service",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/nhs-hospitals.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/nhs-hospitals.json", "schedule": "monthly", "script": "_python/nhs-sites.py"}],
     "pages": ["/cheltenham-ae-waiting-times"]
   },
   {
@@ -132,7 +132,7 @@
     "source_url": "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/roadworks.json", "schedule": "daily"}, {"file": "_data/roadworks-history.json", "schedule": "daily"}],
+    "data": [{"file": "_data/roadworks.json", "schedule": "daily", "script": "_python/roadworks.py"}, {"file": "_data/roadworks-history.json", "schedule": "daily", "script": "_python/roadworks.py"}],
     "pages": ["/cheltenham-roadworks", "/newsletter"]
   },
   {
@@ -140,7 +140,7 @@
     "source_url": "https://www.google.com/maps/d/viewer?mid=195JFz65LYxzFO0M_iNAOUJawnoTnkB4",
     "licence": "Cheltenham Borough Council's taxi rank map (Google My Maps, no licence stated) combined with OpenStreetMap (ODbL), plus ranks checked in person by the editor",
     "licence_type": "Mixed",
-    "data": [{"file": "_data/taxi-ranks.json", "schedule": "monthly"}, {"file": "_data/taxi-ranks-curated.json", "schedule": "manual"}],
+    "data": [{"file": "_data/taxi-ranks.json", "schedule": "monthly", "script": "_python/taxi-ranks.py"}, {"file": "_data/taxi-ranks-curated.json", "schedule": "manual"}],
     "pages": ["/cheltenham-taxi-ranks"]
   },
   {
@@ -148,7 +148,7 @@
     "source_url": "https://www.gov.uk/guidance/find-and-use-roadworks-data",
     "licence": "Open Government Licence v3.0 (Department for Transport, via Find Transport Data). Pushed to the uk.cheltenham-od.receiver Cloudflare Worker, which this site reads",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/street-works.json", "schedule": "every two hours"}, {"file": "_data/street-works-history.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/street-works.json", "schedule": "every two hours", "script": "_python/street-works.py"}, {"file": "_data/street-works-history.json", "schedule": "every two hours", "script": "_python/street-works.py"}],
     "pages": ["/cheltenham-street-works", "/cheltenham-street-works/history"]
   },
   {
@@ -156,7 +156,7 @@
     "source_url": "https://developer.data.nationalhighways.co.uk/",
     "licence": "Open Government Licence v3.0 (stated on the National Highways developer portal; access needs a free subscription key)",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/unplanned-closures.json", "schedule": "every 5 minutes"}, {"file": "_data/unplanned-closures-history.json", "schedule": "every 5 minutes"}],
+    "data": [{"file": "_data/unplanned-closures.json", "schedule": "every 5 minutes", "script": "_python/pi/unplanned-closures.py"}, {"file": "_data/unplanned-closures-history.json", "schedule": "every 5 minutes", "script": "_python/pi/unplanned-closures.py"}],
     "pages": ["/cheltenham-roadworks", "/cheltenham-roadworks/unplanned-closures"]
   },
   {
@@ -164,7 +164,7 @@
     "source_url": "https://data.bus-data.dft.gov.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/bus-routes.json", "schedule": "every two hours"}, {"file": "_data/bus-disruptions.json", "schedule": "every 5 minutes"}, {"file": "_data/bus-disruptions-history.json", "schedule": "every 5 minutes"}],
+    "data": [{"file": "_data/bus-routes.json", "schedule": "every two hours", "script": "_python/bus-data.py"}, {"file": "_data/bus-disruptions.json", "schedule": "every 5 minutes", "script": "_python/pi/buses.py"}, {"file": "_data/bus-disruptions-history.json", "schedule": "every 5 minutes", "script": "_python/pi/buses.py"}],
     "pages": ["/cheltenham-bus-data", "/cheltenham-bus-data/history", "/"]
   },
   {
@@ -172,7 +172,7 @@
     "source_url": "https://www.nomisweb.co.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/cheltenham-stats.json", "schedule": "monthly"}, {"file": "_data/cheltenham-employment.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/cheltenham-stats.json", "schedule": "monthly", "script": "_python/cheltenham-stats.py"}, {"file": "_data/cheltenham-employment.json", "schedule": "monthly", "script": "_python/cheltenham-stats.py"}],
     "pages": ["/about-cheltenham", "/cheltenham-employment-history"]
   },
   {
@@ -180,7 +180,7 @@
     "source_url": "https://data.police.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/crime/index.json", "schedule": "monthly"}, {"file": "_data/crime-map.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/crime/index.json", "schedule": "monthly", "script": "_python/crime.py"}, {"file": "_data/crime-map.json", "schedule": "monthly", "script": "_python/crime-map.py"}],
     "pages": [
       "/cheltenham-crime-data",
       "/cheltenham-crime-data/2023",
@@ -196,7 +196,7 @@
     "source_url": "https://pickup.dpd.co.uk/",
     "licence": "Unofficial public API (no API key required) used under DPD's own website terms — no formal open licence",
     "licence_type": "API terms",
-    "data": [{"file": "_data/dpd-pickup-points.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/dpd-pickup-points.json", "schedule": "every two hours", "script": "_python/dpd-pickup.py"}],
     "pages": ["/cheltenham-dpd-pickup-points"]
   },
   {
@@ -204,7 +204,7 @@
     "source_url": "https://openchargemap.org",
     "licence": "Creative Commons Attribution-ShareAlike 4.0 (CC-BY-SA 4.0) — Data © Open Charge Map contributors",
     "licence_type": "CC BY-SA 4.0",
-    "data": [{"file": "_data/ev-charging.json", "schedule": "daily"}],
+    "data": [{"file": "_data/ev-charging.json", "schedule": "daily", "script": "_python/ev-charging.py"}],
     "pages": ["/cheltenham-ev-charging"]
   },
   {
@@ -212,7 +212,7 @@
     "source_url": "https://www.mi5.gov.uk/threat-levels",
     "licence": "Crown copyright; not explicitly published under the Open Government Licence on mi5.gov.uk — treat as Crown copyright content and verify reuse terms before relying on this. Threat level changes before 19 September 2026 were compiled by hand from Wikipedia's UK Threat Levels article (CC BY-SA 4.0)",
     "licence_type": "Crown copyright",
-    "data": [{"file": "_data/terrorism.json", "schedule": "daily"}, {"file": "_data/terrorism-history.json", "schedule": "daily"}],
+    "data": [{"file": "_data/terrorism.json", "schedule": "daily", "script": "_python/terrorism.py"}, {"file": "_data/terrorism-history.json", "schedule": "daily", "script": "_python/terrorism.py"}],
     "pages": ["/cheltenham-security-alerts"]
   },
   {
@@ -220,7 +220,7 @@
     "source_url": "https://uk-air.defra.gov.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/air-quality.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/air-quality.json", "schedule": "every two hours", "script": "_python/air-quality.py"}],
     "pages": ["/cheltenham-air-quality"]
   },
   {
@@ -236,7 +236,7 @@
     "source_url": "https://environment.data.gov.uk/flood-monitoring/doc/reference",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/flood.json", "schedule": "daily"}, {"file": "_data/flood-history.json", "schedule": "daily"}, {"file": "_data/river-levels.json", "schedule": "every two hours"}, {"file": "_data/river-levels-history.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/flood.json", "schedule": "daily", "script": "_python/flood.py"}, {"file": "_data/flood-history.json", "schedule": "daily", "script": "_python/flood.py"}, {"file": "_data/river-levels.json", "schedule": "every two hours", "script": "_python/river-levels.py"}, {"file": "_data/river-levels-history.json", "schedule": "every two hours", "script": "_python/river-levels.py"}],
     "pages": ["/cheltenham-flood-warnings", "/cheltenham-flood-warnings/history", "/cheltenham-flood-warnings/2007-floods"]
   },
   {
@@ -244,7 +244,7 @@
     "source_url": "https://www.stwater.co.uk/in-my-area/storm-overflow-map/",
     "licence": "No formal licence stated — published as a free public near-real-time data feed by Severn Trent Water via Water UK's National Storm Overflow Hub",
     "licence_type": "None stated",
-    "data": [{"file": "_data/sewage-overflows.json", "schedule": "every two hours"}, {"file": "_data/sewage-overflows-history.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/sewage-overflows.json", "schedule": "every two hours", "script": "_python/sewage-overflows.py"}, {"file": "_data/sewage-overflows-history.json", "schedule": "every two hours", "script": "_python/sewage-overflows.py"}],
     "pages": ["/cheltenham-sewage-overflows", "/cheltenham-sewage-overflows/history"]
   },
   {
@@ -260,7 +260,7 @@
     "source_url": "https://environment.data.gov.uk/water-quality/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/water-quality.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/water-quality.json", "schedule": "monthly", "script": "_python/water-quality.py"}],
     "pages": ["/cheltenham-water-quality"]
   },
   {
@@ -271,7 +271,7 @@
     "source_url": "https://ratings.food.gov.uk/open-data-resources",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/food-standards.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/food-standards.json", "schedule": "every two hours", "script": "_python/food-standards.py"}],
     "pages": [
       "/cheltenham-food-standards",
       "/cheltenham-food-standards/rated-one-to-four",
@@ -285,7 +285,7 @@
     "source_url": "https://www.givefood.org.uk/api/",
     "licence": "CC BY 4.0 (per the Give Food data repository); credit with a link, and show lists of needed items as published",
     "licence_type": "CC BY 4.0",
-    "data": [{"file": "_data/foodbank.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/foodbank.json", "schedule": "every two hours", "script": "_python/foodbank.py"}],
     "pages": ["/cheltenham-foodbank-needed-items", "/cheltenham-foodbank-needed-items/cheltenham-foodbank", "/cheltenham-foodbank-needed-items/cheltenham-open-door", "/cheltenham-foodbank-needed-items/springbank-community-group", "/cheltenham-foodbank-needed-items/gloucester-foodbank", "/cheltenham-foodbank-needed-items/tewkesbury-foodbank", "/cheltenham-foodbank-needed-items/north-cotswold-foodbank"]
   },
   {
@@ -293,7 +293,7 @@
     "source_url": "https://openweathermap.org/",
     "licence": "OpenWeather One Call API subscription terms (requires an API key) — proprietary/commercial terms, not an open data licence",
     "licence_type": "API terms",
-    "data": [{"file": "_data/weather.json", "schedule": "daily"}],
+    "data": [{"file": "_data/weather.json", "schedule": "daily", "script": "_python/forecast.py"}],
     "pages": ["/cheltenham-10-day-weather-forecast", "/", "/newsletter"]
   },
   {
@@ -301,7 +301,7 @@
     "source_url": "https://www.fuel-finder.service.gov.uk",
     "licence": "Open Government Licence v3.0 (published under the statutory Motor Fuel Prices Transparency Scheme; access requires a registered API client but the underlying price data is intended as open government data)",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/fuel-prices.json", "schedule": "hourly"}, {"file": "_data/fuel-prices-history.json", "schedule": "hourly"}],
+    "data": [{"file": "_data/fuel-prices.json", "schedule": "hourly", "script": "_python/pi/fuel.py"}, {"file": "_data/fuel-prices-history.json", "schedule": "hourly", "script": "_python/pi/fuel.py"}],
     "pages": ["/cheltenham-fuel-prices", "/cheltenham-fuel-prices/history"]
   },
   {
@@ -309,7 +309,7 @@
     "source_url": "https://www.gov.uk/government/statistics/weekly-road-fuel-prices",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/fuel-uk-weekly.json", "schedule": "daily"}],
+    "data": [{"file": "_data/fuel-uk-weekly.json", "schedule": "daily", "script": "_python/fuel-uk-weekly.py"}],
     "pages": ["/cheltenham-fuel-prices/history"]
   },
   {
@@ -319,7 +319,7 @@
     "source_url": "https://www.openstreetmap.org/",
     "licence": "Open Database Licence (ODbL)",
     "licence_type": "ODbL",
-    "data": [{"file": "_data/hotels.json", "schedule": "monthly"}, {"file": "_data/points-of-interest.json", "schedule": "monthly"}, {"file": "_data/post-offices.json", "schedule": "daily"}, {"file": "_data/races.json", "schedule": "monthly"}, {"file": "_data/car-parks.json", "schedule": "monthly"}, {"file": "_data/cycle-routes.json", "schedule": "monthly"}, {"file": "_data/play-areas.json", "schedule": "monthly"}, {"file": "_data/permit-zones.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/hotels.json", "schedule": "monthly", "script": "_python/hotels.py"}, {"file": "_data/points-of-interest.json", "schedule": "monthly", "script": "_python/interests.py"}, {"file": "_data/post-offices.json", "schedule": "daily", "script": "_python/post-office.py"}, {"file": "_data/races.json", "schedule": "monthly", "script": "_python/racing.py"}, {"file": "_data/car-parks.json", "schedule": "monthly", "script": "_python/car-parks.py"}, {"file": "_data/cycle-routes.json", "schedule": "monthly", "script": "_python/cycle-routes.py"}, {"file": "_data/play-areas.json", "schedule": "monthly", "script": "_python/play-areas.py"}, {"file": "_data/permit-zones.json", "schedule": "monthly", "script": "_python/permit-zones.py"}],
     "pages": [
       "/staying-in-cheltenham",
       "/cheltenham-points-of-interest",
@@ -338,7 +338,7 @@
     "source_url": "https://www.ordnancesurvey.co.uk/products/os-open-greenspace",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/green-spaces.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/green-spaces.json", "schedule": "monthly", "script": "_python/green-spaces.py"}],
     "pages": ["/cheltenham-green-spaces"]
   },
   {
@@ -355,7 +355,7 @@
     "source_url": "https://landregistry.data.gov.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/cheltenham-house-prices.json", "schedule": "every two hours"}, {"file": "_data/house-summary.json", "schedule": "every two hours"}, {"file": "_data/cheltenham-house-price-history.json", "schedule": "manual"}],
+    "data": [{"file": "_data/cheltenham-house-prices.json", "schedule": "every two hours", "script": "_python/land-registry.py"}, {"file": "_data/house-summary.json", "schedule": "every two hours", "script": "_python/house-summary.py"}, {"file": "_data/cheltenham-house-price-history.json", "schedule": "manual"}],
     "pages": [
       "/cheltenham-house-prices",
       "/cheltenham-house-prices-2023",
@@ -371,7 +371,7 @@
     "source_url": "https://github.com/thechelsuk/uk.cheltenham-od/blob/main/_data/news-sources.yml",
     "licence": "Aggregates RSS feeds from multiple independent publishers (BBC News, Gloucestershire Police, Cheltenham Borough Council, Cheltenham BID, local blogs, GOV.UK Alerts, etc.) — each publisher retains its own copyright/terms; no single formal licence covers the aggregate, used under standard RSS syndication with attribution links back to the source",
     "licence_type": "Mixed",
-    "data": [{"file": "_data/news-archive.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/news-archive.json", "schedule": "every two hours", "script": "_python/news.py"}],
     "pages": ["/cheltenham-news"]
   },
   {
@@ -379,7 +379,7 @@
     "source_url": "https://www.parkrun.org.uk/",
     "licence": "Unofficial public events feed (events.json); no formal open licence stated by parkrun",
     "licence_type": "API terms",
-    "data": [{"file": "_data/parkrun.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/parkrun.json", "schedule": "monthly", "script": "_python/parkrun.py"}],
     "pages": ["/cheltenham-sports/parkrun"]
   },
   {
@@ -387,7 +387,7 @@
     "source_url": "https://digital.nhs.uk/services/organisation-data-service",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/dentists.json", "schedule": "monthly"}, {"file": "_data/opticians.json", "schedule": "monthly"}, {"file": "_data/gp-pharmacy.json", "schedule": "daily"}],
+    "data": [{"file": "_data/dentists.json", "schedule": "monthly", "script": "_python/dentists.py"}, {"file": "_data/opticians.json", "schedule": "monthly", "script": "_python/opticians.py"}, {"file": "_data/gp-pharmacy.json", "schedule": "daily", "script": "_python/pharmacy.py"}],
     "pages": ["/cheltenham-gp-pharmacies", "/cheltenham-dentists", "/cheltenham-opticians"]
   },
   {
@@ -395,7 +395,7 @@
     "source_url": "https://publicaccess.cheltenham.gov.uk/online-applications/",
     "licence": "Not explicitly stated on the scraped planning register pages; Cheltenham Borough Council publishes most site content under the Open Government Licence v3.0 but this has not been confirmed for the PublicAccess/Idox planning portal specifically",
     "licence_type": "None stated",
-    "data": [{"file": "_data/planning-applications.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/planning-applications.json", "schedule": "hourly", "script": "_python/pi/planning.py"}],
     "pages": ["/cheltenham-planning-applications"]
   },
   {
@@ -403,7 +403,7 @@
     "source_url": "https://www.cheltenham.gov.uk/recyclingbanks",
     "licence": "Not explicitly stated on the scraped page; assumed to fall under Cheltenham Borough Council's general Open Government Licence v3.0 website terms, but this is unconfirmed for this specific page",
     "licence_type": "None stated",
-    "data": [{"file": "_data/recycling.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/recycling.json", "schedule": "every two hours", "script": "_python/recycling.py"}],
     "pages": ["/cheltenham-recycling"]
   },
   {
@@ -411,7 +411,7 @@
     "source_url": "https://www.cheltenham.gov.uk/bins-and-recycling/check-your-collection-day/",
     "licence": "None stated. The council's public Week 1/Week 2 Google Calendar, linked from its collection day page, read as an iCalendar feed; bank holiday weeks are flagged from GOV.UK's bank holidays (Open Government Licence v3.0)",
     "licence_type": "None stated",
-    "data": [{"file": "_data/bin-weeks.json", "schedule": "weekly"}],
+    "data": [{"file": "_data/bin-weeks.json", "schedule": "weekly", "script": "_python/bin-weeks.py"}],
     "pages": ["/cheltenham-bin-collections"]
   },
   {
@@ -427,7 +427,7 @@
     "source_url": "https://www.cheltenham.gov.uk/council-tax-and-benefits/council-tax-bands-charges-and-appeals/",
     "licence": "Not explicitly stated on the scraped page; assumed to fall under Cheltenham Borough Council's general Open Government Licence v3.0 website terms, but this is unconfirmed for this specific page. No CSV or open data file is published for this data.",
     "licence_type": "None stated",
-    "data": [{"file": "_data/council-tax.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/council-tax.json", "schedule": "monthly", "script": "_python/council-tax.py"}],
     "pages": ["/cheltenham-council-tax"]
   },
   {
@@ -460,7 +460,7 @@
     "source_url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
     "licence": "Open Government Licence v3.0, as stated on the CQC's Using CQC data page, which asks reusers to acknowledge CQC information. Read weekly from the CQC API (_python/cqc_source.py), which needs a subscription key.",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/cqc.json", "schedule": "weekly"}],
+    "data": [{"file": "_data/cqc.json", "schedule": "weekly", "script": "_python/cqc.py"}],
     "pages": ["/cheltenham-care-homes", "/cheltenham-gp-pharmacies"]
   },
   {
@@ -470,7 +470,7 @@
     "source_url": "https://register-of-charities.charitycommission.gov.uk/en/register/full-register-download",
     "licence": "Open Government Licence v3.0, as stated on the full register download page. Contact addresses, phone numbers and emails are deliberately not republished, since small charities often give a trustee's home details.",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/charities.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/charities.json", "schedule": "monthly", "script": "_python/charities.py"}],
     "pages": ["/cheltenham-charities"]
   },
   {
@@ -500,7 +500,7 @@
     "source_url": "https://www.gov.uk/government/statistical-data-sets/childcare-providers-and-inspections-management-information",
     "licence": "Open Government Licence v3.0. Ofsted's childcare providers and inspections management information is published on GOV.UK under the OGL. Ofsted redacts childminders' and home childcarers' names and addresses, so only childcare on non-domestic premises is listed. Locations from postcodes.io (ONS Postcode Directory).",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/childcare.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/childcare.json", "schedule": "monthly", "script": "_python/childcare.py"}],
     "pages": ["/cheltenham-nurseries-childcare"]
   },
   {
@@ -510,7 +510,7 @@
     "source_url": "https://reports.ofsted.gov.uk/",
     "licence": "Open Government Licence v3.0. The monthly management information on school inspections is published on GOV.UK under the OGL; inspection reports are Crown copyright, which Ofsted allows to be reused under the OGL. The list of reports is read from the Find an Inspection Report site, which has no download or API, and predecessor schools come from the DfE's Get Information about Schools links file.",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/ofsted.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/ofsted.json", "schedule": "monthly", "script": "_python/ofsted.py"}],
     "pages": [
       "/cheltenham-schools"
     ]
@@ -522,7 +522,7 @@
     "source_url": "https://www.toiletmap.org.uk/dataset",
     "licence": "Creative Commons Attribution 4.0 International (CC BY 4.0), as stated on the Toilet Map dataset page",
     "licence_type": "CC BY 4.0",
-    "data": [{"file": "_data/toilets.json", "schedule": "daily"}],
+    "data": [{"file": "_data/toilets.json", "schedule": "daily", "script": "_python/toilets.py"}],
     "pages": ["/cheltenham-public-toilets"]
   },
   {
@@ -546,7 +546,7 @@
     "source_url": "https://geoportal.statistics.gov.uk/",
     "licence": "Open Government Licence v3.0 (contains OS data © Crown copyright and database right)",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/small-areas.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/small-areas.json", "schedule": "monthly", "script": "_python/small-areas.py"}],
     "pages": ["/cheltenham-crime-data/map"]
   },
   {
@@ -572,7 +572,7 @@
     "source_url": "https://www.inpost.co.uk/",
     "licence": "Unofficial public API (no API key required) used under InPost's own website terms — no formal open licence",
     "licence_type": "API terms",
-    "data": [{"file": "_data/inpost-lockers.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/inpost-lockers.json", "schedule": "every two hours", "script": "_python/inpost.py"}],
     "pages": ["/cheltenham-inpost-lockers"]
   },
   {
@@ -580,7 +580,7 @@
     "source_url": "https://www.fixmystreet.com/",
     "licence": "mySociety FixMyStreet public RSS feed terms; no formal open licence stated",
     "licence_type": "None stated",
-    "data": [{"file": "_data/fix-my-street.json", "schedule": "every two hours"}, {"file": "_data/fix-my-street-history.json", "schedule": "every two hours"}],
+    "data": [{"file": "_data/fix-my-street.json", "schedule": "every two hours", "script": "_python/fix-my-street.py"}, {"file": "_data/fix-my-street-history.json", "schedule": "every two hours", "script": "_python/fix-my-street.py"}],
     "pages": ["/cheltenham-fix-my-street", "/cheltenham-fix-my-street/history"]
   },
   {
@@ -596,7 +596,7 @@
     "source_url": "https://www.bbc.co.uk/sport",
     "licence": "BBC Sport's public scores and fixtures feed, read by _python/sport-fixtures.py; no open licence stated, so only fixture facts (teams, date, time, venue) are used, in the newsletter's events roundup alongside the local events feeds",
     "licence_type": "API terms",
-    "data": [{"file": "_data/sport-fixtures.json", "schedule": "daily"}],
+    "data": [{"file": "_data/sport-fixtures.json", "schedule": "daily", "script": "_python/sport-fixtures.py"}],
     "pages": ["/newsletter"]
   },
   {
@@ -604,7 +604,7 @@
     "source_url": "https://cheltenham-od.uk",
     "licence": "None — manually curated by site editors",
     "licence_type": "Own data",
-    "data": [{"file": "_data/third-spaces.json", "schedule": "monthly"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "monthly"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "monthly"}, {"file": "_data/clubs.json", "schedule": "monthly"}, {"file": "_data/helpful-contacts.json", "schedule": "monthly"}, {"file": "_data/local-support.json", "schedule": "monthly"}, {"file": "_data/festivals.json", "schedule": "monthly"}, {"file": "_data/awareness-dates.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/third-spaces.json", "schedule": "monthly"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "monthly"}, {"file": "_data/clubs.json", "schedule": "monthly"}, {"file": "_data/helpful-contacts.json", "schedule": "monthly"}, {"file": "_data/local-support.json", "schedule": "monthly"}, {"file": "_data/festivals.json", "schedule": "monthly"}, {"file": "_data/awareness-dates.json", "schedule": "monthly"}],
     "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/corrections", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-sports-clubs", "/cheltenham-clubs-and-societies", "/cheltenham-arts-and-crafts", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support", "/festivals", "/cheltenham-public-holidays"]
   },
   {
@@ -612,7 +612,7 @@
     "source_url": "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts",
     "licence": "WPD Open Data Licence",
     "licence_type": "NGED Open Data Licence",
-    "data": [{"file": "_data/power-cuts.json", "schedule": "every 5 minutes"}, {"file": "_data/power-cuts-history.json", "schedule": "every 5 minutes"}],
+    "data": [{"file": "_data/power-cuts.json", "schedule": "every 5 minutes", "script": "_python/pi/power.py"}, {"file": "_data/power-cuts-history.json", "schedule": "every 5 minutes", "script": "_python/pi/power.py"}],
     "pages": ["/cheltenham-power-cuts", "/cheltenham-power-cuts/history"]
   },
   {
@@ -628,7 +628,7 @@
     "source_url": "https://fingertips.phe.org.uk/",
     "licence": "Open Government Licence v3.0",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/public-health.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/public-health.json", "schedule": "monthly", "script": "_python/public-health.py"}],
     "pages": ["/cheltenham-public-health"]
   },
   {
@@ -636,7 +636,7 @@
     "source_url": "https://openaccess.naturalengland.org.uk/",
     "licence": "No licence stated. The Met Office produces the Fire Severity Index and Natural England publishes it on its Open Access site through a public ArcGIS feature service; neither states reuse terms for it. Confirm terms with the Met Office before any commercial use, such as a paid alert service",
     "licence_type": "None stated",
-    "data": [{"file": "_data/wildfire.json", "schedule": "daily"}, {"file": "_data/wildfire-history.json", "schedule": "daily"}],
+    "data": [{"file": "_data/wildfire.json", "schedule": "daily", "script": "_python/wildfire.py"}, {"file": "_data/wildfire-history.json", "schedule": "daily", "script": "_python/wildfire.py"}],
     "pages": ["/cheltenham-wildfire-risk", "/cheltenham-wildfire-risk/history"]
   },
   {
@@ -644,7 +644,7 @@
     "source_url": "https://www.metoffice.gov.uk/weather/warnings-and-advice/uk-warnings",
     "licence": "Met Office RSS feed terms: free for any purpose, with attribution to the Met Office, its wording and links used unchanged, and a direct link to its warnings page",
     "licence_type": "Met Office RSS terms",
-    "data": [{"file": "_data/weather-warnings.json", "schedule": "every 5 minutes"}, {"file": "_data/weather-warnings-history.json", "schedule": "every 5 minutes"}],
+    "data": [{"file": "_data/weather-warnings.json", "schedule": "every 5 minutes", "script": "_python/pi/weather-warnings.py"}, {"file": "_data/weather-warnings-history.json", "schedule": "every 5 minutes", "script": "_python/pi/weather-warnings.py"}],
     "pages": ["/cheltenham-10-day-weather-forecast", "/cheltenham-10-day-weather-forecast/weather-warnings"]
   },
   {
@@ -654,8 +654,8 @@
     "licence": "No licence stated. Schools post their own closures on Gloucestershire County Council's closures page, which also publishes them as an RSS feed; the council states no reuse terms for it",
     "licence_type": "None stated",
     "data": [
-      {"file": "_data/school-closures.json", "schedule": "daily"},
-      {"file": "_data/school-closures-history.json", "schedule": "daily"},
+      {"file": "_data/school-closures.json", "schedule": "daily", "script": "_python/school-closures.py"},
+      {"file": "_data/school-closures-history.json", "schedule": "daily", "script": "_python/school-closures.py"},
       {"file": "_data/school-closure-aliases.json", "schedule": "manual"}
     ],
     "pages": ["/cheltenham-schools/closures", "/cheltenham-schools/closures/history"]
@@ -673,7 +673,7 @@
     "source_url": "https://developers.cloudflare.com/analytics/graphql-api/",
     "licence": "The site's own traffic figures from Cloudflare; no open licence applies",
     "licence_type": "Own data",
-    "data": [{"file": "_data/site-traffic.json", "schedule": "daily"}],
+    "data": [{"file": "_data/site-traffic.json", "schedule": "daily", "script": "_python/site-traffic.py"}],
     "pages": ["/sponsor/traffic"]
   },
   {
@@ -689,7 +689,7 @@
     "source_url": "https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx",
     "licence": "None stated — borough election results as published on the council's modern.gov site, read from its per-ward results pages",
     "licence_type": "None stated",
-    "data": [{"file": "_data/ward-politics.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/ward-politics.json", "schedule": "monthly", "script": "_python/ward-politics.py"}],
     "pages": ["/cheltenham-wards", "/cheltenham-local-elections"]
   },
   {
@@ -706,7 +706,7 @@
     "source_url": "https://get-energy-performance-data.communities.gov.uk/",
     "licence": "Open Government Licence v3.0 for certificate data; address and postcode fields are under Ordnance Survey and Royal Mail terms, so only area totals are published",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/epc.json", "schedule": "monthly"}, {"file": "_data/epc-scores.json", "schedule": "manual"}],
+    "data": [{"file": "_data/epc.json", "schedule": "monthly", "script": "_python/epc.py"}, {"file": "_data/epc-scores.json", "schedule": "manual"}],
     "pages": ["/cheltenham-energy-ratings"]
   },
   {
@@ -733,7 +733,7 @@
     "source_url": "https://www.gov.uk/government/statistics/regional-renewable-statistics",
     "licence": "Open Government Licence v3.0 — council installations, capacity and generation published each September; the planning database (REPD) quarterly",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/renewable-energy.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/renewable-energy.json", "schedule": "monthly", "script": "_python/renewable-energy.py"}],
     "pages": ["/cheltenham-renewable-energy"]
   },
   {
@@ -742,7 +742,7 @@
     "source_url": "https://www.gov.uk/government/collections/sub-national-electricity-consumption-data",
     "licence": "Open Government Licence v3.0 — council and small area (LSOA) figures published each December for the year before",
     "licence_type": "OGL v3.0",
-    "data": [{"file": "_data/energy-use.json", "schedule": "monthly"}],
+    "data": [{"file": "_data/energy-use.json", "schedule": "monthly", "script": "_python/energy-use.py"}],
     "pages": ["/cheltenham-renewable-energy/energy-use", "/cheltenham-renewable-energy"]
   },
   {
@@ -760,7 +760,7 @@
     "source_url": "https://football-data.co.uk/englandm.php",
     "licence": "None stated — free season results files with no stated licence or terms of reuse; credited and linked on each page. League tables are worked out from the results, with points deductions from _data/ctfc-corrections.json, and checked against the published final tables",
     "licence_type": "None stated",
-    "data": [{"file": "_data/ctfc-summary.json", "schedule": "daily"}, {"file": "_data/ctfc-referees.json", "schedule": "daily"}],
+    "data": [{"file": "_data/ctfc-summary.json", "schedule": "daily", "script": "_python/ctfc-results.py"}, {"file": "_data/ctfc-referees.json", "schedule": "daily", "script": "_python/ctfc-results.py"}],
     "pages": ["/cheltenham-sports/cheltenham-town-fc", "/cheltenham-sports/cheltenham-town-fc/record", "/cheltenham-sports/cheltenham-town-fc/vs", "/cheltenham-sports/cheltenham-town-fc/referees"]
   },
   {
@@ -769,7 +769,7 @@
     "source_url": "https://www.fotmob.com/teams/8680/overview/cheltenham-town",
     "licence": "None stated — FotMob's free public team calendar (iCalendar feed); only the next three fixtures and last three results are shown, credited and linked on the page. Falls back to Football-Data.co.uk league matches if the calendar can't be read",
     "licence_type": "None stated",
-    "data": [{"file": "_data/cheltenham-town-fc.json", "schedule": "daily"}],
+    "data": [{"file": "_data/cheltenham-town-fc.json", "schedule": "daily", "script": "_python/cheltenham-town-fc.py"}],
     "pages": ["/cheltenham-sports/cheltenham-town-fc"]
   }
 ]

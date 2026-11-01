@@ -5,6 +5,8 @@ Fetches recent planning applications from Cheltenham Borough Council's
 PublicAccess (Idox) portal by BOTH received date and decision date, merges
 them into a running JSON store, and writes a render-ready data file.
 
+Runs on the Pi (hourly.txt): the council's portal blocks GitHub's runners.
+
 Run:
     python planning.py          # hourly: current month, both date types
     python planning.py --deep   # backfill: walk MONTHS_DEEP months
@@ -30,11 +32,15 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
+import os
+import sys
 
 import requests
 from bs4 import BeautifulSoup
 
-import config
+# Runs from _python/pi/ on the Pi, so make the shared _python modules importable.
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
+import config  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("planning")

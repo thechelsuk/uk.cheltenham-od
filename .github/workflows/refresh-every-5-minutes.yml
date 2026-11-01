@@ -58,7 +58,7 @@ jobs:
               run: |-
                   scripts="$(bash _python/run.sh --list every-5-minutes hourly)"
                   while IFS= read -r script; do
-                      python "$script" || echo "::warning::$script failed, continuing with other scripts"
+                      python _python/fetch_status.py pi "$script" || echo "::warning::$script failed, continuing with other scripts"
                   done <<< "$scripts"
 
             - name: Commit and push if changed
