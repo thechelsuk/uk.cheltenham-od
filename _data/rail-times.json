@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T22:25:07+00:00",
+  "generated_at": "2026-11-01T22:30:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,36 +11,8 @@
   "messages": [
     "Reduced CrossCountry service on some routes. Further information can be found in the Disruptions area of the National Rail website."
   ],
-  "departures": [
-    {
-      "scheduled": "2026-11-01T21:52",
-      "expected": "2026-11-01T22:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by trespassers on the railway near Sheffield",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    }
-  ],
+  "departures": [],
   "arrivals": [
-    {
-      "scheduled": "2026-11-01T21:50",
-      "expected": "2026-11-01T22:22",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by trespassers on the railway near Sheffield",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-01T22:50",
       "expected": "2026-11-01T22:50",
@@ -64,5 +36,5 @@
       "mode": "bus"
     }
   ],
-  "replacement_buses_only": false
+  "replacement_buses_only": true
 }
