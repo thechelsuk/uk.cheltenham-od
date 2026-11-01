@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T12:00:08+00:00",
+  "generated_at": "2026-11-01T12:10:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,24 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-01T12:00",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-01T12:10",
-      "expected": "2026-11-01T12:16",
+      "expected": "2026-11-01T12:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -74,13 +58,13 @@
     },
     {
       "scheduled": "2026-11-01T12:20",
-      "expected": "2026-11-01T12:20",
-      "status": "On time",
+      "expected": "2026-11-01T12:28",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by congestion",
       "calling_at": [
         "Gloucester"
       ],
@@ -138,7 +122,7 @@
     },
     {
       "scheduled": "2026-11-01T12:52",
-      "expected": "2026-11-01T13:00",
+      "expected": "2026-11-01T13:06",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -181,13 +165,13 @@
     },
     {
       "scheduled": "2026-11-01T13:11",
-      "expected": "2026-11-01T13:11",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by a passenger being taken ill on this train",
       "calling_at": [
         "Birmingham New Street",
         "Tamworth",
@@ -202,19 +186,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-01T11:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-01T12:08",
-      "expected": "2026-11-01T12:15",
+      "expected": "2026-11-01T12:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -236,13 +209,13 @@
     },
     {
       "scheduled": "2026-11-01T12:18",
-      "expected": "2026-11-01T12:18",
-      "status": "On time",
+      "expected": "2026-11-01T12:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Shrub Hill",
       "destination": "Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by congestion",
       "mode": "train"
     },
     {
@@ -269,7 +242,7 @@
     },
     {
       "scheduled": "2026-11-01T12:50",
-      "expected": "2026-11-01T12:59",
+      "expected": "2026-11-01T13:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -291,12 +264,23 @@
     },
     {
       "scheduled": "2026-11-01T13:09",
-      "expected": "2026-11-01T13:09",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": "This service has been delayed by a passenger being taken ill on this train",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T13:45",
+      "expected": "2026-11-01T13:45",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
