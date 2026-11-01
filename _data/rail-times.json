@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T12:30:08+00:00",
+  "generated_at": "2026-11-01T12:35:08+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,20 +13,6 @@
     "Trains running between Wolverhampton and Birmingham New Street may be delayed, cancelled, diverted or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-01T12:20",
-      "expected": "2026-11-01T12:28",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Gloucester"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-01T12:35",
       "expected": "2026-11-01T12:35",
@@ -65,7 +51,7 @@
     },
     {
       "scheduled": "2026-11-01T12:52",
-      "expected": "2026-11-01T13:11",
+      "expected": "2026-11-01T13:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -188,20 +174,25 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T14:15",
+      "expected": "2026-11-01T14:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-01T12:18",
-      "expected": "2026-11-01T12:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-01T12:49",
       "expected": "2026-11-01T12:49",
@@ -215,7 +206,7 @@
     },
     {
       "scheduled": "2026-11-01T12:50",
-      "expected": "2026-11-01T13:10",
+      "expected": "2026-11-01T13:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -276,6 +267,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T14:14",
+      "expected": "2026-11-01T14:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
