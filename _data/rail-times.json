@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T09:30:08+00:00",
+  "generated_at": "2026-11-01T09:40:07+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,21 +13,6 @@
     "Trains running between Wolverhampton and Birmingham New Street may be delayed, cancelled, diverted or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-01T09:35",
-      "expected": "2026-11-01T09:35",
-      "status": "On time",
-      "platform": "BUS",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Swindon"
-      ],
-      "mode": "bus"
-    },
     {
       "scheduled": "2026-11-01T10:10",
       "expected": "2026-11-01T10:10",
@@ -163,6 +148,20 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T11:21",
+      "expected": "2026-11-01T11:21",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "bus"
     }
   ],
   "arrivals": [
@@ -253,6 +252,17 @@
       "destination": "Leeds",
       "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-01T11:21",
+      "expected": "2026-11-01T11:21",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "bus"
     }
   ],
   "replacement_buses_only": false
