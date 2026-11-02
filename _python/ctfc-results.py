@@ -54,6 +54,9 @@ DIVISIONS = {"E1": "championship", "E2": "league-one", "E3": "league-two", "EC":
 OLD_NAMES = {"E1": "Division One", "E2": "Division Two", "E3": "Division Three"}
 NEW_NAMES = {"E1": "Championship", "E2": "League One", "E3": "League Two", "EC": "National League"}
 TIERS = {"E1": "second", "E2": "third", "E3": "fourth", "EC": "fifth"}
+# Clubs in the divisions above each one, from the Premier League's 20 and 24 in each Football League
+# division (the sizes since 1995-96, so every season here), for a club's rank in the 92.
+CLUBS_ABOVE = {"E1": 20, "E2": 44, "E3": 68, "EC": 92}
 
 # Match statistics as (our name, home column, away column), from football-data's notes.txt.
 STATS = [
@@ -376,6 +379,12 @@ def build_season(path, code, division, clubs, corrections):
     }
 
 
+def rank_in_92(division_code, position):
+    """Rank among the 92 Premier League and Football League clubs, 1 being the Premier League
+    champions; a National League club ranks 93 or lower."""
+    return CLUBS_ABOVE[division_code] + position
+
+
 def build_records(seasons):
     """Opponent files, referee summary and the season-by-season summary from every season file."""
     games = [dict(m, season=s["season"], season_display=s["season_display"], division=s["division"])
@@ -404,6 +413,7 @@ def build_records(seasons):
         rows.append({"season": s["season"], "season_display": s["season_display"], "division": s["division"],
                      "teams": len(s["table"]), "complete": s["complete"], "sorted_by": s["sorted_by"],
                      "has_table": s["season"] >= STATS_FROM, "tier": TIERS[s["division_code"]],
+                     "rank_92": rank_in_92(s["division_code"], mine["position"]),
                      **{k: mine[k] for k in ("position", "played", "won", "drawn", "lost", "gf", "ga", "gd",
                                              "deducted", "points", "ppg", "ppg_display")},
                      "home": record([m for m in s["matches"] if m["venue"] == "H"])["all"],

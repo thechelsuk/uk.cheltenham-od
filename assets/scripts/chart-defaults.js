@@ -83,7 +83,8 @@
                 ds._sitePalette = true;
                 ds.borderColor = colour;
                 ds.backgroundColor = type === "line" && ds.fill ? withAlpha(colour, 0.12) : colour;
-                ds.pointBackgroundColor = colour;
+                // A function is the chart's own per-point fill (e.g. a hollow point), so keep it.
+                if (typeof ds.pointBackgroundColor !== "function") ds.pointBackgroundColor = colour;
             });
         },
     };

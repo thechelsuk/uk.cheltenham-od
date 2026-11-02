@@ -175,3 +175,9 @@ def test_season_display_writes_the_century_in_full():
 def test_slugify():
     assert ctfc.slugify("Brighton & Hove Albion") == "brighton-hove-albion"
     assert ctfc.slugify("Andy D'Urso") == "andy-durso"
+
+
+def test_rank_in_the_92_counts_the_clubs_in_the_divisions_above():
+    assert ctfc.rank_in_92("E2", 1) == 45
+    assert ctfc.rank_in_92("E3", 24) == 92
+    assert ctfc.rank_in_92("EC", 1) == 93  # the National League sits outside the 92

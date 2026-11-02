@@ -17,6 +17,11 @@
 
         {{ content }}
 
+        {% assign charted = ctfc.seasons | where: "has_table", true %}
+        <h2>League Position in the 92</h2>
+        <p><small>Where Cheltenham Town finished each season among the 92 Premier League and Football League clubs, since {{ charted.last.season_display }}.</small></p>
+        <div class="chart-canvas"><canvas id="ctfc-rank-chart" aria-label="Line chart of Cheltenham Town's league position among the 92 Premier League and Football League clubs each season since {{ charted.last.season_display }}"></canvas></div>
+
         <h2>League Record by Season</h2>
         <p><small>Final league position and record each season, newest first. Select a season for its full league table.</small></p>
         <div class="table-scroll">
@@ -104,4 +109,7 @@
 
     </div>
 </div>
+{% include chartjs.html %}
+<script id="ctfc-rank-data" type="application/json">{{ charted | jsonify }}</script>
+<script src="/assets/scripts/ctfc-rank-chart.js"></script>
 {% include footer.html %}
