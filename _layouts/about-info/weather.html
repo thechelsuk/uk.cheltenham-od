@@ -47,7 +47,7 @@
             <p>Earlier warnings are on the <a href="/cheltenham-10-day-weather-forecast/weather-warnings">weather warnings history</a> page, and you can follow new ones through the <a href="/feeds/weather-warnings.xml">weather warnings feed</a>.</p>
 
             <h2>10-day Forecasts</h2>
-            <p class="wx-updated">Updated {{ wx.updated | date: "%A %-d %B %Y at %H:%M" }} · {{ wx.location }}</p>
+            <p class="wx-updated">Updated {{ wx.updated | date: "%s" | plus: 0 | date: "%A %-d %B %Y at %H:%M" }} · {{ wx.location }}</p>
 
             <div class="wx-grid">
                 {% for day in days %}

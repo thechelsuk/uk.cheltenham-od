@@ -45,7 +45,7 @@
                         <td>{{ c.phase }}</td>
                         <td>{{ c.status }}</td>
                         <td>{{ c.reason }}</td>
-                        <td class="date" data-val="{{ c.posted_iso }}">{{ c.posted_iso | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td class="date" data-val="{{ c.posted_iso }}">{{ c.posted_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d %H:%M" }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

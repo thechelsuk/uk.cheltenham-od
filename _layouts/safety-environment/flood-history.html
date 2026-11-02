@@ -10,7 +10,7 @@
 
             <ul class="header-facts">
                 <li><strong>{{ history.count }}</strong> flood warnings logged</li>
-                <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
+                <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
                 <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
@@ -39,9 +39,9 @@
                         <td>{{ r.description }}</td>
                         <td>{{ r.severity }}</td>
                         <td>{{ r.county }}</td>
-                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%Y-%m-%d %H:%M"
+                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d %H:%M"
                             }}{% else %}Unknown{% endif %}</td>
-                        <td class="date">{% if r.last_seen_iso.size > 0 %}{{ r.last_seen_iso | date: "%Y-%m-%d %H:%M"
+                        <td class="date">{% if r.last_seen_iso.size > 0 %}{{ r.last_seen_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d %H:%M"
                             }}{% else %}Unknown{% endif %}</td>
                     </tr>
                     {% endfor %}

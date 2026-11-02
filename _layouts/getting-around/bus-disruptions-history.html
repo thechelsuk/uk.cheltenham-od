@@ -10,7 +10,7 @@
 
             <ul class="header-facts">
                 <li><strong>{{ history.count }}</strong> disruptions logged</li>
-                <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
+                <li><strong>{% if h_latest %}{{ h_latest.first_seen_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
                 <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
             </ul>
         </header>
@@ -39,7 +39,7 @@
                         <td>{{ r.organisation }}</td>
                         <td>{{ r.reason }}{% if r.planned == "True" or r.planned == "true" %} (Planned){% endif %}</td>
                         <td>{{ r.operators_affected }}</td>
-                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
+                        <td class="date">{% if r.first_seen_iso.size > 0 %}{{ r.first_seen_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
                         <td class="date">{% if r.validity_start.size > 0 %}{{ r.validity_start | date: "%Y-%m-%d %H:%M" }}{% else %}Unknown{% endif %}</td>
                         <td class="date">{% if r.validity_end.size > 0 %}{{ r.validity_end | date: "%Y-%m-%d %H:%M" }}{% else %}Not yet known{% endif %}</td>
                     </tr>
