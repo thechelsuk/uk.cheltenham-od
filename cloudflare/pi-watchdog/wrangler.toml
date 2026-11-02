@@ -33,3 +33,5 @@ service = "cf-worker-notifier"
 #   HEARTBEAT_TOKEN  shared with the Pi's .env as WATCHDOG_TOKEN
 #   ADMIN_TOKEN      for POST /mode from your phone
 #   NOTIFY_TOKEN     the same value as cf-worker-notifier's NOTIFY_TOKEN
+#   RAW_GITHUB_TOKEN fine-grained token, uk.cheltenham-od.raw only, Actions: read and write
+#   FUEL_PROXY_TOKEN shared with uk.cheltenham-od.raw's FUEL_PROXY_TOKEN secret

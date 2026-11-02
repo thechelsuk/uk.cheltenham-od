@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, it } from "node:test";
 import assert from "node:assert/strict";
 
 import {
+    RAW_STATUS_URL,
     RUNNERS,
     checkFetchers,
     failingHours,
@@ -50,7 +51,10 @@ beforeEach(() => {
     globalThis.fetch = async (url) => {
         url = String(url);
         calls.push(url);
-        const runner = url.match(/fetch-status\/([^/]+)\.json$/)?.[1];
+        const runner =
+            url === RAW_STATUS_URL
+                ? "raw"
+                : url.match(/fetch-status\/([^/]+)\.json$/)?.[1];
         if (runner && files[runner]) {
             return new Response(JSON.stringify(files[runner]), { status: 200 });
         }
@@ -128,13 +132,13 @@ describe("checkFetchers", () => {
 
         const result = await checkFetchers(env, NOW, notify);
 
-        assert.deepEqual(
-            calls,
-            RUNNERS.map(
+        assert.deepEqual(calls, [
+            ...RUNNERS.map(
                 (r) =>
                     `https://raw.githubusercontent.com/thechelsuk/uk.cheltenham-od/main/_data/fetch-status/${r}.json`,
             ),
-        );
+            RAW_STATUS_URL,
+        ]);
         assert.equal(result.failing, 1);
         assert.equal(sent.length, 1);
         assert.match(sent[0].message, /planning\.py/);
@@ -161,6 +165,21 @@ describe("checkFetchers", () => {
         };
         const result = await checkFetchers(fakeEnv(), NOW, notify);
         assert.deepEqual(result.emailed, ["_python/pi/rail-times.py"]);
+    });
+
+    it("emails about a raw capture failing for over an hour, named as such", async () => {
+        files.raw = {
+            runner: "raw",
+            scripts: {
+                "fuel-finder": {
+                    last_ok: "2026-11-02",
+                    failing_since: "2026-11-02T07:00Z",
+                    last_error: "HTTPError: 401",
+                },
+            },
+        };
+        const result = await checkFetchers(fakeEnv(), NOW, notify);
+        assert.deepEqual(result.emailed, ["uk.cheltenham-od.raw: fuel-finder"]);
     });
 
     it("checks at most once an hour", async () => {
@@ -228,7 +247,7 @@ describe("scheduled", () => {
             waitUntil: (p) => waits.push(p),
         });
         await Promise.all(waits);
-        assert.equal(waits.length, 2);
+        assert.equal(waits.length, 3);
         assert.equal(sentBodies.length, 1);
         assert.match(sentBodies[0].title, /data fetcher failing/);
     });

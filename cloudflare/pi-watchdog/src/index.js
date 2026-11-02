@@ -20,9 +20,13 @@
 //   POST /mode        Bearer ADMIN_TOKEN       set the mode: body or ?mode= auto|pi|cloud
 //   GET  /status                              the current state, as JSON
 
+import { authorised, safeEqual } from "./auth.js";
 import { lastDue } from "./cron.js";
 import { checkFetchers } from "./fetch-status.js";
+import { dispatchRaw, fuelCsv } from "./raw.js";
 import { SCHEDULES } from "./schedules.js";
+
+export { safeEqual };
 
 export const MODES = ["auto", "pi", "cloud"];
 
@@ -63,27 +67,6 @@ export function decide({ mode, lastHeartbeat, now, staleMinutes }) {
 
 export function minutesSince(iso, now) {
     return Math.floor((now.getTime() - new Date(iso).getTime()) / 60000);
-}
-
-// Compare two strings in time that doesn't depend on where they differ.
-export function safeEqual(a, b) {
-    const enc = new TextEncoder();
-    const x = enc.encode(String(a));
-    const y = enc.encode(String(b));
-    let diff = x.length ^ y.length;
-    for (let i = 0; i < x.length; i++) {
-        diff |= x[i] ^ (y[i % y.length] ?? 0);
-    }
-    return diff === 0;
-}
-
-function authorised(request, secret) {
-    if (!secret) {
-        return false;
-    }
-    const header = request.headers.get("Authorization") || "";
-    const match = header.match(/^Bearer (.+)$/);
-    return Boolean(match) && safeEqual(match[1], secret);
 }
 
 function json(body, status = 200) {
@@ -332,6 +315,10 @@ export default {
             return json(await status(env, now));
         }
 
+        if (url.pathname === "/raw/fuel.csv" && request.method === "GET") {
+            return fuelCsv(request, env);
+        }
+
         if (url.pathname === "/status" && request.method === "GET") {
             return json(await status(env, now));
         }
@@ -347,5 +334,7 @@ export default {
         ctx.waitUntil(
             checkFetchers(env, now, notify).catch((err) => console.error(err)),
         );
+        // Every 15 minutes: start the raw data archive's capture workflow.
+        ctx.waitUntil(dispatchRaw(env, now).catch((err) => console.error(err)));
     },
 };

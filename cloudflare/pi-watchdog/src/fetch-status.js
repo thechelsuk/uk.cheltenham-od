@@ -18,7 +18,12 @@ export const RUNNERS = [
 
 // The Pi's scripts run every 5 minutes, so an hour of failures is already
 // twelve missed runs. The workflows run every two hours at most.
-export const FAILING_HOURS = { pi: 1 };
+// The raw data archive (src/raw.js) records its captures the same way.
+export const RAW_STATUS_URL =
+    "https://raw.githubusercontent.com/thechelsuk/uk.cheltenham-od.raw/main/status.json";
+const RAW_PREFIX = "uk.cheltenham-od.raw: ";
+
+export const FAILING_HOURS = { pi: 1, raw: 1 };
 const DEFAULT_FAILING_HOURS = 24;
 
 export function failingHours(runner) {
@@ -60,8 +65,11 @@ export function failingMessage(fresh, total) {
     };
 }
 
-async function readRunner(env, runner) {
-    const url = `https://raw.githubusercontent.com/${env.GITHUB_REPO}/${env.GITHUB_REF}/_data/fetch-status/${runner}.json`;
+function runnerUrl(env, runner) {
+    return `https://raw.githubusercontent.com/${env.GITHUB_REPO}/${env.GITHUB_REF}/_data/fetch-status/${runner}.json`;
+}
+
+async function readStatus(url) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -84,9 +92,16 @@ export async function checkFetchers(env, now, notify) {
 
     const failures = [];
     for (const runner of RUNNERS) {
-        const scripts = await readRunner(env, runner);
+        const scripts = await readStatus(runnerUrl(env, runner));
         failures.push(...overdue(scripts, now, failingHours(runner)));
     }
+    const raw = await readStatus(RAW_STATUS_URL);
+    failures.push(
+        ...overdue(raw, now, failingHours("raw")).map((f) => ({
+            ...f,
+            script: RAW_PREFIX + f.script,
+        })),
+    );
     failures.sort((a, b) => since(a.failing_since) - since(b.failing_since));
     const alerted = JSON.parse((await env.STATE.get(KEY_ALERTED)) || "{}");
     const fresh = failures.filter((f) => alerted[f.script] !== f.failing_since);

@@ -131,6 +131,10 @@ The fuel prices API and the council's planning portal refuse GitHub's servers, s
 
 Once an hour the Worker also reads every runner's `_data/fetch-status/<runner>.json` from GitHub (written by `_python/fetch_status.py`). If any script has been failing for too long (an hour for the Pi's 5-minute scripts, 24 hours for the workflows'), it sends one email listing each one, since when, and its last error. It emails once per failure, so a script that recovers and later fails again gets a new email. The list of runners in `src/fetch-status.js` must match `RUNNERS` in `_python/fetch_status.py`, and a test checks this.
 
+### Raw Data Archive
+
+The Worker also runs [uk.cheltenham-od.raw](https://github.com/thechelsuk/uk.cheltenham-od.raw), which keeps the raw downloads of the sources that have no history of their own (fuel prices, road closures, bus disruptions, power cuts, flood and weather warnings, public toilets), so a history can be rebuilt if a script here goes wrong. Every 15 minutes, at :02, :17, :32 and :47, it starts that repository's **Capture** workflow (`src/raw.js`). Fuel Finder refuses GitHub's servers but not Cloudflare's, so the workflow gets the fuel CSV through the Worker's `/raw/fuel.csv`, which needs `FUEL_PROXY_TOKEN`. The hourly fetcher check reads that repository's `status.json` too, and emails after an hour of failures.
+
 ### Status and Switching
 
 `https://pi-watchdog.<your-subdomain>.workers.dev/status` shows the mode, when the Pi last checked in, whether Cloudflare is in charge, and what it last started.
@@ -152,5 +156,7 @@ You can also edit the `mode` key in the Worker's KV namespace in the Cloudflare 
    - `WATCHDOG_GITHUB_TOKEN`: a fine-grained GitHub token for this repository only, with **Actions: Read and write**
    - `WATCHDOG_HEARTBEAT_TOKEN` and `WATCHDOG_ADMIN_TOKEN`: each from `openssl rand -hex 32`
    - `NOTIFY_TOKEN`: the same value as cf-worker-notifier's `NOTIFY_TOKEN`
+   - `WATCHDOG_RAW_GITHUB_TOKEN`: a fine-grained GitHub token for **uk.cheltenham-od.raw** only, with **Actions: Read and write**
+   - `WATCHDOG_FUEL_PROXY_TOKEN`: from `openssl rand -hex 32`, also saved as `FUEL_PROXY_TOKEN` in uk.cheltenham-od.raw's secrets, alongside its `NAT_HIGH_KEY`
 3. Push to `main`. **Deploy Pi Watchdog** runs the tests and deploys (the first deploy creates the Worker's KV namespace) whenever `cloudflare/pi-watchdog/` or `crontab.txt` changes, or run it by hand from the Actions tab.
 4. On the Pi, add `WATCHDOG_URL=https://pi-watchdog.<your-subdomain>.workers.dev` and `WATCHDOG_TOKEN=<the WATCHDOG_HEARTBEAT_TOKEN value>` to `.env`.

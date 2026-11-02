@@ -50,8 +50,12 @@ jobs:
                       HEARTBEAT_TOKEN
                       ADMIN_TOKEN
                       NOTIFY_TOKEN
+                      RAW_GITHUB_TOKEN
+                      FUEL_PROXY_TOKEN
               env:
                   GITHUB_TOKEN: ${{ secrets.WATCHDOG_GITHUB_TOKEN }}
                   HEARTBEAT_TOKEN: ${{ secrets.WATCHDOG_HEARTBEAT_TOKEN }}
                   ADMIN_TOKEN: ${{ secrets.WATCHDOG_ADMIN_TOKEN }}
                   NOTIFY_TOKEN: ${{ secrets.NOTIFY_TOKEN }}
+                  RAW_GITHUB_TOKEN: ${{ secrets.WATCHDOG_RAW_GITHUB_TOKEN }}
+                  FUEL_PROXY_TOKEN: ${{ secrets.WATCHDOG_FUEL_PROXY_TOKEN }}

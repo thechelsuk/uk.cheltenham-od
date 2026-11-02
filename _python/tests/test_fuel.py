@@ -413,3 +413,12 @@ def test_a_failed_bootstrap_keeps_the_stations_it_had_and_carries_on(site, monke
 
 def test_motorway_services_brands_stay_in_capitals():
     assert fuel.clean_name("STRENSHAM MWSA CONNECT") == "Strensham MWSA Connect"
+
+
+def test_a_run_where_every_forecourt_is_stale_fails_loudly():
+    # 12 October to 2 November 2026: every run "worked" while no price updated.
+    stale = {"stations": [{"stale": True}, {"stale": True}]}
+    with pytest.raises(SystemExit, match="stale"):
+        fuel.check_fresh(stale)
+    fuel.check_fresh({"stations": [{"stale": True}, {"stale": False}]})
+    fuel.check_fresh({"stations": []})  # nothing priced at all is a different problem

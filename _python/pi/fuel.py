@@ -505,6 +505,18 @@ def build_payload(station_cache, today):
     }
 
 
+def check_fresh(payload):
+    """Fail the run when every forecourt's price is stale. That can't be right:
+    forecourts must report each change within 30 minutes, so it means the
+    run is no longer taking new prices (12 October to 2 November 2026, every
+    run "worked" while none updated). Exiting non-zero lets fetch_status.py
+    record a failure, which the watchdog emails about."""
+    stations = payload.get("stations") or []
+    if stations and all(s.get("stale") for s in stations):
+        raise SystemExit(f"All {len(stations)} forecourts' prices are over {STALE_DAYS} days old (stale): "
+                         "the run is not taking new prices")
+
+
 # -- Main ---------------------------------------------------------------------
 
 def main():
@@ -559,6 +571,9 @@ def main():
     #    run replaces today's row, so the day keeps its prices as last checked.
     history = fuel_history.update_history(root / "_data" / "fuel-prices-history.json", payload)
     print(f"Fuel price history now holds {len(history)} days")
+
+    # 7. The files are written either way; fail the run if no price is current.
+    check_fresh(payload)
 
 
 if __name__ == "__main__":
