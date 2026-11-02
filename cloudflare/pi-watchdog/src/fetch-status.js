@@ -1,10 +1,10 @@
-// Emails when a data fetcher has been failing for more than a day.
+// Emails when a data fetcher keeps failing.
 //
 // _python/fetch_status.py records each script's last run in
 // _data/fetch-status/<runner>.json: one file for the Pi and one per refresh
 // workflow. Once an hour this reads them from GitHub and emails, through the
-// notifier Worker, about any script whose failing_since is over FAILING_HOURS
-// old. Each failure is emailed once; if the script recovers and fails again,
+// notifier Worker, about any script that has been failing for longer than
+// its runner's limit (failingHours). Each failure is emailed once; if the script recovers and fails again,
 // that is a new failure and gets a new email.
 
 // Must match RUNNERS in _python/fetch_status.py (a test there checks).
@@ -16,7 +16,14 @@ export const RUNNERS = [
     "refresh-monthly",
 ];
 
-export const FAILING_HOURS = 24;
+// The Pi's scripts run every 5 minutes, so an hour of failures is already
+// twelve missed runs. The workflows run every two hours at most.
+export const FAILING_HOURS = { pi: 1 };
+const DEFAULT_FAILING_HOURS = 24;
+
+export function failingHours(runner) {
+    return FAILING_HOURS[runner] ?? DEFAULT_FAILING_HOURS;
+}
 const CHECK_EVERY_MINUTES = 60;
 
 const KEY_CHECKED = "fetch_status_checked";
@@ -26,7 +33,7 @@ const KEY_ALERTED = "fetch_status_alerted";
 const since = (iso) => new Date(iso);
 
 // Scripts failing for longer than `hours`, longest first.
-export function overdue(scripts, now, hours = FAILING_HOURS) {
+export function overdue(scripts, now, hours = DEFAULT_FAILING_HOURS) {
     return Object.entries(scripts)
         .filter(
             ([, r]) =>
@@ -48,7 +55,7 @@ export function failingMessage(fresh, total) {
             `- ${f.script}, failing since ${readable(f.failing_since)}: ${f.last_error || "no error recorded"}`,
     );
     return {
-        title: `Cheltenham OD: ${total} data fetcher${s} failing for over a day`,
+        title: `Cheltenham OD: ${total} data fetcher${s} failing`,
         message: `${lines.join("\n")}\n\nThe workflows carry on past a failed script, so this is the only alert. The studio's Data Freshness tab has the full list.`,
     };
 }
@@ -75,11 +82,12 @@ export async function checkFetchers(env, now, notify) {
     }
     await env.STATE.put(KEY_CHECKED, now.toISOString());
 
-    const scripts = {};
+    const failures = [];
     for (const runner of RUNNERS) {
-        Object.assign(scripts, await readRunner(env, runner));
+        const scripts = await readRunner(env, runner);
+        failures.push(...overdue(scripts, now, failingHours(runner)));
     }
-    const failures = overdue(scripts, now);
+    failures.sort((a, b) => since(a.failing_since) - since(b.failing_since));
     const alerted = JSON.parse((await env.STATE.get(KEY_ALERTED)) || "{}");
     const fresh = failures.filter((f) => alerted[f.script] !== f.failing_since);
     // Keep only current failures, so a recovered script is forgotten.

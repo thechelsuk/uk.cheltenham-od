@@ -9,8 +9,8 @@
 // notifier Worker to email and turn the Hue light orange. The first heartbeat
 // after that hands back to the Pi, and the light is restored.
 //
-// Once an hour it also emails about any data fetcher that has been failing for
-// over a day (see fetch-status.js).
+// Once an hour it also emails about any data fetcher that keeps failing: after
+// an hour for the Pi's scripts, a day for the workflows' (see fetch-status.js).
 //
 // A mode setting overrides the check: "auto" (the default) follows the
 // heartbeat, "pi" never takes over, "cloud" always does.
@@ -342,7 +342,7 @@ export default {
     async scheduled(controller, env, ctx) {
         const now = new Date(controller.scheduledTime);
         ctx.waitUntil(runCheck(env, now));
-        // Hourly: email about data fetchers failing for over a day. Separate,
+        // Hourly: email about data fetchers that keep failing. Separate,
         // so a problem here never stops the takeover check.
         ctx.waitUntil(
             checkFetchers(env, now, notify).catch((err) => console.error(err)),

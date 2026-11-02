@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import {
     RUNNERS,
     checkFetchers,
+    failingHours,
     failingMessage,
     overdue,
 } from "../src/fetch-status.js";
@@ -94,13 +95,21 @@ describe("overdue", () => {
     });
 });
 
+describe("failingHours", () => {
+    it("allows the Pi's 5-minute scripts an hour and the workflows a day", () => {
+        assert.equal(failingHours("pi"), 1);
+        assert.equal(failingHours("refresh-weekly"), 24);
+        assert.equal(failingHours("refresh-every-2-hours"), 24);
+    });
+});
+
 describe("failingMessage", () => {
     it("names each script, since when, and its error, by email only", () => {
         const message = failingMessage(
             [{ script: "_python/pi/planning.py", ...planning }],
             1,
         );
-        assert.match(message.title, /1 data fetcher failing for over a day/);
+        assert.equal(message.title, "Cheltenham OD: 1 data fetcher failing");
         assert.match(
             message.message,
             /_python\/pi\/planning\.py, failing since 2026-10-15 12:00 UTC: HTTPError: 403/,
@@ -134,6 +143,24 @@ describe("checkFetchers", () => {
         const later = new Date(NOW.getTime() + 61 * 60000);
         await checkFetchers(env, later, notify);
         assert.equal(sent.length, 1);
+    });
+
+    it("emails about a Pi script after an hour but a workflow script after a day", async () => {
+        const twoHoursAgo = {
+            last_ok: "2026-11-02",
+            failing_since: "2026-11-02T07:00Z",
+            last_error: "Timeout",
+        };
+        files.pi = {
+            runner: "pi",
+            scripts: { "_python/pi/rail-times.py": twoHoursAgo },
+        };
+        files["refresh-weekly"] = {
+            runner: "refresh-weekly",
+            scripts: { "_python/jobs.py": twoHoursAgo },
+        };
+        const result = await checkFetchers(fakeEnv(), NOW, notify);
+        assert.deepEqual(result.emailed, ["_python/pi/rail-times.py"]);
     });
 
     it("checks at most once an hour", async () => {
@@ -203,6 +230,6 @@ describe("scheduled", () => {
         await Promise.all(waits);
         assert.equal(waits.length, 2);
         assert.equal(sentBodies.length, 1);
-        assert.match(sentBodies[0].title, /failing for over a day/);
+        assert.match(sentBodies[0].title, /data fetcher failing/);
     });
 });

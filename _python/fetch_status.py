@@ -19,7 +19,8 @@ Dates are kept to the day and the file is only rewritten when something
 changes, so a healthy script adds at most one commit a day. The script's
 output passes straight through, and its exit code is returned, so
 `|| echo "::warning::..."` still works. The studio's freshness tab and the
-Cloudflare watchdog (which emails after 24 hours of failures) read the files.
+Cloudflare watchdog (which emails after an hour of failures for the Pi's
+scripts, 24 hours for the workflows') read the files.
 """
 
 import collections

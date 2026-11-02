@@ -30,7 +30,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 import requests
@@ -226,7 +226,7 @@ def disruption_message(messages):
 
 
 def current_disruptions(board, messages, history, now_iso):
-    """The live disruption as a one-item list for helper.update_history, or
+    """The live disruption as a one-item list for update_closures, or
     an empty list. It keeps the id of a disruption that hasn't ended yet, so a
     closure stays one feed entry however many runs it spans."""
     if not replacement_buses_only(board):
@@ -259,21 +259,47 @@ def build_atom_items(history, page_url):
     return items
 
 
-def record_disruptions(board, messages):
+def update_closures(history, active, now_iso):
+    """The closure history after one check. Unlike helper.update_history, a
+    running closure only records the day it was last seen, so the file
+    changes when a closure starts, ends or runs into a new day, not on every
+    5-minute check. It ends at the first check that no longer sees it, so the
+    end time is right to within one check. Records last seen over
+    HISTORY_RETENTION_DAYS ago are dropped. Newest first."""
+    today = now_iso[:10]
+    by_id = {}
+    for record in history:
+        if "last_seen_iso" in record:  # written by helper.update_history before 2 November 2026
+            record["last_seen"] = record.pop("last_seen_iso")[:10]
+        by_id[record["disruption_id"]] = record
+    for item in active:
+        record = by_id.setdefault(item["disruption_id"], {**item, "first_seen_iso": now_iso})
+        record.update(item)
+        record["last_seen"] = today
+    live = {item["disruption_id"] for item in active}
+    for key, record in by_id.items():
+        if key not in live and not record.get("resolved_iso"):
+            record["resolved_iso"] = now_iso
+    cutoff = (date.fromisoformat(today) - timedelta(days=HISTORY_RETENTION_DAYS)).isoformat()
+    kept = [r for r in by_id.values() if r.get("last_seen", today) >= cutoff]
+    return sorted(kept, key=lambda r: r.get("first_seen_iso", ""), reverse=True)
+
+
+def record_disruptions(board, messages, now):
     """Update the disruption history, its Atom feed, the homepage alert and
     the combined alerts feed."""
     try:
         history = json.loads(HISTORY.read_text()).get("records", [])
     except (OSError, ValueError):
         history = []
-    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now_iso = now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     active = current_disruptions(board, messages, history, now_iso)
-    history = helper.update_history(history, active, id_key="disruption_id", now_iso=now_iso,
-                                    retention_days=HISTORY_RETENTION_DAYS)
+    history = update_closures(history, active, now_iso)
     helper.write_json(HISTORY, {
         "note": "Days when only rail replacement buses served Cheltenham Spa, recorded as they happen.",
         "source": "National Rail Enquiries, via the Rail Data Marketplace",
         "source_url": "https://raildata.org.uk/",
+        "licence": "Rail Data Marketplace licence",
         "refresh": "every 5 minutes",
         "count": len(history),
         "records": history,
@@ -316,7 +342,7 @@ def main():
         "replacement_buses_only": replacement_buses_only(board),
     }
 
-    record_disruptions(board, output["messages"])
+    record_disruptions(board, output["messages"], now)
 
     if unchanged(output, now):
         print("No change since the last run; leaving _data/rail-times.json alone")

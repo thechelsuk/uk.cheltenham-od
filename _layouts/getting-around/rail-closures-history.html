@@ -1,0 +1,68 @@
+{% include header.html %}
+{% assign history = site.data["rail-disruptions-history"] %}
+{% assign closures = history.records | where_exp: "r", "r.resolved_iso" %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            {% assign latest = closures | first %}
+
+            <ul class="header-facts">
+                <li><strong>{{ closures.size }}</strong> closures logged</li>
+                <li><strong>{% if latest %}{{ latest.first_seen_iso | date: "%s" | plus: 0 | date: "%Y-%m-%d" }}{% else %}None yet{% endif %}</strong> most recent</li>
+                <li><strong>RSS Feed</strong> <a href="{{ page.feed_url }}">subscribe via our feed/rss &rarr;</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        {% if closures.size > 0 %}
+        <div class="table-scroll">
+            <table class="rail-closures-history-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Started</th>
+                        <th scope="col" class="date">Ended</th>
+                        <th scope="col" class="number">Hours</th>
+                        <th scope="col">Station Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in closures %}
+                    {%- comment -%} The stored times are UTC. Formatting the Unix time
+                    shows them in the site's timezone (Europe/London). {%- endcomment -%}
+                    {% assign start_s = r.first_seen_iso | date: "%s" | plus: 0 %}
+                    {% assign end_s = r.resolved_iso | date: "%s" | plus: 0 %}
+                    {% assign hours = end_s | minus: start_s | divided_by: 3600.0 | round: 1 %}
+                    <tr id="{{ r.disruption_id }}">
+                        <td class="date" data-val="{{ r.first_seen_iso }}">{{ start_s | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td class="date" data-val="{{ r.resolved_iso }}">{{ end_s | date: "%Y-%m-%d %H:%M" }}</td>
+                        <td class="number" data-val="{{ hours }}">{{ hours }}</td>
+                        <td>{{ r.message }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <blockquote>
+            <p>No closures at Cheltenham Spa have ended since this page started tracking them.</p>
+        </blockquote>
+        {% endif %}
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ history.source_url }}">{{ history.source }}</a>{% if history.licence %}, published under the {{ history.licence }}{% endif %}.
+            {% include freshness.html file="_data/rail-disruptions-history.json" %}
+            Start and end times are UK time and accurate to within five minutes.
+            Cheltenham Open Data is independent and is not endorsed by National Rail or the Rail Delivery Group.
+        </small></p>
+
+    </div>
+</div>
+{% include footer.html %}

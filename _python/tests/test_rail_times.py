@@ -7,7 +7,7 @@ Run from the repository root:
 import importlib.util
 import json
 import pathlib
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import pytest
 
@@ -263,3 +263,51 @@ def test_main_records_a_replacement_bus_day_in_the_alert_feed_and_data(paths, mo
     rail.main()
     assert "No trains at Cheltenham Spa" not in (paths / "rail-alert.html").read_text()
     assert json.loads((paths / "rail-times.json").read_text())["replacement_buses_only"] is False
+
+
+# ---------------------------------------------------------------- closure history, written only on change
+
+LIVE = [{"disruption_id": "rail-replacement-2026-11-01", "message": "No trains"}]
+
+
+def test_a_new_closure_is_recorded_with_its_start_and_todays_date():
+    history = rail.update_closures([], LIVE, "2026-11-01T22:30:07Z")
+    assert history == [{"disruption_id": "rail-replacement-2026-11-01", "message": "No trains",
+                        "first_seen_iso": "2026-11-01T22:30:07Z", "last_seen": "2026-11-01"}]
+
+
+def test_a_running_closure_only_changes_when_the_day_does():
+    history = rail.update_closures([], LIVE, "2026-11-01T22:30:07Z")
+    same_day = rail.update_closures([dict(r) for r in history], LIVE, "2026-11-01T23:55:00Z")
+    assert same_day == history
+    next_day = rail.update_closures([dict(r) for r in history], LIVE, "2026-11-02T00:05:00Z")
+    assert next_day[0]["last_seen"] == "2026-11-02"
+    assert next_day[0]["first_seen_iso"] == "2026-11-01T22:30:07Z"
+
+
+def test_a_closure_ends_at_the_first_check_that_no_longer_sees_it():
+    history = rail.update_closures([], LIVE, "2026-11-01T22:30:07Z")
+    ended = rail.update_closures(history, [], "2026-11-02T01:35:08Z")
+    assert ended[0]["resolved_iso"] == "2026-11-02T01:35:08Z"
+    # and stays ended
+    again = rail.update_closures([dict(r) for r in ended], [], "2026-11-02T01:40:08Z")
+    assert again == ended
+
+
+def test_old_records_move_to_a_last_seen_date_and_expire_after_a_year():
+    old = [{"disruption_id": "rail-replacement-2026-10-17", "first_seen_iso": "2026-10-17T11:35:10Z",
+            "last_seen_iso": "2026-10-17T23:00:10Z", "resolved_iso": "2026-10-17T23:00:10Z", "message": "m"}]
+    history = rail.update_closures(old, [], "2026-11-02T09:00:00Z")
+    assert history[0]["last_seen"] == "2026-10-17" and "last_seen_iso" not in history[0]
+    assert rail.update_closures(history, [], "2027-10-18T09:00:00Z") == []
+
+
+def test_the_history_file_is_left_alone_during_a_closure_on_the_same_day(paths):
+    messages = rail.station_messages(BUSES_ONLY)
+    rail.record_disruptions(BUSES_ONLY, messages, datetime(2026, 11, 1, 22, 30, tzinfo=timezone.utc))
+    before = (paths / "rail-disruptions-history.json").read_text()
+    rail.record_disruptions(BUSES_ONLY, messages, datetime(2026, 11, 1, 23, 55, tzinfo=timezone.utc))
+    assert (paths / "rail-disruptions-history.json").read_text() == before
+    rail.record_disruptions(BOARD, [], datetime(2026, 11, 2, 1, 35, tzinfo=timezone.utc))
+    ended = json.loads((paths / "rail-disruptions-history.json").read_text())["records"][0]
+    assert ended["resolved_iso"] == "2026-11-02T01:35:00Z"

@@ -129,7 +129,7 @@ The fuel prices API and the council's planning portal refuse GitHub's servers, s
 
 ### Failing Fetchers
 
-Once an hour the Worker also reads every runner's `_data/fetch-status/<runner>.json` from GitHub (written by `_python/fetch_status.py`). If any script has been failing for over 24 hours, it sends one email listing each one, since when, and its last error. It emails once per failure, so a script that recovers and later fails again gets a new email. The list of runners in `src/fetch-status.js` must match `RUNNERS` in `_python/fetch_status.py`, and a test checks this.
+Once an hour the Worker also reads every runner's `_data/fetch-status/<runner>.json` from GitHub (written by `_python/fetch_status.py`). If any script has been failing for too long (an hour for the Pi's 5-minute scripts, 24 hours for the workflows'), it sends one email listing each one, since when, and its last error. It emails once per failure, so a script that recovers and later fails again gets a new email. The list of runners in `src/fetch-status.js` must match `RUNNERS` in `_python/fetch_status.py`, and a test checks this.
 
 ### Status and Switching
 
