@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T15:10:08+00:00",
+  "generated_at": "2026-11-02T15:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,29 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-02T14:52",
-      "expected": "2026-11-02T15:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by the communication alarm being activated on this train at Sheffield",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-02T15:12",
-      "expected": "2026-11-02T15:15",
+      "expected": "2026-11-02T15:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -64,7 +43,7 @@
     },
     {
       "scheduled": "2026-11-02T15:15",
-      "expected": "2026-11-02T15:23",
+      "expected": "2026-11-02T15:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -81,7 +60,7 @@
     },
     {
       "scheduled": "2026-11-02T15:23",
-      "expected": "2026-11-02T15:27",
+      "expected": "2026-11-02T15:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -168,23 +147,33 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T15:52",
+      "expected": "2026-11-02T15:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-02T14:50",
-      "expected": "2026-11-02T15:08",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by the communication alarm being activated on this train at Sheffield",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-02T15:10",
-      "expected": "2026-11-02T15:14",
+      "expected": "2026-11-02T15:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -195,7 +184,7 @@
     },
     {
       "scheduled": "2026-11-02T15:14",
-      "expected": "2026-11-02T15:22",
+      "expected": "2026-11-02T15:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -206,7 +195,7 @@
     },
     {
       "scheduled": "2026-11-02T15:21",
-      "expected": "2026-11-02T15:26",
+      "expected": "2026-11-02T15:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -267,6 +256,17 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T15:50",
+      "expected": "2026-11-02T15:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
