@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T07:20:09+00:00",
+  "generated_at": "2026-11-02T07:25:38+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,36 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-02T07:18",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Coleshill Parkway",
-        "Nuneaton",
-        "Leicester",
-        "Melton Mowbray",
-        "Oakham",
-        "Stamford",
-        "Peterborough",
-        "March",
-        "Manea",
-        "Ely",
-        "Cambridge",
-        "Cambridge South",
-        "Stansted Airport"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-02T07:24",
       "expected": "2026-11-02T07:24",
@@ -192,20 +162,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T08:01",
+      "expected": "2026-11-02T08:01",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-02T07:17",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-02T07:22",
       "expected": "2026-11-02T07:22",
@@ -291,6 +271,17 @@
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T07:59",
+      "expected": "2026-11-02T07:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
