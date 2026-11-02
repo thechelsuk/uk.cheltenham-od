@@ -30,3 +30,80 @@ def test_top_stories_leave_out_our_own_posts(monkeypatch):
     section = newsletter.top_stories_section()
     assert "BBC Story" in section
     assert "Growth Mapped" not in section and "Energy Mapped" not in section
+
+
+def works(street, tm, start, end, ward="Lansdown", kind="Planned", promoter="Severn Trent Water"):
+    return {"street": street, "ward": ward, "ward_slug": ward.lower().replace(" ", "-") if ward else "",
+            "kind": kind, "traffic_management": tm, "start": start, "end": end, "promoter": promoter}
+
+
+WEEK = (newsletter.date(2026, 11, 2), newsletter.date(2026, 11, 8))
+
+
+def test_local_works_keep_closures_and_longer_traffic_control_in_the_borough():
+    items = [
+        works("Hall Road", "Road closure", "2026-11-03", "2026-11-03"),
+        works("Queens Road", "Multi-way signals", "2026-11-02", "2026-11-05"),
+        works("Short Lights", "Two-way signals", "2026-11-04", "2026-11-05"),       # under 3 days
+        works("Pavement Only", "Some carriageway incursion", "2026-11-02", "2026-11-20"),
+        works("Outside Town", "Road closure", "2026-11-03", "2026-11-04", ward=""),  # no ward
+        works("Already Started", "Road closure", "2026-10-20T08:00", "2026-11-04"),
+        works("Next Week", "Road closure", "2026-11-09", "2026-11-10"),
+        works("Burst Main", "Road closure", "2026-11-03", "2026-11-04", kind="Unplanned"),
+        works("Odd Spelling", "lane_closure", "2026-11-06", "2026-11-09"),
+    ]
+    picked = newsletter.local_street_works(items, *WEEK)
+    assert [p["street"] for p in picked] == ["Hall Road", "Odd Spelling", "Queens Road"]
+
+
+def test_local_works_on_one_street_share_a_line():
+    items = [
+        works("Church Road", "Two-way signals", "2026-11-02", "2026-11-04", ward="Leckhampton"),
+        works("Church Road", "Road closure", "2026-11-03", "2026-11-07", ward="Leckhampton",
+              promoter="Gloucestershire County Council"),
+    ]
+    [line] = newsletter.local_street_works(items, *WEEK)
+    assert line["effect"] == "road closed"
+    assert (line["start"], line["end"]) == ("2026-11-02", "2026-11-07")
+    assert line["promoters"] == ["Severn Trent Water", "Gloucestershire County Council"]
+
+
+def test_local_works_put_closures_first_and_stop_at_the_cap():
+    items = [works(f"Lights {n}", "Multi-way signals", "2026-11-02", "2026-11-06") for n in range(10)]
+    items.append(works("Closed Road", "Road closure", "2026-11-08", "2026-11-08"))
+    picked = newsletter.local_street_works(items, *WEEK)
+    assert len(picked) == newsletter.MAX_STREET_WORKS
+    assert picked[0]["street"] == "Closed Road"
+
+
+def test_roadworks_section_lists_local_works_after_national_highways(monkeypatch):
+    data = {
+        "roadworks.json": {"items": [{"roads": ["M5"], "description": "Lane closed at junction 11.",
+                                      "start": "2026-11-01", "end": "2026-11-20", "distance_miles": 3}]},
+        "street-works.json": {"items": [
+            works("Queens Road", "Multi-way signals", "2026-11-02", "2026-11-05"),
+            works("Hall Road", "Road closure", "2026-11-03", "2026-11-03", ward="Leckhampton",
+                  promoter="Gloucestershire County Council"),
+            works("Long Job", "Two-way signals", "2026-10-30", "2026-12-04", ward="Park"),
+        ]},
+    }
+    monkeypatch.setattr(newsletter, "load", data.get)
+    section = newsletter.roadworks_section(*WEEK)
+    lines = section.splitlines()
+    assert lines[0].startswith("- **M5**")
+    assert "- **Hall Road, Leckhampton:** road closed, 3 November (Gloucestershire County Council)." in lines
+    assert "- **Queens Road, Lansdown:** temporary traffic lights, 2 to 5 November (Severn Trent Water)." in lines
+    assert "Long Job" not in section
+    assert "/cheltenham-street-works" in section
+
+
+def test_works_dates_read_naturally_across_months():
+    assert newsletter.date_span("2026-11-03", "2026-11-03") == "3 November"
+    assert newsletter.date_span("2026-11-30", "2026-12-02") == "30 November to 2 December"
+    assert newsletter.date_span("2026-11-03", None) == "from 3 November"
+
+
+def test_roadworks_section_says_so_when_nothing_is_planned(monkeypatch):
+    monkeypatch.setattr(newsletter, "load", {"roadworks.json": {"items": []},
+                                             "street-works.json": {"items": []}}.get)
+    assert newsletter.roadworks_section(*WEEK) == "No roadworks are expected to affect Cheltenham this week."

@@ -48,6 +48,16 @@ SITE_URL = helper.site_url()             # links in the draft must resolve outsi
 
 TOP_STORIES = 4
 MAX_ROADWORKS = 5
+MAX_STREET_WORKS = 8                     # local street works lines, closures first
+STREET_WORKS_MIN_DAYS = 3                # lane closures and traffic control shorter than this are left out
+STREET_WORKS_EFFECTS = {                 # Street Manager traffic management type -> what drivers see
+    "lane closure": "lane closed",
+    "two-way signals": "temporary traffic lights",
+    "multi-way signals": "temporary traffic lights",
+    "stop/go boards": "traffic control",
+    "convoy workings": "traffic control",
+}
+EFFECT_ORDER = ["road closed", "lane closed", "temporary traffic lights", "traffic control"]
 EVENT_DAYS_AHEAD = 28                    # a weekly issue doesn't need event-roundup's own 60-day default
 VENUE_REPEAT_GAP = 8                     # issues to avoid repeating a venue within
 PUBLISH_TIME = time(8, 45)               # issues go out at 08:45 on their issue date
@@ -169,24 +179,78 @@ def weather_section(today):
     return "\n".join(lines)
 
 
+def date_span(start, end):
+    """'2026-11-02', '2026-11-05' -> '2 to 5 November'; one day -> '3 November'."""
+    first, last = iso_date(start), iso_date(end)
+    if not last:
+        return f"from {first.day} {first:%B}"
+    if first == last:
+        return f"{first.day} {first:%B}"
+    if (first.year, first.month) == (last.year, last.month):
+        return f"{first.day} to {last.day} {last:%B}"
+    return f"{first.day} {first:%B} to {last.day} {last:%B}"
+
+
+def street_works_effect(traffic_management, days):
+    """What the works mean for drivers, or None when they aren't worth a line: road closures
+    always count, lane closures and traffic control only when they last 3 days or more."""
+    kind = (traffic_management or "").replace("_", " ").lower()
+    if kind == "road closure":
+        return "road closed"
+    effect = STREET_WORKS_EFFECTS.get(kind)
+    return effect if effect and days >= STREET_WORKS_MIN_DAYS else None
+
+
+def local_street_works(items, week_start, week_end):
+    """Planned Street Manager works in a Cheltenham ward that start this week and disrupt
+    traffic, one entry per street, closures first. Unplanned works are left out: they only
+    appear once they've started, so they can't be known when the issue is drafted."""
+    streets = {}
+    for w in items:
+        start, end = iso_date(w.get("start")), iso_date(w.get("end"))
+        if w.get("kind") != "Planned" or not w.get("ward_slug") or not start:
+            continue
+        if not week_start <= start <= week_end:
+            continue
+        effect = street_works_effect(w.get("traffic_management"), ((end or start) - start).days + 1)
+        if not effect:
+            continue
+        line = streets.setdefault((w["street"], w["ward"]), {
+            "street": w["street"], "ward": w["ward"], "effect": effect,
+            "start": start.isoformat(), "end": end.isoformat() if end else None, "promoters": [],
+        })
+        if EFFECT_ORDER.index(effect) < EFFECT_ORDER.index(line["effect"]):
+            line["effect"] = effect
+        line["start"] = min(line["start"], start.isoformat())
+        if end and (not line["end"] or end.isoformat() > line["end"]):
+            line["end"] = end.isoformat()
+        if w.get("promoter") and w["promoter"] not in line["promoters"]:
+            line["promoters"].append(w["promoter"])
+    picked = sorted(streets.values(), key=lambda s: (EFFECT_ORDER.index(s["effect"]), s["start"], s["street"]))
+    return picked[:MAX_STREET_WORKS]
+
+
 def roadworks_section(week_start, week_end):
-    roadworks = load("roadworks.json")
-    if not roadworks or not roadworks.get("items"):
-        return None
+    """National Highways works on the motorways and trunk roads, then the town's own streets."""
+    roadworks = load("roadworks.json") or {}
     active = [
-        r for r in roadworks["items"]
+        r for r in roadworks.get("items") or []
         if iso_date(r["start"]) and iso_date(r["start"]) <= week_end
         and (not iso_date(r.get("end")) or iso_date(r["end"]) >= week_start)
     ]
-    if not active:
-        return "No roadworks are expected to affect Cheltenham this week."
     active.sort(key=lambda r: r.get("distance_miles", 99))
     lines = []
     for r in active[:MAX_ROADWORKS]:
         roads = "/".join(r.get("roads") or []) or "Nearby road"
         lines.append(f"- **{md_escape(roads)}** — {clean_prose(trim(r['description'], 140))}")
-    lines.append(f"\nSee [roadworks]({SITE_URL}/cheltenham-roadworks) for the full picture, including anything "
-                  "that comes up at shorter notice during the week.")
+    for s in local_street_works((load("street-works.json") or {}).get("items") or [], week_start, week_end):
+        who = " and ".join(md_escape(p) for p in s["promoters"])
+        lines.append(f"- **{md_escape(s['street'])}, {md_escape(s['ward'])}:** {s['effect']}, "
+                     f"{date_span(s['start'], s['end'])}" + (f" ({who})." if who else "."))
+    if not lines:
+        return "No roadworks are expected to affect Cheltenham this week."
+    lines.append(f"\nSee [roadworks]({SITE_URL}/cheltenham-roadworks) and [street works]({SITE_URL}/cheltenham-street-works) "
+                 "for the full picture, including anything that comes up at shorter notice during the week.")
     return "\n".join(lines)
 
 
