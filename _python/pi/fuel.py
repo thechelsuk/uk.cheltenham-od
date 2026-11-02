@@ -52,7 +52,7 @@ def fuel_label(code):
 
 # Brand tokens / road refs that stay fully uppercase after title-casing.
 # Add to this set if a name comes out looking wrong.
-ACRONYMS = {"MFG", "ASDA", "EG", "BP", "PFS", "SF", "PJ", "TGC", "PA", "UK"}
+ACRONYMS = {"MFG", "ASDA", "EG", "BP", "PFS", "SF", "PJ", "TGC", "PA", "UK", "MWSA"}
 
 
 def clean_name(raw):
@@ -291,10 +291,21 @@ def bootstrap(station_cache, ignore_set, access_token, lookback_date, cache_path
     return ignore_set
 
 
+def record_date(record):
+    """The date a price record applies from: its own timestamp if it has one,
+    else the newest price change among its fuel prices (the live feed's shape),
+    else "" when the record carries no timestamp at all."""
+    stamp = record.get("effective_start_timestamp")
+    if not stamp:
+        stamps = [p.get("price_change_effective_timestamp") or "" for p in record.get("fuel_prices") or []]
+        stamp = max(stamps, default="")
+    return stamp[:10]
+
+
 def merge_prices(station_cache, records, lookback_date):
     """Merge price records into the station cache, for both the daily run and
     bootstrap. A record replaces a station's prices unless the station already
-    has newer ones. A record with no timestamp is of unknown age, so it only
+    has newer ones. A record with no timestamp anywhere is of unknown age, so it only
     fills a station that has no prices yet, dated `lookback_date` (the feed is
     only asked for prices from then on). Returns how many stations were updated."""
     updated = 0
@@ -305,10 +316,10 @@ def merge_prices(station_cache, records, lookback_date):
             new_prices = record.get("fuel_prices") or []
             if new_prices:
                 existing_date = cached.get("prices_updated") or ""
-                record_date   = (record.get("effective_start_timestamp") or "")[:10]
-                if record_date >= existing_date:
+                dated         = record_date(record)
+                if dated >= existing_date:
                     cached["fuel_prices"]    = new_prices
-                    cached["prices_updated"] = record_date or lookback_date
+                    cached["prices_updated"] = dated or lookback_date
                     updated += 1
     return updated
 

@@ -259,8 +259,24 @@ def test_merge_prices_takes_newer_records_and_leaves_newer_cached_prices():
     assert "FAR" not in cache
 
 
+def test_a_live_record_is_dated_by_its_newest_price_change():
+    # The live feed has no record-level timestamp; each price carries its own.
+    cache = {"A": {"fuel_prices": [price("E10", 130, "2026-10-01")], "prices_updated": "2026-10-12"}}
+    live = [{"node_id": "A", "fuel_prices": [
+        {"fuel_type": "E5", "price": 195.9, "price_last_updated": "2026-10-20T10:50:06.882Z",
+         "price_change_effective_timestamp": "2026-09-25T10:46:49.000Z"},
+        {"fuel_type": "E10", "price": 125.9, "price_last_updated": "2026-10-30T07:12:00.000Z",
+         "price_change_effective_timestamp": "2026-10-30T07:00:00.000Z"}]}]
+    assert fuel.merge_prices(cache, live, "2026-10-03") == 1
+    assert cache["A"]["prices_updated"] == "2026-10-30"
+    assert cache["A"]["fuel_prices"][1]["price"] == 125.9
+    stale = [{"node_id": "A", "fuel_prices": [price("E10", 140, "2026-10-15")]}]
+    assert fuel.merge_prices(cache, stale, "2026-10-03") == 0
+    assert cache["A"]["fuel_prices"][1]["price"] == 125.9
+
+
 def test_an_undated_record_only_fills_a_station_with_no_prices():
-    undated = [{"node_id": "A", "fuel_prices": [price("E10", 125, "2026-10-12")]}]
+    undated = [{"node_id": "A", "fuel_prices": [{"fuel_type": "E10", "price": 125}]}]
     priced = {"A": {"fuel_prices": [price("E10", 130, "2026-10-01")], "prices_updated": "2026-10-01"}}
     assert fuel.merge_prices(priced, undated, "2026-09-17") == 0
     assert priced["A"]["prices_updated"] == "2026-10-01"
@@ -393,3 +409,7 @@ def test_a_failed_bootstrap_keeps_the_stations_it_had_and_carries_on(site, monke
 
     assert list(json.loads((site / "fuel-stations.json").read_text())) == ["NEAR"]
     assert json.loads((site / "ignore-stations.json").read_text()) == []
+
+
+def test_motorway_services_brands_stay_in_capitals():
+    assert fuel.clean_name("STRENSHAM MWSA CONNECT") == "Strensham MWSA Connect"
