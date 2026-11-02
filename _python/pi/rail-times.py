@@ -297,9 +297,9 @@ def record_disruptions(board, messages, now):
     history = update_closures(history, active, now_iso)
     helper.write_json(HISTORY, {
         "note": "Days when only rail replacement buses served Cheltenham Spa, recorded as they happen.",
-        "source": "National Rail Enquiries, via the Rail Data Marketplace",
+        "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
         "source_url": "https://raildata.org.uk/",
-        "licence": "Rail Data Marketplace licence",
+        "licence": "Rail Data Marketplace open licence",
         "refresh": "every 5 minutes",
         "count": len(history),
         "records": history,
@@ -331,10 +331,10 @@ def main():
     now = datetime.now(LONDON)
     output = {
         "generated_at": now.isoformat(timespec="seconds"),
-        "source":       "National Rail Enquiries, via the Rail Data Marketplace",
+        "source":       "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
         "source_url":   "https://raildata.org.uk/",
         "refresh":      "every 5 minutes",
-        "licence":      "Rail Data Marketplace licence",
+        "licence":      "Rail Data Marketplace open licence",
         "station":      {"name": STATION_NAME, "crs": CRS},
         "messages":     station_messages(board),
         "departures":   parse_board(board, "departure"),

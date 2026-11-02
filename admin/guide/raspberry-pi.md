@@ -133,7 +133,7 @@ Once an hour the Worker also reads every runner's `_data/fetch-status/<runner>.j
 
 ### Raw Data Archive
 
-The Worker also runs [uk.cheltenham-od.raw](https://github.com/thechelsuk/uk.cheltenham-od.raw), which keeps the raw downloads of the sources that have no history of their own (fuel prices, road closures, bus disruptions, power cuts, flood and weather warnings, public toilets), so a history can be rebuilt if a script here goes wrong. Every 15 minutes, at :02, :17, :32 and :47, it starts that repository's **Capture** workflow (`src/raw.js`). Fuel Finder refuses GitHub's servers but not Cloudflare's, so the workflow gets the fuel CSV through the Worker's `/raw/fuel.csv`, which needs `FUEL_PROXY_TOKEN`. The hourly fetcher check reads that repository's `status.json` too, and emails after an hour of failures.
+The Worker also runs [uk.cheltenham-od.raw](https://github.com/thechelsuk/uk.cheltenham-od.raw), which keeps the raw downloads of the sources that have no history of their own (fuel prices, road closures, bus disruptions, power cuts, flood and weather warnings, storm overflows, fire severity, school closures and public toilets; its README lists them with their licences), so a history can be rebuilt if a script here goes wrong. Every 15 minutes, at :02, :17, :32 and :47, it starts that repository's **Capture** workflow (`src/raw.js`). Fuel Finder refuses GitHub's servers but not Cloudflare's, so the workflow gets the fuel CSV through the Worker's `/raw/fuel.csv`, which needs `FUEL_PROXY_TOKEN`. The hourly fetcher check reads that repository's `status.json` too, and emails after an hour of failures.
 
 ### Status and Switching
 
