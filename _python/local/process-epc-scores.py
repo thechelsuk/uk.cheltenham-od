@@ -18,8 +18,8 @@ stored file keeps only the UPRN (or an internal key), the small area and
 ward a home falls in, and certificate fields. _data/epc-scores.json, which
 the site reads, holds area totals only.
 
-    .venv/bin/python _python/local/epc-scores.py           # fetch new certificates, rebuild totals
-    .venv/bin/python _python/local/epc-scores.py --limit 50  # try a few first
+    .venv/bin/python _python/local/process-epc-scores.py           # fetch new certificates, rebuild totals
+    .venv/bin/python _python/local/process-epc-scores.py --limit 50  # try a few first
 """
 import argparse
 import hashlib

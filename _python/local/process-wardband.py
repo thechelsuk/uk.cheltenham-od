@@ -5,7 +5,7 @@ Build broadband coverage data for the Jekyll site, aggregated to WARD level.
 Inputs (in _data-sources/):
   1. COVERAGE_CSV       Ofcom Connected Nations postcode-unit coverage CSV.
   2. WARD_BOUNDARY_FILE Ward boundary GeoJSON from the ONS Open Geography Portal
-                        ("Wards May 2024 Boundaries UK BGC"), saved as
+                        ("Wards (May 2026) Boundaries UK BGC", or the latest year), saved as
                         _data-sources/wards.geojson
 
 Postcodes are mapped to wards via postcodes.io (cached in _data-sources/_ward-cache.json),
@@ -66,8 +66,8 @@ COL_GIGABIT = "Gigabit availability (% premises)"
 
 TIER_THRESHOLD = 50.0  # % of premises required to count a tier as "available"
 
-# Ward-boundary property keys holding the GSS code (ONS BGC uses WD24CD).
-WARD_CODE_KEYS = ["WD24CD", "WD23CD", "WD22CD", "WD21CD", "WD20CD", "code", "ward_code", "WardCode"]
+# Ward-boundary property keys holding the GSS code (the ONS BGC file names it WDyyCD for its year, e.g. WD26CD).
+WARD_CODE_KEYS = ["WD26CD", "WD25CD", "WD24CD", "WD23CD", "WD22CD", "WD21CD", "WD20CD", "code", "ward_code", "WardCode"]
 
 # Tier metadata. TIER_LABELS is the long form used in the ward table and map
 # popups; TIER_NAMES/SPEEDS/BLURBS feed the combined "Coverage by Tier" table.
@@ -254,7 +254,7 @@ def main():
     # Join aggregated wards onto ward polygons by GSS code ONLY. Ward names are
     # not unique across the UK (many "College"/"Park" wards), so a name fallback
     # pulls in far-away namesakes and blows the map extent out to the whole UK.
-    # The GSS code (WD24CD) is unique, so match on that alone.
+    # The GSS code (WDyyCD) is unique, so match on that alone.
     boundary = json.loads(WARD_BOUNDARY_FILE.read_text())
     features = []
     matched_keys = set()

@@ -118,7 +118,7 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 ### Home Energy Scores (Energy Performance of Buildings Register)
 
 - **Download:** nothing. The script calls the register's API with `EPC_KEY` from `.env`.
-- **Run:** `epc-scores.py`, then commit `_data/epc-scores.json`. It lists every Cheltenham certificate (14 calls), keeps each home's latest, and fetches full details only for homes whose latest certificate is new since the last run, keeping them in `_data-sources/epc-homes.json`. The first run fetched all 43,600 homes (about 50 minutes); a monthly run fetches a few hundred.
+- **Run:** `process-epc-scores.py`, then commit `_data/epc-scores.json`. It lists every Cheltenham certificate (14 calls), keeps each home's latest, and fetches full details only for homes whose latest certificate is new since the last run, keeping them in `_data-sources/epc-homes.json`. The first run fetched all 43,600 homes (about 50 minutes); a monthly run fetches a few hundred.
 - **What it adds:** the numeric energy efficiency score behind each rating, the score each home could reach, and home type, age, tenure and heating, which the ratings in `_data/epc.json` (refreshed automatically by `epc.py`) don't include.
 - **Keep private:** `epc-homes.json` holds no addresses or postcodes (homes without a UPRN are keyed by a hash), and only area totals go into `_data/`. Postcodes are used in memory to place homes in areas, as the register's licence restricts address data.
 - **Feeds:** `/cheltenham-energy-ratings` and the ward pages.

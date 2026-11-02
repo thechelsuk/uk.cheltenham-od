@@ -7,7 +7,8 @@
 - Total number of properties by year (VOA Council Tax stock of properties,
   CTSOP1.1) — the 1993-2024 run is a one-off backfill kept in
   _data/council-tax-stock-history.json (see local/council-tax-stock-history-backfill.py);
-  this script only fetches the latest single-year snapshot and appends it
+  this script fetches the latest single-year snapshot and saves its year into
+  that file too, so each year stays once the next release replaces it
 
 The gov.uk asset URLs for these change with every release, so both pages are
 scraped for their current download links rather than hardcoding a URL."""
@@ -122,12 +123,19 @@ def fetch_latest_council_tax_stock():
     raise SystemExit("Could not find Cheltenham row in CTSOP1.1 snapshot")
 
 
-def build_council_tax_stock_series(latest):
-    with open(HISTORY_PATH, encoding="utf-8") as f:
+def build_council_tax_stock_series(latest, history_path=HISTORY_PATH):
+    """The history plus the latest snapshot year. Each release holds only one
+    year, so the year is saved into the history file to keep it once the next
+    release replaces it."""
+    with open(history_path, encoding="utf-8") as f:
         history = json.load(f)
     years = {y["year"]: y["all_properties"] for y in history["years"]}
     years[latest["year"]] = latest["all_properties"]
-    return [{"year": y, "all_properties": years[y]} for y in sorted(years)]
+    series = [{"year": y, "all_properties": years[y]} for y in sorted(years)]
+    if series != history["years"]:
+        history["years"] = series
+        helper.write_json(history_path, history)
+    return series
 
 
 def main():

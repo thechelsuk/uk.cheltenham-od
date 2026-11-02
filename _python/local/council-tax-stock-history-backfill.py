@@ -62,11 +62,17 @@ def main():
                         })
                         break
 
+    # Keep the later years housing-supply.py has added from single-year releases.
+    covered = {y["year"] for y in years}
+    if os.path.exists(OUT):
+        with open(OUT, encoding="utf-8") as f:
+            years += [y for y in json.load(f)["years"] if y["year"] not in covered]
     years.sort(key=lambda y: y["year"])
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "note": "One-off backfill of the closed 1993-2024 VOA time series. Not refreshed on a schedule.",
+        "note": ("1993 to 2024 from the VOA's one-off long-run series (CTSOP1.1, 1993-2024); each later year "
+                 "is added by housing-supply.py from that year's single-year release."),
         "source_url": zip_url,
         "years": years,
     }

@@ -1,4 +1,4 @@
-"""Offline tests for the local EPC scores job (local/epc-scores.py): reading
+"""Offline tests for the local EPC scores job (local/process-epc-scores.py): reading
 certificate details and summarising homes by area, type, tenure and heating.
 
 Run from the repository root:
@@ -8,7 +8,7 @@ import importlib.util
 import pathlib
 
 SPEC = importlib.util.spec_from_file_location(
-    "epc_scores", pathlib.Path(__file__).resolve().parents[1] / "local" / "epc-scores.py"
+    "epc_scores", pathlib.Path(__file__).resolve().parents[1] / "local" / "process-epc-scores.py"
 )
 assert SPEC is not None and SPEC.loader is not None
 scores = importlib.util.module_from_spec(SPEC)
