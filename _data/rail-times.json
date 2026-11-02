@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T16:15:08+00:00",
+  "generated_at": "2026-11-02T16:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-02T16:15",
-      "expected": "2026-11-02T16:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-02T16:23",
       "expected": "2026-11-02T16:23",
@@ -49,7 +31,7 @@
     },
     {
       "scheduled": "2026-11-02T16:31",
-      "expected": "2026-11-02T16:48",
+      "expected": "2026-11-02T16:50",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -112,13 +94,13 @@
     },
     {
       "scheduled": "2026-11-02T16:50",
-      "expected": "2026-11-02T17:02",
+      "expected": "2026-11-02T17:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
@@ -127,8 +109,8 @@
     },
     {
       "scheduled": "2026-11-02T16:52",
-      "expected": "2026-11-02T16:52",
-      "status": "On time",
+      "expected": "2026-11-02T16:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
@@ -166,20 +148,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T17:03",
+      "expected": "2026-11-02T17:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-02T16:15",
-      "expected": "2026-11-02T16:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-02T16:21",
       "expected": "2026-11-02T16:21",
@@ -204,7 +196,7 @@
     },
     {
       "scheduled": "2026-11-02T16:30",
-      "expected": "2026-11-02T16:47",
+      "expected": "2026-11-02T16:49",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -237,19 +229,19 @@
     },
     {
       "scheduled": "2026-11-02T16:47",
-      "expected": "2026-11-02T17:01",
+      "expected": "2026-11-02T17:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-02T16:50",
-      "expected": "2026-11-02T16:50",
-      "status": "On time",
+      "expected": "2026-11-02T16:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
