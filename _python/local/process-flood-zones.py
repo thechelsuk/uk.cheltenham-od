@@ -179,7 +179,7 @@ def main():
         ],
     }
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(output, f, separators=(",", ":"))
+        json.dump(output, f, indent=4, ensure_ascii=False)  # one value per line, so diffs show what changed
     size = os.path.getsize(OUT)
     counts = ", ".join(f"{label}: {len(by_zone[code])} polygons" for code, label in ZONES.items())
     print(f"Wrote {counts} to {os.path.normpath(OUT)} ({size / 1024:.0f} KB) from {len(features)} downloaded features")
