@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T11:20:39+00:00",
+  "generated_at": "2026-11-02T11:25:38+00:00",
   "source": "National Rail Enquiries, via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,31 +11,14 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-02T11:15",
-      "expected": "2026-11-02T11:21",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-02T11:23",
-      "expected": "2026-11-02T11:28",
+      "expected": "2026-11-02T11:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a speed restriction",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -119,7 +102,7 @@
     },
     {
       "scheduled": "2026-11-02T11:52",
-      "expected": "2026-11-02T11:56",
+      "expected": "2026-11-02T11:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -159,34 +142,44 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T12:03",
+      "expected": "2026-11-02T12:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-02T11:14",
-      "expected": "2026-11-02T11:20",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-02T11:21",
-      "expected": "2026-11-02T11:27",
+      "expected": "2026-11-02T11:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a speed restriction",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-02T11:26",
-      "expected": "2026-11-02T11:28",
+      "expected": "2026-11-02T11:29",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -241,7 +234,7 @@
     },
     {
       "scheduled": "2026-11-02T11:51",
-      "expected": "2026-11-02T11:55",
+      "expected": "2026-11-02T11:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
