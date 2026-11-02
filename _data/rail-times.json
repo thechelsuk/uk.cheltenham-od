@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T16:55:08+00:00",
+  "generated_at": "2026-11-02T17:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,29 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-02T16:31",
-      "expected": "2026-11-02T16:54",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault with the signalling system near Macclesfield",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-02T16:50",
       "expected": "2026-11-02T17:01",
@@ -50,7 +27,7 @@
     },
     {
       "scheduled": "2026-11-02T16:52",
-      "expected": "2026-11-02T16:57",
+      "expected": "2026-11-02T16:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -66,27 +43,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-02T16:55",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
       ],
       "mode": "train"
     },
@@ -141,7 +97,7 @@
     },
     {
       "scheduled": "2026-11-02T17:19",
-      "expected": "2026-11-02T17:25",
+      "expected": "2026-11-02T17:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -175,20 +131,44 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-02T16:30",
-      "expected": "2026-11-02T16:53",
+      "scheduled": "2026-11-02T17:31",
+      "expected": "2026-11-02T17:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by a fault with the signalling system near Macclesfield",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
       "mode": "train"
     },
+    {
+      "scheduled": "2026-11-02T17:40",
+      "expected": "2026-11-02T17:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-02T16:47",
       "expected": "2026-11-02T17:00",
@@ -202,24 +182,13 @@
     },
     {
       "scheduled": "2026-11-02T16:50",
-      "expected": "2026-11-02T16:56",
+      "expected": "2026-11-02T16:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
       "destination": "Plymouth",
       "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-02T16:54",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     },
     {
@@ -235,7 +204,7 @@
     },
     {
       "scheduled": "2026-11-02T17:18",
-      "expected": "2026-11-02T17:24",
+      "expected": "2026-11-02T17:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -267,6 +236,17 @@
       "mode": "train"
     },
     {
+      "scheduled": "2026-11-02T17:29",
+      "expected": "2026-11-02T17:37",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a fault with the signalling system near Macclesfield",
+      "mode": "train"
+    },
+    {
       "scheduled": "2026-11-02T17:31",
       "expected": "2026-11-02T17:31",
       "status": "On time",
@@ -274,6 +254,17 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T17:38",
+      "expected": "2026-11-02T17:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
