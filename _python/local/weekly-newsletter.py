@@ -49,7 +49,6 @@ SITE_URL = helper.site_url()             # links in the draft must resolve outsi
 TOP_STORIES = 4
 MAX_ROADWORKS = 5
 EVENT_DAYS_AHEAD = 28                    # a weekly issue doesn't need event-roundup's own 60-day default
-SELF_SOURCE = "Cheltenham OD News"       # our own posts, already covered by "New on the site"
 VENUE_REPEAT_GAP = 8                     # issues to avoid repeating a venue within
 PUBLISH_TIME = time(8, 45)               # issues go out at 08:45 on their issue date
 
@@ -268,11 +267,17 @@ def new_on_site_section(since, until, min_items=3):
     return "\n".join(f"- [{md_escape(title)}]({link})" for _, title, link in items)
 
 
+def own_post(link):
+    """Our posts are already in "New on Cheltenham Open Data". The archive keeps them
+    site-relative; matching on the link, not the source name, survives a rename."""
+    return link.startswith("/") or link.startswith(SITE_URL + "/")
+
+
 def top_stories_section():
     archive = load("news-archive.json")
     if not archive:
         return None
-    items = [i for i in archive["items"] if i.get("source") != SELF_SOURCE][:TOP_STORIES]
+    items = [i for i in archive["items"] if not own_post(i["link"])][:TOP_STORIES]
     if not items:
         return None
     blocks = []
