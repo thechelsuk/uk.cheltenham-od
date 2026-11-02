@@ -4,11 +4,10 @@ JSON feed, write _data/sport-fixtures.json.
 
 Covers football (Cheltenham Town, Forest Green Rovers, Cheltenham Town
 Women), rugby union (Gloucester Rugby) and cricket (Gloucestershire), looking
-ahead 7 days from today. Football is fetched a tournament at a time (BBC
-groups it into leagues, so we only pull the leagues our teams could be in,
-same as before); rugby union and cricket have no equivalent "collated"
-collection, so those are fetched sport-wide instead and filtered by team
-name after the fact.
+ahead 7 days from today. Football comes from BBC's "collated" collection
+(every competition in one call, cups included); rugby union and cricket have
+no equivalent, so those are fetched sport-wide instead. All three are then
+filtered by team name.
 
 This is a plain daily snapshot, not a history log: every run replaces
 _data/sport-fixtures.json wholesale with whatever BBC reports as upcoming
@@ -36,12 +35,9 @@ REQUEST_DELAY_SECONDS = 0.6
 LOOKAHEAD_DAYS = 7  # today + the next 6 days
 NOT_STARTED_STATUS = "PreEvent"
 
-# Football is scoped to these leagues (BBC's tournament-collection groups
-# fixtures by league, so we only fetch the ones our teams could appear in),
-# then filtered down to the tracked teams below.
+# Every football competition, cups included, grouped by competition. Don't
+# limit it to a list of leagues: cup weeks would then show no games.
 FOOTBALL_URN = "urn:bbc:sportsdata:football:tournament-collection:collated"
-FOOTBALL_LEAGUES = {"League One", "League Two", "National League",
-                     "Women's Super League", "English WSL 2", "FA Women's National League Division One South West"}
 
 # Rugby union and cricket have no per-league "collated" collection on BBC's
 # feed, so these fetch every tournament in the sport and get filtered by
@@ -97,8 +93,6 @@ def fetch_football(today, end):
             continue
         for group in payload.get("eventGroups", []):
             competition = (group.get("displayLabel") or "").strip()
-            if competition not in FOOTBALL_LEAGUES:
-                continue
             for sub in group.get("secondaryGroups", []):
                 for event in sub.get("events", []):
                     rec = parse_football_event(competition, event)

@@ -82,15 +82,17 @@ def fake_fetch(answers):
     return fetch
 
 
-def test_fetch_football_only_reads_tracked_leagues_and_skips_failed_days(monkeypatch):
+def test_fetch_football_reads_every_competition_and_skips_failed_days(monkeypatch):
+    # Cup ties count too: the first FA Cup round left the 7 November 2026 week
+    # with no league games, so a league list emptied the newsletter's fixtures.
     monkeypatch.setattr(sport.time, "sleep", lambda s: None)
     day1, day2, day3 = date(2026, 10, 12), date(2026, 10, 13), date(2026, 10, 14)
     monkeypatch.setattr(sport, "fetch", fake_fetch({
         day1: payload(" League Two ", [FOOTBALL, {"status": "PostEvent"}]),
         day2: requests.ConnectionError("down"),
-        day3: payload("Premier League", [FOOTBALL]),
+        day3: payload("FA Cup", [FOOTBALL]),
     }))
-    assert [e["home"] for e in sport.fetch_football(day1, day3)] == ["Cheltenham Town"]
+    assert [e["competition"] for e in sport.fetch_football(day1, day3)] == ["League Two", "FA Cup"]
 
 
 def test_fetch_rugby_and_cricket(monkeypatch):
