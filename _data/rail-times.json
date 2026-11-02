@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T19:40:08+00:00",
+  "generated_at": "2026-11-02T19:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -26,29 +26,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-02T19:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-02T19:43",
-      "expected": "2026-11-02T19:43",
-      "status": "On time",
+      "expected": "2026-11-02T19:45",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -61,8 +41,8 @@
     },
     {
       "scheduled": "2026-11-02T19:49",
-      "expected": "2026-11-02T19:49",
-      "status": "On time",
+      "expected": "2026-11-02T19:53",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -79,7 +59,7 @@
     },
     {
       "scheduled": "2026-11-02T19:52",
-      "expected": "2026-11-02T20:08",
+      "expected": "2026-11-02T20:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -182,6 +162,25 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T20:23",
+      "expected": "2026-11-02T20:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -197,20 +196,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-02T19:34",
-      "expected": "2026-11-02T19:40",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-02T19:42",
-      "expected": "2026-11-02T19:42",
-      "status": "On time",
+      "expected": "2026-11-02T19:44",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -220,7 +208,7 @@
     },
     {
       "scheduled": "2026-11-02T19:47",
-      "expected": "2026-11-02T19:49",
+      "expected": "2026-11-02T19:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -231,7 +219,7 @@
     },
     {
       "scheduled": "2026-11-02T19:51",
-      "expected": "2026-11-02T20:07",
+      "expected": "2026-11-02T20:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -271,6 +259,28 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T20:21",
+      "expected": "2026-11-02T20:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-02T20:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
       "mode": "train"
     }
   ],
