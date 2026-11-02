@@ -1,0 +1,15 @@
+{
+  "runner": "refresh-weekly",
+  "scripts": {
+    "_python/bin-weeks.py": {
+      "last_ok": "2026-11-02",
+      "failing_since": null,
+      "last_error": null
+    },
+    "_python/cqc.py": {
+      "last_ok": null,
+      "failing_since": "2026-11-02T04:23Z",
+      "last_error": "requests.exceptions.HTTPError: 502 Server Error: Bad Gateway for url: https://api.service.cqc.org.uk/public/v1/locations?…"
+    }
+  }
+}
