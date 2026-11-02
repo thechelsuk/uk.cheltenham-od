@@ -5,13 +5,13 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 704,
-    "unplanned": 118,
-    "road_closures": 93,
+    "count": 711,
+    "unplanned": 120,
+    "road_closures": 94,
     "by_street": [
       {
         "street": "Cheltenham Road East",
-        "works": 19,
+        "works": 21,
         "road_closures": 0
       },
       {
@@ -63,15 +63,15 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 280
+        "works": 282
       },
       {
         "name": "BT",
-        "works": 138
+        "works": 140
       },
       {
         "name": "Gloucestershire County Council",
-        "works": 110
+        "works": 112
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
@@ -134,6 +134,10 @@
         "works": 1
       },
       {
+        "name": "Ee Ltd",
+        "works": 1
+      },
+      {
         "name": "Gas Transportation Co Ltd",
         "works": 1
       },
@@ -149,11 +153,25 @@
       },
       {
         "month": "2026-11",
-        "works": 30
+        "works": 37
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:YN10030427-T35536675-RW",
+      "first_seen": "2026-11-02",
+      "street": "Blaisdon Way",
+      "ward_slug": "springbank",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Ee Ltd",
+      "start": "2026-11-20",
+      "end": "2026-11-21",
+      "last_seen": "2026-11-02"
+    },
     {
       "id": "PERMIT:XY245001005375159",
       "first_seen": "2026-11-02",
@@ -194,6 +212,20 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-05",
       "end": "2026-11-05",
+      "last_seen": "2026-11-02"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042289915",
+      "first_seen": "2026-11-02",
+      "street": "Kempton Grove",
+      "ward_slug": "hesters-way",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-12",
+      "end": "2026-11-16",
       "last_seen": "2026-11-02"
     },
     {
@@ -323,6 +355,20 @@
       "last_seen": "2026-11-02"
     },
     {
+      "id": "PERMIT:LB9011303-000014436681",
+      "first_seen": "2026-11-02",
+      "street": "Celandine Bank",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-02T13:03",
+      "end": "2026-11-03",
+      "last_seen": "2026-11-02"
+    },
+    {
       "id": "PERMIT:LB525A8W-14406016B",
       "first_seen": "2026-11-02",
       "street": "Kingsley Gardens",
@@ -407,6 +453,34 @@
       "last_seen": "2026-11-02"
     },
     {
+      "id": "PERMIT:EY102GH1902000047828",
+      "first_seen": "2026-11-02",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-12-14",
+      "end": "2026-12-24",
+      "last_seen": "2026-11-02"
+    },
+    {
+      "id": "PERMIT:EY102GH1902000047827",
+      "first_seen": "2026-11-02",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-12-14",
+      "end": "2026-12-24",
+      "last_seen": "2026-11-02"
+    },
+    {
       "id": "PERMIT:EY102GH1902000042322",
       "first_seen": "2026-11-02",
       "street": "Wards Road",
@@ -460,6 +534,34 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-02T09:30",
       "end": "2026-11-02",
+      "last_seen": "2026-11-02"
+    },
+    {
+      "id": "PERMIT:BC518MACKFWH9FF06J",
+      "first_seen": "2026-11-02",
+      "street": "Ermin Park",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - emergency",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-02T13:49",
+      "end": "2026-11-04",
+      "last_seen": "2026-11-02"
+    },
+    {
+      "id": "PERMIT:BC008OGEAA7727838L2CSB",
+      "first_seen": "2026-11-02",
+      "street": "St Philips Street",
+      "ward_slug": "park",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "BT",
+      "start": "2027-02-03",
+      "end": "2027-02-03",
       "last_seen": "2026-11-02"
     },
     {
@@ -1720,7 +1822,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-04",
       "end": "2026-11-06",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042028585A",
@@ -1874,7 +1976,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-03",
       "end": "2026-11-05",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000041548933",
@@ -1886,7 +1988,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-02",
+      "start": "2026-11-02T12:15",
       "end": "2026-11-04",
       "last_seen": "2026-11-02"
     },
@@ -1958,7 +2060,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-02-23",
       "end": "2027-02-24",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014421493A",
@@ -2000,7 +2102,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-05",
       "end": "2026-11-06",
-      "last_seen": "2026-11-01"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014376994B",
@@ -2042,7 +2144,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-19",
       "end": "2027-01-19",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB7012302-000014414223",
@@ -2098,7 +2200,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-14",
       "end": "2026-11-15",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM75214401490G",
@@ -2126,7 +2228,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-14",
       "end": "2026-11-14",
-      "last_seen": "2026-11-01"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY20492370848",
@@ -2168,7 +2270,7 @@
       "promoter": "Netomnia Limited",
       "start": "2026-10-30",
       "end": "2026-11-03",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MAPKFWH6G3L6J",
@@ -2252,7 +2354,7 @@
       "promoter": "BT",
       "start": "2026-11-03",
       "end": "2026-11-05",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MACMM1WH4W8V7K",
@@ -2266,7 +2368,7 @@
       "promoter": "BT",
       "start": "2026-11-03",
       "end": "2026-11-05",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC004WH8TC70B",
@@ -2322,7 +2424,7 @@
       "promoter": "Wales And West Utilities Ltd",
       "start": "2026-11-09",
       "end": "2026-11-12",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:XY244003002363044",
@@ -2448,7 +2550,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-25",
       "end": "2027-01-26",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014431142",
@@ -2476,7 +2578,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-02-17",
       "end": "2027-02-19",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014414721",
@@ -2518,7 +2620,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-12",
       "end": "2026-11-13",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:KA520SAS00159719ULLENWOD",
@@ -2574,7 +2676,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-12-01",
       "end": "2026-12-10",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512593239",
@@ -2588,7 +2690,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-24",
       "end": "2026-12-04",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY20405786093",
@@ -2630,7 +2732,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-10-26T00:00",
       "end": "2026-11-13",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:D2106-INS-GNSCHE039-1",
@@ -2658,7 +2760,7 @@
       "promoter": "Netomnia Limited",
       "start": "2026-10-30",
       "end": "2026-11-03",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MACKFWH8HVJ8Y",
@@ -2798,7 +2900,7 @@
       "promoter": "BT",
       "start": "2026-10-30",
       "end": "2026-11-03",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC004WH8KD57X",
@@ -2810,9 +2912,9 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-02",
+      "start": "2026-11-02T12:44",
       "end": "2026-11-03",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC004WH7V276J",
@@ -2826,7 +2928,7 @@
       "promoter": "BT",
       "start": "2026-10-30",
       "end": "2026-11-03",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000060788398",
@@ -2966,7 +3068,7 @@
       "promoter": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
       "start": "2026-11-05",
       "end": "2026-11-06",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:RZ99811451558",
@@ -3064,7 +3166,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-12",
       "end": "2026-11-13",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014436214",
@@ -3134,7 +3236,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-11",
       "end": "2026-11-11",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB70331182852",
@@ -3190,7 +3292,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-04",
       "end": "2026-11-06",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:FN40213559769",
@@ -3204,7 +3306,7 @@
       "promoter": "National Highways",
       "start": "2026-11-13",
       "end": "2026-11-16",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40049960240",
@@ -3218,7 +3320,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-05",
       "end": "2026-11-05",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY10307683827",
@@ -3232,7 +3334,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-10-19T09:30",
       "end": "2026-10-30",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000046958",
@@ -3246,7 +3348,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-03",
       "end": "2026-11-03",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY006VDK70022928",
@@ -3288,7 +3390,7 @@
       "promoter": "BT",
       "start": "2026-12-18",
       "end": "2026-12-18",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MACKFWH7NF39M",
@@ -3302,7 +3404,7 @@
       "promoter": "BT",
       "start": "2026-12-14",
       "end": "2026-12-18",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC341RW-WH5M7K9Z",
@@ -3344,7 +3446,7 @@
       "promoter": "BT",
       "start": "2026-11-02",
       "end": "2026-11-04",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-54925381",
@@ -3358,7 +3460,7 @@
       "promoter": "",
       "start": "2026-10-28",
       "end": "2026-11-25",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:XJ010CLM081-CV-WK04",
@@ -3372,7 +3474,7 @@
       "promoter": "Hutchison 3G Ltd",
       "start": "2027-01-25",
       "end": "2027-01-29",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:XJ010CLM081-CV-WK02",
@@ -3386,7 +3488,7 @@
       "promoter": "Hutchison 3G Ltd",
       "start": "2027-01-11",
       "end": "2027-01-15",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:TV003MN215567_SC",
@@ -3400,7 +3502,7 @@
       "promoter": "UK Power Distribution Ltd",
       "start": "2027-04-07",
       "end": "2027-04-13",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:TV003MN215567_HWR",
@@ -3414,7 +3516,7 @@
       "promoter": "UK Power Distribution Ltd",
       "start": "2027-03-08",
       "end": "2027-04-13",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:TV003MN215567_FGL",
@@ -3428,7 +3530,7 @@
       "promoter": "UK Power Distribution Ltd",
       "start": "2027-01-11",
       "end": "2027-03-06",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9225201-000006765400",
@@ -3596,7 +3698,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-09",
       "end": "2026-11-09",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000060787766A",
@@ -3708,7 +3810,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-22",
       "end": "2026-11-22",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB7012302-000014373145",
@@ -3750,7 +3852,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-06",
       "end": "2027-01-06",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:KG018-FNS-SP-S2227668",
@@ -3862,7 +3964,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-30",
       "end": "2026-12-18",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM75146114650C",
@@ -3876,7 +3978,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-12-14",
       "end": "2026-12-18",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM75146114650B",
@@ -3890,7 +3992,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-12-03",
       "end": "2026-12-10",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM75146114650",
@@ -3904,7 +4006,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-30",
       "end": "2026-12-04",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY20324024473",
@@ -3946,7 +4048,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-09",
       "end": "2026-11-09",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1901000030179",
@@ -3960,7 +4062,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2024-08-21T15:28",
       "end": "2026-11-25",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518WMCEMWG6L182R",
@@ -4002,7 +4104,7 @@
       "promoter": "BT",
       "start": "2026-12-07",
       "end": "2026-12-09",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC008WH7WC56WL2CSB",
@@ -4016,7 +4118,7 @@
       "promoter": "BT",
       "start": "2027-01-25",
       "end": "2027-01-25",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC008WH7WC56W01L2CSB",
@@ -4030,7 +4132,7 @@
       "promoter": "BT",
       "start": "2027-01-25",
       "end": "2027-01-25",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC008WH6D973F01SB",
@@ -4044,7 +4146,7 @@
       "promoter": "BT",
       "start": "2026-11-09",
       "end": "2026-11-11",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC004WH8MNJ6W",
@@ -4142,7 +4244,7 @@
       "promoter": "",
       "start": "2026-10-28",
       "end": "2026-11-25",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:XY245003002330474",
@@ -4156,7 +4258,7 @@
       "promoter": "Wales And West Utilities Ltd",
       "start": "2026-11-16",
       "end": "2026-11-20",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-00042276319",
@@ -4464,7 +4566,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-12-23",
       "end": "2026-12-24",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB7012302-000014164041B",
@@ -4478,7 +4580,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-18",
       "end": "2027-01-22",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40035158050",
@@ -4492,7 +4594,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-03",
       "end": "2026-11-03",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000046992",
@@ -4548,7 +4650,7 @@
       "promoter": "BT",
       "start": "2026-11-02",
       "end": "2026-11-06",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MACKFFBR51498",
@@ -4576,7 +4678,7 @@
       "promoter": "BT",
       "start": "2026-11-02",
       "end": "2026-11-06",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC418HCRALCABLETRINITYLN",
@@ -4870,7 +4972,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-11",
       "end": "2027-01-22",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7578034853",
@@ -4912,7 +5014,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2027-02-01",
       "end": "2027-04-01",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512592385C",
@@ -4926,7 +5028,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2027-02-01",
       "end": "2027-04-01",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512592385B",
@@ -4940,7 +5042,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2027-02-01",
       "end": "2027-04-01",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512592385A",
@@ -4954,7 +5056,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2027-02-01",
       "end": "2027-04-01",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512592167B",
@@ -4968,7 +5070,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-02",
       "end": "2026-11-06",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512592167A",
@@ -4982,7 +5084,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-02",
       "end": "2026-11-06",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:FN40184578159",
@@ -5052,7 +5154,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-16",
       "end": "2026-11-21",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047703",
@@ -5066,7 +5168,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-05",
       "end": "2026-11-05",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1901000043495",
@@ -5080,7 +5182,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-06-24T09:33",
       "end": "2026-11-13",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY091S278FARMLANECHELT26",
@@ -5094,7 +5196,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-16",
       "end": "2026-11-16",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY020GB-LNT1409",
@@ -5122,7 +5224,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-05",
       "end": "2026-11-07",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC418HCR1S23WGHC0M1P",
@@ -5136,7 +5238,7 @@
       "promoter": "BT",
       "start": "2026-11-15",
       "end": "2026-11-15",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC341RW-WH5LD05H-08",
@@ -5304,7 +5406,7 @@
       "promoter": "Thames Water",
       "start": "2026-11-16",
       "end": "2026-11-18",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042305804",
@@ -5318,7 +5420,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-11",
       "end": "2026-11-13",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042305704",
@@ -5332,7 +5434,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-10",
       "end": "2026-11-12",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042302580",
@@ -5346,7 +5448,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-11",
       "end": "2026-11-13",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042302464",
@@ -5360,7 +5462,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-09",
       "end": "2026-11-11",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042297482",
@@ -5374,7 +5476,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-09",
       "end": "2026-11-11",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042290043",
@@ -5388,7 +5490,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-03",
       "end": "2026-11-05",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042289970",
@@ -5402,7 +5504,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-03",
       "end": "2026-11-05",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042289946",
@@ -5458,7 +5560,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-06",
       "end": "2026-11-10",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042039617A",
@@ -5556,7 +5658,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-08",
       "end": "2026-11-08",
-      "last_seen": "2026-10-24"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:KL238BAG28621141126LO",
@@ -5570,7 +5672,7 @@
       "promoter": "Network Rail",
       "start": "2026-11-14",
       "end": "2026-11-15",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM75128991470B",
@@ -5598,7 +5700,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-09",
       "end": "2026-11-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512587128",
@@ -5626,7 +5728,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-04",
       "end": "2026-11-11",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512508573C",
@@ -5640,7 +5742,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-04",
       "end": "2026-11-08",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512508573B",
@@ -5654,7 +5756,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-04",
       "end": "2026-11-08",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:FN40292691854",
@@ -5668,7 +5770,7 @@
       "promoter": "National Highways",
       "start": "2026-11-09",
       "end": "2026-11-13",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY20495402201",
@@ -5794,7 +5896,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-06",
       "end": "2026-11-06",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY006VDK70023042",
@@ -5808,7 +5910,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-03",
       "end": "2026-11-03",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY006S50-01446",
@@ -5822,7 +5924,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-10-12T09:00",
       "end": "2026-10-23",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY006S50-01445",
@@ -5836,7 +5938,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-30",
       "end": "2026-12-18",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MAPKFWH6JKV3S",
@@ -5878,7 +5980,7 @@
       "promoter": "BT",
       "start": "2026-10-19T11:09",
       "end": "2026-10-20",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC418HCRALCABLECOUNTYCT",
@@ -5892,7 +5994,7 @@
       "promoter": "BT",
       "start": "2026-10-19T11:09",
       "end": "2026-10-19",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC318FB26FILWH8DJ16J",
@@ -5962,7 +6064,7 @@
       "promoter": "",
       "start": "2026-10-30",
       "end": "2026-11-27",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-16517850",
@@ -5976,7 +6078,7 @@
       "promoter": "",
       "start": "2026-10-30",
       "end": "2026-11-13",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-02141049",
@@ -5990,7 +6092,7 @@
       "promoter": "",
       "start": "2026-10-20",
       "end": "2026-11-17",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014379664",
@@ -6130,7 +6232,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-20",
       "end": "2027-01-21",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB7012302-000014384329",
@@ -6144,7 +6246,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-21",
       "end": "2027-01-21",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB7012302-000014363227",
@@ -6158,7 +6260,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-20",
       "end": "2027-01-20",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40043403898",
@@ -6214,7 +6316,7 @@
       "promoter": "Wales And West Utilities Ltd",
       "start": "2026-11-17",
       "end": "2026-11-17",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:NK110ANSL305168",
@@ -6242,7 +6344,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-12-04",
       "end": "2026-12-04",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042050038",
@@ -6424,7 +6526,7 @@
       "promoter": "BT",
       "start": "2026-11-02",
       "end": "2026-11-04",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-98590881",
@@ -6438,7 +6540,7 @@
       "promoter": "",
       "start": "2026-10-21",
       "end": "2026-11-18",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-98107337",
@@ -6452,7 +6554,7 @@
       "promoter": "",
       "start": "2026-10-20",
       "end": "2026-11-17",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-19756969",
@@ -6466,7 +6568,7 @@
       "promoter": "",
       "start": "2026-11-02",
       "end": "2026-11-30",
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:ZP001N0010192-1-KI",
@@ -6508,7 +6610,7 @@
       "promoter": "Wales And West Utilities Ltd",
       "start": "2026-12-07",
       "end": "2026-12-11",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:XY245001005364995",
@@ -6550,7 +6652,7 @@
       "promoter": "Virgin Media",
       "start": "2026-11-30",
       "end": "2026-12-04",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000077162087",
@@ -6634,7 +6736,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-30",
       "end": "2026-12-01",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014377722A",
@@ -6676,7 +6778,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-12",
       "end": "2026-11-12",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:KA550S440911-CASS",
@@ -6802,7 +6904,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-21",
       "end": "2027-01-21",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40082917840",
@@ -6816,7 +6918,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-14",
       "end": "2027-01-14",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40075472588",
@@ -6830,7 +6932,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-27",
       "end": "2027-01-27",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40072981482",
@@ -6844,7 +6946,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-07",
       "end": "2027-01-07",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40066332072",
@@ -6858,7 +6960,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-04",
       "end": "2027-02-04",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40054286036",
@@ -6872,7 +6974,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-06",
       "end": "2027-01-06",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40039880448",
@@ -6886,7 +6988,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-28",
       "end": "2027-01-28",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40033807543",
@@ -6900,7 +7002,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-13",
       "end": "2027-01-13",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40022394219",
@@ -6914,7 +7016,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-01-20",
       "end": "2027-01-20",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40019641887",
@@ -6928,7 +7030,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-03",
       "end": "2027-02-03",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY20498371700",
@@ -7012,7 +7114,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-25",
       "end": "2026-11-27",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC341RW-WH5VNC7K-04",
@@ -7040,7 +7142,7 @@
       "promoter": "BT",
       "start": "2026-11-09",
       "end": "2026-11-11",
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC008WGQM9W8YL2CSB",
@@ -7236,7 +7338,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-12-21",
       "end": "2026-12-23",
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042538171",
@@ -7404,7 +7506,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-10-12T18:00",
       "end": "2026-11-04",
-      "last_seen": "2026-11-01"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014428825A",
@@ -7558,7 +7660,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-11",
       "end": "2026-11-12",
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:KL265BAG2-84M-23C-191226",
@@ -7572,7 +7674,7 @@
       "promoter": "Network Rail",
       "start": "2026-12-19",
       "end": "2026-12-20",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:KA330BDUKGCFNS00918",
@@ -7642,7 +7744,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-06",
       "end": "2026-11-27",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40003212888",
@@ -7726,7 +7828,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-02",
       "end": "2026-11-05",
-      "last_seen": "2026-10-24"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY10319253404",
@@ -7740,7 +7842,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-16",
       "end": "2026-12-05",
-      "last_seen": "2026-10-24"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY10316321049",
@@ -7768,7 +7870,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-02",
       "end": "2026-11-07",
-      "last_seen": "2026-10-24"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047320",
@@ -7810,7 +7912,7 @@
       "promoter": "BT",
       "start": "2026-11-10",
       "end": "2026-11-10",
-      "last_seen": "2026-10-27"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MACKFWH8F7T7K",
@@ -8006,7 +8108,7 @@
       "promoter": "",
       "start": "2026-10-16",
       "end": "2026-11-13",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-57853085",
@@ -8020,7 +8122,7 @@
       "promoter": "",
       "start": "2026-09-10",
       "end": "2027-03-20",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:P600712834223-88253-WK43",
@@ -8118,7 +8220,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-01",
       "end": "2026-11-02",
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9060000-000042478130",
@@ -8216,7 +8318,7 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-13",
       "end": "2026-11-17",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000060785536",
@@ -8300,7 +8402,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-02-03",
       "end": "2027-02-05",
-      "last_seen": "2026-11-01"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014400165",
@@ -8412,7 +8514,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-14",
       "end": "2026-11-15",
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512590304",
@@ -8552,7 +8654,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-16"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY006VDK7513643",
@@ -8566,7 +8668,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-26",
       "end": "2026-11-26",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY006VDK70021544",
@@ -8580,7 +8682,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-09",
       "end": "2026-11-10",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MACKGWH8JNG6J",
@@ -8664,7 +8766,7 @@
       "promoter": "BT",
       "start": "2026-10-29",
       "end": "2026-11-02",
-      "last_seen": "2026-10-29"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-90699633",
@@ -8678,7 +8780,7 @@
       "promoter": "",
       "start": "2026-10-27",
       "end": "2026-11-24",
-      "last_seen": "2026-10-16"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "ACTIVITY:ARN-1600-74240323",
@@ -8692,7 +8794,7 @@
       "promoter": "",
       "start": "2026-10-16",
       "end": "2026-11-13",
-      "last_seen": "2026-10-16"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:XY245004000200076",
@@ -8944,7 +9046,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-28",
       "end": "2027-01-29",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014422307",
@@ -9070,7 +9172,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-13",
       "end": "2027-01-14",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB525A8W-14406015B",
@@ -9196,7 +9298,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-14",
       "end": "2026-11-15",
-      "last_seen": "2026-10-17"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512591063",
@@ -9210,7 +9312,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-05",
       "end": "2026-11-12",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512590409",
@@ -9224,7 +9326,7 @@
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-03",
       "end": "2026-11-13",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:HM7512588521",
@@ -9266,7 +9368,7 @@
       "promoter": "National Highways",
       "start": "2026-11-25",
       "end": "2026-11-27",
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY40084415051",
@@ -9294,7 +9396,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047383",
@@ -9308,7 +9410,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047382",
@@ -9322,7 +9424,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047380",
@@ -9336,7 +9438,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047379",
@@ -9350,7 +9452,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047333",
@@ -9364,7 +9466,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047231",
@@ -9420,7 +9522,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-09-10T15:30",
       "end": "2026-11-10",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY020GB-BEAUMONT1310",
@@ -9714,7 +9816,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-26",
       "end": "2027-01-27",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014419742",
@@ -9728,7 +9830,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-13",
       "end": "2027-01-14",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014406408",
@@ -9742,7 +9844,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-21",
       "end": "2027-01-22",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014403776",
@@ -9756,7 +9858,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-26",
       "end": "2027-01-28",
-      "last_seen": "2026-10-15"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014368717",
@@ -9784,7 +9886,7 @@
       "promoter": "Severn Trent Water",
       "start": "2027-01-21",
       "end": "2027-01-22",
-      "last_seen": "2026-10-14"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:LB9011303-000014274909",
@@ -9910,7 +10012,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-10-27T00:00",
       "end": "2026-11-02",
-      "last_seen": "2026-10-30"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047332",
@@ -9924,7 +10026,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2027-02-01",
       "end": "2027-02-02",
-      "last_seen": "2026-10-14"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:EY102GH1902000047327",
@@ -9952,7 +10054,7 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-07",
       "end": "2026-11-07",
-      "last_seen": "2026-10-14"
+      "last_seen": "2026-11-02"
     },
     {
       "id": "PERMIT:BC518MAPTBWGRK563F",
