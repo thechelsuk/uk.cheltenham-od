@@ -22,9 +22,7 @@ finding:
         - Crimes published
 ---
 
-Police.uk, the national website where police forces in England, Wales and Northern Ireland publish their recorded crime, has shown almost no crime in Cheltenham since February 2026.
-
-From February to September 2026 it published 35 crimes across Cheltenham's 14 policing neighbourhoods. In the same eight months of 2025 it published 8,547.
+Police.uk, the national website where police forces in England, Wales and Northern Ireland publish their recorded crime, has shown almost no crime in Cheltenham since February 2026: 35 crimes across Cheltenham's 14 policing neighbourhoods in eight months, against 8,547 in the same months of 2025. Gloucestershire Constabulary says a new records system stopped the data being published, and two months after it said so, it still hasn't been fixed. Until it is, the official figures can't show whether crime in Cheltenham is rising or falling.
 
 | Month          | Crimes |
 | -------------- | -----: |

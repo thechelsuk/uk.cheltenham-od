@@ -2033,7 +2033,11 @@ body.widget-frame {
     height: 55%;
 }
 
+/* The label is a kicker: its own line beside the circle, with the title or
+   byline underneath. Its line height is the circle's, so the two line up. */
 .kind-label {
+    display: block;
+    line-height: 1.9rem;
     color: var(--kind-text);
     font-family: var(--font-sans);
     font-size: 0.72em;
@@ -2060,12 +2064,36 @@ body.widget-frame {
     --kind-text: var(--kind-classifieds);
 }
 
-/* A post's byline: the kind marker, then the author and dates. */
+/* A post's byline: the circle, then the kind label with the author and
+   dates underneath, the same layout as the news lists. */
 .kind-line {
+    display: grid;
+    grid-template-columns: 1.9rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0 0.6em;
+    padding-bottom: 0.9rem;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* The lede: a post's opening paragraph, straight after the byline, set a
+   size larger. Analysis posts open with their quoted finding instead. */
+.kind-line + p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* The kicker line carries the author too, like the title in a list; the
+   date sits underneath. */
+.kind-line-top {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 0.4em;
+    align-items: baseline;
+    column-gap: 0.4em;
+}
+
+.kind-line > div > .footnote {
+    display: block;
 }
 
 .latest-title {
@@ -2076,14 +2104,6 @@ body.widget-frame {
     grid-column: 2;
     color: var(--text-muted);
     font-size: 0.85rem;
-}
-
-/* Fixed width on the first line so titles line up; wrapped lines run
-   back underneath the label. 7.5em fits the longest label, "Power cut:". */
-.latest-item-kind .kind-label {
-    display: inline-block;
-    width: 7.5em;
-    margin-right: 0;
 }
 
 .action-row {

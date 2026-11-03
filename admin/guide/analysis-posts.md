@@ -81,8 +81,9 @@ finding:
         - Each column the CSV measures
 ---
 
-Cheltenham Open Data analysed ... Context and the next most important figures,
-not the quote again, ending with a link to the live data page.
+Cheltenham Open Data analysed ... This first paragraph is the lede, shown above the finding
+and chart: what happened, why it matters to someone in Cheltenham, and the next most important
+figures, not the quote again, ending with a link to the live data page.
 
 ## Key Figures
 
@@ -116,8 +117,8 @@ Prose explaining the finding and what sits behind it.
 
 Rules that apply to every analysis post:
 
-- **Say the finding once.** It goes in `finding.quote`. The header `description` gives context, and the opening paragraph moves on to supporting figures.
-- **Headings** use AP title case: short prepositions such as "of", "from" and "to" stay lowercase.
+- **Say the finding once.** It goes in `finding.quote`. The header `description` gives context, and the opening paragraph, the lede, moves on to why it matters and the supporting figures. The layout shows the lede above the finding and chart.
+- **Headings** use AP title case: articles, conjunctions and prepositions of three letters or fewer ("of", "to", "and") stay lowercase, and longer ones ("From", "With") are capitalised. "over" is the one exception and stays lowercase.
 - **Dates** in figures and tables are `YYYY-MM-DD`.
 - **`seo`** is 160 characters or fewer.
 - **Copy** is for readers: no notes about how the data was processed for the site.

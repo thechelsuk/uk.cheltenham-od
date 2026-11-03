@@ -99,7 +99,7 @@ Two small-print lines, each a list item in small text with the accent marker.
 
 ## Kind Markers
 
-A coloured circle with an icon, then the kind's label in capitals: news, alerts and classifieds on the home page and `/news`, and the byline on every post. See every kind on the [kinds page](/admin/kinds).
+A coloured circle with an icon, and beside it the kind's label in capitals as a kicker, on its own line, with the title (or, in a post's byline, the author and dates) underneath. Used for news, alerts and classifieds on the home page and `/news`, the weather warnings, and the byline on every post. The kicker needs no fixed width, so every list lines up the same way whatever its labels. See every kind on the [kinds page](/admin/kinds).
 
 {% include admin/kind-examples.html %}
 
@@ -110,6 +110,14 @@ A coloured circle with an icon, then the kind's label in capitals: news, alerts 
 - **Classifieds:** the kind is the ad's `category`, which matches `classified_categories` in `_config.yml`.
 - **Icons** are Material Icons, except the Update megaphone (from the site logo) and the Flood cloud (Material Symbols).
 - To check a new kind, see it on the [kinds page](/admin/kinds), which shows every kind with its demo title.
+
+## News Posts
+
+The headline is the page's `h1`, in the header. Below the header:
+
+- **Byline:** the kind marker's circle, then the kicker line with the author ("ROUNDUP · By Mat Benfield"), and the date underneath ("Published 3 November 2026", plus "Updated" when there is one), the same layout as the news lists. A thin rule under the byline marks where the article starts.
+- **Lede:** the post's first paragraph, set a size larger straight after the byline. Two or three sentences that say what happened, why it matters to someone in Cheltenham, and the standout story, not a list of counts. On analysis posts the layout lifts the first paragraph above the quoted finding and chart, so every post opens the same way; the feed keeps the post in its written order.
+- **Credit:** posts are written for the site and edited by Mat, who is named as the author.
 
 ## Dates
 

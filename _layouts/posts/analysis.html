@@ -12,7 +12,14 @@
             </ul>
         </header>
         {% include section-links.html %}
-        <p class="kind-line">{% include kind.html post=page %}{% if page.author %}<span class="footnote">· By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %} · Published {{ page.date | date: "%-d %B %Y" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%-d %B %Y" }}{% endif %}</span>{% endif %}</p>
+        <div class="kind-line">{% include kind.html post=page part="dot" %}<div><div class="kind-line-top">{% include kind.html post=page part="label" %}{% if page.author %}<span class="footnote">· By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %}</span>{% endif %}</div><span class="footnote">Published {{ page.date | date: "%-d %B %Y" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%-d %B %Y" }}{% endif %}</span></div></div>
+        {%- comment -%} The post's first paragraph is its lede: shown here, before the finding and chart,
+        and the rest of the post after them. The feed keeps the post in its written order. {%- endcomment -%}
+        {%- assign post_body = content | strip -%}
+        {%- assign post_lede = "" -%}
+        {%- assign opening = post_body | slice: 0, 3 -%}
+        {%- if opening == "<p>" -%}{%- assign post_lede = post_body | split: "</p>" | first | append: "</p>" -%}{%- assign post_body = post_body | remove_first: post_lede -%}{%- endif %}
+        {{ post_lede }}
 
         <blockquote>
             <p><strong>{{ f.quote }}</strong></p>
@@ -21,7 +28,7 @@
 
         {% include finding-figure.html slug=f.data alt=f.chart_alt page=f.page %}
 
-        {{ content }}
+        {{ post_body }}
 
         {% if page.corrections %}
         <h2 id="corrections">Corrections</h2>

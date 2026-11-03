@@ -6,7 +6,7 @@ is set in assets/style.css.
          has a `finding:`, or update
   group: news, alerts or classifieds, with
   kind:  the kind's key in that group (used when there is no post)
-  part:  "dot" for the circle, "label" for "Label:" before a title, or
+  part:  "dot" for the circle, "label" for the kicker above a title, or
          leave it out for the circle and the label together
 {%- endcomment -%}
 {%- if include.post -%}
@@ -21,5 +21,5 @@ is set in assets/style.css.
 <span class="kind-dot kind-{{ kind_group }}"><svg class="kind-icon" viewBox="{{ kind_data.viewbox | default: '0 0 24 24' }}" aria-hidden="true" focusable="false"><path fill="currentColor" d="{{ kind_data.icon }}"></path></svg></span>
 {%- endunless -%}
 {%- unless include.part == "dot" -%}
-<span class="kind-label kind-{{ kind_group }}">{{ kind_data.label }}{% if include.part == "label" %}:{% endif %}</span>
+<span class="kind-label kind-{{ kind_group }}">{{ kind_data.label }}</span>
 {%- endunless -%}

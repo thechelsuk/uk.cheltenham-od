@@ -11,7 +11,7 @@
             </ul>
         </header>
         {% include section-links.html %}
-        <p class="kind-line">{% include kind.html post=page %}{% if page.author %}<span class="footnote">· By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %} · Published {{ page.date | date: "%-d %B %Y" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%-d %B %Y" }}{% endif %}</span>{% endif %}</p>
+        <div class="kind-line">{% include kind.html post=page part="dot" %}<div><div class="kind-line-top">{% include kind.html post=page part="label" %}{% if page.author %}<span class="footnote">· By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %}</span>{% endif %}</div><span class="footnote">Published {{ page.date | date: "%-d %B %Y" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%-d %B %Y" }}{% endif %}</span></div></div>
 
         {{ content }}
 
