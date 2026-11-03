@@ -436,14 +436,22 @@ def _existing_feed_updated(filename, atom_ns):
         return None
 
 
-def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None):
+# Liquid that Jekyll fills in when it builds the feed: the shared footer
+# (_includes/feed-footer.html), escaped to sit inside <content type="html">.
+FEED_FOOTER = "{% capture feed_footer %}{% include feed-footer.html %}{% endcapture %}{{ feed_footer | xml_escape }}"
+
+
+def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None,
+                     footer=False):
     """Write an Atom 1.0 feed of arbitrary `items` (each a dict with title,
     link, published_iso, summary, source and an optional category) to `filename`, with the usual
     front-matter + layout:empty wrapper so Jekyll serves it as a static file.
     `permalink_path` is the site-relative path (e.g. '/feeds/news-summary.xml')
     written into that front matter; `self_url`/`alternate_url` are the full
     URLs used in the feed's own <link> elements. Mirrors convert_to_atom()
-    above, generalised for reuse."""
+    above, generalised for reuse. With `footer`, each entry also gets the
+    summary as HTML <content> followed by the site's feed footer (a sponsored
+    offer and how to sponsor), which Jekyll adds when it builds the feed."""
     ATOM_NS = "http://www.w3.org/2005/Atom"
     ET.register_namespace("", ATOM_NS)
 
@@ -481,6 +489,11 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
 
         summary = ET.SubElement(entry, "summary")
         summary.text = item.get("summary") or item.get("title", "")
+
+        if footer:
+            content = ET.SubElement(entry, "content")
+            content.set("type", "html")
+            content.text = f"<p>{html.escape(summary.text, quote=False)}</p>{FEED_FOOTER}"
 
         published_iso = item.get("published_iso")
         updated_text = None

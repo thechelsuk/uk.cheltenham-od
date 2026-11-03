@@ -356,3 +356,33 @@ def test_title_case_handles_curly_apostrophes_and_styled_words():
 
 def test_title_case_fixes_an_all_capitals_heading():
     assert helper.title_case("THE BEST PLACES TO VISIT") == "The Best Places to Visit"
+
+
+FOOTER_TAG = "{% capture feed_footer %}{% include feed-footer.html %}{% endcapture %}{{ feed_footer | xml_escape }}"
+
+
+def atom_entries(path):
+    import xml.etree.ElementTree as ET
+    body = path.read_text().split("---\n", 2)[2]
+    ns = {"a": "http://www.w3.org/2005/Atom"}
+    return ET.fromstring(body).findall("a:entry", ns), ns
+
+
+def test_atom_writer_adds_the_feed_footer_to_each_entry_when_asked(tmp_path):
+    path = tmp_path / "f.xml"
+    helper.write_items_atom([{"title": "Road closed", "link": "https://example.test/x", "summary": "A & B roads"}],
+                            path, "/feeds/f.xml", "f", "f", "https://example.test/self", "https://example.test/f",
+                            footer=True)
+    (entry,), ns = atom_entries(path)
+    content = entry.find("a:content", ns)
+    assert content.get("type") == "html"
+    assert content.text == "<p>A &amp; B roads</p>" + FOOTER_TAG
+    assert entry.find("a:summary", ns).text == "A & B roads"
+
+
+def test_atom_writer_leaves_out_the_footer_by_default(tmp_path):
+    path = tmp_path / "f.xml"
+    helper.write_items_atom([{"title": "x", "link": "https://example.test/x"}], path,
+                            "/feeds/f.xml", "f", "f", "https://example.test/self", "https://example.test/f")
+    (entry,), ns = atom_entries(path)
+    assert entry.find("a:content", ns) is None

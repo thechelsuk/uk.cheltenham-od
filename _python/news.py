@@ -178,6 +178,7 @@ if __name__ == "__main__":
         feed_subtitle="Every local headline aggregated across Cheltenham news, council, police and community sources, as it's picked up.",
         self_url=f"{SITE_URL}/feeds/news-breaking.xml",
         alternate_url=f"{SITE_URL}/cheltenham-news",
+        footer=True,
     )
 
     total_pages = max(1, math.ceil(len(all_items) / PAGE_SIZE))

@@ -1,0 +1,10 @@
+{%- comment -%}
+The footer at the end of every entry in the main, classifieds and breaking
+news feeds: a sponsored offer, picked at random from _data/offers.yml on each
+build, and how to sponsor the site. Outputs HTML; inside a feed it goes in
+the entry's <content type="html">.
+{%- endcomment -%}
+{%- assign feed_offers = site.data.offers.offers -%}
+{%- assign feed_offer_index = "now" | date: "%N" | modulo: feed_offers.size -%}
+{%- assign feed_offer = feed_offers[feed_offer_index] -%}
+<hr /><p>Thanks for following Cheltenham Open Data by RSS, here is a sponsored offer for you: <a rel="sponsored" href="{{ feed_offer.link }}">{{ feed_offer.Label }}</a> [T&amp;Cs apply].</p><p>If you would like to sponsor the site or feed please see <a href="{{ '/sponsor' | absolute_url }}">sponsor</a> for details.</p>
