@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T17:50:08+00:00",
+  "generated_at": "2026-11-03T17:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-03T17:31",
-      "expected": "2026-11-03T17:50",
+      "expected": "2026-11-03T17:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -26,29 +26,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-03T17:45",
-      "expected": "2026-11-03T17:49",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by the train departing late to maintain customer connections",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-03T17:50",
-      "expected": "2026-11-03T17:50",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -63,7 +43,7 @@
     },
     {
       "scheduled": "2026-11-03T17:52",
-      "expected": "2026-11-03T17:58",
+      "expected": "2026-11-03T17:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -127,7 +107,7 @@
     },
     {
       "scheduled": "2026-11-03T18:12",
-      "expected": "2026-11-03T18:15",
+      "expected": "2026-11-03T18:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -153,7 +133,7 @@
     },
     {
       "scheduled": "2026-11-03T18:19",
-      "expected": "2026-11-03T18:21",
+      "expected": "2026-11-03T18:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -185,12 +165,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T18:31",
+      "expected": "2026-11-03T18:43",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by the emergency services dealing with an incident earlier today",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-03T17:29",
-      "expected": "2026-11-03T17:49",
+      "expected": "2026-11-03T17:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -212,7 +207,7 @@
     },
     {
       "scheduled": "2026-11-03T17:50",
-      "expected": "2026-11-03T17:57",
+      "expected": "2026-11-03T17:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -234,7 +229,7 @@
     },
     {
       "scheduled": "2026-11-03T18:11",
-      "expected": "2026-11-03T18:14",
+      "expected": "2026-11-03T18:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -245,7 +240,7 @@
     },
     {
       "scheduled": "2026-11-03T18:18",
-      "expected": "2026-11-03T18:20",
+      "expected": "2026-11-03T18:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -267,13 +262,24 @@
     },
     {
       "scheduled": "2026-11-03T18:27",
-      "expected": "2026-11-03T18:29",
+      "expected": "2026-11-03T18:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by the train departing late to maintain customer connections",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T18:29",
+      "expected": "2026-11-03T18:42",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by the emergency services dealing with an incident earlier today",
       "mode": "train"
     }
   ],
