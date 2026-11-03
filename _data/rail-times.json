@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T20:20:09+00:00",
+  "generated_at": "2026-11-03T20:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,22 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-03T20:15",
-      "expected": "2026-11-03T20:19",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-03T20:23",
       "expected": "2026-11-03T20:27",
@@ -165,20 +149,28 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T21:15",
+      "expected": "2026-11-03T21:15",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Cheltenham Spa",
+      "destination": "Newport (South Wales)",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)"
+      ],
+      "mode": "bus"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-03T20:14",
-      "expected": "2026-11-03T20:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-03T20:21",
       "expected": "2026-11-03T20:26",
@@ -203,7 +195,7 @@
     },
     {
       "scheduled": "2026-11-03T20:33",
-      "expected": "2026-11-03T21:01",
+      "expected": "2026-11-03T21:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
