@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T21:20:08+00:00",
+  "generated_at": "2026-11-03T21:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,7 +8,9 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "Trains between Stafford / Shrewsbury and Wolverhampton may be delayed by up to 60 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
+  ],
   "departures": [
     {
       "scheduled": "2026-11-03T21:02",
@@ -148,17 +150,6 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-03T20:33",
-      "expected": "2026-11-03T21:19",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-03T21:33",
       "expected": "2026-11-03T21:33",
       "status": "On time",
@@ -232,6 +223,17 @@
       "operator": "CrossCountry",
       "origin": "Leicester",
       "destination": "Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T22:27",
+      "expected": "2026-11-03T22:31",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
