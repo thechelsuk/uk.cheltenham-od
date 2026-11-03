@@ -5,7 +5,7 @@ must not be treated as the exact location of an incident.
 
 Run from the repository root:
 	.venv/bin/python _python/crime.py
-	.venv/bin/python _python/crime.py --start-date 2026-02 --end-date 2026-07 --overwrite
+	.venv/bin/python _python/crime.py --start-date 2026-02 --end-date 2026-09 --overwrite
 """
 
 import argparse
