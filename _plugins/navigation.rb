@@ -84,7 +84,8 @@ module Navigation
       }
       (item["children"] || []).each do |child|
         map[norm(child["link"])] = {
-          "name" => child["name"], "short" => child["short"], "parent" => norm(item["link"]), "group" => item["group"]
+          "name" => child["name"], "short" => child["short"], "parent" => norm(item["link"]), "group" => item["group"],
+          "profile" => child["profile"]
         }
       end
     end

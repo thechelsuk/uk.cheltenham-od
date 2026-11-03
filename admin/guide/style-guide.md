@@ -71,7 +71,7 @@ The same goes for `<style>` blocks: styles live in `assets/style.css`, not in a 
 
 ## Tables
 
-Follow [Displaying Data](/admin/guide/displaying-data): `table-scroll` around a `data-table`, `data-sortable` where sorting helps, `number`, `postcode` and `date` classes on columns, one value per cell, and dates as `YYYY-MM-DD HH:MM`. A table doesn't need a key, but when it has one, it is the key style below.
+Follow [Displaying Data](/admin/guide/displaying-data): `table-scroll` around a `data-table`, `data-sortable` where sorting helps, `number`, `postcode` and `date` classes on columns, one value per cell, and dates as `YYYY-MM-DD HH:MM`. Markdown tables in posts and pages get the same treatment automatically from `_plugins/table_alignment.rb`: the `table-scroll` wrapper and `data-table` class, `number` for right-aligned (`--:`) columns, and `postcode` and `date` for cells that are wholly a postcode or a date. A table doesn't need a key, but when it has one, it is the key style below.
 
 ## Key and Attribution
 
