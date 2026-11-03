@@ -9,7 +9,7 @@ seo: "Cheltenham in October 2026: Morrisons rose from a 1 to a 5 for food hygien
 date: 2026-11-03 09:00
 ---
 
-Morrisons on Caernarvon Road went from a food hygiene rating of 1, given after an inspection in January, to the top rating of 5 in October, the biggest change among 13 new ratings for Cheltenham businesses. Storm overflows near the town spilled sewage 10 times, the most in a month for at least a year, while 333 sets of street works finished and 42 power cuts affected almost 10,000 homes and businesses.
+Morrisons on Caernarvon Road went from a food hygiene rating of 1 to the top rating of 5 in October, the biggest change among 13 new ratings for Cheltenham businesses. Storm overflows near the town spilled sewage 10 times, the most in a month for at least a year, while 333 sets of street works finished and 42 power cuts affected almost 10,000 homes and businesses.
 
 ## Food Hygiene Ratings
 
