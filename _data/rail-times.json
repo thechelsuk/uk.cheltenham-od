@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T08:00:08+00:00",
+  "generated_at": "2026-11-03T08:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,29 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-03T07:55",
-      "expected": "2026-11-03T08:03",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-03T08:01",
-      "expected": "2026-11-03T08:06",
+      "expected": "2026-11-03T08:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -82,8 +61,8 @@
     },
     {
       "scheduled": "2026-11-03T08:15",
-      "expected": "2026-11-03T08:15",
-      "status": "On time",
+      "expected": "2026-11-03T08:19",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -172,23 +151,34 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T08:59",
+      "expected": "2026-11-03T08:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-03T07:50",
-      "expected": "2026-11-03T08:02",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "London Paddington",
-      "reason": "This service has been delayed by congestion",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-03T07:59",
-      "expected": "2026-11-03T08:05",
+      "expected": "2026-11-03T08:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -210,8 +200,8 @@
     },
     {
       "scheduled": "2026-11-03T08:14",
-      "expected": "2026-11-03T08:14",
-      "status": "On time",
+      "expected": "2026-11-03T08:18",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -271,6 +261,17 @@
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T08:57",
+      "expected": "2026-11-03T08:57",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
