@@ -56,7 +56,7 @@ A typical earner buying alone has a realistic choice of flats and very little el
 - **Caveats:** The figures assume a single income and take no account of deposits, other debts or mortgage rates. They cover full-time earners only. Earnings are a survey estimate taken in April, so a large move in one year's figure feeds straight into that year's price limit. The mix of homes that sell also changes from year to year, so the trend matters more than any single year. Sales can take several months to appear in the Land Registry data, so the latest year's counts can rise slightly after publication.
 - **Data and updates:** The page is refreshed monthly and adds each year once it has finished and its earnings figure is published. For questions or interviews, use the [contact page](/contact).
 
-Data from HM Land Registry Price Paid Data and the ONS Annual Survey of Hours and Earnings, published under the Open Government Licence v3.0. Last updated 2026-10-02.
+{% include attribution.html text="Data from HM Land Registry Price Paid Data and the ONS Annual Survey of Hours and Earnings, published under the Open Government Licence v3.0. Last updated 2026-10-02." %}
 
 {% include cite-this.html %}
 
@@ -74,6 +74,6 @@ Data from HM Land Registry Price Paid Data and the ONS Annual Survey of Hours an
 
 - No. It uses one typical income and a simple 4.5 times limit, so it is a guide to how much of the market is in reach, not a mortgage calculation.
 
-### Why Are Flats so Different from Houses?
+### Why Are Flats so Different From Houses?
 
 - Flats sell for far less than houses in Cheltenham, so a much larger share of them fall under the price limit, while almost no detached homes do.

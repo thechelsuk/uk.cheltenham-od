@@ -56,9 +56,9 @@
 
         {% if total_pages > 1 %}
         <nav class="news-pagination" aria-label="News archive pages">
-            {% if prev_url %}<a href="{{ prev_url }}" class="news-pagination-link">← Newer</a>{% else %}<span></span>{% endif %}
+            {% if prev_url %}<a href="{{ prev_url }}" class="pill-link">&larr; Newer</a>{% else %}<span></span>{% endif %}
             <span class="news-pagination-status">Page {{ page_num }} of {{ total_pages }}</span>
-            {% if next_url %}<a href="{{ next_url }}" class="news-pagination-link">Older →</a>{% else %}<span></span>{% endif %}
+            {% if next_url %}<a href="{{ next_url }}" class="pill-link">Older &rarr;</a>{% else %}<span></span>{% endif %}
         </nav>
         {% endif %}
     </div>

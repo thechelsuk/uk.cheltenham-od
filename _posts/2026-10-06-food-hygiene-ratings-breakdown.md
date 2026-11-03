@@ -54,7 +54,7 @@ Takeaways and smaller shops are the exception. About three in four are rated 5, 
 
 Another 33 businesses are waiting for their first inspection, and 32 are exempt, usually because the food risk is very low.
 
-Data from the Food Standards Agency, published under the Open Government Licence v3.0. Last updated 2026-10-06.
+{% include attribution.html text="Data from the Food Standards Agency, published under the Open Government Licence v3.0. Last updated 2026-10-06." %}
 
 ## Notes to Editors
 

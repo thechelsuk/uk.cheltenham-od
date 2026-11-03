@@ -66,7 +66,7 @@ def upsert_history(records, entry, threshold=HISTORY_LEVEL):
 
 def build_alert_html(days, threshold=ALERT_LEVEL):
     """Homepage alert for today and tomorrow at `threshold` or above."""
-    return helper.alert_rows("Wildfire", [
+    return helper.alert_rows("wildfire", [
         (PAGE_PATH, f'{day["label"]} ({day["rating"]} of 5) fire severity forecast around Cheltenham on {helper.alert_date(day["date"])}')
         for day in days[:2] if day["rating"] >= threshold
     ])

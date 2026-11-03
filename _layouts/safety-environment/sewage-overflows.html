@@ -58,7 +58,7 @@
         {% assign spilling = sewage.overflows | where: "discharging", true %}
         <h2>Frequently Asked Questions</h2>
 
-        <h3>How Many Storm Overflows Are near Cheltenham?</h3>
+        <h3>How Many Storm Overflows Are Near Cheltenham?</h3>
         <ul>
             <li>{{ sewage.overflows.size }} within {{ sewage.radius_miles }} miles of the town centre, and {% if spilling.size == 0 %}none were{% elsif spilling.size == 1 %}one was{% else %}{{ spilling.size }} were{% endif %} discharging when this page was last updated.</li>
         </ul>

@@ -104,7 +104,7 @@
                         <td class="number">{{ m.gf }}</td>
                         <td class="number">{{ m.ga }}</td>
                         <td>{{ m.result }}</td>
-                        <td>{% if m.referee %}<a href="/cheltenham-sports/cheltenham-town-fc/referees/{{ m.referee_slug }}">{{ m.referee_sort }}</a>{% endif %}</td>
+                        <td class="referee">{% if m.referee %}<a href="/cheltenham-sports/cheltenham-town-fc/referees/{{ m.referee_slug }}">{{ m.referee_sort }}</a>{% endif %}</td>
                         <td class="number">{{ m.ht_gf }}</td>
                         <td class="number">{{ m.ht_ga }}</td>
                         {% for k in shown %}

@@ -61,7 +61,7 @@
                 .bindPopup(html)
                 .addTo(layer);
         });
-        overlays['<span style="color:' + colour + '">&#9679;</span> ' + escapeHtml(service.label)] = layer;
+        overlays['<span class="map-dot" style="--swatch: ' + colour + '">&#9679;</span> ' + escapeHtml(service.label)] = layer;
         if (startOn[service.group]) layer.addTo(map);
         groups.push(layer);
     });

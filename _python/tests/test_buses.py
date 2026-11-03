@@ -106,7 +106,7 @@ def test_alert_date_writes_out_iso_dates_and_keeps_other_text():
 def test_the_alert_lists_at_most_five_disruptions():
     disruptions = [buses.build_disruption(row(**{"Situation Number": f"S{i}"})) for i in range(7)]
     html = buses.build_alert_html(disruptions)
-    assert html.count('<li class="latest-item"><span class="latest-pill latest-pill-announcements">Bus</span>') == 5
+    assert html.count('group="alerts" kind="bus" part="dot"') == 5
     assert "<h2>" not in html
 
 

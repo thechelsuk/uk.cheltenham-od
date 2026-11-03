@@ -1,7 +1,7 @@
 ---
 layout: about-info/advert
 type: about
-title: "Friendly site Support for Cheltenham Small Businesses and Clubs"
+title: "Friendly Site Support for Cheltenham Small Businesses and Clubs"
 category: services
 company: "Cheltenham Open Data"
 location: "Cheltenham and surrounding area"

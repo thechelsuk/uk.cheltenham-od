@@ -7,7 +7,7 @@ robots: noindex
 render_with_liquid: false
 ---
 
-[&larr; Site guide contents](/admin/guide)
+[&larr; Admin](/admin)
 
 ## The Page (`_pages/<name>.md` or `_pages/<group>/<name>.md`)
 

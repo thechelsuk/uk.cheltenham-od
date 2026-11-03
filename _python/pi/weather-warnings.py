@@ -122,7 +122,7 @@ def build_alert_html(warnings):
         ends = helper.alert_date(warning.get("ends"))
         text = warning["title"] + (f", until {ends}" if ends else "")
         rows.append((warning["link"] or SOURCE_PAGE, text))
-    return helper.alert_rows("Weather warning", rows)
+    return helper.alert_rows("weather", rows)
 
 
 def build_atom_items(records):

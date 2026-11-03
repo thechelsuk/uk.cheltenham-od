@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Admin
-permalink: /admin
+title: Pages and SEO
+permalink: /admin/pages
 robots: noindex
 filters:
   - table: 1
@@ -10,6 +10,6 @@ filters:
     column: "Type"
 ---
 
-How the site is built: see the [site guide](/admin/guide).
+[&larr; Admin](/admin)
 
 {% include admin/index.html %}

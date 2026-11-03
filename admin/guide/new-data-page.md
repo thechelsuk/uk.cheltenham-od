@@ -7,7 +7,7 @@ robots: noindex
 render_with_liquid: false
 ---
 
-[&larr; Site guide contents](/admin/guide)
+[&larr; Admin](/admin)
 
 This is the standard shape of a data page on Cheltenham Open Data. It's not a hard rule for every page on the site — a handful of pages are pure curated Markdown (`_pages/sports.md`, `_pages/third-spaces.md`) with no fetcher behind them — but if you're adding something backed by an external source, follow this pattern so it's consistent with the rest of the site.
 
@@ -33,7 +33,7 @@ The detail for each step is on [Fetching Data](/admin/guide/fetching-data) and [
 - [ ] Added to the right `refresh-*.yml` workflow for how often the source actually changes, or, for a 5-minute feed, put in `_python/pi/` and listed in `_python/pi/every-5-minutes.txt`
 - [ ] Its workflow line runs it through `_python/fetch_status.py <runner>`, and its `_data/sources.json` entry names it as `script`
 - [ ] `_pages/<name>.md` (or `_pages/<group>/<name>.md`) with full front matter and real intro prose, not just a data dump — reread every sentence as a visitor would: no implementation/data-decision notes ("hand-curated because OSM coverage is patchy") leaking into published copy
-- [ ] `seo:` is 160 characters or fewer on the page and on any announcement post (the admin page flags any over the limit)
+- [ ] `seo:` is 160 characters or fewer on the page and on any update post (the [Pages and SEO](/admin/pages) page flags any over the limit)
 - [ ] `_layouts/<category>/<name>.html`, in the folder for the page's menu category (the same as its `_pages/<category>/` folder) — map + table + attribution line, reusing an existing layout via front matter variables if it's a filtered sibling of another page. The page runs intro, then data and maps, then FAQs, then an `<h2 id="about-this-data">About This Data</h2>` section at the very bottom holding the attribution: `Data from SOURCE, published under the LICENCE.` then `{% include freshness.html file="_data/<name>.json" %}` (which writes "Last updated 9 September 2026, checked daily."), then any required notices (such as "Contains OS data © Crown copyright") and caveats. Pages with several sources name each one in the same sentence.
 - [ ] Every numeric table column has `class="number"` on its `<th>` and `<td>`s (right-aligned), and any postcode column has `class="postcode"` (no mid-postcode wrapping)
 - [ ] Every date/time cell in a table and every date in a map popup is `YYYY-MM-DD HH:MM` (or `YYYY-MM-DD` with no time), with the ISO value in `data-val` and `class="date"` on the `<th>`/`<td>`s

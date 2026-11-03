@@ -83,11 +83,11 @@
 
             <h2>Recent Sales</h2>
 
-            <ul>
+            <p class="action-row">
                 {% for y in page.available-years %}
-                <li><a href="/cheltenham-house-prices-{{ y }}">View {{ y }} Sales &rarr;</a></li>
+                <a href="/cheltenham-house-prices-{{ y }}" class="pill-link">View {{ y }} Sales &rarr;</a>
                 {% endfor %}
-            </ul>
+            </p>
         </div>
 
         {% assign prices = site.data["cheltenham-house-prices"] %}
@@ -106,7 +106,7 @@
         <script src="https://cdn.ons.gov.uk/vendor/pym/1.3.2/pym.min.js"></script>
         <script>var pymParent = new pym.Parent("chart-ftb-static", "https://www.ons.gov.uk/visualisations/housingpriceslocal/embed/?area=E07000078&chart=chart-ftb-static", { name: "chart-ftb-static", title: "Embedded chart" });</script>
 
-        <h2>House Prices When Buying with Cash or Mortgage in Cheltenham</h2>
+        <h2>House Prices When Buying With Cash or Mortgage in Cheltenham</h2>
 
         <div id="chart-mortgagecash"></div>
         <script src="https://cdn.ons.gov.uk/vendor/pym/1.3.2/pym.min.js"></script>

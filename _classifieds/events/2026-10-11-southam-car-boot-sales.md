@@ -2,7 +2,7 @@
 layout: about-info/advert
 type: about
 title: "Southam Car Boot Sale"
-category: community
+category: events
 company: "Southam Car Boot Sale"
 location: "Southam Lane, Cheltenham, GL52 3PE"
 salary: "Free entry"

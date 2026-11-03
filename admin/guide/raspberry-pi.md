@@ -7,7 +7,7 @@ robots: noindex
 render_with_liquid: false
 ---
 
-[&larr; Site guide contents](/admin/guide)
+[&larr; Admin](/admin)
 
 A Raspberry Pi at home does two jobs:
 

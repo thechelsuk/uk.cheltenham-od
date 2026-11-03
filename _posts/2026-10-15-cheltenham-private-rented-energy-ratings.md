@@ -51,7 +51,7 @@ Since April 2020, privately rented homes have needed a rating of at least E unle
 
 On today's certificates, 4,170 of Cheltenham's 4,571 privately rented homes below C could reach C or better with the improvements their certificates list, such as insulation, double glazing or a more efficient boiler.
 
-Data from the Energy Performance of Buildings Register, published under the Open Government Licence v3.0. Last updated 2026-10-11.
+{% include attribution.html text="Data from the Energy Performance of Buildings Register, published under the Open Government Licence v3.0. Last updated 2026-10-11." %}
 
 ## Notes to Editors
 

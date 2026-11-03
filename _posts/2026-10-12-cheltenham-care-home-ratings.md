@@ -49,7 +49,7 @@ That does not mean the homes with older ratings would do worse if inspected toda
 - **Caveats:** The publication date is when the CQC published the rating, usually some weeks after the inspection. The CQC changed how it assesses services from late 2023, which may affect how recent ratings compare with older ones. A rating covers the whole home and five areas: safe, effective, caring, responsive and well-led.
 - **Data and updates:** The care homes page updates weekly. For questions or interviews, use the [contact page](/contact).
 
-Data from the Care Quality Commission, published under the Open Government Licence v3.0. Last updated 2026-10-09.
+{% include attribution.html text="Data from the Care Quality Commission, published under the Open Government Licence v3.0. Last updated 2026-10-09." %}
 
 {% include cite-this.html %}
 

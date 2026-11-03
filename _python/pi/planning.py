@@ -55,10 +55,10 @@ MONTHLY_LIST_URL = f"{BASE_URL}/search.do?action=monthlyList&searchType=Applicat
 # How many months of the list to walk. Hourly runs only need the current
 # month (the merge keeps history); --deep backfills further.
 MONTHS_NORMAL = 1
-MONTHS_DEEP = 3
+MONTHS_DEEP = 4
 
 # Keep/show a record if its received OR decision date is within this window.
-RETENTION_DAYS = 90
+RETENTION_DAYS = 120
 
 # The council's register has no coordinates, so each application is placed at the centre of its
 # postcode with postcodes.io. A record that has been looked up keeps its lat/lon (null when the

@@ -49,7 +49,7 @@ We only use your email address to send you the newsletter and the confirmation l
 
 ## Frequently Asked Questions
 
-### How Often Will I Hear from You?
+### How Often Will I Hear From You?
 
 - Once a week, on Monday morning. There are no extra emails beyond the confirmation message when you sign up.
 

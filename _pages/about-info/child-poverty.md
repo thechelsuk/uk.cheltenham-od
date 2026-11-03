@@ -9,7 +9,7 @@ type: "about"
 schema: child-poverty
 ---
 
-## Low-income families across Cheltenham
+## Low-income Families Across Cheltenham
 
 The Department for Work and Pensions publishes estimates of the number and share of children aged 0 to 15 living in low-income families, for each ward in Cheltenham. The tables compare relative and absolute low income before housing costs from FYE 2022 to FYE 2025, and relative low income after housing costs for FYE 2024 and FYE 2025.
 

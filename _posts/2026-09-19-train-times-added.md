@@ -28,6 +28,6 @@ This joins [roadworks](/cheltenham-roadworks), [car parks](/cheltenham-car-parks
 
 - Regularly throughout the day, and the time of the latest update is shown on the page. The passenger figures are annual, so they change once a year.
 
-### What If No Trains Are Showing?
+### What if No Trains Are Showing?
 
 - Each section points to National Rail's own [departures](https://www.nationalrail.co.uk/live-trains/departures/cheltenham-spa/) and [arrivals](https://www.nationalrail.co.uk/live-trains/arrivals/cheltenham-spa/) pages for Cheltenham Spa. Delays and platform changes can happen at short notice, so it is always worth checking the station screens when you arrive.

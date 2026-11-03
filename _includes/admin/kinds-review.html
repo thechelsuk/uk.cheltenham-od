@@ -1,0 +1,27 @@
+{%- comment -%}
+Every kind in _data/kinds.yml, in light and dark mode, for admin/kinds.md.
+Light panels set the light token values themselves, because the site only
+defines them for the whole page.
+{%- endcomment -%}
+{% assign groups = "news,alerts,classifieds" | split: "," %}
+{% assign modes = "light,dark" | split: "," %}
+{% for group in groups %}
+<h2>{{ group | capitalize }}</h2>
+<div class="kinds-review">
+    {% for mode in modes %}
+    <div class="kinds-review-mode" data-theme="{{ mode }}">
+        <ul class="latest-list plain-list">
+            {% for k in site.data.kinds[group] %}{% assign kind_demo = k[0] %}
+            <li class="latest-item latest-item-kind">{% include kind.html group=group kind=kind_demo part="dot" %}<span class="latest-title">{% include kind.html group=group kind=kind_demo part="label" %}<a href="#">{{ k[1].demo }}</a></span></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+<style>
+.kinds-review { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.kinds-review-mode { background: var(--bg); color: var(--text); padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 0.5rem; }
+.kinds-review-mode[data-theme="light"] { --bg: #fff; --text: #1a1a1a; --link: #1d4e89; --border: #dcdad2; --accent: #ca3393; --accent-dark: #77267e; --accent-text: #fff; --kind-alerts: #9a6100; --kind-classifieds: #4f5b66; --kind-on: #fff; }
+.kinds-review-mode a { color: var(--link); }
+</style>

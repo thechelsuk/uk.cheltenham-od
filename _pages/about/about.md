@@ -16,7 +16,7 @@ It's free, fast and independent: no pop-ups, no tracking cookies and no clickbai
 
 ## Why It Exists
 
-Useful local information is scattered across council PDFs, government spreadsheets and national sites that rarely focus on Cheltenham. This site brings it together and keeps it current, so you can check the cheapest fuel nearby, whether a street is in a flood zone or how a school was rated in a few seconds. [Read why Cheltenham Open Data was built →](/news/why-cheltenham-open-data-exists)
+Useful local information is scattered across council PDFs, government spreadsheets and national sites that rarely focus on Cheltenham. This site brings it together and keeps it current, so you can check the cheapest fuel nearby, whether a street is in a flood zone or how a school was rated in a few seconds. [Read why Cheltenham Open Data was built](/news/why-cheltenham-open-data-exists)
 
 ## Who Runs It
 
@@ -59,4 +59,5 @@ The site is built as static HTML, CSS, and a little JavaScript, so it's lightnin
 
 [![Green Web Foundation badge](https://app.greenweb.org/api/v3/greencheckimage/cheltenham-od.uk?nocache=true)](https://www.thegreenwebfoundation.org/green-web-check/?url=cheltenham-od.uk)
 
-[Check it out on Product Hunt →](https://www.producthunt.com/products/cheltenham-open-data?embed=true&utm_source=embed&utm_medium=post_embed)
+[Check it out on Product Hunt &rarr;](https://www.producthunt.com/products/cheltenham-open-data?embed=true&utm_source=embed&utm_medium=post_embed){: .pill-link}
+{: .action-row}

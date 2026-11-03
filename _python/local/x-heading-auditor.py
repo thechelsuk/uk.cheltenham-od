@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Scan a built Jekyll site (_site) for every H1/H2 heading and check it against
-standard English title-case rules (Chicago/AP style), flagging mismatches
+AP title-case rules (the site's heading style), flagging mismatches
 and suggesting a corrected version.
 
 Title case rule applied:
@@ -32,27 +32,20 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 
-# Minor words per Chicago Manual of Style / AP style convention: articles,
-# coordinating conjunctions, and prepositions of four letters or fewer.
-MINOR_WORDS = {
-    "a", "an", "the",
-    "and", "but", "or", "nor", "for", "so", "yet",
-    "as", "at", "by", "in", "of", "off", "on", "per", "to", "up", "via",
-    "vs", "from", "into", "like", "near", "onto", "over", "past", "than",
-    "with",
-}
-
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import helper  # noqa: E402  (shared AP title case)
 
 # Proper names and brands whose own capitalisation wins over the rules
 # (a minor word that is part of a name, or a lower-case brand).
-ALLOWLIST = ["Up Hatherley", "Aim Up", "parkrun", "parkruns"]
+ALLOWLIST = ["Up Hatherley", "Aim Up", "parkrun", "parkruns", "Turn On", "MP"]
 
 DATA = Path(__file__).resolve().parents[2] / "_data"
 
 
 def name_allowlist():
-    """ALLOWLIST plus every school and care home whose name starts with
-    "The", read from the site's data so new ones are covered too."""
+    """ALLOWLIST plus every school, care home and football referee name,
+    read from the site's data so new ones are covered too. These are
+    registered names, so their own capitalisation stands."""
     names = list(ALLOWLIST)
     for file, key in (("schools.json", None), ("cqc.json", "locations")):
         path = DATA / file
@@ -60,8 +53,13 @@ def name_allowlist():
             continue
         records = json.loads(path.read_text(encoding="utf-8"))
         for record in records[key] if key else records:
-            if record.get("name", "").startswith("The "):
+            if record.get("name"):
                 names.append(record["name"])
+    # Football referees are named by initial and surname ("A Backhouse"),
+    # so the initial isn't the article "a".
+    referees = DATA / "ctfc-referees.json"
+    if referees.exists():
+        names.extend(r["name"] for r in json.loads(referees.read_text(encoding="utf-8"))["referees"])
     # Longest first, so a full name wins over any shorter one inside it.
     return sorted(set(names), key=len, reverse=True)
 
@@ -77,84 +75,15 @@ def protect_names(original: str, suggestion: str) -> str:
     return suggestion
 
 
-def is_word_token(token: str) -> bool:
-    """True if token contains at least one letter (i.e. is a real word,
-    not pure punctuation like '—' or ':')."""
-    return bool(re.search(r"[A-Za-z]", token))
-
-
-def has_intentional_internal_caps(core: str) -> bool:
-    """True for words that look deliberately styled (eBay, iPhone, McDonald's,
-    GL50, USA) rather than just wrongly-cased — i.e. any uppercase letter
-    after position 0. These are left completely untouched, first letter
-    included, since forcing them to standard case breaks brand/proper-noun
-    styling."""
-    return bool(re.search(r"[A-Za-z]", core[1:])) and any(c.isupper() for c in core[1:])
-
-
-def apply_title_case(text: str) -> str:
-    """Return the title-case-corrected version of a heading.
-
-    Normal case: only the FIRST character of each word is changed —
-    everything else is left as-is, so ordinary acronyms are untouched.
-
-    All-caps heading (e.g. "THE BEST PLACES TO VISIT"): a first-letter-only
-    pass can't fix this without producing a garbled mix, so the whole
-    heading is first lowercased, then title-cased word by word.
-
-    Words with intentional internal capitals (eBay, iPhone, McDonald's,
-    GL50) are detected and left completely untouched, including their
-    first letter, rather than forced into "Ebay"/"Iphone".
-    """
-    is_all_caps_heading = text.isupper()
-
-    raw_words = text.split(" ")
-    # Numbers count as words for first/last ("Years 1 to 7"), so take
-    # positions from any token with a letter or digit.
-    word_positions = [i for i, w in enumerate(raw_words) if re.search(r"[A-Za-z0-9]", w)]
-    first_pos = word_positions[0] if word_positions else -1
-    last_pos = word_positions[-1] if word_positions else -1
-    corrected = []
-    after_colon = False
-
-    for position, word in enumerate(raw_words):
-        if not is_word_token(word):
-            corrected.append(word)
-            # A number or symbol after a colon takes the "first word" slot.
-            after_colon = word.endswith(":") or (after_colon and not re.search(r"[0-9]", word))
-            continue
-
-        m = re.match(r"^(\W*)([A-Za-z][\w'-]*)(\W*)$", word)
-        if not m:
-            corrected.append(word)
-            continue
-        lead, core, trail = m.groups()
-
-        # An all-caps heading gives us no signal about intended internal
-        # styling (GL50 vs Gl50 look identical once shouted), so only
-        # apply the "leave it alone" exception for mixed-case source text.
-        if not is_all_caps_heading and has_intentional_internal_caps(core):
-            corrected.append(lead + core + trail)
-            continue
-
-        work_core = core.lower() if is_all_caps_heading else core
-        core_lower = work_core.lower()
-        # By position, not by text, so a minor word that also happens to
-        # start or end the heading isn't capitalised everywhere. The first
-        # word after a colon starts a new phrase, so it is capitalised too.
-        is_first_or_last_word = position in (first_pos, last_pos) or after_colon
-        after_colon = word.endswith(":")
-
-        should_lowercase = (core_lower in MINOR_WORDS) and not is_first_or_last_word
-
-        if should_lowercase:
-            new_core = core_lower[0] + core_lower[1:] if len(core_lower) > 1 else core_lower
-        else:
-            new_core = work_core[0].upper() + work_core[1:] if len(work_core) > 1 else work_core.upper()
-
-        corrected.append(lead + new_core + trail)
-
-    return " ".join(corrected)
+def is_quoted_headline(tag) -> bool:
+    """True for a heading that is wholly a link to another site, such as a
+    newsletter's news item: that is the other publisher's headline, quoted
+    as published, so it isn't ours to re-case."""
+    link = tag.find("a", href=True)
+    if link is None or link.get_text(strip=True) != tag.get_text(strip=True):
+        return False
+    href = link["href"]
+    return href.startswith(("http://", "https://")) and "cheltenham-od.uk" not in href
 
 
 def find_headings(html_path: Path):
@@ -163,7 +92,7 @@ def find_headings(html_path: Path):
     for tag_name in ("h1", "h2", "h3"):
         for tag in soup.find_all(tag_name):
             text = tag.get_text(strip=True)
-            if text:
+            if text and not is_quoted_headline(tag):
                 headings.append((tag_name, text))
     return headings
 
@@ -184,7 +113,7 @@ def main():
     for html_path in html_files:
         rel_path = html_path.relative_to(site_dir)
         for tag_name, text in find_headings(html_path):
-            suggestion = protect_names(text, apply_title_case(text))
+            suggestion = protect_names(text, helper.title_case(text))
             needs_fix = suggestion != text
             all_rows.append((str(rel_path), tag_name.upper(), text, suggestion, needs_fix))
 

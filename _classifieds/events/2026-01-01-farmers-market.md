@@ -2,7 +2,7 @@
 layout: about-info/advert
 type: about
 title: "Cheltenham Farmers Market"
-category: community
+category: events
 company: "Cheltenham Farmers Market"
 location: "Cheltenham"
 salary: "Free entry"

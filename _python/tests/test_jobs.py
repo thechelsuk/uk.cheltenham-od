@@ -123,6 +123,15 @@ def test_write_advert_lists_for_a_week_or_until_closing(classifieds):
     assert jobs.existing() == {"0a1b2c3d4e5f6071": path}
 
 
+def test_write_advert_title_cases_the_job_title(classifieds):
+    today = date(2026, 10, 12)
+    job = {"id": "abc", "title": "Mystery shopper - weekend work", "company": None, "location": None,
+           "salary": None, "summary": ""}
+    jobs.write_advert(job, {"hours": None, "job_type": None, "posted": None, "closes": None}, today)
+    text = (classifieds / "2026-10-12-mystery-shopper-weekend-work-abc.md").read_text(encoding="utf-8")
+    assert 'title: "Mystery Shopper - Weekend Work"' in text
+
+
 def test_write_advert_without_dates_uses_today_and_a_week(classifieds):
     today = date(2026, 10, 12)
     job = {"id": "abc", "title": "Cook", "company": None, "location": None, "salary": None, "summary": ""}

@@ -1,7 +1,7 @@
 ---
 layout: "about-info/advert"
 type: "about"
-title: "Employment Locum - 15-20 hours per week - 3+ months - remote working"
+title: "Employment Locum - 15-20 Hours per Week - 3+ Months - Remote Working"
 category: "jobs"
 company: "Ten-Percent.co.uk Ltd"
 location: "GL50 3DA"

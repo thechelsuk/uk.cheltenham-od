@@ -239,7 +239,7 @@ def current_disruptions(board, messages, history, now_iso):
 def build_alert_html(active):
     if not active:
         return ""
-    return helper.alert_rows("Rail", [(PAGE_PATH, "No trains at Cheltenham Spa: rail replacement buses are running")])
+    return helper.alert_rows("rail", [(PAGE_PATH, "No trains at Cheltenham Spa: rail replacement buses are running")])
 
 
 def build_atom_items(history, page_url):

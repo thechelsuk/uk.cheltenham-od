@@ -2,7 +2,7 @@
 layout: about-info/advert
 type: about
 title: "Cheltenham parkruns: Free Weekly 5k Every Saturday"
-category: community
+category: events
 company: "parkrun"
 location: "Pittville Park and King George V Playing Field, Cheltenham"
 salary: "Free"

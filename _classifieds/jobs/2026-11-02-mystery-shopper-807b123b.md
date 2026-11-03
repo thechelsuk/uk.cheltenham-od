@@ -1,7 +1,7 @@
 ---
 layout: "about-info/advert"
 type: "about"
-title: "Mystery shopper"
+title: "Mystery Shopper"
 category: "jobs"
 company: "Mystery Customer Evaluations"
 location: "Cheltenham"

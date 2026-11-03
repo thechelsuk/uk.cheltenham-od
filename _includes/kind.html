@@ -1,0 +1,25 @@
+{%- comment -%}
+The kind marker: a coloured circle with an icon, and the kind's label in
+capitals. Kinds and their icons live in _data/kinds.yml; each group's colour
+is set in assets/style.css.
+  post:  a news post (or page); its kind is its `kind:`, or analysis when it
+         has a `finding:`, or update
+  group: news, alerts or classifieds, with
+  kind:  the kind's key in that group (used when there is no post)
+  part:  "dot" for the circle, "label" for "Label:" before a title, or
+         leave it out for the circle and the label together
+{%- endcomment -%}
+{%- if include.post -%}
+{%- assign kind_group = "news" -%}
+{%- if include.post.kind -%}{%- assign kind_key = include.post.kind -%}{%- elsif include.post.finding -%}{%- assign kind_key = "analysis" -%}{%- else -%}{%- assign kind_key = "update" -%}{%- endif -%}
+{%- else -%}
+{%- assign kind_group = include.group -%}
+{%- assign kind_key = include.kind -%}
+{%- endif -%}
+{%- assign kind_data = site.data.kinds[kind_group][kind_key] -%}
+{%- unless include.part == "label" -%}
+<span class="kind-dot kind-{{ kind_group }}"><svg class="kind-icon" viewBox="{{ kind_data.viewbox | default: '0 0 24 24' }}" aria-hidden="true" focusable="false"><path fill="currentColor" d="{{ kind_data.icon }}"></path></svg></span>
+{%- endunless -%}
+{%- unless include.part == "dot" -%}
+<span class="kind-label kind-{{ kind_group }}">{{ kind_data.label }}{% if include.part == "label" %}:{% endif %}</span>
+{%- endunless -%}

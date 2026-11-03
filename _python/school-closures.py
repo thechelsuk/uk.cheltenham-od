@@ -123,7 +123,7 @@ def headline(closure):
 
 
 def build_alert_html(closures):
-    return helper.alert_rows("School", [(PAGE_PATH, headline(c)) for c in closures])
+    return helper.alert_rows("school", [(PAGE_PATH, headline(c)) for c in closures])
 
 
 def build_atom_items(records, history_url):

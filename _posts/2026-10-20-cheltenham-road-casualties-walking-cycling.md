@@ -51,7 +51,7 @@ Most of Cheltenham's roads are 30mph, so most collisions happen on them. The sma
 - **Caveats:** Only collisions reported to the police are included, and many slight injuries, especially to cyclists, are never reported. Gloucestershire Constabulary has classified severity from the injuries recorded since November 2015, so all five years are counted the same way. That system tends to record more injuries as serious than older methods, so compare serious casualty figures with forces or years using a different system with care. 2021 traffic was lower than usual because of Covid restrictions.
 - **Data and updates:** The collisions page adds each year once the Department for Transport publishes final figures, now each July. For questions or interviews, use the [contact page](/contact).
 
-Data from the Department for Transport road safety data (STATS19), published under the Open Government Licence v3.0. Last updated 2026-10-05.
+{% include attribution.html text="Data from the Department for Transport road safety data (STATS19), published under the Open Government Licence v3.0. Last updated 2026-10-05." %}
 
 {% include cite-this.html %}
 

@@ -29,7 +29,7 @@ confusion, just a clean view of what's ahead.
 - Siri Shortcuts and deep-link support — just ask Siri to "export my schedule
   from Tomoz"
 
-## Why you'll like It
+## Why You'll Like It
 
 - Clean, distraction-free interface with smooth animations and no learning curve
 - Custom colour themes and tint colours, plus Light, Dark and System modes

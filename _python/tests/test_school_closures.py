@@ -110,7 +110,7 @@ def test_alert_is_empty_with_no_closures():
 
 def test_alert_lists_each_closure_with_its_date_written_out():
     html = sc.build_alert_html([{"school": "Springbank Primary Academy", "status": "Closed", "date": "2026-10-23"}])
-    assert 'latest-pill-announcements">School</span>' in html
+    assert 'group="alerts" kind="school" part="dot"' in html
     assert '<a href="/cheltenham-schools/closures">Springbank Primary Academy closed on Friday 23 October 2026</a>' in html
 
 

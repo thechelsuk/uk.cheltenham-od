@@ -71,15 +71,18 @@ STATS = [
     ("red_cards", "HR", "AR"),
     ("booking_points", "HBP", "ABP"),
 ]
+# The stats the pages show, in order. Woodwork, offsides and booking points are
+# still read into the match data above, but football-data only recorded them
+# in 2000-01 and 2001-02, so they are left off every page.
 STAT_LABELS = {
-    "shots": "Shots", "shots_on_target": "Shots on target", "woodwork": "Hit the woodwork", "corners": "Corners",
-    "fouls": "Fouls", "free_kicks_conceded": "Free kicks conceded", "offsides": "Offsides",
-    "yellow_cards": "Yellow cards", "red_cards": "Red cards", "booking_points": "Booking points",
+    "shots": "Shots", "shots_on_target": "Shots on target", "corners": "Corners",
+    "fouls": "Fouls", "free_kicks_conceded": "Free kicks conceded",
+    "yellow_cards": "Yellow cards", "red_cards": "Red cards",
 }
 # Short column headings for the stats, explained in a key under each table.
 STAT_ABBR = {
-    "shots": "Sh", "shots_on_target": "SoT", "woodwork": "HW", "corners": "Co", "fouls": "Fo",
-    "free_kicks_conceded": "FKC", "offsides": "Off", "yellow_cards": "YC", "red_cards": "RC", "booking_points": "BP",
+    "shots": "Sh", "shots_on_target": "SoT", "corners": "Co", "fouls": "Fo",
+    "free_kicks_conceded": "FKC", "yellow_cards": "YC", "red_cards": "RC",
 }
 
 

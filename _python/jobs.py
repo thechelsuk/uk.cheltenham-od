@@ -151,7 +151,8 @@ def write_advert(job, details, today):
     front = {
         "layout": "about-info/advert",
         "type": "about",
-        "title": job["title"],
+        # AP title case, the site's heading style: GOV.UK titles are often lower case.
+        "title": helper.title_case(job["title"]),
         "category": "jobs",
         "company": job["company"],
         "location": job["location"],

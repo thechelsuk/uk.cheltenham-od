@@ -48,7 +48,7 @@ More people came to Gloucestershire's emergency departments than in any Septembe
 | 2025      |      14,045 |               62.8% |           281 |
 | 2026      |      14,773 |               61.8% |           454 |
 
-Data from NHS England, A&E Attendances and Emergency Admissions, published under the Open Government Licence v3.0. Last updated 2026-10-09.
+{% include attribution.html text="Data from NHS England, A&E Attendances and Emergency Admissions, published under the Open Government Licence v3.0. Last updated 2026-10-09." %}
 
 ## Long Waits Are Rising Again
 
@@ -73,7 +73,7 @@ Emergency admissions through the trust's A&E departments were slightly lower tha
 
 - Gloucestershire Hospitals' emergency departments had 14,773 attendances in September 2026, the most for any September since at least 2021, and 61.8% of patients were seen within four hours.
 
-### What Is a 12-Hour Wait from Decision to Admit?
+### What Is a 12-Hour Wait From Decision to Admit?
 
 - It counts patients who waited more than 12 hours for a hospital bed after a doctor decided they needed to be admitted. The time already spent in A&E before that decision is not included.
 

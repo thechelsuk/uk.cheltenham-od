@@ -1,6 +1,6 @@
 ---
 layout: posts/posts
-title: Updating Food Banks with a Map and Six Nearby Food Banks
+title: Updating Food Banks With a Map and Six Nearby Food Banks
 type: cod
 description: The food banks page now covers six food banks and 37 donation points, with a map and a page for each.
 seo: See what six food banks near Cheltenham need right now, what not to donate and where to drop off, with a map, opening hours and contact details.
@@ -45,6 +45,6 @@ Each food bank has its own page: [Cheltenham Foodbank](/cheltenham-foodbank-need
 
 - Each food bank's page lists its donation points, such as supermarket collection points and community groups, with addresses, opening hours, wheelchair access and a map pin for each. Check the opening hours before you go.
 
-### Do I Need a Referral to Get Help from a Food Bank?
+### Do I Need a Referral to Get Help From a Food Bank?
 
 - Many food banks ask for a referral from a professional such as a GP, school or advice charity. Contact the food bank first to check how it works.

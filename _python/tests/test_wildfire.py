@@ -83,7 +83,7 @@ def test_alert_names_today_or_tomorrow_at_very_high_or_above():
         {"date": "2026-07-22", "rating": 5, "label": "Exceptional"},
     ]
     html = wildfire.build_alert_html(days)
-    assert 'latest-pill-announcements">Wildfire</span>' in html
+    assert 'group="alerts" kind="wildfire" part="dot"' in html
     assert "on Tuesday 21 July 2026" in html
     assert "Exceptional (5 of 5)" in html
     # only today and tomorrow make the homepage, not the days after

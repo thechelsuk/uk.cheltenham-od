@@ -48,7 +48,7 @@ The gap held in both of the last two borough elections. Turnout rose everywhere 
 - **Caveats:** In 2026 one seat was contested in each ward, while all 40 seats were contested in 2024. Turnout depends on many things besides deprivation, including the age of residents, how many people have recently moved, students, and how close the contest was. These figures show a pattern across wards, not why any individual votes or not.
 - **Data and updates:** The wards page updates after each borough election. For questions or interviews, use the [contact page](/contact).
 
-Data from Cheltenham Borough Council and the English Indices of Deprivation 2025, published under the Open Government Licence v3.0. Last updated 2026-09-21.
+{% include attribution.html text="Data from Cheltenham Borough Council and the English Indices of Deprivation 2025, published under the Open Government Licence v3.0. Last updated 2026-09-21." %}
 
 {% include cite-this.html %}
 

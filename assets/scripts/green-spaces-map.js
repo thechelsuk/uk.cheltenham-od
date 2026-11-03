@@ -102,7 +102,7 @@
         legend.innerHTML = (data.groups || [])
             .map(function (g) {
                 return (
-                    '<span><i class="tier-swatch" style="background:' +
+                    '<span><i class="tier-swatch" style="--swatch: ' +
                     (COLOURS[g.id] || "#555555") +
                     '"></i> ' +
                     esc(g.name) +

@@ -680,6 +680,46 @@ def private_rented_epc() -> None:
     )
 
 
+def crime_missing() -> None:
+    """Crime data post: monthly crimes published on police.uk for Cheltenham,
+    with the months since February 2026 highlighted and labelled."""
+    months = sorted(load("crime/index.json")["months"], key=lambda m: m["month"])
+    rows = [
+        {
+            "month": m["month"],
+            "crimes_published": sum(n["crime_count"] for n in m["neighbourhoods"]),
+        }
+        for m in months
+    ]
+    write_csv("cheltenham-crime-data-missing", rows)
+    gap_from = "2026-02"  # first month published nearly empty
+    cats = [r["month"][:4] if r["month"].endswith("-01") else "" for r in rows]
+    stacks = [
+        [(float(r["crimes_published"]), "s1" if r["month"] >= gap_from else "mute")]
+        for r in rows
+    ]
+    marks, height = vbars(cats, stacks, value_labels=False)
+    # The highlighted bars are almost flat, so print their counts: the numbers,
+    # not the colour, carry the drop.
+    slot = (WIDTH - 68) / len(rows)
+    for i, r in enumerate(rows):
+        if r["month"] >= gap_from:
+            x = 48 + i * slot + slot / 2
+            marks.append(f'<text class="val" x="{x:.1f}" y="{76 + 220 - 6}" '
+                         f'text-anchor="middle">{r["crimes_published"]}</text>')
+    frame(
+        "cheltenham-crime-data-missing",
+        height,
+        (
+            "Crimes published on police.uk, Cheltenham",
+            f"Monthly, {rows[0]['month']} to {rows[-1]['month']}; "
+            f"months since {gap_from} highlighted",
+            "Source: Police.uk (OGL v3.0)",
+        ),
+        marks,
+    )
+
+
 # One entry per chart, keyed by the slug its files are written under. A new
 # analysis post adds a builder above and one line here.
 BUILDERS: dict[str, Callable[[], None]] = {
@@ -693,6 +733,7 @@ BUILDERS: dict[str, Callable[[], None]] = {
     "cheltenham-housing-supply-slowdown": housing_supply,
     "cheltenham-rent-share-of-pay": rents_vs_pay,
     "cheltenham-private-rented-epc": private_rented_epc,
+    "cheltenham-crime-data-missing": crime_missing,
 }
 
 

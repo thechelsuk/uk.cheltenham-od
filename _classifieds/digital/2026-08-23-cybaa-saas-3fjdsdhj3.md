@@ -1,7 +1,7 @@
 ---
 layout: about-info/advert
 type: about
-title: "Cybaa - Spot security problems across your domains, sites and email"
+title: "Cybaa - Spot Security Problems Across Your Domains, Sites and Email"
 category: digital
 company: "Cybaa"
 location: "Cheltenham"
@@ -28,7 +28,7 @@ dedicated security team. It covers domain, DNS, certificate, email, and maliciou
 - Alerts you when domains are added or removed, and when SPF, DMARC or MTA-STS configuration changes
 - Offers an API layer so you can build domain infrastructure and security checks into your own systems
 
-## Why you'll like It
+## Why You'll Like It
 
 - Built around the fundamentals, rather than trying to be an all-in-one security suite
 - Can be used as a monitoring product, a set of free security checks, or purely as an API

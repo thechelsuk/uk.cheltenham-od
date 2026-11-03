@@ -7,7 +7,7 @@ robots: noindex
 render_with_liquid: false
 ---
 
-[&larr; Site guide contents](/admin/guide)
+[&larr; Admin](/admin)
 
 New data reaches the site in one of three ways:
 

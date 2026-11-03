@@ -7,7 +7,7 @@ robots: noindex
 render_with_liquid: false
 ---
 
-[&larr; Site guide contents](/admin/guide)
+[&larr; Admin](/admin)
 
 An analysis post leads with one finding from the site's own data, framed so a journalist, campaigner or council officer can quote it and link to it. It uses `layout: analysis`, which adds:
 
@@ -99,7 +99,7 @@ Prose explaining the finding and what sits behind it.
 - **Caveats:** what the figures do not show, and anything sensitive to the choice of years.
 - **Data and updates:** how often the live page refreshes. For questions or interviews, use the [contact page](/contact).
 
-Data from SOURCE, published under the LICENCE. Last updated YYYY-MM-DD.
+{% include attribution.html text="Data from SOURCE, published under the LICENCE. Last updated YYYY-MM-DD." %}
 
 {% include cite-this.html %}
 

@@ -29,6 +29,6 @@ The page pairs a live availability map with a list of well-known hotels in the t
 
 - The list is a selection of well-known hotels in the town. The availability map alongside it shows a much wider range of hotels and rentals, including options that aren't in the list.
 
-### How up to Date Are the Prices?
+### How Up to Date Are the Prices?
 
 - Prices and availability are pulled live from the travel providers at the time you view the page, so they reflect current rates rather than a fixed figure saved on our site.

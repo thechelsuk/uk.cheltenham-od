@@ -26,7 +26,9 @@ The main recycling centre for Cheltenham is located at Wingmoor Farm, half mile 
 
 - Wingmoor Farm HRC Bishop's Cleeve, Nr Cheltenham, Gloucestershire, GL52 7RS
 - Open 9-5 in Summer, and 10-4 in winter, seven days a week.
-- [Book a visit &rarr;](https://www.gloucestershirerecycles.com/household-recycling-centres-hrcs/car-and-van-bookings-for-an-hrc-visit/)
+
+[Book a visit &rarr;](https://www.gloucestershirerecycles.com/household-recycling-centres-hrcs/car-and-van-bookings-for-an-hrc-visit/){: .pill-link}
+{: .action-row}
 
 - [View other county household recycling centres here](https://www.gloucestershirerecycles.com/household-recycling-centres-hrcs/your-nearest-recycling-centre/)
 

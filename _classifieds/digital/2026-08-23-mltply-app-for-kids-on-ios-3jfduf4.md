@@ -31,7 +31,7 @@ feels more like a conversation than a worksheet.
 - Tracks streaks of correct answers on a local scoreboard, so it's easy to
   see improvement over time
 
-## Why you'll like It
+## Why You'll Like It
 
 - Simple, encouraging design built specifically for kids
 - Fully customisable to your child's level and preferred maths operations

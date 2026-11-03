@@ -1,7 +1,7 @@
 ---
 layout: "about-info/advert"
 type: "about"
-title: "CUSTOMER SERVICES ASSISTANT"
+title: "Customer Services Assistant"
 category: "jobs"
 company: "G4S"
 location: "Cheltenham"

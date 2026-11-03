@@ -109,7 +109,7 @@
         group.push(marker);
 
         legendHtml +=
-            '<span><span class="catchment-swatch" style="background:' +
+            '<span><span class="catchment-swatch" style="--swatch: ' +
             color +
             '"></span>' +
             (p.name || "School") +

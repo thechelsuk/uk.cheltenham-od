@@ -181,3 +181,13 @@ def test_rank_in_the_92_counts_the_clubs_in_the_divisions_above():
     assert ctfc.rank_in_92("E2", 1) == 45
     assert ctfc.rank_in_92("E3", 24) == 92
     assert ctfc.rank_in_92("EC", 1) == 93  # the National League sits outside the 92
+
+
+def test_early_season_only_stats_are_kept_in_the_data_but_not_shown():
+    # Woodwork, offsides and booking points were only recorded in 2000-01 and
+    # 2001-02, so the pages don't show them; the match data still keeps them.
+    parsed = [name for name, _, _ in ctfc.STATS]
+    for name in ("woodwork", "offsides", "booking_points"):
+        assert name in parsed
+        assert name not in ctfc.STAT_LABELS and name not in ctfc.STAT_ABBR
+    assert set(ctfc.STAT_LABELS) == set(ctfc.STAT_ABBR)

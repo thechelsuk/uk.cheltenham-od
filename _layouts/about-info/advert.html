@@ -6,8 +6,8 @@
     {% if page.expires and expiry < now %}
         <blockquote class="classifieds-expired">
             <p>This classified advert has expired and is no longer available.
-                {%- if cat %} <a href="{{ page.parent }}#{{ cat.value }}">See the live adverts in {{ cat.label }}
-                    &rarr;</a>{% else %} <a href="{{ page.parent }}">See the live classifieds &rarr;</a>{% endif %}</p>
+                {%- if cat %} <a href="{{ page.parent }}#{{ cat.value }}">See the live adverts in {{ cat.label }}</a>.
+                {%- else %} <a href="{{ page.parent }}">See the live classifieds</a>.{% endif %}</p>
         </blockquote>
         {% else %}
 
@@ -44,7 +44,7 @@
 
         <footer class="classifieds-footer">
             {%- if page.apply_url -%}
-            <p><a class="single-apply" href="{{ page.apply_url }}?ref=cheltenham-od" rel="nofollow noopener"
+            <p class="action-row"><a class="pill-link" href="{{ page.apply_url }}?ref=cheltenham-od" rel="nofollow noopener"
                     target="_blank">{{ page.apply_text}} &rarr;</a></p>
             {%- elsif page.contact_email -%}
             <p><strong>Contact:</strong> <a href="mailto:{{ page.contact_email }}">{{ page.contact_email }}</a></p>

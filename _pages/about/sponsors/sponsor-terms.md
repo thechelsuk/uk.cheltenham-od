@@ -27,7 +27,7 @@ _Last updated: September 2026._
   page, the homepage. One slot only.
 - Either tier includes optional editorial: write your own post in your own
   words (I have editorial rights to edit) published permanently as a site
-  announcement, which you're free to share on our socials — or, if you'd
+  update, which you're free to share on our socials — or, if you'd
   rather keep it simple, I'll write you a short thank-you post instead.
 - No more than one sponsor card appears on any one page.
 - Your link is marked `rel="sponsored"`, in line with Google's guidance.

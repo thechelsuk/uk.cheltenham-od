@@ -117,7 +117,7 @@
                     {% for m in r.matches %}
                     <tr>
                         <td class="date" data-val="{{ m.date }}">{{ m.date }}</td>
-                        <td data-val="{{ m.season }}"><a href="/cheltenham-sports/cheltenham-town-fc/record/{{ m.season }}">{{ m.season_display }}</a></td>
+                        <td class="season" data-val="{{ m.season }}"><a href="/cheltenham-sports/cheltenham-town-fc/record/{{ m.season }}">{{ m.season_display }}</a></td>
                         <td><a href="/cheltenham-sports/cheltenham-town-fc/vs/{{ m.opponent_slug }}">{{ m.opponent }}</a></td>
                         <td>{{ m.venue }}</td>
                         <td class="number">{{ m.gf }}</td>

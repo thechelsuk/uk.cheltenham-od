@@ -14,13 +14,13 @@
         </header>
         {% include section-links.html %}
 
-        <h2>Latest News from Cheltenham Open Data</h2>
+        <h2>Latest News From Cheltenham Open Data</h2>
 
         <ul class="latest-list plain-list">
             {% for post in items %}
-            <li class="latest-item">
-                {% if post.finding %}<a href="/news" class="latest-pill latest-pill-events">Analysis</a>{% else %}<a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>{% endif %}
-                <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
+            <li class="latest-item latest-item-kind">
+                {% include kind.html post=post part="dot" %}
+                <span class="latest-title">{% include kind.html post=post part="label" %}<a href="{{ post.url }}">{{ post.title }}</a></span>
                 {% assign words = post.content | number_of_words %}
                 <span class="latest-date">{% if words >= 1000 %}{{ words | divided_by: 1000 }},{{ words | modulo: 1000 | prepend: "00" | slice: -3, 3 }}{% else %}{{ words }}{% endif %} words on
                     {{ post.date | date: "%-d %B %Y" }}</span>

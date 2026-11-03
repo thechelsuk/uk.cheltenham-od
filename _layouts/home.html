@@ -97,13 +97,13 @@
             </div>
         </div>
 
-        <h2>Latest News from Cheltenham Open Data</h2>
+        <h2>Latest News From Cheltenham Open Data</h2>
         <ul class="latest-list plain-list">
             {% assign latest = site.posts | sort: "date" | reverse %}
             {% for post in latest limit: 5 %}
-            <li class="latest-item">
-                {% if post.finding %}<a href="/news" class="latest-pill latest-pill-events">Analysis</a>{% else %}<a href="/news" class="latest-pill latest-pill-announcements">Announcements</a>{% endif %}
-                <a href="{{ post.url }}" class="latest-title">{{ post.title }}</a>
+            <li class="latest-item latest-item-kind">
+                {% include kind.html post=post part="dot" %}
+                <span class="latest-title">{% include kind.html post=post part="label" %}<a href="{{ post.url }}">{{ post.title }}</a></span>
                 <span class="latest-date">{{ post.date | date: "%-d %B %Y" }}</span>
             </li>
             {% endfor %}
@@ -119,11 +119,9 @@
                 <ul class="latest-list plain-list">
                     {% assign latest_ads = live_classifieds | sort: "date" | reverse %}
                     {% for ad in latest_ads limit: 3 %}
-                    {% assign ad_cat = site.classified_categories | where: "value", ad.category | first %}
-                    <li class="latest-item">
-                        <a href="/cheltenham-classifieds#{{ ad.category }}" class="latest-pill latest-pill-announcements">{{ ad_cat.label |
-                            default: "Classifieds" }}</a>
-                        <a href="{{ ad.url }}" class="latest-title">{{ ad.title }}</a>
+                    <li class="latest-item latest-item-kind">
+                        {% include kind.html group="classifieds" kind=ad.category part="dot" %}
+                        <span class="latest-title">{% include kind.html group="classifieds" kind=ad.category part="label" %}<a href="{{ ad.url }}">{{ ad.title }}</a></span>
                         <span class="latest-date">{{ ad.date | date: "%-d %B %Y" }}</span>
                     </li>
                     {% endfor %}

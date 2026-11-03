@@ -96,15 +96,18 @@ classified_categories:
   - value: "property"
     label: "Property"
     description: "Private property sales, lets and places to rent etc"
-  - value: "community"
-    label: "Community notices"
-    description: "Local community events and notices"
+  - value: "events"
+    label: "Events"
+    description: "Local events, markets and things to do"
   - value: "wanted"
     label: "Wanted"
     description: "Wanted items to purchase or collect for free"
   - value: "digital"
     label: "Digital"
     description: "Sites, applications, mobile apps, Software as a Service (SaaS) products"
+  - value: "notices"
+    label: "Notices"
+    description: "Personal notices, such as death announcements and lost or found pets"
 
 feed:
   collections:
@@ -137,7 +140,7 @@ feeds:
     link: /feeds/main.xml
     group: From Cheltenham Open Data
     key: true
-    description: "New pages, site announcements and our own analysis of local data."
+    description: "New pages, site updates, monthly roundups and our own analysis of local data."
   - name: Cheltenham Classifieds
     link: /feeds/classifieds.xml
     group: From Cheltenham Open Data

@@ -1,0 +1,8 @@
+{%- comment -%}
+Where data comes from: its source, licence and when it was last updated, as a
+list item with the accent square marker, in small text. Data pages write the
+same line as <p class="attribution"><small> under "About This Data".
+  text: the line, in Markdown, e.g. "Data from [Police.uk](https://data.police.uk/), published under the Open Government Licence v3.0."
+In Markdown: {% include attribution.html text="..." %}
+{%- endcomment -%}
+<ul class="attribution"><li><small>{{ include.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</small></li></ul>

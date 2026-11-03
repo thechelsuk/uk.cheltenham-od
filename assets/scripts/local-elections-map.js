@@ -72,7 +72,7 @@
             .sort()
             .map(function (party) {
                 var label = party === "Split" ? "Split between parties" : escapeHtml(party);
-                return '<span><i class="tier-swatch" style="background:' + colourOf(party) + '"></i> ' + label + "</span>";
+                return '<span><i class="tier-swatch" style="--swatch: ' + colourOf(party) + '"></i> ' + label + "</span>";
             })
             .join("");
     }

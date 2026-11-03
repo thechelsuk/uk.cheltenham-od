@@ -232,7 +232,7 @@ def test_a_disruption_keeps_its_id_while_it_lasts_and_a_new_one_gets_todays_date
 def test_the_homepage_alert_only_shows_while_a_disruption_is_live():
     assert rail.build_alert_html([]) == ""
     html = rail.build_alert_html([{"disruption_id": "x", "message": "m"}])
-    assert 'latest-pill-announcements">Rail</span>' in html and 'href="/cheltenham-train-times"' in html
+    assert 'group="alerts" kind="rail" part="dot"' in html and 'href="/cheltenham-train-times"' in html
 
 
 def test_feed_entries_are_dated_by_start_then_by_end():

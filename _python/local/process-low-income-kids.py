@@ -43,19 +43,19 @@ TEXT_P_TAG = f"{{{TEXT_NS}}}p"
 SERIES = (
     {
         "key": "relative_ahc",
-        "label": "Relative low income after housing costs",
+        "label": "Relative Low Income After Housing Costs",
         "description": "Children in families with income below the relative low-income threshold after housing costs are deducted.",
         "sheet": "4_AHC_Relative_Ward",
     },
     {
         "key": "relative_bhc",
-        "label": "Relative low income before housing costs",
+        "label": "Relative Low Income Before Housing Costs",
         "description": "Children in families with income below the relative low-income threshold before housing costs are deducted.",
         "sheet": "11_BHC_Relative_Ward",
     },
     {
         "key": "absolute_bhc",
-        "label": "Absolute low income before housing costs",
+        "label": "Absolute Low Income Before Housing Costs",
         "description": "Children in families with income below the absolute low-income threshold before housing costs are deducted.",
         "sheet": "12_BHC_Absolute_Ward",
     },

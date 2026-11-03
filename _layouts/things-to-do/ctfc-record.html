@@ -47,7 +47,7 @@
                 <tbody>
                     {% for s in ctfc.seasons %}
                     <tr>
-                        <td data-val="{{ s.season }}">{% if s.has_table %}<a href="/cheltenham-sports/cheltenham-town-fc/record/{{ s.season }}">{{ s.season_display }}</a>{% else %}{{ s.season_display }}{% endif %}{% unless s.complete %} (so far){% endunless %}{% if s.sorted_by == "points per game" %} (by PPG){% endif %}</td>
+                        <td class="season" data-val="{{ s.season }}">{% if s.has_table %}<a href="/cheltenham-sports/cheltenham-town-fc/record/{{ s.season }}">{{ s.season_display }}</a>{% else %}{{ s.season_display }}{% endif %}{% unless s.complete %} (so far){% endunless %}{% if s.sorted_by == "points per game" %} (by PPG){% endif %}</td>
                         <td>{{ s.division }}</td>
                         <td class="number" data-val="{{ s.position }}">{{ s.position }}</td>
                         <td class="number">{{ s.played }}</td>

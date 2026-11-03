@@ -218,13 +218,16 @@ def alert_date(value):
     return f"{day} ({match[2]})" if match[2] else day
 
 
-def alert_rows(label, rows):
+def alert_rows(kind, rows):
     """Homepage alert rows for one alert type: each (url, text) as a list
-    item with a pill naming the type. _includes/alerts.html puts every type's
-    rows under one "Alerts" heading, and leaves it out when there are none."""
+    item with the alert's kind marker (circle, icon and label), where kind is
+    its key under `alerts` in _data/kinds.yml. _includes/alerts.html puts
+    every type's rows under one "Alerts" heading, and leaves it out when
+    there are none."""
+    marker = '{{% include kind.html group="alerts" kind="{}" part="{}" %}}'
     return "\n".join(
-        f'  <li class="latest-item"><span class="latest-pill latest-pill-announcements">{label}</span>'
-        f'<span class="latest-title"><a href="{url}">{text}</a></span></li>'
+        f'  <li class="latest-item latest-item-kind">{marker.format(kind, "dot")}'
+        f'<span class="latest-title">{marker.format(kind, "label")}<a href="{url}">{text}</a></span></li>'
         for url, text in rows
     )
 
@@ -592,3 +595,97 @@ def write_digest_atom(digests, filename, permalink_path, feed_title, feed_subtit
     front_matter = f"---\nlayout: empty\npermalink: {permalink_path}\n---\n"
     with open(filename, "w") as f:
         f.write(front_matter + xml_pretty)
+
+
+# Minor words in AP style, the site's heading style: articles, and
+# conjunctions and prepositions of three letters or fewer. Words of four or
+# more letters are capitalised ("From", "With", "Into"), except "over",
+# which the site keeps lower case ("Employment Rates over Time"). "up" is
+# left out: in a heading it is nearly always part of a phrasal verb ("Back
+# Up", "Add Up"), which AP capitalises.
+MINOR_WORDS = {
+    "a", "an", "the",
+    "and", "but", "or", "nor", "for", "so", "yet", "if",
+    "as", "at", "by", "in", "of", "off", "on", "per", "to", "via",
+    "vs", "over",
+}
+
+
+def is_word_token(token: str) -> bool:
+    """True if token contains at least one letter (i.e. is a real word,
+    not pure punctuation like '—' or ':')."""
+    return bool(re.search(r"[A-Za-z]", token))
+
+
+def has_intentional_internal_caps(core: str) -> bool:
+    """True for words that look deliberately styled (eBay, iPhone, McDonald's,
+    GL50, USA) rather than just wrongly-cased — i.e. any uppercase letter
+    after position 0. These are left completely untouched, first letter
+    included, since forcing them to standard case breaks brand/proper-noun
+    styling."""
+    return bool(re.search(r"[A-Za-z]", core[1:])) and any(c.isupper() for c in core[1:])
+
+
+def title_case(text: str) -> str:
+    """Return the title-case-corrected version of a heading.
+
+    Normal case: only the FIRST character of each word is changed —
+    everything else is left as-is, so ordinary acronyms are untouched.
+
+    All-caps heading (e.g. "THE BEST PLACES TO VISIT"): a first-letter-only
+    pass can't fix this without producing a garbled mix, so the whole
+    heading is first lowercased, then title-cased word by word.
+
+    Words with intentional internal capitals (eBay, iPhone, McDonald's,
+    GL50) are detected and left completely untouched, including their
+    first letter, rather than forced into "Ebay"/"Iphone".
+    """
+    is_all_caps_heading = text.isupper()
+
+    raw_words = text.split(" ")
+    # Numbers count as words for first/last ("Years 1 to 7"), so take
+    # positions from any token with a letter or digit.
+    word_positions = [i for i, w in enumerate(raw_words) if re.search(r"[A-Za-z0-9]", w)]
+    first_pos = word_positions[0] if word_positions else -1
+    last_pos = word_positions[-1] if word_positions else -1
+    corrected = []
+    after_colon = False
+
+    for position, word in enumerate(raw_words):
+        if not is_word_token(word):
+            corrected.append(word)
+            # A number or symbol after a colon takes the "first word" slot.
+            after_colon = word.endswith(":") or (after_colon and not re.search(r"[0-9]", word))
+            continue
+
+        m = re.match(r"^(\W*)([A-Za-z][\w'’-]*)(\W*)$", word)
+        if not m:
+            corrected.append(word)
+            continue
+        lead, core, trail = m.groups()
+
+        # An all-caps heading gives us no signal about intended internal
+        # styling (GL50 vs Gl50 look identical once shouted), so only
+        # apply the "leave it alone" exception for mixed-case source text.
+        if not is_all_caps_heading and has_intentional_internal_caps(core):
+            corrected.append(lead + core + trail)
+            continue
+
+        work_core = core.lower() if is_all_caps_heading else core
+        core_lower = work_core.lower()
+        # By position, not by text, so a minor word that also happens to
+        # start or end the heading isn't capitalised everywhere. The first
+        # word after a colon starts a new phrase, so it is capitalised too.
+        is_first_or_last_word = position in (first_pos, last_pos) or after_colon
+        after_colon = word.endswith(":")
+
+        should_lowercase = (core_lower in MINOR_WORDS) and not is_first_or_last_word
+
+        if should_lowercase:
+            new_core = core_lower[0] + core_lower[1:] if len(core_lower) > 1 else core_lower
+        else:
+            new_core = work_core[0].upper() + work_core[1:] if len(work_core) > 1 else work_core.upper()
+
+        corrected.append(lead + new_core + trail)
+
+    return " ".join(corrected)

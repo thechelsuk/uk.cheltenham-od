@@ -119,7 +119,7 @@ def build_alert_html(incidents):
             reported = helper.alert_date(incident["date_of_reported_fault"])
             when = f", reported {reported}" if reported else ""
         rows.append(("/cheltenham-power-cuts", f"{label} near {area}{when}"))
-    return helper.alert_rows("Power cut", rows)
+    return helper.alert_rows("power-cut", rows)
 
 
 def build_atom_items(history_records, page_url):

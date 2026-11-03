@@ -49,7 +49,7 @@
         {% assign near = parkrun.events | where_exp: "e", "e.distance_miles < 2" %}
         <h2>Frequently Asked Questions</h2>
 
-        <h3>How Many Parkruns Are There near Cheltenham?</h3>
+        <h3>How Many Parkruns Are There Near Cheltenham?</h3>
         <ul>
             <li>{{ parkrun.events.size }} within {{ parkrun.radius_miles }} miles of the town centre, {{ near.size }} of them in Cheltenham itself, nearest first in the table above.</li>
         </ul>

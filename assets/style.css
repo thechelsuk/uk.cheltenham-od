@@ -43,6 +43,13 @@ html {
     --font-sans: "Archivo", var(--font-system), "Gill Sans", sans-serif;
     --saving: #00732b;
     --saving-bg: rgb(26 127 55 / 10%);
+
+    /* Kind marker colours, one per group (_data/kinds.yml). News uses the
+       theme's accent tokens; these two are the other groups. --kind-on is
+       the icon colour on them. */
+    --kind-alerts: #9a6100;
+    --kind-classifieds: #4f5b66;
+    --kind-on: #fff;
 }
 
 [data-theme="dark"] {
@@ -65,6 +72,9 @@ html {
     --secondary: #a2a0d4;
     --saving: #6fd88a;
     --saving-bg: rgb(111 216 138 / 12%);
+    --kind-alerts: #f0b84a;
+    --kind-classifieds: #b7c2cc;
+    --kind-on: #14171a;
 }
 
 body {
@@ -93,7 +103,7 @@ body {
 
 #outer-wrapper {
     min-height: 80%;
-    margin-bottom: -40px;
+    margin-bottom: -2.5rem;
 }
 
 #wrapper {
@@ -535,7 +545,7 @@ pre > code {
     font-size: 2rem;
     font-weight: 700;
     padding-bottom: 0;
-    margin-right: 8px;
+    margin-right: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -644,8 +654,8 @@ pre > code {
 }
 
 .nav-toggle svg {
-    width: 14px;
-    height: 14px;
+    width: 0.875em;
+    height: 0.875em;
     stroke: currentcolor;
     fill: none;
     stroke-width: 2;
@@ -729,8 +739,8 @@ pre > code {
    reflects the current page's theme, not each group's. */
 .nav-category-swatch {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 0.8em;
+    height: 0.8em;
     flex: 0 0 auto;
     border: 1px solid #000;
     background: var(--accent);
@@ -798,8 +808,8 @@ pre > code {
 }
 
 .theme-toggle svg {
-    width: 18px;
-    height: 18px;
+    width: 1.125em;
+    height: 1.125em;
     display: none;
     fill: none;
 }
@@ -918,12 +928,33 @@ table[data-sortable] th.sort-desc::after {
     opacity: 0.8;
 }
 
-.data-table .number {
+/* A number column: right-aligned, in any table. Markdown tables get it from
+   _plugins/table_alignment.rb for a right-aligned (--:) column. */
+td.number,
+th.number {
     text-align: right;
 }
 
-/* The key under a data table, explaining its column headings: a list item with an accent bullet. */
+/* The key under a data table or chart, explaining its column headings: a
+   list item with the accent circle marker (_includes/key.html). */
 .table-key li::marker {
+    color: var(--accent);
+}
+
+/* Where data comes from (source, licence, last updated): the accent square
+   marker. Posts use _includes/attribution.html, a list; data pages write
+   <p class="attribution">, shown as the same square-marked line. */
+.attribution {
+    list-style-type: square;
+}
+
+p.attribution {
+    display: list-item;
+    margin-left: 2.5rem;
+}
+
+.attribution::marker,
+.attribution li::marker {
     color: var(--accent);
 }
 
@@ -933,7 +964,9 @@ table[data-sortable] th.sort-desc::after {
 .data-table .category,
 .data-table .rating-date,
 .data-table .listing,
-.data-table .action {
+.data-table .action,
+.data-table .season,
+.data-table .referee {
     white-space: nowrap;
 }
 
@@ -941,29 +974,12 @@ table[data-sortable] th.sort-desc::after {
     margin: 1em 0 2em;
 }
 
-.single-apply {
-    display: inline-block;
-    background: var(--accent);
-    color: var(--accent-text);
-    padding: 0.6em 1.4em;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.single-apply:hover,
-.single-apply:focus {
-    background: var(--accent-hover, var(--accent-dark));
-    color: var(--accent-text);
-    text-decoration: none;
-}
-
 /* ================================
    Maps
    ================================ */
 
 .map-canvas {
-    height: 600px;
+    height: 37.5rem;
     border-radius: 8px;
 }
 
@@ -984,7 +1000,7 @@ iframe.map-canvas {
 .map-legend > span {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 0.44em;
 }
 
 /* Table filter bar, built by table-filter.js from a page's "filters" front
@@ -1205,7 +1221,7 @@ iframe.map-canvas {
 }
 
 .finding-figure {
-    max-width: 800px;
+    max-width: 50rem;
     margin: 1.5em 0;
 }
 
@@ -1220,7 +1236,7 @@ iframe.map-canvas {
 .classifieds-image img {
     display: block;
     width: 100%;
-    max-width: 360px;
+    max-width: 22.5rem;
     height: auto;
     border-radius: 8px;
 }
@@ -1230,7 +1246,7 @@ iframe.map-canvas {
     .classifieds-image {
         float: right;
         width: 36%;
-        max-width: 340px;
+        max-width: 21.25rem;
         margin: 0.5em 0 1.5em 2.5em;
     }
 
@@ -1244,7 +1260,7 @@ iframe.map-canvas {
 }
 
 .contact-form-wrapper {
-    max-width: 832px;
+    max-width: 52rem;
     margin: 2em auto;
     font-family: var(--font-sans);
     color: var(--text);
@@ -1286,7 +1302,8 @@ iframe.map-canvas {
 }
 
 .submit-btn:hover,
-.submit-btn:focus {
+.submit-btn:focus,
+.submit-btn:active {
     background: var(--accent-hover, var(--accent-dark));
     border-color: var(--accent-hover, var(--accent-dark));
 }
@@ -1302,7 +1319,7 @@ iframe.map-canvas {
 #chart-ftb-static,
 #chart-mortgagecash {
     margin: 1em 0 2em;
-    min-height: 400px;
+    min-height: 25rem;
 }
 
 label {
@@ -1333,17 +1350,17 @@ textarea:focus {
 }
 
 input[type="number"] {
-    width: 100px;
+    width: 6.25rem;
 }
 
 input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
 }
 
 textarea {
     width: 100%;
-    min-height: 150px;
+    min-height: 9.375rem;
     resize: vertical;
     font-family: var(--font-mono);
     line-height: 1.4;
@@ -1385,7 +1402,7 @@ textarea {
 
 .form-field textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 7.5rem;
     font-family: var(--font-sans);
 }
 
@@ -1645,9 +1662,9 @@ button:disabled,
 }
 
 .footer-theme-toggle-icon svg {
-    width: 18px;
-    height: 18px;
-    flex: 0 0 18px;
+    width: 1.125em;
+    height: 1.125em;
+    flex: 0 0 1.125em;
 }
 
 .nav-toggle[aria-expanded="true"] svg {
@@ -1669,12 +1686,12 @@ button:disabled,
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .sponsor-card a {
     display: flex;
-    gap: 12px;
+    gap: 0.75em;
     align-items: center;
     text-decoration: none;
     color: var(--text);
@@ -1691,8 +1708,8 @@ button:disabled,
 }
 
 .sponsor-card__logo {
-    width: 48px;
-    height: 48px;
+    width: 3rem;
+    height: 3rem;
     object-fit: contain;
     flex: none;
     border: none;
@@ -1702,7 +1719,7 @@ button:disabled,
 
     /* keep dark logos legible in dark mode */
     border-radius: 4px;
-    padding: 4px;
+    padding: 0.25rem;
 }
 
 .sponsor-card__text {
@@ -1802,8 +1819,8 @@ button:disabled,
     }
 
     .footer {
-        line-height: 30px;
-        padding-top: 10px;
+        line-height: 2.2;
+        padding-top: 0.625rem;
     }
 
     .footer .wrapper {
@@ -1828,10 +1845,21 @@ button:disabled,
 
 .catchment-swatch {
     display: inline-block;
+    background: var(--swatch);
     width: 0.85em;
     height: 0.85em;
     border-radius: 50%;
     flex-shrink: 0;
+}
+
+/* A data colour passed in as --swatch: the newest period on the town growth
+   map is outlined, and the ward map's layer list shows a coloured dot. */
+.tier-swatch-newest {
+    outline: 2px solid #0f172a;
+}
+
+.map-dot {
+    color: var(--swatch);
 }
 
 .home-hero-grid {
@@ -1904,8 +1932,8 @@ body.widget-frame {
 
 .info-card__icon {
     flex: none;
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
     border: none;
 
     /* OpenWeatherMap's cloud icons are pale grey linework that all but disappears on a light
@@ -1980,30 +2008,64 @@ body.widget-frame {
     border-bottom: none;
 }
 
-.latest-pill {
-    font-size: 0.75rem;
-    text-align: center;
+/* The kind marker (_includes/kind.html): a coloured circle with an icon,
+   then the label in capitals, so colour is never the only signal. The circle
+   is the list's first column, so it is sized in rem; the icon is sized to the
+   circle; the label to its own text, in em. */
+.latest-item-kind {
+    grid-template-columns: 1.9rem minmax(0, 1fr);
+    align-items: start;
+}
+
+.kind-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    background: var(--kind);
+    color: var(--kind-icon);
+}
+
+.kind-icon {
+    width: 55%;
+    height: 55%;
+}
+
+.kind-label {
+    color: var(--kind-text);
+    font-family: var(--font-sans);
+    font-size: 0.72em;
     font-weight: 600;
-    padding: 0.2em 0.7em;
-    border-radius: 999px;
-    text-decoration: none;
-    white-space: nowrap;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
 }
 
-.latest-pill:hover,
-.latest-pill:focus {
-    text-decoration: none;
-    opacity: 0.85;
+.kind-news {
+    --kind: var(--accent);
+    --kind-icon: var(--accent-text);
+    --kind-text: var(--accent-dark);
 }
 
-.latest-pill-announcements {
-    background: color-mix(in srgb, var(--accent) 15%, transparent);
-    color: var(--accent-dark);
+.kind-alerts {
+    --kind: var(--kind-alerts);
+    --kind-icon: var(--kind-on);
+    --kind-text: var(--kind-alerts);
 }
 
-.latest-pill-events {
-    background: color-mix(in srgb, var(--secondary) 30%, transparent);
-    color: color-mix(in srgb, var(--secondary) 50%, var(--text));
+.kind-classifieds {
+    --kind: var(--kind-classifieds);
+    --kind-icon: var(--kind-on);
+    --kind-text: var(--kind-classifieds);
+}
+
+/* A post's byline: the kind marker, then the author and dates. */
+.kind-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
 }
 
 .latest-title {
@@ -2014,6 +2076,14 @@ body.widget-frame {
     grid-column: 2;
     color: var(--text-muted);
     font-size: 0.85rem;
+}
+
+/* Fixed width on the first line so titles line up; wrapped lines run
+   back underneath the label. 7.5em fits the longest label, "Power cut:". */
+.latest-item-kind .kind-label {
+    display: inline-block;
+    width: 7.5em;
+    margin-right: 0;
 }
 
 .action-row {
@@ -2086,13 +2156,16 @@ body.widget-frame {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .latest-pill {
-        justify-self: start;
-        width: 7.5rem;
-    }
-
     .latest-date {
         grid-column: 1;
+    }
+
+    .latest-item-kind {
+        grid-template-columns: 1.9rem minmax(0, 1fr);
+    }
+
+    .latest-item-kind .latest-date {
+        grid-column: 2;
     }
 }
 
@@ -2169,7 +2242,7 @@ body.widget-frame {
    maintainAspectRatio so the chart fills it at any screen width. */
 .chart-canvas {
     position: relative;
-    height: 400px;
+    height: 25rem;
     min-width: 0;
 }
 
@@ -2181,4 +2254,304 @@ body.widget-frame {
     color: var(--accent-text);
     text-decoration-thickness: 2px;
     text-underline-offset: 0.15em;
+}
+
+/* ================================
+   Helpful contacts summary
+   ================================ */
+
+.contacts-glance {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin: 1em 0 1.5em;
+}
+
+@media (max-width: 800px) {
+    .contacts-glance {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================
+   10-day weather forecast
+   ================================ */
+
+/* Chart text sizes are in SVG user units, so they stay in px. */
+
+/* Card, muted-text and temperature colours follow the site's light and dark tokens. */
+.wx {
+    --wx-card-bg: var(--bg-alt);
+    --wx-border: var(--border);
+    --wx-muted: var(--text-secondary);
+    --wx-track: var(--border);
+    --wx-min: #0773ac;
+    --wx-max: #c04212;
+    --wx-feels: #8b5cf6;
+    --wx-wind: #2e9e8f;
+    --wx-sun: #f2a007;
+    --wx-humidity: #7b68ee;
+    --wx-rain: #4aa3df;
+}
+
+[data-theme="dark"] .wx {
+    --wx-min: #4aa3df;
+    --wx-max: #e6653b;
+}
+
+.wx-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .wx-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.wx-card {
+    border: 1px solid var(--wx-border);
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
+    background: var(--wx-card-bg);
+}
+
+.wx-date {
+    font-weight: 600;
+}
+
+/* Same fix as .info-card__icon on the home page: a shadow gives OpenWeatherMap's
+   pale cloud icons an edge to read against on a light card. */
+.wx-icon {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 35%));
+}
+
+[data-theme="dark"] .wx-icon {
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 60%))
+        drop-shadow(0 0 1px rgb(255 255 255 / 30%));
+}
+
+.wx-desc {
+    font-size: 0.85rem;
+    color: var(--wx-muted);
+    min-height: 2.4em;
+}
+
+.wx-temps {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.wx-range {
+    position: relative;
+    flex: 1;
+    height: 0.375rem;
+    border-radius: 3px;
+    background: var(--wx-track);
+}
+
+.wx-range-fill {
+    position: absolute;
+    top: 0;
+    left: var(--bar-start);
+    width: var(--bar-width);
+    height: 0.375rem;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--wx-min), var(--wx-max));
+}
+
+.wx-min {
+    color: var(--wx-min);
+}
+
+.wx-max {
+    color: var(--wx-max);
+}
+
+.wx-pop {
+    position: relative;
+    height: 1rem;
+    border-radius: 8px;
+    background: var(--wx-track);
+    margin: 0.4rem 0;
+    overflow: hidden;
+}
+
+.wx-pop-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--bar-width);
+    height: 100%;
+    background: var(--wx-rain);
+    opacity: 0.35;
+}
+
+.wx-pop-label {
+    position: relative;
+    font-size: 0.7rem;
+    line-height: 1rem;
+}
+
+.wx-meta {
+    font-size: 0.72rem;
+    color: var(--wx-muted);
+}
+
+.wx-updated {
+    font-size: 0.8rem;
+    color: var(--wx-muted);
+}
+
+.wx-sun {
+    width: 100%;
+    height: auto;
+    margin-top: 0.4rem;
+}
+
+.wx-horizon {
+    stroke: var(--wx-track);
+    stroke-width: 1;
+}
+
+.wx-arc {
+    stroke: var(--wx-sun);
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+}
+
+.wx-sun-dot {
+    fill: var(--wx-sun);
+}
+
+.wx-sun-times {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    color: var(--wx-muted);
+    margin-top: 0.15rem;
+}
+
+.wx-chart-title {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.wx-legend {
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--wx-muted);
+}
+
+.wx-key {
+    display: inline-block;
+    width: 0.75em;
+    height: 0.1875em;
+    vertical-align: middle;
+    margin: 0 0.25rem 0 0.5rem;
+}
+
+.wx-key-max {
+    background: var(--wx-max);
+}
+
+.wx-key-min {
+    background: var(--wx-min);
+}
+
+.wx-key-feels {
+    background: var(--wx-feels);
+}
+
+.wx-chart-wrap {
+    margin: 0;
+}
+
+.wx-chart {
+    width: 100%;
+    height: auto;
+}
+
+.wx-grid-line {
+    stroke: var(--wx-track);
+    stroke-width: 1;
+}
+
+.wx-tick-label,
+.wx-x-label {
+    font-size: 11px;
+    fill: var(--wx-muted);
+}
+
+.wx-pt-label {
+    font-size: 10px;
+    fill: var(--wx-muted);
+}
+
+.wx-line {
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+}
+
+.wx-line-max {
+    stroke: var(--wx-max);
+}
+
+.wx-line-min {
+    stroke: var(--wx-min);
+}
+
+.wx-line-feels {
+    stroke: var(--wx-feels);
+    stroke-dasharray: 4 3;
+}
+
+.wx-line-wind {
+    stroke: var(--wx-wind);
+}
+
+.wx-line-day {
+    stroke: var(--wx-sun);
+}
+
+.wx-line-hum {
+    stroke: var(--wx-humidity);
+}
+
+.wx-dot-max {
+    fill: var(--wx-max);
+}
+
+.wx-dot-min {
+    fill: var(--wx-min);
+}
+
+.wx-dot-wind {
+    fill: var(--wx-wind);
+}
+
+.wx-dot-day {
+    fill: var(--wx-sun);
+}
+
+.wx-dot-hum {
+    fill: var(--wx-humidity);
+}
+
+.wx-bar {
+    fill: var(--wx-rain);
+    opacity: 0.7;
 }

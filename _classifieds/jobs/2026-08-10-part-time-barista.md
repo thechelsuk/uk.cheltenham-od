@@ -18,7 +18,7 @@ robots: noindex
 We're a small independent coffee shop in the heart of Cheltenham looking for a
 friendly, reliable barista to join our team.
 
-## About The Role
+## About the Role
 
 - Making and serving coffee and light food to a high standard
 - Keeping the shop clean, tidy and welcoming

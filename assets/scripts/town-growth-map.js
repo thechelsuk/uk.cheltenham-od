@@ -67,8 +67,7 @@
         for (var k = 0; k <= n; k++) {
             var newest = k === n && n > 0;
             html +=
-                '<span><i class="tier-swatch" style="background:' + shades[k] +
-                (newest ? ";outline:2px solid #0f172a" : "") + '"></i> ' +
+                '<span><i class="tier-swatch' + (newest ? " tier-swatch-newest" : "") + '" style="--swatch: ' + shades[k] + '"></i> ' +
                 escapeHtml(data.periods[k]) + (newest ? " (newest, outlined)" : "") + "</span>";
         }
         legend.innerHTML = html;

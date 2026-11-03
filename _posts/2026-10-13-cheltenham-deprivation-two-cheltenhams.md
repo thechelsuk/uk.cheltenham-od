@@ -49,7 +49,7 @@ The gap shows up in house prices too. The median sale price in Hesters Way over 
 - **Caveats:** Deprivation ranks are relative. They show which areas are more deprived than others, not by how much, and not every person in a deprived area is deprived. Ranks from 2025 cannot be compared directly with earlier editions because neighbourhood boundaries and some indicators changed.
 - **Data and updates:** The indices are published every few years; the previous edition was in 2019. House prices on the wards page come from HM Land Registry Price Paid Data. For questions or interviews, use the [contact page](/contact).
 
-Data from the English Indices of Deprivation 2025 and HM Land Registry Price Paid Data, published under the Open Government Licence v3.0. Last updated 2026-10-05.
+{% include attribution.html text="Data from the English Indices of Deprivation 2025 and HM Land Registry Price Paid Data, published under the Open Government Licence v3.0. Last updated 2026-10-05." %}
 
 {% include cite-this.html %}
 

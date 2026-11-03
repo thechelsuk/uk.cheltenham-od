@@ -150,7 +150,7 @@
             </ul>
         </nav>
 
-        <h2 id="getting-around">Getting Around near {{ w.name }}</h2>
+        <h2 id="getting-around">Getting Around Near {{ w.name }}</h2>
         <h3>Street Works</h3>
         {% if ward_works.size > 0 %}
         <p><small>{{ ward_works.size }} current or upcoming street works on {{ w.name }}'s roads. See every works around town on the
@@ -191,7 +191,7 @@
         {% endif %}
         {% include ward-services.html group="Getting Around" %}
 
-        <h2 id="health-and-care">Health and Care near {{ w.name }}</h2>
+        <h2 id="health-and-care">Health and Care Near {{ w.name }}</h2>
         {% include ward-services.html group="Health and Care" %}
         {% assign health_wards = site.data["public-health"].wards %}
         {% assign child_weight = health_wards.rows | where: "code", w.code | first %}
@@ -202,20 +202,20 @@
             <a href="/cheltenham-public-health#wards">Cheltenham public health page</a>.</p>
         {% endif %}
 
-        <h2 id="schools-and-childcare">Schools and Childcare near {{ w.name }}</h2>
+        <h2 id="schools-and-childcare">Schools and Childcare Near {{ w.name }}</h2>
         {% include ward-services.html group="Schools and Childcare" %}
 
-        <h2 id="parks-and-play">Parks and Play near {{ w.name }}</h2>
+        <h2 id="parks-and-play">Parks and Play Near {{ w.name }}</h2>
         <p>Every park, playing field and allotment in Cheltenham is on our <a href="/cheltenham-green-spaces">parks and green spaces</a> map.</p>
         {% include ward-services.html group="Parks and Play" %}
 
-        <h2 id="everyday-services">Everyday Services near {{ w.name }}</h2>
+        <h2 id="everyday-services">Everyday Services Near {{ w.name }}</h2>
         {% include ward-services.html group="Everyday Services" %}
 
-        <h2 id="food-and-drink">Food and Drink near {{ w.name }}</h2>
+        <h2 id="food-and-drink">Food and Drink Near {{ w.name }}</h2>
         {% include ward-services.html group="Food and Drink" %}
 
-        <h2 id="heritage">Heritage near {{ w.name }}</h2>
+        <h2 id="heritage">Heritage Near {{ w.name }}</h2>
         {% include ward-services.html group="Heritage" %}
 
         <h2 id="crime">Crime in {{ w.name }}</h2>
@@ -255,7 +255,7 @@
             </table>
         </div>
 
-        <h3>Streets with the Most Reports</h3>
+        <h3>Streets With the Most Reports</h3>
         <div class="table-scroll">
             <table class="ward-crime-table data-table" data-sortable>
                 <thead>
@@ -274,9 +274,9 @@
                 </tbody>
             </table>
         </div>
-        <p><small>Police record each crime against the nearest street point rather than the exact spot, so a street's
+        <ul class="table-key"><li><small><strong>Key:</strong> Police record each crime against the nearest street point rather than the exact spot, so a street's
             total also includes crimes reported nearby. Crimes are counted by that point falling inside the ward
-            boundary, so incidents on a boundary road can land on either side.</small></p>
+            boundary, so incidents on a boundary road can land on either side.</small></li></ul>
 
         <h2 id="local-issues">Local Issues in {{ w.name }}</h2>
         <h3>Reports on FixMyStreet</h3>
@@ -452,8 +452,8 @@
                 </tbody>
             </table>
         </div>
-        <p><small>The latest year is part-year, so its sale count is lower. Prices come from HM Land Registry's
-            Price Paid data, matched to the ward by postcode.</small></p>
+        <ul class="table-key"><li><small><strong>Key:</strong> The latest year is part-year, so its sale count is lower.</small></li></ul>
+        <ul class="attribution"><li><small>Prices come from HM Land Registry's Price Paid data, matched to the ward by postcode.</small></li></ul>
 
         {% if ward_dep %}
         <h2 id="deprivation">Deprivation in {{ w.name }}</h2>
@@ -500,8 +500,9 @@
                 </tbody>
             </table>
         </div>
-        <p><small>National rank is out of {{ dep.lsoa_count_england_display }} neighbourhoods in England (1 = most
-            deprived); the other columns are deciles. Data from the {{ dep.source }}, published under the {{ dep.licence }}.</small></p>
+        <ul class="table-key"><li><small><strong>Key:</strong> National rank is out of {{ dep.lsoa_count_england_display }} neighbourhoods in England (1 = most
+            deprived); the other columns are deciles.</small></li></ul>
+        <ul class="attribution"><li><small>Data from the {{ dep.source }}, published under the {{ dep.licence }}.</small></li></ul>
         {% endif %}
 
             {% if child_poverty %}
@@ -529,12 +530,10 @@
                     </tbody>
                 </table>
             </div>
-            <p><small>
-                DWP figures are estimates for areas, not individual families. Counts are rounded and subject to statistical
+            <ul class="table-key"><li><small><strong>Key:</strong> DWP figures are estimates for areas, not individual families. Counts are rounded and subject to statistical
                 disclosure control. See all 20 wards and other income measures on the
-                <a href="/cheltenham-child-poverty">Cheltenham child poverty page</a>; data from the
-                <a href="{{ child_poverty.source_url }}">Department for Work and Pensions</a>, under the Open Government Licence v3.0.
-            </small></p>
+                <a href="/cheltenham-child-poverty">Cheltenham child poverty page</a>.</small></li></ul>
+            <ul class="attribution"><li><small>Data from the <a href="{{ child_poverty.source_url }}">Department for Work and Pensions</a>, published under the Open Government Licence v3.0.</small></li></ul>
             {% endif %}
 
             <h2 id="broadband">Broadband in {{ w.name }}</h2>
@@ -656,12 +655,12 @@
                 </tbody>
             </table>
         </div>
-        <p><small><a href="{{ e.source_url }}" rel="noopener">Official {{ e.title }} result for {{ w.name }}</a> on the council's site.</small></p>
+        <ul class="attribution"><li><small><a href="{{ e.source_url }}" rel="noopener">Official {{ e.title }} result for {{ w.name }}</a> on the council's site.</small></li></ul>
         {% endfor %}
-        <p><small>Election results and councillors from <a href="{{ e.source_url | default: "https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx" }}" rel="noopener">Cheltenham Borough Council</a>.
-            Each voter has as many votes as there are seats, so in a two-seat contest the votes can add up to more than the
+        <ul class="table-key"><li><small><strong>Key:</strong> Each voter has as many votes as there are seats, so in a two-seat contest the votes can add up to more than the
             ballot papers issued, and turnout is ballot papers issued as a share of registered voters. See the
-            <a href="/cheltenham-local-elections">results for every ward</a>.</small></p>
+            <a href="/cheltenham-local-elections">results for every ward</a>.</small></li></ul>
+        <ul class="attribution"><li><small>Election results and councillors from <a href="{{ e.source_url | default: "https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx" }}" rel="noopener">Cheltenham Borough Council</a>.</small></li></ul>
         {% endif %}
 
         <h2 id="faq">Frequently Asked Questions</h2>

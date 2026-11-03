@@ -1,7 +1,7 @@
 ---
 layout: "about-info/advert"
 type: "about"
-title: "Morning Cleaner - Cheltenham Gallagher Weekend cleaner"
+title: "Morning Cleaner - Cheltenham Gallagher Weekend Cleaner"
 category: "jobs"
 company: "IJ Facilities Management Ltd"
 location: "Cheltenham, Cheltenham"

@@ -12,9 +12,7 @@
             </ul>
         </header>
         {% include section-links.html %}
-        {% if page.author %}
-        <p class="footnote">By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %} · Published {{ page.date | date: "%Y-%m-%d" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%Y-%m-%d" }}{% endif %}</p>
-        {% endif %}
+        <p class="kind-line">{% include kind.html post=page %}{% if page.author %}<span class="footnote">· By {% if page.author_url %}<a href="{{ page.author_url }}">{{ page.author }}</a>{% else %}{{ page.author }}{% endif %} · Published {{ page.date | date: "%-d %B %Y" }}{% if page.last_modified_at %} · Updated {{ page.last_modified_at | date: "%-d %B %Y" }}{% endif %}</span>{% endif %}</p>
 
         <blockquote>
             <p><strong>{{ f.quote }}</strong></p>

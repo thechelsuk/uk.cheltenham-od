@@ -77,7 +77,7 @@ def build_alert_html(disruptions):
         start = helper.alert_date(d.get("validity_start"))
         when = f" from {start}" if start else ""
         rows.append(("/cheltenham-bus-data", f"Disruption to {label} bus services{when}"))
-    return helper.alert_rows("Bus", rows)
+    return helper.alert_rows("bus", rows)
 
 
 def build_atom_items(history_records, history_url):

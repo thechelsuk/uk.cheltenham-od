@@ -1,0 +1,7 @@
+{%- comment -%}
+The key under a table or chart, explaining its short headings and symbols:
+a list item with the accent circle marker, in small text, starting "Key:".
+  text: the explanation, in Markdown, e.g. "**Was** previous rating, **Now** new rating"
+In Markdown: {% include key.html text="..." %}
+{%- endcomment -%}
+<ul class="table-key"><li><small><strong>Key:</strong> {{ include.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</small></li></ul>

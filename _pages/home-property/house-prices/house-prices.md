@@ -14,7 +14,7 @@ available-years:
     - 2023
 ---
 
-## Cheltenham House Prices from Land Registry Price Paid Data
+## Cheltenham House Prices From Land Registry Price Paid Data
 
 Cheltenham has seen **{{ site.data.house-summary.current.count_display }}** properties change hands in the {{ site.data.house-summary.current.period_label | default: "past year" }}{% if site.data.house-summary.current.count_change %}, {{ site.data.house-summary.current.count_change }}{% endif %}. The typical sale (median) went for **{{ site.data.house-summary.current.median_display }}**{% if site.data.house-summary.current.median_change %}, {{ site.data.house-summary.current.median_change }}{% endif %}, with an average (mean) of **{{ site.data.house-summary.current.mean_display }}**{% if site.data.house-summary.current.mean_change %}, {{ site.data.house-summary.current.mean_change }}{% endif %}. Prices ranged from {{ site.data.house-summary.current.min_display }} up to {{ site.data.house-summary.current.max_display }}{% if site.data.house-summary.current.range_prior_display %} ({{ site.data.house-summary.current.range_prior_display }}){% endif %}.
 

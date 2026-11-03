@@ -51,7 +51,7 @@ def _incident(**overrides):
 def test_alert_includes_a_partly_restored_cut_with_homes_still_off():
     html = power.build_alert_html([_incident()])
     assert "GL50 4DB" in html
-    assert 'latest-pill-announcements">Power cut</span>' in html
+    assert 'group="alerts" kind="power-cut" part="dot"' in html
 
 
 def test_alert_leaves_out_a_cut_with_no_homes_off():

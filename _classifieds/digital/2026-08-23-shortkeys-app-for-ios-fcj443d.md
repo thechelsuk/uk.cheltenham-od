@@ -36,7 +36,7 @@ addresses and phone numbers to whole paragraphs and code snippets.
 - Export shortcuts in JSON format for backup or sharing
 - Light, dark, or system appearance modes with a customisable tint colour
 
-## Why you'll like It
+## Why You'll Like It
 
 - Free plan covers up to 10 shortcuts — enough to try it properly before
   committing to anything

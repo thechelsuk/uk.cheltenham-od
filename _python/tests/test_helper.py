@@ -325,13 +325,34 @@ def test_write_json_leaves_a_file_alone_when_only_its_timestamp_changes(tmp_path
     assert json.loads(path.read_text())["generated_at"] == "2026-10-12T11:00:00"
 
 
-def test_alert_rows_are_list_items_with_a_type_pill():
-    html = helper.alert_rows("Bus", [("/buses", "Disruption to Stagecoach West bus services")])
+def test_alert_rows_are_list_items_with_the_alert_kind_marker():
+    html = helper.alert_rows("bus", [("/buses", "Disruption to Stagecoach West bus services")])
     assert html == (
-        '  <li class="latest-item"><span class="latest-pill latest-pill-announcements">Bus</span>'
-        '<span class="latest-title"><a href="/buses">Disruption to Stagecoach West bus services</a></span></li>'
+        '  <li class="latest-item latest-item-kind">'
+        '{% include kind.html group="alerts" kind="bus" part="dot" %}'
+        '<span class="latest-title">{% include kind.html group="alerts" kind="bus" part="label" %}'
+        '<a href="/buses">Disruption to Stagecoach West bus services</a></span></li>'
     )
 
 
 def test_alert_rows_are_empty_with_nothing_to_show():
-    assert helper.alert_rows("Bus", []) == ""
+    assert helper.alert_rows("bus", []) == ""
+
+
+def test_title_case_follows_ap_style():
+    assert helper.title_case("Mystery shopper") == "Mystery Shopper"
+    assert helper.title_case("Getting Around near All Saints") == "Getting Around Near All Saints"
+    assert helper.title_case("Streets with the Most Reports") == "Streets With the Most Reports"
+    assert helper.title_case("Employment Rates over Time") == "Employment Rates over Time"
+    assert (helper.title_case("Employment Locum - 15-20 hours per week - 3+ months - remote working")
+            == "Employment Locum - 15-20 Hours per Week - 3+ Months - Remote Working")
+
+
+def test_title_case_handles_curly_apostrophes_and_styled_words():
+    assert helper.title_case("Why you’ll like it") == "Why You’ll Like It"
+    assert helper.title_case("Why you'll like It") == "Why You'll Like It"
+    assert helper.title_case("Parking near GL50 on eBay") == "Parking Near GL50 on eBay"
+
+
+def test_title_case_fixes_an_all_capitals_heading():
+    assert helper.title_case("THE BEST PLACES TO VISIT") == "The Best Places to Visit"

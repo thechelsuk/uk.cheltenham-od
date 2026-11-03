@@ -101,7 +101,7 @@ def test_an_empty_feed_has_no_warnings():
 
 def test_alert_shows_the_met_office_title_and_end_time_linking_to_the_met_office():
     html = ww.build_alert_html(ww.parse(feed(GLOS_RAIN)))
-    assert 'latest-pill-announcements">Weather warning</span>' in html
+    assert 'group="alerts" kind="weather" part="dot"' in html
     assert ">Yellow warning of rain affecting South West England, until Sunday 1 November 2026 (21:00)</a>" in html
     assert 'href="https://www.metoffice.gov.uk/weather/warnings-and-advice/uk-warnings#?date=2026-11-01&id=abc-123' in html
 

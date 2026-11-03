@@ -59,7 +59,7 @@
             <li><strong>Collected:</strong> {{ c.frequency }}.</li>
             <li><strong>Yes:</strong> {{ c.takes }}.</li>
             <li><strong>No:</strong> {{ c.not }}.</li>
-            <li><a href="{{ c.url }}">Full list on the council's site</a> &rarr;</li>
+            <li><a href="{{ c.url }}">Full list on the council's site</a></li>
         </ul>
         {% endfor %}
 
@@ -98,12 +98,12 @@
             {{ bins.garden_waste.term }}, plus {{ bins.garden_waste.delivery }} delivery for each bin. Over
             Christmas and New Year there are no garden waste collections from
             {{ bins.garden_waste.break_from | date: "%-d %B %Y" }} until {{ bins.garden_waste.restart | date: "%-d %B %Y" }}.
-            <a href="{{ bins.garden_waste.url }}">Sign up or renew on the council's site</a> &rarr;</p>
+            <a href="{{ bins.garden_waste.url }}">Sign up or renew on the council's site</a>.</p>
 
         <h2 id="other-services">Other Bin Services</h2>
         <ul>
             {% for l in bins.links %}
-            <li><a href="{{ l.url }}">{{ l.name }}</a> &rarr;</li>
+            <li><a href="{{ l.url }}">{{ l.name }}</a></li>
             {% endfor %}
         </ul>
 

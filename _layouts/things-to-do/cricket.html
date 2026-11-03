@@ -57,14 +57,12 @@
 
         {% for g in cricket.grounds %}
         <h3>Getting to the {{ g.short_name }}</h3>
-        <p>{{ g.role }}.
-            <a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ g.lat }},{{ g.lon }}" target="_blank"
-                rel="noopener">Directions on Google Maps &rarr;</a>
-        </p>
+        <p>{{ g.role }}.</p>
+        <p class="action-row"><a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ g.lat }},{{ g.lon }}" target="_blank"
+                rel="noopener" class="pill-link">Directions on Google Maps &rarr;</a></p>
         <ul>
             {% for line in g.getting_there %}
-            <li>{{ line }}{% if line contains "train times page" %} <a href="/cheltenham-train-times">Train times
-                    &rarr;</a>{% endif %}</li>
+            <li>{{ line }}{% if line contains "train times page" %} <a href="/cheltenham-train-times">Train times</a>{% endif %}</li>
             {% endfor %}
         </ul>
         {% endfor %}
