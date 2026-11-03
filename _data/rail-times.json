@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T18:35:08+00:00",
+  "generated_at": "2026-11-03T18:40:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-03T18:31",
-      "expected": "2026-11-03T19:02",
+      "expected": "2026-11-03T19:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -41,7 +41,7 @@
     },
     {
       "scheduled": "2026-11-03T18:40",
-      "expected": "2026-11-03T18:50",
+      "expected": "2026-11-03T18:51",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -61,8 +61,8 @@
     },
     {
       "scheduled": "2026-11-03T18:48",
-      "expected": null,
-      "status": "Delayed",
+      "expected": "2026-11-03T18:48",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -77,7 +77,7 @@
     },
     {
       "scheduled": "2026-11-03T18:52",
-      "expected": "2026-11-03T18:56",
+      "expected": "2026-11-03T18:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -163,12 +163,26 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T19:15",
+      "expected": "2026-11-03T19:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-03T18:27",
-      "expected": "2026-11-03T18:40",
+      "expected": "2026-11-03T18:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -179,24 +193,13 @@
     },
     {
       "scheduled": "2026-11-03T18:29",
-      "expected": "2026-11-03T19:01",
+      "expected": "2026-11-03T19:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by the emergency services dealing with an incident earlier today",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-03T18:31",
-      "expected": "2026-11-03T18:33",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -212,8 +215,8 @@
     },
     {
       "scheduled": "2026-11-03T18:46",
-      "expected": null,
-      "status": "Delayed",
+      "expected": "2026-11-03T18:46",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -223,7 +226,7 @@
     },
     {
       "scheduled": "2026-11-03T18:50",
-      "expected": "2026-11-03T18:55",
+      "expected": "2026-11-03T18:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +254,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-03T19:14",
+      "expected": "2026-11-03T19:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
       "reason": "",
       "mode": "train"
     }
