@@ -55,7 +55,9 @@ MONTHLY_LIST_URL = f"{BASE_URL}/search.do?action=monthlyList&searchType=Applicat
 # How many months of the list to walk. Hourly runs only need the current
 # month (the merge keeps history); --deep backfills further.
 MONTHS_NORMAL = 1
-MONTHS_DEEP = 4
+# 120 days can span parts of five calendar months (early July to early
+# November, say), so a backfill walks five monthly lists.
+MONTHS_DEEP = 5
 
 # Keep/show a record if its received OR decision date is within this window.
 RETENTION_DAYS = 120
@@ -76,7 +78,8 @@ DATA_DIR = Path("_data")
 DATA_FILE = DATA_DIR / "planning-applications.json"
 
 REQUEST_DELAY_SECONDS = 1.5
-MAX_PAGES = 10
+# Ten results a page; a busy month has over 100, so allow 300 a month.
+MAX_PAGES = 30
 
 # Status text that counts as a reached decision (drives the decided table).
 DECISION_TERMS = (
@@ -85,7 +88,6 @@ DECISION_TERMS = (
 )
 
 LONDON = ZoneInfo("Europe/London")
-TODAY = datetime.now(LONDON).strftime("%Y-%m-%d")
 
 DEBUG = False
 
@@ -193,15 +195,24 @@ def discover_form(html, base_url, date_type):
 # FETCHING
 # ---------------------------------------------------------------------------
 
-def fetch_page(session, action_url, fields, page_number):
-    fields = dict(fields)
-    if page_number > 1:
-        fields["searchCriteria.page"] = page_number
-    resp = session.post(action_url, data=fields, timeout=30)
+def fetch_page(session, action_url, fields):
+    """The first page of results: the search form, posted."""
+    resp = session.post(action_url, data=dict(fields), timeout=30)
     log.info("POST %s -> %s, %s bytes", resp.url, resp.status_code, len(resp.text))
     resp.raise_for_status()
     if DEBUG:
-        Path(f"debug_{fields.get('searchCriteria.page', 1)}.html").write_text(resp.text, encoding="utf-8")
+        Path("debug_1.html").write_text(resp.text, encoding="utf-8")
+    return resp.text
+
+
+def fetch_next_page(session, next_url):
+    """A later page of results. The portal ignores a page number sent with the
+    search form; page 2 onwards come only from following its "Next" link
+    (pagedSearchResults.do?action=page&searchCriteria.page=N) in the same
+    session, which holds the search."""
+    resp = session.get(next_url, timeout=30)
+    log.info("GET %s -> %s, %s bytes", resp.url, resp.status_code, len(resp.text))
+    resp.raise_for_status()
     return resp.text
 
 
@@ -215,8 +226,9 @@ def parse_results_page(html):
         log.info("--- END ---")
 
     records = [r for r in (parse_result_item(i) for i in items) if r]
-    has_next = bool(soup.select_one("a.next, a[title='Next']"))
-    return records, has_next
+    next_link = soup.select_one("a.next, a[title='Next']")
+    next_url = urljoin(BASE_URL + "/", next_link["href"]) if next_link and next_link.get("href") else None
+    return records, next_url
 
 
 def parse_result_item(item):
@@ -306,26 +318,24 @@ def fetch_by_date_type(session, form_html, date_type, months):
         if month_field and mv is not None:
             fields[month_field] = mv
         page = 1
+        next_url = None
         while page <= MAX_PAGES:
             try:
-                html = fetch_page(session, action_url, fields, page)
+                html = fetch_page(session, action_url, fields) if page == 1 else fetch_next_page(session, next_url)
             except requests.RequestException as exc:
                 log.error("Request failed (%s, month=%s, page=%s): %s", date_type, mv, page, exc)
                 break
-            records, has_next = parse_results_page(html)
+            records, next_url = parse_results_page(html)
             fresh = [r for r in records if r["ref"] not in seen]
             log.info("%s month=%s page=%s: %s records (%s new)", date_type, mv, page, len(records), len(fresh))
             if not fresh:
                 break
             for r in fresh:
-                # If the decided search found it but the list didn't expose a
-                # decision date, floor it to today so retention keeps it and
-                # the decided table can still surface it.
-                if date_type == "decided" and not r["decided_date"]:
-                    r["decided_date"] = TODAY
+                # The decided list shows no decision date; fill_decision_dates()
+                # reads it from the application's own page.
                 seen.add(r["ref"])
             collected.extend(fresh)
-            if not has_next:
+            if not next_url:
                 break
             page += 1
             time.sleep(REQUEST_DELAY_SECONDS)
@@ -376,16 +386,61 @@ def load_existing():
 
 def merge_records(existing, new_records):
     """Field-wise merge: a non-empty new value wins, but we never blank an
-    existing value (so a decided-search hit can't wipe received_date)."""
+    existing value (so a decided-search hit can't wipe received_date), and a
+    stored decision date is kept: it was read from the application's page."""
     for rec in new_records:
         ref = rec["ref"]
         if ref in existing:
             for k, v in rec.items():
+                if k == "decided_date" and existing[ref].get(k):
+                    continue
                 if v not in (None, "", []):
                     existing[ref][k] = v
         else:
             existing[ref] = rec
     return existing
+
+
+def parse_decision_date(html):
+    """The "Decision Issued Date" from an application's summary page."""
+    soup = BeautifulSoup(html, "html.parser")
+    for row in soup.select("table#simpleDetailsTable tr"):
+        th, td = row.find("th"), row.find("td")
+        if th and td and th.get_text(strip=True).lower() == "decision issued date":
+            text = re.sub(r"^\w{3}\s+", "", td.get_text(" ", strip=True))
+            return parse_date(text)
+    return None
+
+
+def fill_decision_dates(records_by_ref, session=None, recheck=False):
+    """Read each decision's date from its application page. The council's
+    decided list shows no decision date, so it can't be taken from the list,
+    and stamping the day it was found would be wrong for a backfill. Only
+    decisions without a date are looked up, unless recheck (a deep run)
+    looks up every one. A page that fails leaves the date blank, so the
+    next run tries again."""
+    todo = [r for r in records_by_ref.values()
+            if is_decision(r.get("status")) and r.get("url") and (recheck or not r.get("decided_date"))]
+    if not todo:
+        return
+    if session is None:
+        session = requests.Session()
+        session.headers.update(config.HEADERS)
+    found = 0
+    for i, rec in enumerate(todo):
+        if i:
+            time.sleep(REQUEST_DELAY_SECONDS)
+        try:
+            resp = session.get(rec["url"], timeout=30)
+            resp.raise_for_status()
+        except requests.RequestException as exc:
+            log.warning("Decision date lookup failed for %s: %s", rec.get("ref"), exc)
+            continue
+        date = parse_decision_date(resp.text)
+        if date:
+            rec["decided_date"] = date
+            found += 1
+    log.info("Read %s of %s decision dates from application pages", found, len(todo))
 
 
 def geocode_missing(records_by_ref):
@@ -496,6 +551,9 @@ def main():
         return
 
     merged = merge_records(load_existing(), new_records)
+    # Before the window is applied, so an old application decided recently
+    # is kept on its decision date.
+    fill_decision_dates(merged, recheck=args.deep)
     merged = apply_retention(merged)
     geocode_missing(merged)
     save_payload(build_payload(merged))

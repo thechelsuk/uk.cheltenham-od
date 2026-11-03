@@ -48,8 +48,12 @@ def result_item(ref, description="Erection of 2 dwellings", status="Pending Cons
 </li>"""
 
 
-def results_page(*items, has_next=False):
-    nav = '<a class="next" href="#">Next</a>' if has_next else ""
+NEXT_PAGE = "/online-applications/pagedSearchResults.do?action=page&searchCriteria.page={}"
+
+
+def results_page(*items, next_page=None):
+    """A results page; next_page is the page number its "Next" link points to."""
+    nav = f'<a class="next" href="{NEXT_PAGE.format(next_page)}">Next</a>' if next_page else ""
     return f"<ul id='searchresults'>{''.join(items)}</ul>{nav}"
 
 
@@ -99,9 +103,10 @@ def test_parse_results_page_reads_each_application():
     html = results_page(result_item("26/01234/FUL"),
                         result_item("26/00999/HOUSE", description="Single storey rear extension",
                                     status="Granted", received="02 Sep 2026", decided="Fri 10 Oct 2026"),
-                        has_next=True)
-    records, has_next = planning.parse_results_page(html)
-    assert has_next is True
+                        next_page=2)
+    records, next_url = planning.parse_results_page(html)
+    assert next_url == ("https://publicaccess.cheltenham.gov.uk/online-applications/"
+                        "pagedSearchResults.do?action=page&searchCriteria.page=2")
     assert records[0] == {
         "ref": "26/01234/FUL",
         "description": "Erection of 2 dwellings",
@@ -118,7 +123,7 @@ def test_parse_results_page_reads_each_application():
 
 def test_parse_result_item_skips_items_without_a_link_or_reference():
     html = "<li class='searchresult'>No link</li><li class='searchresult'><a href='x'>No ref here</a></li>"
-    assert planning.parse_results_page(html) == ([], False)
+    assert planning.parse_results_page(html) == ([], None)
 
 
 def test_parse_result_item_takes_the_address_from_the_text_when_unmarked():
@@ -161,13 +166,21 @@ class FakeResponse:
 
 
 class FakeSession:
-    """Answers each POST with the next queued page, recording the form data."""
+    """Answers each search POST, and each GET of a "Next" page, with the next
+    queued page, recording the form data and the pages followed. A GET of the
+    search form itself returns the form."""
     def __init__(self, pages, form_page=FORM_PAGE):
-        self.pages, self.posts, self.form_page = list(pages), [], form_page
+        self.pages, self.posts, self.gets, self.form_page = list(pages), [], [], form_page
         self.headers = {}
 
     def get(self, url, timeout):
-        return FakeResponse(self.form_page)
+        if url == planning.MONTHLY_LIST_URL:
+            return FakeResponse(self.form_page)
+        self.gets.append(url)
+        page = self.pages.pop(0)
+        if isinstance(page, Exception):
+            raise page
+        return FakeResponse(page)
 
     def post(self, url, data, timeout):
         self.posts.append(dict(data))
@@ -177,24 +190,31 @@ class FakeSession:
         return FakeResponse(page)
 
 
-def test_fetch_page_adds_the_page_number_after_the_first_page():
+def test_first_page_posts_the_search_and_later_pages_follow_the_next_link():
+    # The portal ignores a page number sent with the search form: page 2
+    # onwards only come from its "Next" link, in the same session.
     session = FakeSession(["one", "two"])
-    assert planning.fetch_page(session, "url", {"a": 1}, 1) == "one"
-    assert planning.fetch_page(session, "url", {"a": 1}, 2) == "two"
-    assert session.posts == [{"a": 1}, {"a": 1, "searchCriteria.page": 2}]
+    assert planning.fetch_page(session, "url", {"a": 1}) == "one"
+    assert planning.fetch_next_page(session, "next-url") == "two"
+    assert session.posts == [{"a": 1}] and session.gets == ["next-url"]
 
 
 def test_fetch_by_date_type_walks_pages_and_months(monkeypatch):
     monkeypatch.setattr(planning.time, "sleep", lambda s: None)
     session = FakeSession([
-        results_page(result_item("A/1"), has_next=True),
-        results_page(result_item("A/1"), result_item("A/2")),          # Oct page 2: A/1 is a repeat
-        results_page(result_item("B/1", received="01 Sep 2026")),       # Sep page 1
+        results_page(result_item("A/1"), next_page=2),                       # Oct page 1
+        results_page(result_item("A/2"), next_page=3),                       # Oct page 2
+        results_page(result_item("A/2"), result_item("A/3")),                # Oct page 3: A/2 is a repeat
+        results_page(result_item("B/1", received="01 Sep 2026")),            # Sep page 1
     ])
     records = planning.fetch_by_date_type(session, FORM_PAGE, "decided", months=2)
-    assert [r["ref"] for r in records] == ["A/1", "A/2", "B/1"]
-    assert all(r["decided_date"] == planning.TODAY for r in records)
-    assert [p.get("month") for p in session.posts] == ["Oct 26", "Oct 26", "Sep 26"]
+    assert [r["ref"] for r in records] == ["A/1", "A/2", "A/3", "B/1"]
+    # The decided list shows no decision date; it is read from each
+    # application's own page later, never stamped with today.
+    assert all(r["decided_date"] is None for r in records)
+    assert [p.get("month") for p in session.posts] == ["Oct 26", "Sep 26"]
+    assert session.gets == [planning.BASE_URL.rsplit("/online-applications", 1)[0] + NEXT_PAGE.format(n)
+                            for n in (2, 3)]
 
 
 def test_fetch_by_date_type_stops_a_month_on_a_request_error_or_no_new_records(monkeypatch):
@@ -223,6 +243,12 @@ def test_load_existing_reads_both_tables_and_the_legacy_list(tmp_path, monkeypat
     assert planning.load_existing() == {"C": {"ref": "C"}}
     store.write_text("{broken")
     assert planning.load_existing() == {}
+
+
+def test_merge_records_keeps_a_stored_decision_date():
+    existing = {"A": {"ref": "A", "status": "Permit", "decided_date": "2026-09-30"}}
+    merged = planning.merge_records(existing, [{"ref": "A", "status": "Permit", "decided_date": "2026-11-03"}])
+    assert merged["A"]["decided_date"] == "2026-09-30"
 
 
 def test_merge_records_never_blanks_an_existing_value():
@@ -340,3 +366,75 @@ def test_main_merges_retains_geocodes_and_saves(monkeypatch):
     planning.main()
     assert months_asked == [planning.MONTHS_DEEP]
     assert saved[0]["received_count"] == 1
+
+
+# -- Decision dates -------------------------------------------------------------
+
+def details_page(decided="Fri 30 Oct 2026"):
+    row = f"<tr><th>Decision Issued Date</th><td>{decided}</td></tr>" if decided else ""
+    return f"""<table id="simpleDetailsTable">
+  <tr><th>Reference</th><td>26/01550/FUL</td></tr>
+  <tr><th>Decision</th><td>Permit</td></tr>{row}
+</table>"""
+
+
+def test_parse_decision_date_reads_the_application_page():
+    assert planning.parse_decision_date(details_page()) == "2026-10-30"
+    assert planning.parse_decision_date(details_page(decided=None)) is None
+
+
+class DetailsSession:
+    """Answers GETs of application pages from a dict of url -> page (or error)."""
+    def __init__(self, pages):
+        self.pages, self.gets, self.headers = pages, [], {}
+
+    def get(self, url, timeout):
+        self.gets.append(url)
+        page = self.pages[url]
+        if isinstance(page, Exception):
+            raise page
+        return FakeResponse(page)
+
+
+def test_fill_decision_dates_reads_missing_dates_from_each_application(monkeypatch):
+    monkeypatch.setattr(planning.time, "sleep", lambda s: None)
+    session = DetailsSession({"u/A": details_page(), "u/B": requests.ConnectionError("down")})
+    records = {
+        "A": {"status": "Permit", "url": "u/A"},
+        "B": {"status": "Refused", "url": "u/B"},
+        "C": {"status": "Permit", "url": "u/C", "decided_date": "2026-09-01"},
+        "D": {"status": "Pending Consideration", "url": "u/D"},
+    }
+    planning.fill_decision_dates(records, session)
+    assert records["A"]["decided_date"] == "2026-10-30"
+    assert records["B"].get("decided_date") is None      # tried again next run
+    assert records["C"]["decided_date"] == "2026-09-01"  # already known
+    assert session.gets == ["u/A", "u/B"]                 # pending D isn't a decision
+
+
+def test_fill_decision_dates_rechecks_every_decision_on_a_deep_run(monkeypatch):
+    monkeypatch.setattr(planning.time, "sleep", lambda s: None)
+    session = DetailsSession({"u/C": details_page("Mon 28 Sep 2026")})
+    records = {"C": {"status": "Permit", "url": "u/C", "decided_date": "2026-11-03"}}
+    planning.fill_decision_dates(records, session, recheck=True)
+    assert records["C"]["decided_date"] == "2026-09-28"
+
+
+def test_main_reads_decision_dates_before_the_window_is_applied(monkeypatch):
+    monkeypatch.setattr(sys, "argv", ["planning.py"])
+    old = {"ref": "A", "received_date": days_ago(400), "status": "Permit", "postcode": None, "url": "u/A"}
+    monkeypatch.setattr(planning, "fetch_all", lambda months: [old])
+    monkeypatch.setattr(planning, "load_existing", lambda: {})
+    calls = []
+
+    def fill(records, session=None, recheck=False):
+        calls.append(recheck)
+        records["A"]["decided_date"] = days_ago(2)
+
+    monkeypatch.setattr(planning, "fill_decision_dates", fill)
+    saved = []
+    monkeypatch.setattr(planning, "save_payload", saved.append)
+    planning.main()
+    assert calls == [False]
+    assert [r["ref"] for r in saved[0]["decided"]] == ["A"]
+
