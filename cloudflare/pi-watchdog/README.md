@@ -6,7 +6,7 @@ The Pi fetches the 5-minute data feeds and starts the site's scheduled GitHub wo
 
 - it starts the **Refresh Every 5 Minutes (Pi Fallback)** workflow every 5 minutes
 - it starts any scheduled workflow that fell due while the Pi was quiet, unless GitHub shows it already ran
-- it sends an email and turns a Hue light orange, through the [cf-worker-notifier](https://github.com/thechelsuk/cf-worker-notifier) Worker
+- it sends an email and turns a Hue light orange, through the [cf-worker-notifier](https://github.com/thechelsuk/cf-worker-notifier) Worker. The email says whether [GitHub's status page](https://www.githubstatus.com) reports problems with Git Operations, API Requests or Actions, so a GitHub outage isn't mistaken for a fault on the Pi
 
 The Pi's next check-in hands back control, restores the light and sends a "the Pi is back" email.
 

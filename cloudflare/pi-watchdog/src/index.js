@@ -23,6 +23,7 @@
 import { authorised, safeEqual } from "./auth.js";
 import { lastDue } from "./cron.js";
 import { checkFetchers } from "./fetch-status.js";
+import { githubStatusLine, readGithubStatus } from "./github-status.js";
 import { dispatchRaw, fuelCsv } from "./raw.js";
 import { SCHEDULES } from "./schedules.js";
 
@@ -229,13 +230,13 @@ export async function notify(env, { title, message, light }) {
     }
 }
 
-function takeoverMessage(decision, lastHeartbeat) {
+function takeoverMessage(decision, lastHeartbeat, githubLine) {
     const since = lastHeartbeat
         ? ` The last check-in was at ${lastHeartbeat}.`
         : "";
     return {
         title: "Cheltenham OD: Cloudflare has taken over from the Pi",
-        message: `Cloudflare is running the 5-minute data checks and any scheduled workflows that fall due, because ${decision.reason}.${since}\n\nIt hands back as soon as the Pi checks in again.`,
+        message: `Cloudflare is running the 5-minute data checks and any scheduled workflows that fall due, because ${decision.reason}.${since}\n\n${githubLine}\n\nIt hands back as soon as the Pi checks in again.`,
         light: "orange",
     };
 }
@@ -260,7 +261,11 @@ export async function runCheck(env, now) {
         notified = await notify(
             env,
             decision.active
-                ? takeoverMessage(decision, lastHeartbeat)
+                ? takeoverMessage(
+                      decision,
+                      lastHeartbeat,
+                      githubStatusLine(await readGithubStatus()),
+                  )
                 : handbackMessage(decision),
         );
     }

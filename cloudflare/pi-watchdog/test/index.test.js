@@ -375,6 +375,40 @@ describe("runCheck", () => {
         assert.equal(saved.due, "2026-10-29T08:47:00.000Z");
     });
 
+    it("says in the takeover email when GitHub is having problems", async () => {
+        const fakeGithub = globalThis.fetch;
+        globalThis.fetch = async (url, init) => {
+            if (String(url).includes("githubstatus.com")) {
+                return new Response(
+                    JSON.stringify({
+                        components: [
+                            { name: "Git Operations", status: "major_outage" },
+                        ],
+                        incidents: [],
+                    }),
+                    { status: 200 },
+                );
+            }
+            return fakeGithub(url, init);
+        };
+        const env = fakeEnv({ heartbeat: minutesAgo(16) });
+        await runCheck(env, NOW);
+        assert.match(
+            env.NOTIFIER.sent[0].body.message,
+            /GitHub is having problems with Git Operations/,
+        );
+    });
+
+    it("doesn't check GitHub's status on the hand-back email", async () => {
+        const env = fakeEnv({ heartbeat: minutesAgo(1), cloud_active: "true" });
+        await runCheck(env, NOW);
+        assert.equal(
+            calls.some((c) => c.url.includes("githubstatus.com")),
+            false,
+        );
+        assert.doesNotMatch(env.NOTIFIER.sent[0].body.message, /GitHub/);
+    });
+
     it("doesn't alert again on the next check", async () => {
         const env = fakeEnv({
             heartbeat: minutesAgo(16),
