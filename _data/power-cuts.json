@@ -4,7 +4,7 @@
   "source_url": "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts",
   "licence": "WPD Open Data Licence",
   "refresh": "every 5 minutes",
-  "count": 1,
+  "count": 2,
   "incidents": [
     {
       "fault_id": "INCD-76134-p",
@@ -27,6 +27,35 @@
       "lon": -1.965477,
       "postcodes": [
         "GL54 5BE"
+      ]
+    },
+    {
+      "fault_id": "INCD-21683-l",
+      "status": "In Progress",
+      "planned": true,
+      "category": "Hv Planned",
+      "confirmed_off": 72,
+      "predicted_off": 0,
+      "restored": 0,
+      "affected": 72,
+      "voltage": "HV",
+      "date_of_reported_fault": "2026-11-04T11:30:00",
+      "last_updated": "2026-11-04T11:35:00",
+      "date_of_restoration": "",
+      "etr": "",
+      "planned_start": "2026-11-04T11:30:00",
+      "planned_end": "2026-11-04T13:00:00",
+      "planned_off": 72,
+      "lat": 51.97154,
+      "lon": -1.954478,
+      "postcodes": [
+        "GL54 5PN",
+        "GL54 5NU",
+        "GL54 5NY",
+        "GL54 5NX",
+        "GL54 5PA",
+        "GL54 5NZ",
+        "GL54 5II"
       ]
     }
   ]
