@@ -5,13 +5,13 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 777,
-    "unplanned": 133,
+    "count": 779,
+    "unplanned": 134,
     "road_closures": 101,
     "by_street": [
       {
         "street": "Cheltenham Road East",
-        "works": 22,
+        "works": 23,
         "road_closures": 0
       },
       {
@@ -63,7 +63,7 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 303
+        "works": 304
       },
       {
         "name": "BT",
@@ -98,6 +98,10 @@
         "works": 6
       },
       {
+        "name": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
+        "works": 4
+      },
+      {
         "name": "Thames Water",
         "works": 4
       },
@@ -119,10 +123,6 @@
       },
       {
         "name": "Network Rail",
-        "works": 3
-      },
-      {
-        "name": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
         "works": 3
       },
       {
@@ -153,11 +153,25 @@
       },
       {
         "month": "2026-11",
-        "works": 103
+        "works": 105
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:ZH00167552368",
+      "first_seen": "2026-11-04",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Nwp Street Ltd (Formerly New World Payphones Ltd)",
+      "start": "2026-11-20",
+      "end": "2026-11-20",
+      "last_seen": "2026-11-04"
+    },
     {
       "id": "PERMIT:NK110ANSL306189",
       "first_seen": "2026-11-04",
@@ -267,6 +281,20 @@
       "road_closure": false,
       "promoter": "Severn Trent Water",
       "start": "2026-11-04T11:57",
+      "end": "2026-11-06",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060790674",
+      "first_seen": "2026-11-04",
+      "street": "Langdale Road",
+      "ward_slug": "warden-hill",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-04T13:25",
       "end": "2026-11-06",
       "last_seen": "2026-11-04"
     },
@@ -850,12 +878,12 @@
       "street": "B4070 From Stroud Road To A417",
       "ward_slug": "",
       "kind": "Planned",
-      "category": "Minor",
+      "category": "Standard",
       "traffic_management": "Two-way signals",
       "road_closure": false,
       "promoter": "BT",
       "start": "2026-11-02T19:00",
-      "end": "2026-11-04",
+      "end": "2026-11-05",
       "last_seen": "2026-11-04"
     },
     {
@@ -2604,8 +2632,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-03",
-      "end": "2026-11-05",
+      "start": "2026-11-10",
+      "end": "2026-11-12",
       "last_seen": "2026-11-04"
     },
     {
@@ -2856,7 +2884,7 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-04",
+      "start": "2026-11-04T13:11",
       "end": "2026-11-06",
       "last_seen": "2026-11-04"
     },
