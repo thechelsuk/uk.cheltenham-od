@@ -5,9 +5,9 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 760,
-    "unplanned": 129,
-    "road_closures": 98,
+    "count": 770,
+    "unplanned": 131,
+    "road_closures": 99,
     "by_street": [
       {
         "street": "Cheltenham Road East",
@@ -40,6 +40,11 @@
         "road_closures": 1
       },
       {
+        "street": "Badgeworth Road",
+        "works": 8,
+        "road_closures": 1
+      },
+      {
         "street": "Church Road",
         "works": 8,
         "road_closures": 5
@@ -47,11 +52,6 @@
       {
         "street": "Pirton Lane",
         "works": 8,
-        "road_closures": 0
-      },
-      {
-        "street": "Badgeworth Road",
-        "works": 7,
         "road_closures": 0
       },
       {
@@ -63,7 +63,7 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 293
+        "works": 300
       },
       {
         "name": "BT",
@@ -83,11 +83,11 @@
       },
       {
         "name": "Unknown",
-        "works": 18
+        "works": 20
       },
       {
         "name": "Virgin Media",
-        "works": 18
+        "works": 19
       },
       {
         "name": "Gigaclear Limited",
@@ -153,11 +153,123 @@
       },
       {
         "month": "2026-11",
-        "works": 86
+        "works": 96
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:NK110ANSL306189",
+      "first_seen": "2026-11-04",
+      "street": "Old Bath Road",
+      "ward_slug": "charlton-park",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Virgin Media",
+      "start": "2026-11-11",
+      "end": "2026-11-12",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042309401",
+      "first_seen": "2026-11-04",
+      "street": "Long Mynd Avenue",
+      "ward_slug": "up-hatherley",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-14",
+      "end": "2026-11-17",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042302485",
+      "first_seen": "2026-11-04",
+      "street": "Footway From Henley Road To Hartbury Close",
+      "ward_slug": "springbank",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-13",
+      "end": "2026-11-17",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042302398",
+      "first_seen": "2026-11-04",
+      "street": "Hartbury Close",
+      "ward_slug": "springbank",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-13",
+      "end": "2026-11-17",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042290003",
+      "first_seen": "2026-11-04",
+      "street": "Kempton Grove",
+      "ward_slug": "hesters-way",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-13",
+      "end": "2026-11-17",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042234215",
+      "first_seen": "2026-11-04",
+      "street": "Calverley Mews",
+      "ward_slug": "up-hatherley",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-14",
+      "end": "2026-11-17",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060790551",
+      "first_seen": "2026-11-04",
+      "street": "Tryes Road",
+      "ward_slug": "park",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-04T08:47",
+      "end": "2026-11-05",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014442484",
+      "first_seen": "2026-11-04",
+      "street": "Badgeworth Road",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-04T09:43",
+      "end": "2026-11-09",
+      "last_seen": "2026-11-04"
+    },
     {
       "id": "PERMIT:EY102GH1902000047839",
       "first_seen": "2026-11-04",
@@ -168,8 +280,36 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "Gloucestershire County Council",
-      "start": "2026-11-04",
+      "start": "2026-11-04T08:45",
       "end": "2026-11-04",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "ACTIVITY:ARN-1600-97436931",
+      "first_seen": "2026-11-04",
+      "street": "Bloomsbury Street",
+      "ward_slug": "st-peters",
+      "kind": "Planned",
+      "category": "scaffolding",
+      "traffic_management": "no_carriageway_incursion",
+      "road_closure": false,
+      "promoter": "",
+      "start": "2026-11-08",
+      "end": "2026-12-06",
+      "last_seen": "2026-11-04"
+    },
+    {
+      "id": "ACTIVITY:ARN-1600-86763378",
+      "first_seen": "2026-11-04",
+      "street": "Montpellier Spa Road",
+      "ward_slug": "college",
+      "kind": "Planned",
+      "category": "skips",
+      "traffic_management": "give_and_take",
+      "road_closure": false,
+      "promoter": "",
+      "start": "2026-11-20",
+      "end": "2026-11-21",
       "last_seen": "2026-11-04"
     },
     {
@@ -911,7 +1051,7 @@
       "road_closure": true,
       "promoter": "Severn Trent Water",
       "start": "2026-11-02T09:15",
-      "end": "2026-11-04",
+      "end": "2026-11-05",
       "last_seen": "2026-11-04"
     },
     {
@@ -1498,8 +1638,8 @@
       "traffic_management": "Multi-way signals",
       "road_closure": false,
       "promoter": "Gloucestershire County Council",
-      "start": "2026-11-05",
-      "end": "2026-11-05",
+      "start": "2026-11-12",
+      "end": "2026-11-12",
       "last_seen": "2026-11-04"
     },
     {
@@ -1596,7 +1736,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-04",
+      "start": "2026-11-04T09:21",
       "end": "2026-11-05",
       "last_seen": "2026-11-04"
     },
@@ -2170,7 +2310,7 @@
       "traffic_management": "Multi-way signals",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-04",
+      "start": "2026-11-04T09:40",
       "end": "2026-11-06",
       "last_seen": "2026-11-04"
     },
@@ -2408,7 +2548,7 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "Virgin Media",
-      "start": "2026-11-04",
+      "start": "2026-11-04T09:09",
       "end": "2026-11-06",
       "last_seen": "2026-11-04"
     },
@@ -2758,7 +2898,7 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-04",
+      "start": "2026-11-04T09:12",
       "end": "2026-11-05",
       "last_seen": "2026-11-04"
     },
@@ -4774,7 +4914,7 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-04",
+      "start": "2026-11-04T08:50",
       "end": "2026-11-06",
       "last_seen": "2026-11-04"
     },
