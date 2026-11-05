@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T08:45:09+00:00",
+  "generated_at": "2026-11-05T08:50:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,28 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-05T08:43",
-      "expected": "2026-11-05T08:43",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-05T08:52",
-      "expected": "2026-11-05T09:16",
+      "expected": "2026-11-05T09:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -114,7 +94,7 @@
     },
     {
       "scheduled": "2026-11-05T09:12",
-      "expected": "2026-11-05T09:19",
+      "expected": "2026-11-05T09:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -142,7 +122,7 @@
     },
     {
       "scheduled": "2026-11-05T09:15",
-      "expected": "2026-11-05T09:24",
+      "expected": "2026-11-05T09:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -175,12 +155,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T09:32",
+      "expected": "2026-11-05T09:50",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a fault on this train",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-05T08:50",
-      "expected": "2026-11-05T09:15",
+      "expected": "2026-11-05T09:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,7 +208,7 @@
     },
     {
       "scheduled": "2026-11-05T09:10",
-      "expected": "2026-11-05T09:18",
+      "expected": "2026-11-05T09:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -224,7 +219,7 @@
     },
     {
       "scheduled": "2026-11-05T09:14",
-      "expected": "2026-11-05T09:23",
+      "expected": "2026-11-05T09:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -264,6 +259,17 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T09:31",
+      "expected": "2026-11-05T09:49",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a fault on this train",
       "mode": "train"
     }
   ],
