@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T19:20:08+00:00",
+  "generated_at": "2026-11-05T19:25:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,20 +12,6 @@
     "The ticket office is currently closed at this station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-05T19:15",
-      "expected": "2026-11-05T19:18",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-05T19:23",
       "expected": "2026-11-05T19:26",
@@ -157,20 +143,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T20:02",
+      "expected": "2026-11-05T20:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-05T19:14",
-      "expected": "2026-11-05T19:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-05T19:21",
       "expected": "2026-11-05T19:25",
@@ -184,7 +180,7 @@
     },
     {
       "scheduled": "2026-11-05T19:27",
-      "expected": "2026-11-05T19:29",
+      "expected": "2026-11-05T19:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
