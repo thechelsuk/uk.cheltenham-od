@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T21:50:08+00:00",
+  "generated_at": "2026-11-05T21:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,22 +12,6 @@
     "The ticket office is currently closed at this station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-05T21:52",
-      "expected": "2026-11-05T21:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-05T21:53",
       "expected": "2026-11-05T21:55",
@@ -47,13 +31,13 @@
     },
     {
       "scheduled": "2026-11-05T22:00",
-      "expected": "2026-11-05T22:00",
-      "status": "On time",
+      "expected": "2026-11-05T22:02",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -125,20 +109,23 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T22:57",
+      "expected": "2026-11-05T23:19",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-05T21:50",
-      "expected": "2026-11-05T21:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-05T21:51",
       "expected": "2026-11-05T21:54",
@@ -152,13 +139,13 @@
     },
     {
       "scheduled": "2026-11-05T21:59",
-      "expected": "2026-11-05T21:59",
-      "status": "On time",
+      "expected": "2026-11-05T22:01",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -225,6 +212,17 @@
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T22:55",
+      "expected": "2026-11-05T23:05",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
       "mode": "train"
     }
   ],
