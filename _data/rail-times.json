@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T19:30:08+00:00",
+  "generated_at": "2026-11-05T19:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,7 +14,7 @@
   "departures": [
     {
       "scheduled": "2026-11-05T19:30",
-      "expected": "2026-11-05T19:32",
+      "expected": "2026-11-05T19:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -29,7 +29,7 @@
     },
     {
       "scheduled": "2026-11-05T19:40",
-      "expected": "2026-11-05T19:43",
+      "expected": "2026-11-05T19:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -81,7 +81,7 @@
     },
     {
       "scheduled": "2026-11-05T19:52",
-      "expected": "2026-11-05T19:58",
+      "expected": "2026-11-05T20:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -129,7 +129,7 @@
       "scheduled": "2026-11-05T20:02",
       "expected": "2026-11-05T20:02",
       "status": "On time",
-      "platform": "1",
+      "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
       "destination": "London Paddington",
@@ -148,8 +148,8 @@
     },
     {
       "scheduled": "2026-11-05T20:12",
-      "expected": "2026-11-05T20:14",
-      "status": "Delayed",
+      "expected": "2026-11-05T20:12",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -168,20 +168,25 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T20:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-05T19:27",
-      "expected": "2026-11-05T19:32",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by the train departing late to maintain customer connections",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-05T19:28",
       "expected": "2026-11-05T19:31",
@@ -228,7 +233,7 @@
     },
     {
       "scheduled": "2026-11-05T19:51",
-      "expected": "2026-11-05T19:57",
+      "expected": "2026-11-05T19:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -250,13 +255,24 @@
     },
     {
       "scheduled": "2026-11-05T20:10",
-      "expected": "2026-11-05T20:13",
-      "status": "Delayed",
+      "expected": "2026-11-05T20:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-05T20:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     }
   ],
