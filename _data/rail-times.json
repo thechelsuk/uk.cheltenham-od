@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T19:50:08+00:00",
+  "generated_at": "2026-11-06T19:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-06T19:49",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Great Malvern",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street",
-        "Malvern Link",
-        "Great Malvern"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-06T19:52",
       "expected": "2026-11-06T20:10",
@@ -173,20 +155,30 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T20:52",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-06T19:47",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Great Malvern",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-06T19:51",
       "expected": "2026-11-06T20:09",
@@ -262,6 +254,17 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T20:50",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     }
   ],
