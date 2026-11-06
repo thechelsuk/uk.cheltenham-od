@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T15:25:08+00:00",
+  "generated_at": "2026-11-06T15:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,27 +8,8 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [
-    "Trains between Penzance and Plymouth may be delayed by up to 40 minutes or revised. Further information can be found in the Disruptions area of the National Rail website."
-  ],
+  "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-06T15:15",
-      "expected": "2026-11-06T15:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-06T15:29",
       "expected": "2026-11-06T15:47",
@@ -66,8 +47,8 @@
     },
     {
       "scheduled": "2026-11-06T15:40",
-      "expected": "2026-11-06T15:42",
-      "status": "Delayed",
+      "expected": "2026-11-06T15:40",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -102,7 +83,7 @@
     },
     {
       "scheduled": "2026-11-06T15:52",
-      "expected": "2026-11-06T16:01",
+      "expected": "2026-11-06T16:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -163,31 +144,56 @@
         "London Paddington"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-06T15:14",
-      "expected": "2026-11-06T15:25",
-      "status": "Delayed",
+      "scheduled": "2026-11-06T16:12",
+      "expected": "2026-11-06T16:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Dunbar",
+        "Edinburgh"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T16:15",
+      "expected": "2026-11-06T16:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T15:26",
-      "expected": "2026-11-06T15:26",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-06T15:28",
       "expected": "2026-11-06T15:46",
@@ -212,7 +218,7 @@
     },
     {
       "scheduled": "2026-11-06T15:38",
-      "expected": "2026-11-06T15:41",
+      "expected": "2026-11-06T15:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -234,7 +240,7 @@
     },
     {
       "scheduled": "2026-11-06T15:50",
-      "expected": "2026-11-06T16:00",
+      "expected": "2026-11-06T15:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +257,28 @@
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T16:10",
+      "expected": "2026-11-06T16:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T16:15",
+      "expected": "2026-11-06T16:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
