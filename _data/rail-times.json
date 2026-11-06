@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T20:55:08+00:00",
+  "generated_at": "2026-11-06T21:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,28 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-06T20:52",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T20:52",
-      "expected": "2026-11-06T20:59",
+      "expected": "2026-11-06T21:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -99,7 +78,7 @@
     },
     {
       "scheduled": "2026-11-06T21:12",
-      "expected": "2026-11-06T21:17",
+      "expected": "2026-11-06T21:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -198,23 +177,31 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T22:00",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-06T20:50",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T20:50",
-      "expected": "2026-11-06T20:58",
+      "expected": "2026-11-06T20:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -236,7 +223,7 @@
     },
     {
       "scheduled": "2026-11-06T21:10",
-      "expected": "2026-11-06T21:16",
+      "expected": "2026-11-06T21:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -287,6 +274,17 @@
       "origin": "Cardiff Central",
       "destination": "Birmingham New Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T21:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     }
   ],
