@@ -5,8 +5,8 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 833,
-    "unplanned": 147,
+    "count": 837,
+    "unplanned": 150,
     "road_closures": 120,
     "by_street": [
       {
@@ -30,14 +30,14 @@
         "road_closures": 1
       },
       {
+        "street": "High Street",
+        "works": 11,
+        "road_closures": 1
+      },
+      {
         "street": "Hucclecote Road",
         "works": 11,
         "road_closures": 0
-      },
-      {
-        "street": "High Street",
-        "works": 10,
-        "road_closures": 1
       },
       {
         "street": "Badgeworth Road",
@@ -63,7 +63,7 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 325
+        "works": 326
       },
       {
         "name": "BT",
@@ -75,7 +75,7 @@
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
-        "works": 76
+        "works": 78
       },
       {
         "name": "Wales And West Utilities Ltd",
@@ -83,7 +83,7 @@
       },
       {
         "name": "Unknown",
-        "works": 21
+        "works": 22
       },
       {
         "name": "Virgin Media",
@@ -153,11 +153,25 @@
       },
       {
         "month": "2026-11",
-        "works": 159
+        "works": 163
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:LB9011303-000060791446",
+      "first_seen": "2026-11-06",
+      "street": "Horsbere Road",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-06T11:47",
+      "end": "2026-11-10",
+      "last_seen": "2026-11-06"
+    },
     {
       "id": "PERMIT:LB9011303-000060790944",
       "first_seen": "2026-11-06",
@@ -187,6 +201,34 @@
       "last_seen": "2026-11-06"
     },
     {
+      "id": "PERMIT:HM7578034854",
+      "first_seen": "2026-11-06",
+      "street": "High Street",
+      "ward_slug": "st-pauls",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2026-11-06T10:30",
+      "end": "2026-11-12",
+      "last_seen": "2026-11-06"
+    },
+    {
+      "id": "PERMIT:HM7528161402",
+      "first_seen": "2026-11-06",
+      "street": "Barnett Way",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2026-11-06T10:30",
+      "end": "2026-11-12",
+      "last_seen": "2026-11-06"
+    },
+    {
       "id": "PERMIT:FN40210711186",
       "first_seen": "2026-11-06",
       "street": "A436 From South Of Seven Springs Play And Support Centre To Air Balloon",
@@ -212,6 +254,20 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-09",
       "end": "2026-11-13",
+      "last_seen": "2026-11-06"
+    },
+    {
+      "id": "ACTIVITY:ARN-1600-61287105",
+      "first_seen": "2026-11-06",
+      "street": "Gloucester Street",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "skips",
+      "traffic_management": "give_and_take",
+      "road_closure": false,
+      "promoter": "",
+      "start": "2026-11-11",
+      "end": "2026-12-09",
       "last_seen": "2026-11-06"
     },
     {
@@ -4397,7 +4453,7 @@
       "road_closure": false,
       "promoter": "National Grid Electricity Distribution (West Midlands)",
       "start": "2026-11-24",
-      "end": "2026-12-02",
+      "end": "2026-11-30",
       "last_seen": "2026-11-06"
     },
     {
@@ -9800,8 +9856,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-05",
-      "end": "2026-11-09",
+      "start": "2026-11-06T11:04",
+      "end": "2026-11-10",
       "last_seen": "2026-11-06"
     },
     {
