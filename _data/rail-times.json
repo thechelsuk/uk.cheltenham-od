@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T10:25:08+00:00",
+  "generated_at": "2026-11-06T10:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-06T10:15",
-      "expected": "2026-11-06T10:40",
+      "expected": "2026-11-06T10:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -24,25 +24,6 @@
         "Lydney",
         "Newport (South Wales)",
         "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T10:23",
-      "expected": "2026-11-06T10:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
       ],
       "mode": "train"
     },
@@ -176,40 +157,68 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T11:03",
+      "expected": "2026-11-06T11:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T11:12",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-06T10:14",
-      "expected": "2026-11-06T10:39",
+      "expected": "2026-11-06T10:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been delayed by a fault on a train in front of this one",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T10:22",
-      "expected": "2026-11-06T10:22",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T10:27",
-      "expected": "2026-11-06T10:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -276,6 +285,17 @@
       "origin": "Cardiff Central",
       "destination": "Edinburgh via Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T11:10",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
       "mode": "train"
     }
   ],
