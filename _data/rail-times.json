@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T11:30:08+00:00",
+  "generated_at": "2026-11-06T11:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,25 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-06T11:15",
-      "expected": "2026-11-06T11:31",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-06T11:29",
-      "expected": "2026-11-06T11:32",
+      "expected": "2026-11-06T11:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -64,7 +47,7 @@
     },
     {
       "scheduled": "2026-11-06T11:40",
-      "expected": "2026-11-06T11:43",
+      "expected": "2026-11-06T11:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -100,7 +83,7 @@
     },
     {
       "scheduled": "2026-11-06T11:52",
-      "expected": "2026-11-06T12:00",
+      "expected": "2026-11-06T12:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -198,23 +181,29 @@
         "Aberdeen"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-06T11:14",
-      "expected": "2026-11-06T11:30",
-      "status": "Delayed",
+      "scheduled": "2026-11-06T12:15",
+      "expected": "2026-11-06T12:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-06T11:27",
-      "expected": "2026-11-06T11:31",
+      "expected": "2026-11-06T11:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -225,7 +214,7 @@
     },
     {
       "scheduled": "2026-11-06T11:31",
-      "expected": "2026-11-06T11:36",
+      "expected": "2026-11-06T11:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -236,7 +225,7 @@
     },
     {
       "scheduled": "2026-11-06T11:38",
-      "expected": "2026-11-06T11:42",
+      "expected": "2026-11-06T11:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -258,7 +247,7 @@
     },
     {
       "scheduled": "2026-11-06T11:51",
-      "expected": "2026-11-06T11:59",
+      "expected": "2026-11-06T12:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -286,6 +275,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Aberdeen via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T12:14",
+      "expected": "2026-11-06T12:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
