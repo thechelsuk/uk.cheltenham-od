@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T10:30:08+00:00",
+  "generated_at": "2026-11-06T10:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -24,30 +24,6 @@
         "Lydney",
         "Newport (South Wales)",
         "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-06T10:29",
-      "expected": "2026-11-06T10:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Weston-super-Mare",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
       ],
       "mode": "train"
     },
@@ -109,7 +85,7 @@
     },
     {
       "scheduled": "2026-11-06T10:52",
-      "expected": "2026-11-06T11:06",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,6 +183,23 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T11:15",
+      "expected": "2026-11-06T11:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -222,20 +215,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-06T10:28",
-      "expected": "2026-11-06T10:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-06T10:31",
-      "expected": "2026-11-06T10:31",
-      "status": "On time",
+      "expected": "2026-11-06T10:33",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -267,7 +249,7 @@
     },
     {
       "scheduled": "2026-11-06T10:50",
-      "expected": "2026-11-06T11:05",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -296,6 +278,17 @@
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T11:14",
+      "expected": "2026-11-06T11:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
