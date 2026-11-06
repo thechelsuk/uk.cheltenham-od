@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T18:20:07+00:00",
+  "generated_at": "2026-11-06T18:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,32 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-06T18:12",
-      "expected": "2026-11-06T18:20",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Newcastle via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-06T18:19",
       "expected": "2026-11-06T18:32",
@@ -159,20 +133,33 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T18:55",
+      "expected": "2026-11-06T18:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-06T18:11",
-      "expected": "2026-11-06T18:19",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Newcastle via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-06T18:18",
       "expected": "2026-11-06T18:31",
@@ -197,8 +184,8 @@
     },
     {
       "scheduled": "2026-11-06T18:27",
-      "expected": "2026-11-06T18:27",
-      "status": "On time",
+      "expected": "2026-11-06T18:29",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
@@ -219,8 +206,8 @@
     },
     {
       "scheduled": "2026-11-06T18:31",
-      "expected": "2026-11-06T18:31",
-      "status": "On time",
+      "expected": "2026-11-06T18:33",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -252,12 +239,23 @@
     },
     {
       "scheduled": "2026-11-06T18:50",
-      "expected": "2026-11-06T18:50",
-      "status": "On time",
+      "expected": "2026-11-06T18:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T18:54",
+      "expected": "2026-11-06T18:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
