@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T19:10:08+00:00",
+  "generated_at": "2026-11-06T19:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,30 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-06T18:52",
-      "expected": "2026-11-06T19:09",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central",
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-06T19:12",
       "expected": "2026-11-06T19:12",
@@ -90,7 +66,7 @@
     },
     {
       "scheduled": "2026-11-06T19:30",
-      "expected": "2026-11-06T19:35",
+      "expected": "2026-11-06T19:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -154,20 +130,30 @@
         "Great Malvern"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-06T18:50",
-      "expected": "2026-11-06T19:06",
+      "scheduled": "2026-11-06T19:52",
+      "expected": "2026-11-06T19:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
+      "destination": "Plymouth",
       "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-06T19:10",
       "expected": "2026-11-06T19:10",
@@ -214,7 +200,7 @@
     },
     {
       "scheduled": "2026-11-06T19:28",
-      "expected": "2026-11-06T19:34",
+      "expected": "2026-11-06T19:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -254,6 +240,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Great Malvern",
       "reason": "This service has been cancelled because of a fault on this train",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-06T19:51",
+      "expected": "2026-11-06T19:56",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
       "mode": "train"
     }
   ],
