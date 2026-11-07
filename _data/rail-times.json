@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T13:05:08+00:00",
+  "generated_at": "2026-11-07T13:10:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-07T13:03",
-      "expected": "2026-11-07T13:06",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-07T13:12",
       "expected": "2026-11-07T13:12",
@@ -60,7 +39,7 @@
     },
     {
       "scheduled": "2026-11-07T13:15",
-      "expected": "2026-11-07T13:25",
+      "expected": "2026-11-07T13:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -96,7 +75,7 @@
     },
     {
       "scheduled": "2026-11-07T13:29",
-      "expected": "2026-11-07T13:34",
+      "expected": "2026-11-07T13:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -164,13 +143,34 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T13:52",
+      "expected": "2026-11-07T13:57",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-07T13:10",
-      "expected": "2026-11-07T13:10",
-      "status": "On time",
+      "expected": "2026-11-07T13:12",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -180,7 +180,7 @@
     },
     {
       "scheduled": "2026-11-07T13:14",
-      "expected": "2026-11-07T13:24",
+      "expected": "2026-11-07T13:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,7 +213,7 @@
     },
     {
       "scheduled": "2026-11-07T13:27",
-      "expected": "2026-11-07T13:33",
+      "expected": "2026-11-07T13:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -252,6 +252,17 @@
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T13:50",
+      "expected": "2026-11-07T13:56",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
