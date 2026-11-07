@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T05:30:08+00:00",
+  "generated_at": "2026-11-07T05:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-07T05:30",
-      "expected": "2026-11-07T05:30",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Gloucester",
-      "destination": "Great Malvern",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street",
-        "Malvern Link",
-        "Great Malvern"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-07T05:40",
       "expected": "2026-11-07T05:40",
@@ -68,7 +50,7 @@
     },
     {
       "scheduled": "2026-11-07T06:02",
-      "expected": "2026-11-07T06:04",
+      "expected": "2026-11-07T06:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -234,23 +216,31 @@
         "Stansted Airport"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T07:19",
+      "expected": "2026-11-07T07:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-07T05:28",
-      "expected": "2026-11-07T05:30",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Gloucester",
-      "destination": "Great Malvern",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-07T06:01",
-      "expected": "2026-11-07T06:03",
+      "expected": "2026-11-07T06:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -300,6 +290,17 @@
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Stansted Airport",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T07:17",
+      "expected": "2026-11-07T07:17",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Great Malvern",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
     }
