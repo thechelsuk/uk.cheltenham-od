@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T20:00:08+00:00",
+  "generated_at": "2026-11-07T20:10:16+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,75 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-07T19:52",
-      "expected": "2026-11-07T20:01",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Newton Abbot",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-07T19:59",
-      "expected": "2026-11-07T19:59",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Wilnecote",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Spondon",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-07T20:03",
-      "expected": "2026-11-07T20:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-07T20:12",
-      "expected": "2026-11-07T20:15",
+      "expected": "2026-11-07T20:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -154,34 +87,72 @@
         "Cardiff Central"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-07T19:50",
-      "expected": "2026-11-07T20:00",
+      "scheduled": "2026-11-07T20:52",
+      "expected": "2026-11-07T21:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Newton Abbot",
-      "reason": "",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a speed restriction",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-07T19:58",
-      "expected": "2026-11-07T19:58",
+      "scheduled": "2026-11-07T21:05",
+      "expected": "2026-11-07T21:05",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T21:12",
+      "expected": "2026-11-07T21:12",
       "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
+      "origin": "Plymouth",
+      "destination": "Derby",
       "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-07T20:11",
-      "expected": "2026-11-07T20:14",
+      "expected": "2026-11-07T20:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -214,7 +185,7 @@
     },
     {
       "scheduled": "2026-11-07T20:25",
-      "expected": "2026-11-07T20:27",
+      "expected": "2026-11-07T20:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -236,13 +207,35 @@
     },
     {
       "scheduled": "2026-11-07T20:42",
-      "expected": "2026-11-07T20:57",
+      "expected": "2026-11-07T21:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a shortage of train crew",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T20:50",
+      "expected": "2026-11-07T21:02",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a speed restriction",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T21:11",
+      "expected": "2026-11-07T21:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Derby",
+      "reason": "",
       "mode": "train"
     }
   ],
