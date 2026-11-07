@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T13:00:08+00:00",
+  "generated_at": "2026-11-07T13:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,40 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-07T12:52",
-      "expected": "2026-11-07T13:02",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "Par",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "Camborne",
-        "Hayle",
-        "St Erth",
-        "Penzance"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-07T13:03",
-      "expected": "2026-11-07T13:03",
-      "status": "On time",
+      "expected": "2026-11-07T13:06",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -91,7 +60,7 @@
     },
     {
       "scheduled": "2026-11-07T13:15",
-      "expected": "2026-11-07T13:24",
+      "expected": "2026-11-07T13:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -127,7 +96,7 @@
     },
     {
       "scheduled": "2026-11-07T13:29",
-      "expected": "2026-11-07T13:35",
+      "expected": "2026-11-07T13:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -179,24 +148,29 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T13:48",
+      "expected": "2026-11-07T13:48",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-07T12:50",
-      "expected": "2026-11-07T13:01",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Penzance",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-07T13:10",
-      "expected": "2026-11-07T13:12",
-      "status": "Delayed",
+      "expected": "2026-11-07T13:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -206,7 +180,7 @@
     },
     {
       "scheduled": "2026-11-07T13:14",
-      "expected": "2026-11-07T13:23",
+      "expected": "2026-11-07T13:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -239,7 +213,7 @@
     },
     {
       "scheduled": "2026-11-07T13:27",
-      "expected": "2026-11-07T13:34",
+      "expected": "2026-11-07T13:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -267,6 +241,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-07T13:47",
+      "expected": "2026-11-07T13:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
