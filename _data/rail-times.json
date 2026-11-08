@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T16:00:08+00:00",
+  "generated_at": "2026-11-08T16:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,54 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-08T15:52",
-      "expected": "2026-11-08T16:04",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a shortage of train drivers",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "St Erth",
-        "Penzance"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-08T16:01",
-      "expected": "2026-11-08T16:01",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-08T16:09",
-      "expected": "2026-11-08T16:16",
+      "expected": "2026-11-08T16:12",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -106,8 +60,8 @@
     },
     {
       "scheduled": "2026-11-08T16:15",
-      "expected": "2026-11-08T16:15",
-      "status": "On time",
+      "expected": "2026-11-08T16:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -171,7 +125,7 @@
     },
     {
       "scheduled": "2026-11-08T16:52",
-      "expected": "2026-11-08T17:07",
+      "expected": "2026-11-08T17:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -189,23 +143,50 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T16:59",
+      "expected": "2026-11-08T16:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Nottingham"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T17:00",
+      "expected": "2026-11-08T17:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-08T15:50",
-      "expected": "2026-11-08T16:03",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a shortage of train drivers",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-08T16:08",
-      "expected": "2026-11-08T16:10",
+      "expected": "2026-11-08T16:11",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -216,8 +197,8 @@
     },
     {
       "scheduled": "2026-11-08T16:14",
-      "expected": "2026-11-08T16:14",
-      "status": "On time",
+      "expected": "2026-11-08T16:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
@@ -271,13 +252,24 @@
     },
     {
       "scheduled": "2026-11-08T16:50",
-      "expected": "2026-11-08T17:06",
+      "expected": "2026-11-08T17:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a speed restriction over defective track",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T16:58",
+      "expected": "2026-11-08T16:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Nottingham",
+      "reason": "",
       "mode": "train"
     }
   ],
