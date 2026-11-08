@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T16:25:12+00:00",
+  "generated_at": "2026-11-08T16:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,25 +12,6 @@
     "Trains running between Oxford and Reading may be cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-08T16:22",
-      "expected": "2026-11-08T16:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T16:39",
       "expected": "2026-11-08T16:39",
@@ -63,7 +44,7 @@
     },
     {
       "scheduled": "2026-11-08T16:52",
-      "expected": "2026-11-08T17:08",
+      "expected": "2026-11-08T17:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -145,20 +126,30 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T17:52",
+      "expected": "2026-11-08T18:07",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a speed restriction over defective track",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-08T16:21",
-      "expected": "2026-11-08T16:21",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T16:29",
       "expected": "2026-11-08T16:29",
@@ -194,7 +185,7 @@
     },
     {
       "scheduled": "2026-11-08T16:50",
-      "expected": "2026-11-08T17:07",
+      "expected": "2026-11-08T17:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -227,8 +218,8 @@
     },
     {
       "scheduled": "2026-11-08T17:28",
-      "expected": "2026-11-08T17:28",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
@@ -245,6 +236,17 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T17:50",
+      "expected": "2026-11-08T18:06",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by a speed restriction over defective track",
       "mode": "train"
     }
   ],
