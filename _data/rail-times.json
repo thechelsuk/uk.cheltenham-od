@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T19:40:07+00:00",
+  "generated_at": "2026-11-08T19:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-08T19:11",
-      "expected": "2026-11-08T19:39",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "calling_at": [
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T19:54",
       "expected": "2026-11-08T20:09",
@@ -112,8 +93,8 @@
     },
     {
       "scheduled": "2026-11-08T20:15",
-      "expected": "2026-11-08T20:15",
-      "status": "On time",
+      "expected": "2026-11-08T20:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -144,23 +125,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T20:46",
+      "expected": "2026-11-08T20:46",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-08T19:08",
-      "expected": "2026-11-08T19:37",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-08T19:29",
-      "expected": "2026-11-08T19:43",
+      "expected": "2026-11-08T19:45",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -171,7 +156,7 @@
     },
     {
       "scheduled": "2026-11-08T19:45",
-      "expected": "2026-11-08T19:47",
+      "expected": "2026-11-08T19:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -204,8 +189,8 @@
     },
     {
       "scheduled": "2026-11-08T20:14",
-      "expected": "2026-11-08T20:14",
-      "status": "On time",
+      "expected": "2026-11-08T20:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -232,6 +217,17 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T20:46",
+      "expected": "2026-11-08T20:46",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
