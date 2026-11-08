@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T16:30:08+00:00",
+  "generated_at": "2026-11-08T16:35:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,9 +8,7 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [
-    "Trains running between Oxford and Reading may be cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
-  ],
+  "messages": [],
   "departures": [
     {
       "scheduled": "2026-11-08T16:39",
@@ -44,7 +42,7 @@
     },
     {
       "scheduled": "2026-11-08T16:52",
-      "expected": "2026-11-08T17:09",
+      "expected": "2026-11-08T17:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -129,7 +127,7 @@
     },
     {
       "scheduled": "2026-11-08T17:52",
-      "expected": "2026-11-08T18:07",
+      "expected": "2026-11-08T18:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -147,20 +145,27 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T18:00",
+      "expected": "2026-11-08T18:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-08T16:29",
-      "expected": "2026-11-08T16:29",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T16:38",
       "expected": "2026-11-08T16:38",
@@ -185,7 +190,7 @@
     },
     {
       "scheduled": "2026-11-08T16:50",
-      "expected": "2026-11-08T17:08",
+      "expected": "2026-11-08T17:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -218,8 +223,8 @@
     },
     {
       "scheduled": "2026-11-08T17:28",
-      "expected": null,
-      "status": "Delayed",
+      "expected": "2026-11-08T17:28",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
@@ -240,7 +245,7 @@
     },
     {
       "scheduled": "2026-11-08T17:50",
-      "expected": "2026-11-08T18:06",
+      "expected": "2026-11-08T18:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
