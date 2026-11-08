@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T20:20:08+00:00",
+  "generated_at": "2026-11-08T20:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-08T20:10",
-      "expected": "2026-11-08T20:19",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by the train departing late to maintain customer connections",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-08T20:15",
-      "expected": "2026-11-08T20:20",
+      "expected": "2026-11-08T20:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -82,7 +62,7 @@
     },
     {
       "scheduled": "2026-11-08T20:52",
-      "expected": "2026-11-08T20:57",
+      "expected": "2026-11-08T21:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -143,7 +123,7 @@
     },
     {
       "scheduled": "2026-11-08T21:11",
-      "expected": "2026-11-08T21:26",
+      "expected": "2026-11-08T21:28",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -159,12 +139,28 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T21:52",
+      "expected": "2026-11-08T21:59",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been delayed by a speed restriction over defective track",
+      "calling_at": [
+        "Gloucester",
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-08T20:14",
-      "expected": "2026-11-08T20:19",
+      "expected": "2026-11-08T20:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -186,8 +182,8 @@
     },
     {
       "scheduled": "2026-11-08T20:29",
-      "expected": "2026-11-08T20:29",
-      "status": "On time",
+      "expected": "2026-11-08T20:32",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Swindon",
@@ -208,7 +204,7 @@
     },
     {
       "scheduled": "2026-11-08T20:50",
-      "expected": "2026-11-08T20:56",
+      "expected": "2026-11-08T20:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -230,7 +226,7 @@
     },
     {
       "scheduled": "2026-11-08T21:09",
-      "expected": "2026-11-08T21:25",
+      "expected": "2026-11-08T21:27",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -248,6 +244,17 @@
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T21:50",
+      "expected": "2026-11-08T21:58",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been delayed by a speed restriction over defective track",
       "mode": "train"
     }
   ],
