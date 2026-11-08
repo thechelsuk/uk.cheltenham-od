@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T11:15:08+00:00",
+  "generated_at": "2026-11-08T11:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains running between Oxford and Reading may be cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-08T11:10",
-      "expected": "2026-11-08T11:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T11:55",
       "expected": "2026-11-08T11:55",
@@ -90,13 +69,13 @@
     },
     {
       "scheduled": "2026-11-08T12:11",
-      "expected": "2026-11-08T12:13",
-      "status": "Delayed",
+      "expected": "2026-11-08T12:11",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle",
-      "reason": "This service has been delayed by a shortage of train drivers",
+      "reason": "",
       "calling_at": [
         "Birmingham New Street",
         "Burton-on-Trent",
@@ -144,12 +123,12 @@
     },
     {
       "scheduled": "2026-11-08T12:35",
-      "expected": "2026-11-08T12:35",
-      "status": "On time",
+      "expected": null,
+      "status": "Cancelled",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
+      "destination": "Cardiff Central",
       "reason": "",
       "calling_at": [
         "Gloucester",
@@ -161,31 +140,46 @@
         "Cardiff Central"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
-    {
-      "scheduled": "2026-11-08T11:08",
-      "expected": "2026-11-08T11:11",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
     },
     {
-      "scheduled": "2026-11-08T11:16",
-      "expected": "2026-11-08T11:16",
+      "scheduled": "2026-11-08T12:45",
+      "expected": "2026-11-08T12:45",
       "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
       "mode": "train"
     },
+    {
+      "scheduled": "2026-11-08T12:52",
+      "expected": "2026-11-08T12:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-08T11:46",
       "expected": null,
@@ -221,13 +215,13 @@
     },
     {
       "scheduled": "2026-11-08T12:09",
-      "expected": "2026-11-08T12:12",
+      "expected": "2026-11-08T12:11",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Newcastle",
-      "reason": "This service has been delayed by a shortage of train drivers",
+      "reason": "",
       "mode": "train"
     },
     {
@@ -249,6 +243,28 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T12:43",
+      "expected": "2026-11-08T12:43",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T12:51",
+      "expected": "2026-11-08T12:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
