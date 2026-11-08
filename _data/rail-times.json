@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T15:40:08+00:00",
+  "generated_at": "2026-11-08T15:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,29 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-08T14:52",
-      "expected": "2026-11-08T15:40",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by engineering works not being finished on time",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-08T15:52",
-      "expected": "2026-11-08T16:04",
+      "expected": "2026-11-08T16:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -159,20 +138,23 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T16:39",
+      "expected": "2026-11-08T16:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-08T14:50",
-      "expected": "2026-11-08T15:39",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by engineering works not being finished on time",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T15:44",
       "expected": "2026-11-08T15:44",
@@ -186,7 +168,7 @@
     },
     {
       "scheduled": "2026-11-08T15:50",
-      "expected": "2026-11-08T16:03",
+      "expected": "2026-11-08T16:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -208,8 +190,8 @@
     },
     {
       "scheduled": "2026-11-08T16:08",
-      "expected": "2026-11-08T16:08",
-      "status": "On time",
+      "expected": "2026-11-08T16:10",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
@@ -247,6 +229,17 @@
       "operator": "Great Western Railway",
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T16:38",
+      "expected": "2026-11-08T16:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
     }
