@@ -20,6 +20,8 @@ Please follow the Reduce, Reuse, Recycle philosophy where possible
 
 For your kerbside boxes and bins, our [bin collections](/cheltenham-bin-collections) page shows whether it's Week 1 or Week 2, what goes in each bin and any bank holiday changes.
 
+From 9 November 2026, every household can also recycle plastic bags and wrapping at the kerbside, including crisp packets, sweet wrappers, pouches and cling film. You sign up once with the council, then put the tied bag in your recycling box on collection day. See [plastic bags and wrapping](/cheltenham-bin-collections#what-goes-where) for what it takes.
+
 ## Recycling Centres in Cheltenham
 
 The main recycling centre for Cheltenham is located at Wingmoor Farm, half mile west of Bishop's Cleeve, on the road to Stoke Orchard.

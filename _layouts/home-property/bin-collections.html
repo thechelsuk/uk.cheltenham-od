@@ -58,7 +58,7 @@
         <ul>
             <li><strong>Collected:</strong> {{ c.frequency }}.</li>
             <li><strong>Yes:</strong> {{ c.takes }}.</li>
-            <li><strong>No:</strong> {{ c.not }}.</li>
+            {% if c.not %}<li><strong>No:</strong> {{ c.not }}.</li>{% endif %}
             <li><a href="{{ c.url }}">Full list on the council's site</a></li>
         </ul>
         {% endfor %}
@@ -114,6 +114,15 @@
             <li>Enter your postcode in the council's <a href="{{ bins.checker_url }}">collection day checker</a>.
                 It lists the dates for your recycling, green bin, food caddy and garden waste. Once you know
                 whether your recycling falls in Week 1 or Week 2, this page shows which week it is.</li>
+        </ul>
+
+        <h3>Can I Recycle Plastic Bags and Wrapping?</h3>
+        <ul>
+            <li>Yes. From 9 November 2026 every household in Cheltenham can sign up for kerbside plastic bag and
+                wrapping recycling, on the council's <a href="https://www.cheltenham.gov.uk/bins-and-recycling/request-bins-and-recycling-containers/">bins
+                and recycling containers page</a> or by calling 01242 262626. The council delivers a pack of
+                collection bags, or you can use your own carrier bags. Tie the full bag and put it in your recycling
+                box on your usual recycling day.</li>
         </ul>
 
         <h3>What Time Should I Put My Bins Out?</h3>
