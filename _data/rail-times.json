@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T12:30:08+00:00",
+  "generated_at": "2026-11-08T12:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -50,7 +50,7 @@
     },
     {
       "scheduled": "2026-11-08T12:52",
-      "expected": "2026-11-08T12:57",
+      "expected": "2026-11-08T12:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -149,20 +149,30 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T13:52",
+      "expected": "2026-11-08T14:01",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a shortage of train drivers",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-08T12:26",
-      "expected": "2026-11-08T12:28",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T12:43",
       "expected": "2026-11-08T12:43",
@@ -176,7 +186,7 @@
     },
     {
       "scheduled": "2026-11-08T12:51",
-      "expected": "2026-11-08T12:56",
+      "expected": "2026-11-08T12:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -238,6 +248,17 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T13:50",
+      "expected": "2026-11-08T14:00",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Newcastle",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been delayed by a shortage of train drivers",
       "mode": "train"
     }
   ],
