@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T23:30:08+00:00",
+  "generated_at": "2026-11-08T07:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,7 +9,27 @@
     "crs": "CNM"
   },
   "messages": [],
-  "departures": [],
+  "departures": [
+    {
+      "scheduled": "2026-11-08T09:21",
+      "expected": "2026-11-08T09:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
+    }
+  ],
   "arrivals": [],
   "replacement_buses_only": false
 }
