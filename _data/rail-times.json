@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T13:10:08+00:00",
+  "generated_at": "2026-11-08T13:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,35 +12,6 @@
     "Trains running between Oxford and Reading may be cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-08T13:11",
-      "expected": "2026-11-08T13:11",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Glasgow Central via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Motherwell",
-        "Glasgow Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-08T13:40",
       "expected": "2026-11-08T13:40",
@@ -149,7 +120,7 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Gloucester",
         "Newport (South Wales)",
@@ -175,23 +146,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T14:29",
+      "expected": "2026-11-08T14:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-08T13:08",
-      "expected": "2026-11-08T13:08",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Glasgow Central via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-08T13:19",
-      "expected": "2026-11-08T13:28",
+      "expected": "2026-11-08T13:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -252,7 +227,7 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "mode": "train"
     },
     {
@@ -263,6 +238,17 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-08T14:27",
+      "expected": "2026-11-08T14:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     }
