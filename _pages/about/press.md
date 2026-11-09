@@ -122,6 +122,12 @@ _Please don't alter the logo's colours or proportions._
 
 Site, content, code and compilation &copy; Cheltenham Open Data. Underlying data &copy; respective providers, used under licence. No liability is accepted for data accuracy. Please credit "Cheltenham Open Data" and link to <https://cheltenham-od.uk> where possible.
 
+## Cite This Site
+
+Researchers, students and journalists can cite Cheltenham Open Data with its permanent DOI, which always points to the latest archived version of the site and its data scripts:
+
+Benfield, M. (2026). _Cheltenham Open Data_. Zenodo. <https://doi.org/10.5281/zenodo.24066076>
+
 ## Contact
 
 For interviews, comment or media enquiries:

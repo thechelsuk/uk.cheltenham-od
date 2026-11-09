@@ -1,6 +1,8 @@
 
 # Cheltenham Open Data
 
+[![DOI](https://zenodo.org/badge/311179157.svg)](https://doi.org/10.5281/zenodo.24066076)
+
 A site dedicated to the collection and dissemination of local open data in the Cheltenham and Gloucestershire area in the UK. Pages are built from official and public sources (ONS/Nomis, BODS, Ofcom, DfE, GOV.UK, OpenStreetMap and more) and refreshed automatically on a schedule.
 
 ## What's on the Site
