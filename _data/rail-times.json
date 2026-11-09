@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T19:15:08+00:00",
+  "generated_at": "2026-11-09T19:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,20 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-09T19:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-09T19:23",
       "expected": "2026-11-09T19:23",
@@ -156,20 +142,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T20:02",
+      "expected": "2026-11-09T20:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-09T19:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-09T19:21",
       "expected": "2026-11-09T19:21",
