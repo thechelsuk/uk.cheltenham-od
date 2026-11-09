@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:40:09+00:00",
+  "generated_at": "2026-11-09T23:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,11 +9,40 @@
     "crs": "CNM"
   },
   "messages": [],
-  "departures": [],
+  "departures": [
+    {
+      "scheduled": "2026-11-09T23:04",
+      "expected": "2026-11-10T00:06",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Parkway",
+      "reason": "This service has been delayed by a points failure",
+      "calling_at": [
+        "Gloucester",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
+    }
+  ],
   "arrivals": [
     {
+      "scheduled": "2026-11-09T23:02",
+      "expected": "2026-11-10T00:05",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Parkway",
+      "reason": "This service has been delayed by a points failure",
+      "mode": "train"
+    },
+    {
       "scheduled": "2026-11-09T23:31",
-      "expected": "2026-11-09T23:48",
+      "expected": "2026-11-09T23:50",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
