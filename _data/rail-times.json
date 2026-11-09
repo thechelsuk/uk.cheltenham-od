@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T07:20:08+00:00",
+  "generated_at": "2026-11-09T07:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,36 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-09T07:18",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Coleshill Parkway",
-        "Nuneaton",
-        "Leicester",
-        "Melton Mowbray",
-        "Oakham",
-        "Stamford",
-        "Peterborough",
-        "March",
-        "Manea",
-        "Ely",
-        "Cambridge",
-        "Cambridge South",
-        "Stansted Airport"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-09T07:24",
       "expected": "2026-11-09T07:24",
@@ -57,7 +27,7 @@
     },
     {
       "scheduled": "2026-11-09T07:29",
-      "expected": "2026-11-09T07:32",
+      "expected": "2026-11-09T07:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -92,7 +62,7 @@
     },
     {
       "scheduled": "2026-11-09T07:36",
-      "expected": "2026-11-09T07:38",
+      "expected": "2026-11-09T07:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -194,20 +164,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T08:01",
+      "expected": "2026-11-09T08:01",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-09T07:17",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Stansted Airport",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-09T07:22",
       "expected": "2026-11-09T07:22",
@@ -221,7 +201,7 @@
     },
     {
       "scheduled": "2026-11-09T07:27",
-      "expected": "2026-11-09T07:31",
+      "expected": "2026-11-09T07:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -254,8 +234,8 @@
     },
     {
       "scheduled": "2026-11-09T07:36",
-      "expected": "2026-11-09T07:36",
-      "status": "On time",
+      "expected": "2026-11-09T07:40",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -294,6 +274,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T07:59",
+      "expected": "2026-11-09T07:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Plymouth",
+      "reason": "",
       "mode": "train"
     }
   ],
