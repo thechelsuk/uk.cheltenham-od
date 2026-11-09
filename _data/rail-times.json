@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T22:00:08+00:00",
+  "generated_at": "2026-11-09T22:10:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,42 +8,10 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "Trains between Reading and Maidenhead may be cancelled, delayed by up to 30 minutes or revised. More details can be found in the Disruptions area of the National Rail website ."
+  ],
   "departures": [
-    {
-      "scheduled": "2026-11-09T22:00",
-      "expected": "2026-11-09T22:00",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-09T22:03",
-      "expected": "2026-11-09T22:03",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-09T22:16",
       "expected": "2026-11-09T22:16",
@@ -78,7 +46,7 @@
     },
     {
       "scheduled": "2026-11-09T22:52",
-      "expected": "2026-11-09T23:02",
+      "expected": "2026-11-09T23:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -124,42 +92,40 @@
         "Cardiff Central"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-09T21:59",
-      "expected": "2026-11-09T21:59",
+      "scheduled": "2026-11-09T23:02",
+      "expected": "2026-11-09T23:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T23:04",
+      "expected": "2026-11-09T23:04",
       "status": "On time",
       "platform": "1",
       "operator": "Great Western Railway",
-      "origin": "Great Malvern",
+      "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
       "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-09T22:01",
-      "expected": "2026-11-09T22:01",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-09T22:06",
-      "expected": "2026-11-09T22:06",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Westbury",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-09T22:20",
       "expected": "2026-11-09T22:20",
@@ -173,7 +139,7 @@
     },
     {
       "scheduled": "2026-11-09T22:27",
-      "expected": "2026-11-09T22:29",
+      "expected": "2026-11-09T22:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -195,7 +161,7 @@
     },
     {
       "scheduled": "2026-11-09T22:50",
-      "expected": "2026-11-09T23:01",
+      "expected": "2026-11-09T23:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -213,6 +179,39 @@
       "origin": "Penzance",
       "destination": "Birmingham New Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T23:00",
+      "expected": "2026-11-09T23:00",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T23:02",
+      "expected": "2026-11-09T23:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-09T23:31",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by trespassers on the railway",
       "mode": "train"
     }
   ],
