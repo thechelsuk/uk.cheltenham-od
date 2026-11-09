@@ -24,6 +24,15 @@ New to feeds? Start with the [all-in-one alerts feed](/feeds/alerts.xml) for any
 {% endfor %}
 {% endfor %}
 
+## Cheltenham Data in Drafts
+
+If you use [Drafts](https://getdrafts.com/) on iPhone, iPad or Mac, these free actions add the latest Cheltenham figures and headlines straight into your notes. Install one from the Drafts Directory and run it from any draft.
+
+- [Cheltenham Alerts](https://directory.getdrafts.com/a/28P): active weather, flood, power and travel alerts, plus the five latest alerts.
+- [Cheltenham News](https://directory.getdrafts.com/a/28R): the 10 latest headlines from local news, council, police and community sources.
+- [Cheltenham Fuel Prices](https://directory.getdrafts.com/a/28Q): today's cheapest unleaded, diesel and premium fuel within 20 miles.
+- [Cheltenham House Prices](https://directory.getdrafts.com/a/28S): the median house price, average rents by bedroom and home affordability.
+
 ## Frequently Asked Questions
 
 ### What Is a Feed?

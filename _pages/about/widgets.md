@@ -12,3 +12,5 @@ nav_title: "Widgets"
 Put live Cheltenham figures on your own site, free. Each widget below is a small box of local data that updates itself whenever the figures change, so you never have to edit your page again. They suit estate and letting agents, mortgage brokers, local news sites, community groups and anyone writing about life in Cheltenham.
 
 To add one, copy its code and paste it into your page wherever you can add HTML, such as an "HTML" or "Embed" block in WordPress, Squarespace or Wix. The widget fits the width of the space you put it in.
+
+Want the same figures in your own notes instead? Our [Drafts actions](/feeds#cheltenham-data-in-drafts) add them to a draft on iPhone, iPad or Mac.
