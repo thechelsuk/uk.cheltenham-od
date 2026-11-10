@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T17:15:08+00:00",
+  "generated_at": "2026-11-10T17:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains running through York and Darlington / Middlesbrough may be cancelled, delayed by up to 60 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-10T16:52",
-      "expected": "2026-11-10T17:15",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by damage to the overhead electric wires",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-10T17:12",
       "expected": "2026-11-10T17:20",
@@ -63,7 +42,7 @@
     },
     {
       "scheduled": "2026-11-10T17:19",
-      "expected": "2026-11-10T17:46",
+      "expected": "2026-11-10T17:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -101,7 +80,7 @@
     },
     {
       "scheduled": "2026-11-10T17:31",
-      "expected": "2026-11-10T17:43",
+      "expected": "2026-11-10T17:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,20 +148,30 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T17:52",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of damage to the overhead electric wires",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-10T16:50",
-      "expected": "2026-11-10T17:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by damage to the overhead electric wires",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-10T17:10",
       "expected": "2026-11-10T17:19",
@@ -196,7 +185,7 @@
     },
     {
       "scheduled": "2026-11-10T17:18",
-      "expected": "2026-11-10T17:45",
+      "expected": "2026-11-10T17:47",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -229,7 +218,7 @@
     },
     {
       "scheduled": "2026-11-10T17:29",
-      "expected": "2026-11-10T17:42",
+      "expected": "2026-11-10T17:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -269,6 +258,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T17:50",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "This service has been cancelled because of damage to the overhead electric wires",
       "mode": "train"
     }
   ],
