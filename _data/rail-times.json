@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T17:45:08+00:00",
+  "generated_at": "2026-11-10T17:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,7 +14,7 @@
   "departures": [
     {
       "scheduled": "2026-11-10T17:19",
-      "expected": "2026-11-10T17:56",
+      "expected": "2026-11-10T17:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -32,7 +32,7 @@
     },
     {
       "scheduled": "2026-11-10T17:31",
-      "expected": "2026-11-10T17:57",
+      "expected": "2026-11-10T17:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -46,28 +46,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-10T17:40",
-      "expected": "2026-11-10T17:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-10T17:45",
-      "expected": null,
+      "expected": "2026-11-10T17:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -124,7 +104,7 @@
     },
     {
       "scheduled": "2026-11-10T17:52",
-      "expected": "2026-11-10T17:59",
+      "expected": "2026-11-10T18:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -211,12 +191,28 @@
         "Newcastle"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T18:19",
+      "expected": "2026-11-10T18:30",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by overcrowding",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-10T17:18",
-      "expected": "2026-11-10T17:55",
+      "expected": "2026-11-10T17:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -227,24 +223,13 @@
     },
     {
       "scheduled": "2026-11-10T17:29",
-      "expected": "2026-11-10T17:56",
+      "expected": "2026-11-10T17:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by a passenger being taken ill on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-10T17:38",
-      "expected": "2026-11-10T17:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -271,7 +256,7 @@
     },
     {
       "scheduled": "2026-11-10T17:50",
-      "expected": "2026-11-10T17:58",
+      "expected": "2026-11-10T18:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -300,6 +285,17 @@
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T18:18",
+      "expected": "2026-11-10T18:29",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by overcrowding",
       "mode": "train"
     }
   ],
