@@ -5,9 +5,9 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 878,
-    "unplanned": 161,
-    "road_closures": 127,
+    "count": 885,
+    "unplanned": 163,
+    "road_closures": 128,
     "by_street": [
       {
         "street": "Cheltenham Road East",
@@ -40,6 +40,11 @@
         "road_closures": 0
       },
       {
+        "street": "Pirton Lane",
+        "works": 9,
+        "road_closures": 0
+      },
+      {
         "street": "Badgeworth Road",
         "works": 8,
         "road_closures": 1
@@ -50,11 +55,6 @@
         "road_closures": 5
       },
       {
-        "street": "Pirton Lane",
-        "works": 8,
-        "road_closures": 0
-      },
-      {
         "street": "Station Road",
         "works": 8,
         "road_closures": 2
@@ -63,15 +63,15 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 344
+        "works": 349
       },
       {
         "name": "BT",
-        "works": 169
+        "works": 170
       },
       {
         "name": "Gloucestershire County Council",
-        "works": 149
+        "works": 150
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
@@ -153,11 +153,109 @@
       },
       {
         "month": "2026-11",
-        "works": 204
+        "works": 211
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:LB9060000-000042043377",
+      "first_seen": "2026-11-10",
+      "street": "New Barn Avenue",
+      "ward_slug": "prestbury",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-17",
+      "end": "2026-11-19",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9060000-000041850001",
+      "first_seen": "2026-11-10",
+      "street": "Cumming Court",
+      "ward_slug": "prestbury",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-17",
+      "end": "2026-11-19",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014447583",
+      "first_seen": "2026-11-10",
+      "street": "Lowdilow Lane",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-10T07:17",
+      "end": "2026-11-11",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014447424",
+      "first_seen": "2026-11-10",
+      "street": "Kingsmead Avenue",
+      "ward_slug": "springbank",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-10T08:16",
+      "end": "2026-11-11",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014445182",
+      "first_seen": "2026-11-10",
+      "street": "Aysgarth Avenue",
+      "ward_slug": "up-hatherley",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-17",
+      "end": "2026-11-18",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:EY102GH1902000045956",
+      "first_seen": "2026-11-10",
+      "street": "Elm Street",
+      "ward_slug": "swindon-village",
+      "kind": "Planned",
+      "category": "Major",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Gloucestershire County Council",
+      "start": "2026-11-10T07:30",
+      "end": "2026-11-10",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:BC004WH9FPM2D",
+      "first_seen": "2026-11-10",
+      "street": "Pirton Lane",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-16",
+      "end": "2026-11-18",
+      "last_seen": "2026-11-10"
+    },
     {
       "id": "PERMIT:LB9060000-000042042666",
       "first_seen": "2026-11-09",
@@ -1764,8 +1862,8 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-11",
-      "end": "2026-11-13",
+      "start": "2026-11-10",
+      "end": "2026-11-12",
       "last_seen": "2026-11-10"
     },
     {
