@@ -5,9 +5,9 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 899,
-    "unplanned": 168,
-    "road_closures": 128,
+    "count": 906,
+    "unplanned": 171,
+    "road_closures": 129,
     "by_street": [
       {
         "street": "Cheltenham Road East",
@@ -50,24 +50,24 @@
         "road_closures": 1
       },
       {
+        "street": "Cheltenham Road",
+        "works": 8,
+        "road_closures": 1
+      },
+      {
         "street": "Church Road",
         "works": 8,
         "road_closures": 5
-      },
-      {
-        "street": "Station Road",
-        "works": 8,
-        "road_closures": 2
       }
     ],
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 359
+        "works": 364
       },
       {
         "name": "BT",
-        "works": 173
+        "works": 174
       },
       {
         "name": "Gloucestershire County Council",
@@ -102,6 +102,10 @@
         "works": 6
       },
       {
+        "name": "Hutchison 3G Ltd",
+        "works": 4
+      },
+      {
         "name": "Network Rail",
         "works": 4
       },
@@ -119,10 +123,6 @@
       },
       {
         "name": "Cornerstone Telecommunications Infrastructure Limited",
-        "works": 3
-      },
-      {
-        "name": "Hutchison 3G Ltd",
         "works": 3
       },
       {
@@ -153,11 +153,39 @@
       },
       {
         "month": "2026-11",
-        "works": 225
+        "works": 232
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:XJ002GLO076-WHP3UK-RF1",
+      "first_seen": "2026-11-10",
+      "street": "Cheltenham Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Hutchison 3G Ltd",
+      "start": "2027-01-21",
+      "end": "2027-01-22",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9225201-000006761005",
+      "first_seen": "2026-11-10",
+      "street": "Cheltenham Footpath 99",
+      "ward_slug": "benhall-the-reddings-fiddlers-green",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-23",
+      "end": "2026-11-25",
+      "last_seen": "2026-11-10"
+    },
     {
       "id": "PERMIT:LB9060000-0000801824947",
       "first_seen": "2026-11-10",
@@ -184,6 +212,20 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-16",
       "end": "2026-11-16",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042282545",
+      "first_seen": "2026-11-10",
+      "street": "Nine Elms Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-16",
+      "end": "2026-11-18",
       "last_seen": "2026-11-10"
     },
     {
@@ -229,6 +271,34 @@
       "last_seen": "2026-11-10"
     },
     {
+      "id": "PERMIT:LB9060000-000041576108A",
+      "first_seen": "2026-11-10",
+      "street": "Bath Parade",
+      "ward_slug": "college",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-16",
+      "end": "2026-11-18",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060792331",
+      "first_seen": "2026-11-10",
+      "street": "Ratcliff Lawns",
+      "ward_slug": "",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-10T13:21",
+      "end": "2026-11-12",
+      "last_seen": "2026-11-10"
+    },
+    {
       "id": "PERMIT:LB9011303-000060791443",
       "first_seen": "2026-11-10",
       "street": "Gratton Road",
@@ -257,6 +327,20 @@
       "last_seen": "2026-11-10"
     },
     {
+      "id": "PERMIT:LB9011303-000060791092",
+      "first_seen": "2026-11-10",
+      "street": "Penrith Road",
+      "ward_slug": "up-hatherley",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-10T14:17",
+      "end": "2026-11-12",
+      "last_seen": "2026-11-10"
+    },
+    {
       "id": "PERMIT:LB9011303-000060780148",
       "first_seen": "2026-11-10",
       "street": "Roberts Road",
@@ -281,7 +365,7 @@
       "road_closure": false,
       "promoter": "Severn Trent Water",
       "start": "2026-11-10T11:45",
-      "end": "2026-11-12",
+      "end": "2026-11-13",
       "last_seen": "2026-11-10"
     },
     {
@@ -394,6 +478,20 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-10T07:30",
       "end": "2026-11-10",
+      "last_seen": "2026-11-10"
+    },
+    {
+      "id": "PERMIT:BC311001WH8WT06W",
+      "first_seen": "2026-11-10",
+      "street": "Leckhampton Hill",
+      "ward_slug": "charlton-park",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-10T11:56",
+      "end": "2026-11-12",
       "last_seen": "2026-11-10"
     },
     {
@@ -519,7 +617,7 @@
       "road_closure": true,
       "promoter": "Severn Trent Water",
       "start": "2026-11-09T07:47",
-      "end": "2026-11-12",
+      "end": "2026-11-13",
       "last_seen": "2026-11-10"
     },
     {
@@ -1442,7 +1540,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Gigaclear Limited",
-      "start": "2026-11-10",
+      "start": "2026-11-10T12:10",
       "end": "2026-11-12",
       "last_seen": "2026-11-10"
     },
@@ -2058,7 +2156,7 @@
       "traffic_management": "Give and take",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-10",
+      "start": "2026-11-10T14:00",
       "end": "2026-11-12",
       "last_seen": "2026-11-10"
     },
@@ -4312,7 +4410,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "BT",
-      "start": "2026-11-10",
+      "start": "2026-11-10T13:01",
       "end": "2026-11-12",
       "last_seen": "2026-11-10"
     },
