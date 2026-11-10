@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:25:38+00:00",
+  "generated_at": "2026-11-10T18:30:38+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,44 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-10T18:19",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by overcrowding",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-10T18:25",
-      "expected": "2026-11-10T18:25",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-10T18:31",
-      "expected": "2026-11-10T18:33",
-      "status": "Delayed",
+      "expected": "2026-11-10T18:31",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -114,7 +79,7 @@
     },
     {
       "scheduled": "2026-11-10T18:52",
-      "expected": "2026-11-10T19:31",
+      "expected": "2026-11-10T19:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -159,31 +124,50 @@
         "Nottingham"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
-    {
-      "scheduled": "2026-11-10T18:18",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by overcrowding",
-      "mode": "train"
     },
     {
-      "scheduled": "2026-11-10T18:24",
-      "expected": "2026-11-10T18:24",
+      "scheduled": "2026-11-10T19:02",
+      "expected": "2026-11-10T19:02",
       "status": "On time",
       "platform": "1",
       "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Reading",
+        "London Paddington"
+      ],
       "mode": "train"
     },
+    {
+      "scheduled": "2026-11-10T19:12",
+      "expected": "2026-11-10T19:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "mode": "train"
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-10T18:27",
       "expected": "2026-11-10T18:27",
@@ -197,7 +181,7 @@
     },
     {
       "scheduled": "2026-11-10T18:29",
-      "expected": "2026-11-10T18:32",
+      "expected": "2026-11-10T18:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -208,8 +192,8 @@
     },
     {
       "scheduled": "2026-11-10T18:31",
-      "expected": "2026-11-10T18:34",
-      "status": "Delayed",
+      "expected": "2026-11-10T18:31",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -241,7 +225,7 @@
     },
     {
       "scheduled": "2026-11-10T18:50",
-      "expected": "2026-11-10T19:30",
+      "expected": "2026-11-10T19:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -258,6 +242,17 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T19:10",
+      "expected": "2026-11-10T19:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
       "reason": "",
       "mode": "train"
     }
