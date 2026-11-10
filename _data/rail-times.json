@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T15:15:09+00:00",
+  "generated_at": "2026-11-10T15:20:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -44,23 +44,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-10T15:15",
-      "expected": "2026-11-10T15:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-10T15:23",
       "expected": null,
       "status": "Cancelled",
@@ -81,8 +64,8 @@
     },
     {
       "scheduled": "2026-11-10T15:29",
-      "expected": "2026-11-10T15:29",
-      "status": "On time",
+      "expected": "2026-11-10T15:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -170,6 +153,27 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T15:52",
+      "expected": "2026-11-10T16:24",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -182,17 +186,6 @@
       "origin": "Plymouth",
       "destination": "Glasgow Central via Leeds",
       "reason": "This service has been delayed by failure of the electricity supply",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-10T15:14",
-      "expected": "2026-11-10T15:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -219,8 +212,8 @@
     },
     {
       "scheduled": "2026-11-10T15:28",
-      "expected": "2026-11-10T15:28",
-      "status": "On time",
+      "expected": "2026-11-10T15:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -270,6 +263,17 @@
       "origin": "Edinburgh",
       "destination": "Plymouth",
       "reason": "This service has been delayed by damage to the overhead electric wires",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T15:50",
+      "expected": "2026-11-10T16:23",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
+      "reason": "",
       "mode": "train"
     }
   ],
