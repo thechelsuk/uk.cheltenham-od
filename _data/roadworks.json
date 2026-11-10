@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-07T03:48:51.511639+00:00",
+  "generated_at": "2026-11-10T03:50:32.001760+00:00",
   "source": "National Highways planned roadworks",
   "source_url": "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks",
   "licence": "Open Government Licence v3.0",
-  "file_url": "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/nh_roadworks_2026_2_11.xml",
-  "published": "2026-11-02",
+  "file_url": "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/nh_roadworks_2026_9_11.xml",
+  "published": "2026-11-09",
   "radius_miles": 12,
   "items": [
     {
-      "id": "00479203-012",
+      "id": "00479203-013",
       "roads": [
         "A40",
         "A449",
@@ -118,35 +118,19 @@
       "lon": -2.140656
     },
     {
-      "id": "00526054-001",
+      "id": "00530995-001",
       "roads": [
-        "A417",
-        "M5"
+        "A46"
       ],
-      "description": "A417 Southbound from A46 Shurdington to Air Balloon Roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A46, A435, A436.",
-      "closure_type": "Major Schemes",
-      "expected_delay": "Moderate (10 - 30 mins)",
-      "start": "2026-11-06T21:00",
-      "end": "2026-11-09T06:00",
+      "description": "A46 northbound from Old Market Place to Beckford Cross. Multi-way traffic signals on behalf of Gigaclear.",
+      "closure_type": "Ad-hoc Street/Road Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-09T20:00",
+      "end": "2026-11-13T06:00",
       "in_progress": true,
-      "distance_miles": 4.0,
-      "lat": 51.851609,
-      "lon": -2.131865
-    },
-    {
-      "id": "00526032-001",
-      "roads": [
-        "A417"
-      ],
-      "description": "A417 Northbound Air Balloon Roundabout to A46 Shurdington roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A436, A435, and A46.",
-      "closure_type": "Major Schemes",
-      "expected_delay": "Moderate (10 - 30 mins)",
-      "start": "2026-11-06T23:00",
-      "end": "2026-11-09T06:00",
-      "in_progress": true,
-      "distance_miles": 4.1,
-      "lat": 51.845526,
-      "lon": -2.11977
+      "distance_miles": 8.4,
+      "lat": 52.016319,
+      "lon": -2.028514
     },
     {
       "id": "00528292-001",
@@ -162,6 +146,21 @@
       "distance_miles": 10.2,
       "lat": 52.00728,
       "lon": -2.242548
+    },
+    {
+      "id": "00529891-002",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 southbound Jct 8 to Jct 9. Lane closures for maintenance works.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-14T21:00",
+      "end": "2026-11-15T06:00",
+      "in_progress": false,
+      "distance_miles": 9.2,
+      "lat": 52.029239,
+      "lon": -2.124517
     },
     {
       "id": "00529812-001",
@@ -189,6 +188,71 @@
       "expected_delay": "Moderate (10 - 30 mins)",
       "start": "2026-11-16T21:00",
       "end": "2026-11-20T06:00",
+      "in_progress": false,
+      "distance_miles": 4.1,
+      "lat": 51.845526,
+      "lon": -2.11977
+    },
+    {
+      "id": "00532258-001",
+      "roads": [
+        "A417"
+      ],
+      "description": "A417 northbound Burford Road Jct to Peewits Hill - lane closure for inspection/survey.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-17T20:00",
+      "end": "2026-11-18T06:00",
+      "in_progress": false,
+      "distance_miles": 11.9,
+      "lat": 51.742455,
+      "lon": -1.963571
+    },
+    {
+      "id": "00523812-002",
+      "roads": [
+        "A38",
+        "A40",
+        "A46",
+        "M5",
+        "M50"
+      ],
+      "description": "M50 both directions Jct 1 to M5 Jct 8. Carriageway closure for maintenance works. Diversion via National Highways and local authority network.",
+      "closure_type": "Area Schemes",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-11-18T21:00",
+      "end": "2027-01-09T06:00",
+      "in_progress": false,
+      "distance_miles": 10.9,
+      "lat": 52.021652,
+      "lon": -2.240221
+    },
+    {
+      "id": "00529862-001",
+      "roads": [
+        "A417",
+        "M5"
+      ],
+      "description": "A417 Southbound from A46 Shurdington to Air Balloon Roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A46, A435, A436.",
+      "closure_type": "Major Schemes",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-11-20T21:00",
+      "end": "2026-11-23T06:00",
+      "in_progress": false,
+      "distance_miles": 4.0,
+      "lat": 51.851609,
+      "lon": -2.131865
+    },
+    {
+      "id": "00530264-001",
+      "roads": [
+        "A417"
+      ],
+      "description": "A417 Northbound Air Balloon Roundabout to A46 Shurdington roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A436, A435, and A46.",
+      "closure_type": "Major Schemes",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-11-20T23:00",
+      "end": "2026-11-23T06:00",
       "in_progress": false,
       "distance_miles": 4.1,
       "lat": 51.845526,
