@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T13:35:08+00:00",
+  "generated_at": "2026-11-10T13:41:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,13 +9,13 @@
     "crs": "CNM"
   },
   "messages": [
-    "Trains running through York and Darlington / Middlesbrough may be cancelled, delayed or revised. Latest information can be found in the Disruptions area of the National Rail website."
+    "Trains running through York and Darlington / Middlesbrough may be cancelled, delayed by up to 60 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
     {
       "scheduled": "2026-11-10T13:40",
-      "expected": "2026-11-10T13:40",
-      "status": "On time",
+      "expected": "2026-11-10T13:42",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -91,8 +91,8 @@
     },
     {
       "scheduled": "2026-11-10T13:59",
-      "expected": "2026-11-10T13:59",
-      "status": "On time",
+      "expected": "2026-11-10T14:01",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -201,17 +201,6 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-10T13:31",
-      "expected": "2026-11-10T13:35",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-10T13:38",
       "expected": "2026-11-10T13:40",
       "status": "Delayed",
@@ -246,8 +235,8 @@
     },
     {
       "scheduled": "2026-11-10T13:58",
-      "expected": "2026-11-10T13:58",
-      "status": "On time",
+      "expected": "2026-11-10T14:00",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -285,6 +274,17 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T14:27",
+      "expected": "2026-11-10T14:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
