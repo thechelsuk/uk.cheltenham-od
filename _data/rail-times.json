@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T19:00:08+00:00",
+  "generated_at": "2026-11-10T19:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,8 +13,24 @@
   ],
   "departures": [
     {
+      "scheduled": "2026-11-10T18:19",
+      "expected": "2026-11-10T19:20",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Worcestershire Parkway",
+      "destination": "Gloucester",
+      "reason": "This service has been delayed by overcrowding",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
       "scheduled": "2026-11-10T18:52",
-      "expected": "2026-11-10T19:45",
+      "expected": "2026-11-10T19:49",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -33,26 +49,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-10T19:02",
-      "expected": "2026-11-10T19:02",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
       ],
       "mode": "train"
     },
@@ -79,7 +75,7 @@
     },
     {
       "scheduled": "2026-11-10T19:15",
-      "expected": "2026-11-10T19:30",
+      "expected": "2026-11-10T19:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -112,7 +108,7 @@
     },
     {
       "scheduled": "2026-11-10T19:30",
-      "expected": "2026-11-10T19:40",
+      "expected": "2026-11-10T19:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -162,8 +158,19 @@
   ],
   "arrivals": [
     {
+      "scheduled": "2026-11-10T18:18",
+      "expected": "2026-11-10T19:19",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Worcestershire Parkway",
+      "destination": "Gloucester",
+      "reason": "This service has been delayed by overcrowding",
+      "mode": "train"
+    },
+    {
       "scheduled": "2026-11-10T18:50",
-      "expected": "2026-11-10T19:44",
+      "expected": "2026-11-10T19:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -185,7 +192,7 @@
     },
     {
       "scheduled": "2026-11-10T19:14",
-      "expected": "2026-11-10T19:29",
+      "expected": "2026-11-10T19:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -207,18 +214,18 @@
     },
     {
       "scheduled": "2026-11-10T19:27",
-      "expected": "2026-11-10T19:27",
-      "status": "On time",
+      "expected": "2026-11-10T19:29",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a road vehicle colliding with a bridge",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-10T19:28",
-      "expected": "2026-11-10T19:39",
+      "expected": "2026-11-10T19:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
