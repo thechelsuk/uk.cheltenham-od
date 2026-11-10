@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T19:20:08+00:00",
+  "generated_at": "2026-11-10T19:25:10+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,24 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-10T18:19",
-      "expected": "2026-11-10T19:20",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Worcestershire Parkway",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by overcrowding",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-10T18:52",
-      "expected": "2026-11-10T19:55",
+      "expected": "2026-11-10T20:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -54,7 +38,7 @@
     },
     {
       "scheduled": "2026-11-10T19:15",
-      "expected": "2026-11-10T19:33",
+      "expected": "2026-11-10T19:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -87,13 +71,13 @@
     },
     {
       "scheduled": "2026-11-10T19:30",
-      "expected": "2026-11-10T19:44",
+      "expected": "2026-11-10T19:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
-      "reason": "",
+      "reason": "This service has been delayed by the train making extra stops because of service disruption",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
@@ -151,23 +135,33 @@
         "Great Malvern"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T19:52",
+      "expected": "2026-11-10T20:07",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by damage to the overhead electric wires",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-10T18:18",
-      "expected": "2026-11-10T19:19",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Worcestershire Parkway",
-      "destination": "Gloucester",
-      "reason": "This service has been delayed by overcrowding",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-10T18:50",
-      "expected": "2026-11-10T19:54",
+      "expected": "2026-11-10T19:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -178,7 +172,7 @@
     },
     {
       "scheduled": "2026-11-10T19:14",
-      "expected": "2026-11-10T19:32",
+      "expected": "2026-11-10T19:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -211,13 +205,13 @@
     },
     {
       "scheduled": "2026-11-10T19:28",
-      "expected": "2026-11-10T19:43",
+      "expected": "2026-11-10T19:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
-      "reason": "",
+      "reason": "This service has been delayed by the train making extra stops because of service disruption",
       "mode": "train"
     },
     {
@@ -251,6 +245,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Great Malvern",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-10T19:51",
+      "expected": "2026-11-10T20:06",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Plymouth",
+      "reason": "This service has been delayed by damage to the overhead electric wires",
       "mode": "train"
     }
   ],
