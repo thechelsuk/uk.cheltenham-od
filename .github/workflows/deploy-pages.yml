@@ -108,10 +108,6 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v5
-              # A healthy sync takes under 3 minutes. Give up on a stalled
-              # one then, not at the default 10, so the next push gets a turn.
-              with:
-                  timeout: 180000
 
     # Runs only when the deploy succeeded and it changed a page worth a crawl.
     indexnow:
