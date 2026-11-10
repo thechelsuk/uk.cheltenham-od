@@ -7,14 +7,9 @@ on:
 
 permissions:
     contents: write
-    pages: write
-    id-token: write
 
 jobs:
     scheduled:
-        outputs:
-            changed: ${{ steps.commit.outputs.changed }}
-            ref: ${{ steps.commit.outputs.ref }}
         runs-on: ubuntu-latest
         steps:
             - name: Check out this repo
@@ -75,16 +70,12 @@ jobs:
                   python _python/fetch_status.py refresh-monthly _python/renewable-energy.py || echo "::warning::renewable-energy.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-monthly _python/energy-use.py || echo "::warning::energy-use.py failed, continuing with other scripts"
 
+            # No deploy here: a push from a workflow does not start Pages, so the
+            # Pi's next push (every 5 minutes by day, hourly overnight) publishes
+            # this commit. Deploying from this run reused the ID of a commit
+            # Pages had already deployed, and blocked the push that followed.
             - name: Commit and push if changed
               id: commit
               uses: ./.github/actions/commit-and-push
               with:
                   message: "Chore: Monthly COD data pull for"
-
-    deploy:
-        needs: scheduled
-        if: needs.scheduled.outputs.changed == 'true'
-        uses: ./.github/workflows/deploy-pages.yml
-        with:
-            ref: ${{ needs.scheduled.outputs.ref }}
-        secrets: inherit

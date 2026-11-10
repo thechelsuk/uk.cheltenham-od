@@ -21,6 +21,8 @@ NOT_SOURCE_DATA = {
     "news-digests.json", "fix-my-street-categories.json", "general-election-dates.json",
     "ignore-stations.json", "fuel-stations.json", "weather-today.json", "wards/index.json",
     "newsletter-venues.json",
+    # Deploy settings: pages indexnow-urls.py never sends to IndexNow.
+    "indexnow.json",
     # Fetcher settings: the indicators public-health.py fetches.
     "public-health-indicators.json",
     # Fetcher settings for ctfc-results.py: club names, referee name fixes and table corrections.

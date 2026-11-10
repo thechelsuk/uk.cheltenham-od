@@ -15,10 +15,35 @@ concurrency:
     cancel-in-progress: false
 
 jobs:
+    # After a deploy: did the commit it published touch _posts/? Most deploys
+    # are the Pi's data pushes, which never do, so this stops there without
+    # installing Python.
+    new-post:
+        if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+        outputs:
+            found: ${{ steps.check.outputs.found }}
+        steps:
+            - name: Check the deployed commit for posts
+              id: check
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  SHA: ${{ github.event.workflow_run.head_sha }}
+              run: |
+                  files="$(gh api "repos/$GITHUB_REPOSITORY/commits/$SHA" --jq '.files[].filename')"
+                  if grep -q '^_posts/' <<< "$files"; then
+                      echo "found=true" >> "$GITHUB_OUTPUT"
+                  else
+                      echo "found=false" >> "$GITHUB_OUTPUT"
+                  fi
+
     post:
-        # After a deploy, only when it succeeded. The schedule (which catches posts published by a
-        # scheduled data deploy) and manual runs always go ahead.
-        if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+        needs: new-post
+        # After a deploy, only when it published a post. The schedule (which catches every other
+        # post: a scheduled one going live, the news digest) and manual runs always go ahead.
+        if: ${{ !cancelled() && (github.event_name != 'workflow_run' || needs.new-post.outputs.found == 'true') }}
         runs-on: ubuntu-latest
         steps:
             - name: Check out Repo

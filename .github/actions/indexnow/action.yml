@@ -1,5 +1,5 @@
 name: "IndexNow Submit"
-description: "Submit sitemap URLs to IndexNow (Bing, Yandex, Seznam, Naver, etc.)"
+description: "Tell IndexNow (Bing, Yandex, Seznam, Naver, etc.) which pages are new or have changed"
 
 inputs:
   site-url:
@@ -8,10 +8,9 @@ inputs:
   key:
     description: "IndexNow API key string"
     required: true
-  sitemap-path:
-    description: "Path to sitemap relative to site-url"
-    required: false
-    default: "/sitemap.xml"
+  urls:
+    description: "The new or changed page URLs, as a JSON list (from _python/indexnow-urls.py)"
+    required: true
 
 runs:
   using: "composite"
@@ -21,34 +20,21 @@ runs:
       env:
         SITE_URL: ${{ inputs.site-url }}
         INDEXNOW_KEY: ${{ inputs.key }}
-        SITEMAP_PATH: ${{ inputs.sitemap-path }}
+        URLS_JSON: ${{ inputs.urls }}
       run: |
         set -euo pipefail
 
         HOST=$(echo "$SITE_URL" | sed -E 's~https?://([^/]+).*~\1~')
-        SITEMAP_URL="${SITE_URL%/}${SITEMAP_PATH}"
 
-        echo "Fetching sitemap: $SITEMAP_URL"
-        HTTP_STATUS=$(curl -sL -w "%{http_code}" "$SITEMAP_URL" -o sitemap.xml)
-        if [ "$HTTP_STATUS" -ge 400 ]; then
-          echo "::error::Sitemap fetch failed with status $HTTP_STATUS at $SITEMAP_URL"
-          exit 1
-        fi
+        PAYLOAD=$(jq -n --arg host "$HOST" --arg key "$INDEXNOW_KEY" --argjson urls "$URLS_JSON" \
+          '{host: $host, key: $key, keyLocation: "https://\($host)/\($key).txt", urlList: $urls}')
 
-        URLS_JSON=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml \
-          | python3 -c "import sys, json; print(json.dumps([l.strip() for l in sys.stdin]))")
-
-        COUNT=$(echo "$URLS_JSON" | python3 -c 'import sys,json; print(len(json.load(sys.stdin)))')
-        echo "Submitting $COUNT URLs to IndexNow"
+        echo "Submitting $(jq 'length' <<< "$URLS_JSON") URLs to IndexNow:"
+        jq -r '.[]' <<< "$URLS_JSON"
 
         HTTP_STATUS=$(curl -s -o response.txt -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
           -H "Content-Type: application/json; charset=utf-8" \
-          -d "{
-                \"host\": \"${HOST}\",
-                \"key\": \"${INDEXNOW_KEY}\",
-                \"keyLocation\": \"https://${HOST}/${INDEXNOW_KEY}.txt\",
-                \"urlList\": ${URLS_JSON}
-              }")
+          -d "$PAYLOAD")
 
         echo "Response HTTP $HTTP_STATUS:"
         cat response.txt

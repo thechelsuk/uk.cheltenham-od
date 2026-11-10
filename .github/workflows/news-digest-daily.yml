@@ -6,16 +6,11 @@ on:
     # Cloudflare watchdog as backup. No GitHub schedule: it ran hours late.
 permissions:
     contents: write
-    pages: write
-    id-token: write
     pull-requests: read
     issues: read
 
 jobs:
     build:
-        outputs:
-            changed: ${{ steps.commit.outputs.changed }}
-            ref: ${{ steps.commit.outputs.ref }}
         permissions:
             contents: write
             pull-requests: read
@@ -45,17 +40,13 @@ jobs:
               run: |-
                   python '_python/news-digest.py'
 
+            # No deploy here: a push from a workflow does not start Pages, so the
+            # Pi's next push (every 5 minutes by day, hourly overnight) publishes
+            # this commit. Deploying from this run reused the ID of a commit
+            # Pages had already deployed, and blocked the push that followed.
             - name: Commit and push if changed
               id: commit
               uses: ./.github/actions/commit-and-push
               with:
                   message: "Chore: Daily news digest for"
                   date-format: "%Y-%m-%d"
-
-    deploy:
-        needs: build
-        if: needs.build.outputs.changed == 'true'
-        uses: ./.github/workflows/deploy-pages.yml
-        with:
-            ref: ${{ needs.build.outputs.ref }}
-        secrets: inherit

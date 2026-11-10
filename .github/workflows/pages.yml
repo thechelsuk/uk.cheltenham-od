@@ -10,6 +10,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # To find the last successful deploy, for IndexNow.
+  deployments: read
 
 jobs:
   deploy:

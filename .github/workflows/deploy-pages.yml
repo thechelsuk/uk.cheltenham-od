@@ -12,6 +12,8 @@ permissions:
     contents: read
     pages: write
     id-token: write
+    # To find the last successful deploy, for IndexNow.
+    deployments: read
 
 # Let a running deploy finish: GitHub keeps at most one run waiting and
 # replaces it with each newer push, so the latest commit still goes out
@@ -23,6 +25,8 @@ concurrency:
 jobs:
     build:
         runs-on: ubuntu-latest
+        outputs:
+            indexnow_urls: ${{ steps.indexnow.outputs.urls }}
         env:
             JEKYLL_ENV: production
             JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,6 +64,31 @@ jobs:
             - name: Build site
               run: bundle exec jekyll build --config _config.yml,_config.production.yml --baseurl "${{ steps.pages.outputs.base_path }}"
 
+            # IndexNow wants only pages that are new or have changed: those the
+            # sitemap dates later than the commit the last successful deploy
+            # published. A failure here must not stop the deploy.
+            - name: Choose pages for IndexNow
+              id: indexnow
+              continue-on-error: true
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  previous=""
+                  while read -r id sha; do
+                      if gh api "repos/$GITHUB_REPOSITORY/deployments/$id/statuses" --jq '.[].state' | grep -qx success; then
+                          previous="$sha"
+                          break
+                      fi
+                  done < <(gh api "repos/$GITHUB_REPOSITORY/deployments?environment=github-pages&per_page=10" --jq '.[] | "\(.id) \(.sha)"')
+
+                  if [ -z "$previous" ]; then
+                      echo "::warning::No recent successful deploy found; nothing sent to IndexNow"
+                      exit 0
+                  fi
+                  since="$(git show -s --format=%cI "$previous")"
+                  echo "Last successful deploy published $previous ($since)"
+                  python3 _python/indexnow-urls.py --since "$since"
+
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v5
               with:
@@ -79,9 +108,15 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v5
+              # A healthy sync takes under 3 minutes. Give up on a stalled
+              # one then, not at the default 10, so the next push gets a turn.
+              with:
+                  timeout: 180000
 
+    # Runs only when the deploy succeeded and it changed a page worth a crawl.
     indexnow:
-        needs: deploy
+        needs: [build, deploy]
+        if: needs.build.outputs.indexnow_urls != '' && needs.build.outputs.indexnow_urls != '[]'
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -91,4 +126,5 @@ jobs:
               uses: ./.github/actions/indexnow
               with:
                   site-url: ${{ needs.deploy.outputs.page_url }}
+                  urls: ${{ needs.build.outputs.indexnow_urls }}
                   key: ${{ secrets.INDEXNOW_KEY }}

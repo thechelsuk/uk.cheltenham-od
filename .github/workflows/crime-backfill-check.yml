@@ -7,14 +7,9 @@ on:
 
 permissions:
     contents: write
-    pages: write
-    id-token: write
 
 jobs:
     check:
-        outputs:
-            changed: ${{ steps.commit.outputs.changed }}
-            ref: ${{ steps.commit.outputs.ref }}
         runs-on: ubuntu-latest
         steps:
             - name: Check out this repo
@@ -45,17 +40,13 @@ jobs:
                   python _python/crime-map.py || echo "::warning::crime-map.py failed"
                   echo "::notice::Re-fetched $MONTHS. Run _python/local/process-wards.py locally to update the ward pages."
 
+            # No deploy here: a push from a workflow does not start Pages, so the
+            # Pi's next push (every 5 minutes by day, hourly overnight) publishes
+            # this commit. Deploying from this run reused the ID of a commit
+            # Pages had already deployed, and blocked the push that followed.
             - name: Commit and push if changed
               id: commit
               if: steps.check.outputs.months != ''
               uses: ./.github/actions/commit-and-push
               with:
                   message: "Chore: Backfilled crime data pull for"
-
-    deploy:
-        needs: check
-        if: needs.check.outputs.changed == 'true'
-        uses: ./.github/workflows/deploy-pages.yml
-        with:
-            ref: ${{ needs.check.outputs.ref }}
-        secrets: inherit
