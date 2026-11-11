@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T18:00:08+00:00",
+  "generated_at": "2026-11-11T18:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,49 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-11T17:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-11T18:03",
-      "expected": "2026-11-11T18:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T18:12",
       "expected": "2026-11-11T18:12",
@@ -81,7 +38,7 @@
     },
     {
       "scheduled": "2026-11-11T18:19",
-      "expected": "2026-11-11T18:24",
+      "expected": "2026-11-11T18:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -162,20 +119,41 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T18:48",
+      "expected": "2026-11-11T18:48",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T18:52",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Gloucester via Gloucester and Plymouth via Gloucester",
+      "reason": "This service has been delayed by a fault on this train",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-11T17:58",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T18:11",
       "expected": "2026-11-11T18:11",
@@ -189,7 +167,7 @@
     },
     {
       "scheduled": "2026-11-11T18:18",
-      "expected": "2026-11-11T18:23",
+      "expected": "2026-11-11T18:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +229,28 @@
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T18:46",
+      "expected": "2026-11-11T18:46",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T18:50",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Gloucester via Gloucester and Plymouth via Gloucester",
+      "reason": "This service has been delayed by a fault on this train",
       "mode": "train"
     }
   ],
