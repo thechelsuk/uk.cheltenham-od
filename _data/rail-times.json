@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T07:45:08+00:00",
+  "generated_at": "2026-11-11T07:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,41 +12,6 @@
     "Trains running between Reading / Heathrow Express and London Paddington may be cancelled, revised or delayed by up to 60 minutes. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-11T07:24",
-      "expected": "2026-11-11T07:46",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-11T07:43",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T07:55",
       "expected": "2026-11-11T07:55",
@@ -70,7 +35,7 @@
     },
     {
       "scheduled": "2026-11-11T07:55",
-      "expected": "2026-11-11T07:58",
+      "expected": "2026-11-11T07:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -171,20 +136,49 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T08:40",
+      "expected": "2026-11-11T08:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T08:43",
+      "expected": "2026-11-11T08:43",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-11T07:22",
-      "expected": "2026-11-11T07:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T07:50",
       "expected": "2026-11-11T07:50",
@@ -198,7 +192,7 @@
     },
     {
       "scheduled": "2026-11-11T07:54",
-      "expected": "2026-11-11T07:57",
+      "expected": "2026-11-11T07:58",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -264,12 +258,23 @@
     },
     {
       "scheduled": "2026-11-11T08:32",
-      "expected": "2026-11-11T09:04",
+      "expected": "2026-11-11T09:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T08:39",
+      "expected": "2026-11-11T08:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
