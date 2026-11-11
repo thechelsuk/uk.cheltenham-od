@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:10:08+00:00",
+  "generated_at": "2026-11-11T19:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -28,27 +28,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-11T19:12",
-      "expected": "2026-11-11T19:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
       ],
       "mode": "train"
     },
@@ -87,7 +66,7 @@
     },
     {
       "scheduled": "2026-11-11T19:30",
-      "expected": "2026-11-11T19:35",
+      "expected": "2026-11-11T19:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -133,29 +112,36 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T19:49",
+      "expected": "2026-11-11T19:59",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-11T18:50",
-      "expected": "2026-11-11T19:39",
+      "expected": "2026-11-11T19:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-11T19:10",
-      "expected": "2026-11-11T19:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -193,7 +179,7 @@
     },
     {
       "scheduled": "2026-11-11T19:28",
-      "expected": "2026-11-11T19:34",
+      "expected": "2026-11-11T19:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -221,6 +207,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T19:47",
+      "expected": "2026-11-11T19:58",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
       "reason": "",
       "mode": "train"
     }
