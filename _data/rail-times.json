@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T19:40:08+00:00",
+  "generated_at": "2026-11-11T19:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-11T18:55",
-      "expected": "2026-11-11T19:40",
+      "expected": "2026-11-11T19:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -32,42 +32,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-11T19:40",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-11T19:43",
-      "expected": "2026-11-11T19:43",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-11T19:49",
-      "expected": "2026-11-11T20:00",
+      "expected": "2026-11-11T20:01",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -172,14 +138,49 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T20:15",
+      "expected": "2026-11-11T20:19",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T20:23",
+      "expected": "2026-11-11T20:23",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-11T18:50",
-      "expected": "2026-11-11T19:46",
+      "expected": "2026-11-11T19:45",
       "status": "Delayed",
-      "platform": "1",
+      "platform": "",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Cheltenham Spa",
@@ -188,7 +189,7 @@
     },
     {
       "scheduled": "2026-11-11T19:34",
-      "expected": "2026-11-11T19:47",
+      "expected": "2026-11-11T19:51",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -198,19 +199,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-11T19:42",
-      "expected": "2026-11-11T19:32",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-11T19:47",
-      "expected": "2026-11-11T19:59",
+      "expected": "2026-11-11T20:00",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -249,6 +239,28 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T20:14",
+      "expected": "2026-11-11T20:18",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T20:21",
+      "expected": "2026-11-11T20:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
     }
