@@ -64,6 +64,7 @@ CRS = "CNM"
 NUM_ROWS = 10           # rows requested from the API
 MAX_SERVICES = 10       # rows kept per board
 HEARTBEAT_MINUTES = 30  # see module docstring
+BUS_DUE_MINUTES = 60    # see replacement_buses_only
 
 HISTORY_RETENTION_DAYS = 365
 PAGE_PATH = "/cheltenham-train-times"
@@ -215,8 +216,18 @@ def unchanged(new, now):
 def replacement_buses_only(board):
     """True when rail replacement buses are running and no trains are, which
     is how the board shows the line closed for engineering work. A late night
-    with neither isn't a closure."""
-    return bool(board.get("busServices")) and not board.get("trainServices")
+    with neither isn't a closure, and nor is an early bus the board shows
+    hours ahead before the first train comes into view, so a bus has to be
+    due within BUS_DUE_MINUTES."""
+    if board.get("trainServices"):
+        return False
+    generated = board_time(board)
+    for service in board.get("busServices") or []:
+        times = [service.get(key) or "" for key in ("std", "sta")]
+        for hhmm in (t for t in times if TIME_PATTERN.match(t)):
+            if resolve_time(hhmm, generated) - generated <= timedelta(minutes=BUS_DUE_MINUTES):
+                return True
+    return False
 
 
 def disruption_message(messages):

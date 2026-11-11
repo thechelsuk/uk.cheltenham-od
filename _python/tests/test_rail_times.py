@@ -211,6 +211,39 @@ def test_only_a_board_with_buses_and_no_trains_counts_as_replacement_buses_only(
     assert not rail.replacement_buses_only({})
 
 
+# Overnight on 10 and 11 November 2026: an early bus came onto the board two
+# hours ahead, before the first train did. That is not a closure.
+EARLY_BUS_OVERNIGHT = {
+    "generatedAt": "2026-11-10T02:35:08+00:00",
+    "busServices": [{"std": "04:30", "etd": "On time", "platform": "BUS",
+                     "destination": [{"locationName": "Severn Tunnel Junction"}]}],
+}
+
+
+def test_an_early_bus_on_the_board_hours_ahead_is_not_a_closure():
+    assert not rail.replacement_buses_only(EARLY_BUS_OVERNIGHT)
+    assert rail.current_disruptions(EARLY_BUS_OVERNIGHT, [], [], "2026-11-10T02:35:08Z") == []
+
+
+def test_buses_only_counts_once_a_bus_is_due_within_the_hour():
+    soon = {**EARLY_BUS_OVERNIGHT, "generatedAt": "2026-11-10T03:31:00+00:00"}
+    assert rail.replacement_buses_only(soon)
+    later = {**EARLY_BUS_OVERNIGHT, "generatedAt": "2026-11-10T03:29:00+00:00"}
+    assert not rail.replacement_buses_only(later)
+
+
+def test_a_bus_that_only_arrives_here_counts_by_its_arrival_time():
+    arriving = {"generatedAt": "2026-10-17T12:20:00+01:00",
+                "busServices": [{"sta": "12:50", "eta": "On time"}]}
+    assert rail.replacement_buses_only(arriving)
+
+
+def test_a_bus_due_just_after_midnight_counts_from_late_evening():
+    late = {"generatedAt": "2026-11-01T23:40:00+00:00",
+            "busServices": [{"std": "00:15", "etd": "On time"}]}
+    assert rail.replacement_buses_only(late)
+
+
 def test_the_disruption_message_is_the_one_about_trains_or_a_standard_line():
     messages = rail.station_messages(BUSES_ONLY)
     assert rail.disruption_message(messages).startswith("There are no train services")
