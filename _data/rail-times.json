@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T17:25:08+00:00",
+  "generated_at": "2026-11-11T17:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,24 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-11T17:19",
-      "expected": "2026-11-11T17:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T17:25",
       "expected": "2026-11-11T17:37",
@@ -160,20 +142,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T18:03",
+      "expected": "2026-11-11T18:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-11T17:18",
-      "expected": "2026-11-11T17:23",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T17:24",
       "expected": "2026-11-11T17:36",
@@ -187,7 +179,7 @@
     },
     {
       "scheduled": "2026-11-11T17:27",
-      "expected": "2026-11-11T17:33",
+      "expected": "2026-11-11T17:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -242,8 +234,8 @@
     },
     {
       "scheduled": "2026-11-11T17:50",
-      "expected": "2026-11-11T17:50",
-      "status": "On time",
+      "expected": "2026-11-11T17:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
