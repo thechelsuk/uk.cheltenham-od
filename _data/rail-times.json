@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:20:08+00:00",
+  "generated_at": "2026-11-11T06:40:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,7 +8,9 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "Trains running between Reading / Heathrow Express and London Paddington may be cancelled, revised or delayed by up to 60 minutes. Latest information can be found in the Disruptions area of the National Rail website ."
+  ],
   "departures": [
     {
       "scheduled": "2026-11-11T06:41",
@@ -110,13 +112,13 @@
     },
     {
       "scheduled": "2026-11-11T07:24",
-      "expected": "2026-11-11T07:24",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
@@ -234,13 +236,13 @@
     },
     {
       "scheduled": "2026-11-11T07:22",
-      "expected": "2026-11-11T07:22",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
