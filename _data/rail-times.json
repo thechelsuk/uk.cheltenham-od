@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T20:50:08+00:00",
+  "generated_at": "2026-11-11T20:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-11T20:41",
-      "expected": "2026-11-11T20:54",
+      "expected": "2026-11-11T20:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -27,27 +27,6 @@
         "Severn Tunnel Junction",
         "Newport (South Wales)",
         "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-11T20:52",
-      "expected": "2026-11-11T20:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
       ],
       "mode": "train"
     },
@@ -98,7 +77,7 @@
     },
     {
       "scheduled": "2026-11-11T21:12",
-      "expected": "2026-11-11T21:14",
+      "expected": "2026-11-11T21:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -197,20 +176,28 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T22:00",
+      "expected": "2026-11-11T22:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-11T20:50",
-      "expected": "2026-11-11T20:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T21:05",
       "expected": "2026-11-11T21:05",
@@ -224,7 +211,7 @@
     },
     {
       "scheduled": "2026-11-11T21:10",
-      "expected": "2026-11-11T21:13",
+      "expected": "2026-11-11T21:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -275,6 +262,17 @@
       "origin": "Cardiff Central",
       "destination": "Birmingham New Street",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T21:59",
+      "expected": "2026-11-11T21:59",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
