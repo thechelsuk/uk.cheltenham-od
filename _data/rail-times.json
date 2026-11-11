@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T20:45:08+00:00",
+  "generated_at": "2026-11-11T20:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -98,8 +98,8 @@
     },
     {
       "scheduled": "2026-11-11T21:12",
-      "expected": "2026-11-11T21:12",
-      "status": "On time",
+      "expected": "2026-11-11T21:14",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -180,24 +180,30 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T21:53",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-11T20:27",
-      "expected": "2026-11-11T20:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a speed restriction",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-11T20:50",
-      "expected": "2026-11-11T20:52",
-      "status": "Delayed",
+      "expected": "2026-11-11T20:50",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -218,7 +224,7 @@
     },
     {
       "scheduled": "2026-11-11T21:10",
-      "expected": "2026-11-11T21:12",
+      "expected": "2026-11-11T21:13",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -258,6 +264,17 @@
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T21:51",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
