@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T08:50:09+00:00",
+  "generated_at": "2026-11-11T08:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains running between Reading / Heathrow Express and London Paddington may be cancelled, revised or delayed by up to 60 minutes. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-11T08:52",
-      "expected": "2026-11-11T08:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T08:59",
       "expected": "2026-11-11T08:59",
@@ -94,7 +73,7 @@
     },
     {
       "scheduled": "2026-11-11T09:12",
-      "expected": "2026-11-11T09:15",
+      "expected": "2026-11-11T09:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -122,7 +101,7 @@
     },
     {
       "scheduled": "2026-11-11T09:15",
-      "expected": "2026-11-11T09:18",
+      "expected": "2026-11-11T09:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -170,20 +149,29 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T09:40",
+      "expected": "2026-11-11T09:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-11T08:50",
-      "expected": "2026-11-11T08:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-11T08:57",
       "expected": "2026-11-11T08:57",
@@ -208,7 +196,7 @@
     },
     {
       "scheduled": "2026-11-11T09:10",
-      "expected": "2026-11-11T09:14",
+      "expected": "2026-11-11T09:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -219,7 +207,7 @@
     },
     {
       "scheduled": "2026-11-11T09:14",
-      "expected": "2026-11-11T09:17",
+      "expected": "2026-11-11T09:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -252,13 +240,13 @@
     },
     {
       "scheduled": "2026-11-11T09:30",
-      "expected": "2026-11-11T10:06",
+      "expected": "2026-11-11T10:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by the emergency services dealing with an incident",
       "mode": "train"
     },
     {
@@ -269,6 +257,17 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-11T09:39",
+      "expected": "2026-11-11T09:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
