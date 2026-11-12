@@ -8,13 +8,13 @@
     },
     "_python/pi/fuel.py": {
       "last_ok": "2026-11-11",
-      "failing_since": null,
-      "last_error": null
+      "failing_since": "2026-11-12T00:05Z",
+      "last_error": "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.fuel-finder.service.gov.uk', port=443): Max retries exceeded with url: /api/v1/pfs/fuel-prices?… (Caused by NameResolutionError(\"HTTPSConnection(host='www.fuel-finder.service.gov.uk', port=443): Failed to resolve 'www.fuel-finder.ser"
     },
     "_python/pi/planning.py": {
       "last_ok": "2026-11-11",
-      "failing_since": null,
-      "last_error": null
+      "failing_since": "2026-11-12T00:05Z",
+      "last_error": "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='publicaccess.cheltenham.gov.uk', port=443): Max retries exceeded with url: /online-applications/search.do?… (Caused by NameResolutionError(\"HTTPSConnection(host='publicaccess.cheltenham.gov.uk', port=443): Failed to resolve 'publicaccess"
     },
     "_python/pi/power.py": {
       "last_ok": "2026-11-12",
