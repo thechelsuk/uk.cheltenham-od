@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T22:00:09+00:00",
+  "generated_at": "2026-11-12T22:05:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-12T21:33",
-      "expected": "2026-11-12T22:00",
+      "expected": "2026-11-12T22:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -27,7 +27,7 @@
     },
     {
       "scheduled": "2026-11-12T21:52",
-      "expected": "2026-11-12T22:04",
+      "expected": "2026-11-12T22:06",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -42,27 +42,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-12T22:00",
-      "expected": "2026-11-12T22:00",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-12T22:03",
-      "expected": "2026-11-12T22:11",
+      "expected": "2026-11-12T22:12",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -121,6 +102,20 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-12T22:57",
+      "expected": "2026-11-12T23:06",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by a broken down train",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -137,7 +132,7 @@
     },
     {
       "scheduled": "2026-11-12T21:50",
-      "expected": "2026-11-12T22:03",
+      "expected": "2026-11-12T22:05",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -147,19 +142,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-12T21:59",
-      "expected": "2026-11-12T21:59",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-12T22:01",
-      "expected": "2026-11-12T22:10",
+      "expected": "2026-11-12T22:11",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -170,13 +154,13 @@
     },
     {
       "scheduled": "2026-11-12T22:06",
-      "expected": "2026-11-12T22:06",
-      "status": "On time",
+      "expected": "2026-11-12T22:10",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Westbury",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -221,6 +205,17 @@
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-12T22:55",
+      "expected": "2026-11-12T23:05",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by a broken down train",
       "mode": "train"
     }
   ],
