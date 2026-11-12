@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T08:10:16+00:00",
+  "generated_at": "2026-11-12T08:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,41 +11,13 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-12T08:12",
-      "expected": "2026-11-12T08:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-12T08:15",
-      "expected": "2026-11-12T08:17",
-      "status": "Delayed",
+      "expected": "2026-11-12T08:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
+      "destination": "Newport (South Wales)",
       "reason": "",
       "calling_at": [
         "Gloucester",
@@ -57,7 +29,7 @@
     },
     {
       "scheduled": "2026-11-12T08:29",
-      "expected": "2026-11-12T08:34",
+      "expected": "2026-11-12T08:33",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -155,6 +127,27 @@
     },
     {
       "scheduled": "2026-11-12T09:03",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-12T09:03",
       "expected": "2026-11-12T09:03",
       "status": "On time",
       "platform": "2",
@@ -172,24 +165,13 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-12T08:10",
-      "expected": "2026-11-12T08:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-12T08:14",
-      "expected": "2026-11-12T08:16",
-      "status": "Delayed",
+      "expected": "2026-11-12T08:14",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
+      "destination": "Newport (South Wales)",
       "reason": "",
       "mode": "train"
     },
@@ -206,7 +188,7 @@
     },
     {
       "scheduled": "2026-11-12T08:27",
-      "expected": "2026-11-12T08:33",
+      "expected": "2026-11-12T08:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
