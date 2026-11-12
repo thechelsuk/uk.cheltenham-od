@@ -11,7 +11,7 @@ Thank you for using Cheltenham Open Data! If you need help or have questions, he
 
 ### Issue Tracker
 
-If you've found a bug or have a feature request, please check if it's already been reported in our [issue tracker](https://github.com/mat-0/cheltenham-open-data/issues).
+If you've found a bug or have a feature request, please check if it's already been reported in our [issue tracker](https://github.com/thechelsuk/uk.cheltenham-od/issues).
 
 If your issue is new:
 
