@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T08:55:08+00:00",
+  "generated_at": "2026-11-13T09:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,32 +9,12 @@
     "crs": "CNM"
   },
   "messages": [
+    "Trains running between Crewe and Manchester Airport / Stockport may be delayed by up to 20 minutes or cancelled in full. Latest information can be found in the Disruptions area of the National Rail website .",
     "Trains to / from Southampton Central may be cancelled, delayed, diverted or revised. Latest information can be found in the Disruptions area of the National Rail website .",
     "Trains running between London Paddington and Reading may be delayed, cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website .",
     "Trains at Exeter St Davids will be cancelled, delayed by up to 60 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-13T08:52",
-      "expected": "2026-11-13T08:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T08:59",
       "expected": "2026-11-13T09:03",
@@ -80,8 +60,8 @@
     },
     {
       "scheduled": "2026-11-13T09:03",
-      "expected": "2026-11-13T09:03",
-      "status": "On time",
+      "expected": "2026-11-13T09:05",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Salisbury",
@@ -96,8 +76,8 @@
     },
     {
       "scheduled": "2026-11-13T09:12",
-      "expected": "2026-11-13T09:12",
-      "status": "On time",
+      "expected": "2026-11-13T09:15",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -157,31 +137,44 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:32",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a broken rail",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a fault on this train",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-13T08:32",
-      "expected": "2026-11-13T08:57",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by congestion",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-13T08:50",
-      "expected": "2026-11-13T08:52",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T08:57",
       "expected": "2026-11-13T09:02",
@@ -195,8 +188,8 @@
     },
     {
       "scheduled": "2026-11-13T09:02",
-      "expected": "2026-11-13T09:02",
-      "status": "On time",
+      "expected": "2026-11-13T09:04",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Salisbury",
@@ -206,7 +199,7 @@
     },
     {
       "scheduled": "2026-11-13T09:10",
-      "expected": "2026-11-13T09:12",
+      "expected": "2026-11-13T09:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -257,6 +250,28 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "This service has been delayed by congestion",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:31",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a broken rail",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:39",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     }
   ],
