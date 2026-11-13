@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T07:35:08+00:00",
+  "generated_at": "2026-11-13T07:40:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,29 +15,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-13T07:29",
-      "expected": "2026-11-13T07:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Exeter St Davids",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T07:35",
-      "expected": "2026-11-13T07:38",
+      "expected": "2026-11-13T07:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -90,8 +69,8 @@
     },
     {
       "scheduled": "2026-11-13T07:43",
-      "expected": "2026-11-13T07:43",
-      "status": "On time",
+      "expected": "2026-11-13T07:47",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -200,34 +179,29 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T08:15",
+      "expected": "2026-11-13T08:21",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-13T07:27",
-      "expected": "2026-11-13T07:32",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Exeter St Davids",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-13T07:29",
-      "expected": "2026-11-13T07:34",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a speed restriction over defective track",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T07:33",
-      "expected": "2026-11-13T07:37",
+      "expected": "2026-11-13T07:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -238,7 +212,7 @@
     },
     {
       "scheduled": "2026-11-13T07:36",
-      "expected": "2026-11-13T07:38",
+      "expected": "2026-11-13T07:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -299,6 +273,28 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T08:14",
+      "expected": "2026-11-13T08:20",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Derby",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T08:27",
+      "expected": "2026-11-13T08:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
