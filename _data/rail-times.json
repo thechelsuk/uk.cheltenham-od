@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T12:45:11+00:00",
+  "generated_at": "2026-11-13T12:50:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-11-13T12:12",
-      "expected": "2026-11-13T12:45",
+      "expected": "2026-11-13T12:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -51,29 +51,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-13T12:40",
-      "expected": "2026-11-13T12:46",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T12:45",
-      "expected": "2026-11-13T12:45",
-      "status": "On time",
+      "expected": "2026-11-13T12:50",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -88,7 +68,7 @@
     },
     {
       "scheduled": "2026-11-13T12:52",
-      "expected": "2026-11-13T13:13",
+      "expected": "2026-11-13T13:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -164,7 +144,7 @@
     },
     {
       "scheduled": "2026-11-13T13:12",
-      "expected": "2026-11-13T13:20",
+      "expected": "2026-11-13T13:23",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -193,7 +173,7 @@
     },
     {
       "scheduled": "2026-11-13T13:15",
-      "expected": "2026-11-13T13:22",
+      "expected": "2026-11-13T13:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -226,12 +206,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T13:29",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a points failure",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-13T12:11",
-      "expected": "2026-11-13T12:44",
+      "expected": "2026-11-13T12:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -242,7 +237,7 @@
     },
     {
       "scheduled": "2026-11-13T12:43",
-      "expected": "2026-11-13T12:45",
+      "expected": "2026-11-13T12:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -253,7 +248,7 @@
     },
     {
       "scheduled": "2026-11-13T12:50",
-      "expected": "2026-11-13T13:12",
+      "expected": "2026-11-13T13:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -275,7 +270,7 @@
     },
     {
       "scheduled": "2026-11-13T13:10",
-      "expected": "2026-11-13T13:19",
+      "expected": "2026-11-13T13:22",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -286,7 +281,7 @@
     },
     {
       "scheduled": "2026-11-13T13:14",
-      "expected": "2026-11-13T13:21",
+      "expected": "2026-11-13T13:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -315,6 +310,17 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T13:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a points failure",
       "mode": "train"
     }
   ],
