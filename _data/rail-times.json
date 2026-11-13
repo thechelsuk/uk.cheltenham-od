@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T11:11:08+00:00",
+  "generated_at": "2026-11-13T11:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-13T10:52",
-      "expected": "2026-11-13T11:10",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T11:12",
       "expected": null,
@@ -136,7 +115,7 @@
     },
     {
       "scheduled": "2026-11-13T11:40",
-      "expected": "2026-11-13T11:46",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -169,20 +148,30 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T11:52",
+      "expected": "2026-11-13T11:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-13T10:50",
-      "expected": "2026-11-13T11:06",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T11:10",
       "expected": null,
@@ -251,7 +240,7 @@
     },
     {
       "scheduled": "2026-11-13T11:38",
-      "expected": "2026-11-13T11:45",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -268,6 +257,17 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T11:51",
+      "expected": "2026-11-13T11:51",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
