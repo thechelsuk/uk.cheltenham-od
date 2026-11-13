@@ -117,11 +117,14 @@
             <h3>Are the Listings Up to Date?</h3>
             <ul>
                 <li>They come from Open Charge Map, which is updated by drivers and operators, so a charger can be out of action or newly opened before the listing changes. Check the operator's app before you travel.</li>
+                {% assign added = ev.stations | where: "hand_checked", true %}
+                {% if added.size > 0 %}<li>Not on Open Charge Map yet: {% for s in added %}{{ s.name }}{% if forloop.rindex == 2 %} and {% elsif forloop.last == false %}, {% endif %}{% endfor %}. {% if added.size == 1 %}Its details come{% else %}Their details come{% endif %} from the operator and council pages listed under About This Data.</li>{% endif %}
             </ul>
 
             <h2 id="about-this-data">About This Data</h2>
             <p class="attribution"><small>
                 Data from <a href="{{ ev.source_url }}">{{ ev.source }}</a>{% if ev.licence %}, published under the {{ ev.licence }}{% endif %}.
+                {% for s in added %}{{ s.name }} from {% for src in s.sources %}<a href="{{ src.url }}">{{ src.name }}</a>{% if forloop.rindex == 2 %} and {% elsif forloop.last == false %}, {% endif %}{% endfor %}. {% endfor %}
                 {% include freshness.html file="_data/ev-charging.json" %}
                 Always check the operator's app for live availability and pricing.
             </small></p>

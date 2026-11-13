@@ -1,0 +1,247 @@
+{% include header.html %}
+        {% assign absence = site.data["school-absence"] %}
+        {% assign fy = absence.full_year %}
+        {% assign tt = absence.two_term %}
+        {% assign fy_latest = fy.series | last %}
+        {% assign tt_latest = tt.series | last %}
+        {% assign fy_pre = fy.series | where: "year", "2018/19" | first %}
+        {% assign areas = "gloucestershire:Gloucestershire,south_west:South West,england:England" | split: "," %}
+
+
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{ page.title }}</h1>
+            <p>{{ page.description }}</p>
+            <ul class="header-facts">
+                <li><strong>{{ fy_latest.gloucestershire_display.overall }}</strong> of sessions missed in Gloucestershire, {{ fy_latest.year }}</li>
+                <li><strong>{{ fy_latest.gloucestershire_display.persistent }}</strong> persistently absent</li>
+                <li><strong>{{ fy_latest.gloucestershire_display.severe }}</strong> severely absent</li>
+                <li><strong>{{ absence.schools.size }}</strong> state schools</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <p>Every state school records whether each pupil is in class for the morning and afternoon sessions, and the
+            Department for Education publishes the totals. In {{ fy_latest.year }}, pupils at Gloucestershire's state schools
+            missed {{ fy_latest.gloucestershire_display.overall }} of their sessions, against
+            {{ fy_latest.england_display.overall }} across England. Of {{ fy_latest.gloucestershire_pupils.enrolments_display }}
+            pupil enrolments in the county, {{ fy_latest.gloucestershire_pupils.persistent_display }}
+            ({{ fy_latest.gloucestershire_display.persistent }}) were persistently absent, missing at least one session in ten,
+            and {{ fy_latest.gloucestershire_pupils.severe_display }} ({{ fy_latest.gloucestershire_display.severe }}) were
+            severely absent, missing at least half.{% if fy_pre %} Before the pandemic, in {{ fy_pre.year }}, those figures were
+            {{ fy_pre.gloucestershire_pupils.persistent_display }} ({{ fy_pre.gloucestershire_display.persistent }}) and
+            {{ fy_pre.gloucestershire_pupils.severe_display }} ({{ fy_pre.gloucestershire_display.severe }}).{% endif %}</p>
+        <p>The figures for the autumn and spring terms of {{ tt_latest.year }} came out in
+            {{ tt.published | date: "%B %Y" }}: Gloucestershire's pupils missed {{ tt_latest.gloucestershire_display.overall }}
+            of sessions and {{ tt_latest.gloucestershire_display.persistent }} were persistently absent, against
+            {{ tt_latest.england_display.overall }} and {{ tt_latest.england_display.persistent }} for England. The tables below
+            compare the county with the South West and England, then show each of the {{ absence.schools.size }} state schools
+            in the Cheltenham area.</p>
+
+        <h2>Gloucestershire, the South West and England</h2>
+        <div class="table-scroll">
+            <table class="schools-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Period</th>
+                        <th scope="col">Area</th>
+                        <th scope="col" class="number">Sessions Missed</th>
+                        <th scope="col" class="number">Persistently Absent</th>
+                        <th scope="col" class="number">Severely Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign periods = "full,part" | split: "," %}
+                    {% for p in periods %}
+                    {% if p == "full" %}
+                    {% assign row = fy_latest %}{% assign period = fy_latest.year | append: " full year" %}
+                    {% else %}
+                    {% assign row = tt_latest %}{% assign period = tt_latest.year | append: " autumn and spring" %}
+                    {% endif %}
+                    {% for a in areas %}
+                    {% assign parts = a | split: ":" %}
+                    {% assign key = parts[0] %}
+                    {% assign disp_key = key | append: "_display" %}
+                    <tr>
+                        <td>{{ period }}</td>
+                        <td>{{ parts[1] }}</td>
+                        <td class="number" data-val="{{ row[key].overall }}">{{ row[disp_key].overall }}</td>
+                        <td class="number" data-val="{{ row[key].persistent }}">{{ row[disp_key].persistent }}</td>
+                        <td class="number" data-val="{{ row[key].severe }}">{{ row[disp_key].severe }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Sessions missed** share of morning and afternoon sessions missed, **Persistently absent** share of pupils missing 10% or more of sessions, **Severely absent** share of pupils missing 50% or more" %}
+
+        <h2>Sessions Missed Each Year</h2>
+        <div class="chart-canvas"><canvas id="absence-overall-chart" aria-label="Line chart of the share of school sessions missed each year in Gloucestershire, the South West and England since {{ fy.series.first.year }}"></canvas></div>
+
+        <h2>Persistently Absent Pupils Each Year</h2>
+        <div class="chart-canvas"><canvas id="absence-persistent-chart" aria-label="Line chart of the share of pupils persistently absent each year in Gloucestershire, the South West and England since {{ fy.series.first.year }}"></canvas></div>
+
+        <h2>Severely Absent Pupils Each Year</h2>
+        <div class="chart-canvas"><canvas id="absence-severe-chart" aria-label="Line chart of the share of pupils severely absent each year in Gloucestershire, the South West and England since {{ fy.series.first.year }}"></canvas></div>
+
+        <h2>Gloucestershire Year by Year</h2>
+        <div class="table-scroll">
+            <table class="schools-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">School Year</th>
+                        <th scope="col" class="number">Pupils</th>
+                        <th scope="col" class="number">Sessions Missed</th>
+                        <th scope="col" class="number">Persistently Absent</th>
+                        <th scope="col" class="number">Pupils Persistently Absent</th>
+                        <th scope="col" class="number">Severely Absent</th>
+                        <th scope="col" class="number">Pupils Severely Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for y in fy.series reversed %}
+                    <tr>
+                        <td>{{ y.year }}</td>
+                        <td class="number" data-val="{{ y.gloucestershire_pupils.enrolments }}">{{ y.gloucestershire_pupils.enrolments_display }}</td>
+                        <td class="number" data-val="{{ y.gloucestershire.overall }}">{{ y.gloucestershire_display.overall }}</td>
+                        <td class="number" data-val="{{ y.gloucestershire.persistent }}">{{ y.gloucestershire_display.persistent }}</td>
+                        <td class="number" data-val="{{ y.gloucestershire_pupils.persistent }}">{{ y.gloucestershire_pupils.persistent_display }}</td>
+                        <td class="number" data-val="{{ y.gloucestershire.severe }}">{{ y.gloucestershire_display.severe }}</td>
+                        <td class="number" data-val="{{ y.gloucestershire_pupils.severe }}">{{ y.gloucestershire_pupils.severe_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Pupils** enrolments of pupils aged 5 to 15 at Gloucestershire's state primary, secondary and special schools during the year" %}
+
+        <h2>By Phase, {{ fy_latest.year }}</h2>
+        <div class="table-scroll">
+            <table class="schools-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Phase</th>
+                        <th scope="col">Area</th>
+                        <th scope="col" class="number">Sessions Missed</th>
+                        <th scope="col" class="number">Persistently Absent</th>
+                        <th scope="col" class="number">Severely Absent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ph in fy.by_phase %}
+                    {% for a in areas %}
+                    {% assign parts = a | split: ":" %}
+                    {% assign key = parts[0] %}
+                    {% assign disp_key = key | append: "_display" %}
+                    <tr>
+                        <td>{{ ph.phase }}</td>
+                        <td>{{ parts[1] }}</td>
+                        <td class="number" data-val="{{ ph[key].overall }}">{{ ph[disp_key].overall }}</td>
+                        <td class="number" data-val="{{ ph[key].persistent }}">{{ ph[disp_key].persistent }}</td>
+                        <td class="number" data-val="{{ ph[key].severe }}">{{ ph[disp_key].severe }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Absence at Each School</h2>
+        <p>Figures for each state school in the GL50–GL54 area, for the {{ fy.school_year }} school year and for the autumn and
+            spring terms of {{ tt.school_year }}. The Department for Education's absence figures cover state-funded primary,
+            secondary and special schools, so independent schools, the hospital education service and colleges aren't listed.
+            Select a school's name for its own page, with its Ofsted history and absence.</p>
+        <div class="table-scroll">
+            <table class="schools-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Phase</th>
+                        <th scope="col" class="number">Pupils</th>
+                        <th scope="col" class="number">Missed {{ fy.school_year }}</th>
+                        <th scope="col" class="number">Persistent {{ fy.school_year }}</th>
+                        <th scope="col" class="number">Severe {{ fy.school_year }}</th>
+                        <th scope="col" class="number">Missed {{ tt.school_year }}</th>
+                        <th scope="col" class="number">Persistent {{ tt.school_year }}</th>
+                        <th scope="col" class="number">Severe {{ tt.school_year }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in absence.schools %}
+                    {% assign s_ofsted = site.data.ofsted.schools[s.urn] %}
+                    <tr>
+                        <td>{% if s_ofsted %}<a href="/cheltenham-schools/{{ s_ofsted.slug }}">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</td>
+                        <td>{{ s.phase }}</td>
+                        {% if s.full_year %}
+                        <td class="number" data-val="{{ s.full_year.enrolments }}">{{ s.full_year.enrolments_display }}</td>
+                        <td class="number" data-val="{{ s.full_year.overall }}">{{ s.full_year.overall_display }}</td>
+                        <td class="number" data-val="{{ s.full_year.persistent }}">{{ s.full_year.persistent_display }}</td>
+                        <td class="number" data-val="{{ s.full_year.severe }}">{{ s.full_year.severe_display }}</td>
+                        {% else %}
+                        <td class="number">&ndash;</td><td class="number">&ndash;</td><td class="number">&ndash;</td><td class="number">&ndash;</td>
+                        {% endif %}
+                        {% if s.two_term %}
+                        <td class="number" data-val="{{ s.two_term.overall }}">{{ s.two_term.overall_display }}</td>
+                        <td class="number" data-val="{{ s.two_term.persistent }}">{{ s.two_term.persistent_display }}</td>
+                        <td class="number" data-val="{{ s.two_term.severe }}">{{ s.two_term.severe_display }}</td>
+                        {% else %}
+                        <td class="number">&ndash;</td><td class="number">&ndash;</td><td class="number">&ndash;</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Pupils** pupil enrolments during the full school year, **Missed** share of sessions missed, **Persistent** share of pupils missing 10% or more, **Severe** share of pupils missing 50% or more. The second set of figures covers the autumn and spring terms only" %}
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Do Persistent and Severe Absence Mean?</h3>
+        <ul>
+            <li>A school day has two sessions, morning and afternoon. A pupil is persistently absent if they miss 10% or more of
+                their possible sessions, about one day a fortnight, and severely absent if they miss 50% or more.</li>
+            <li>The figures count all absence, authorised (such as illness or medical appointments) and unauthorised (such as an
+                unapproved holiday or an unexplained absence). They cover pupils aged 5 to 15 at state-funded primary, secondary
+                and special schools.</li>
+            <li>The Department for Education counts pupil enrolments rather than pupils, so a child who moved school during the
+                year is counted at each school. Across England, enrolments are about 4% higher than the number of pupils.</li>
+        </ul>
+
+        <h3>Why Is There No Figure for 2019/20?</h3>
+        <ul>
+            <li>The Department for Education cancelled its 2019/20 absence releases during the COVID-19 pandemic.</li>
+            <li>From 2020/21 until April 2022, schools recorded sessions that pupils couldn't attend because of COVID-19 rules
+                under a separate code that isn't counted as absence, so take care comparing those years with others.</li>
+        </ul>
+
+        <h3>Which Figures Should I Compare?</h3>
+        <ul>
+            <li>The full school year figures, published each March, are the definitive ones. The autumn and spring term figures,
+                published each October, come out sooner but cover only part of the year, when winter illness is at its height,
+                so the Department for Education treats them as an early indication.</li>
+            <li>A school's absence depends on its pupils as well as the school, for example on how many have long-term health
+                conditions or special educational needs, so the figures are a starting point for questions rather than a
+                ranking. Small schools' percentages can move a lot from one year to the next because of a handful of
+                pupils.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Absence figures from the <a href="{{ absence.source_url }}">Department for Education's Pupil absence in schools in England</a>
+            (<a href="{{ fy.release_url }}">{{ fy.release | downcase | capitalize }}</a> and
+            <a href="{{ tt.release_url }}">{{ tt.release | downcase }}</a>), published under the {{ absence.licence }}.
+            {% include freshness.html file="_data/school-absence.json" %}
+        </small></p>
+
+    </div>
+    <script id="school-absence-data" type="application/json">{{ fy.series | jsonify }}</script>
+    {% include chartjs.html %}
+    <script src="/assets/scripts/school-absence-chart.js"></script>
+    {% include footer.html %}
+</div>

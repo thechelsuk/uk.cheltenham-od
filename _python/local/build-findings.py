@@ -62,6 +62,10 @@ STYLE = """
   .line { fill: none; stroke: #ca3393; stroke-width: 2; }
   .dot { fill: #ca3393; stroke: #fcfcfb; stroke-width: 2; }
   .hatch { stroke: #fcfcfb; stroke-width: 2; }
+  .pt { stroke: #fcfcfb; stroke-width: 1.5; }
+  .ring { fill: #fcfcfb; stroke: #52514e; stroke-width: 1.5; }
+  .arrow { fill: none; stroke: #0b0b0b; stroke-width: 1.5; }
+  .divide { stroke: #8a8984; stroke-width: 1; stroke-dasharray: 4 3; }
 </style>
 """.replace(
     "FONT", FONT
@@ -282,6 +286,95 @@ def legend(items: Sequence[tuple[str, str]], y: int) -> list[str]:
         marks.append(f'<text class="lab" x="{x + 18}" y="{y + 11}">{escape(label)}</text>')
         x += 30 + 7 * len(label)
     return marks
+
+
+def marker(shape: str, x: float, y: float, cls: str, size: float = 5) -> str:
+    """One point: a circle, diamond or triangle, so shape can carry a category."""
+    if shape == "diamond":
+        s = size * 1.3
+        return (f'<polygon class="{cls} pt" points="{x:.1f},{y - s:.1f} '
+                f'{x + s:.1f},{y:.1f} {x:.1f},{y + s:.1f} {x - s:.1f},{y:.1f}"/>')
+    if shape == "triangle":
+        s = size * 1.3
+        return (f'<polygon class="{cls} pt" points="{x:.1f},{y - s:.1f} '
+                f'{x + s:.1f},{y + s * 0.8:.1f} {x - s:.1f},{y + s * 0.8:.1f}"/>')
+    return f'<circle class="{cls} pt" cx="{x:.1f}" cy="{y:.1f}" r="{size}"/>'
+
+
+def shape_legend(items: Sequence[tuple[str, str, str]], y: int) -> list[str]:
+    """A one-row legend of (shape, css class, label) markers."""
+    marks, x = [], 26
+    for shape, cls, label in items:
+        marks.append(marker(shape, x, y + 6, cls))
+        marks.append(f'<text class="lab" x="{x + 12}" y="{y + 10}">{escape(label)}</text>')
+        x += 36 + 7 * len(label)
+    return marks
+
+
+class Scatter:
+    """Axes for a scatter plot. `px` and `py` map data values to the canvas, so
+    builders can place points, arrows and notes on the same scale."""
+
+    top, plot_h, left, right = 116, 260, 64, 24
+
+    def __init__(self, x_range: tuple[float, float], y_range: tuple[float, float],
+                 left: int = 64):
+        self.left = left
+        self.x0, self.x1 = x_range
+        self.y0, self.y1 = y_range
+        self.base = self.top + self.plot_h
+
+    def px(self, x: float) -> float:
+        """Canvas x for a data x."""
+        span = WIDTH - self.left - self.right
+        return self.left + span * (x - self.x0) / (self.x1 - self.x0)
+
+    def py(self, y: float) -> float:
+        """Canvas y for a data y."""
+        return self.top + self.plot_h * (self.y1 - y) / (self.y1 - self.y0)
+
+    def axes(
+        self,
+        x_ticks: Sequence[tuple[float, str]],
+        y_ticks: Sequence[tuple[float, str]],
+        labels: tuple[str, str],
+    ) -> list[str]:
+        """Gridlines, tick labels and axis titles (x title, y title)."""
+        marks = [f'<line class="base" x1="{self.left}" x2="{WIDTH - self.right}" '
+                 f'y1="{self.base}" y2="{self.base}"/>']
+        for value, text in y_ticks:
+            y = self.py(value)
+            marks.append(f'<line class="grid" x1="{self.left}" x2="{WIDTH - self.right}" '
+                         f'y1="{y:.1f}" y2="{y:.1f}"/>')
+            marks.append(f'<text class="ax" x="{self.left - 6}" y="{y + 4:.1f}" '
+                         f'text-anchor="end">{escape(text)}</text>')
+        for value, text in x_ticks:
+            marks.append(f'<text class="ax" x="{self.px(value):.1f}" '
+                         f'y="{self.base + 16}" text-anchor="middle">{escape(text)}</text>')
+        x_title, y_title = labels
+        marks.append(f'<text class="ax" x="{(self.left + WIDTH - self.right) / 2:.1f}" '
+                     f'y="{self.base + 34}" text-anchor="middle">{escape(x_title)}</text>')
+        marks.append(f'<text class="ax" x="20" y="{self.top - 12}">{escape(y_title)}</text>')
+        return marks
+
+    def arrow(self, start: tuple[float, float], end: tuple[float, float],
+              gap: float = 9) -> list[str]:
+        """A line with an arrowhead from start to end (data values), stopping
+        `gap` px short of each point so the markers stay visible."""
+        x1, y1 = self.px(start[0]), self.py(start[1])
+        x2, y2 = self.px(end[0]), self.py(end[1])
+        length = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5 or 1
+        ux, uy = (x2 - x1) / length, (y2 - y1) / length
+        ax, ay = x1 + ux * gap, y1 + uy * gap
+        bx, by = x2 - ux * gap, y2 - uy * gap
+        head = 7
+        lx, ly = bx - ux * head - uy * head * 0.6, by - uy * head + ux * head * 0.6
+        rx, ry = bx - ux * head + uy * head * 0.6, by - uy * head - ux * head * 0.6
+        return [
+            f'<line class="arrow" x1="{ax:.1f}" y1="{ay:.1f}" x2="{bx:.1f}" y2="{by:.1f}"/>',
+            f'<polygon fill="#0b0b0b" points="{bx:.1f},{by:.1f} {lx:.1f},{ly:.1f} '
+            f'{rx:.1f},{ry:.1f}"/>',
+        ]
 
 
 def rents_vs_pay() -> None:
@@ -720,6 +813,184 @@ def crime_missing() -> None:
     )
 
 
+OFSTED_GRADES = ("Outstanding", "Good", "Requires improvement", "Inadequate")
+ABSENCE_YEAR = ("2024-09-01", "2025-08-31")  # the 2024/25 school year
+
+
+def ofsted_grade_on(record: Row, day: str) -> tuple[str, str] | None:
+    """The four-point Ofsted grade in force on `day`, with its inspection date.
+    Inspections from September 2024 graded each area but gave no overall grade;
+    for those, the quality of education grade stands in. Ungraded inspections
+    keep the previous grade."""
+    found = [(i["date"], i["outcome"]) for i in record["inspections"]
+             if i["outcome"] in OFSTED_GRADES and i["date"] <= day]
+    graded = record["graded"]
+    if graded and graded["date"] <= day and not graded.get("overall") and graded["areas"]:
+        quality = [a["grade"] for a in graded["areas"] if a["area"] == "Quality of education"]
+        if quality:
+            found.append((graded["date"], quality[0]))
+    if not found:
+        return None
+    day_found, grade = max(found)
+    return grade, day_found
+
+
+def inside(point: tuple[float, float], ring: Sequence[Sequence[float]]) -> bool:
+    """Whether a (lat, lon) point lies inside a polygon ring of [lat, lon] pairs."""
+    lat, lon = point
+    hit = False
+    for (lat1, lon1), (lat2, lon2) in zip(ring, [ring[-1], *ring[:-1]]):
+        if (lat1 > lat) != (lat2 > lat) and lon < (lon2 - lon1) * (lat - lat1) / (lat2 - lat1) + lon1:
+            hit = not hit
+    return hit
+
+
+def school_ward_rows() -> list[Row]:
+    """Cheltenham borough state primaries with 2024/25 absence, the deprivation
+    of the ward each school sits in, and its Ofsted grade at the start and end
+    of the school year."""
+    dep = load("deprivation.json")
+    ofsted = load("ofsted.json")["schools"]
+    places = {s["urn_url"].rsplit("/", 1)[-1]: s for s in load("schools.json")}
+    rows = []
+    for school in load("school-absence.json")["schools"]:
+        year = school.get("full_year")
+        if school["phase"] != "Primary" or not year:
+            continue
+        place = places[school["urn"]]
+        area = next((a for a in dep["lsoas"]
+                     if any(inside((place["lat"], place["lon"]), ring) for ring in a["boundary"])),
+                    None)
+        if not area:
+            continue  # outside Cheltenham borough
+        ward = dep["wards"][area["ward_code"]]
+        start = ofsted_grade_on(ofsted[school["urn"]], ABSENCE_YEAR[0])
+        end = ofsted_grade_on(ofsted[school["urn"]], ABSENCE_YEAR[1])
+        if not end:
+            continue
+        rows.append({
+            "school": school["name"],
+            "urn": school["urn"],
+            "ward": ward["name"],
+            "ward_deprivation_rank_in_cheltenham": ward["rank"],
+            "ward_imd_score": ward["score"],
+            "enrolments": year["enrolments"],
+            "overall_absence_pct": year["overall"],
+            "persistent_absence_pct": year["persistent"],
+            "severe_absence_pct": year["severe"],
+            "ofsted_grade_2024_09_01": start[0] if start else "",
+            "ofsted_grade_2025_08_31": end[0],
+            "ofsted_grade_date": end[1],
+        })
+    return sorted(rows, key=lambda r: (r["ward_deprivation_rank_in_cheltenham"],
+                                       r["persistent_absence_pct"]))
+
+
+def ward_offsets(rows: Sequence[Row]) -> list[float]:
+    """Small sideways offsets so schools in the same ward don't overlap."""
+    by_ward: dict[int, list[int]] = defaultdict(list)
+    for i, r in enumerate(rows):
+        by_ward[r["ward_deprivation_rank_in_cheltenham"]].append(i)
+    offsets = [0.0] * len(rows)
+    for members in by_ward.values():
+        for j, i in enumerate(members):
+            offsets[i] = (j - (len(members) - 1) / 2) * 0.36
+    return offsets
+
+
+def weighted(rows: Sequence[Row], field: str) -> float:
+    """Enrolment-weighted rate across schools."""
+    pupils = sum(r["enrolments"] for r in rows)
+    return sum(r[field] * r["enrolments"] for r in rows) / pupils
+
+
+WARD_TICKS = [(1, "1"), (5, "5"), (10, "10"), (15, "15"), (20, "20")]
+WARD_AXIS = "Ward deprivation rank in Cheltenham (1 = most deprived of 20 wards)"
+SHAPES = {"Outstanding": "diamond", "Good": "circle", "Requires improvement": "triangle"}
+
+
+def school_absence_deprivation() -> None:
+    """School absence post: persistent absence at each primary against the
+    deprivation of its ward, with the Ofsted grade as the marker's shape."""
+    slug = "cheltenham-school-absence-deprivation"
+    rows = school_ward_rows()
+    write_csv(slug, rows)
+    plot = Scatter((0.5, 20.5), (0, 40))
+    marks = plot.axes(WARD_TICKS, [(v, f"{v}%") for v in (0, 10, 20, 30, 40)],
+                      (WARD_AXIS, "% of pupils persistently absent, 2024/25"))
+    most = [r for r in rows if r["ward_deprivation_rank_in_cheltenham"] <= 5]
+    least_wards = sorted({r["ward_deprivation_rank_in_cheltenham"] for r in rows})[-5:]
+    least = [r for r in rows if r["ward_deprivation_rank_in_cheltenham"] in least_wards]
+    split = plot.px(5.5)
+    marks.append(f'<line class="divide" x1="{split:.1f}" x2="{split:.1f}" '
+                 f'y1="{plot.top}" y2="{plot.base}"/>')
+    marks.append(f'<text class="val" x="{split + 6:.1f}" y="{plot.top + 14}">'
+                 f"5 most deprived wards: {weighted(most, 'persistent_absence_pct'):.1f}%"
+                 "</text>")
+    marks.append(f'<text class="val" x="{WIDTH - plot.right}" y="{plot.py(17):.1f}" '
+                 f'text-anchor="end">5 least deprived wards with a primary: '
+                 f"{weighted(least, 'persistent_absence_pct'):.1f}%</text>")
+    for r, dx in zip(rows, ward_offsets(rows)):
+        marks.append(marker(
+            SHAPES[r["ofsted_grade_2025_08_31"]],
+            plot.px(r["ward_deprivation_rank_in_cheltenham"] + dx),
+            plot.py(r["persistent_absence_pct"]),
+            "s1" if r in most else "mute",
+        ))
+    marks += shape_legend([(SHAPES[g], "mute", g)
+                           for g in ("Outstanding", "Good", "Requires improvement")], 64)
+    frame(
+        slug,
+        plot.base + 64,
+        (
+            "Persistent absence at Cheltenham primaries, by ward deprivation",
+            f"{len(rows)} state primaries, 2024/25; schools in the 5 most deprived wards highlighted",
+            "Source: DfE pupil absence; MHCLG IoD 2025; Ofsted (OGL v3.0)",
+        ),
+        marks,
+    )
+
+
+def school_ofsted_deprivation() -> None:
+    """School absence post: each primary's Ofsted grade against the deprivation
+    of its ward, with an arrow where the grade changed during 2024/25."""
+    slug = "cheltenham-school-ofsted-deprivation"
+    rows = school_ward_rows()
+    write_csv(slug, rows)
+    level = {"Outstanding": 3, "Good": 2, "Requires improvement": 1}
+    counts = Counter(r["ofsted_grade_2025_08_31"] for r in rows)
+    plot = Scatter((0.5, 20.5), (0.5, 3.5), left=170)
+    marks = plot.axes(
+        WARD_TICKS,
+        [(v, f"{g} ({counts[g]})") for g, v in level.items()],
+        (WARD_AXIS, "Ofsted grade at the end of 2024/25 (number of schools)"),
+    )
+    for r, dx in zip(rows, ward_offsets(rows)):
+        x = r["ward_deprivation_rank_in_cheltenham"] + dx
+        before, after = r["ofsted_grade_2024_09_01"], r["ofsted_grade_2025_08_31"]
+        if before and before != after:
+            marks.append(marker(SHAPES[before], plot.px(x), plot.py(level[before]), "ring"))
+            marks += plot.arrow((x, level[before]), (x, level[after]))
+            marks.append(marker(SHAPES[after], plot.px(x), plot.py(level[after]), "s1"))
+            note_y = (plot.py(level[before]) + plot.py(level[after])) / 2 + 4
+            marks.append(f'<text class="lab" x="{plot.px(x) - 10:.1f}" y="{note_y:.1f}" '
+                         f'text-anchor="end">{escape(r["school"])}</text>')
+        else:
+            marks.append(marker(SHAPES[after], plot.px(x), plot.py(level[after]), "mute"))
+    marks += shape_legend([("circle", "ring", "Grade on 1 September 2024"),
+                           ("circle", "s1", "Grade after a 2024/25 inspection")], 64)
+    frame(
+        slug,
+        plot.base + 64,
+        (
+            "Ofsted grades at Cheltenham primaries, by ward deprivation",
+            f"{len(rows)} state primaries; arrows show grades that changed during 2024/25",
+            "Source: Ofsted; MHCLG IoD 2025 (OGL v3.0)",
+        ),
+        marks,
+    )
+
+
 # One entry per chart, keyed by the slug its files are written under. A new
 # analysis post adds a builder above and one line here.
 BUILDERS: dict[str, Callable[[], None]] = {
@@ -734,6 +1005,8 @@ BUILDERS: dict[str, Callable[[], None]] = {
     "cheltenham-rent-share-of-pay": rents_vs_pay,
     "cheltenham-private-rented-epc": private_rented_epc,
     "cheltenham-crime-data-missing": crime_missing,
+    "cheltenham-school-absence-deprivation": school_absence_deprivation,
+    "cheltenham-school-ofsted-deprivation": school_ofsted_deprivation,
 }
 
 

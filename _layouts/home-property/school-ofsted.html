@@ -136,6 +136,49 @@
             </table>
         </div>
 
+        {% assign ab_data = site.data["school-absence"] %}
+        {% assign ab = ab_data.schools | where: "urn", s.urn | first %}
+        {% if ab %}
+        {% assign ab_fy = ab_data.full_year %}
+        {% assign ab_tt = ab_data.two_term %}
+        {% assign cmp_fy = ab_fy.by_phase | where: "phase", ab.phase | where: "year", ab_fy.school_year | first %}
+        {% assign cmp_tt = ab_tt.by_phase | where: "phase", ab.phase | where: "year", ab_tt.school_year | first %}
+        {% if cmp_fy %}{% assign cmp_phase = ab.phase | downcase %}{% assign cmp_label = "Gloucestershire " | append: cmp_phase | append: " schools" %}{% assign cmp_prose = cmp_label %}{% else %}{% assign cmp_fy = ab_fy.series | last %}{% assign cmp_tt = ab_tt.series | last %}{% assign cmp_label = "All Gloucestershire state schools" %}{% assign cmp_prose = "all Gloucestershire state schools" %}{% endif %}
+        <h2 id="pupil-absence">Pupil Absence</h2>
+        <p>How often pupils at {{ s.name }} missed school, from the Department for Education's official figures, against
+            {{ cmp_prose }}. To compare it with every state school in the area, see our
+            <a href="/cheltenham-schools/absence">Cheltenham school absence</a> page.</p>
+        <div class="table-scroll">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Measure</th>
+                        <th scope="col" class="number">This School {{ ab_fy.school_year }}</th>
+                        <th scope="col" class="number">{{ cmp_label }} {{ ab_fy.school_year }}</th>
+                        <th scope="col" class="number">This School, Autumn and Spring {{ ab_tt.school_year }}</th>
+                        <th scope="col" class="number">{{ cmp_label }}, Autumn and Spring {{ ab_tt.school_year }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign measures = "overall:Sessions missed,persistent:Persistently absent,severe:Severely absent" | split: "," %}
+                    {% for m in measures %}
+                    {% assign mk = m | split: ":" | first %}{% assign ml = m | split: ":" | last %}
+                    {% assign mkd = mk | append: "_display" %}
+                    <tr>
+                        <td>{{ ml }}</td>
+                        <td class="number">{% if ab.full_year %}{{ ab.full_year[mkd] }}{% else %}&ndash;{% endif %}</td>
+                        <td class="number">{{ cmp_fy.gloucestershire_display[mk] | default: "&ndash;" }}</td>
+                        <td class="number">{% if ab.two_term %}{{ ab.two_term[mkd] }}{% else %}&ndash;{% endif %}</td>
+                        <td class="number">{{ cmp_tt.gloucestershire_display[mk] | default: "&ndash;" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Sessions missed** share of morning and afternoon sessions missed, **Persistently absent** share of pupils missing 10% or more, **Severely absent** share of pupils missing 50% or more. Autumn and spring figures cover part of the school year only" %}
+        {% if ab.full_year %}<p>Figures cover {{ ab.full_year.enrolments_display }} pupil enrolments in {{ ab_fy.school_year }}. In a small school, a change of a few percentage points can be one or two pupils.</p>{% endif %}
+        {% endif %}
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>What Is {{ s.name }}'s Ofsted Rating?</h3>
@@ -195,6 +238,10 @@
             <a href="{{ data.mi_url }}" rel="noopener">monthly management information</a>, published under the {{ data.licence }}.
             {% include freshness.html file="_data/ofsted.json" %}
         </small></p>
+        {% if ab %}<p class="attribution"><small>
+            Absence figures from the <a href="{{ ab_data.source_url }}">Department for Education's Pupil absence in schools in England</a>,
+            published under the {{ ab_data.licence }}. {% include freshness.html file="_data/school-absence.json" %}
+        </small></p>{% endif %}
     </div>
     {% include footer.html %}
 </div>

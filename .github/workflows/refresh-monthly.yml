@@ -63,6 +63,7 @@ jobs:
                   python _python/fetch_status.py refresh-monthly _python/racing.py || echo "::warning::racing.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-monthly _python/affordability.py || echo "::warning::affordability.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-monthly _python/ofsted.py || echo "::warning::ofsted.py failed, continuing with other scripts"
+                  python _python/fetch_status.py refresh-monthly _python/school-absence.py || echo "::warning::school-absence.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-monthly _python/childcare.py || echo "::warning::childcare.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-monthly _python/charities.py || echo "::warning::charities.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-monthly _python/taxi-ranks.py || echo "::warning::taxi-ranks.py failed, continuing with other scripts"

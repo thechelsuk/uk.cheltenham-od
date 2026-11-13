@@ -69,6 +69,7 @@ NO_SCRIPT = {
     "_data/holidays.json", "_data/bin-collections.json", "_data/clubs.json", "_data/third-spaces.json",
     "_data/helpful-contacts.json", "_data/local-support.json", "_data/festivals.json",
     "_data/gloucestershire-cricket.json", "_data/cycle-venues.json", "_data/awareness-dates.json",
+    "_data/ev-charging-additions.json",
 }
 
 

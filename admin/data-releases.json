@@ -81,6 +81,13 @@
       "notes": "nhs-ae.py picks this up in the daily workflow. January is the winter peak, the month the A&E analysis compares year on year."
     },
     {
+      "date": "2027-03-01",
+      "title": "Check: DfE pupil absence full year 2025/26 date",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/pupil-absence-in-schools-in-england-202526",
+      "notes": "Provisional for March 2027 (the 2024/25 figures came out on 26 March 2026, 2023/24 on 20 March 2025). Feeds the pupil absence section of /cheltenham-schools through school-absence.py in the monthly workflow, which picks up the new files on the next 2nd of the month. Run the monthly workflow by hand after release to show it sooner."
+    },
+    {
       "date": "2027-03-11",
       "time": "09:30",
       "title": "NHS A&E figures (February data)",
@@ -115,6 +122,20 @@
       "status": "expected",
       "url": "https://www.gov.uk/government/statistics/fire-statistics-incident-level-datasets",
       "notes": "Usually late July (22 July in 2026). Manual: download the outdoor fires dataset .ods files into _data-sources/outdoor-fires/, replacing the old ones, then run process-wildfire-incidents.py."
+    },
+    {
+      "date": "2027-08-02",
+      "title": "Check: DfE pupil absence autumn term 2026/27",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/pupil-absence-in-schools-in-england-autumn-term-202627",
+      "notes": "Provisional for August 2027. Autumn-term-only figures are not shown on the site, so nothing to run; useful as an early sign before the October release."
+    },
+    {
+      "date": "2027-10-01",
+      "title": "Check: DfE pupil absence autumn and spring 2026/27",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/statistics/announcements/pupil-absence-in-schools-in-england-autumn-and-spring-term-202627",
+      "notes": "Provisional for October 2027 (15 October in 2026). Feeds the autumn and spring figures on /cheltenham-schools through school-absence.py in the monthly workflow."
     }
   ]
 }

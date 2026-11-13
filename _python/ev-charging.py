@@ -7,6 +7,11 @@ Run locally:      OCM_API_KEY=your_key python _python/ev-charging.py
 GitHub Actions:   refresh-4-times-daily.yml passes the OCM_API_KEY repo secret to this step.
 
 Data © Open Charge Map contributors, licensed CC-BY-SA 4.0.
+
+Open Charge Map can lag behind new sites, so hand-checked stations in
+_data/ev-charging-additions.json are merged in too. Each one names its
+sources and the date it was last checked, and is dropped automatically once
+Open Charge Map lists the same operator within DEDUPE_METRES of it.
 """
 
 import json
@@ -28,6 +33,7 @@ import helper
 SCRIPT_DIR = pathlib.Path(__file__).resolve().parent          # .../_python
 DATA_DIR = SCRIPT_DIR.parent / "_data"                        # .../_data
 OUTPUT_FILE = DATA_DIR / "ev-charging.json"
+ADDITIONS_FILE = DATA_DIR / "ev-charging-additions.json"
 
 # Cheltenham town centre — search radius is measured from here.
 CENTRE_LAT, CENTRE_LNG = config.CENTRE
@@ -44,6 +50,10 @@ REQUEST_TIMEOUT = 60  # seconds
 SOURCE_NAME = "Open Charge Map"
 SOURCE_URL = "https://openchargemap.org"
 LICENCE = "Creative Commons Attribution-ShareAlike 4.0 licence (CC BY-SA 4.0)"
+
+# An addition counts as already on Open Charge Map when OCM has a station run
+# by the same operator this close to it.
+DEDUPE_METRES = 150
 
 # --- Helpers ----------------------------------------------------------------
 
@@ -123,6 +133,83 @@ def transform(poi):
     }
 
 
+def load_additions(path=ADDITIONS_FILE):
+    """The hand-checked stations from the additions file (none if it's missing)."""
+    path = pathlib.Path(path)
+    if not path.exists():
+        return []
+    return json.loads(path.read_text(encoding="utf-8")).get("stations", [])
+
+
+def addition_to_station(entry):
+    """Turn a hand-checked addition into the same shape as transform() gives."""
+    sources = [src for src in entry.get("sources") or [] if src.get("url")]
+    if not sources:
+        raise ValueError(f"{entry.get('id')}: an addition needs at least one source with a url")
+    try:
+        datetime.strptime(entry.get("last_checked") or "", "%Y-%m-%d")
+    except ValueError:
+        raise ValueError(f"{entry.get('id')}: last_checked must be an ISO date (YYYY-MM-DD)") from None
+    lat, lng = entry.get("latitude"), entry.get("longitude")
+    if lat is None or lng is None:
+        raise ValueError(f"{entry.get('id')}: an addition needs latitude and longitude")
+
+    connections = [
+        {"type": c.get("type"), "power_kw": c.get("power_kw"),
+         "quantity": c.get("quantity"), "level": c.get("level")}
+        for c in entry.get("connections") or []
+    ]
+    powers = [c["power_kw"] for c in connections if c.get("power_kw")]
+
+    return {
+        "id": entry.get("id"),
+        "name": entry.get("name"),
+        "operator": entry.get("operator"),
+        "address": entry.get("address"),
+        "town": entry.get("town"),
+        "postcode": entry.get("postcode"),
+        "latitude": lat,
+        "longitude": lng,
+        "distance_miles": round(helper.miles_from_centre(lat, lng), 2),
+        "access": entry.get("access"),
+        "status": entry.get("status"),
+        "num_points": entry.get("num_points"),
+        "connections": connections,
+        "max_power_kw": max(powers) if powers else None,
+        "last_verified": entry["last_checked"],
+        "google_maps_url": google_maps_url(lat, lng),
+        "ocm_url": None,
+        "hand_checked": True,
+        "source_url": sources[0]["url"],
+        "sources": sources,
+    }
+
+
+def _same_operator(a, b):
+    return bool(a and b) and a.strip().casefold() == b.strip().casefold()
+
+
+def merge_additions(stations, additions):
+    """Add hand-checked stations that OCM doesn't list yet, sorted by distance."""
+    merged = list(stations)
+    for entry in additions:
+        extra = addition_to_station(entry)
+        if extra["distance_miles"] * 1.609344 > RADIUS_KM:
+            continue
+        on_ocm = any(
+            _same_operator(s.get("operator"), extra["operator"])
+            and helper.haversine_km(s["latitude"], s["longitude"], extra["latitude"], extra["longitude"]) * 1000
+            <= DEDUPE_METRES
+            for s in stations
+        )
+        if on_ocm:
+            print(f"Open Charge Map now lists {extra['name']}: remove {extra['id']} from {ADDITIONS_FILE.name}")
+            continue
+        merged.append(extra)
+    merged.sort(key=lambda s: s["distance_miles"])
+    return merged
+
+
 def build_summary(stations):
     """Aggregate connector types and headline stats for the page."""
     by_type = defaultdict(lambda: {"stations": 0, "connectors": 0, "max_power_kw": 0})
@@ -169,7 +256,7 @@ def main():
 
     raw = fetch_pois()
     stations = [t for t in (transform(p) for p in raw) if t]
-    stations.sort(key=lambda s: s["distance_miles"])
+    stations = merge_additions(stations, load_additions())
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -179,6 +266,7 @@ def main():
         "centre": {"latitude": CENTRE_LAT, "longitude": CENTRE_LNG},
         "radius_km": RADIUS_KM,
         "count": len(stations),
+        "hand_checked_count": sum(1 for s in stations if s.get("hand_checked")),
         "summary": build_summary(stations),
         "stations": stations,
     }

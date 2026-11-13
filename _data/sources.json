@@ -516,6 +516,16 @@
     ]
   },
   {
+    "id": "dfe-pupil-absence",
+    "name": "Department for Education, Pupil absence in schools in England",
+    "licence_name": "Open Government Licence v3.0",
+    "source_url": "https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england",
+    "licence": "Open Government Licence v3.0. Accredited official statistics on Explore Education Statistics, whose content is published under the OGL v3.0. Read from the EES data catalogue: the full academic year (published each March) and the autumn and spring terms (each October), for England, the South West, Gloucestershire and each state school matched by URN.",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/school-absence.json", "schedule": "monthly", "script": "_python/school-absence.py"}],
+    "pages": ["/cheltenham-schools/absence", "/cheltenham-schools"]
+  },
+  {
     "id": "great-british-toilet-map",
     "name": "The Toilet Map",
     "licence_name": "Creative Commons Attribution 4.0 licence (CC BY 4.0)",
@@ -604,8 +614,8 @@
     "source_url": "https://cheltenham-od.uk",
     "licence": "None — manually curated by site editors",
     "licence_type": "Own data",
-    "data": [{"file": "_data/third-spaces.json", "schedule": "monthly"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "monthly"}, {"file": "_data/clubs.json", "schedule": "monthly"}, {"file": "_data/helpful-contacts.json", "schedule": "monthly"}, {"file": "_data/local-support.json", "schedule": "monthly"}, {"file": "_data/festivals.json", "schedule": "monthly"}, {"file": "_data/awareness-dates.json", "schedule": "monthly"}],
-    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/corrections", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-sports-clubs", "/cheltenham-clubs-and-societies", "/cheltenham-arts-and-crafts", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support", "/festivals", "/cheltenham-public-holidays"]
+    "data": [{"file": "_data/third-spaces.json", "schedule": "monthly"}, {"file": "_data/covid-timeline.json", "schedule": "manual"}, {"file": "_data/corrections.json", "schedule": "manual"}, {"file": "_data/cycle-venues.json", "schedule": "manual"}, {"file": "_data/gloucestershire-cricket.json", "schedule": "monthly"}, {"file": "_data/clubs.json", "schedule": "monthly"}, {"file": "_data/helpful-contacts.json", "schedule": "monthly"}, {"file": "_data/local-support.json", "schedule": "monthly"}, {"file": "_data/festivals.json", "schedule": "monthly"}, {"file": "_data/awareness-dates.json", "schedule": "monthly"}, {"file": "_data/ev-charging-additions.json", "schedule": "monthly"}],
+    "pages": ["/cheltenham-third-spaces", "/cheltenham-covid-19", "/corrections", "/cheltenham-cycle-routes", "/cheltenham-sports/gloucestershire-cricket", "/cheltenham-sports-clubs", "/cheltenham-clubs-and-societies", "/cheltenham-arts-and-crafts", "/cheltenham-helpful-contacts-reports", "/cheltenham-helpful-contacts-reports/local-support", "/festivals", "/cheltenham-public-holidays", "/cheltenham-ev-charging"]
   },
   {
     "id": "nged-live-power-cuts",

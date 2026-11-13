@@ -36,4 +36,6 @@ straight from the official register. For higher education, see the
 
 Sort the table by name, type or phase, or filter it by phase, to find what you're after, or use the summary to see how the schools break down across phases. Select a school's name for its full Ofsted inspection history: its latest report card or graded inspection, area by area, and every Ofsted report since records began. The Site column opens the school's own site.
 
+How often pupils miss school, for Gloucestershire and each state school, is on our [school absence](/cheltenham-schools/absence) page.
+
 Moving with children? Our [moving to Cheltenham guide](/moving-to-cheltenham) covers school catchments alongside house prices and neighbourhood safety.

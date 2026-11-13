@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T11:23:05.510729+00:00",
+  "generated_at": "2026-11-12T22:46:27.940136+00:00",
   "source": "Open Charge Map",
   "source_url": "https://openchargemap.org",
   "licence": "Creative Commons Attribution-ShareAlike 4.0 licence (CC BY-SA 4.0)",
@@ -8,12 +8,13 @@
     "longitude": -2.0783
   },
   "radius_km": 6.4,
-  "count": 30,
+  "count": 32,
+  "hand_checked_count": 2,
   "summary": {
-    "total_locations": 30,
-    "total_connectors": 79,
-    "operators": 14,
-    "max_power_kw": 175,
+    "total_locations": 32,
+    "total_connectors": 99,
+    "operators": 15,
+    "max_power_kw": 300,
     "connector_types": [
       {
         "type": "Type 2 (Socket Only)",
@@ -29,9 +30,9 @@
       },
       {
         "type": "CCS (Type 2)",
-        "stations": 5,
-        "connectors": 9,
-        "max_power_kw": 175
+        "stations": 7,
+        "connectors": 29,
+        "max_power_kw": 300
       },
       {
         "type": "Tesla (Model S/X)",
@@ -241,6 +242,54 @@
       "ocm_url": "https://openchargemap.org/site/poi/details/9241"
     },
     {
+      "id": "duracell-st-james-street",
+      "name": "St James Street Car Park",
+      "operator": "Duracell E-Charge",
+      "address": "St James Street",
+      "town": "Cheltenham",
+      "postcode": "GL52 2SH",
+      "latitude": 51.8984463,
+      "longitude": -2.0696501,
+      "distance_miles": 0.37,
+      "access": "Public - Pay At Location",
+      "status": "Operational",
+      "num_points": 10,
+      "connections": [
+        {
+          "type": "CCS (Type 2)",
+          "power_kw": 300,
+          "quantity": 6,
+          "level": "Level 3:  High (Over 40kW)"
+        },
+        {
+          "type": "CCS (Type 2)",
+          "power_kw": 50,
+          "quantity": 4,
+          "level": "Level 3:  High (Over 40kW)"
+        }
+      ],
+      "max_power_kw": 300,
+      "last_verified": "2026-11-12",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=51.8984463,-2.0696501",
+      "ocm_url": null,
+      "hand_checked": true,
+      "source_url": "https://cheltenham.gov.uk/parking-travel-and-visitors/electric-vehicle-ev-charging/",
+      "sources": [
+        {
+          "name": "Cheltenham Borough Council",
+          "url": "https://cheltenham.gov.uk/parking-travel-and-visitors/electric-vehicle-ev-charging/"
+        },
+        {
+          "name": "Duracell E-Charge",
+          "url": "https://duracellecharge.com/charging/stjames/"
+        },
+        {
+          "name": "Zapmap (connector type)",
+          "url": "https://www.zapmap.com/charge-points/cheltenham/5ASJAIM"
+        }
+      ]
+    },
+    {
       "id": 147913,
       "name": "Montpellier Street / Parabola Road",
       "operator": "Charge Your Car",
@@ -361,6 +410,48 @@
       "last_verified": "2018-10-03T21:21:00Z",
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=51.905982,-2.070301",
       "ocm_url": "https://openchargemap.org/site/poi/details/81382"
+    },
+    {
+      "id": "duracell-bath-terrace",
+      "name": "Bath Terrace Car Park",
+      "operator": "Duracell E-Charge",
+      "address": "Bath Terrace",
+      "town": "Cheltenham",
+      "postcode": "GL50 2BA",
+      "latitude": 51.8899565,
+      "longitude": -2.079686,
+      "distance_miles": 0.66,
+      "access": "Public - Pay At Location",
+      "status": "Operational",
+      "num_points": 10,
+      "connections": [
+        {
+          "type": "CCS (Type 2)",
+          "power_kw": 300,
+          "quantity": 10,
+          "level": "Level 3:  High (Over 40kW)"
+        }
+      ],
+      "max_power_kw": 300,
+      "last_verified": "2026-11-12",
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=51.8899565,-2.079686",
+      "ocm_url": null,
+      "hand_checked": true,
+      "source_url": "https://cheltenham.gov.uk/parking-travel-and-visitors/electric-vehicle-ev-charging/",
+      "sources": [
+        {
+          "name": "Cheltenham Borough Council",
+          "url": "https://cheltenham.gov.uk/parking-travel-and-visitors/electric-vehicle-ev-charging/"
+        },
+        {
+          "name": "Duracell E-Charge",
+          "url": "https://duracellecharge.com/charging/cheltenhambathterrace/"
+        },
+        {
+          "name": "Zapmap (connector type)",
+          "url": "https://www.zapmap.com/charge-points/cheltenham/CC0TG2R"
+        }
+      ]
     },
     {
       "id": 190035,
