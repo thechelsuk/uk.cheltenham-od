@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T08:30:13+00:00",
+  "generated_at": "2026-11-13T08:35:13+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,23 +14,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 60 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-13T08:15",
-      "expected": "2026-11-13T08:30",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "calling_at": [
-        "Gloucester",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T08:29",
       "expected": "2026-11-13T08:36",
@@ -88,8 +71,8 @@
     },
     {
       "scheduled": "2026-11-13T08:52",
-      "expected": "2026-11-13T08:52",
-      "status": "On time",
+      "expected": "2026-11-13T08:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -193,20 +176,26 @@
         "Edinburgh"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-13T08:14",
-      "expected": "2026-11-13T08:29",
+      "scheduled": "2026-11-13T09:15",
+      "expected": "2026-11-13T09:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Derby",
+      "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-13T08:27",
       "expected": "2026-11-13T08:35",
@@ -220,7 +209,7 @@
     },
     {
       "scheduled": "2026-11-13T08:32",
-      "expected": "2026-11-13T08:45",
+      "expected": "2026-11-13T08:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -242,8 +231,8 @@
     },
     {
       "scheduled": "2026-11-13T08:50",
-      "expected": "2026-11-13T08:50",
-      "status": "On time",
+      "expected": "2026-11-13T08:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -281,6 +270,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:14",
+      "expected": "2026-11-13T09:16",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
