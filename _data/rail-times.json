@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T12:30:16+00:00",
+  "generated_at": "2026-11-13T12:35:11+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -51,27 +51,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-13T12:29",
-      "expected": "2026-11-13T12:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T12:35",
-      "expected": "2026-11-13T12:40",
+      "expected": "2026-11-13T12:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -142,7 +123,7 @@
     },
     {
       "scheduled": "2026-11-13T12:52",
-      "expected": "2026-11-13T13:05",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -215,6 +196,35 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T13:12",
+      "expected": "2026-11-13T13:18",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Dunbar",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -230,17 +240,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-13T12:28",
-      "expected": "2026-11-13T12:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T12:32",
       "expected": "2026-11-13T12:37",
       "status": "Delayed",
@@ -253,7 +252,7 @@
     },
     {
       "scheduled": "2026-11-13T12:33",
-      "expected": "2026-11-13T12:39",
+      "expected": "2026-11-13T12:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -286,7 +285,7 @@
     },
     {
       "scheduled": "2026-11-13T12:50",
-      "expected": "2026-11-13T13:04",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -304,6 +303,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T13:10",
+      "expected": "2026-11-13T13:17",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
       "mode": "train"
     }
   ],
