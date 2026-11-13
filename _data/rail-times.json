@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:35:08+00:00",
+  "generated_at": "2026-11-13T17:40:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,25 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-13T17:25",
-      "expected": "2026-11-13T17:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T17:31",
       "expected": "2026-11-13T17:57",
@@ -104,7 +85,7 @@
     },
     {
       "scheduled": "2026-11-13T17:52",
-      "expected": "2026-11-13T18:01",
+      "expected": "2026-11-13T18:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -125,7 +106,7 @@
     },
     {
       "scheduled": "2026-11-13T17:59",
-      "expected": "2026-11-13T18:03",
+      "expected": "2026-11-13T18:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -192,20 +173,25 @@
         "Newcastle"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T18:19",
+      "expected": "2026-11-13T18:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-13T17:24",
-      "expected": "2026-11-13T17:33",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T17:29",
       "expected": "2026-11-13T17:56",
@@ -219,7 +205,7 @@
     },
     {
       "scheduled": "2026-11-13T17:31",
-      "expected": "2026-11-13T17:40",
+      "expected": "2026-11-13T17:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -252,7 +238,7 @@
     },
     {
       "scheduled": "2026-11-13T17:50",
-      "expected": "2026-11-13T18:00",
+      "expected": "2026-11-13T18:01",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -263,7 +249,7 @@
     },
     {
       "scheduled": "2026-11-13T17:58",
-      "expected": "2026-11-13T18:02",
+      "expected": "2026-11-13T18:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -281,6 +267,17 @@
       "origin": "Plymouth",
       "destination": "Newcastle via Leeds",
       "reason": "This service has been delayed by urgent repairs to the track",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T18:18",
+      "expected": "2026-11-13T18:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
