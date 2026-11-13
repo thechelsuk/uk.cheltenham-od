@@ -11,7 +11,7 @@ render_with_liquid: false
 
 A Raspberry Pi at home does two jobs:
 
-- It fetches the feeds that go stale within minutes (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices), rather than GitHub Actions.
+- It fetches the feeds that go stale within minutes (bus disruptions, power cuts, train times, unplanned road closures, weather warnings and fuel prices), and the sources that don't work from GitHub's servers (planning applications and NHS A&E figures), rather than GitHub Actions.
 - It starts the site's scheduled GitHub workflows at their set times. GitHub's own `schedule:` trigger ran hours late, so no workflow has one.
 
 The Pi runs on time for the cost of its electricity. When it goes quiet, from a power cut or a Wi-Fi drop, a Cloudflare Worker takes over both jobs until it is back (see [Cloudflare Watchdog](#cloudflare-watchdog)).
@@ -29,6 +29,7 @@ The data scripts live in `_python/pi/`. Each writes its `_data` file (and Atom f
 | `weather-warnings.py` | `_data/weather-warnings.json`, `_data/weather-warnings-history.json`, `feeds/weather-warnings.xml` | Met Office warnings RSS feed (South West England) |
 | `fuel.py` | `_data/fuel-prices.json`, `_data/fuel-prices-history.json`, `_data/fuel-stations.json` | GOV.UK fuel price scheme |
 | `planning.py` | `_data/planning-applications.json` | Cheltenham Borough Council planning portal (blocks GitHub's runners, so it runs here) |
+| `nhs-ae.py` | `_data/nhs-ae.json` | NHS England A&E Attendances and Emergency Admissions (GitHub's runners never saw a new month on its year pages, so it runs here) |
 
 ## How It Runs
 
@@ -73,7 +74,7 @@ crontab ~/uk.cheltenham-od/_python/pi/crontab.txt
 
 It does two things:
 
-- **Data scripts.** The scripts in `every-5-minutes.txt` run every 5 minutes, and those in `hourly.txt` (fuel prices and planning applications) at 3 minutes past each hour. They only commit when something has changed. Both share one lockfile through `flock`, so two runs never pull, commit or push at the same time: a 5-minute run skips if the lock is busy (`-n`), and the hourly run waits up to 5 minutes for it (`-w 300`).
+- **Data scripts.** The scripts in `every-5-minutes.txt` run every 5 minutes, and those in `hourly.txt` (fuel prices, planning applications and NHS A&E figures) at 3 minutes past each hour. They only commit when something has changed. Both share one lockfile through `flock`, so two runs never pull, commit or push at the same time: a 5-minute run skips if the lock is busy (`-n`), and the hourly run waits up to 5 minutes for it (`-w 300`).
 - **Scheduled workflows.** GitHub's own `schedule:` trigger was running hours late, so the site's scheduled workflows have none. The Pi starts each one at its set time with `_python/pi/dispatch.sh <workflow>`, which calls GitHub's `workflow_dispatch`.
 
 All times are UK time. The Pi's clock is on `Europe/London`, and the watchdog reads its copy of the schedules in UK time too, so a workflow set for 08:46 runs at 08:46 UK time all year. Output goes to `run.log` in the repository folder, which is gitignored.
@@ -125,7 +126,7 @@ After each run where at least one script worked, `run.sh` posts to the Worker's 
 
 The first check-in after that hands back to the Pi: Cloudflare stops, the light goes back to how it was, and a "the Pi is back" email follows. The Worker never takes over before the Pi has checked in once.
 
-The fuel prices API and the council's planning portal refuse GitHub's servers, so fuel prices and planning applications don't update while Cloudflare is in charge. Everything else does.
+The fuel prices API and the council's planning portal refuse GitHub's servers, and NHS England's A&E pages haven't shown them a new month, so fuel prices, planning applications and A&E figures don't update while Cloudflare is in charge, and they show as failing in the fetch status. Everything else does.
 
 ### Failing Fetchers
 

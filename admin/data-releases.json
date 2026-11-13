@@ -30,7 +30,7 @@
       "title": "NHS A&E figures (October data)",
       "status": "confirmed",
       "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
-      "notes": "nhs-ae.py runs in the daily workflow, but missed the September release, so check the A&E page updates and run it by hand if not. The September analysis post went out on 2026-10-09; October's figures could follow it up."
+      "notes": "Run by hand on 2026-11-13 after the workflow missed it again. The 2026-10-09 analysis post was updated with October's 12-hour waits; no follow-up post, A&E is reviewed month by month."
     },
     {
       "date": "2026-11-16",
@@ -62,7 +62,7 @@
       "title": "NHS A&E figures (November data)",
       "status": "confirmed",
       "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
-      "notes": "nhs-ae.py picks this up in the daily workflow."
+      "notes": "pi/nhs-ae.py checks hourly on the Raspberry Pi, so this should land on the day. If the month is still missing the day after release, the script fails and the watchdog emails about it."
     },
     {
       "date": "2027-01-14",
@@ -70,7 +70,7 @@
       "title": "NHS A&E figures (December data)",
       "status": "confirmed",
       "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
-      "notes": "nhs-ae.py picks this up in the daily workflow."
+      "notes": "pi/nhs-ae.py checks hourly on the Raspberry Pi, so this should land on the day. If the month is still missing the day after release, the script fails and the watchdog emails about it."
     },
     {
       "date": "2027-02-11",
@@ -78,7 +78,7 @@
       "title": "NHS A&E figures (January data)",
       "status": "confirmed",
       "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
-      "notes": "nhs-ae.py picks this up in the daily workflow. January is the winter peak, the month the A&E analysis compares year on year."
+      "notes": "pi/nhs-ae.py checks hourly on the Raspberry Pi, so this should land on the day. If the month is still missing the day after release, the script fails and the watchdog emails about it. January is the winter peak, the month the A&E analysis compares year on year."
     },
     {
       "date": "2027-03-01",
@@ -93,7 +93,7 @@
       "title": "NHS A&E figures (February data)",
       "status": "confirmed",
       "url": "https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting-times-and-activity/",
-      "notes": "nhs-ae.py picks this up in the daily workflow. This is the last date in NHS England's current 12-month plan: add the next dates from https://www.england.nhs.uk/statistics/12-months-statistics-calendar/"
+      "notes": "pi/nhs-ae.py checks hourly on the Raspberry Pi, so this should land on the day. If the month is still missing the day after release, the script fails and the watchdog emails about it. This is the last date in NHS England's current 12-month plan: add the next dates from https://www.england.nhs.uk/statistics/12-months-statistics-calendar/"
     },
     {
       "date": "2027-05-03",

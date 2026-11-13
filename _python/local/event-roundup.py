@@ -7,7 +7,8 @@ the next ~30 days, fuzzy-dedupes near-identical listings across feeds, lets
 you pick which ones to keep via a terminal checkbox list, then writes a
 Jekyll markdown post straight into _posts/.
 
-A source whose url ends in ".json" (e.g. "/_data/sport-fixtures.json") is
+A source whose url ends in ".json" (e.g. "/_data/sport-fixtures.json", or the
+hand-added "/_data/candidate-events.json") is
 read as a local fixtures file instead of an RSS feed — see
 fetch_json_events() for the expected shape.
 
@@ -307,6 +308,8 @@ def fetch_json_events(source_id: str, url: str, start: date, horizon: date) -> l
     _python/sport-fixtures.py writes."""
     path = Path(url.lstrip("/"))
     payload = json.loads(path.read_text(encoding="utf-8"))
+    if "events" in payload:
+        return candidate_events(source_id, url, payload["events"] or [], start, horizon)
     link = payload.get("source_url") or url
 
     events: list[Event] = []
@@ -344,6 +347,38 @@ def fetch_json_events(source_id: str, url: str, start: date, horizon: date) -> l
             venue=fx.get("venue") or "",
             description=description,
             raw_entry=fx,
+        ))
+    return events
+
+
+def candidate_events(source_id: str, url: str, entries: list[dict], start: date, horizon: date) -> list[Event]:
+    """Hand-added candidate events from _data/candidate-events.json: events our
+    feeds miss, each {"title", "date", "end_date"?, "time"?, "venue"?, "link",
+    "note"?}. Every one links to its own source page, and its note is only what
+    that source says, so an entry without a link is skipped."""
+    events: list[Event] = []
+    for item in entries:
+        title, link = (item.get("title") or "").strip(), (item.get("link") or "").strip()
+        if not title or not link:
+            continue
+        try:
+            event_date = date.fromisoformat(item["date"])
+            end_date = date.fromisoformat(item["end_date"]) if item.get("end_date") else None
+        except (KeyError, TypeError, ValueError):
+            continue
+        if (end_date or event_date) < start or event_date > horizon:
+            continue
+        description = " — ".join(b for b in (item.get("time") or "", item.get("note") or "") if b)
+        events.append(Event(
+            source_id=source_id,
+            source_url=url,
+            title=title,
+            event_date=event_date,
+            end_date=end_date,
+            link=link,
+            venue=item.get("venue") or "",
+            description=description,
+            raw_entry=item,
         ))
     return events
 

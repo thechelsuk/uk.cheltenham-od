@@ -52,6 +52,8 @@ jobs:
 
           - [ ] **Curated lists** — no download: check each list against the groups' and organisers' own sites, and update its JSON for anything added, closed or changed: `_data/clubs.json` (sports clubs, clubs and societies, arts and crafts), `_data/third-spaces.json`, `_data/helpful-contacts.json`, `_data/local-support.json`, `_data/festivals.json` (add the next dates once each festival's own site announces them), `_data/gloucestershire-cricket.json`, `_data/cycle-venues.json` and `_data/ev-charging-additions.json` (EV sites Open Charge Map doesn't list yet: recheck each against its sources, update `last_checked`, and remove any the fetcher reports Open Charge Map now lists). Their pages say "checked monthly". Also act on any additions or corrections sent through the contact form.
 
+          - [ ] **Candidate events** — no download: add events in the next month that the newsletter's feeds miss (gigs, concerts, markets, parties, specific closures or openings) to `_data/candidate-events.json`, each with a date and a link to its own source page. `weekly-newsletter.py` removes past ones by itself.
+
           Close this issue once done — a new one opens automatically next month.
           EOF
 

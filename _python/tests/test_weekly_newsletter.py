@@ -107,3 +107,31 @@ def test_roadworks_section_says_so_when_nothing_is_planned(monkeypatch):
     monkeypatch.setattr(newsletter, "load", {"roadworks.json": {"items": []},
                                              "street-works.json": {"items": []}}.get)
     assert newsletter.roadworks_section(*WEEK) == "No roadworks are expected to affect Cheltenham this week."
+
+
+def test_prune_candidate_events_drops_only_past_ones(tmp_path):
+    # Hand-added candidate events tidy themselves: anything that ended before the
+    # issue date goes, a multi-day event stays until its last day has passed.
+    path = tmp_path / "candidate-events.json"
+    path.write_text(newsletter.json.dumps({"source": "x", "events": [
+        {"title": "Gone", "date": "2026-11-01", "link": "https://example.org/a"},
+        {"title": "Still running", "date": "2026-11-01", "end_date": "2026-11-20", "link": "https://example.org/b"},
+        {"title": "Today", "date": "2026-11-16", "link": "https://example.org/c"},
+        {"title": "Later", "date": "2026-12-01", "link": "https://example.org/d"},
+    ]}), encoding="utf-8")
+    dropped = newsletter.prune_candidate_events(newsletter.date(2026, 11, 16), path)
+    assert dropped == 1
+    titles = [e["title"] for e in newsletter.json.loads(path.read_text(encoding="utf-8"))["events"]]
+    assert titles == ["Still running", "Today", "Later"]
+
+
+def test_prune_candidate_events_leaves_the_file_alone_when_nothing_has_passed(tmp_path):
+    path = tmp_path / "candidate-events.json"
+    original = '{"events": [{"title": "Later", "date": "2026-12-01", "link": "https://example.org/d"}]}'
+    path.write_text(original, encoding="utf-8")
+    assert newsletter.prune_candidate_events(newsletter.date(2026, 11, 16), path) == 0
+    assert path.read_text(encoding="utf-8") == original
+
+
+def test_prune_candidate_events_without_a_file(tmp_path):
+    assert newsletter.prune_candidate_events(newsletter.date(2026, 11, 16), tmp_path / "missing.json") == 0

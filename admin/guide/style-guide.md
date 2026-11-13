@@ -63,7 +63,7 @@ Where arrows go:
 Don't use `style=""` attributes; put the styling in a class in `assets/style.css`. An inline style is a sign something should be a component. Two exceptions:
 
 - **A data value** that can only come from the data, such as a bar's width or a source's colour, is passed as a CSS custom property and nothing else, for example `style="--bar-width: 40%"` or `style="--swatch: #3182bd"`. The class does all the styling with `var(--bar-width)`.
-- **Embed code for other sites**, such as the widgets, which can't rely on the site's stylesheet.
+- **Embed code for other sites**, such as the widgets, which can't rely on the site's style sheet.
 
 Right-aligned Markdown table columns (`--:`) are fine: `_plugins/table_alignment.rb` swaps Kramdown's inline style for the `number` class.
 
@@ -118,6 +118,19 @@ The headline is the page's `h1`, in the header. Below the header:
 - **Byline:** the kind marker's circle, then the kicker line with the author ("ROUNDUP · By Mat Benfield"), and the date underneath ("Published 3 November 2026", plus "Updated" when there is one), the same layout as the news lists. A thin rule under the byline marks where the article starts.
 - **Lede:** the post's first paragraph, set a size larger straight after the byline. Two or three sentences that say what happened, why it matters to someone in Cheltenham, and the standout story, not a list of counts. On analysis posts the layout lifts the first paragraph above the quoted finding and chart, so every post opens the same way; the feed keeps the post in its written order.
 - **Credit:** posts are written for the site and edited by Mat, who is named as the author.
+
+## Newsletter
+
+The Cheltenham Week Ahead covers the coming week, and its What's On section looks up to a month ahead, because people may need to book. What's On is for things to go to: parties, gigs, concerts, markets, and specific closures or openings. Consultations, council decisions and planning are not newsletter items; if one matters, it's a news post.
+
+Most events come from the feeds in `_data/event-sources.yml`. When you find one they miss, from a source you're reading, a venue's own listings or a reader, add it to `_data/candidate-events.json`:
+
+- `title`, `date` (`YYYY-MM-DD`) and, for anything longer than a day, `end_date`
+- `time` (`HH:MM`) and `venue`, if the source gives them
+- `link`: the event's page on the organiser's or venue's own site
+- `note`: only a detail the source itself states, such as "Free entry". Leave it out rather than write one
+
+Every entry needs a date and a link, or the newsletter skips it. `weekly-newsletter.py` removes events once they have ended, each time it runs, so the file never needs tidying by hand. The entries appear in the same review as the feed events, so add events, not reminders to check things.
 
 ## Dates
 

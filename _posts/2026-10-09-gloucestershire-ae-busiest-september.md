@@ -6,6 +6,7 @@ type: cod
 description: How busy Gloucestershire's A&E departments were in September 2026, and how long patients waited for a bed, from NHS England's monthly figures.
 seo: "Gloucestershire A&E had 14,773 attendances in September 2026, the most for any September since at least 2021, and 12-hour waits rose 62%. NHS England data."
 date: 2026-10-09 13:00
+last_modified_at: 2026-11-13 15:00
 finding:
     quote: "Gloucestershire's A&E departments saw 14,773 attendances in September 2026, the most for any September in at least five years, and 454 patients waited more than 12 hours for a bed, up 62% on last September."
     source: NHS England A&E Attendances and Emergency Admissions
@@ -54,7 +55,7 @@ More people came to Gloucestershire's emergency departments than in any Septembe
 
 The longest waits fell over the summer. In July 2026, 197 patients waited more than 12 hours for a bed after the decision to admit them, the lowest month in the past three years. That rose to 333 in August and 454 in September, though still below every month from February to June, when there were between 472 and 539.
 
-The longer trend is still better than two winters ago. Last January, 543 patients waited more than 12 hours, against 974 in January 2024. Whether this winter stays below that depends on the months ahead: October's figures are due on 12 November 2026.
+The longer trend is still better than two winters ago. Last January, 543 patients waited more than 12 hours, against 974 in January 2024. Whether this winter stays below that depends on the months ahead. In October 2026, 441 patients waited more than 12 hours, against 348 in October 2025, and the [A&E waiting times page](/cheltenham-ae-waiting-times) adds each new month as it is published.
 
 Emergency admissions through the trust's A&E departments were slightly lower than last September, at 5,446 against 5,601, so the rise in long waits is not simply down to more patients being admitted.
 
@@ -83,7 +84,7 @@ Emergency admissions through the trust's A&E departments were slightly lower tha
 
 ### When Are the Next Figures Published?
 
-- NHS England publishes October's figures on 12 November 2026. The [A&E waiting times page](/cheltenham-ae-waiting-times) updates when they are released.
+- NHS England publishes each month's figures on the second Thursday of the month after, usually at 09:30. The [A&E waiting times page](/cheltenham-ae-waiting-times) updates when they are released.
 
 ### Can I Use This Chart?
 

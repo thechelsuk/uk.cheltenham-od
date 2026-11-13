@@ -56,7 +56,6 @@ jobs:
                   python _python/fetch_status.py refresh-4-times-daily _python/ctfc-results.py || echo "::warning::ctfc-results.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-4-times-daily _python/cheltenham-town-fc.py || echo "::warning::cheltenham-town-fc.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-4-times-daily _python/roadworks.py || echo "::warning::roadworks.py failed, continuing with other scripts"
-                  python _python/fetch_status.py refresh-4-times-daily _python/nhs-ae.py || echo "::warning::nhs-ae.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-4-times-daily _python/ev-charging.py || echo "::warning::ev-charging.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-4-times-daily _python/site-traffic.py || echo "::warning::site-traffic.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-4-times-daily _python/sport-fixtures.py || echo "::warning::sport-fixtures.py failed, continuing with other scripts"

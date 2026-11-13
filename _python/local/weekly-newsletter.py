@@ -14,7 +14,8 @@ directly, not reimplemented — it already does real text-based event-date
 extraction, fuzzy deduplication across feeds and a proper terminal checkbox
 review) to fetch _data/event-sources.yml live and ask you which events to
 include, formatting your picks into the issue instead of writing its usual
-_events/*.md post.
+_events/*.md post. Events the feeds miss go in _data/candidate-events.json,
+one of those sources; each run first removes any that have already ended.
 
 Nothing is published. This writes _data/newsletter-draft.json — one scratch
 slot holding the complete text of the issue (front matter and all), which
@@ -44,6 +45,7 @@ ROOT = helper.repo_root()
 DATA = ROOT / "_data"
 OUT_DIR = ROOT / "_newsletters"          # published issues live here, but this script never writes to it
 DRAFT_PATH = DATA / "newsletter-draft.json"
+CANDIDATES_PATH = DATA / "candidate-events.json"  # hand-added events our feeds miss; past ones prune themselves
 SITE_URL = helper.site_url()             # links in the draft must resolve outside the site, e.g. in an email
 
 TOP_STORIES = 4
@@ -258,6 +260,28 @@ def roadworks_section(week_start, week_end):
 # Events — event-roundup.py's own fetch/dedupe/review pipeline, reused as-is
 # --------------------------------------------------------------------------
 
+def prune_candidate_events(today, path=CANDIDATES_PATH):
+    """Drop hand-added candidate events that ended before `today`, so the file never needs
+    tidying by hand. Returns how many went; the file is only rewritten when some did."""
+    if not path.exists():
+        return 0
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    kept = []
+    for item in payload.get("events", []):
+        try:
+            last = date.fromisoformat(item.get("end_date") or item["date"])
+        except (KeyError, TypeError, ValueError):
+            kept.append(item)  # malformed: leave it for a person to fix, the reader skips it
+            continue
+        if last >= today:
+            kept.append(item)
+    dropped = len(payload.get("events", [])) - len(kept)
+    if dropped:
+        payload["events"] = kept
+        path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return dropped
+
+
 def pick_events(days_ahead):
     """Run event-roundup's fetch → dedupe → terminal checkbox review, then format whatever you
     selected as 'What's On' markdown. Returns None if you selected nothing."""
@@ -389,6 +413,9 @@ def build(today, since_date, event_days_ahead):
     issues = existing_issues()
     recent_venues = {i["venue"] for i in issues[-VENUE_REPEAT_GAP:] if i["venue"]}
 
+    dropped = prune_candidate_events(today)
+    if dropped:
+        print(f"Removed {dropped} past event(s) from {CANDIDATES_PATH.name}.")
     whats_on = pick_events(event_days_ahead)
     venue_body, venue_name = venue_section(recent_venues)
 
