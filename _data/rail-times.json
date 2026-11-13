@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T16:45:08+00:00",
+  "generated_at": "2026-11-13T16:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,37 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-13T16:12",
-      "expected": "2026-11-13T16:44",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Penzance",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Dunbar",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T16:31",
-      "expected": "2026-11-13T16:55",
+      "expected": "2026-11-13T16:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -67,27 +38,7 @@
     },
     {
       "scheduled": "2026-11-13T16:40",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a speed restriction over defective track",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-13T16:40",
-      "expected": "2026-11-13T16:46",
+      "expected": "2026-11-13T16:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -122,7 +73,7 @@
     },
     {
       "scheduled": "2026-11-13T16:52",
-      "expected": "2026-11-13T16:57",
+      "expected": "2026-11-13T16:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -187,7 +138,7 @@
     },
     {
       "scheduled": "2026-11-13T17:12",
-      "expected": "2026-11-13T17:18",
+      "expected": "2026-11-13T17:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -229,23 +180,31 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T17:25",
+      "expected": "2026-11-13T17:28",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been delayed by congestion",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-13T16:10",
-      "expected": "2026-11-13T16:42",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Penzance",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T16:30",
-      "expected": "2026-11-13T16:54",
+      "expected": "2026-11-13T16:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -256,7 +215,7 @@
     },
     {
       "scheduled": "2026-11-13T16:38",
-      "expected": "2026-11-13T16:45",
+      "expected": "2026-11-13T16:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -267,8 +226,8 @@
     },
     {
       "scheduled": "2026-11-13T16:47",
-      "expected": "2026-11-13T16:47",
-      "status": "On time",
+      "expected": "2026-11-13T16:50",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -278,7 +237,7 @@
     },
     {
       "scheduled": "2026-11-13T16:50",
-      "expected": "2026-11-13T16:56",
+      "expected": "2026-11-13T16:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -300,7 +259,7 @@
     },
     {
       "scheduled": "2026-11-13T17:10",
-      "expected": "2026-11-13T17:17",
+      "expected": "2026-11-13T17:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -318,6 +277,28 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T17:24",
+      "expected": "2026-11-13T17:27",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "This service has been delayed by congestion",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T17:27",
+      "expected": "2026-11-13T17:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
       "mode": "train"
     }
   ],
