@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T08:00:08+00:00",
+  "generated_at": "2026-11-13T08:10:12+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,27 +14,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 60 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-13T08:01",
-      "expected": "2026-11-13T08:01",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T08:12",
       "expected": "2026-11-13T08:12",
@@ -82,8 +61,8 @@
     },
     {
       "scheduled": "2026-11-13T08:29",
-      "expected": "2026-11-13T08:29",
-      "status": "On time",
+      "expected": "2026-11-13T08:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -177,20 +156,25 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:03",
+      "expected": "2026-11-13T09:03",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-13T07:59",
-      "expected": "2026-11-13T07:59",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Derby",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T08:10",
       "expected": "2026-11-13T08:12",
@@ -226,7 +210,7 @@
     },
     {
       "scheduled": "2026-11-13T08:27",
-      "expected": "2026-11-13T08:29",
+      "expected": "2026-11-13T08:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -237,7 +221,7 @@
     },
     {
       "scheduled": "2026-11-13T08:32",
-      "expected": "2026-11-13T08:43",
+      "expected": "2026-11-13T08:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -276,6 +260,17 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T09:02",
+      "expected": "2026-11-13T09:02",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Salisbury",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
