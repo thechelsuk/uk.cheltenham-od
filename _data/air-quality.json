@@ -1,11 +1,51 @@
 {
-  "generated_at": "2026-11-13T00:36:57.891582+00:00",
+  "generated_at": "2026-11-13T02:37:09.641864+00:00",
   "source": "DEFRA UK-AIR",
   "source_url": "https://uk-air.defra.gov.uk/",
   "licence": "Open Government Licence v3.0",
   "radius_km": 19.3,
-  "reading_count": 0,
-  "highest_band": null,
-  "nearest_km": null,
-  "stations": []
+  "reading_count": 3,
+  "highest_band": "Moderate",
+  "nearest_km": 2.5,
+  "stations": [
+    {
+      "name": "Cheltenham A40 Gloucester Road",
+      "distance_km": 2.5,
+      "readings": [
+        {
+          "pollutant_key": "pm2.5",
+          "pollutant": "PM2.5 (fine particulates)",
+          "value": 12.3,
+          "uom": "ug.m-3",
+          "reading_display": "12.3 ug.m-3",
+          "band": "Moderate",
+          "measured": "2026-11-13T02:00"
+        }
+      ]
+    },
+    {
+      "name": "Gloucester Tredworth",
+      "distance_km": 12.1,
+      "readings": [
+        {
+          "pollutant_key": "pm10",
+          "pollutant": "PM10 (particulates)",
+          "value": 13.1,
+          "uom": "ug.m-3",
+          "reading_display": "13.1 ug.m-3",
+          "band": "Low",
+          "measured": "2026-11-13T02:00"
+        },
+        {
+          "pollutant_key": "pm2.5",
+          "pollutant": "PM2.5 (fine particulates)",
+          "value": 9.623,
+          "uom": "ug.m-3",
+          "reading_display": "9.623 ug.m-3",
+          "band": "Low",
+          "measured": "2026-11-13T02:00"
+        }
+      ]
+    }
+  ]
 }
