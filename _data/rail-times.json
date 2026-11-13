@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T21:00:08+00:00",
+  "generated_at": "2026-11-13T21:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,30 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-13T20:52",
-      "expected": "2026-11-13T20:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-13T21:02",
-      "expected": "2026-11-13T21:02",
-      "status": "On time",
+      "expected": "2026-11-13T21:04",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -182,13 +161,13 @@
     },
     {
       "scheduled": "2026-11-13T22:03",
-      "expected": "2026-11-13T22:03",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
@@ -197,17 +176,6 @@
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-13T20:50",
-      "expected": "2026-11-13T20:57",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-13T21:05",
       "expected": "2026-11-13T21:20",
@@ -221,8 +189,8 @@
     },
     {
       "scheduled": "2026-11-13T21:10",
-      "expected": "2026-11-13T21:12",
-      "status": "Delayed",
+      "expected": "2026-11-13T21:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Newton Abbot",
@@ -287,12 +255,23 @@
     },
     {
       "scheduled": "2026-11-13T22:01",
-      "expected": "2026-11-13T22:01",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-13T22:06",
+      "expected": "2026-11-13T22:06",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Westbury",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
