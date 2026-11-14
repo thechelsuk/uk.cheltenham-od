@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T08:50:09+00:00",
+  "generated_at": "2026-11-14T08:55:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,46 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-14T08:40",
-      "expected": "2026-11-14T08:49",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T08:46",
-      "expected": "2026-11-14T08:50",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Chippenham",
-        "Bath Spa",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T08:50",
       "expected": "2026-11-14T08:55",
@@ -70,7 +30,7 @@
     },
     {
       "scheduled": "2026-11-14T08:52",
-      "expected": "2026-11-14T09:18",
+      "expected": "2026-11-14T09:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -91,8 +51,8 @@
     },
     {
       "scheduled": "2026-11-14T08:59",
-      "expected": "2026-11-14T08:59",
-      "status": "On time",
+      "expected": "2026-11-14T09:02",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -194,20 +154,24 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T09:29",
+      "expected": "2026-11-14T09:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-14T08:38",
-      "expected": "2026-11-14T08:48",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T08:47",
       "expected": "2026-11-14T08:54",
@@ -221,7 +185,7 @@
     },
     {
       "scheduled": "2026-11-14T08:50",
-      "expected": "2026-11-14T09:17",
+      "expected": "2026-11-14T09:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -232,8 +196,8 @@
     },
     {
       "scheduled": "2026-11-14T08:58",
-      "expected": "2026-11-14T08:58",
-      "status": "On time",
+      "expected": "2026-11-14T09:01",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -283,6 +247,28 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T09:27",
+      "expected": "2026-11-14T09:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T09:31",
+      "expected": "2026-11-14T09:35",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by a points failure",
       "mode": "train"
     }
   ],
