@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T15:00:08+00:00",
+  "generated_at": "2026-11-14T15:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,43 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-14T14:52",
-      "expected": "2026-11-14T14:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault on this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T14:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of the train conductor being taken ill",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T15:03",
       "expected": "2026-11-14T15:03",
@@ -69,7 +32,7 @@
     },
     {
       "scheduled": "2026-11-14T15:12",
-      "expected": "2026-11-14T15:17",
+      "expected": "2026-11-14T15:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -99,7 +62,7 @@
     },
     {
       "scheduled": "2026-11-14T15:15",
-      "expected": "2026-11-14T15:17",
+      "expected": "2026-11-14T15:18",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -152,6 +115,26 @@
       "scheduled": "2026-11-14T15:40",
       "expected": "2026-11-14T15:40",
       "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T15:40",
+      "expected": "2026-11-14T15:40",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -167,34 +150,28 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T15:49",
+      "expected": "2026-11-14T15:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T14:50",
-      "expected": "2026-11-14T14:57",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T14:58",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "This service has been cancelled because of the train conductor being taken ill",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T15:10",
-      "expected": "2026-11-14T15:16",
+      "expected": "2026-11-14T15:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -205,7 +182,7 @@
     },
     {
       "scheduled": "2026-11-14T15:14",
-      "expected": "2026-11-14T15:16",
+      "expected": "2026-11-14T15:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -266,6 +243,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T15:47",
+      "expected": "2026-11-14T15:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
