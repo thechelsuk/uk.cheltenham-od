@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T17:30:08+00:00",
+  "generated_at": "2026-11-14T17:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-14T17:15",
-      "expected": "2026-11-14T17:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T17:29",
-      "expected": "2026-11-14T17:29",
-      "status": "On time",
+      "expected": "2026-11-14T17:35",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -67,8 +49,8 @@
     },
     {
       "scheduled": "2026-11-14T17:45",
-      "expected": "2026-11-14T17:45",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -124,8 +106,8 @@
     },
     {
       "scheduled": "2026-11-14T17:59",
-      "expected": "2026-11-14T17:59",
-      "status": "On time",
+      "expected": "2026-11-14T18:04",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
@@ -161,23 +143,34 @@
         "Swindon"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T18:12",
+      "expected": "2026-11-14T18:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "York via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T17:14",
-      "expected": "2026-11-14T17:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T17:25",
-      "expected": "2026-11-14T17:33",
+      "expected": "2026-11-14T17:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -188,7 +181,7 @@
     },
     {
       "scheduled": "2026-11-14T17:27",
-      "expected": "2026-11-14T17:29",
+      "expected": "2026-11-14T17:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -199,7 +192,7 @@
     },
     {
       "scheduled": "2026-11-14T17:31",
-      "expected": "2026-11-14T17:37",
+      "expected": "2026-11-14T17:40",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -232,8 +225,8 @@
     },
     {
       "scheduled": "2026-11-14T17:50",
-      "expected": "2026-11-14T17:50",
-      "status": "On time",
+      "expected": "2026-11-14T17:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -243,12 +236,23 @@
     },
     {
       "scheduled": "2026-11-14T17:58",
-      "expected": "2026-11-14T17:58",
-      "status": "On time",
+      "expected": "2026-11-14T18:03",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T18:10",
+      "expected": "2026-11-14T18:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "York via Leeds",
       "reason": "",
       "mode": "train"
     }
