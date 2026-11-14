@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T16:50:08+00:00",
+  "generated_at": "2026-11-14T16:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,45 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-14T16:40",
-      "expected": "2026-11-14T16:48",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by congestion",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T16:48",
-      "expected": "2026-11-14T16:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T16:52",
-      "expected": "2026-11-14T16:52",
-      "status": "On time",
+      "expected": "2026-11-14T16:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Aberdeen",
@@ -136,7 +100,7 @@
     },
     {
       "scheduled": "2026-11-14T17:15",
-      "expected": "2026-11-14T17:20",
+      "expected": "2026-11-14T17:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -185,20 +149,29 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:40",
+      "expected": "2026-11-14T17:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-14T16:47",
-      "expected": "2026-11-14T16:49",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T16:50",
       "expected": "2026-11-14T16:52",
@@ -234,7 +207,7 @@
     },
     {
       "scheduled": "2026-11-14T17:14",
-      "expected": "2026-11-14T17:19",
+      "expected": "2026-11-14T17:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -273,6 +246,28 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:31",
+      "expected": "2026-11-14T17:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:38",
+      "expected": "2026-11-14T17:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
