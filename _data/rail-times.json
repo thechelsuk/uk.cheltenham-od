@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T12:25:11+00:00",
+  "generated_at": "2026-11-14T12:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,7 +14,7 @@
   "departures": [
     {
       "scheduled": "2026-11-14T12:29",
-      "expected": "2026-11-14T12:37",
+      "expected": "2026-11-14T12:40",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -85,7 +85,7 @@
     },
     {
       "scheduled": "2026-11-14T12:52",
-      "expected": "2026-11-14T12:54",
+      "expected": "2026-11-14T12:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -168,23 +168,29 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T13:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of overcrowding as this train has fewer coaches than normal",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T12:25",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been cancelled because of a fault on a train in front of this one",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T12:27",
-      "expected": "2026-11-14T12:36",
+      "expected": "2026-11-14T12:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -228,7 +234,7 @@
     },
     {
       "scheduled": "2026-11-14T12:50",
-      "expected": "2026-11-14T12:53",
+      "expected": "2026-11-14T12:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -257,6 +263,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Doncaster",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T13:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of overcrowding as this train has fewer coaches than normal",
       "mode": "train"
     }
   ],
