@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T12:20:10+00:00",
+  "generated_at": "2026-11-14T12:25:11+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,25 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-14T12:23",
-      "expected": "2026-11-14T12:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T12:29",
       "expected": "2026-11-14T12:37",
@@ -104,8 +85,8 @@
     },
     {
       "scheduled": "2026-11-14T12:52",
-      "expected": "2026-11-14T12:52",
-      "status": "On time",
+      "expected": "2026-11-14T12:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -160,20 +141,36 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T13:12",
+      "expected": "2026-11-14T13:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Dunbar",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-14T12:22",
-      "expected": "2026-11-14T12:22",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T12:25",
       "expected": null,
@@ -231,7 +228,7 @@
     },
     {
       "scheduled": "2026-11-14T12:50",
-      "expected": "2026-11-14T12:52",
+      "expected": "2026-11-14T12:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -248,6 +245,17 @@
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T13:10",
+      "expected": "2026-11-14T13:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Edinburgh via Doncaster",
       "reason": "",
       "mode": "train"
     }
