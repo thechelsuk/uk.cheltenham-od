@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T16:55:08+00:00",
+  "generated_at": "2026-11-14T17:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,44 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-14T16:52",
-      "expected": "2026-11-14T16:54",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T16:55",
-      "expected": "2026-11-14T16:55",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T17:03",
       "expected": "2026-11-14T17:03",
@@ -100,7 +62,7 @@
     },
     {
       "scheduled": "2026-11-14T17:15",
-      "expected": "2026-11-14T17:22",
+      "expected": "2026-11-14T17:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,31 +131,45 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:45",
+      "expected": "2026-11-14T17:45",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:48",
+      "expected": "2026-11-14T17:52",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "This service has been delayed by a fault with the signalling system",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-14T16:50",
-      "expected": "2026-11-14T16:52",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T16:54",
-      "expected": "2026-11-14T16:54",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T17:10",
       "expected": "2026-11-14T17:10",
@@ -207,7 +183,7 @@
     },
     {
       "scheduled": "2026-11-14T17:14",
-      "expected": "2026-11-14T17:21",
+      "expected": "2026-11-14T17:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -269,6 +245,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:46",
+      "expected": "2026-11-14T17:51",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "mode": "train"
     }
   ],
