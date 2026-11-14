@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T10:30:08+00:00",
+  "generated_at": "2026-11-14T10:35:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,25 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-14T10:15",
-      "expected": "2026-11-14T10:30",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by overcrowding because of an earlier cancellation",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T10:29",
-      "expected": "2026-11-14T10:37",
+      "expected": "2026-11-14T10:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -117,8 +100,8 @@
     },
     {
       "scheduled": "2026-11-14T10:59",
-      "expected": "2026-11-14T10:59",
-      "status": "On time",
+      "expected": "2026-11-14T11:03",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -184,23 +167,29 @@
         "Edinburgh"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-14T10:14",
-      "expected": "2026-11-14T10:29",
+      "scheduled": "2026-11-14T11:15",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by overcrowding because of an earlier cancellation",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-14T10:27",
-      "expected": "2026-11-14T10:36",
+      "expected": "2026-11-14T10:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -211,7 +200,7 @@
     },
     {
       "scheduled": "2026-11-14T10:31",
-      "expected": "2026-11-14T10:45",
+      "expected": "2026-11-14T10:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -255,8 +244,8 @@
     },
     {
       "scheduled": "2026-11-14T10:58",
-      "expected": "2026-11-14T10:58",
-      "status": "On time",
+      "expected": "2026-11-14T11:02",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -272,6 +261,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T11:14",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
