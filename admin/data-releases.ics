@@ -22,7 +22,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:20261021-ons-private-rents--september-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20261021T093000
 DTEND;TZID=Europe/London:20261021T100000
 SUMMARY:ONS private rents (September data)
@@ -36,7 +36,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261022-ons-employee-earnings--ashe-2026@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20261022T093000
 DTEND;TZID=Europe/London:20261022T100000
 SUMMARY:ONS employee earnings (ASHE 2026)
@@ -50,25 +50,8 @@ URL:https://www.gov.uk/government/statistics/announcements/employee-earning
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:20261102-check--housing-supply-net-additional-dwellings-2025-26-date@ch
- eltenham-od.uk
-DTSTAMP:20261113T153443Z
-DTSTART;VALUE=DATE:20261102
-DTEND;VALUE=DATE:20261103
-SUMMARY:[Expected] Check: housing supply net additional dwellings 2025-26 d
- ate
-DESCRIPTION:Expected November 2026 (provisional). Look for the confirmed da
- y on the GOV.UK release calendar\, then move the release-day event in admi
- n/data-releases.json to match.\n\nhttps://www.gov.uk/government/statistics
- /announcements/housing-supply-net-additional-dwellings-england-2025-to-202
- 6
-URL:https://www.gov.uk/government/statistics/announcements/housing-supply-n
- et-additional-dwellings-england-2025-to-2026
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:20261112-nhs-a-e-figures--october-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20261112T093000
 DTEND;TZID=Europe/London:20261112T100000
 SUMMARY:NHS A&E figures (October data)
@@ -82,7 +65,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261116-check--ofcom-connected-nations-2026-report@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:[Expected] Check: Ofcom Connected Nations 2026 report
@@ -96,7 +79,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261118-ons-private-rents--october-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20261118T093000
 DTEND;TZID=Europe/London:20261118T100000
 SUMMARY:ONS private rents (October data)
@@ -108,23 +91,23 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261126-refresh-the-housing-squeeze-draft@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20261126T093000
 DTEND;TZID=Europe/London:20261126T100000
-SUMMARY:[Expected] MHCLG housing supply (net additional dwellings 2025-26)
-DESCRIPTION:Provisional release day (late-November Thursday\; confirm on GO
- V.UK). Feeds /cheltenham-house-prices/housing-supply through housing-suppl
- y.py in the monthly workflow\, which next runs on 2 December. Run the mont
- hly workflow by hand to show it sooner.\n\nhttps://www.gov.uk/government/s
- tatistics/announcements/housing-supply-net-additional-dwellings-england-20
- 25-to-2026
+SUMMARY:MHCLG housing supply (net additional dwellings 2025-26)
+DESCRIPTION:Confirmed for 26 November 2026 at 09:30 on GOV.UK. Feeds /chelt
+ enham-house-prices/housing-supply through housing-supply.py in the monthly
+  workflow\, which next runs on 2 December. Run the monthly workflow by han
+ d on the day to show it sooner.\n\nhttps://www.gov.uk/government/statistic
+ s/announcements/housing-supply-net-additional-dwellings-england-2025-to-20
+ 26
 URL:https://www.gov.uk/government/statistics/announcements/housing-supply-n
  et-additional-dwellings-england-2025-to-2026
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261210-nhs-a-e-figures--november-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20261210T093000
 DTEND;TZID=Europe/London:20261210T100000
 SUMMARY:NHS A&E figures (November data)
@@ -138,7 +121,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270114-nhs-a-e-figures--december-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20270114T093000
 DTEND;TZID=Europe/London:20270114T100000
 SUMMARY:NHS A&E figures (December data)
@@ -152,7 +135,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270211-nhs-a-e-figures--january-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20270211T093000
 DTEND;TZID=Europe/London:20270211T100000
 SUMMARY:NHS A&E figures (January data)
@@ -168,7 +151,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270301-check--dfe-pupil-absence-full-year-2025-26-date@cheltenham-od.
  uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270302
 SUMMARY:[Expected] Check: DfE pupil absence full year 2025/26 date
@@ -185,7 +168,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270311-nhs-a-e-figures--february-data@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;TZID=Europe/London:20270311T093000
 DTEND;TZID=Europe/London:20270311T100000
 SUMMARY:NHS A&E figures (February data)
@@ -203,7 +186,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270503-check--dft-road-casualties-provisional-2026-results@cheltenham
  -od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20270503
 DTEND;VALUE=DATE:20270504
 SUMMARY:[Expected] Check: DfT road casualties provisional 2026 results
@@ -217,7 +200,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270504-check--ofcom-connected-nations-spring-update@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20270504
 DTEND;VALUE=DATE:20270505
 SUMMARY:[Expected] Check: Ofcom Connected Nations spring update
@@ -231,7 +214,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270701-check--dft-road-casualties-final-2026-results@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270702
 SUMMARY:[Expected] Check: DfT road casualties final 2026 results
@@ -247,7 +230,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270721-check--mhclg-fire-statistics-incident-level-datasets@cheltenha
  m-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20270721
 DTEND;VALUE=DATE:20270722
 SUMMARY:[Expected] Check: MHCLG fire statistics incident level datasets
@@ -261,7 +244,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270802-check--dfe-pupil-absence-autumn-term-2026-27@cheltenham-od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20270802
 DTEND;VALUE=DATE:20270803
 SUMMARY:[Expected] Check: DfE pupil absence autumn term 2026/27
@@ -276,7 +259,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271001-check--dfe-pupil-absence-autumn-and-spring-2026-27@cheltenham-
  od.uk
-DTSTAMP:20261113T153443Z
+DTSTAMP:20261114T094329Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271002
 SUMMARY:[Expected] Check: DfE pupil absence autumn and spring 2026/27
