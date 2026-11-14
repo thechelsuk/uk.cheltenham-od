@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T13:40:09+00:00",
+  "generated_at": "2026-11-14T13:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -34,7 +34,7 @@
     },
     {
       "scheduled": "2026-11-14T13:40",
-      "expected": "2026-11-14T13:47",
+      "expected": "2026-11-14T13:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -54,13 +54,13 @@
     },
     {
       "scheduled": "2026-11-14T13:48",
-      "expected": "2026-11-14T13:48",
-      "status": "On time",
+      "expected": "2026-11-14T13:53",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Worcester Foregate Street",
-      "reason": "",
+      "reason": "This service has been delayed by overcrowding",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill",
@@ -200,19 +200,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T13:25",
-      "expected": "2026-11-14T13:40",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by overcrowding because of a rugby match",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T13:38",
-      "expected": "2026-11-14T13:46",
+      "expected": "2026-11-14T13:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -223,13 +212,13 @@
     },
     {
       "scheduled": "2026-11-14T13:47",
-      "expected": "2026-11-14T13:47",
-      "status": "On time",
+      "expected": "2026-11-14T13:52",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Worcester Foregate Street",
-      "reason": "",
+      "reason": "This service has been delayed by overcrowding",
       "mode": "train"
     },
     {
@@ -285,6 +274,17 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T14:25",
+      "expected": "2026-11-14T14:31",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by congestion",
       "mode": "train"
     }
   ],
