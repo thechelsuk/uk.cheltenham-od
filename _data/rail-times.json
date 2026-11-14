@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T11:05:19+00:00",
+  "generated_at": "2026-11-14T11:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,31 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-14T10:59",
-      "expected": "2026-11-14T11:05",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Long Eaton",
-        "Beeston",
-        "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T11:03",
-      "expected": "2026-11-14T11:03",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -57,7 +35,7 @@
     },
     {
       "scheduled": "2026-11-14T11:12",
-      "expected": "2026-11-14T11:14",
+      "expected": "2026-11-14T11:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -84,7 +62,7 @@
     },
     {
       "scheduled": "2026-11-14T11:15",
-      "expected": "2026-11-14T11:33",
+      "expected": "2026-11-14T11:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -120,7 +98,7 @@
     },
     {
       "scheduled": "2026-11-14T11:29",
-      "expected": "2026-11-14T11:40",
+      "expected": "2026-11-14T11:46",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -135,8 +113,8 @@
     },
     {
       "scheduled": "2026-11-14T11:40",
-      "expected": "2026-11-14T11:40",
-      "status": "On time",
+      "expected": "2026-11-14T11:45",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -172,23 +150,28 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T11:50",
+      "expected": "2026-11-14T11:50",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T10:58",
-      "expected": "2026-11-14T11:04",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Nottingham",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T11:10",
-      "expected": "2026-11-14T11:13",
+      "expected": "2026-11-14T11:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -199,7 +182,7 @@
     },
     {
       "scheduled": "2026-11-14T11:14",
-      "expected": "2026-11-14T11:32",
+      "expected": "2026-11-14T11:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -221,7 +204,7 @@
     },
     {
       "scheduled": "2026-11-14T11:25",
-      "expected": "2026-11-14T11:31",
+      "expected": "2026-11-14T11:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -232,7 +215,7 @@
     },
     {
       "scheduled": "2026-11-14T11:27",
-      "expected": "2026-11-14T11:39",
+      "expected": "2026-11-14T11:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -260,6 +243,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T11:48",
+      "expected": "2026-11-14T11:48",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
