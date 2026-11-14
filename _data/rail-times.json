@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T07:20:07+00:00",
+  "generated_at": "2026-11-14T07:25:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,54 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-14T07:15",
-      "expected": "2026-11-14T07:21",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Gloucester",
-      "destination": "Stansted Airport",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Coleshill Parkway",
-        "Nuneaton",
-        "Leicester",
-        "Melton Mowbray",
-        "Oakham",
-        "Stamford",
-        "Peterborough",
-        "March",
-        "Ely",
-        "Cambridge",
-        "Cambridge South",
-        "Stansted Airport"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T07:19",
-      "expected": "2026-11-14T07:19",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T07:29",
       "expected": "2026-11-14T07:29",
@@ -188,35 +140,57 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T08:12",
+      "expected": "2026-11-14T08:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T08:15",
+      "expected": "2026-11-14T08:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T07:14",
-      "expected": "2026-11-14T07:20",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Gloucester",
-      "destination": "Stansted Airport",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-14T07:17",
-      "expected": "2026-11-14T07:17",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Great Malvern",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T07:27",
-      "expected": "2026-11-14T07:29",
-      "status": "Delayed",
+      "expected": "2026-11-14T07:27",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -277,6 +251,28 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T08:10",
+      "expected": "2026-11-14T08:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T08:14",
+      "expected": "2026-11-14T08:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
