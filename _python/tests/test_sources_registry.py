@@ -128,3 +128,18 @@ def test_the_not_in_reminder_list_only_shrinks():
     manual = {i["file"] for s in SOURCES for i in s.get("data", []) if i["schedule"] == "manual"}
     stale = sorted(f for f in NOT_IN_REMINDER_YET if f not in manual or f.removeprefix("_data/") in body)
     assert not stale, f"remove from NOT_IN_REMINDER_YET: {stale}"
+
+
+# Hand-kept files with a schedule (no script writes them): the date they were last checked, so the studio's Data
+# Freshness can tell a list checked with nothing to change from one nobody has looked at.
+HAND_KEPT = [item["file"] for source in SOURCES for item in source.get("data", [])
+             if not item.get("script") and item.get("schedule") not in (None, "manual") and item["file"].endswith(".json")]
+
+
+@pytest.mark.parametrize("file", HAND_KEPT)
+def test_hand_kept_file_records_when_it_was_last_checked(file):
+    data = json.loads((ROOT / file).read_text())
+    assert isinstance(data, dict), f"{file}: expected a JSON object with a top-level last_checked"
+    checked = data.get("last_checked")
+    assert isinstance(checked, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked), \
+        f'{file}: set "last_checked": "YYYY-MM-DD" to the day the list was last checked'

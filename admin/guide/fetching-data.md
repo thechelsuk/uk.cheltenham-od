@@ -79,6 +79,8 @@ Notes:
 
 Some things don't have a machine-readable source at all (club directories, third spaces). In that case, hand-write the `_data/<name>.json` directly, in the same shape a fetcher would produce (`generated_at`, `source`, locations with real lat/lon you've looked up yourself), and say so in the page copy — see `_pages/third-spaces.md`'s "Notes" section and `_data/third-spaces.json`. Don't fake a `_python/*.py` script for something that isn't actually fetched.
 
+A hand-kept file with a schedule (most are "monthly") carries a top-level `"last_checked": "YYYY-MM-DD"`. Set it to the day you check the list, even when nothing else changes: a check that finds nothing to change otherwise leaves no trace, and the studio's Data Freshness would call the list stale. `_python/tests/test_sources_registry.py` checks every such file has one.
+
 ## How Far a Dataset Looks
 
 A dataset that searches around Cheltenham uses one of four distance bands, so "nearby" means the same on every page. The bands are defined once in `_data/distance-bands.json`, which both `_python/config.py` and the public [glossary](/glossary) read:
