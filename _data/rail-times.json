@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T20:00:08+00:00",
+  "generated_at": "2026-11-14T20:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains at Exeter St Davids will be cancelled, delayed by up to 25 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-14T19:52",
-      "expected": "2026-11-14T19:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-14T19:59",
       "expected": "2026-11-14T20:05",
@@ -59,8 +38,8 @@
     },
     {
       "scheduled": "2026-11-14T20:03",
-      "expected": "2026-11-14T20:03",
-      "status": "On time",
+      "expected": "2026-11-14T20:06",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -103,8 +82,8 @@
     },
     {
       "scheduled": "2026-11-14T20:15",
-      "expected": "2026-11-14T20:15",
-      "status": "On time",
+      "expected": "2026-11-14T20:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -155,20 +134,24 @@
         "Cardiff Central"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-14T19:50",
-      "expected": "2026-11-14T19:58",
-      "status": "Delayed",
+      "scheduled": "2026-11-14T20:52",
+      "expected": "2026-11-14T20:52",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Plymouth",
+      "destination": "Bristol Temple Meads",
       "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-14T19:58",
       "expected": "2026-11-14T20:04",
@@ -193,8 +176,8 @@
     },
     {
       "scheduled": "2026-11-14T20:14",
-      "expected": "2026-11-14T20:14",
-      "status": "On time",
+      "expected": "2026-11-14T20:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -243,6 +226,17 @@
       "operator": "Great Western Railway",
       "origin": "Salisbury",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T20:50",
+      "expected": "2026-11-14T20:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     }
