@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T17:15:08+00:00",
+  "generated_at": "2026-11-14T17:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,35 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-14T17:12",
-      "expected": "2026-11-14T17:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Doncaster",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T17:15",
-      "expected": "2026-11-14T17:23",
+      "expected": "2026-11-14T17:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -78,8 +51,8 @@
     },
     {
       "scheduled": "2026-11-14T17:29",
-      "expected": "2026-11-14T17:29",
-      "status": "On time",
+      "expected": "2026-11-14T17:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -93,8 +66,8 @@
     },
     {
       "scheduled": "2026-11-14T17:40",
-      "expected": "2026-11-14T17:40",
-      "status": "On time",
+      "expected": "2026-11-14T17:42",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -133,7 +106,7 @@
     },
     {
       "scheduled": "2026-11-14T17:48",
-      "expected": null,
+      "expected": "2026-11-14T18:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -167,23 +140,34 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:59",
+      "expected": "2026-11-14T17:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-14T17:10",
-      "expected": "2026-11-14T17:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Doncaster",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-14T17:14",
-      "expected": "2026-11-14T17:22",
+      "expected": "2026-11-14T17:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -216,8 +200,8 @@
     },
     {
       "scheduled": "2026-11-14T17:27",
-      "expected": "2026-11-14T17:27",
-      "status": "On time",
+      "expected": "2026-11-14T17:30",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -238,8 +222,8 @@
     },
     {
       "scheduled": "2026-11-14T17:38",
-      "expected": "2026-11-14T17:38",
-      "status": "On time",
+      "expected": "2026-11-14T17:41",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -249,7 +233,7 @@
     },
     {
       "scheduled": "2026-11-14T17:46",
-      "expected": null,
+      "expected": "2026-11-14T18:02",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -266,6 +250,17 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-14T17:58",
+      "expected": "2026-11-14T17:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
