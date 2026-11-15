@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T10:40:08+00:00",
+  "generated_at": "2026-11-15T10:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,42 +13,6 @@
     "The ticket office is closed at Cheltenham Spa station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-15T10:43",
-      "expected": "2026-11-15T10:43",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-15T10:47",
-      "expected": "2026-11-15T10:47",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T11:10",
       "expected": "2026-11-15T11:10",
@@ -180,24 +144,32 @@
         "Aberdeen"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T12:20",
+      "expected": "2026-11-15T12:20",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-15T10:42",
-      "expected": "2026-11-15T10:42",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-15T11:08",
-      "expected": "2026-11-15T11:08",
-      "status": "On time",
+      "expected": "2026-11-15T11:10",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
@@ -207,8 +179,8 @@
     },
     {
       "scheduled": "2026-11-15T11:08",
-      "expected": "2026-11-15T11:08",
-      "status": "On time",
+      "expected": "2026-11-15T11:10",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -268,6 +240,28 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Aberdeen via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T12:18",
+      "expected": "2026-11-15T12:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T12:26",
+      "expected": "2026-11-15T12:26",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
