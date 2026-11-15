@@ -29,6 +29,7 @@ jobs:
               run: |
                   python _python/fetch_status.py refresh-weekly _python/cqc.py || echo "::warning::cqc.py failed, continuing with other scripts"
                   python _python/fetch_status.py refresh-weekly _python/bin-weeks.py || echo "::warning::bin-weeks.py failed, continuing with other scripts"
+                  python _python/fetch_status.py refresh-weekly _python/charities.py || echo "::warning::charities.py failed, continuing with other scripts"
 
             # No deploy here: a push from a workflow does not start Pages, so the
             # Pi's next push (every 5 minutes by day, hourly overnight) publishes
