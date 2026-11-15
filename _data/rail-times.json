@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T12:20:08+00:00",
+  "generated_at": "2026-11-15T12:25:15+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,43 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-15T12:11",
-      "expected": "2026-11-15T12:19",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Aberdeen via Doncaster",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Inverkeithing",
-        "Kirkcaldy",
-        "Markinch",
-        "Ladybank",
-        "Cupar",
-        "Leuchars",
-        "Dundee",
-        "Aberdeen"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-15T12:20",
-      "expected": "2026-11-15T12:22",
+      "expected": "2026-11-15T12:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -192,20 +157,29 @@
         "Glasgow Central"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-15T12:09",
-      "expected": "2026-11-15T12:14",
-      "status": "Delayed",
+      "scheduled": "2026-11-15T13:40",
+      "expected": null,
+      "status": "Cancelled",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
-      "destination": "Aberdeen via Doncaster",
-      "reason": "",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-15T12:18",
       "expected": "2026-11-15T12:21",
@@ -281,6 +255,17 @@
       "origin": "Swindon",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T13:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
