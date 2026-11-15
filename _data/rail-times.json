@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T20:10:08+00:00",
+  "generated_at": "2026-11-15T20:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,47 +13,6 @@
     "The ticket office is closed at Cheltenham Spa station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-15T20:10",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-15T20:11",
-      "expected": "2026-11-15T20:11",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T20:15",
       "expected": null,
@@ -172,20 +131,29 @@
         "Swindon"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-15T20:08",
-      "expected": "2026-11-15T20:08",
+      "scheduled": "2026-11-15T21:11",
+      "expected": "2026-11-15T21:11",
       "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
+      "origin": "Penzance",
       "destination": "Leeds",
       "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Leeds"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-15T20:14",
       "expected": null,
@@ -261,6 +229,28 @@
       "origin": "Cardiff Central",
       "destination": "Leicester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T21:09",
+      "expected": "2026-11-15T21:09",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T21:25",
+      "expected": "2026-11-15T21:25",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Swindon",
+      "destination": "Cheltenham Spa",
+      "reason": "",
       "mode": "train"
     }
   ],
