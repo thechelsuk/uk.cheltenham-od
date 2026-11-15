@@ -15,12 +15,15 @@ comparable. Add each new election to ELECTIONS once it has been held: the ID is
 the "ID=" in its link on https://democracy.cheltenham.gov.uk/mgManageElectionResults.aspx.
 The council elects by halves, so most ward contests after 2024 are for one seat.
 
-The results pages are HTML, not an API, so the parser is deliberately strict
+Results already saved in the output are reused: only an election not yet in
+the file is scraped (see saved_results). The results pages are HTML, not an API, so the parser is deliberately strict
 and fails loudly if a page's tables change shape. Requests are spaced out to be
 kind to the council's server. Councillors change rarely and elections happen
 in May, so a monthly refresh is plenty.
 """
+import json
 import os
+import pathlib
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -223,10 +226,28 @@ def wards_summary(wards):
     return rows
 
 
+def saved_results(path):
+    """Election results already in the output, as {date: {slug: result}}.
+    A past election's results never change, so they're reused rather than
+    scraped again; the council's per-ward results pages now refuse every
+    visitor (a Cloudflare block), and only a new election needs them."""
+    try:
+        wards = json.loads(pathlib.Path(path).read_text()).get("wards", {})
+    except (OSError, ValueError):
+        return {}
+    saved = {}
+    for slug, ward in wards.items():
+        for result in ward.get("elections", []):
+            saved.setdefault(result["date"], {})[slug] = result
+    return saved
+
+
 def main():
+    saved = saved_results(OUT)
     results = {}
     for election in ELECTIONS:
-        for slug, result in fetch_election(election).items():
+        by_ward = saved.get(election["date"]) or fetch_election(election)
+        for slug, result in by_ward.items():
             results.setdefault(slug, []).append(result)
     councillors = fetch_councillors()
 
