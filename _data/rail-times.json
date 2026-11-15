@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T20:40:09+00:00",
+  "generated_at": "2026-11-15T20:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,20 +13,6 @@
     "The ticket office is closed at Cheltenham Spa station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-15T20:40",
-      "expected": "2026-11-15T20:40",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T20:46",
       "expected": "2026-11-15T20:49",
@@ -44,8 +30,8 @@
     },
     {
       "scheduled": "2026-11-15T20:52",
-      "expected": "2026-11-15T20:52",
-      "status": "On time",
+      "expected": "2026-11-15T20:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "York",
@@ -150,20 +136,28 @@
         "Swindon"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T22:19",
+      "expected": "2026-11-15T22:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-15T20:39",
-      "expected": "2026-11-15T20:39",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T20:46",
       "expected": "2026-11-15T20:48",
@@ -177,8 +171,8 @@
     },
     {
       "scheduled": "2026-11-15T20:50",
-      "expected": "2026-11-15T20:50",
-      "status": "On time",
+      "expected": "2026-11-15T20:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "York",
@@ -240,6 +234,17 @@
       "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "bus"
+    },
+    {
+      "scheduled": "2026-11-15T22:18",
+      "expected": "2026-11-15T22:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
     }
   ],
   "replacement_buses_only": false
