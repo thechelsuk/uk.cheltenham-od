@@ -200,6 +200,12 @@ def main():
 		parser.error(str(error))
 
 	existing_months = [date for date in months if (OUTPUT_DIR / date).exists()]
+	scheduled = not (args.date or args.start_date or args.end_date)
+	if scheduled and existing_months and not args.overwrite:
+		# Police.uk publishes about once a month; until it does, a scheduled
+		# run finds its latest month already saved and has nothing to do.
+		log.info("Latest month %s is already saved; nothing new from Police.uk", start_date)
+		return
 	if existing_months and not args.overwrite:
 		parser.error(
 			f"data already saved for {', '.join(existing_months)}; "
