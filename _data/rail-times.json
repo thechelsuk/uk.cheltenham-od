@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T16:20:08+00:00",
+  "generated_at": "2026-11-15T16:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,22 +13,6 @@
     "The ticket office is closed at Cheltenham Spa station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-15T16:15",
-      "expected": "2026-11-15T16:19",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T16:22",
       "expected": "2026-11-15T16:26",
@@ -177,20 +161,24 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T17:26",
+      "expected": "2026-11-15T17:26",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-15T16:14",
-      "expected": "2026-11-15T16:17",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T16:21",
       "expected": "2026-11-15T16:25",
@@ -276,6 +264,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Edinburgh via Doncaster",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T17:21",
+      "expected": "2026-11-15T17:21",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     }
