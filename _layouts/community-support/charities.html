@@ -82,7 +82,7 @@
                         {% assign register_label = c.name | append: " on the charity register" %}
                         {% assign site_label = c.name | append: " site" %}
                         <td class="link">{% include link-icon.html url=c.register_url label=register_label %}</td>
-                        <td class="link">{% if c.website %}{% include link-icon.html url=c.website label=site_label nofollow=true %}{% endif %}</td>
+                        <td class="link">{% if c.website %}{% include link-icon.html url=c.website label=site_label nofollow=true %}{% elsif c.website_archive %}{% assign archive_label = c.name | append: "'s old site, archived copy" %}{% include link-icon.html url=c.website_archive label=archive_label nofollow=true archived=true %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -9,7 +9,7 @@ date: 2026-09-08 05:00
 
 Cheltenham Open Data has given the [fuel prices page](/cheltenham-fuel-prices) a significant upgrade.
 
-Pulling data from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-prices), the page now tracks forecourts within 20 miles of Cheltenham town centre — from supermarket pumps to independent garages — with the cheapest price for each fuel highlighted and an interactive map of every station.
+Pulling data from the [GOV.UK Fuel Finder scheme](https://www.gov.uk/government/collections/fuel-finder), the page now tracks forecourts within 20 miles of Cheltenham town centre — from supermarket pumps to independent garages — with the cheapest price for each fuel highlighted and an interactive map of every station.
 
 The page currently tracks **116** forecourts.
 
@@ -25,7 +25,7 @@ The page currently tracks **116** forecourts.
 
 ### Where Does the Fuel Data Come From?
 
-- Prices come from the [GOV.UK fuel price scheme](https://www.gov.uk/check-fuel-prices), under which retailers publish their pump prices as open data licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/).
+- Prices come from the [GOV.UK Fuel Finder scheme](https://www.gov.uk/government/collections/fuel-finder), under which retailers publish their pump prices as open data licensed under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/).
 
 ### How Often Is It Updated?
 

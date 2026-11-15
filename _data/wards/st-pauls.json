@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T19:22:45.219763+00:00",
+  "generated_at": "2026-11-15T18:41:49.199547+00:00",
   "name": "St Paul's",
   "slug": "st-pauls",
   "code": "E05015719",
@@ -658,30 +658,23 @@
     ]
   },
   "local_issues": {
-    "fix_my_street": [
-      {
-        "title": "Broken glass",
-        "group": "Litter, fly-tipping & graffiti",
-        "published": "2026-10-31",
-        "url": "https://www.fixmystreet.com/report/10311125",
-        "lat": 51.907233,
-        "lon": -2.077328
-      },
-      {
-        "title": "Flytipping in bushes st pauls",
-        "group": "Litter, fly-tipping & graffiti",
-        "published": "2026-10-31",
-        "url": "https://www.fixmystreet.com/report/10310841",
-        "lat": 51.906532,
-        "lon": -2.07745
-      }
-    ],
+    "fix_my_street": [],
     "planning": [
+      {
+        "ref": "26/01673/CLEUD",
+        "address": "31 Marle Hill Road Cheltenham Gloucestershire GL50 4LN",
+        "description": "Use of the property as a 7 bedroom licensed HMO",
+        "status": "Issued",
+        "received": "2026-10-19",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TN54S0ELM9900&activeTab=summary",
+        "lat": 51.908274,
+        "lon": -2.075085
+      },
       {
         "ref": "26/01571/ADV",
         "address": "Taco Bell 211 High Street Cheltenham Gloucestershire GL50 3HH",
         "description": "New fascia sign, projecting sign and window manifestations",
-        "status": "Pending Consideration",
+        "status": "Grant",
         "received": "2026-10-05",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TMF7D8ELM2H00&activeTab=summary",
         "lat": 51.901593,
@@ -700,8 +693,8 @@
       {
         "ref": "26/01411/CACN",
         "address": "22 Henrietta Street Cheltenham Gloucestershire GL50 4AA",
-        "description": "A small laurel tree which is intertwining in the phone line it is also taking up a lot of the room in the garden, I am asking for a full removal to ground level so the customer doesnt have to maintain or have work done again.",
-        "status": "Pending Consideration",
+        "description": "Laurel - Remove",
+        "status": "No objection",
         "received": "2026-09-03",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TKRY2CELLRU00&activeTab=summary",
         "lat": 51.903435,
@@ -716,6 +709,26 @@
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TK3VEHELLO000&activeTab=summary",
         "lat": 51.907378,
         "lon": -2.082453
+      },
+      {
+        "ref": "26/01327/FUL",
+        "address": "Parish Church Of St Paul St Pauls Road Cheltenham Gloucestershire GL50 4EZ",
+        "description": "Installation of solar panels on east and west roof slopes.",
+        "status": "Permit",
+        "received": "2026-08-18",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TJYBHRELLMA00&activeTab=summary",
+        "lat": 51.906411,
+        "lon": -2.076695
+      },
+      {
+        "ref": "26/01309/DISCON",
+        "address": "Parish Church Of St Paul St Pauls Road Cheltenham Gloucestershire GL50 4EZ",
+        "description": "Discharge of conditions 3 (materials) and 4 (windows and doors) of granted permission 24/00608/FUL.",
+        "status": "Pending Consideration",
+        "received": "2026-08-14",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TJQX2EELLL500&activeTab=summary",
+        "lat": 51.906411,
+        "lon": -2.076695
       },
       {
         "ref": "26/01303/AMEND",
@@ -814,7 +827,7 @@
   "venue_types": [
     {
       "type": "Restaurant/Cafe/Canteen",
-      "count": 34
+      "count": 35
     },
     {
       "type": "Takeaway/sandwich shop",
@@ -1611,6 +1624,16 @@
           "distance_miles": 0.29
         },
         {
+          "name": "Tesco Superstore Cheltenham",
+          "address": "Colletts Drive, Lansdown",
+          "postcode": "GL51 8JQ",
+          "detail": "InPost locker",
+          "lat": 51.90558,
+          "lon": -2.08707,
+          "in_ward": false,
+          "distance_miles": 0.3
+        },
+        {
           "name": "Family Shopper",
           "address": "278-282 High Street",
           "postcode": "GL50 3HQ",
@@ -1649,16 +1672,6 @@
           "lon": -2.074672,
           "in_ward": false,
           "distance_miles": 0.5
-        },
-        {
-          "name": "One Stop Hilltop Stores",
-          "address": "Hilltop Road",
-          "postcode": "GL50 4NN",
-          "detail": "InPost locker",
-          "lat": 51.91431,
-          "lon": -2.07746,
-          "in_ward": false,
-          "distance_miles": 0.52
         }
       ]
     },
@@ -1711,7 +1724,7 @@
         {
           "name": "St Paul's Hub",
           "address": "St Paul's Walk, Cheltenham, GL50 4GG",
-          "url": "https://www.cheltenham.gov.uk/info/20005/",
+          "url": "https://www.cheltenham.gov.uk/housing/cheltenham-borough-council-housing-services/your-community/community-hubs/",
           "lat": 51.9087,
           "lon": -2.0791,
           "in_ward": true,
@@ -1954,7 +1967,7 @@
       "group": "Food and Drink",
       "label": "Pubs, Cafes and Takeaways",
       "mode": "in_ward",
-      "in_ward": 56,
+      "in_ward": 57,
       "items": [
         {
           "name": "Village Grill",
@@ -2111,10 +2124,10 @@
           "distance_miles": 0.19
         },
         {
-          "name": "Havanas Burgers And Shakes / The Mustard",
+          "name": "Havanas Burgers And Shakes",
           "address": "365 High Street, Cheltenham, Gloucestershire",
           "postcode": "GL50 3HT",
-          "detail": "Rating 4",
+          "detail": "Rating 5",
           "type": "Takeaway/sandwich shop",
           "lat": 51.903982,
           "lon": -2.08097,
@@ -2569,6 +2582,17 @@
           "type": "Restaurant/Cafe/Canteen",
           "lat": 51.901494,
           "lon": -2.075248,
+          "in_ward": true,
+          "distance_miles": 0.44
+        },
+        {
+          "name": "Popeyes",
+          "address": "Taco Bell, 211 High Street, Cheltenham, Gloucestershire",
+          "postcode": "GL50 3HH",
+          "detail": "AwaitingInspection",
+          "type": "Restaurant/Cafe/Canteen",
+          "lat": 51.901467,
+          "lon": -2.075204,
           "in_ward": true,
           "distance_miles": 0.44
         }

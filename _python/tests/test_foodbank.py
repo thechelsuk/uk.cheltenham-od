@@ -43,3 +43,4 @@ def test_summary_counts_donation_points_and_finds_the_latest_list():
     assert summary["foodbank_count"] == 2
     assert summary["donation_point_count"] == 5
     assert summary["latest_change"]["slug"] == "b"
+

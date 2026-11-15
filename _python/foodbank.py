@@ -55,7 +55,7 @@ def normalise_place(place):
         "address": one_line(place.get("address")),
         "postcode": place.get("postcode") or "",
         "phone": place.get("phone") or "",
-        "url": place.get("url") or "",
+        "url": helper.web_address(place.get("url")),
         "opening_hours": clean_hours(place.get("opening_hours")),
         "wheelchair_accessible": place.get("wheelchair_accessible"),
         "lat": lat,
@@ -148,6 +148,8 @@ if __name__ == "__main__":
             continue
         foodbanks.append(normalise_foodbank(detail, result["distance_mi"]))
     foodbanks.sort(key=lambda fb: fb["distance_mi"])
+    places = [p for fb in foodbanks for p in fb["locations"] + fb["donation_points"]]
+    helper.link_websites(places, "foodbank", field="url", empty="")
 
     now = datetime.now(timezone.utc)
     helper.write_json(root / "_data/foodbank.json", {

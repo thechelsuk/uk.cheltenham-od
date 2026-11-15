@@ -20,3 +20,6 @@ jobs:
       site_host: cheltenham-od\.uk
       ruby_version: 3.3.11
       jekyll_args: --config _config.yml,_config.production.yml
+      # Newsletter issues are dated archives: their event pages expire within
+      # weeks, so links in them are left as published and not checked.
+      extra_args: --exclude-path '_site/newsletter/'

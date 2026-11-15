@@ -7,6 +7,7 @@ Run from the repository root:
 import ast
 import json
 import pathlib
+import socket
 import subprocess
 import sys
 from datetime import date, datetime, timezone
@@ -386,3 +387,191 @@ def test_atom_writer_leaves_out_the_footer_by_default(tmp_path):
                             "/feeds/f.xml", "f", "f", "https://example.test/self", "https://example.test/f")
     (entry,), ns = atom_entries(path)
     assert entry.find("a:content", ns) is None
+
+
+
+# --- website checks ------------------------------------------------------
+
+@pytest.fixture
+def dead_list(tmp_path, monkeypatch):
+    path = tmp_path / "dead-websites.json"
+    path.write_text(json.dumps({"last_checked": "2026-11-15", "websites": [
+        {"url": "https://leygore.manor/", "checked": "2026-11-15", "reason": "Not a valid web address"},
+        {"url": "http://live.example.org.uk/old-page.aspx", "checked": "2026-11-15", "reason": "Redirects to an unrelated page"},
+    ]}))
+    monkeypatch.setattr(helper, "DEAD_WEBSITES_FILE", path)
+    helper.dead_websites.cache_clear()
+    yield
+    helper.dead_websites.cache_clear()
+
+
+@pytest.mark.parametrize("url", [
+    "https://leygore.manor/",
+    "http://leygore.manor",                    # scheme and trailing slash don't matter
+    "https://www.LEYGORE.manor/",              # nor www. or the host's case
+    "https://live.example.org.uk/old-page.aspx",
+])
+def test_listed_websites_are_dead(dead_list, url):
+    assert helper.is_dead_website(url)
+
+
+@pytest.mark.parametrize("url", ["https://live.example.org.uk/", "https://www.other.example.org.uk/", "", None])
+def test_other_websites_are_not_listed(dead_list, url):
+    assert not helper.is_dead_website(url)
+
+
+def test_the_real_dead_websites_list_loads():
+    helper.dead_websites.cache_clear()
+    data = json.loads(helper.DEAD_WEBSITES_FILE.read_text())
+    for entry in data["websites"]:
+        assert entry["url"].startswith(("http://", "https://")), entry
+        assert entry["reason"] and entry["checked"], entry
+
+
+@pytest.mark.parametrize("raw, expected", [
+    ("www.example.org.uk", "http://www.example.org.uk"),     # no scheme: http, and a site with https redirects
+    ("example.org.uk/about", "http://example.org.uk/about"),
+    ("https://www.example.org.uk", "https://www.example.org.uk"),
+    ("HTTP://example.org.uk", "HTTP://example.org.uk"),
+    ("http:/example.org.uk", "http://example.org.uk"),        # a slash missing
+    ("  ", ""),
+    (None, ""),
+])
+def test_web_address(raw, expected):
+    assert helper.web_address(raw) == expected
+
+
+class FakeCheckResponse:
+    def __init__(self, status_code=200, payload=None):
+        self.status_code = status_code
+        self._payload = payload
+
+    def json(self):
+        return self._payload
+
+    def close(self):
+        pass
+
+
+def resolves(monkeypatch, error=None):
+    def fake_getaddrinfo(host, port):
+        if error is not None:
+            raise socket.gaierror(error, "lookup failed")
+        return [("addr",)]
+    monkeypatch.setattr(helper.socket, "getaddrinfo", fake_getaddrinfo)
+
+
+def answers(monkeypatch, status=None, error=None):
+    def fake_get(url, **kwargs):
+        if error is not None:
+            raise error
+        return FakeCheckResponse(status)
+    monkeypatch.setattr(helper.requests, "get", fake_get)
+
+
+def test_a_domain_that_doesnt_exist_is_dead(monkeypatch):
+    resolves(monkeypatch, socket.EAI_NONAME)
+    assert helper._probe("https://www.lapsed.example.org.uk/") == "Domain not found"
+
+
+def test_a_failed_lookup_isnt_taken_as_dead(monkeypatch):
+    resolves(monkeypatch, socket.EAI_AGAIN)
+    assert helper._probe("https://www.example.org.uk/") is None
+
+
+@pytest.mark.parametrize("status, expected", [
+    (404, "Page not found (404)"), (410, "Page gone (410)"), (200, None), (403, None), (500, None),
+])
+def test_only_404_and_410_count_as_dead(monkeypatch, status, expected):
+    resolves(monkeypatch)
+    answers(monkeypatch, status)
+    assert helper._probe("https://www.example.org.uk/page") == expected
+
+
+def test_a_timeout_or_certificate_error_isnt_taken_as_dead(monkeypatch):
+    resolves(monkeypatch)
+    answers(monkeypatch, error=requests.exceptions.SSLError("bad certificate"))
+    assert helper._probe("https://www.example.org.uk/") is None
+
+
+def test_the_wayback_machine_copy_is_found(monkeypatch):
+    seen = {}
+
+    def fake_get(url, params=None, **kwargs):
+        seen.update(params)
+        return FakeCheckResponse(200, {"archived_snapshots": {"closest": {
+            "available": True, "status": "200", "url": "http://web.archive.org/web/2019/http://lapsed.example.org/"}}})
+    monkeypatch.setattr(helper.requests, "get", fake_get)
+    assert helper._archive("https://www.lapsed.example.org/") == "https://web.archive.org/web/2019/http://lapsed.example.org/"
+    assert seen["url"] == "www.lapsed.example.org"
+
+
+def test_no_wayback_copy(monkeypatch):
+    monkeypatch.setattr(helper.requests, "get", lambda url, **kwargs: FakeCheckResponse(200, {"archived_snapshots": {}}))
+    assert helper._archive("https://www.lapsed.example.org/") is None
+
+
+@pytest.fixture
+def checks_dir(tmp_path, monkeypatch, dead_list):
+    monkeypatch.setattr(helper, "WEBSITE_CHECKS_DIR", tmp_path / "website-checks")
+    probed = []
+    monkeypatch.setattr(helper, "_probe", lambda url: probed.append(url) or ("Domain not found" if "lapsed" in url else None))
+    monkeypatch.setattr(helper, "_archive", lambda url: "https://web.archive.org/web/2020/" + url if "lapsed" in url else None)
+    return probed
+
+
+def test_websites_are_checked_and_the_results_kept(checks_dir):
+    urls = ["https://lapsed.example.org/", "https://live.example.org/", "https://leygore.manor", "", None]
+    checks = helper.check_websites(urls, "test", today=date(2026, 11, 15))
+    assert sorted(checks_dir) == ["https://lapsed.example.org/", "https://live.example.org/"]
+    assert checks["https://lapsed.example.org/"] == {
+        "checked": "2026-11-15", "dead": "Domain not found",
+        "archive": "https://web.archive.org/web/2020/https://lapsed.example.org/"}
+    assert checks["https://live.example.org/"] == {"checked": "2026-11-15", "dead": None, "archive": None}
+    assert checks["https://leygore.manor"]["dead"] == "Not a valid web address"
+    saved = json.loads((helper.WEBSITE_CHECKS_DIR / "test.json").read_text())
+    assert saved["websites"] == checks
+
+
+def test_a_recent_check_is_reused_and_an_old_one_redone(checks_dir):
+    urls = ["https://lapsed.example.org/", "https://live.example.org/"]
+    helper.check_websites(urls, "test", today=date(2026, 11, 15))
+    checks_dir.clear()
+    helper.check_websites(urls, "test", today=date(2026, 12, 1))
+    assert checks_dir == []
+    helper.check_websites(urls, "test", today=date(2026, 12, 20))
+    assert sorted(checks_dir) == urls
+
+
+def test_addresses_no_longer_used_are_dropped_from_the_cache(checks_dir):
+    helper.check_websites(["https://live.example.org/", "https://old.example.org/"], "test", today=date(2026, 11, 15))
+    checks = helper.check_websites(["https://live.example.org/"], "test", today=date(2026, 11, 16))
+    assert list(checks) == ["https://live.example.org/"]
+
+
+def test_website_link():
+    checks = {"https://lapsed.example.org/": {"dead": "Domain not found", "archive": "https://web.archive.org/x"},
+              "https://live.example.org/": {"dead": None, "archive": None}}
+    assert helper.website_link("https://lapsed.example.org/", checks) == (None, "https://web.archive.org/x")
+    assert helper.website_link("https://live.example.org/", checks) == ("https://live.example.org/", None)
+    assert helper.website_link("", checks) == (None, None)
+    assert helper.website_link("https://unchecked.example.org/", checks) == ("https://unchecked.example.org/", None)
+
+
+def test_link_websites_swaps_a_dead_site_for_its_archive(checks_dir):
+    items = [{"website": "https://lapsed.example.org/"}, {"website": "https://live.example.org/"}, {"website": None}]
+    helper.link_websites(items, "test", today=date(2026, 11, 15))
+    assert items == [
+        {"website": None, "website_archive": "https://web.archive.org/web/2020/https://lapsed.example.org/"},
+        {"website": "https://live.example.org/", "website_archive": None},
+        {"website": None, "website_archive": None},
+    ]
+
+
+def test_link_websites_keeps_a_fetchers_own_field_and_empty_value(checks_dir):
+    items = [{"url": "https://lapsed.example.org/"}, {"url": ""}]
+    helper.link_websites(items, "test", field="url", empty="", today=date(2026, 11, 15))
+    assert items == [
+        {"url": "", "url_archive": "https://web.archive.org/web/2020/https://lapsed.example.org/"},
+        {"url": "", "url_archive": ""},
+    ]

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Fetch OSM points of interest (incl. plaques) near Cheltenham via Overpass,
 write _data/points-of-interest.json as a distance-sorted array."""
-import re
 import os
 
 import config
@@ -62,12 +61,7 @@ def build_query():
     return f"[out:json][timeout:90];({''.join(clauses)});out center tags;"
 
 def normalize_url(url: str) -> str:
-    url = url.strip()
-    if not url:
-        return ""
-    if not re.match(r'^https?://', url, re.IGNORECASE):
-        url = "https://" + url
-    return url
+    return helper.web_address(url)
 
 def main():
     elements = helper.overpass(build_query(), timeout=120)
@@ -97,6 +91,7 @@ def main():
         })
 
     pois.sort(key=lambda p: p["distance"])
+    helper.link_websites(pois, "points-of-interest", empty="")
 
     helper.write_json(OUT, pois)
 

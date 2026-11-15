@@ -106,6 +106,17 @@ def load_archive(archive_path):
     return {item["link"]: item for item in payload.get("items", []) if item.get("link")}
 
 
+def mark_unavailable(items):
+    """Flag headlines whose page the publisher has taken down (listed in
+    _data/dead-websites.json), so the archive shows them without a link."""
+    for item in items:
+        if helper.is_dead_website(item.get("link")):
+            item["unavailable"] = True
+        else:
+            item.pop("unavailable", None)
+    return items
+
+
 def write_paginated_page(path, page_num):
     """Generated pages only need a permalink and which page they are —
     page_size/total_pages/offset/prev_url/next_url are all derived in the
@@ -155,6 +166,7 @@ if __name__ == "__main__":
     for item in all_items:
         item["published_relative"] = time_ago(datetime.fromisoformat(item["published_iso"]))
     all_items.sort(key=lambda x: x["published_iso"], reverse=True)
+    mark_unavailable(all_items)
 
     payload = {
         "updated": helper.updated_timestamp(),

@@ -13,7 +13,7 @@ permalink: /cheltenham-power-cuts
 ## Cheltenham Power Cuts
 
 This page tracks live power cuts affecting Cheltenham postcodes (GL50–GL54),
-sourced from [National Grid Electricity Distribution](https://www.nationalgrid.co.uk/electricity-distribution),
+sourced from [National Grid Electricity Distribution](https://www.nationalgrid.co.uk/),
 the electricity distribution network operator for Gloucestershire, formerly
 Western Power Distribution. Their [Live Power Cuts open dataset](https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts)
 updates continuously as incidents are reported, confirmed and restored.

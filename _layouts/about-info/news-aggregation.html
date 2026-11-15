@@ -44,10 +44,10 @@
         <ul class="news-pill-list">
             {% for item in page_items %}
             <li class="news-pill-item">
-                <a href="{{ item.link }}" class="news-pill-title" target="_blank" rel="noopener">{{ item.title }}</a>
+                {% if item.unavailable %}<span class="news-pill-title">{{ item.title }} (no longer available)</span>{% else %}<a href="{{ item.link }}" class="news-pill-title" target="_blank" rel="noopener">{{ item.title }}</a>{% endif %}
                 {% if item.summary %}<p class="news-pill-summary">{{ item.summary }}</p>{% endif %}
                 <div class="news-pill-meta">
-                    <a href="{{ item.link }}" class="news-pill-tag" style="--pill-color: {{ item.source_color }};" target="_blank" rel="noopener">{{ item.source }}</a>
+                    {% if item.unavailable %}<span class="news-pill-tag" style="--pill-color: {{ item.source_color }};">{{ item.source }}</span>{% else %}<a href="{{ item.link }}" class="news-pill-tag" style="--pill-color: {{ item.source_color }};" target="_blank" rel="noopener">{{ item.source }}</a>{% endif %}
                     <span class="news-pill-date">{{ item.published_relative }}</span>
                 </div>
             </li>

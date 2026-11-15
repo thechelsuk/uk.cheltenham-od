@@ -5,12 +5,15 @@ Run manually after downloading a new GIAS extract into _data-sources/ — not
 part of any scheduled workflow, since that gitignored input file only exists
 locally.
 """
-import re
 import csv
 import json
 import os
+import sys
 
 from pyproj import Transformer
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+import helper  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))          # _python/
 SRC  = os.path.join(HERE, "..", "..", "_data-sources", "edubasealldata.csv")
@@ -40,12 +43,7 @@ def address(row) -> str:
     return ", ".join(p for p in parts if p)
 
 def normalize_url(url: str) -> str:
-    url = url.strip()
-    if not url:
-        return ""
-    if not re.match(r'^https?://', url, re.IGNORECASE):
-        url = "https://" + url
-    return url
+    return helper.web_address(url)
 
 schools = []
 with open(SRC, encoding="latin-1", newline="") as f:
@@ -71,6 +69,7 @@ with open(SRC, encoding="latin-1", newline="") as f:
         })
 
 schools.sort(key=lambda s: s["name"])
+helper.link_websites(schools, "schools", empty="")
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w", encoding="utf-8") as f:

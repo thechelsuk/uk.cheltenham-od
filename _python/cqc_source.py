@@ -14,7 +14,6 @@ load_locations(postcode_districts) returns one dict per location:
     ratings: {"safe", "effective", "caring", "responsive", "well_led"}
 """
 import os
-import re
 
 import helper
 
@@ -60,10 +59,7 @@ def _listed(districts):
 
 
 def _website(url):
-    url = (url or "").strip()
-    if not url:
-        return None
-    return url if re.match(r"^https?://", url, re.I) else "https://" + url
+    return helper.web_address(url) or None
 
 
 def _rating(value):

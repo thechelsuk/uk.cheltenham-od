@@ -97,6 +97,7 @@ def main():
     slugs = [loc["slug"] for loc in locations if loc["slug"]]
     if len(slugs) != len(set(slugs)):
         raise RuntimeError("Two CQC locations share a page address")
+    helper.link_websites(locations, "cqc")
 
     care_homes = [loc for loc in locations if loc["kind"] in ("nursing_home", "residential_home")]
     summary = {

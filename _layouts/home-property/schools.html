@@ -80,7 +80,7 @@
                         <td>{{ school.address }}</td>
                         <td class="postcode">{{ school.postcode }}</td>
                         {% assign site_label = school.name | append: " site" %}
-                        <td class="link">{% if school.website %}{% include link-icon.html url=school.website label=site_label nofollow=true %}{% endif %}</td>
+                        <td class="link">{% if school.website %}{% include link-icon.html url=school.website label=site_label nofollow=true %}{% elsif school.website_archive and school.website_archive != "" %}{% assign archive_label = school.name | append: "'s old site, archived copy" %}{% include link-icon.html url=school.website_archive label=archive_label nofollow=true archived=true %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

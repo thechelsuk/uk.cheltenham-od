@@ -33,7 +33,7 @@ def overall(rating, date, **questions):
 def test_small_helpers():
     assert cqc_source._postcode_ok("gl50 1aa", {"GL50"})
     assert not cqc_source._postcode_ok(None, {"GL50"})
-    assert cqc_source._website(" www.example.org ") == "https://www.example.org"
+    assert cqc_source._website(" www.example.org ") == "http://www.example.org"
     assert cqc_source._website("HTTP://example.org") == "HTTP://example.org"
     assert cqc_source._website("") is None
     assert cqc_source._rating(" requires Improvement ") == "Requires improvement"
@@ -62,7 +62,7 @@ def test_location_builds_the_record_the_pages_use():
     record = cqc_source._location(detail(currentRatings=overall("Good", "2024-06-01", Safe="Good")))
     assert record == {
         "id": "1-100", "ods_code": None, "name": "Rose House", "address": "1 Rose Lane, Cheltenham",
-        "postcode": "GL52 3AA", "website": "https://www.rosehouse.example",
+        "postcode": "GL52 3AA", "website": "http://www.rosehouse.example",
         "url": "https://www.cqc.org.uk/location/1-100",
         "service_types": ["Residential homes"], "specialisms": ["Dementia"],
         "category": "Residential social care", "care_home": True, "overall": "Good", "published": "2024-06-01",
@@ -165,6 +165,7 @@ def test_main_geocodes_ranks_and_summarises(monkeypatch):
     monkeypatch.setattr(helper, "miles_from_centre", lambda lat, lon: 1.234)
     written = {}
     monkeypatch.setattr(helper, "write_json", lambda path, payload: written.update(payload))
+    monkeypatch.setattr(helper, "check_websites", lambda urls, name, today=None: {})
 
     cqc.main()
 
@@ -187,3 +188,4 @@ def test_main_refuses_two_locations_with_one_page_address(monkeypatch):
     with pytest.raises(RuntimeError, match="share a page address"):
         cqc.main()
     assert written == []
+

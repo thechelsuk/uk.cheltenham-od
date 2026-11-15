@@ -17,3 +17,4 @@ def no_network(monkeypatch):
         raise RuntimeError("tests must not use the network; fake the fetch instead")
     monkeypatch.setattr(socket.socket, "connect", refuse)
     monkeypatch.setattr(socket, "create_connection", refuse)
+    monkeypatch.setattr(socket, "getaddrinfo", refuse)

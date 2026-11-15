@@ -1,5 +1,6 @@
 from dateutil.parser import parse
 import csv
+import functools
 import io
 import math
 import pathlib
@@ -7,6 +8,8 @@ import re
 import json
 import requests
 import time
+import urllib.parse
+import socket
 import html
 from datetime import date, datetime, timedelta, timezone
 import xml.etree.ElementTree as ET
@@ -19,6 +22,137 @@ import config
 def repo_root():
     """Resolve the repository root from within any _python/*.py script."""
     return pathlib.Path(__file__).parent.parent.resolve()
+
+
+DEAD_WEBSITES_FILE = repo_root() / "_data" / "dead-websites.json"
+WEBSITE_CHECKS_DIR = repo_root() / "_data" / "website-checks"
+WEBSITE_CHECK_DAYS = 28
+WAYBACK_API = "https://archive.org/wayback/available"
+
+
+def web_address(url):
+    """A web address as a register gives it, made usable: a missing scheme
+    becomes http:// (a site with HTTPS redirects itself; one without would
+    break if forced to https://), and "http:/" gets its second slash."""
+    url = (url or "").strip()
+    if not url:
+        return ""
+    url = re.sub(r"^(https?):/(?!/)", r"\1://", url, flags=re.I)
+    return url if re.match(r"^https?://", url, re.I) else "http://" + url
+
+
+def _website_key(url):
+    """A web address without its scheme, www., trailing slash or host case."""
+    url = re.sub(r"^https?://", "", (url or "").strip(), flags=re.I)
+    host, _, path = url.partition("/")
+    host = host.lower().removeprefix("www.")
+    return f"{host}/{path}".rstrip("/")
+
+
+@functools.lru_cache(maxsize=None)
+def dead_websites():
+    """The hand-kept _data/dead-websites.json: addresses that are gone in a way
+    a check can't see (an invalid domain, a redirect to an unrelated page),
+    as {key: reason}."""
+    data = json.loads(pathlib.Path(DEAD_WEBSITES_FILE).read_text())
+    return {_website_key(entry["url"]): entry["reason"] for entry in data["websites"]}
+
+
+def is_dead_website(url):
+    return bool(url) and _website_key(url) in dead_websites()
+
+
+def _probe(url):
+    """Why a website is gone, or None if it isn't known to be. Only a domain
+    that doesn't exist (or has no address) and a 404 or 410 count: a timeout,
+    certificate error, 403 or 5xx may be temporary or a bot block."""
+    host = urllib.parse.urlsplit(url).hostname
+    if not host:
+        return "Not a valid web address"
+    try:
+        socket.getaddrinfo(host, None)
+    except socket.gaierror as error:
+        gone = {socket.EAI_NONAME, getattr(socket, "EAI_NODATA", socket.EAI_NONAME)}
+        return "Domain not found" if error.errno in gone else None
+    try:
+        response = requests.get(url, headers=config.HEADERS, timeout=20, allow_redirects=True, stream=True)
+    except requests.exceptions.RequestException:
+        return None
+    response.close()
+    return {404: "Page not found (404)", 410: "Page gone (410)"}.get(response.status_code)
+
+
+def _archive(url):
+    """The Wayback Machine's latest copy of a dead website, or None. A whole
+    site is looked up by its host, so any archived page of it counts."""
+    parts = urllib.parse.urlsplit(url)
+    target = parts.netloc if parts.path in ("", "/") and not parts.query else url
+    try:
+        response = requests.get(WAYBACK_API, params={"url": target}, headers=config.HEADERS, timeout=30)
+        closest = (response.json().get("archived_snapshots") or {}).get("closest") or {}
+    except (requests.exceptions.RequestException, ValueError):
+        return None
+    if not closest.get("available") or closest.get("status") != "200":
+        return None
+    return re.sub(r"^http://", "https://", closest["url"])
+
+
+def check_websites(urls, name, today=None, workers=16):
+    """Check each website a register gives once every WEBSITE_CHECK_DAYS, and
+    look up a Wayback Machine copy of any that are gone. Results are kept in
+    _data/website-checks/<name>.json, so a run only checks new or stale
+    addresses and the site build never calls out. Returns
+    {url: {"checked", "dead", "archive"}}."""
+    today = today or uk_today()
+    path = pathlib.Path(WEBSITE_CHECKS_DIR) / f"{name}.json"
+    try:
+        previous = json.loads(path.read_text()).get("websites", {})
+    except (OSError, ValueError):
+        previous = {}
+    checks, to_check = {}, []
+    for url in dict.fromkeys(u for u in urls if u):
+        old = previous.get(url)
+        if old and (today - date.fromisoformat(old["checked"])).days < WEBSITE_CHECK_DAYS:
+            checks[url] = old
+        else:
+            to_check.append(url)
+
+    def check(url):
+        listed = dead_websites().get(_website_key(url))
+        dead = listed or _probe(url)
+        archive = _archive(url) if dead and dead != "Not a valid web address" else None
+        return url, {"checked": today.isoformat(), "dead": dead, "archive": archive}
+
+    if to_check:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            checks.update(pool.map(check, to_check))
+    checks = {url: checks[url] for url in sorted(checks)}
+    write_json(path, {"generated_at": datetime.now(timezone.utc).isoformat(), "check_days": WEBSITE_CHECK_DAYS, "websites": checks})
+    return checks
+
+
+def website_link(url, checks):
+    """(website, archived copy) for a page: the website while it works, or
+    None and its Wayback Machine copy (if any) once it's gone."""
+    if not url:
+        return None, None
+    check = checks.get(url) or {}
+    if check.get("dead"):
+        return None, check.get("archive")
+    return url, None
+
+
+def link_websites(items, name, field="website", empty=None, today=None):
+    """Check every item's website (check_websites) and, for one that's gone,
+    swap it for <field>_archive, its Wayback Machine copy. `empty` is what the
+    fetcher writes for no address (None, or "" where its pages test for that)."""
+    checks = check_websites([item.get(field) for item in items], name, today=today)
+    for item in items:
+        live, archive = website_link(item.get(field), checks)
+        item[field] = live or empty
+        item[f"{field}_archive"] = archive or empty
+    return items
 
 
 def site_url():

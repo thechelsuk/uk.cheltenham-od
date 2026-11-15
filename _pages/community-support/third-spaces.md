@@ -46,17 +46,17 @@ Offering a range of fun and social activities for all ages, including after scho
 A weekly drop-in an informal setting. Activities include crafts, colouring, jigsaws, games and an opportunity to chill and chat. Open to anyone of any ability living in Cheltenham. This club also provides a source of information, signposting and advice, and training for disabled and non-disabled residents.
 
 - [Cassin Drive, Cheltenham, GL51 7SY](https://maps.app.goo.gl/fzvy8ih7yRMwdW2y8)
-- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/info/20005/) &rarr;
+- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/housing/cheltenham-borough-council-housing-services/your-community/community-hubs/) &rarr;
 
 ### St Paul's Hub, Cheltenham
 
 - [St Paul’s Walk, Cheltenham, GL50 4GG](https://maps.app.goo.gl/UQtXHvd5rHtQ5UCE9)
-- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/info/20005/) &rarr;
+- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/housing/cheltenham-borough-council-housing-services/your-community/community-hubs/) &rarr;
 
 ### Oakley Resource Hub, Cheltenham
 
 - [Clyde Crescent, Cheltenham, GL52 5QL](https://maps.app.goo.gl/CxqweBrvV6NSejzJA)
-- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/info/20005/) &rarr;
+- [cheltenham.gov.uk](https://www.cheltenham.gov.uk/housing/cheltenham-borough-council-housing-services/your-community/community-hubs/) &rarr;
 
 ## Hub8, Cheltenham
 

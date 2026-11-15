@@ -71,7 +71,7 @@
         <h2>Contact and Reports</h2>
         <ul>
             <li>Address: {{ c.address }}, {{ c.postcode }} {% if c.lat %}{% include pin.html lat=c.lat lng=c.lon label=c.name %}{% endif %}</li>
-            {% if c.website %}<li><a href="{{ c.website }}" rel="nofollow noopener">{{ c.name }}'s own site</a></li>{% endif %}
+            {% if c.website %}<li><a href="{{ c.website }}" rel="nofollow noopener">{{ c.name }}'s own site</a></li>{% elsif c.website_archive %}<li><a href="{{ c.website_archive }}" rel="nofollow noopener">{{ c.name }}'s old site (archived copy)</a></li>{% endif %}
             <li><a href="{{ c.url }}" rel="noopener">Full CQC report and inspection history</a></li>
             {% if c.previous_registration %}<li><a href="{{ c.previous_url }}" rel="noopener">CQC report under its previous registration</a></li>{% endif %}
         </ul>

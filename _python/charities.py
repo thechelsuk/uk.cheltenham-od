@@ -80,10 +80,7 @@ def sentence(text):
 
 
 def website(url):
-    url = (url or "").strip()
-    if not url:
-        return None
-    return url if re.match(r"^https?://", url, re.I) else "https://" + url
+    return helper.web_address(url) or None
 
 
 def money(value):
@@ -136,6 +133,7 @@ def main():
             charity["causes"].append(cause[:1].upper() + cause[1:])
 
     items = sorted(charities.values(), key=lambda c: c["name"].lower())
+    helper.link_websites(items, "charities")
     total = sum(c["income"] or 0 for c in items)
     causes = Counter(cause for c in items for cause in c["causes"])
     bands = Counter(c["income_band"] for c in items if c["income_band"])

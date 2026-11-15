@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T19:22:45.469777+00:00",
+  "generated_at": "2026-11-15T18:41:49.448539+00:00",
   "name": "St Peter's",
   "slug": "st-peters",
   "code": "E05015720",
@@ -629,14 +629,54 @@
     "fix_my_street": [],
     "planning": [
       {
+        "ref": "26/01751/PIP",
+        "address": "75 Queens Road Cheltenham Gloucestershire GL50 2NH",
+        "description": "Permission in principle for the erection of 1no. dwelling.",
+        "status": "Pending Consideration",
+        "received": "2026-11-02",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TNVM1IEL08300&activeTab=summary",
+        "lat": 51.897584,
+        "lon": -2.098233
+      },
+      {
+        "ref": "26/01727/CLPUD",
+        "address": "78 Netherwood Gardens Cheltenham Gloucestershire GL51 8LG",
+        "description": "Partial conversion of garage, to create Utility / Cloakroom.",
+        "status": "Pending Consideration",
+        "received": "2026-10-30",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TNPQOJEL0M300&activeTab=summary",
+        "lat": 51.907122,
+        "lon": -2.100478
+      },
+      {
+        "ref": "26/01703/AMEND",
+        "address": "152 Brooklyn Gardens Cheltenham Gloucestershire GL51 8LW",
+        "description": "Non-material amendment of granted permission 25/01491/FUL; no thermal insulation to be applied to any elevations under render, no change to colour or finish.",
+        "status": "Allow",
+        "received": "2026-10-23",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TNCR7ZEL0M300&activeTab=summary",
+        "lat": 51.90938,
+        "lon": -2.098288
+      },
+      {
         "ref": "26/01502/FUL",
         "address": "14 Graduate Court Cheltenham Gloucestershire GL51 8PE",
         "description": "Proposed building within rear garden to provide garden office, shed and gym",
-        "status": "Pending Consideration",
+        "status": "Permit",
         "received": "2026-09-21",
         "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TLPA6RELLXS00&activeTab=summary",
         "lat": 51.907062,
         "lon": -2.096553
+      },
+      {
+        "ref": "26/01254/PDE",
+        "address": "4 Brickfield Drive Cheltenham Gloucestershire GL51 8PN",
+        "description": "Single storey rear extension which would extend beyond the rear wall of the original house by 4m, for which the maximum height would be 3.5m, and for which the height of the eaves would be 2.6m.",
+        "status": "Approved",
+        "received": "2026-08-06",
+        "url": "https://publicaccess.cheltenham.gov.uk/online-applications/applicationDetails.do?keyVal=TJC3DXELLHZ00&activeTab=summary",
+        "lat": 51.899926,
+        "lon": -2.093311
       }
     ],
     "serious_collisions": [
@@ -1519,17 +1559,27 @@
       "group": "Everyday Services",
       "label": "Parcel Pick-up Points",
       "mode": "nearest",
-      "in_ward": 2,
+      "in_ward": 3,
       "items": [
         {
-          "name": "Post Office Tewkesbury Road",
-          "address": "93 Tewkesbury Road",
-          "postcode": "GL51 9DB",
-          "detail": "DPD Pickup",
-          "lat": 51.909538,
-          "lon": -2.091068,
-          "in_ward": false,
-          "distance_miles": 0.32
+          "name": "Alstone Local Cheltenham",
+          "address": "93 Gloucester Road",
+          "postcode": "GL51 8NG",
+          "detail": "InPost locker",
+          "lat": 51.90164,
+          "lon": -2.09231,
+          "in_ward": true,
+          "distance_miles": 0.33
+        },
+        {
+          "name": "Tesco Superstore Cheltenham",
+          "address": "Colletts Drive, Lansdown",
+          "postcode": "GL51 8JQ",
+          "detail": "InPost locker",
+          "lat": 51.90558,
+          "lon": -2.08707,
+          "in_ward": true,
+          "distance_miles": 0.36
         },
         {
           "name": "Shell Arle Service Station",
@@ -1540,56 +1590,6 @@
           "lon": -2.1003,
           "in_ward": true,
           "distance_miles": 0.49
-        },
-        {
-          "name": "YEEP! The Umbrella",
-          "address": "Orchard Way",
-          "postcode": "GL51 7LD",
-          "detail": "DPD Pickup",
-          "lat": 51.908485,
-          "lon": -2.107552,
-          "in_ward": false,
-          "distance_miles": 0.54
-        },
-        {
-          "name": "Tesco Express Queens Road Cheltenham",
-          "address": "Queens Road",
-          "postcode": "GL50 2NH",
-          "detail": "InPost locker",
-          "lat": 51.89749,
-          "lon": -2.09842,
-          "in_ward": true,
-          "distance_miles": 0.59
-        },
-        {
-          "name": "Hesters Way Post Office",
-          "address": "8-10 Hesters Way Road",
-          "postcode": "GL51 0DA",
-          "detail": "DPD Pickup",
-          "lat": 51.90963,
-          "lon": -2.1125,
-          "in_ward": false,
-          "distance_miles": 0.77
-        },
-        {
-          "name": "Family Shopper",
-          "address": "278-282 High Street",
-          "postcode": "GL50 3HQ",
-          "detail": "DPD Pickup",
-          "lat": 51.902645,
-          "lon": -2.078019,
-          "in_ward": false,
-          "distance_miles": 0.78
-        },
-        {
-          "name": "Wymans Brook Shopping Centre",
-          "address": "Wyman's Brook",
-          "postcode": "GL50 4RA",
-          "detail": "InPost locker",
-          "lat": 51.91603,
-          "lon": -2.08702,
-          "in_ward": false,
-          "distance_miles": 0.79
         }
       ]
     },
@@ -1642,7 +1642,7 @@
         {
           "name": "St Paul's Hub",
           "address": "St Paul's Walk, Cheltenham, GL50 4GG",
-          "url": "https://www.cheltenham.gov.uk/info/20005/",
+          "url": "https://www.cheltenham.gov.uk/housing/cheltenham-borough-council-housing-services/your-community/community-hubs/",
           "lat": 51.9087,
           "lon": -2.0791,
           "in_ward": false,
@@ -1929,7 +1929,7 @@
           "name": "Jumpin Fun",
           "address": "Cotswold Fabric Warehouse, Tewkesbury Road, Cheltenham, Gloucestershire",
           "postcode": "GL51 9AH",
-          "detail": "Rating 5",
+          "detail": "Rating 4",
           "type": "Restaurant/Cafe/Canteen",
           "lat": 51.908704,
           "lon": -2.090746,

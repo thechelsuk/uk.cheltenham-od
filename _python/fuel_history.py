@@ -63,7 +63,7 @@ def last_snapshot_per_day(commits):
 def write_history(path, records):
     helper.write_json(path, {
         "source": "GOV.UK fuel price scheme",
-        "source_url": "https://www.gov.uk/check-fuel-prices",
+        "source_url": "https://www.gov.uk/guidance/access-the-latest-fuel-prices-and-forecourt-data-via-api-or-email",
         "licence": "Open Government Licence v3.0",
         "refresh": "hourly",
         "fuels": list(HISTORY_FUELS),

@@ -11,7 +11,7 @@ sponsor:
     url: "https://tidd.ly/4h3ASX3"
     logo: "/assets/images/sponsors/yale.png"
     name: "Yale Smart Alarms"
-    tagline: "Add security and peace of mind with a Yale Smart Alarm system - 6 months enhanced free"
+    tagline: "Add security and peace of mind with a Yale Smart Alarm premium kit"
     type: "Affiliate Link"
 ---
 

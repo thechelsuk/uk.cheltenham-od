@@ -110,3 +110,11 @@ def test_write_paginated_page_writes_front_matter_and_sponsor_include(tmp_path):
     assert meta["permalink"] == "/cheltenham-news/page/3/"
     assert meta["page_num"] == 3 and meta["robots"] == "noindex,follow"
     assert body.strip() == "{% include sponsor.html %}"
+
+
+def test_a_headline_whose_page_is_gone_is_marked_unavailable(monkeypatch):
+    monkeypatch.setattr(news.helper, "is_dead_website", lambda url: "removed" in url)
+    items = [{"link": "https://www.bbc.co.uk/programmes/removed"}, {"link": "https://www.bbc.co.uk/news/live"}]
+    news.mark_unavailable(items)
+    assert items[0]["unavailable"] is True
+    assert "unavailable" not in items[1]
