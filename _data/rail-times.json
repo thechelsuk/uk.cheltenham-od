@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T20:00:08+00:00",
+  "generated_at": "2026-11-15T20:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,24 +14,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-15T19:54",
-      "expected": "2026-11-15T20:01",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-15T20:00",
-      "expected": "2026-11-15T20:00",
-      "status": "On time",
+      "expected": "2026-11-15T20:06",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -138,13 +123,13 @@
     },
     {
       "scheduled": "2026-11-15T20:46",
-      "expected": "2026-11-15T20:46",
-      "status": "On time",
+      "expected": "2026-11-15T20:48",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on a train",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
@@ -165,20 +150,31 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T20:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Leicester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Coleshill Parkway",
+        "Nuneaton",
+        "Hinckley",
+        "Narborough",
+        "South Wigston",
+        "Leicester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-15T19:52",
-      "expected": "2026-11-15T20:00",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T20:08",
       "expected": "2026-11-15T20:08",
@@ -242,7 +238,7 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on a train",
       "mode": "train"
     },
     {
@@ -254,6 +250,17 @@
       "origin": "York",
       "destination": "Bristol Temple Meads",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T20:58",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Leicester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
