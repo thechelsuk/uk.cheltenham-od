@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T21:00:08+00:00",
+  "generated_at": "2026-11-15T21:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,50 +9,10 @@
     "crs": "CNM"
   },
   "messages": [
-    "Trains between Edinburgh and North Berwick / Dunbar will be cancelled, delayed by up to 120 minutes or revised. Latest information and the full impact on your journey can be found in the Disruptions area of the National Rail website.",
+    "No trains between Edinburgh and North Berwick / Newcastle. Latest information and the full impact on your journey can be found in the Disruptions area of the National Rail website.",
     "The ticket office is closed at Cheltenham Spa station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-15T20:59",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Leicester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "University",
-        "Birmingham New Street",
-        "Coleshill Parkway",
-        "Nuneaton",
-        "Hinckley",
-        "Narborough",
-        "South Wigston",
-        "Leicester"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-15T21:00",
-      "expected": "2026-11-15T21:00",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T21:11",
       "expected": "2026-11-15T21:11",
@@ -140,20 +100,24 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T22:52",
+      "expected": "2026-11-15T22:52",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-15T20:58",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Cardiff Central",
-      "destination": "Leicester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-15T21:09",
       "expected": "2026-11-15T21:09",
@@ -228,6 +192,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-15T22:50",
+      "expected": "2026-11-15T22:50",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "York",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     }
