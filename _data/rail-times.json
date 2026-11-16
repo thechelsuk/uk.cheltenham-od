@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T21:00:08+00:00",
+  "generated_at": "2026-11-16T21:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,24 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-16T20:15",
-      "expected": "2026-11-16T20:58",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by an obstruction on the track",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T20:52",
-      "expected": "2026-11-16T21:01",
+      "expected": "2026-11-16T21:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -51,8 +35,8 @@
     },
     {
       "scheduled": "2026-11-16T21:02",
-      "expected": "2026-11-16T21:02",
-      "status": "On time",
+      "expected": "2026-11-16T21:04",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -96,7 +80,7 @@
     },
     {
       "scheduled": "2026-11-16T21:12",
-      "expected": "2026-11-16T21:27",
+      "expected": "2026-11-16T21:31",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -111,8 +95,8 @@
     },
     {
       "scheduled": "2026-11-16T21:15",
-      "expected": "2026-11-16T21:15",
-      "status": "On time",
+      "expected": "2026-11-16T21:17",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -195,23 +179,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T22:03",
+      "expected": "2026-11-16T22:03",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-16T20:14",
-      "expected": "2026-11-16T20:57",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by an obstruction on the track",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T20:50",
-      "expected": "2026-11-16T21:00",
+      "expected": "2026-11-16T21:02",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -233,7 +221,7 @@
     },
     {
       "scheduled": "2026-11-16T21:10",
-      "expected": "2026-11-16T21:26",
+      "expected": "2026-11-16T21:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -244,8 +232,8 @@
     },
     {
       "scheduled": "2026-11-16T21:14",
-      "expected": "2026-11-16T21:14",
-      "status": "On time",
+      "expected": "2026-11-16T21:16",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
@@ -294,6 +282,17 @@
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T22:01",
+      "expected": "2026-11-16T22:01",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
