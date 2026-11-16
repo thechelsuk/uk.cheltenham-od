@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:00:08+00:00",
+  "generated_at": "2026-11-16T11:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,7 +8,11 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "Trains running between Edinburgh and Newcastle may be cancelled in full, delayed by up to 45 minutes or revised to only run for part of their normal journey. More information can be found in the Disruptions area of the National Rail website .",
+    "The ticket office is closed at Cheltenham Spa station.",
+    "Trains at Manchester Piccadilly may be cancelled, delayed by up to 40 minutes or revised. Further information can be found in the Disruptions area of the National Rail website ."
+  ],
   "departures": [
     {
       "scheduled": "2026-11-16T10:59",
@@ -37,27 +41,6 @@
         "Alnmouth",
         "Berwick-upon-Tweed",
         "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-16T11:03",
-      "expected": "2026-11-16T11:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
       ],
       "mode": "train"
     },
@@ -180,6 +163,22 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T11:48",
+      "expected": "2026-11-16T11:48",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -268,6 +267,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T11:46",
+      "expected": "2026-11-16T11:46",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
