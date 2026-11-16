@@ -1,0 +1,14 @@
+---
+# Runs the Python tests before every commit that touches the fetchers, their
+# tests, the workflows or the site config. Data-only and content-only commits
+# skip it; CI (python-tests.yml) still runs the full suite on push and PR.
+# Install once per checkout: .venv/bin/python -m pre_commit install
+repos:
+  - repo: local
+    hooks:
+      - id: pytest
+        name: Python tests
+        entry: .venv/bin/python -m pytest -q _python/tests
+        language: system
+        pass_filenames: false
+        files: ^(_python/|\.github/|_config.*\.yml$|\.gitignore$|\.pre-commit-config\.yaml$)
