@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T08:50:08+00:00",
+  "generated_at": "2026-11-16T08:55:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,6 @@
     "The ticket office is closed at Cheltenham Spa station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-16T08:52",
-      "expected": "2026-11-16T08:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-16T08:59",
       "expected": "2026-11-16T08:59",
@@ -171,20 +150,29 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T09:40",
+      "expected": "2026-11-16T09:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-16T08:50",
-      "expected": "2026-11-16T08:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-16T08:57",
       "expected": "2026-11-16T08:57",
@@ -270,6 +258,17 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T09:39",
+      "expected": "2026-11-16T09:39",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
