@@ -26,6 +26,7 @@ Dates and times can change, so check the organiser's page before you set off. Wh
 ## Christmas Markets and Late-Night Shopping
 
 - **Friday 27 November, 17:00 to 21:00, and Sunday 29 November, 11:00 to 16:00:** Christmas artisan markets at [Pittville Pump Room](https://pittvillepumproom.org.uk/christmas2026/), both free to enter.
+- **Sunday 29 November, 11:00 to 16:00:** the [Suffolks Christmas Market](https://thesuffolks.co.uk/markets/), run by The Suffolks Traders Association, with independent stalls along Suffolk Parade, Suffolk Road and Great Norwood Street.
 - **Sunday 6 December, 10:30 to 15:00:** [Cambray Christmas Market](https://www.cambray.org/events/cambray-christmas-market/) in Cambray Place, run by Cambray Baptist Church, with community stalls, choirs and Father Christmas.
 - **10 to 23 December:** the Cheltenham Christmas Market on the Promenade, with more than 40 chalets and free entry, according to [Cheltenham BID](https://cheltenhambid.co.uk/christmas-in-cheltenham/).
 - **Thursday 3 and Thursday 10 December:** late-night shopping, with shops open until 19:00 or 20:00. Council car parks are free from 15:00 on both evenings; Regent Arcade's car park isn't included. Our [car parks page](/cheltenham-car-parks) lists every car park with its fees and hours.
