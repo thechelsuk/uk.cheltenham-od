@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T20:15:08+00:00",
+  "generated_at": "2026-11-16T20:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-16T19:52",
-      "expected": "2026-11-16T20:22",
+      "expected": "2026-11-16T20:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -32,31 +32,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-16T20:12",
-      "expected": "2026-11-16T20:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T20:15",
-      "expected": "2026-11-16T20:56",
+      "expected": "2026-11-16T20:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -111,8 +88,8 @@
     },
     {
       "scheduled": "2026-11-16T20:52",
-      "expected": "2026-11-16T20:52",
-      "status": "On time",
+      "expected": "2026-11-16T20:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -174,12 +151,27 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T21:12",
+      "expected": "2026-11-16T21:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-16T19:51",
-      "expected": "2026-11-16T20:21",
+      "expected": "2026-11-16T20:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -189,19 +181,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-16T20:10",
-      "expected": "2026-11-16T20:13",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Leeds",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T20:14",
-      "expected": "2026-11-16T20:55",
+      "expected": "2026-11-16T20:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -234,19 +215,19 @@
     },
     {
       "scheduled": "2026-11-16T20:33",
-      "expected": "2026-11-16T20:33",
-      "status": "On time",
+      "expected": "2026-11-16T20:38",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by congestion",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-16T20:50",
-      "expected": "2026-11-16T20:50",
-      "status": "On time",
+      "expected": "2026-11-16T20:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -262,6 +243,17 @@
       "operator": "CrossCountry",
       "origin": "Gloucester",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T21:10",
+      "expected": "2026-11-16T21:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
     }
