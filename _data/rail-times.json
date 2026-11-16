@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T20:25:08+00:00",
+  "generated_at": "2026-11-16T20:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,27 +12,6 @@
     "Trains between Exeter St Davids and Newton Abbot may be cancelled, delayed by up to 15 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-16T19:52",
-      "expected": "2026-11-16T20:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-16T20:15",
       "expected": "2026-11-16T20:56",
@@ -51,8 +30,8 @@
     },
     {
       "scheduled": "2026-11-16T20:41",
-      "expected": "2026-11-16T20:41",
-      "status": "On time",
+      "expected": "2026-11-16T20:43",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -71,7 +50,7 @@
     },
     {
       "scheduled": "2026-11-16T20:52",
-      "expected": "2026-11-16T20:56",
+      "expected": "2026-11-16T20:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,20 +148,24 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T21:33",
+      "expected": "2026-11-16T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-16T19:51",
-      "expected": "2026-11-16T20:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-16T20:14",
       "expected": "2026-11-16T20:55",
@@ -196,7 +179,7 @@
     },
     {
       "scheduled": "2026-11-16T20:27",
-      "expected": "2026-11-16T20:32",
+      "expected": "2026-11-16T20:33",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -207,7 +190,7 @@
     },
     {
       "scheduled": "2026-11-16T20:33",
-      "expected": "2026-11-16T20:38",
+      "expected": "2026-11-16T20:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -218,7 +201,7 @@
     },
     {
       "scheduled": "2026-11-16T20:50",
-      "expected": "2026-11-16T20:55",
+      "expected": "2026-11-16T20:54",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -257,6 +240,17 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T21:33",
+      "expected": "2026-11-16T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
       "reason": "",
       "mode": "train"
     }
