@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T06:55:08+00:00",
+  "generated_at": "2026-11-16T07:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,28 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-16T06:48",
-      "expected": "2026-11-16T06:54",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T07:14",
-      "expected": "2026-11-16T07:29",
+      "expected": "2026-11-16T07:33",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -64,12 +44,12 @@
     {
       "scheduled": "2026-11-16T07:18",
       "expected": null,
-      "status": "Delayed",
+      "status": "Cancelled",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Stansted Airport",
-      "reason": "",
+      "reason": "This service has been cancelled because of a fault on this train",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcestershire Parkway",
@@ -199,12 +179,35 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T07:55",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
+      "reason": "This service has been delayed by a fault on this train",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-16T07:12",
-      "expected": "2026-11-16T07:28",
+      "expected": "2026-11-16T07:32",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -216,12 +219,12 @@
     {
       "scheduled": "2026-11-16T07:17",
       "expected": null,
-      "status": "Delayed",
+      "status": "Cancelled",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Stansted Airport",
-      "reason": "",
+      "reason": "This service has been cancelled because of a fault on this train",
       "mode": "train"
     },
     {
@@ -288,6 +291,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T07:54",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Gloucester",
+      "destination": "Nottingham",
+      "reason": "This service has been delayed by a fault on this train",
       "mode": "train"
     }
   ],
