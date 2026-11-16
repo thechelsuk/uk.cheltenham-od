@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Staying Safe Online: A Guide to Protecting Your Digital Life"
+nav_title: "Staying Safe Online"
 seo_title: "Staying Safe Online: Passwords, Passkeys & Scams"
 seo: "Simple steps to protect your accounts, devices and money online: password managers, two-step verification, passkeys, data breach alerts and spotting scams."
 description: "A plain-English guide to protecting your accounts, devices and money online, from password managers and passkeys to data breach alerts and spotting scams."

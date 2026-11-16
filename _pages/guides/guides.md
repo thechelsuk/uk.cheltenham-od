@@ -46,6 +46,14 @@ Planning a day out, a weekend or a festival trip? This guide covers where to sta
 - [Points of interest in and around Cheltenham](/cheltenham-points-of-interest)
 - [What's on in Cheltenham](/newsletter) — sign up for the weekly newsletter
 
+### Christmas and Winter in Cheltenham
+
+The Christmas lights switch-ons, markets, carols and Santa, alongside the practical side of winter: school holidays, bank holidays, buses over Christmas and how the county's roads are gritted.
+
+- [Read the Christmas and winter guide](/cheltenham-christmas-guide-2026)
+- [Schools in Cheltenham](/cheltenham-schools)
+- [Cheltenham weather forecast](/cheltenham-10-day-weather-forecast)
+
 ### Staying Safe Online
 
 Simple steps to protect your accounts, devices and money: a password manager, two-step verification and passkeys, alerts when your details turn up in a data breach, and the warning signs of a scam.

@@ -6,6 +6,7 @@ Run from the repository root:
 """
 import importlib.util
 import pathlib
+import pytest
 
 SPEC = importlib.util.spec_from_file_location(
     "weekly_newsletter", pathlib.Path(__file__).resolve().parents[1] / "local" / "weekly-newsletter.py"
@@ -13,6 +14,23 @@ SPEC = importlib.util.spec_from_file_location(
 assert SPEC is not None and SPEC.loader is not None
 newsletter = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(newsletter)
+
+
+def test_default_issue_date_is_monday_when_run_on_sunday_or_monday():
+    assert newsletter.default_issue_date(newsletter.date(2026, 11, 15)) == newsletter.date(2026, 11, 16)
+    assert newsletter.default_issue_date(newsletter.date(2026, 11, 16)) == newsletter.date(2026, 11, 16)
+
+
+def test_save_issue_file_uses_issue_date_and_preserves_existing_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(newsletter, "OUT_DIR", tmp_path)
+    issue_date = newsletter.date(2026, 11, 16)
+    path = newsletter.save_issue_file(issue_date, "review this issue\n")
+    assert path == tmp_path / "2026-11-16.md"
+    assert path.read_text(encoding="utf-8") == "review this issue\n"
+
+    with pytest.raises(FileExistsError, match="Refusing to overwrite existing newsletter issue"):
+        newsletter.save_issue_file(issue_date, "replacement issue\n")
+    assert path.read_text(encoding="utf-8") == "review this issue\n"
 
 
 def test_top_stories_leave_out_our_own_posts(monkeypatch):

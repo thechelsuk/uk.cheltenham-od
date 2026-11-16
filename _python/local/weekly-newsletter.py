@@ -2,11 +2,10 @@
 """Interactively build a draft issue of The Cheltenham Week Ahead newsletter.
 
 You run this yourself, whenever you want to prepare an issue — there's no
-schedule. You usually run it the day before the issue goes out (a Sunday for
-a Monday issue), so the issue covers a rolling 7-day window starting
-tomorrow (tomorrow to tomorrow + 6), and is dated to publish tomorrow at
-08:45. Every section (weather, roadworks, title, front matter) is anchored to
-that one issue date. Most sections read data the site's own fetchers already
+schedule. You usually run it on Sunday or Monday for a Monday issue, so the
+issue covers the 7-day week starting on Monday and is dated to publish that
+Monday at 08:45. Every section (weather, roadworks, title, front matter) is
+anchored to that one issue date. Most sections read data the site's own fetchers already
 maintain (weather, roadworks, the news archive) plus the hand-picked venue
 shortlist in newsletter-venues.json. "What's On" reuses
 _python/local/event-roundup.py's own fetch/dedupe/review pipeline (loaded
@@ -17,16 +16,15 @@ include, formatting your picks into the issue instead of writing its usual
 _events/*.md post. Events the feeds miss go in _data/candidate-events.json,
 one of those sources; each run first removes any that have already ended.
 
-Nothing is published. This writes _data/newsletter-draft.json — one scratch
-slot holding the complete text of the issue (front matter and all), which
-the "Newsletter" tab in the studio app (uk.cheltenham-od.studio) shows with
-a one-click copy. That file is gitignored: it's working state for you, not
-something the site needs to ship. To publish a reviewed draft, copy it from the studio and save it yourself
-as _newsletters/<issue-date>.md, then commit and push — there's no
-auto-publish step, on purpose, so nothing reaches the public /newsletter
-archive without you having looked at it first.
+Nothing is published automatically. This writes the complete issue to
+_newsletters/<monday>.md and to _data/newsletter-draft.json — a scratch slot
+which the "Newsletter" tab in the studio app (uk.cheltenham-od.studio) shows
+with a one-click copy. The JSON file is gitignored; the Markdown file is ready
+for review and commit. If a Markdown file for that date already exists, the
+script refuses to overwrite it. Nothing reaches the public /newsletter archive
+until you have reviewed the issue and committed and pushed it.
 
-    python3 _python/weekly-newsletter.py                        # draft tomorrow's issue
+    python3 _python/weekly-newsletter.py                        # draft this/next Monday's issue
     python3 _python/weekly-newsletter.py --for-date 2026-10-05  # draft the issue for a specific date
     python3 _python/weekly-newsletter.py --days 45              # widen the events search window
 """
@@ -43,7 +41,7 @@ import helper
 
 ROOT = helper.repo_root()
 DATA = ROOT / "_data"
-OUT_DIR = ROOT / "_newsletters"          # published issues live here, but this script never writes to it
+OUT_DIR = ROOT / "_newsletters"
 DRAFT_PATH = DATA / "newsletter-draft.json"
 CANDIDATES_PATH = DATA / "candidate-events.json"  # hand-added events our feeds miss; past ones prune themselves
 SITE_URL = helper.site_url()             # links in the draft must resolve outside the site, e.g. in an email
@@ -130,6 +128,26 @@ def section(heading, content):
     if not content:
         return None
     return f"## {heading}\n\n{content.strip()}"
+
+
+def default_issue_date(run_date):
+    """Use today when run on Monday; otherwise keep the existing tomorrow default."""
+    return run_date if run_date.weekday() == 0 else run_date + timedelta(days=1)
+
+
+def issue_file_path(issue_date):
+    return OUT_DIR / f"{issue_date.isoformat()}.md"
+
+
+def save_issue_file(issue_date, content):
+    path = issue_file_path(issue_date)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open("x", encoding="utf-8") as f:
+            f.write(content)
+    except FileExistsError:
+        raise FileExistsError(f"Refusing to overwrite existing newsletter issue: {path}") from None
+    return path
 
 
 # --------------------------------------------------------------------------
@@ -404,10 +422,14 @@ def venue_section(recent_venues):
 # --------------------------------------------------------------------------
 
 def build(today, since_date, event_days_ahead):
-    """`today` is the issue date: the day it goes out and the first day of its rolling 7-day
-    window — every section (weather, roadworks, title, front matter) is anchored to this one
+    """`today` is the Monday issue date: the day it goes out and the first day of its 7-day
+    week — every section (weather, roadworks, title, front matter) is anchored to this one
     date, so they can never drift apart the way they did when the title used a different date
     than the content."""
+    issue_path = issue_file_path(today)
+    if issue_path.exists():
+        raise FileExistsError(f"Refusing to overwrite existing newsletter issue: {issue_path}")
+
     week_end = today + timedelta(days=6)
     publish_at = datetime.combine(today, PUBLISH_TIME)
     issues = existing_issues()
@@ -437,8 +459,7 @@ def build(today, since_date, event_days_ahead):
     ]
     body = "\n\n".join(b for b in blocks if b) + "\n"
 
-    # This exact text is what you copy from the studio and save as _newsletters/<monday>.md to
-    # publish it — so it needs to be the complete, valid file, front matter included.
+    # This is the complete, valid issue file, including its front matter.
     full_file = "\n".join([
         "---",
         "layout: site/newsletter-issue",
@@ -465,23 +486,24 @@ def build(today, since_date, event_days_ahead):
         "save_as": f"_newsletters/{today.isoformat()}.md",
         "content": full_file,
     }
+    saved_issue = save_issue_file(today, full_file)
     DATA.mkdir(exist_ok=True)
     with open(DRAFT_PATH, "w", encoding="utf-8") as f:
         json.dump(draft, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    print(f"\nWrote {DRAFT_PATH.relative_to(ROOT)} — review and copy it from the studio's Newsletter tab, "
-          f"save as {draft['save_as']} to publish")
+    print(f"\nWrote {saved_issue.relative_to(ROOT)} and {DRAFT_PATH.relative_to(ROOT)} — "
+          "review the Markdown issue before committing and pushing")
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--for-date", help="draft the issue going out on this date (YYYY-MM-DD) "
-                                            "instead of tomorrow's")
+                                            "instead of the default date")
     parser.add_argument("--days", type=int, default=EVENT_DAYS_AHEAD,
                          help=f"how many days ahead to search for events (default {EVENT_DAYS_AHEAD})")
     args = parser.parse_args()
 
-    today = date.fromisoformat(args.for_date) if args.for_date else date.today() + timedelta(days=1)
+    today = date.fromisoformat(args.for_date) if args.for_date else default_issue_date(date.today())
 
     # An issue already saved for this date isn't "the last issue" — it's the one being redrafted.
     issues = [i for i in existing_issues() if i["issue_date"] != today.isoformat()]

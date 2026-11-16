@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Visiting Cheltenham - a Local Data Guide
+nav_title: "Visiting Cheltenham"
 seo: "Planning a visit to Cheltenham? A local guide to where to stay, what to see, where to eat and how to get around - backed by open data."
 description: "A practical guide to visiting Cheltenham, Gloucestershire. Where to stay, things to do, eating out and getting around, all backed by open data."
 type: "landing"
