@@ -22,7 +22,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:20261021-ons-private-rents--september-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20261021T093000
 DTEND;TZID=Europe/London:20261021T100000
 SUMMARY:ONS private rents (September data)
@@ -36,7 +36,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261022-ons-employee-earnings--ashe-2026@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20261022T093000
 DTEND;TZID=Europe/London:20261022T100000
 SUMMARY:ONS employee earnings (ASHE 2026)
@@ -51,7 +51,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261112-nhs-a-e-figures--october-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20261112T093000
 DTEND;TZID=Europe/London:20261112T100000
 SUMMARY:NHS A&E figures (October data)
@@ -64,22 +64,8 @@ URL:https://www.england.nhs.uk/statistics/statistical-work-areas/ae-waiting
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:20261116-check--ofcom-connected-nations-2026-report@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
-DTSTART;VALUE=DATE:20261116
-DTEND;VALUE=DATE:20261117
-SUMMARY:[Expected] Check: Ofcom Connected Nations 2026 report
-DESCRIPTION:Not confirmed. The 2025 report came out on 19 November 2025. Ma
- nual: save the new coverage CSVs\, then run process-mobile-coverage.py and
-  process-wardband.py.\n\nhttps://www.ofcom.org.uk/phones-and-broadband/cov
- erage-and-speeds/connected-nations-and-infrastructure-reports
-URL:https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/conne
- cted-nations-and-infrastructure-reports
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:20261118-ons-private-rents--october-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20261118T093000
 DTEND;TZID=Europe/London:20261118T100000
 SUMMARY:ONS private rents (October data)
@@ -90,8 +76,23 @@ URL:https://www.ons.gov.uk/releases/privaterentandhousepricesuknovember2026
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:ofcom-connected-nations-2026@cheltenham-od.uk
+DTSTAMP:20261116T000148Z
+DTSTART;VALUE=DATE:20261123
+DTEND;VALUE=DATE:20261124
+SUMMARY:[Expected] Check: Ofcom Connected Nations 2026 report
+DESCRIPTION:Not out on 16 November 2026 (Ofcom's coverage page lists nothin
+ g newer than the 2025 report). The 2025 report came out on 19 November 202
+ 5\; check again. When it's out\, save the new coverage CSVs\, then run pro
+ cess-mobile-coverage.py and process-wardband.py.\n\nhttps://www.ofcom.org.
+ uk/phones-and-broadband/coverage-and-speeds/connected-nations-2025
+URL:https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/conne
+ cted-nations-2025
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:20261126-refresh-the-housing-squeeze-draft@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20261126T093000
 DTEND;TZID=Europe/London:20261126T100000
 SUMMARY:MHCLG housing supply (net additional dwellings 2025-26)
@@ -107,7 +108,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20261210-nhs-a-e-figures--november-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20261210T093000
 DTEND;TZID=Europe/London:20261210T100000
 SUMMARY:NHS A&E figures (November data)
@@ -121,7 +122,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270114-nhs-a-e-figures--december-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20270114T093000
 DTEND;TZID=Europe/London:20270114T100000
 SUMMARY:NHS A&E figures (December data)
@@ -135,7 +136,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270211-nhs-a-e-figures--january-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20270211T093000
 DTEND;TZID=Europe/London:20270211T100000
 SUMMARY:NHS A&E figures (January data)
@@ -151,7 +152,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270301-check--dfe-pupil-absence-full-year-2025-26-date@cheltenham-od.
  uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20270301
 DTEND;VALUE=DATE:20270302
 SUMMARY:[Expected] Check: DfE pupil absence full year 2025/26 date
@@ -168,7 +169,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270311-nhs-a-e-figures--february-data@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;TZID=Europe/London:20270311T093000
 DTEND;TZID=Europe/London:20270311T100000
 SUMMARY:NHS A&E figures (February data)
@@ -186,7 +187,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270503-check--dft-road-casualties-provisional-2026-results@cheltenham
  -od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20270503
 DTEND;VALUE=DATE:20270504
 SUMMARY:[Expected] Check: DfT road casualties provisional 2026 results
@@ -200,7 +201,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270504-check--ofcom-connected-nations-spring-update@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20270504
 DTEND;VALUE=DATE:20270505
 SUMMARY:[Expected] Check: Ofcom Connected Nations spring update
@@ -214,7 +215,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270701-check--dft-road-casualties-final-2026-results@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20270701
 DTEND;VALUE=DATE:20270702
 SUMMARY:[Expected] Check: DfT road casualties final 2026 results
@@ -230,7 +231,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20270721-check--mhclg-fire-statistics-incident-level-datasets@cheltenha
  m-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20270721
 DTEND;VALUE=DATE:20270722
 SUMMARY:[Expected] Check: MHCLG fire statistics incident level datasets
@@ -244,7 +245,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:20270802-check--dfe-pupil-absence-autumn-term-2026-27@cheltenham-od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20270802
 DTEND;VALUE=DATE:20270803
 SUMMARY:[Expected] Check: DfE pupil absence autumn term 2026/27
@@ -259,7 +260,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:20271001-check--dfe-pupil-absence-autumn-and-spring-2026-27@cheltenham-
  od.uk
-DTSTAMP:20261114T094329Z
+DTSTAMP:20261116T000148Z
 DTSTART;VALUE=DATE:20271001
 DTEND;VALUE=DATE:20271002
 SUMMARY:[Expected] Check: DfE pupil absence autumn and spring 2026/27
