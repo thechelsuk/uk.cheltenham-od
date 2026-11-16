@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:50:09+00:00",
+  "generated_at": "2026-11-16T11:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,24 +15,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-16T11:48",
-      "expected": "2026-11-16T11:48",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill",
-        "Worcester Foregate Street"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T11:52",
-      "expected": "2026-11-16T12:01",
+      "expected": "2026-11-16T11:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -53,7 +37,7 @@
     },
     {
       "scheduled": "2026-11-16T11:59",
-      "expected": "2026-11-16T12:01",
+      "expected": "2026-11-16T12:04",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -133,8 +117,8 @@
     },
     {
       "scheduled": "2026-11-16T12:15",
-      "expected": "2026-11-16T12:17",
-      "status": "Delayed",
+      "expected": "2026-11-16T12:15",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -169,8 +153,8 @@
     },
     {
       "scheduled": "2026-11-16T12:35",
-      "expected": "2026-11-16T12:35",
-      "status": "On time",
+      "expected": "2026-11-16T12:39",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -181,23 +165,32 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T12:40",
+      "expected": "2026-11-16T12:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-16T11:46",
-      "expected": "2026-11-16T11:46",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Foregate Street",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T11:51",
-      "expected": "2026-11-16T12:00",
+      "expected": "2026-11-16T11:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -208,7 +201,7 @@
     },
     {
       "scheduled": "2026-11-16T11:58",
-      "expected": "2026-11-16T12:00",
+      "expected": "2026-11-16T12:03",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -230,8 +223,8 @@
     },
     {
       "scheduled": "2026-11-16T12:14",
-      "expected": "2026-11-16T12:16",
-      "status": "Delayed",
+      "expected": "2026-11-16T12:14",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -274,12 +267,23 @@
     },
     {
       "scheduled": "2026-11-16T12:33",
-      "expected": "2026-11-16T12:33",
-      "status": "On time",
+      "expected": "2026-11-16T12:38",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T12:38",
+      "expected": "2026-11-16T12:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Paignton",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
