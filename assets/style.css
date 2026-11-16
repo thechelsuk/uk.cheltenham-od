@@ -1776,7 +1776,7 @@ button:disabled,
         margin-top: 1.5em;
     }
 
-    /* nine icons overflow one row on a phone, so wrap them 5 + 4 with equal
+    /* ten icons overflow one row on a phone, so wrap them 5 + 5 with equal
        spacing between icons and between the rows */
     .social-row {
         flex-wrap: wrap;
@@ -2094,6 +2094,53 @@ body.widget-frame {
 
 .kind-line > div > .footnote {
     display: block;
+}
+
+/* A post's byline row with an action on the right: the Google "preferred source" button
+   (_includes/preferred-source.html). On phones it wraps under the byline. */
+.kind-line--action {
+    grid-template-columns: 1.9rem minmax(0, 1fr) auto;
+    align-items: center;
+}
+
+.ps-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    padding: 0.3em 0.7em;
+    border: 1px solid var(--accent-dark);
+    border-radius: 999px;
+    color: var(--accent-dark);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ps-button:hover,
+.ps-button:focus-visible {
+    background: color-mix(in srgb, var(--accent-dark) 12%, transparent);
+}
+
+.ps-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentcolor;
+}
+
+@media screen and (max-width: 640px) {
+    .kind-line--action {
+        grid-template-columns: 1.9rem minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .kind-line--action .ps-button {
+        grid-column: 2;
+        justify-self: start;
+        margin-top: 0.5em;
+    }
 }
 
 .latest-title {

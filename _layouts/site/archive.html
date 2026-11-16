@@ -10,6 +10,7 @@
             <ul class="header-facts">
                 <li><strong>{{ items | size }}</strong> posts</li>
                 <li><strong>RSS Feed</strong> <a href="/feeds/main.xml">subscribe via our feed/rss &rarr;</a></li>
+                {% include preferred-source.html variant="fact" %}
             </ul>
         </header>
         {% include section-links.html %}
