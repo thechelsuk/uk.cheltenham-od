@@ -38,8 +38,10 @@ def test_site_builds_use_the_production_config():
     for workflow in ("deploy-pages.yml", "link-checker.yml"):
         text = (ROOT / ".github" / "workflows" / workflow).read_text()
         builds = re.findall(r"jekyll build[^\n]*", text)
-        assert builds, workflow
-        for build in builds:
+        jekyll_args = re.findall(r"jekyll_args:\s*([^\n]+)", text)
+        build_args = [*builds, *[f"jekyll {arg}" for arg in jekyll_args]]
+        assert build_args, workflow
+        for build in build_args:
             assert "--config _config.yml,_config.production.yml" in build, f"{workflow}: {build}"
 
 
