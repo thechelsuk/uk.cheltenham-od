@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T12:35:16+00:00",
+  "generated_at": "2026-11-16T12:40:12+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -189,23 +189,29 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T13:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a fault with the signalling system",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-16T12:27",
-      "expected": "2026-11-16T12:35",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by more trains than usual needing repairs at the same time",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T12:32",
-      "expected": "2026-11-16T12:39",
+      "expected": "2026-11-16T12:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -278,6 +284,17 @@
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T13:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a fault with the signalling system",
       "mode": "train"
     }
   ],
