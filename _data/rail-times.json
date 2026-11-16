@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T19:15:08+00:00",
+  "generated_at": "2026-11-16T19:20:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -28,7 +28,7 @@
     },
     {
       "scheduled": "2026-11-16T18:52",
-      "expected": "2026-11-16T19:38",
+      "expected": "2026-11-16T19:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -52,7 +52,7 @@
     },
     {
       "scheduled": "2026-11-16T19:12",
-      "expected": "2026-11-16T19:18",
+      "expected": "2026-11-16T19:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -72,28 +72,14 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-16T19:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "calling_at": [
-        "Gloucester"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T19:23",
-      "expected": "2026-11-16T19:23",
-      "status": "On time",
+      "expected": "2026-11-16T19:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by congestion",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -106,7 +92,7 @@
     },
     {
       "scheduled": "2026-11-16T19:30",
-      "expected": null,
+      "expected": "2026-11-16T19:59",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -152,6 +138,24 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T19:49",
+      "expected": "2026-11-16T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -168,7 +172,7 @@
     },
     {
       "scheduled": "2026-11-16T18:50",
-      "expected": "2026-11-16T19:37",
+      "expected": "2026-11-16T19:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -179,7 +183,7 @@
     },
     {
       "scheduled": "2026-11-16T19:10",
-      "expected": "2026-11-16T19:17",
+      "expected": "2026-11-16T19:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -189,25 +193,14 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-16T19:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-16T19:21",
-      "expected": "2026-11-16T19:21",
-      "status": "On time",
+      "expected": "2026-11-16T19:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by congestion",
       "mode": "train"
     },
     {
@@ -223,7 +216,7 @@
     },
     {
       "scheduled": "2026-11-16T19:28",
-      "expected": null,
+      "expected": "2026-11-16T19:58",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +244,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-16T19:47",
+      "expected": "2026-11-16T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
       "reason": "",
       "mode": "train"
     }
