@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T12:50:14+00:00",
+  "generated_at": "2026-11-17T12:55:17+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,26 +11,6 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-17T12:40",
-      "expected": "2026-11-17T12:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-17T12:52",
       "expected": null,
       "status": "Cancelled",
@@ -39,38 +19,6 @@
       "origin": "Edinburgh",
       "destination": "Penzance",
       "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth",
-        "Liskeard",
-        "Bodmin Parkway",
-        "Lostwithiel",
-        "Par",
-        "St Austell",
-        "Truro",
-        "Redruth",
-        "Camborne",
-        "Hayle",
-        "St Erth",
-        "Penzance"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-17T12:52",
-      "expected": "2026-11-17T12:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Penzance",
-      "reason": "",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -217,20 +165,29 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-17T13:40",
+      "expected": "2026-11-17T13:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street",
+        "Wolverhampton",
+        "Stafford",
+        "Stoke-on-Trent",
+        "Macclesfield",
+        "Stockport",
+        "Manchester Piccadilly"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-17T12:38",
-      "expected": "2026-11-17T12:49",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Paignton",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-17T12:50",
       "expected": null,
@@ -240,17 +197,6 @@
       "origin": "Edinburgh",
       "destination": "Penzance",
       "reason": "This service has been cancelled because of a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-17T12:50",
-      "expected": "2026-11-17T12:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Penzance",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -316,6 +262,28 @@
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-17T13:31",
+      "expected": "2026-11-17T13:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-17T13:38",
+      "expected": "2026-11-17T13:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
       "mode": "train"
     }
