@@ -5,13 +5,13 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 1067,
-    "unplanned": 205,
-    "road_closures": 155,
+    "count": 1082,
+    "unplanned": 206,
+    "road_closures": 156,
     "by_street": [
       {
         "street": "Cheltenham Road East",
-        "works": 29,
+        "works": 31,
         "road_closures": 0
       },
       {
@@ -30,13 +30,13 @@
         "road_closures": 1
       },
       {
-        "street": "High Street",
-        "works": 13,
+        "street": "Cheltenham Road",
+        "works": 14,
         "road_closures": 2
       },
       {
-        "street": "Cheltenham Road",
-        "works": 12,
+        "street": "High Street",
+        "works": 13,
         "road_closures": 2
       },
       {
@@ -63,11 +63,11 @@
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 449
+        "works": 459
       },
       {
         "name": "BT",
-        "works": 190
+        "works": 191
       },
       {
         "name": "Gloucestershire County Council",
@@ -78,15 +78,15 @@
         "works": 97
       },
       {
+        "name": "Virgin Media",
+        "works": 31
+      },
+      {
         "name": "Wales And West Utilities Ltd",
         "works": 30
       },
       {
         "name": "Unknown",
-        "works": 28
-      },
-      {
-        "name": "Virgin Media",
         "works": 28
       },
       {
@@ -139,7 +139,7 @@
       },
       {
         "name": "Ee Ltd",
-        "works": 1
+        "works": 2
       },
       {
         "name": "Gas Transportation Co Ltd",
@@ -161,11 +161,25 @@
       },
       {
         "month": "2026-11",
-        "works": 393
+        "works": 408
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:YN12315184-P-310310-DC",
+      "first_seen": "2026-11-17",
+      "street": "Parabola Road",
+      "ward_slug": "lansdown",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Road closure",
+      "road_closure": true,
+      "promoter": "Ee Ltd",
+      "start": "2027-01-14",
+      "end": "2027-01-15",
+      "last_seen": "2026-11-17"
+    },
     {
       "id": "PERMIT:XY245003002376961",
       "first_seen": "2026-11-17",
@@ -178,6 +192,48 @@
       "promoter": "Wales And West Utilities Ltd",
       "start": "2026-11-19",
       "end": "2026-11-24",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:NK128STAV-X-YV",
+      "first_seen": "2026-11-17",
+      "street": "Windyridge Road",
+      "ward_slug": "swindon-village",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Virgin Media",
+      "start": "2026-12-04",
+      "end": "2026-12-14",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:NK128STAV-X-YU",
+      "first_seen": "2026-11-17",
+      "street": "Fairview Street",
+      "ward_slug": "all-saints",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Virgin Media",
+      "start": "2027-01-14",
+      "end": "2027-01-22",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:NK128STAV-X-YR",
+      "first_seen": "2026-11-17",
+      "street": "Princess Elizabeth Way",
+      "ward_slug": "st-peters",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Virgin Media",
+      "start": "2027-01-11",
+      "end": "2027-01-19",
       "last_seen": "2026-11-17"
     },
     {
@@ -209,6 +265,48 @@
       "last_seen": "2026-11-17"
     },
     {
+      "id": "PERMIT:LB9060000-000042289936",
+      "first_seen": "2026-11-17",
+      "street": "Kingsmead Road",
+      "ward_slug": "springbank",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-27",
+      "end": "2026-11-27",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042281808A",
+      "first_seen": "2026-11-17",
+      "street": "Old Tewkesbury Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-23",
+      "end": "2026-11-25",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042270375",
+      "first_seen": "2026-11-17",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-12-01",
+      "end": "2026-12-03",
+      "last_seen": "2026-11-17"
+    },
+    {
       "id": "PERMIT:LB9060000-000042256838",
       "first_seen": "2026-11-17",
       "street": "Cheltenham Road East",
@@ -234,6 +332,34 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-23",
       "end": "2026-11-23",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042047613",
+      "first_seen": "2026-11-17",
+      "street": "Cleevelands Avenue",
+      "ward_slug": "pittville",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-24",
+      "end": "2026-11-24",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB9060000-000042033461",
+      "first_seen": "2026-11-17",
+      "street": "Glencairn Park Road",
+      "ward_slug": "lansdown",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-24",
+      "end": "2026-11-24",
       "last_seen": "2026-11-17"
     },
     {
@@ -265,6 +391,20 @@
       "last_seen": "2026-11-17"
     },
     {
+      "id": "PERMIT:LB9060000-000042011237",
+      "first_seen": "2026-11-17",
+      "street": "Cheltenham Road East",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-12-01",
+      "end": "2026-12-03",
+      "last_seen": "2026-11-17"
+    },
+    {
       "id": "PERMIT:LB9060000-000041550393",
       "first_seen": "2026-11-17",
       "street": "Brunswick Street",
@@ -289,6 +429,20 @@
       "road_closure": false,
       "promoter": "Severn Trent Water",
       "start": "2026-11-17T11:39",
+      "end": "2026-11-18",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB9011303-000060793205",
+      "first_seen": "2026-11-17",
+      "street": "Springbank Road",
+      "ward_slug": "springbank",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-17T13:54",
       "end": "2026-11-18",
       "last_seen": "2026-11-17"
     },
@@ -318,6 +472,20 @@
       "promoter": "Severn Trent Water",
       "start": "2027-02-17",
       "end": "2027-02-18",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014456543",
+      "first_seen": "2026-11-17",
+      "street": "Croft Gardens",
+      "ward_slug": "charlton-kings",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-24",
+      "end": "2026-11-27",
       "last_seen": "2026-11-17"
     },
     {
@@ -363,6 +531,20 @@
       "last_seen": "2026-11-17"
     },
     {
+      "id": "PERMIT:LB70397890080",
+      "first_seen": "2026-11-17",
+      "street": "Cheltenham Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Two-way signals",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-12-01",
+      "end": "2026-12-01",
+      "last_seen": "2026-11-17"
+    },
+    {
       "id": "PERMIT:LB70380628525",
       "first_seen": "2026-11-17",
       "street": "Cheltenham Road",
@@ -374,6 +556,20 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-30",
       "end": "2026-11-30",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:LB70377962695",
+      "first_seen": "2026-11-17",
+      "street": "Cheltenham Road",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "No carriageway incursion",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-12-02",
+      "end": "2026-12-02",
       "last_seen": "2026-11-17"
     },
     {
@@ -416,6 +612,20 @@
       "promoter": "Gloucestershire County Council",
       "start": "2026-11-27",
       "end": "2026-11-27",
+      "last_seen": "2026-11-17"
+    },
+    {
+      "id": "PERMIT:BC518MACKFWH9PVJ2D",
+      "first_seen": "2026-11-17",
+      "street": "Southwood Lane",
+      "ward_slug": "lansdown",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "BT",
+      "start": "2026-11-20",
+      "end": "2026-11-24",
       "last_seen": "2026-11-17"
     },
     {
@@ -1940,8 +2150,8 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-16",
-      "end": "2026-11-17",
+      "start": "2026-11-17T12:00",
+      "end": "2026-11-18",
       "last_seen": "2026-11-17"
     },
     {
@@ -2276,7 +2486,7 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-17",
+      "start": "2026-11-17T11:48",
       "end": "2026-11-17",
       "last_seen": "2026-11-17"
     },
@@ -2612,7 +2822,7 @@
       "traffic_management": "Some carriageway incursion",
       "road_closure": false,
       "promoter": "Severn Trent Water",
-      "start": "2026-11-17",
+      "start": "2026-11-17T12:41",
       "end": "2026-11-18",
       "last_seen": "2026-11-17"
     },
