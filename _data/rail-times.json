@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T17:30:08+00:00",
+  "generated_at": "2026-11-17T17:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -30,13 +30,13 @@
     },
     {
       "scheduled": "2026-11-17T17:31",
-      "expected": "2026-11-17T17:45",
+      "expected": "2026-11-17T17:48",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
@@ -65,8 +65,8 @@
     },
     {
       "scheduled": "2026-11-17T17:45",
-      "expected": "2026-11-17T17:45",
-      "status": "On time",
+      "expected": "2026-11-17T17:47",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -101,7 +101,7 @@
     },
     {
       "scheduled": "2026-11-17T17:52",
-      "expected": "2026-11-17T17:54",
+      "expected": "2026-11-17T17:57",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -162,6 +162,32 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-17T18:12",
+      "expected": "2026-11-17T18:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -178,7 +204,7 @@
     },
     {
       "scheduled": "2026-11-17T17:27",
-      "expected": "2026-11-17T17:34",
+      "expected": "2026-11-17T17:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -189,30 +215,19 @@
     },
     {
       "scheduled": "2026-11-17T17:29",
-      "expected": "2026-11-17T17:44",
+      "expected": "2026-11-17T17:47",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
       "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-17T17:31",
-      "expected": "2026-11-17T17:31",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-17T17:38",
-      "expected": "2026-11-17T17:38",
-      "status": "On time",
+      "expected": "2026-11-17T17:40",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Paignton",
@@ -233,7 +248,7 @@
     },
     {
       "scheduled": "2026-11-17T17:50",
-      "expected": "2026-11-17T17:53",
+      "expected": "2026-11-17T17:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -251,6 +266,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of more trains than usual needing repairs at the same time",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-17T18:11",
+      "expected": "2026-11-17T18:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Newcastle via Leeds",
+      "reason": "",
       "mode": "train"
     }
   ],
