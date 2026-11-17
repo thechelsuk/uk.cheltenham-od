@@ -1,0 +1,47 @@
+name: Correction
+description: A figure, date or fact on a page is wrong
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when something on a page is wrong: a figure, a date, a name or a fact. If a page is broken or won't load, use **Spot an Issue** instead.
+
+        We check every report we receive, and correct a confirmed error as soon as we can. Significant corrections are listed with their date on our [corrections page](https://cheltenham-od.uk/corrections).
+
+        Issues are public, so please don't include personal details. For anything private, use our [contact form](https://cheltenham-od.uk/contact).
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: A link to the page, or its title if you don't have one
+      placeholder: https://cheltenham-od.uk/...
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What does the page say?
+      description: Copy the figure, date or sentence that's wrong
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What should it say?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Where is the right figure published?
+      description: A link to the source, ideally the original publisher, such as the council, ONS or NHS
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else?
+    validations:
+      required: false

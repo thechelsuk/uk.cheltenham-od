@@ -1,0 +1,69 @@
+name: Add or Update a Listing
+description: Add a sports club, community group or place to one of our lists, or update one that's changed
+labels: ["listing"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this to add a club, group or place to one of our lists, or to tell us one has changed or closed. We check the lists every month.
+
+        Issues are public, so please only include details the group already publishes. For anything private, use our [contact form](https://cheltenham-od.uk/contact).
+  - type: dropdown
+    id: action
+    attributes:
+      label: What would you like to do?
+      options:
+        - Add a new listing
+        - Update a listing
+        - Remove a group or place that has closed
+    validations:
+      required: true
+  - type: dropdown
+    id: list
+    attributes:
+      label: Which list?
+      options:
+        - Sports clubs
+        - Clubs and societies
+        - Arts and crafts
+        - Third spaces
+        - Local help and support
+        - Helplines and contacts
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: The club, group or place
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: Its own site, or a social media page if it has no site
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: address
+    attributes:
+      label: Where does it meet?
+      description: An address or venue, if it has one
+    validations:
+      required: false
+  - type: textarea
+    id: about
+    attributes:
+      label: What does it do?
+      description: One or two sentences, or what has changed
+    validations:
+      required: true
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else?
+    validations:
+      required: false

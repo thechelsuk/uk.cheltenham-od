@@ -1,0 +1,22 @@
+name: Question
+description: Ask a question about the site or its data
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask anything about the site or the data it shows. Answers to common questions may be added to the FAQs on the page they're about.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Which page is it about?
+      description: A link, if it's about a particular page
+      placeholder: https://cheltenham-od.uk/...
+    validations:
+      required: false

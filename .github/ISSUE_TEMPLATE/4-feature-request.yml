@@ -1,0 +1,22 @@
+name: Feature Request
+description: Suggest something new for the site
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: want
+    attributes:
+      label: I would like…
+    validations:
+      required: true
+  - type: textarea
+    id: so-that
+    attributes:
+      label: …so that I can…
+    validations:
+      required: true
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else?
+    validations:
+      required: false

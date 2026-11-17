@@ -1,0 +1,64 @@
+name: Spot an Issue
+description: Something on the site is broken or not working
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when something is broken: a page won't load, a map or chart is blank, a link goes nowhere or a widget stops showing. If a figure or fact is wrong, use **Correction** instead.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part?
+      options:
+        - A page on this site
+        - A widget on another site
+        - The newsletter
+        - An RSS feed
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: The page, or a link if you have one
+      placeholder: https://cheltenham-od.uk/...
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: false
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: e.g. iPhone 16, Safari
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag images into this box
+    validations:
+      required: false

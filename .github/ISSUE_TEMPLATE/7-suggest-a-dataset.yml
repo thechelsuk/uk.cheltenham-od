@@ -1,0 +1,41 @@
+name: Suggest a Dataset
+description: Tell us about local data the site could show
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Know of data about Cheltenham or Gloucestershire that the site could show? Tell us who publishes it and where to find it.
+  - type: input
+    id: data
+    attributes:
+      label: What is the data?
+    validations:
+      required: true
+  - type: input
+    id: publisher
+    attributes:
+      label: Who publishes it?
+      description: For example the council, ONS, NHS or a local organisation
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Licence
+      description: If you know it, for example Open Government Licence
+    validations:
+      required: false
+  - type: textarea
+    id: why
+    attributes:
+      label: What would it help people find out?
+    validations:
+      required: false

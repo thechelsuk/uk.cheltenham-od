@@ -1,0 +1,34 @@
+name: Accessibility
+description: Something on the site is hard to use, or you need it in another format
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us the page and what went wrong, and we'll fix what we can. Our [accessibility statement](https://cheltenham-od.uk/accessibility) explains what we aim for.
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      placeholder: https://cheltenham-od.uk/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What was hard to use?
+    validations:
+      required: true
+  - type: input
+    id: format
+    attributes:
+      label: Do you need it in another format?
+    validations:
+      required: false
+  - type: input
+    id: setup
+    attributes:
+      label: Device, browser and any assistive technology
+      placeholder: e.g. Windows 11, Firefox, NVDA
+    validations:
+      required: false
