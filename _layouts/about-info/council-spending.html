@@ -1,0 +1,189 @@
+{% include header.html %}
+{% assign spending = site.data["council-spending"] %}
+{% assign idx = spending.index %}
+{% assign latest = spending.months[idx.latest_month] %}
+{% assign latest_name = idx.latest_month | append: "-01" | date: "%B %Y" %}
+{% assign l12_from = idx.last_12.first_month | append: "-01" | date: "%B %Y" %}
+{% assign latest_year = idx.years | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ idx.last_12.payments_display }}</strong> paid in the 12 months to {{ latest_name }}</li>
+                <li><strong>{{ idx.last_12.count_display }}</strong> payments</li>
+                <li><strong>{{ idx.years | size }}</strong> financial years of figures</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Spending by Month</h2>
+        <div class="chart-canvas"><canvas id="council-spending-monthly-chart" aria-label="Bar chart of Cheltenham Borough Council's payments to suppliers each month since {{ idx.monthly.first.month | append: "-01" | date: "%B %Y" }}"></canvas></div>
+
+        <h2>Spending by Year</h2>
+        <div class="chart-canvas"><canvas id="council-spending-yearly-chart" aria-label="Bar chart of Cheltenham Borough Council's payments to suppliers in each financial year since {{ idx.years.last.year }}"></canvas></div>
+        <div class="table-scroll">
+            <table class="council-spending-years-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col" class="number">Months</th>
+                        <th scope="col" class="number">Payments</th>
+                        <th scope="col" class="number">Paid</th>
+                        <th scope="col" class="number">Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for y in idx.years %}
+                    <tr>
+                        <td data-val="{{ y.year }}">{% if y.has_page %}<a href="/cheltenham-council-spending/{{ y.year }}">{{ y.year }}</a>{% else %}{{ y.year }}{% endif %}</td>
+                        <td class="number" data-val="{{ y.months }}">{{ y.months }}</td>
+                        <td class="number" data-val="{{ y.count }}">{{ y.count_display }}</td>
+                        <td class="number" data-val="{{ y.payments }}">{{ y.payments_display }}</td>
+                        <td class="number" data-val="{{ y.credits }}">{{ y.credits_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Year** the council's financial year, April to March, **Months** months published so far, **Payments** number of payments, **Paid** money paid out, **Credits** refunds and other money coming back" %}
+
+        <h2>Biggest Suppliers in the Last 12 Months</h2>
+        <div class="table-scroll">
+            <table class="council-spending-suppliers-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Supplier</th>
+                        <th scope="col" class="number">Payments</th>
+                        <th scope="col" class="number">Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in idx.last_12.top_suppliers %}
+                    <tr>
+                        <td>{{ s.name }}</td>
+                        <td class="number" data-val="{{ s.count }}">{{ s.count_display }}</td>
+                        <td class="number" data-val="{{ s.payments }}">{{ s.payments_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="action-row"><a class="pill-link" href="/cheltenham-council-spending/suppliers">See the top 100 suppliers &rarr;</a></p>
+
+        <h2>Biggest Service Areas in the Last 12 Months</h2>
+        <div class="table-scroll">
+            <table class="council-spending-services-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Service Area</th>
+                        <th scope="col" class="number">Payments</th>
+                        <th scope="col" class="number">Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in idx.last_12.top_services %}
+                    <tr>
+                        <td>{{ s.name }}</td>
+                        <td class="number" data-val="{{ s.count }}">{{ s.count_display }}</td>
+                        <td class="number" data-val="{{ s.payments }}">{{ s.payments_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p>These cover {{ l12_from }} to {{ latest_name }}. Every service area for each year is on the year pages, from <a href="/cheltenham-council-spending/{{ latest_year.year }}">{{ latest_year.year }}</a> back to <a href="/cheltenham-council-spending/{{ idx.page_years.last }}">{{ idx.page_years.last }}</a>.</p>
+
+        <h2>Every Payment in {{ latest_name }}</h2>
+        <div class="table-scroll">
+            <table class="council-spending-payments-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Supplier</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col" class="number">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% assign latest_payments = latest.payments | sort: "amount" | reverse %}
+                    {% for p in latest_payments %}
+                    <tr>
+                        <td class="date" data-val="{{ p.date }}">{{ p.date }}</td>
+                        <td>{{ p.supplier_display }}</td>
+                        <td>{{ p.service }}</td>
+                        <td>{{ p.purpose }}</td>
+                        <td class="number" data-val="{{ p.amount }}">{{ p.amount_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="action-row"><a class="pill-link" href="{{ latest.source_url }}">Download the council's file for {{ latest_name }} &rarr;</a></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Does This Spending Data Cover?</h3>
+        <ul>
+            <li>Every payment Cheltenham Borough Council makes to a supplier where the charge to one budget is £500 or more, and purchases made on the council's payment cards. The council publishes one file a month.</li>
+            <li>It shows payments to suppliers, not the council's whole budget. For the council's spending by service, see the <a href="/cheltenham-council-spending/accounts">council accounts</a> page.</li>
+        </ul>
+
+        <h3>Do the Amounts Include VAT?</h3>
+        <ul>
+            <li>The council's files don't say whether amounts include VAT, so the figures here are shown exactly as the council publishes them.</li>
+        </ul>
+
+        <h3>Why Are Some Suppliers Shown as Redacted?</h3>
+        <ul>
+            <li>The council's files show some payee names as redacted. These payments are left out of the supplier rankings, because they can't be put against one supplier, but they are counted in every total. In the 12 months to {{ latest_name }}, {{ idx.last_12.withheld.count_display }} payments worth {{ idx.last_12.withheld.payments_display }} had the payee redacted.</li>
+        </ul>
+
+        <h3>What Are Credits?</h3>
+        <ul>
+            <li>Some lines in the council's files are negative: refunds, reversed payments and some money paid to the council. They are added up separately as credits, so the "paid" figures count only money going out.</li>
+        </ul>
+
+        <h3>Can I See Council Spending by Ward?</h3>
+        <ul>
+            <li>No. The council's payment files don't record where in Cheltenham money was spent, so spending can't be split by <a href="/cheltenham-wards">ward</a>.</li>
+        </ul>
+
+        <h3>Why Isn't Last Month Shown Yet?</h3>
+        <ul>
+            <li>The council publishes each month's file some weeks after the month ends. This page checks for a new file every week.</li>
+        </ul>
+
+        <h3>Why Do the Yearly Totals Go Up and Down?</h3>
+        <ul>
+            <li>A few large payments, such as buying land or buildings, can move a year's total by millions of pounds. The year pages list every service area, so you can see where the money went.</li>
+        </ul>
+
+        <h3>How Are Card Purchases Shown?</h3>
+        <ul>
+            <li>Payments on the council's cards are listed under the card's name in the council's files. In the supplier rankings they are added together as "Council credit card purchases"; the table of every payment shows each one as published.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ idx.source_url }}">{{ idx.source }}</a>, published under the {{ idx.licence }}.
+            {% include freshness.html file="_data/council-spending/index.json" %}
+            {% if latest_year.skipped > 0 %}{{ latest_year.skipped }} payments are left out because the council's file doesn't show a readable amount.{% endif %}
+        </small></p>
+    </div>
+
+    {% include footer.html %}
+</div>
+
+{% include chartjs.html %}
+<script id="council-spending-monthly-data" type="application/json">{{ idx.monthly | jsonify }}</script>
+<script id="council-spending-yearly-data" type="application/json">{{ idx.years | map: "year" | jsonify }}</script>
+<script id="council-spending-yearly-values" type="application/json">{{ idx.years | map: "payments" | jsonify }}</script>
+<script id="council-spending-yearly-months" type="application/json">{{ idx.years | map: "months" | jsonify }}</script>
+<script src="/assets/scripts/council-spending-chart.js"></script>

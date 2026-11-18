@@ -1,0 +1,206 @@
+{% include header.html %}
+{% assign rates = site.data["business-rates"] %}
+{% assign s = rates.summary %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ s.properties_display }}</strong> business properties</li>
+                <li><strong>{{ s.occupied_display }}</strong> occupied</li>
+                <li><strong>{{ s.empty_display }}</strong> empty</li>
+                <li><strong>{{ s.empty_pct_display }}</strong> empty in {{ rates.release.name }}</li>
+                <li><strong>{{ s.median_rv_display }}</strong> median rateable value</li>
+            </ul>
+            <ul class="header-links">
+                <li><a href="{{ rates.source_url }}">Council business rates data</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>Empty Properties over Time</h2>
+        <p>Occupied and empty business properties in each of the council's lists. Holiday lets are left out of every count.</p>
+        <div class="table-scroll">
+            <table class="business-rates-releases-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">List</th>
+                        <th scope="col" class="number">Occupied</th>
+                        <th scope="col" class="number">Empty</th>
+                        <th scope="col" class="number">Share Empty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in rates.releases reversed %}
+                    <tr>
+                        <td class="date" data-val="{{ r.key }}">{{ r.key }}</td>
+                        <td class="number" data-val="{{ r.occupied }}">{{ r.occupied_display }}</td>
+                        <td class="number" data-val="{{ r.empty }}">{{ r.empty_display }}</td>
+                        <td class="number" data-val="{{ r.empty_pct }}">{{ r.empty_pct_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="map">Business Properties Map</h2>
+        <p>Each circle is a postcode, shaded by the highest rateable value there. Choose a band to see only the properties in
+            it, or show only postcodes with an empty property. Select a circle for its counts.</p>
+        <div class="filter-bar">
+            <label class="filter-label" for="business-rates-map-band">Rateable value</label>
+            <select id="business-rates-map-band">
+                <option value="all">All bands</option>
+                {% for b in rates.bands %}<option value="{{ b.band }}">{{ b.label }}</option>
+                {% endfor %}<option value="awaiting">Awaiting a rateable value</option>
+            </select>
+            <label class="filter-label" for="business-rates-map-status">Show</label>
+            <select id="business-rates-map-status">
+                <option value="all">All properties</option>
+                <option value="empty">Postcodes with an empty property</option>
+            </select>
+        </div>
+        <div class="map-legend" id="business-rates-map-legend"></div>
+        <div id="business-rates-map" class="map-canvas" data-mode="postcodes" aria-label="Map of Cheltenham business properties by postcode, shaded by rateable value"></div>
+
+        <h2>Properties by Rateable Value</h2>
+        <div class="table-scroll">
+            <table class="business-rates-bands-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Rateable Value</th>
+                        <th scope="col" class="number">Occupied</th>
+                        <th scope="col" class="number">Empty</th>
+                        <th scope="col" class="number">Share Empty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in rates.bands %}
+                    <tr>
+                        <td data-val="{{ b.band }}">{{ b.label }}</td>
+                        <td class="number" data-val="{{ b.occupied }}">{{ b.occupied_display }}</td>
+                        <td class="number" data-val="{{ b.empty }}">{{ b.empty_display }}</td>
+                        <td class="number" data-val="{{ b.empty_pct }}">{{ b.empty_pct_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>{{ s.awaiting_rv_display }} properties are awaiting a rateable value and aren't in a band.</small></p>
+
+        <h2>Properties by Type</h2>
+        <div class="table-scroll">
+            <table class="business-rates-types-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Type</th>
+                        <th scope="col" class="number">Occupied</th>
+                        <th scope="col" class="number">Empty</th>
+                        <th scope="col" class="number">Share Empty</th>
+                        <th scope="col" class="number">Median Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in rates.by_type %}
+                    <tr>
+                        <td data-val="{{ t.type | downcase }}">{{ t.type }}</td>
+                        <td class="number" data-val="{{ t.occupied }}">{{ t.occupied_display }}</td>
+                        <td class="number" data-val="{{ t.empty }}">{{ t.empty_display }}</td>
+                        <td class="number" data-val="{{ t.empty_pct }}">{{ t.empty_pct_display }}</td>
+                        <td class="number" data-val="{{ t.median_rv }}">{{ t.median_rv_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>Types are the Valuation Office Agency's descriptions. Median value is the middle rateable value of the
+            type's properties, leaving out those awaiting a value.</small></p>
+
+        <h2>Rate Relief on Occupied Properties</h2>
+        <p>{{ rates.small_business_relief_display }} occupied properties get small business rate relief. These are the other
+            reliefs the council records.</p>
+        <div class="table-scroll">
+            <table class="business-rates-reliefs-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Relief</th>
+                        <th scope="col" class="number">Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in rates.reliefs %}
+                    <tr>
+                        <td>{{ r.name }}</td>
+                        <td class="number" data-val="{{ r.count }}">{{ r.count_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is a Rateable Value?</h3>
+        <ul>
+            <li>The Valuation Office Agency's estimate of the yearly rent a property could have been let for on the open
+                market on a set date. For the revaluation that took effect on 1 April 2026, that date was 1 April 2024. It is
+                not a sale price or a rates bill.</li>
+        </ul>
+
+        <h3>How Is a Business Rates Bill Worked Out?</h3>
+        <ul>
+            <li>The council multiplies the rateable value by a multiplier the Government sets each year, then takes off any
+                relief. From April 2026 properties valued below £51,000 pay a lower small business multiplier, and those
+                valued at £500,000 or more pay a higher one. The council's
+                <a href="https://www.cheltenham.gov.uk/business-and-licensing/business-rates-and-rate-relief/calculating-your-business-rates/">calculating
+                your business rates</a> page lists each multiplier.</li>
+        </ul>
+
+        <h3>Who Gets Small Business Rate Relief?</h3>
+        <ul>
+            <li>A business that occupies one property, or one main property plus small extra ones, valued at no more than
+                £15,000. Up to £12,000 the relief is 100%, and it tapers between £12,000 and £15,000. The
+                <a href="https://www.cheltenham.gov.uk/business-and-licensing/business-rates-and-rate-relief/rate-relief/">council's
+                rate relief page</a> has the full rules.</li>
+        </ul>
+
+        <h3>Do Empty Business Properties Pay Rates?</h3>
+        <ul>
+            <li>Yes, after a while. No rates are due for the first three months a property is empty, or six months for
+                certain industrial properties. After that the full rates are due, unless the property is exempt, for example
+                because it's a listed building. See the <a href="/cheltenham-business-rates/empty-properties">empty business
+                properties</a> list for each property's exemption.</li>
+        </ul>
+
+        <h3>Why Aren't Business Owners Named?</h3>
+        <ul>
+            <li>The council leaves out the names of sole traders and individuals, as their names are personal data. This
+                page leaves out every ratepayer's name, and counts holiday lets without listing or mapping them, as many are
+                in or next to someone's home.</li>
+        </ul>
+
+        <h3>How Often Is This Updated?</h3>
+        <ul>
+            <li>The council publishes new lists a few times a year. In 2026 it published lists for January, April, June and
+                October. This page checks for a new list every week.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ rates.source_url }}">{{ rates.source }}</a>'s business rates lists for {{ rates.release.name }},
+            with no licence stated. Rateable values are set by the Valuation Office Agency. Properties are placed on the map by their postcode using
+            <a href="https://postcodes.io/">postcodes.io</a> (ONS Postcode Directory).
+            {% include freshness.html file="_data/business-rates.json" %}
+            Rateable values changed for most properties on 1 April 2026, when the 2026 revaluation took effect, so values in
+            earlier lists aren't comparable with current ones. Each circle sits at its postcode's centre, not the property itself.
+        </small></p>
+    </div>
+</div>
+
+{% include leaflet.html %}
+<script id="business-rates-map-data" type="application/json">{"bands": {{ rates.bands | map: "label" | jsonify }}, "upper": {{ rates.band_upper | jsonify }}, "types": {{ rates.map_types | jsonify }}, "postcodes": {{ rates.postcodes | jsonify }}}</script>
+<script src="/assets/scripts/business-rates-map.js"></script>
+{% include footer.html %}

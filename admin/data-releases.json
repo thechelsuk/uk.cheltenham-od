@@ -67,6 +67,14 @@
       "notes": "pi/nhs-ae.py checks hourly on the Raspberry Pi, so this should land on the day. If the month is still missing the day after release, the script fails and the watchdog emails about it."
     },
     {
+      "date": "2027-02-01",
+      "title": "Check: Cheltenham business rates lists (January 2027)",
+      "status": "expected",
+      "url": "https://www.cheltenham.gov.uk/business-and-licensing/business-rates-and-rate-relief/business-rates-data/",
+      "notes": "The council published its 2026 lists in February (January), April, July (June) and October. business-rates.py in the weekly workflow picks up a new pair by itself; check /cheltenham-business-rates shows it.",
+      "id": "cbc-business-rates-2027-01"
+    },
+    {
       "date": "2027-02-11",
       "time": "09:30",
       "title": "NHS A&E figures (January data)",
@@ -130,6 +138,13 @@
       "status": "expected",
       "url": "https://www.gov.uk/government/statistics/announcements/pupil-absence-in-schools-in-england-autumn-and-spring-term-202627",
       "notes": "Provisional for October 2027 (15 October in 2026). Feeds the autumn and spring figures on /cheltenham-schools through school-absence.py in the monthly workflow."
+    },
+    {
+      "date": "2027-09-01",
+      "title": "Check: MHCLG revenue outturn 2026-27 (council accounts)",
+      "status": "expected",
+      "url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+      "notes": "The 2025-26 individual local authority outturn came out in September 2026. When the 2026-27 RSX file is out, save it in _data-sources/council-accounts/ and run process-council-accounts.py. Feeds /cheltenham-council-spending/accounts."
     }
   ]
 }

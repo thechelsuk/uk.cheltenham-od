@@ -40,10 +40,12 @@ These update themselves. The "Feeds" column lists the analysis posts that would 
 | ONS Annual Survey of Hours and Earnings | `earnings.py` and `affordability.py`, monthly | Once a year, in October or November | 2026-10-22 at 09:30 (confirmed) | `/cheltenham-earnings-history`, `/cheltenham-house-prices/affordability`; affordability analysis |
 | MHCLG net additional dwellings | `housing-supply.py`, monthly | Once a year, in November | 2026-11-26 at 09:30 (confirmed) | `/cheltenham-house-prices/housing-supply` |
 | HM Land Registry Price Paid Data | `land-registry.py`, every two hours | Monthly. Recent months keep growing as late sales are registered | No fixed date | House price pages, `/cheltenham-house-prices/affordability`; affordability analysis |
+| Cheltenham Borough Council business rates lists | `business-rates.py`, weekly | A few times a year: in 2026 the January, April, June and October lists, published in February, April, July and October | January 2027 list, expected around February (usual timing) | `/cheltenham-business-rates`, `/cheltenham-business-rates/empty-properties` |
 | Care Quality Commission ratings | `cqc.py`, weekly | Updated continuously as inspections are published | No fixed date | `/cheltenham-care-homes`; care homes analysis |
 | Food Standards Agency hygiene ratings | `food-standards.py`, every two hours | Updated continuously as councils publish inspections | No fixed date | `/cheltenham-food-standards`; food hygiene analysis |
 | Energy Performance of Buildings Register (ratings) | `epc.py`, monthly | Updated daily as certificates are lodged | No fixed date | `/cheltenham-energy-ratings`, ward pages |
 | DfE pupil absence in schools in England | `school-absence.py`, monthly | Three times a year: the full school year each March, autumn term in August (not used), autumn and spring terms each October. Found through the Explore Education Statistics data catalogue, so a new release needs no code change | Full year 2025/26 in March 2027, autumn and spring 2026/27 in October 2027 (both provisional) | `/cheltenham-schools/absence` and each school's page; school absence and deprivation analysis (2024/25 figures, frozen) |
+| Cheltenham Borough Council payments to suppliers | `council-spending.py`, weekly | Monthly, some weeks after the month ends (September 2026's file was on the council's page by 17 November 2026). The council sometimes reissues a month, so the latest three are downloaded again each week | No fixed date | `/cheltenham-council-spending`, its suppliers page and the five year pages |
 | English Indices of Deprivation | `deprivation.py`, by hand | Every four to six years. The 2025 edition is current | Next edition not announced | `/cheltenham-deprivation`, `/cheltenham-wards`; deprivation and turnout analyses |
 
 Because the monthly workflow runs on the 2nd, a release later in the month waits up to a few weeks. Run the monthly workflow by hand after a release that an upcoming post depends on. The housing figures due in November are an example: the workflow would not fetch them until 2 December.
@@ -123,6 +125,19 @@ These are the items on the monthly reminder issue. Each downloaded file goes in 
 - **What it adds:** the numeric energy efficiency score behind each rating, the score each home could reach, and home type, age, tenure and heating, which the ratings in `_data/epc.json` (refreshed automatically by `epc.py`) don't include.
 - **Keep private:** `epc-homes.json` holds no addresses or postcodes (homes without a UPRN are keyed by a hash), and only area totals go into `_data/`. Postcodes are used in memory to place homes in areas, as the register's licence restricts address data.
 - **Feeds:** `/cheltenham-energy-ratings` and the ward pages.
+
+### Council Accounts (MHCLG Revenue Outturn)
+
+- **Download:** the "Revenue outturn service expenditure summary (RSX)" `.ods` from the year's "individual local authority data - outturn" page in the [revenue expenditure and financing collection](https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing), into `_data-sources/council-accounts/`. Keep the previous years' files there too.
+- **Run:** `process-council-accounts.py`, then commit `_data/council-accounts.json`. It keeps the newest five years and stops if the service columns or Cheltenham's row (ONS code E07000078) can't be found.
+- **When it publishes:** once a year. The 2025-26 outturn came out in September 2026.
+- **Feeds:** `/cheltenham-council-spending/accounts`.
+
+### Council Spending Before 2020 (Web Archive)
+
+- **Download:** none. The council's current site lists January 2020 onwards. April 2016 to December 2019 came once from the web archive's copies of its old "Payments to suppliers" pages, and the original files are in `uk.cheltenham-od.raw` under `sources/cbc-payments-to-suppliers/`.
+- **Run:** `council-spending-backfill.py <that folder>` only to rebuild those months. It reads February 2019 from the council's `.xls`, which needs `xlrd` from `requirements-dev.txt`.
+- **Feeds:** the yearly totals on `/cheltenham-council-spending`. Those years have no pages of their own.
 
 ## Analysis Posts and Their Sources
 

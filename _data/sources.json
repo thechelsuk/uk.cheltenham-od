@@ -781,5 +781,31 @@
     "licence_type": "None stated",
     "data": [{"file": "_data/cheltenham-town-fc.json", "schedule": "daily", "script": "_python/cheltenham-town-fc.py"}],
     "pages": ["/cheltenham-sports/cheltenham-town-fc"]
+  },
+  {
+    "id": "cheltenham-bc-payments-to-suppliers",
+    "name": "Cheltenham Borough Council payments to suppliers",
+    "source_url": "https://www.cheltenham.gov.uk/about-the-council/council-performance-and-spending/financial-information/payments-to-suppliers-and-procurement-card-purchases/",
+    "licence": "Open Government Licence v3.0, as stated on the council's own record of this dataset on data.gov.uk (https://www.data.gov.uk/dataset/local_authority_spend_over_500_cheltenham); the council's web page states no licence. April 2016 to December 2019 come from the web archive's copies of the council's old pages, as the current site lists January 2020 onwards; the original files are kept in uk.cheltenham-od.raw",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/council-spending/index.json", "schedule": "weekly", "script": "_python/council-spending.py"}],
+    "pages": ["/cheltenham-council-spending", "/cheltenham-council-spending/suppliers", "/cheltenham-council-spending/2022-23", "/cheltenham-council-spending/2023-24", "/cheltenham-council-spending/2024-25", "/cheltenham-council-spending/2025-26", "/cheltenham-council-spending/2026-27"]
+  },
+  {
+    "id": "mhclg-revenue-outturn-rsx",
+    "name": "Local authority revenue expenditure and financing: revenue outturn service expenditure summary (RSX)",
+    "source_url": "https://www.gov.uk/government/collections/local-authority-revenue-expenditure-and-financing",
+    "licence": "Open Government Licence v3.0",
+    "licence_type": "OGL v3.0",
+    "data": [{"file": "_data/council-accounts.json", "schedule": "manual"}],
+    "pages": ["/cheltenham-council-spending/accounts"]
+  },
+  {
+    "id": "cheltenham-bc-business-rates-data",
+    "source_url": "https://www.cheltenham.gov.uk/business-and-licensing/business-rates-and-rate-relief/business-rates-data/",
+    "licence": "None stated. Cheltenham Borough Council publishes its lists of occupied and empty non-domestic properties to cut down Freedom of Information requests, and its data and information pages state no licence. Ratepayer names are not republished, and holiday lets are counted but not listed",
+    "licence_type": "None stated",
+    "data": [{"file": "_data/business-rates.json", "schedule": "weekly", "script": "_python/business-rates.py"}],
+    "pages": ["/cheltenham-business-rates", "/cheltenham-business-rates/empty-properties"]
   }
 ]

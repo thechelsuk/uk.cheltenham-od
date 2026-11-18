@@ -1,0 +1,137 @@
+{% include header.html %}
+{% assign rates = site.data["business-rates"] %}
+{% assign s = rates.summary %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ s.empty_display }}</strong> empty in {{ rates.release.name }}</li>
+                <li><strong>{{ s.empty_pct_display }}</strong> of business properties</li>
+                <li><strong>{{ s.empty_every_release_display }}</strong> empty in all {{ s.release_count }} lists</li>
+                <li><strong>{{ s.empty_rv_display }}</strong> total rateable value</li>
+            </ul>
+            <ul class="header-links">
+                <li><a href="{{ rates.source_url }}">Council business rates data</a></li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+
+        {{ content }}
+
+        <h2>Exemptions From Empty Rates</h2>
+        <p>The exemption the council records for each empty property. Properties with none pay full rates.</p>
+        <div class="table-scroll">
+            <table class="business-rates-exemptions-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Exemption</th>
+                        <th scope="col" class="number">Properties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in rates.exemptions %}
+                    <tr>
+                        <td>{{ e.name }}</td>
+                        <td class="number" data-val="{{ e.count }}">{{ e.count_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <h2 id="map">Empty Properties Map</h2>
+        <p>Each circle is an empty property, shaded by its rateable value. Choose a band to see only the properties in it.</p>
+        <div class="filter-bar">
+            <label class="filter-label" for="business-rates-map-band">Rateable value</label>
+            <select id="business-rates-map-band">
+                <option value="all">All bands</option>
+                {% for b in rates.bands %}<option value="{{ b.band }}">{{ b.label }}</option>
+                {% endfor %}<option value="awaiting">Awaiting a rateable value</option>
+            </select>
+        </div>
+        <div class="map-legend" id="business-rates-map-legend"></div>
+        <div id="business-rates-map" class="map-canvas" data-mode="empty" aria-label="Map of empty business properties in Cheltenham, shaded by rateable value"></div>
+
+        <h2>All Empty Business Properties</h2>
+        <p>Every empty property in the council's {{ rates.release.name }} list. "Lists Empty" counts how many of the
+            council's {{ s.release_count }} lists since {{ rates.releases.first.name }} showed it empty.</p>
+        <div class="table-scroll">
+            <table class="business-rates-empty-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col" class="postcode">Postcode</th>
+                        <th scope="col">Type</th>
+                        <th scope="col" class="number">Rateable Value</th>
+                        <th scope="col">Exemption</th>
+                        <th scope="col" class="date">Start Date</th>
+                        <th scope="col" class="number">Lists Empty</th>
+                        <th scope="col">Map</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in rates.empty %}
+                    <tr>
+                        <td>{{ e.address }}</td>
+                        <td class="postcode">{{ e.postcode }}</td>
+                        <td>{{ e.type }}</td>
+                        <td class="number" data-val="{{ e.rv }}">{{ e.rv_display }}</td>
+                        <td>{{ e.reason }}</td>
+                        <td class="date" data-val="{{ e.since }}">{{ e.since | date: "%Y-%m-%d" }}</td>
+                        <td class="number" data-val="{{ e.releases_empty }}">{{ e.releases_empty }} of {{ s.release_count }}</td>
+                        <td class="map">{% if e.lat %}{% include pin.html lat=e.lat lng=e.lon label=e.address %}{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>Holiday lets aren't listed. {{ s.holiday_lets_display }} holiday lets are on the council's lists, occupied
+            or empty.</small></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>When Does an Empty Business Property Start Paying Rates?</h3>
+        <ul>
+            <li>After three months empty, or six months for certain industrial properties. From then on the full rates are
+                due, unless the property is exempt. The council's
+                <a href="https://www.cheltenham.gov.uk/business-and-licensing/business-rates-and-rate-relief/unoccupied-properties/">unoccupied
+                properties</a> page explains the rules.</li>
+        </ul>
+
+        <h3>Which Empty Properties Are Exempt?</h3>
+        <ul>
+            <li>Among others, listed buildings, properties whose rateable value is mostly land, and some properties
+                owned by registered charities or community amateur sports clubs. The table above gives the exemption the
+                council records for each property.</li>
+        </ul>
+
+        <h3>What Does the Start Date Show?</h3>
+        <ul>
+            <li>The start date on the council's record for the empty property. It is usually when the property became empty
+                or changed hands, so treat it as a guide to how long it has stood empty rather than an exact date.</li>
+        </ul>
+
+        <h3>What Does "Lists Empty" Show?</h3>
+        <ul>
+            <li>How many of the council's lists since {{ rates.releases.first.name }} showed the property empty. A property
+                empty in every list has stayed empty for most of the year, though a short let between two lists wouldn't show.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ rates.source_url }}">{{ rates.source }}</a>'s business rates lists, with no licence
+            stated. Rateable values are set by the Valuation Office Agency. Properties are placed on the map by their
+            postcode using <a href="https://postcodes.io/">postcodes.io</a> (ONS Postcode Directory).
+            {% include freshness.html file="_data/business-rates.json" %}
+            Each circle sits at its postcode's centre, so properties sharing a postcode share a spot.
+        </small></p>
+    </div>
+</div>
+
+{% include leaflet.html %}
+<script id="business-rates-map-data" type="application/json">{"bands": {{ rates.bands | map: "label" | jsonify }}, "upper": {{ rates.band_upper | jsonify }}, "release_count": {{ s.release_count }}, "empty": {{ rates.empty | jsonify }}}</script>
+<script src="/assets/scripts/business-rates-map.js"></script>
+{% include footer.html %}

@@ -1,0 +1,125 @@
+{% include header.html %}
+{% assign idx = site.data["council-spending"].index %}
+{% assign y = idx.years | where: "year", page.spending_year | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ y.payments_display }}</strong> paid to suppliers{% unless y.complete %} so far{% endunless %}</li>
+                <li><strong>{{ y.count_display }}</strong> payments</li>
+                <li><strong>{{ y.services | size }}</strong> service areas</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Spending by Month</h2>
+        <div class="table-scroll">
+            <table class="council-spending-months-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Month</th>
+                        <th scope="col" class="number">Payments</th>
+                        <th scope="col" class="number">Paid</th>
+                        <th scope="col" class="number">Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in y.month_totals %}
+                    <tr>
+                        <td data-val="{{ m.month }}">{{ m.month | append: "-01" | date: "%B %Y" }}</td>
+                        <td class="number" data-val="{{ m.count }}">{{ m.count_display }}</td>
+                        <td class="number" data-val="{{ m.payments }}">{{ m.payments_display }}</td>
+                        <td class="number" data-val="{{ m.credits }}">{{ m.credits_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Payments** number of payments, **Paid** money paid out, **Credits** refunds and other money coming back" %}
+
+        <h2>Spending by Service Area</h2>
+        <div class="table-scroll">
+            <table class="council-spending-services-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col">Service Area</th>
+                        <th scope="col" class="number">Payments</th>
+                        <th scope="col" class="number">Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in y.services %}
+                    <tr>
+                        <td>{{ s.name }}</td>
+                        <td class="number" data-val="{{ s.count }}">{{ s.count_display }}</td>
+                        <td class="number" data-val="{{ s.payments }}">{{ s.payments_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p>Service areas are the council's own budget headings, as named in its payment files.</p>
+
+        <h2>Top {{ y.top_suppliers | size }} Suppliers</h2>
+        <div class="table-scroll">
+            <table class="council-spending-suppliers-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="number">Rank</th>
+                        <th scope="col">Supplier</th>
+                        <th scope="col" class="number">Payments</th>
+                        <th scope="col" class="number">Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in y.top_suppliers %}
+                    <tr>
+                        <td class="number" data-val="{{ forloop.index }}">{{ forloop.index }}</td>
+                        <td>{{ s.name }}</td>
+                        <td class="number" data-val="{{ s.count }}">{{ s.count_display }}</td>
+                        <td class="number" data-val="{{ s.payments }}">{{ s.payments_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="action-row"><a class="pill-link" href="/cheltenham-council-spending/suppliers">See the top 100 suppliers over five years &rarr;</a></p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Is the Council's Financial Year?</h3>
+        <ul>
+            <li>It runs from 1 April to 31 March, so {{ y.year }} covers {{ y.label }}.{% unless y.complete %} The council has published {{ y.months }} months of this year so far, up to {{ y.last_month | append: "-01" | date: "%B %Y" }}.{% endunless %}</li>
+        </ul>
+
+        <h3>Does This Show Everything the Council Spent?</h3>
+        <ul>
+            <li>No. It lists payments to suppliers where the charge to one budget is £500 or more, and purchases on the council's payment cards. For the council's spending by service, see the <a href="/cheltenham-council-spending/accounts">council accounts</a> page.</li>
+        </ul>
+
+        <h3>Do the Amounts Include VAT?</h3>
+        <ul>
+            <li>The council's files don't say whether amounts include VAT, so the figures are shown exactly as published.</li>
+        </ul>
+
+        <h3>Why Are Some Suppliers Shown as Redacted?</h3>
+        <ul>
+            <li>The council's files show some payee names as redacted. These payments are left out of the top suppliers, because they can't be put against one supplier, but they are counted in every total. In {{ y.year }}{% unless y.complete %} so far{% endunless %}, {{ y.withheld.count_display }} payments worth {{ y.withheld.payments_display }} had the payee redacted.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ idx.source_url }}">{{ idx.source }}</a>, published under the {{ idx.licence }}.
+            {% include freshness.html file="_data/council-spending/index.json" %}
+            {% if y.skipped > 0 %}{{ y.skipped }} payments are left out because the council's file doesn't show a readable amount.{% endif %}
+        </small></p>
+    </div>
+
+    {% include footer.html %}
+</div>

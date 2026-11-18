@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": {{ page.title | jsonify }},
+  "description": "Payments of £500 or more and card purchases by Cheltenham Borough Council, published monthly under the Local Government Transparency Code.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['council-spending'].index.generated_at }}",
+  "isAccessibleForFree": true,
+  "license": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "temporalCoverage": "{{ site.data['council-spending'].index.first_month }}/{{ site.data['council-spending'].index.latest_month }}",
+  "variableMeasured": ["Payment date", "Supplier", "Service area", "Purpose", "Amount"]
+}
+</script>

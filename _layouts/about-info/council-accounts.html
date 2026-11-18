@@ -1,0 +1,86 @@
+{% include header.html %}
+{% assign accounts = site.data["council-accounts"] %}
+{% assign latest_total = accounts.total.years | last %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ latest_total.display }}</strong> net spending on services in {{ accounts.latest_year }}</li>
+                <li><strong>{{ accounts.years | size }}</strong> financial years</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Net Spending by Service</h2>
+        <div class="chart-canvas"><canvas id="council-accounts-chart" aria-label="Bar chart of Cheltenham Borough Council's net spending by service from {{ accounts.years.first }} to {{ accounts.latest_year }}"></canvas></div>
+        <div class="table-scroll">
+            <table class="council-accounts-table data-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Service</th>
+                        {% for year in accounts.years %}
+                        <th scope="col" class="number">{{ year }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in accounts.services %}
+                    <tr>
+                        <td>{{ s.name }}</td>
+                        {% for v in s.years %}
+                        <td class="number">{{ v.display }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include key.html text="**Net spending** what each service cost after its own income, such as fees and charges, is taken off; a figure below zero means the service took in more than it spent" %}
+        <p>Across all services, the council's net spending was {% for v in accounts.total.years %}{% if forloop.last %}and {% endif %}<strong>{{ v.display }}</strong> in {{ v.year }}{% unless forloop.last %}{% if forloop.rindex == 2 %} {% else %}, {% endif %}{% endunless %}{% endfor %}.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What Does Net Spending Mean?</h3>
+        <ul>
+            <li>It is what a service cost the council after its own income, such as fees, charges and some grants, is taken off. The figures cover the council's day-to-day (revenue) spending, not capital spending such as building projects.</li>
+        </ul>
+
+        <h3>Why Is Highways and Transport Below Zero?</h3>
+        <ul>
+            <li>A figure below zero means the service's own income was larger than what it spent. Highways and transport includes the council's off-street car parks, which in 2025-26 took in more than they cost.</li>
+        </ul>
+
+        <h3>Why Are Education and Social Care Missing?</h3>
+        <ul>
+            <li>Cheltenham Borough Council reported no spending under those headings in these years, so they are left out of the table.</li>
+        </ul>
+
+        <h3>How Is This Different From the Payments Pages?</h3>
+        <ul>
+            <li>The <a href="/cheltenham-council-spending">council spending</a> pages list individual payments to suppliers. This page shows the council's own year-end figures for each service, as reported to the government, so the two don't add up to the same totals.</li>
+        </ul>
+
+        <h3>When Is a New Year Added?</h3>
+        <ul>
+            <li>The government publishes each council's figures some months after the financial year ends. This page shows the latest five years.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from the <a href="{{ accounts.source_url }}">{{ accounts.source }}</a>, published under the {{ accounts.licence }}.
+            {% include freshness.html file="_data/council-accounts.json" %}
+        </small></p>
+    </div>
+
+    {% include footer.html %}
+</div>
+
+{% include chartjs.html %}
+<script id="council-accounts-data" type="application/json">{"years": {{ accounts.years | jsonify }}, "services": {{ accounts.services | jsonify }}}</script>
+<script src="/assets/scripts/council-spending-chart.js"></script>

@@ -1,0 +1,90 @@
+{% include header.html %}
+{% assign idx = site.data["council-spending"].index %}
+{% assign top = idx.suppliers | first %}
+<div class="{{page.type}} herobar">
+    <div class="{{page.type}}">
+        <header class="{{page.type}} header">
+            {% include breadcrumbs.html %}
+            <h1>{{page.title}}</h1>
+            <p>{{page.description}}</p>
+            <ul class="header-facts">
+                <li><strong>{{ idx.suppliers | size }}</strong> biggest suppliers</li>
+                <li><strong>{{ idx.page_years.last }} to {{ idx.page_years.first }}</strong> financial years</li>
+                <li><strong>{{ top.total_display }}</strong> paid to the biggest, {{ top.name }}</li>
+            </ul>
+        </header>
+        {% include section-links.html %}
+        {% include sponsor.html %}
+
+        {{ content }}
+
+        <h2>Top {{ idx.suppliers | size }} Suppliers</h2>
+        <div class="table-scroll">
+            <table class="council-spending-supplier-years-table data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="number">Rank</th>
+                        <th scope="col">Supplier</th>
+                        {% for year in idx.page_years %}
+                        <th scope="col" class="number">{{ year }}</th>
+                        {% endfor %}
+                        <th scope="col" class="number">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in idx.suppliers %}
+                    <tr>
+                        <td class="number" data-val="{{ forloop.index }}">{{ forloop.index }}</td>
+                        <td>{{ s.name }}</td>
+                        {% for year in idx.page_years %}
+                        {% assign sy = s.years | where: "year", year | first %}
+                        <td class="number" data-val="{{ sy.payments | default: 0 }}">{{ sy.payments_display | default: "—" }}</td>
+                        {% endfor %}
+                        <td class="number" data-val="{{ s.total }}">{{ s.total_display }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% assign current = idx.years | first %}
+        {% include key.html text="**Years** the council's financial years, April to March, with links to each year below, **—** no payments that year" %}
+        {% unless current.complete %}<p>{{ current.year }} covers {{ current.months }} months so far, to {{ current.last_month | append: "-01" | date: "%B %Y" }}.</p>{% endunless %}
+
+        <p>Spending for each year:{% for year in idx.page_years %} <a href="/cheltenham-council-spending/{{ year }}">{{ year }}</a>{% unless forloop.last %},{% endunless %}{% endfor %}.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How Are Suppliers Ranked?</h3>
+        <ul>
+            <li>By the total paid to each supplier over the five financial years from {{ idx.page_years.last }}, counting only money paid out, not refunds or credits.</li>
+        </ul>
+
+        <h3>Why Is the Same Company Listed Twice?</h3>
+        <ul>
+            <li>Suppliers are listed under the names the council uses in its files. A company that changed its name, or that the council records in two ways, can appear twice. Names that differ only in their capital letters are counted together, and names the council writes all in capitals are shown with a capital letter only at the start of each word, keeping initials such as EDF and NHS. Otherwise names are never merged, so each line keeps the council's own wording.</li>
+        </ul>
+
+        <h3>What Are "Council Credit Card Purchases"?</h3>
+        <ul>
+            <li>Purchases on the council's payment cards, added together as one line.</li>
+        </ul>
+
+        <h3>Why Are Redacted Payments Missing?</h3>
+        <ul>
+            <li>Where the council's files show a payee as redacted, the payments can't be put against a supplier, so they are left out of this table. They are still counted in every total on the <a href="/cheltenham-council-spending">council spending</a> pages.</li>
+        </ul>
+
+        <h3>Do the Amounts Include VAT?</h3>
+        <ul>
+            <li>The council's files don't say whether amounts include VAT, so the figures are shown exactly as published.</li>
+        </ul>
+
+        <h2 id="about-this-data">About This Data</h2>
+        <p class="attribution"><small>
+            Data from <a href="{{ idx.source_url }}">{{ idx.source }}</a>, published under the {{ idx.licence }}.
+            {% include freshness.html file="_data/council-spending/index.json" %}
+        </small></p>
+    </div>
+
+    {% include footer.html %}
+</div>

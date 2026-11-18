@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Empty Business Properties",
+  "description": "Every empty business property in Cheltenham Borough Council's business rates lists, with address, property type, rateable value, empty rates exemption and the number of lists showing it empty.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['business-rates'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Address", "Property type", "Rateable value", "Empty rates exemption", "Start date", "Lists showing the property empty"]
+}
+</script>

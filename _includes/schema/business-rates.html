@@ -1,0 +1,14 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Cheltenham Business Rates: Occupied and Empty Properties",
+  "description": "Counts of Cheltenham's occupied and empty business properties by rateable value band and property type, with reliefs, from Cheltenham Borough Council's business rates lists.",
+  "url": "{{ page.url | absolute_url }}",
+  "dateModified": "{{ site.data['business-rates'].generated_at }}",
+  "isAccessibleForFree": true,
+  "creator": { "@type": "Organization", "name": "{{ site.title }}", "url": "{{ site.url }}" },
+  "spatialCoverage": { "@type": "Place", "name": "Cheltenham, Gloucestershire, UK" },
+  "variableMeasured": ["Occupied properties", "Empty properties", "Share of properties empty", "Properties by rateable value band", "Properties by type", "Rate reliefs"]
+}
+</script>
