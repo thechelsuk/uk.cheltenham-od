@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T08:35:09+00:00",
+  "generated_at": "2026-11-18T08:40:10+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -32,8 +32,8 @@
     },
     {
       "scheduled": "2026-11-18T08:43",
-      "expected": "2026-11-18T08:43",
-      "status": "On time",
+      "expected": "2026-11-18T08:45",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -174,23 +174,31 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-18T09:26",
+      "expected": "2026-11-18T09:26",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-18T08:27",
-      "expected": "2026-11-18T08:33",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a speed restriction",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-18T08:32",
-      "expected": "2026-11-18T08:35",
+      "expected": "2026-11-18T08:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -262,6 +270,17 @@
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-18T09:26",
+      "expected": "2026-11-18T09:26",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
     }
