@@ -155,7 +155,11 @@ def test_finds_each_months_csv_on_the_council_page():
     ("EDF ENERGY", "EDF Energy"),
     ("Lloyds Corporate Card - REDACTED - Selco", cs.CARD_GROUP),
     ("BUSINESS CARD CHARGE - REDACTED - ROMAN BATHS", cs.CARD_GROUP),
-    ("BARCLAYCARD REDACTED", cs.CARD_GROUP),
+    # Barclaycard's monthly car park card-processing charges: a supplier, not card purchases
+    ("BARCLAYCARD REDACTED", "Barclaycard"),
+    ("BARCLAYCARD -REDACTED", "Barclaycard"),
+    ("BARCLAYCARD - 1154295310723", "Barclaycard"),
+    ("BARCLAYCARD", "Barclaycard"),
     ("CARDNET SERVICE CHARGES", "Cardnet Service Charges"),
     ("CARDO (WALES & WEST) LIMITED", "Cardo (Wales & West) Limited"),
 ])

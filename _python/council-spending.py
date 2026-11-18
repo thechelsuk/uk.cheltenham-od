@@ -203,7 +203,11 @@ def supplier_group(name):
     """The name a payment is ranked under: card purchases and withheld payees
     each as one line, other suppliers with spacing tidied and capitals eased."""
     upper = name.upper()
-    if re.search(r"CREDIT CARD|CHARGE CARD|CHG CARD|CORPORATE CARD|BUS(INESS)? CARD|BARCLAYCARD", upper):
+    # Barclaycard is paid each month for taking card payments at the car parks
+    # ("credit card charges"): a supplier, whatever account details follow its name.
+    if upper.strip().startswith("BARCLAYCARD"):
+        return "Barclaycard"
+    if re.search(r"CREDIT CARD|CHARGE CARD|CHG CARD|CORPORATE CARD|BUS(INESS)? CARD", upper):
         return CARD_GROUP
     if "REDACTED" in upper:
         return REDACTED_GROUP
