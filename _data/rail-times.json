@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T18:40:09+00:00",
+  "generated_at": "2026-11-18T18:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,23 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-18T17:31",
-      "expected": "2026-11-18T18:41",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-18T17:40",
-      "expected": "2026-11-18T18:49",
+      "expected": "2026-11-18T18:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -50,7 +35,7 @@
     },
     {
       "scheduled": "2026-11-18T18:12",
-      "expected": "2026-11-18T18:45",
+      "expected": "2026-11-18T18:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -76,7 +61,7 @@
     },
     {
       "scheduled": "2026-11-18T18:31",
-      "expected": null,
+      "expected": "2026-11-18T19:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -91,7 +76,7 @@
     },
     {
       "scheduled": "2026-11-18T18:40",
-      "expected": "2026-11-18T18:56",
+      "expected": "2026-11-18T18:57",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -141,8 +126,8 @@
     },
     {
       "scheduled": "2026-11-18T18:52",
-      "expected": "2026-11-18T18:52",
-      "status": "On time",
+      "expected": "2026-11-18T18:57",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -206,23 +191,33 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-18T19:12",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "This service has been cancelled because of train crew being delayed",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-18T17:29",
-      "expected": "2026-11-18T18:40",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-18T17:38",
-      "expected": "2026-11-18T18:48",
+      "expected": "2026-11-18T18:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -233,7 +228,7 @@
     },
     {
       "scheduled": "2026-11-18T18:11",
-      "expected": "2026-11-18T18:44",
+      "expected": "2026-11-18T18:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -244,7 +239,7 @@
     },
     {
       "scheduled": "2026-11-18T18:29",
-      "expected": null,
+      "expected": "2026-11-18T19:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -255,7 +250,7 @@
     },
     {
       "scheduled": "2026-11-18T18:38",
-      "expected": "2026-11-18T18:55",
+      "expected": "2026-11-18T18:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -277,7 +272,7 @@
     },
     {
       "scheduled": "2026-11-18T18:50",
-      "expected": "2026-11-18T18:52",
+      "expected": "2026-11-18T18:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -295,6 +290,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-18T19:10",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "This service has been cancelled because of train crew being delayed",
       "mode": "train"
     }
   ],
