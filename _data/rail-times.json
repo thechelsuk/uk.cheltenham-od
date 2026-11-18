@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T21:15:16+00:00",
+  "generated_at": "2026-11-18T21:20:11+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,13 +14,13 @@
   "departures": [
     {
       "scheduled": "2026-11-18T21:02",
-      "expected": null,
+      "expected": "2026-11-18T21:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
       "destination": "London Paddington",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Gloucester",
         "Stonehouse",
@@ -32,60 +32,6 @@
         "London Paddington"
       ],
       "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-18T21:12",
-      "expected": "2026-11-18T21:15",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-18T21:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-18T21:15",
-      "expected": "2026-11-18T21:15",
-      "status": "On time",
-      "platform": "BUS",
-      "operator": "CrossCountry",
-      "origin": "Cheltenham Spa",
-      "destination": "Newport (South Wales)",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)"
-      ],
-      "mode": "bus"
     },
     {
       "scheduled": "2026-11-18T21:33",
@@ -104,8 +50,8 @@
     },
     {
       "scheduled": "2026-11-18T21:52",
-      "expected": "2026-11-18T21:52",
-      "status": "On time",
+      "expected": "2026-11-18T21:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -162,37 +108,47 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Ashchurch for Tewkesbury",
         "Worcester Shrub Hill"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-18T21:10",
-      "expected": "2026-11-18T21:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Birmingham New Street",
+      "scheduled": "2026-11-18T22:16",
+      "expected": "2026-11-18T22:16",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
       "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-18T21:14",
+      "scheduled": "2026-11-18T22:21",
       "expected": null,
       "status": "Cancelled",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
+      "origin": "Leicester",
+      "destination": "Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-18T21:33",
       "expected": "2026-11-18T21:33",
@@ -206,8 +162,8 @@
     },
     {
       "scheduled": "2026-11-18T21:50",
-      "expected": "2026-11-18T21:50",
-      "status": "On time",
+      "expected": "2026-11-18T21:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -245,7 +201,7 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Shrub Hill",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -255,6 +211,28 @@
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Westbury",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-18T22:20",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Leicester",
+      "destination": "Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-18T22:27",
+      "expected": "2026-11-18T22:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
