@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T17:40:08+00:00",
+  "generated_at": "2026-11-19T17:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,6 @@
     "Trains running through the York area may be severely delayed by up to 90 minutes, cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-19T16:52",
-      "expected": "2026-11-19T17:40",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T17:31",
       "expected": "2026-11-19T18:00",
@@ -51,7 +30,7 @@
     },
     {
       "scheduled": "2026-11-19T17:40",
-      "expected": "2026-11-19T17:43",
+      "expected": "2026-11-19T17:44",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -107,7 +86,7 @@
     },
     {
       "scheduled": "2026-11-19T17:52",
-      "expected": "2026-11-19T18:16",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -128,7 +107,7 @@
     },
     {
       "scheduled": "2026-11-19T17:59",
-      "expected": "2026-11-19T18:03",
+      "expected": "2026-11-19T18:06",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -172,7 +151,7 @@
     },
     {
       "scheduled": "2026-11-19T18:12",
-      "expected": "2026-11-19T18:14",
+      "expected": "2026-11-19T18:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -211,20 +190,28 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T18:25",
+      "expected": "2026-11-19T18:25",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-19T16:50",
-      "expected": "2026-11-19T17:39",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Aberdeen",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by train crew being delayed by service disruption",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T17:29",
       "expected": "2026-11-19T17:59",
@@ -260,7 +247,7 @@
     },
     {
       "scheduled": "2026-11-19T17:50",
-      "expected": "2026-11-19T18:15",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -271,7 +258,7 @@
     },
     {
       "scheduled": "2026-11-19T17:58",
-      "expected": "2026-11-19T18:02",
+      "expected": "2026-11-19T18:05",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -282,7 +269,7 @@
     },
     {
       "scheduled": "2026-11-19T18:11",
-      "expected": "2026-11-19T18:13",
+      "expected": "2026-11-19T18:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -300,6 +287,17 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T18:24",
+      "expected": "2026-11-19T18:24",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
