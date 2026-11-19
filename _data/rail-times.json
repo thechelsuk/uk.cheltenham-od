@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T21:55:08+00:00",
+  "generated_at": "2026-11-19T22:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,22 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-19T21:52",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T22:00",
       "expected": "2026-11-19T22:00",
@@ -47,8 +31,8 @@
     },
     {
       "scheduled": "2026-11-19T22:03",
-      "expected": "2026-11-19T22:03",
-      "status": "On time",
+      "expected": "2026-11-19T22:05",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -120,20 +104,29 @@
         "Birmingham New Street"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T22:58",
+      "expected": "2026-11-19T22:58",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-19T21:50",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been cancelled because of a fault on this train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T21:59",
       "expected": "2026-11-19T21:59",
@@ -147,8 +140,8 @@
     },
     {
       "scheduled": "2026-11-19T22:01",
-      "expected": "2026-11-19T22:01",
-      "status": "On time",
+      "expected": "2026-11-19T22:04",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
