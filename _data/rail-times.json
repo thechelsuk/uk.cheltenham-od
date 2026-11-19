@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T08:55:08+00:00",
+  "generated_at": "2026-11-19T09:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,6 @@
     "A reduced Transport for Wales services is in operation between Cardiff Central and Cheltenham Spa. More details can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-19T08:52",
-      "expected": "2026-11-19T08:56",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T08:59",
       "expected": null,
@@ -184,20 +163,24 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T09:32",
+      "expected": "2026-11-19T09:32",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-19T08:50",
-      "expected": "2026-11-19T08:55",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Leeds",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T08:57",
       "expected": null,
@@ -233,8 +216,8 @@
     },
     {
       "scheduled": "2026-11-19T09:10",
-      "expected": "2026-11-19T09:10",
-      "status": "On time",
+      "expected": "2026-11-19T09:12",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -283,6 +266,17 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T09:31",
+      "expected": "2026-11-19T09:31",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     }
