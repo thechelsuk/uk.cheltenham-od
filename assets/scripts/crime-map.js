@@ -39,15 +39,19 @@
 
     function drawLegend(edges) {
         if (!legend) return;
-        var html = "";
+        legend.textContent = "";
         for (var b = 0; b < shades.length; b++) {
             var label;
             if (b === 0) label = "Under " + edges[0];
             else if (b === shades.length - 1) label = edges[b - 1] + "+";
             else label = edges[b - 1] + " to " + edges[b];
-            html += '<span><i class="tier-swatch shade-' + b + '"></i> ' + label + "</span>";
+            var item = document.createElement("span");
+            var swatch = document.createElement("i");
+            swatch.className = "tier-swatch shade-" + b;
+            item.appendChild(swatch);
+            item.appendChild(document.createTextNode(" " + label));
+            legend.appendChild(item);
         }
-        legend.innerHTML = html;
     }
 
     var map = L.map(el, { zoomSnap: 0.25 });
@@ -73,7 +77,7 @@
         var html = "<strong>" + escapeHtml(area.name) + "</strong><br>";
         if (level === "lsoa") html += escapeHtml(area.ward_name) + " ward<br>";
         html +=
-            w.first_month + " to " + w.last_month + "<br>" +
+            escapeHtml(w.first_month) + " to " + escapeHtml(w.last_month) + "<br>" +
             "Crimes: " + thousands(area.crimes[i]) + "<br>" +
             "Residents: " + thousands(area.residents[i]) + "<br>" +
             "Per 1,000 residents: " + area.rate[i].toFixed(1);

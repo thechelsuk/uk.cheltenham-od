@@ -12,6 +12,32 @@
     }
     if (!zones.length) return;
 
+    function escapeHtml(text) {
+        var div = document.createElement("div");
+        div.textContent = text == null ? "" : text;
+        return div.innerHTML;
+    }
+
+    // Only http and https links from the data go into a popup.
+    function safeUrl(url) {
+        try {
+            var parsed = new URL(url, window.location.href);
+            return parsed.protocol === "https:" || parsed.protocol === "http:" ? parsed.href : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function legendItem(color, label) {
+        var item = document.createElement("span");
+        var swatch = document.createElement("span");
+        swatch.className = "catchment-swatch";
+        swatch.style.setProperty("--swatch", color);
+        item.appendChild(swatch);
+        item.appendChild(document.createTextNode(label));
+        return item;
+    }
+
     // Golden-angle hue rotation, as on the school catchment map, so
     // neighbouring zones get clearly different colours.
     function colorForIndex(i) {
@@ -27,7 +53,7 @@
     CODMap.tiles(map);
 
     var group = [];
-    var legendHtml = "";
+    if (legendEl) legendEl.textContent = "";
 
     zones.forEach(function (z, i) {
         var color = colorForIndex(i);
@@ -38,28 +64,27 @@
                 opacity: 0.85,
                 dashArray: line.part ? "6 6" : null,
             }).addTo(map);
+            var mapUrl = safeUrl(z.map_url);
             polyline.bindPopup(
                 "<strong>" +
-                    line.street +
+                    escapeHtml(line.street) +
                     "</strong><br>" +
-                    zoneLabel(z) +
+                    escapeHtml(zoneLabel(z)) +
                     (line.part ? "<br>Part of street only" : "") +
-                    '<br><a href="' +
-                    z.map_url +
-                    '" target="_blank" rel="noopener">Council zone map ↗</a>'
+                    (mapUrl
+                        ? '<br><a href="' +
+                          escapeHtml(mapUrl) +
+                          '" target="_blank" rel="noopener">Council zone map ↗</a>'
+                        : "")
             );
             group.push(polyline);
         });
 
-        legendHtml +=
-            '<span><span class="catchment-swatch" style="--swatch: ' +
-            color +
-            '"></span>' +
-            zoneLabel(z) +
-            "</span> ";
+        if (legendEl) {
+            legendEl.appendChild(legendItem(color, zoneLabel(z)));
+            legendEl.appendChild(document.createTextNode(" "));
+        }
     });
-
-    if (legendEl) legendEl.innerHTML = legendHtml;
 
     if (group.length) map.fitBounds(L.featureGroup(group).getBounds().pad(0.05));
 

@@ -62,13 +62,13 @@
         card.appendChild(stats);
 
         var actions = el("p", "action-row");
-        var record = actionLink("Official rating record", "https://ratings.food.gov.uk/business/" + v.id);
+        var record = actionLink("Official rating record", "https://ratings.food.gov.uk/business/" + encodeURIComponent(v.id));
         record.target = "_blank";
         record.rel = "noopener";
         actions.appendChild(record);
         if (v.latitude != null && v.longitude != null) {
             var directions = actionLink("Directions", "https://www.google.com/maps/dir/?api=1&destination=" +
-                v.latitude + "," + v.longitude);
+                Number(v.latitude) + "," + Number(v.longitude));
             directions.target = "_blank";
             directions.rel = "noopener";
             actions.appendChild(directions);

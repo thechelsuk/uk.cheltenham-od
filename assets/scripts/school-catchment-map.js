@@ -53,6 +53,32 @@
 
     if (points.length < 2) return;
 
+    function escapeHtml(text) {
+        var div = document.createElement("div");
+        div.textContent = text == null ? "" : text;
+        return div.innerHTML;
+    }
+
+    // Only http and https links from the data go into a popup.
+    function safeUrl(url) {
+        try {
+            var parsed = new URL(url, window.location.href);
+            return parsed.protocol === "https:" || parsed.protocol === "http:" ? parsed.href : null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function legendItem(color, label) {
+        var item = document.createElement("span");
+        var swatch = document.createElement("span");
+        swatch.className = "catchment-swatch";
+        swatch.style.setProperty("--swatch", color);
+        item.appendChild(swatch);
+        item.appendChild(document.createTextNode(label));
+        return item;
+    }
+
     // Golden-angle hue rotation gives N visually distinct colours without
     // needing a hand-picked palette sized to the school count (7 for
     // secondary, 30+ for primary).
@@ -80,8 +106,8 @@
     var delaunay = d3.Delaunay.from(points.map(function (p) { return [p.lon, p.lat]; }));
     var voronoi = delaunay.voronoi(bounds);
 
-    var legendHtml = "";
     var group = [];
+    if (legendEl) legendEl.textContent = "";
 
     points.forEach(function (p, i) {
         var color = colorForIndex(i);
@@ -108,29 +134,26 @@
         marker.bindPopup(popupHtml(p));
         group.push(marker);
 
-        legendHtml +=
-            '<span><span class="catchment-swatch" style="--swatch: ' +
-            color +
-            '"></span>' +
-            (p.name || "School") +
-            "</span> ";
+        if (legendEl) {
+            legendEl.appendChild(legendItem(color, p.name || "School"));
+            legendEl.appendChild(document.createTextNode(" "));
+        }
     });
-
-    if (legendEl) legendEl.innerHTML = legendHtml;
 
     function popupHtml(p) {
         var o = ofsted[p.name];
-        var name = p.name || "School";
-        var html = "<strong>" + (o ? '<a href="' + o.url + '">' + name + "</a>" : name) + "</strong>";
-        if (p.type) html += "<br>" + p.type;
-        if (p.address) html += "<br>" + p.address;
-        if (o && o.outcome) html += "<br>Ofsted: " + o.outcome + " (" + o.date + ")";
-        if (o) html += '<br><a href="' + o.url + '">Ofsted inspection history</a>';
-        var link = p.website || p.urn_url;
+        var name = escapeHtml(p.name || "School");
+        var ofstedUrl = o ? safeUrl(o.url) : null;
+        var html = "<strong>" + (ofstedUrl ? '<a href="' + escapeHtml(ofstedUrl) + '">' + name + "</a>" : name) + "</strong>";
+        if (p.type) html += "<br>" + escapeHtml(p.type);
+        if (p.address) html += "<br>" + escapeHtml(p.address);
+        if (o && o.outcome) html += "<br>Ofsted: " + escapeHtml(o.outcome) + " (" + escapeHtml(o.date) + ")";
+        if (ofstedUrl) html += '<br><a href="' + escapeHtml(ofstedUrl) + '">Ofsted inspection history</a>';
+        var link = safeUrl(p.website || p.urn_url);
         if (link) {
             html +=
                 '<br><a href="' +
-                link +
+                escapeHtml(link) +
                 '" target="_blank" rel="noopener">School site ↗</a>';
         }
         html += '<br><small>Nearest by straight-line distance only</small>';

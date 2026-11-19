@@ -6,6 +6,10 @@ import worker, { catchUp, decide, runCheck, safeEqual } from "../src/index.js";
 import { lastDue, matches } from "../src/cron.js";
 import { SCHEDULES, WATCHDOG_CRON } from "../src/schedules.js";
 
+function isGithubStatus(url) {
+    return new URL(String(url)).hostname === "www.githubstatus.com";
+}
+
 const here = new URL(".", import.meta.url);
 const repoFile = (path) =>
     readFileSync(new URL(`../../../${path}`, here), "utf8");
@@ -378,7 +382,7 @@ describe("runCheck", () => {
     it("says in the takeover email when GitHub is having problems", async () => {
         const fakeGithub = globalThis.fetch;
         globalThis.fetch = async (url, init) => {
-            if (String(url).includes("githubstatus.com")) {
+            if (isGithubStatus(url)) {
                 return new Response(
                     JSON.stringify({
                         components: [
@@ -403,7 +407,7 @@ describe("runCheck", () => {
         const env = fakeEnv({ heartbeat: minutesAgo(1), cloud_active: "true" });
         await runCheck(env, NOW);
         assert.equal(
-            calls.some((c) => c.url.includes("githubstatus.com")),
+            calls.some((c) => isGithubStatus(c.url)),
             false,
         );
         assert.doesNotMatch(env.NOTIFIER.sent[0].body.message, /GitHub/);
