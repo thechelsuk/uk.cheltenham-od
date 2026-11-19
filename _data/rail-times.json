@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T15:50:08+00:00",
+  "generated_at": "2026-11-19T15:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,26 +12,6 @@
     "Trains running through the York area may be severely delayed by up to 90 minutes, cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-19T15:40",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T15:48",
       "expected": "2026-11-19T15:59",
@@ -70,30 +50,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-19T15:52",
-      "expected": "2026-11-19T15:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-19T15:59",
-      "expected": "2026-11-19T15:59",
-      "status": "On time",
+      "expected": "2026-11-19T16:03",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -135,7 +94,7 @@
     },
     {
       "scheduled": "2026-11-19T16:12",
-      "expected": "2026-11-19T16:18",
+      "expected": "2026-11-19T16:20",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -198,20 +157,32 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T16:31",
+      "expected": "2026-11-19T16:31",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Paignton",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Dawlish",
+        "Teignmouth",
+        "Newton Abbot",
+        "Torquay",
+        "Paignton"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-19T15:38",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T15:47",
       "expected": "2026-11-19T15:58",
@@ -235,20 +206,9 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-19T15:50",
-      "expected": "2026-11-19T15:47",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-19T15:58",
-      "expected": "2026-11-19T15:58",
-      "status": "On time",
+      "expected": "2026-11-19T16:02",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
@@ -258,7 +218,7 @@
     },
     {
       "scheduled": "2026-11-19T16:10",
-      "expected": "2026-11-19T16:17",
+      "expected": "2026-11-19T16:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -296,6 +256,28 @@
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T16:30",
+      "expected": "2026-11-19T16:30",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Paignton",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T16:31",
+      "expected": "2026-11-19T16:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
