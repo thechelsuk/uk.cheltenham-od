@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T12:25:41+00:00",
+  "generated_at": "2026-11-19T12:30:12+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,46 +9,10 @@
     "crs": "CNM"
   },
   "messages": [
+    "Trains running between Wolverhampton and Shrewsbury / Stafford may be delayed by up to 20 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website.",
     "Trains running through the York area may be delayed by up to 40 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-19T12:12",
-      "expected": "2026-11-19T12:25",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Aberdeen via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Inverkeithing",
-        "Kirkcaldy",
-        "Markinch",
-        "Ladybank",
-        "Cupar",
-        "Leuchars",
-        "Dundee",
-        "Aberdeen"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T12:29",
       "expected": "2026-11-19T12:29",
@@ -105,8 +69,8 @@
     },
     {
       "scheduled": "2026-11-19T12:40",
-      "expected": "2026-11-19T12:40",
-      "status": "On time",
+      "expected": "2026-11-19T12:43",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -141,7 +105,7 @@
     },
     {
       "scheduled": "2026-11-19T12:52",
-      "expected": "2026-11-19T13:18",
+      "expected": "2026-11-19T13:17",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -193,31 +157,59 @@
         "Nottingham"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-19T12:11",
-      "expected": "2026-11-19T12:22",
+      "scheduled": "2026-11-19T13:03",
+      "expected": "2026-11-19T13:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T13:12",
+      "expected": "2026-11-19T13:18",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Aberdeen via Leeds",
-      "reason": "",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been delayed by the emergency services dealing with an incident earlier today",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Dunbar",
+        "Edinburgh"
+      ],
       "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-19T12:27",
-      "expected": "2026-11-19T12:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-19T12:28",
       "expected": "2026-11-19T12:28",
@@ -253,7 +245,7 @@
     },
     {
       "scheduled": "2026-11-19T12:38",
-      "expected": "2026-11-19T12:40",
+      "expected": "2026-11-19T12:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -275,7 +267,7 @@
     },
     {
       "scheduled": "2026-11-19T12:50",
-      "expected": "2026-11-19T13:17",
+      "expected": "2026-11-19T13:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -293,6 +285,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T13:10",
+      "expected": "2026-11-19T13:17",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been delayed by the emergency services dealing with an incident earlier today",
       "mode": "train"
     }
   ],
