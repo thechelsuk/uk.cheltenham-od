@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T20:16:08+00:00",
+  "generated_at": "2026-11-19T20:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,7 +14,7 @@
   "departures": [
     {
       "scheduled": "2026-11-19T19:52",
-      "expected": "2026-11-19T20:17",
+      "expected": "2026-11-19T20:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -30,29 +30,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-19T20:12",
-      "expected": "2026-11-19T20:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Newton Abbot",
-      "destination": "Derby",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
       ],
       "mode": "train"
     },
@@ -74,13 +51,13 @@
     },
     {
       "scheduled": "2026-11-19T20:23",
-      "expected": "2026-11-19T20:25",
-      "status": "Delayed",
+      "expected": "2026-11-19T20:23",
+      "status": "On time",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "reason": "",
       "calling_at": [
         "Gloucester",
         "Cam & Dursley",
@@ -113,8 +90,8 @@
     },
     {
       "scheduled": "2026-11-19T20:52",
-      "expected": "2026-11-19T20:52",
-      "status": "On time",
+      "expected": "2026-11-19T20:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -176,6 +153,21 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T21:12",
+      "expected": "2026-11-19T21:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -187,17 +179,6 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-19T20:10",
-      "expected": "2026-11-19T20:12",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Newton Abbot",
-      "destination": "Derby",
       "reason": "",
       "mode": "train"
     },
@@ -214,13 +195,13 @@
     },
     {
       "scheduled": "2026-11-19T20:21",
-      "expected": "2026-11-19T20:24",
+      "expected": "2026-11-19T20:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "This service has been delayed by a late running train being in front of this one",
+      "reason": "",
       "mode": "train"
     },
     {
@@ -247,8 +228,8 @@
     },
     {
       "scheduled": "2026-11-19T20:50",
-      "expected": "2026-11-19T20:50",
-      "status": "On time",
+      "expected": "2026-11-19T20:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -265,6 +246,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T21:10",
+      "expected": "2026-11-19T21:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Birmingham New Street",
+      "reason": "",
       "mode": "train"
     }
   ],
