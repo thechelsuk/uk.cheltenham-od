@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T18:30:08+00:00",
+  "generated_at": "2026-11-19T18:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,29 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-19T17:52",
-      "expected": "2026-11-19T18:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a shortage of train drivers",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-19T18:31",
-      "expected": "2026-11-19T18:33",
+      "expected": "2026-11-19T18:35",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -178,23 +157,26 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T19:15",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-19T17:50",
-      "expected": "2026-11-19T18:27",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a shortage of train drivers",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-19T18:29",
-      "expected": "2026-11-19T18:32",
+      "expected": "2026-11-19T18:34",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -205,7 +187,7 @@
     },
     {
       "scheduled": "2026-11-19T18:31",
-      "expected": "2026-11-19T18:37",
+      "expected": "2026-11-19T18:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -267,6 +249,17 @@
       "origin": "Plymouth",
       "destination": "Leeds",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T19:14",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
