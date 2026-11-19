@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T12:30:12+00:00",
+  "generated_at": "2026-11-19T12:35:10+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,29 +9,10 @@
     "crs": "CNM"
   },
   "messages": [
-    "Trains running between Wolverhampton and Shrewsbury / Stafford may be delayed by up to 20 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website.",
+    "Trains running between Wolverhampton and Shrewsbury / Stafford may be delayed by up to 35 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website.",
     "Trains running through the York area may be delayed by up to 40 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-19T12:29",
-      "expected": "2026-11-19T12:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T12:35",
       "expected": null,
@@ -105,7 +86,7 @@
     },
     {
       "scheduled": "2026-11-19T12:52",
-      "expected": "2026-11-19T13:17",
+      "expected": "2026-11-19T13:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -181,7 +162,7 @@
     },
     {
       "scheduled": "2026-11-19T13:12",
-      "expected": "2026-11-19T13:18",
+      "expected": "2026-11-19T13:17",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -207,20 +188,26 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T13:15",
+      "expected": "2026-11-19T13:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-19T12:28",
-      "expected": "2026-11-19T12:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T12:32",
       "expected": "2026-11-19T12:32",
@@ -267,7 +254,7 @@
     },
     {
       "scheduled": "2026-11-19T12:50",
-      "expected": "2026-11-19T13:16",
+      "expected": "2026-11-19T13:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -289,13 +276,24 @@
     },
     {
       "scheduled": "2026-11-19T13:10",
-      "expected": "2026-11-19T13:17",
+      "expected": "2026-11-19T13:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by the emergency services dealing with an incident earlier today",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T13:14",
+      "expected": "2026-11-19T13:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
