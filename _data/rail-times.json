@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T14:50:08+00:00",
+  "generated_at": "2026-11-19T14:55:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,50 +9,9 @@
     "crs": "CNM"
   },
   "messages": [
-    "Trains running through the York area may be severely delayed by up to 90 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
+    "Trains running through the York area may be severely delayed by up to 90 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-19T13:52",
-      "expected": "2026-11-19T14:50",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by damage to the overhead electric wires",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-19T14:40",
-      "expected": "2026-11-19T14:51",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by train crew being delayed",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T14:52",
       "expected": null,
@@ -140,7 +99,7 @@
     },
     {
       "scheduled": "2026-11-19T15:12",
-      "expected": "2026-11-19T15:25",
+      "expected": "2026-11-19T15:30",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -171,7 +130,7 @@
     },
     {
       "scheduled": "2026-11-19T15:15",
-      "expected": "2026-11-19T15:23",
+      "expected": "2026-11-19T15:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -204,31 +163,24 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T15:29",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident earlier today",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-19T13:50",
-      "expected": "2026-11-19T14:49",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by damage to the overhead electric wires",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-19T14:38",
-      "expected": "2026-11-19T14:50",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "This service has been delayed by train crew being delayed",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-19T14:50",
       "expected": null,
@@ -264,7 +216,7 @@
     },
     {
       "scheduled": "2026-11-19T15:10",
-      "expected": "2026-11-19T15:24",
+      "expected": "2026-11-19T15:29",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -275,7 +227,7 @@
     },
     {
       "scheduled": "2026-11-19T15:14",
-      "expected": "2026-11-19T15:22",
+      "expected": "2026-11-19T15:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -302,6 +254,28 @@
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T15:28",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident earlier today",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T15:31",
+      "expected": "2026-11-19T15:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
