@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T12:15:09+00:00",
+  "generated_at": "2026-11-19T12:20:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,29 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-19T11:52",
-      "expected": "2026-11-19T12:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a fault on a train in front of this one",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-19T12:12",
-      "expected": "2026-11-19T12:21",
+      "expected": "2026-11-19T12:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -72,7 +51,7 @@
     },
     {
       "scheduled": "2026-11-19T12:15",
-      "expected": "2026-11-19T12:23",
+      "expected": "2026-11-19T12:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -176,23 +155,44 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-19T11:51",
-      "expected": "2026-11-19T12:12",
+      "scheduled": "2026-11-19T12:52",
+      "expected": "2026-11-19T13:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a fault on a train in front of this one",
+      "destination": "Penzance",
+      "reason": "This service has been delayed by damage to the overhead electric wires",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth",
+        "Liskeard",
+        "Bodmin Parkway",
+        "Lostwithiel",
+        "Par",
+        "St Austell",
+        "Truro",
+        "Redruth",
+        "Camborne",
+        "Hayle",
+        "St Erth",
+        "Penzance"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-19T12:11",
-      "expected": "2026-11-19T12:20",
+      "expected": "2026-11-19T12:23",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -203,7 +203,7 @@
     },
     {
       "scheduled": "2026-11-19T12:14",
-      "expected": "2026-11-19T12:22",
+      "expected": "2026-11-19T12:21",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -276,6 +276,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-19T12:50",
+      "expected": "2026-11-19T13:18",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Penzance",
+      "reason": "This service has been delayed by damage to the overhead electric wires",
       "mode": "train"
     }
   ],
