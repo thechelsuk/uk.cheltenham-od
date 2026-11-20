@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T17:15:08+00:00",
+  "generated_at": "2026-11-20T17:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,29 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-20T16:52",
-      "expected": "2026-11-20T17:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Dundee",
-      "destination": "Plymouth",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-20T17:12",
-      "expected": "2026-11-20T17:18",
+      "expected": "2026-11-20T17:19",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -168,20 +147,30 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-20T16:50",
-      "expected": "2026-11-20T17:11",
+      "scheduled": "2026-11-20T17:52",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Dundee",
-      "destination": "Plymouth",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
       "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
       "scheduled": "2026-11-20T17:10",
       "expected": "2026-11-20T17:17",
@@ -239,7 +228,7 @@
     },
     {
       "scheduled": "2026-11-20T17:31",
-      "expected": "2026-11-20T17:34",
+      "expected": "2026-11-20T17:33",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -267,6 +256,17 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-20T17:50",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads",
       "reason": "",
       "mode": "train"
     }
