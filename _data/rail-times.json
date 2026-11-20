@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T11:30:08+00:00",
+  "generated_at": "2026-11-20T11:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-20T10:52",
-      "expected": "2026-11-20T11:28",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by trespassers on the railway",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-20T11:29",
       "expected": "2026-11-20T11:34",
@@ -48,7 +27,7 @@
     },
     {
       "scheduled": "2026-11-20T11:40",
-      "expected": "2026-11-20T11:55",
+      "expected": "2026-11-20T11:53",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -165,23 +144,50 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-20T12:12",
+      "expected": "2026-11-20T12:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh",
+        "Haymarket",
+        "Inverkeithing",
+        "Kirkcaldy",
+        "Markinch",
+        "Ladybank",
+        "Cupar",
+        "Leuchars",
+        "Dundee",
+        "Aberdeen"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-20T10:50",
-      "expected": "2026-11-20T11:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Newcastle",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by trespassers on the railway",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-20T11:26",
-      "expected": "2026-11-20T11:44",
+      "expected": "2026-11-20T11:42",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -203,7 +209,7 @@
     },
     {
       "scheduled": "2026-11-20T11:31",
-      "expected": "2026-11-20T11:34",
+      "expected": "2026-11-20T11:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -254,6 +260,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-20T12:11",
+      "expected": "2026-11-20T12:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Aberdeen via Leeds",
+      "reason": "",
       "mode": "train"
     }
   ],
