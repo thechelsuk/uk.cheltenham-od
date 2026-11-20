@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T15:20:08+00:00",
+  "generated_at": "2026-11-20T15:25:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,27 +13,6 @@
     "Trains running in the Gloucester area may be delayed, cancelled, revised or diverted. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-20T14:52",
-      "expected": "2026-11-20T15:19",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a speed restriction over a bridge earlier today",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-20T15:23",
       "expected": null,
@@ -166,20 +145,30 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-20T16:03",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "This service has been cancelled because of a safety inspection of the track",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-20T14:50",
-      "expected": "2026-11-20T15:16",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a speed restriction over a bridge earlier today",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-20T15:21",
       "expected": null,
