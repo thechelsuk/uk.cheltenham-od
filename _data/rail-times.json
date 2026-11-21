@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T18:00:08+00:00",
+  "generated_at": "2026-11-21T18:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,29 +14,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-21T17:52",
-      "expected": "2026-11-21T17:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by train crew being delayed",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T17:59",
-      "expected": "2026-11-21T18:09",
+      "expected": "2026-11-21T18:11",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -54,24 +33,6 @@
         "Long Eaton",
         "Beeston",
         "Nottingham"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-21T18:03",
-      "expected": "2026-11-21T18:03",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon"
       ],
       "mode": "train"
     },
@@ -99,7 +60,7 @@
     },
     {
       "scheduled": "2026-11-21T18:19",
-      "expected": "2026-11-21T18:31",
+      "expected": "2026-11-21T18:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -134,7 +95,7 @@
     },
     {
       "scheduled": "2026-11-21T18:29",
-      "expected": "2026-11-21T18:42",
+      "expected": "2026-11-21T18:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -144,6 +105,20 @@
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T18:40",
+      "expected": "2026-11-21T18:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
       ],
       "mode": "train"
     },
@@ -166,23 +141,28 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T18:48",
+      "expected": "2026-11-21T18:48",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-21T17:50",
-      "expected": "2026-11-21T17:57",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by train crew being delayed",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T17:58",
-      "expected": "2026-11-21T18:08",
+      "expected": "2026-11-21T18:10",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -204,7 +184,7 @@
     },
     {
       "scheduled": "2026-11-21T18:18",
-      "expected": "2026-11-21T18:30",
+      "expected": "2026-11-21T18:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -237,7 +217,7 @@
     },
     {
       "scheduled": "2026-11-21T18:28",
-      "expected": "2026-11-21T18:41",
+      "expected": "2026-11-21T18:43",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -254,6 +234,28 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T18:38",
+      "expected": "2026-11-21T18:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T18:47",
+      "expected": "2026-11-21T18:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Foregate Street",
       "reason": "",
       "mode": "train"
     }
