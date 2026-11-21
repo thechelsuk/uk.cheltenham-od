@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T20:50:08+00:00",
+  "generated_at": "2026-11-21T20:55:52+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,34 +9,13 @@
     "crs": "CNM"
   },
   "messages": [
-    "Trains running between Birmingham New Steet and Kings Norton via University may be delayed by up to 30 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website .",
     "Trains running between Newcastle and Edinburgh may be cancelled, delayed by up to 40 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website .",
     "The ticket office is currently closed at this station."
   ],
   "departures": [
     {
-      "scheduled": "2026-11-21T20:41",
-      "expected": "2026-11-21T20:48",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by the train departing late to maintain customer connections",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T20:52",
-      "expected": "2026-11-21T21:15",
+      "expected": "2026-11-21T21:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -72,7 +51,7 @@
     },
     {
       "scheduled": "2026-11-21T21:12",
-      "expected": null,
+      "expected": "2026-11-21T21:28",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -135,7 +114,7 @@
       "scheduled": "2026-11-21T21:32",
       "expected": "2026-11-21T21:32",
       "status": "On time",
-      "platform": "2",
+      "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
       "destination": "Swindon",
@@ -151,7 +130,7 @@
     },
     {
       "scheduled": "2026-11-21T21:46",
-      "expected": "2026-11-21T21:48",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -179,12 +158,32 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T21:59",
+      "expected": "2026-11-21T21:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Derby",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-21T20:50",
-      "expected": "2026-11-21T21:14",
+      "expected": "2026-11-21T21:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -195,7 +194,7 @@
     },
     {
       "scheduled": "2026-11-21T21:11",
-      "expected": null,
+      "expected": "2026-11-21T21:27",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -239,7 +238,7 @@
     },
     {
       "scheduled": "2026-11-21T21:45",
-      "expected": "2026-11-21T21:47",
+      "expected": null,
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -256,6 +255,17 @@
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T21:58",
+      "expected": "2026-11-21T21:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Derby",
       "reason": "",
       "mode": "train"
     }
