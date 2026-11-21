@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T15:31:08+00:00",
+  "generated_at": "2026-11-21T15:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,23 +8,10 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "The ticket office is currently closed at this station."
+  ],
   "departures": [
-    {
-      "scheduled": "2026-11-21T14:52",
-      "expected": "2026-11-21T15:32",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault occurring when attaching a part of this train",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-21T15:29",
       "expected": "2026-11-21T15:40",
@@ -188,20 +175,27 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T16:15",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-21T14:50",
-      "expected": "2026-11-21T15:31",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Glasgow Central",
-      "destination": "Bristol Temple Meads",
-      "reason": "This service has been delayed by a fault occurring when attaching a part of this train",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-21T15:27",
       "expected": "2026-11-21T15:39",
@@ -215,7 +209,7 @@
     },
     {
       "scheduled": "2026-11-21T15:31",
-      "expected": "2026-11-21T15:33",
+      "expected": "2026-11-21T15:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -277,6 +271,17 @@
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T16:14",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
