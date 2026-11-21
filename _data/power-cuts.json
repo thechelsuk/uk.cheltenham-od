@@ -1,9 +1,35 @@
 {
-  "updated_iso": "2026-11-20",
+  "updated_iso": "2026-11-21",
   "source": "National Grid Electricity Distribution",
   "source_url": "https://connecteddata.nationalgrid.co.uk/dataset/live-power-cuts",
   "licence": "WPD Open Data Licence",
   "refresh": "every 5 minutes",
-  "count": 0,
-  "incidents": []
+  "count": 1,
+  "incidents": [
+    {
+      "fault_id": "INCD-22043-l",
+      "status": "In Progress",
+      "planned": true,
+      "category": "Hv Planned",
+      "confirmed_off": 15,
+      "predicted_off": 0,
+      "restored": 0,
+      "affected": 15,
+      "voltage": "HV",
+      "date_of_reported_fault": "2026-11-21T09:00:00",
+      "last_updated": "2026-11-21T09:05:00",
+      "date_of_restoration": "",
+      "etr": "",
+      "planned_start": "2026-11-21T09:00:00",
+      "planned_end": "2026-11-21T16:00:00",
+      "planned_off": 15,
+      "lat": 51.9715,
+      "lon": -2.012283,
+      "postcodes": [
+        "GL54 5HF",
+        "GL54 5HE",
+        "GL54 5HD"
+      ]
+    }
+  ]
 }
