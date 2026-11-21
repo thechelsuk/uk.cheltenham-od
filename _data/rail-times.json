@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:15:08+00:00",
+  "generated_at": "2026-11-21T17:20:07+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,36 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-21T17:12",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T17:15",
-      "expected": "2026-11-21T17:31",
+      "expected": "2026-11-21T17:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -79,7 +51,7 @@
     },
     {
       "scheduled": "2026-11-21T17:29",
-      "expected": "2026-11-21T17:38",
+      "expected": "2026-11-21T17:37",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,23 +141,35 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T17:59",
+      "expected": "2026-11-21T18:04",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-21T17:10",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "This service has been cancelled because of a shortage of train drivers",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T17:14",
-      "expected": "2026-11-21T17:30",
+      "expected": "2026-11-21T17:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -218,7 +202,7 @@
     },
     {
       "scheduled": "2026-11-21T17:27",
-      "expected": "2026-11-21T17:37",
+      "expected": "2026-11-21T17:36",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -269,6 +253,17 @@
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
       "reason": "This service has been delayed by train crew being delayed",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T17:58",
+      "expected": "2026-11-21T18:03",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
       "mode": "train"
     }
   ],
