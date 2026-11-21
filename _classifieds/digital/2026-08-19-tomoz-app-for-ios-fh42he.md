@@ -9,7 +9,8 @@ salary: "Free (In-App Purchases)"
 job_type: "iPhone app (iOS 18.5+)"
 date: 2026-08-19
 expires: 2027-02-19
-apply_url: https://apps.apple.com/gb/app/tomoz/id6748755747
+apply_url: https://apps.apple.com/gb/app/tomoz/id6748755747?pt=127889770&ct=cod&mt=8
+
 apply_text: "View App Store"
 robots: noindex
 seo: "Tomoz - Tomorrow's Calendar Today an app for iOS Apple"

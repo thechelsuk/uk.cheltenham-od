@@ -9,7 +9,7 @@ salary: "Free tier available"
 job_type: "Web-based SaaS"
 date: 2026-08-23
 expires: 2027-02-23
-apply_url: https://cybaa.io
+apply_url: https://cybaa.io?src=cod
 apply_text: "Visit Cybaa"
 robots: noindex
 seo: "Cybaa - Spot security problems across your domains, sites and email"

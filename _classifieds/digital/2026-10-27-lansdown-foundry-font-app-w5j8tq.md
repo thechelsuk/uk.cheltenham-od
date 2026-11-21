@@ -9,7 +9,7 @@ salary: "£19.99 (one purchase covers iPad and Mac)"
 job_type: "iPad app (Apple Pencil) & Mac app (Apple silicon)"
 date: 2026-10-27
 expires: 2027-04-27
-apply_url: https://apps.apple.com/gb/app/lansdown-foundry-make-fonts/id6817508991
+apply_url: https://apps.apple.com/gb/app/lansdown-foundry-make-fonts/id6817508991?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "Lansdown Foundry - design your own font or handwriting font with Apple Pencil, for iPad and Mac"

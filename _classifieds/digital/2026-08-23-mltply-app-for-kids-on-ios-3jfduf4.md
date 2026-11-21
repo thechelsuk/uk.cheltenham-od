@@ -9,7 +9,7 @@ salary: "Free"
 job_type: "iPhone & iPad app (iOS 18.6+)"
 date: 2026-08-19
 expires: 2027-02-19
-apply_url: https://apps.apple.com/gb/app/mltply/id6747147316
+apply_url: https://apps.apple.com/gb/app/mltply/id6747147316?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "Mltply - the Maths Chat-like game for Kids on Apple iOS"

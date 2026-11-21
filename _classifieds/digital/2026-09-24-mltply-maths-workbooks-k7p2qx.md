@@ -9,7 +9,7 @@ salary: "Free sampler, workbooks from £3.99, all five for £14.99"
 job_type: "Printable A4 PDF workbooks"
 date: 2026-09-24
 expires: 2027-03-24
-apply_url: https://shop.thechels.uk
+apply_url: https://shop.thechels.uk?src=cod
 apply_text: "Browse the workbooks"
 image: /assets/images/classifieds/mltply-maths-workbooks.png
 image_alt: "Five Mltply maths workbooks fanned out: Addition & Subtraction, Times Tables, Division, Fractions and Squares, Cubes & Roots"

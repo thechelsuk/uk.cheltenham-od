@@ -9,7 +9,7 @@ salary: "£17.99 a year, with a free one-week trial"
 job_type: "iPhone, iPad & Apple Watch app (iOS 18+)"
 date: 2026-10-27
 expires: 2027-04-27
-apply_url: https://apps.apple.com/gb/app/opiuml-podcast-player/id6823693348
+apply_url: https://apps.apple.com/gb/app/opiuml-podcast-player/id6823693348?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "Opiuml - podcast player with an Inbox and Queue, CarPlay and Apple Watch, an app for iOS Apple"

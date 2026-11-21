@@ -9,7 +9,7 @@ salary: "Free (Chapter 3 £2.99, optional extras from £0.99)"
 job_type: "iPhone game (iOS 18+)"
 date: 2026-10-27
 expires: 2027-04-27
-apply_url: https://apps.apple.com/gb/app/unsettled-impossible-escape/id6819058615
+apply_url: https://apps.apple.com/gb/app/unsettled-impossible-escape/id6819058615?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "Unsettled - a spy puzzle and escape room game hidden in a phone, for iPhone"

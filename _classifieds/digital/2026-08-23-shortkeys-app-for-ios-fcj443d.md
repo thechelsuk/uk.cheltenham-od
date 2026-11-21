@@ -9,7 +9,7 @@ salary: "Free (In-App Purchases)"
 job_type: "iPhone & iPad app (iOS 26.1+)"
 date: 2026-08-23
 expires: 2027-02-23
-apply_url: https://apps.apple.com/gb/app/shortkeys/id6755919256
+apply_url: https://apps.apple.com/gb/app/shortkeys/id6755919256?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "ShortKeys - Multi-line Text Expansion and Text Replacement app for iOS"

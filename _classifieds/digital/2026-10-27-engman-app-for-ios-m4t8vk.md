@@ -9,7 +9,7 @@ salary: "Free (In-App Purchases: £3.99/year or £14.99 lifetime)"
 job_type: "iPhone & iPad app (iOS 18.6+)"
 date: 2026-10-27
 expires: 2027-04-27
-apply_url: https://apps.apple.com/gb/app/engman-em-coaching-cards/id6747295473
+apply_url: https://apps.apple.com/gb/app/engman-em-coaching-cards/id6747295473?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "EngMan - coaching prompts and questions for engineering managers, an app for iOS Apple"

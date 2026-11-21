@@ -9,7 +9,7 @@ salary: "Free (Nuchronic Plus £4.99, one-off)"
 job_type: "iPhone & iPad app (iOS 18+)"
 date: 2026-10-27
 expires: 2027-04-27
-apply_url: https://apps.apple.com/gb/app/nuchronic-energy-symptoms/id6817007686
+apply_url: https://apps.apple.com/gb/app/nuchronic-energy-symptoms/id6817007686?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "Nuchronic - energy, symptom and pacing tracker for ME/CFS, long COVID and chronic illness, an app for iOS Apple"

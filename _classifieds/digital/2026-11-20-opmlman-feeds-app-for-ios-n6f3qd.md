@@ -9,7 +9,7 @@ salary: "Free, with no ads"
 job_type: "iPhone, iPad & Mac app (iOS 18+, macOS 15+)"
 date: 2026-11-20
 expires: 2027-05-20
-apply_url: https://apps.apple.com/gb/app/opmlman-feeds-manager/id6832117624
+apply_url: https://apps.apple.com/gb/app/opmlman-feeds-manager/id6832117624?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "OPMLMan - OPML and RSS feed manager that finds dead, moved and duplicate feeds, an app for iOS and Mac Apple"

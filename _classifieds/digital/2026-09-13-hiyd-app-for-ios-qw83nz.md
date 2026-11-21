@@ -9,7 +9,7 @@ salary: "Free (In-App Purchases)"
 job_type: "iPhone app (iOS 18.5+)"
 date: 2026-09-13
 expires: 2027-03-13
-apply_url: https://apps.apple.com/gb/app/hiyd/id6746853559
+apply_url: https://apps.apple.com/gb/app/hiyd/id6746853559?pt=127889770&ct=cod&mt=8
 apply_text: "View App Store"
 robots: noindex
 seo: "Hiyd - the Jekyll Companion App an app for iOS Apple"
