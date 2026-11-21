@@ -66,3 +66,5 @@ You sponsor a whole category, exclusively. Your "supported by" card appears on e
 - **Editorial included, optional.** Write your own post in your own words — I have editorial rights to edit, and it's published permanently as a [site update](/news), yours to share on our socials as they grow. Prefer something simpler? I'll write you a short thank-you post instead.
 - **Exclusive.** One sponsor per category, so you're the only business of your kind in that section.
 - Three-month minimum, then cancel any time. Pay by card through Stripe.
+
+Note: When there is no sponsor, the card is replaced with an affiliate link to a relevant service, or a page supported by link to our sponsorship page.
