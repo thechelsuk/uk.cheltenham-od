@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:40:08+00:00",
+  "generated_at": "2026-11-21T17:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,28 +9,14 @@
     "crs": "CNM"
   },
   "messages": [
-    "The ticket office is currently closed at this station."
+    "The ticket office is currently closed at this station.",
+    "Trains running between Newcastle and Edinburgh may be cancelled, delayed or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
     {
-      "scheduled": "2026-11-21T17:29",
-      "expected": "2026-11-21T17:39",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T17:40",
-      "expected": "2026-11-21T17:40",
-      "status": "On time",
+      "expected": "2026-11-21T17:43",
+      "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
@@ -107,7 +93,7 @@
     },
     {
       "scheduled": "2026-11-21T17:59",
-      "expected": "2026-11-21T18:09",
+      "expected": "2026-11-21T18:07",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -170,7 +156,7 @@
     },
     {
       "scheduled": "2026-11-21T18:19",
-      "expected": "2026-11-21T18:24",
+      "expected": "2026-11-21T18:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -206,19 +192,8 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-21T17:27",
-      "expected": "2026-11-21T17:38",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T17:38",
-      "expected": "2026-11-21T17:40",
+      "expected": "2026-11-21T17:41",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -229,8 +204,8 @@
     },
     {
       "scheduled": "2026-11-21T17:46",
-      "expected": "2026-11-21T17:48",
-      "status": "Delayed",
+      "expected": "2026-11-21T17:46",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -251,7 +226,7 @@
     },
     {
       "scheduled": "2026-11-21T17:58",
-      "expected": "2026-11-21T18:08",
+      "expected": "2026-11-21T18:06",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -262,8 +237,8 @@
     },
     {
       "scheduled": "2026-11-21T18:10",
-      "expected": "2026-11-21T18:12",
-      "status": "Delayed",
+      "expected": "2026-11-21T18:10",
+      "status": "On time",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
@@ -273,7 +248,7 @@
     },
     {
       "scheduled": "2026-11-21T18:18",
-      "expected": "2026-11-21T18:23",
+      "expected": "2026-11-21T18:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -290,6 +265,17 @@
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T18:25",
+      "expected": "2026-11-21T18:25",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
