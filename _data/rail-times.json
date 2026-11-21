@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T19:00:08+00:00",
+  "generated_at": "2026-11-21T19:05:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,21 +13,6 @@
     "Trains running between Newcastle and Edinburgh may be cancelled, delayed by up to 40 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-21T18:52",
-      "expected": "2026-11-21T18:59",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-21T19:03",
       "expected": "2026-11-21T19:03",
@@ -51,7 +36,7 @@
     },
     {
       "scheduled": "2026-11-21T19:12",
-      "expected": "2026-11-21T19:14",
+      "expected": "2026-11-21T19:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -108,7 +93,7 @@
     },
     {
       "scheduled": "2026-11-21T19:29",
-      "expected": "2026-11-21T19:43",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -154,23 +139,30 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T19:49",
+      "expected": "2026-11-21T19:49",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill",
+        "Worcester Foregate Street",
+        "Malvern Link",
+        "Great Malvern"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-21T18:50",
-      "expected": "2026-11-21T18:56",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-21T19:10",
-      "expected": "2026-11-21T19:13",
+      "expected": "2026-11-21T19:14",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -214,7 +206,7 @@
     },
     {
       "scheduled": "2026-11-21T19:27",
-      "expected": "2026-11-21T19:42",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -242,6 +234,17 @@
       "operator": "CrossCountry",
       "origin": "Bristol Temple Meads",
       "destination": "Birmingham New Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T19:47",
+      "expected": "2026-11-21T19:47",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Great Malvern",
       "reason": "",
       "mode": "train"
     }
