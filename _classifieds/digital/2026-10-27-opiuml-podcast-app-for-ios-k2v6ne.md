@@ -5,7 +5,7 @@ title: "Opiuml - the Inbox and Queue Podcast Player"
 category: digital
 company: "thechelsuk"
 location: "Anywhere"
-salary: "£29.99 a year, with a free one-week trial"
+salary: "£17.99 a year, with a free one-week trial"
 job_type: "iPhone, iPad & Apple Watch app (iOS 18+)"
 date: 2026-10-27
 expires: 2027-04-27
@@ -36,7 +36,7 @@ quietly tidy themselves away.
 ## How Much It Costs
 
 - **Free trial:** one week for new subscribers
-- **Subscription:** £29.99 a year, cancel any time in your App Store settings
+- **Subscription:** £17.99 a year, cancel any time in your App Store settings
 - Exporting your library always works, even without a subscription
 
 ## Why You'll Like It
