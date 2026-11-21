@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T06:50:08+00:00",
+  "generated_at": "2026-11-21T06:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-21T06:49",
-      "expected": "2026-11-21T06:49",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "London Paddington",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon",
-        "Didcot Parkway",
-        "Reading",
-        "London Paddington"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-21T06:55",
       "expected": "2026-11-21T06:55",
@@ -142,8 +121,8 @@
     },
     {
       "scheduled": "2026-11-21T07:19",
-      "expected": "2026-11-21T07:19",
-      "status": "On time",
+      "expected": "2026-11-21T07:21",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
@@ -213,6 +192,21 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T07:48",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by this train being late from the depot",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -251,7 +245,7 @@
     },
     {
       "scheduled": "2026-11-21T07:17",
-      "expected": "2026-11-21T07:19",
+      "expected": "2026-11-21T07:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -291,6 +285,17 @@
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-21T07:46",
+      "expected": null,
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "Bristol Temple Meads",
+      "destination": "Worcester Shrub Hill",
+      "reason": "This service has been delayed by this train being late from the depot",
       "mode": "train"
     }
   ],
