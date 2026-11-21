@@ -1,12 +1,15 @@
 {% assign offers = site.data.offers.offers %}
 {% assign offer_count = offers | size %}
 {% assign random_index = "now" | date: "%N" | modulo: offer_count %}
-{% assign offer = offers[random_index] %}
 
-<h2>Selected Referral Offer</h2>
+<h2>Selected Referral Offers</h2>
 
+{% for offer_offset in (0..2) %}
+{% assign offer_index = random_index | plus: offer_offset | modulo: offer_count %}
+{% assign offer = offers[offer_index] %}
 <blockquote>
     <p><b>{{ offer.Name }}</b></p>
     <p><span><a href="{{ offer.link }}" rel="sponsored">{{ offer.Label }} &rarr;</a></span></p>
     <p><small><i>Terms and Conditions apply - see offer for details.</i></small></p>
 </blockquote>
+{% endfor %}
