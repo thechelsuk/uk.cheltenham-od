@@ -30,6 +30,7 @@ Dates and times can change, so check the organiser's page before you set off. Wh
 - **Sunday 6 December, 10:30 to 15:00:** [Cambray Christmas Market](https://www.cambray.org/events/cambray-christmas-market/) in Cambray Place, run by Cambray Baptist Church, with community stalls, choirs and Father Christmas.
 - **10 to 23 December:** the Cheltenham Christmas Market on the Promenade, with more than 40 chalets and free entry, according to [Cheltenham BID](https://cheltenhambid.co.uk/christmas-in-cheltenham/).
 - **Thursday 3 and Thursday 10 December:** late-night shopping, with shops open until 19:00 or 20:00. Council car parks are free from 15:00 on both evenings; Regent Arcade's car park isn't included. Our [car parks page](/cheltenham-car-parks) lists every car park with its fees and hours.
+- **Friday 27 November and Friday 4 December, 16:30 to 20:30:** late-night Christmas shopping in the Cotswold village of Broadway, Worcestershire, organised by the Broadway Business Association, with Christmas lights, music, mulled wine and festive food, according to [Broadway Cotswolds](https://www.broadway-cotswolds.co.uk/christmas-shopping-nights) and [Visit Worcestershire](https://visitworcestershire.org/blog/whats-on-this-christmas-in-worcestershire). Visitors can use Broadway's four council car parks.
 
 ## Carols and Christmas Concerts
 
@@ -42,6 +43,7 @@ St Matthew's and the Minster lists its other Christmas services and events on it
 
 ## Meeting Santa
 
+- **Friday 27 November, Friday 4, Saturday 12 and Saturday 19 December:** [Santa's Grotto at Broadway Museum](https://broadwaymuseum.org.uk/?p=12028) in Broadway, Worcestershire, with a reindeer trail, a letter to Father Christmas and a gift. Pre-booked slots get priority.
 - **Selected days from 28 November to 23 December:** the [Santa Express](https://www.gwsr.com/whats-on/santa-specials/) on the Gloucestershire Warwickshire Steam Railway. For 2026 every train leaves from Toddington, and every child meets Santa in his grotto and gets a gift.
 - **Selected days from 5 to 24 December:** [Christmas Grotto at Webbs Cheltenham](https://www.webbsdirect.co.uk/grotto-cheltenham/), the garden centre's grotto. Children's tickets are £15, including a gift and two activities, and adults and teenagers need a £5 ticket. Book in advance.
 - **Sunday 6 December:** Father Christmas visits the [Cambray Christmas Market](https://www.cambray.org/events/cambray-christmas-market/).
@@ -111,4 +113,4 @@ Before a cold snap, check our [10-day forecast](/cheltenham-10-day-weather-forec
 
 ### Where Does This Information Come From?
 
-- Each event and date links to its organiser or official source: The Cheltenham Trust, Cheltenham BID, Cambray Baptist Church, St Matthew's and the Minster, the Oriel Singers, the Gloucestershire Warwickshire Steam Railway, Webbs, Ellenborough Park, John Lewis, the Jockey Club, Stagecoach West and Gloucestershire County Council. We check these pages and update this guide as new details are announced.
+- Each event and date links to its organiser or official source: The Cheltenham Trust, Cheltenham BID, Cambray Baptist Church, St Matthew's and the Minster, the Oriel Singers, the Gloucestershire Warwickshire Steam Railway, Webbs, Ellenborough Park, John Lewis, Broadway Museum, the Broadway Business Association, Visit Worcestershire, the Jockey Club, Stagecoach West and Gloucestershire County Council. We check these pages and update this guide as new details are announced.

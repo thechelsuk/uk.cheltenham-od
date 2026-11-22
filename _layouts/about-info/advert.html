@@ -4,6 +4,7 @@
 {%- assign cat = site.classified_categories | where: "value", page.category | first -%}
 <article class="classifieds herobar">
     {% if page.expires and expiry < now %}
+        <h1 class="classifieds-title">{{ page.title }}</h1>
         <blockquote class="classifieds-expired">
             <p>This classified advert has expired and is no longer available.
                 {%- if cat %} <a href="{{ page.parent }}#{{ cat.value }}">See the live adverts in {{ cat.label }}</a>.
