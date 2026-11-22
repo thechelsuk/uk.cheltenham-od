@@ -22,4 +22,10 @@ jobs:
       jekyll_args: --config _config.yml,_config.production.yml
       # Newsletter issues are dated archives: their event pages expire within
       # weeks, so links in them are left as published and not checked.
-      extra_args: --exclude-path '_site/newsletter/'
+      extra_args: >-
+        --exclude-path '_site/newsletter/'
+        --exclude '^https?://(www\.)?(barchester\.com|farecare\.co\.uk|newlandscare\.org|cirencestermvc\.co\.uk|insight-glos\.org\.uk|outofthehat\.org\.uk|fishac\.org\.uk)(/|$)'
+        --exclude '^https?://(www\.)?(ckjs\.org\.uk|cleeveschool\.net|lakesidechelt\.co\.uk|everymantheatre\.org\.uk|hazelwoods\.co\.uk|gloucester\.roundtable\.co\.uk|gloucestershire\.boys-brigade\.org\.uk|leckhamptonrovers\.co\.uk)(/|$)'
+        --exclude '^https?://(www\.)?(therissingtonschool\.org\.uk|bishopscleeve\.gloucs\.sch\.uk|gloucesterroadprimary\.co\.uk|northleach\.gloucs\.sch\.uk|prestburystmarys\.co\.uk|prestburystmarysfederation\.co\.uk|rowanfieldinfant\.co\.uk|st-andrewsschool\.co\.uk)(/|$)'
+        --exclude '^https://www\.johnlewis\.com/our-shops/events$'
+        --exclude '^https://www\.waitrose\.com/content/waitrose/en/bf_home/bf/663\.html'
