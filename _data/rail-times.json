@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T20:30:08+00:00",
+  "generated_at": "2026-11-22T20:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,25 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-22T20:23",
-      "expected": "2026-11-22T20:30",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-22T20:40",
       "expected": null,
@@ -60,7 +41,7 @@
     },
     {
       "scheduled": "2026-11-22T20:52",
-      "expected": "2026-11-22T21:07",
+      "expected": "2026-11-22T21:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -115,7 +96,7 @@
     },
     {
       "scheduled": "2026-11-22T21:11",
-      "expected": "2026-11-22T21:17",
+      "expected": "2026-11-22T21:16",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -147,31 +128,46 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T22:00",
+      "expected": "2026-11-22T22:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T22:19",
+      "expected": "2026-11-22T22:19",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-22T20:21",
-      "expected": "2026-11-22T20:29",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-22T20:29",
-      "expected": "2026-11-22T20:29",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Swindon",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-22T20:39",
       "expected": null,
@@ -196,7 +192,7 @@
     },
     {
       "scheduled": "2026-11-22T20:50",
-      "expected": "2026-11-22T21:06",
+      "expected": "2026-11-22T21:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -218,7 +214,7 @@
     },
     {
       "scheduled": "2026-11-22T21:09",
-      "expected": "2026-11-22T21:16",
+      "expected": "2026-11-22T21:15",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -245,6 +241,17 @@
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T22:18",
+      "expected": "2026-11-22T22:18",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Shrub Hill",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
       "mode": "train"
