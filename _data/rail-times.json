@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T16:15:23+00:00",
+  "generated_at": "2026-11-22T16:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-22T15:52",
-      "expected": "2026-11-22T16:29",
+      "expected": "2026-11-22T16:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,22 +28,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-22T16:15",
-      "expected": "2026-11-22T16:15",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -119,8 +103,8 @@
     },
     {
       "scheduled": "2026-11-22T16:52",
-      "expected": "2026-11-22T16:52",
-      "status": "On time",
+      "expected": "2026-11-22T16:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -169,29 +153,45 @@
         "Swindon"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T17:11",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
+      "calling_at": [
+        "Birmingham New Street",
+        "Tamworth",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Alnmouth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-22T15:50",
-      "expected": "2026-11-22T16:28",
+      "expected": "2026-11-22T16:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Newcastle",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a fault on this train",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-22T16:14",
-      "expected": "2026-11-22T16:14",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -251,8 +251,8 @@
     },
     {
       "scheduled": "2026-11-22T16:50",
-      "expected": "2026-11-22T16:50",
-      "status": "On time",
+      "expected": "2026-11-22T16:53",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -269,6 +269,17 @@
       "origin": "Cardiff Central",
       "destination": "Nottingham",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T17:08",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Edinburgh via Leeds",
+      "reason": "This service has been cancelled because of the emergency services dealing with an incident",
       "mode": "train"
     }
   ],
