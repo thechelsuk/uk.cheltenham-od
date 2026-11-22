@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T21:40:08+00:00",
+  "generated_at": "2026-11-22T21:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -91,6 +91,21 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T23:45",
+      "expected": "2026-11-22T23:45",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "bus"
     }
   ],
   "arrivals": [
@@ -148,6 +163,17 @@
       "destination": "Bristol Temple Meads",
       "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T23:45",
+      "expected": "2026-11-22T23:45",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Bristol Temple Meads",
+      "reason": "",
+      "mode": "bus"
     }
   ],
   "replacement_buses_only": false
