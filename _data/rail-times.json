@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:35:08+00:00",
+  "generated_at": "2026-11-22T18:40:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,24 +11,9 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-22T18:29",
-      "expected": "2026-11-22T18:34",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-22T18:35",
-      "expected": "2026-11-22T18:35",
-      "status": "On time",
+      "expected": "2026-11-22T18:41",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
@@ -47,7 +32,7 @@
     },
     {
       "scheduled": "2026-11-22T18:40",
-      "expected": "2026-11-22T18:49",
+      "expected": "2026-11-22T18:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -83,7 +68,7 @@
     },
     {
       "scheduled": "2026-11-22T18:52",
-      "expected": "2026-11-22T18:55",
+      "expected": "2026-11-22T18:56",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -168,23 +153,26 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T19:40",
+      "expected": "2026-11-22T19:40",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-22T18:27",
-      "expected": "2026-11-22T18:33",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-22T18:38",
-      "expected": "2026-11-22T18:48",
+      "expected": "2026-11-22T18:47",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -206,7 +194,7 @@
     },
     {
       "scheduled": "2026-11-22T18:50",
-      "expected": "2026-11-22T18:54",
+      "expected": "2026-11-22T18:55",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -256,6 +244,17 @@
       "operator": "Great Western Railway",
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T19:38",
+      "expected": "2026-11-22T19:38",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
     }
