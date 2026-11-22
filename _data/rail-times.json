@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T15:41:09+00:00",
+  "generated_at": "2026-11-22T15:45:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -11,28 +11,8 @@
   "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-22T15:40",
-      "expected": "2026-11-22T15:40",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-22T15:52",
-      "expected": "2026-11-22T16:19",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -150,23 +130,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T16:29",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-22T15:38",
-      "expected": "2026-11-22T15:38",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-22T15:44",
-      "expected": "2026-11-22T15:50",
+      "expected": "2026-11-22T15:52",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -177,7 +161,7 @@
     },
     {
       "scheduled": "2026-11-22T15:50",
-      "expected": "2026-11-22T16:18",
+      "expected": null,
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -228,6 +212,17 @@
       "origin": "Worcester Foregate Street",
       "destination": "Bristol Temple Meads via Gloucester",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T16:27",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     },
     {
