@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T20:10:08+00:00",
+  "generated_at": "2026-11-22T20:15:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-22T20:00",
-      "expected": "2026-11-22T20:12",
+      "expected": "2026-11-22T20:14",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -36,7 +36,7 @@
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by the train departing late to maintain customer connections",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -45,27 +45,6 @@
         "Severn Tunnel Junction",
         "Newport (South Wales)",
         "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-22T20:11",
-      "expected": "2026-11-22T20:11",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Leeds",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds"
       ],
       "mode": "train"
     },
@@ -135,7 +114,7 @@
     },
     {
       "scheduled": "2026-11-22T20:52",
-      "expected": "2026-11-22T20:59",
+      "expected": "2026-11-22T21:04",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -169,20 +148,27 @@
         "Leicester"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-22T21:00",
+      "expected": "2026-11-22T21:00",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "Swindon",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-22T20:08",
-      "expected": "2026-11-22T20:08",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Leeds",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-22T20:14",
       "expected": "2026-11-22T20:14",
@@ -240,7 +226,7 @@
     },
     {
       "scheduled": "2026-11-22T20:50",
-      "expected": "2026-11-22T20:58",
+      "expected": "2026-11-22T21:03",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
