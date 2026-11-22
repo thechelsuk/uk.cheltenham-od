@@ -48,7 +48,7 @@
                         <td class="postcode">{{ p.postcode }}</td>
                         <td class="map">{% if p.lat %}{% include pin.html lat=p.lat lng=p.lon label=p.name %}{% endif %}</td>
                         {% assign ofsted_label = p.name | append: " on Ofsted" %}
-                        <td class="link">{% include link-icon.html url=p.ofsted_url label=ofsted_label %}</td>
+                        <td class="link">{% if p.ofsted_url %}{% include link-icon.html url=p.ofsted_url label=ofsted_label %}{% endif %}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

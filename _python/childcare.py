@@ -97,6 +97,13 @@ def latest_outcome(row):
     return {"kind": "none", "date": None, "outcome": "Not yet inspected"}
 
 
+def report_url(urn):
+    """Ofsted's page for a provider, or None where it has no page (listed in
+    _data/dead-websites.json), so the table shows no link rather than a 404."""
+    url = REPORTS_URL.format(urn)
+    return None if helper.is_dead_website(url) else url
+
+
 def address(row):
     parts = [row[f"Provider address line {n}"].strip() for n in (1, 2, 3)] + [row["Provider town"].strip().title()]
     return ", ".join(p for p in parts if p)
@@ -130,7 +137,7 @@ def main():
             "places_display": f"{places:,}" if places is not None else None,
             "registered": iso(row["Registration date"]),
             "latest": latest_outcome(row),
-            "ofsted_url": REPORTS_URL.format(row["Provider URN"]),
+            "ofsted_url": report_url(row["Provider URN"]),
             "distance_miles": round(helper.miles_from_centre(lat, lon), 1) if lat is not None else None,
             "lat": round(lat, 6) if lat is not None else None,
             "lon": round(lon, 6) if lon is not None else None,
