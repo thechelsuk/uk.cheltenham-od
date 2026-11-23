@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T20:20:08+00:00",
+  "generated_at": "2026-11-23T20:25:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,25 +12,6 @@
     "Trains running between London Paddington and Heathrow Terminals / Reading may be delayed by up to 25 minutes, cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-23T20:23",
-      "expected": "2026-11-23T20:23",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-23T20:41",
       "expected": "2026-11-23T20:41",
@@ -170,20 +151,24 @@
         "Newport (South Wales)"
       ],
       "mode": "bus"
+    },
+    {
+      "scheduled": "2026-11-23T21:33",
+      "expected": "2026-11-23T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-23T20:21",
-      "expected": "2026-11-23T20:21",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-23T20:27",
       "expected": "2026-11-23T20:27",
@@ -197,7 +182,7 @@
     },
     {
       "scheduled": "2026-11-23T20:33",
-      "expected": "2026-11-23T20:36",
+      "expected": "2026-11-23T20:35",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -248,6 +233,17 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-23T21:33",
+      "expected": "2026-11-23T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
       "mode": "train"
     }
   ],
