@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T21:50:09+00:00",
+  "generated_at": "2026-11-23T21:55:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,22 +12,6 @@
     "Trains running between London Paddington and Heathrow Terminals / Reading may be delayed by up to 15 minutes, cancelled or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-23T21:52",
-      "expected": "2026-11-23T21:52",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-23T21:53",
       "expected": "2026-11-23T21:53",
@@ -99,7 +83,7 @@
     },
     {
       "scheduled": "2026-11-23T22:21",
-      "expected": "2026-11-23T22:29",
+      "expected": "2026-11-23T22:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -125,20 +109,23 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-23T22:57",
+      "expected": "2026-11-23T23:06",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
+      "calling_at": [
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-23T21:50",
-      "expected": "2026-11-23T21:50",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-23T21:51",
       "expected": "2026-11-23T21:51",
@@ -185,7 +172,7 @@
     },
     {
       "scheduled": "2026-11-23T22:20",
-      "expected": "2026-11-23T22:28",
+      "expected": "2026-11-23T22:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -225,6 +212,17 @@
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-23T22:55",
+      "expected": "2026-11-23T23:05",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Penzance",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
       "mode": "train"
     }
   ],
