@@ -9,7 +9,7 @@ Website: https://cheltenham-od.uk
 --------------------------------------------------
 FILES IN THIS PACK
 --------------------------------------------------
-Colour logo (pink #CA3393) — use on light backgrounds:
+Colour logo (pink #CA3393 and ink #1A1A1A) — use on light backgrounds:
   cheltenham-open-data-logo-ca3393.svg        Scalable vector — best quality
   cheltenham-open-data-logo-ca3393-1x.png     PNG, transparent (smallest)
   cheltenham-open-data-logo-ca3393-2x.png     PNG, transparent (medium)
@@ -28,6 +28,7 @@ On a white background (no transparency):
 COLOURS
 --------------------------------------------------
 Primary (pink):  #CA3393
+Ink:             #1A1A1A
 White:           #FFFFFF
 
 --------------------------------------------------
