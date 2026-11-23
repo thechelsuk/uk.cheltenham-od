@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-23T07:51:06.085593+00:00",
+  "generated_at": "2026-11-23T13:50:21.301067+00:00",
   "source": "National Highways planned roadworks",
   "source_url": "https://www.data.gov.uk/dataset/5b3267d8-4307-4eef-a9af-3a4c28224694/highways_agency_planned_roadworks",
   "licence": "Open Government Licence v3.0",
-  "file_url": "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/nh_roadworks_2026_16_11.xml",
-  "published": "2026-11-16",
+  "file_url": "https://s3.eu-west-2.amazonaws.com/webdata.nationalhighways.co.uk/ha-roadworks/nh_roadworks_2026_23_11.xml",
+  "published": "2026-11-23",
   "radius_miles": 12,
   "items": [
     {
@@ -161,10 +161,25 @@
       "expected_delay": "Slight (less than 10 mins)",
       "start": "2026-11-23T09:30",
       "end": "2026-12-04T15:30",
-      "in_progress": false,
+      "in_progress": true,
       "distance_miles": 3.3,
       "lat": 51.928939,
       "lon": -2.140425
+    },
+    {
+      "id": "00529520-001",
+      "roads": [
+        "A46"
+      ],
+      "description": "A46 northbound Jct with The Groaten Ashton under Hill. Multi-Way traffic signals on behalf of BT.",
+      "closure_type": "Ad-hoc Street/Road Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-23T20:00",
+      "end": "2026-11-24T06:00",
+      "in_progress": false,
+      "distance_miles": 10.3,
+      "lat": 52.037783,
+      "lon": -1.990332
     },
     {
       "id": "00532714-001",
@@ -198,6 +213,51 @@
       "lon": -2.11977
     },
     {
+      "id": "00533806-002",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 northbound Jct 12 lane closure for electrical works.",
+      "closure_type": "Regional Technology Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-24T21:00",
+      "end": "2026-11-25T06:00",
+      "in_progress": false,
+      "distance_miles": 11.7,
+      "lat": 51.795368,
+      "lon": -2.292594
+    },
+    {
+      "id": "00533826-001",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 northbound Jct 11A to 11 lane closure for electrical works.",
+      "closure_type": "Regional Technology Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-24T21:00",
+      "end": "2026-11-25T06:00",
+      "in_progress": false,
+      "distance_miles": 4.2,
+      "lat": 51.86629,
+      "lon": -2.161535
+    },
+    {
+      "id": "00533877-001",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 northbound Jct 11 to Jct 10 - lane closures for electrical works.",
+      "closure_type": "Regional Technology Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-25T21:00",
+      "end": "2026-11-26T06:00",
+      "in_progress": false,
+      "distance_miles": 3.2,
+      "lat": 51.894472,
+      "lon": -2.151638
+    },
+    {
       "id": "00533317-002",
       "roads": [
         "A40"
@@ -229,6 +289,21 @@
       "lon": -2.158318
     },
     {
+      "id": "00533889-001",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 southbound Jct 12 - lane closures for electrical works.",
+      "closure_type": "Regional Technology Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-26T21:00",
+      "end": "2026-11-27T06:00",
+      "in_progress": false,
+      "distance_miles": 11.4,
+      "lat": 51.798093,
+      "lon": -2.288638
+    },
+    {
       "id": "00533213-001",
       "roads": [
         "A40",
@@ -246,6 +321,52 @@
       "lon": -2.174225
     },
     {
+      "id": "00534879-001",
+      "roads": [
+        "M5"
+      ],
+      "description": "M5 northbound Jct 12 to11A - lane closure for barrier/fence safety repairs.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-11-27T21:00",
+      "end": "2026-11-28T06:00",
+      "in_progress": false,
+      "distance_miles": 6.4,
+      "lat": 51.840302,
+      "lon": -2.194027
+    },
+    {
+      "id": "00534115-001",
+      "roads": [
+        "A417",
+        "M5"
+      ],
+      "description": "A417 Southbound from A46 Shurdington to Air Balloon Roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A46, A435, A436.",
+      "closure_type": "Major Schemes",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-11-27T21:00",
+      "end": "2026-11-30T06:00",
+      "in_progress": false,
+      "distance_miles": 4.0,
+      "lat": 51.851609,
+      "lon": -2.131865
+    },
+    {
+      "id": "00534125-001",
+      "roads": [
+        "A417"
+      ],
+      "description": "A417 Northbound Air Balloon Roundabout to A46 Shurdington roundabout. Carriageway Closure (24/7) for earthworks for Missing Link works. Diversion route via A436, A435, and A46.",
+      "closure_type": "Major Schemes",
+      "expected_delay": "Moderate (10 - 30 mins)",
+      "start": "2026-11-27T23:00",
+      "end": "2026-11-30T06:00",
+      "in_progress": false,
+      "distance_miles": 4.1,
+      "lat": 51.845526,
+      "lon": -2.11977
+    },
+    {
       "id": "00533234-001",
       "roads": [
         "M5"
@@ -259,6 +380,82 @@
       "distance_miles": 3.3,
       "lat": 51.928633,
       "lon": -2.140235
+    },
+    {
+      "id": "00534459-001",
+      "roads": [
+        "A40"
+      ],
+      "description": "A40 both directions Churcham - multi way traffic lights electrical works.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-12-01T21:00",
+      "end": "2026-12-02T06:00",
+      "in_progress": false,
+      "distance_miles": 11.8,
+      "lat": 51.865927,
+      "lon": -2.349226
+    },
+    {
+      "id": "00534693-001",
+      "roads": [
+        "A417"
+      ],
+      "description": "A417 northbound Quarry Junction to Duntisbourne Abbots - lane closure for electrical works.",
+      "closure_type": "Regional Technology Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-12-01T21:00",
+      "end": "2026-12-02T06:00",
+      "in_progress": false,
+      "distance_miles": 9.0,
+      "lat": 51.773054,
+      "lon": -2.026272
+    },
+    {
+      "id": "00535007-001",
+      "roads": [
+        "A417",
+        "M5"
+      ],
+      "description": "M5 northbound Jct 12 entry slip road closure for electrical works. Diversion via M5 southbound to Jct 13 and return.",
+      "closure_type": "Regional Technology Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-12-02T20:00",
+      "end": "2026-12-03T06:00",
+      "in_progress": false,
+      "distance_miles": 8.2,
+      "lat": 51.826659,
+      "lon": -2.230751
+    },
+    {
+      "id": "00533330-001",
+      "roads": [
+        "A46"
+      ],
+      "description": "A46 both directions Ashchurch. Traffic signals for maintenance works.",
+      "closure_type": "Area Schemes",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-12-02T21:00",
+      "end": "2026-12-03T06:00",
+      "in_progress": false,
+      "distance_miles": 7.1,
+      "lat": 52.00223,
+      "lon": -2.085621
+    },
+    {
+      "id": "00534624-001",
+      "roads": [
+        "A40"
+      ],
+      "description": "A40 westbound Elmbridge Court to Longford - lane closure for electrical works.",
+      "closure_type": "Programmed Routine Works",
+      "expected_delay": "Slight (less than 10 mins)",
+      "start": "2026-12-03T21:00",
+      "end": "2026-12-04T06:00",
+      "in_progress": false,
+      "distance_miles": 5.8,
+      "lat": 51.882772,
+      "lon": -2.211716
     }
   ]
 }
