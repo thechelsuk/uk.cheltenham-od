@@ -156,7 +156,7 @@ Every page, grouped as in the site menu.
 - [Cheltenham Third Spaces](https://cheltenham-od.uk/cheltenham-third-spaces) — Local third spaces and community hubs in Cheltenham
 - [Cheltenham Post Offices &amp; Lockers](https://cheltenham-od.uk/cheltenham-post-office-locations) — Find Post Offices, InPost lockers and DPD Pickup points in Cheltenham
   - [Cheltenham InPost Lockers](https://cheltenham-od.uk/cheltenham-inpost-lockers) — Cheltenham InPost self-service parcel locker locations
-  - [Cheltenham DPD Pickup Points](https://cheltenham-od.uk/cheltenham-dpd-pickup-points) — Cheltenham DPD Pickup points at local shops and petrol stations
+  - [DPD Drop-Off Points in Cheltenham](https://cheltenham-od.uk/cheltenham-dpd-pickup-points) — DPD drop-off and collection points at local shops and petrol stations
 
 ### About & Info
 
