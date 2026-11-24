@@ -1,0 +1,23 @@
+---
+layout: "about-info/advert"
+type: "about"
+title: "Crew Member - Lates & Night Shifts"
+category: "jobs"
+company: "Lemon Pepper Holdings Limited (Wingstop UK)"
+location: "Cheltenham"
+job_type: "Full-time, Permanent"
+date: 2026-11-24
+expires: 2026-12-01
+closes: 2026-12-23
+apply_url: "https://www.jobs.service.gov.uk/jobs/6b04d26e8416cf7e523cf933"
+apply_text: "Apply on GOV.UK"
+source: "GOV.UK Work Hub"
+job_id: "6b04d26e8416cf7e523cf933"
+robots: "noindex"
+---
+
+About Us At Wingstop, we’re not just in the chicken business, we’re in the flavour business. Creating memorable experiences for our customers and team is what we do best, and we’ve got the awards to prove it (Sunday Times Best Places to Work 2024 & 2025 and Deliveroo’s Restaurant of the Year).
+
+Posted on GOV.UK on 2026-11-23, applications close 2026-12-23.
+
+This vacancy is listed from GOV.UK's Work Hub job search. Read the full advert and apply there.
