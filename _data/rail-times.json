@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T09:25:08+00:00",
+  "generated_at": "2026-11-24T09:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-24T09:15",
-      "expected": "2026-11-24T09:33",
+      "expected": "2026-11-24T09:32",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,27 +28,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-24T09:26",
-      "expected": "2026-11-24T09:26",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-24T09:32",
-      "expected": "2026-11-24T09:41",
+      "expected": "2026-11-24T09:42",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -83,7 +64,7 @@
     },
     {
       "scheduled": "2026-11-24T09:40",
-      "expected": "2026-11-24T09:48",
+      "expected": "2026-11-24T09:49",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -119,7 +100,7 @@
     },
     {
       "scheduled": "2026-11-24T09:52",
-      "expected": "2026-11-24T10:06",
+      "expected": "2026-11-24T10:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -159,40 +140,67 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T10:03",
+      "expected": "2026-11-24T10:03",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Didcot Parkway",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T10:12",
+      "expected": "2026-11-24T10:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Wakefield Westgate",
+        "Leeds",
+        "York",
+        "Darlington",
+        "Durham",
+        "Newcastle",
+        "Morpeth",
+        "Berwick-upon-Tweed",
+        "Edinburgh"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-24T09:14",
-      "expected": "2026-11-24T09:32",
+      "expected": "2026-11-24T09:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-24T09:26",
-      "expected": "2026-11-24T09:26",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Shrub Hill",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-24T09:26",
-      "expected": "2026-11-24T09:26",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -208,7 +216,7 @@
     },
     {
       "scheduled": "2026-11-24T09:31",
-      "expected": "2026-11-24T09:40",
+      "expected": "2026-11-24T09:41",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -219,7 +227,7 @@
     },
     {
       "scheduled": "2026-11-24T09:39",
-      "expected": "2026-11-24T09:47",
+      "expected": "2026-11-24T09:48",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -241,7 +249,7 @@
     },
     {
       "scheduled": "2026-11-24T09:50",
-      "expected": "2026-11-24T10:05",
+      "expected": "2026-11-24T10:06",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -258,6 +266,17 @@
       "operator": "CrossCountry",
       "origin": "Cardiff Central",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T10:11",
+      "expected": "2026-11-24T10:11",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Edinburgh via Leeds",
       "reason": "",
       "mode": "train"
     }
