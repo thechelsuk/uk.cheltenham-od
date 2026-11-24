@@ -1,10 +1,10 @@
 ---
 layout: home-property/house
-title: "Cheltenham House Price Data"
-seo_title: "Cheltenham House Prices: Average Prices and Sales Data"
-seo: "Cheltenham house prices: average and median sale prices, number of sales and price changes by property type, from Land Registry and ONS data."
+title: "Cheltenham House Prices: Latest Data and Full History"
+seo_title: "Cheltenham House Prices: Latest Data and All Years"
+seo: "Cheltenham house prices now and for every year since 1995: average and median sale prices, number of sales and changes by property type, from Land Registry."
 permalink: /cheltenham-house-prices
-description: "Average and median house prices in Cheltenham, with sales and price changes by property type, from Land Registry and ONS data."
+description: "The latest Cheltenham house prices and the full history since 1995: average and median prices, sales and changes by property type, from Land Registry and ONS."
 type: "property"
 schema: house-prices
 available-years:

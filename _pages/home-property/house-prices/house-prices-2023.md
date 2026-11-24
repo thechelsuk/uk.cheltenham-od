@@ -1,9 +1,10 @@
 ---
 layout: home-property/house-year
-title: "Cheltenham House Price Data 2023"
-seo: "Cheltenham house price sales data for 2023: average and median prices and number of sales by property type, from Land Registry price paid data."
+title: "Cheltenham House Prices in 2023: Sales and Median Price"
+seo_title: "2023 House Prices in Cheltenham: Sales by Property Type"
+seo: "Cheltenham house prices in 2023: homes sold, median and average sale price and sales by property type, from Land Registry data."
 permalink: /cheltenham-house-prices-2023
-description: "Cheltenham house prices in 2023: average and median prices, sales and changes by property type, from Land Registry and ONS data."
+description: "House prices in Cheltenham in 2023: median and average prices and every recorded sale. For the latest figures and all years, see the main page."
 type: "property"
 schema: house-prices
 pyear: "2023"

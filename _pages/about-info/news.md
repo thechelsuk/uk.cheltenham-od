@@ -1,15 +1,16 @@
 ---
 layout: about-info/news-aggregation
-title: Latest Cheltenham News Aggregation
-seo: "Cheltenham local news in one place, updated hourly from Gov.uk, Gloucestershire Police, the council, BBC, Cheltenham Post and more, without the clutter."
-description: "Local news from more than a dozen sources, from the council and police to the BBC, in one list refreshed every couple of hours."
+title: "Latest Cheltenham News Today"
+seo_title: "Cheltenham News Today: Latest Local Headlines"
+seo: "Latest Cheltenham news today: headlines from the council, police, BBC, Cheltenham Post and more in one list, refreshed every couple of hours."
+description: "Cheltenham news today from local sources, from the council and police to the BBC, in one list refreshed every couple of hours."
 extra_css: /assets/news-aggregation.css
 type: about
 permalink: /cheltenham-news
 ---
 {% include sponsor.html %}
 
-## How This Cheltenham News Aggregator Works
+## How This Cheltenham News Page Works
 
 This page pulls headlines from Cheltenham Borough Council, Gloucestershire County Council, Gloucestershire Police, GOV.UK alerts, the BBC's local Gloucestershire feed, Cheltenham BID, Cheltenham Post, Gloucester News Centre, the Shire News, and Golden Valley — plus our own Cheltenham Open Data site announcements and analysis — into one chronological list, refreshed automatically every couple of hours. Nothing is edited or summarised: each headline links straight back to the original publisher, with a short excerpt so you can tell at a glance whether it's worth a click.
 

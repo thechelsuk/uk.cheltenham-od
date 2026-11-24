@@ -1,9 +1,10 @@
 ---
 layout: things-to-do/where-to-eat
-title: "Where to Eat in Cheltenham: Restaurants, Pubs and Takeaways"
-seo: "Where to eat in Cheltenham: a map and list of restaurants, cafés, pubs, bars and takeaways, each with its official Food Standards Agency hygiene rating."
+title: "Restaurants in Cheltenham: Cafés, Pubs and Takeaways"
+seo_title: "Restaurants in Cheltenham: Map and Food Hygiene Ratings"
+seo: "Restaurants in Cheltenham on a map, with cafés, pubs, bars and takeaways, each with its official Food Standards Agency hygiene rating and inspection date."
 permalink: /cheltenham-where-to-eat
-description: "Restaurants, cafés, pubs, bars and takeaways in Cheltenham on a map, each with its official food hygiene rating and the date it was last inspected."
+description: "Restaurants in Cheltenham, plus cafés, pubs, bars and takeaways, on a map, each with its official food hygiene rating and the date it was last inspected."
 type: "activities"
 schema: where-to-eat
 venue_types:
@@ -25,9 +26,9 @@ filters:
 {% assign venues = site.data["food-standards"] | where_exp: "v", "type_names contains v.type" %}
 {% assign five_star = venues | where: "rating", "5" | size %}
 
-## Where to Eat in Cheltenham
+## Restaurants in Cheltenham
 
-Find somewhere to eat or drink in Cheltenham. The map and list below show **{{ venues.size }} restaurants, cafés, pubs, bars and takeaways**, each with the hygiene rating the Food Standards Agency gave it at its last inspection. {{ five_star }} of them hold the top rating of 5.
+Find a restaurant, café, pub, bar or takeaway in Cheltenham. The map and list below show **{{ venues.size }} restaurants, cafés, pubs, bars and takeaways**, each with the hygiene rating the Food Standards Agency gave it at its last inspection. {{ five_star }} of them hold the top rating of 5.
 
 A hygiene rating tells you how well a venue handles food safely, from how the food is prepared and stored to how clean the premises are and how well the business is managed. It is not a review of the food, the service or the atmosphere, so use it alongside your own taste. Can't decide? The random picker below chooses a well-rated place for you. Select a pin for a venue's rating, when it was inspected and a link to its official record. The list doesn't include opening hours, and venues change them often, so check a venue's hours before you set out, especially for evenings, Sundays and bank holidays. If you'd rather see every rating band, our [food hygiene ratings](/cheltenham-food-standards) pages list all {{ site.data["food-standards"].size }} food businesses in Cheltenham, and [five-star venues](/cheltenham-food-standards/rated-five) has just the top-rated ones.
 

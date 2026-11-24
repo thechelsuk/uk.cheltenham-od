@@ -1,6 +1,7 @@
 ---
 layout: community-support/care-homes
-title: "Care Homes in Cheltenham: CQC Ratings"
+title: "Care Homes and Nursing Homes in Cheltenham: CQC Ratings"
+seo_title: "Care Homes and Nursing Homes in Cheltenham: CQC Ratings"
 seo: "Care homes and nursing homes in Cheltenham with their latest CQC ratings, plus home care services, on a map with the care each one specialises in."
 permalink: /cheltenham-care-homes
 description: "Every registered care home, nursing home and home care service in Cheltenham, with its latest Care Quality Commission rating and the care it offers."
@@ -12,9 +13,9 @@ schema: care-homes
 
 {% assign cqc = site.data.cqc %}
 
-## Care Homes in Cheltenham
+## Care Homes and Nursing Homes in Cheltenham
 
-Choosing a care home for a parent or relative is a big decision, and the Care Quality Commission's inspection reports are one of the best places to start. This page lists all {{ cqc.summary.care_homes }} care homes registered across Cheltenham's GL50–GL54 postcodes, {{ cqc.summary.nursing_homes }} of them nursing homes, with each one's latest CQC rating. Every home has its own page with its scores on the five questions inspectors ask and the kinds of care it offers.
+Choosing a care home for a parent or relative is a big decision, and the Care Quality Commission's inspection reports are one of the best places to start. This page lists all {{ cqc.summary.care_homes }} care homes registered across Cheltenham's GL50–GL54 postcodes, with each one's latest CQC rating: {{ cqc.summary.care_homes | minus: cqc.summary.nursing_homes }} residential care homes and {{ cqc.summary.nursing_homes }} nursing homes, which also provide nursing care. Every home has its own page with its scores on the five questions inspectors ask and the kinds of care it offers.
 
 Not everyone needs to move into a home. The {{ cqc.summary.home_care }} home care services below send carers to help people in their own homes, from a short daily visit to live-in support.
 

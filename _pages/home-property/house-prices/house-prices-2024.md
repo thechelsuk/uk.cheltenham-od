@@ -1,9 +1,10 @@
 ---
 layout: home-property/house-year
-title: "Cheltenham House Price Data 2024"
-seo: "Cheltenham house price sales data for 2024: average and median prices and number of sales by property type, from Land Registry price paid data."
+title: "Cheltenham House Prices in 2024: Sales and Median Price"
+seo_title: "2024 House Prices in Cheltenham: Sales by Property Type"
+seo: "Cheltenham house prices in 2024: homes sold, median and average sale price and sales by property type, from Land Registry data."
 permalink: /cheltenham-house-prices-2024
-description: "Cheltenham house prices in 2024: average and median prices, sales and changes by property type, from Land Registry and ONS data."
+description: "House prices in Cheltenham in 2024: median and average prices and every recorded sale. For the latest figures and all years, see the main page."
 type: "property"
 schema: house-prices
 pyear: "2024"

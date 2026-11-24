@@ -2,9 +2,9 @@
 layout: home-property/recycling
 title: "Cheltenham Recycling"
 seo_title: "Cheltenham Recycling: Centres, Bring Banks and FAQs"
-seo: "Cheltenham recycling options in Cheltenham including locations, recycling items FAQ, and refillable and plastic free shopping"
+seo: "Cheltenham recycling: Wingmoor Farm recycling centre hours and booking, recycling bank locations, what you can recycle, and plastic-free refill shops."
 permalink: /cheltenham-recycling
-description: "Where to recycle, reuse and refill in Cheltenham: recycling centres and banks, what goes where, and plastic-free shops."
+description: "Cheltenham recycling guide: the Wingmoor Farm recycling centre, recycling bank locations, what you can recycle, and plastic-free refill shops."
 type: "property"
 ---
 
