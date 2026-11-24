@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T17:55:09+00:00",
+  "generated_at": "2026-11-24T18:00:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,27 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-24T17:52",
-      "expected": "2026-11-24T17:55",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a road vehicle colliding with a bridge",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-24T17:59",
       "expected": "2026-11-24T17:59",
@@ -137,8 +116,8 @@
     },
     {
       "scheduled": "2026-11-24T18:31",
-      "expected": "2026-11-24T18:33",
-      "status": "Delayed",
+      "expected": "2026-11-24T18:31",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -147,6 +126,20 @@
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads"
+      ],
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T18:40",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Birmingham New Street"
       ],
       "mode": "train"
     },
@@ -172,17 +165,6 @@
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-24T17:50",
-      "expected": "2026-11-24T17:54",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Plymouth",
-      "reason": "This service has been delayed by a road vehicle colliding with a bridge",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-24T17:58",
       "expected": "2026-11-24T17:58",
@@ -240,7 +222,7 @@
     },
     {
       "scheduled": "2026-11-24T18:29",
-      "expected": "2026-11-24T18:32",
+      "expected": "2026-11-24T18:31",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -258,6 +240,17 @@
       "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T18:38",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Bristol Temple Meads",
+      "destination": "Birmingham New Street",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
