@@ -85,7 +85,7 @@ def test_fetch_local_items_reads_dated_posts(tmp_path):
 
     assert items == [{
         "title": "Council tax added",
-        "link": "/news/council-tax-added.html",
+        "link": "/news/council-tax-added",
         "source": "Cheltenham OD",
         "source_color": "#7a7973",
         "published_iso": "2026-09-14T08:00:00",
@@ -100,6 +100,18 @@ def test_load_archive_keys_items_by_link_and_tolerates_bad_files(tmp_path):
     assert news.load_archive(archive) == {}
     archive.write_text(json.dumps({"items": [{"link": "/a", "title": "A"}, {"title": "no link"}]}))
     assert news.load_archive(archive) == {"/a": {"link": "/a", "title": "A"}}
+
+
+def test_load_archive_maps_old_html_news_links_to_the_plain_address(tmp_path):
+    archive = tmp_path / "news_archive.json"
+    archive.write_text(json.dumps({"items": [
+        {"link": "/news/council-tax-added.html", "title": "Old"},
+        {"link": "https://example.org/a.html", "title": "Elsewhere"},
+    ]}))
+    assert news.load_archive(archive) == {
+        "/news/council-tax-added": {"link": "/news/council-tax-added", "title": "Old"},
+        "https://example.org/a.html": {"link": "https://example.org/a.html", "title": "Elsewhere"},
+    }
 
 
 def test_write_paginated_page_writes_front_matter_and_sponsor_include(tmp_path):

@@ -78,7 +78,9 @@ def fetch_local_items(source, root):
     """Pull items straight from this site's own _posts collection, rather
     than round-tripping through our own already-derived Atom feed."""
     collection_dir = root / "_posts"
-    link_template = "/news/{slug}.html"
+    # Same address as the post's permalink and the sitemap, so the feeds never
+    # point at a second URL for the same page (search engines see the .html one as a duplicate).
+    link_template = "/news/{slug}"
 
     items = []
     for path in sorted(collection_dir.glob("*.md")):
@@ -96,6 +98,15 @@ def fetch_local_items(source, root):
     return items
 
 
+def canonical_news_link(link):
+    """Earlier runs saved this site's own headlines as /news/<slug>.html. Map
+    them to /news/<slug>, so the same story merges with its new entry rather
+    than appearing twice."""
+    if link and link.startswith("/news/") and link.endswith(".html"):
+        return link[: -len(".html")]
+    return link
+
+
 def load_archive(archive_path):
     if not archive_path.exists():
         return {}
@@ -103,7 +114,12 @@ def load_archive(archive_path):
         payload = json.loads(archive_path.read_text())
     except json.JSONDecodeError:
         return {}
-    return {item["link"]: item for item in payload.get("items", []) if item.get("link")}
+    merged = {}
+    for item in payload.get("items", []):
+        if item.get("link"):
+            item["link"] = canonical_news_link(item["link"])
+            merged[item["link"]] = item
+    return merged
 
 
 def mark_unavailable(items):
