@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T08:30:08+00:00",
+  "generated_at": "2026-11-24T08:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,21 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-24T08:29",
-      "expected": "2026-11-24T08:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-24T08:40",
       "expected": "2026-11-24T08:40",
@@ -67,13 +52,13 @@
     },
     {
       "scheduled": "2026-11-24T08:52",
-      "expected": "2026-11-24T09:06",
+      "expected": "2026-11-24T09:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "calling_at": [
         "Bristol Parkway",
         "Bristol Temple Meads",
@@ -172,6 +157,23 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T09:15",
+      "expected": "2026-11-24T09:20",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a late running train being in front of this one",
+      "calling_at": [
+        "Gloucester",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -187,19 +189,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-24T08:27",
-      "expected": "2026-11-24T08:27",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-24T08:32",
-      "expected": "2026-11-24T08:34",
+      "expected": "2026-11-24T08:36",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -221,13 +212,13 @@
     },
     {
       "scheduled": "2026-11-24T08:50",
-      "expected": "2026-11-24T09:05",
+      "expected": "2026-11-24T09:09",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Leeds",
       "destination": "Plymouth",
-      "reason": "",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     },
     {
@@ -261,6 +252,17 @@
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T09:14",
+      "expected": "2026-11-24T09:19",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     }
   ],
