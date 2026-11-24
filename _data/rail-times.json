@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T18:25:08+00:00",
+  "generated_at": "2026-11-24T18:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,22 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-24T18:19",
-      "expected": "2026-11-24T18:23",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-24T18:25",
       "expected": "2026-11-24T18:28",
@@ -157,20 +141,29 @@
         "Nottingham"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T19:02",
+      "expected": "2026-11-24T19:02",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Cheltenham Spa",
+      "destination": "London Paddington",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Stonehouse",
+        "Stroud",
+        "Kemble",
+        "Swindon",
+        "Reading",
+        "London Paddington"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-24T18:18",
-      "expected": "2026-11-24T18:22",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-24T18:24",
       "expected": "2026-11-24T18:27",
@@ -206,8 +199,8 @@
     },
     {
       "scheduled": "2026-11-24T18:31",
-      "expected": "2026-11-24T18:33",
-      "status": "Delayed",
+      "expected": "2026-11-24T18:31",
+      "status": "On time",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
