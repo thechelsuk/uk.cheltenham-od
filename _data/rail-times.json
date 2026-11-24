@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T21:15:09+00:00",
+  "generated_at": "2026-11-24T21:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,45 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-24T21:15",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a fault on a train",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-24T21:15",
-      "expected": "2026-11-24T21:15",
-      "status": "On time",
-      "platform": "BUS",
-      "operator": "CrossCountry",
-      "origin": "Cheltenham Spa",
-      "destination": "Newport (South Wales)",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)"
-      ],
-      "mode": "bus"
-    },
     {
       "scheduled": "2026-11-24T21:33",
       "expected": "2026-11-24T21:33",
@@ -166,17 +127,6 @@
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-24T21:14",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been cancelled because of a fault on a train",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-24T21:33",
       "expected": "2026-11-24T21:33",
       "status": "On time",
@@ -189,8 +139,8 @@
     },
     {
       "scheduled": "2026-11-24T21:50",
-      "expected": "2026-11-24T21:50",
-      "status": "On time",
+      "expected": "2026-11-24T21:52",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -250,6 +200,28 @@
       "operator": "CrossCountry",
       "origin": "Leicester",
       "destination": "Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T22:27",
+      "expected": "2026-11-24T22:27",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-24T22:34",
+      "expected": "2026-11-24T22:34",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
