@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T15:25:17+00:00",
+  "generated_at": "2026-11-25T15:30:10+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -173,20 +173,27 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T16:15",
+      "expected": "2026-11-25T16:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-25T15:26",
-      "expected": "2026-11-25T15:26",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-25T15:28",
       "expected": "2026-11-25T15:28",
@@ -261,6 +268,17 @@
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Edinburgh via Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T16:15",
+      "expected": "2026-11-25T16:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
