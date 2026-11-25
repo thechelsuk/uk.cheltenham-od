@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T13:10:19+00:00",
+  "generated_at": "2026-11-25T13:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,35 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-25T13:12",
-      "expected": "2026-11-25T13:12",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Alnmouth",
-        "Berwick-upon-Tweed",
-        "Dunbar",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-25T13:15",
       "expected": "2026-11-25T13:19",
@@ -58,7 +29,7 @@
     },
     {
       "scheduled": "2026-11-25T13:23",
-      "expected": "2026-11-25T13:25",
+      "expected": "2026-11-25T13:28",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -166,20 +137,31 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T13:59",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-25T13:10",
-      "expected": "2026-11-25T13:10",
-      "status": "On time",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Edinburgh via Leeds",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-25T13:14",
       "expected": "2026-11-25T13:18",
@@ -193,7 +175,7 @@
     },
     {
       "scheduled": "2026-11-25T13:22",
-      "expected": "2026-11-25T13:24",
+      "expected": "2026-11-25T13:27",
       "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
@@ -266,6 +248,17 @@
       "origin": "Glasgow Central",
       "destination": "Plymouth",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T13:58",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "This service has been cancelled because of a shortage of train drivers",
       "mode": "train"
     }
   ],
