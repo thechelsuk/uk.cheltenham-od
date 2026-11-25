@@ -3,11 +3,12 @@
 JSON feed, write _data/sport-fixtures.json.
 
 Covers football (Cheltenham Town, Forest Green Rovers, Cheltenham Town
-Women), rugby union (Gloucester Rugby) and cricket (Gloucestershire), looking
-ahead 7 days from today. Football comes from BBC's "collated" collection
-(every competition in one call, cups included); rugby union and cricket have
-no equivalent, so those are fetched sport-wide instead. All three are then
-filtered by team name.
+Women), rugby union (Gloucester Rugby) and cricket (Gloucestershire, who
+play the T20 Blast as Bristol Lions from 2027), looking ahead 7 days from
+today. Football comes from BBC's "collated" collection (every competition
+in one call, cups included); rugby union and cricket have no equivalent,
+so those are fetched sport-wide instead. All three are then filtered by
+team name.
 
 This is a plain daily snapshot, not a history log: every run replaces
 _data/sport-fixtures.json wholesale with whatever BBC reports as upcoming
@@ -48,7 +49,7 @@ CRICKET_URN = "urn:bbc:sportsdata:cricket"
 TRACKED_TEAMS = {
     "football": {"Cheltenham Town", "Forest Green Rovers", "Cheltenham Town Women"},
     "rugby-union": {"Gloucester"},
-    "cricket": {"Gloucestershire"},
+    "cricket": {"Gloucestershire", "Bristol Lions"},
 }
 
 

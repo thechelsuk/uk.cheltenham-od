@@ -2,9 +2,9 @@
 layout: things-to-do/cricket
 title: "Gloucestershire Cricket in Cheltenham: Festival, Fixtures and Getting to the Ground"
 seo_title: "Gloucestershire Cricket: Cheltenham Festival and Fixtures"
-seo: "Gloucestershire cricket in Cheltenham: the men's and women's teams, the Cheltenham Cricket Festival, a map and directions to home grounds, and fixtures."
+seo: "Gloucestershire cricket in Cheltenham: the Cheltenham Cricket Festival, Bristol Lions' 2027 T20 Blast fixtures, and a map and directions to the grounds."
 permalink: /cheltenham-sports/gloucestershire-cricket
-description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival, a map and directions to their home grounds, and links to official fixtures and tickets."
+description: "Gloucestershire's men's and women's cricket teams, the Cheltenham Cricket Festival, Bristol Lions' 2027 T20 Blast fixtures, and a map and directions to their home grounds."
 type: "activities"
 ---
 
@@ -18,11 +18,11 @@ The College Ground has hosted first-class cricket since 1872, and the festival i
 
 ## Gloucestershire Men
 
-The men's team plays in the County Championship, the county game's first-class competition played over four days, as well as the one-day and T20 Blast competitions. The 2026 festival included both a four-day match and shorter-format games.
+The men's team plays in the County Championship, the county game's first-class competition played over four days, as well as the one-day and T20 Blast competitions. From 2027 the T20 side plays as Bristol Lions, and its 2027 Blast season starts at home to Durham on Friday 21 May. The 2026 festival included both a four-day match and shorter-format games.
 
 ## Gloucestershire Women
 
-Gloucestershire Women play in the women's domestic one-day and T20 competitions. The women play matches at the Cheltenham Cricket Festival as well as in Bristol, so the festival is a chance to see both teams in one summer.
+Gloucestershire Women play in the women's domestic one-day and T20 competitions. In the T20 Blast they play as Bristol Lions too, in League Two, starting away at Kent on Sunday 23 May 2027. The women play matches at the Cheltenham Cricket Festival as well as in Bristol, so the festival is a chance to see both teams in one summer.
 
 ## The Cheltenham Cricket Festival
 

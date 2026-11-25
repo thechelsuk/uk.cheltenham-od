@@ -139,3 +139,10 @@ def test_main_writes_tracked_fixtures_in_date_order(monkeypatch):
     assert [(f["date"], f["team"]) for f in fixtures] == [
         ("2026-10-13", "Gloucestershire"), ("2026-10-17", "Cheltenham Town"), ("2026-10-18", "Gloucester")]
     assert written["payload"]["lookahead_days"] == 7
+
+
+def test_filter_and_tag_tracks_bristol_lions_in_the_t20_blast():
+    # Gloucestershire play the T20 Blast as Bristol Lions from 2027.
+    blast = {**sport.parse_cricket_event("T20 Blast", CRICKET), "home": "Bristol Lions", "away": "Durham"}
+    assert sport.filter_and_tag([blast], "cricket") == [
+        {**blast, "team": "Bristol Lions", "opponent": "Durham", "home_away": "Home"}]

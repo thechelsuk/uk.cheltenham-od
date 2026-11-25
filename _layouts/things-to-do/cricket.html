@@ -8,6 +8,7 @@
             <p>{{page.description}}</p>
             <ul class="header-facts">
                 <li><strong>{{ cricket.grounds | size }}</strong> home grounds</li>
+                <li><strong>{{ cricket.fixtures | size }}</strong> T20 Blast fixtures in {{ cricket.blast.season }}</li>
             </ul>
             <ul class="header-links">
                 <li><a href="{{ cricket.source_url }}" target="_blank" rel="noopener">Official club site &rarr;</a></li>
@@ -16,6 +17,34 @@
         {% include section-links.html %}
 
         {{ content }}
+
+        <h2 id="t20-blast-fixtures">Bristol Lions {{ cricket.blast.season }} T20 Blast Fixtures</h2>
+        <p>The men play in {{ cricket.blast.men_group }} with {{ cricket.blast.men_group_teams }}. The quarter-finals are on {{ cricket.blast.quarter_finals | date: "%-d %B" }}, and Finals Day is on {{ cricket.blast.finals_day | date: "%-d %B %Y" }} at {{ cricket.blast.finals_day_venue }}. The women play in {{ cricket.blast.women_league }}, whose Finals Day is on the same date at the {{ cricket.blast.women_finals_day_venue }}. Start times haven't been announced yet.</p>
+        <div class="table-scroll">
+            <table class="cricket-fixtures data-table" data-sortable>
+                <thead>
+                    <tr>
+                        <th scope="col" class="date">Date</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Opponent</th>
+                        <th scope="col">Home or Away</th>
+                        <th scope="col">Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in cricket.fixtures %}
+                    <tr>
+                        <td class="date" data-val="{{ f.date }}">{{ f.date }}</td>
+                        <td>{{ f.team }}</td>
+                        <td>{{ f.opponent }}</td>
+                        <td>{{ f.venue_type | capitalize }}</td>
+                        <td>{{ f.venue }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p><small>Source: the ECB's <a href="{{ cricket.blast.fixtures_url }}" target="_blank" rel="noopener">men's</a> and <a href="{{ cricket.blast.women_fixtures_url }}" target="_blank" rel="noopener">women's</a> fixture lists. Fixtures can change, so check the club's site before you travel.</small></p>
 
         <h2>Fixtures, Results and Tickets</h2>
         <p>Fixtures change through the season, so use the club's own pages for the latest.</p>
@@ -84,6 +113,13 @@
                 for each year's festival, so check its <a
                     href="https://www.gloscricket.co.uk/towergate-cheltenham-cricket-festival/" target="_blank"
                     rel="noopener">official festival page</a> for the next one.</li>
+        </ul>
+
+        <h3>Why Are Gloucestershire Called Bristol Lions?</h3>
+        <ul>
+            <li>From the 2027 season, Gloucestershire's men's and women's teams play the T20 Blast as Bristol Lions. The
+                name was announced on 24 November 2026. No Blast match in 2027 is at Cheltenham: every home game is at
+                the Seat Unique Stadium in Bristol.</li>
         </ul>
 
         <h3>Do the Women's Team Play in Cheltenham?</h3>
