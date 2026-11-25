@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T17:45:08+00:00",
+  "generated_at": "2026-11-25T17:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,48 +8,10 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "Trains between Swindon and Bristol Parkway may be cancelled or delayed by up to 45 minutes. More details can be found in the Disruptions area of the National Rail website ."
+  ],
   "departures": [
-    {
-      "scheduled": "2026-11-25T17:40",
-      "expected": "2026-11-25T17:43",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "calling_at": [
-        "Birmingham New Street",
-        "Wolverhampton",
-        "Stafford",
-        "Stoke-on-Trent",
-        "Macclesfield",
-        "Stockport",
-        "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-25T17:45",
-      "expected": "2026-11-25T17:45",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-25T17:50",
       "expected": "2026-11-25T17:50",
@@ -158,7 +120,7 @@
     },
     {
       "scheduled": "2026-11-25T18:19",
-      "expected": "2026-11-25T18:22",
+      "expected": "2026-11-25T18:23",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -190,20 +152,24 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T18:31",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault on a train",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-25T17:38",
-      "expected": "2026-11-25T17:41",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Bristol Temple Meads",
-      "destination": "Manchester Piccadilly via Stoke-on-Trent",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-25T17:47",
       "expected": "2026-11-25T17:47",
@@ -250,7 +216,7 @@
     },
     {
       "scheduled": "2026-11-25T18:18",
-      "expected": "2026-11-25T18:21",
+      "expected": "2026-11-25T18:22",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -277,6 +243,28 @@
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T18:29",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Manchester Piccadilly",
+      "destination": "Bristol Temple Meads",
+      "reason": "This service has been cancelled because of a fault on a train",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-25T18:31",
+      "expected": "2026-11-25T18:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
       "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
