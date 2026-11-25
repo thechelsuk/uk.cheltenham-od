@@ -390,6 +390,35 @@ def test_atom_writer_leaves_out_the_footer_by_default(tmp_path):
 
 
 
+def test_atom_writer_makes_relative_links_and_ids_absolute(tmp_path):
+    path = tmp_path / "f.xml"
+    helper.write_items_atom([{"title": "x", "link": "/news/new-post"}], path, "/feeds/f.xml", "f", "f",
+                            "https://example.test/feeds/f.xml", "https://example.test/f")
+    (entry,), ns = atom_entries(path)
+    assert entry.find("a:link", ns).get("href") == "https://example.test/news/new-post"
+    assert entry.find("a:id", ns).text == "https://example.test/news/new-post"
+
+
+def test_atom_writer_keeps_a_legacy_id_as_it_was_but_makes_its_link_absolute(tmp_path):
+    path = tmp_path / "f.xml"
+    helper.write_items_atom([{"title": "x", "link": "/news/old-post"}, {"title": "y", "link": "/news/new-post"}],
+                            path, "/feeds/f.xml", "f", "f", "https://example.test/feeds/f.xml",
+                            "https://example.test/f", legacy_ids={"/news/old-post"})
+    old, new = atom_entries(path)[0]
+    ns = atom_entries(path)[1]
+    assert old.find("a:link", ns).get("href") == "https://example.test/news/old-post"
+    assert old.find("a:id", ns).text == "/news/old-post"
+    assert new.find("a:id", ns).text == "https://example.test/news/new-post"
+
+
+def test_atom_writer_leaves_external_links_alone(tmp_path):
+    path = tmp_path / "f.xml"
+    helper.write_items_atom([{"title": "x", "link": "https://other.test/a?b=1"}], path, "/feeds/f.xml", "f", "f",
+                            "https://example.test/feeds/f.xml", "https://example.test/f")
+    (entry,), ns = atom_entries(path)
+    assert entry.find("a:link", ns).get("href") == entry.find("a:id", ns).text == "https://other.test/a?b=1"
+
+
 # --- website checks ------------------------------------------------------
 
 @pytest.fixture

@@ -576,7 +576,7 @@ FEED_FOOTER = "{% capture feed_footer %}{% include feed-footer.html %}{% endcapt
 
 
 def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle, self_url, alternate_url, feed_id=None,
-                     footer=False):
+                     footer=False, legacy_ids=()):
     """Write an Atom 1.0 feed of arbitrary `items` (each a dict with title,
     link, published_iso, summary, source and an optional category) to `filename`, with the usual
     front-matter + layout:empty wrapper so Jekyll serves it as a static file.
@@ -585,7 +585,10 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
     URLs used in the feed's own <link> elements. Mirrors convert_to_atom()
     above, generalised for reuse. With `footer`, each entry also gets the
     summary as HTML <content> followed by the site's feed footer (a sponsored
-    offer and how to sponsor), which Jekyll adds when it builds the feed."""
+    offer and how to sponsor), which Jekyll adds when it builds the feed.
+    Relative links become absolute, since a feed's links and ids must be full URLs.
+    An item whose link is in `legacy_ids` keeps that link, as published, for its
+    <id>, so readers that key on it don't show the entry twice."""
     ATOM_NS = "http://www.w3.org/2005/Atom"
     ET.register_namespace("", ATOM_NS)
 
@@ -610,10 +613,12 @@ def write_items_atom(items, filename, permalink_path, feed_title, feed_subtitle,
         entry = ET.SubElement(feed, "entry")
         ET.SubElement(entry, "title").text = item.get("title", "")
 
+        raw_link = item.get("link", alternate_url)
+        absolute_link = urllib.parse.urljoin(self_url, raw_link)
         link = ET.SubElement(entry, "link")
-        link.set("href", item.get("link", alternate_url))
+        link.set("href", absolute_link)
 
-        ET.SubElement(entry, "id").text = item.get("link", alternate_url)
+        ET.SubElement(entry, "id").text = raw_link if raw_link in legacy_ids else absolute_link
 
         author = ET.SubElement(entry, "author")
         ET.SubElement(author, "name").text = item.get("source", feed_title)

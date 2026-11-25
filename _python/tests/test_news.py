@@ -130,3 +130,10 @@ def test_a_headline_whose_page_is_gone_is_marked_unavailable(monkeypatch):
     news.mark_unavailable(items)
     assert items[0]["unavailable"] is True
     assert "unavailable" not in items[1]
+
+
+def test_load_legacy_feed_ids_reads_the_list_and_tolerates_a_missing_file(tmp_path):
+    path = tmp_path / "ids.json"
+    assert news.load_legacy_feed_ids(path) == set()
+    path.write_text(json.dumps(["/news/a", "/news/b"]))
+    assert news.load_legacy_feed_ids(path) == {"/news/a", "/news/b"}

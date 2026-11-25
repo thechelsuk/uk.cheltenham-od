@@ -122,6 +122,15 @@ def load_archive(archive_path):
     return merged
 
 
+def load_legacy_feed_ids(path):
+    """Links of the entries first published in the feed with a relative <id>.
+    Their ids stay as published so readers don't show them twice; every other
+    entry gets an absolute id."""
+    if not path.exists():
+        return set()
+    return set(json.loads(path.read_text()))
+
+
 def mark_unavailable(items):
     """Flag headlines whose page the publisher has taken down (listed in
     _data/dead-websites.json), so the archive shows them without a link."""
@@ -207,6 +216,7 @@ if __name__ == "__main__":
         self_url=f"{SITE_URL}/feeds/news-breaking.xml",
         alternate_url=f"{SITE_URL}/cheltenham-news",
         footer=True,
+        legacy_ids=load_legacy_feed_ids(root / "_data/news-feed-legacy-ids.json"),
     )
 
     total_pages = max(1, math.ceil(len(all_items) / PAGE_SIZE))

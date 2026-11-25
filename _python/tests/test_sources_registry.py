@@ -20,7 +20,7 @@ NOT_SOURCE_DATA = {
     "sources.json", "sponsors.json", "social-posted.json", "newsletter-draft.json", "distance-bands.json",
     "news-digests.json", "fix-my-street-categories.json", "general-election-dates.json",
     "ignore-stations.json", "fuel-stations.json", "weather-today.json", "wards/index.json",
-    "newsletter-venues.json",
+    "newsletter-venues.json", "news-feed-legacy-ids.json",
     # Deploy settings: pages indexnow-urls.py never sends to IndexNow.
     "indexnow.json",
     # Fetcher settings: the indicators public-health.py fetches.
