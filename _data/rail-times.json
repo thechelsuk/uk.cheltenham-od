@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T19:45:08+00:00",
+  "generated_at": "2026-11-26T19:50:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -10,26 +10,6 @@
   },
   "messages": [],
   "departures": [
-    {
-      "scheduled": "2026-11-26T19:40",
-      "expected": "2026-11-26T19:44",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "Transport for Wales",
-      "origin": "Cheltenham Spa",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "This service has been delayed by a speed restriction earlier on this train's journey",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-26T19:49",
       "expected": "2026-11-26T19:49",
@@ -50,7 +30,7 @@
     },
     {
       "scheduled": "2026-11-26T19:52",
-      "expected": "2026-11-26T20:14",
+      "expected": "2026-11-26T20:16",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -172,24 +152,33 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T20:41",
+      "expected": "2026-11-26T20:41",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-26T19:34",
-      "expected": "2026-11-26T19:45",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a late running train being in front of this one",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-26T19:47",
-      "expected": "2026-11-26T19:47",
-      "status": "On time",
+      "expected": "2026-11-26T19:49",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
@@ -199,7 +188,7 @@
     },
     {
       "scheduled": "2026-11-26T19:51",
-      "expected": "2026-11-26T20:13",
+      "expected": "2026-11-26T20:15",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -261,6 +250,17 @@
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
       "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T20:33",
+      "expected": "2026-11-26T20:42",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
+      "reason": "This service has been delayed by a late running train being in front of this one",
       "mode": "train"
     }
   ],
