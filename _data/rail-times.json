@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T19:15:08+00:00",
+  "generated_at": "2026-11-26T19:20:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,32 +8,10 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [],
+  "messages": [
+    "Trains between Birmingham New Street and Longbridge / Worcestershire Parkway may be cancelled, delayed by up to 45 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
+  ],
   "departures": [
-    {
-      "scheduled": "2026-11-26T18:52",
-      "expected": "2026-11-26T19:14",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": "This service has been delayed by a points failure",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central",
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Newton Abbot",
-        "Totnes",
-        "Plymouth"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-26T19:15",
       "expected": "2026-11-26T19:26",
@@ -69,8 +47,8 @@
     },
     {
       "scheduled": "2026-11-26T19:30",
-      "expected": "2026-11-26T19:30",
-      "status": "On time",
+      "expected": "2026-11-26T19:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -154,20 +132,34 @@
         "Plymouth"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T19:59",
+      "expected": "2026-11-26T19:59",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Wilnecote",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Willington",
+        "Derby",
+        "Spondon",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-26T18:50",
-      "expected": "2026-11-26T19:13",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Edinburgh",
-      "destination": "Cardiff Central via Gloucester and Plymouth via Gloucester",
-      "reason": "This service has been delayed by a points failure",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-26T19:14",
       "expected": "2026-11-26T19:25",
@@ -203,8 +195,8 @@
     },
     {
       "scheduled": "2026-11-26T19:28",
-      "expected": "2026-11-26T19:28",
-      "status": "On time",
+      "expected": "2026-11-26T19:31",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -254,6 +246,17 @@
       "origin": "Edinburgh",
       "destination": "Plymouth",
       "reason": "This service has been delayed by a points failure",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T19:58",
+      "expected": "2026-11-26T19:58",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Newport (South Wales)",
+      "destination": "Nottingham",
+      "reason": "",
       "mode": "train"
     }
   ],
