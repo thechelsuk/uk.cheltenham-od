@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T20:25:08+00:00",
+  "generated_at": "2026-11-26T20:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,7 +12,7 @@
   "departures": [
     {
       "scheduled": "2026-11-26T19:52",
-      "expected": "2026-11-26T20:28",
+      "expected": "2026-11-26T20:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -28,22 +28,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-26T20:15",
-      "expected": "2026-11-26T20:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Newport (South Wales)",
-        "Cardiff Central"
       ],
       "mode": "train"
     },
@@ -167,12 +151,46 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T21:15",
+      "expected": "2026-11-26T21:15",
+      "status": "On time",
+      "platform": "BUS",
+      "operator": "CrossCountry",
+      "origin": "Cheltenham Spa",
+      "destination": "Newport (South Wales)",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)"
+      ],
+      "mode": "bus"
+    },
+    {
+      "scheduled": "2026-11-26T21:33",
+      "expected": "2026-11-26T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcester Shrub Hill"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-26T19:51",
-      "expected": "2026-11-26T20:27",
+      "expected": "2026-11-26T20:29",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -182,30 +200,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-26T20:14",
-      "expected": "2026-11-26T20:24",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-26T20:27",
-      "expected": "2026-11-26T20:27",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Transport for Wales",
-      "origin": "Cardiff Central",
-      "destination": "Cheltenham Spa",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-26T20:33",
-      "expected": "2026-11-26T20:44",
+      "expected": "2026-11-26T20:46",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -256,6 +252,17 @@
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
       "reason": "This service has been cancelled because of a shortage of train drivers",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T21:33",
+      "expected": "2026-11-26T21:33",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Worcester Shrub Hill",
+      "reason": "",
       "mode": "train"
     }
   ],
