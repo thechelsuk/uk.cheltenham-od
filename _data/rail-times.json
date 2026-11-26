@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T19:30:08+00:00",
+  "generated_at": "2026-11-26T19:35:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -8,34 +8,17 @@
     "name": "Cheltenham Spa",
     "crs": "CNM"
   },
-  "messages": [
-    "Trains between Birmingham New Street and Longbridge / Worcestershire Parkway may be cancelled, delayed by up to 45 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website."
-  ],
+  "messages": [],
   "departures": [
     {
-      "scheduled": "2026-11-26T19:30",
-      "expected": "2026-11-26T19:30",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-26T19:40",
-      "expected": "2026-11-26T19:44",
+      "expected": "2026-11-26T19:45",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
       "origin": "Cheltenham Spa",
       "destination": "Cardiff Central via Gloucester",
-      "reason": "",
+      "reason": "This service has been delayed by a speed restriction earlier on this train's journey",
       "calling_at": [
         "Gloucester",
         "Lydney",
@@ -81,7 +64,7 @@
     },
     {
       "scheduled": "2026-11-26T19:52",
-      "expected": "2026-11-26T20:08",
+      "expected": "2026-11-26T20:11",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -168,12 +151,28 @@
         "Leeds"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T20:15",
+      "expected": "2026-11-26T20:15",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-26T19:27",
-      "expected": "2026-11-26T19:33",
+      "expected": "2026-11-26T19:34",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -183,19 +182,8 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-26T19:28",
-      "expected": "2026-11-26T19:30",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-26T19:34",
-      "expected": "2026-11-26T19:37",
+      "expected": "2026-11-26T19:38",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -228,7 +216,7 @@
     },
     {
       "scheduled": "2026-11-26T19:51",
-      "expected": "2026-11-26T20:07",
+      "expected": "2026-11-26T20:10",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -256,6 +244,17 @@
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Leeds",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T20:14",
+      "expected": "2026-11-26T20:14",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
       "reason": "",
       "mode": "train"
     }
