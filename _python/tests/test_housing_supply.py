@@ -46,3 +46,31 @@ def test_each_new_snapshot_year_is_kept_in_the_history(tmp_path):
         {"year": 2026, "all_properties": 57760}, history)
     assert [y["year"] for y in series] == [2024, 2025, 2026]
     assert json.loads(history.read_text())["years"] == series
+
+
+def lt122_frame(lead_columns, values):
+    import pandas as pd
+    header = lead_columns + ["Current ONS code", "Authority data", "2001-02", "2024-25 [r] [note 18]", "2025-26 [p] [note 19]"]
+    pad = [None] * (len(lead_columns) + 1)
+    rows = [["Title"] + [None] * (len(header) - 1) for _ in range(4)]
+    rows.append(header)
+    rows.append(pad[:-1] + ["E92000001", "England"] + [100.0, 200.0, 300.0])
+    rows.append(pad[:-1] + ["E07000078", "Cheltenham"] + values)
+    return pd.DataFrame(rows)
+
+
+def test_lt122_reads_the_2026_layout_with_a_geography_column():
+    # The 2025-26 release added a "Geography type" column first and gave
+    # decimal values, so columns are found by their headers and rounded.
+    df = lt122_frame(["Geography type", "DCLG code", "Former ONS code"], [322.7, 410.2, None])
+    assert housing_supply.parse_net_additional_dwellings(df) == [
+        {"year": "2001-02", "net_additional_dwellings": 323},
+        {"year": "2024-25", "net_additional_dwellings": 410},
+    ]
+
+
+def test_lt122_still_reads_the_older_layout():
+    df = lt122_frame(["DCLG code", "Former ONS code"], [323, 410, 455])
+    years = housing_supply.parse_net_additional_dwellings(df)
+    assert [y["year"] for y in years] == ["2001-02", "2024-25", "2025-26"]
+    assert years[-1]["net_additional_dwellings"] == 455

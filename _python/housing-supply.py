@@ -58,20 +58,31 @@ def cheltenham_row(df, code_col=2):
     return rows.iloc[0]
 
 
-def fetch_net_additional_dwellings():
-    url = find_link(LIVE_TABLES_PAGE_URL, r"Live_Table_122\.ods")
-    df = pd.read_excel(io.BytesIO(download(url)), engine="odf", sheet_name="LT_122", header=None)
-    headers = df.iloc[4].tolist()
-    row = cheltenham_row(df)
+def parse_net_additional_dwellings(df):
+    """Cheltenham's yearly figures from the LT_122 sheet. Columns are found by
+    their headers: the 2025-26 release added a "Geography type" column first
+    and gave decimal values, which are rounded to whole dwellings."""
+    header_row = next(i for i in range(len(df))
+                      if "Current ONS code" in [str(v).strip() for v in df.iloc[i]])
+    headers = [str(v).strip() for v in df.iloc[header_row]]
+    row = cheltenham_row(df, code_col=headers.index("Current ONS code"))
 
     years = []
-    for col in range(4, len(headers)):
-        year_label = re.sub(r"\s*\[note \d+\]|\s*\[r\]|\s*\[p\]", "", str(headers[col])).strip()
+    for col, header in enumerate(headers):
+        if not re.match(r"^\d{4}-\d{2}\b", header):
+            continue
         value = row[col]
         if pd.isna(value):
             continue
-        years.append({"year": year_label, "net_additional_dwellings": int(value)})
-    return {"source_url": url, "years": years}
+        year_label = re.sub(r"\s*\[note \d+\]|\s*\[r\]|\s*\[p\]", "", header).strip()
+        years.append({"year": year_label, "net_additional_dwellings": int(round(float(value)))})
+    return years
+
+
+def fetch_net_additional_dwellings():
+    url = find_link(LIVE_TABLES_PAGE_URL, r"Live_Table_122\.ods")
+    df = pd.read_excel(io.BytesIO(download(url)), engine="odf", sheet_name="LT_122", header=None)
+    return {"source_url": url, "years": parse_net_additional_dwellings(df)}
 
 
 def fetch_communal_accommodation():
