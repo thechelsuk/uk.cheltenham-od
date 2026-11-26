@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T19:25:08+00:00",
+  "generated_at": "2026-11-26T19:30:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,23 +13,9 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-26T19:15",
-      "expected": "2026-11-26T19:26",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-26T19:30",
-      "expected": "2026-11-26T19:32",
-      "status": "Delayed",
+      "expected": "2026-11-26T19:30",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -43,7 +29,7 @@
     },
     {
       "scheduled": "2026-11-26T19:40",
-      "expected": "2026-11-26T19:43",
+      "expected": "2026-11-26T19:44",
       "status": "Delayed",
       "platform": "1",
       "operator": "Transport for Wales",
@@ -159,23 +145,35 @@
         "London Paddington"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T20:12",
+      "expected": "2026-11-26T20:12",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
+      "reason": "",
+      "calling_at": [
+        "Worcestershire Parkway",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Chesterfield",
+        "Sheffield",
+        "Doncaster",
+        "Wakefield Westgate",
+        "Leeds"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-26T19:14",
-      "expected": "2026-11-26T19:25",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Nottingham",
-      "destination": "Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-26T19:27",
-      "expected": "2026-11-26T19:32",
+      "expected": "2026-11-26T19:33",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
@@ -186,7 +184,7 @@
     },
     {
       "scheduled": "2026-11-26T19:28",
-      "expected": "2026-11-26T19:31",
+      "expected": "2026-11-26T19:30",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -197,7 +195,7 @@
     },
     {
       "scheduled": "2026-11-26T19:34",
-      "expected": "2026-11-26T19:36",
+      "expected": "2026-11-26T19:37",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -247,6 +245,17 @@
       "operator": "CrossCountry",
       "origin": "Newport (South Wales)",
       "destination": "Nottingham",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-26T20:10",
+      "expected": "2026-11-26T20:10",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Plymouth",
+      "destination": "Leeds",
       "reason": "",
       "mode": "train"
     }
