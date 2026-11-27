@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T12:30:08+00:00",
+  "generated_at": "2026-11-27T12:35:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,25 +12,6 @@
     "Trains running to / from and through Plymouth may be delayed by up to 45 minutes or revised. Latest information can be found in the Disruptions area of the National Rail website ."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-27T12:29",
-      "expected": "2026-11-27T12:29",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Cam & Dursley",
-        "Yate",
-        "Bristol Parkway",
-        "Filton Abbey Wood",
-        "Bristol Temple Meads"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-27T12:35",
       "expected": "2026-11-27T12:42",
@@ -68,7 +49,7 @@
     },
     {
       "scheduled": "2026-11-27T12:40",
-      "expected": "2026-11-27T12:58",
+      "expected": "2026-11-27T12:59",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -180,7 +161,7 @@
     },
     {
       "scheduled": "2026-11-27T13:12",
-      "expected": "2026-11-27T13:26",
+      "expected": "2026-11-27T13:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -206,24 +187,30 @@
         "Edinburgh"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T13:15",
+      "expected": "2026-11-27T13:17",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-27T12:28",
-      "expected": "2026-11-27T12:28",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Worcester Foregate Street",
-      "destination": "Bristol Temple Meads via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T12:32",
-      "expected": "2026-11-27T12:32",
-      "status": "On time",
+      "expected": "2026-11-27T12:34",
+      "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
       "origin": "London Paddington",
@@ -244,7 +231,7 @@
     },
     {
       "scheduled": "2026-11-27T12:38",
-      "expected": "2026-11-27T12:57",
+      "expected": "2026-11-27T12:58",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -288,13 +275,24 @@
     },
     {
       "scheduled": "2026-11-27T13:10",
-      "expected": "2026-11-27T13:25",
+      "expected": "2026-11-27T13:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by a late running train being in front of this one",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T13:14",
+      "expected": "2026-11-27T13:16",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Nottingham",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
       "mode": "train"
     }
   ],
