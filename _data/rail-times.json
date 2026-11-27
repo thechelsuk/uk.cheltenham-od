@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T16:50:09+00:00",
+  "generated_at": "2026-11-27T16:55:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -14,7 +14,7 @@
   "departures": [
     {
       "scheduled": "2026-11-27T16:12",
-      "expected": "2026-11-27T16:54",
+      "expected": "2026-11-27T16:56",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -43,29 +43,6 @@
       "mode": "train"
     },
     {
-      "scheduled": "2026-11-27T16:31",
-      "expected": "2026-11-27T16:49",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "calling_at": [
-        "Bristol Parkway",
-        "Bristol Temple Meads",
-        "Taunton",
-        "Tiverton Parkway",
-        "Exeter St Davids",
-        "Dawlish",
-        "Teignmouth",
-        "Newton Abbot",
-        "Torquay",
-        "Paignton"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T16:40",
       "expected": "2026-11-27T17:23",
       "status": "Delayed",
@@ -82,21 +59,6 @@
         "Macclesfield",
         "Stockport",
         "Manchester Piccadilly"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-27T16:50",
-      "expected": "2026-11-27T16:50",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
-      "calling_at": [
-        "Ashchurch for Tewkesbury",
-        "Worcester Shrub Hill"
       ],
       "mode": "train"
     },
@@ -165,7 +127,7 @@
     },
     {
       "scheduled": "2026-11-27T17:12",
-      "expected": "2026-11-27T17:21",
+      "expected": "2026-11-27T17:22",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -193,7 +155,7 @@
     },
     {
       "scheduled": "2026-11-27T17:19",
-      "expected": "2026-11-27T17:22",
+      "expected": "2026-11-27T17:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -208,40 +170,37 @@
         "Cardiff Central"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T17:25",
+      "expected": "2026-11-27T17:25",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Cam & Dursley",
+        "Yate",
+        "Bristol Parkway",
+        "Filton Abbey Wood",
+        "Bristol Temple Meads"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
       "scheduled": "2026-11-27T16:10",
-      "expected": "2026-11-27T16:53",
+      "expected": "2026-11-27T16:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Penzance",
       "destination": "Edinburgh via Leeds",
       "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-27T16:30",
-      "expected": "2026-11-27T16:47",
-      "status": "Delayed",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Manchester Piccadilly",
-      "destination": "Bristol Temple Meads",
-      "reason": "",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-27T16:31",
-      "expected": "2026-11-27T16:49",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "London Paddington",
-      "destination": "Cheltenham Spa",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -253,17 +212,6 @@
       "origin": "Bristol Temple Meads",
       "destination": "Manchester Piccadilly via Stoke-on-Trent",
       "reason": "This service has been delayed by train crew being delayed",
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-27T16:47",
-      "expected": "2026-11-27T16:47",
-      "status": "On time",
-      "platform": "2",
-      "operator": "Great Western Railway",
-      "origin": "Bristol Temple Meads",
-      "destination": "Worcester Shrub Hill",
-      "reason": "",
       "mode": "train"
     },
     {
@@ -290,7 +238,7 @@
     },
     {
       "scheduled": "2026-11-27T17:10",
-      "expected": "2026-11-27T17:20",
+      "expected": "2026-11-27T17:21",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -301,12 +249,45 @@
     },
     {
       "scheduled": "2026-11-27T17:18",
-      "expected": "2026-11-27T17:21",
+      "expected": "2026-11-27T17:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Nottingham",
       "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T17:24",
+      "expected": "2026-11-27T17:24",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Great Western Railway",
+      "origin": "Worcester Foregate Street",
+      "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T17:27",
+      "expected": "2026-11-27T17:29",
+      "status": "Delayed",
+      "platform": "2",
+      "operator": "Transport for Wales",
+      "origin": "Cardiff Central",
+      "destination": "Cheltenham Spa",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T17:31",
+      "expected": "2026-11-27T17:31",
+      "status": "On time",
+      "platform": "2",
+      "operator": "Great Western Railway",
+      "origin": "London Paddington",
+      "destination": "Cheltenham Spa",
       "reason": "",
       "mode": "train"
     }
