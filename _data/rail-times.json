@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T17:00:09+00:00",
+  "generated_at": "2026-11-27T17:10:08+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,38 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-27T16:12",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Penzance",
-      "destination": "Edinburgh via Leeds",
-      "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Dunbar",
-        "Edinburgh"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T16:40",
-      "expected": "2026-11-27T17:25",
+      "expected": "2026-11-27T17:26",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -64,8 +34,8 @@
     },
     {
       "scheduled": "2026-11-27T17:03",
-      "expected": "2026-11-27T17:03",
-      "status": "On time",
+      "expected": "2026-11-27T17:09",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Cheltenham Spa",
@@ -85,13 +55,13 @@
     },
     {
       "scheduled": "2026-11-27T17:12",
-      "expected": "2026-11-27T17:22",
+      "expected": "2026-11-27T17:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "calling_at": [
         "Worcestershire Parkway",
         "Birmingham New Street",
@@ -113,7 +83,7 @@
     },
     {
       "scheduled": "2026-11-27T17:19",
-      "expected": "2026-11-27T17:27",
+      "expected": "2026-11-27T17:26",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -131,8 +101,8 @@
     },
     {
       "scheduled": "2026-11-27T17:25",
-      "expected": "2026-11-27T17:25",
-      "status": "On time",
+      "expected": "2026-11-27T17:27",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -183,23 +153,32 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T17:45",
+      "expected": "2026-11-27T17:45",
+      "status": "On time",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central via Gloucester",
+      "reason": "",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-27T16:10",
-      "expected": null,
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Penzance",
-      "destination": "Edinburgh via Leeds",
-      "reason": "This service has been delayed by the train making extra stops because a train was cancelled",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T16:38",
-      "expected": "2026-11-27T17:24",
+      "expected": "2026-11-27T17:25",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -210,18 +189,18 @@
     },
     {
       "scheduled": "2026-11-27T17:10",
-      "expected": "2026-11-27T17:21",
+      "expected": "2026-11-27T17:24",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
       "origin": "Plymouth",
       "destination": "Edinburgh via Leeds",
-      "reason": "",
+      "reason": "This service has been delayed by a fault with the signalling system",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-27T17:18",
-      "expected": "2026-11-27T17:26",
+      "expected": "2026-11-27T17:25",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -232,8 +211,8 @@
     },
     {
       "scheduled": "2026-11-27T17:24",
-      "expected": "2026-11-27T17:24",
-      "status": "On time",
+      "expected": "2026-11-27T17:26",
+      "status": "Delayed",
       "platform": "1",
       "operator": "Great Western Railway",
       "origin": "Worcester Foregate Street",
@@ -243,7 +222,7 @@
     },
     {
       "scheduled": "2026-11-27T17:27",
-      "expected": "2026-11-27T17:29",
+      "expected": "2026-11-27T17:33",
       "status": "Delayed",
       "platform": "2",
       "operator": "Transport for Wales",
