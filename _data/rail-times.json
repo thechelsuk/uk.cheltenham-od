@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T20:35:17+00:00",
+  "generated_at": "2026-11-27T20:40:16+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -12,29 +12,6 @@
     "The ticket office is currently closed at this station."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-27T20:12",
-      "expected": "2026-11-27T20:35",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Derby",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Tamworth",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Doncaster",
-        "Wakefield Westgate",
-        "Leeds"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-27T20:41",
       "expected": "2026-11-27T20:41",
@@ -125,7 +102,7 @@
     },
     {
       "scheduled": "2026-11-27T21:12",
-      "expected": "2026-11-27T21:15",
+      "expected": "2026-11-27T21:27",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -175,7 +152,7 @@
     },
     {
       "scheduled": "2026-11-27T21:52",
-      "expected": "2026-11-27T22:04",
+      "expected": "2026-11-27T22:08",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -188,23 +165,29 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T21:53",
+      "expected": "2026-11-27T21:53",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-27T20:10",
-      "expected": "2026-11-27T20:34",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Derby",
-      "reason": "This service has been delayed by a fault with the signalling system",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T20:33",
-      "expected": "2026-11-27T20:37",
+      "expected": "2026-11-27T20:39",
       "status": "Delayed",
       "platform": "2",
       "operator": "Great Western Railway",
@@ -215,8 +198,8 @@
     },
     {
       "scheduled": "2026-11-27T20:50",
-      "expected": "2026-11-27T20:52",
-      "status": "Delayed",
+      "expected": "2026-11-27T20:50",
+      "status": "On time",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -237,7 +220,7 @@
     },
     {
       "scheduled": "2026-11-27T21:10",
-      "expected": "2026-11-27T21:14",
+      "expected": "2026-11-27T21:26",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -270,12 +253,23 @@
     },
     {
       "scheduled": "2026-11-27T21:50",
-      "expected": "2026-11-27T22:03",
+      "expected": "2026-11-27T22:07",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T21:51",
+      "expected": "2026-11-27T21:51",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Birmingham New Street",
       "reason": "",
       "mode": "train"
     }
