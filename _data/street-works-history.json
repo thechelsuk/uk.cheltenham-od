@@ -5,8 +5,8 @@
   "radius_miles": 6,
   "tracking_since": "2026-10-11",
   "summary": {
-    "count": 1301,
-    "unplanned": 267,
+    "count": 1307,
+    "unplanned": 269,
     "road_closures": 177,
     "by_street": [
       {
@@ -45,6 +45,11 @@
         "road_closures": 1
       },
       {
+        "street": "London Road",
+        "works": 12,
+        "road_closures": 0
+      },
+      {
         "street": "Station Road",
         "works": 12,
         "road_closures": 4
@@ -53,17 +58,12 @@
         "street": "Church Road",
         "works": 11,
         "road_closures": 5
-      },
-      {
-        "street": "London Road",
-        "works": 11,
-        "road_closures": 0
       }
     ],
     "by_promoter": [
       {
         "name": "Severn Trent Water",
-        "works": 571
+        "works": 573
       },
       {
         "name": "Gloucestershire County Council",
@@ -75,7 +75,7 @@
       },
       {
         "name": "National Grid Electricity Distribution (West Midlands)",
-        "works": 112
+        "works": 115
       },
       {
         "name": "Virgin Media",
@@ -83,7 +83,7 @@
       },
       {
         "name": "Wales And West Utilities Ltd",
-        "works": 38
+        "works": 39
       },
       {
         "name": "Unknown",
@@ -165,11 +165,25 @@
       },
       {
         "month": "2026-11",
-        "works": 627
+        "works": 633
       }
     ]
   },
   "records": [
+    {
+      "id": "PERMIT:XY245008000216616",
+      "first_seen": "2026-11-27",
+      "street": "Bishops Cleeve Bypass",
+      "ward_slug": "",
+      "kind": "Planned",
+      "category": "Minor",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Wales And West Utilities Ltd",
+      "start": "2026-12-18",
+      "end": "2026-12-22",
+      "last_seen": "2026-11-27"
+    },
     {
       "id": "PERMIT:MU70501382325-0001",
       "first_seen": "2026-11-27",
@@ -227,6 +241,34 @@
       "last_seen": "2026-11-27"
     },
     {
+      "id": "PERMIT:LB9011303-000014460530",
+      "first_seen": "2026-11-27",
+      "street": "Church Street",
+      "ward_slug": "charlton-kings",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Give and take",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-27T14:14",
+      "end": "2026-11-30",
+      "last_seen": "2026-11-27"
+    },
+    {
+      "id": "PERMIT:LB9011303-000014455569",
+      "first_seen": "2026-11-27",
+      "street": "Kipling Road",
+      "ward_slug": "st-marks",
+      "kind": "Unplanned",
+      "category": "Immediate - urgent",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "Severn Trent Water",
+      "start": "2026-11-27T13:01",
+      "end": "2026-11-30",
+      "last_seen": "2026-11-27"
+    },
+    {
       "id": "PERMIT:LB9011303-000014453664",
       "first_seen": "2026-11-27",
       "street": "Brooksdale Lane",
@@ -238,6 +280,48 @@
       "promoter": "Severn Trent Water",
       "start": "2026-11-27T11:24",
       "end": "2026-12-01",
+      "last_seen": "2026-11-27"
+    },
+    {
+      "id": "PERMIT:HM7532597920",
+      "first_seen": "2026-11-27",
+      "street": "Caernarvon Road",
+      "ward_slug": "warden-hill",
+      "kind": "Planned",
+      "category": "Standard",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2026-12-11",
+      "end": "2026-12-17",
+      "last_seen": "2026-11-27"
+    },
+    {
+      "id": "PERMIT:HM7512597733B",
+      "first_seen": "2026-11-27",
+      "street": "London Road",
+      "ward_slug": "charlton-kings",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Multi-way signals",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2027-02-15",
+      "end": "2027-05-15",
+      "last_seen": "2026-11-27"
+    },
+    {
+      "id": "PERMIT:HM7512597733A",
+      "first_seen": "2026-11-27",
+      "street": "Glenfall Way",
+      "ward_slug": "battledown",
+      "kind": "Planned",
+      "category": "Major (PAA)",
+      "traffic_management": "Some carriageway incursion",
+      "road_closure": false,
+      "promoter": "National Grid Electricity Distribution (West Midlands)",
+      "start": "2027-02-15",
+      "end": "2027-05-15",
       "last_seen": "2026-11-27"
     },
     {
@@ -1384,8 +1468,8 @@
       "traffic_management": "No carriageway incursion",
       "road_closure": false,
       "promoter": "Virgin Media",
-      "start": "2026-11-26",
-      "end": "2026-11-30",
+      "start": "2026-11-27T14:07",
+      "end": "2026-12-01",
       "last_seen": "2026-11-27"
     },
     {
