@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T12:15:08+00:00",
+  "generated_at": "2026-11-27T12:20:09+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -13,45 +13,8 @@
   ],
   "departures": [
     {
-      "scheduled": "2026-11-27T12:12",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Aberdeen via Leeds",
-      "reason": "This service has been cancelled because of overcrowding",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Morpeth",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Inverkeithing",
-        "Kirkcaldy",
-        "Markinch",
-        "Ladybank",
-        "Cupar",
-        "Leuchars",
-        "Dundee",
-        "Aberdeen"
-      ],
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T12:15",
-      "expected": "2026-11-27T12:19",
+      "expected": "2026-11-27T12:20",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -87,7 +50,7 @@
     },
     {
       "scheduled": "2026-11-27T12:35",
-      "expected": "2026-11-27T12:40",
+      "expected": "2026-11-27T12:39",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -122,7 +85,7 @@
     },
     {
       "scheduled": "2026-11-27T12:40",
-      "expected": "2026-11-27T12:53",
+      "expected": "2026-11-27T12:55",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -158,8 +121,8 @@
     },
     {
       "scheduled": "2026-11-27T12:52",
-      "expected": "2026-11-27T12:52",
-      "status": "On time",
+      "expected": "2026-11-27T12:55",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
@@ -187,23 +150,35 @@
         "Penzance"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T12:55",
+      "expected": "2026-11-27T12:55",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
+      "reason": "",
+      "calling_at": [
+        "Ashchurch for Tewkesbury",
+        "Worcestershire Parkway",
+        "University",
+        "Birmingham New Street",
+        "Tamworth",
+        "Burton-on-Trent",
+        "Derby",
+        "Long Eaton",
+        "Beeston",
+        "Nottingham"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
     {
-      "scheduled": "2026-11-27T12:11",
-      "expected": null,
-      "status": "Cancelled",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Aberdeen via Leeds",
-      "reason": "This service has been cancelled because of overcrowding",
-      "mode": "train"
-    },
-    {
       "scheduled": "2026-11-27T12:14",
-      "expected": "2026-11-27T12:18",
+      "expected": "2026-11-27T12:19",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -247,7 +222,7 @@
     },
     {
       "scheduled": "2026-11-27T12:33",
-      "expected": "2026-11-27T12:39",
+      "expected": "2026-11-27T12:38",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -258,7 +233,7 @@
     },
     {
       "scheduled": "2026-11-27T12:38",
-      "expected": "2026-11-27T12:52",
+      "expected": "2026-11-27T12:54",
       "status": "Delayed",
       "platform": "2",
       "operator": "CrossCountry",
@@ -280,12 +255,23 @@
     },
     {
       "scheduled": "2026-11-27T12:50",
-      "expected": "2026-11-27T12:50",
-      "status": "On time",
+      "expected": "2026-11-27T12:54",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Edinburgh",
       "destination": "Plymouth",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-27T12:54",
+      "expected": "2026-11-27T12:54",
+      "status": "On time",
+      "platform": "2",
+      "operator": "CrossCountry",
+      "origin": "Cardiff Central",
+      "destination": "Nottingham",
       "reason": "",
       "mode": "train"
     }
