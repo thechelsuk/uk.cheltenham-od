@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T05:45:15+00:00",
+  "generated_at": "2026-11-28T05:50:15+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,27 +9,10 @@
     "crs": "CNM"
   },
   "messages": [
-    "Reduced CrossCountry service on some routes today and Sunday 29 November. More details and the full impact to your journey can be found in the Disruptions area of the National Rail website."
+    "Reduced CrossCountry service on some routes today and Sunday 29 November. More details and the full impact to your journey can be found in the Disruptions area of the National Rail website.",
+    "Trains between Wolverhampton and Stafford may be cancelled, delayed by up to 20 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-28T05:48",
-      "expected": "2026-11-28T05:48",
-      "status": "On time",
-      "platform": "1",
-      "operator": "Great Western Railway",
-      "origin": "Cheltenham Spa",
-      "destination": "Swindon",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Stonehouse",
-        "Stroud",
-        "Kemble",
-        "Swindon"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-28T06:02",
       "expected": "2026-11-28T06:02",
@@ -214,6 +197,27 @@
         "Bristol Temple Meads"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-28T07:29",
+      "expected": "2026-11-28T07:29",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Paignton",
+      "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Torquay",
+        "Paignton"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
@@ -280,6 +284,17 @@
       "operator": "Great Western Railway",
       "origin": "Great Malvern",
       "destination": "Bristol Temple Meads via Gloucester",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-28T07:27",
+      "expected": "2026-11-28T07:27",
+      "status": "On time",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Birmingham New Street",
+      "destination": "Paignton",
       "reason": "",
       "mode": "train"
     },
