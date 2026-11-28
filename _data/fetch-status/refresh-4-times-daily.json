@@ -34,7 +34,7 @@
     "_python/jobs.py": {
       "last_ok": "2026-11-26",
       "failing_since": "2026-11-27T03:53Z",
-      "last_error": "requests.exceptions.HTTPError: 503 Server Error: Service Unavailable for url: https://www.jobs.service.gov.uk/jobs/search?…"
+      "last_error": "requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='www.jobs.service.gov.uk', port=443): Read timed out. (read timeout=30)"
     },
     "_python/nhs-ae.py": {
       "last_ok": "2026-11-13",
@@ -49,7 +49,7 @@
     "_python/post-office.py": {
       "last_ok": "2026-11-27",
       "failing_since": "2026-11-27T13:50Z",
-      "last_error": "RuntimeError: All Overpass endpoints failed: HTTPSConnectionPool(host='overpass.openstreetmap.ru', port=443): Max retries exceeded with url: /api/interpreter (Caused by ConnectTimeoutError(<HTTPSConnection(host='overpass.openstreetmap.ru', port=443) at 0x76cc07ed9d10>, 'Connection to overpass.openst"
+      "last_error": "RuntimeError: All Overpass endpoints failed: HTTPSConnectionPool(host='overpass.openstreetmap.ru', port=443): Max retries exceeded with url: /api/interpreter (Caused by ConnectTimeoutError(<HTTPSConnection(host='overpass.openstreetmap.ru', port=443) at 0x7f5b7d077ed0>, 'Connection to overpass.openst"
     },
     "_python/roadworks.py": {
       "last_ok": "2026-11-28",
