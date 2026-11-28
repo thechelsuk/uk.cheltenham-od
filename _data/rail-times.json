@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T14:15:16+00:00",
+  "generated_at": "2026-11-28T14:20:16+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -15,7 +15,7 @@
   "departures": [
     {
       "scheduled": "2026-11-28T13:52",
-      "expected": "2026-11-28T14:22",
+      "expected": "2026-11-28T14:24",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
@@ -31,36 +31,6 @@
         "Newton Abbot",
         "Totnes",
         "Plymouth"
-      ],
-      "mode": "train"
-    },
-    {
-      "scheduled": "2026-11-28T14:12",
-      "expected": "2026-11-28T14:14",
-      "status": "Delayed",
-      "platform": "2",
-      "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Glasgow Central via Leeds",
-      "reason": "",
-      "calling_at": [
-        "Worcestershire Parkway",
-        "Birmingham New Street",
-        "Burton-on-Trent",
-        "Derby",
-        "Chesterfield",
-        "Sheffield",
-        "Wakefield Westgate",
-        "Leeds",
-        "York",
-        "Darlington",
-        "Durham",
-        "Newcastle",
-        "Berwick-upon-Tweed",
-        "Edinburgh",
-        "Haymarket",
-        "Motherwell",
-        "Glasgow Central"
       ],
       "mode": "train"
     },
@@ -102,8 +72,8 @@
     },
     {
       "scheduled": "2026-11-28T14:29",
-      "expected": "2026-11-28T14:29",
-      "status": "On time",
+      "expected": "2026-11-28T14:33",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -170,28 +140,38 @@
         "Worcester Foregate Street"
       ],
       "mode": "train"
-    }
-  ],
-  "arrivals": [
+    },
     {
-      "scheduled": "2026-11-28T13:50",
-      "expected": "2026-11-28T14:21",
+      "scheduled": "2026-11-28T14:52",
+      "expected": "2026-11-28T15:00",
       "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Glasgow Central",
       "destination": "Plymouth",
       "reason": "",
+      "calling_at": [
+        "Bristol Parkway",
+        "Bristol Temple Meads",
+        "Taunton",
+        "Tiverton Parkway",
+        "Exeter St Davids",
+        "Newton Abbot",
+        "Totnes",
+        "Plymouth"
+      ],
       "mode": "train"
-    },
+    }
+  ],
+  "arrivals": [
     {
-      "scheduled": "2026-11-28T14:10",
-      "expected": "2026-11-28T14:13",
+      "scheduled": "2026-11-28T13:50",
+      "expected": "2026-11-28T14:23",
       "status": "Delayed",
-      "platform": "2",
+      "platform": "1",
       "operator": "CrossCountry",
-      "origin": "Plymouth",
-      "destination": "Glasgow Central via Leeds",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     },
@@ -225,13 +205,13 @@
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": "",
+      "reason": "This service has been delayed by a fault on a train earlier",
       "mode": "train"
     },
     {
       "scheduled": "2026-11-28T14:27",
-      "expected": "2026-11-28T14:27",
-      "status": "On time",
+      "expected": "2026-11-28T14:32",
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Manchester Piccadilly",
@@ -269,6 +249,17 @@
       "operator": "Great Western Railway",
       "origin": "Bristol Temple Meads",
       "destination": "Worcester Foregate Street",
+      "reason": "",
+      "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-28T14:50",
+      "expected": "2026-11-28T14:59",
+      "status": "Delayed",
+      "platform": "1",
+      "operator": "CrossCountry",
+      "origin": "Glasgow Central",
+      "destination": "Plymouth",
       "reason": "",
       "mode": "train"
     }
