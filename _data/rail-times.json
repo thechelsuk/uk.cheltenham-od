@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T06:45:16+00:00",
+  "generated_at": "2026-11-28T06:50:15+00:00",
   "source": "Rail Delivery Group (National Rail Enquiries), via the Rail Data Marketplace",
   "source_url": "https://raildata.org.uk/",
   "refresh": "every 5 minutes",
@@ -9,30 +9,10 @@
     "crs": "CNM"
   },
   "messages": [
-    "Reduced CrossCountry service on some routes today and Sunday 29 November. More details and the full impact to your journey can be found in the Disruptions area of the National Rail website.",
-    "Trains between Wolverhampton and Stafford / Shrewsbury may be cancelled, delayed by up to 20 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
+    "A reduced CrossCountry service is in operation on some routes. More details and the full impact to your journey can be found in the Disruptions area of the National Rail website .",
+    "Trains between Wolverhampton and Stafford / Shrewsbury may be cancelled, delayed by up to 45 minutes or revised. More details can be found in the Disruptions area of the National Rail website."
   ],
   "departures": [
-    {
-      "scheduled": "2026-11-28T06:44",
-      "expected": "2026-11-28T06:44",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "calling_at": [
-        "Gloucester",
-        "Lydney",
-        "Chepstow",
-        "Caldicot",
-        "Severn Tunnel Junction",
-        "Newport (South Wales)",
-        "Cardiff Central"
-      ],
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-28T06:49",
       "expected": "2026-11-28T06:49",
@@ -180,8 +160,8 @@
     },
     {
       "scheduled": "2026-11-28T07:29",
-      "expected": "2026-11-28T07:29",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -218,20 +198,29 @@
         "Manchester Piccadilly"
       ],
       "mode": "train"
+    },
+    {
+      "scheduled": "2026-11-28T07:43",
+      "expected": null,
+      "status": "Cancelled",
+      "platform": "1",
+      "operator": "Transport for Wales",
+      "origin": "Cheltenham Spa",
+      "destination": "Cardiff Central",
+      "reason": "This service has been cancelled because of a problem in the depot",
+      "calling_at": [
+        "Gloucester",
+        "Lydney",
+        "Chepstow",
+        "Caldicot",
+        "Severn Tunnel Junction",
+        "Newport (South Wales)",
+        "Cardiff Central"
+      ],
+      "mode": "train"
     }
   ],
   "arrivals": [
-    {
-      "scheduled": "2026-11-28T06:43",
-      "expected": "2026-11-28T06:43",
-      "status": "On time",
-      "platform": "1",
-      "operator": "CrossCountry",
-      "origin": "Birmingham New Street",
-      "destination": "Cardiff Central via Gloucester",
-      "reason": "",
-      "mode": "train"
-    },
     {
       "scheduled": "2026-11-28T06:57",
       "expected": "2026-11-28T06:57",
@@ -278,8 +267,8 @@
     },
     {
       "scheduled": "2026-11-28T07:27",
-      "expected": "2026-11-28T07:27",
-      "status": "On time",
+      "expected": null,
+      "status": "Delayed",
       "platform": "1",
       "operator": "CrossCountry",
       "origin": "Birmingham New Street",
@@ -289,13 +278,13 @@
     },
     {
       "scheduled": "2026-11-28T07:28",
-      "expected": "2026-11-28T07:37",
-      "status": "Delayed",
+      "expected": null,
+      "status": "Cancelled",
       "platform": "2",
       "operator": "Transport for Wales",
       "origin": "Cardiff Central",
       "destination": "Cheltenham Spa",
-      "reason": "This service has been delayed by a fault on this train",
+      "reason": "This service has been cancelled because of a problem in the depot",
       "mode": "train"
     },
     {
